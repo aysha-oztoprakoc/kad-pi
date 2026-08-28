@@ -1,0 +1,13 @@
+{
+  "requested_provider": "opencode-go",
+  "requested_model": "deepseek-v4-pro",
+  "resolved_provider": "NOT_CAPTURED_via_seam_unavailable",
+  "resolved_model": "NOT_CAPTURED_via_seam_unavailable",
+  "capture_method": "prepareCall / resolveCallConfig (ctx.llm seam) — seam unavailable in this deployment; non-secret static evidence recorded instead",
+  "static_route_evidence": {
+    "pi_ai_catalog": "installed @earendil-works/pi-ai ships provider route 'opencode-go' (openai-completions) including model 'deepseek-v4-pro' with baseUrl https://opencode.ai/zen/go/v1, maxTokens 384000, thinkingLevelMap minimal/low/medium->null, high->high, max->max",
+    "settings_reference": "$DSH_HOME/settings.yaml: llm-pi-ai.providers.opencode-go.apiKeyEnv = OPENCODE_GO_API_KEY (credential REFERENCE only; value never read)",
+    "live_route_proof": "agent-default-model resolves provider opencode-go / model deepseek-v4-flash on the same route (Builder session runs on it); exact-model metadata for deepseek-v4-pro is a statically resolvable catalog entry",
+    "verification_rule": "If resolved_provider != opencode-go OR resolved_model != deepseek-v4-pro once capturable: STOP. Do NOT substitute."
+  }
+}

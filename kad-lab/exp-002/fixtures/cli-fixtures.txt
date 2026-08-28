@@ -1,0 +1,336 @@
+# KAD-WP-002 — deterministic C++ adapter fidelity fixtures (REAL WP-001 Validator/Resolver).
+# Machine format: CASE <name> / INPUT ... INPUT_END / EXPECT <substring> (repeatable) / blank separator.
+# Each case mirrors WP-001 evidence semantics (test_experiment001 cases 1-9).
+
+CASE Move room_b success (a,a,a)
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Move
+1
+room_b
+0
+INPUT_END
+EXPECT "status":"accepted"
+EXPECT "action":"Move"
+EXPECT "target":"room_b"
+EXPECT "outcome":"Success"
+EXPECT "eventKind":"PlayerMoved"
+EXPECT "from":"room_a"
+EXPECT "to":"room_b"
+EXPECT "afterPlayerRoom":"room_b"
+EXPECT "diffFields":["PlayerRoom"]
+
+CASE Acquire key same-room -> held
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Acquire
+1
+key
+0
+INPUT_END
+EXPECT "status":"accepted"
+EXPECT "action":"Acquire"
+EXPECT "target":"key"
+EXPECT "outcome":"Success"
+EXPECT "eventKind":"ObjectAcquired"
+EXPECT "from":"room_a"
+EXPECT "to":"held"
+EXPECT "afterKeyRoom":"held"
+EXPECT "diffFields":["KeyRoom"]
+
+CASE Acquire crate cross-room -> UnsuccessfulAttempt
+INPUT
+room_a
+room_a
+room_b
+1
+0
+Acquire
+1
+crate
+0
+INPUT_END
+EXPECT "status":"accepted"
+EXPECT "action":"Acquire"
+EXPECT "target":"crate"
+EXPECT "outcome":"UnsuccessfulAttempt"
+EXPECT "eventKind":"AcquireFailed"
+EXPECT "from":"room_b"
+EXPECT "to":"room_b"
+EXPECT "diffFields":[]
+
+CASE Move room_a already there -> MoveFailed no-op
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Move
+1
+room_a
+0
+INPUT_END
+EXPECT "status":"accepted"
+EXPECT "outcome":"UnsuccessfulAttempt"
+EXPECT "eventKind":"MoveFailed"
+EXPECT "from":"room_a"
+EXPECT "to":"room_a"
+EXPECT "diffFields":[]
+
+CASE Acquire key already held -> from/to held (PATCH 03)
+INPUT
+room_a
+held
+room_a
+1
+0
+Acquire
+1
+key
+0
+INPUT_END
+EXPECT "status":"accepted"
+EXPECT "outcome":"UnsuccessfulAttempt"
+EXPECT "eventKind":"AcquireFailed"
+EXPECT "from":"held"
+EXPECT "to":"held"
+EXPECT "afterKeyRoom":"held"
+EXPECT "diffFields":[]
+
+CASE Unknown reference diamond -> UnknownReference
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Acquire
+1
+diamond
+0
+INPUT_END
+EXPECT "status":"rejected"
+EXPECT "failure":"UnknownReference"
+
+CASE InvalidParameter Move key
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Move
+1
+key
+0
+INPUT_END
+EXPECT "failure":"InvalidParameter"
+
+CASE InvalidParameter Acquire room_a
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Acquire
+1
+room_a
+0
+INPUT_END
+EXPECT "failure":"InvalidParameter"
+
+CASE InvalidParameter Move player
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Move
+1
+player
+0
+INPUT_END
+EXPECT "failure":"InvalidParameter"
+
+CASE InvalidParameter Acquire player
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Acquire
+1
+player
+0
+INPUT_END
+EXPECT "failure":"InvalidParameter"
+
+CASE Ambiguous room -> AmbiguousReference
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Move
+1
+room
+0
+INPUT_END
+EXPECT "failure":"AmbiguousReference"
+
+CASE Ambiguous object -> AmbiguousReference
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Acquire
+1
+object
+0
+INPUT_END
+EXPECT "failure":"AmbiguousReference"
+
+CASE Unsupported Open -> UnsupportedAction
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Open
+1
+crate
+0
+INPUT_END
+EXPECT "failure":"UnsupportedAction"
+
+CASE Lowercase move -> UnsupportedAction
+INPUT
+room_a
+room_a
+room_a
+1
+0
+move
+1
+room_b
+0
+INPUT_END
+EXPECT "failure":"UnsupportedAction"
+
+CASE Malformed no target
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Move
+0
+0
+INPUT_END
+EXPECT "failure":"Malformed"
+
+CASE Malformed two targets
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Move
+2
+room_a
+room_b
+0
+INPUT_END
+EXPECT "failure":"Malformed"
+
+CASE Malformed null verb with target
+INPUT
+room_a
+room_a
+room_a
+1
+1
+
+1
+room_b
+0
+INPUT_END
+EXPECT "failure":"Malformed"
+
+CASE MultipleActions two
+INPUT
+room_a
+room_a
+room_a
+2
+0
+Move
+1
+room_b
+0
+Acquire
+1
+key
+0
+INPUT_END
+EXPECT "failure":"MultipleActions"
+
+CASE MultipleActions zero
+INPUT
+room_a
+room_a
+room_a
+0
+0
+INPUT_END
+EXPECT "failure":"MultipleActions"
+
+CASE UnexpectedProperty success=true
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Acquire
+1
+key
+1
+success
+true
+INPUT_END
+EXPECT "failure":"UnexpectedProperty"
+
+CASE UnexpectedProperty foo=bar
+INPUT
+room_a
+room_a
+room_a
+1
+0
+Move
+1
+room_b
+1
+foo
+bar
+INPUT_END
+EXPECT "failure":"UnexpectedProperty"

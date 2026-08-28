@@ -1,0 +1,35 @@
+{
+  "context_id": "C0",
+  "read_only": true,
+  "non_authoritative": true,
+  "world_state": {
+    "player_room": "room_a",
+    "key_room": "room_a",
+    "crate_room": "room_b"
+  },
+  "locations": [
+    "room_a",
+    "room_b"
+  ],
+  "actor": [
+    "player"
+  ],
+  "objects": [
+    "key",
+    "crate"
+  ],
+  "ambiguous_aliases": {
+    "room": [
+      "room_a",
+      "room_b"
+    ],
+    "object": [
+      "key",
+      "crate"
+    ]
+  },
+  "actions": {
+    "Move": "actor attempts to move to a location",
+    "Acquire": "actor attempts to acquire an object"
+  }
+}

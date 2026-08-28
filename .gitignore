@@ -3,13 +3,16 @@ data_workspace/
 technopagan-netrunner/
 kad-rpg/
 kad-sillytavern/
-kad-lab/
 agent/
 .claude/
 amdy-platform/
 tries/
 .dsh-ptc-canary/
 .mise.toml
+
+# Build Artifacts
+build/
+**/build/
 
 # Environment & Secrets
 .env

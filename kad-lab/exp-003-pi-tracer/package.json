@@ -1,0 +1,11 @@
+{
+  "name": "exp-003-pi-tracer",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/pi-tracer.test.mjs"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

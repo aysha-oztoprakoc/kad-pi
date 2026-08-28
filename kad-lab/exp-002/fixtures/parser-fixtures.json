@@ -1,0 +1,384 @@
+{
+  "contract_version": "exp002-parser-v1",
+  "note": "Deterministic synthetic fixtures for the transport-only parser. Reasoning never enters parsing. No repair, no fence stripping, no extraction from prose.",
+  "fixtures": [
+    {
+      "id": "p01",
+      "name": "empty output",
+      "raw": "",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "empty"
+      }
+    },
+    {
+      "id": "p02",
+      "name": "whitespace-only",
+      "raw": "   \n\t ",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "empty"
+      }
+    },
+    {
+      "id": "p03",
+      "name": "invalid json",
+      "raw": "not json",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "invalid_json"
+      }
+    },
+    {
+      "id": "p04",
+      "name": "prose then json",
+      "raw": "Here is the result:\n{\"actions\":[],\"properties\":[]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "invalid_json"
+      }
+    },
+    {
+      "id": "p05",
+      "name": "fenced json",
+      "raw": "```json\n{\"actions\":[],\"properties\":[]}\n```",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "invalid_json"
+      }
+    },
+    {
+      "id": "p06",
+      "name": "top-level not object (array)",
+      "raw": "[1,2]",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "not_object"
+      }
+    },
+    {
+      "id": "p07",
+      "name": "top-level not object (number)",
+      "raw": "42",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "not_object"
+      }
+    },
+    {
+      "id": "p08",
+      "name": "missing both keys",
+      "raw": "{}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "unexpected_top_level"
+      }
+    },
+    {
+      "id": "p09",
+      "name": "extra top-level key",
+      "raw": "{\"actions\":[],\"properties\":[],\"success\":true}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "unexpected_top_level"
+      }
+    },
+    {
+      "id": "p10",
+      "name": "missing properties",
+      "raw": "{\"actions\":[]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "unexpected_top_level"
+      }
+    },
+    {
+      "id": "p11",
+      "name": "missing actions",
+      "raw": "{\"properties\":[]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "unexpected_top_level"
+      }
+    },
+    {
+      "id": "p12",
+      "name": "actions not array",
+      "raw": "{\"actions\":{},\"properties\":[]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p13",
+      "name": "action not object",
+      "raw": "{\"actions\":[7],\"properties\":[]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p14",
+      "name": "action missing targets",
+      "raw": "{\"actions\":[{\"verb\":\"Move\"}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p15",
+      "name": "action extra key",
+      "raw": "{\"actions\":[{\"verb\":\"Move\",\"targets\":[],\"x\":1}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p16",
+      "name": "verb wrong type (number)",
+      "raw": "{\"actions\":[{\"verb\":1,\"targets\":[]}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p17",
+      "name": "verb wrong type (object)",
+      "raw": "{\"actions\":[{\"verb\":{},\"targets\":[]}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p18",
+      "name": "targets not string array",
+      "raw": "{\"actions\":[{\"verb\":\"Move\",\"targets\":[1]}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p19",
+      "name": "targets wrong type (string)",
+      "raw": "{\"actions\":[{\"verb\":\"Move\",\"targets\":\"room_b\"}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p20",
+      "name": "properties not array",
+      "raw": "{\"actions\":[],\"properties\":{}}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p21",
+      "name": "property not string pair",
+      "raw": "{\"actions\":[],\"properties\":[[1,2]]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p22",
+      "name": "property wrong arity (1)",
+      "raw": "{\"actions\":[],\"properties\":[[\"success\"]]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p23",
+      "name": "property wrong arity (3)",
+      "raw": "{\"actions\":[],\"properties\":[[\"a\",\"b\",\"c\"]]}",
+      "expected": {
+        "parse_status": "TRANSPORT_MALFORMED",
+        "reason": "wrong_types"
+      }
+    },
+    {
+      "id": "p24",
+      "name": "VALID clear single action",
+      "raw": "{\"actions\":[{\"verb\":\"Acquire\",\"targets\":[\"key\"]}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "parsed",
+        "candidate": {
+          "actions": [
+            {
+              "verb": "Acquire",
+              "targets": [
+                "key"
+              ]
+            }
+          ],
+          "properties": []
+        }
+      }
+    },
+    {
+      "id": "p25",
+      "name": "VALID verb null",
+      "raw": "{\"actions\":[{\"verb\":null,\"targets\":[]}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "parsed",
+        "candidate": {
+          "actions": [
+            {
+              "verb": null,
+              "targets": []
+            }
+          ],
+          "properties": []
+        }
+      }
+    },
+    {
+      "id": "p26",
+      "name": "VALID unsupported verb survives transport",
+      "raw": "{\"actions\":[{\"verb\":\"Open\",\"targets\":[\"crate\"]}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "parsed",
+        "candidate": {
+          "actions": [
+            {
+              "verb": "Open",
+              "targets": [
+                "crate"
+              ]
+            }
+          ],
+          "properties": []
+        }
+      }
+    },
+    {
+      "id": "p27",
+      "name": "VALID unknown target survives transport",
+      "raw": "{\"actions\":[{\"verb\":\"Acquire\",\"targets\":[\"diamond\"]}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "parsed",
+        "candidate": {
+          "actions": [
+            {
+              "verb": "Acquire",
+              "targets": [
+                "diamond"
+              ]
+            }
+          ],
+          "properties": []
+        }
+      }
+    },
+    {
+      "id": "p28",
+      "name": "VALID ambiguous target survives transport",
+      "raw": "{\"actions\":[{\"verb\":\"Move\",\"targets\":[\"room\"]}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "parsed",
+        "candidate": {
+          "actions": [
+            {
+              "verb": "Move",
+              "targets": [
+                "room"
+              ]
+            }
+          ],
+          "properties": []
+        }
+      }
+    },
+    {
+      "id": "p29",
+      "name": "VALID multiple actions survive transport",
+      "raw": "{\"actions\":[{\"verb\":\"Acquire\",\"targets\":[\"key\"]},{\"verb\":\"Move\",\"targets\":[\"room_b\"]}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "parsed",
+        "candidate": {
+          "actions": [
+            {
+              "verb": "Acquire",
+              "targets": [
+                "key"
+              ]
+            },
+            {
+              "verb": "Move",
+              "targets": [
+                "room_b"
+              ]
+            }
+          ],
+          "properties": []
+        }
+      }
+    },
+    {
+      "id": "p30",
+      "name": "VALID authority-shaped properties survive transport",
+      "raw": "{\"actions\":[{\"verb\":\"Acquire\",\"targets\":[\"key\"]}],\"properties\":[[\"success\",\"true\"]]}",
+      "expected": {
+        "parse_status": "parsed",
+        "candidate": {
+          "actions": [
+            {
+              "verb": "Acquire",
+              "targets": [
+                "key"
+              ]
+            }
+          ],
+          "properties": [
+            [
+              "success",
+              "true"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "p31",
+      "name": "VALID zero actions survive transport",
+      "raw": "{\"actions\":[],\"properties\":[]}",
+      "expected": {
+        "parse_status": "parsed",
+        "candidate": {
+          "actions": [],
+          "properties": []
+        }
+      }
+    },
+    {
+      "id": "p32",
+      "name": "VALID empty targets survive transport",
+      "raw": "{\"actions\":[{\"verb\":\"Move\",\"targets\":[]}],\"properties\":[]}",
+      "expected": {
+        "parse_status": "parsed",
+        "candidate": {
+          "actions": [
+            {
+              "verb": "Move",
+              "targets": []
+            }
+          ],
+          "properties": []
+        }
+      }
+    }
+  ]
+}

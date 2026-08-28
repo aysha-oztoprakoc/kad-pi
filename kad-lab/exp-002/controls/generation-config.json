@@ -1,0 +1,13 @@
+{
+  "temperature": 0,
+  "maxTokens": 512,
+  "stop": null,
+  "reasoningEffort": null,
+  "top_p": "not_exposed (current GenerateOptions exposes temperature/maxTokens/stop only; field NOT invented)",
+  "tools": "NONE",
+  "candidate_transport_version": "exp002-transport-v1",
+  "system_prompt_version": "exp002-interpreter-v1",
+  "interpreter_prompt_version": "exp002-interpreter-v1",
+  "freeze_rule": "No generation parameter may change after R01. Stability attempts use identical configuration. If effective route/config silently changes: STOP.",
+  "effective_default_note": "resolveCallConfig-level effective defaults (e.g. adapter defaultMaxTokens) would be recorded from the seam; seam unavailable, so no effective defaults were materialized."
+}
