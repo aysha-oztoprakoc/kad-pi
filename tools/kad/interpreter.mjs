@@ -131,7 +131,7 @@ function sanitizeCandidateIntent(obj) {
 
   // Check if object attempted to smuggle authority properties directly
   for (const [k, v] of Object.entries(obj)) {
-    if (k !== 'actions' && k !== 'properties' && k !== 'action' && k !== 'target') {
+    if (k !== 'actions' && k !== 'properties' && k !== 'action' && k !== 'target' && k !== 'targets') {
       properties.push([String(k), String(v)]);
     }
   }

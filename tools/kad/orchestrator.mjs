@@ -13,15 +13,26 @@ const DEFAULT_JOURNAL_PATH = resolve(ROOT_DIR, 'evidence/WP-KAD-002/causal-journ
 /**
  * Runs a complete single-turn world transition through the deterministic authority boundary.
  *
+ * Transaction Policy:
+ * 1. Interpretation is untrusted and cannot mutate GameState.
+ * 2. Deterministic Validator/Resolver owns authority.
+ * 3. NO JOURNAL -> NO EXTERNAL STATE COMMIT: If journal recording fails, runTurn throws
+ *    before returning, ensuring external caller / adapter state does NOT advance.
+ *
  * @param {string|object} input
  * @param {object} [initialState]
  * @param {object} [options]
  * @returns {object}
  */
 export function runTurn(input, initialState = null, options = {}) {
-  const causationId = options.causationId || generateCausalId('turn');
+  const engineExecutor = options.engineExecutor || executeDeterministicCore;
+  const journalAppender = options.journalAppender || appendJournalEntry;
+  const idFactory = options.idFactory || null;
+  const clock = options.clock || (() => new Date().toISOString());
+
+  const causationId = options.causationId || generateCausalId('turn', idFactory);
   const correlationId = options.correlationId || 'session-kad-main';
-  const journalPath = options.journalPath || DEFAULT_JOURNAL_PATH;
+  const journalPath = options.journalPath !== undefined ? options.journalPath : DEFAULT_JOURNAL_PATH;
 
   // 1. Authoritative State Before
   const stateBefore = initialState ? cloneState(initialState) : createInitialState();
@@ -31,12 +42,12 @@ export function runTurn(input, initialState = null, options = {}) {
   const candidateIntent = interpretText(input);
 
   // 3. Deterministic Validation & Resolution Boundary (C++20 Engine)
-  const engineResult = executeDeterministicCore(candidateIntent, stateBefore, options);
+  const engineResult = engineExecutor(candidateIntent, stateBefore, options);
 
   let stateAfter;
   let stateDiff = [];
   let domainEvent = null;
-  let validationStatus = engineResult.status;
+  let validationStatus = engineResult?.status || 'rejected';
   let validationDetail = null;
   let resolution = null;
 
@@ -68,8 +79,8 @@ export function runTurn(input, initialState = null, options = {}) {
     stateDiff = [];
     validationStatus = 'rejected';
     validationDetail = {
-      failure_kind: engineResult.failure_kind,
-      detail: engineResult.detail
+      failure_kind: engineResult?.failure_kind || 'Rejection',
+      detail: engineResult?.detail || 'Rejected by policy'
     };
   }
 
@@ -84,10 +95,12 @@ export function runTurn(input, initialState = null, options = {}) {
     }
   }
 
-  // 5. Causal Journal Append
-  const journalEntry = appendJournalEntry(journalPath, {
+  // 5. Causal Journal Append (Transaction Gate)
+  // If journal append fails, this throws, preventing caller from advancing external state
+  const journalEntry = journalAppender(journalPath, {
     causation_id: causationId,
     correlation_id: correlationId,
+    timestamp_iso: clock(),
     input_text: typeof input === 'string' ? input : JSON.stringify(input),
     candidate_intent: candidateIntent,
     validation_status: validationStatus,
@@ -100,8 +113,8 @@ export function runTurn(input, initialState = null, options = {}) {
     state_after_hash: stateAfterHash,
     domain_event: domainEvent,
     epistemic_status: 'OBSERVED',
-    reality_level: 'INTEGRATION'
-  });
+    reality_level: options.realityLevel || 'INTEGRATION'
+  }, { clock, idFactory, correlationId });
 
   return {
     accepted: validationStatus === 'accepted',

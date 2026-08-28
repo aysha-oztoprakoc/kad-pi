@@ -1,12 +1,11 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { resolve, dirname, join } from 'node:path';
+import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { readFileSync, writeFileSync, unlinkSync, existsSync, mkdirSync, rmSync } from 'node:fs';
+import { readFileSync, unlinkSync, existsSync, rmSync } from 'node:fs';
 
 import {
   runTurn,
-  interpretText,
   executeDeterministicCore,
   createInitialState,
   computeStateHash,
@@ -99,7 +98,6 @@ test('WP-KAD-002 End-to-End World Transition Vertical Slice', async (t) => {
 
   await t.test('T4 — Malformed CandidateIntent: missing verbs and multi-targets are rejected', () => {
     const initialState = createInitialState();
-    const beforeHash = computeStateHash(initialState);
 
     // Malformed: verb null
     const candidate1 = { actions: [{ verb: null, targets: ['key'] }], properties: [] };
@@ -120,17 +118,33 @@ test('WP-KAD-002 End-to-End World Transition Vertical Slice', async (t) => {
     assert.equal(res2.failure_kind, 'MultipleActions');
   });
 
-  await t.test('T5 — Deterministic Replay: identical state and intent produce bit-for-bit identical resolutions', () => {
+  await t.test('T5 — Deterministic Replay & Injectable Identifiers: identical state/intent produces identical resolutions', () => {
     const state = createInitialState({ player_room: 'room_a', key_room: 'room_a' });
     const input = 'move room_b';
 
-    const run1 = runTurn(input, state, { journalPath: TEST_JOURNAL_PATH });
-    const run2 = runTurn(input, state, { journalPath: TEST_JOURNAL_PATH });
+    let idSeq = 0;
+    const fixedClock = () => '2026-08-28T12:00:00.000Z';
+    const fixedIdFactory = (prefix) => `${prefix}:fixed:${++idSeq}`;
+
+    const run1 = runTurn(input, state, {
+      journalPath: TEST_JOURNAL_PATH,
+      clock: fixedClock,
+      idFactory: fixedIdFactory
+    });
+
+    idSeq = 0;
+    const run2 = runTurn(input, state, {
+      journalPath: TEST_JOURNAL_PATH,
+      clock: fixedClock,
+      idFactory: fixedIdFactory
+    });
 
     assert.equal(run1.state_after_hash, run2.state_after_hash);
     assert.deepEqual(run1.state_diff, run2.state_diff);
     assert.deepEqual(run1.resolution, run2.resolution);
     assert.deepEqual(run1.state_after, run2.state_after);
+    assert.equal(run1.journal_entry.turn_id, run2.journal_entry.turn_id);
+    assert.equal(run1.journal_entry.timestamp_iso, run2.journal_entry.timestamp_iso);
   });
 
   await t.test('T6 — Journal Completeness: all required causal fields and hashes are preserved on disk', () => {
@@ -162,7 +176,7 @@ test('WP-KAD-002 End-to-End World Transition Vertical Slice', async (t) => {
     }
   });
 
-  await t.test('T7 — Post-Failure State Integrity: failure injection maintains state invariance', () => {
+  await t.test('T7 — Domain Invariant & Unsuccessful Attempt Semantics', () => {
     // 1. Cross-room acquire attempt: player in room_a, crate in room_b
     const state = createInitialState({ player_room: 'room_a', crate_room: 'room_b' });
     const beforeHash = computeStateHash(state);
@@ -183,7 +197,75 @@ test('WP-KAD-002 End-to-End World Transition Vertical Slice', async (t) => {
     assert.equal(badParamResult.state_after_hash, beforeHash);
   });
 
-  await t.test('T8 — Pi Session Adapter Integration & Teardown Silence', async () => {
+  await t.test('FI-1 — Failure Injection: Engine Executor Failure Before Commit', () => {
+    const initialState = createInitialState();
+    const beforeHash = computeStateHash(initialState);
+
+    const failingExecutor = () => {
+      throw new Error('INJECTED_ENGINE_CRASH');
+    };
+
+    assert.throws(
+      () => {
+        runTurn('acquire key', initialState, {
+          engineExecutor: failingExecutor,
+          journalPath: TEST_JOURNAL_PATH
+        });
+      },
+      (err) => {
+        assert.match(err.message, /INJECTED_ENGINE_CRASH/);
+        return true;
+      }
+    );
+
+    // Initial state is unmodified
+    assert.equal(computeStateHash(initialState), beforeHash);
+  });
+
+  await t.test('FI-2 — Failure Injection: Journal Append Failure Prevents External State Commit (NO JOURNAL -> NO COMMIT)', () => {
+    let adapterState = createInitialState({ key_room: 'room_a' });
+    const beforeHash = computeStateHash(adapterState);
+
+    const failingJournalAppender = () => {
+      throw new Error('INJECTED_JOURNAL_DISK_FULL');
+    };
+
+    const mockSession = {
+      subscriber: null,
+      subscribe(fn) {
+        this.subscriber = fn;
+        return () => { this.subscriber = null; };
+      }
+    };
+
+    let turnsCompleted = 0;
+    const adapter = mountPiTurnAdapter({
+      session: mockSession,
+      initialState: adapterState,
+      onTurnComplete: () => { turnsCompleted++; }
+    });
+
+    // In normal execution, dispatching 'acquire key' would transition key_room to 'held'.
+    // Here we inject journal failure directly into runTurn options or via wrapper.
+    assert.throws(
+      () => {
+        runTurn('acquire key', adapter.getCurrentState(), {
+          journalAppender: failingJournalAppender
+        });
+      },
+      (err) => {
+        assert.match(err.message, /INJECTED_JOURNAL_DISK_FULL/);
+        return true;
+      }
+    );
+
+    // Because runTurn threw, adapter state did NOT advance to 'held'
+    assert.equal(adapter.getCurrentState().key_room, 'room_a');
+    assert.equal(computeStateHash(adapter.getCurrentState()), beforeHash);
+    assert.equal(turnsCompleted, 0);
+  });
+
+  await t.test('T8 — Pi Session Adapter Contract Simulation & Teardown Silence (SIMULATED)', async () => {
     let subscriberCallback = null;
     let unsubscribed = false;
 

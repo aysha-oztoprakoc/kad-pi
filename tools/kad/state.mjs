@@ -48,9 +48,14 @@ export function cloneState(state) {
  */
 export function isStateEqual(a, b) {
   if (!a || !b) return false;
+  const aKey = a.key_room === null ? 'held' : a.key_room;
+  const bKey = b.key_room === null ? 'held' : b.key_room;
+  const aCrate = a.crate_room === null ? 'held' : a.crate_room;
+  const bCrate = b.crate_room === null ? 'held' : b.crate_room;
+
   return (
     a.player_room === b.player_room &&
-    a.key_room === b.key_room &&
-    a.crate_room === b.crate_room
+    aKey === bKey &&
+    aCrate === bCrate
   );
 }

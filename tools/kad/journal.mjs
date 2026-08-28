@@ -4,33 +4,43 @@ import { dirname } from 'node:path';
 let globalTurnSequence = 0;
 
 /**
- * Generates a deterministic or monotonic correlation/causation ID.
+ * Generates unique causal/turn identifiers.
+ * Note: Uses process-local monotonic sequence + wall-clock timestamp unless custom idFactory is injected.
  * @param {string} prefix
+ * @param {Function} [idFactory]
  * @returns {string}
  */
-export function generateCausalId(prefix = 'kad') {
+export function generateCausalId(prefix = 'kad', idFactory = null) {
+  if (typeof idFactory === 'function') {
+    return idFactory(prefix);
+  }
   return `${prefix}:${Date.now()}:${++globalTurnSequence}`;
 }
 
 /**
- * Appends a structured turn record to the causal journal.
+ * Appends a structured turn record to the append-oriented JSONL causal journal.
+ *
  * @param {string} journalPath
  * @param {object} entry
+ * @param {object} [options]
  */
-export function appendJournalEntry(journalPath, entry) {
-  if (!journalPath) return;
+export function appendJournalEntry(journalPath, entry, options = {}) {
+  if (!journalPath) return null;
 
   const dir = dirname(journalPath);
   if (!existsSync(dir)) {
     mkdirSync(dir, { recursive: true });
   }
 
+  const clock = options.clock || (() => new Date().toISOString());
+  const idFactory = options.idFactory || null;
+
   const record = {
-    turn_id: entry.turn_id || `turn-${Date.now()}-${++globalTurnSequence}`,
-    run_id: entry.run_id || `run-wp002-${Date.now()}`,
+    turn_id: entry.turn_id || generateCausalId('turn', idFactory),
+    run_id: entry.run_id || (options.runId || `run-wp002-${Date.now()}`),
     causation_id: entry.causation_id || 'root-user-command',
-    correlation_id: entry.correlation_id || 'session-kad-main',
-    timestamp_iso: entry.timestamp_iso || new Date().toISOString(),
+    correlation_id: entry.correlation_id || (options.correlationId || 'session-kad-main'),
+    timestamp_iso: entry.timestamp_iso || clock(),
     input_text: entry.input_text,
     candidate_intent: entry.candidate_intent,
     validation_status: entry.validation_status,
