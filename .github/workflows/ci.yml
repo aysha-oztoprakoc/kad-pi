@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run Prime Directive Constitution Check
+        run: python3 validate_prime_directive.py
+
+      - name: Run Librarian Knowledge Base Verifier
+        run: node tools/librarian/librarian.mjs verify
+
+      - name: Run Librarian Test Suite
+        run: node --test tools/librarian/test/librarian.test.mjs
+
+      - name: Run Capability Contract Tests
+        run: node --test .agents/capabilities/ask_user/contract_test.mjs
+
+      - name: Build and Run C++ Deterministic Core Tests
+        run: |
+          cd kad-lab
+          make test

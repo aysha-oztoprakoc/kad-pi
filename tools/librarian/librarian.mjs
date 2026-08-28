@@ -1,7 +1,16 @@
 #!/usr/bin/env node
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname, relative } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+
+export const VALID_EPISTEMIC_STATUSES = Object.freeze([
+  'SOURCE_DERIVED',
+  'DESIGN_DECISION',
+  'HYPOTHESIS',
+  'EXPERIMENT',
+  'OBSERVED',
+  'CONFIRMED'
+]);
 
 /**
  * Loads and parses CATALOG.json
@@ -68,41 +77,68 @@ export function loadRetrievalIndex(indexPath) {
  * Looks up a term in the taxonomy ontology
  * @param {string} term
  * @param {object} taxonomy
+ * @param {object} options
  * @returns {object|null}
  */
-export function lookupTerm(term, taxonomy) {
+export function lookupTerm(term, taxonomy, options = {}) {
   if (!term || typeof term !== 'string' || !taxonomy || !taxonomy.concepts) {
     return null;
   }
   const cleanTerm = term.trim();
   if (!cleanTerm) return null;
 
-  const direct = taxonomy.concepts[cleanTerm];
-  if (direct) return direct;
+  let conceptKey = cleanTerm;
+  let direct = taxonomy.concepts[cleanTerm];
 
-  // Case-insensitive fallback or synonym search
-  const lower = cleanTerm.toLowerCase();
-  for (const [key, val] of Object.entries(taxonomy.concepts)) {
-    if (key.toLowerCase() === lower) return val;
-    if (val.synonyms && val.synonyms.some(s => s.toLowerCase() === lower)) {
-      return val;
+  if (!direct) {
+    // Case-insensitive fallback or synonym search
+    const lower = cleanTerm.toLowerCase();
+    for (const [key, val] of Object.entries(taxonomy.concepts)) {
+      if (key.toLowerCase() === lower) {
+        conceptKey = key;
+        direct = val;
+        break;
+      }
+      if (val.synonyms && val.synonyms.some(s => s.toLowerCase() === lower)) {
+        conceptKey = key;
+        direct = val;
+        break;
+      }
     }
   }
-  return null;
+
+  if (!direct) return null;
+
+  const rootDir = options.rootDir || process.cwd();
+  const sourcePath = 'wiki/synthetic/TAXONOMY.json';
+  const fullPath = resolve(rootDir, sourcePath);
+
+  return {
+    term: conceptKey,
+    ...direct,
+    source_path: sourcePath,
+    locator: `${sourcePath}#concept:${conceptKey}`,
+    file_uri: `${pathToFileURL(fullPath).href}#concept:${conceptKey}`
+  };
 }
 
 /**
- * Searches knowledge base documents and retrieval index cards
+ * Searches knowledge base documents and retrieval index cards with exact provenance
  * @param {string} query
  * @param {object} catalog
  * @param {object} options
  * @returns {Array<object>}
  */
 export function searchKnowledgeBase(query, catalog, options = {}) {
-  const { index = [], domain, epistemicStatus, limit = 10 } = options;
+  const { index = [], domain, epistemicStatus, limit = 10, rootDir = process.cwd() } = options;
   if (!query || typeof query !== 'string') return [];
   const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
   if (terms.length === 0) return [];
+
+  const catalogMap = new Map();
+  for (const doc of catalog?.documents || []) {
+    if (doc.id) catalogMap.set(doc.id, doc);
+  }
 
   const scoredDocs = [];
 
@@ -122,8 +158,14 @@ export function searchKnowledgeBase(query, catalog, options = {}) {
     }
 
     if (score > 0) {
+      const fullPath = resolve(rootDir, doc.path);
       scoredDocs.push({
         ...doc,
+        source_path: doc.path,
+        start_line: 1,
+        end_line: 1,
+        locator: `${doc.path}#L1`,
+        file_uri: pathToFileURL(fullPath).href,
         matchType: 'document',
         score
       });
@@ -147,13 +189,25 @@ export function searchKnowledgeBase(query, catalog, options = {}) {
     }
 
     if (score > 0) {
+      const doc = catalogMap.get(card.doc_id);
+      const sourcePath = card.source_path || doc?.path || 'unknown';
+      const startLine = card.start_line || 1;
+      const endLine = card.end_line || startLine;
+      const fullPath = resolve(rootDir, sourcePath);
+      const locator = card.locator || `${sourcePath}#L${startLine}-L${endLine}`;
+
       scoredDocs.push({
         id: card.card_id,
         doc_id: card.doc_id,
         title: card.heading,
-        domain: card.domain || 'SYNTHETIC_CARD',
+        domain: card.domain || doc?.domain || 'SYNTHETIC_CARD',
         epistemic_status: card.epistemic_status,
         summary: card.content,
+        source_path: sourcePath,
+        start_line: startLine,
+        end_line: endLine,
+        locator,
+        file_uri: `${pathToFileURL(fullPath).href}#L${startLine}-L${endLine}`,
         matchType: 'chunk',
         score
       });
@@ -165,22 +219,36 @@ export function searchKnowledgeBase(query, catalog, options = {}) {
 }
 
 /**
- * Validates links, files, and epistemic tags across the knowledge base
+ * Deeply validates catalog, taxonomy, retrieval index, provenance locators, frontmatter, and links
  * @param {object} param0
  * @returns {object}
  */
 export function verifyKnowledgeBase({ rootDir, wikiDir }) {
+  const errors = [];
   const missingFiles = [];
   const brokenLinks = [];
+  const corruptedLocators = [];
+  const invalidSchemas = [];
   let validDocumentsCount = 0;
+  let validCardsCount = 0;
+  let validConceptsCount = 0;
 
   const catalogPath = resolve(wikiDir, 'synthetic/CATALOG.json');
+  const taxonomyPath = resolve(wikiDir, 'synthetic/TAXONOMY.json');
+  const indexPath = resolve(wikiDir, 'synthetic/RETRIEVAL_INDEX.jsonl');
+
+  // 1. Validate CATALOG.json existence and schema
   if (!existsSync(catalogPath)) {
     return {
       status: 'FAIL',
+      errors: ['Missing CATALOG.json'],
       missingFiles: ['wiki/synthetic/CATALOG.json'],
       brokenLinks: [],
-      validDocumentsCount: 0
+      corruptedLocators: [],
+      invalidSchemas: ['CATALOG.json'],
+      validDocumentsCount: 0,
+      validCardsCount: 0,
+      validConceptsCount: 0
     };
   }
 
@@ -190,19 +258,101 @@ export function verifyKnowledgeBase({ rootDir, wikiDir }) {
   } catch (err) {
     return {
       status: 'FAIL',
-      missingFiles: [`wiki/synthetic/CATALOG.json (malformed JSON: ${err.message})`],
+      errors: [`Failed to parse CATALOG.json: ${err.message}`],
+      missingFiles: [],
       brokenLinks: [],
-      validDocumentsCount: 0
+      corruptedLocators: [],
+      invalidSchemas: ['CATALOG.json'],
+      validDocumentsCount: 0,
+      validCardsCount: 0,
+      validConceptsCount: 0
     };
   }
 
+  // 2. Validate TAXONOMY.json existence and schema
+  if (!existsSync(taxonomyPath)) {
+    return {
+      status: 'FAIL',
+      errors: ['Missing TAXONOMY.json'],
+      missingFiles: ['wiki/synthetic/TAXONOMY.json'],
+      brokenLinks: [],
+      corruptedLocators: [],
+      invalidSchemas: ['TAXONOMY.json'],
+      validDocumentsCount: 0,
+      validCardsCount: 0,
+      validConceptsCount: 0
+    };
+  }
+
+  let taxonomy;
+  try {
+    taxonomy = JSON.parse(readFileSync(taxonomyPath, 'utf8'));
+  } catch (err) {
+    return {
+      status: 'FAIL',
+      errors: [`Failed to parse TAXONOMY.json: ${err.message}`],
+      missingFiles: [],
+      brokenLinks: [],
+      corruptedLocators: [],
+      invalidSchemas: ['TAXONOMY.json'],
+      validDocumentsCount: 0,
+      validCardsCount: 0,
+      validConceptsCount: 0
+    };
+  }
+
+  if (!taxonomy.domains || typeof taxonomy.domains !== 'object') {
+    invalidSchemas.push('TAXONOMY.json: missing domains object');
+    errors.push('TAXONOMY.json must define domains');
+  }
+
+  if (!taxonomy.concepts || typeof taxonomy.concepts !== 'object') {
+    invalidSchemas.push('TAXONOMY.json: missing concepts object');
+    errors.push('TAXONOMY.json must define concepts');
+  } else {
+    for (const [conceptName, conceptData] of Object.entries(taxonomy.concepts)) {
+      validConceptsCount++;
+      if (!conceptData.domain || !taxonomy.domains[conceptData.domain]) {
+        errors.push(`Concept "${conceptName}" references undeclared domain "${conceptData.domain}"`);
+        invalidSchemas.push(`Concept ${conceptName} undeclared domain`);
+      }
+      if (!conceptData.epistemic_class || !VALID_EPISTEMIC_STATUSES.includes(conceptData.epistemic_class)) {
+        errors.push(`Concept "${conceptName}" has invalid epistemic class "${conceptData.epistemic_class}"`);
+        invalidSchemas.push(`Concept ${conceptName} invalid epistemic class`);
+      }
+    }
+  }
+
+  // 3. Validate Catalog Documents & Content on Disk
+  const catalogDocMap = new Map();
+  const fileLineCountCache = new Map();
+
   for (const doc of catalog.documents || []) {
+    if (!doc.id) {
+      errors.push('Catalog document missing id');
+      invalidSchemas.push('Catalog document without id');
+      continue;
+    }
+    if (catalogDocMap.has(doc.id)) {
+      errors.push(`Duplicate document ID in catalog: ${doc.id}`);
+      invalidSchemas.push(`Duplicate doc_id: ${doc.id}`);
+    }
+    catalogDocMap.set(doc.id, doc);
+
+    if (!doc.epistemic_status || !VALID_EPISTEMIC_STATUSES.includes(doc.epistemic_status)) {
+      errors.push(`Document ${doc.id} has invalid epistemic_status: ${doc.epistemic_status}`);
+      invalidSchemas.push(`Document ${doc.id} invalid epistemic_status`);
+    }
+
     const fullPath = resolve(rootDir, doc.path);
     if (!existsSync(fullPath)) {
       missingFiles.push(doc.path);
+      errors.push(`Catalog document ${doc.id} file not found: ${doc.path}`);
     } else {
       validDocumentsCount++;
       const content = readFileSync(fullPath, 'utf8');
+      const lines = content.split('\n');
+      fileLineCountCache.set(doc.path, lines.length);
 
       // Check frontmatter source_documents if present
       if (content.startsWith('---')) {
@@ -216,13 +366,15 @@ export function verifyKnowledgeBase({ rootDir, wikiDir }) {
               .map(s => s.replace(/^\s+-\s+/, '').trim())
               .filter(Boolean);
             for (const src of sources) {
-              const srcPath = resolve(rootDir, src.replace(/^['"]|['"]$/g, ''));
+              const cleanSrc = src.replace(/^['"]|['"]$/g, '');
+              const srcPath = resolve(rootDir, cleanSrc);
               if (!existsSync(srcPath)) {
                 brokenLinks.push({
                   file: doc.path,
                   link: `source_documents: ${src}`,
                   resolved: relative(rootDir, srcPath)
                 });
+                errors.push(`Broken source_document reference in ${doc.path}: ${src}`);
               }
             }
           }
@@ -249,7 +401,6 @@ export function verifyKnowledgeBase({ rootDir, wikiDir }) {
         if (linkTarget.startsWith('file:///')) {
           resolvedLink = fileURLToPath(linkTarget.split('#')[0]);
         } else {
-          // Normalize relative path
           const targetClean = decodeURIComponent(linkTarget.split('#')[0]).replace(/^['"]|['"]$/g, '');
           if (!targetClean) continue;
           resolvedLink = resolve(dirname(fullPath), targetClean);
@@ -260,16 +411,125 @@ export function verifyKnowledgeBase({ rootDir, wikiDir }) {
             link: linkTarget,
             resolved: relative(rootDir, resolvedLink)
           });
+          errors.push(`Broken link in ${doc.path}: ${linkTarget}`);
         }
       }
     }
   }
 
+  // 4. Validate RETRIEVAL_INDEX.jsonl Existence, Schema, and Provenance Locators
+  if (!existsSync(indexPath)) {
+    return {
+      status: 'FAIL',
+      errors: ['Missing RETRIEVAL_INDEX.jsonl'],
+      missingFiles: ['wiki/synthetic/RETRIEVAL_INDEX.jsonl'],
+      brokenLinks,
+      corruptedLocators,
+      invalidSchemas: ['RETRIEVAL_INDEX.jsonl'],
+      validDocumentsCount,
+      validCardsCount: 0,
+      validConceptsCount
+    };
+  }
+
+  let indexEntries;
+  try {
+    indexEntries = loadRetrievalIndex(indexPath);
+  } catch (err) {
+    return {
+      status: 'FAIL',
+      errors: [`Failed to parse RETRIEVAL_INDEX.jsonl: ${err.message}`],
+      missingFiles,
+      brokenLinks,
+      corruptedLocators,
+      invalidSchemas: ['RETRIEVAL_INDEX.jsonl'],
+      validDocumentsCount,
+      validCardsCount: 0,
+      validConceptsCount
+    };
+  }
+
+  const seenCardIds = new Set();
+  for (const card of indexEntries) {
+    if (!card.card_id) {
+      errors.push('Card missing card_id');
+      invalidSchemas.push('Card without card_id');
+      continue;
+    }
+    if (seenCardIds.has(card.card_id)) {
+      errors.push(`Duplicate card_id: ${card.card_id}`);
+      corruptedLocators.push({ card_id: card.card_id, reason: 'Duplicate card_id' });
+    }
+    seenCardIds.add(card.card_id);
+
+    if (!card.doc_id || !catalogDocMap.has(card.doc_id)) {
+      errors.push(`Card ${card.card_id} references unknown doc_id "${card.doc_id}"`);
+      corruptedLocators.push({ card_id: card.card_id, reason: `Unresolved doc_id: ${card.doc_id}` });
+      continue;
+    }
+
+    const doc = catalogDocMap.get(card.doc_id);
+    if (card.source_path && card.source_path !== doc.path) {
+      errors.push(`Card ${card.card_id} source_path "${card.source_path}" does not match catalog path "${doc.path}"`);
+      corruptedLocators.push({ card_id: card.card_id, reason: 'Mismatched source_path' });
+    }
+
+    const sourcePath = card.source_path || doc.path;
+    const fullPath = resolve(rootDir, sourcePath);
+
+    if (!existsSync(fullPath)) {
+      errors.push(`Card ${card.card_id} source file not found on disk: ${sourcePath}`);
+      missingFiles.push(sourcePath);
+      continue;
+    }
+
+    let lineCount = fileLineCountCache.get(sourcePath);
+    if (lineCount === undefined) {
+      lineCount = readFileSync(fullPath, 'utf8').split('\n').length;
+      fileLineCountCache.set(sourcePath, lineCount);
+    }
+
+    if (
+      typeof card.start_line !== 'number' ||
+      typeof card.end_line !== 'number' ||
+      card.start_line < 1 ||
+      card.end_line < card.start_line ||
+      card.end_line > lineCount
+    ) {
+      errors.push(
+        `Card ${card.card_id} has invalid line range [${card.start_line}, ${card.end_line}] (total lines: ${lineCount})`
+      );
+      corruptedLocators.push({
+        card_id: card.card_id,
+        reason: `Invalid line range [${card.start_line}, ${card.end_line}], file total: ${lineCount}`
+      });
+    }
+
+    if (!card.epistemic_status || !VALID_EPISTEMIC_STATUSES.includes(card.epistemic_status)) {
+      errors.push(`Card ${card.card_id} has invalid epistemic_status "${card.epistemic_status}"`);
+      invalidSchemas.push(`Card ${card.card_id} invalid epistemic_status`);
+    }
+
+    validCardsCount++;
+  }
+
+  const isPass =
+    errors.length === 0 &&
+    missingFiles.length === 0 &&
+    brokenLinks.length === 0 &&
+    corruptedLocators.length === 0 &&
+    invalidSchemas.length === 0;
+
   return {
-    status: missingFiles.length === 0 && brokenLinks.length === 0 ? 'PASS' : 'FAIL',
+    status: isPass ? 'PASS' : 'FAIL',
+    errors,
     missingFiles,
     brokenLinks,
-    validDocumentsCount
+    corruptedLocators,
+    invalidSchemas,
+    validDocumentsCount,
+    validCardsCount,
+    validConceptsCount
   };
 }
 
@@ -330,7 +590,8 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
       index,
       domain: cli.options.domain,
       epistemicStatus: cli.options.epistemicStatus,
-      limit: cli.options.limit || 10
+      limit: cli.options.limit || 10,
+      rootDir: ROOT_DIR
     });
     console.log(JSON.stringify(results, null, 2));
   } else if (cli.command === 'lookup') {
@@ -340,7 +601,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
       process.exit(1);
     }
     const taxonomy = loadTaxonomy(resolve(SYNTHETIC_DIR, 'TAXONOMY.json'));
-    const result = lookupTerm(term, taxonomy);
+    const result = lookupTerm(term, taxonomy, { rootDir: ROOT_DIR });
     if (!result) {
       console.log(JSON.stringify({ notFound: true, term }, null, 2));
     } else {
