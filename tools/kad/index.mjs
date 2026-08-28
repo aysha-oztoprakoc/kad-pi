@@ -12,3 +12,4 @@ export { StcScope } from './stc-scope.mjs';
 export { PersistentSession } from './session.mjs';
 export { replayJournal } from './replay.mjs';
 export { generateTurnDataset } from './dataset.mjs';
+export { normalizeWorkRequest, compileTaskPacket, selectControllerLane, validateWorkerResult, executeSwarm, canonicalSwarmReceipt } from './swarm.mjs';

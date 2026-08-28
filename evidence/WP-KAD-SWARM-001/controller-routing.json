@@ -1,0 +1,17 @@
+{
+  "policy_source":".omp/controllers.json",
+  "semantic_role":"controller",
+  "selected_lane":"approved-remote-controller",
+  "provider":"openai-codex",
+  "model":"gpt-5.6-luna",
+  "reason_codes":["APPROVED","NON_PAYG","SUBSCRIPTION_BACKED","CAPABILITY_SUFFICIENT"],
+  "auth_observation":"pi auth check --provider openai-codex => ready",
+  "quota":"UNKNOWN",
+  "price_claim":"UNKNOWN",
+  "payg_authorized":false,
+  "provider_not_used_as_higher_level_authority":true,
+  "attempts_observed":3,
+  "accepted_attempt":3,
+  "bounded_failure_attempt":2,
+  "accepted_attempt_controller_consumption":true
+}

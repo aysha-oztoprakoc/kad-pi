@@ -1,0 +1,62 @@
+{
+  "status": "ACCEPTED",
+  "controller": {
+    "role": "controller",
+    "id": "approved-remote-controller",
+    "provider": "openai-codex",
+    "model": "gpt-5.6-luna",
+    "billing_class": "SUBSCRIPTION_BACKED"
+  },
+  "validation": {
+    "result": "PASS",
+    "errors": []
+  },
+  "telemetry": {
+    "controller_invocations": 1,
+    "remote_lane": {
+      "role": "controller",
+      "id": "approved-remote-controller",
+      "provider": "openai-codex",
+      "model": "gpt-5.6-luna",
+      "billing_class": "SUBSCRIPTION_BACKED"
+    },
+    "remote_input_tokens": 518,
+    "remote_output_tokens": 65,
+    "remote_cost": {
+      "input": 0.00010360000000000001,
+      "output": 0.000078,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0.00018160000000000002
+    },
+    "local_invocations": 1,
+    "deterministic_tool_invocations": 1,
+    "repairs": 0,
+    "escalations": 0,
+    "accepted": true,
+    "latency_ms": 66164,
+    "context_bytes": 2076,
+    "failure_reason": null,
+    "route": {
+      "status": "ROUTED",
+      "selected_lane": {
+        "role": "controller",
+        "id": "approved-remote-controller",
+        "provider": "openai-codex",
+        "model": "gpt-5.6-luna",
+        "billing_class": "SUBSCRIPTION_BACKED"
+      },
+      "candidates": [
+        "approved-remote-controller"
+      ],
+      "reason_codes": [
+        "APPROVED",
+        "NON_PAYG",
+        "SUBSCRIPTION_BACKED",
+        "CAPABILITY_SUFFICIENT"
+      ]
+    }
+  },
+  "worker_provider": "kad-local-retrieval-amdy",
+  "preflight_after": "READY"
+}

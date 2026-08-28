@@ -1,23 +1,20 @@
 {
   "providers": {
-    "kad-local": {
-      "name": "KAD localhost inference",
+    "kad-local-world": {
+      "name": "KAD external WORLD inference (Stheno)",
       "baseUrl": "http://127.0.0.1:5001/v1",
       "api": "openai-completions",
       "apiKey": "local-no-secret",
       "authHeader": false,
-      "models": [
-        {
-          "id": "stheno-local",
-          "name": "L3-8B-Stheno-v3.2-Q4_K_M",
-          "reasoning": false,
-          "input": ["text"],
-          "cost": {"input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0},
-          "contextWindow": 2048,
-          "maxTokens": 32,
-          "compat": {"supportsStore": false, "supportsDeveloperRole": false, "supportsTemperature": true}
-        }
-      ]
+      "models": [{"id":"stheno-local","name":"L3-8B-Stheno-v3.2-Q4_K_M","reasoning":false,"input":["text"],"cost":{"input":0,"output":0,"cacheRead":0,"cacheWrite":0},"contextWindow":2048,"maxTokens":128,"compat":{"supportsStore":false,"supportsDeveloperRole":false,"supportsTemperature":true}}]
+    },
+    "kad-local-qwen": {
+      "name": "KAD STC-owned retrieval inference (Qwen)",
+      "baseUrl": "http://127.0.0.1:5002/v1",
+      "api": "openai-completions",
+      "apiKey": "local-no-secret",
+      "authHeader": false,
+      "models": [{"id":"qwen-local","name":"Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M","reasoning":true,"input":["text"],"cost":{"input":0,"output":0,"cacheRead":0,"cacheWrite":0},"contextWindow":2048,"maxTokens":192,"samplingParams":{"reasoning_effort":"none","max_tokens":192},"compat":{"supportsStore":false,"supportsDeveloperRole":false,"supportsTemperature":true,"maxTokensField":"max_tokens","thinkingFormat":"qwen","supportsReasoningEffort":true}}]
     }
   }
 }

@@ -1,0 +1,13 @@
+GREEN evidence
+
+- `node --test tools/kad/test/*.test.mjs`: 78 passed, 0 failed.
+- `node --test tools/librarian/test/librarian.test.mjs`: 11 passed, 0 failed.
+- `python3 validate_prime_directive.py`: VALIDATION SUCCESS; 1478-token estimate within 1500 budget.
+- Changed-module syntax checks: PASS.
+- OMP model catalog resolution: `kad-local-qwen/qwen-local` present; PASS.
+- Deterministic swarm replay: canonical receipt comparison PASS.
+- Live preflight during activation: READY; WORLD external/available and Qwen owned/available with verified identity.
+- Real run attempt 1: remote controller invocation 1 -> bounded packet -> Pi 0.84.3 Qwen invocation 1 -> deterministic schema/source validator PASS -> ACCEPTED.
+- Real run attempt 2: malformed local result -> exactly one repair -> deterministic rejection -> DEGRADED; no recursive retry or escalation.
+- Definitive real run attempt 3: remote controller invocation 1 decomposed and invocation 2 consumed the validated result; Qwen invocation 1 passed deterministic schema/source validation -> ACCEPTED.
+- Teardown preflight: DEGRADED only because nonessential Qwen was disposed; WORLD remained RESOLVED/AVAILABLE.

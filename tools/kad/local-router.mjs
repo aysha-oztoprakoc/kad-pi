@@ -26,7 +26,11 @@ export class CapabilityRegistry {
   choose(requirement) {
     const candidates = this.eligible(requirement);
     if (!candidates.length) return { status: 'DEGRADED', reason: 'no eligible capability', candidates: [] };
-    candidates.sort((a, b) => (a.local === b.local ? (a.priority ?? 0) - (b.priority ?? 0) : a.local ? -1 : 1));
+    candidates.sort((a, b) => {
+      if (Boolean(a.deterministic) !== Boolean(b.deterministic)) return a.deterministic ? -1 : 1;
+      if (Boolean(a.local) !== Boolean(b.local)) return a.local ? -1 : 1;
+      return (a.priority ?? 0) - (b.priority ?? 0);
+    });
     const selected = candidates[0];
     return { status: 'ROUTED', selected: selected.id, candidates: candidates.map(({ id }) => id) };
   }

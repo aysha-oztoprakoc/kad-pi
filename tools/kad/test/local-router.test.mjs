@@ -13,6 +13,13 @@ test('local-first router filters by declared capability and trust domain', () =>
   assert.equal(registry.choose({ trust_domain: 'engineering', capabilities: ['structured-extraction'] }).status, 'DEGRADED');
 });
 
+test('deterministic capability wins before local model when contracts are equally sufficient', () => {
+  const registry = new CapabilityRegistry();
+  registry.register({ id: 'local-qwen', local: true, deterministic: false, priority: 0, context_window: 2048, trust_domain: 'retrieval', capabilities: ['structured-extraction'] });
+  registry.register({ id: 'schema-validate', local: true, deterministic: true, priority: 99, context_window: 2048, trust_domain: 'retrieval', capabilities: ['structured-extraction'] });
+  assert.equal(registry.choose({ trust_domain: 'retrieval', capabilities: ['structured-extraction'] }).selected, 'schema-validate');
+});
+
 test('failed capability disappears without authority escalation', () => {
   const registry = new CapabilityRegistry();
   registry.register({ id: 'tell-worker', local: true, context_window: 2048, trust_domain: 'retrieval', capabilities: ['classification'] });

@@ -1,0 +1,12 @@
+{
+  "workpackage":"WP-KAD-SWARM-001",
+  "head_before":"7150a55",
+  "origin_main":"27ed3c6",
+  "pi":"0.84.3",
+  "omp":"18.0.9",
+  "existing_dirty_work":"preserved and not staged unless attributable",
+  "accepted_boundaries":["KAD authority","exact trust-domain routing","deterministic-first","Qwen retrieval-only","Stheno WORLD-only","STC owned-vs-external lifecycle"],
+  "remote_lane_observation":{"provider":"openai-codex","model":"gpt-5.6-luna","auth":"ready","quota":"UNKNOWN","payg_authorized":false},
+  "world_before":{"endpoint":"http://127.0.0.1:5001/v1","identity":"koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M","pid":1215627,"ownership":"EXTERNAL"},
+  "retrieval_before":{"endpoint":"http://127.0.0.1:5002/v1","identity":"INACTIVE","ownership":"INACTIVE"}
+}

@@ -53,6 +53,7 @@ function modelsFromConfig(models) {
       baseUrl: scalar(body, 'baseUrl'),
       auth: scalar(body, 'auth'),
       models: [...body.matchAll(/^\s*- id:\s*([^\s#]+)\s*$/gm)].map(match => match[1].replace(/^['"]|['"]$/g, '')),
+      identityContains: scalar(body, 'identityContains'),
       contextWindows: [...body.matchAll(/^\s*contextWindow:\s*(\d+)/gm)].map(match => Number(match[1]))
     };
   }
@@ -140,6 +141,7 @@ function parseSelector(selector) {
 function inspectRoles(root, config, models, observed) {
   const declared = rolesFromConfig(config);
   const enabled = enabledModelsFromConfig(config);
+  const resources = observed.localInference?.resources ?? [];
   const roles = {};
   for (const name of ['world', 'local_retrieval']) {
     const selector = declared[name];
@@ -147,15 +149,16 @@ function inspectRoles(root, config, models, observed) {
     const provider = parsed && models[parsed.provider];
     const listed = Boolean(provider?.models.includes(parsed.model));
     const enabledByPolicy = parsed && enabled.some(pattern => pattern === `${parsed.provider}/${parsed.model}` || pattern === `${parsed.provider}/*`);
-    let status = 'UNRESOLVED';
-    if (parsed && listed && enabledByPolicy) status = 'RESOLVED';
-    if (name === 'local_retrieval' && observed.localInference) {
-      if (observed.localInference.available === false) status = 'UNAVAILABLE';
-      if (observed.localInference.available === true && (observed.localInference.provider !== parsed?.provider || observed.localInference.model !== parsed?.model)) status = 'STALE';
+    let status = parsed && listed && enabledByPolicy ? 'RESOLVED' : 'UNRESOLVED';
+    if (name === 'local_retrieval') {
+      const resource = resources.find(item => item.provider === parsed?.provider);
+      if (resource) status = resource.capability_state === 'AVAILABLE' && resource.ownership === 'OWNED' ? 'RESOLVED' : resource.capability_state;
+      else if (observed.localInference?.available === false) status = 'UNAVAILABLE';
+      else if (observed.localInference?.available === true && (observed.localInference.provider !== parsed?.provider || observed.localInference.model !== parsed?.model)) status = 'STALE';
     }
     roles[name] = { status, selector: selector ?? 'UNKNOWN', provider: parsed?.provider ?? 'UNKNOWN', model: parsed?.model ?? 'UNKNOWN' };
   }
-  return { roles, failures: roles.local_retrieval.status === 'UNRESOLVED' ? ['LOCAL_RETRIEVAL_ROLE_UNRESOLVED'] : [], unknowns: roles.local_retrieval.status === 'UNKNOWN' ? ['LOCAL_RETRIEVAL_ROLE_UNKNOWN'] : [] };
+  return { roles, failures: roles.local_retrieval.status === 'UNRESOLVED' ? ['LOCAL_RETRIEVAL_ROLE_UNRESOLVED'] : [], unknowns: ['UNKNOWN', 'NOT_STC_OWNED'].includes(roles.local_retrieval.status) ? ['LOCAL_RETRIEVAL_ROLE_UNKNOWN'] : [] };
 }
 
 function inspectAuthority(root) {
@@ -178,41 +181,88 @@ function inspectPi(observed) {
   return { available: Boolean(version), version: version ?? 'UNKNOWN', provenance: observed.piProvenance ?? 'pi --version', failures: version ? [] : ['PI_UNAVAILABLE'] };
 }
 
-function collectLiveLocalInference(models) {
-  const provider = Object.values(models).find(value => value.baseUrl)?.baseUrl ?? 'http://127.0.0.1:5001/v1';
-  let endpointAvailable = false;
-  let identity = '';
-  try {
-    const health = execFileSync('curl', ['-fsS', '--max-time', '2', `${provider.replace(/\/$/, '').replace(/\/v1$/, '')}/api/v1/model`], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
-    endpointAvailable = true;
-    identity = JSON.parse(health).result ?? '';
-  } catch {}
-  let processArgs = '';
-  let processCwd = '';
-  try {
-    const processLine = execFileSync('ps', ['-eo', 'pid=,args='], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).split('\n').map(line => line.trim()).find(line => /^(\d+)\s+.*(?:koboldcpp|llama-server).*--port\s+5001/i.test(line));
-    processArgs = processLine?.replace(/^\d+\s+/, '') ?? '';
-    const pid = processLine?.match(/^(\d+)/)?.[1];
-    if (pid) { try { processCwd = readlinkSync(`/proc/${pid}/cwd`); } catch {} }
-  } catch {}
-  const lower = identity.toLowerCase();
-  const qwen = lower.includes('qwen');
-  const stheno = lower.includes('stheno');
-  const ownership = processArgs ? (/kad-sillytavern|sillytavern/.test(`${processArgs} ${processCwd}`) ? 'EXTERNAL' : 'UNKNOWN') : (endpointAvailable ? 'UNKNOWN' : 'INACTIVE');
-  return { endpoint: provider, endpoint_available: endpointAvailable, available: qwen, provider: qwen ? 'kad-local-qwen' : stheno ? 'kad-local-world' : 'UNKNOWN', model: qwen ? 'qwen-local' : stheno ? 'kad-local-s13' : 'UNKNOWN', identity: identity || 'UNKNOWN', ownership };
+function endpointBase(endpoint) {
+  try { const url = new URL(endpoint); url.pathname = ''; return url.toString().replace(/\/$/, ''); } catch { return ''; }
 }
 
-function inspectLocalInference(observed) {
+function liveProcessForPort(port, processLines) {
+  if (!port) return null;
+  return processLines.map(line => line.trim()).find(line => new RegExp(`^(\\d+)\\s+.*(?:koboldcpp|llama-server).*--port\\s+${port}(?:\\s|$)`, 'i').test(line)) ?? null;
+}
+
+function ownedPidFromReceipt(root, provider, endpoint) {
+  const path = join(root, '.state', 'omp-kad', 'qwen-retrieval', 'activation.json');
+  try {
+    const receipt = JSON.parse(text(path));
+    if (receipt.provider !== provider || receipt.ownership !== 'OWNED' || endpointBase(receipt.endpoint) !== endpointBase(endpoint) || !Number.isInteger(receipt.pid)) return null;
+    process.kill(receipt.pid, 0);
+    const port = new URL(endpoint).port;
+    const cmdline = readFileSync(`/proc/${receipt.pid}/cmdline`, 'utf8').replaceAll('\0', ' ');
+    if (!new RegExp(`(?:^|\\s)--port\\s+${port}(?:\\s|$)`).test(cmdline)) return null;
+    return receipt.pid;
+  } catch { return null; }
+}
+
+function collectLiveLocalInference(models, root) {
+  let processLines = [];
+  try { processLines = execFileSync('ps', ['-eo', 'pid=,args='], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).split('\n'); } catch {}
+  return Object.entries(models).filter(([, definition]) => definition.baseUrl).map(([provider, definition]) => {
+    const endpoint = definition.baseUrl;
+    let endpointAvailable = false;
+    let identity = '';
+    try {
+      const health = execFileSync('curl', ['-fsS', '--max-time', '2', `${endpointBase(endpoint)}/api/v1/model`], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+      endpointAvailable = true;
+      identity = JSON.parse(health).result ?? '';
+    } catch {}
+    const port = (() => { try { return new URL(endpoint).port; } catch { return ''; } })();
+    const processLine = liveProcessForPort(port, processLines);
+    const pid = processLine?.match(/^(\d+)/)?.[1];
+    let cwd = '';
+    if (pid) { try { cwd = readlinkSync(`/proc/${pid}/cwd`); } catch {} }
+    const ownedPid = ownedPidFromReceipt(root, provider, endpoint);
+    const ownership = ownedPid ? 'OWNED' : processLine ? (/kad-sillytavern|sillytavern/.test(`${processLine} ${cwd}`) ? 'EXTERNAL' : 'UNKNOWN') : endpointAvailable ? 'UNKNOWN' : 'INACTIVE';
+    return { provider, endpoint, endpoint_available: endpointAvailable, expected_model: definition.models[0] ?? 'UNKNOWN', expected_identity: definition.identityContains ?? 'UNKNOWN', observed_identity: identity || 'UNKNOWN', ownership, pid: ownedPid ?? (pid ? Number(pid) : undefined) };
+  });
+}
+
+function identityMatches(resource, definition) {
+  const expected = definition.identityContains ?? (resource.provider.includes('qwen') ? 'qwen' : resource.provider.includes('world') ? 'stheno' : definition.models[0]);
+  return resource.observed_identity !== 'UNKNOWN' && resource.observed_identity.toLowerCase().includes(expected.toLowerCase());
+}
+
+function resourceState(resource, definition) {
+  if (resource.capability_state) return resource.capability_state;
+  if (resource.endpoint_available === false) return 'UNAVAILABLE';
+  if (resource.endpoint_available !== true || resource.observed_identity === 'UNKNOWN') return 'UNKNOWN';
+  if (!identityMatches(resource, definition)) return 'CAPABILITY_MISMATCH';
+  if (resource.provider.includes('qwen') && resource.ownership !== 'OWNED') return 'NOT_STC_OWNED';
+  return 'AVAILABLE';
+}
+
+function inspectLocalInference(observed, models) {
   const value = observed.localInference ?? {};
-  const ownership = ['OWNED', 'EXTERNAL', 'UNKNOWN', 'INACTIVE'].includes(value.ownership) ? value.ownership : 'UNKNOWN';
-  return { endpoint: value.endpoint ?? 'UNKNOWN', endpoint_available: value.endpoint_available ?? value.available ?? 'UNKNOWN', loaded_provider: value.provider ?? 'UNKNOWN', loaded_model: value.model ?? 'UNKNOWN', ownership, mutation_performed: false, failures: ownership === 'UNKNOWN' ? ['LOCAL_PROCESS_OWNERSHIP_UNKNOWN'] : [] };
+  const supplied = Array.isArray(value.resources) ? value.resources : value.provider ? [{ provider: value.provider, model: value.model, endpoint: value.endpoint, endpoint_available: value.endpoint_available ?? value.available, observed_identity: value.identity ?? 'UNKNOWN', ownership: value.ownership, capability_state: value.capability_state ?? (value.available === true ? 'AVAILABLE' : value.available === false ? 'UNAVAILABLE' : undefined) }] : [];
+  const resources = Object.entries(models).filter(([, definition]) => definition.baseUrl).map(([provider, definition]) => {
+    const source = supplied.find(item => item.provider === provider) ?? { provider, endpoint: definition.baseUrl, endpoint_available: false, observed_identity: 'UNKNOWN', ownership: 'INACTIVE' };
+    const resource = { provider, endpoint: source.endpoint ?? definition.baseUrl, expected_model: source.expected_model ?? definition.models[0] ?? 'UNKNOWN', expected_identity: source.expected_identity ?? definition.identityContains ?? 'UNKNOWN', observed_identity: source.observed_identity ?? 'UNKNOWN', endpoint_available: source.endpoint_available ?? 'UNKNOWN', ownership: ['OWNED', 'EXTERNAL', 'UNKNOWN', 'INACTIVE'].includes(source.ownership) ? source.ownership : 'UNKNOWN' };
+    return { ...resource, capability_state: resourceState({ ...resource, capability_state: source.capability_state }, definition) };
+  });
+  const retrieval = resources.find(resource => providerForRole(models, 'qwen', resource.provider));
+  const failures = resources.filter(resource => resource.ownership === 'UNKNOWN').map(resource => `LOCAL_PROCESS_OWNERSHIP_UNKNOWN:${resource.provider}`);
+  return { resources, endpoint: retrieval?.endpoint ?? 'UNKNOWN', endpoint_available: retrieval?.endpoint_available ?? 'UNKNOWN', loaded_provider: retrieval?.provider ?? 'UNKNOWN', loaded_model: retrieval?.expected_model ?? 'UNKNOWN', ownership: retrieval?.ownership ?? 'UNKNOWN', mutation_performed: false, failures };
+}
+
+function providerForRole(models, role, provider) {
+  return role === 'qwen' ? provider.includes('qwen') : Boolean(models[provider]);
 }
 
 function statusFor(sections) {
   const blocking = [...sections.omp.failures, ...sections.learning.failures, ...sections.spend.failures, ...sections.pi.failures];
   const degraded = [...sections.governance.failures, ...sections.skills.failures, ...sections.roles.failures, ...sections.authority.failures, ...sections.local_inference.failures];
+  const retrieval = sections.local_inference.resources.find(resource => resource.provider === sections.roles.roles.local_retrieval.provider);
   if (blocking.length) return 'BLOCKED';
-  if (degraded.length || sections.roles.roles.local_retrieval.status !== 'RESOLVED' || sections.local_inference.endpoint_available !== true) return 'DEGRADED';
+  if (degraded.length || sections.roles.roles.local_retrieval.status !== 'RESOLVED' || retrieval?.capability_state !== 'AVAILABLE') return 'DEGRADED';
   return 'READY';
 }
 
@@ -221,16 +271,18 @@ export function inspectPreflight({ root = process.cwd(), observed = {} } = {}) {
   const config = text(join(root, '.omp', 'config.yml'));
   const modelsText = text(join(root, '.omp', 'models.yml'));
   const models = modelsFromConfig(modelsText);
-  const effectiveObserved = Object.hasOwn(observed, 'localInference') ? observed : { ...observed, localInference: collectLiveLocalInference(models) };
+  const effectiveObserved = Object.hasOwn(observed, 'localInference') ? observed : { ...observed, localInference: { resources: collectLiveLocalInference(models, root) } };
+  const localInference = inspectLocalInference(effectiveObserved, models);
+  const roleObservation = { ...effectiveObserved, localInference };
   const sections = {
     omp: inspectOmp(root, effectiveObserved),
     pi: inspectPi(effectiveObserved),
     governance: inspectGovernance(root, config),
     skills: inspectSkills(root, config),
     learning: inspectLearning(config),
-    roles: inspectRoles(root, config, models, effectiveObserved),
+    roles: inspectRoles(root, config, models, roleObservation),
     authority: inspectAuthority(root),
-    local_inference: inspectLocalInference(effectiveObserved),
+    local_inference: localInference,
     spend: inspectSpend(config, models)
   };
   const failures = Object.values(sections).flatMap(section => section.failures ?? []);

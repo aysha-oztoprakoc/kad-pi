@@ -1,0 +1,7 @@
+RED evidence (before implementation)
+
+2026-08-28: `node --test tools/kad/test/swarm.test.mjs` failed before implementation with `ERR_MODULE_NOT_FOUND: Cannot find module .../tools/kad/swarm.mjs`.
+
+2026-08-28: bounded OMP/Qwen delegation with repository tools was rejected operationally: Qwen selected an invalid `read` argument (`src/**/*`) and hit `Deadline exceeded`; the result was not accepted. A second no-tools extraction also timed out/drifted. This was recorded as rejected evidence, not promoted.
+
+2026-08-28: first direct local worker attempt returned fenced JSON with a `rule` key rather than the required `claim` schema; deterministic validation rejected it. The later bounded real run produced an accepted schema-valid result; a subsequent run demonstrated the one-repair degradation path.

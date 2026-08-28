@@ -1,0 +1,176 @@
+{
+  "episode_id": "episode-SWARM-REAL-001",
+  "schema_version": "1",
+  "causation": {
+    "event_id": "event-SWARM-REAL-001",
+    "parent_event_id": null,
+    "pon_event": "work.requested"
+  },
+  "task": {
+    "task_id": "SWARM-REAL-001",
+    "domain": "RETRIEVAL",
+    "task_class": "repository-fact-finding",
+    "objective": "What exact rule does eligibility apply to a resource?",
+    "trust_domain": "retrieval"
+  },
+  "state": {
+    "available_capabilities": [
+      "controller",
+      "repository-fact-finding"
+    ],
+    "unavailable_capabilities": [],
+    "scope": "task",
+    "host_state_refs": []
+  },
+  "context": {
+    "available_refs": [
+      "tools/kad/local-router.mjs"
+    ],
+    "selected_refs": [
+      "tools/kad/local-router.mjs"
+    ],
+    "selected_bytes": 2076,
+    "selected_tokens": null,
+    "provenance": [
+      {
+        "path": "tools/kad/local-router.mjs",
+        "sha256": "04a2aa064f4d2c486735d39106091939ef7e72cd7c17f8476e0eec371bb04491"
+      }
+    ]
+  },
+  "decision": {
+    "actor_role": "CAPABILITY_ROUTER",
+    "required_capability": "repository-fact-finding",
+    "selected_resource": "kad-local-retrieval-amdy",
+    "reason_code": "LOCAL_SPECIALIST_SUPPORTED",
+    "confidence": null
+  },
+  "resolution": {
+    "deterministic_capability_available": false,
+    "deterministic_capability_considered": true,
+    "selected_execution_class": "LOCAL_SPECIALIST",
+    "capability_id": "kad-local-retrieval-amdy",
+    "model_avoided": false,
+    "new_tool_created": false,
+    "reason_code": "LOCAL_SPECIALIST_SUPPORTED"
+  },
+  "trajectory": [
+    {
+      "type": "work.requested",
+      "task_id": "SWARM-REAL-001"
+    },
+    {
+      "type": "requirement.classified",
+      "task_id": "SWARM-REAL-001",
+      "role": "local_retrieval",
+      "trust_domain": "retrieval",
+      "capability": "repository-fact-finding"
+    },
+    {
+      "type": "route.selected",
+      "task_id": "SWARM-REAL-001",
+      "role": "controller",
+      "lane": "approved-remote-controller"
+    },
+    {
+      "type": "controller.completed",
+      "task_id": "SWARM-REAL-001",
+      "lane": "approved-remote-controller",
+      "plan": {
+        "capability": "repository-fact-finding",
+        "source_paths": [
+          "tools/kad/local-router.mjs"
+        ],
+        "question": "What exact rule does eligibility apply to a resource?",
+        "max_facts": 1
+      }
+    },
+    {
+      "type": "capability.requested",
+      "task_id": "SWARM-REAL-001",
+      "capability": "repository-fact-finding",
+      "trust_domain": "retrieval"
+    },
+    {
+      "type": "worker.started",
+      "task_id": "SWARM-REAL-001",
+      "resource_id": "kad-local-retrieval-amdy"
+    },
+    {
+      "type": "worker.completed",
+      "task_id": "SWARM-REAL-001",
+      "resource_id": "kad-local-retrieval-amdy",
+      "validation": "PASS"
+    },
+    {
+      "type": "validation.passed",
+      "task_id": "SWARM-REAL-001",
+      "validator": "schema-source-evidence-validator",
+      "errors": []
+    },
+    {
+      "type": "controller.consumed",
+      "task_id": "SWARM-REAL-001",
+      "accepted": true
+    },
+    {
+      "type": "result.accepted",
+      "task_id": "SWARM-REAL-001",
+      "status": "ACCEPTED"
+    }
+  ],
+  "validation": {
+    "validator": "schema-source-evidence-validator",
+    "result": "PASS",
+    "tests": [],
+    "postconditions": [
+      "schema-valid",
+      "source-evidence-valid"
+    ]
+  },
+  "outcome": {
+    "accepted": true,
+    "remote_escalation": false,
+    "human_correction": false
+  },
+  "economics": {
+    "local_input_tokens": 1352,
+    "local_output_tokens": 161,
+    "remote_input_tokens": 1086,
+    "remote_output_tokens": 93,
+    "wall_ms": 80596,
+    "tool_calls": 1,
+    "latency_ms": 80596
+  },
+  "slop": {
+    "duplicate_reads": 0,
+    "redundant_tool_calls": 0,
+    "blind_retries": 0,
+    "invalid_structured_outputs": 0,
+    "unused_worker_outputs": 0,
+    "unsupported_claims": 0,
+    "violations": []
+  },
+  "teacher": {
+    "used": true,
+    "provider": "openai-codex",
+    "model": "gpt-5.6-luna",
+    "version": null,
+    "supervision_artifact": null
+  },
+  "ancestry": {
+    "origin": "REAL_SYSTEM_OBSERVATION",
+    "generation_depth": 0,
+    "parents": []
+  },
+  "training_eligibility": {
+    "eligible": false,
+    "rights_status": "UNKNOWN",
+    "quality_status": "UNREVIEWED",
+    "reason": "runtime-episode-only"
+  },
+  "teacher_interest": "NONE",
+  "evidence_refs": [
+    "tools/kad/local-router.mjs#04a2aa064f4d2c486735d39106091939ef7e72cd7c17f8476e0eec371bb04491"
+  ]
+}

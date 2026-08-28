@@ -1,0 +1,15 @@
+{
+  "lanes": [
+    {
+      "role": "controller",
+      "id": "approved-remote-controller",
+      "provider": "openai-codex",
+      "model": "gpt-5.6-luna",
+      "approved": true,
+      "payg": false,
+      "billing_class": "SUBSCRIPTION_BACKED",
+      "approval_scope": "current-workpackage",
+      "billing_evidence": "Pi auth check ready; no price or quota claim"
+    }
+  ]
+}

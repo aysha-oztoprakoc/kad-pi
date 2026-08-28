@@ -1,0 +1,10 @@
+{
+  "workpackage":"WP-KAD-SWARM-001",
+  "topology":[
+    {"role":"controller","semantic_role":"controller","configured_lane":".omp/controllers.json","authority":["decompose","request capability","consume result","escalate"],"mutation":false},
+    {"role":"deterministic_layer","components":["tools/kad/swarm.mjs","tools/kad/local-router.mjs","schema-source-evidence-validator"],"authority":["normalize","route","compile packet","validate","accept/degrade","record"],"mutation":false},
+    {"role":"local_worker","semantic_role":"local_retrieval","resource_id":"kad-local-retrieval-amdy","provider":"kad-local-qwen","model":"qwen-local","capabilities":["repository-fact-finding","structured-extraction"],"trust_domain":"retrieval","ownership":"STC-OWNED","mutation":false},
+    {"role":"world","semantic_role":"world","provider":"kad-local-world","model":"kad-local-s13","trust_domain":"world","ownership":"EXTERNAL","authority":["world-only"]}
+  ],
+  "boundary":"Stheno is not an eligible retrieval or engineering resource; Qwen has no mutation or acceptance authority."
+}

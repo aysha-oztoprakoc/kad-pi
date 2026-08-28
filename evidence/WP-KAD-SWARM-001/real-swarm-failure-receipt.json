@@ -1,0 +1,337 @@
+{
+  "workpackage": "WP-KAD-SWARM-001",
+  "task_id": "SWARM-REAL-001",
+  "preflight_status": "READY",
+  "status": "DEGRADED",
+  "request": {
+    "task_id": "SWARM-REAL-001",
+    "role": "local_retrieval",
+    "capability": "repository-fact-finding",
+    "trust_domain": "retrieval",
+    "question": "What exact rule does eligibility apply to a resource?",
+    "source_paths": [
+      "tools/kad/local-router.mjs"
+    ],
+    "max_facts": 1,
+    "min_context": 0
+  },
+  "packet": {
+    "task_id": "SWARM-REAL-001",
+    "role": "local_retrieval",
+    "capability": "repository-fact-finding",
+    "trust_domain": "retrieval",
+    "sources": [
+      {
+        "path": "tools/kad/local-router.mjs",
+        "sha256": "04a2aa064f4d2c486735d39106091939ef7e72cd7c17f8476e0eec371bb04491",
+        "excerpt": "/** Explainable local-first capability router. No model/provider identity is required by policy. */\nexport class CapabilityRegistry {\n  #resources = new Map();\n  #observations = [];\n\n  register(resource) {\n    if (!resource?.id || !resource.capabilities?.length) throw new Error('resource id and capabilities are required');\n    this.#resources.set(resource.id, { ...resource, available: resource.available !== false });\n  }\n\n  setAvailability(id, available, reason = 'observed state change') {\n    const resource = this.#resources.get(id);\n    if (!resource) return false;\n    resource.available = Boolean(available);\n    resource.availability_reason = reason;\n    return true;\n  }\n\n  eligible(requirement) {\n    return [...this.#resources.values()].filter(resource => resource.available &&\n      requirement.trust_domain === resource.trust_domain &&\n      (requirement.capabilities ?? []).every(capability => resource.capabilities.includes(capability)) &&\n      (requirement.min_context ?? 0) <= (resource.context_window ?? 0));\n  }\n\n  choose(requirement) {\n    const candidates = this.eligible(requirement);\n    if (!candidates.length) return { status: 'DEGRADED', reason: 'no eligible capability', candidates: [] };\n    candidates.sort((a, b) => {\n      if (Boolean(a.deterministic) !== Boolean(b.deterministic)) return a.deterministic ? -1 : 1;\n      if (Boolean(a.local) !== Boolean(b.local)) return a.local ? -1 : 1;\n      return (a.priority ?? 0) - (b.priority ?? 0);\n    });\n    const selected = candidates[0];\n    return { status: 'ROUTED', selected: selected.id, candidates: candidates.map(({ id }) => id) };\n  }\n\n  observe(observation) {\n    if (!observation?.resource_id || typeof observation.accepted !== 'boolean') throw new Error('observation requires resource_id and accepted');\n    this.#observations.push(Object.freeze({ ...observation, recorded_at: observation.recorded_at ?? new Date().toISOString() }));\n  }\n\n  observations() { return [...this.#observations]; }\n  snapshot() { return [...this.#resources.values()].map(resource => ({ ...resource })); }\n}\n"
+      }
+    ],
+    "question": "What exact rule does eligibility apply to a resource?",
+    "output_schema": {
+      "task_id": "string",
+      "facts": "array",
+      "unknowns": "array",
+      "conflicts": "array"
+    },
+    "limits": {
+      "max_facts": 1,
+      "allowed_source_paths": [
+        "tools/kad/local-router.mjs"
+      ]
+    },
+    "packet_sha256": "9f53c7ff2242177169ac86af70fe34e2a6893f7347cd247f743cd11c56cef752"
+  },
+  "controller": {
+    "lane": {
+      "role": "controller",
+      "id": "approved-remote-controller",
+      "provider": "openai-codex",
+      "model": "gpt-5.6-luna",
+      "billing_class": "SUBSCRIPTION_BACKED"
+    },
+    "plan": {
+      "capability": "repository-fact-finding",
+      "source_paths": [
+        "tools/kad/local-router.mjs"
+      ],
+      "question": "What exact rule does eligibility apply to a resource?",
+      "max_facts": 1
+    }
+  },
+  "worker": {
+    "resource_id": "kad-local-retrieval-amdy",
+    "provider": "kad-local-retrieval-amdy",
+    "output": null
+  },
+  "validation": {
+    "result": "FAIL",
+    "errors": [
+      "output is not a JSON object",
+      "task_id mismatch",
+      "required arrays are missing"
+    ]
+  },
+  "telemetry": {
+    "controller_invocations": 1,
+    "remote_lane": {
+      "role": "controller",
+      "id": "approved-remote-controller",
+      "provider": "openai-codex",
+      "model": "gpt-5.6-luna",
+      "billing_class": "SUBSCRIPTION_BACKED"
+    },
+    "remote_input_tokens": 518,
+    "remote_output_tokens": 45,
+    "remote_cost": {
+      "input": 0.00010360000000000001,
+      "output": 0.000054,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0.0001576
+    },
+    "local_invocations": 2,
+    "deterministic_tool_invocations": 1,
+    "repairs": 1,
+    "escalations": 0,
+    "accepted": false,
+    "latency_ms": 99585,
+    "context_bytes": 2076,
+    "failure_reason": null,
+    "route": {
+      "status": "ROUTED",
+      "selected_lane": {
+        "role": "controller",
+        "id": "approved-remote-controller",
+        "provider": "openai-codex",
+        "model": "gpt-5.6-luna",
+        "billing_class": "SUBSCRIPTION_BACKED"
+      },
+      "candidates": [
+        "approved-remote-controller"
+      ],
+      "reason_codes": [
+        "APPROVED",
+        "NON_PAYG",
+        "SUBSCRIPTION_BACKED",
+        "CAPABILITY_SUFFICIENT"
+      ]
+    },
+    "local_input_tokens": 1354,
+    "local_output_tokens": 149
+  },
+  "events": [
+    {
+      "type": "work.requested",
+      "task_id": "SWARM-REAL-001"
+    },
+    {
+      "type": "requirement.classified",
+      "task_id": "SWARM-REAL-001",
+      "role": "local_retrieval",
+      "trust_domain": "retrieval",
+      "capability": "repository-fact-finding"
+    },
+    {
+      "type": "route.selected",
+      "task_id": "SWARM-REAL-001",
+      "role": "controller",
+      "lane": "approved-remote-controller"
+    },
+    {
+      "type": "capability.requested",
+      "task_id": "SWARM-REAL-001",
+      "capability": "repository-fact-finding",
+      "trust_domain": "retrieval"
+    },
+    {
+      "type": "worker.started",
+      "task_id": "SWARM-REAL-001",
+      "resource_id": "kad-local-retrieval-amdy"
+    },
+    {
+      "type": "repair.requested",
+      "task_id": "SWARM-REAL-001",
+      "reason": "deterministic-validation-failed",
+      "bounded_to": 1
+    },
+    {
+      "type": "validation.failed",
+      "task_id": "SWARM-REAL-001",
+      "validator": "schema-source-evidence-validator",
+      "errors": [
+        "output is not a JSON object",
+        "task_id mismatch",
+        "required arrays are missing"
+      ]
+    },
+    {
+      "type": "result.rejected",
+      "task_id": "SWARM-REAL-001",
+      "status": "DEGRADED"
+    }
+  ],
+  "episode": {
+    "episode_id": "episode-SWARM-REAL-001",
+    "schema_version": "1",
+    "causation": {
+      "event_id": "event-SWARM-REAL-001",
+      "parent_event_id": null,
+      "pon_event": "work.requested"
+    },
+    "task": {
+      "task_id": "SWARM-REAL-001",
+      "domain": "RETRIEVAL",
+      "task_class": "repository-fact-finding",
+      "objective": "What exact rule does eligibility apply to a resource?",
+      "trust_domain": "retrieval"
+    },
+    "state": {
+      "available_capabilities": [
+        "controller",
+        "repository-fact-finding"
+      ],
+      "unavailable_capabilities": [],
+      "scope": "task",
+      "host_state_refs": []
+    },
+    "context": {
+      "available_refs": [
+        "tools/kad/local-router.mjs"
+      ],
+      "selected_refs": [
+        "tools/kad/local-router.mjs"
+      ],
+      "selected_bytes": 2076,
+      "selected_tokens": null,
+      "provenance": [
+        {
+          "path": "tools/kad/local-router.mjs",
+          "sha256": "04a2aa064f4d2c486735d39106091939ef7e72cd7c17f8476e0eec371bb04491"
+        }
+      ]
+    },
+    "decision": {
+      "actor_role": "CAPABILITY_ROUTER",
+      "required_capability": "repository-fact-finding",
+      "selected_resource": "kad-local-retrieval-amdy",
+      "reason_code": "LOCAL_SPECIALIST_SUPPORTED",
+      "confidence": null
+    },
+    "resolution": {
+      "deterministic_capability_available": false,
+      "deterministic_capability_considered": true,
+      "selected_execution_class": "LOCAL_SPECIALIST",
+      "capability_id": "kad-local-retrieval-amdy",
+      "model_avoided": false,
+      "new_tool_created": false,
+      "reason_code": "LOCAL_SPECIALIST_SUPPORTED"
+    },
+    "trajectory": [
+      {
+        "type": "work.requested",
+        "task_id": "SWARM-REAL-001"
+      },
+      {
+        "type": "requirement.classified",
+        "task_id": "SWARM-REAL-001",
+        "role": "local_retrieval",
+        "trust_domain": "retrieval",
+        "capability": "repository-fact-finding"
+      },
+      {
+        "type": "route.selected",
+        "task_id": "SWARM-REAL-001",
+        "role": "controller",
+        "lane": "approved-remote-controller"
+      },
+      {
+        "type": "capability.requested",
+        "task_id": "SWARM-REAL-001",
+        "capability": "repository-fact-finding",
+        "trust_domain": "retrieval"
+      },
+      {
+        "type": "worker.started",
+        "task_id": "SWARM-REAL-001",
+        "resource_id": "kad-local-retrieval-amdy"
+      },
+      {
+        "type": "repair.requested",
+        "task_id": "SWARM-REAL-001",
+        "reason": "deterministic-validation-failed",
+        "bounded_to": 1
+      },
+      {
+        "type": "validation.failed",
+        "task_id": "SWARM-REAL-001",
+        "validator": "schema-source-evidence-validator",
+        "errors": [
+          "output is not a JSON object",
+          "task_id mismatch",
+          "required arrays are missing"
+        ]
+      },
+      {
+        "type": "result.rejected",
+        "task_id": "SWARM-REAL-001",
+        "status": "DEGRADED"
+      }
+    ],
+    "validation": {
+      "validator": "schema-source-evidence-validator",
+      "result": "FAIL",
+      "tests": [
+        "output is not a JSON object",
+        "task_id mismatch",
+        "required arrays are missing"
+      ],
+      "postconditions": []
+    },
+    "outcome": {
+      "accepted": false,
+      "remote_escalation": false,
+      "human_correction": false
+    },
+    "economics": {
+      "local_input_tokens": 1354,
+      "local_output_tokens": 149,
+      "remote_input_tokens": 518,
+      "remote_output_tokens": 45,
+      "wall_ms": 99585,
+      "tool_calls": 1,
+      "latency_ms": 99585
+    },
+    "slop": {
+      "duplicate_reads": 0,
+      "redundant_tool_calls": 0,
+      "blind_retries": 0,
+      "invalid_structured_outputs": 0,
+      "unused_worker_outputs": 0,
+      "unsupported_claims": 0,
+      "violations": []
+    },
+    "teacher": {
+      "used": true,
+      "provider": "openai-codex",
+      "model": "gpt-5.6-luna",
+      "version": null,
+      "supervision_artifact": null
+    },
+    "ancestry": {
+      "origin": "REAL_SYSTEM_OBSERVATION",
+      "generation_depth": 0,
+      "parents": []
+    },
+    "training_eligibility": {
+      "eligible": false,
+      "rights_status": "UNKNOWN",
+      "quality_status": "UNREVIEWED",
+      "reason": "runtime-episode-only"
+    },
+    "teacher_interest": "NONE",
+    "evidence_refs": [
+      "tools/kad/local-router.mjs#04a2aa064f4d2c486735d39106091939ef7e72cd7c17f8476e0eec371bb04491"
+    ]
+  }
+}

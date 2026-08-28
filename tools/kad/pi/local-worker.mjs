@@ -14,12 +14,12 @@ export async function runLocalWorker({ endpoint = 'http://127.0.0.1:5001/v1', mo
   const { sdk } = await loadPiSdk();
   const { ModelRuntime, SessionManager } = sdk;
   const models = JSON.parse(readFileSync(modelsPath, 'utf8'));
-  models.providers['kad-local'].baseUrl = endpoint;
+  models.providers['kad-local-world'].baseUrl = endpoint;
   const runtimePath = `/tmp/kad-local-models-${process.pid}.json`;
   await (await import('node:fs/promises')).writeFile(runtimePath, JSON.stringify(models));
   const modelRuntime = await ModelRuntime.create({ modelsPath: runtimePath, authPath: `/tmp/kad-local-auth-${process.pid}.json`, refreshOnCreate: false });
-  const model = modelRuntime.getModel('kad-local', 'stheno-local');
-  if (!model) throw new Error('Configured kad-local/stheno-local model was not resolved by Pi');
+  const model = modelRuntime.getModel('kad-local-world', 'stheno-local');
+  if (!model) throw new Error('Configured kad-local-world/stheno-local model was not resolved by Pi');
   const { session } = await sdk.createAgentSession({
     model, modelRuntime, cwd: process.cwd(), agentDir,
     sessionManager: SessionManager.inMemory(),

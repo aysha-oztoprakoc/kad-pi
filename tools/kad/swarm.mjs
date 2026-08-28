@@ -1,0 +1,183 @@
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { createEpisode } from './episode.mjs';
+import { canonicalize } from './distillation.mjs';
+
+const supportedLocalCapabilities = new Set(['repository-fact-finding', 'structured-extraction']);
+const hash = value => createHash('sha256').update(value, 'utf8').digest('hex');
+const now = () => Date.now();
+
+export function normalizeWorkRequest(input = {}) {
+  const capability = input.capability ?? input.required_capability;
+  if (!input.task_id || !input.role || !input.trust_domain || !capability || !input.question) throw new Error('task_id, role, trust_domain, capability, and question are required');
+  if (!Array.isArray(input.source_paths) || input.source_paths.length === 0) throw new Error('bounded source_paths are required');
+  return {
+    task_id: input.task_id,
+    role: input.role,
+    capability,
+    trust_domain: input.trust_domain,
+    question: input.question,
+    source_paths: [...new Set(input.source_paths)],
+    max_facts: Math.max(1, Math.min(10, input.max_facts ?? 3)),
+    min_context: input.min_context ?? 0
+  };
+}
+
+export function compileTaskPacket(requestInput, sources) {
+  const request = normalizeWorkRequest(requestInput);
+  const allowed = new Map((sources ?? []).map(source => [source.path, source]));
+  const selected = request.source_paths.map(path => {
+    const source = allowed.get(path);
+    if (!source) throw new Error(`requested source is unavailable: ${path}`);
+    const content = String(source.content ?? readFileSync(path, 'utf8'));
+    return { path, sha256: hash(content), excerpt: content.slice(0, 12000) };
+  });
+  const packet = {
+    task_id: request.task_id,
+    role: request.role,
+    capability: request.capability,
+    trust_domain: request.trust_domain,
+    sources: selected,
+    question: request.question,
+    output_schema: { task_id: 'string', facts: 'array', unknowns: 'array', conflicts: 'array' },
+    limits: { max_facts: request.max_facts, allowed_source_paths: selected.map(source => source.path) }
+  };
+  return { ...packet, packet_sha256: hash(canonicalize(packet)) };
+}
+
+export function selectControllerLane(lanes = []) {
+  const eligible = lanes.filter(lane => lane?.role === 'controller' && lane.available !== false && lane.approved === true && lane.payg !== true && lane.billing_class === 'SUBSCRIPTION_BACKED');
+  if (!eligible.length) return { status: 'DEGRADED', reason: 'no approved non-PAYG controller lane', selected_lane: null, candidates: [] };
+  eligible.sort((a, b) => String(a.expires_at ?? '9999').localeCompare(String(b.expires_at ?? '9999')) || String(a.id).localeCompare(String(b.id)));
+  const selected = eligible[0];
+  return { status: 'ROUTED', selected_lane: { role: 'controller', id: selected.id, provider: selected.provider ?? 'UNKNOWN', model: selected.model ?? 'UNKNOWN', billing_class: selected.billing_class }, candidates: eligible.map(lane => lane.id), reason_codes: ['APPROVED', 'NON_PAYG', 'SUBSCRIPTION_BACKED', 'CAPABILITY_SUFFICIENT'] };
+}
+
+function parseWorkerOutput(output) {
+  if (output && typeof output === 'object') return output;
+  try { return JSON.parse(String(output ?? '')); } catch { return null; }
+}
+
+export function validateWorkerResult(output, packet) {
+  const value = parseWorkerOutput(output);
+  const errors = [];
+  if (!value || typeof value !== 'object' || Array.isArray(value)) errors.push('output is not a JSON object');
+  if (!value || value.task_id !== packet.task_id) errors.push('task_id mismatch');
+  if (!Array.isArray(value?.facts) || !Array.isArray(value?.unknowns) || !Array.isArray(value?.conflicts)) errors.push('required arrays are missing');
+  if (Array.isArray(value?.facts) && value.facts.length > packet.limits.max_facts) errors.push('fact limit exceeded');
+  const allowed = new Map(packet.sources.map(source => [source.path, source.excerpt]));
+  for (const fact of value?.facts ?? []) {
+    if (!fact || typeof fact.claim !== 'string' || !fact.claim.trim()) errors.push('fact claim is empty');
+    if (!allowed.has(fact?.source_path)) errors.push(`fact source is outside packet: ${fact?.source_path ?? 'UNKNOWN'}`);
+    else if (typeof fact.evidence !== 'string' || !fact.evidence || !allowed.get(fact.source_path).includes(fact.evidence)) errors.push(`fact evidence is not present in source: ${fact.source_path}`);
+  }
+  return { accepted: errors.length === 0, value, errors };
+}
+
+function event(type, taskId, data = {}) { return { type, task_id: taskId, ...data }; }
+function baseEpisode(request, packet, route, validation, outcome, telemetry, trajectory) {
+  return createEpisode({
+    episode_id: `episode-${request.task_id}`,
+    causation: { event_id: `event-${request.task_id}`, pon_event: 'work.requested' },
+    task: { task_id: request.task_id, domain: request.trust_domain.toUpperCase(), task_class: request.capability, objective: request.question, trust_domain: request.trust_domain },
+    state: { available_capabilities: ['controller', request.capability], unavailable_capabilities: [], scope: 'task' },
+    context: { available_refs: packet?.sources.map(source => source.path) ?? request.source_paths, selected_refs: packet?.sources.map(source => source.path) ?? [], selected_bytes: packet?.sources.reduce((sum, source) => sum + Buffer.byteLength(source.excerpt), 0) ?? 0, selected_tokens: null, provenance: packet?.sources.map(source => ({ path: source.path, sha256: source.sha256 })) ?? [] },
+    decision: { actor_role: 'CAPABILITY_ROUTER', required_capability: request.capability, selected_resource: route?.selected_resource ?? null, reason_code: route?.reason_code ?? 'bounded-contract' },
+    resolution: { selected_execution_class: route?.selected_resource ? 'LOCAL_SPECIALIST' : 'REMOTE_CHEAP', capability_id: route?.selected_resource ?? route?.selected_lane ?? null, model_avoided: false, reason_code: route?.reason_code ?? 'bounded-contract' },
+    trajectory,
+    validation: { validator: 'schema-source-evidence-validator', result: validation?.result ?? 'UNKNOWN', tests: validation?.errors ?? [], postconditions: validation?.accepted ? ['schema-valid', 'source-evidence-valid'] : [] },
+    outcome: { accepted: outcome.accepted, remote_escalation: outcome.remote_escalation ?? false },
+    economics: { local_input_tokens: telemetry.local_input_tokens ?? null, local_output_tokens: telemetry.local_output_tokens ?? null, remote_input_tokens: telemetry.remote_input_tokens ?? null, remote_output_tokens: telemetry.remote_output_tokens ?? null, wall_ms: telemetry.latency_ms ?? telemetry.wall_ms ?? null, tool_calls: telemetry.deterministic_tool_invocations ?? null },
+    teacher: { used: Boolean(route?.selected_lane), provider: route?.selected_lane?.provider ?? null, model: route?.selected_lane?.model ?? null },
+    evidence_refs: packet ? packet.sources.map(source => `${source.path}#${source.sha256}`) : []
+  });
+}
+
+export async function executeSwarm({ request: requestInput, sources, controller, registry, worker, max_repairs = 1, emit = () => {} }) {
+  const started = now();
+  const request = normalizeWorkRequest(requestInput);
+  const events = [event('work.requested', request.task_id), event('requirement.classified', request.task_id, { role: request.role, trust_domain: request.trust_domain, capability: request.capability })];
+  const telemetry = { controller_invocations: 0, remote_lane: null, remote_input_tokens: null, remote_output_tokens: null, remote_cost: null, local_invocations: 0, deterministic_tool_invocations: 1, repairs: 0, escalations: 0, accepted: false, latency_ms: null, context_bytes: 0, failure_reason: null };
+  const route = selectControllerLane(controller?.lanes);
+  telemetry.route = route;
+  emit(events[0]); emit(events[1]);
+  if (route.status !== 'ROUTED') {
+    telemetry.failure_reason = 'CONTROLLER_UNAVAILABLE';
+    const result = { status: 'DEGRADED', failure_reason: telemetry.failure_reason, events, telemetry, episode: baseEpisode(request, null, null, { result: 'UNKNOWN' }, { accepted: false }, telemetry, events) };
+    return { ...result, dispose: async () => {} };
+  }
+  if (!supportedLocalCapabilities.has(request.capability)) {
+    telemetry.failure_reason = 'UNSUPPORTED_LOCAL_CAPABILITY';
+    const result = { status: 'DEGRADED', failure_reason: telemetry.failure_reason, events, telemetry, episode: baseEpisode(request, null, route, { result: 'UNKNOWN' }, { accepted: false }, telemetry, events) };
+    return { ...result, dispose: async () => {} };
+  }
+  events.push(event('route.selected', request.task_id, { role: 'controller', lane: route.selected_lane.id })); emit(events.at(-1));
+  const controllerResult = await controller.execute({ ...request, source_manifest: request.source_paths });
+  telemetry.controller_invocations = 1;
+  telemetry.remote_lane = route.selected_lane;
+  telemetry.remote_input_tokens = controllerResult.telemetry?.input_tokens ?? null;
+  telemetry.remote_output_tokens = controllerResult.telemetry?.output_tokens ?? null;
+  telemetry.remote_cost = controllerResult.telemetry?.cost ?? null;
+  const plan = controllerResult.plan ?? {};
+  const controllerCompleted = event('controller.completed', request.task_id, { lane: route.selected_lane.id, plan });
+  events.push(controllerCompleted); emit(controllerCompleted);
+  const planPaths = plan.source_paths ?? request.source_paths;
+  if (planPaths.some(path => !request.source_paths.includes(path))) {
+    telemetry.failure_reason = 'CONTROLLER_SCOPE_VIOLATION';
+    return { status: 'DEGRADED', failure_reason: telemetry.failure_reason, events, telemetry, episode: baseEpisode(request, null, route, { result: 'FAIL', errors: [telemetry.failure_reason] }, { accepted: false }, telemetry, events), dispose: async () => {} };
+  }
+  const packet = compileTaskPacket({ ...request, question: plan.question ?? request.question, max_facts: plan.max_facts ?? request.max_facts, source_paths: planPaths }, sources);
+  telemetry.context_bytes = packet.sources.reduce((sum, source) => sum + Buffer.byteLength(source.excerpt), 0);
+  events.push(event('capability.requested', request.task_id, { capability: request.capability, trust_domain: request.trust_domain }));
+  const selected = registry.choose({ trust_domain: request.trust_domain, capabilities: [request.capability], min_context: request.min_context });
+  if (selected.status !== 'ROUTED' || selected.selected !== worker?.resource_id) {
+    telemetry.failure_reason = 'TRUST_DOMAIN_UNAVAILABLE';
+    return { status: 'DEGRADED', failure_reason: telemetry.failure_reason, events, telemetry, packet, episode: baseEpisode(request, packet, { selected_resource: selected.selected ?? null, reason_code: telemetry.failure_reason }, { result: 'FAIL', errors: [telemetry.failure_reason] }, { accepted: false }, telemetry, events), dispose: async () => {} };
+  }
+  events.push(event('worker.started', request.task_id, { resource_id: worker.resource_id })); emit(events.at(-1));
+  let workerResult = await worker.execute(packet);
+  telemetry.local_invocations = 1;
+  telemetry.local_input_tokens = workerResult.telemetry?.input_tokens ?? null;
+  telemetry.local_output_tokens = workerResult.telemetry?.output_tokens ?? null;
+  let validation = validateWorkerResult(workerResult?.output ?? workerResult, packet);
+  let cleanup = workerResult?.dispose;
+  if (!validation.accepted && max_repairs > 0) {
+    telemetry.repairs = 1;
+    events.push(event('repair.requested', request.task_id, { reason: 'deterministic-validation-failed', bounded_to: 1 }));
+    workerResult = await worker.execute({ ...packet, repair: { previous_errors: validation.errors } });
+    telemetry.local_invocations++;
+    telemetry.local_input_tokens = telemetry.local_input_tokens === null ? (workerResult.telemetry?.input_tokens ?? null) : telemetry.local_input_tokens;
+    telemetry.local_output_tokens = telemetry.local_output_tokens === null ? (workerResult.telemetry?.output_tokens ?? null) : telemetry.local_output_tokens;
+    validation = validateWorkerResult(workerResult?.output ?? workerResult, packet);
+    cleanup = workerResult?.dispose ?? cleanup;
+  }
+  telemetry.latency_ms = now() - started;
+  telemetry.accepted = validation.accepted;
+  const workerCompleted = event('worker.completed', request.task_id, { resource_id: worker.resource_id, validation: validation.accepted ? 'PASS' : 'FAIL' });
+  events.push(workerCompleted); emit(workerCompleted);
+  const validationEvent = event(validation.accepted ? 'validation.passed' : 'validation.failed', request.task_id, { validator: 'schema-source-evidence-validator', errors: validation.errors });
+  events.push(validationEvent); emit(validationEvent);
+  let controllerConsumption = null;
+  if (validation.accepted && typeof controller.consume === 'function') {
+    controllerConsumption = await controller.consume({ request, packet, result: validation.value });
+    telemetry.controller_invocations++;
+    const inputTokens = controllerConsumption.telemetry?.input_tokens;
+    const outputTokens = controllerConsumption.telemetry?.output_tokens;
+    telemetry.remote_input_tokens = telemetry.remote_input_tokens === null || inputTokens == null ? (telemetry.remote_input_tokens ?? inputTokens ?? null) : telemetry.remote_input_tokens + inputTokens;
+    telemetry.remote_output_tokens = telemetry.remote_output_tokens === null || outputTokens == null ? (telemetry.remote_output_tokens ?? outputTokens ?? null) : telemetry.remote_output_tokens + outputTokens;
+    if (controllerConsumption.telemetry?.cost && telemetry.remote_cost) telemetry.remote_cost = Object.fromEntries(['input', 'output', 'cacheRead', 'cacheWrite', 'total'].map(key => [key, (telemetry.remote_cost[key] ?? 0) + (controllerConsumption.telemetry.cost[key] ?? 0)]));
+    if (controllerConsumption.consumed !== true) { telemetry.failure_reason = 'CONTROLLER_CONSUMPTION_FAILED'; validation = { ...validation, accepted: false, errors: [...validation.errors, telemetry.failure_reason] }; }
+    const consumedEvent = event(controllerConsumption.consumed === true ? 'controller.consumed' : 'controller.consumption_failed', request.task_id, { accepted: controllerConsumption.consumed === true });
+    events.push(consumedEvent); emit(consumedEvent);
+  }
+  const status = validation.accepted ? 'ACCEPTED' : 'DEGRADED';
+  const outcomeEvent = event(validation.accepted ? 'result.accepted' : 'result.rejected', request.task_id, { status });
+  events.push(outcomeEvent); emit(outcomeEvent);
+  const result = { status, failure_reason: validation.accepted ? null : (telemetry.failure_reason ?? 'LOCAL_VALIDATION_FAILED'), request, packet, controller: { lane: route.selected_lane, plan: controllerResult.plan ?? null, consumption: controllerConsumption }, worker: { resource_id: worker.resource_id, provider: worker.resource_id, output: validation.value }, validation: { result: validation.accepted ? 'PASS' : 'FAIL', errors: validation.errors }, events, telemetry, episode: baseEpisode(request, packet, { ...route, selected_resource: worker.resource_id, reason_code: 'LOCAL_SPECIALIST_SUPPORTED' }, { ...validation, result: validation.accepted ? 'PASS' : 'FAIL' }, { accepted: validation.accepted }, telemetry, events), dispose: async () => { await cleanup?.(); } };
+  result.episode.economics.latency_ms = telemetry.latency_ms;
+  return result;
+}
+
+export function canonicalSwarmReceipt(result) {
+  return canonicalize({ status: result.status, failure_reason: result.failure_reason, request: result.request, packet: result.packet && { task_id: result.packet.task_id, packet_sha256: result.packet.packet_sha256, sources: result.packet.sources.map(source => ({ path: source.path, sha256: source.sha256 })) }, controller: result.controller, worker: result.worker && { resource_id: result.worker.resource_id, output: result.worker.output }, validation: result.validation, telemetry: result.telemetry, events: result.events, episode: result.episode });
+}
