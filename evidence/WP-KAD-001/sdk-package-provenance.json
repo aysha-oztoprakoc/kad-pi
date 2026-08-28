@@ -1,0 +1,16 @@
+{
+  "package": "@earendil-works/pi-coding-agent",
+  "version": "0.84.3",
+  "registry_metadata_url": "https://registry.npmjs.org/@earendil-works%2fpi-coding-agent/0.84.3",
+  "tarball_url": "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-0.84.3.tgz",
+  "registry_shasum": "c040a5c2cfacd996731ce302a323269f124c8bdc",
+  "tarball_sha1": "c040a5c2cfacd996731ce302a323269f124c8bdc",
+  "registry_integrity": "sha512-Yr2p9PubrbFZmYEPYI+C8KmZP9xlFuLDnAG64RtU0ZDgrdiXYWa+y7WGyJO5OlqPliOkVCMd9IzVszO3/t0D0w==",
+  "tarball_integrity_verified": true,
+  "tarball_sha512": "62bda9f4fb9badb15999810f608f82f0a9993fdc6516e2c39c01bae11b54d190e0add8976166becbb586c893b93a5a8f9623a454231df48cd5b333b7fedd03d3",
+  "registry_git_head": "bfb004d4418ff05c6f909eaaab856cbe75c1fde0",
+  "local_package_json": "/tmp/wp-kad-001-sdk/runtime/node_modules/@earendil-works/pi-coding-agent/package.json",
+  "local_lockfile": "/tmp/wp-kad-001-sdk/runtime/package-lock.json",
+  "resolved_specifier": "file:../earendil-works-pi-coding-agent-0.84.3.tgz",
+  "local_package_identity_verified": true
+}

@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0.0",
+  "domains": {
+    "PON_STC_CORE": "Notification-Oriented Paradigm, Spatiotemporal Composability, and Cordis execution core",
+    "KAD_SIMULATION": "Deterministic authority boundary, intent validation, resolver, and world simulation",
+    "PI_INTEGRATION": "Pi Coding Agent SDK integration, session subscription, and lifecycle verification",
+    "SWARM_GOVERNANCE": "Multi-agent swarm coordination, role specializations, and mutation authority",
+    "SUBSCRIPTION_ECONOMICS": "Multi-provider quota pools, token economics, and dynamic routing matrix",
+    "SAFE_LAB_TOOLCHAINS": "DeepHar, Cordis plugin lab, Dream OS, and QuickShell UI customization",
+    "EPISTEMOLOGY_EVIDENCE": "Prime Directive, scientific evidence ledgers, and reality level verification"
+  },
+  "concepts": {
+    "Notification": {
+      "domain": "PON_STC_CORE",
+      "epistemic_class": "SOURCE_DERIVED",
+      "definition": "A punctual, typed signal that relevant state or an environmental fact has changed.",
+      "synonyms": ["PON Signal", "State Notification"],
+      "relationships": {
+        "triggers": "Premise",
+        "governed_by": "PON Directives"
+      }
+    },
+    "Fact": {
+      "domain": "PON_STC_CORE",
+      "epistemic_class": "SOURCE_DERIVED",
+      "definition": "A factual-executional state primitive within the Fact Base.",
+      "synonyms": ["Fact Base Element", "State Fact"],
+      "relationships": {
+        "evaluated_in": "Premise"
+      }
+    },
+    "Premise": {
+      "domain": "PON_STC_CORE",
+      "epistemic_class": "SOURCE_DERIVED",
+      "definition": "A logical unit evaluating whether a specific fact condition holds true upon notification.",
+      "synonyms": ["Condition Premise"],
+      "relationships": {
+        "composes": "Condition"
+      }
+    },
+    "Rule": {
+      "domain": "PON_STC_CORE",
+      "epistemic_class": "SOURCE_DERIVED",
+      "definition": "Logical-causal knowledge defining which ActionIntent is produced when its guarding condition becomes satisfied.",
+      "synonyms": ["Causal Rule", "PON Rule"],
+      "relationships": {
+        "emits": "ActionIntent",
+        "guarded_by": "Condition"
+      }
+    },
+    "Effect": {
+      "domain": "PON_STC_CORE",
+      "epistemic_class": "SOURCE_DERIVED",
+      "definition": "A context-mediated mutation attributable to an owner that registers its inverse when applied.",
+      "synonyms": ["Managed Effect", "Temporal Mutation"],
+      "relationships": {
+        "owned_by": "Fiber",
+        "unwound_by": "Teardown"
+      }
+    },
+    "Coeffect": {
+      "domain": "PON_STC_CORE",
+      "epistemic_class": "SOURCE_DERIVED",
+      "definition": "A declared dependency or capability required by a component from its runtime environment.",
+      "synonyms": ["Dependency", "Spatial Coeffect"],
+      "relationships": {
+        "resolved_in": "Context"
+      }
+    },
+    "Fiber": {
+      "domain": "PON_STC_CORE",
+      "epistemic_class": "SOURCE_DERIVED",
+      "definition": "An instantiated, scoped runtime instance of a component whose lifecycle is governed by a Context.",
+      "synonyms": ["Scoped Fiber", "Component Instance"],
+      "relationships": {
+        "managed_by": "Context"
+      }
+    },
+    "Context": {
+      "domain": "PON_STC_CORE",
+      "epistemic_class": "SOURCE_DERIVED",
+      "definition": "The runtime mediator of effects, coeffects, capability resolution, and lifecycle disposal.",
+      "synonyms": ["Cordis Context", "Runtime Context"],
+      "relationships": {
+        "manages": "Fiber"
+      }
+    },
+    "CandidateIntent": {
+      "domain": "KAD_SIMULATION",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "An untrusted, probabilistic proposal produced by an LLM interpreter from raw natural language input.",
+      "synonyms": ["Proposed Intent", "Probabilistic Proposal"],
+      "relationships": {
+        "verified_by": "Validator"
+      }
+    },
+    "ValidatedIntent": {
+      "domain": "KAD_SIMULATION",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "A verified, schema-compliant intent authorized for canonical state resolution.",
+      "synonyms": ["Authorized Intent"],
+      "relationships": {
+        "resolved_by": "Resolver"
+      }
+    },
+    "Validator": {
+      "domain": "KAD_SIMULATION",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "A deterministic, pure boundary engine verifying CandidateIntent schemas, references, and preconditions.",
+      "synonyms": ["Authority Boundary Engine"],
+      "relationships": {
+        "transforms": "CandidateIntent to ValidatedIntent"
+      }
+    },
+    "Resolver": {
+      "domain": "KAD_SIMULATION",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "The deterministic engine computing state transitions and generating events from ValidatedIntents.",
+      "synonyms": ["Deterministic Resolver", "State Resolver"],
+      "relationships": {
+        "produces": "StateDiff"
+      }
+    },
+    "StateDiff": {
+      "domain": "KAD_SIMULATION",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "An explicit, complete delta of modified fields transitioning GameState_before to GameState_after.",
+      "synonyms": ["Atomic Delta", "State Delta"],
+      "relationships": {
+        "applies_to": "GameState"
+      }
+    },
+    "GameState": {
+      "domain": "KAD_SIMULATION",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "The immutable canonical snapshot of all world simulation entities, rooms, and attributes.",
+      "synonyms": ["Canonical State", "Simulation Snapshot"],
+      "relationships": {
+        "mutated_via": "StateDiff"
+      }
+    },
+    "WorkPackage": {
+      "domain": "SWARM_GOVERNANCE",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "A bounded unit of scoped, self-contained execution with explicit input paths, mutation authority, and acceptance criteria.",
+      "synonyms": ["Bounded WP", "Execution Unit"],
+      "relationships": {
+        "delegated_to": "Subagent"
+      }
+    },
+    "Evidence": {
+      "domain": "EPISTEMOLOGY_EVIDENCE",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "Durable, attributable observations, logs, or cryptographic hashes from which claims and postconditions are independently verified.",
+      "synonyms": ["Durable Evidence", "Audit Artifact"],
+      "relationships": {
+        "proves": "Claim"
+      }
+    }
+  },
+  "relationships": {
+    "causal_chain": ["State Change", "Notification", "Premise", "Condition", "Rule", "ActionIntent"],
+    "lifecycle_chain": ["Context", "Fiber", "Coeffect Resolution", "Effect Application", "Dispose Unwind"],
+    "simulation_chain": ["Raw Input", "CandidateIntent", "Validator", "ValidatedIntent", "Resolver", "StateDiff", "GameState"]
+  }
+}

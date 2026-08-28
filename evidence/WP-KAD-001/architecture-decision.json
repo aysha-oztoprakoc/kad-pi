@@ -1,0 +1,21 @@
+{
+  "workpackage": "WP-KAD-001",
+  "decision": "INSTALLED_RPC_EXHAUSTED_EXTERNAL_SDK_ACCEPTANCE_DECISION_PENDING",
+  "verdict": "PARTIAL",
+  "selected_pi_seam": {
+    "sdk_event": "AgentSession queue_update emitted by session.steer()",
+    "reason": "The documented AgentSession.subscribe() returns a real unsubscribe function, unlike pi.on(). session.steer() deterministically emits queue_update before agent steering."
+  },
+  "cordis_seam": {
+    "implementation": "/home/amdy/Work/tries/deepseek-harness-lab/vendor/cordis/lib/index.js",
+    "mechanism": "Context/Fiber.effect() owns a disposer and Fiber unload invokes collected disposers."
+  },
+  "pi_extension_path": "BLOCKED: pi.on() has no sanctioned unsubscribe and factory returns are ignored.",
+  "pi_rpc_path": "BLOCKED: the installed JSONL RPC mode streams a process-owned session subscription to stdout, but exposes no public per-client subscribe/unsubscribe observer operation; declared client/rpc-entry exports are absent from this binary distribution.",
+  "pi_sdk_path": "STATIC_PROVEN: AgentSession.subscribe() returns documented unsubscribe. LIVE_IMPORT_PENDING: the binary-only installed distribution lacks its declared dist/index.js SDK export.",
+  "blocking_invariant": "The extension and installed RPC paths cannot provide the required real subscription withdrawal. The only discovered disposer is the SDK API embedded in the installed executable but not importable from this binary-only distribution. Before any external package is fetched, make an explicit acceptance decision whether it satisfies the literal actual-installed-Pi participation gate.",
+  "non_decisions": [
+    "No substitute EventEmitter, fake Pi runtime, or copied Cordis lifecycle abstraction will be used to claim integration.",
+    "No new production architecture will be introduced to work around the missing Pi lifecycle capability."
+  ]
+}

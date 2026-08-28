@@ -1,0 +1,13 @@
+{
+  "workpackage": "WP-KAD-001",
+  "authorized_by": "user",
+  "date": "2026-08-28",
+  "old_requirement": "actual installed Pi participates in the integration seam",
+  "revised_requirement": "a provenance-verified official Pi 0.84.3 implementation participates in the live integration, while the locally installed Pi 0.84.3 binary remains independently LIVE_OBSERVED and unmodified",
+  "preserved_constraints": [
+    "No EventEmitter simulation or Pi-shaped mock satisfies integration acceptance.",
+    "The locally installed Pi 0.84.3 extension smoke remains LIVE_OBSERVED.",
+    "The locally installed Pi distribution must remain unmodified.",
+    "All non-Pi-participation acceptance criteria remain unchanged."
+  ]
+}

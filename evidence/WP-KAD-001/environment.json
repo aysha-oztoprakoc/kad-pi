@@ -1,0 +1,8 @@
+{
+  "pi_binary": "/home/amdy/.local/share/mise/installs/pi/0.84.3/pi/pi",
+  "pi_version": "0.84.3",
+  "pi_binary_sha256": "ca858fde375ab91531353b22fac6ebdf29c0a153efe754f5f9b8a72a7423ed08",
+  "inspection_date": "2026-08-28",
+  "runtime_model_calls": "NOT_RUN",
+  "real_pi_extension_run": "NOT_RUN"
+}

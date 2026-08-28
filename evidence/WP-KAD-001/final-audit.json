@@ -1,0 +1,25 @@
+{
+  "workpackage": "WP-KAD-001",
+  "initial_corrected_verdict": "PARTIAL",
+  "final_verdict": "PARTIAL",
+  "acceptance": {
+    "real_pi_seam": "LIVE_OBSERVED_EXTENSION_SMOKE_ONLY; INSTALLED_RPC_LIFECYCLE_BLOCKED",
+    "installed_pi_binary_mutation": "ZERO_FOR_SMOKE_RUN",
+    "installed_pi_distribution_mutation": "UNPROVEN: current manifests cover only the pi binary",
+    "notification_translation": "NOT_IMPLEMENTED",
+    "relevant_activation": "NOT_IMPLEMENTED",
+    "irrelevant_activation": "NOT_IMPLEMENTED",
+    "action_intent": "NOT_IMPLEMENTED",
+    "cordis_lifecycle": "STATIC_PROVEN_NOT_INTEGRATED",
+    "dispose": "PI_EXTENSION_PATH_BLOCKED; PI_RPC_PATH_BLOCKED; PI_SDK_PATH_STATICALLY_PROVEN_PENDING_ACCEPTANCE_DECISION",
+    "post_dispose_silence": "PI_EXTENSION_PATH_BLOCKED; PI_RPC_PATH_BLOCKED; PI_SDK_PATH_STATICALLY_PROVEN_PENDING_ACCEPTANCE_DECISION",
+    "rule_failure_cleanup": "NOT_IMPLEMENTED",
+    "sink_failure_cleanup": "NOT_IMPLEMENTED",
+    "blind_retry": "NOT_IMPLEMENTED",
+    "runtime_model_calls": "ZERO_FOR_SMOKE_RUN",
+    "journal_reconstructability": "SIMULATED_ONLY",
+    "critical_findings": 1,
+    "high_findings": 0
+  },
+  "critical_finding": "The mandated actual Pi listener withdrawal is unavailable through pi.on() and installed JSONL RPC. An SDK disposer exists only as static embedded behavior because this binary-only installation lacks its declared SDK import/client exports. External exact-version SDK use requires an explicit acceptance-semantics decision."
+}

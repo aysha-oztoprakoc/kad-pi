@@ -1,0 +1,1 @@
+{"package":"@earendil-works/pi-coding-agent","version":"0.84.3","event":{"type":"queue_update","steering":["kad-sdk-lifecycle-token"],"followUp":[]},"callbackCount":1,"providerCalls":0,"model":{"provider":"unknown","id":"unknown"},"unsubscribeType":"function","disposed":true}
