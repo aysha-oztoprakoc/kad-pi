@@ -1,0 +1,3 @@
+{"timestamp_iso":"2026-08-28T12:57:48.350Z","sdk_package":"@earendil-works/pi-coding-agent","sdk_version":"0.84.3","event_type":"queue_update","steering":["acquire key"],"followUp":[]}
+{"timestamp_iso":"2026-08-28T12:57:48.355Z","sdk_package":"@earendil-works/pi-coding-agent","sdk_version":"0.84.3","event_type":"queue_update","steering":["acquire key","move room_b"],"followUp":[]}
+{"timestamp_iso":"2026-08-28T12:57:48.358Z","sdk_package":"@earendil-works/pi-coding-agent","sdk_version":"0.84.3","event_type":"queue_update","steering":["acquire key","move room_b","move room_a"],"followUp":[]}

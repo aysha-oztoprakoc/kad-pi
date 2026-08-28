@@ -241,6 +241,16 @@
       "epistemic_status": "CONFIRMED",
       "summary": "Verified persistent multi-turn world substrate with PON selective notification engine, STC lifecycle ownership, deterministic replay, and evidence dataset extraction.",
       "retrieval_keywords": ["WP-KAD-003", "Persistent Multi-Turn", "PON Engine", "STC Scope", "Deterministic Replay", "Dataset"]
+    },
+    {
+      "id": "EVID_WP_KAD_004",
+      "title": "Evidence: WP-KAD-004 Real Pi Harness Persistent World Runtime",
+      "path": "evidence/WP-KAD-004/final-report.md",
+      "type": "evidence",
+      "domain": "PI_INTEGRATION",
+      "epistemic_status": "CONFIRMED",
+      "summary": "Verified real Pi SDK AgentSession integration driving persistent multi-turn world transitions with PON selectivity, Cordis effect unsubscription, and zero provider invocations.",
+      "retrieval_keywords": ["WP-KAD-004", "Real Pi Harness", "AgentSession", "session.steer", "PON Selectivity", "Cordis Lifecycle", "Zero Provider Calls"]
     }
   ]
 }
