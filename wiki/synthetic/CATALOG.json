@@ -221,6 +221,16 @@
       "epistemic_status": "OBSERVED",
       "summary": "Detailed capacity and quota comparison across ChatGPT Plus, Google AI Pro, and OpenCode Go.",
       "retrieval_keywords": ["Economics", "Quota", "ChatGPT Plus", "Google AI Pro", "OpenCode Go"]
+    },
+    {
+      "id": "EVID_WP_KAD_002",
+      "title": "Evidence: WP-KAD-002 End-to-End World Transition Vertical Slice",
+      "path": "evidence/WP-KAD-002/final-report.md",
+      "type": "evidence",
+      "domain": "KAD_SIMULATION",
+      "epistemic_status": "CONFIRMED",
+      "summary": "Verified end-to-end vertical slice connecting natural language interpretation to C++20 Validator, Resolver, atomic StateDiff, and Causal Journaling.",
+      "retrieval_keywords": ["WP-KAD-002", "Vertical Slice", "World Turn", "CandidateIntent", "StateDiff", "Causal Journal", "run-turn"]
     }
   ]
 }

@@ -40,3 +40,7 @@ jobs:
         run: |
           cd kad-lab
           make test
+
+      - name: Run World Turn Integration Tests
+        run: node --test tools/kad/test/world-turn.test.mjs
+
