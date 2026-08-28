@@ -1,0 +1,3 @@
+# RAG microexperiment design (WP-KAD-005)
+
+Conditions are frozen for a later reproducible run: RAG-0 full packet, RAG-1 deterministic keyword retrieval, RAG-2 notification-triggered selective retrieval with STC packets declaring source/version/scope/dependencies/lifetime/provenance. The evaluator must use a fixed question set and compare correctness, recall/precision, injected tokens, latency, stale-context errors, invalidations, unaffected-rule evaluations, cache reuse, local/remote tokens. This work package implemented the routing seam but did not claim a RAG result; `rag-experiment-results.json` records the honest blocked status.

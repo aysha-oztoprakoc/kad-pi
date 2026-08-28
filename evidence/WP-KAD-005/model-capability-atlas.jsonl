@@ -1,0 +1,2 @@
+{"resource":"kad-local/stheno-local","domain":"world","capabilities_tested":["bounded_structured_classification"],"accepted":true,"capabilities_unknown":["engineering","tool-calling","long-context","embeddings","reranking"],"evidence":"model-task-observations.jsonl"}
+{"resource":"AMDY installed RP models","domain":"world","capabilities_tested":[],"status":"UNKNOWN","note":"inventory only; no quality or canonical-world claims"}

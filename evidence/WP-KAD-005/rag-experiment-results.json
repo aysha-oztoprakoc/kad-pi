@@ -1,0 +1,1 @@
+{"status":"NOT_RUN","reason":"Local provider activation and router GREEN were prioritized; no correctness corpus/evaluator was frozen before execution. No PON+STC RAG improvement claim.","conditions":["RAG-0 FULL","RAG-1 STANDARD","RAG-2 PON+STC"],"metrics":"defined in rag-experiment-design.md"}

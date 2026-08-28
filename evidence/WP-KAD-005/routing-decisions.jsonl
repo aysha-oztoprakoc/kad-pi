@@ -1,0 +1,2 @@
+{"task_id":"WP-KAD-005-local-green","requirement":{"trust_domain":"retrieval","capabilities":["structured-extraction"],"min_context":100},"decision":"local eligible","selected":"kad-local/stheno-local","remote_called":false,"evidence":"tools/kad/pi/local-worker.mjs"}
+{"task_id":"WP-KAD-005-tell-inventory","decision":"DEGRADED","selected":null,"reason":"TELL SSH unavailable","remote_called":false}

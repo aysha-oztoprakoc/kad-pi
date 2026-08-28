@@ -1,0 +1,23 @@
+{
+  "providers": {
+    "kad-local": {
+      "name": "KAD localhost inference",
+      "baseUrl": "http://127.0.0.1:5001/v1",
+      "api": "openai-completions",
+      "apiKey": "local-no-secret",
+      "authHeader": false,
+      "models": [
+        {
+          "id": "stheno-local",
+          "name": "L3-8B-Stheno-v3.2-Q4_K_M",
+          "reasoning": false,
+          "input": ["text"],
+          "cost": {"input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0},
+          "contextWindow": 2048,
+          "maxTokens": 32,
+          "compat": {"supportsStore": false, "supportsDeveloperRole": false, "supportsTemperature": true}
+        }
+      ]
+    }
+  }
+}

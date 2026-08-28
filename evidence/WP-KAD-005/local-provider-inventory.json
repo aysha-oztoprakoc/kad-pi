@@ -1,0 +1,5 @@
+{
+  "providers": [{"id":"kad-local","runtime":"KoboldCpp 1.119","binary":"kad-sillytavern/koboldcpp/koboldcpp-linux-x64-nocuda","endpoint":"http://127.0.0.1:5001/v1","binding":"localhost-only","api":"openai-completions","model":"L3-8B-Stheno-v3.2-Q4_K_M","backend":"Vulkan device 0","status":"LIVE_OBSERVED","health":"/api/v1/model returned model identity"}],
+  "tell": {"status":"TELL_UNAVAILABLE","reason":"SSH authentication failed; no retry or mutation performed"},
+  "network_exposure":"No public binding; endpoint is 127.0.0.1"
+}

@@ -1,0 +1,1 @@
+{"model":"L3-8B-Stheno-v3.2-Q4_K_M","runtime":"KoboldCpp 1.119","backend":"Vulkan device 0","context":2048,"prompt_tokens":34,"completion_tokens":2,"generation_tok_s":22.0,"prompt_tok_s":349.21,"latency_ms":90,"result":"READY","status":"OBSERVED","notes":"single short direct chat-completion; not a comparative benchmark"}

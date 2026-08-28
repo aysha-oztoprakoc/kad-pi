@@ -1,0 +1,8 @@
+{
+  "workpackage": "WP-KAD-005",
+  "observed_at": "2026-08-28",
+  "hosts": [
+    {"host":"AMDY","status":"AVAILABLE","os":"Arch Linux","kernel":"7.1.9-arch1-2","cpu":"AMD Ryzen 7 7700 8-Core Processor","cores":8,"threads":16,"ram_bytes":15032385536,"gpu":"AMD Navi 44 Radeon RX 9060 XT","gpu_observation":"lspci; VRAM not independently reported","vulkan":"functional via KoboldCpp Vulkan device 0","rocm":"UNKNOWN; rocminfo not installed","cuda":"NOT_PRESENT"},
+    {"host":"TELL","status":"UNAVAILABLE","reachability":"SSH permission denied (publickey,password,keyboard-interactive)","hardware":"UNKNOWN","destructive_inventory":"not attempted"}
+  ]
+}
