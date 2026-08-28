@@ -2,7 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { existsSync, mkdirSync, writeFileSync, rmSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync, rmSync, readFileSync, copyFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 
 import {
   loadCatalog,
@@ -346,4 +347,42 @@ test('Librarian Knowledge Base Verification Suite (WP-KAD-LIB-002)', async (t) =
       rmSync(tempDir, { recursive: true, force: true });
     }
   });
+
+  await t.test('10. Portability Regression: validate_prime_directive.py executes independently of cwd', () => {
+    const validatorPath = resolve(ROOT_DIR, 'validate_prime_directive.py');
+
+    // 1. Positive proof: Execute from /tmp (outside repository cwd)
+    const stdout = execFileSync('python3', [validatorPath], {
+      cwd: '/tmp',
+      encoding: 'utf8'
+    });
+    assert.match(stdout, /VALIDATION SUCCESS/, 'Validator must output VALIDATION SUCCESS when run from /tmp');
+    assert.match(stdout, /Token budget check passed/, 'Token budget check must pass when run from /tmp');
+
+    // 2. Negative proof: Missing target fails deterministically with non-zero exit
+    const tempDir = resolve('/tmp/validator-missing-test-' + Date.now());
+    mkdirSync(tempDir, { recursive: true });
+    const isolatedScript = join(tempDir, 'validate_prime_directive.py');
+    copyFileSync(validatorPath, isolatedScript);
+
+    try {
+      assert.throws(
+        () => {
+          execFileSync('python3', [isolatedScript], {
+            cwd: tempDir,
+            encoding: 'utf8',
+            stdio: ['pipe', 'pipe', 'pipe']
+          });
+        },
+        (err) => {
+          assert.equal(err.status, 1, 'Validator must exit with status code 1 when PRIME_DIRECTIVE.md is missing');
+          assert.match(err.stdout || err.stderr || '', /PRIME_DIRECTIVE\.md not found/);
+          return true;
+        }
+      );
+    } finally {
+      rmSync(tempDir, { recursive: true, force: true });
+    }
+  });
 });
+

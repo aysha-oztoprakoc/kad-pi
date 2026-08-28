@@ -1,10 +1,12 @@
 import os
+from pathlib import Path
 import re
 import sys
 
-file_path = "/home/amdy/Work/PRIME_DIRECTIVE.md"
+repo_root = Path(__file__).resolve().parent
+file_path = repo_root / "PRIME_DIRECTIVE.md"
 
-if not os.path.exists(file_path):
+if not file_path.exists():
     print("Error: PRIME_DIRECTIVE.md not found.")
     sys.exit(1)
 
