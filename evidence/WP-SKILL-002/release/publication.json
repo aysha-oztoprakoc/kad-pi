@@ -1,0 +1,14 @@
+{
+  "repository_root": "/home/amdy/Work",
+  "repository_name": "kad-pi",
+  "repository_created": true,
+  "repository_remote": "https://github.com/aysha-oztoprakoc/kad-pi.git",
+  "branch": "main",
+  "local_commit": "2ef04ade9323113e99efa4f290c8f0a7dfeeab7e",
+  "commit_message": "Complete skill ecosystem refactor and canonical capability integration",
+  "github_url": "https://github.com/aysha-oztoprakoc/kad-pi",
+  "github_commit_verified": true,
+  "remote_sha": "2ef04ade9323113e99efa4f290c8f0a7dfeeab7e",
+  "github_publication": "PASS",
+  "published_at": "2026-08-28T09:46:55.961545+00:00"
+}
