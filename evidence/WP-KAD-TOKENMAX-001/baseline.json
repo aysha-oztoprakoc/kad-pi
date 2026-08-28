@@ -1,0 +1,32 @@
+{
+  "workpackage":"WP-KAD-TOKENMAX-001",
+  "head":"f6a16706d1e7335060a80f3e5c1d47e92f075165",
+  "branch":"main",
+  "baseline_commit_message":"feat(kad): implement evidence-gated local swarm",
+  "preexisting_dirty_paths":[
+    {"path":"evidence/WP-KAD-002/causal-journal.jsonl","classification":"preserve-unrelated-dirty","action":"not modified or staged"},
+    {"path":"tools/kad/index.mjs","classification":"preserve-unrelated-dirty","action":"not modified or staged"},
+    {"path":".agents/skills/kad-evidence-gate/","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":".pi/agents/kad-local-extractor.md","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":".pi/agents/kad-local-world.md","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":"evidence/WP-KAD-005/","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":"evidence/WP-KAD-LOCAL-001/","classification":"preserve-prior-workpackage","action":"not modified or staged"},
+    {"path":"evidence/WP-KAD-MATT-001/","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":"tools/kad/DISTILLATION.md","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":"tools/kad/distill-cli.mjs","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":"tools/kad/distillation.mjs","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":"tools/kad/episode.mjs","classification":"preserve-prior-workpackage","action":"read-only dependency"},
+    {"path":"tools/kad/record-distill-000.mjs","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":"tools/kad/seeds/","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":"tools/kad/test/distillation.test.mjs","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":"tools/kad/test/episode.test.mjs","classification":"preserve-prior-workpackage","action":"read-only dependency"},
+    {"path":"tools/kad/test/kad-evidence-gate-skill.test.mjs","classification":"preserve-unrelated-untracked","action":"not modified or staged"},
+    {"path":"tools/kad/test/local-child.test.mjs","classification":"preserve-prior-workpackage","action":"read-only dependency"}
+  ],
+  "accepted_inputs":["WP-KAD-SWARM-001","WP-KAD-005","WP-KAD-LOCAL-001","WP-KAD-OMP-001/002","PRIME_DIRECTIVE.md"],
+  "economic_baseline":{"controller_calls":2,"remote_input_tokens":1086,"remote_output_tokens":93,"local_worker_calls":1,"deterministic_calls":1,"packet_bytes":2076,"repairs":0,"wall_ms":80596,"quota":"UNKNOWN","price":"UNKNOWN"},
+  "spend_policy":{"payg_authorized":false,"allow_paid_fallback":false,"allow_auto_topup":false,"max_incremental_cost":0},
+  "live_quota_observation":"UNAVAILABLE; no provider quota endpoint was used or fabricated",
+  "world_endpoint":{"endpoint":"http://127.0.0.1:5001/v1","identity":"koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M","ownership":"EXTERNAL"},
+  "retrieval_endpoint":{"endpoint":"http://127.0.0.1:5002/v1","identity":"Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M","ownership":"STC-owned only while explicitly activated"}
+}

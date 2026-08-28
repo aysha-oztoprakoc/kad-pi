@@ -1,0 +1,30 @@
+{
+  "episode_id": "episode-SWARM-REAL-001-economic-negative",
+  "schema_version": "1",
+  "source": "WP-KAD-SWARM-001 real bounded failure",
+  "task_id": "SWARM-REAL-001",
+  "route": {
+    "selected_lane": "approved-remote-controller",
+    "watermark": "UNKNOWN",
+    "quota_units": null,
+    "reason_codes": [
+      "ELIGIBLE",
+      "WATERMARK_UNKNOWN"
+    ]
+  },
+  "outcome": "DEGRADED",
+  "validation": {
+    "result": "FAIL",
+    "errors": [
+      "output is not a JSON object",
+      "task_id mismatch",
+      "required arrays are missing"
+    ]
+  },
+  "repairs": 1,
+  "local_invocations": 2,
+  "training_eligibility": {
+    "eligible": false,
+    "reason": "negative runtime evidence only"
+  }
+}

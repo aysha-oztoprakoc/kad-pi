@@ -1,0 +1,8 @@
+{
+  "policy_version":"tokenmax-economic-v1",
+  "execution_order":["DETERMINISTIC_EXISTING","DETERMINISTIC_NEW","LOCAL_TINY_SPECIALIST","LOCAL_SPECIALIST","LOCAL_GENERAL","REMOTE_FREE","REMOTE_SUBSCRIPTION","REMOTE_STRONG","HUMAN"],
+  "quota":{"green_min_fraction":0.5,"yellow_min_fraction":0.25,"expiring_window_ms":86400000,"stale_ttl_ms":86400000},
+  "spend":{"payg_authorized":false,"allow_paid_fallback":false,"allow_auto_topup":false,"max_incremental_cost":0},
+  "exception":"EXPIRING subscription can outrank ordinary remote-free only for already-useful queued work with healthy long-window headroom; never outranks deterministic/local.",
+  "provider_policy":"provider/model is transport metadata; routing consumes normalized lane state"
+}

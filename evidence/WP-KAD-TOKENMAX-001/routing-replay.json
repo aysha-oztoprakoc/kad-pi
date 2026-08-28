@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "same_frozen_input": true,
+  "results": [
+    {
+      "status": "ROUTED",
+      "selected_lane": "tool",
+      "selected_execution_class": "DETERMINISTIC_EXISTING",
+      "reason_codes": [
+        "ELIGIBLE",
+        "EXECUTION_CLASS_DETERMINISTIC_EXISTING",
+        "WATERMARK_UNKNOWN",
+        "QUOTA_UNKNOWN"
+      ],
+      "rejections": [],
+      "candidates": [
+        "tool",
+        "remote"
+      ],
+      "observation": {
+        "lane_id": "tool",
+        "watermark": "UNKNOWN",
+        "quota_unit": null,
+        "remaining": null,
+        "capacity": null,
+        "confidence": "UNKNOWN"
+      }
+    },
+    {
+      "status": "ROUTED",
+      "selected_lane": "free",
+      "selected_execution_class": "REMOTE_FREE",
+      "reason_codes": [
+        "ELIGIBLE",
+        "EXECUTION_CLASS_REMOTE_FREE",
+        "WATERMARK_UNKNOWN",
+        "QUOTA_UNKNOWN"
+      ],
+      "rejections": [],
+      "candidates": [
+        "free",
+        "subscription"
+      ],
+      "observation": {
+        "lane_id": "free",
+        "watermark": "UNKNOWN",
+        "quota_unit": null,
+        "remaining": null,
+        "capacity": null,
+        "confidence": "UNKNOWN"
+      }
+    },
+    {
+      "status": "ROUTED",
+      "selected_lane": "expiring",
+      "selected_execution_class": "REMOTE_SUBSCRIPTION",
+      "reason_codes": [
+        "ELIGIBLE",
+        "EXECUTION_CLASS_REMOTE_SUBSCRIPTION",
+        "WATERMARK_EXPIRING",
+        "USE_IT_OR_LOSE_IT_QUOTA"
+      ],
+      "rejections": [],
+      "candidates": [
+        "expiring",
+        "free"
+      ],
+      "observation": {
+        "lane_id": "expiring",
+        "watermark": "EXPIRING",
+        "quota_unit": "percent",
+        "remaining": 80,
+        "capacity": 100,
+        "confidence": "OBSERVED"
+      }
+    },
+    {
+      "status": "DEGRADED",
+      "selected_lane": null,
+      "reason_codes": [
+        "NO_ELIGIBLE_LANE"
+      ],
+      "rejections": [
+        {
+          "lane_id": "payg",
+          "reason": "PAYG_NOT_AUTHORIZED"
+        }
+      ],
+      "candidates": [],
+      "observation": {
+        "watermark": "UNKNOWN",
+        "quota_unit": null
+      }
+    },
+    {
+      "status": "DEGRADED",
+      "selected_lane": null,
+      "reason_codes": [
+        "NO_ELIGIBLE_LANE"
+      ],
+      "rejections": [
+        {
+          "lane_id": "stheno",
+          "reason": "TRUST_DOMAIN_MISMATCH"
+        }
+      ],
+      "candidates": [],
+      "observation": {
+        "watermark": "UNKNOWN",
+        "quota_unit": null
+      }
+    },
+    {
+      "status": "ROUTED",
+      "selected_lane": "unknown",
+      "selected_execution_class": "REMOTE_FREE",
+      "reason_codes": [
+        "ELIGIBLE",
+        "EXECUTION_CLASS_REMOTE_FREE",
+        "WATERMARK_UNKNOWN",
+        "QUOTA_UNKNOWN"
+      ],
+      "rejections": [],
+      "candidates": [
+        "unknown"
+      ],
+      "observation": {
+        "lane_id": "unknown",
+        "watermark": "UNKNOWN",
+        "quota_unit": "tokens",
+        "remaining": null,
+        "capacity": null,
+        "confidence": "UNKNOWN"
+      }
+    }
+  ]
+}

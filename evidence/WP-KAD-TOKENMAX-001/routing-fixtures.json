@@ -1,0 +1,146 @@
+{
+  "fixture_status": "SYNTHETIC_TEST_DATA",
+  "now": 1787875200000,
+  "requirement": {
+    "trust_domain": "retrieval",
+    "capabilities": [
+      "structured-extraction"
+    ],
+    "min_context": 100
+  },
+  "cases": [
+    {
+      "id": "deterministic-first",
+      "lanes": [
+        {
+          "lane_id": "remote",
+          "execution_class": "REMOTE_FREE",
+          "trust_domain": "retrieval",
+          "capabilities": [
+            "structured-extraction"
+          ],
+          "context_window": 2048
+        },
+        {
+          "lane_id": "tool",
+          "execution_class": "DETERMINISTIC_EXISTING",
+          "deterministic": true,
+          "trust_domain": "retrieval",
+          "capabilities": [
+            "structured-extraction"
+          ],
+          "context_window": 2048
+        }
+      ]
+    },
+    {
+      "id": "free-over-subscription",
+      "lanes": [
+        {
+          "lane_id": "free",
+          "execution_class": "REMOTE_FREE",
+          "billing_class": "FREE_RECURRING",
+          "trust_domain": "retrieval",
+          "capabilities": [
+            "structured-extraction"
+          ],
+          "context_window": 2048
+        },
+        {
+          "lane_id": "subscription",
+          "execution_class": "REMOTE_SUBSCRIPTION",
+          "billing_class": "SUBSCRIPTION",
+          "trust_domain": "retrieval",
+          "capabilities": [
+            "structured-extraction"
+          ],
+          "context_window": 2048
+        }
+      ]
+    },
+    {
+      "id": "expiring-useful",
+      "queued_work": true,
+      "lanes": [
+        {
+          "lane_id": "free",
+          "execution_class": "REMOTE_FREE",
+          "trust_domain": "retrieval",
+          "capabilities": [
+            "structured-extraction"
+          ],
+          "context_window": 2048
+        },
+        {
+          "lane_id": "expiring",
+          "execution_class": "REMOTE_SUBSCRIPTION",
+          "trust_domain": "retrieval",
+          "capabilities": [
+            "structured-extraction"
+          ],
+          "quota": {
+            "status": "KNOWN",
+            "unit": "percent",
+            "remaining": 80,
+            "capacity": 100,
+            "reset_at": 1787878800000,
+            "observed_at": 1787875200000,
+            "source": "synthetic"
+          },
+          "context_window": 2048
+        }
+      ]
+    },
+    {
+      "id": "payg-closed",
+      "lanes": [
+        {
+          "lane_id": "payg",
+          "execution_class": "REMOTE_STRONG",
+          "payg": true,
+          "marginal_cost": 1,
+          "trust_domain": "retrieval",
+          "capabilities": [
+            "structured-extraction"
+          ],
+          "context_window": 2048
+        }
+      ]
+    },
+    {
+      "id": "world-excluded",
+      "lanes": [
+        {
+          "lane_id": "stheno",
+          "provider": "kad-local-world",
+          "execution_class": "LOCAL_GENERAL",
+          "trust_domain": "world",
+          "capabilities": [
+            "structured-extraction"
+          ],
+          "context_window": 2048
+        }
+      ]
+    },
+    {
+      "id": "unknown-quota",
+      "lanes": [
+        {
+          "lane_id": "unknown",
+          "execution_class": "REMOTE_FREE",
+          "trust_domain": "retrieval",
+          "capabilities": [
+            "structured-extraction"
+          ],
+          "quota": {
+            "status": "UNKNOWN",
+            "unit": "tokens",
+            "remaining": null,
+            "capacity": null
+          },
+          "context_window": 2048
+        }
+      ]
+    }
+  ]
+}

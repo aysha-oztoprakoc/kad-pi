@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://kad-pi.local/schemas/quota-state-1.json",
+  "title":"Normalized quota observation",
+  "type":"object",
+  "required":["status","unit","remaining","capacity","reset_at","observed_at","source","confidence","watermark"],
+  "properties":{"status":{"enum":["KNOWN","UNKNOWN","STALE"]},"unit":{"type":["string","null"]},"remaining":{"type":["number","null"]},"capacity":{"type":["number","null"]},"reset_at":{"type":["string","number","null"]},"observed_at":{"type":["number","null"]},"source":{"type":["string","null"]},"confidence":{"enum":["OBSERVED","CALCULATED","DECLARED","UNKNOWN"]},"watermark":{"enum":["GREEN","YELLOW","RED","EXPIRING","UNKNOWN","STALE"]}},
+  "additionalProperties":false
+}

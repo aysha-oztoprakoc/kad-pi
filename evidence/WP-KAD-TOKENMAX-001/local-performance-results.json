@@ -1,0 +1,9 @@
+{
+  "benchmark":"bounded Qwen retrieval packet; same source/question/output contract",
+  "model":"Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
+  "cpu_configuration":{"flags":["--usecpu","--threads","4","--contextsize","2048","--batchsize","128"],"startup_ms":"UNKNOWN","prompt_eval_ms":"UNKNOWN","generation_ms":"UNKNOWN","total_ms":63217,"input_tokens":1313,"output_tokens":175,"validator":"REJECTED: fenced JSON/rule key","source":"WP-KAD-SWARM-001 real local worker observation"},
+  "gpu_vulkan_configuration":{"status":"NOT_RUN","startup_ms":null,"prompt_eval_ms":null,"generation_ms":null,"total_ms":null,"tokens_per_second":null,"reason":"Stheno externally controls the existing GPU-bound WORLD process; no deterministic VRAM observation was available and starting a competing Vulkan Qwen process would violate ownership/coexistence safety"},
+  "hardware_observation":{"vram":"UNKNOWN","vulkaninfo":"UNAVAILABLE","rocminfo":"UNAVAILABLE"},
+  "accepted_configuration":"CPU-only Qwen, port 5002, context 2048, batch 128, four threads",
+  "conclusion":"Retain CPU configuration. No CPU-vs-GPU speedup claim is made."
+}

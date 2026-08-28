@@ -19,7 +19,8 @@ export function normalizeWorkRequest(input = {}) {
     question: input.question,
     source_paths: [...new Set(input.source_paths)],
     max_facts: Math.max(1, Math.min(10, input.max_facts ?? 3)),
-    min_context: input.min_context ?? 0
+    min_context: input.min_context ?? 0,
+    budget: { max_input_tokens: input.budget?.max_input_tokens ?? null, max_output_tokens: input.budget?.max_output_tokens ?? null, max_model_calls: input.budget?.max_model_calls ?? 1, max_repairs: input.budget?.max_repairs ?? 1, deadline_ms: input.budget?.deadline_ms ?? null }
   };
 }
 
@@ -40,7 +41,8 @@ export function compileTaskPacket(requestInput, sources) {
     sources: selected,
     question: request.question,
     output_schema: { task_id: 'string', facts: 'array', unknowns: 'array', conflicts: 'array' },
-    limits: { max_facts: request.max_facts, allowed_source_paths: selected.map(source => source.path) }
+    limits: { max_facts: request.max_facts, allowed_source_paths: selected.map(source => source.path) },
+    budget: request.budget
   };
   return { ...packet, packet_sha256: hash(canonicalize(packet)) };
 }
@@ -141,7 +143,8 @@ export async function executeSwarm({ request: requestInput, sources, controller,
   telemetry.local_output_tokens = workerResult.telemetry?.output_tokens ?? null;
   let validation = validateWorkerResult(workerResult?.output ?? workerResult, packet);
   let cleanup = workerResult?.dispose;
-  if (!validation.accepted && max_repairs > 0) {
+  const repairBudget = Math.min(max_repairs, request.budget.max_repairs);
+  if (!validation.accepted && repairBudget > 0) {
     telemetry.repairs = 1;
     events.push(event('repair.requested', request.task_id, { reason: 'deterministic-validation-failed', bounded_to: 1 }));
     workerResult = await worker.execute({ ...packet, repair: { previous_errors: validation.errors } });

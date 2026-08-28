@@ -1,0 +1,12 @@
+{"status":"OBSERVED","claim":"Baseline accepted swarm used two controller calls, 1086 remote input tokens, 93 output tokens, one local call, one deterministic call, 2076 packet bytes, and 80596ms wall time.","evidence":"baseline.json; WP-KAD-SWARM-001/real-swarm-run.json"}
+{"status":"CALCULATED","claim":"Deterministic execution-class ordering selects deterministic before local and remote lanes after eligibility filtering.","evidence":"routing-results.jsonl; economic-policy.json"}
+{"status":"CALCULATED","claim":"A healthy expiring subscription lane may outrank ordinary remote-free only for useful queued work.","evidence":"routing-results.jsonl fixture expiring-useful; economic-policy.json"}
+{"status":"CALCULATED","claim":"PAYG is rejected when payg_authorized, paid fallback, and auto-topup policy are disabled.","evidence":"routing-results.jsonl fixture payg-closed; economic-policy.json"}
+{"status":"CALCULATED","claim":"Quota watermark transitions are GREEN/YELLOW/RED/EXPIRING/UNKNOWN/STALE and stale observations do not become fresh capacity.","evidence":"quota-state.mjs; economic-router.test.mjs T5-T8"}
+{"status":"OBSERVED","claim":"Definitive accepted real swarm remains accepted with controller consumption and Qwen retrieval validation.","evidence":"WP-KAD-SWARM-001/real-swarm-run.json"}
+{"status":"OBSERVED","claim":"Qwen CPU bounded worker observation took 63217ms and was rejected for malformed structured output; accepted run retained the CPU configuration.","evidence":"local-performance-results.json"}
+{"status":"UNKNOWN","claim":"Live provider quota balances, allowance reset state, generalized GPU speed, and future token savings remain unknown.","evidence":"baseline.json; local-performance-results.json"}
+{"status":"UNKNOWN","claim":"Quota units are heterogeneous and no cross-provider token equivalence is asserted.","evidence":"quota-schema.json; economic-router.mjs"}
+{"status":"REJECTED","claim":"Provider identity, available quota, or subscription existence alone grants authority or capability.","evidence":"economic-router.test.mjs T2/T9/T15/T16"}
+{"status":"REJECTED","claim":"A GPU/Vulkan speedup claim is supported without a safe same-fixture measurement.","evidence":"local-performance-results.json"}
+{"status":"PROMOTED","claim":"The normalized economic control-plane interface and raw multidimensional telemetry are retained; no automatic model training or promotion is enabled.","evidence":"economic-router.mjs; telemetry.mjs; episode.json"}

@@ -6,12 +6,13 @@ import { inspectPreflight } from './omp-orchestration-preflight.mjs';
 import { CapabilityRegistry } from './local-router.mjs';
 import { runLocalPiChild } from './pi/local-child.mjs';
 import { canonicalSwarmReceipt, executeSwarm, selectControllerLane } from './swarm.mjs';
+import { routeEconomically, createEconomicPolicy } from './economic-router.mjs';
 
 const root = resolve(process.cwd());
 const evidence = join(root, 'evidence', 'WP-KAD-SWARM-001');
 mkdirSync(evidence, { recursive: true });
 const taskId = 'SWARM-REAL-001';
-const request = { task_id: taskId, role: 'local_retrieval', trust_domain: 'retrieval', capability: 'repository-fact-finding', question: 'What exact rule does eligibility apply to a resource?', source_paths: ['tools/kad/local-router.mjs'], max_facts: 1 };
+const request = { task_id: taskId, role: 'local_retrieval', trust_domain: 'retrieval', capability: 'repository-fact-finding', question: 'What exact rule does eligibility apply to a resource?', source_paths: ['tools/kad/local-router.mjs'], max_facts: 1, budget: { max_input_tokens: 2048, max_output_tokens: 192, max_model_calls: 1, max_repairs: 1, deadline_ms: 180000 } };
 
 function parseJson(text) {
   const value = String(text ?? '').replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim();
@@ -48,8 +49,12 @@ const registry = new CapabilityRegistry();
 registry.register({ id: 'kad-local-retrieval-amdy', local: true, deterministic: false, priority: 10, context_window: 2048, trust_domain: 'retrieval', capabilities: ['repository-fact-finding', 'structured-extraction'], available: true, provider: qwen.provider, model_identity: qwen.observed_identity, ownership: qwen.ownership });
 registry.register({ id: 'kad-local-world-external', local: true, priority: 0, context_window: 4096, trust_domain: 'world', capabilities: ['world-generation'], available: true, provider: 'kad-local-world', ownership: 'EXTERNAL' });
 const controllerPolicy = JSON.parse(readFileSync(join(root, '.omp', 'controllers.json'), 'utf8'));
+const economicControllerRoute = routeEconomically({ requirement: { trust_domain: 'control', capabilities: ['decomposition'] }, lanes: controllerPolicy.lanes, policy: createEconomicPolicy(), now: Date.now(), queued_work: true });
+if (economicControllerRoute.status !== 'ROUTED') throw new Error(`economic controller route unavailable: ${economicControllerRoute.reason_codes.join(',')}`);
+const selectedControllerDefinition = controllerPolicy.lanes.find(lane => lane.lane_id === economicControllerRoute.selected_lane || lane.id === economicControllerRoute.selected_lane);
 const controller = {
-  lanes: controllerPolicy.lanes,
+  lanes: [selectedControllerDefinition],
+  economic_route: economicControllerRoute,
   execute: async normalized => {
     const manifest = { task_id: normalized.task_id, role: normalized.role, capability: normalized.capability, trust_domain: normalized.trust_domain, source_paths: normalized.source_paths, max_facts: normalized.max_facts, question: normalized.question };
     const selectedController = selectControllerLane(controller.lanes).selected_lane;

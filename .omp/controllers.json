@@ -8,6 +8,13 @@
       "approved": true,
       "payg": false,
       "billing_class": "SUBSCRIPTION_BACKED",
+      "execution_class": "REMOTE_SUBSCRIPTION",
+      "trust_domain": "control",
+      "capabilities": ["decomposition", "result-consumption"],
+      "context_window": 272000,
+      "marginal_cost": 0,
+      "payg": false,
+      "quota": {"status":"UNKNOWN","unit":"tokens","remaining":null,"capacity":null,"confidence":"UNKNOWN","source":"not-observed"},
       "approval_scope": "current-workpackage",
       "billing_evidence": "Pi auth check ready; no price or quota claim"
     }
