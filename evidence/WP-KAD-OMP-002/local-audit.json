@@ -1,0 +1,10 @@
+{
+  "task_id": "LOCAL-AUDIT-01",
+  "result": "DEFERRED",
+  "failure_class": "LOCAL_RETRIEVAL_BLOCKED_BY_EXTERNAL_RESOURCE",
+  "reason": "The only live endpoint remained externally controlled Stheno; a second request would be a blind retry and could not prove Qwen execution.",
+  "scope": ["tools/kad/omp-orchestration-preflight.mjs", "tools/kad/test/omp-orchestration-preflight.test.mjs", ".omp/agents/kad-local-extractor.md"],
+  "deterministic_checks_used": ["node --check", "node --test tools/kad/test/omp-orchestration-preflight.test.mjs", "git diff --check"],
+  "unknowns": ["local factual post-change audit"],
+  "authority": "No local worker acceptance claimed."
+}

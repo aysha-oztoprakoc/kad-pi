@@ -1,0 +1,16 @@
+{
+  "workpackage": "WP-KAD-OMP-002",
+  "orchestrator": "LUNA_HIGH",
+  "planned": {
+    "task_id": "LOCAL-RECON-01",
+    "agent": "kad-local-extractor",
+    "role": "@local_retrieval",
+    "task_class": "RETRIEVAL",
+    "scope": ["tools/kad/local-inference-capability.mjs", "tools/kad/local-router.mjs", "tools/kad/test/local-router.test.mjs", "evidence/WP-KAD-005/final-report.md"],
+    "output_schema": { "task_id": "string", "facts": [], "unknowns": [], "conflicts": [] },
+    "authority": "READ_ONLY_FACTS"
+  },
+  "gate": "Qwen endpoint identity must match the configured local_retrieval resource before execution",
+  "observed_gate": "BLOCKED: endpoint reports Stheno while configured Qwen resource is not loaded; process ownership is EXTERNAL",
+  "action": "no retry and no process mutation"
+}

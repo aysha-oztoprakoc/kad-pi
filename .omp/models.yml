@@ -9,3 +9,11 @@ providers:
       - id: kad-local-s13
         name: Stheno v3.2 (KAD WORLD-only)
         contextWindow: 4096
+  kad-local-qwen:
+    baseUrl: http://127.0.0.1:5001/v1
+    api: openai-completions
+    auth: none
+    models:
+      - id: qwen-local
+        name: Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M (KAD retrieval-only)
+        contextWindow: 4096

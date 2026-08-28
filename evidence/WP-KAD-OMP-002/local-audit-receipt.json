@@ -1,0 +1,19 @@
+{
+  "task_id": "LOCAL-AUDIT-01",
+  "parent_workpackage": "WP-KAD-OMP-002",
+  "orchestrator": "LUNA_HIGH",
+  "agent": "kad-local-extractor",
+  "role": "@local_retrieval",
+  "provider": "kad-local-qwen",
+  "model": "qwen-local",
+  "task_class": "FACTUAL_POST_CHANGE_AUDIT",
+  "authority": "READ_ONLY_FACTS",
+  "result": "REJECTED",
+  "verifier": "preflight identity/ownership gate",
+  "failure_class": "LOCAL_RETRIEVAL_BLOCKED_BY_EXTERNAL_RESOURCE",
+  "requests": "NOT_MEASURED",
+  "input_tokens": "NOT_MEASURED",
+  "output_tokens": "NOT_MEASURED",
+  "duration_ms": "NOT_MEASURED",
+  "repair_cycles": 0
+}

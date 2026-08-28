@@ -1,0 +1,39 @@
+{
+  "workpackage": "WP-KAD-OMP-002",
+  "branch": "main",
+  "head": "48f2a0c1b0bb7b7e007263c992ffa684e60f93ce",
+  "origin_main": "27ed3c67016e330b658aa9be2b049b4020912109",
+  "preexisting_dirty": [
+    "evidence/WP-KAD-002/causal-journal.jsonl",
+    "tools/kad/index.mjs",
+    "tools/kad/local-router.mjs",
+    "tools/kad/test/local-router.test.mjs",
+    ".agents/skills/kad-evidence-gate/",
+    ".pi/agents/kad-local-extractor.md",
+    ".pi/agents/kad-local-world.md",
+    "evidence/WP-KAD-005/",
+    "evidence/WP-KAD-MATT-001/",
+    "tools/kad/DISTILLATION.md",
+    "tools/kad/distill-cli.mjs",
+    "tools/kad/distillation.mjs",
+    "tools/kad/episode.mjs",
+    "tools/kad/pi/local-child.mjs",
+    "tools/kad/record-distill-000.mjs",
+    "tools/kad/seeds/",
+    "tools/kad/test/distillation.test.mjs",
+    "tools/kad/test/episode.test.mjs",
+    "tools/kad/test/kad-evidence-gate-skill.test.mjs",
+    "tools/kad/test/local-child.test.mjs"
+  ],
+  "omp": { "version": "18.0.9", "binary": ".tools/oh-my-pi/v18.0.9", "manifest": "evidence/WP-KAD-OMP-001/install-manifest.json" },
+  "pi": { "version": "0.84.3", "provider": "openai-codex", "model": "gpt-5.6-luna", "reasoning": "high", "harness": "pi" },
+  "local_inference": {
+    "endpoint": "http://127.0.0.1:5001/v1",
+    "loaded_identity": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M",
+    "process": "manual kad-sillytavern KoboldCpp",
+    "ownership": "EXTERNAL",
+    "qwen_artifact": "kad-sillytavern/models/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf",
+    "qwen_runtime": "NOT_ACTIVE"
+  },
+  "tell": "TELL_UNAVAILABLE"
+}

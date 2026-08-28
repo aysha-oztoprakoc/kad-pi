@@ -1,0 +1,7 @@
+RED — 2026-08-28
+
+- `tools/kad/omp-orchestration-preflight.mjs` did not exist; its import failed with ERR_MODULE_NOT_FOUND.
+- Before this WP, `.omp/agents/kad-local-extractor.md` and the `@local_retrieval` role binding were absent.
+- After the thin role declaration was added, OMP's model catalog resolved the configured Qwen selector, but the only live localhost endpoint reported `koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M`.
+- The Stheno KoboldCpp process is manual/external. It was not stopped or replaced. `LOCAL_RETRIEVAL_BLOCKED_BY_EXTERNAL_RESOURCE`.
+- The attempted OMP request was terminated by its bounded deadline; no Qwen execution or accepted local recon is claimed.

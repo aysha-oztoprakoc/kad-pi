@@ -1,0 +1,6 @@
+{"task":"repository baseline and authority inspection","class":"DETERMINISTIC","executor":"LUNA_HIGH + shell/read","why":"state and authority must be observed exactly","accepted":true,"escalated":false}
+{"task":"Qwen lifecycle/routing recon","class":"LOCAL_DELEGATED","executor":"kad-local-extractor / @local_retrieval","why":"bounded fact extraction is eligible when the resource identity is valid","accepted":false,"escalated":true,"escalation_reason":"CAPABILITY_MISMATCH: endpoint served external Stheno"}
+{"task":"preflight contract tests","class":"DETERMINISTIC","executor":"node test runner","why":"exact readiness behavior is code-verifiable","accepted":true,"escalated":false}
+{"task":"preflight implementation and integration","class":"LUNA_MUTATION","executor":"LUNA_HIGH","why":"local worker has no mutation authority and lane was unavailable","accepted":true,"escalated":false}
+{"task":"post-change factual audit","class":"LOCAL_DELEGATED","executor":"kad-local-extractor / @local_retrieval","why":"bounded changed-file inspection","accepted":false,"escalated":false,"reason":"not attempted; unchanged external resource would make retry blind"}
+{"task":"final architecture and acceptance review","class":"LUNA_ORCHESTRATION","executor":"LUNA_HIGH","why":"ambiguity, claims, and verdict require orchestrator authority","accepted":true,"escalated":false}

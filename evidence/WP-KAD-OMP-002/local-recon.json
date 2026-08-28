@@ -1,0 +1,14 @@
+{
+  "task_id": "LOCAL-RECON-01",
+  "result": "REJECTED",
+  "failure_class": "CAPABILITY_MISMATCH",
+  "configured_provider": "kad-local-qwen",
+  "configured_model": "qwen-local",
+  "observed_provider": "koboldcpp",
+  "observed_model": "L3-8B-Stheno-v3.2-Q4_K_M",
+  "ownership": "EXTERNAL",
+  "facts": [],
+  "unknowns": ["Qwen retrieval execution and output quality in this run"],
+  "verifier": "curl /api/v1/model plus process/ownership observation",
+  "note": "No engineering prompt was sent to Stheno; no retry or model switch was performed."
+}
