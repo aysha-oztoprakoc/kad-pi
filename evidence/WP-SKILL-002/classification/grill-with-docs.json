@@ -1,0 +1,15 @@
+{
+  "skill": "grill-with-docs",
+  "taxonomy": "Workflow",
+  "disposition": "MIGRATED",
+  "behavior_to_preserve": "Relentless interview delegating to grilling and domain-modeling with CONTEXT.md and ADR side-effects.",
+  "dependencies": [
+    "grilling",
+    "domain-modeling"
+  ],
+  "capabilities": [
+    "ask_user"
+  ],
+  "harness_coupling": "REMOVED (migrated ask_question / ask_user_question strings to ask_user capability declaration)",
+  "confidence": 1.0
+}

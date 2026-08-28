@@ -1,0 +1,14 @@
+{
+  "skill": "to-spec",
+  "taxonomy": "Workflow",
+  "disposition": "COMPOSED",
+  "behavior_to_preserve": "Synthesizes conversation into spec without interviewing, published to tracker.",
+  "dependencies": [
+    "prototype",
+    "setup-matt-pocock-skills",
+    "triage"
+  ],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

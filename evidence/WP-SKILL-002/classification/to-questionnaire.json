@@ -1,0 +1,10 @@
+{
+  "skill": "to-questionnaire",
+  "taxonomy": "Workflow",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Produces asynchronous questionnaire for external stakeholder input.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

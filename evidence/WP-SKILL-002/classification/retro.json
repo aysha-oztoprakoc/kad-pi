@@ -1,0 +1,12 @@
+{
+  "skill": "retro",
+  "taxonomy": "Specialized Workflow",
+  "disposition": "COMPOSED",
+  "behavior_to_preserve": "Retrospective interview after shipping, updating AGENTS.md / rules.",
+  "dependencies": [
+    "writing-for-agents"
+  ],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

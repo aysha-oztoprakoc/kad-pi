@@ -1,0 +1,8 @@
+Running RED/GREEN validator on /home/amdy/Work/.agents/skills/grilling/SKILL.md
+=== R1: Harness Purity ===
+R1: PASS - No harness specific strings found.
+=== R2: Capability Declaration ===
+R2: PASS - Capability explicitly declared.
+=== R3: Behavior Anchors ===
+R3: PASS - All anchors found.
+OVERALL VERDICT: GREEN

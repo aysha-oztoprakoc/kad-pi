@@ -1,0 +1,13 @@
+{
+  "skill": "implement",
+  "taxonomy": "Workflow",
+  "disposition": "COMPOSED",
+  "behavior_to_preserve": "Drives TDD for implementation and runs code-review before committing.",
+  "dependencies": [
+    "tdd",
+    "code-review"
+  ],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

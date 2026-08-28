@@ -1,0 +1,10 @@
+{
+  "skill": "prototype",
+  "taxonomy": "Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Builds throwaway prototype for logic/UI on prototype/<name> branch.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

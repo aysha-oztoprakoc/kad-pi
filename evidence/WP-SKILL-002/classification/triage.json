@@ -1,0 +1,16 @@
+{
+  "skill": "triage",
+  "taxonomy": "Workflow",
+  "disposition": "COMPOSED",
+  "behavior_to_preserve": "Moves issue tracker issues through triage roles, using grilling and domain-modeling.",
+  "dependencies": [
+    "domain-modeling",
+    "grilling",
+    "setup-matt-pocock-skills"
+  ],
+  "capabilities": [
+    "ask_user"
+  ],
+  "harness_coupling": "NONE (delegates interaction to grilling)",
+  "confidence": 1.0
+}

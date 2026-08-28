@@ -1,0 +1,10 @@
+{
+  "skill": "domain-modeling",
+  "taxonomy": "Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Ubiquitous language maintenance in CONTEXT.md and ADR creation/updating.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

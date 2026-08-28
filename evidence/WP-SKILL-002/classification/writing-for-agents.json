@@ -1,0 +1,10 @@
+{
+  "skill": "writing-for-agents",
+  "taxonomy": "Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Foundational principles for writing agent documentation and skill mechanics.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

@@ -1,0 +1,16 @@
+{
+  "skill": "improve-codebase-architecture",
+  "taxonomy": "Workflow",
+  "disposition": "COMPOSED",
+  "behavior_to_preserve": "Surfaces deepening opportunities, generates HTML report, and drills down via grilling and domain-modeling.",
+  "dependencies": [
+    "codebase-design",
+    "domain-modeling",
+    "grilling"
+  ],
+  "capabilities": [
+    "ask_user"
+  ],
+  "harness_coupling": "NONE (delegates interaction to grilling)",
+  "confidence": 1.0
+}

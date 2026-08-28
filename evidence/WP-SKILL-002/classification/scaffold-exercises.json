@@ -1,0 +1,10 @@
+{
+  "skill": "scaffold-exercises",
+  "taxonomy": "Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Scaffolds course exercise directory structures.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

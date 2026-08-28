@@ -1,0 +1,88 @@
+{
+  "batch_id": "BATCH_03",
+  "skills": [
+    "tdd",
+    "setup-ts-deep-modules",
+    "wait-what",
+    "writing-fragments",
+    "writing-shape",
+    "retro"
+  ],
+  "status": "APPLIED",
+  "footprint_before": {
+    "tdd": {
+      "sha256": "cb01f66bebfaa25fa1f88e6b7e769cd9fd9f35b1120b8563749820738814c927",
+      "tokens": 745,
+      "bytes": 3549,
+      "lines": 38
+    },
+    "setup-ts-deep-modules": {
+      "sha256": "29acca66ac99d4532e2a6f0370d8125d7cba1e87c9ac66573203c75189d3e6c7",
+      "tokens": 1480,
+      "bytes": 7546,
+      "lines": 102
+    },
+    "wait-what": {
+      "sha256": "e3f44e3ccbc0e7b62f20ba70b295fc9c9f4aa3f96c77168faee1c71bacbf4215",
+      "tokens": 80,
+      "bytes": 394,
+      "lines": 7
+    },
+    "writing-fragments": {
+      "sha256": "298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
+      "tokens": 793,
+      "bytes": 3558,
+      "lines": 79
+    },
+    "writing-shape": {
+      "sha256": "f5e6c57bdd85178ace4a260c92f46da6b64ddee18215b461d875739c68976f72",
+      "tokens": 1368,
+      "bytes": 5922,
+      "lines": 79
+    },
+    "retro": {
+      "sha256": "264f3330f1e2382af89610ed048ba0ed6d08883eb69f596a8f1df3f1e1a4c6a1",
+      "tokens": 706,
+      "bytes": 3388,
+      "lines": 44
+    }
+  },
+  "footprint_after": {
+    "tdd": {
+      "sha256": "5c1902f0c747725fe2781b68d678f4cebe075bad2ebd4a977a82d5f8d08d00bf",
+      "tokens": 749,
+      "bytes": 3583,
+      "lines": 41
+    },
+    "setup-ts-deep-modules": {
+      "sha256": "f52b67a1a9cccd206af53c93ef59eab354984ccb375f1aa3a7b1fc7319d4b61c",
+      "tokens": 1484,
+      "bytes": 7582,
+      "lines": 106
+    },
+    "wait-what": {
+      "sha256": "e3bdaffb47dfc6c2f804038ff3a69747ec3c3d855a3316841323b51220c58283",
+      "tokens": 84,
+      "bytes": 426,
+      "lines": 9
+    },
+    "writing-fragments": {
+      "sha256": "ac413a3f6409579a53a78d7fecaa1d3954f16ab3c2780e5698baf02f0ad3ac83",
+      "tokens": 801,
+      "bytes": 3608,
+      "lines": 83
+    },
+    "writing-shape": {
+      "sha256": "17dd7b2cb27897a8dbcb0033627eb6356d630dc1b4508d3ca83a9948375fb31e",
+      "tokens": 1376,
+      "bytes": 5972,
+      "lines": 83
+    },
+    "retro": {
+      "sha256": "5d151ca1c954bde1b88ad74d789d2fb486dc657bc0e967351422b36392a0519f",
+      "tokens": 710,
+      "bytes": 3421,
+      "lines": 46
+    }
+  }
+}

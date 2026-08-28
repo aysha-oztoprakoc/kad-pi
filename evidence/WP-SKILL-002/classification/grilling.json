@@ -1,0 +1,12 @@
+{
+  "skill": "grilling",
+  "taxonomy": "Discipline",
+  "disposition": "MIGRATED",
+  "behavior_to_preserve": "Design tree interview in rounds, asking the frontier, recommended first option, subagent fact-finding, ask_user invocation.",
+  "dependencies": [],
+  "capabilities": [
+    "ask_user"
+  ],
+  "harness_coupling": "NONE (verified pure in WP-SKILL-001C)",
+  "confidence": 1.0
+}

@@ -1,0 +1,7 @@
+[improve-codebase-architecture] STATUS: GREEN
+[loop-me] STATUS: GREEN
+[to-spec] STATUS: GREEN
+[to-tickets] STATUS: GREEN
+[triage] STATUS: GREEN
+[implement] STATUS: GREEN
+[implement-spec] STATUS: GREEN

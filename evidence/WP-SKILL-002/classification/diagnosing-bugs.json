@@ -1,0 +1,10 @@
+{
+  "skill": "diagnosing-bugs",
+  "taxonomy": "Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Minimal reproduction loop, regression test generation, and post-mortem analysis.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

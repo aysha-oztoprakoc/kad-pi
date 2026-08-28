@@ -1,0 +1,6 @@
+[tdd] STATUS: GREEN
+[setup-ts-deep-modules] STATUS: GREEN
+[wait-what] STATUS: GREEN
+[writing-fragments] STATUS: GREEN
+[writing-shape] STATUS: GREEN
+[retro] STATUS: GREEN

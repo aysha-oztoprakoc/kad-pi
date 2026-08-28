@@ -1,0 +1,305 @@
+{
+  "inventory_count": 51,
+  "manifest_count": 51,
+  "inventory_equals_manifest": true,
+  "unique_skill_ids": 51,
+  "manifest_hash_mismatches": 0,
+  "source_artifact_changes": 0,
+  "source_pre_hash": "47dd8d48fe72393fd060aa0bceafb1c84264fdbc2ba098175cfae2ce221445ad",
+  "source_post_hash": "47dd8d48fe72393fd060aa0bceafb1c84264fdbc2ba098175cfae2ce221445ad",
+  "hashes_equal": true,
+  "evidence_boundary_respected": true,
+  "scope_note": "Work/Project-Local currently proves the shared /home/amdy/Work/.agents/skills root. It does not prove that every nested project's own skill directory has been enumerated.",
+  "artifacts": [
+    {
+      "relative_path": "inventory.jsonl",
+      "sha256": "1833a4d533c0f449a51fa392ad7deb70353d563a8e6e4842bbc193d8c4ee5771",
+      "bytes": 63880
+    },
+    {
+      "relative_path": "baseline-inventory.md",
+      "sha256": "eac2d2a52cf747fa59b5b4228eeb95b62199ec57ccb5c1b02bf418492c79423d",
+      "bytes": 12699
+    },
+    {
+      "relative_path": "environment.json",
+      "sha256": "a9fc3a8a3d61a995535ca3c27af139fca2361f79396e42e9dfb6f713c96fff29",
+      "bytes": 426
+    },
+    {
+      "relative_path": "roots.json",
+      "sha256": "160ebf7c8b0a6007b2014556125e13ece20937d1820f1bd99fedb37c4141d324",
+      "bytes": 1580
+    },
+    {
+      "relative_path": "source-pre.tsv",
+      "sha256": "47dd8d48fe72393fd060aa0bceafb1c84264fdbc2ba098175cfae2ce221445ad",
+      "bytes": 27754
+    },
+    {
+      "relative_path": "source-post.tsv",
+      "sha256": "47dd8d48fe72393fd060aa0bceafb1c84264fdbc2ba098175cfae2ce221445ad",
+      "bytes": 27754
+    },
+    {
+      "relative_path": "verification.json",
+      "sha256": "378c75972017e94a4dea15cef57922e822c85b5e24589e6c7da55dece6de6ce2",
+      "bytes": 275
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_ask-matt.tsv",
+      "sha256": "1e9754a7f0a94979614817247ba5fa4dd2172ab8c59424152e82412012142d29",
+      "bytes": 257
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_code-review.tsv",
+      "sha256": "5973063983f22dd9e5581755702bbe973bb8b72987bd68fac85e717509e7f8d6",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_codebase-design.tsv",
+      "sha256": "a1c8e7e1fc80542ea5ed7d160499d707515be7a9fbdd39495e847190f0388d4a",
+      "bytes": 338
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_diagnosing-bugs.tsv",
+      "sha256": "534ba95222c6fe0877b30a6875a84cd9ee33cffeb0d05805b6fb94c4286ccf5f",
+      "bytes": 266
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_domain-modeling.tsv",
+      "sha256": "a3423bb2d6f31ce8ab641b6b2930ef12f39c5ee9d05de9a65a52c810d9044fb0",
+      "bytes": 338
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_grill-with-docs.tsv",
+      "sha256": "6f3a78320736327598bc4475d65f12b5289ad3d7d35e72be3df6ff83d9cf935d",
+      "bytes": 165
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_implement.tsv",
+      "sha256": "8ceacb4eda7535d1390f57c391ef189a5550f5af1950394f8628a6aebe9d14d8",
+      "bytes": 165
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_improve-codebase-architecture.tsv",
+      "sha256": "139330033687246803c2315b8df6e01754373e9743bfaa9e73b26955056931c9",
+      "bytes": 251
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_prototype.tsv",
+      "sha256": "640991062ac5e199f76aad919e6acc8a0443b8ff1010068dd6c3730d33f7d185",
+      "bytes": 321
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_research.tsv",
+      "sha256": "47eb56dbe3e763339dc7b3faf3b88776e894802f639b24d6b7cdae1fd1cd85c2",
+      "bytes": 164
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_resolving-merge-conflicts.tsv",
+      "sha256": "4c55d78c26e27323f7d3364e3bb8bc416fa1bf442948ce686374ea3f50e8a5a3",
+      "bytes": 165
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_setup-matt-pocock-skills.tsv",
+      "sha256": "60777806f49d55b5a6045188ac568ed9eca48a414bccd79f9941b787756956b4",
+      "bytes": 614
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_tdd.tsv",
+      "sha256": "8046e76fb162c5673dd0a2b0aa4a73c982c302550641cf3a8cb93174b1e0343c",
+      "bytes": 325
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_to-spec.tsv",
+      "sha256": "35f729b4a7d84541b707e1e61898ba648b07f7d140fc62faad24ffae2568846a",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_to-tickets.tsv",
+      "sha256": "35aea6239325a10e90dc4f6c70e25896f7555fb24747adf6174ac35eb7d571b5",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_triage.tsv",
+      "sha256": "4c239361964fa571c658627f70e7bf3c008529fff34c29b57f510bb0e4a70717",
+      "bytes": 337
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_wayfinder.tsv",
+      "sha256": "667254e3c06fcc59570fce04ddf712145c1ff3529651d7cbc621239323a2880e",
+      "bytes": 167
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_wizard.tsv",
+      "sha256": "88f0a129b2a40cd42760317f41289410b24b3e5b6f70c6f957b6939f95c81718",
+      "bytes": 247
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_claude-handoff.tsv",
+      "sha256": "8d6b49c15a7586575af60bc6434c383dc513e2d54d86f59dac04f4c298348fbc",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_implement-spec.tsv",
+      "sha256": "d972266860804d51608fcba214d072ca6970724d0f69f877d20e71ff9130a0ba",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_loop-me.tsv",
+      "sha256": "b5bf2443025242727a616b977a6ac57e0ebf67f97b2fdff91b98a5cc690d6bcc",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_retro.tsv",
+      "sha256": "d4cde07e98b1a15285160c4bb4bac146ad5bb790b523ba614b82385d96ba5580",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_setup-ts-deep-modules.tsv",
+      "sha256": "74e7fcb3b9451d32706591cf3dc11890e35f31b78a1ae6ecc894f024210860cc",
+      "bytes": 266
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_writing-beats.tsv",
+      "sha256": "d8a081263d9c9e3ad9998aa8cf563643fe39397a70d9025f24128e720e47fb50",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_writing-fragments.tsv",
+      "sha256": "95bf47f811571898da652a66b3ebd4659d481db8574117e99893fa7cc1599421",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_writing-shape.tsv",
+      "sha256": "753df50b41c249a8501f0981a0172e9f665cc9fbf3201d36b9ad7ddedb5f04b1",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_git-guardrails-claude-code.tsv",
+      "sha256": "b84f8b7a0a6638529798b0fb7ffd0a439e6137485c354d3560b6502ab40536ac",
+      "bytes": 266
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_migrate-to-shoehorn.tsv",
+      "sha256": "4d8a815ea4b9bf4e016d449d08aa31ccf60f5ce3250b3dec799541adb34208f0",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_scaffold-exercises.tsv",
+      "sha256": "ff5f9bfe66adfcbe9345a4d6603873856db90043b7a235696ff17fe990c57619",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_setup-pre-commit.tsv",
+      "sha256": "75b4c0f1cb30fe5733b7bdb3cdac5a36020b24ff41cca4edec715ff065923888",
+      "bytes": 165
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_grill-me.tsv",
+      "sha256": "7f36c9f050ad21d074d856c75db86c09965abdf77f2724fbcb081b961efd6a0f",
+      "bytes": 165
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_grilling.tsv",
+      "sha256": "b265cdd2a9e85b6eab304d4173c06300bb1d594681ddfdd87df0dc1e8060876e",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_handoff.tsv",
+      "sha256": "062586c3dc163525eb345e6bd45dac9fd586e0233fd62096bbb0dff540789b27",
+      "bytes": 165
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_teach.tsv",
+      "sha256": "a8992deb9cde90be684736e3235ff8e1f0474286149371e7b183277a0268b01d",
+      "bytes": 529
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_to-questionnaire.tsv",
+      "sha256": "38debd156e1a9df854052de072618a41e7aee5f1f55c1acf571097aef0e8c5a3",
+      "bytes": 166
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_wait-what.tsv",
+      "sha256": "04af6cc8e8e892fc0d15bc07777f87fc8944d99f764247312d0162f860aa7de2",
+      "bytes": 165
+    },
+    {
+      "relative_path": "manifests/Work_Project-Local_writing-for-agents.tsv",
+      "sha256": "a9177adb22bfb60661520bb7d53d7c6ece61d33096624a38fb312b9ce413ca44",
+      "bytes": 256
+    },
+    {
+      "relative_path": "manifests/Antigravity_agy-customizations.tsv",
+      "sha256": "a187f5e113439fbbb4c69303d1189af58c8fb9e242a762179e5e42954c800780",
+      "bytes": 599
+    },
+    {
+      "relative_path": "manifests/Antigravity_antigravity_guide.tsv",
+      "sha256": "76fb9c212d4174239b778617e278785166d8855f90925bcc226f3c6422cd8386",
+      "bytes": 430
+    },
+    {
+      "relative_path": "manifests/Antigravity_generative_ui.tsv",
+      "sha256": "f8eeb4a00b6cc1c8204612e2f9204178b351c6672913fec1602ddf6b234518fa",
+      "bytes": 78
+    },
+    {
+      "relative_path": "manifests/Antigravity_migrate-workflows.tsv",
+      "sha256": "415cf0a5104e1a07e219f7cc498619c64c05838790b6904d98a069487ccad9a5",
+      "bytes": 78
+    },
+    {
+      "relative_path": "manifests/Antigravity_permissioned-github.tsv",
+      "sha256": "633faf1b5715fc2a83b105f426d02701280aa1d420c6016b15db720aee8b52e9",
+      "bytes": 78
+    },
+    {
+      "relative_path": "manifests/Gemini_Plugins_google-antigravity-sdk.tsv",
+      "sha256": "7bfe204fb412d78a2c510f2a16b68018576f3ccf82e9217c518b52d37937cfb6",
+      "bytes": 2766
+    },
+    {
+      "relative_path": "manifests/Gemini_Plugins_gemini-api-dev.tsv",
+      "sha256": "f108ef52ee7286c7e36bda7de028e552c6afd15aada958569525602521bfc3de",
+      "bytes": 78
+    },
+    {
+      "relative_path": "manifests/Gemini_Plugins_gemini-interactions-api.tsv",
+      "sha256": "0dd60a0faffa091e94c206fe6fb36dd9a306a374f62e3be7e72bb5a1d7759d48",
+      "bytes": 173
+    },
+    {
+      "relative_path": "manifests/Gemini_Plugins_gemini-live-api-dev.tsv",
+      "sha256": "8167aead78d28b7defeea3f2d75cb8532903bd3bf12653d143b5cba84b416dc0",
+      "bytes": 79
+    },
+    {
+      "relative_path": "manifests/Gemini_Plugins_gemini-omni-flash-api.tsv",
+      "sha256": "6cdf11e647b8839d55a0a94c9bbe761f9e9c98f439ec4fd4ac92d5e9c0bb4eae",
+      "bytes": 475
+    },
+    {
+      "relative_path": "manifests/Gemini_Plugins_chrome-extensions.tsv",
+      "sha256": "2cf722b0a698888854ac86faaacf4481623d20bc95334631b68fb133172d3386",
+      "bytes": 2350
+    },
+    {
+      "relative_path": "manifests/Gemini_Plugins_modern-web-guidance.tsv",
+      "sha256": "e990693ebb91e698780b5e70bcc75c5afe19551c0a733cc17f0f5baff780c14e",
+      "bytes": 78
+    },
+    {
+      "relative_path": "manifests/Omarchy_diagnose-crash.tsv",
+      "sha256": "454c2095ecfdf62037241ce65abcdc8a03520f06a92f339565987a8cc1e15b1f",
+      "bytes": 161
+    },
+    {
+      "relative_path": "manifests/Omarchy_omarchy.tsv",
+      "sha256": "46e9f113b04d2a0953b50f9f472ce7ba731ccbcc9db979ee9690da1a4b31b182",
+      "bytes": 569
+    }
+  ]
+}

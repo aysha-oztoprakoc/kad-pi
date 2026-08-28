@@ -1,0 +1,10 @@
+{
+  "skill": "resolving-merge-conflicts",
+  "taxonomy": "Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Resolves merge/rebase conflicts by intent traced to primary sources.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

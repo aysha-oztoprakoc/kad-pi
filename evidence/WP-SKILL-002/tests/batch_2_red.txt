@@ -1,0 +1,28 @@
+[improve-codebase-architecture] STATUS: RED
+  FAIL: Missing dependency: codebase-design
+  FAIL: Missing dependency: domain-modeling
+  FAIL: Missing dependency: grilling
+  FAIL: Missing capability: ask_user
+[loop-me] STATUS: RED
+  FAIL: Missing dependency: grilling
+  FAIL: Missing capability: ask_user
+[to-spec] STATUS: RED
+  FAIL: Missing dependency: prototype
+  FAIL: Missing dependency: setup-matt-pocock-skills
+  FAIL: Missing dependency: triage
+[to-tickets] STATUS: RED
+  FAIL: Missing dependency: prototype
+  FAIL: Missing dependency: setup-matt-pocock-skills
+  FAIL: Missing dependency: triage
+[triage] STATUS: RED
+  FAIL: Missing dependency: domain-modeling
+  FAIL: Missing dependency: grilling
+  FAIL: Missing dependency: setup-matt-pocock-skills
+  FAIL: Missing capability: ask_user
+[implement] STATUS: RED
+  FAIL: Missing dependency: tdd
+  FAIL: Missing dependency: code-review
+[implement-spec] STATUS: RED
+  FAIL: Missing dependency: research
+  FAIL: Missing dependency: implement
+  FAIL: Missing dependency: code-review

@@ -1,0 +1,34 @@
+{
+  "workpackage": "WP-SKILL-002",
+  "status": "PASS",
+  "vertical_slice": "PASS",
+  "skills_total": 37,
+  "disposition_summary": {
+    "MIGRATED": 4,
+    "COMPOSED": 13,
+    "KEEP_AS_IS": 20,
+    "ADAPTER_EXTRACTED": 0,
+    "DETERMINISTIC_REPLACEMENT": 0,
+    "DEPRECATED": 0,
+    "DEFERRED_EVIDENCE_BACKED": 0,
+    "ROLLED_BACK": 0
+  },
+  "semantic_harness_coupling_remaining": 0,
+  "unintended_mutations": 0,
+  "behavior_regressions": 0,
+  "aggregate_context_before": 53428,
+  "aggregate_context_after": 53501,
+  "context_delta": 73,
+  "percentage_delta": "0.14%",
+  "automatic_resolver": "ABSENT",
+  "canonical_capabilities": [
+    "ask_user"
+  ],
+  "canonical_adapters": [
+    "ask_user -> Antigravity"
+  ],
+  "test_suites_passed": 8,
+  "test_suites_total": 8,
+  "secret_scan_clean": true,
+  "mutated_files_count": 16
+}

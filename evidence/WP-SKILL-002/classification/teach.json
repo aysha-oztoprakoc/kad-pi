@@ -1,0 +1,10 @@
+{
+  "skill": "teach",
+  "taxonomy": "Specialized Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Multi-session learning progression with glossary, learning record, missions.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

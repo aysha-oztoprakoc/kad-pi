@@ -1,0 +1,15 @@
+{
+  "skill": "implement-spec",
+  "taxonomy": "Workflow",
+  "disposition": "COMPOSED",
+  "behavior_to_preserve": "Multi-phase implementation of specs driving research, implement, tdd, and code-review.",
+  "dependencies": [
+    "research",
+    "implement",
+    "tdd",
+    "code-review"
+  ],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

@@ -1,0 +1,12 @@
+{
+  "skill": "wait-what",
+  "taxonomy": "Specialized Discipline",
+  "disposition": "COMPOSED",
+  "behavior_to_preserve": "Re-pitches last message in Simplified Technical English using CONTEXT.md domain language.",
+  "dependencies": [
+    "domain-modeling"
+  ],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

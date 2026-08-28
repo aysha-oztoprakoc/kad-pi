@@ -1,0 +1,52 @@
+[
+  {
+    "namespace": "Work/Project-Local",
+    "status": "FOUND",
+    "paths_checked": [
+      "/home/amdy/Work/.agents/skills"
+    ],
+    "evidence": "FILESYSTEM_EVIDENCE: Path /home/amdy/Work/.agents/skills exists"
+  },
+  {
+    "namespace": "Antigravity",
+    "status": "FOUND",
+    "paths_checked": [
+      "/home/amdy/.gemini/antigravity-cli/builtin/skills"
+    ],
+    "evidence": "FILESYSTEM_EVIDENCE: Path /home/amdy/.gemini/antigravity-cli/builtin/skills exists"
+  },
+  {
+    "namespace": "Gemini Plugins",
+    "status": "FOUND",
+    "paths_checked": [
+      "/home/amdy/.gemini/config/plugins"
+    ],
+    "evidence": "FILESYSTEM_EVIDENCE: Path /home/amdy/.gemini/config/plugins exists"
+  },
+  {
+    "namespace": "Omarchy",
+    "status": "FOUND",
+    "paths_checked": [
+      "/usr/share/omarchy/default/agents/skills/"
+    ],
+    "evidence": "FILESYSTEM_EVIDENCE: Path /usr/share/omarchy/default/agents/skills/ exists"
+  },
+  {
+    "namespace": "Pi",
+    "status": "UNKNOWN",
+    "paths_checked": [],
+    "evidence": "UNKNOWN: Only environment variables and executable presence were checked; no configuration files were inspected."
+  },
+  {
+    "namespace": "OpenCode",
+    "status": "UNKNOWN",
+    "paths_checked": [],
+    "evidence": "UNKNOWN: Only environment variables and executable presence were checked; no configuration files were inspected."
+  },
+  {
+    "namespace": "DSH",
+    "status": "UNKNOWN",
+    "paths_checked": [],
+    "evidence": "UNKNOWN: Only environment variables and executable presence were checked; no configuration files were inspected."
+  }
+]

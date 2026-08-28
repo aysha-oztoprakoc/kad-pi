@@ -1,0 +1,10 @@
+{
+  "skill": "git-guardrails-claude-code",
+  "taxonomy": "Deterministic Tool / Setup Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Configures Claude Code PreToolUse hook to intercept dangerous git commands.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE (domain content about Claude Code)",
+  "confidence": 1.0
+}

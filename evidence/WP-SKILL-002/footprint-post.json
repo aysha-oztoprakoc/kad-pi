@@ -1,0 +1,730 @@
+{
+  ".agents/adapters/antigravity/ask_user.md": {
+    "bytes": 1429,
+    "lines": 22,
+    "words": 188,
+    "estimated_tokens": 250,
+    "sha256": "abf4aadbe8d28f81dfc5443eb9d89806b3c065d6e8522a03c8f894aec9cb27ab"
+  },
+  ".agents/capabilities/ask_user/CAPABILITY.md": {
+    "bytes": 1837,
+    "lines": 35,
+    "words": 256,
+    "estimated_tokens": 341,
+    "sha256": "e61712ae232e98129332382fdb3991f6636b79d68dad3dd806647c14a42b24ec"
+  },
+  ".agents/capabilities/ask_user/contract_test.mjs": {
+    "bytes": 5621,
+    "lines": 144,
+    "words": 567,
+    "estimated_tokens": 756,
+    "sha256": "b9bef2c8c3401c16b0bc7f2eba97e4716da11411acfec08e07e20ef294c9838f"
+  },
+  ".agents/skills/ask-matt/PHASE-BOUNDARIES.md": {
+    "bytes": 4249,
+    "lines": 55,
+    "words": 699,
+    "estimated_tokens": 932,
+    "sha256": "a8aa20158609ef39e2b308b6ba0660c91066838d07a867202e63a7744a88a3ed"
+  },
+  ".agents/skills/ask-matt/SKILL.md": {
+    "bytes": 11417,
+    "lines": 90,
+    "words": 1769,
+    "estimated_tokens": 2358,
+    "sha256": "b25d86fb36b1d294eeead5d7db529f86135f9671f2afcd607579a63bb2213769"
+  },
+  ".agents/skills/ask-matt/agents/openai.yaml": {
+    "bytes": 137,
+    "lines": 5,
+    "words": 14,
+    "estimated_tokens": 18,
+    "sha256": "bdffbc5a0a99ed1b6ef3253d251d755fd18162b9845972e380007f844b09b05c"
+  },
+  ".agents/skills/claude-handoff/SKILL.md": {
+    "bytes": 1301,
+    "lines": 18,
+    "words": 199,
+    "estimated_tokens": 265,
+    "sha256": "6738e8b7c7899ea0038fb7a5c859ca1b90c7b1eb40123dcdbe94c51b5b119f12"
+  },
+  ".agents/skills/claude-handoff/agents/openai.yaml": {
+    "bytes": 141,
+    "lines": 5,
+    "words": 14,
+    "estimated_tokens": 18,
+    "sha256": "2308a672978864633286fb9f0792b08657e501426b3f7883fc418d5d2eac5eb0"
+  },
+  ".agents/skills/code-review/SKILL.md": {
+    "bytes": 6589,
+    "lines": 87,
+    "words": 1064,
+    "estimated_tokens": 1418,
+    "sha256": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50"
+  },
+  ".agents/skills/code-review/agents/openai.yaml": {
+    "bytes": 100,
+    "lines": 3,
+    "words": 12,
+    "estimated_tokens": 16,
+    "sha256": "8229ca854e11dc8e6aef2131ee03f31fb1561cf905fab9ccc325180cf3331352"
+  },
+  ".agents/skills/codebase-design/DEEPENING.md": {
+    "bytes": 2553,
+    "lines": 37,
+    "words": 385,
+    "estimated_tokens": 513,
+    "sha256": "f3dd099ce99289bd213914d8ee3e2429b78309c3957ca4583f7659551b1d53c1"
+  },
+  ".agents/skills/codebase-design/DESIGN-IT-TWICE.md": {
+    "bytes": 2664,
+    "lines": 44,
+    "words": 393,
+    "estimated_tokens": 524,
+    "sha256": "8e740bf98446dbd4dfdc132ac4346d9a7eedaf93de6a495889171cf7f99f16bd"
+  },
+  ".agents/skills/codebase-design/SKILL.md": {
+    "bytes": 6446,
+    "lines": 114,
+    "words": 851,
+    "estimated_tokens": 1134,
+    "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+  },
+  ".agents/skills/codebase-design/agents/openai.yaml": {
+    "bytes": 102,
+    "lines": 3,
+    "words": 9,
+    "estimated_tokens": 12,
+    "sha256": "edebc9e4fcfe102114012575eaa9600b9b5fd08c311664f389c36e7bc717740f"
+  },
+  ".agents/skills/diagnosing-bugs/SKILL.md": {
+    "bytes": 8529,
+    "lines": 138,
+    "words": 1402,
+    "estimated_tokens": 1869,
+    "sha256": "77f3cf31bc99b2f49af943222526531fcc9fc41d047626d3640e875e85af3e84"
+  },
+  ".agents/skills/diagnosing-bugs/agents/openai.yaml": {
+    "bytes": 103,
+    "lines": 3,
+    "words": 10,
+    "estimated_tokens": 13,
+    "sha256": "3e430dbe4334a87597488c060cb3dc3786bb00c9182877d6f5ec41f62490e90b"
+  },
+  ".agents/skills/diagnosing-bugs/scripts/hitl-loop.template.sh": {
+    "bytes": 1316,
+    "lines": 44,
+    "words": 196,
+    "estimated_tokens": 261,
+    "sha256": "35103539fc36873eea36074769ad454f9379d6fc8b2dc0e26ce987fd3bfe5503"
+  },
+  ".agents/skills/domain-modeling/ADR-FORMAT.md": {
+    "bytes": 2733,
+    "lines": 47,
+    "words": 432,
+    "estimated_tokens": 576,
+    "sha256": "944c92aa790e8fbdc9199640b170979abb8a34ba8d0fe18c2a01a63bce140ca0"
+  },
+  ".agents/skills/domain-modeling/CONTEXT-FORMAT.md": {
+    "bytes": 2290,
+    "lines": 60,
+    "words": 335,
+    "estimated_tokens": 446,
+    "sha256": "17ab16ce783e4d2801ee52fd9acdf550cbf44de65ae76797a93943bbedf22a13"
+  },
+  ".agents/skills/domain-modeling/SKILL.md": {
+    "bytes": 3331,
+    "lines": 74,
+    "words": 493,
+    "estimated_tokens": 657,
+    "sha256": "327a2b50620e2fd70abc6893cd6965e76b20f8d0adb0dc2c8d5eb3845efb643e"
+  },
+  ".agents/skills/domain-modeling/agents/openai.yaml": {
+    "bytes": 101,
+    "lines": 3,
+    "words": 11,
+    "estimated_tokens": 14,
+    "sha256": "f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b"
+  },
+  ".agents/skills/git-guardrails-claude-code/SKILL.md": {
+    "bytes": 2313,
+    "lines": 95,
+    "words": 302,
+    "estimated_tokens": 402,
+    "sha256": "69b291d655626a01602b998a1836fcb93c058ede68dfafddfd71e87f17074764"
+  },
+  ".agents/skills/git-guardrails-claude-code/agents/openai.yaml": {
+    "bytes": 112,
+    "lines": 3,
+    "words": 12,
+    "estimated_tokens": 16,
+    "sha256": "d53cd783fc0ac208dec9a4c267989284384785aab6422dccdaed42f9e40243ec"
+  },
+  ".agents/skills/git-guardrails-claude-code/scripts/block-dangerous-git.sh": {
+    "bytes": 507,
+    "lines": 25,
+    "words": 69,
+    "estimated_tokens": 92,
+    "sha256": "234922b83c0a1737ee7300806c21ac0f389b07aaeb65c2d71ccedafbc5e1ea4b"
+  },
+  ".agents/skills/grill-me/SKILL.md": {
+    "bytes": 590,
+    "lines": 16,
+    "words": 80,
+    "estimated_tokens": 106,
+    "sha256": "07ef07e77dd6291a5fd82995f4796892e77d568085361684ee56added8c541ec"
+  },
+  ".agents/skills/grill-me/agents/openai.yaml": {
+    "bytes": 137,
+    "lines": 5,
+    "words": 13,
+    "estimated_tokens": 17,
+    "sha256": "c061e39c3e0f9d865fb1b97556d485704af2a8a58f4b8221a8917a5c2074a32b"
+  },
+  ".agents/skills/grill-with-docs/SKILL.md": {
+    "bytes": 783,
+    "lines": 17,
+    "words": 105,
+    "estimated_tokens": 140,
+    "sha256": "bc4d9b100697001674d415e99b1686e7fb6e11b6c8ca533238dd59c334f90d0a"
+  },
+  ".agents/skills/grill-with-docs/agents/openai.yaml": {
+    "bytes": 145,
+    "lines": 5,
+    "words": 16,
+    "estimated_tokens": 21,
+    "sha256": "94cd0ab161fb468a836349f5ed482ba58ce8e709a05c57ce533d739dbd35cca9"
+  },
+  ".agents/skills/grilling/SKILL.md": {
+    "bytes": 2419,
+    "lines": 19,
+    "words": 383,
+    "estimated_tokens": 510,
+    "sha256": "0b833c9a9094a658eef80fdaf55d7a0c57c27ddad0a288d69f3ed6862eced25b"
+  },
+  ".agents/skills/grilling/agents/openai.yaml": {
+    "bytes": 113,
+    "lines": 3,
+    "words": 13,
+    "estimated_tokens": 17,
+    "sha256": "1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b"
+  },
+  ".agents/skills/handoff/SKILL.md": {
+    "bytes": 894,
+    "lines": 16,
+    "words": 138,
+    "estimated_tokens": 184,
+    "sha256": "7c62de979fdc7ac32fb5ddb2146156c917f80ee070d30fadc9d40343c4b6ed25"
+  },
+  ".agents/skills/handoff/agents/openai.yaml": {
+    "bytes": 141,
+    "lines": 5,
+    "words": 13,
+    "estimated_tokens": 17,
+    "sha256": "5c479fd562c691851690e8b18c8501045bef0943c10743d636b2fae26add1d28"
+  },
+  ".agents/skills/implement-spec/SKILL.md": {
+    "bytes": 2092,
+    "lines": 39,
+    "words": 322,
+    "estimated_tokens": 429,
+    "sha256": "c4352f75582d71e6d5dda1f7c111b97acf7e2ec4f6d2674e0e28c9b1a49884a5"
+  },
+  ".agents/skills/implement-spec/agents/openai.yaml": {
+    "bytes": 143,
+    "lines": 5,
+    "words": 15,
+    "estimated_tokens": 20,
+    "sha256": "d457ae78ff282b8798380b0c2e393c9798bc2bf5ee7dfe9ca31607714c6cd7d3"
+  },
+  ".agents/skills/implement/SKILL.md": {
+    "bytes": 465,
+    "lines": 18,
+    "words": 75,
+    "estimated_tokens": 100,
+    "sha256": "7a624d0a999f6f0d2d45c3a430ed026094827fb55330b06826efda7ca8984c49"
+  },
+  ".agents/skills/implement/agents/openai.yaml": {
+    "bytes": 139,
+    "lines": 5,
+    "words": 14,
+    "estimated_tokens": 18,
+    "sha256": "8970a8596ade0c28ab427f41a4ea242d6bdf6186c59ebf55e1238dbecaab79dc"
+  },
+  ".agents/skills/improve-codebase-architecture/HTML-REPORT.md": {
+    "bytes": 6641,
+    "lines": 123,
+    "words": 924,
+    "estimated_tokens": 1232,
+    "sha256": "581e8bb5a521e46bbda8ca7e19b15948bed882187108092ebb90c62513b77528"
+  },
+  ".agents/skills/improve-codebase-architecture/SKILL.md": {
+    "bytes": 6081,
+    "lines": 78,
+    "words": 909,
+    "estimated_tokens": 1212,
+    "sha256": "103ee6e1b83bb4e2221f9337ec463daafd0d7f16a1511b92ebffe67099b46927"
+  },
+  ".agents/skills/improve-codebase-architecture/agents/openai.yaml": {
+    "bytes": 166,
+    "lines": 5,
+    "words": 14,
+    "estimated_tokens": 18,
+    "sha256": "c8cb20f68ebf0edb4e497bc11ae5fcaa196004e661cd189015b04f4109ced7f1"
+  },
+  ".agents/skills/loop-me/SKILL.md": {
+    "bytes": 2570,
+    "lines": 36,
+    "words": 421,
+    "estimated_tokens": 561,
+    "sha256": "e4dece52e7a9b0c6b8d95fc1891c8b9f45077d2568239bbf91b6634dd820b343"
+  },
+  ".agents/skills/loop-me/agents/openai.yaml": {
+    "bytes": 140,
+    "lines": 5,
+    "words": 15,
+    "estimated_tokens": 20,
+    "sha256": "b66fa10079957051be6a812f45e55b67ac394b71d5ba88349962b4c9205802c3"
+  },
+  ".agents/skills/migrate-to-shoehorn/SKILL.md": {
+    "bytes": 2795,
+    "lines": 118,
+    "words": 415,
+    "estimated_tokens": 553,
+    "sha256": "de4da4c11d924fac79c924b2ee3d2db4a5cb98386eb490a599119463d036ae72"
+  },
+  ".agents/skills/migrate-to-shoehorn/agents/openai.yaml": {
+    "bytes": 110,
+    "lines": 3,
+    "words": 11,
+    "estimated_tokens": 14,
+    "sha256": "395c2db852e66a199f1cd07f7ed92d66cb6f0787460c5475926f1a5e778b699d"
+  },
+  ".agents/skills/prototype/LOGIC.md": {
+    "bytes": 6036,
+    "lines": 67,
+    "words": 1025,
+    "estimated_tokens": 1366,
+    "sha256": "f61c7d249e786a79ef289018901c348271e1798dd0b0bc5607b5c6f4d4a01ab9"
+  },
+  ".agents/skills/prototype/SKILL.md": {
+    "bytes": 2931,
+    "lines": 26,
+    "words": 487,
+    "estimated_tokens": 649,
+    "sha256": "714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3"
+  },
+  ".agents/skills/prototype/UI.md": {
+    "bytes": 6913,
+    "lines": 112,
+    "words": 1118,
+    "estimated_tokens": 1490,
+    "sha256": "723211e878acbc7b6ff09755263f3295cde724ba902ff0064da41eed51d45ad3"
+  },
+  ".agents/skills/prototype/agents/openai.yaml": {
+    "bytes": 100,
+    "lines": 3,
+    "words": 10,
+    "estimated_tokens": 13,
+    "sha256": "5af65e43ab41a350436697b81e27b7f848d36782043b73c322bb2c9fa9cc55dc"
+  },
+  ".agents/skills/research/SKILL.md": {
+    "bytes": 794,
+    "lines": 12,
+    "words": 131,
+    "estimated_tokens": 174,
+    "sha256": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4"
+  },
+  ".agents/skills/research/agents/openai.yaml": {
+    "bytes": 94,
+    "lines": 3,
+    "words": 8,
+    "estimated_tokens": 10,
+    "sha256": "9b4c470d63221c1f68f22df70b83e2f12401b317babe0d1b7b5f24a974474d0d"
+  },
+  ".agents/skills/resolving-merge-conflicts/SKILL.md": {
+    "bytes": 918,
+    "lines": 14,
+    "words": 133,
+    "estimated_tokens": 177,
+    "sha256": "9d8114f8ef0b31f535a265fc05c364bd8cf2e2895a830040e06c22acb11f54b0"
+  },
+  ".agents/skills/resolving-merge-conflicts/agents/openai.yaml": {
+    "bytes": 113,
+    "lines": 3,
+    "words": 11,
+    "estimated_tokens": 14,
+    "sha256": "a1f4f96838f2ed6282eb28abbbf99029cb8fadce552baf53da90a025b8bffddf"
+  },
+  ".agents/skills/retro/SKILL.md": {
+    "bytes": 3421,
+    "lines": 46,
+    "words": 533,
+    "estimated_tokens": 710,
+    "sha256": "5d151ca1c954bde1b88ad74d789d2fb486dc657bc0e967351422b36392a0519f"
+  },
+  ".agents/skills/retro/agents/openai.yaml": {
+    "bytes": 146,
+    "lines": 5,
+    "words": 14,
+    "estimated_tokens": 18,
+    "sha256": "cb6fb9d7e6b4be5975f41f6def1dd00a1255bad5d9b02696b124c924a8b8745c"
+  },
+  ".agents/skills/scaffold-exercises/SKILL.md": {
+    "bytes": 3589,
+    "lines": 106,
+    "words": 442,
+    "estimated_tokens": 589,
+    "sha256": "75f5c9d771606fb9762f16522efc954df11c324f87148d8ff069bce166257de9"
+  },
+  ".agents/skills/scaffold-exercises/agents/openai.yaml": {
+    "bytes": 108,
+    "lines": 3,
+    "words": 9,
+    "estimated_tokens": 12,
+    "sha256": "525b33913340bea7947ad2de17f2a7c5fb94be543345fe80ae753b9a44ba601d"
+  },
+  ".agents/skills/setup-matt-pocock-skills/SKILL.md": {
+    "bytes": 6841,
+    "lines": 116,
+    "words": 1008,
+    "estimated_tokens": 1344,
+    "sha256": "2bcd89e97777cdb705914424e39c97d5db524c8eb4eafac8120778a07774f0ec"
+  },
+  ".agents/skills/setup-matt-pocock-skills/agents/openai.yaml": {
+    "bytes": 152,
+    "lines": 5,
+    "words": 16,
+    "estimated_tokens": 21,
+    "sha256": "9527de0110541c45712319025155aeab8dc7d77c6ed6e5e83271bab1851ab939"
+  },
+  ".agents/skills/setup-matt-pocock-skills/domain.md": {
+    "bytes": 2033,
+    "lines": 51,
+    "words": 266,
+    "estimated_tokens": 354,
+    "sha256": "edc6d6131fdffc4b7135704f5262124fc43355c95f61b7399dc5a4db643e28ca"
+  },
+  ".agents/skills/setup-matt-pocock-skills/issue-tracker-github.md": {
+    "bytes": 3731,
+    "lines": 45,
+    "words": 553,
+    "estimated_tokens": 737,
+    "sha256": "afd6852a80185217bd28aa5cbe456bef1e85be25be7bd1fba382d5b8ee428325"
+  },
+  ".agents/skills/setup-matt-pocock-skills/issue-tracker-gitlab.md": {
+    "bytes": 3809,
+    "lines": 46,
+    "words": 592,
+    "estimated_tokens": 789,
+    "sha256": "ea175f73d193b3f55819c0ed9bbccf6ee0e70ad8f928e3d7607596c53380acd6"
+  },
+  ".agents/skills/setup-matt-pocock-skills/issue-tracker-local.md": {
+    "bytes": 1810,
+    "lines": 30,
+    "words": 265,
+    "estimated_tokens": 353,
+    "sha256": "7dcda20a2eb4bdc89b95d1143423c0691309921cadae3132e6424f371030506e"
+  },
+  ".agents/skills/setup-matt-pocock-skills/triage-labels.md": {
+    "bytes": 1045,
+    "lines": 15,
+    "words": 135,
+    "estimated_tokens": 180,
+    "sha256": "4f53c9b40ce2651e3611aa090eaedbd6dbc9b71ef8c5f7e65eac0d8263190d0d"
+  },
+  ".agents/skills/setup-pre-commit/SKILL.md": {
+    "bytes": 2258,
+    "lines": 91,
+    "words": 332,
+    "estimated_tokens": 442,
+    "sha256": "c9819d7f1e3b198064edc1faa3154224ed67395e9f07f5d3cea4b67cf0a11a98"
+  },
+  ".agents/skills/setup-pre-commit/agents/openai.yaml": {
+    "bytes": 99,
+    "lines": 3,
+    "words": 9,
+    "estimated_tokens": 12,
+    "sha256": "acf41db398c5c43afe504008bb7d615a97b6498b0f1f6c5b2395254c0bfb57d1"
+  },
+  ".agents/skills/setup-ts-deep-modules/SKILL.md": {
+    "bytes": 7582,
+    "lines": 106,
+    "words": 1113,
+    "estimated_tokens": 1484,
+    "sha256": "f52b67a1a9cccd206af53c93ef59eab354984ccb375f1aa3a7b1fc7319d4b61c"
+  },
+  ".agents/skills/setup-ts-deep-modules/agents/openai.yaml": {
+    "bytes": 149,
+    "lines": 5,
+    "words": 14,
+    "estimated_tokens": 18,
+    "sha256": "159f680217d50747702620c05fd65734a152185b3219a8ca5ee4630878a354fa"
+  },
+  ".agents/skills/setup-ts-deep-modules/dependency-cruiser.config.cjs": {
+    "bytes": 3712,
+    "lines": 95,
+    "words": 491,
+    "estimated_tokens": 654,
+    "sha256": "3c4973bec69f73b2117654abf9e666a7c28665b213be20e6d39869e29842428e"
+  },
+  ".agents/skills/tdd/SKILL.md": {
+    "bytes": 3583,
+    "lines": 41,
+    "words": 562,
+    "estimated_tokens": 749,
+    "sha256": "5c1902f0c747725fe2781b68d678f4cebe075bad2ebd4a977a82d5f8d08d00bf"
+  },
+  ".agents/skills/tdd/agents/openai.yaml": {
+    "bytes": 87,
+    "lines": 3,
+    "words": 6,
+    "estimated_tokens": 8,
+    "sha256": "ea6f01cf1b8c06a4b0f5b649d74b1b8ce8685e72af1b38d70d877693e092af0b"
+  },
+  ".agents/skills/tdd/mocking.md": {
+    "bytes": 1481,
+    "lines": 59,
+    "words": 202,
+    "estimated_tokens": 269,
+    "sha256": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef"
+  },
+  ".agents/skills/tdd/tests.md": {
+    "bytes": 2214,
+    "lines": 77,
+    "words": 291,
+    "estimated_tokens": 388,
+    "sha256": "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a"
+  },
+  ".agents/skills/teach/GLOSSARY-FORMAT.md": {
+    "bytes": 2122,
+    "lines": 35,
+    "words": 343,
+    "estimated_tokens": 457,
+    "sha256": "9b99859ec28437668130d8f2ce5a342938970f8a1ed4fd38c3eab4f4b5fff210"
+  },
+  ".agents/skills/teach/LEARNING-RECORD-FORMAT.md": {
+    "bytes": 2747,
+    "lines": 46,
+    "words": 416,
+    "estimated_tokens": 554,
+    "sha256": "701fa34b6748aa89e6c960ffb815257f481a7d77fb2900f9028f7edf3fdd6052"
+  },
+  ".agents/skills/teach/MISSION-FORMAT.md": {
+    "bytes": 1540,
+    "lines": 31,
+    "words": 253,
+    "estimated_tokens": 337,
+    "sha256": "8cacbb3c0644d3ae0ea4965564797099401a6930a23f7cf462918576587f2418"
+  },
+  ".agents/skills/teach/RESOURCES-FORMAT.md": {
+    "bytes": 1924,
+    "lines": 32,
+    "words": 281,
+    "estimated_tokens": 374,
+    "sha256": "e9cacf34026e11a8d1c8f9de88abe5bcbf654f4ebdb25cae8c0de0d5f48f44ec"
+  },
+  ".agents/skills/teach/SKILL.md": {
+    "bytes": 9506,
+    "lines": 140,
+    "words": 1488,
+    "estimated_tokens": 1984,
+    "sha256": "a32df9dcdfc0c4fdc1c98e1ed3940c5f56b84c1aa90ff60346f32b8b53915b43"
+  },
+  ".agents/skills/teach/agents/openai.yaml": {
+    "bytes": 139,
+    "lines": 5,
+    "words": 14,
+    "estimated_tokens": 18,
+    "sha256": "5856f3ae8aec742f1499c640aecdd5f1d6af5fa210a7c6ec794de8263a6f733f"
+  },
+  ".agents/skills/to-questionnaire/SKILL.md": {
+    "bytes": 2904,
+    "lines": 54,
+    "words": 470,
+    "estimated_tokens": 626,
+    "sha256": "b5eb929842ee0e93d867c5e906d183d350f2f2d149eaeaa86967d94d8eda1d3b"
+  },
+  ".agents/skills/to-questionnaire/agents/openai.yaml": {
+    "bytes": 166,
+    "lines": 5,
+    "words": 17,
+    "estimated_tokens": 22,
+    "sha256": "9e8a06c38c8842eea8d4922cb9d1ead8e3ace647bab259b943c994a1b4742bc2"
+  },
+  ".agents/skills/to-spec/SKILL.md": {
+    "bytes": 3108,
+    "lines": 80,
+    "words": 500,
+    "estimated_tokens": 666,
+    "sha256": "161c467836ae06a04d7101195dc45aae00002586fefd7238b5c6da091b5d6d03"
+  },
+  ".agents/skills/to-spec/agents/openai.yaml": {
+    "bytes": 135,
+    "lines": 5,
+    "words": 14,
+    "estimated_tokens": 18,
+    "sha256": "1c5b4d1e3d8e52287ef19cc2742fdbbfae1914ac75d33af3e4c8174f08cc55bb"
+  },
+  ".agents/skills/to-tickets/SKILL.md": {
+    "bytes": 5739,
+    "lines": 112,
+    "words": 901,
+    "estimated_tokens": 1201,
+    "sha256": "c3fa584629393a3b86f94e291fe7b3968ff1b3d338e8b49719ae3152aedac9dc"
+  },
+  ".agents/skills/to-tickets/agents/openai.yaml": {
+    "bytes": 146,
+    "lines": 5,
+    "words": 14,
+    "estimated_tokens": 18,
+    "sha256": "21bc6215fffcd7614e9f772bb1760e87cc5fc7dcc707e7d282bc9414267a6090"
+  },
+  ".agents/skills/triage/AGENT-BRIEF.md": {
+    "bytes": 7942,
+    "lines": 207,
+    "words": 1232,
+    "estimated_tokens": 1642,
+    "sha256": "7f5f87fed3033df1b06e083c480f3e847b1fbb0647746b8a4c6a50f9f26ef44f"
+  },
+  ".agents/skills/triage/OUT-OF-SCOPE.md": {
+    "bytes": 4667,
+    "lines": 105,
+    "words": 714,
+    "estimated_tokens": 952,
+    "sha256": "1fbf9b432130c6380aa65813b55553cfda150309b27c595e183f8e335b8a190d"
+  },
+  ".agents/skills/triage/SKILL.md": {
+    "bytes": 6654,
+    "lines": 119,
+    "words": 1000,
+    "estimated_tokens": 1333,
+    "sha256": "57b46ed96577e4b4b6317f238206c765b47b5441757027186b9197889ad56278"
+  },
+  ".agents/skills/triage/agents/openai.yaml": {
+    "bytes": 135,
+    "lines": 5,
+    "words": 12,
+    "estimated_tokens": 16,
+    "sha256": "2e683717720cf456d165d0bb1a68bb600d0b6a8ccb61841c172e50d26f95351c"
+  },
+  ".agents/skills/wait-what/SKILL.md": {
+    "bytes": 426,
+    "lines": 9,
+    "words": 63,
+    "estimated_tokens": 84,
+    "sha256": "e3bdaffb47dfc6c2f804038ff3a69747ec3c3d855a3316841323b51220c58283"
+  },
+  ".agents/skills/wait-what/agents/openai.yaml": {
+    "bytes": 158,
+    "lines": 5,
+    "words": 16,
+    "estimated_tokens": 21,
+    "sha256": "b41faadf741d51e4ea184148b2d1854d93f947aaf754c7844f70a00f04194999"
+  },
+  ".agents/skills/wayfinder/SKILL.md": {
+    "bytes": 12614,
+    "lines": 142,
+    "words": 2098,
+    "estimated_tokens": 2797,
+    "sha256": "28e033d79e807788773eb312c07f7c0d92941bbaf9f4149f419e10a91e3fb839"
+  },
+  ".agents/skills/wayfinder/agents/openai.yaml": {
+    "bytes": 144,
+    "lines": 5,
+    "words": 14,
+    "estimated_tokens": 18,
+    "sha256": "88bc81a11a6d52ac67aeaa76b8b619e387020d47c5133a4dd4927fd15c4ad073"
+  },
+  ".agents/skills/wizard/SKILL.md": {
+    "bytes": 4123,
+    "lines": 44,
+    "words": 673,
+    "estimated_tokens": 897,
+    "sha256": "bdf31d48211ea559878f95a4f344aeabf8d85897488ba564382bab0b000daac1"
+  },
+  ".agents/skills/wizard/agents/openai.yaml": {
+    "bytes": 96,
+    "lines": 3,
+    "words": 9,
+    "estimated_tokens": 12,
+    "sha256": "98f44d682d58e262f160dc59a8befc365e0aa65820dd0261864af26aa8e59d83"
+  },
+  ".agents/skills/wizard/template.sh": {
+    "bytes": 8567,
+    "lines": 204,
+    "words": 1118,
+    "estimated_tokens": 1490,
+    "sha256": "33cbe9dfb1d0e9185b60248a52aabed14bc64785a00cac695e302e739dd6c153"
+  },
+  ".agents/skills/writing-beats/SKILL.md": {
+    "bytes": 4855,
+    "lines": 67,
+    "words": 852,
+    "estimated_tokens": 1136,
+    "sha256": "a96abafa2372eede8267d770138b322d6125da8adaa7ccf0a5e08e4ee13ee71e"
+  },
+  ".agents/skills/writing-beats/agents/openai.yaml": {
+    "bytes": 142,
+    "lines": 5,
+    "words": 13,
+    "estimated_tokens": 17,
+    "sha256": "ddaef01da61d8e3c5f482c4403033c20cf5823f08a1dbf1d4c871670831d01e2"
+  },
+  ".agents/skills/writing-for-agents/SKILL-MECHANICS.md": {
+    "bytes": 2629,
+    "lines": 22,
+    "words": 414,
+    "estimated_tokens": 552,
+    "sha256": "c768e6307c7c10728c401c213f2c4ba71c542127eeb7ad2956aabd15a0fa0059"
+  },
+  ".agents/skills/writing-for-agents/SKILL.md": {
+    "bytes": 10886,
+    "lines": 81,
+    "words": 1777,
+    "estimated_tokens": 2369,
+    "sha256": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a"
+  },
+  ".agents/skills/writing-for-agents/agents/openai.yaml": {
+    "bytes": 102,
+    "lines": 3,
+    "words": 10,
+    "estimated_tokens": 13,
+    "sha256": "eacb24b2a618cfb81dacb0416f4fdd75ddf3a8060f8ddb99aae1b1e301907e4b"
+  },
+  ".agents/skills/writing-fragments/SKILL.md": {
+    "bytes": 3608,
+    "lines": 83,
+    "words": 601,
+    "estimated_tokens": 801,
+    "sha256": "ac413a3f6409579a53a78d7fecaa1d3954f16ab3c2780e5698baf02f0ad3ac83"
+  },
+  ".agents/skills/writing-fragments/agents/openai.yaml": {
+    "bytes": 140,
+    "lines": 5,
+    "words": 12,
+    "estimated_tokens": 16,
+    "sha256": "81167f25ee8ea1bb4b4958f12b6702ea972ad31b05e03ec91e39fa4bae0c2641"
+  },
+  ".agents/skills/writing-shape/SKILL.md": {
+    "bytes": 5972,
+    "lines": 83,
+    "words": 1032,
+    "estimated_tokens": 1376,
+    "sha256": "17dd7b2cb27897a8dbcb0033627eb6356d630dc1b4508d3ca83a9948375fb31e"
+  },
+  ".agents/skills/writing-shape/agents/openai.yaml": {
+    "bytes": 144,
+    "lines": 5,
+    "words": 14,
+    "estimated_tokens": 18,
+    "sha256": "56de45430e23104ff178415f5ecf7821d51a9cfabd8814b1607ebf39da2ef5cd"
+  },
+  "skills-lock.json": {
+    "bytes": 9260,
+    "lines": 227,
+    "words": 414,
+    "estimated_tokens": 552,
+    "sha256": "e84a1b4b182f4aa75e11b3565f243be2d2143d1608757a6da8ba12b783315704"
+  }
+}

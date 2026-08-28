@@ -1,0 +1,14 @@
+{
+  "skill": "to-tickets",
+  "taxonomy": "Workflow",
+  "disposition": "COMPOSED",
+  "behavior_to_preserve": "Breaks spec into tracer-bullet tickets with explicit blocking edges on tracker.",
+  "dependencies": [
+    "prototype",
+    "setup-matt-pocock-skills",
+    "triage"
+  ],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

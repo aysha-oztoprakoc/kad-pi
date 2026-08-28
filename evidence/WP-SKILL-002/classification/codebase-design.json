@@ -1,0 +1,10 @@
+{
+  "skill": "codebase-design",
+  "taxonomy": "Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Deep module terminology, deepening criteria, and design-it-twice subagent exploration.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

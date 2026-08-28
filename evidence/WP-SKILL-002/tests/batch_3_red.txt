@@ -1,0 +1,14 @@
+[tdd] STATUS: RED
+  FAIL: Missing dependency: codebase-design
+[setup-ts-deep-modules] STATUS: RED
+  FAIL: Missing dependency: codebase-design
+[wait-what] STATUS: RED
+  FAIL: Missing dependency: domain-modeling
+[writing-fragments] STATUS: RED
+  FAIL: Missing dependency: grilling
+  FAIL: Missing capability: ask_user
+[writing-shape] STATUS: RED
+  FAIL: Missing dependency: grilling
+  FAIL: Missing capability: ask_user
+[retro] STATUS: RED
+  FAIL: Missing dependency: writing-for-agents

@@ -1,0 +1,12 @@
+{
+  "skill": "claude-handoff",
+  "taxonomy": "Specialized Workflow",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Launches background Claude agent with summary and --name argument.",
+  "dependencies": [
+    "handoff"
+  ],
+  "capabilities": [],
+  "harness_coupling": "NONE (domain content about Claude Code)",
+  "confidence": 1.0
+}

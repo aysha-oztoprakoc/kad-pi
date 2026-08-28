@@ -1,0 +1,4 @@
+STATUS: RED
+  FAIL: Forbidden harness strings found: ['ask_question', 'ask_user_question', 'Antigravity', 'Pi', 'DSH']
+  FAIL: Missing explicit grilling dependency in frontmatter
+  FAIL: Missing explicit ask_user capability in frontmatter

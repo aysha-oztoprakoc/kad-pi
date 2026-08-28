@@ -1,0 +1,36 @@
+{
+  "batch_id": "BATCH_01",
+  "skills": [
+    "grill-with-docs",
+    "wayfinder"
+  ],
+  "status": "APPLIED",
+  "footprint_before": {
+    "grill-with-docs": {
+      "sha256": "7fecccd6cc9fa3d454f360f1019f4bd3b7fb88f0a6181d05ece1f5ee15e5f490",
+      "tokens": 125,
+      "bytes": 640,
+      "lines": 9
+    },
+    "wayfinder": {
+      "sha256": "255d3fd1b4004f5b64bf0bdda92522996f0704c30afc31f5ac1e72a9953511eb",
+      "tokens": 2838,
+      "bytes": 12704,
+      "lines": 134
+    }
+  },
+  "footprint_after": {
+    "grill-with-docs": {
+      "sha256": "bc4d9b100697001674d415e99b1686e7fb6e11b6c8ca533238dd59c334f90d0a",
+      "tokens": 140,
+      "bytes": 783,
+      "lines": 17
+    },
+    "wayfinder": {
+      "sha256": "28e033d79e807788773eb312c07f7c0d92941bbaf9f4149f419e10a91e3fb839",
+      "tokens": 2797,
+      "bytes": 12614,
+      "lines": 142
+    }
+  }
+}

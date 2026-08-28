@@ -1,0 +1,753 @@
+[
+  {
+    "skill": "ask-matt",
+    "frontmatter": {
+      "name": "ask-matt",
+      "description": "Ask which skill or flow fits your situation. A router over the skills in this repo.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "PHASE-BOUNDARIES.md",
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 90,
+    "bytes": 11417,
+    "harness_couplings": [],
+    "skill_refs": [
+      "code-review",
+      "codebase-design",
+      "diagnosing-bugs",
+      "domain-modeling",
+      "grill-me",
+      "grill-with-docs",
+      "grilling",
+      "handoff",
+      "implement",
+      "improve-codebase-architecture",
+      "prototype",
+      "research",
+      "resolving-merge-conflicts",
+      "setup-matt-pocock-skills",
+      "tdd",
+      "teach",
+      "to-questionnaire",
+      "to-spec",
+      "to-tickets",
+      "triage",
+      "wait-what",
+      "wayfinder",
+      "wizard",
+      "writing-for-agents"
+    ],
+    "body_snippet": "  # Ask Matt  You don't remember every skill, so ask.  A **flow** is a path through the skills. Most paths run along one **main flow**, and two **on-ramps** merge onto it. Everything else is standalon"
+  },
+  {
+    "skill": "claude-handoff",
+    "frontmatter": {
+      "name": "claude-handoff",
+      "description": "Hand the current conversation off to a fresh background agent that picks up the work immediately.",
+      "argument-hint": "What will the next session be used for?",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 18,
+    "bytes": 1301,
+    "harness_couplings": [
+      "claude:3"
+    ],
+    "skill_refs": [
+      "handoff"
+    ],
+    "body_snippet": "  Write a handoff summary of the current conversation so a fresh agent can continue the work. Instead of saving it, launch a background agent seeded with the summary as its prompt: `claude --bg --name"
+  },
+  {
+    "skill": "code-review",
+    "frontmatter": {
+      "name": "code-review",
+      "description": "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 87,
+    "bytes": 6589,
+    "harness_couplings": [],
+    "skill_refs": [
+      "implement",
+      "setup-matt-pocock-skills"
+    ],
+    "body_snippet": "  Two-axis review of the diff between `HEAD` and a fixed point the user supplies:  - **Standards**: does the code conform to this repo's documented coding standards? - **Spec**: does the code faithful"
+  },
+  {
+    "skill": "codebase-design",
+    "frontmatter": {
+      "name": "codebase-design",
+      "description": "Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary."
+    },
+    "files": [
+      "DEEPENING.md",
+      "DESIGN-IT-TWICE.md",
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 114,
+    "bytes": 6446,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  # Codebase Design  Design **deep modules**: a lot of behaviour behind a small interface, placed at a clean seam, testable through that interface. Use this language and these principles wherever code"
+  },
+  {
+    "skill": "diagnosing-bugs",
+    "frontmatter": {
+      "name": "diagnosing-bugs",
+      "description": "Diagnosis loop for hard bugs and performance regressions. Use when the user says \"diagnose\"/\"debug this\", or reports something broken/throwing/failing/slow."
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml",
+      "scripts/hitl-loop.template.sh"
+    ],
+    "lines": 138,
+    "bytes": 8529,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  # Diagnosing Bugs  A discipline for hard bugs. Skip phases only when explicitly justified.  When exploring the codebase, read `CONTEXT.md` (if it exists) to get a clear mental model of the relevant "
+  },
+  {
+    "skill": "domain-modeling",
+    "frontmatter": {
+      "name": "domain-modeling",
+      "description": "Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR."
+    },
+    "files": [
+      "ADR-FORMAT.md",
+      "CONTEXT-FORMAT.md",
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 74,
+    "bytes": 3331,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  # Domain Modeling  Actively build and sharpen the project's domain model as you design. This is the *active* discipline: challenging terms, inventing edge-case scenarios, and writing the glossary an"
+  },
+  {
+    "skill": "git-guardrails-claude-code",
+    "frontmatter": {
+      "name": "git-guardrails-claude-code",
+      "description": "Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in Claude Code."
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml",
+      "scripts/block-dangerous-git.sh"
+    ],
+    "lines": 95,
+    "bytes": 2313,
+    "harness_couplings": [
+      "Claude:4",
+      "claude:9"
+    ],
+    "skill_refs": [],
+    "body_snippet": "  # Setup Git Guardrails  Sets up a PreToolUse hook that intercepts and blocks dangerous git commands before Claude executes them.  ## What Gets Blocked  - `git push` (all variants including `--force`"
+  },
+  {
+    "skill": "grill-me",
+    "frontmatter": {
+      "name": "grill-me",
+      "description": "A relentless interview to sharpen a plan or design.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 9,
+    "bytes": 550,
+    "harness_couplings": [
+      "ask_question:1",
+      "ask_user_question:1",
+      "Antigravity:1",
+      "Pi:1",
+      "DSH:1"
+    ],
+    "skill_refs": [
+      "grilling"
+    ],
+    "body_snippet": "  Call the Skill tool with \"grilling\".  **CRITICAL UI REQUIREMENT**: Whenever you ask the user a question, you MUST use your harness's interactive question tool (`ask_question` in Antigravity, or `ask"
+  },
+  {
+    "skill": "grill-with-docs",
+    "frontmatter": {
+      "name": "grill-with-docs",
+      "description": "A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 9,
+    "bytes": 640,
+    "harness_couplings": [
+      "ask_question:1",
+      "ask_user_question:1",
+      "Antigravity:1",
+      "Pi:1",
+      "DSH:1"
+    ],
+    "skill_refs": [
+      "domain-modeling",
+      "grilling"
+    ],
+    "body_snippet": "  Call the Skill tool twice, for \"grilling\" and \"domain-modeling\".  **CRITICAL UI REQUIREMENT**: Whenever you ask the user a question, you MUST use your harness's interactive question tool (`ask_quest"
+  },
+  {
+    "skill": "grilling",
+    "frontmatter": {
+      "name": "grilling",
+      "description": "Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.",
+      "capabilities": [
+        "ask_user"
+      ]
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 19,
+    "bytes": 2419,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.  Work the tree in **rounds**. The "
+  },
+  {
+    "skill": "handoff",
+    "frontmatter": {
+      "name": "handoff",
+      "description": "Compact the current conversation into a handoff document for another agent to pick up.",
+      "argument-hint": "What will the next session be used for?",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 16,
+    "bytes": 894,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save to the temporary directory of the user's OS - not the current workspace.  Include a \"sugges"
+  },
+  {
+    "skill": "implement",
+    "frontmatter": {
+      "name": "implement",
+      "description": "Implement a piece of work based on a spec or set of tickets.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 15,
+    "bytes": 433,
+    "harness_couplings": [],
+    "skill_refs": [
+      "code-review",
+      "tdd"
+    ],
+    "body_snippet": "  Implement the work described by the user in the spec or tickets.  Use /tdd where possible, at pre-agreed seams.  Run typechecking regularly, single test files regularly, and the full test suite once"
+  },
+  {
+    "skill": "implement-spec",
+    "frontmatter": {
+      "name": "implement-spec",
+      "description": "Implement a specification in code.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 35,
+    "bytes": 2043,
+    "harness_couplings": [],
+    "skill_refs": [
+      "code-review",
+      "implement",
+      "research"
+    ],
+    "body_snippet": "  You have been provided a spec. This spec should have tickets associated with it, describing how to implement the spec.  The goal is a PR which implements the entire spec on a single branch.  The tic"
+  },
+  {
+    "skill": "improve-codebase-architecture",
+    "frontmatter": {
+      "name": "improve-codebase-architecture",
+      "description": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "HTML-REPORT.md",
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 71,
+    "bytes": 5993,
+    "harness_couplings": [],
+    "skill_refs": [
+      "codebase-design",
+      "domain-modeling",
+      "grilling"
+    ],
+    "body_snippet": "  # Improve Codebase Architecture  Surface architectural friction and propose **deepening opportunities**: refactors that turn shallow modules into deep ones. The aim is testability and AI-navigabilit"
+  },
+  {
+    "skill": "loop-me",
+    "frontmatter": {
+      "name": "loop-me",
+      "description": "Grill me about specs for the workflows I want to build, within this workspace.",
+      "disable-model-invocation": true,
+      "argument-hint": "A workflow to design, or nothing to go find one"
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 32,
+    "bytes": 2522,
+    "harness_couplings": [],
+    "skill_refs": [
+      "grilling"
+    ],
+    "body_snippet": "  Run a stateful `/grilling` session whose only output is **workflow** specs. Use the grilling discipline (relentless, a round of questions at a time, a recommended answer attached to each) aimed at t"
+  },
+  {
+    "skill": "migrate-to-shoehorn",
+    "frontmatter": {
+      "name": "migrate-to-shoehorn",
+      "description": "Migrate test files from `as` type assertions to @total-typescript/shoehorn. Use when user mentions shoehorn, wants to replace `as` in tests, or needs partial test data."
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 118,
+    "bytes": 2795,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  # Migrate to Shoehorn  ## Why shoehorn?  `shoehorn` lets you pass partial data in tests while keeping TypeScript happy. It replaces `as` assertions with type-safe alternatives.  **Test code only.** "
+  },
+  {
+    "skill": "prototype",
+    "frontmatter": {
+      "name": "prototype",
+      "description": "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like."
+    },
+    "files": [
+      "LOGIC.md",
+      "SKILL.md",
+      "UI.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 26,
+    "bytes": 2931,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  # Prototype  A prototype is **throwaway code that answers a question**. The question decides the shape.  ## Pick a branch  Identify which question is being answered, using the user's prompt, the sur"
+  },
+  {
+    "skill": "research",
+    "frontmatter": {
+      "name": "research",
+      "description": "Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent."
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 12,
+    "bytes": 794,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  Spin up a **background agent** to do the research, so you keep working while it reads.  Its job:  1. Investigate the question against **primary sources** (official docs, source code, specs, first-pa"
+  },
+  {
+    "skill": "resolving-merge-conflicts",
+    "frontmatter": {
+      "name": "resolving-merge-conflicts",
+      "description": "Use when you need to resolve an in-progress git merge/rebase conflict."
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 14,
+    "bytes": 918,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  1. **See the current state** of the merge/rebase. Check git history, and the conflicting files.  2. **Find the primary sources** for each conflict. Understand deeply why each change was made, and wh"
+  },
+  {
+    "skill": "retro",
+    "frontmatter": {
+      "name": "retro",
+      "description": "Conduct a retrospective on a coding session.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 44,
+    "bytes": 3388,
+    "harness_couplings": [],
+    "skill_refs": [
+      "writing-for-agents"
+    ],
+    "body_snippet": "  The user has asked for a **retrospective**. You are suggesting improvements to the coding agent's **environment** to improve future runs.  ## Steps  1. Call the Skill tool with `writing-for-agents` "
+  },
+  {
+    "skill": "scaffold-exercises",
+    "frontmatter": {
+      "name": "scaffold-exercises",
+      "description": "Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course section."
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 106,
+    "bytes": 3589,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  # Scaffold Exercises  Create exercise directory structures that pass `pnpm ai-hero-cli internal lint`, then commit with `git commit`.  ## Directory naming  - **Sections**: `XX-section-name/` inside "
+  },
+  {
+    "skill": "setup-matt-pocock-skills",
+    "frontmatter": {
+      "name": "setup-matt-pocock-skills",
+      "description": "Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "domain.md",
+      "issue-tracker-github.md",
+      "issue-tracker-gitlab.md",
+      "issue-tracker-local.md",
+      "triage-labels.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 116,
+    "bytes": 6841,
+    "harness_couplings": [],
+    "skill_refs": [
+      "to-spec",
+      "to-tickets",
+      "triage"
+    ],
+    "body_snippet": "  # Setup Matt Pocock's Skills  Scaffold the per-repo configuration that the engineering skills assume:  - **Issue tracker**: where issues live (GitHub by default; local markdown is also supported out"
+  },
+  {
+    "skill": "setup-pre-commit",
+    "frontmatter": {
+      "name": "setup-pre-commit",
+      "description": "Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add commit-time formatting/typechecking/testing."
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 91,
+    "bytes": 2258,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  # Setup Pre-Commit Hooks  ## What This Sets Up  - **Husky** pre-commit hook - **lint-staged** running Prettier on all staged files - **Prettier** config (if missing) - **typecheck** and **test** scr"
+  },
+  {
+    "skill": "setup-ts-deep-modules",
+    "frontmatter": {
+      "name": "setup-ts-deep-modules",
+      "description": "Wire dependency-cruiser into a TypeScript repo so each package is a deep module, with implementation hidden in subfolders and reachable only through its entry-point files. User-invoked.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "dependency-cruiser.config.cjs",
+      "agents/openai.yaml"
+    ],
+    "lines": 102,
+    "bytes": 7546,
+    "harness_couplings": [],
+    "skill_refs": [
+      "codebase-design"
+    ],
+    "body_snippet": "  # Setup TS Deep Modules  Make every package in this repo a **deep module**: a lot of behaviour behind a small interface. A package's public surface is its **entry points** (the files at the package "
+  },
+  {
+    "skill": "tdd",
+    "frontmatter": {
+      "name": "tdd",
+      "description": "Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions \"red-green-refactor\", or wants integration tests."
+    },
+    "files": [
+      "SKILL.md",
+      "mocking.md",
+      "tests.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 38,
+    "bytes": 3549,
+    "harness_couplings": [],
+    "skill_refs": [
+      "code-review",
+      "codebase-design"
+    ],
+    "body_snippet": "  # Test-Driven Development  TDD is the red \u2192 green loop. This skill is the reference that makes that loop produce tests worth keeping: what a good test is, where tests go, the anti-patterns, and the "
+  },
+  {
+    "skill": "teach",
+    "frontmatter": {
+      "name": "teach",
+      "description": "Teach the user a new skill or concept, within this workspace.",
+      "disable-model-invocation": true,
+      "argument-hint": "What would you like to learn about?"
+    },
+    "files": [
+      "GLOSSARY-FORMAT.md",
+      "LEARNING-RECORD-FORMAT.md",
+      "MISSION-FORMAT.md",
+      "RESOURCES-FORMAT.md",
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 140,
+    "bytes": 9506,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  The user has asked you to teach them something. This is a stateful request - they intend to learn the topic over multiple sessions.  ## Teaching Workspace  Treat the current directory as a teaching "
+  },
+  {
+    "skill": "to-questionnaire",
+    "frontmatter": {
+      "name": "to-questionnaire",
+      "description": "Turn a decision you can't fully answer into a questionnaire for someone else to fill in.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 54,
+    "bytes": 2904,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  Turn something the user can't answer alone into a **questionnaire**: a Markdown document they hand to one person to fill in async, or fill out together over a meeting. The recipient holds knowledge "
+  },
+  {
+    "skill": "to-spec",
+    "frontmatter": {
+      "name": "to-spec",
+      "description": "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 75,
+    "bytes": 3043,
+    "harness_couplings": [],
+    "skill_refs": [
+      "prototype",
+      "setup-matt-pocock-skills",
+      "triage"
+    ],
+    "body_snippet": "  This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user; just synthesize what you already know.  The issue tracker and triage labe"
+  },
+  {
+    "skill": "to-tickets",
+    "frontmatter": {
+      "name": "to-tickets",
+      "description": "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 105,
+    "bytes": 5671,
+    "harness_couplings": [],
+    "skill_refs": [
+      "prototype",
+      "setup-matt-pocock-skills",
+      "triage"
+    ],
+    "body_snippet": "  # To Tickets  Break a plan, spec, or conversation into a set of **tickets**: tracer-bullet vertical slices, each declaring the tickets that **block** it.  The issue tracker and triage label vocabula"
+  },
+  {
+    "skill": "triage",
+    "frontmatter": {
+      "name": "triage",
+      "description": "Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "AGENT-BRIEF.md",
+      "OUT-OF-SCOPE.md",
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 112,
+    "bytes": 6557,
+    "harness_couplings": [],
+    "skill_refs": [
+      "domain-modeling",
+      "grilling",
+      "setup-matt-pocock-skills"
+    ],
+    "body_snippet": "  # Triage  Move issues on the project issue tracker through a small state machine of triage roles.  If this repo treats external pull requests as a request surface (see the issue-tracker config), tri"
+  },
+  {
+    "skill": "wait-what",
+    "frontmatter": {
+      "name": "wait-what",
+      "description": "Stop. That last message did not land: re-pitch it.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 7,
+    "bytes": 394,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  Wait, I don't understand where you've got to here. Re-pitch that: give me a little bit of context, talk in ASD-STE100 Simplified Technical English, and use the ubiquitous language from `CONTEXT.md` "
+  },
+  {
+    "skill": "wayfinder",
+    "frontmatter": {
+      "name": "wayfinder",
+      "description": "Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 134,
+    "bytes": 12704,
+    "harness_couplings": [
+      "ask_question:1",
+      "ask_user_question:1",
+      "Antigravity:1",
+      "Pi:1",
+      "DSH:1"
+    ],
+    "skill_refs": [
+      "domain-modeling",
+      "grilling",
+      "prototype",
+      "research",
+      "setup-matt-pocock-skills"
+    ],
+    "body_snippet": "  A loose idea has arrived, too big for one agent session, and wrapped in fog: the way from here to the **destination** isn't visible yet. Wayfinding is about finding that way, not charging at the des"
+  },
+  {
+    "skill": "wizard",
+    "frontmatter": {
+      "name": "wizard",
+      "description": "Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover. Don't invoke this for steps the agent can perform itself."
+    },
+    "files": [
+      "SKILL.md",
+      "template.sh",
+      "agents/openai.yaml"
+    ],
+    "lines": 44,
+    "bytes": 4123,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  # Wizard  A **wizard** is a bash script that walks a human, step by step, through a manual procedure that's tedious to do by hand and tedious to re-explain to an AI every time. It opens each URL, sa"
+  },
+  {
+    "skill": "writing-beats",
+    "frontmatter": {
+      "name": "writing-beats",
+      "description": "Writing, exploit; assemble raw material into a journey of beats, grounding each term before a beat leans on it.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 67,
+    "bytes": 4855,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  <what-to-do>  The user has passed (or will pass) a markdown file of raw material. This is **exploit**: the exploring is done, the pile is fixed. Commit to a path through it and mine the pile to fill"
+  },
+  {
+    "skill": "writing-for-agents",
+    "frontmatter": {
+      "name": "writing-for-agents",
+      "description": "Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md."
+    },
+    "files": [
+      "SKILL-MECHANICS.md",
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 81,
+    "bytes": 10886,
+    "harness_couplings": [],
+    "skill_refs": [],
+    "body_snippet": "  Reference for writing any document an agent consumes: a skill, an `AGENTS.md` / `CLAUDE.md`, a doc reached by a pointer. The packaging differs; the writing does not: the same levers make each one pr"
+  },
+  {
+    "skill": "writing-fragments",
+    "frontmatter": {
+      "name": "writing-fragments",
+      "description": "Writing, explore: mine raw fragments, no structure yet.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 79,
+    "bytes": 3558,
+    "harness_couplings": [],
+    "skill_refs": [
+      "grilling"
+    ],
+    "body_snippet": "  <what-to-do>  This is pure **explore**: widen the space of what could be written without committing to structure. Committing is _exploit_, a separate skill's job. Run a grilling session that produce"
+  },
+  {
+    "skill": "writing-shape",
+    "frontmatter": {
+      "name": "writing-shape",
+      "description": "Writing, exploit: shape raw material into an article, paragraph by paragraph.",
+      "disable-model-invocation": true
+    },
+    "files": [
+      "SKILL.md",
+      "agents/openai.yaml"
+    ],
+    "lines": 79,
+    "bytes": 5922,
+    "harness_couplings": [],
+    "skill_refs": [
+      "grilling"
+    ],
+    "body_snippet": "  <what-to-do>  The user has passed (or will pass) a markdown file of raw material. Treat it as the input pile: anything from a tidy list of fragments to a wall of unstructured prose to a transcript. "
+  }
+]

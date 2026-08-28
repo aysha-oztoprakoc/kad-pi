@@ -1,0 +1,14 @@
+{
+  "skill": "grill-me",
+  "taxonomy": "Workflow",
+  "disposition": "MIGRATED",
+  "behavior_to_preserve": "Stateless relentless interview delegating to grilling with recommended first option and native write-in UI.",
+  "dependencies": [
+    "grilling"
+  ],
+  "capabilities": [
+    "ask_user"
+  ],
+  "harness_coupling": "REMOVED (migrated ask_question / ask_user_question strings to ask_user capability declaration)",
+  "confidence": 1.0
+}

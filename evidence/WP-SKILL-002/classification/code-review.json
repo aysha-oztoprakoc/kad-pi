@@ -1,0 +1,12 @@
+{
+  "skill": "code-review",
+  "taxonomy": "Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Parallel subagent review along Standards and Spec axes with diff analysis.",
+  "dependencies": [
+    "implement"
+  ],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

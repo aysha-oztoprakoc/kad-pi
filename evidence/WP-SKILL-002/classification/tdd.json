@@ -1,0 +1,12 @@
+{
+  "skill": "tdd",
+  "taxonomy": "Discipline",
+  "disposition": "COMPOSED",
+  "behavior_to_preserve": "Drives red-green-refactor loop speaking codebase-design vocabulary.",
+  "dependencies": [
+    "codebase-design"
+  ],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

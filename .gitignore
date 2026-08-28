@@ -1,0 +1,29 @@
+# Unrelated workspace projects
+data_workspace/
+technopagan-netrunner/
+kad-rpg/
+kad-sillytavern/
+kad-lab/
+agent/
+.claude/
+amdy-platform/
+tries/
+.dsh-ptc-canary/
+.mise.toml
+
+# Environment & Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Python & Node artifacts
+__pycache__/
+*.py[cod]
+node_modules/
+*.log
+
+# OS & Editor
+.DS_Store
+.vscode/
+.idea/

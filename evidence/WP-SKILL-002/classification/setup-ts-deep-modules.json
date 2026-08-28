@@ -1,0 +1,12 @@
+{
+  "skill": "setup-ts-deep-modules",
+  "taxonomy": "Deterministic Tool / Setup Discipline",
+  "disposition": "COMPOSED",
+  "behavior_to_preserve": "Installs dependency-cruiser configuration enforcing deep module seams.",
+  "dependencies": [
+    "codebase-design"
+  ],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

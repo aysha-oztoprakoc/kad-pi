@@ -1,0 +1,10 @@
+{
+  "skill": "migrate-to-shoehorn",
+  "taxonomy": "Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Refactors type assertions in tests to use @total-typescript/shoehorn.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

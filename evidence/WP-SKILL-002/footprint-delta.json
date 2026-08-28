@@ -1,0 +1,137 @@
+{
+  "total_tokens_pre": 53428,
+  "total_tokens_post": 53501,
+  "token_delta": 73,
+  "percentage_delta": "0.14%",
+  "mutated_files_count": 16,
+  "mutated_files": [
+    {
+      "file": ".agents/skills/grill-me/SKILL.md",
+      "tokens_pre": 108,
+      "tokens_post": 106,
+      "tokens_delta": -2,
+      "pre_sha": "ffd3cc224a6093b44d309c36f3823dace3cd9204c3053fdd4be4819ca531447b",
+      "post_sha": "07ef07e77dd6291a5fd82995f4796892e77d568085361684ee56added8c541ec"
+    },
+    {
+      "file": ".agents/skills/grill-with-docs/SKILL.md",
+      "tokens_pre": 125,
+      "tokens_post": 140,
+      "tokens_delta": 15,
+      "pre_sha": "7fecccd6cc9fa3d454f360f1019f4bd3b7fb88f0a6181d05ece1f5ee15e5f490",
+      "post_sha": "bc4d9b100697001674d415e99b1686e7fb6e11b6c8ca533238dd59c334f90d0a"
+    },
+    {
+      "file": ".agents/skills/implement-spec/SKILL.md",
+      "tokens_pre": 420,
+      "tokens_post": 429,
+      "tokens_delta": 9,
+      "pre_sha": "f703b5f41df9c2202e19540d203e0d5fc32613572a838a070136cc22e712b129",
+      "post_sha": "c4352f75582d71e6d5dda1f7c111b97acf7e2ec4f6d2674e0e28c9b1a49884a5"
+    },
+    {
+      "file": ".agents/skills/implement/SKILL.md",
+      "tokens_pre": 93,
+      "tokens_post": 100,
+      "tokens_delta": 7,
+      "pre_sha": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3",
+      "post_sha": "7a624d0a999f6f0d2d45c3a430ed026094827fb55330b06826efda7ca8984c49"
+    },
+    {
+      "file": ".agents/skills/improve-codebase-architecture/SKILL.md",
+      "tokens_pre": 1198,
+      "tokens_post": 1212,
+      "tokens_delta": 14,
+      "pre_sha": "d1ac25511a936ff4250a48dbcefda363837d6bb9321b3cba73df99fa37270a75",
+      "post_sha": "103ee6e1b83bb4e2221f9337ec463daafd0d7f16a1511b92ebffe67099b46927"
+    },
+    {
+      "file": ".agents/skills/loop-me/SKILL.md",
+      "tokens_pre": 553,
+      "tokens_post": 561,
+      "tokens_delta": 8,
+      "pre_sha": "e44d1cc3e760fb86ac42964c2a5f1fcac511715db50fb375f3f7be814de1eaa7",
+      "post_sha": "e4dece52e7a9b0c6b8d95fc1891c8b9f45077d2568239bbf91b6634dd820b343"
+    },
+    {
+      "file": ".agents/skills/retro/SKILL.md",
+      "tokens_pre": 706,
+      "tokens_post": 710,
+      "tokens_delta": 4,
+      "pre_sha": "264f3330f1e2382af89610ed048ba0ed6d08883eb69f596a8f1df3f1e1a4c6a1",
+      "post_sha": "5d151ca1c954bde1b88ad74d789d2fb486dc657bc0e967351422b36392a0519f"
+    },
+    {
+      "file": ".agents/skills/setup-ts-deep-modules/SKILL.md",
+      "tokens_pre": 1480,
+      "tokens_post": 1484,
+      "tokens_delta": 4,
+      "pre_sha": "29acca66ac99d4532e2a6f0370d8125d7cba1e87c9ac66573203c75189d3e6c7",
+      "post_sha": "f52b67a1a9cccd206af53c93ef59eab354984ccb375f1aa3a7b1fc7319d4b61c"
+    },
+    {
+      "file": ".agents/skills/tdd/SKILL.md",
+      "tokens_pre": 745,
+      "tokens_post": 749,
+      "tokens_delta": 4,
+      "pre_sha": "cb01f66bebfaa25fa1f88e6b7e769cd9fd9f35b1120b8563749820738814c927",
+      "post_sha": "5c1902f0c747725fe2781b68d678f4cebe075bad2ebd4a977a82d5f8d08d00bf"
+    },
+    {
+      "file": ".agents/skills/to-spec/SKILL.md",
+      "tokens_pre": 657,
+      "tokens_post": 666,
+      "tokens_delta": 9,
+      "pre_sha": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+      "post_sha": "161c467836ae06a04d7101195dc45aae00002586fefd7238b5c6da091b5d6d03"
+    },
+    {
+      "file": ".agents/skills/to-tickets/SKILL.md",
+      "tokens_pre": 1192,
+      "tokens_post": 1201,
+      "tokens_delta": 9,
+      "pre_sha": "5c9fba69845c2519b9b35b9af42ae5142c21f8ca15ac2123dc2722002c8058ae",
+      "post_sha": "c3fa584629393a3b86f94e291fe7b3968ff1b3d338e8b49719ae3152aedac9dc"
+    },
+    {
+      "file": ".agents/skills/triage/SKILL.md",
+      "tokens_pre": 1320,
+      "tokens_post": 1333,
+      "tokens_delta": 13,
+      "pre_sha": "623a2ed692bdc77d2090e2a3dea3b627dd722ad3bbaca0be83aada75292c8fc4",
+      "post_sha": "57b46ed96577e4b4b6317f238206c765b47b5441757027186b9197889ad56278"
+    },
+    {
+      "file": ".agents/skills/wait-what/SKILL.md",
+      "tokens_pre": 80,
+      "tokens_post": 84,
+      "tokens_delta": 4,
+      "pre_sha": "e3f44e3ccbc0e7b62f20ba70b295fc9c9f4aa3f96c77168faee1c71bacbf4215",
+      "post_sha": "e3bdaffb47dfc6c2f804038ff3a69747ec3c3d855a3316841323b51220c58283"
+    },
+    {
+      "file": ".agents/skills/wayfinder/SKILL.md",
+      "tokens_pre": 2838,
+      "tokens_post": 2797,
+      "tokens_delta": -41,
+      "pre_sha": "255d3fd1b4004f5b64bf0bdda92522996f0704c30afc31f5ac1e72a9953511eb",
+      "post_sha": "28e033d79e807788773eb312c07f7c0d92941bbaf9f4149f419e10a91e3fb839"
+    },
+    {
+      "file": ".agents/skills/writing-fragments/SKILL.md",
+      "tokens_pre": 793,
+      "tokens_post": 801,
+      "tokens_delta": 8,
+      "pre_sha": "298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
+      "post_sha": "ac413a3f6409579a53a78d7fecaa1d3954f16ab3c2780e5698baf02f0ad3ac83"
+    },
+    {
+      "file": ".agents/skills/writing-shape/SKILL.md",
+      "tokens_pre": 1368,
+      "tokens_post": 1376,
+      "tokens_delta": 8,
+      "pre_sha": "f5e6c57bdd85178ace4a260c92f46da6b64ddee18215b461d875739c68976f72",
+      "post_sha": "17dd7b2cb27897a8dbcb0033627eb6356d630dc1b4508d3ca83a9948375fb31e"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "workflow": {
+    "name": "grill-me",
+    "active": true
+  },
+  "discipline": {
+    "name": "grilling",
+    "resolved": true
+  },
+  "canonical_request": {
+    "question": "Which architecture pattern do you prefer for state management?",
+    "options": [
+      "(Recommended) PON reactive engine",
+      "Centralized redux store",
+      "Actor model"
+    ],
+    "allowCustom": true,
+    "requestId": "req-001"
+  },
+  "native_agy_tool_call": {
+    "tool": "ask_question",
+    "parameters": {
+      "questions": [
+        {
+          "question": "Which architecture pattern do you prefer for state management?",
+          "options": [
+            {
+              "label": "(Recommended) PON reactive engine"
+            },
+            {
+              "label": "Centralized redux store"
+            },
+            {
+              "label": "Actor model"
+            }
+          ],
+          "is_multi_select": false
+        }
+      ]
+    }
+  },
+  "native_result": {
+    "answers": [
+      {
+        "selected": [
+          "(Recommended) PON reactive engine"
+        ]
+      }
+    ]
+  },
+  "canonical_result": {
+    "state": "ANSWERED",
+    "answer": "(Recommended) PON reactive engine"
+  },
+  "next_decision_tree_state": {
+    "settled": [
+      {
+        "question": "Which architecture pattern do you prefer for state management?",
+        "answer": "(Recommended) PON reactive engine"
+      }
+    ],
+    "frontier": [
+      "Define notification dispatch topology"
+    ]
+  },
+  "verdict": "PASS"
+}

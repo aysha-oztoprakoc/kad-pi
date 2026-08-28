@@ -1,0 +1,18 @@
+{
+  "skill": "wayfinder",
+  "taxonomy": "Workflow",
+  "disposition": "MIGRATED",
+  "behavior_to_preserve": "Charts shared map on issue tracker, works decision tickets one at a time, uses grilling and ask_user.",
+  "dependencies": [
+    "domain-modeling",
+    "grilling",
+    "prototype",
+    "research",
+    "setup-matt-pocock-skills"
+  ],
+  "capabilities": [
+    "ask_user"
+  ],
+  "harness_coupling": "REMOVED (migrated UI requirement to canonical ask_user capability via grilling)",
+  "confidence": 1.0
+}

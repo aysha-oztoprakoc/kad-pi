@@ -1,0 +1,148 @@
+{
+  "batch_id": "BATCH_04",
+  "skills": [
+    "ask-matt",
+    "claude-handoff",
+    "code-review",
+    "codebase-design",
+    "diagnosing-bugs",
+    "domain-modeling",
+    "git-guardrails-claude-code",
+    "handoff",
+    "migrate-to-shoehorn",
+    "prototype",
+    "research",
+    "resolving-merge-conflicts",
+    "scaffold-exercises",
+    "setup-matt-pocock-skills",
+    "setup-pre-commit",
+    "teach",
+    "to-questionnaire",
+    "wizard",
+    "writing-beats",
+    "writing-for-agents"
+  ],
+  "status": "VERIFIED_KEPT_AS_IS",
+  "footprint": {
+    "ask-matt": {
+      "sha256": "b25d86fb36b1d294eeead5d7db529f86135f9671f2afcd607579a63bb2213769",
+      "tokens": 2358,
+      "bytes": 11417,
+      "lines": 90
+    },
+    "claude-handoff": {
+      "sha256": "6738e8b7c7899ea0038fb7a5c859ca1b90c7b1eb40123dcdbe94c51b5b119f12",
+      "tokens": 265,
+      "bytes": 1301,
+      "lines": 18
+    },
+    "code-review": {
+      "sha256": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50",
+      "tokens": 1418,
+      "bytes": 6589,
+      "lines": 87
+    },
+    "codebase-design": {
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "tokens": 1134,
+      "bytes": 6446,
+      "lines": 114
+    },
+    "diagnosing-bugs": {
+      "sha256": "77f3cf31bc99b2f49af943222526531fcc9fc41d047626d3640e875e85af3e84",
+      "tokens": 1869,
+      "bytes": 8529,
+      "lines": 138
+    },
+    "domain-modeling": {
+      "sha256": "327a2b50620e2fd70abc6893cd6965e76b20f8d0adb0dc2c8d5eb3845efb643e",
+      "tokens": 657,
+      "bytes": 3331,
+      "lines": 74
+    },
+    "git-guardrails-claude-code": {
+      "sha256": "69b291d655626a01602b998a1836fcb93c058ede68dfafddfd71e87f17074764",
+      "tokens": 402,
+      "bytes": 2313,
+      "lines": 95
+    },
+    "handoff": {
+      "sha256": "7c62de979fdc7ac32fb5ddb2146156c917f80ee070d30fadc9d40343c4b6ed25",
+      "tokens": 184,
+      "bytes": 894,
+      "lines": 16
+    },
+    "migrate-to-shoehorn": {
+      "sha256": "de4da4c11d924fac79c924b2ee3d2db4a5cb98386eb490a599119463d036ae72",
+      "tokens": 553,
+      "bytes": 2795,
+      "lines": 118
+    },
+    "prototype": {
+      "sha256": "714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3",
+      "tokens": 649,
+      "bytes": 2931,
+      "lines": 26
+    },
+    "research": {
+      "sha256": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4",
+      "tokens": 174,
+      "bytes": 794,
+      "lines": 12
+    },
+    "resolving-merge-conflicts": {
+      "sha256": "9d8114f8ef0b31f535a265fc05c364bd8cf2e2895a830040e06c22acb11f54b0",
+      "tokens": 177,
+      "bytes": 918,
+      "lines": 14
+    },
+    "scaffold-exercises": {
+      "sha256": "75f5c9d771606fb9762f16522efc954df11c324f87148d8ff069bce166257de9",
+      "tokens": 589,
+      "bytes": 3589,
+      "lines": 106
+    },
+    "setup-matt-pocock-skills": {
+      "sha256": "2bcd89e97777cdb705914424e39c97d5db524c8eb4eafac8120778a07774f0ec",
+      "tokens": 1344,
+      "bytes": 6841,
+      "lines": 116
+    },
+    "setup-pre-commit": {
+      "sha256": "c9819d7f1e3b198064edc1faa3154224ed67395e9f07f5d3cea4b67cf0a11a98",
+      "tokens": 442,
+      "bytes": 2258,
+      "lines": 91
+    },
+    "teach": {
+      "sha256": "a32df9dcdfc0c4fdc1c98e1ed3940c5f56b84c1aa90ff60346f32b8b53915b43",
+      "tokens": 1984,
+      "bytes": 9506,
+      "lines": 140
+    },
+    "to-questionnaire": {
+      "sha256": "b5eb929842ee0e93d867c5e906d183d350f2f2d149eaeaa86967d94d8eda1d3b",
+      "tokens": 626,
+      "bytes": 2904,
+      "lines": 54
+    },
+    "wizard": {
+      "sha256": "bdf31d48211ea559878f95a4f344aeabf8d85897488ba564382bab0b000daac1",
+      "tokens": 897,
+      "bytes": 4123,
+      "lines": 44
+    },
+    "writing-beats": {
+      "sha256": "a96abafa2372eede8267d770138b322d6125da8adaa7ccf0a5e08e4ee13ee71e",
+      "tokens": 1136,
+      "bytes": 4855,
+      "lines": 67
+    },
+    "writing-for-agents": {
+      "sha256": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a",
+      "tokens": 2369,
+      "bytes": 10886,
+      "lines": 81
+    }
+  }
+}

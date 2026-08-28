@@ -1,0 +1,14 @@
+{
+  "skill": "writing-fragments",
+  "taxonomy": "Discipline",
+  "disposition": "COMPOSED",
+  "behavior_to_preserve": "Writing explore phase: mining raw fragments via grilling.",
+  "dependencies": [
+    "grilling"
+  ],
+  "capabilities": [
+    "ask_user"
+  ],
+  "harness_coupling": "NONE (delegates to grilling)",
+  "confidence": 1.0
+}

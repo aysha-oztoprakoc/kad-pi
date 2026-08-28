@@ -1,0 +1,14 @@
+{
+  "skill": "setup-matt-pocock-skills",
+  "taxonomy": "Setup Workflow",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Configures repo issue tracker, triage labels, and domain directories.",
+  "dependencies": [
+    "to-spec",
+    "to-tickets",
+    "triage"
+  ],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

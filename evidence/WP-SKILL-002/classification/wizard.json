@@ -1,0 +1,10 @@
+{
+  "skill": "wizard",
+  "taxonomy": "Discipline / Specialized Tool",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Generates interactive bash wizard script for human-only actions.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

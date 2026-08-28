@@ -1,0 +1,61 @@
+{
+  "all_pass": true,
+  "results": [
+    {
+      "test_name": "Prime Directive Validation",
+      "command": "python3 /home/amdy/Work/validate_prime_directive.py",
+      "passed": true,
+      "stdout": "VALIDATION SUCCESS\n==================\nBytes: 8914\nWords: 1109\nLines: 115\nEstimated Tokens: 1478\nToken budget check passed (<= 1500 tokens).\n",
+      "stderr": ""
+    },
+    {
+      "test_name": "Ask User Contract Test",
+      "command": "node /home/amdy/Work/.agents/capabilities/ask_user/contract_test.mjs",
+      "passed": true,
+      "stdout": "Running T1 \u2014 ANSWERED\nRunning T2 \u2014 UNAVAILABLE\nRunning T3 \u2014 FAILED\nRunning T4 \u2014 Schema Translation\nRunning T5 \u2014 Unsupported Representation\nAll contract tests PASSED.\nRunning T6 \u2014 Custom Input Unsupported\nAll contract tests PASSED (including T6).\n",
+      "stderr": ""
+    },
+    {
+      "test_name": "Grill-Me Validator (Phase C Gate)",
+      "command": "python3 /home/amdy/Work/evidence/WP-SKILL-002/tests/validator_grill_me.py",
+      "passed": true,
+      "stdout": "STATUS: GREEN - All checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test_name": "Vertical Slice Test (001D Gate)",
+      "command": "python3 /home/amdy/Work/evidence/WP-SKILL-002/tests/vertical_slice_test.py",
+      "passed": true,
+      "stdout": "=== Vertical Slice Chain Verification ===\n\u2714 Step 1: Workflow 'grill-me' declares dependency on 'grilling'\n\u2714 Step 2: Discipline 'grilling' declares capability 'ask_user'\n\u2714 Step 3: Canonical capability contract 'ask_user' exists\n\u2714 Step 4: Antigravity adapter maps canonical 'ask_user' to native 'ask_question'\n\u2714 Step 5: Live execution simulation from workflow -> discipline -> capability -> adapter -> UI -> response -> continuation passed!\nVERTICAL SLICE VERIFICATION: PASS\n",
+      "stderr": ""
+    },
+    {
+      "test_name": "Batch 1 Validator (Workflows)",
+      "command": "python3 /home/amdy/Work/evidence/WP-SKILL-002/tests/validator_batch_1.py",
+      "passed": true,
+      "stdout": "[grill-with-docs] STATUS: GREEN\n[wayfinder] STATUS: GREEN\n",
+      "stderr": ""
+    },
+    {
+      "test_name": "Batch 2 Validator (Composed Workflows)",
+      "command": "python3 /home/amdy/Work/evidence/WP-SKILL-002/tests/validator_batch_2.py",
+      "passed": true,
+      "stdout": "[improve-codebase-architecture] STATUS: GREEN\n[loop-me] STATUS: GREEN\n[to-spec] STATUS: GREEN\n[to-tickets] STATUS: GREEN\n[triage] STATUS: GREEN\n[implement] STATUS: GREEN\n[implement-spec] STATUS: GREEN\n",
+      "stderr": ""
+    },
+    {
+      "test_name": "Batch 3 Validator (Composed Disciplines)",
+      "command": "python3 /home/amdy/Work/evidence/WP-SKILL-002/tests/validator_batch_3.py",
+      "passed": true,
+      "stdout": "[tdd] STATUS: GREEN\n[setup-ts-deep-modules] STATUS: GREEN\n[wait-what] STATUS: GREEN\n[writing-fragments] STATUS: GREEN\n[writing-shape] STATUS: GREEN\n[retro] STATUS: GREEN\n",
+      "stderr": ""
+    },
+    {
+      "test_name": "Batch 4 Validator (Kept Disciplines)",
+      "command": "python3 /home/amdy/Work/evidence/WP-SKILL-002/tests/validator_batch_4.py",
+      "passed": true,
+      "stdout": "[ask-matt] PASS: Pure and intact.\n[claude-handoff] PASS: Pure and intact.\n[code-review] PASS: Pure and intact.\n[codebase-design] PASS: Pure and intact.\n[diagnosing-bugs] PASS: Pure and intact.\n[domain-modeling] PASS: Pure and intact.\n[git-guardrails-claude-code] PASS: Pure and intact.\n[handoff] PASS: Pure and intact.\n[migrate-to-shoehorn] PASS: Pure and intact.\n[prototype] PASS: Pure and intact.\n[research] PASS: Pure and intact.\n[resolving-merge-conflicts] PASS: Pure and intact.\n[scaffold-exercises] PASS: Pure and intact.\n[setup-matt-pocock-skills] PASS: Pure and intact.\n[setup-pre-commit] PASS: Pure and intact.\n[teach] PASS: Pure and intact.\n[to-questionnaire] PASS: Pure and intact.\n[wizard] PASS: Pure and intact.\n[writing-beats] PASS: Pure and intact.\n[writing-for-agents] PASS: Pure and intact.\n",
+      "stderr": ""
+    }
+  ]
+}

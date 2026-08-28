@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-08-28T05:50:52.811099",
+  "hostname": "amdy",
+  "workspace_root": "/home/amdy/Work",
+  "git_revision": "UNKNOWN",
+  "git_status": "UNKNOWN",
+  "env_vars": {
+    "OMARCHY_PATH": "/usr/share/omarchy",
+    "ANTIGRAVITY_AGENTAPI_EXE": "/home/amdy/.local/bin/agy"
+  },
+  "versions": {
+    "Pi": "0.84.3",
+    "AGY": "1.1.22",
+    "OpenCode": "1.18.23",
+    "DSH": "0.1.1-rc.2",
+    "Omarchy": "UNKNOWN"
+  }
+}

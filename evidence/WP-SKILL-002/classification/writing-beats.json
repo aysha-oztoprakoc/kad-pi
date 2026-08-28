@@ -1,0 +1,10 @@
+{
+  "skill": "writing-beats",
+  "taxonomy": "Discipline",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Writing exploit phase: assembling raw material into sequence of beats.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}

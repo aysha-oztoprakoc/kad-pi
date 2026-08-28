@@ -1,0 +1,14 @@
+[grill-with-docs] STATUS: RED
+  FAIL: Forbidden strings found: ['ask_question', 'ask_user_question', 'Antigravity', 'Pi', 'DSH']
+  FAIL: Missing dependency: grilling
+  FAIL: Missing dependency: domain-modeling
+  FAIL: Missing capability: ask_user
+  FAIL: Missing behavioral anchor: CONTEXT.md
+[wayfinder] STATUS: RED
+  FAIL: Forbidden strings found: ['ask_question', 'ask_user_question', 'Antigravity', 'Pi', 'DSH']
+  FAIL: Missing dependency: domain-modeling
+  FAIL: Missing dependency: grilling
+  FAIL: Missing dependency: prototype
+  FAIL: Missing dependency: research
+  FAIL: Missing dependency: setup-matt-pocock-skills
+  FAIL: Missing capability: ask_user

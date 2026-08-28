@@ -1,0 +1,10 @@
+{
+  "skill": "handoff",
+  "taxonomy": "Workflow",
+  "disposition": "KEEP_AS_IS",
+  "behavior_to_preserve": "Writes portable handoff markdown doc to OS temp directory.",
+  "dependencies": [],
+  "capabilities": [],
+  "harness_coupling": "NONE",
+  "confidence": 1.0
+}
