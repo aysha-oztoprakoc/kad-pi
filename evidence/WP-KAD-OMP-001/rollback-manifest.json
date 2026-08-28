@@ -1,0 +1,7 @@
+{
+  "created_by_wp": [".tools/oh-my-pi/v18.0.9",".state/omp-kad","bin/omp-kad",".omp","evidence/WP-KAD-OMP-001"],
+  "modified_by_wp": [".gitignore"],
+  "preexisting_preserved": [".pi",".agents","existing KAD evidence","local inference process","all pre-state modified/untracked files"],
+  "procedure":"If reverting before commit, remove only the listed created paths and restore .gitignore from its pre-state hash; do not remove .pi/.agents or unrelated evidence. The wrapper removes its own newly-created ~/.omp log root after each invocation when that root was absent at launch.",
+  "pre_gitignore_sha256":"87d86fceaacab549c1ceb779f0caeab8291a74902a8cfdc653805e730fdc37b9"
+}

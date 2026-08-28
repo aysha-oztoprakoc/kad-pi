@@ -1,0 +1,9 @@
+{
+  "roles": {
+    "world": {"selector":"kad-local-world/kad-local-s13:low","provider":"kad-local-world","model":"kad-local-s13","execution_class":"LOCAL_GENERAL","trust_class":"WORLD","authority":"Stheno WORLD-only","evidence":"live /v1/models identity plus KAD WP005 endpoint evidence"},
+    "default":"UNKNOWN", "plan":"UNKNOWN", "smol":"UNKNOWN", "slow":"UNKNOWN", "advisor":"OFF", "planner":"UNKNOWN", "builder":"UNKNOWN", "review":"UNKNOWN", "free_fast":"UNKNOWN", "free_reason":"UNKNOWN", "local_retrieval":"UNKNOWN"
+  },
+  "allowlist":"kad-local-world/*",
+  "economic_authority":"KAD; OMP modelRoles are transport bindings only",
+  "auth":"No OMP provider login performed; no credentials copied"
+}

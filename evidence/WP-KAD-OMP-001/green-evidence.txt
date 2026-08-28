@@ -1,0 +1,10 @@
+GREEN observations
+
+- Installed binary hash equals GitHub-published digest; `bin/omp-kad --version` => `omp/18.0.9`.
+- Wrapper preserves cwd and exports Work-local agent/XDG state; linked model config is tracked `.omp/models.yml` and no credentials are present.
+- Effective config shows `advisor.enabled=false`, `memory.backend=off`, `autolearn.enabled=false`, and `enabledModels=[kad-local-world/*]`.
+- OMP model catalog resolved `kad-local-world/kad-local-s13`, context 4096, zero-cost local provider.
+- `--model @world` resolved provider `kad-local-world` and model `kad-local-s13`.
+- KAD baseline tests remained green.
+
+LIMITATION: v18.0.9 still created `~/.omp/logs` despite XDG/state isolation. Wrapper now removes that root after invocation only when it was absent before launch; this is recorded as a supply/runtime caveat, not claimed as native zero-side-effect behavior.

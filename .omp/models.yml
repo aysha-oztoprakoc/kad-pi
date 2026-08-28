@@ -1,0 +1,11 @@
+# Source-of-truth project declaration for the wrapper-linked Work-local OMP model config.
+# No credential is stored here. The endpoint is KAD STC-owned and localhost-only.
+providers:
+  kad-local-world:
+    baseUrl: http://127.0.0.1:5001/v1
+    api: openai-completions
+    auth: none
+    models:
+      - id: kad-local-s13
+        name: Stheno v3.2 (KAD WORLD-only)
+        contextWindow: 4096

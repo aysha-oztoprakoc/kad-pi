@@ -1,0 +1,5 @@
+[
+  {"pi_agent":"kad-local-world","omp_adapter":".omp/agents/kad-local-world.md","model_role":"@world","tool_authority":["read"],"verdict":"WORKING_DISCOVERABLE_ADAPTER; execution probe resolved provider/model; behavioral output was not accepted as a workflow result"},
+  {"pi_agent":"kad-local-extractor","omp_adapter":null,"model_role":"UNKNOWN","tool_authority":[],"verdict":"DEFER; Qwen retrieval endpoint/model was not live"},
+  {"pi_agent":"kad-scout","omp_adapter":null,"model_role":"UNKNOWN","tool_authority":[],"verdict":"DEFER; no independently authenticated remote lane"}
+]

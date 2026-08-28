@@ -1,0 +1,2 @@
+{"task_id":"omp-world-probe","required_trust_domain":"WORLD","selected_execution_class":"LOCAL_GENERAL","selected_role":"@world","selected_resource":"kad-local-world/kad-local-s13","reason_code":"observed_local_world_endpoint","authority":"KAD policy; OMP role binding only","accepted":false}
+{"task_id":"omp-engineering-workflow","selected_execution_class":"UNKNOWN","selected_role":"UNKNOWN","reason_code":"no_verified_planner_builder_review_lanes","authority":"KAD policy","accepted":false}

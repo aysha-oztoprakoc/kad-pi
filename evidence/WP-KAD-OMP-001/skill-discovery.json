@@ -1,0 +1,15 @@
+{
+  "source":"/home/amdy/Work/.agents/skills",
+  "count_observed":"38",
+  "copied_count":0,
+  "provider":"agents (documented OMP v18.0.9 project discovery)",
+  "representative":[
+    {"skill":"tdd","discovered":true,"source":".agents/skills/tdd/SKILL.md","collision":"UNKNOWN","invocable":"NOT_MEASURED"},
+    {"skill":"code-review","discovered":true,"source":".agents/skills/code-review/SKILL.md","collision":"UNKNOWN","invocable":"NOT_MEASURED"},
+    {"skill":"handoff","discovered":true,"source":".agents/skills/handoff/SKILL.md","collision":"UNKNOWN","invocable":"NOT_MEASURED"},
+    {"skill":"research","discovered":true,"source":".agents/skills/research/SKILL.md","collision":"UNKNOWN","invocable":"NOT_MEASURED"},
+    {"skill":"writing-for-agents","discovered":true,"source":".agents/skills/writing-for-agents/SKILL.md","collision":"UNKNOWN","invocable":"NOT_MEASURED"},
+    {"skill":"kad-evidence-gate","discovered":true,"source":".agents/skills/kad-evidence-gate/SKILL.md","collision":"UNKNOWN","invocable":"NOT_MEASURED"}
+  ],
+  "classification":"REUSE_IN_PLACE; OMP docs/source confirm .agents is supported; no .omp/skills copy"
+}

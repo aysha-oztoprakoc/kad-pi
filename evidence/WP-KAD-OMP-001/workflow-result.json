@@ -1,0 +1,10 @@
+{
+  "status":"PARTIAL",
+  "plan":"NOT_RUN",
+  "scout":"NOT_RUN",
+  "build":"NOT_RUN",
+  "verify":"KAD deterministic baseline PASS; no OMP mutation fixture run",
+  "review":"NOT_RUN",
+  "reason":"Only WORLD-only local role was live; planner/builder/review roles were UNKNOWN and no trust-safe engineering workflow could be fabricated.",
+  "transport_probe":{"selector":"@world","provider":"kad-local-world","model":"kad-local-s13","resolved":true,"accepted":false,"note":"Endpoint returned unrelated read-tool documentation; no capability was promoted."}
+}

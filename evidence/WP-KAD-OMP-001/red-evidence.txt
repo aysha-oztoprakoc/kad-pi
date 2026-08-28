@@ -1,0 +1,10 @@
+RED — pre-state observation
+
+- `.tools/oh-my-pi/v18.0.9`: ABSENT
+- `.state/omp-kad`: ABSENT
+- `bin/omp-kad`: ABSENT
+- `.omp`: ABSENT
+- no OMP semantic role bridge existed
+- no OMP KAD agent adapter existed
+
+Evidence: pre-state.tsv and rollback-freeze.tsv, captured before WorkPackage mutation.

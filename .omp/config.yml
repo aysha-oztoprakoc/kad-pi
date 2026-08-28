@@ -1,0 +1,16 @@
+# Project-portable KAD policy overlay. Concrete transport lives in the Work-local state symlink.
+modelRoles:
+  world: "kad-local-world/kad-local-s13:low"
+enabledModels:
+  - "kad-local-world/*"
+advisor:
+  enabled: false
+memory:
+  backend: "off"
+autolearn:
+  enabled: false
+  autoContinue: false
+skills:
+  enabled: true
+  enableAgentsProject: true
+  enablePiProject: false

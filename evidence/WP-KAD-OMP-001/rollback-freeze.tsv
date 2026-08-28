@@ -1,0 +1,11 @@
+captured_at	2026-08-28T13:56:26-03:00
+branch	main
+head	27ed3c67016e330b658aa9be2b049b4020912109
+origin_head	27ed3c67016e330b658aa9be2b049b4020912109
+git_status	22 entries
+tracked_file_sha256	.gitignore	87d86fceaacab549c1ceb779f0caeab8291a74902a8cfdc653805e730fdc37b9
+target_absence	.tools/oh-my-pi/v18.0.9	ABSENT
+target_absence	.state/omp-kad	ABSENT
+target_absence	bin/omp-kad	ABSENT
+target_absence	.omp	ABSENT
+rollback_scope	Only this WP may create the listed target paths; pre-existing paths are never removed or overwritten.

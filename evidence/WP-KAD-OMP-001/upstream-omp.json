@@ -1,0 +1,14 @@
+{
+  "repository": "can1357/oh-my-pi",
+  "version": "18.0.9",
+  "tag": "v18.0.9",
+  "tag_commit": "cc14e04f075de82c5c0c0ccd2f9dfbce6f03fe9e",
+  "asset": "omp-linux-x64",
+  "architecture": "Linux x86_64",
+  "size": 193979592,
+  "sha256_expected": "55304008876a61f48c2a1dc1b0998ca36e7e45b8bc25aa25cf24e5c44524412c",
+  "release_api": "https://api.github.com/repos/can1357/oh-my-pi/releases/tags/v18.0.9",
+  "asset_url": "https://github.com/can1357/oh-my-pi/releases/download/v18.0.9/omp-linux-x64",
+  "license_url": "https://github.com/can1357/oh-my-pi/releases/download/v18.0.9/LICENSE",
+  "verification": "GitHub metadata and tag ref independently queried; asset hash matched before install"
+}

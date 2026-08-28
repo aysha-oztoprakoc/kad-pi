@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+WORK_ROOT="/home/amdy/Work"
+OMP_BINARY="$WORK_ROOT/.tools/oh-my-pi/v18.0.9"
+OMP_STATE="$WORK_ROOT/.state/omp-kad/agent"
+MODEL_CONFIG="$WORK_ROOT/.omp/models.yml"
+LINK="$OMP_STATE/models.yml"
+
+if [[ ! -x "$OMP_BINARY" ]]; then
+  printf 'omp-kad: missing or non-executable pinned binary: %s\n' "$OMP_BINARY" >&2
+  exit 127
+fi
+if [[ ! -f "$MODEL_CONFIG" ]]; then
+  printf 'omp-kad: missing tracked model configuration: %s\n' "$MODEL_CONFIG" >&2
+  exit 78
+fi
+mkdir -p "$OMP_STATE" \
+  "$WORK_ROOT/.state/omp-kad/xdg/data/omp" \
+  "$WORK_ROOT/.state/omp-kad/xdg/state/omp" \
+  "$WORK_ROOT/.state/omp-kad/xdg/cache/omp"
+export XDG_DATA_HOME="$WORK_ROOT/.state/omp-kad/xdg/data"
+export XDG_STATE_HOME="$WORK_ROOT/.state/omp-kad/xdg/state"
+export XDG_CACHE_HOME="$WORK_ROOT/.state/omp-kad/xdg/cache"
+if [[ -e "$LINK" || -L "$LINK" ]]; then
+  if [[ ! -L "$LINK" || "$(readlink -f "$LINK")" != "$MODEL_CONFIG" ]]; then
+    printf 'omp-kad: refusing to overwrite unexpected state path: %s\n' "$LINK" >&2
+    exit 78
+  fi
+else
+  # A concurrent launcher may win creation; verify after a non-destructive retry.
+  ln -s "$MODEL_CONFIG" "$LINK" 2>/dev/null || true
+  if [[ ! -L "$LINK" || "$(readlink -f "$LINK")" != "$MODEL_CONFIG" ]]; then
+    printf 'omp-kad: failed to establish expected model-config link: %s\n' "$LINK" >&2
+    exit 78
+  fi
+fi
+
+export PI_CODING_AGENT_DIR="$OMP_STATE"
+
+# v18.0.9 still writes its process audit log under the home config root.
+# Remove only that root when it was absent before this invocation; preserve any
+# pre-existing OMP installation/state owned by another harness.
+global_root="$HOME/.omp"
+global_preexisting=0
+[[ -e "$global_root" || -L "$global_root" ]] && global_preexisting=1
+cleanup() {
+  if [[ "$global_preexisting" == 0 ]]; then
+    rm -rf "$global_root"
+  fi
+}
+trap cleanup EXIT
+
+"$OMP_BINARY" "$@"

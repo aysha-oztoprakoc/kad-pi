@@ -1,0 +1,14 @@
+{
+  "release": "18.0.9",
+  "tag": "v18.0.9",
+  "commit": "cc14e04f075de82c5c0c0ccd2f9dfbce6f03fe9e",
+  "asset": "omp-linux-x64",
+  "size": 193979592,
+  "sha256_expected": "55304008876a61f48c2a1dc1b0998ca36e7e45b8bc25aa25cf24e5c44524412c",
+  "sha256_observed": "55304008876a61f48c2a1dc1b0998ca36e7e45b8bc25aa25cf24e5c44524412c",
+  "download_source": "https://github.com/can1357/oh-my-pi/releases/download/v18.0.9/omp-linux-x64",
+  "installed_path": "/home/amdy/Work/.tools/oh-my-pi/v18.0.9",
+  "installed_at": "2026-08-28T13:56:59-03:00",
+  "omp_version_output": "omp/18.0.9",
+  "verification": "PASS; chmod before atomic move; unverified binary was never executed"
+}

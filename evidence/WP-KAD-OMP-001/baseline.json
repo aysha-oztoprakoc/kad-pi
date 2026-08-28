@@ -1,0 +1,15 @@
+{
+  "branch": "main",
+  "head": "27ed3c67016e330b658aa9be2b049b4020912109",
+  "origin": "https://github.com/aysha-oztoprakoc/kad-pi.git",
+  "origin_head": "27ed3c67016e330b658aa9be2b049b4020912109",
+  "pi": "0.84.3",
+  "skills_count": 38,
+  "pi_agents": ["kad-local-extractor", "kad-local-world", "kad-scout"],
+  "local_endpoint": "http://127.0.0.1:5001/v1",
+  "local_health": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M",
+  "local_boundary": "Stheno WORLD-only; Qwen retrieval not live in this probe",
+  "tests": {"prime": "PASS", "local_router": "7/7 PASS", "evidence_gate": "1/1 PASS", "kad_lab": "14/14 PASS"},
+  "dirty_before_wp": true,
+  "preexisting_status_manifest": "pre-state.tsv"
+}
