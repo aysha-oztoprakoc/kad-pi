@@ -1,4 +1,5 @@
 {"claim_id":"C1","claim":"AMDY hardware is Ryzen 7 7700 with RX 9060 XT","status":"OBSERVED","evidence":"hardware-atlas.json"}
 {"claim_id":"C2","claim":"A local model is callable through Pi SDK and localhost KoboldCpp","status":"OBSERVED","evidence":"tools/kad/pi/local-worker.mjs"}
 {"claim_id":"C3","claim":"TELL is operational","status":"UNKNOWN","evidence":"SSH permission denied"}
-{"claim_id":"C4","claim":"PON+STC reduces RAG context without correctness loss","status":"HYPOTHESIS","evidence":"rag-experiment-design.md; no result"}
+{"claim_id":"C4","claim":"In the fixed two-question fixture, PON+STC preserved correctness and avoided unrelated rule evaluation","status":"OBSERVED","evidence":"rag-experiment-results.json"}
+{"claim_id":"C5","claim":"Compact trail plus selected evidence preserved fixture correctness with fewer input tokens","status":"OBSERVED","evidence":"context-experiment-results.json"}

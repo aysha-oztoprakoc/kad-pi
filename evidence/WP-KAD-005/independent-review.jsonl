@@ -1,0 +1,72 @@
+## Verdict: PARTIAL
+
+Read-only audit only; I did not execute tests. Current tree has credible router/local-worker pieces, but several requested gates remain incomplete or evidence-inconsistent.
+
+## Severity-ranked findings
+
+### HIGH — Pi-native swarm evidence is not sufficient / internally inconsistent
+Evidence claims “Native Pi subagent extension,” but the actual trace records `provider:"openai-codex"` and `model:"gpt-5.5"` for both swarm tasks, with large token counts. The referenced raw evidence is outside the repo under `/tmp`, so it is not durable audit evidence.
+
+- `evidence/WP-KAD-005/swarm-trace.jsonl:1`
+- `evidence/WP-KAD-005/swarm-trace.jsonl:2`
+- `evidence/WP-KAD-005/swarm-trace.jsonl:3`
+
+### HIGH — RAG experiment evidence is toy/simulated and contradicts other status files
+There is now `rag-experiment-results.json`, but it uses a 3-item hardcoded corpus and RAG-2 evaluates only one question while RAG-0/RAG-1 evaluate two, so the conditions are not comparable. Other milestone evidence still says the RAG result was not produced / is hypothesis.
+
+- Result exists: `evidence/WP-KAD-005/rag-experiment-results.json:46` (`evaluated_question_count: 1`)
+- Script is hardcoded toy corpus: `tools/kad/rag-microexperiment.mjs`
+- Contradictory “NOT_RUN”: `evidence/WP-KAD-005/final-report.md:22`
+- Contradictory hypothesis/no result: `evidence/WP-KAD-005/claim-ledger.jsonl:4`
+- Design says later reproducible run: `evidence/WP-KAD-005/rag-experiment-design.md:3`
+
+### MEDIUM — STC lifecycle works for direct dispose, but ownership/state lifecycle is partial
+`LocalInferenceCapability` registers teardown effects and advertises only after health check, which is good. But if the parent `StcScope` is disposed externally, the registry capability is torn down while `LocalInferenceCapability.state` remains `ACTIVE`; there is no watcher tying process death/endpoint loss back into registry availability except explicit dispose/manual routing tests.
+
+- Capability teardown registration: `tools/kad/local-inference-capability.mjs:42`
+- State set active: `tools/kad/local-inference-capability.mjs:43`
+- Direct dispose loop only handles stored disposers: `tools/kad/local-inference-capability.mjs:52-54`
+- STC implementation itself: `tools/kad/stc-scope.mjs`
+
+### MEDIUM — Regression evidence is stale/inconsistent
+`test-results.md` reports `local-router.test.mjs` as PASS `(3/3)`, but the current test file contains six tests, including STC lifecycle and Pi result validation. Self-improvement evidence says “6/6,” but the regression status artifact was not updated.
+
+- Stale count: `evidence/WP-KAD-005/test-results.md:3`
+- Current additional tests: `tools/kad/test/local-router.test.mjs:25` onward
+- “6/6” only in self-report: `evidence/WP-KAD-005/self-improvement-lessons.jsonl:1`
+
+### MEDIUM — Context experiment is self-reported fixture evidence, not reproducible experiment evidence
+The context result claims a 66.1% token reduction, but I found only a single JSON result and one trail packet; no runner/evaluator script equivalent to the RAG script is present.
+
+- `evidence/WP-KAD-005/context-experiment-results.json`
+- `evidence/WP-KAD-005/context-trails.jsonl`
+
+### LOW — Trust-domain enforcement is implemented and tested, but narrow
+The router enforces exact equality on `requirement.trust_domain === resource.trust_domain`, and tests prove `world` cannot satisfy `retrieval` or `engineering`. This gate looks good for routing selection, but there is no enum/schema validation preventing arbitrary domain strings or missing metadata at registration.
+
+- Implementation: `tools/kad/local-router.mjs:19-23`
+- Regression test: `tools/kad/test/local-router.test.mjs:25-29`
+
+### LOW — TELL defer is correctly handled
+TELL is explicitly unavailable, SSH auth failure is documented, and no retry/mutation is claimed. This gate passes as a defer.
+
+- `evidence/WP-KAD-005/tell-activation-handoff.md:3`
+- `evidence/WP-KAD-005/tell-activation-handoff.md:7-8`
+- `evidence/WP-KAD-005/claim-ledger.jsonl:3`
+
+### LOW — Secrets look acceptable from static evidence
+The Pi model config uses localhost and `apiKey: "local-no-secret"` with `authHeader:false`; broad static grep did not surface obvious live API keys in WP-KAD-005-relevant files.
+
+- `tools/kad/pi/local-models.json:5-8`
+
+## Gate summary
+
+- Trust-domain enforcement: **PASS**
+- STC lifecycle: **PARTIAL**
+- Pi-native swarm evidence: **PARTIAL / weak**
+- RAG experiment: **PARTIAL**
+- Context experiment: **PARTIAL**
+- Self-improvement evidence: **PARTIAL**
+- TELL defer: **PASS**
+- Secrets: **PASS by static review**
+- Regression status: **PARTIAL / stale evidence**

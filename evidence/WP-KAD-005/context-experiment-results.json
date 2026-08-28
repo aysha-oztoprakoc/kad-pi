@@ -1,0 +1,21 @@
+{
+  "experiment": "WP-KAD-005-R1-context",
+  "A_broad": {
+    "input_tokens_estimate": 115,
+    "correctness": true,
+    "files_reopened": 4,
+    "tool_calls": 4,
+    "duplicate_discovery": 2,
+    "accepted": true
+  },
+  "B_trail_evidence": {
+    "input_tokens_estimate": 39,
+    "correctness": true,
+    "files_reopened": 1,
+    "tool_calls": 1,
+    "duplicate_discovery": 0,
+    "accepted": true
+  },
+  "savings_ratio": 0.6608695652173913,
+  "conclusion": "fixture observation; not a universal claim"
+}

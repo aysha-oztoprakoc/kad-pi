@@ -1,0 +1,99 @@
+Verdict: **PARTIAL**
+
+Read-only audit of current `/home/amdy/Work` tree. I re-checked prior findings against files, not self-reports.
+
+## Severity-ranked findings
+
+### HIGH — Pi-native swarm evidence remains contradictory / overclaimed
+- Summary trace claims `remote_tokens:0` and “Native Pi subagent extension”.
+- Actual durable raw trace shows child agents used `provider:"openai-codex"` / `model:"gpt-5.5"` with nonzero token/cost usage.
+- Summary rows still point evidence to `/tmp/wp005r1-swarm-success.jsonl`, outside repo, though raw was copied into repo.
+
+Paths:
+- `evidence/WP-KAD-005/swarm-trace.jsonl:1-3`
+- `evidence/WP-KAD-005/swarm-trace-raw.jsonl:150-154`
+- `evidence/WP-KAD-005/final-report.md:31`
+
+Status: **PARTIAL**. Durable raw evidence now exists, but “Pi-native” / “remote_tokens:0” is not established as local/native-model execution.
+
+### MEDIUM — STC lifecycle still partial under external scope disposal / liveness loss
+`LocalInferenceCapability` registers process and registry teardown effects, and direct `dispose()` works. But previous lifecycle concern remains: if the owning `StcScope` is disposed externally, registry availability is cleared while `LocalInferenceCapability.state` can remain `ACTIVE`; no watcher reconciles endpoint/process death back into availability except explicit/manual paths.
+
+Paths:
+- `tools/kad/local-inference-capability.mjs:41-43`
+- `tools/kad/local-inference-capability.mjs:52-57`
+- `tools/kad/stc-scope.mjs`
+- `tools/kad/test/local-router.test.mjs:34-53`
+
+Status: **PARTIAL**.
+
+### MEDIUM — Regression status artifact is still stale/inconsistent
+`test-results.md` reports router tests as `PASS (3/3)`, but current test file contains six `test(...)` cases. Final report also says “3 new router/validator tests pass,” which may be semantically “new” but does not repair the stale explicit `(3/3)` status artifact.
+
+Paths:
+- `evidence/WP-KAD-005/test-results.md:3`
+- `tools/kad/test/local-router.test.mjs:8,16,25,34,47,55`
+- `evidence/WP-KAD-005/final-report.md:25`
+
+Status: **PARTIAL**.
+
+### MEDIUM — RAG comparability improved, but evidence remains only a tiny hardcoded fixture
+Prior non-comparable condition count appears repaired: RAG-2 now records `evaluated_question_count: 2`, same question count as the fixture. But the experiment is still a 3-document hardcoded corpus, no real retrieval corpus, no cache-reuse metric despite design text, and design still says “later reproducible run” while final report treats fixture completion as repaired evidence.
+
+Paths:
+- `tools/kad/rag-microexperiment.mjs`
+- `evidence/WP-KAD-005/rag-experiment-results.json`
+- `evidence/WP-KAD-005/rag-experiment-design.md:3`
+- `evidence/WP-KAD-005/final-report.md:22,31`
+
+Status: **PARTIAL**.
+
+### LOW — Context experiment now has a runner, but remains synthetic fixture evidence
+Previous “no runner” finding is fixed: `tools/kad/context-experiment.mjs` exists and reproduces the JSON. However, it is hardcoded arithmetic over synthetic “broad” vs “trail” objects, not a replay of actual agent continuation behavior.
+
+Paths:
+- `tools/kad/context-experiment.mjs`
+- `evidence/WP-KAD-005/context-experiment-results.json`
+
+Status: **PARTIAL**.
+
+### LOW — Self-improvement evidence is plausible but thin
+Trust-domain improvement has a lesson entry and matching regression test. But the red/green cycle evidence is summarized in one JSONL row; no raw failing command output or pre-change diff evidence is present.
+
+Paths:
+- `evidence/WP-KAD-005/self-improvement-lessons.jsonl:1`
+- `tools/kad/test/local-router.test.mjs:25-32`
+
+Status: **PARTIAL**.
+
+## Passing gates
+
+- **Trust-domain enforcement:** **PASS** — exact equality in router and regression for world-vs-retrieval/engineering exclusion.
+  - `tools/kad/local-router.mjs:15-22`
+  - `tools/kad/test/local-router.test.mjs:8-14,25-32`
+
+- **TELL defer:** **PASS** — unavailable, SSH auth failure documented, no retry/mutation claimed.
+  - `evidence/WP-KAD-005/tell-activation-handoff.md`
+  - `evidence/WP-KAD-005/local-provider-inventory.json`
+  - `evidence/WP-KAD-005/hardware-atlas.json`
+
+- **Secrets:** **PASS by static review** — relevant KAD config uses localhost and `apiKey:"local-no-secret"` with `authHeader:false`; no obvious live keys surfaced in relevant static grep.
+  - `tools/kad/pi/local-models.json:3-8`
+
+- **ROCm/training claims:** **PASS** — claims are conservative: ROCm unknown/not installed; training explicitly `NOT_READY`.
+  - `evidence/WP-KAD-005/hardware-atlas.json`
+  - `evidence/WP-KAD-005/training-readiness.md`
+  - `evidence/WP-KAD-005/amdy-backend-benchmarks.jsonl`
+
+## Overall gate summary
+
+- Trust-domain enforcement: **PASS**
+- STC lifecycle: **PARTIAL**
+- Pi-native swarm evidence: **PARTIAL**
+- Comparable RAG conditions: **PARTIAL**
+- Reproducible context experiment: **PARTIAL**
+- Self-improvement evidence: **PARTIAL**
+- TELL defer: **PASS**
+- Secrets: **PASS**
+- ROCm/training claims: **PASS**
+- Regression status: **PARTIAL**

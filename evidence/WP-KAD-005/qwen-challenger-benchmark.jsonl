@@ -1,0 +1,5 @@
+{"model":"Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M","host":"AMDY","backend":"Vulkan","runtime":"KoboldCpp 1.119","setting":"reasoning_effort:none, temperature:0","case":"structured_extraction","output_shape":"JSON fenced markdown with correct Ada/librarian fields","accepted":true,"tokens":"30 prompt / 43 completion","latency_ms":1034}
+{"model":"Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M","case":"repository_fact_finding","output":"PRIME","accepted":true,"tokens":"22 / 20","latency_ms":547}
+{"model":"Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M","case":"summary_compression","output_shape":"repeated/truncated; exceeded 5-word constraint","accepted":false,"tokens":"32 / 128","latency_ms":2877}
+{"model":"Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M","case":"instruction_following","output":"READY","accepted":true,"tokens":"16 / 19","latency_ms":527}
+{"model":"Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M","case":"schema_adherence","output":"{\"status\":\"ok\",\"count\":2}","accepted":true,"tokens":"22 / 27","latency_ms":677}

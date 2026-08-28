@@ -14,6 +14,7 @@ test: verify
 	$(MAKE) -C kad-lab test
 	node --test tools/kad/test/world-turn.test.mjs
 	node --test tools/kad/test/multi-turn-pon.test.mjs
+	node --test tools/kad/test/local-router.test.mjs
 
 test-pi-integration:
 	KAD_PI_SDK_ROOT=$(KAD_PI_SDK_ROOT) node --test tools/kad/test/pi-real-persistent.integration.test.mjs

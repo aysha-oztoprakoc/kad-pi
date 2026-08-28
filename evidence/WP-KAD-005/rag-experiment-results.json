@@ -1,1 +1,67 @@
-{"status":"NOT_RUN","reason":"Local provider activation and router GREEN were prioritized; no correctness corpus/evaluator was frozen before execution. No PON+STC RAG improvement claim.","conditions":["RAG-0 FULL","RAG-1 STANDARD","RAG-2 PON+STC"],"metrics":"defined in rag-experiment-design.md"}
+{
+  "experiment": "WP-KAD-005-R1-RAG",
+  "corpus_size": 3,
+  "question_count": 2,
+  "conditions": [
+    {
+      "condition": "RAG-0 FULL",
+      "correctness": 1,
+      "retrieval_precision": 0.6666666666666666,
+      "retrieval_recall": 1,
+      "injected_context_tokens": 28,
+      "source_ranges_used": [
+        "PRIME_DIRECTIVE.md#L1-L4",
+        "tools/kad/local-router.mjs#L1-L8"
+      ],
+      "latency_ms": 0.109,
+      "local_tokens": 0,
+      "remote_tokens": 0
+    },
+    {
+      "condition": "RAG-1 STANDARD",
+      "correctness": 1,
+      "retrieval_precision": 1,
+      "retrieval_recall": 1,
+      "injected_context_tokens": 19,
+      "source_ranges_used": [
+        "PRIME_DIRECTIVE.md#L1-L4",
+        "tools/kad/local-router.mjs#L1-L8"
+      ],
+      "latency_ms": 0.014,
+      "local_tokens": 0,
+      "remote_tokens": 0
+    },
+    {
+      "condition": "RAG-2 PON+STC",
+      "correctness": 1,
+      "retrieval_precision": 1,
+      "retrieval_recall": 1,
+      "injected_context_tokens": 19,
+      "source_ranges_used": [
+        "PRIME_DIRECTIVE.md#L1-L4",
+        "tools/kad/local-router.mjs#L1-L8"
+      ],
+      "latency_ms": 0.009,
+      "local_tokens": 0,
+      "remote_tokens": 0,
+      "evaluated_question_count": 2,
+      "source_change": "router trust-domain classification",
+      "pon_notification": "trust-domain.changed",
+      "affected_rule_evaluations": 1,
+      "unaffected_rule_evaluations": 0,
+      "invalidation_count": 1,
+      "stale_context_error": false,
+      "stc_context": {
+        "source": "tools/kad/local-router.mjs",
+        "version": "working-tree",
+        "scope": "retrieval",
+        "dependencies": [
+          "trust-domain"
+        ],
+        "lifetime": "until dependency change",
+        "provenance": "OBSERVED"
+      }
+    }
+  ],
+  "conclusion": "OBSERVED measurements only; no general improvement claim."
+}

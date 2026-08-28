@@ -19,13 +19,13 @@ KoboldCpp 1.119 served Stheno Q4_K_M on `127.0.0.1:5001`, Vulkan device 0, with 
 One non-comparative observation: direct short request measured approximately 22 generation tok/s and 349 prompt tok/s; Pi worker latency 567 ms. Vulkan worked. ROCm/HIP comparison, context regimes, concurrency, quantization, and VRAM telemetry were not completed.
 
 ## 10. PON/STC/RAG/context
-Existing KAD code and ADRs preserve distinct PON and STC graphs. This work package did not produce a new PON/STC RAG result. The three-condition design is frozen in `rag-experiment-design.md`; results are honestly `NOT_RUN`. A continuation trail packet is present in `context-trails.jsonl`.
+Existing KAD code and ADRs preserve distinct PON and STC graphs. The three-condition deterministic fixture experiment ran. FULL injected 28 tokens; STANDARD 19; PON+STC 19, all with correctness 1.0. RAG-2 recorded one invalidation, one affected-rule evaluation, zero unrelated evaluations, and no stale-context error. This is a small observation, not a general improvement claim. A continuation trail packet and reproducible context runner are present.
 
 ## 11. Testing
 Prime validation, Librarian verification, 30 existing baseline tests, and 3 new router/validator tests pass. The local worker is integration evidence, not a mock.
 
 ## 12. Degradation and limitations
-Local endpoint failure handling is represented by capability removal and tested at router level. TELL is `TELL_UNAVAILABLE`. No remote escalation was justified. No RP quality, embedding, reranking, training, or synthetic-canon claims were made.
+Local endpoint failure handling is represented by capability removal and tested at router level. TELL is `TELL_UNAVAILABLE`. No remote escalation was justified. Qwen3.5-9B challenger testing promoted only structured extraction, repository fact finding, instruction following, and schema adherence; five-word summary compression failed. No embedding, reranking, training, or synthetic-canon claims were made.
 
-## 13. Next work package
-Implement the fixed RAG-0/RAG-1/RAG-2 corpus experiment and trail handoff evaluator, then activate TELL only after credentials are available. Follow with comparative AMD backend/context benchmarks and an independent review. Full acceptance requires those measured artifacts.
+## 13. Review and next work package
+Two independent fresh Pi reviews returned PARTIAL. The first findings were repaired by making swarm evidence durable, correcting RAG comparability, updating test counts, and adding a reproducible context runner. The second still correctly identifies limits: the swarm used remote child models, the RAG corpus is tiny, and lifecycle/liveness coverage is bounded. TELL remains deferred and ROCm remains unavailable. This R1 therefore remains PARTIAL rather than falsely claiming closure.
