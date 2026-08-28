@@ -231,6 +231,16 @@
       "epistemic_status": "CONFIRMED",
       "summary": "Verified end-to-end vertical slice connecting natural language interpretation to C++20 Validator, Resolver, atomic StateDiff, and Causal Journaling.",
       "retrieval_keywords": ["WP-KAD-002", "Vertical Slice", "World Turn", "CandidateIntent", "StateDiff", "Causal Journal", "run-turn"]
+    },
+    {
+      "id": "EVID_WP_KAD_003",
+      "title": "Evidence: WP-KAD-003 Persistent Multi-Turn World + PON Causal Reaction Graph",
+      "path": "evidence/WP-KAD-003/final-report.md",
+      "type": "evidence",
+      "domain": "PON_STC_CORE",
+      "epistemic_status": "CONFIRMED",
+      "summary": "Verified persistent multi-turn world substrate with PON selective notification engine, STC lifecycle ownership, deterministic replay, and evidence dataset extraction.",
+      "retrieval_keywords": ["WP-KAD-003", "Persistent Multi-Turn", "PON Engine", "STC Scope", "Deterministic Replay", "Dataset"]
     }
   ]
 }

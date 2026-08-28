@@ -1,0 +1,40 @@
+{
+  "verified": true,
+  "turns_replayed": 4,
+  "initial_state_hash": "f084cc9da6c1aab019dd5ef53767bf4e72ff6ab4d17f198fa9244e97f2dedd24",
+  "final_state_hash": "c2be9af2b5636cbadcde888537de50affcc9e33b7b0b48947477cfe5bd5a9467",
+  "details": [
+    {
+      "turn_index": 1,
+      "match_before": true,
+      "match_after": true,
+      "match_status": true,
+      "recorded_after_hash": "c2be9af2b5636cbadcde888537de50affcc9e33b7b0b48947477cfe5bd5a9467",
+      "replayed_after_hash": "c2be9af2b5636cbadcde888537de50affcc9e33b7b0b48947477cfe5bd5a9467"
+    },
+    {
+      "turn_index": 2,
+      "match_before": true,
+      "match_after": true,
+      "match_status": true,
+      "recorded_after_hash": "5be58ee65956186d332b0dae18deea5fde787022bc136dbe6d07f8e506cd5504",
+      "replayed_after_hash": "5be58ee65956186d332b0dae18deea5fde787022bc136dbe6d07f8e506cd5504"
+    },
+    {
+      "turn_index": 3,
+      "match_before": true,
+      "match_after": true,
+      "match_status": true,
+      "recorded_after_hash": "5be58ee65956186d332b0dae18deea5fde787022bc136dbe6d07f8e506cd5504",
+      "replayed_after_hash": "5be58ee65956186d332b0dae18deea5fde787022bc136dbe6d07f8e506cd5504"
+    },
+    {
+      "turn_index": 4,
+      "match_before": true,
+      "match_after": true,
+      "match_status": true,
+      "recorded_after_hash": "c2be9af2b5636cbadcde888537de50affcc9e33b7b0b48947477cfe5bd5a9467",
+      "replayed_after_hash": "c2be9af2b5636cbadcde888537de50affcc9e33b7b0b48947477cfe5bd5a9467"
+    }
+  ]
+}

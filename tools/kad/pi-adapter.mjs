@@ -59,3 +59,62 @@ export function mountPiTurnAdapter({
     dispose: disposeHandler
   };
 }
+
+/**
+ * Mounts a PersistentSession onto a Pi SDK AgentSession.
+ *
+ * @param {object} param0
+ * @param {object} param0.session - Pi SDK AgentSession
+ * @param {object} [param0.context] - Cordis Context / Fiber
+ * @param {PersistentSession} param0.persistentSession - PersistentSession instance
+ * @param {Function} [param0.onTurnComplete] - Callback on turn resolution
+ * @returns {object} { dispose: () => Promise<void> }
+ */
+export function mountPiPersistentSessionAdapter({
+  session,
+  context,
+  persistentSession,
+  onTurnComplete = null
+}) {
+  let active = true;
+
+  const onQueueUpdate = (event) => {
+    if (!active || event?.type !== 'queue_update') return;
+
+    if (!Array.isArray(event.steering) || event.steering.length === 0) return;
+    const steeringItem = event.steering[0];
+    const text = typeof steeringItem === 'string' ? steeringItem : (steeringItem?.content || steeringItem?.text);
+    if (!text) return;
+
+    const result = persistentSession.executeTurn(text);
+
+    if (onTurnComplete) {
+      try {
+        onTurnComplete(result);
+      } catch (err) {
+        console.error('Error in persistent onTurnComplete callback:', err);
+      }
+    }
+  };
+
+  const unsubscribe = session.subscribe(onQueueUpdate);
+
+  const disposeHandler = async () => {
+    if (!active) return;
+    active = false;
+    if (typeof unsubscribe === 'function') {
+      unsubscribe();
+    }
+    await persistentSession.dispose();
+  };
+
+  if (context && typeof context.on === 'function') {
+    context.on('dispose', disposeHandler);
+  }
+
+  return {
+    getSession: () => persistentSession,
+    dispose: disposeHandler
+  };
+}
+

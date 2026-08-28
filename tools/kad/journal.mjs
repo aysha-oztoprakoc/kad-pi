@@ -36,15 +36,17 @@ export function appendJournalEntry(journalPath, entry, options = {}) {
   const idFactory = options.idFactory || null;
 
   const record = {
+    turn_index: entry.turn_index !== undefined ? entry.turn_index : undefined,
     turn_id: entry.turn_id || generateCausalId('turn', idFactory),
+    session_id: entry.session_id || undefined,
     run_id: entry.run_id || (options.runId || `run-wp002-${Date.now()}`),
     causation_id: entry.causation_id || 'root-user-command',
     correlation_id: entry.correlation_id || (options.correlationId || 'session-kad-main'),
     timestamp_iso: entry.timestamp_iso || clock(),
-    input_text: entry.input_text,
+    input_text: entry.input_text || entry.input,
     candidate_intent: entry.candidate_intent,
-    validation_status: entry.validation_status,
-    validation_detail: entry.validation_detail || null,
+    validation_status: entry.validation_status || entry.status,
+    validation_detail: entry.validation_detail || entry.validation || null,
     resolution: entry.resolution || null,
     state_before: entry.state_before,
     state_before_hash: entry.state_before_hash,
@@ -52,10 +54,11 @@ export function appendJournalEntry(journalPath, entry, options = {}) {
     state_after: entry.state_after,
     state_after_hash: entry.state_after_hash,
     domain_event: entry.domain_event || null,
+    pon_reactions: entry.pon_reactions || [],
     epistemic_status: entry.epistemic_status || 'OBSERVED',
     reality_level: entry.reality_level || 'INTEGRATION',
     engine_provenance: {
-      version: 'WP-KAD-002-v1',
+      version: 'WP-KAD-003-v1',
       binary: 'kad-lab/build/kad_engine_cli',
       authority_boundary: 'deterministic-cpp20'
     }
