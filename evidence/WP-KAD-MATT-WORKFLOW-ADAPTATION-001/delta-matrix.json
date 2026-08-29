@@ -1,0 +1,10 @@
+{
+  "strategy": "thin project-scoped overlay/composition",
+  "upstream_repositories": {
+    "matt": {"repository":"https://github.com/mattpocock/skills","revision":"6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"},
+    "five_persona_advisory_board": {"repository":"https://github.com/harryvondiesel-web/5-persona-advisory-board","revision":"fd58b80648c399f29b36d31739a0b07d459b43cf"}
+  },
+  "local_delta": ["ask-matt routing/orientation", "Wayfinder overlay", "decision protocol", "workflow bridge", "skill boundary sections", "governance tests"],
+  "upstream_content_replaced": false,
+  "future_update": "compare pinned snapshot, replay minimal delta, run doctors/tests/review, update lock"
+}

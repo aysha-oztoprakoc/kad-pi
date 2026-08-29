@@ -1,0 +1,18 @@
+{
+  "workpackage": "WP-KAD-MATT-WORKFLOW-ADAPTATION-001",
+  "upstream_first": true,
+  "skills": [
+    {"skill":"ask-matt","role":"router","kad_delta":"state-aware orientation and KAD routing","owner":"ask-matt"},
+    {"skill":"wayfinder","role":"decision map","kad_delta":"project overlay; five-plus-one human decisions","owner":"Wayfinder + human"},
+    {"skill":"grill-with-docs","role":"exploration","kad_delta":"returns unresolved authority choices to Wayfinder","owner":"grilling"},
+    {"skill":"domain-modeling","role":"terminology","kad_delta":"classifies KAD term changes before glossary mutation","owner":"domain-modeling"},
+    {"skill":"research","role":"evidence","kad_delta":"evidence input, never authority","owner":"research"},
+    {"skill":"prototype","role":"experiment","kad_delta":"explicitly experimental; no execution authorization","owner":"prototype"},
+    {"skill":"to-spec","role":"specification","kad_delta":"preserves selected decision and records governance gates","owner":"to-spec"},
+    {"skill":"to-tickets","role":"tracer bullets","kad_delta":"validated deterministic workctl bridge","owner":"to-tickets"},
+    {"skill":"implement","role":"execution","kad_delta":"claim and handoff preconditions","owner":"implement + workctl"},
+    {"skill":"tdd","role":"proof","kad_delta":"conditional KAD acceptance checks","owner":"tdd"},
+    {"skill":"code-review","role":"review","kad_delta":"KAD checks remain alongside Standards and Specification","owner":"code-review"}
+  ],
+  "unchanged_vanilla_skills": ["diagnosing-bugs", "resolving-merge-conflicts", "wizard", "setup-matt-pocock-skills"]
+}

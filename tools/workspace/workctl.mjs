@@ -3,6 +3,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { runSkillGovernance } from './skill-governance.mjs';
+import { importTicketFile } from './workflow-bridge.mjs';
 
 const STATES = new Set(['PROPOSED', 'READY', 'CLAIMED', 'IN_PROGRESS', 'BLOCKED', 'REVIEW', 'ACCEPTED', 'REJECTED', 'SUPERSEDED']);
 const MUTATING_STATES = new Set(['CLAIMED', 'IN_PROGRESS']);
@@ -102,6 +103,7 @@ function validateItem(root, item) {
   for (const field of ['id', 'project', 'title', 'status', 'fixed_point', 'owned_paths', 'blocked_by', 'blocks']) {
     if (!(field in item)) throw new Error(`task ${item.id ?? '<unknown>'} missing ${field}`);
   }
+  if (!/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(item.id)) throw new Error(`task ${item.id} has unsafe id`);
   if (!STATES.has(item.status)) throw new Error(`task ${item.id} has invalid state ${item.status}`);
   const currentProject = project(root, item.project);
   if (!Array.isArray(item.owned_paths)) throw new Error(`task ${item.id} owned_paths must be an array`);
@@ -210,8 +212,11 @@ function execute(root, parsed) {
         const currentHead = gitHead(projectInfo.root);
         if (currentHead && item.fixed_point !== currentHead) throw new Error(`fixed point mismatch: expected ${item.fixed_point}, current ${currentHead}`);
         const owned = [...new Set(item.owned_paths.map((ownedPath) => relativeOwned(projectInfo.root, ownedPath)))];
-        for (const claim of activeClaims(root).filter((candidate) => candidate.project === item.project)) {
-          if ((claim.owned_paths ?? []).some((ownedPath) => owned.some((candidatePath) => pathConflict(ownedPath, candidatePath)))) throw new Error('owned paths already claimed');
+        const ownedAbsolute = owned.map((ownedPath) => path.resolve(projectInfo.root, ownedPath));
+        for (const claim of activeClaims(root)) {
+          const claimProject = project(root, claim.project);
+          const claimedAbsolute = (claim.owned_paths ?? []).map((ownedPath) => path.resolve(claimProject.root, relativeOwned(claimProject.root, ownedPath)));
+          if (claimedAbsolute.some((ownedPath) => ownedAbsolute.some((candidatePath) => pathConflict(ownedPath, candidatePath)))) throw new Error('owned paths already claimed');
         }
         const record = { task: item.id, project: item.project, claim_id: crypto.randomUUID(), actor_label: actor(parsed), started_at: new Date().toISOString(), base_commit: currentHead ?? item.fixed_point, owned_paths: [...owned], mode: 'mutate', active: true };
         const claimFile = path.join(paths(root).claims, `${item.id}.json`);
@@ -253,7 +258,9 @@ function execute(root, parsed) {
     const claimFile = path.join(paths(root).claims, `${item.id}.json`);
     const claim = fs.existsSync(claimFile) ? json(claimFile) : null;
     if (!claim || claim.active === false || claim.mode === 'readonly') return fail('active mutating claim required for handoff');
+    if (!MUTATING_STATES.has(item.status)) return fail(`task is not handoffable in state ${item.status}`);
     if (claim.actor_label !== actor(parsed)) return fail('only the claim owner may hand off the task');
+    if (staleClaim(root, claim)) return fail('stale claim cannot be handed off');
     const dirty = dirtyPaths(projectInfo.root);
     const dirtyOwnedPaths = dirty.filter((entry) => item.owned_paths.some((ownedPath) => pathConflict(entry, ownedPath) || pathConflict(ownedPath, entry)));
     const handoff = { task: item.id, project: item.project, spec: item.spec_ref ?? null, fixed_point: item.fixed_point, current_head: gitHead(projectInfo.root), scope: item.scope ?? [], non_scope: item.non_scope ?? [], owned_paths: item.owned_paths, completed: [], remaining: ['Continue from the task contract'], tests_run: [], tests_pending: item.validation ?? [], failures: [], blockers: [], evidence_paths: item.evidence_target ? [item.evidence_target] : [], dirty_paths: dirty, dirty_owned_paths: dirtyOwnedPaths, next_action: 'Read project instructions, inspect the fixed point, then follow the task validation list.', instruction_files: instructionFiles(root, projectInfo) };
@@ -264,6 +271,11 @@ function execute(root, parsed) {
     const item = task(root, positional[0]); const projectInfo = validateItem(root, item); const handoffFile = path.join(paths(root).handoffs, `${item.id}.json`);
     if (!fs.existsSync(handoffFile)) return fail('no handoff exists for task');
     return ok({ project: { ...projectInfo, root: undefined }, instructions: instructionFiles(root, projectInfo), task: Object.fromEntries(Object.entries(item).filter(([key]) => key !== '_file')), handoff: json(handoffFile), validation: item.validation ?? [] });
+  }
+  if (command === 'import-tickets' || (command === 'tickets' && positional[0] === 'import')) {
+    const ticketFile = command === 'tickets' ? positional[1] : positional[0];
+    if (!ticketFile) return fail('ticket import requires a JSON file');
+    try { return ok(importTicketFile(ticketFile, { root })); } catch (error) { return fail(error.message); }
   }
   if (command === 'skills') {
     const subcommand = positional[0] ?? 'status';
@@ -300,7 +312,7 @@ function execute(root, parsed) {
     const tools = toolRegistry(root).tools ?? []; const toolStatus = tools.map((tool) => { const executable = String(tool.command).trim().split(/\s+/)[0]; const local = executable.startsWith('.') || executable.includes('/'); const available = local ? fs.existsSync(path.resolve(root, executable)) : spawnSync('sh', ['-c', 'command -v "$1"', 'workctl', executable]).status === 0; return { id: tool.id, command: tool.command, available }; });
     return errors.length ? fail(JSON.stringify({ errors, warnings, toolStatus })) : ok({ status: 'healthy', errors, warnings, toolStatus, llm_required: false });
   }
-  return ok({ commands: ['bootstrap', 'projects', 'status', 'next', 'show', 'claim', 'release', 'transition', 'handoff', 'resume', 'skills status', 'skills check-updates', 'skills doctor', 'doctor'] });
+  return ok({ commands: ['bootstrap', 'projects', 'status', 'next', 'show', 'claim', 'release', 'transition', 'handoff', 'resume', 'import-tickets', 'tickets import', 'skills status', 'skills check-updates', 'skills doctor', 'doctor'] });
 }
 
 export function runWorkctl(argv, options = {}) {

@@ -1,0 +1,1 @@
+{"status":"PASS","fixture":"builder claims, creates handoff, separate CLI process resumes","observed":["handoff requires active mutating claim and owner","handoff includes fixed point, owned paths, pending validation, dirty paths, and next action","resume returns task and handoff without harness metadata"],"stale_claim":"handoff rejects stale fixed-point claims"}

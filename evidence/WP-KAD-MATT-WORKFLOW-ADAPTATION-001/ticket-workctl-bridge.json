@@ -1,0 +1,1 @@
+{"status":"PASS","command":"bin/workctl import-tickets <tickets.json>","observed":["valid ticket maps ready-for-agent to READY","import is idempotent","conflicting existing record rejects","unknown blockers reject before writes","unsafe IDs and provider/model/harness fields reject","workctl next returns only unblocked READY items"],"execution_owner":"workctl"}

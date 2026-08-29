@@ -85,3 +85,5 @@ A change can pass one axis and fail the other:
 - Code that does exactly what the issue asked but breaks the project's conventions → **Spec pass, Standards fail.**
 
 Reporting them separately stops one axis from masking the other.
+
+For `kad-pi`, add conditional checks for authority inversion, trust leakage, unsafe escalation, hidden probabilistic dependencies, unbounded context, and broken evidence/provenance. The advisory board is an input before implementation; this review remains the post-implementation Standards + Specification gate.

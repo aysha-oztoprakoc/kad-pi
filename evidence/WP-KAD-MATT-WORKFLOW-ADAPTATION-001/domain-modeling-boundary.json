@@ -1,0 +1,1 @@
+{"status":"PASS","classification":["NEW","REFINEMENT","CONFLICT","SUPERSESSION_CANDIDATE","UNKNOWN"],"canonical_sources":["PRIME_DIRECTIVE.md","CONTEXT.md","accepted ADRs","KnowledgePlane taxonomy"],"authority":"terminology changes affecting governance return to Wayfinder; no silent overwrite"}

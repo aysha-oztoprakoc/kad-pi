@@ -1,0 +1,12 @@
+{
+  "workpackage": "WP-KAD-MATT-WORKFLOW-ADAPTATION-001",
+  "captured_at": "2026-08-29T19:31:40-03:00",
+  "fixed_point": "376daac8c9e395fbdbe123e4b71d08584d78d245",
+  "previous_commits": [
+    "376daac docs(skills): finalize governance report",
+    "91b3620 docs(skills): record governance evidence",
+    "7f1131f feat(skills): add KAD governance layer"
+  ],
+  "authority": ["PRIME_DIRECTIVE.md", "AGENTS.md"],
+  "pre_existing_dirty_paths_excluded": true
+}

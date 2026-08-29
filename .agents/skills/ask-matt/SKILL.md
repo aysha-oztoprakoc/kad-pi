@@ -92,3 +92,13 @@ Off the main flow entirely.
 ## Precondition
 
 **`/setup-matt-pocock-skills`**: run before your first engineering flow to configure the issue tracker, triage labels, and doc layout the other skills assume. Custom issue trackers also work.
+
+## KAD workspace orientation
+
+When invoked from `/home/amdy/Work`, orient deterministically before routing:
+
+1. Run `bin/workctl bootstrap` and `bin/workctl status`.
+2. Read the nearest project instruction entrypoint and the referenced active Wayfinder map, if any.
+3. If a current work item is `READY`, `CLAIMED`, `IN_PROGRESS`, or `REVIEW`, continue that state instead of restarting discovery.
+
+This orientation observes state only. `ask-matt` remains a router and never claims, mutates, or executes work.

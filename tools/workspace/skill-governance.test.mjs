@@ -6,6 +6,7 @@ import path from 'node:path';
 import {
   createAdvisoryResult,
   createDecisionRequest,
+  deriveSpecFromDecision,
   recordDecisionOnMap,
   recordWorkctlState,
   resolveDecision,
@@ -46,6 +47,17 @@ test('recommendation does not override a different human choice', () => {
   const decision = resolveDecision(request, { status: 'ANSWERED', selection: 'OPTION_4' });
   assert.equal(decision.humanSelection, 'OPTION_4');
   assert.notEqual(decision.humanSelection, 'OPTION_2');
+});
+
+test('spec preserves the human-selected option rather than the recommendation', () => {
+  const decision = resolveDecision(
+    createDecisionRequest({ question: 'Pick architecture', generatedOptions: fiveOptions, recommendedIndex: 1 }),
+    { status: 'ANSWERED', selection: 'OPTION_4' },
+  );
+  const spec = deriveSpecFromDecision(decision, { problem: 'Need a seam', solution: 'Use the selected seam', acceptance: ['behavior works'] });
+  assert.equal(spec.selected_option, 'OPTION_4');
+  assert.notEqual(spec.selected_option, 'OPTION_2');
+  assert.equal(spec.authority, 'AUTHOR_DECLARED');
 });
 
 test('Wayfinder map and workctl execution state remain separate owners', () => {
@@ -98,6 +110,8 @@ test('adapted routing preserves the vanilla engineering flow', () => {
   const routing = fs.readFileSync(path.resolve('.agents/skills/ask-matt/SKILL.md'), 'utf8');
   const flow = ['/wayfinder', '/to-spec', '/to-tickets', '/implement', '/tdd', '/code-review'];
   let cursor = -1;
+  const governance = validateLock();
+  assert.deepEqual(governance.workflow.errors, []);
   for (const step of flow) {
     const next = routing.indexOf(step, cursor + 1);
     assert.notEqual(next, -1, `${step} missing from vanilla flow`);

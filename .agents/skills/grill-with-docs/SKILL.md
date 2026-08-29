@@ -15,3 +15,5 @@ Execute a persistent interview by invoking the composed `grilling` and `domain-m
 - Resolve and invoke `grilling` and `domain-modeling`.
 - Interaction with the user is mediated by the canonical `ask_user` capability declared by `grilling`.
 - If the required capability is unavailable, follow the graceful degradation policy defined by `ask_user`.
++
++For `kad-pi`, an architecture or governance choice is not resolved by the interview itself. Return the decision to Wayfinder, which presents five meaningful options plus one custom write-in through `ask_user`; only an `ANSWERED` human response becomes authoritative.

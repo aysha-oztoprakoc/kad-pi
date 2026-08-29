@@ -1,0 +1,13 @@
+{
+  "status":"PASS",
+  "router":"ask-matt",
+  "routes": {
+    "high-impact strategic or safety decision":"kad-advisory-board -> wayfinder -> ask_user",
+    "large foggy effort":"wayfinder",
+    "unclear requirements":"grill-with-docs / domain-modeling",
+    "missing external fact":"research",
+    "sharp implementation":"to-spec -> to-tickets -> implement -> tdd -> code-review",
+    "hard reproducible bug":"diagnosing-bugs"
+  },
+  "non_role":"ask-matt does not implement, claim, or decide"
+}

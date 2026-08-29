@@ -78,3 +78,7 @@ A description of the things that are out of scope for this spec.
 Any further notes about the feature.
 
 </spec-template>
+
+## KAD overlay
+
+For `kad-pi`, derive the specification from resolved Wayfinder decisions and record decision locators, project scope, trust boundaries, failure/degradation expectations, evidence requirements, and acceptance gates. If a decision is unresolved, the spec is not ready unless it explicitly records the deferral and blocker. Do not reverse or silently improve a human-selected option.

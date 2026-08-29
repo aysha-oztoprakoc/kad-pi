@@ -113,3 +113,13 @@ test('handoff requires an active mutating claim and rejects unsafe review actors
   assert.equal(review.code, 1);
   assert.match(review.error, /unsafe path characters/);
 });
+
+test('mutating commands reject unsafe work item identifiers', () => {
+  const root = fixture();
+  const item = task(root);
+  item.id = '../escape';
+  fs.writeFileSync(path.join(root, '.agents', 'work', 'WP-TEST-001.json'), JSON.stringify(item));
+  const doctor = runWorkctl(['doctor'], { workspaceRoot: root });
+  assert.equal(doctor.code, 1);
+  assert.match(doctor.error, /unsafe id/);
+});

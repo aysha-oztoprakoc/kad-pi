@@ -1,0 +1,1 @@
+{"status":"PASS","checked":"ticket and work item contracts","observed":"no required model, provider, or harness identity; forbidden coupling keys rejected by bridge","zero_model_operations":["ticket registration","import","next","claim","handoff","resume","status","doctor","drift check"]}

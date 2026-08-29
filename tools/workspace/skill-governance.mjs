@@ -17,17 +17,17 @@ const SOURCES = [
   ['code-review', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/code-review/SKILL.md', '.agents/skills/code-review/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + CONFIG', 'canonical skill capability metadata'],
   ['codebase-design', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/codebase-design/SKILL.md', '.agents/skills/codebase-design/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + CONFIG', 'canonical skill capability metadata'],
   ['diagnosing-bugs', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/diagnosing-bugs/SKILL.md', '.agents/skills/diagnosing-bugs/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + CONFIG', 'canonical skill capability metadata'],
-  ['domain-modeling', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/domain-modeling/SKILL.md', '.agents/skills/domain-modeling/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + CONFIG', 'canonical skill capability metadata'],
-  ['grill-with-docs', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/grill-with-docs/SKILL.md', '.agents/skills/grill-with-docs/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + CONFIG', 'canonical skill capability metadata'],
-  ['implement', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/implement/SKILL.md', '.agents/skills/implement/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + CONFIG', 'canonical skill capability metadata'],
+  ['domain-modeling', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/domain-modeling/SKILL.md', '.agents/skills/domain-modeling/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + KAD OVERLAY', 'canonical skill capability metadata plus terminology authority boundary'],
+  ['grill-with-docs', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/grill-with-docs/SKILL.md', '.agents/skills/grill-with-docs/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + KAD OVERLAY', 'canonical skill capability metadata plus Wayfinder decision boundary'],
+  ['implement', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/implement/SKILL.md', '.agents/skills/implement/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + KAD OVERLAY', 'canonical skill capability metadata plus workctl claim and handoff boundary'],
   ['improve-codebase-architecture', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/improve-codebase-architecture/SKILL.md', '.agents/skills/improve-codebase-architecture/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + CONFIG', 'canonical skill capability metadata'],
-  ['prototype', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/prototype/SKILL.md', '.agents/skills/prototype/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA', 'no local change'],
-  ['research', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/research/SKILL.md', '.agents/skills/research/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA', 'no local change'],
+  ['prototype', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/prototype/SKILL.md', '.agents/skills/prototype/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + KAD OVERLAY', 'experimental artifact boundary'],
+  ['research', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/research/SKILL.md', '.agents/skills/research/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + KAD OVERLAY', 'evidence-only decision boundary'],
   ['resolving-merge-conflicts', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/resolving-merge-conflicts/SKILL.md', '.agents/skills/resolving-merge-conflicts/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA', 'no local change'],
   ['setup-matt-pocock-skills', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/setup-matt-pocock-skills/SKILL.md', '.agents/skills/setup-matt-pocock-skills/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA', 'no local change'],
-  ['tdd', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/tdd/SKILL.md', '.agents/skills/tdd/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + CONFIG', 'canonical skill capability metadata'],
-  ['to-spec', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/to-spec/SKILL.md', '.agents/skills/to-spec/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + CONFIG', 'canonical skill capability metadata'],
-  ['to-tickets', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/to-tickets/SKILL.md', '.agents/skills/to-tickets/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + CONFIG', 'canonical skill capability metadata'],
+  ['tdd', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/tdd/SKILL.md', '.agents/skills/tdd/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + KAD OVERLAY', 'canonical skill capability metadata plus conditional KAD acceptance checks'],
+  ['to-spec', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/to-spec/SKILL.md', '.agents/skills/to-spec/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + KAD OVERLAY', 'canonical skill capability metadata plus decision fidelity boundary'],
+  ['to-tickets', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/to-tickets/SKILL.md', '.agents/skills/to-tickets/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + KAD OVERLAY', 'canonical skill capability metadata plus deterministic workctl bridge'],
   ['triage', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/triage/SKILL.md', '.agents/skills/triage/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + CONFIG', 'canonical skill capability metadata'],
   ['wayfinder', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/wayfinder/SKILL.md', '.agents/skills/wayfinder/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA + KAD OVERLAY', 'ask_user decision protocol and project-scoped KAD policy'],
   ['wizard', MATT_REPOSITORY, MATT_REVISION, '.agents/upstream/matt/skills/engineering/wizard/SKILL.md', '.agents/skills/wizard/SKILL.md', '.agents/upstream/matt/LICENSE', 'VANILLA', 'no local change'],
@@ -86,6 +86,24 @@ function checkEntry(root, entry) {
   return { name: entry.name, status: executionSha === upstreamSha ? 'CURRENT' : 'LOCAL_DELTA', upstream_sha256: upstreamSha, execution_sha256: executionSha };
 }
 
+function workflowChecks(root) {
+  const askMatt = absolute(root, '.agents/skills/ask-matt/SKILL.md');
+  if (!fs.existsSync(askMatt)) return { errors: [], warnings: [] };
+  const errors = [];
+  const warnings = [];
+  if (!fs.existsSync(absolute(root, 'tools/workspace/workflow-bridge.mjs'))) errors.push('KAD workflow bridge missing');
+  if (!fs.existsSync(absolute(root, '.agents/skill-overlays/wayfinder-kad.md'))) errors.push('KAD Wayfinder overlay missing');
+  const routing = fs.readFileSync(askMatt, 'utf8');
+  const flow = ['/wayfinder', '/to-spec', '/to-tickets', '/implement', '/tdd', '/code-review'];
+  let cursor = -1;
+  for (const step of flow) {
+    const next = routing.indexOf(step, cursor + 1);
+    if (next < 0) { errors.push(`ask-matt routing reference missing: ${step}`); break; }
+    cursor = next;
+  }
+  return { errors, warnings };
+}
+
 export function validateLock({ root = ROOT, lock = readLock(root) } = {}) {
   const errors = [];
   const entries = Array.isArray(lock.skills) ? lock.skills.map((entry) => checkEntry(root, entry)) : [];
@@ -94,8 +112,11 @@ export function validateLock({ root = ROOT, lock = readLock(root) } = {}) {
   const names = lock.skills?.map((entry) => entry.name) ?? [];
   if (new Set(names).size !== names.length) errors.push('skills lock contains duplicate names');
   for (const entry of entries) if (entry.status === 'UNPINNED') errors.push(`${entry.name}: missing ${entry.missing.join(', ')}`);
+  const workflow = workflowChecks(root);
+  errors.push(...workflow.errors);
   const warnings = entries.filter((entry) => ['LOCAL_DELTA', 'UPSTREAM_CHANGED', 'UNKNOWN'].includes(entry.status));
-  return { status: errors.length ? 'FAIL' : warnings.length ? 'WARN' : 'PASS', errors, warnings, entries, counts: entries.reduce((counts, entry) => ({ ...counts, [entry.status]: (counts[entry.status] ?? 0) + 1 }), {}) };
+  warnings.push(...workflow.warnings.map((message) => ({ name: 'workflow', status: 'WARNING', reason: message })));
+  return { status: errors.length ? 'FAIL' : warnings.length ? 'WARN' : 'PASS', errors, warnings, entries, workflow, counts: entries.reduce((counts, entry) => ({ ...counts, [entry.status]: (counts[entry.status] ?? 0) + 1 }), {}) };
 }
 
 export function runSkillGovernance(argv = process.argv.slice(2), root = ROOT) {

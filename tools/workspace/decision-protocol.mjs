@@ -56,6 +56,27 @@ export function resolveDecision(request, response) {
   });
 }
 
+export function deriveSpecFromDecision(decision, { problem, solution, scope = [], nonScope = [], acceptance = [] } = {}) {
+  if (!decision || decision.authority !== 'AUTHOR_DECLARED' || !decision.humanSelection) throw new Error('spec requires an AUTHOR_DECLARED decision');
+  nonEmpty(problem, 'problem');
+  nonEmpty(solution, 'solution');
+  for (const [value, field] of [[scope, 'scope'], [nonScope, 'nonScope'], [acceptance, 'acceptance']]) {
+    if (!Array.isArray(value)) throw new Error(`${field} must be an array`);
+  }
+  return Object.freeze({
+    problem,
+    solution,
+    decision_ref: decision.requestId,
+    decision_ticket: decision.ticket,
+    selected_option: decision.humanSelection,
+    custom_response: decision.customResponse,
+    authority: decision.authority,
+    scope: Object.freeze([...scope]),
+    non_scope: Object.freeze([...nonScope]),
+    acceptance: Object.freeze([...acceptance]),
+  });
+}
+
 export function recordDecisionOnMap(map, decision, gist) {
   if (!map || !Array.isArray(map.decisions)) throw new Error('decision map must contain a decisions array');
   nonEmpty(gist, 'gist');

@@ -1,0 +1,1 @@
+{"status":"PASS","fixture":"recommendation OPTION_2; human selects OPTION_4","observed":{"selected_option":"OPTION_4","authority":"AUTHOR_DECLARED"},"rule":"deriveSpecFromDecision preserves the human selection and never substitutes the recommendation"}

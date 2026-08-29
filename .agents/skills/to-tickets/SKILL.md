@@ -110,3 +110,9 @@ The end-to-end behaviour this ticket makes work, from the user's perspective, no
 </issue-template>
 
 In either form, avoid specific file paths or code snippets: they go stale fast. Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it and note briefly that it came from a prototype. Trim to the decision-rich parts, not a working demo, just the important bits.
+
+## KAD workctl bridge
+
+When the active project is `kad-pi`, an accepted ticket may be emitted as a JSON ticket artifact and imported deterministically with `bin/workctl import-tickets <file>` (or `bin/workctl tickets import <file>`). The bridge validates the work-contract fields, blocking references, project authority, and provider/model/harness neutrality before writing `.agents/work/<id>.json`.
+
+The resulting work item is the single execution-state record. `workctl next` remains the authority for unblocked `READY` work; the tracker and spec remain planning/documentation surfaces. Do not create a second task database or silently change a ticket during import.

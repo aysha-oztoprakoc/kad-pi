@@ -8,3 +8,4 @@
 - **Map update:** store full resolution on the decision ticket; append only a pointer and gist to `Decisions so far`.
 - **Isolation:** do not inject PON, STC, KAD authority taxonomy, or KAD epistemic classes into projects without explicit opt-in.
 - **Evidence:** retain the offered options, response, timestamp, source ticket, consequences, and evidence inputs.
+- **Handoff:** after a decision is accepted, `to-spec` and `to-tickets` carry its selected semantics forward; `workctl` is the only execution-state owner.

@@ -1,0 +1,1 @@
+{"status":"PASS","cases":[{"project":"kad-pi","opted_in":false,"overlay":"available"},{"project":"side-project","opted_in":false,"overlay":"not available"},{"project":"side-project","opted_in":true,"overlay":"available"}],"rule":"KAD authority/PON/STC ontology is not injected into unrelated projects"}

@@ -1,0 +1,1 @@
+{"status":"PASS","fixture":"two simulated builders claim one mutating ticket","observed":{"builder_a":"PASS","builder_b":"REJECT task already claimed"},"rule":"implement requires workctl mutating claim; read-only review does not reserve mutation paths"}
