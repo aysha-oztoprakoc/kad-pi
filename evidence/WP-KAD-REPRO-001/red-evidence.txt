@@ -1,0 +1,10 @@
+RED — before canonical bootstrap / explicit historical runtime
+
+Command:
+KAD_PI_SDK_ROOT=/tmp/wp-kad-001-sdk/runtime node --input-type=module -e "import { loadPiSdk } from './tools/kad/pi/sdk-loader.mjs'; await loadPiSdk();"
+
+Observed exit code: 1
+Observed failure:
+Error: SDK provenance verification failed: artifact manifest is absent: /tmp/wp-kad-001-sdk/runtime/sdk-artifact-manifest.json
+
+This is fail-closed rejection. The historical path is not searched or trusted; it cannot satisfy the current provenance gate.

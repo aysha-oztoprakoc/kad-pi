@@ -1,0 +1,24 @@
+GREEN — canonical deterministic bootstrap and verification
+
+Bootstrap command:
+node tools/kad/pi/bootstrap-sdk.mjs --offline
+
+Result:
+status=bootstrapped
+package=@earendil-works/pi-coding-agent
+version=0.84.3
+provenance_status=CONFIRMED
+reality_level=INTEGRATION
+artifact_manifest_sha256=6b1d3c95afd7194d773858da9d0c90df0745313b751124698fe49ddbd1e502d0
+
+Accepted artifact:
+- registry SHA-1: c040a5c2cfacd996731ce302a323269f124c8bdc
+- tarball SHA-256: d07dc417f78a14dac376a878b6556b51961f118f79771ee375333dc51356bc75
+- tarball SHA-512: 62bda9f4fb9badb15999810f608f82f0a9993fdc6516e2c39c01bae11b54d190e0add8976166becbb586c893b93a5a8f9623a454231df48cd5b333b7fedd03d3
+- package files verified: 1,044
+- package tree SHA-256: bb72c98d21fb4d1c7f0a6919bb6481e170496ccd4c00bdf07bf06487f7487acf
+- package-lock SHA-256: 6fbdda7f91e96a3b8826bce41b35e540f3faafc986d91f2d8624012fb9854f09
+
+Repeat command:
+node tools/kad/pi/bootstrap-sdk.mjs --offline
+Result: status=already-verified, with the identical canonical receipt and no reinstall.

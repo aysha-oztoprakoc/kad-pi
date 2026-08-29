@@ -16,6 +16,7 @@ build/
 
 # Work-local OMP binary and runtime/auth state
 .tools/oh-my-pi/
+.tools/kad/pi-sdk/
 .state/omp-kad/
 
 # Environment & Secrets

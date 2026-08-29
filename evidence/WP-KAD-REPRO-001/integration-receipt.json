@@ -1,0 +1,15 @@
+{
+  "workpackage":"WP-KAD-REPRO-001",
+  "command":"node --test tools/kad/test/pi-real-persistent.integration.test.mjs",
+  "status":"PASS",
+  "tests":7,
+  "passed":7,
+  "failed":0,
+  "sdk_package":"@earendil-works/pi-coding-agent",
+  "sdk_version":"0.84.3",
+  "sdk_provenance_status":"CONFIRMED",
+  "sdk_runtime":".tools/kad/pi-sdk/0.84.3/runtime",
+  "provider_network_calls":0,
+  "agent_stream_calls":0,
+  "notes":["PI-F3 emits the intentionally injected PON error while the test passes; this is expected negative evidence.","Stheno and external WORLD resources were not mutated."]
+}

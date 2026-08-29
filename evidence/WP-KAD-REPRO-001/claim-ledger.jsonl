@@ -1,0 +1,6 @@
+{"claim_id":"REPRO-C1","claim":"The real Pi SDK gate resolves without the historical ephemeral runtime.","status":"PROVEN","evidence":["green-evidence.txt","integration-receipt.json"]}
+{"claim_id":"REPRO-C2","claim":"Only the accepted package/version and content digests can be imported.","status":"PROVEN","evidence":["tools/kad/pi/sdk-provenance.json","adversarial-review.md","sdk-resolver.test.mjs"]}
+{"claim_id":"REPRO-C3","claim":"The bootstrap is deterministic and repeatable.","status":"PROVEN","evidence":["green-evidence.txt","regression-results.md"]}
+{"claim_id":"REPRO-C4","claim":"Real Pi persistent integration passes with no provider invocation.","status":"PROVEN","evidence":["integration-receipt.json"]}
+{"claim_id":"REPRO-C5","claim":"The full KAD regression remains green.","status":"PROVEN","evidence":["regression-results.md"]}
+{"claim_id":"REPRO-C6","claim":"No speedup, savings, PAYG, authority, or provider-capacity claim is introduced.","status":"BOUNDED","evidence":["experimental-contract.md","adversarial-review.md"]}

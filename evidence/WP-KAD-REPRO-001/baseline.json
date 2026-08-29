@@ -1,0 +1,24 @@
+{
+  "workpackage":"WP-KAD-REPRO-001",
+  "head":"7335b0cc431b21a4b74f1a0680b2f7e27a9f99c5",
+  "branch":"main",
+  "preexisting_dirty_paths":[
+    {"path":"evidence/WP-KAD-002/causal-journal.jsonl","classification":"unrelated-dirty","action":"preserved; not staged"},
+    {"path":"tools/kad/index.mjs","classification":"unrelated-dirty","action":"preserved; not staged"},
+    {"path":".agents/skills/kad-evidence-gate/","classification":"unrelated-untracked","action":"preserved; not staged"},
+    {"path":".pi/agents/","classification":"prior-workpackage-untracked","action":"preserved; not staged"},
+    {"path":"evidence/WP-KAD-005/","classification":"prior-workpackage-untracked","action":"preserved; not staged"},
+    {"path":"evidence/WP-KAD-LOCAL-001/","classification":"prior-workpackage-untracked","action":"preserved; not staged"},
+    {"path":"evidence/WP-KAD-MATT-001/","classification":"prior-workpackage-untracked","action":"preserved; not staged"},
+    {"path":"tools/kad/DISTILLATION.md","classification":"prior-workpackage-untracked","action":"preserved; not staged"},
+    {"path":"tools/kad/distillation.mjs","classification":"prior-workpackage-untracked","action":"read-only dependency; not staged"},
+    {"path":"tools/kad/episode.mjs","classification":"prior-workpackage-untracked","action":"read-only dependency; not staged"},
+    {"path":"tools/kad/test/distillation.test.mjs","classification":"prior-workpackage-untracked","action":"preserved; not staged"},
+    {"path":"tools/kad/test/episode.test.mjs","classification":"prior-workpackage-untracked","action":"read-only dependency; not staged"}
+  ],
+  "old_failure":"sdk-loader depended on absent /tmp/wp-kad-001-sdk/runtime",
+  "accepted_sdk":{"package":"@earendil-works/pi-coding-agent","version":"0.84.3","sha1":"c040a5c2cfacd996731ce302a323269f124c8bdc","sha256":"d07dc417f78a14dac376a878b6556b51961f118f79771ee375333dc51356bc75","sha512":"62bda9f4fb9badb15999810f608f82f0a9993fdc6516e2c39c01bae11b54d190e0add8976166becbb586c893b93a5a8f9623a454231df48cd5b333b7fedd03d3","registry_integrity":"sha512-Yr2p9PubrbFZmYEPYI+C8KmZP9xlFuLDnAG64RtU0ZDgrdiXYWa+y7WGyJO5OlqPliOkVCMd9IzVszO3/t0D0w==","git_head":"bfb004d4418ff05c6f909eaaab856cbe75c1fde0"},
+  "installed_pi":"/home/amdy/.local/share/mise/installs/pi/0.84.3/pi",
+  "npm_cache":"authenticated exact tarball available through npm cache; package metadata offline install was not available, local tarball install was",
+  "policy":"no version upgrade; no provider/model/swarm/economic changes"
+}

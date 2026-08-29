@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "package": "@earendil-works/pi-coding-agent",
+  "version": "0.84.3",
+  "registry_sha1": "c040a5c2cfacd996731ce302a323269f124c8bdc",
+  "registry_git_head": "bfb004d4418ff05c6f909eaaab856cbe75c1fde0",
+  "registry_integrity": "sha512-Yr2p9PubrbFZmYEPYI+C8KmZP9xlFuLDnAG64RtU0ZDgrdiXYWa+y7WGyJO5OlqPliOkVCMd9IzVszO3/t0D0w==",
+  "tarball_sha256": "d07dc417f78a14dac376a878b6556b51961f118f79771ee375333dc51356bc75",
+  "tarball_sha512": "62bda9f4fb9badb15999810f608f82f0a9993fdc6516e2c39c01bae11b54d190e0add8976166becbb586c893b93a5a8f9623a454231df48cd5b333b7fedd03d3",
+  "canonical_root": ".tools/kad/pi-sdk/0.84.3/runtime",
+  "artifact_manifest": "sdk-artifact-manifest.json",
+  "artifact_manifest_sha256": "6b1d3c95afd7194d773858da9d0c90df0745313b751124698fe49ddbd1e502d0",
+  "bootstrap_policy": "exact package/version only; verify tarball before extraction; install with scripts disabled; no global or ephemeral fallback"
+}
