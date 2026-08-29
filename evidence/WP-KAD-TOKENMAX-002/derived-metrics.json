@@ -1,0 +1,19 @@
+{
+  "source":"historical-economic-episode.json",
+  "classification":"HISTORICAL_OBSERVED + CALCULATED",
+  "episode_count":1,
+  "accepted_episode_count":1,
+  "rejected_episode_count":0,
+  "remote_tokens":1179,
+  "accepted_remote_tokens":1179,
+  "total_model_calls":2,
+  "repair_count":0,
+  "escalation_count":0,
+  "remote_tokens_per_accepted_episode":1179,
+  "provider_cost_per_accepted_episode":null,
+  "provider_cost_unit":null,
+  "repair_amplification":2,
+  "latency_ms":80596,
+  "compiled_context_bytes":2076,
+  "unknowns":["provider monetary cost; subscription-backed runtime metadata is not treated as actual charge","cached input tokens","reasoning tokens","accepted artifact hash","quota snapshot at historical route time"]
+}

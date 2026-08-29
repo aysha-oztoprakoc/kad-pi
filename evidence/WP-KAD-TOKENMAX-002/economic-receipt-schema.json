@@ -1,0 +1,8 @@
+{
+  "schema_version":"kad-economic-1",
+  "required":["task_id","episode_id","semantic_role","provider","model","execution_class","usage","economics","performance","quality","provenance"],
+  "usage":{"input_tokens":"number|null","cached_input_tokens":"number|null","output_tokens":"number|null","reasoning_tokens":"number|null","total_tokens":"number|null"},
+  "economics":{"provider_reported_cost":"number|null","cost_unit":"string|null","billing_class":"string|null","quota_snapshot_id":"sha256|null","quota_state":"object|null","cache":"provider-scoped object|null"},
+  "quality":{"validation":"PASS|FAIL|UNKNOWN","accepted":"boolean; only true with KAD_VALIDATOR and PASS","repairs":"number","escalations":"number","accepted_artifact_hash":"sha256|null"},
+  "security":"No raw provider payload, authorization header, token, or hidden reasoning field is permitted."
+}

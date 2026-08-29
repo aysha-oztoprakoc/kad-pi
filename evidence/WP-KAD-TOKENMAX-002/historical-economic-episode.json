@@ -1,0 +1,30 @@
+{
+  "episode_source":"HISTORICAL_OBSERVED",
+  "source_artifact":"evidence/WP-KAD-SWARM-001/real-swarm-run.json",
+  "source_artifact_sha256":"6bf2b30725efe395180443f786e27c8b949221a62c80126ad6b5f7c6ff9e6690",
+  "receipt": {
+    "schema_version":"kad-economic-1",
+    "task_id":"SWARM-REAL-001",
+    "episode_id":"episode-SWARM-REAL-001",
+    "equivalence_key":"retrieval/repository-fact-finding",
+    "semantic_role":"controller",
+    "provider":"openai-codex",
+    "model":"gpt-5.6-luna",
+    "execution_class":"REMOTE_SUBSCRIPTION",
+    "trust_domain":"retrieval",
+    "capability":"repository-fact-finding",
+    "usage":{"input_tokens":1086,"cached_input_tokens":null,"output_tokens":93,"reasoning_tokens":null,"total_tokens":1179},
+    "economics":{"provider_reported_cost":null,"cost_unit":null,"cost_provenance":null,"billing_class":"SUBSCRIPTION_BACKED","quota_snapshot_id":null,"quota_state":null,"cache":null},
+    "performance":{"latency_ms":80596,"compiled_context_bytes":2076},
+    "quality":{"validation":"PASS","accepted":true,"repairs":0,"escalations":0,"final_outcome":"ACCEPTED","accepted_artifact_hash":null},
+    "slop":{"duplicate_calls":null,"unnecessary_retries":null,"validation_failures":0},
+    "model_calls":2,
+    "observation_confidence":"OBSERVED",
+    "provenance":{"source":"evidence/WP-KAD-SWARM-001/real-swarm-run.json","usage_source":"real controller telemetry","provider_metadata_observed":true}
+  },
+  "derived_metrics":{"episode_count":1,"accepted_episode_count":1,"rejected_episode_count":0,"remote_tokens":1179,"accepted_remote_tokens":1179,"total_model_calls":2,"repair_count":0,"escalation_count":0,"remote_tokens_per_accepted_episode":1179,"provider_cost_per_accepted_episode":null,"provider_cost_unit":null,"repair_amplification":2},
+  "pareto_analysis":{"result":"INSUFFICIENT_EVIDENCE","reason":"no equivalent accepted alternative with complete observed dimensions"},
+  "shadow_recommendation":{"recommendation":"INSUFFICIENT_EVIDENCE","reason_codes":["NO_PROVEN_DOWNWARD_DOMINANCE"]},
+  "distillation_candidate":{"distillation_candidate":false,"promoted":false,"reason":"insufficient-repeated-accepted-evidence"},
+  "replay_equal":true
+}

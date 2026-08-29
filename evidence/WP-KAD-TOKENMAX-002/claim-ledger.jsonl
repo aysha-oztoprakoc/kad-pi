@@ -1,0 +1,8 @@
+{"claim_id":"TOKENMAX002-C1","classification":"HISTORICAL_OBSERVED","claim":"Accepted SWARM-REAL-001 used 1086 input and 93 output remote tokens over 80596ms with two controller calls and zero repairs.","evidence":"historical-economic-episode.json; evidence/WP-KAD-SWARM-001/real-swarm-run.json"}
+{"claim_id":"TOKENMAX002-C2","classification":"CALCULATED","claim":"The accepted historical episode consumed 1179 observed remote tokens and has repair amplification 2.","evidence":"derived-metrics.json"}
+{"claim_id":"TOKENMAX002-C3","classification":"UNKNOWN","claim":"Actual subscription-backed monetary cost is not established.","evidence":"historical-economic-episode.json"}
+{"claim_id":"TOKENMAX002-C4","classification":"UNKNOWN","claim":"A quota snapshot was not captured at the historical route time.","evidence":"historical-economic-episode.json"}
+{"claim_id":"TOKENMAX002-C5","classification":"REJECTED","claim":"Runtime/API list-price metadata equals actual subscription cost.","evidence":"economic-receipt-schema.json; adversarial-review.md"}
+{"claim_id":"TOKENMAX002-C6","classification":"REJECTED","claim":"One accepted episode proves a downward routing migration or provider superiority.","evidence":"pareto-analysis.json; shadow-routing-receipt.json"}
+{"claim_id":"TOKENMAX002-C7","classification":"INFERRED","claim":"Repeated bounded accepted evidence would be required before a distillation candidate could be considered.","evidence":"distillation-candidate-receipt.json"}
+{"claim_id":"TOKENMAX002-C8","classification":"OBSERVED","claim":"Telemetry is attached to accepted episodes without changing production routing or training eligibility.","evidence":"tools/kad/swarm.mjs; accepted-work-economics.test.mjs"}

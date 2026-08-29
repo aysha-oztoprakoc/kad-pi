@@ -1,0 +1,7 @@
+GREEN evidence
+
+- Canonical accepted-work receipt normalization and passive swarm attachment tests pass.
+- Historical accepted episode normalized to 1,086 input + 93 output = 1,179 observed remote tokens, 80,596 ms latency, 2 controller calls, 0 repairs, accepted by KAD validation.
+- Provider monetary cost, cache tokens, reasoning tokens, accepted artifact hash, and historical quota snapshot remain null/UNKNOWN.
+- Sparse alternatives produce `INSUFFICIENT_EVIDENCE`; no production route or distillation promotion occurs.
+- Current OpenRouter quota state can be linked when present, but no live execution was triggered because no independently useful remote work was queued.

@@ -1,0 +1,8 @@
+RED evidence
+
+- Before implementation, `node --test tools/kad/test/accepted-work-economics.test.mjs` failed closed with `ERR_MODULE_NOT_FOUND` for `tools/kad/accepted-work-economics.mjs`.
+- Historical accepted controller telemetry exposed tokens and latency, but no quota snapshot was captured at route time; the normalized receipt therefore keeps `quota_snapshot_id: null`.
+- Subscription-backed runtime cost metadata is not accepted as an actual monetary charge; provider cost remains UNKNOWN/null.
+- No naturally justified remote WorkRequest occurred during this WP, so no live model execution was manufactured.
+
+These are retained as bounded UNKNOWN/INSUFFICIENT_EVIDENCE results rather than converted into zero, savings, or a routing promotion.

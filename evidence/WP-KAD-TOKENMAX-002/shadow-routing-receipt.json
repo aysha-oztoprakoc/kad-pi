@@ -1,0 +1,9 @@
+{
+  "actual_episode_id":"episode-SWARM-REAL-001",
+  "candidate_alternative_routes":[],
+  "evidence_available":{"accepted":true,"remote_tokens":1179,"latency_ms":80596,"provider_cost":null,"quota_snapshot":null},
+  "shadow_recommendation":"INSUFFICIENT_EVIDENCE",
+  "reason_codes":["NO_EQUIVALENT_ACCEPTED_ALTERNATIVE","PROVIDER_COST_UNKNOWN","QUOTA_SNAPSHOT_NOT_CAPTURED"],
+  "production_route_mutated":false,
+  "execution_triggered":false
+}

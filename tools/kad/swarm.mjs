@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { createEpisode } from './episode.mjs';
 import { canonicalize } from './distillation.mjs';
+import { normalizeEconomicReceipt } from './accepted-work-economics.mjs';
 
 const supportedLocalCapabilities = new Set(['repository-fact-finding', 'structured-extraction']);
 const hash = value => createHash('sha256').update(value, 'utf8').digest('hex');
@@ -52,7 +53,7 @@ export function selectControllerLane(lanes = []) {
   if (!eligible.length) return { status: 'DEGRADED', reason: 'no approved non-PAYG controller lane', selected_lane: null, candidates: [] };
   eligible.sort((a, b) => String(a.expires_at ?? '9999').localeCompare(String(b.expires_at ?? '9999')) || String(a.id).localeCompare(String(b.id)));
   const selected = eligible[0];
-  return { status: 'ROUTED', selected_lane: { role: 'controller', id: selected.id, provider: selected.provider ?? 'UNKNOWN', model: selected.model ?? 'UNKNOWN', billing_class: selected.billing_class }, candidates: eligible.map(lane => lane.id), reason_codes: ['APPROVED', 'NON_PAYG', 'SUBSCRIPTION_BACKED', 'CAPABILITY_SUFFICIENT'] };
+  return { status: 'ROUTED', selected_lane: { role: 'controller', id: selected.id, provider: selected.provider ?? 'UNKNOWN', model: selected.model ?? 'UNKNOWN', execution_class: selected.execution_class ?? 'REMOTE_SUBSCRIPTION', billing_class: selected.billing_class, quota_snapshot: selected.quota_snapshot ?? null, quota_state: selected.quota_state ?? null }, candidates: eligible.map(lane => lane.id), reason_codes: ['APPROVED', 'NON_PAYG', 'SUBSCRIPTION_BACKED', 'CAPABILITY_SUFFICIENT'] };
 }
 
 function parseWorkerOutput(output) {
@@ -78,7 +79,34 @@ export function validateWorkerResult(output, packet) {
 
 function event(type, taskId, data = {}) { return { type, task_id: taskId, ...data }; }
 function baseEpisode(request, packet, route, validation, outcome, telemetry, trajectory) {
-  return createEpisode({
+  const economicReceipt = telemetry.remote_lane ? normalizeEconomicReceipt({
+    task_id: request.task_id,
+    episode_id: `episode-${request.task_id}`,
+    equivalence_key: `${request.trust_domain}/${request.capability}`,
+    semantic_role: telemetry.remote_lane.role ?? 'controller',
+    provider: telemetry.remote_lane.provider,
+    model: telemetry.remote_lane.model,
+    execution_class: telemetry.remote_lane.execution_class ?? 'REMOTE_SUBSCRIPTION',
+    trust_domain: request.trust_domain,
+    capability: request.capability,
+    usage: { input_tokens: telemetry.remote_input_tokens, cached_input_tokens: telemetry.remote_cached_input_tokens, output_tokens: telemetry.remote_output_tokens, reasoning_tokens: telemetry.remote_reasoning_tokens },
+    provider_reported_cost: telemetry.remote_provider_reported_cost,
+    cost_provenance: telemetry.remote_provider_reported_cost === null ? null : 'PROVIDER_REPORTED',
+    billing_class: telemetry.remote_lane.billing_class,
+    cache: telemetry.remote_cache,
+    quota_snapshot: telemetry.remote_lane.quota_snapshot ?? telemetry.remote_lane.quota_state ?? null,
+    performance: { latency_ms: telemetry.latency_ms, compiled_context_bytes: telemetry.context_bytes },
+    validation: validation?.result,
+    accepted: outcome.accepted,
+    acceptance_authority: 'KAD_VALIDATOR',
+    accepted_artifact_hash: validation?.accepted ? hash(canonicalize(validation.value)) : null,
+    repairs: telemetry.repairs,
+    escalations: telemetry.escalations,
+    model_calls: telemetry.controller_invocations,
+    observation_confidence: telemetry.remote_input_tokens !== null || telemetry.remote_output_tokens !== null ? 'OBSERVED' : 'UNKNOWN',
+    provenance: { source: 'KAD swarm controller response metadata', usage_source: 'controller telemetry', provider_metadata_observed: telemetry.remote_input_tokens !== null || telemetry.remote_output_tokens !== null },
+  }) : null;
+  const episode = createEpisode({
     episode_id: `episode-${request.task_id}`,
     causation: { event_id: `event-${request.task_id}`, pon_event: 'work.requested' },
     task: { task_id: request.task_id, domain: request.trust_domain.toUpperCase(), task_class: request.capability, objective: request.question, trust_domain: request.trust_domain },
@@ -93,13 +121,18 @@ function baseEpisode(request, packet, route, validation, outcome, telemetry, tra
     teacher: { used: Boolean(route?.selected_lane), provider: route?.selected_lane?.provider ?? null, model: route?.selected_lane?.model ?? null },
     evidence_refs: packet ? packet.sources.map(source => `${source.path}#${source.sha256}`) : []
   });
+  if (economicReceipt) {
+    episode.economics.economic_receipt = economicReceipt;
+    episode.economics.quota_snapshot_id = economicReceipt.economics.quota_snapshot_id;
+  }
+  return episode;
 }
 
 export async function executeSwarm({ request: requestInput, sources, controller, registry, worker, max_repairs = 1, emit = () => {} }) {
   const started = now();
   const request = normalizeWorkRequest(requestInput);
   const events = [event('work.requested', request.task_id), event('requirement.classified', request.task_id, { role: request.role, trust_domain: request.trust_domain, capability: request.capability })];
-  const telemetry = { controller_invocations: 0, remote_lane: null, remote_input_tokens: null, remote_output_tokens: null, remote_cost: null, local_invocations: 0, deterministic_tool_invocations: 1, repairs: 0, escalations: 0, accepted: false, latency_ms: null, context_bytes: 0, failure_reason: null };
+  const telemetry = { controller_invocations: 0, remote_lane: null, remote_input_tokens: null, remote_cached_input_tokens: null, remote_output_tokens: null, remote_reasoning_tokens: null, remote_provider_reported_cost: null, remote_cache: null, remote_cost: null, local_invocations: 0, deterministic_tool_invocations: 1, repairs: 0, escalations: 0, accepted: false, latency_ms: null, context_bytes: 0, failure_reason: null };
   const route = selectControllerLane(controller?.lanes);
   telemetry.route = route;
   emit(events[0]); emit(events[1]);
@@ -118,7 +151,11 @@ export async function executeSwarm({ request: requestInput, sources, controller,
   telemetry.controller_invocations = 1;
   telemetry.remote_lane = route.selected_lane;
   telemetry.remote_input_tokens = controllerResult.telemetry?.input_tokens ?? null;
+  telemetry.remote_cached_input_tokens = controllerResult.telemetry?.cached_input_tokens ?? null;
   telemetry.remote_output_tokens = controllerResult.telemetry?.output_tokens ?? null;
+  telemetry.remote_reasoning_tokens = controllerResult.telemetry?.reasoning_tokens ?? null;
+  telemetry.remote_provider_reported_cost = Number.isFinite(controllerResult.telemetry?.provider_reported_cost) ? controllerResult.telemetry.provider_reported_cost : null;
+  telemetry.remote_cache = controllerResult.telemetry?.cache ?? null;
   telemetry.remote_cost = controllerResult.telemetry?.cost ?? null;
   const plan = controllerResult.plan ?? {};
   const controllerCompleted = event('controller.completed', request.task_id, { lane: route.selected_lane.id, plan });
@@ -165,9 +202,15 @@ export async function executeSwarm({ request: requestInput, sources, controller,
     controllerConsumption = await controller.consume({ request, packet, result: validation.value });
     telemetry.controller_invocations++;
     const inputTokens = controllerConsumption.telemetry?.input_tokens;
+    const cachedInputTokens = controllerConsumption.telemetry?.cached_input_tokens;
     const outputTokens = controllerConsumption.telemetry?.output_tokens;
+    const reasoningTokens = controllerConsumption.telemetry?.reasoning_tokens;
     telemetry.remote_input_tokens = telemetry.remote_input_tokens === null || inputTokens == null ? (telemetry.remote_input_tokens ?? inputTokens ?? null) : telemetry.remote_input_tokens + inputTokens;
     telemetry.remote_output_tokens = telemetry.remote_output_tokens === null || outputTokens == null ? (telemetry.remote_output_tokens ?? outputTokens ?? null) : telemetry.remote_output_tokens + outputTokens;
+    telemetry.remote_cached_input_tokens = telemetry.remote_cached_input_tokens !== null && cachedInputTokens != null ? telemetry.remote_cached_input_tokens + cachedInputTokens : null;
+    telemetry.remote_reasoning_tokens = telemetry.remote_reasoning_tokens !== null && reasoningTokens != null ? telemetry.remote_reasoning_tokens + reasoningTokens : null;
+    if (Number.isFinite(controllerConsumption.telemetry?.provider_reported_cost) && telemetry.remote_provider_reported_cost !== null) telemetry.remote_provider_reported_cost += controllerConsumption.telemetry.provider_reported_cost;
+    if (controllerConsumption.telemetry?.cache) telemetry.remote_cache = telemetry.remote_cache ?? controllerConsumption.telemetry.cache;
     if (controllerConsumption.telemetry?.cost && telemetry.remote_cost) telemetry.remote_cost = Object.fromEntries(['input', 'output', 'cacheRead', 'cacheWrite', 'total'].map(key => [key, (telemetry.remote_cost[key] ?? 0) + (controllerConsumption.telemetry.cost[key] ?? 0)]));
     if (controllerConsumption.consumed !== true) { telemetry.failure_reason = 'CONTROLLER_CONSUMPTION_FAILED'; validation = { ...validation, accepted: false, errors: [...validation.errors, telemetry.failure_reason] }; }
     const consumedEvent = event(controllerConsumption.consumed === true ? 'controller.consumed' : 'controller.consumption_failed', request.task_id, { accepted: controllerConsumption.consumed === true });

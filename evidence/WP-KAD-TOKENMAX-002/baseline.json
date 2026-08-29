@@ -1,0 +1,11 @@
+{
+  "workpackage":"WP-KAD-TOKENMAX-002",
+  "base_commit":"4605e96",
+  "base_commit_full":"4605e96c0d6480da3622e892e021d59cc06c71d0",
+  "accepted_gates_expected":{"kad":"152/152","real_pi":"7/7","librarian":"11/11","prime":"PASS"},
+  "economic_baseline_source":"evidence/WP-KAD-SWARM-001/real-swarm-run.json",
+  "known_previous_remote":{"provider":"openai-codex","input_tokens":1086,"output_tokens":93,"accepted":true,"latency_ms":80596,"provider_cost":"UNKNOWN_FOR_SUBSCRIPTION"},
+  "quota_baseline":{"provider":"openrouter","usage":"OBSERVED","capacity":"UNKNOWN","remaining":"UNKNOWN"},
+  "spend_policy":{"payg_authorized":false,"allow_paid_fallback":false,"allow_auto_topup":false,"max_incremental_cost":0},
+  "preserve_unrelated_work":true
+}

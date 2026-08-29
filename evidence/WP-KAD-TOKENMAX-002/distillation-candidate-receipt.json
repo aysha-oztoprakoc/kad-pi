@@ -1,0 +1,7 @@
+{
+  "source_episode_id":"episode-SWARM-REAL-001",
+  "distillation_candidate":false,
+  "promoted":false,
+  "reason":"A single accepted episode is not sufficient repeated evidence for downward migration or distillation.",
+  "required_future_evidence":["repeated bounded task equivalence","accepted validation on each episode","complete comparable resource metrics"]
+}

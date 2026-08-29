@@ -1,0 +1,6 @@
+{
+  "status":"NOT_TRIGGERED_NO_JUSTIFIED_REMOTE_WORK",
+  "reason":"No independently useful remote KAD WorkRequest was required during this WP; no model call was manufactured.",
+  "passive_telemetry_tests":"covered by accepted-work-economics.test.mjs and swarm integration seam",
+  "provider_quota_context":"Current OpenRouter usage observation remains available, but no execution receipt is attached because no task ran."
+}

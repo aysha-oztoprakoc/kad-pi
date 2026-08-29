@@ -1,0 +1,8 @@
+{
+  "classification":"HISTORICAL_OBSERVED",
+  "comparisons":[
+    {"left":"episode-SWARM-REAL-001","right":"no-equivalent-complete-observation","result":"INSUFFICIENT_EVIDENCE","reason":"one accepted episode cannot establish a migration advantage"},
+    {"left":"historical accepted episode","right":"sparse alternative fixture","result":"INSUFFICIENT_EVIDENCE","reason":"alternative tokens and latency are UNKNOWN"}
+  ],
+  "promotion":"none"
+}

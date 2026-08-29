@@ -1,0 +1,8 @@
+{
+  "receipt_schema":"kad-economic-1",
+  "source":"historical-economic-episode.json",
+  "canonical_replay":"PASS",
+  "same_normalized_receipt":"true",
+  "same_derived_metrics":"true",
+  "production_mutation":"false"
+}
