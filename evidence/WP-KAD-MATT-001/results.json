@@ -1,0 +1,37 @@
+{
+  "experiment_id": "WP-KAD-MATT-001",
+  "repo_state": {
+    "branch": "main",
+    "commit": "27ed3c67016e330b658aa9be2b049b4020912109",
+    "clean": false,
+    "preexisting_dirty_state": true
+  },
+  "baseline_a": {
+    "skill": "agent/skills/writing-for-agents/SKILL.md",
+    "bytes": 10862,
+    "kad_specific_evidence_gate": false,
+    "deterministic_contract_test": false
+  },
+  "candidate_b": {
+    "skill": ".agents/skills/kad-evidence-gate/SKILL.md",
+    "skill_bytes": 2180,
+    "reference_bytes": 880,
+    "contract_test": "tools/kad/test/kad-evidence-gate-skill.test.mjs",
+    "skill_sha256": "e1118957b052d4170809b0fb1ad83c8274d9e3a1aa23828fe31b483a1ce2da66",
+    "reference_sha256": "2df21c4ac573720e91a740937c36d58132175cb1220968193371851a73112580",
+    "test_sha256": "211f8ebcac33f79f2fc242b3cd77eb21b5517fc366e531672eb8ee93807d527b"
+  },
+  "observations": {
+    "candidate_contract_test": "PASS",
+    "full_kad_tests": "46 PASS, 0 FAIL",
+    "prime_and_librarian_and_capability_gates": "PASS",
+    "kad_lab_tests": "14 PASS",
+    "context_bytes_reduction_vs_writing_for_agents": 0.7993,
+    "agent_invocation_precision": "NOT_MEASURED",
+    "process_reproducibility": "NOT_MEASURED",
+    "model_tokens": "NOT_MEASURED",
+    "remote_calls": "NOT_MEASURED"
+  },
+  "verdict": "DEFER",
+  "reason": "Deterministic contract and context-size observation are positive, but no controlled equivalent agent A/B episode measured invocation or workflow outcomes."
+}

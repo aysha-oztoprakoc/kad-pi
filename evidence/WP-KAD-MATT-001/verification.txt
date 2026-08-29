@@ -1,0 +1,98 @@
+$ python3 validate_prime_directive.py
+VALIDATION SUCCESS
+==================
+Bytes: 8914
+Words: 1109
+Lines: 115
+Estimated Tokens: 1478
+Token budget check passed (<= 1500 tokens).
+$ node --test tools/kad/test/*.test.mjs
+✔ schema validation and canonicalization preserve meaningful whitespace (2.708111ms)
+✔ forged receipt and unknown verifier fail closed (0.386941ms)
+✔ authorized verifier execution creates an authenticated receipt (0.35453ms)
+✔ promotion requires verified evidence and provenance hash (0.621742ms)
+✔ rejection is machine-readable and RAW cannot jump to GOLDEN (0.274015ms)
+✔ replay requires fresh execution and mismatches fail (0.418793ms)
+✔ Episode lineage is content-addressed and checked (0.674844ms)
+✔ training export is separate from runtime export (0.592546ms)
+✔ store and repeated export are deterministic (0.784264ms)
+✔ episode represents deterministic execution without fake model provenance (0.811866ms)
+✔ KAD evidence gate is a conditional pointer with executable evidence invariants (0.958437ms)
+✔ local child inherits project-scoped Pi config and selects the local provider (2.083594ms)
+✔ local child output uses the deterministic READY validator (0.145018ms)
+✔ local-first router filters by declared capability and trust domain (1.089639ms)
+✔ deterministic capability wins before local model when contracts are equally sufficient (0.121443ms)
+✔ failed capability disappears without authority escalation (0.129578ms)
+✔ WORLD resources cannot satisfy retrieval or engineering requirements (0.164355ms)
+✔ STC-owned local inference advertises then tears down its capability (86.438537ms)
+✔ partial STC activation fails closed and does not advertise capability (104.248801ms)
+✔ bounded local Pi result has deterministic acceptance (0.197819ms)
+▶ WP-KAD-003 Persistent Multi-Turn World + PON Causal Reaction Graph
+  ✔ Lane A & B — Multi-turn persistent state continuity (turn N state_after == turn N+1 state_before) (10.920756ms)
+  ✔ Lane C — PON Selective Premise Evaluation (Evaluates affected premises ONLY; never scans all rules) (0.226755ms)
+  ✔ Lane D — STC Lifecycle Ownership & Reverse Order Teardown (LIFO) (0.564873ms)
+  ✔ Lane E — Deterministic Multi-Turn Journal Replay (14.432598ms)
+  ✔ Lane F — Evidence Dataset Generation (3.665166ms)
+  ✔ Lane G — Pi SDK Session Persistent Adapter & Teardown Silence (SIMULATED) (3.817689ms)
+  ✔ Lane H — Adversarial Attacks & Resilience (0.390108ms)
+✔ WP-KAD-003 Persistent Multi-Turn World + PON Causal Reaction Graph (35.705109ms)
+▶ WP-KAD-004 Real Pi Harness Persistent World Runtime (INTEGRATION)
+  ✔ 1. Provenance & Fail-Closed Provider Isolation Verification (394.56819ms)
+  ✔ 2. Sequential Real Pi Steer Multi-Turn Persistent State Continuity (32.882047ms)
+  ✔ 3. Real Failure Test PI-F1: Irrelevant SDK Event Rejected Early (17.841704ms)
+  ✔ 4. Real Failure Test PI-F2: Deterministic Rejection Through Real Pi Steer (20.480563ms)
+Error executing action for PON rule failing-rule: Error: INJECTED_PON_RULE_ERROR
+    at Object.action (file:///home/amdy/Work/tools/kad/test/pi-real-persistent.integration.test.mjs:262:17)
+    at PonEngine.processStateDiff (file:///home/amdy/Work/tools/kad/pon-engine.mjs:131:31)
+    at PersistentSession.executeTurn (file:///home/amdy/Work/tools/kad/session.mjs:80:37)
+    at onQueueUpdate (file:///home/amdy/Work/tools/kad/pi-adapter.mjs:134:40)
+    at AgentSession._emit (file:///tmp/wp-kad-001-sdk/runtime/node_modules/@earendil-works/pi-coding-agent/dist/core/agent-session.js:298:13)
+    at AgentSession._emitQueueUpdate (file:///tmp/wp-kad-001-sdk/runtime/node_modules/@earendil-works/pi-coding-agent/dist/core/agent-session.js:302:14)
+    at AgentSession._queueSteer (file:///tmp/wp-kad-001-sdk/runtime/node_modules/@earendil-works/pi-coding-agent/dist/core/agent-session.js:1021:14)
+    at AgentSession.steer (file:///tmp/wp-kad-001-sdk/runtime/node_modules/@earendil-works/pi-coding-agent/dist/core/agent-session.js:997:20)
+    at TestContext.<anonymous> (file:///home/amdy/Work/tools/kad/test/pi-real-persistent.integration.test.mjs:281:29)
+    at async Test.run (node:internal/test_runner/test:1404:7)
+  ✔ 5. Real Failure Test PI-F3: PON Rule Failure Handled Without Session Disruption (15.310842ms)
+  ✔ 6. Real Failure Test PI-F4: Journal Commit Failure Prevents State Advance (NO JOURNAL -> NO COMMIT) (16.180659ms)
+✔ WP-KAD-004 Real Pi Harness Persistent World Runtime (INTEGRATION) (498.67523ms)
+▶ WP-KAD-002 End-to-End World Transition Vertical Slice
+  ✔ T1 — Accepted Command: natural language translates to CandidateIntent, Accepted, and mutates state (3.871332ms)
+  ✔ T2 — Unsupported Action: safely rejected and leaves GameState strictly invariant (2.692212ms)
+  ✔ T3 — Authority Leak Attempt: smuggled properties are rejected by Validator (4.363936ms)
+  ✔ T4 — Malformed CandidateIntent: missing verbs and multi-targets are rejected (4.351081ms)
+  ✔ T5 — Deterministic Replay & Injectable Identifiers: identical state/intent produces identical resolutions (3.939052ms)
+  ✔ T6 — Journal Completeness: all required causal fields and hashes are preserved on disk (3.849279ms)
+  ✔ T7 — Domain Invariant & Unsuccessful Attempt Semantics (3.275029ms)
+  ✔ FI-1 — Failure Injection: Engine Executor Failure Before Commit (0.439673ms)
+  ✔ FI-2 — Failure Injection: Journal Append Failure Prevents External State Commit (NO JOURNAL -> NO COMMIT) (1.896887ms)
+  ✔ T8 — Pi Session Adapter Contract Simulation & Teardown Silence (SIMULATED) (1.995225ms)
+✔ WP-KAD-002 End-to-End World Transition Vertical Slice (32.501818ms)
+ℹ tests 46
+ℹ suites 0
+ℹ pass 46
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1136.049814
+$ cd kad-lab && make test
+./build/test_experiment001
+KAD-WP-001-INTENT-AUTHORITY-BOUNDARY — EXPERIMENT-001
+14 evidence cases (self-asserting):
+
+1  valid success (Move room_a->room_b; Acquire key in hand room) ... PASS
+2  valid unsuccessful (Acquire cross-room; Move already there; Acquire held) ... PASS
+3  unknown reference + InvalidParameter (wrong EntityKind) ... PASS
+4  ambiguous reference (room / object) ... PASS
+5  unsupported action (Open; lowercase) ... PASS
+6  malformed (verb missing/empty; zero or multiple targets) ... PASS
+7  invented property (foo=bar) ... PASS
+8  multiple actions (and zero actions) ... PASS
+9  authority-leak attempt (success=true) ... PASS
+10 GameState unchanged for every rejection AND acceptance ... PASS
+11 type enforcement (static_asserts above) ... PASS
+12 deterministic replay (state+intent+seed twice) ... PASS
+13 complete StateDiff (no missing, no extra fields) ... PASS
+14 consistency (outcome<->EventKind; apply(); from/to vs diff) ... PASS
+
+ALL 14 EVIDENCE CASES: PASS
