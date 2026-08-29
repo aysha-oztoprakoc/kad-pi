@@ -1,1 +1,1 @@
-{"status":"PASS","command":"node --test tools/workspace/workctl.test.mjs tools/workspace/workflow-bridge.test.mjs tools/workspace/skill-governance.test.mjs","result":"21 tests passed","rule":"KAD checks extend vanilla RED -> GREEN -> REFACTOR rather than replacing it"}
+{"status":"PASS","command":"node --test tools/workspace/workctl.test.mjs tools/workspace/workflow-bridge.test.mjs tools/workspace/skill-governance.test.mjs","result":"23 tests passed","rule":"KAD checks extend vanilla RED -> GREEN -> REFACTOR rather than replacing it"}

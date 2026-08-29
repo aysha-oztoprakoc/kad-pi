@@ -1,0 +1,7 @@
+{
+  "status":"PASS",
+  "reviewed_commit":"f3b9e2e",
+  "fixed_findings":["unsafe work-item IDs are rejected by workctl validation","active claim owned paths are resolved against project roots before conflict checks"],
+  "residual_findings":[],
+  "scope":["ticket import path safety","claim collision isolation","authority bypass","project isolation","provider/model/harness coupling"]
+}

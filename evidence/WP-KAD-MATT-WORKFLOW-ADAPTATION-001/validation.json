@@ -1,0 +1,13 @@
+{
+  "status":"PASS",
+  "commands":[
+    {"command":"make test","result":"passed; prime directive, librarian, ask_user, workspace governance, kad-lab, and KAD suites passed"},
+    {"command":"node --test tools/workspace/workctl.test.mjs tools/workspace/workflow-bridge.test.mjs","result":"13 tests passed"},
+    {"command":"node --test tools/workspace/skill-governance.test.mjs","result":"10 tests passed"},
+    {"command":"bin/workctl doctor","result":"healthy; no errors; expected LOCAL_DELTA warnings"},
+    {"command":"bin/workctl skills doctor","result":"no errors; expected explicit local-delta warnings"},
+    {"command":"git diff --check 376daac8c9e395fbdbe123e4b71d08584d78d245...HEAD","result":"passed"}
+  ],
+  "provider_or_economic_authority_changed":false,
+  "paid_spend_introduced":false
+}
