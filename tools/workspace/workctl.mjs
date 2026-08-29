@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
+import { runSkillGovernance } from './skill-governance.mjs';
 
 const STATES = new Set(['PROPOSED', 'READY', 'CLAIMED', 'IN_PROGRESS', 'BLOCKED', 'REVIEW', 'ACCEPTED', 'REJECTED', 'SUPERSEDED']);
 const MUTATING_STATES = new Set(['CLAIMED', 'IN_PROGRESS']);
@@ -272,6 +273,10 @@ function execute(root, parsed) {
     const collisions = [...names.entries()].filter(([, locations]) => locations.length > 1).map(([name, locations]) => ({ name, locations, canonical: '.agents/skills', resolution: 'canonical root wins; legacy views remain read-only' }));
     const issues = skillIssues(root);
     if (subcommand === 'check-updates') return ok({ status: 'deferred', reason: 'normal coordination does not auto-update trusted instructions', collisions, issues });
+    if (subcommand === 'doctor') {
+      const result = runSkillGovernance(['doctor'], root);
+      return result.code === 0 ? ok({ ...result.value, collisions, issues }) : fail(result.error ?? JSON.stringify(result.value));
+    }
     return ok({ canonical_root: '.agents/skills', roots: skillRoots.map((directory) => path.relative(root, directory)), skills: [...names.entries()].sort().map(([name, locations]) => ({ name, locations })), collisions, issues, llm_required: false });
   }
   if (command === 'doctor') {
@@ -286,10 +291,16 @@ function execute(root, parsed) {
         (owned ? errors : warnings).push(`skill: ${issue}`);
       }
     }
+    const lockPath = path.join(root, '.agents', 'workspace', 'skills.lock.json');
+    if (fs.existsSync(lockPath)) {
+      const governance = runSkillGovernance(['doctor'], root);
+      if (governance.code !== 0) errors.push(governance.error ?? governance.value?.errors?.join('; ') ?? 'skill governance validation failed');
+      else for (const warning of governance.value.warnings) warnings.push(`skill-governance: ${warning.name}: ${warning.status}`);
+    }
     const tools = toolRegistry(root).tools ?? []; const toolStatus = tools.map((tool) => { const executable = String(tool.command).trim().split(/\s+/)[0]; const local = executable.startsWith('.') || executable.includes('/'); const available = local ? fs.existsSync(path.resolve(root, executable)) : spawnSync('sh', ['-c', 'command -v "$1"', 'workctl', executable]).status === 0; return { id: tool.id, command: tool.command, available }; });
     return errors.length ? fail(JSON.stringify({ errors, warnings, toolStatus })) : ok({ status: 'healthy', errors, warnings, toolStatus, llm_required: false });
   }
-  return ok({ commands: ['bootstrap', 'projects', 'status', 'next', 'show', 'claim', 'release', 'transition', 'handoff', 'resume', 'skills status', 'skills check-updates', 'doctor'] });
+  return ok({ commands: ['bootstrap', 'projects', 'status', 'next', 'show', 'claim', 'release', 'transition', 'handoff', 'resume', 'skills status', 'skills check-updates', 'skills doctor', 'doctor'] });
 }
 
 export function runWorkctl(argv, options = {}) {

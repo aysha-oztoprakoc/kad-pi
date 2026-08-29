@@ -2,14 +2,6 @@
 name: wayfinder
 description: Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.
 disable-model-invocation: true
-dependencies:
-  - domain-modeling
-  - grilling
-  - prototype
-  - research
-  - setup-matt-pocock-skills
-capabilities:
-  - ask_user
 ---
 
 A loose idea has arrived, too big for one agent session, and wrapped in fog: the way from here to the **destination** isn't visible yet. Wayfinding is about finding that way, not charging at the destination. This skill charts the way as a **shared map** on the repo's issue tracker, then works its **decision tickets** (questions whose resolution is a decision, not slices of a build to execute) one at a time until the route is clear.
@@ -107,20 +99,6 @@ Fog only ever gathers _toward_ the destination. The destination fixes the scope,
 Out-of-scope work never graduates (the frontier stops at the destination), so it returns only if the destination is redrawn, and then as a fresh effort, not a resumption.
 
 Ruling something out of scope is a scoping act, not a step on the route. When a ticket that already exists turns out to sit past the destination (mis-scoped in while charting, or exposed by a resolution), **close it** (a closed ticket is unambiguously off the frontier) and leave one line in the **Out of scope** section: the gist plus why it's out of scope, linking the closed ticket. It stays out of **Decisions so far**, which records the route actually walked; a scope boundary isn't a step on it.
-
-## Capability Requirement
-
-Whenever you or a composed discipline (such as `grilling`) requests user input to resolve a ticket or map the frontier, resolve and invoke the canonical `ask_user` capability through the capability/adapter layer.
-For ordinary workspaces, provide up to 4 specific selectable options with the top option prefixed with `(Recommended) ` and rely on the capability's native UI for custom write-ins. For the `kad-pi` project, load `.agents/skill-overlays/wayfinder-kad.md` and provide exactly five meaningful generated options plus exactly one custom/write-in option.
-If the capability is unavailable, follow the graceful degradation policy defined by `ask_user`; record `BLOCKED_ON_HUMAN` and do not resolve the ticket.
-
-## KAD project overlay
-
-When the active project is `kad-pi` (or explicitly opts into KAD governance), Wayfinder remains the manager of the shared decision map. It does not claim, execute, or transition implementation work; `workctl` owns execution coordination. `to-spec` consumes resolved decision tickets, and `to-tickets` produces implementation tasks.
-
-Each genuine human decision is a HITL ticket and MUST use `ask_user` with five distinct generated alternatives and one custom/write-in option. Wayfinder MAY mark one generated option `RECOMMENDED`, but MUST NOT silently select it. A response selects the human's exact option or records exact custom text as `AUTHOR_DECLARED`; model preference is never a resolution.
-
-After an `ANSWERED` response, record the question, all options, selection, custom text when used, timestamp, source ticket, and consequences in the decision ticket. Then close that ticket and append only a short pointer/gist to `Decisions so far`; never duplicate the decision detail in the map. If no answer is available, leave the ticket open and mark it `BLOCKED_ON_HUMAN`.
 
 ## Invocation
 

@@ -15,6 +15,7 @@ public-build:
 test: verify
 	node --test tools/librarian/test/librarian.test.mjs
 	node --test .agents/capabilities/ask_user/contract_test.mjs
+	node --test tools/workspace/skill-governance.test.mjs
 	$(MAKE) -C kad-lab test
 	node --test tools/kad/test/world-turn.test.mjs
 	node --test tools/kad/test/multi-turn-pon.test.mjs
