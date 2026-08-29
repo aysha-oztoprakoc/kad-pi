@@ -1,0 +1,17 @@
+{
+  "workpackage": "WP-KAD-SKILL-GOVERNANCE-001",
+  "method": "git diff --no-index against pinned upstream SKILL.md snapshots",
+  "entries": [
+    {"skill":"5-persona-advisory-board","upstream_lines":"303","local_changed_sections":["frontmatter name normalization"],"reason":"workctl validates unquoted frontmatter names against directory names; upstream quoted scalar triggered a warning","composition_possible":false,"treatment":"KAD derivative is separate"},
+    {"skill":"wayfinder","upstream_lines":"128","local_changed_sections":["frontmatter capability metadata","Capability Requirement","KAD project overlay"],"reason":"expose canonical ask_user and constrain KAD HITL decisions to 5+1 without changing vanilla map semantics","composition_possible":true,"treatment":"thin overlay plus small explicit patch"},
+    {"skill":"ask-matt","upstream_lines":"90","local_changed_sections":["KAD routing bullets"],"reason":"route high-impact KAD decisions to advisory board and Wayfinder while preserving vanilla flow","composition_possible":true,"treatment":"small explicit patch"},
+    {"skill":"grill-with-docs","upstream_lines":"8","local_changed_sections":["frontmatter capability metadata"],"reason":"canonical ask_user capability integration","composition_possible":true,"treatment":"VANILLA + CONFIG"},
+    {"skill":"implement","upstream_lines":"11","local_changed_sections":["frontmatter capability metadata"],"reason":"canonical skill capability integration","composition_possible":true,"treatment":"VANILLA + CONFIG"},
+    {"skill":"improve-codebase-architecture","upstream_lines":"15","local_changed_sections":["frontmatter capability metadata"],"reason":"canonical skill capability integration","composition_possible":true,"treatment":"VANILLA + CONFIG"},
+    {"skill":"tdd","upstream_lines":"8","local_changed_sections":["frontmatter capability metadata"],"reason":"canonical skill capability integration","composition_possible":true,"treatment":"VANILLA + CONFIG"},
+    {"skill":"to-spec","upstream_lines":"8","local_changed_sections":["frontmatter capability metadata"],"reason":"canonical skill capability integration","composition_possible":true,"treatment":"VANILLA + CONFIG"},
+    {"skill":"to-tickets","upstream_lines":"9","local_changed_sections":["frontmatter capability metadata"],"reason":"canonical skill capability integration","composition_possible":true,"treatment":"VANILLA + CONFIG"},
+    {"skill":"triage","upstream_lines":"8","local_changed_sections":["frontmatter capability metadata"],"reason":"canonical skill capability integration","composition_possible":true,"treatment":"VANILLA + CONFIG"}
+  ],
+  "unchanged_tracked_skills":["code-review","codebase-design","diagnosing-bugs","domain-modeling","prototype","research","resolving-merge-conflicts","setup-matt-pocock-skills","wizard"]
+}

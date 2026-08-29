@@ -1,0 +1,11 @@
+{
+  "workpackage": "WP-KAD-SKILL-GOVERNANCE-001",
+  "command": "node --test tools/workspace/skill-governance.test.mjs",
+  "tests": [
+    {"name":"exactly five generated options plus custom","status":"PASS"},
+    {"name":"HITL requires ANSWERED and records AUTHOR_DECLARED","status":"PASS"},
+    {"name":"custom response preserves exact text","status":"PASS"},
+    {"name":"recommendation does not override human choice","status":"PASS"}
+  ],
+  "result": "8/8 passed"
+}

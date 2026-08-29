@@ -1,0 +1,9 @@
+{
+  "command": "node --test tools/workspace/skill-governance.test.mjs",
+  "status": "PASS",
+  "assertions": [
+    "UNAVAILABLE is rejected and cannot resolve a HITL request",
+    "ANSWERED OPTION_4 produces AUTHOR_DECLARED OPTION_4 even when OPTION_2 is recommended",
+    "CUSTOM preserves exact write-in text"
+  ]
+}

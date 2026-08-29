@@ -1,0 +1,9 @@
+{
+  "command": "node --test tools/workspace/skill-governance.test.mjs",
+  "status": "PASS",
+  "observed": {
+    "wayfinder": "recordDecisionOnMap appends a ticket pointer and gist only",
+    "workctl": "recordWorkctlState transitions execution task state only",
+    "cross_mutation": "none; a decision does not create an implementation claim and a task transition does not alter the map"
+  }
+}

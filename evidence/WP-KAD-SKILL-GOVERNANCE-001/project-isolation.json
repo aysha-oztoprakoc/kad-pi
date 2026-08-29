@@ -1,0 +1,10 @@
+{
+  "command": "node --test tools/workspace/skill-governance.test.mjs",
+  "status": "PASS",
+  "cases": [
+    {"project":"kad-pi","opted_in":false,"kad_overlay":"available"},
+    {"project":"side-project","opted_in":false,"kad_overlay":"not available"},
+    {"project":"side-project","opted_in":true,"kad_overlay":"available"}
+  ],
+  "note": "The KAD derivative declares project-opt-in scope; vanilla Matt skills remain the default elsewhere."
+}

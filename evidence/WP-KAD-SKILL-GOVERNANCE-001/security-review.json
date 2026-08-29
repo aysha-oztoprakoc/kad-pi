@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "scope": ["tools/workspace/skill-governance.mjs","tools/workspace/decision-protocol.mjs",".agents/skills/kad-advisory-board/SKILL.md",".agents/skills/wayfinder/SKILL.md",".agents/skills/ask-matt/SKILL.md"],
+  "checks": {
+    "shell_authority_creep": "PASS; governance code uses Node filesystem/hash APIs and does not spawn providers or shells",
+    "automatic_downloads": "PASS; runtime validation reads pinned local snapshots; no update path exists",
+    "provider_calls": "PASS; no provider/model routing changed",
+    "secret_access": "PASS; no secret or credential paths introduced",
+    "unbounded_project_mutation": "PASS; lock writer is explicit and decision helpers return state without mutating project files",
+    "cross_project_leakage": "PASS; KAD overlay is restricted to kad-pi or explicit opt-in",
+    "authority_boundary": "PASS; advisory result has no authority/policy/execution mutation fields and human resolution requires ANSWERED"
+  },
+  "evidence": "tools/workspace/skill-governance.test.mjs; bin/workctl skills doctor"
+}

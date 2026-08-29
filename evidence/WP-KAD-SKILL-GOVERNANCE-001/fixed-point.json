@@ -1,0 +1,30 @@
+{
+  "workpackage": "WP-KAD-SKILL-GOVERNANCE-001",
+  "workspace": "/home/amdy/Work",
+  "captured_at": "2026-08-29T19:31:40-03:00",
+  "pwd": "/home/amdy/Work",
+  "head": "7dded4743a103fa39368ea13bcf679cec37d572b",
+  "recent_commits": [
+    "7dded47 docs: record bounded substrate commits",
+    "2df780c docs: close workspace substrate evidence",
+    "5dce16b feat: add portable workspace agent substrate",
+    "7f24158 docs(kad): record live status evidence",
+    "7a96a7e fix(kad): harden runtime status boundaries",
+    "0d0b1a5 feat(kad): add read-only live runtime status",
+    "60c6e3d docs(kad): record interface platform evidence",
+    "0b90430 feat(kad): add governed interface platform",
+    "b617067 feat(kad): expand governed canonical wiki",
+    "0f6063f feat(kad): add governed knowledge plane vertical slice"
+  ],
+  "initial_status": {
+    "staged_count": 0,
+    "unstaged_count": 9,
+    "untracked_count": 19,
+    "dirty_paths_not_owned_by_this_wp": ["CONTEXT.md","evidence/WP-KAD-002/causal-journal.jsonl","tools/kad/context-economy.mjs","wiki/KAD_Implementation_Plan.md","wiki/index.md","wiki/synthetic/CATALOG.json","wiki/synthetic/RETRIEVAL_INDEX.jsonl","wiki/synthetic/TAXONOMY.json","wiki/synthetic/TAXONOMY.md",".scratch","docs/adr/0008-unified-context-knowledge-plane.md","evidence/WP-KAD-CONTEXT-PLANE-001","evidence/WP-KAD-KNOWLEDGE-PLANE-001","evidence/WP-KAD-STRATEGIC-WAYFINDING-001","ngc-cli.md5","ngc-cli","ngccli_linux.zip","wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md"]
+  },
+  "deterministic_gates": {
+    "bin/workctl bootstrap": "PASS",
+    "bin/workctl doctor": "PASS with pre-existing 5-persona frontmatter warning",
+    "bin/workctl skills status": "PASS; canonical .agents/skills root; collisions reported"
+  }
+}

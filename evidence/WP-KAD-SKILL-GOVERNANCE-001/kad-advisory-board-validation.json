@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "invocation": "KAD advisory board applied CRIT using upstream 5-persona-advisory-board as the external reference",
+  "decision": "thin project-scoped overlay/composition",
+  "lenses": ["Epistemic Integrity","Authority & Safety","Systems & Lifecycle","Economy & Determinism","Research & Long-Horizon Value"],
+  "disagreement_forced": true,
+  "advisory_only": true,
+  "human_authority_declared": false,
+  "implementation_started_by_board": false,
+  "artifact": "evidence/WP-KAD-SKILL-GOVERNANCE-001/kad-advisory-board-review.md"
+}

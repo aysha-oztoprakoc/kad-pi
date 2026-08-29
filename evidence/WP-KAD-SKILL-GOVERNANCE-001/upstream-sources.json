@@ -1,0 +1,26 @@
+{
+  "workpackage": "WP-KAD-SKILL-GOVERNANCE-001",
+  "retrieved_at": "2026-08-29T19:31:40-03:00",
+  "verification": "git ls-remote HEAD and refs/heads/main",
+  "sources": [
+    {
+      "repository": "https://github.com/harryvondiesel-web/5-persona-advisory-board",
+      "commit": "fd58b80648c399f29b36d31739a0b07d459b43cf",
+      "skill_path": "SKILL.md",
+      "skill_sha256": "9c3079e838d92967af5936f99591d9c3908a816d0e49faae9341087f0acc52ae",
+      "license": "MIT",
+      "license_path": "LICENSE",
+      "revision_is_current": true
+    },
+    {
+      "repository": "https://github.com/mattpocock/skills",
+      "commit": "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76",
+      "skill_path": "skills/engineering/*/SKILL.md",
+      "skill_sha256": "see skills-lock.json per skill",
+      "license": "MIT",
+      "license_path": "LICENSE",
+      "revision_is_current": true,
+      "tracked_skill_count": 17
+    }
+  ]
+}
