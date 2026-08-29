@@ -1,0 +1,15 @@
+{
+  "provider":"openrouter",
+  "surface":"GET /api/v1/key",
+  "effective_status":"UNKNOWN",
+  "effective_watermark":"UNKNOWN",
+  "effective_window_id":null,
+  "reason":"limit and limit_remaining were null; observed usage does not establish capacity or remaining allowance",
+  "windows":[
+    {"window_id":"key","unit":"USD","status":"UNKNOWN","confidence":"OBSERVED","used":0,"capacity":null,"remaining":null},
+    {"window_id":"daily","unit":"USD","status":"UNKNOWN","confidence":"OBSERVED","used":0,"capacity":null,"remaining":null},
+    {"window_id":"weekly","unit":"USD","status":"UNKNOWN","confidence":"OBSERVED","used":0,"capacity":null,"remaining":null},
+    {"window_id":"monthly","unit":"USD","status":"UNKNOWN","confidence":"OBSERVED","used":0,"capacity":null,"remaining":null}
+  ],
+  "declared_comparison":{"provider":"opencode-go","effective_status":"UNKNOWN","reason":"declared capacities have unknown current usage"}
+}

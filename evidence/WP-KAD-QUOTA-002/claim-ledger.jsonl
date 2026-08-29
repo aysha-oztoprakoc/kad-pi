@@ -1,0 +1,9 @@
+{"claim_id":"QUOTA002-C1","classification":"OBSERVED","claim":"All four expected providers were present and auth-ready under no-refresh checks.","evidence":"provider-surface-inventory.json"}
+{"claim_id":"QUOTA002-C2","classification":"OBSERVED","claim":"OpenRouter GET /api/v1/key returned usage=0, daily=0, weekly=0, monthly=0, with null limit, limit_remaining, and limit_reset.","evidence":"live-probes-sanitized.jsonl"}
+{"claim_id":"QUOTA002-C3","classification":"OBSERVED","claim":"OpenRouter provider-owned usage is represented in four native USD windows; current capacity and remaining allowance are UNKNOWN.","evidence":"quota-windows.json"}
+{"claim_id":"QUOTA002-C4","classification":"DECLARED","claim":"OpenCode Go publishes 5-hour $12, weekly $30, and monthly $60 limits.","evidence":"official-surface-contracts.json; quota-windows.json"}
+{"claim_id":"QUOTA002-C5","classification":"UNKNOWN","claim":"Current OpenCode Go usage and remaining allowance are not exposed by the installed native surface.","evidence":"live-probes-sanitized.jsonl"}
+{"claim_id":"QUOTA002-C6","classification":"UNKNOWN","claim":"Codex CLI /status did not yield machine-readable current allowance in the bounded PTY probe.","evidence":"live-probes-sanitized.jsonl"}
+{"claim_id":"QUOTA002-C7","classification":"REJECTED","claim":"GitHub auth readiness proves billing usage authorization.","evidence":"live-probes-sanitized.jsonl; adversarial-review.md"}
+{"claim_id":"QUOTA002-C8","classification":"CALCULATED","claim":"Router effective state is UNKNOWN because all observed OpenRouter windows lack capacity/remaining and cannot form a trustworthy bottleneck scalar.","evidence":"effective-economic-state.json; dry-run-routing-receipt.json"}
+{"claim_id":"QUOTA002-C9","classification":"PROVEN","claim":"Native multi-window normalization, targeted events, bounded caching, and spend/authority gates pass tests.","evidence":"regression-results.md"}

@@ -45,12 +45,18 @@ export function routeEconomically({ requirement, lanes = [], policy: suppliedPol
   const reason_codes = ['ELIGIBLE', `EXECUTION_CLASS_${selected.lane.execution_class}`, `WATERMARK_${selected.lane.quota.watermark}`];
   if (selected.expiring) reason_codes.push('USE_IT_OR_LOSE_IT_QUOTA');
   if (selected.lane.quota.watermark === WATERMARKS.UNKNOWN || selected.lane.quota.watermark === WATERMARKS.STALE) reason_codes.push(`QUOTA_${selected.lane.quota.watermark}`);
-  return { status: 'ROUTED', selected_lane: selected.lane.lane_id, selected_execution_class: selected.lane.execution_class, reason_codes, rejections, candidates: ranked.map(item => item.lane.lane_id), observation: { lane_id: selected.lane.lane_id, watermark: selected.lane.quota.watermark, quota_unit: selected.lane.quota.unit, remaining: selected.lane.quota.remaining, capacity: selected.lane.quota.capacity, confidence: selected.lane.quota.confidence } };
+  return { status: 'ROUTED', selected_lane: selected.lane.lane_id, selected_execution_class: selected.lane.execution_class, reason_codes, rejections, candidates: ranked.map(item => item.lane.lane_id), observation: { lane_id: selected.lane.lane_id, watermark: selected.lane.quota.watermark, quota_unit: selected.lane.quota.unit, remaining: selected.lane.quota.remaining, capacity: selected.lane.quota.capacity, confidence: selected.lane.quota.confidence, effective_window_id: selected.lane.quota.effective_window_id ?? null, windows: selected.lane.quota.windows ?? [] } };
 }
 
 export function quotaNotification(previous, next) {
   if (previous.lane_id !== next.lane_id) return { type: 'quota.observed', affected_lane_ids: [next.lane_id] };
   if (previous.quota.watermark !== next.quota.watermark) return { type: 'quota.watermark.changed', lane_id: next.lane_id, affected_lane_ids: [next.lane_id], from: previous.quota.watermark, to: next.quota.watermark };
+  if (JSON.stringify(previous.quota.windows ?? []) !== JSON.stringify(next.quota.windows ?? [])) {
+    const before = new Set((previous.quota.windows ?? []).map(window => window.window_id));
+    const after = new Set((next.quota.windows ?? []).map(window => window.window_id));
+    const windowIds = [...new Set([...before, ...after])].filter(id => JSON.stringify((previous.quota.windows ?? []).find(window => window.window_id === id)) !== JSON.stringify((next.quota.windows ?? []).find(window => window.window_id === id)));
+    return { type: 'quota.window.changed', lane_id: next.lane_id, window_ids: windowIds, affected_lane_ids: [next.lane_id] };
+  }
   if (previous.quota.remaining !== next.quota.remaining) return { type: 'quota.observed', lane_id: next.lane_id, affected_lane_ids: [next.lane_id] };
   return { type: 'quota.unchanged', lane_id: next.lane_id, affected_lane_ids: [] };
 }

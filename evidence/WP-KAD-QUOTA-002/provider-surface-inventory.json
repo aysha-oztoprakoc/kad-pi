@@ -1,0 +1,11 @@
+{
+  "observed_at":"2026-08-29T02:03:32.353Z",
+  "inventory_source":"pi auth check --provider <id> --no-refresh --json",
+  "providers":[
+    {"provider":"openai-codex","installed":true,"auth_status":"ready","auth_type":"oauth","surface_result":"PARSE_UNSUPPORTED"},
+    {"provider":"opencode-go","installed":true,"auth_status":"ready","auth_type":"api_key","surface_result":"NOT_EXPOSED"},
+    {"provider":"github-copilot","installed":true,"auth_status":"ready","auth_type":"oauth","surface_result":"AUTH_INSUFFICIENT"},
+    {"provider":"openrouter","installed":true,"auth_status":"ready","auth_type":"oauth","surface_result":"OBSERVED"}
+  ],
+  "credential_policy":"Only existing credentials were inspected/used in memory; no credential values are present here. All auth checks used --no-refresh."
+}

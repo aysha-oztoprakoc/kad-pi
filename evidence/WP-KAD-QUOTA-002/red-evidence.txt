@@ -1,0 +1,13 @@
+RED evidence
+
+1. TDD import gate before implementation:
+   `node --test tools/kad/test/quota-windows.test.mjs`
+   failed with `ERR_MODULE_NOT_FOUND` for `tools/kad/remote-quota-observation.mjs`.
+
+2. Live surface boundaries:
+   - Codex CLI `0.150.1` is installed and Pi auth is ready, but bounded PTY `/status` timed out without machine-readable allowance output; no model task was sent.
+   - GitHub billing usage returned HTTP 404 and existing scopes were only `gist`, `read:org`, `repo`, `workflow`; no `Plan: read`, PAT, or scope expansion was attempted.
+   - OpenCode Go CLI is installed/auth-ready but exposes no current provider-owned allowance surface.
+   - OpenRouter exposed `usage=0`, daily/weekly/monthly usage `0`, but `limit`, `limit_remaining`, and `limit_reset` were null.
+
+All boundaries fail closed to UNKNOWN or the explicit authorization/surface classification; none is interpreted as quota exhaustion or unlimited capacity.

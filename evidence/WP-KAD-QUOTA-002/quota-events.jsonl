@@ -1,0 +1,9 @@
+{"event_type":"provider.usage.probe.requested","provider":"openrouter","surface":"GET /api/v1/key","read_only":true,"refresh_credentials":false}
+{"event_type":"provider.usage.observed","provider":"openrouter","surface":"GET /api/v1/key","windows":4,"usage_fields_observed":["usage","usage_daily","usage_weekly","usage_monthly"],"capacity_fields_null":["limit","limit_remaining","limit_reset"]}
+{"event_type":"quota.window.normalized","provider":"openrouter","window_id":"key","unit":"USD","status":"UNKNOWN","confidence":"OBSERVED"}
+{"event_type":"quota.window.normalized","provider":"openrouter","window_id":"daily","unit":"USD","status":"UNKNOWN","confidence":"OBSERVED"}
+{"event_type":"quota.window.normalized","provider":"openrouter","window_id":"weekly","unit":"USD","status":"UNKNOWN","confidence":"OBSERVED"}
+{"event_type":"quota.window.normalized","provider":"openrouter","window_id":"monthly","unit":"USD","status":"UNKNOWN","confidence":"OBSERVED"}
+{"event_type":"quota.effective_state.observed","provider":"openrouter","state":"UNKNOWN","consequential":false,"note":"initial observation only; no state transition emitted"}
+{"event_type":"economic.route.reconsidered","provider":"openrouter","route_kind":"DRY_RUN_ROUTE","selected_lane":"openrouter-observed","executed_model_task":false}
+{"event_type":"quota.unchanged","provider":"openrouter","repeat_observation":true,"affected_lane_ids":[]}

@@ -1,0 +1,15 @@
+{
+  "replay_kind":"SANITIZED_PROVIDER_OBSERVATION",
+  "provider":"openrouter",
+  "surface":"GET /api/v1/key",
+  "fixture_source_hash":"619373d4a5e71baeda86a03970a5f8a58a05e3b76581c7e12266e01173189e14",
+  "observed_at":1787969012353,
+  "parser_version":"remote-quota-observation-1",
+  "normalization_status":"UNKNOWN",
+  "window_ids":["key","daily","weekly","monthly"],
+  "window_statuses":["UNKNOWN","UNKNOWN","UNKNOWN","UNKNOWN"],
+  "route_status":"ROUTED",
+  "selected_lane":"openrouter-observed",
+  "replay_equal":true,
+  "credentials_included":false
+}

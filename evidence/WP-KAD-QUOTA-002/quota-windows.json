@@ -1,0 +1,12 @@
+{
+  "provider":"openrouter",
+  "surface":"GET /api/v1/key",
+  "observed_at":"2026-08-29T02:03:32.353Z",
+  "windows":[
+    {"window_id":"key","unit":"USD","capacity":null,"used":0,"remaining":null,"reset_at":null,"status":"UNKNOWN","confidence":"OBSERVED","scope":{"window":"key"}},
+    {"window_id":"daily","unit":"USD","capacity":null,"used":0,"remaining":null,"reset_at":null,"status":"UNKNOWN","confidence":"OBSERVED","scope":{"window":"daily"}},
+    {"window_id":"weekly","unit":"USD","capacity":null,"used":0,"remaining":null,"reset_at":null,"status":"UNKNOWN","confidence":"OBSERVED","scope":{"window":"weekly"}},
+    {"window_id":"monthly","unit":"USD","capacity":null,"used":0,"remaining":null,"reset_at":null,"status":"UNKNOWN","confidence":"OBSERVED","scope":{"window":"monthly"}}
+  ],
+  "declared_policy_comparison":{"provider":"opencode-go","windows":[{"window_id":"5-hour","unit":"USD","capacity":12,"used":null,"remaining":null,"status":"UNKNOWN","confidence":"DECLARED"},{"window_id":"weekly","unit":"USD","capacity":30,"used":null,"remaining":null,"status":"UNKNOWN","confidence":"DECLARED"},{"window_id":"monthly","unit":"USD","capacity":60,"used":null,"remaining":null,"status":"UNKNOWN","confidence":"DECLARED"}]}
+}

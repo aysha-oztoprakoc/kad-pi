@@ -1,0 +1,9 @@
+{
+  "sources":[
+    {"provider":"openai-codex","official_source":"https://developers.openai.com/codex/cli/slash-commands/","surface":"/status","contract":"interactive status command; no machine-readable output was established"},
+    {"provider":"openrouter","official_source":"https://openrouter.ai/docs/api-reference/limits","surface":"GET https://openrouter.ai/api/v1/key","contract":"current-key read-only response may expose limit, limit_remaining, usage and reset/tier fields"},
+    {"provider":"github-copilot","official_source":"https://docs.github.com/en/rest/billing/usage","surface":"GET /users/{username}/settings/billing/usage","contract":"user billing usage report; existing credential lacks Plan: read"},
+    {"provider":"opencode-go","official_source":"https://opencode.ai/docs/go/","surface":"published Go limits","contract":"5-hour $12, weekly $30, monthly $60 are provider-declared capacities only"}
+  ],
+  "interpretation":"Official documentation defines possible surfaces; only provider-owned runtime responses are OBSERVED. Documentation never upgrades current usage or remaining allowance."
+}

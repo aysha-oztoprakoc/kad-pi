@@ -1,0 +1,14 @@
+{
+  "status":"PASS",
+  "credential_values_in_evidence":false,
+  "secret_scan_command":"rg -n -i 'bearer\\s+[A-Za-z0-9._-]+|gh[opsr]_[A-Za-z0-9_]+|api[_-]?key\\s*[:=]|access[_-]?token\\s*[:=]|refresh[_-]?token\\s*[:=]' evidence/WP-KAD-QUOTA-002 tools/kad/run-remote-quota-probe.mjs",
+  "secret_scan_exit_code":1,
+  "auth_checks":"pi auth check --no-refresh only",
+  "oauth_refresh_triggered":false,
+  "browser_scraping":false,
+  "model_inference_for_discovery":false,
+  "provider_mutation":false,
+  "payg_enabled":false,
+  "auto_topup_enabled":false,
+  "notes":["The OpenRouter access token was read and held in process memory solely for the provider-owned GET request; it was never printed, persisted, or included in a receipt.","GitHub used gh's existing keyring-backed credential without printing it."]
+}

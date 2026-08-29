@@ -1,0 +1,9 @@
+{
+  "kind":"DRY_RUN_ROUTE",
+  "executed_model_task":false,
+  "provider":"openrouter",
+  "requirement":{"trust_domain":"retrieval","capabilities":["structured-extraction"],"min_context":1000},
+  "lane":{"lane_id":"openrouter-observed","execution_class":"REMOTE_SUBSCRIPTION","provider":"openrouter","model":"unknown","trust_domain":"retrieval","capabilities":["structured-extraction"],"context_window":4096,"payg":false,"marginal_cost":0},
+  "router_result":{"status":"ROUTED","selected_lane":"openrouter-observed","reason_codes":["ELIGIBLE","EXECUTION_CLASS_REMOTE_SUBSCRIPTION","WATERMARK_UNKNOWN","QUOTA_UNKNOWN"],"observation":{"watermark":"UNKNOWN","quota_unit":null,"remaining":null,"capacity":null,"confidence":"UNKNOWN","effective_window_id":null,"window_count":4,"window_ids":["key","daily","weekly","monthly"]}},
+  "interpretation":"The provider-owned usage observation is accepted as router input, but no current allowance is claimed and no remote inference was executed."
+}

@@ -1,0 +1,11 @@
+GREEN evidence
+
+- `node --test tools/kad/test/quota-windows.test.mjs`: 22/22 pass.
+- `node --test tools/kad/test/*.test.mjs`: 152/152 pass.
+- `node --test tools/kad/test/pi-real-persistent.integration.test.mjs`: 7/7 pass.
+- `node --test tools/librarian/test/librarian.test.mjs`: 11/11 pass.
+- `python3 validate_prime_directive.py`: VALIDATION SUCCESS; 1,478 estimated tokens <= 1,500.
+- `git diff --check`: pass.
+- Changed-module `node --check`: pass.
+
+Live OpenRouter provider-owned read-only observation succeeded with HTTP 200. Four native USD windows were normalized; usage was observed as zero, while capacity/remaining/reset remained null and effective state remained UNKNOWN. A no-model-task DRY_RUN_ROUTE consumed this normalized state and selected the approved subscription lane with explicit `QUOTA_UNKNOWN`.

@@ -28,10 +28,11 @@ export function normalizeRawProviderQuota({ provider, surface, raw, model_scope 
   const parsed = parseRaw(raw);
   const sanitized = redactProviderOutput(raw);
   const candidate = parsed.value?.quota;
+  const windows = Array.isArray(parsed.value?.windows) ? parsed.value.windows : Array.isArray(candidate?.windows) ? candidate.windows : null;
   const validQuota = candidate && typeof candidate === 'object' && Number.isFinite(candidate.remaining) && Number.isFinite(candidate.capacity) && candidate.capacity > 0 && typeof candidate.unit === 'string';
-  const quotaInput = validQuota ? { ...candidate, status: candidate.status ?? 'KNOWN', observed_at: candidate.observed_at ?? observed_at, source: candidate.source ?? `${provider}/${surface}`, scope: { model: model_scope, window: window_scope } } : { status: 'UNKNOWN', unit: null, remaining: null, capacity: null, observed_at, scope: { model: model_scope, window: window_scope } };
+  const quotaInput = windows ? { windows, observed_at, source: `${provider}/${surface}`, useful_queued_work: false } : validQuota ? { ...candidate, status: candidate.status ?? 'KNOWN', observed_at: candidate.observed_at ?? observed_at, source: candidate.source ?? `${provider}/${surface}`, scope: { model: model_scope, window: window_scope } } : { status: 'UNKNOWN', unit: null, remaining: null, capacity: null, observed_at, scope: { model: model_scope, window: window_scope } };
   const quota = normalizeQuota(quotaInput, policy, now);
-  return { ...quota, provenance: { provider: provider ?? 'UNKNOWN', surface: surface ?? 'UNKNOWN', observation_mechanism: 'provider-owned read-only adapter', command_identity: null, observed_at, raw_source_hash: hash(sanitized), parser_version: QUOTA_ADAPTER_VERSION, normalization_version: 'quota-state-1', model_scope, window_scope, freshness_ttl_ms: policy.stale_ttl_ms ?? 86400000, parse_warnings: [...parsed.warnings, ...(validQuota ? [] : ['quota dimension not exposed or not machine-readable'])], raw_sanitized: sanitized } };
+  return { ...quota, provenance: { provider: provider ?? 'UNKNOWN', surface: surface ?? 'UNKNOWN', observation_mechanism: 'provider-owned read-only adapter', command_identity: null, observed_at, raw_source_hash: hash(sanitized), parser_version: QUOTA_ADAPTER_VERSION, normalization_version: 'quota-state-1', model_scope, window_scope, freshness_ttl_ms: policy.stale_ttl_ms ?? 86400000, parse_warnings: [...parsed.warnings, ...(windows || validQuota ? [] : ['quota dimension not exposed or not machine-readable'])], raw_sanitized: sanitized } };
 }
 
 export class ProviderQuotaAdapter {

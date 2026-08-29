@@ -1,0 +1,10 @@
+{
+  "workpackage":"WP-KAD-QUOTA-002",
+  "base_commit":"1b1dd08",
+  "base_commit_full":"1b1dd084ba2598ed8aca8174313a4d8f18363cc1",
+  "provider_priority_to_verify":["openai-codex","opencode-go","github-copilot","openrouter"],
+  "known_previous_state":"WP-KAD-QUOTA-001 represented live openai-codex quota as UNKNOWN because pi auth check exposed readiness only",
+  "preexisting_unrelated_work_preserved":true,
+  "policy_baseline":{"payg_authorized":false,"allow_paid_fallback":false,"allow_auto_topup":false,"max_incremental_cost":0},
+  "constraints":["read-only provider observation","no new credentials","no credential refresh","no model inference for quota discovery","no provider or economic redesign"]
+}
