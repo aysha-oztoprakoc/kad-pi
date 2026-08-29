@@ -1,0 +1,17 @@
+{
+  "workpackage": "WP-KAD-INTERFACE-PLATFORM-001",
+  "status": "PASS",
+  "fixed_point": "b617067",
+  "commit": "0b90430",
+  "commands": [
+    { "command": "node --check tools/kad/publication.mjs", "status": "PASS" },
+    { "command": "node --check bin/kad-publication", "status": "PASS" },
+    { "command": "node --check interface/kad-ui.js", "status": "PASS" },
+    { "command": "node --check site/site.js", "status": "PASS" },
+    { "command": "node --check dashboard/dashboard.js", "status": "PASS" },
+    { "command": "make verify", "status": "PASS" },
+    { "command": "make test", "status": "PASS", "observed_node_test_cases": 94, "observed_cpp_evidence_cases": 14 },
+    { "command": "git diff --check", "status": "PASS" }
+  ],
+  "unrelated_worktree_changes": "preserved and not staged"
+}
