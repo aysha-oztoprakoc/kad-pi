@@ -1,10 +1,48 @@
-# Project-portable KAD policy overlay. Concrete transport lives in the Work-local state symlink.
+# Project-portable KAD routing policy. Concrete transport remains in the
+# wrapper-linked Work-local model configuration.
+modelRoleStorage: project
 modelRoles:
+  default: "openai-codex/gpt-5.6-luna:medium"
+  plan: "openai-codex/gpt-5.6-luna:high"
+  slow: "google-antigravity/gemini-3-flash:high"
+  advisor: "google-antigravity/gemini-3-flash:low"
+  task: "openai-codex/gpt-5.4-mini:low"
+  smol: "zai-free/glm-4.7-flash:minimal"
+  tiny: "zai-free/glm-4.7-flash:minimal"
+  commit: "zai-free/glm-4.7-flash:low"
+  designer: "google-antigravity/gemini-3-flash:high"
+  vision: "google-antigravity/gemini-3-flash:high"
+  oracle: "openai-codex/gpt-5.6-luna:max"
+  verifier: "google-antigravity/gemini-3-flash:high"
+  research: "google-antigravity/gemini-3-flash:medium"
   world: "kad-local-world/kad-local-s13:low"
   local_retrieval: "kad-local-qwen/qwen-local:low"
+modelTags:
+  oracle:
+    name: "Oracle (manual premium escalation)"
+    hidden: true
+  verifier:
+    name: "Verifier (independent provider-family review)"
+  research:
+    name: "Research (literature and technical synthesis)"
+  world:
+    name: "World (Stheno WORLD-only)"
+  local_retrieval:
+    name: "Local Retrieval (Qwen retrieval-only)"
+  local_general:
+    name: "Local General (unqualified)"
+    hidden: true
+cycleOrder:
+  - smol
+  - default
+  - slow
+# The allowlist is deliberately local-only; remote access is explicit through
+# the role and fallback selectors below, preserving the KAD spend preflight.
 enabledModels:
   - "kad-local-world/*"
   - "kad-local-qwen/qwen-local"
+disabledProviders:
+  - "openrouter"
 advisor:
   enabled: false
 memory:
@@ -16,3 +54,66 @@ skills:
   enabled: true
   enableAgentsProject: true
   enablePiProject: false
+task:
+  enableEffort: false
+  agentModelOverrides:
+    kad-master: "@plan"
+    kad-builder: "@task"
+    kad-tester: "@verifier"
+    kad-reviewer: "@verifier"
+    kad-researcher: "@research"
+    kad-local-world: "@world"
+    kad-local-extractor: "@local_retrieval"
+    scout: "@smol"
+    sonic: "@tiny"
+    designer: "@designer"
+    reviewer: "@verifier"
+    security-reviewer: "@verifier"
+    librarian: "@research"
+  agentAdvisor:
+    kad-master: "off"
+    kad-builder: "off"
+    kad-tester: "off"
+    kad-reviewer: "off"
+    kad-researcher: "off"
+    kad-local-world: "off"
+    kad-local-extractor: "off"
+    scout: "off"
+    sonic: "off"
+    designer: "off"
+    reviewer: "off"
+    security-reviewer: "off"
+    librarian: "off"
+retry:
+  enabled: true
+  modelFallback: true
+  fallbackRevertPolicy: cooldown-expiry
+  fallbackChains:
+    default:
+      - "google-antigravity/gemini-3-flash:medium"
+    plan:
+      - "google-antigravity/gemini-3-flash:high"
+    slow:
+      - "openai-codex/gpt-5.6-luna:high"
+    advisor:
+      - "openai-codex/gpt-5.4-mini:low"
+    task:
+      - "zai-free/glm-4.7-flash:low"
+    smol:
+      - "openai-codex/gpt-5.4-mini:minimal"
+    tiny:
+      - "openai-codex/gpt-5.4-mini:minimal"
+    commit:
+      - "openai-codex/gpt-5.4-mini:low"
+    designer:
+      - "openai-codex/gpt-5.6-luna:high"
+    vision:
+      - "openai-codex/gpt-5.6-luna:high"
+    verifier:
+      - "openai-codex/gpt-5.6-luna:high"
+    research:
+      - "openai-codex/gpt-5.4-mini:low"
+    oracle: []
+    world: []
+    local_retrieval: []
+    local_general: []
