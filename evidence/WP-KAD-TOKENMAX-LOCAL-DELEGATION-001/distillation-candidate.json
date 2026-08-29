@@ -1,0 +1,9 @@
+{
+  "type":"ROUTING_POLICY_LESSON",
+  "invariant":"CHEAPEST_SUFFICIENT_TRUSTED_EXECUTION",
+  "subordinate":["DETERMINISTIC_BEFORE_PROBABILISTIC","LOCAL_BEFORE_REMOTE_WHEN_SUFFICIENT","ESCALATION_REQUIRES_TYPED_REASON","REMOTE_CONTEXT_MUST_NOT_INCLUDE_LOCAL_SLOP"],
+  "observed_local_episode_count":0,
+  "general_local_capability":"UNKNOWN",
+  "deterministic_candidates":["repeated JSON-pointer extraction should remain parser/tool work, not model work"],
+  "promotion":"NOT_PERFORMED"
+}

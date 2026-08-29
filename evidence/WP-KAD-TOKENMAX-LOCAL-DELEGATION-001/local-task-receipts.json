@@ -1,0 +1,15 @@
+{
+  "task":"LOCAL-ELIGIBILITY-DRY-RUN",
+  "resource":"kad-local-retrieval-amdy",
+  "model":"Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
+  "compiled_context_bytes":884,
+  "local_tokens":null,
+  "latency_ms":null,
+  "validator":"NOT_RUN",
+  "accepted":false,
+  "execution_class":"REMOTE_REQUIRED",
+  "reason":"LOCAL_RESOURCE_UNAVAILABLE",
+  "local_calls":0,
+  "remote_calls":0,
+  "claim_class":"OBSERVED"
+}

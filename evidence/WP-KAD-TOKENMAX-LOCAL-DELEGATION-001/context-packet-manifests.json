@@ -1,0 +1,7 @@
+{
+  "precise_selector": {"selector":"/providers/kad-local-qwen","selected_bytes":884,"packet_sha256":"f543b84405f01e557e9d26f950df55fed603f9435561d67d939c655411e1155d"},
+  "broad_selector": {"selector":"whole_file","selected_bytes":1242,"packet_sha256":"b87c27ebfe0da890627c2cf16d0c194bcdb3a117dd0fd23e6715348fd722abf2"},
+  "reduction_bytes": 358,
+  "ordering": "canonical selector ordering and SHA-256 packet hash",
+  "isolation": ["fresh packet per task", "no parent conversation", "no prior local transcript", "no hidden reasoning"]
+}

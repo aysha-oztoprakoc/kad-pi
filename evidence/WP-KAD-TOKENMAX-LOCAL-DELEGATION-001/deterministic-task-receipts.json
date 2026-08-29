@@ -1,0 +1,5 @@
+{
+  "MICRO-A":{"claim":"kad-local-qwen is retrieval-scoped","source":"tools/kad/pi/local-models.json#/providers/kad-local-qwen","validator":"PASS","model_calls":0},
+  "MICRO-B":{"claim":"qwen-local declares contextWindow 2048 and maxTokens 192","source":"tools/kad/pi/local-models.json#/providers/kad-local-qwen/models/0","validator":"PASS","model_calls":0},
+  "MICRO-C":{"claim":"kad-local-world is WORLD-scoped","source":"tools/kad/pi/local-models.json#/providers/kad-local-world","validator":"PASS","model_calls":0}
+}

@@ -1,0 +1,12 @@
+{
+  "workpackage": "WP-KAD-TOKENMAX-LOCAL-DELEGATION-001",
+  "head_before_this_workpackage": "649f301",
+  "prior_context_compiler_commit": "d68f748",
+  "dirty_state_before": ["evidence/WP-KAD-002/causal-journal.jsonl"],
+  "qwen_endpoint": "http://127.0.0.1:5002/v1",
+  "qwen_runtime_state_at_experiment": "UNAVAILABLE",
+  "world_endpoint": "http://127.0.0.1:5001/v1",
+  "remote_inference_contract": 0,
+  "local_model_inference_contract": 3,
+  "baseline_status": "ATTRIBUTED_PRIOR_WORK_COMMITTED_SEPARATELY"
+}

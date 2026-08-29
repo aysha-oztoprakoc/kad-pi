@@ -1,0 +1,12 @@
+{
+  "tasks": [
+    {"task":"MICRO-A","kind":"exact JSON trust-domain extraction","source":"tools/kad/pi/local-models.json#/providers/kad-local-qwen","route":"DETERMINISTIC","validator":"exact JSON pointer/source evidence","accepted":true,"local_calls":0,"remote_calls":0},
+    {"task":"MICRO-B","kind":"bounded JSON resource-field extraction","source":"tools/kad/pi/local-models.json#/providers/kad-local-qwen/models/0","route":"DETERMINISTIC","validator":"exact JSON pointer/source evidence","accepted":true,"local_calls":0,"remote_calls":0},
+    {"task":"MICRO-C","kind":"exact WORLD provider declaration extraction","source":"tools/kad/pi/local-models.json#/providers/kad-local-world","route":"DETERMINISTIC","validator":"exact JSON pointer/source evidence","accepted":true,"local_calls":0,"remote_calls":0}
+  ],
+  "deterministic_tasks": 3,
+  "local_eligible_at_current_runtime": 0,
+  "local_eligibility_reason":"Qwen process was unavailable; stale STC capability was not resurrected",
+  "local_first_contract_tests": 38,
+  "remote_calls": 0
+}

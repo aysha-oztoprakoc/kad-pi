@@ -14,3 +14,4 @@ export { replayJournal } from './replay.mjs';
 export { generateTurnDataset } from './dataset.mjs';
 export { STATES, SOURCE_CLASSES, FAILURE_CLASSES, canonicalize, hashCanonical, hashArtifact, createRecord, validateRecord, verifyCandidate, verifyRecord, VerifierRegistry, defaultVerifiers, fromEpisode, verifyEpisodeLineage, transition, rejectRecord, DistillationStore, retrieveGolden, buildSteeringContext, replayRecord, replayWithAdapter, registerReplayAdapter, exportDataset } from './distillation.mjs';
 export { normalizeWorkRequest, compileTaskPacket, selectControllerLane, validateWorkerResult, executeSwarm, canonicalSwarmReceipt } from './swarm.mjs';
+export { EXECUTION_CLASSES as MICROTASK_EXECUTION_CLASSES, ESCALATION_REASONS, classifyMicrotask, compileFreshLocalPacket, buildEscalationPacket, routeMicrotask, executeMicrotask, makeEconomicReceipt, recordDistillationCandidate } from './microtask-router.mjs';

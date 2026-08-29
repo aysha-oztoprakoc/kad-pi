@@ -1,0 +1,9 @@
+{
+  "execution_classes": ["DETERMINISTIC", "LOCAL_SPECIALIST", "LOCAL_GENERAL", "REMOTE_FREE", "REMOTE_SUBSCRIPTION", "REMOTE_STRONG", "REMOTE_REQUIRED", "HUMAN_REQUIRED"],
+  "bounded_local_conditions": ["read_only", "source_count 1..16", "output_bound", "validator", "no mutation", "no security authority", "no architecture authority", "no acceptance authority", "matching trust and capability", "explicit proven resource contract", "resource fit PASS"],
+  "escalation_requires": "typed reason code",
+  "max_local_inferences": 1,
+  "max_local_repairs": 0,
+  "model_self_declaration_authority": false,
+  "legacy_without_resource_contract": "LEGACY_COMPATIBILITY_NOT_ELIGIBLE"
+}

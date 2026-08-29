@@ -1,0 +1,6 @@
+{"claim":"Prior context/compiler changes were separately attributable and committed","class":"OBSERVED","evidence":"baseline.json; commit d68f748"}
+{"claim":"Three current repository extraction tasks were solved deterministically with zero model calls","class":"OBSERVED","evidence":"deterministic-task-receipts.json"}
+{"claim":"Precise selector reduced selected source bytes from 1242 to 884 in fixture","class":"CALCULATED","evidence":"context-packet-manifests.json"}
+{"claim":"Qwen was not eligible at experiment time because its process was unavailable","class":"OBSERVED","evidence":"local-task-receipts.json"}
+{"claim":"General Qwen retrieval capability is proven","class":"UNKNOWN","evidence":"no local inference in this workpackage"}
+{"claim":"Future premium token savings","class":"PROJECTED","evidence":"not claimed as observed"}

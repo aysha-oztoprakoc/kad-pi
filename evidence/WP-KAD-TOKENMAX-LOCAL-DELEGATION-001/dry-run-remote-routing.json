@@ -1,0 +1,8 @@
+[
+  {"task":"architecture","execution_class":"REMOTE_REQUIRED","invoke":false,"reason":"ARCHITECTURE_REQUIRES_REMOTE"},
+  {"task":"security-mutation","execution_class":"REMOTE_REQUIRED","invoke":false,"reason":"SECURITY_REQUIRES_REMOTE"},
+  {"task":"WORLD-generation","execution_class":"LOCAL_SPECIALIST","invoke":true,"resource":"WORLD-only specialist; never Qwen"},
+  {"task":"unsupported-retrieval-capability","execution_class":"REMOTE_REQUIRED","invoke":false,"reason":"NO_LOCAL_CAPABILITY"},
+  {"task":"oversized-resource-contract","execution_class":"REMOTE_REQUIRED","invoke":false,"reason":"LOCAL_RESOURCE_FIT_FAILED"},
+  {"task":"exact-deterministic-lookup","execution_class":"DETERMINISTIC","invoke":true,"reason":"DETERMINISTIC_PATH_AVAILABLE"}
+]
