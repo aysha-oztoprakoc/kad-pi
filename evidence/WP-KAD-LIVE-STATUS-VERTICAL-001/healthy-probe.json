@@ -1,0 +1,13 @@
+{
+  "schema": "kad-runtime-status-v1",
+  "runtime_id": "stheno-v3.2",
+  "observed_at": "2026-08-29T21:25:18.388Z",
+  "state": "AVAILABLE",
+  "capability": "world",
+  "trust_domain": "world",
+  "endpoint_class": "localhost-openai-models",
+  "identity": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M",
+  "latency_ms": 23,
+  "reason": null,
+  "source": "runtime-probe"
+}

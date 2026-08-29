@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "fixed_point": "60c6e3dd04c2f6731d79ecae2a0738073d70bc11",
+  "implementation_commits": [
+    "0d0b1a5 feat(kad): add read-only live runtime status",
+    "7a96a7e fix(kad): harden runtime status boundaries"
+  ],
+  "owned_paths_only": true,
+  "unrelated_preexisting_worktree_changes_preserved": true,
+  "reviewed_diff": "git diff 60c6e3d...HEAD"
+}

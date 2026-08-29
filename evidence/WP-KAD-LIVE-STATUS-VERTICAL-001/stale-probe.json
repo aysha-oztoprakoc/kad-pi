@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "fixture": {
+    "input_state": "AVAILABLE",
+    "observed_at": "2026-08-29T20:00:00.000Z",
+    "checked_at": "2026-08-29T20:01:00.001Z",
+    "threshold_ms": 60000,
+    "output_state": "STALE",
+    "reason": "runtime observation exceeded stale threshold"
+  },
+  "test_command": "node --test tools/kad/test/runtime-status.test.mjs"
+}

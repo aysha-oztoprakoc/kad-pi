@@ -1,0 +1,10 @@
+{
+  "schema": "kad-runtime-status-v1",
+  "required_fields": ["runtime_id", "observed_at", "state", "capability", "trust_domain", "endpoint_class", "identity", "latency_ms", "reason", "source"],
+  "states": ["AVAILABLE", "DEGRADED", "UNAVAILABLE", "UNKNOWN", "STALE"],
+  "timeout_ms": 1500,
+  "stale_threshold_ms": 30000,
+  "poll_interval_ms": 10000,
+  "source": "runtime-probe",
+  "monitoring_tokens": 0
+}

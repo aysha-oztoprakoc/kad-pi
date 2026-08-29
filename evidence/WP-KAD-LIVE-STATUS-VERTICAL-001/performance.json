@@ -1,0 +1,11 @@
+{
+  "status": "OBSERVED",
+  "probe_timeout_ms": 1500,
+  "healthy_probe_latency_ms": 23,
+  "api_response_bytes": 311,
+  "poll_interval_ms": 10000,
+  "stale_threshold_ms": 30000,
+  "browser_observed_api_requests": 24,
+  "steady_state_model_tokens": 0,
+  "notes": "Request count is one browser-session observation, not a production monitoring rate. No sub-second polling or retry loop exists."
+}

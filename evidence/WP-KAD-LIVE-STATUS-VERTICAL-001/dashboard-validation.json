@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "live_server": "http://127.0.0.1:4173",
+  "healthy_observation": "AVAILABLE with koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M identity",
+  "overview": ["live runtime panel", "snapshot/live distinction", "attention queue", "capability and trust fields", "observation time", "latency"],
+  "system": ["live observation", "probe source", "endpoint class", "last successful observation", "last interface failure", "poll interval", "stale threshold", "no control path"],
+  "unavailable_fixture": "Static python server on 127.0.0.1:4174 left governed snapshot usable and rendered live UNAVAILABLE.",
+  "narrow_viewport_px": 600,
+  "narrow_overflow": false,
+  "static_live_separation": true,
+  "qualification_runtime_separation": true
+}

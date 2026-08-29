@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "targeted": {
+    "command": "node --test tools/kad/test/runtime-status.test.mjs tools/kad/test/interface-server.test.mjs tools/kad/test/interface-platform.test.mjs",
+    "passed": 16,
+    "failed": 0
+  },
+  "syntax": [
+    "node --check tools/kad/runtime-status.mjs",
+    "node --check tools/kad/interface-server.mjs",
+    "node --check dashboard/dashboard.js",
+    "node --check bin/kad-interface-server"
+  ],
+  "full_gates": {
+    "command": "make verify && make test",
+    "result": "PASS"
+  },
+  "smoke": {
+    "cli": "AVAILABLE with koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M",
+    "live_api_http": 200,
+    "public_api_http": 404
+  },
+  "browser": {
+    "healthy_dashboard": "AVAILABLE, expected identity, attention queue, no horizontal overflow",
+    "system_view": "READ-ONLY, no control path, transition field visible",
+    "unavailable_dashboard": "static snapshot remained usable and live state rendered UNAVAILABLE at 600px",
+    "screenshot_inspected": true
+  },
+  "diff_check": "PASS"
+}

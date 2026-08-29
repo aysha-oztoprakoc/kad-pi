@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "checks": {
+    "localhost_bind": true,
+    "read_only_get_surface": true,
+    "unsupported_methods_rejected": true,
+    "no_shell_execution": true,
+    "no_filesystem_writes": true,
+    "no_arbitrary_filesystem_path": true,
+    "no_arbitrary_proxy": true,
+    "no_runtime_control": true,
+    "bounded_runtime_endpoint": true,
+    "malformed_observation_not_healthy": true,
+    "escaped_dashboard_rendering": true,
+    "public_site_operational_api_connection": false
+  },
+  "evidence": ["tools/kad/test/interface-server.test.mjs", "tools/kad/test/interface-platform.test.mjs"]
+}

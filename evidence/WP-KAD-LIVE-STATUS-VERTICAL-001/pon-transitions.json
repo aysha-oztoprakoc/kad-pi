@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "transitions": [
+    "AVAILABLE_TO_UNAVAILABLE",
+    "UNAVAILABLE_TO_AVAILABLE",
+    "AVAILABLE_TO_DEGRADED",
+    "FRESH_TO_STALE"
+  ],
+  "implementation": "runtimeTransition helper",
+  "automatic_reaction": false,
+  "event_bus": false,
+  "test_command": "node --test tools/kad/test/runtime-status.test.mjs"
+}

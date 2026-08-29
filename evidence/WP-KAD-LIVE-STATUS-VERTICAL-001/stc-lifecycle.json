@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "observer": {
+    "owner": "dashboard/interface server process",
+    "activation": "server request invokes one bounded GET probe",
+    "deadline_ms": 1500,
+    "state": "request-scoped observation result",
+    "cleanup": "AbortController timeout and timer cleanup in finally",
+    "resource_owner": "external KoboldCpp process",
+    "ownership_relation": "observer != observed resource owner"
+  },
+  "server": {
+    "owner": "foreground process started by operator",
+    "bind": "127.0.0.1",
+    "shutdown": "process lifecycle; no runtime teardown performed"
+  },
+  "authority_mutation": false
+}

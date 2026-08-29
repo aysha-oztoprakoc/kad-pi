@@ -1,0 +1,42 @@
+{
+  "workpackage": "WP-KAD-LIVE-STATUS-VERTICAL-001",
+  "observed_at": "2026-08-29T21:11:33.000Z",
+  "method": "deterministic read-only local probes",
+  "candidates": [
+    {
+      "candidate": "Stheno WORLD runtime",
+      "runtime_identity": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M",
+      "owner": "external KoboldCpp process",
+      "endpoint": "http://127.0.0.1:5001/v1/models",
+      "health_mechanism": "GET /v1/models",
+      "availability": "AVAILABLE",
+      "trust_domain": "world",
+      "mutation_required": false,
+      "process_observed": "koboldcpp-linux-x64-nocuda --model .../kad-sillytavern/models/L3-8B-Stheno-v3.2-Q4_K_M.gguf --host 127.0.0.1 --port 5001",
+      "selection": "SELECTED"
+    },
+    {
+      "candidate": "OpenViking service",
+      "runtime_identity": "UNKNOWN",
+      "owner": "UNKNOWN",
+      "endpoint": "http://127.0.0.1:1933/health",
+      "health_mechanism": "GET /health",
+      "availability": "UNAVAILABLE",
+      "trust_domain": "knowledge-plane adapter; non-authoritative",
+      "mutation_required": false,
+      "selection": "REJECTED: connection refused"
+    },
+    {
+      "candidate": "Qwen retrieval runtime",
+      "runtime_identity": "UNKNOWN",
+      "owner": "KAD STC adapter when explicitly activated",
+      "endpoint": "http://127.0.0.1:5002/v1/models",
+      "health_mechanism": "GET /v1/models",
+      "availability": "UNAVAILABLE",
+      "trust_domain": "retrieval",
+      "mutation_required": false,
+      "selection": "REJECTED: connection refused; existing registry state remains DEGRADED"
+    }
+  ],
+  "selection_gate": "Stheno is real, approved, observable read-only, identity-verifiable, localhost-only, and requires no authority change or paid spend."
+}

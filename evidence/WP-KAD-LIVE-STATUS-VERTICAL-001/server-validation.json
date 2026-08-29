@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "bind": "127.0.0.1",
+  "routes": {
+    "GET /api/runtime-status": "200 with validated kad-runtime-status-v1",
+    "GET /dashboard/index.html": "200",
+    "POST /api/runtime-status": "405 GET only",
+    "GET /api/other": "404",
+    "GET /%2e%2e/PRIME_DIRECTIVE.md": "404",
+    "GET /CONTEXT.md": "404"
+  },
+  "implementation": "Node node:http with explicit static allowlist",
+  "write_capabilities": false,
+  "shell_capabilities": false,
+  "arbitrary_proxy": false,
+  "filesystem_writes": false,
+  "runtime_control": false,
+  "test_command": "node --test tools/kad/test/interface-server.test.mjs",
+  "tests_passed": 4
+}

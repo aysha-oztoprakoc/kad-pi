@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "selected": "stheno-v3.2",
+  "selection_order": ["Stheno WORLD runtime", "OpenViking service", "Qwen retrieval runtime"],
+  "reason": "First candidate satisfied real, approved, observable read-only, identity-verifiable, localhost-only, no-authority-change, no-paid-spend gate.",
+  "owner": "external KoboldCpp process",
+  "observer_ownership": "NONE",
+  "runtime_authority": "WORLD-only",
+  "legacy_path": "Observed process still reads kad-sillytavern/models legacy path; cutover was not performed."
+}

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "fixtures": [
+    { "case": "connection failure", "state": "UNAVAILABLE", "reason": "runtime endpoint was unreachable" },
+    { "case": "timeout", "state": "UNAVAILABLE", "reason": "runtime probe timed out after 5ms in bounded fixture" },
+    { "case": "malformed JSON", "state": "UNKNOWN", "reason": "runtime health response was not valid JSON" },
+    { "case": "identity mismatch", "state": "DEGRADED", "identity": "koboldcpp/other-model", "reason": "runtime identity mismatch" }
+  ],
+  "test_command": "node --test tools/kad/test/runtime-status.test.mjs tools/kad/test/interface-server.test.mjs",
+  "tests_passed": 7
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "method": "browser inspection against running surfaces",
+  "healthy": {
+    "url": "http://127.0.0.1:4173/dashboard/index.html#overview",
+    "observed": ["AVAILABLE", "Stheno identity", "live runtime panel", "attention queue"]
+  },
+  "system": {
+    "url": "http://127.0.0.1:4173/dashboard/index.html#system",
+    "observed": ["Read-only observation", "no control path", "qualification separate from runtime"]
+  },
+  "unavailable": {
+    "url": "http://127.0.0.1:4174/dashboard/index.html#overview",
+    "observed": ["governed snapshot remained usable", "live state rendered UNAVAILABLE"]
+  },
+  "narrow": { "viewport_px": 600, "horizontal_overflow": false },
+  "runtime_api": "localhost-only"
+}
