@@ -150,7 +150,7 @@ New owned files are under `AGENTS.md`, `.agents/workspace/`, `.agents/work/`, `.
 
 ## COMMITS
 
-Bounded commit: `5dce16b` (`feat: add portable workspace agent substrate`). It contains only the owned substrate and evidence paths; unrelated dirty paths were not staged.
+Bounded commits: `5dce16b` (`feat: add portable workspace agent substrate`) and `2df780c` (`docs: close workspace substrate evidence`). They contain only owned substrate and evidence paths; unrelated dirty paths were not staged.
 
 ## REMAINING PARTIALS
 
