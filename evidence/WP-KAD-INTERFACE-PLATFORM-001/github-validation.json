@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "artifact": "README.md",
+  "observed": [
+    "KAD-PI identity and evidence-gated local-first positioning are explicit.",
+    "Current PARTIAL state and degraded OpenViking / blocked Needle states are stated without green badges.",
+    "Architecture flow, doctrines, quickstart, daily knowledge workflow, canonical navigation, evidence, agents, skills, and roadmap links are present.",
+    "Unsupported autonomy, AGI, self-learning, and production claims are explicitly rejected."
+  ]
+}

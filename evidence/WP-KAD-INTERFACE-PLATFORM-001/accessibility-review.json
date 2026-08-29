@@ -1,0 +1,14 @@
+{
+  "status": "PASS_BASELINE",
+  "method": "browser inspection and source review",
+  "observed": [
+    "Semantic header, nav, main, section, article, table, and footer elements are used.",
+    "Navigation exposes aria-label and current-page/current-view state.",
+    "Status labels include text and a marker, not color alone.",
+    "Visible focus styling is defined with :focus-visible.",
+    "Reduced-motion media query disables nonessential animation/scroll behavior.",
+    "Tables retain readable overflow behavior on narrow screens.",
+    "Keyboard Tab reaches the public brand link."
+  ],
+  "not_claimed": "Formal WCAG conformance audit"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "command": "node --test tools/kad/test/publication.test.mjs",
+  "tests": 5,
+  "passed": 5,
+  "failed": 0,
+  "observations": [
+    "Only explicit PUBLIC records are emitted.",
+    "INTERNAL, SENSITIVE, UNKNOWN, and PUBLIC_CANDIDATE records are excluded.",
+    "Source references, hashes, local paths, and component details are absent from persisted output.",
+    "Missing internal state raises a bounded failure."
+  ]
+}

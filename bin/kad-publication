@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+import { runPublicationCli } from '../tools/kad/publication.mjs';
+
+process.exitCode = runPublicationCli(process.argv.slice(2));

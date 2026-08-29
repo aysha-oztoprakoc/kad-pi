@@ -1,0 +1,18 @@
+{
+  "workpackage": "WP-KAD-INTERFACE-PLATFORM-001",
+  "status": "PASS",
+  "input": "wiki/generated/kad-canonical/project-state.json plus status.json",
+  "output": "site/generated/public-state.json",
+  "schema": "kad-public-state-v1",
+  "automatic_allowlist": ["PUBLIC"],
+  "blocked_classes": ["PUBLIC_CANDIDATE", "INTERNAL", "SENSITIVE", "UNKNOWN"],
+  "removed_fields": ["source_ref", "source_hash", "trust_domain", "components", "evidence_ref", "private traces", "operational controls"],
+  "fail_closed_rules": [
+    "missing internal projection raises a bounded build error",
+    "non-PUBLIC records are omitted",
+    "secret-shaped keys and values are rejected",
+    "absolute local paths are rejected",
+    "unknown schema or publication class is rejected"
+  ],
+  "public_site_reads_internal_projection_directly": false
+}

@@ -1,0 +1,13 @@
+{
+  "workpackage": "WP-KAD-INTERFACE-PLATFORM-001",
+  "status": "PASS",
+  "runtime_dependencies_added": [],
+  "build_dependencies": ["Node.js built-ins", "native browser ES modules"],
+  "existing_inputs": [
+    "wiki/generated/kad-canonical/project-state.json",
+    "wiki/generated/kad-canonical/status.json",
+    "wiki/generated/kad-canonical/evidence-index.json"
+  ],
+  "backend": { "required": false, "implemented": false, "reason": "MVP dashboard requirements are covered by generated projections." },
+  "external_services_required": false
+}

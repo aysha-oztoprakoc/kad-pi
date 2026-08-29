@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "build": { "command": "bin/kad-publication build", "schema": "kad-public-state-v1", "records": 0, "project_status": "PARTIAL" },
+  "routes": [
+    { "path": "/site/index.html", "title": "KAD-PI — governed local AI research" },
+    { "path": "/site/architecture.html", "title": "Architecture — KAD-PI" },
+    { "path": "/site/research.html", "title": "Research — KAD-PI" },
+    { "path": "/site/knowledge.html", "title": "KnowledgePlane — KAD-PI" },
+    { "path": "/site/local-ai.html", "title": "Local AI — KAD-PI" },
+    { "path": "/site/roadmap.html", "title": "Roadmap — KAD-PI" }
+  ],
+  "browser_observations": [
+    "Public state rendered PARTIAL with 40 sources and 56 governed records.",
+    "Desktop screenshot inspected at 1440x1000.",
+    "Mobile layout inspected at 390px with no horizontal overflow.",
+    "Navigation routes loaded successfully without live KAD services."
+  ]
+}

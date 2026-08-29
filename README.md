@@ -1,109 +1,173 @@
-# KAD-PI: Local AI Experimental Platform & Agent Harness
+# KAD-PI
 
-> **React only to relevant change; declare what every component requires; track and recover what every component changes; prove behavior before trusting implementation; reduce capability safely when assumptions fail; and preserve enough evidence to reconstruct every consequential decision.**
+## Governed local AI research, with receipts
 
-`NOTIFY, DON'T POLL.`  
-`DECLARE, DON'T REACH.`  
-`TRACK, DON'T ASSUME CLEANUP.`  
-`TEST, DON'T CLAIM.`  
-`DEGRADE, DON'T ESCALATE AUTHORITY.`  
-`RECORD, DON'T GUESS.`  
+KAD-PI is a local-first experimental platform for agent harnesses, deterministic
+knowledge, and bounded AI capability. Models can propose. Evidence, policy, and
+validation decide what becomes trusted state.
 
----
+> **Build from scratch, not from zero.**
+> **Real data, not dashboard theater.**
+> **Public is a sanitized projection, not an internal mirror.**
 
-## 1. Overview
+`NOTIFY, DON'T POLL.` · `DECLARE, DON'T REACH.` · `TEST, DON'T CLAIM.`
+`DEGRADE, DON'T ESCALATE AUTHORITY.` · `RECORD, DON'T GUESS.`
 
-**KAD-PI** is an experimental platform combining:
-- **Notification-Oriented Paradigm (PON)**: Selective, causal state reaction without polling.
-- **Spatiotemporal Composability (STC)**: Scoped capabilities, explicit coeffects (dependencies), managed effects, and reversible teardowns governed by **Cordis**.
-- **Deterministic Authority Boundary**: Decoupling non-deterministic language models (interpreters) from canonical state mutations (pure C++20/TypeScript validator and resolver).
-- **Pi Coding Agent Lifecycle Integration**: Provenance-verified `@earendil-works/pi-coding-agent` (v0.84.3) integration seam with deterministic session subscription and disposal.
-- **Autonomous Agent Swarms**: Specialized role-based agent coordination (`kad-master`, `kad-researcher`, `kad-builder`, `kad-tester`, `kad-reviewer`) on Google Antigravity (AGY).
-- **Synthetic Knowledge Base & Librarian Agent**: Multi-tier documentation layer with structured catalogs, taxonomies, and zero-overhead deterministic retrieval tools for autonomous agents.
+## Current state
 
----
+The current governed projection is **PARTIAL**. KnowledgePlane exact retrieval
+is available; OpenViking is **DEGRADED**, Needle is **BLOCKED**, and local model
+qualification remains mixed. These are evidence-derived states, not manually
+maintained badges.
 
-## 2. Repository Structure
+Query the projection:
+
+```bash
+bin/kad-knowledge health
+bin/kad-knowledge status
+bin/kad-knowledge ask "What owns authority in KAD-PI?"
+bin/kad-knowledge list MODELS
+bin/kad-knowledge show model:qwen-local
+```
+
+## Architecture
 
 ```text
-.
-├── PRIME_DIRECTIVE.md                 # Normative constitution & invariants
-├── CONTEXT.md                         # Project domain context & ubiquitous language
-├── validate_prime_directive.py        # Token budget and constitution validator
-│
-├── .agents/
-│   ├── agents/                        # Custom AGY swarm subagent definitions
-│   │   ├── kad-master/                # Master architect (Pro tier)
-│   │   ├── kad-researcher/            # Read-only fact investigator (Flash tier)
-│   │   ├── kad-builder/               # Bounded RED->GREEN implementer (Flash tier)
-│   │   ├── kad-tester/                # Deterministic verifier & failure injector (Flash tier)
-│   │   └── kad-reviewer/              # Adversarial auditor (Flash tier)
-│   ├── capabilities/                  # Canonical capabilities (e.g. ask_user)
-│   ├── adapters/                      # Harness-specific interaction adapters
-│   └── skills/                        # Standardized engineering skills
-│
-├── docs/
-│   └── adr/                           # Architectural Decision Records (ADRs 0001-0007)
-│
-├── kad-lab/
-│   ├── src/                           # Pure C++20 deterministic simulation core
-│   │   └── kad/                       # CandidateIntent, Validator, Resolver, StateDiff
-│   ├── test/                          # EXPERIMENT-001 test suites
-│   ├── exp-002/                       # LLM stream transport & teacher prompt experiments
-│   └── exp-003-pi-tracer/             # Pi 0.84.3 SDK lifecycle integration tracer & tests
-│
-├── tools/
-│   └── librarian/                     # Deterministic Librarian query engine & verifier CLI
-│       ├── librarian.mjs              # Search, lookup, and verification CLI
-│       └── test/                      # Librarian verification test suite
-│
-├── wiki/
-│   ├── index.md                       # Master knowledge wiki index
-│   ├── synthetic/                     # Progressive-disclosure synthetic docs for agents
-│   │   ├── 01_ARCHITECTURE_PON_STC.md
-│   │   ├── 02_DETERMINISTIC_AUTHORITY_SIMULATION.md
-│   │   ├── 03_PI_HARNESS_INTEGRATION.md
-│   │   ├── 04_SWARM_GOVERNANCE_AGENTS.md
-│   │   ├── 05_SUBSCRIPTION_ECONOMICS_ROUTING.md
-│   │   ├── 06_SAFE_PLUGIN_LAB_TOOLCHAINS.md
-│   │   ├── 07_EVIDENCE_EPISTEMOLOGY_LEDGER.md
-│   │   ├── LIBRARIAN.md               # Operating manual for Librarian Agent
-│   │   ├── CATALOG.json               # Machine-readable document catalog
-│   │   ├── TAXONOMY.json              # Domain ontology and concept graph
-│   │   ├── TAXONOMY.md
-│   │   └── RETRIEVAL_INDEX.jsonl      # Content-addressed chunk retrieval index
-│   └── *.md                           # Raw source handoffs and notes
-│
-└── evidence/
-    ├── WP-SKILL-001A/                 # Baseline skill inventory evidence
-    ├── WP-SKILL-002/                  # Ecosystem refactor evidence
-    └── WP-KAD-001/                    # Pi SDK tracer contract & provenance evidence
+canonical sources + evidence
+            ↓
+       KnowledgePlane
+            ↓
+ deterministic projections
+            ↓
+ PON / STC orchestration and policy
+            ↓
+ local + remote capabilities
+            ↓
+ GitHub · public brief · local dashboard
 ```
 
----
+The interface layer displays governed state; it does not create authority.
+Probabilistic model output remains a proposal until a deterministic boundary
+accepts it. Derived indexes, summaries, and wiki projections are rebuildable
+and never replace canonical artifacts.
 
-## 3. Quickstart & Verification
+## Three interfaces, three audiences
 
-### Running the Librarian Engine
+- **[GitHub landing](README.md)** — agent and developer navigation into authority,
+  current state, architecture, evidence, and runnable checks.
+- **[Public explanatory site](site/index.html)** — a static, sanitized human
+  explanation of KAD-PI, its research, and its current boundaries.
+- **[Local operational dashboard](dashboard/index.html)** — a read-only view of
+  generated project state for the operator. It has no mutation controls and no
+  invented telemetry.
+
+Serve the static surfaces locally:
+
 ```bash
-# Verify knowledge base links, schemas, and epistemic tags
+python3 -m http.server 4173
+# public site:  http://127.0.0.1:4173/site/
+# dashboard:    http://127.0.0.1:4173/dashboard/
+```
+
+Rebuild the public projection after rebuilding canonical wiki state:
+
+```bash
+bin/kad-knowledge rebuild
+bin/kad-publication build
+```
+
+The public site receives `site/generated/public-state.json`, a fail-closed
+projection. It does not read `wiki/generated/kad-canonical/project-state.json`
+directly. Internal, sensitive, unknown, and unapproved candidate records are
+excluded.
+
+## Canonical navigation
+
+Start with these sources; generated state is derived:
+
+- [PRIME_DIRECTIVE.md](PRIME_DIRECTIVE.md) — normative constitution and
+  PON/STC/TDD/graceful-degradation rules.
+- [CONTEXT.md](CONTEXT.md) — project domain language.
+- [Accepted ADRs](docs/adr/) — architecture decisions.
+- [Generated canonical wiki](wiki/generated/kad-canonical/index.md) — cited,
+  provenance-bearing navigation and machine-readable projections.
+- [Project-state contract](docs/contracts/project-state-projection.md) —
+  stable consumer boundary.
+- [Evidence](evidence/) — receipts, reports, hashes, and validation results.
+- [Local model registry](config/local-models.registry.json) — declared model
+  identities and qualification states.
+- [.agents/agents](.agents/agents/) and [.agents/skills](.agents/skills/) —
+  bounded role and skill declarations.
+- [Roadmap](wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md) — current
+  sequencing and unresolved work.
+
+## Repository map
+
+```text
+PRIME_DIRECTIVE.md          normative authority
+CONTEXT.md                  ubiquitous language
+docs/adr/                   accepted design decisions
+tools/kad/                  KnowledgePlane, projections, and tests
+bin/kad-*                   deterministic operator commands
+wiki/generated/             rebuildable governed projections
+site/                       public static explanatory surface
+dashboard/                  private/local read-only surface
+interface/                  shared KAD design tokens and UI utilities
+evidence/                   durable workpackage receipts
+kad-lab/                    deterministic simulation experiments
+.agents/                    agent, capability, and skill declarations
+```
+
+## Doctrines
+
+### PON — notification-oriented causality
+
+Relevant state changes produce bounded notifications. Causal relationships
+remain explicit; notification does not imply nondeterministic execution.
+
+### STC — spatiotemporal composability
+
+Components declare coeffects and capabilities. Managed effects register
+inverses, and lifecycle teardown follows tracked ownership.
+
+### TDD — executable evidence
+
+The default loop is RED → minimum GREEN → REFACTOR → VERIFY. Tests prove
+observable behavior at seams rather than implementation details.
+
+### Graceful degradation
+
+Failure reduces only the affected capability and preserves the safest useful
+path. It never widens authority, trust, permissions, provider access, or spend.
+
+## Quickstart and verification
+
+```bash
+# Verify the Librarian's deterministic source catalog
 node tools/librarian/librarian.mjs verify
 
-# Lookup a domain concept in the formal taxonomy
-node tools/librarian/librarian.mjs lookup "Fiber"
+# Build the sanitized public projection
+bin/kad-publication build
 
-# Search documents and retrieval cards with domain filtering
-node tools/librarian/librarian.mjs search "PON causality"
+# Run the repository gate and tests
+make verify
+make test
 ```
 
-### Running Test Suites
-```bash
-# Deterministic C++20 Simulation Core (EXPERIMENT-001)
-cd kad-lab && make test
+The dashboard is intentionally static for this MVP. No backend is necessary
+for its current feature set, so there is no local endpoint to mutate KAD
+authority and no live service dependency to hide behind a green widget.
 
-# Librarian Knowledge Base Verification Suite
-node --test tools/librarian/test/librarian.test.mjs
+## What is not claimed
 
-# Constitution Token Budget Check
-python3 validate_prime_directive.py
-```
+KAD-PI is not presented as autonomous AGI, a self-learning authority, a
+production swarm, or a finished semantic platform. OpenViking and Needle are
+optional experimental adapters. Unknown stays unknown; experimental stays
+experimental.
+
+## Contributing
+
+Read the directive, context, accepted ADRs, and relevant evidence before
+mutation. Keep workpackages bounded. Preserve unrelated worktree changes.
+Record consequential observations under `evidence/`, and run the applicable
+deterministic verifier before claiming completion.

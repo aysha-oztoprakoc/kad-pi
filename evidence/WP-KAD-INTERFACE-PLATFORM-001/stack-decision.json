@@ -1,0 +1,27 @@
+{
+  "workpackage": "WP-KAD-INTERFACE-PLATFORM-001",
+  "status": "ACCEPTED",
+  "predecessor": "WP-KAD-INTERFACE-ARCHAEOLOGY-001 not present in repository",
+  "stack": {
+    "frontend": "native HTML + CSS + browser ES modules",
+    "build": "deterministic Node.js publication script",
+    "backend": "none",
+    "server": "python3 -m http.server for local inspection only"
+  },
+  "why": [
+    "The repository has no root web framework or package manifest.",
+    "The MVP is static-first and requires no live dashboard capability.",
+    "Native browser modules minimize dependencies, attack surface, and maintenance cost.",
+    "One shared CSS token layer and utility module serve public and operational surfaces."
+  ],
+  "reference_influence": {
+    "DATA_REIN": "red, dark, technical, instrument-like lineage; restrained to preserve evidence legibility",
+    "SofiaV3": "no repository archaeology artifact was found; no code, assets, CSS, branding, or schema consumed"
+  },
+  "explicit_rejections": [
+    "framework-heavy multi-app architecture",
+    "dashboard backend without a required live capability",
+    "copied reference components or assets",
+    "decorative telemetry and all-green status presentation"
+  ]
+}

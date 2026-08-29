@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "surfaces": ["public site", "operational dashboard"],
+  "observations": [
+    "Dark near-black surfaces, restrained red warning accents, cyan diagnostics, and gold knowledge accents establish a KAD-native technical grammar.",
+    "Panels use hard borders and clipped corner details without hiding evidence text.",
+    "Public desktop screenshot inspected at 1440x1000.",
+    "Public mobile layout inspected at 390x844 with no horizontal overflow.",
+    "Dashboard overview screenshot inspected at 1440x1000.",
+    "Dashboard model view inspected at 600px with no horizontal page overflow.",
+    "PASS, PARTIAL, DEGRADED, and BLOCKED remain text-labelled and geometrically distinct."
+  ]
+}

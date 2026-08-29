@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "reference_projects": {
+    "DATA_REIN": "visual lineage only: restrained red, dark technical surfaces, instrument-like density",
+    "SofiaV3": "no source project or archaeology artifact found in this repository"
+  },
+  "copied_code": false,
+  "copied_css": false,
+  "copied_assets": false,
+  "copied_branding": false,
+  "copied_schemas": false,
+  "implementation": "new KAD-native HTML, CSS, and browser-module surfaces"
+}

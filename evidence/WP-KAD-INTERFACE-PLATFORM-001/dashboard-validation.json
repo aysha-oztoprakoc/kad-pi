@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "mode": "static read-only",
+  "data_sources": [
+    "wiki/generated/kad-canonical/project-state.json",
+    "wiki/generated/kad-canonical/status.json",
+    "wiki/generated/kad-canonical/evidence-index.json"
+  ],
+  "navigation": ["OVERVIEW", "KNOWLEDGE", "AGENTS", "MODELS", "PROVIDERS", "EVIDENCE", "RESEARCH", "SYSTEM"],
+  "browser_observations": [
+    "Overview renders PARTIAL consistently in header and attention badge.",
+    "Overview identifies Needle BLOCKED, OpenViking DEGRADED, and degraded local model state.",
+    "Models view renders six governed records.",
+    "Evidence view renders eleven evidence rows with local report links.",
+    "Narrow dashboard view renders without horizontal page overflow.",
+    "No runtime telemetry or mutation controls are present."
+  ]
+}

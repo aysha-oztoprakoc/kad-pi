@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "command": "node --test tools/kad/test/publication.test.mjs tools/kad/test/interface-platform.test.mjs",
+  "tests": 9,
+  "passed": 9,
+  "failed": 0,
+  "covered": [
+    "PUBLIC-only publication",
+    "privacy and path stripping",
+    "secret-shaped field rejection",
+    "missing-state bounded failure",
+    "public route and shared design presence",
+    "read-only dashboard navigation",
+    "sanitized persisted output"
+  ]
+}

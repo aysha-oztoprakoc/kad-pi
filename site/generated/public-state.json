@@ -1,0 +1,27 @@
+{
+  "schema_version": "kad-public-state-v1",
+  "publication_class": "PUBLIC",
+  "projection_id": "kad-governed-wiki-v1",
+  "project": {
+    "name": "KAD-PI",
+    "status": "PARTIAL",
+    "source_count": 40,
+    "record_count": 56
+  },
+  "component_summary": {
+    "PASS": 1,
+    "QUALIFIED": 1,
+    "PARTIAL": 0,
+    "DEGRADED": 2,
+    "BLOCKED": 1,
+    "FAILED": 0,
+    "UNKNOWN": 10,
+    "EXPERIMENTAL": 0,
+    "FILE_ONLY": 3,
+    "LOADABLE": 2,
+    "ACTIVE": 1,
+    "STALE": 0,
+    "QUARANTINED": 0
+  },
+  "records": []
+}

@@ -1,0 +1,7 @@
+{
+  "status": "NOT_REQUIRED",
+  "decision": "No backend implemented.",
+  "reason": "The required MVP dashboard views are fully served by existing generated projections. No safe existing live source was required to answer the acceptance questions.",
+  "unavailable_behavior": "Not applicable; static projection loading errors are rendered as UNKNOWN/bounded error and never as healthy state.",
+  "mutation_authority": false
+}

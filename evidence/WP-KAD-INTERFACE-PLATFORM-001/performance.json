@@ -1,0 +1,13 @@
+{
+  "status": "OBSERVED",
+  "method": "wc -c static asset measurement",
+  "assets": {
+    "public_html_and_js_bytes": 15666,
+    "shared_css_and_js_bytes": 11509,
+    "dashboard_html_and_js_bytes": 10111,
+    "public_projection_bytes": 525,
+    "total_measured_bytes": 42810
+  },
+  "runtime_model": "static-first; public fetches one sanitized JSON file; dashboard fetches three generated JSON files",
+  "not_claimed": "network performance under deployment CDN or production traffic"
+}

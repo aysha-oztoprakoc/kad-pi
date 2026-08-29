@@ -1,4 +1,4 @@
-.PHONY: all test test-pi-integration verify clean
+.PHONY: all test test-pi-integration verify public-build clean
 
 KAD_PI_SDK_ROOT ?= /tmp/wp-kad-001-sdk/runtime
 
@@ -8,6 +8,10 @@ verify:
 	python3 validate_prime_directive.py
 	node tools/librarian/librarian.mjs verify
 
+public-build:
+	node bin/kad-publication build
+
+
 test: verify
 	node --test tools/librarian/test/librarian.test.mjs
 	node --test .agents/capabilities/ask_user/contract_test.mjs
@@ -16,7 +20,7 @@ test: verify
 	node --test tools/kad/test/multi-turn-pon.test.mjs
 	node --test tools/kad/test/local-router.test.mjs
 	node --test tools/kad/test/model-store.test.mjs tools/kad/test/model-store-repository.test.mjs
-	node --test tools/kad/test/knowledge-plane.test.mjs tools/kad/test/wiki-projection.test.mjs
+	node --test tools/kad/test/knowledge-plane.test.mjs tools/kad/test/wiki-projection.test.mjs tools/kad/test/publication.test.mjs tools/kad/test/interface-platform.test.mjs
 	node --test tools/kad/test/context-economy.test.mjs tools/kad/test/context-extension.test.mjs tools/kad/test/swarm-control-plane.test.mjs
 
 test-pi-integration:
