@@ -1,0 +1,85 @@
+{
+  "limits": [
+    {
+      "source": "TOKENMAX task packet",
+      "field": "budget.max_input_tokens",
+      "declared_value": 4096,
+      "semantic_meaning": "task allowance, not worker context",
+      "authority": "task compiler",
+      "consumed_by_runtime": false,
+      "confidence": "OBSERVED"
+    },
+    {
+      "source": "TOKENMAX task packet",
+      "field": "budget.max_output_tokens",
+      "declared_value": 512,
+      "semantic_meaning": "task desired output allowance",
+      "authority": "task compiler",
+      "consumed_by_runtime": false,
+      "confidence": "OBSERVED"
+    },
+    {
+      "source": "Pi local model manifest",
+      "field": "contextWindow",
+      "declared_value": 2048,
+      "semantic_meaning": "Pi model catalog context for UI/clamping/accounting",
+      "authority": "Pi config claim",
+      "consumed_by_runtime": "Pi consumes for maxTokens clamp only",
+      "confidence": "OBSERVED"
+    },
+    {
+      "source": "Pi local model manifest",
+      "field": "maxTokens",
+      "declared_value": 192,
+      "semantic_meaning": "default generation request before context clamp",
+      "authority": "Pi config claim",
+      "consumed_by_runtime": true,
+      "confidence": "OBSERVED"
+    },
+    {
+      "source": "Pi local model manifest",
+      "field": "samplingParams.max_tokens",
+      "declared_value": 192,
+      "semantic_meaning": "late-merged provider parameter overriding clamped max_tokens",
+      "authority": "Pi config claim consumed by adapter",
+      "consumed_by_runtime": true,
+      "confidence": "OBSERVED_BY_CAPTURE"
+    },
+    {
+      "source": "OMP models.yml",
+      "field": "contextWindow",
+      "declared_value": 4096,
+      "semantic_meaning": "OMP catalog claim",
+      "authority": "OMP config claim",
+      "consumed_by_runtime": false,
+      "confidence": "OBSERVED"
+    },
+    {
+      "source": "OMP models.yml",
+      "field": "maxTokens",
+      "declared_value": 256,
+      "semantic_meaning": "OMP catalog claim",
+      "authority": "OMP config claim",
+      "consumed_by_runtime": false,
+      "confidence": "OBSERVED"
+    },
+    {
+      "source": "KoboldCpp launch plan",
+      "field": "--contextsize",
+      "declared_value": 2048,
+      "semantic_meaning": "backend KV/context allocation when launched by current plan",
+      "authority": "historical/current launch configuration",
+      "consumed_by_runtime": "UNKNOWN_CURRENT; Qwen inactive during diagnostic",
+      "confidence": "CONFIGURED"
+    },
+    {
+      "source": "request capture fixture",
+      "field": "body.max_tokens",
+      "declared_value": 192,
+      "semantic_meaning": "actual OpenAI-compatible request generation cap sent by Pi adapter",
+      "authority": "transport capture",
+      "consumed_by_runtime": true,
+      "confidence": "OBSERVED_NO_MODEL_INFERENCE"
+    }
+  ]
+}

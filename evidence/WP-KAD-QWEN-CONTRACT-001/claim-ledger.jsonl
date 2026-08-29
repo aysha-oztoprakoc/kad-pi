@@ -1,0 +1,6 @@
+{"claim":"Pi vs OMP vs task output declarations conflict","class":"OBSERVED","evidence":"resource-limit-inventory.json; contract-comparison.json"}
+{"claim":"Pi OpenAI-compatible transport sends max_tokens=192 for qwen-local","class":"OBSERVED","evidence":"effective-request-capture.json"}
+{"claim":"R2 192/192 equals proven request generation cap","class":"OBSERVED","evidence":"attempt-receipts.json; effective-request-capture.json"}
+{"claim":"R2 finish reason is unknown from archived live output","class":"UNKNOWN","evidence":"finish-reason-contract.json"}
+{"claim":"Exact Kobold tokenizer component split is unavailable","class":"UNKNOWN","evidence":"token-fit-analysis.json"}
+{"claim":"Increasing context does not increase trust/capability authority","class":"REJECTED","evidence":"resource-contract.test.mjs"}

@@ -1,0 +1,15 @@
+{
+  "r2_archived_finish_reason": {
+    "finish_reason": "UNKNOWN",
+    "stop_reason": "UNKNOWN",
+    "truncated": "UNKNOWN",
+    "length_limit_hit": "UNKNOWN"
+  },
+  "request_capture_fixture_finish_reason": {
+    "finish_reason": "stop",
+    "stop_reason": "stop",
+    "truncated": false,
+    "length_limit_hit": false
+  },
+  "policy": "UNKNOWN remains UNKNOWN; valid JSON does not imply STOP"
+}

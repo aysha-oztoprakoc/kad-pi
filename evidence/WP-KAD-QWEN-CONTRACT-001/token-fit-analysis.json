@@ -1,0 +1,41 @@
+{
+  "TOKEN_COUNT_CONFIDENCE": "OBSERVED_PROVIDER_USAGE_FOR_R2; prompt subcomponents estimated by Pi/Kobold reporting not decomposed",
+  "attempts": [
+    {
+      "attempt": 1,
+      "attempt_id": "TOKENMAX-LIVE-001-local-1",
+      "kind": "initial",
+      "input_tokens": 2302,
+      "output_tokens": 192,
+      "latency_ms": 40930,
+      "raw_output_sha256": "32bbc4cabf9a2cdc39ce285463c1616a542234229d1fdd85e0257af181ea048e",
+      "raw_output_bytes": 737,
+      "normalization": "WHITESPACE",
+      "validator": "FAIL"
+    },
+    {
+      "attempt": 2,
+      "attempt_id": "TOKENMAX-LIVE-001-local-2",
+      "kind": "repair",
+      "input_tokens": 2346,
+      "output_tokens": 192,
+      "latency_ms": 42895,
+      "raw_output_sha256": "5b09083bb03bd7b11a6ac7ce54cb287e3f33b4c05519390a759154e733000eae",
+      "raw_output_bytes": 698,
+      "normalization": "MULTIPLE_JSON_VALUES",
+      "validator": "FAIL"
+    }
+  ],
+  "required_prompt_tokens_initial": 2302,
+  "required_prompt_tokens_repair": 2346,
+  "requested_output_allowance": 512,
+  "effective_transport_output_cap": 192,
+  "effective_context_window": 2048,
+  "initial_remaining_generation_space": -254,
+  "repair_remaining_generation_space": -298,
+  "initial_fits_context_with_192_reserve": false,
+  "repair_fits_context_with_192_reserve": false,
+  "initial_prompt_sha256": "b6476994da1724033ce528ee3d3e1aea52f52edc865b34b581a3666a16d89c6b",
+  "repair_prompt_sha256": "e3a64ec50e9dd8a60ca147220ff7cfc5ee6607a1cff40c4c90f48e03f73b5bd9",
+  "component_note": "Exact system/schema/source/repair split is unavailable from archived Pi/Kobold usage; total attempt input tokens are archived."
+}

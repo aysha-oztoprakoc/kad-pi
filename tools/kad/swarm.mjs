@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { createEpisode } from './episode.mjs';
 import { canonicalize } from './distillation.mjs';
 import { normalizeEconomicReceipt } from './accepted-work-economics.mjs';
+import { preflightResourceContract } from './resource-contract.mjs';
 
 const supportedLocalCapabilities = new Set(['repository-fact-finding', 'structured-extraction']);
 const hash = value => createHash('sha256').update(value, 'utf8').digest('hex');
@@ -272,6 +273,14 @@ export async function executeSwarm({ request: requestInput, sources, controller,
   if (selected.status !== 'ROUTED' || selected.selected !== worker?.resource_id) {
     telemetry.failure_reason = 'TRUST_DOMAIN_UNAVAILABLE';
     return { status: 'DEGRADED', failure_reason: telemetry.failure_reason, events, telemetry, packet, episode: baseEpisode(request, packet, { selected_resource: selected.selected ?? null, reason_code: telemetry.failure_reason }, { result: 'FAIL', errors: [telemetry.failure_reason] }, { accepted: false }, telemetry, events), dispose: async () => {} };
+  }
+  if (worker.resource_contract) {
+    const contractPreflight = preflightResourceContract({ resource: worker.resource_contract, required_prompt_tokens: worker.required_prompt_tokens ?? packet.required_prompt_tokens ?? null, required_output_reserve: request.budget.max_output_tokens, requested_output_tokens: request.budget.max_output_tokens });
+    telemetry.resource_contract_preflight = contractPreflight;
+    if (!contractPreflight.ok) {
+      telemetry.failure_reason = contractPreflight.code;
+      return { status: 'DEGRADED', failure_reason: telemetry.failure_reason, events, telemetry, packet, episode: baseEpisode(request, packet, { selected_resource: selected.selected ?? null, reason_code: telemetry.failure_reason }, { result: 'FAIL', errors: [contractPreflight.reason] }, { accepted: false }, telemetry, events), dispose: async () => {} };
+    }
   }
   events.push(event('worker.started', request.task_id, { resource_id: worker.resource_id })); emit(events.at(-1));
   let workerResult = await worker.execute(packet);

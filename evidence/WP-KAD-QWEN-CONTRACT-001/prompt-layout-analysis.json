@@ -1,0 +1,51 @@
+{
+  "prompt_order": {
+    "initial": [
+      [
+        "task identity",
+        "packet.task_id near PACKET JSON after behavior constraints"
+      ],
+      [
+        "JSON/schema contract",
+        "behavior prefix keys plus packet.output_schema inside PACKET"
+      ],
+      [
+        "behavior constraints",
+        "front-loaded before PACKET"
+      ],
+      [
+        "source packet",
+        "tail PACKET JSON includes sources/excerpts"
+      ],
+      [
+        "repair instructions",
+        "not present"
+      ]
+    ],
+    "repair": [
+      [
+        "task identity",
+        "repair text before PACKET and packet.task_id inside tail PACKET JSON"
+      ],
+      [
+        "JSON/schema contract",
+        "behavior prefix plus packet.output_schema inside PACKET"
+      ],
+      [
+        "behavior constraints",
+        "front-loaded"
+      ],
+      [
+        "repair instructions",
+        "middle, before PACKET"
+      ],
+      [
+        "source packet",
+        "tail PACKET JSON"
+      ]
+    ]
+  },
+  "truncation_risk": "If backend truncates from either side, tail truncation risks source packet/output_schema; head truncation risks behavioral constraints. Which side Kobold truncates was not proven without live backend instrumentation.",
+  "initial_prompt_bytes": 5926,
+  "repair_prompt_bytes": 6201
+}

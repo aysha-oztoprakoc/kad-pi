@@ -1,0 +1,28 @@
+{
+  "task_budget": {
+    "max_input_tokens": 4096,
+    "max_output_tokens": 512
+  },
+  "pi_model": {
+    "contextWindow": 2048,
+    "maxTokens": 192
+  },
+  "omp_model": {
+    "contextWindow": 4096,
+    "maxTokens": 256
+  },
+  "kobold_runtime": {
+    "context_window": 2048
+  },
+  "effective_request": {
+    "max_tokens": 192
+  },
+  "classifications": {
+    "context_window": "INCONSISTENT",
+    "max_output_tokens": "INCONSISTENT",
+    "task_budget_gt_worker_context": "INCONSISTENT",
+    "task_budget_gt_worker_output": "INCONSISTENT",
+    "omp_vs_pi": "INCONSISTENT",
+    "pi_vs_runtime": "CONSISTENT"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "expected_baseline": "e3d5e5c test(kad): live-prove recovery accounting",
+  "observed_head": "e3d5e5c test(kad): live-prove recovery accounting",
+  "authoritative_newer_evidence": [
+    "evidence/WP-KAD-TOKENMAX-003-R2/final-result.json",
+    "evidence/WP-KAD-TOKENMAX-003-R2/attempt-receipts.json"
+  ],
+  "no_live_qwen_inference": true
+}

@@ -1,0 +1,10 @@
+{
+  "qwen_ps_current": "INACTIVE",
+  "runtime": {
+    "context_window": 2048,
+    "evidence": "evidence/WP-KAD-LOCAL-001/resource-feasibility.json configuration.contextsize; no active Qwen ps process in current session",
+    "confidence": "CONFIGURED_NOT_LIVE_OBSERVED_CURRENT"
+  },
+  "world_ps_current": "Stheno active at --contextsize 4096 only",
+  "effective_context_window_current_confidence": "CONFIGURED_NOT_LIVE_OBSERVED_CURRENT"
+}
