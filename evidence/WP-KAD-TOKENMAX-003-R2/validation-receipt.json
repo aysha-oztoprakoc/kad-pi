@@ -1,0 +1,9 @@
+{
+  "validator":"schema-source-evidence-validator",
+  "result":"FAIL",
+  "accepted":false,
+  "authority":"KAD_VALIDATOR",
+  "errors":["output is not a JSON object","task_id mismatch","required arrays are missing"],
+  "normalizer_successes":1,
+  "normalizer_attempts":2
+}

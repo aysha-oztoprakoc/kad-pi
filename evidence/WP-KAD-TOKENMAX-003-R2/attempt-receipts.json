@@ -1,0 +1,7 @@
+{
+  "attempts":[
+    {"attempt":1,"attempt_id":"TOKENMAX-LIVE-001-local-1","kind":"initial","input_tokens":2302,"output_tokens":192,"latency_ms":40930,"raw_output_sha256":"32bbc4cabf9a2cdc39ce285463c1616a542234229d1fdd85e0257af181ea048e","raw_output_bytes":737,"normalization":"WHITESPACE","validator":"FAIL"},
+    {"attempt":2,"attempt_id":"TOKENMAX-LIVE-001-local-2","kind":"repair","input_tokens":2346,"output_tokens":192,"latency_ms":42895,"raw_output_sha256":"5b09083bb03bd7b11a6ac7ce54cb287e3f33b4c05519390a759154e733000eae","raw_output_bytes":698,"normalization":"MULTIPLE_JSON_VALUES","validator":"FAIL"}
+  ],
+  "local_input_tokens_total":4648,"local_output_tokens_total":384,"local_tokens_total":5032,"model_repair_calls":1
+}

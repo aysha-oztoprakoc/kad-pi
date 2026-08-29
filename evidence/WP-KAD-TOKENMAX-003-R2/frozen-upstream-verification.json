@@ -1,0 +1,10 @@
+{
+  "status":"PASS",
+  "request_hash_reference":"6a30530cc8f84cc40a0dd2132070a67ae64527948b332c6f190c4e93deac9e21",
+  "packet_hash":"91e0384bf7e54a6cac0d83a9315ba4c802759db801b06b449a308689e72cbc5b",
+  "controller_decomposition":"UNCHANGED_FROM_TOKENMAX-LIVE-001",
+  "source_hashes_unchanged":true,
+  "trust_requirement":{"trust_domain":"retrieval","capability":"repository-fact-finding","mutation":"forbidden"},
+  "quota_lineage":{"parent_receipt_hash":"593609c3351d61b6a41626954ffad4ea55aea63968eef56bc9fd05fa0bb24d1e","parent_remote_tokens":709},
+  "controller_rerun":false
+}

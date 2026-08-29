@@ -1,0 +1,13 @@
+{
+  "candidate": "WORLD",
+  "requirement": {
+    "trust_domain": "retrieval",
+    "capability": "repository-fact-finding"
+  },
+  "decision": "REJECTED_TRUST_DOMAIN",
+  "router_result": {
+    "status": "DEGRADED",
+    "reason": "no eligible capability",
+    "candidates": []
+  }
+}

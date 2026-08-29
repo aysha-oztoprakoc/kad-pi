@@ -1,0 +1,66 @@
+{
+  "parent_sunk_remote_tokens": 709,
+  "r2_incremental_remote_input_tokens": 0,
+  "r2_incremental_remote_output_tokens": 0,
+  "r2_incremental_remote_tokens": 0,
+  "r2_receipt": {
+    "schema_version": "kad-economic-1",
+    "task_id": "TOKENMAX-LIVE-001",
+    "episode_id": "episode-TOKENMAX-LIVE-001-R2",
+    "equivalence_key": null,
+    "semantic_role": "UNKNOWN",
+    "provider": "UNKNOWN",
+    "model": "UNKNOWN",
+    "execution_class": "UNKNOWN",
+    "trust_domain": "UNKNOWN",
+    "capability": "UNKNOWN",
+    "usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": null,
+      "output_tokens": 0,
+      "reasoning_tokens": null,
+      "total_tokens": 0
+    },
+    "usage_scope": "INCREMENTAL_ATTEMPT",
+    "inherited_parent": {
+      "receipt_id": "episode-TOKENMAX-LIVE-001",
+      "receipt_hash": "593609c3351d61b6a41626954ffad4ea55aea63968eef56bc9fd05fa0bb24d1e",
+      "remote_tokens": 709
+    },
+    "economics": {
+      "provider_reported_cost": null,
+      "cost_unit": null,
+      "cost_provenance": null,
+      "billing_class": null,
+      "quota_snapshot_id": null,
+      "quota_state": null,
+      "cache": null
+    },
+    "performance": {
+      "latency_ms": null,
+      "compiled_context_bytes": null
+    },
+    "quality": {
+      "validation": "UNKNOWN",
+      "accepted": false,
+      "repairs": 0,
+      "escalations": 0,
+      "final_outcome": "UNKNOWN",
+      "accepted_artifact_hash": null
+    },
+    "slop": {
+      "duplicate_calls": null,
+      "unnecessary_retries": null,
+      "validation_failures": 0
+    },
+    "model_calls": 1,
+    "observation_confidence": "UNKNOWN",
+    "provenance": {
+      "source": "provider-response-metadata",
+      "usage_source": null,
+      "provider_metadata_observed": false
+    }
+  },
+  "lineage_remote_tokens": 709,
+  "duplicate_replay_lineage_remote_tokens": 709
+}

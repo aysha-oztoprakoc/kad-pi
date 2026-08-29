@@ -1,0 +1,179 @@
+{
+  "activation": {
+    "state": "ACTIVE",
+    "endpoint": "http://127.0.0.1:5002",
+    "ownership": "OWNED",
+    "model_identity": "koboldcpp/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
+    "pid": 193452
+  },
+  "receipt_exists_during": true,
+  "result": {
+    "status": "DEGRADED",
+    "validation": {
+      "result": "FAIL",
+      "errors": [
+        "output is not a JSON object",
+        "task_id mismatch",
+        "required arrays are missing"
+      ]
+    },
+    "telemetry": {
+      "controller_invocations": 1,
+      "new_remote_controller_calls": 0,
+      "remote_lane": {
+        "role": "controller",
+        "id": "approved-remote-controller",
+        "provider": "openai-codex",
+        "model": "gpt-5.6-luna",
+        "execution_class": "REMOTE_SUBSCRIPTION",
+        "billing_class": "SUBSCRIPTION_BACKED",
+        "quota_snapshot": null,
+        "quota_state": null
+      },
+      "remote_input_tokens": 0,
+      "remote_cached_input_tokens": 0,
+      "remote_output_tokens": 0,
+      "remote_reasoning_tokens": 0,
+      "remote_provider_reported_cost": null,
+      "remote_cache": null,
+      "remote_cost": null,
+      "usage_scope": "INCREMENTAL_ATTEMPT",
+      "incremental_remote_tokens": 0,
+      "inherited_parent": {
+        "receipt_id": "episode-TOKENMAX-LIVE-001",
+        "receipt_hash": "593609c3351d61b6a41626954ffad4ea55aea63968eef56bc9fd05fa0bb24d1e",
+        "remote_tokens": 709
+      },
+      "local_invocations": 2,
+      "local_attempts": [
+        {
+          "attempt": 1,
+          "attempt_id": "TOKENMAX-LIVE-001-local-1",
+          "kind": "initial",
+          "input_tokens": 2302,
+          "output_tokens": 192,
+          "latency_ms": 40930
+        },
+        {
+          "attempt": 2,
+          "attempt_id": "TOKENMAX-LIVE-001-local-2",
+          "kind": "repair",
+          "input_tokens": 2346,
+          "output_tokens": 192,
+          "latency_ms": 42895
+        }
+      ],
+      "local_input_tokens_total": 4648,
+      "local_output_tokens_total": 384,
+      "local_tokens_total": 5032,
+      "model_repair_calls": 1,
+      "validation_calls": 2,
+      "deterministic_normalization_attempts": 2,
+      "deterministic_normalization_successes": 1,
+      "normalization_history": [
+        {
+          "attempt_id": "TOKENMAX-LIVE-001-local-1",
+          "raw_output_sha256": "32bbc4cabf9a2cdc39ce285463c1616a542234229d1fdd85e0257af181ea048e",
+          "byte_length": 737,
+          "classification": "WHITESPACE",
+          "validator_result": "FAIL",
+          "reasoning_wrapper_detected": false,
+          "provenance": {
+            "normalizer_version": "kad-worker-normalizer-2",
+            "normalizer_source_hash": "5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7",
+            "validator_version": "schema-source-evidence-validator-1",
+            "validator_hash": "5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7",
+            "runtime_commit": "bed5ce9cc9e3e3b97bd44054a586a3b93276b2e2"
+          }
+        },
+        {
+          "attempt_id": "TOKENMAX-LIVE-001-local-2",
+          "raw_output_sha256": "5b09083bb03bd7b11a6ac7ce54cb287e3f33b4c05519390a759154e733000eae",
+          "byte_length": 698,
+          "classification": "MULTIPLE_JSON_VALUES",
+          "validator_result": "FAIL",
+          "reasoning_wrapper_detected": false,
+          "provenance": {
+            "normalizer_version": "kad-worker-normalizer-2",
+            "normalizer_source_hash": "5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7",
+            "validator_version": "schema-source-evidence-validator-1",
+            "validator_hash": "5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7",
+            "runtime_commit": "bed5ce9cc9e3e3b97bd44054a586a3b93276b2e2"
+          }
+        }
+      ],
+      "deterministic_tool_invocations": 1,
+      "repairs": 1,
+      "escalations": 0,
+      "accepted": false,
+      "acceptance_semantics": "KAD_VALIDATOR_SUFFICIENT",
+      "latency_ms": 83827,
+      "context_bytes": 4105,
+      "failure_reason": null,
+      "route": {
+        "status": "ROUTED",
+        "selected_lane": {
+          "role": "controller",
+          "id": "approved-remote-controller",
+          "provider": "openai-codex",
+          "model": "gpt-5.6-luna",
+          "execution_class": "REMOTE_SUBSCRIPTION",
+          "billing_class": "SUBSCRIPTION_BACKED",
+          "quota_snapshot": null,
+          "quota_state": null
+        },
+        "candidates": [
+          "approved-remote-controller"
+        ],
+        "reason_codes": [
+          "APPROVED",
+          "NON_PAYG",
+          "SUBSCRIPTION_BACKED",
+          "CAPABILITY_SUFFICIENT"
+        ]
+      },
+      "resumed_from_episode_id": "episode-TOKENMAX-LIVE-001",
+      "local_input_tokens": 2302,
+      "local_output_tokens": 192
+    },
+    "worker": {
+      "resource_id": "qwen",
+      "provider": "qwen",
+      "output": null
+    },
+    "acceptance_semantics": "KAD_VALIDATOR_SUFFICIENT"
+  },
+  "runtime_commit": "bed5ce9cc9e3e3b97bd44054a586a3b93276b2e2",
+  "packet_hash": "91e0384bf7e54a6cac0d83a9315ba4c802759db801b06b449a308689e72cbc5b",
+  "request_hash_reference": "6a30530cc8f84cc40a0dd2132070a67ae64527948b332c6f190c4e93deac9e21",
+  "source_hashes": [
+    {
+      "path": "tools/kad/local-router.mjs",
+      "sha256": "04a2aa064f4d2c486735d39106091939ef7e72cd7c17f8476e0eec371bb04491"
+    },
+    {
+      "path": "tools/kad/pi/local-models.json",
+      "sha256": "74366591a844abf573ce4af69f2074f89ca27135b1620c942ee5056962cbf72e"
+    },
+    {
+      "path": ".omp/models.yml",
+      "sha256": "2b35cae76be36676652cd9e668dac732eb708c0b42ace0be124e44e54af5871e"
+    }
+  ],
+  "normalizer": [
+    {
+      "normalizer_version": "kad-worker-normalizer-2",
+      "normalizer_source_hash": "5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7",
+      "validator_version": "schema-source-evidence-validator-1",
+      "validator_hash": "5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7",
+      "runtime_commit": "bed5ce9cc9e3e3b97bd44054a586a3b93276b2e2"
+    },
+    {
+      "normalizer_version": "kad-worker-normalizer-2",
+      "normalizer_source_hash": "5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7",
+      "validator_version": "schema-source-evidence-validator-1",
+      "validator_hash": "5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7",
+      "runtime_commit": "bed5ce9cc9e3e3b97bd44054a586a3b93276b2e2"
+    }
+  ]
+}

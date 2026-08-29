@@ -1,0 +1,6 @@
+{"claim":"R2 executed exactly once locally with at most one repair","class":"OBSERVED","evidence":"live-run-receipt.json; attempt-receipts.json"}
+{"claim":"No new remote controller call or token occurred","class":"OBSERVED","evidence":"live-run-receipt.json; economic-receipt.json"}
+{"claim":"World candidate was rejected by retrieval trust-domain filtering","class":"OBSERVED","evidence":"world-exclusion.json"}
+{"claim":"Qwen identity was verified and owned during execution, then disposed","class":"OBSERVED","evidence":"lifecycle-receipt.json"}
+{"claim":"R2 was not accepted by the KAD validator","class":"OBSERVED","evidence":"validation-receipt.json"}
+{"claim":"Qwen reliability was not fixed by this episode","class":"SOURCE_DERIVED","evidence":"final-result.json; distillation-shadow-result.json"}

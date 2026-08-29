@@ -1,0 +1,6 @@
+{
+  "distillation":"CANDIDATE_NOT_CREATED",
+  "shadow_recommendation":"INSUFFICIENT_EVIDENCE",
+  "reason":"R2 was not KAD-accepted; no training, promotion, LoRA, or fine-tuning performed",
+  "tokenmax_hypothesis":"INCONCLUSIVE"
+}

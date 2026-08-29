@@ -1,0 +1,8 @@
+{
+  "workpackage":"WP-KAD-TOKENMAX-003-R2",
+  "baseline_commit":"bed5ce9cc9e3e3b97bd44054a586a3b93276b2e2",
+  "parent_experiment":"TOKENMAX-LIVE-001",
+  "parent_r1":"TOKENMAX-LIVE-001-R1",
+  "live_runs_authorized":1,
+  "controller_calls_authorized":0
+}

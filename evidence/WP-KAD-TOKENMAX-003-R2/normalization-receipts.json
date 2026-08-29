@@ -1,0 +1,9 @@
+{
+  "normalizer_version":"kad-worker-normalizer-2",
+  "validator_version":"schema-source-evidence-validator-1",
+  "attempts":[
+    {"attempt_id":"TOKENMAX-LIVE-001-local-1","raw_output_sha256":"32bbc4cabf9a2cdc39ce285463c1616a542234229d1fdd85e0257af181ea048e","byte_length":737,"classification":"WHITESPACE","success":true,"changed":true,"reasoning_wrapper_detected":false,"normalizer_source_hash":"5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7","validator_source_hash":"5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7","runtime_commit":"bed5ce9cc9e3e3b97bd44054a586a3b93276b2e2"},
+    {"attempt_id":"TOKENMAX-LIVE-001-local-2","raw_output_sha256":"5b09083bb03bd7b11a6ac7ce54cb287e3f33b4c05519390a759154e733000eae","byte_length":698,"classification":"MULTIPLE_JSON_VALUES","success":false,"changed":false,"reasoning_wrapper_detected":false,"normalizer_source_hash":"5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7","validator_source_hash":"5ed14a7494c06ebe08559ed912e4e09294f18c3c208a20598a5718a71f8bc5c7","runtime_commit":"bed5ce9cc9e3e3b97bd44054a586a3b93276b2e2"}
+  ],
+  "RAW_REPLAY_POLICY":"HASH_ONLY"
+}

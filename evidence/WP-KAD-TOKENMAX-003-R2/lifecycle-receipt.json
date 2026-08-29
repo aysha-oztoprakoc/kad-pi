@@ -1,0 +1,33 @@
+{
+  "activation": {
+    "state": "ACTIVE",
+    "endpoint": "http://127.0.0.1:5002",
+    "ownership": "OWNED",
+    "model_identity": "koboldcpp/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
+    "pid": 193452
+  },
+  "receipt_removed": true,
+  "preflight_after": {
+    "status": "DEGRADED",
+    "qwen": {
+      "provider": "kad-local-qwen",
+      "endpoint": "http://127.0.0.1:5002/v1",
+      "expected_model": "qwen-local",
+      "expected_identity": "Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
+      "observed_identity": "UNKNOWN",
+      "endpoint_available": false,
+      "ownership": "INACTIVE",
+      "capability_state": "UNAVAILABLE"
+    },
+    "world": {
+      "provider": "kad-local-world",
+      "endpoint": "http://127.0.0.1:5001/v1",
+      "expected_model": "kad-local-s13",
+      "expected_identity": "L3-8B-Stheno-v3.2-Q4_K_M",
+      "observed_identity": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M",
+      "endpoint_available": true,
+      "ownership": "EXTERNAL",
+      "capability_state": "AVAILABLE"
+    }
+  }
+}
