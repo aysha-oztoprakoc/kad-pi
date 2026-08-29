@@ -1,0 +1,72 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-API-001",
+  "suite": "tools/kad/test/research.test.mjs",
+  "timestamp": "2026-08-29T23:58:00.000Z",
+  "status": "PASS",
+  "summary": {
+    "total_tests": 13,
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "tests": [
+    {
+      "name": "ResearchIdentifier normalizes DOIs, arXiv IDs, and internal identifiers deterministically",
+      "status": "PASS"
+    },
+    {
+      "name": "ResearchCandidate preserves explicit nulls, is non-authoritative, and does not fabricate fields",
+      "status": "PASS"
+    },
+    {
+      "name": "ResearchSource safely resolves local files, hashes bytes deterministically, and rejects unsafe paths",
+      "status": "PASS"
+    },
+    {
+      "name": "ResearchDocument enforces identifier precedence and canonical identity",
+      "status": "PASS"
+    },
+    {
+      "name": "DeterministicResearchCorpus provides idempotent ingestion and deduplication",
+      "status": "PASS"
+    },
+    {
+      "name": "DeterministicResearchCorpus fails closed on conflicting identity evidence",
+      "status": "PASS"
+    },
+    {
+      "name": "Derived or external metadata cannot overwrite canonical accepted source data",
+      "status": "PASS"
+    },
+    {
+      "name": "Corpus persistence survives reload and provides atomic state management",
+      "status": "PASS"
+    },
+    {
+      "name": "Exact source trace resolves local bytes and provenance",
+      "status": "PASS"
+    },
+    {
+      "name": "Corpus integrity verification detects missing and altered source files",
+      "status": "PASS"
+    },
+    {
+      "name": "Multiple sources attach cleanly to a single document and listDocuments supports filtering",
+      "status": "PASS"
+    },
+    {
+      "name": "End-to-end vertical acceptance fixture demonstrates exact trace, idempotence, and persistence reload",
+      "status": "PASS"
+    },
+    {
+      "name": "Research corpus operations execute with zero external network or model dependency",
+      "status": "PASS"
+    }
+  ],
+  "full_suite_verification": {
+    "make_verify": "PASS",
+    "make_test": "PASS",
+    "workctl_tests": "PASS (7/7)"
+  }
+}

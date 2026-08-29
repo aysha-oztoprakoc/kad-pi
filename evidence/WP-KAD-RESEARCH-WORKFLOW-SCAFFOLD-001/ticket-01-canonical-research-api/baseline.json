@@ -1,0 +1,39 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-API-001",
+  "title": "Canonical Research API and Persistence",
+  "claim": {
+    "task": "WP-KAD-RESEARCH-API-001",
+    "project": "kad-pi",
+    "claim_id": "deb2b0da-14e0-4efd-a26e-cc5fce3bc7a7",
+    "actor_label": "gemini-builder",
+    "started_at": "2026-08-29T23:52:53.745Z",
+    "base_commit": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf",
+    "owned_paths": [
+      "tools/kad/research.mjs",
+      "tools/kad/index.mjs",
+      "tools/kad/test/research.test.mjs"
+    ],
+    "mode": "mutate",
+    "active": true
+  },
+  "fixed_point": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf",
+  "spec_decisions": ["D1", "D2", "D4"],
+  "scope": [
+    "tools/kad/research.mjs",
+    "tools/kad/index.mjs",
+    "tools/kad/test/research.test.mjs"
+  ],
+  "non_scope": [
+    "autonomous literature review",
+    "provider SDKs",
+    "paid credentials",
+    "OpenViking authority",
+    "ResearchClaim acceptance",
+    "workctl orchestration"
+  ],
+  "pre_change_verification": {
+    "workctl_status": "READY -> IN_PROGRESS",
+    "knowledge_plane_tests": "PASS (9/9)",
+    "git_head": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-API-001",
+  "reviewer": "gemini-builder (specification review)",
+  "verdict": "PASS",
+  "spec_fidelity": {
+    "D1_hybrid_literature_ownership": {
+      "status": "PASS",
+      "evidence": "KAD owns canonical ResearchDocument, identifiers, source hashes, and provenance; Zotero is not canonical authority."
+    },
+    "D2_layered_research_contract": {
+      "status": "PASS",
+      "evidence": "ResearchCandidate -> ResearchSource -> ResearchDocument layers implemented with explicit unknown/null values, no fabrication, and deterministic SHA-256 content hashing."
+    },
+    "D4_deterministic_research_api": {
+      "status": "PASS",
+      "evidence": "DeterministicResearchCorpus and standalone helper functions own validation, normalization, identifier precedence, hashing, deduplication, conflict detection, provenance, and persistence."
+    }
+  },
+  "acceptance_criteria_matrix": [
+    {
+      "criterion": "Layered ResearchCandidate, ResearchIdentifier, ResearchSource, ResearchDocument, and ResearchProvenance state is deterministic and explicit about unknown values.",
+      "status": "PASS",
+      "test": "ResearchCandidate preserves explicit nulls, is non-authoritative, and does not fabricate fields"
+    },
+    {
+      "criterion": "Identifiers and local source hashes support duplicate detection, idempotent import, and conflict rejection.",
+      "status": "PASS",
+      "test": "DeterministicResearchCorpus provides idempotent ingestion and deduplication; DeterministicResearchCorpus fails closed on conflicting identity evidence"
+    },
+    {
+      "criterion": "Malformed metadata and unsafe paths fail before canonical mutation.",
+      "status": "PASS",
+      "test": "ResearchSource safely resolves local files, hashes bytes deterministically, and rejects unsafe paths"
+    },
+    {
+      "criterion": "Provenance and source references survive persistence; derived metadata cannot overwrite canonical source state.",
+      "status": "PASS",
+      "test": "Derived or external metadata cannot overwrite canonical accepted source data; Corpus persistence survives reload and provides atomic state management"
+    },
+    {
+      "criterion": "Baseline tests require no API key, paid provider, remote model, or OpenViking service.",
+      "status": "PASS",
+      "test": "Research corpus operations execute with zero external network or model dependency"
+    }
+  ]
+}

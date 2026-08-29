@@ -1,0 +1,61 @@
+{
+  "id": "WP-KAD-RESEARCH-CLI-002",
+  "project": "kad-pi",
+  "title": "Research Operator Namespace and Manifests",
+  "status": "READY",
+  "priority": 90,
+  "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
+  "fixed_point": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf",
+  "scope": [
+    "bin/kad-knowledge",
+    "tools/kad/research-cli.mjs",
+    "tools/kad/test/research-cli.test.mjs",
+    "docs/agents/research-workflow.md"
+  ],
+  "non_scope": [
+    "canonical research API internals",
+    "provider SDKs",
+    "paid credentials",
+    "workctl orchestration",
+    "autonomous Zotero writes"
+  ],
+  "owned_paths": [
+    "bin/kad-knowledge",
+    "tools/kad/research-cli.mjs",
+    "tools/kad/test/research-cli.test.mjs",
+    "docs/agents/research-workflow.md"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "code_build",
+    "shell_readonly"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/research-cli.test.mjs",
+    "kad-knowledge research fixture import/export scenario",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-02-research-cli",
+  "blocked_by": [
+    "WP-KAD-RESEARCH-API-001"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Existing kad-knowledge research namespace delegates domain behavior to the reusable research API.",
+    "DOI, arXiv, standard export, metadata, and local PDF workflows require no provider credentials.",
+    "Manifests support deterministic import/export but are not the sole mutation interface.",
+    "Unsafe paths, malformed input, duplicates, and conflicts produce deterministic non-success results without canonical corruption.",
+    "OpenViking absence does not prevent canonical import or exact source inspection."
+  ],
+  "description": "Thin operator transport and supported manifest import/export for free/manual research workflows.",
+  "spec_decisions": [
+    "D2",
+    "D4",
+    "D6"
+  ],
+  "source_ticket": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001-IMPLEMENTATION/issues/02-research-operator-manifests.md"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "WP-KAD-RESEARCH-CAPABILITIES-003",
+  "project": "kad-pi",
+  "title": "Provider Capability Profiles and Degradation",
+  "status": "READY",
+  "priority": 80,
+  "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
+  "fixed_point": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf",
+  "scope": [
+    "tools/kad/research-capabilities.mjs",
+    "tools/kad/test/research-capabilities.test.mjs",
+    "config/research-capabilities/"
+  ],
+  "non_scope": [
+    "provider SDKs",
+    "paid credentials",
+    "canonical source mutation",
+    "OpenViking implementation",
+    "durable enhancement queue"
+  ],
+  "owned_paths": [
+    "tools/kad/research-capabilities.mjs",
+    "tools/kad/test/research-capabilities.test.mjs",
+    "config/research-capabilities/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "code_build",
+    "shell_readonly"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/research-capabilities.test.mjs",
+    "free/manual capability and outage scenario",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-03-capabilities",
+  "blocked_by": [
+    "WP-KAD-RESEARCH-API-001"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Stable capability profiles are separate from dated availability/quota observations and economic admission.",
+    "Credential-free manifests represent manual/free/API/paid/unavailable constraint classes.",
+    "Missing, stale, unavailable, unauthorized, and quota-exhausted states reduce only the affected capability.",
+    "Explicit deterministic/local/manual/free fallback remains usable and paid lanes never activate implicitly.",
+    "Capability data cannot mutate canonical research authority."
+  ],
+  "description": "Provider-neutral profiles, observations, and per-capability degradation behavior that preserve free/manual operation.",
+  "spec_decisions": [
+    "D5",
+    "D6"
+  ],
+  "source_ticket": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001-IMPLEMENTATION/issues/03-capabilities-degradation.md"
+}

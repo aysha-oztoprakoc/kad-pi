@@ -1,0 +1,62 @@
+{
+  "id": "WP-KAD-RESEARCH-API-001",
+  "project": "kad-pi",
+  "title": "Canonical Research API and Persistence",
+  "status": "ACCEPTED",
+  "priority": 100,
+  "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
+  "fixed_point": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf",
+  "scope": [
+    "tools/kad/research.mjs",
+    "tools/kad/index.mjs",
+    "tools/kad/test/research.test.mjs"
+  ],
+  "non_scope": [
+    "autonomous literature review",
+    "provider SDKs",
+    "paid credentials",
+    "OpenViking authority",
+    "ResearchClaim acceptance",
+    "workctl orchestration"
+  ],
+  "owned_paths": [
+    "tools/kad/research.mjs",
+    "tools/kad/index.mjs",
+    "tools/kad/test/research.test.mjs"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "code_build",
+    "shell_readonly"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/research.test.mjs",
+    "deterministic fixture import and idempotency scenario",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-01-canonical-research-api",
+  "blocked_by": [],
+  "blocks": [
+    "WP-KAD-RESEARCH-CLI-002",
+    "WP-KAD-RESEARCH-CAPABILITIES-003",
+    "WP-KAD-RESEARCH-OPENVIKING-004"
+  ],
+  "acceptance_criteria": [
+    "Layered ResearchCandidate, ResearchIdentifier, ResearchSource, ResearchDocument, and ResearchProvenance state is deterministic and explicit about unknown values.",
+    "Identifiers and local source hashes support duplicate detection, idempotent import, and conflict rejection.",
+    "Malformed metadata and unsafe paths fail before canonical mutation.",
+    "Provenance and source references survive persistence; derived metadata cannot overwrite canonical source state.",
+    "Baseline tests require no API key, paid provider, remote model, or OpenViking service."
+  ],
+  "description": "Reusable deterministic research-domain API owns validation, normalization, identifier precedence, hashing, deduplication/conflict detection, provenance, and canonical persistence.",
+  "spec_decisions": [
+    "D1",
+    "D2",
+    "D4"
+  ],
+  "source_ticket": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001-IMPLEMENTATION/issues/01-canonical-research-api.md"
+}

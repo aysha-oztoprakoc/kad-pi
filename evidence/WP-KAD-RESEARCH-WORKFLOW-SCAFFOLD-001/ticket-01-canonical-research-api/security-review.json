@@ -1,0 +1,32 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-API-001",
+  "reviewer": "gemini-builder (security review)",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check": "path_traversal_protection",
+      "status": "PASS",
+      "evidence": "assertSafePath strictly prevents relative navigation ('..'), root escapes, and null-byte injection before any filesystem operations."
+    },
+    {
+      "check": "symlink_escape_protection",
+      "status": "PASS",
+      "evidence": "assertSafePath checks all path segments and resolves realpathSync to detect and block symlinks pointing outside rootDir with ResearchSecurityError."
+    },
+    {
+      "check": "no_credentials_required",
+      "status": "PASS",
+      "evidence": "Zero API keys, tokens, or external network calls exist in tools/kad/research.mjs or test suite."
+    },
+    {
+      "check": "untrusted_input_sanitization",
+      "status": "PASS",
+      "evidence": "Identifiers, authors, titles, and paths are validated and normalized against strict regex patterns and schemas."
+    },
+    {
+      "check": "canonical_authority_protection",
+      "status": "PASS",
+      "evidence": "updateMetadata explicitly rejects attempts by external derived adapters (e.g. OpenViking or INFERRED epistemic class) to overwrite canonical accepted records."
+    }
+  ]
+}

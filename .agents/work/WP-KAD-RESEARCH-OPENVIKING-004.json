@@ -1,0 +1,59 @@
+{
+  "id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "project": "kad-pi",
+  "title": "OpenViking Derived Research Context",
+  "status": "READY",
+  "priority": 80,
+  "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
+  "fixed_point": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf",
+  "scope": [
+    "tools/kad/research-openviking.mjs",
+    "tools/kad/knowledge-plane-adapters.mjs",
+    "tools/kad/test/research-openviking.test.mjs"
+  ],
+  "non_scope": [
+    "original-document authority in OpenViking",
+    "automatic full-document upload",
+    "paid services",
+    "Needle extraction",
+    "canonical source mutation"
+  ],
+  "owned_paths": [
+    "tools/kad/research-openviking.mjs",
+    "tools/kad/knowledge-plane-adapters.mjs",
+    "tools/kad/test/research-openviking.test.mjs"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "code_build",
+    "shell_readonly"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/research-openviking.test.mjs",
+    "derived context trace and stale fallback scenario",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-04-openviking",
+  "blocked_by": [
+    "WP-KAD-RESEARCH-API-001"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Derived resources use a stable KAD-bound research namespace keyed by ResearchDocument identity.",
+    "L0, L1, and bounded L2 preserve canonical IDs, source references, hashes, derivation version, and layer identity.",
+    "Original documents and authoritative source state remain outside OpenViking.",
+    "Hash/version mismatch marks derived context stale and requires rebuild.",
+    "Missing or stale OpenViking falls back to exact deterministic KAD/Librarian retrieval without canonical mutation."
+  ],
+  "description": "Optional derived-context adapter with traceability, stale detection, rebuild, and exact fallback behavior.",
+  "spec_decisions": [
+    "D2",
+    "D3",
+    "D6"
+  ],
+  "source_ticket": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001-IMPLEMENTATION/issues/04-openviking-context.md"
+}

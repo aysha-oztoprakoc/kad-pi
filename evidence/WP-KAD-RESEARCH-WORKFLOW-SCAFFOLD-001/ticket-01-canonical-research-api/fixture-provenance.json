@@ -1,0 +1,39 @@
+{
+  "fixture_id": "kad-pi-pon-foundation-2026",
+  "document_id": "doc:doi:10.9999/kad.pon.2026.01",
+  "title": "Notification-Oriented Paradigm in Real-Time Agent Harnesses",
+  "authors": ["A. Builder", "K. Validator"],
+  "year": 2026,
+  "identifiers": [
+    {
+      "type": "doi",
+      "value": "10.9999/kad.pon.2026.01",
+      "raw_value": "https://doi.org/10.9999/kad.pon.2026.01"
+    },
+    {
+      "type": "arxiv",
+      "value": "2608.00001",
+      "raw_value": "arXiv:2608.00001"
+    }
+  ],
+  "source": {
+    "source_path": "fixtures/papers/kad-pi-pon-foundation-2026.pdf",
+    "source_hash": "2ea7e1b5ea1ee5c4cb8510cb0be3cfabcf4eefd1d368e7ecae9e3a6efbb29124",
+    "mime_type": "application/pdf"
+  },
+  "provenance": {
+    "method": "manual",
+    "origin": "author_fixture",
+    "actor": "gemini-builder",
+    "observed_at": "2026-08-29T23:55:00.000Z",
+    "evidence_ref": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-01-canonical-research-api/fixture-provenance.json"
+  },
+  "lifecycle_state": {
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "acceptance_state": "ACCEPTED",
+    "authority_class": "CANONICAL_RESEARCH",
+    "trust_domain": "engineering"
+  },
+  "idempotence_verified": true,
+  "reload_trace_verified": true
+}

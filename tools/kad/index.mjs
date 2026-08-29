@@ -20,3 +20,6 @@ export { EXECUTION_CLASSES as MICROTASK_EXECUTION_CLASSES, ESCALATION_REASONS, c
 export { DEFAULT_SOURCE_ALLOWLIST, EPISTEMIC_CLASSES, DeterministicKnowledgePlane, hashSource, parseKnowledgeCliArgs, projectionImpact, runKnowledgeCli, validateAcceptanceTransition } from './knowledge-plane.mjs';
 export { createNeedleAdapter, createOpenVikingAdapter, readFixture, runOptionalAdapterProbe } from './knowledge-plane-adapters.mjs';
 export { RUNTIME_STATES, RUNTIME_STATUS_SCHEMA, SELECTED_RUNTIME, createRuntimeStatus, applyStaleness, observeRuntime, runtimeTransition, validateRuntimeStatus } from './runtime-status.mjs';
+
+// WP-KAD-RESEARCH-API-001 Exports
+export { RESEARCH_SCHEMA_VERSION, IDENTIFIER_TYPES, IDENTIFIER_PRECEDENCE, ResearchError, ResearchSecurityError, ResearchConflictError, ResearchValidationError, ResearchIdentifier, ResearchProvenance, ResearchCandidate, ResearchSource, ResearchDocument, DeterministicResearchCorpus, hashSourceBytes, assertSafePath, normalizeIdentifier, createIdentifier, createProvenance, createCandidate, createSource, createDocument } from './research.mjs';
