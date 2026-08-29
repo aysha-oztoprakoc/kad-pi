@@ -1,0 +1,69 @@
+{
+  "pid": 215607,
+  "observed_at": "2026-08-29T03:39:27.476Z",
+  "argv_sha256": "ed41e54dc2705306fcb58b5cf01aab0c3c14beb4f24bf1a1483e131bbf41da68",
+  "sanitized_argv": [
+    "/home/amdy/Work/kad-sillytavern/koboldcpp/koboldcpp-linux-x64-nocuda",
+    "--model",
+    "/home/amdy/Work/kad-sillytavern/models/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf",
+    "--usecpu",
+    "--contextsize",
+    "2048",
+    "--batchsize",
+    "128",
+    "--threads",
+    "4",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "5002",
+    "--skiplauncher"
+  ],
+  "parsed": {
+    "executable": "/home/amdy/Work/kad-sillytavern/koboldcpp/koboldcpp-linux-x64-nocuda",
+    "model_path": "/home/amdy/Work/kad-sillytavern/models/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf",
+    "context_window": 2048,
+    "batch_size": 128,
+    "threads": 4,
+    "host": "127.0.0.1",
+    "port": 5002,
+    "gpu_layers": null,
+    "cpu_mode": true,
+    "skiplauncher": true,
+    "generation_ceiling": null
+  },
+  "fields": {
+    "context_window": {
+      "value": 2048,
+      "class": "OBSERVED_RUNTIME"
+    },
+    "generation_ceiling": {
+      "value": null,
+      "class": "UNKNOWN"
+    },
+    "threads": {
+      "value": 4,
+      "class": "OBSERVED_RUNTIME"
+    },
+    "batch_size": {
+      "value": 128,
+      "class": "OBSERVED_RUNTIME"
+    },
+    "cpu_mode": {
+      "value": true,
+      "class": "OBSERVED_RUNTIME"
+    },
+    "gpu_layers": {
+      "value": null,
+      "class": "UNKNOWN"
+    },
+    "model_path": {
+      "value": "/home/amdy/Work/kad-sillytavern/models/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf",
+      "class": "OBSERVED_RUNTIME"
+    },
+    "port": {
+      "value": 5002,
+      "class": "OBSERVED_RUNTIME"
+    }
+  }
+}

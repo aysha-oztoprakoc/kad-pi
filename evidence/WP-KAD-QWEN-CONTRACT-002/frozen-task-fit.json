@@ -1,0 +1,84 @@
+{
+  "INITIAL_FIT": "FAIL",
+  "REPAIR_FIT": "FAIL",
+  "OUTPUT_FIT": "FAIL",
+  "initialGate": {
+    "ok": false,
+    "reason": "PROMPT_PLUS_RESERVE_EXCEEDS_CONTEXT",
+    "code": "LOCAL_TASK_BUDGET_UNSATISFIABLE",
+    "required_prompt_tokens": 2302,
+    "required_output_reserve": 192,
+    "effective_context_window": 2048,
+    "contract": {
+      "resource_id": "kad-local-retrieval-amdy",
+      "trust_domain": "retrieval",
+      "capabilities": [
+        "repository-fact-finding",
+        "structured-extraction"
+      ],
+      "effective_context_window": 2048,
+      "effective_max_output_tokens": 192,
+      "evidence": [
+        "process-argv:ed41e54dc2705306fcb58b5cf01aab0c3c14beb4f24bf1a1483e131bbf41da68"
+      ],
+      "confidence": "OBSERVED_RUNTIME"
+    }
+  },
+  "repairGate": {
+    "ok": false,
+    "reason": "PROMPT_PLUS_RESERVE_EXCEEDS_CONTEXT",
+    "code": "LOCAL_TASK_BUDGET_UNSATISFIABLE",
+    "required_prompt_tokens": 2346,
+    "required_output_reserve": 192,
+    "effective_context_window": 2048,
+    "contract": {
+      "resource_id": "kad-local-retrieval-amdy",
+      "trust_domain": "retrieval",
+      "capabilities": [
+        "repository-fact-finding",
+        "structured-extraction"
+      ],
+      "effective_context_window": 2048,
+      "effective_max_output_tokens": 192,
+      "evidence": [
+        "process-argv:ed41e54dc2705306fcb58b5cf01aab0c3c14beb4f24bf1a1483e131bbf41da68"
+      ],
+      "confidence": "OBSERVED_RUNTIME"
+    }
+  },
+  "outputGate": {
+    "ok": false,
+    "reason": "REQUESTED_OUTPUT_EXCEEDS_RESOURCE_MAX",
+    "code": "LOCAL_TASK_OUTPUT_UNSATISFIABLE",
+    "requested_output_tokens": 512,
+    "effective_max_output_tokens": 192,
+    "contract": {
+      "resource_id": "kad-local-retrieval-amdy",
+      "trust_domain": "retrieval",
+      "capabilities": [
+        "repository-fact-finding",
+        "structured-extraction"
+      ],
+      "effective_context_window": 2048,
+      "effective_max_output_tokens": 192,
+      "evidence": [
+        "process-argv:ed41e54dc2705306fcb58b5cf01aab0c3c14beb4f24bf1a1483e131bbf41da68"
+      ],
+      "confidence": "OBSERVED_RUNTIME"
+    }
+  },
+  "resourceContract": {
+    "resource_id": "kad-local-retrieval-amdy",
+    "trust_domain": "retrieval",
+    "capabilities": [
+      "repository-fact-finding",
+      "structured-extraction"
+    ],
+    "effective_context_window": 2048,
+    "effective_max_output_tokens": 192,
+    "evidence": [
+      "process-argv:ed41e54dc2705306fcb58b5cf01aab0c3c14beb4f24bf1a1483e131bbf41da68"
+    ],
+    "confidence": "OBSERVED_RUNTIME"
+  }
+}

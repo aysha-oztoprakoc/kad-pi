@@ -1,0 +1,8 @@
+{"claim":"live context window = 2048","class":"OBSERVED","evidence":"runtime-process-observation.json"}
+{"claim":"transport output cap = 192","class":"OBSERVED","evidence":"../WP-KAD-QWEN-CONTRACT-001/effective-request-capture.json"}
+{"claim":"frozen task initial context fit fails","class":"CALCULATED","evidence":"frozen-task-fit.json"}
+{"claim":"frozen task repair context fit fails","class":"CALCULATED","evidence":"frozen-task-fit.json"}
+{"claim":"frozen task output fit fails","class":"CALCULATED","evidence":"frozen-task-fit.json"}
+{"claim":"generation-cap saturation = OBSERVED","class":"OBSERVED","evidence":"../WP-KAD-TOKENMAX-003-R2/attempt-receipts.json; ../WP-KAD-QWEN-CONTRACT-001/effective-request-capture.json"}
+{"claim":"actual R2 truncation remains UNKNOWN","class":"UNKNOWN","evidence":"finish reason unavailable"}
+{"claim":"Qwen semantic reliability remains UNKNOWN","class":"UNKNOWN","evidence":"resource contract mismatch prevents clean semantic trial"}

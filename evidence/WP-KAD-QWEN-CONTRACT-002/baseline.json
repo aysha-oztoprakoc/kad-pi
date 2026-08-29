@@ -1,0 +1,14 @@
+{
+  "workpackage": "WP-KAD-QWEN-CONTRACT-002",
+  "expected_head": "cc5b607 fix(kad): enforce local model resource budgets",
+  "observed_head": "cc5b607",
+  "unrelated_dirty_work_preserved": true,
+  "accepted_prior_findings_preserved": {
+    "transport_max_tokens": 192,
+    "transport_confidence": "OBSERVED_NO_MODEL_INFERENCE",
+    "task_requested_output": 512,
+    "generation_cap_saturation": "OBSERVED",
+    "r2_finish_reason": "UNKNOWN",
+    "actual_historical_truncation": "UNKNOWN"
+  }
+}
