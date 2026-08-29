@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kad-distill-1",
+  "type": "object",
+  "required": ["id", "schema_version", "state", "task", "provenance", "input", "behavior", "output", "verification", "promotion", "replay"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "schema_version": { "const": "kad-distill-1" },
+    "state": { "enum": ["RAW", "CANDIDATE", "VERIFIED", "GOLDEN", "ACTIVE", "REJECTED"] },
+    "task": { "type": "object", "required": ["class", "objective"] },
+    "provenance": { "type": "object", "required": ["source", "executor", "timestamp", "source_artifact", "source_hash"] },
+    "input": { "type": "object", "required": ["canonical", "hash"] },
+    "verification": { "type": "object", "required": ["verifier_ids", "evidence", "verdict"] },
+    "promotion": { "type": "object", "required": ["state"] },
+    "replay": { "type": "object", "required": ["enabled", "comparison_mode"] }
+  }
+}

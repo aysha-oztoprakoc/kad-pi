@@ -1,0 +1,127 @@
+{
+  "ancestry": {
+    "generation_depth": 0,
+    "origin": "REAL_SYSTEM_OBSERVATION",
+    "parents": []
+  },
+  "behavior": {
+    "canonical_strategy": "structured",
+    "forbidden": [
+      "mutate state after rejected validation"
+    ],
+    "required": [
+      "validate CandidateIntent before resolution"
+    ]
+  },
+  "distillation": {
+    "lesson": "Deterministically validated actions may resolve state and preserve the observed state hash.",
+    "negative_examples": [],
+    "policies": [
+      "validator precedes resolver"
+    ]
+  },
+  "evidence_refs": [
+    "evidence/WP-KAD-002/causal-journal.jsonl",
+    "kad-lab/build/kad_engine_cli"
+  ],
+  "id": "real-wp002-action",
+  "input": {
+    "canonical": {
+      "candidate_intent": {
+        "actions": [
+          {
+            "targets": [
+              "key"
+            ],
+            "verb": "Acquire"
+          }
+        ],
+        "properties": []
+      },
+      "input_text": "acquire key"
+    },
+    "hash": "08a58363f16329a1d7ee9cd8cb12a24109f13a9f56405ffe0d346b3c54f6081f"
+  },
+  "output": {
+    "canonical_example": {
+      "state_after_hash": "324f6e412a63c5dd4dfe53afe2e44f9aae7298ebf8f011fd40aed7aaebecbe32",
+      "validation": "accepted"
+    },
+    "expected_type": "object"
+  },
+  "promotion": {
+    "promoted_by": "deterministic-policy",
+    "promotion_evidence": [
+      "record-schema receipt",
+      "WP-KAD-002 journal"
+    ],
+    "state": "GOLDEN"
+  },
+  "provenance": {
+    "executor": "kad-lab/build/kad_engine_cli",
+    "source": "KAD-002 observed journal",
+    "source_artifact": "evidence/WP-KAD-002/causal-journal.jsonl",
+    "source_episode_hash": "7b974deefcbe5d4276391a798118db488b407322f9f9cdd0c0b4e01b1fa4b48b",
+    "source_episode_id": "episode-from-wp-kad-002-turn-1",
+    "source_hash": "cdec305da943d8389319d534922c42a626da43673641717bd1dce42aa0a83a1c",
+    "source_version": "WP-KAD-002-v1",
+    "timestamp": "2026-08-28T12:37:34.004Z"
+  },
+  "replay": {
+    "adapter_id": null,
+    "comparison_mode": "BEHAVIOR",
+    "enabled": false,
+    "fixture": null
+  },
+  "schema_version": "kad-distill-1",
+  "source_class": "REAL_ACCEPTED_TRAJECTORY",
+  "state": "GOLDEN",
+  "task": {
+    "class": "validated-action",
+    "constraints": [],
+    "objective": "acquire key"
+  },
+  "teacher": {
+    "model": null,
+    "provider": null,
+    "supervision_artifact": null,
+    "used": false,
+    "version": null
+  },
+  "training_eligibility": {
+    "eligible": false,
+    "quality_status": "UNREVIEWED",
+    "reason": "runtime episode only",
+    "rights_status": "UNKNOWN"
+  },
+  "trajectory": [
+    {
+      "event": "candidate.validated",
+      "input": "acquire key",
+      "result": "accepted"
+    },
+    {
+      "event": "state.resolved",
+      "state_after_hash": "324f6e412a63c5dd4dfe53afe2e44f9aae7298ebf8f011fd40aed7aaebecbe32"
+    }
+  ],
+  "verification": {
+    "evidence": [
+      {
+        "exit_code": null,
+        "expected": "schema-valid",
+        "implementation_hash": "6e83630efae900f9e8e40483e812086165f42106b1e4b6b34d885228756c3465",
+        "input_hash": "08a58363f16329a1d7ee9cd8cb12a24109f13a9f56405ffe0d346b3c54f6081f",
+        "observed": "schema-valid",
+        "passed": true,
+        "receipt_hash": "d947d120688e1adb5dd486fb58cfa57822611544e3c6c9f01ced88ea03b5d5ba",
+        "verifier_id": "record-schema",
+        "verifier_version": "1"
+      }
+    ],
+    "verdict": "PASS",
+    "verifier_ids": [
+      "record-schema"
+    ]
+  }
+}

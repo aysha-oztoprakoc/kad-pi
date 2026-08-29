@@ -12,4 +12,5 @@ export { StcScope } from './stc-scope.mjs';
 export { PersistentSession } from './session.mjs';
 export { replayJournal } from './replay.mjs';
 export { generateTurnDataset } from './dataset.mjs';
+export { STATES, SOURCE_CLASSES, FAILURE_CLASSES, canonicalize, hashCanonical, hashArtifact, createRecord, validateRecord, verifyCandidate, verifyRecord, VerifierRegistry, defaultVerifiers, fromEpisode, verifyEpisodeLineage, transition, rejectRecord, DistillationStore, retrieveGolden, buildSteeringContext, replayRecord, replayWithAdapter, registerReplayAdapter, exportDataset } from './distillation.mjs';
 export { normalizeWorkRequest, compileTaskPacket, selectControllerLane, validateWorkerResult, executeSwarm, canonicalSwarmReceipt } from './swarm.mjs';

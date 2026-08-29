@@ -1,0 +1,111 @@
+{
+  "episode_id": "episode-from-wp-kad-002-turn-1",
+  "schema_version": "1",
+  "causation": {
+    "event_id": "turn:1787920654000:1",
+    "parent_event_id": null,
+    "pon_event": "task.accepted"
+  },
+  "task": {
+    "task_id": "turn-1787920654004-2",
+    "domain": "ENGINEERING",
+    "task_class": "validated-action",
+    "objective": "acquire key",
+    "trust_domain": "ENGINEERING"
+  },
+  "state": {
+    "available_capabilities": [],
+    "unavailable_capabilities": [],
+    "scope": "task",
+    "host_state_refs": []
+  },
+  "context": {
+    "available_refs": [],
+    "selected_refs": [],
+    "selected_bytes": 0,
+    "selected_tokens": null,
+    "provenance": []
+  },
+  "decision": {
+    "actor_role": "CAPABILITY_ROUTER",
+    "required_capability": null,
+    "selected_resource": "kad-lab/build/kad_engine_cli",
+    "reason_code": "bounded-contract",
+    "confidence": null
+  },
+  "resolution": {
+    "deterministic_capability_available": true,
+    "deterministic_capability_considered": true,
+    "selected_execution_class": "DETERMINISTIC_EXISTING",
+    "capability_id": "kad-lab/build/kad_engine_cli",
+    "model_avoided": true,
+    "new_tool_created": false,
+    "reason_code": "tested_capability_sufficient"
+  },
+  "trajectory": [
+    {
+      "event": "candidate.validated",
+      "input": "acquire key",
+      "result": "accepted"
+    },
+    {
+      "event": "state.resolved",
+      "state_after_hash": "324f6e412a63c5dd4dfe53afe2e44f9aae7298ebf8f011fd40aed7aaebecbe32"
+    }
+  ],
+  "validation": {
+    "validator": "kad-lab/build/kad_engine_cli",
+    "result": "PASS",
+    "tests": [
+      "state_after_hash observed"
+    ],
+    "postconditions": [
+      "324f6e412a63c5dd4dfe53afe2e44f9aae7298ebf8f011fd40aed7aaebecbe32"
+    ]
+  },
+  "outcome": {
+    "accepted": true,
+    "remote_escalation": false,
+    "human_correction": false
+  },
+  "economics": {
+    "local_input_tokens": null,
+    "local_output_tokens": null,
+    "remote_input_tokens": null,
+    "remote_output_tokens": null,
+    "wall_ms": null,
+    "tool_calls": null
+  },
+  "slop": {
+    "duplicate_reads": 0,
+    "redundant_tool_calls": 0,
+    "blind_retries": 0,
+    "invalid_structured_outputs": 0,
+    "unused_worker_outputs": 0,
+    "unsupported_claims": 0,
+    "violations": []
+  },
+  "teacher": {
+    "used": false,
+    "provider": null,
+    "model": null,
+    "version": null,
+    "supervision_artifact": null
+  },
+  "ancestry": {
+    "origin": "REAL_SYSTEM_OBSERVATION",
+    "generation_depth": 0,
+    "parents": []
+  },
+  "training_eligibility": {
+    "eligible": false,
+    "rights_status": "UNKNOWN",
+    "quality_status": "UNREVIEWED",
+    "reason": "runtime episode only"
+  },
+  "teacher_interest": "NONE",
+  "evidence_refs": [
+    "evidence/WP-KAD-002/causal-journal.jsonl",
+    "kad-lab/build/kad_engine_cli"
+  ]
+}

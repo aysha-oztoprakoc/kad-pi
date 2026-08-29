@@ -1,0 +1,102 @@
+{
+  "ancestry": {
+    "generation_depth": 0,
+    "origin": "DISTILLED",
+    "parents": []
+  },
+  "behavior": {
+    "canonical_strategy": "structured",
+    "forbidden": [],
+    "required": []
+  },
+  "distillation": {
+    "lesson": "Unsupported actions remain rejected and do not mutate state.",
+    "negative_examples": [],
+    "policies": []
+  },
+  "evidence_refs": [],
+  "id": "real-wp002-negative",
+  "input": {
+    "canonical": {
+      "candidate_intent": {
+        "actions": [
+          {
+            "targets": [
+              "moon"
+            ],
+            "verb": "Teleport"
+          }
+        ],
+        "properties": []
+      },
+      "input_text": "teleport to the moon"
+    },
+    "hash": "5de7c0f0cfa4a6dc60a761d06a7fb5900d200a8b5f49f66754e39c1df0234ef5"
+  },
+  "output": {
+    "canonical_example": {
+      "validation": "rejected"
+    },
+    "expected_type": "object"
+  },
+  "promotion": {
+    "promoted_by": null,
+    "promotion_evidence": [],
+    "state": "REJECTED"
+  },
+  "provenance": {
+    "executor": "kad-lab/build/kad_engine_cli",
+    "source": "KAD-002 observed journal",
+    "source_artifact": "evidence/WP-KAD-002/causal-journal.jsonl",
+    "source_episode_hash": null,
+    "source_episode_id": null,
+    "source_hash": "cdec305da943d8389319d534922c42a626da43673641717bd1dce42aa0a83a1c",
+    "source_version": "WP-KAD-002-v1",
+    "timestamp": "2026-08-28T12:37:38.390Z"
+  },
+  "rejection": {
+    "candidate": {
+      "validation": "rejected"
+    },
+    "expected": "supported action",
+    "failed_verifier": "kad-lab-validator",
+    "failure_class": "INVALID_TOOL_SEQUENCE",
+    "lesson": "Do not resolve unsupported actions.",
+    "observed": {
+      "detail": "verb \"Teleport\"",
+      "failure_kind": "UnsupportedAction"
+    }
+  },
+  "replay": {
+    "adapter_id": null,
+    "comparison_mode": "BEHAVIOR",
+    "enabled": false,
+    "fixture": null
+  },
+  "schema_version": "kad-distill-1",
+  "source_class": "NEGATIVE_FAILURE",
+  "state": "REJECTED",
+  "task": {
+    "class": "validated-action",
+    "constraints": [],
+    "objective": "teleport to the moon"
+  },
+  "teacher": {
+    "model": null,
+    "provider": null,
+    "used": false,
+    "version": null
+  },
+  "training_eligibility": {
+    "eligible": false,
+    "quality_status": "UNREVIEWED",
+    "reason": "runtime-only until explicitly approved",
+    "rights_status": "UNKNOWN"
+  },
+  "trajectory": [],
+  "verification": {
+    "evidence": [],
+    "verdict": "FAIL",
+    "verifier_ids": []
+  }
+}
