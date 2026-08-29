@@ -1,0 +1,16 @@
+{
+  "schema_version": "kad-omp-preflight-1",
+  "epistemic_class": "OBSERVED",
+  "status": "DEGRADED",
+  "omp": { "version": "18.0.9", "version_matches": true, "wrapper": "bin/omp-kad", "manifest_sha256_observed": "55304008876a61f48c2a1dc1b0998ca36e7e45b8bc25aa25cf24e5c44524412c" },
+  "governance": { "prime_directive": true, "bridge_pointer": true, "rules_reference_kad": true },
+  "learning": { "advisor_enabled": false, "memory_backend": "off", "autolearn_enabled": false, "safe": true },
+  "roles": { "world": "RESOLVED", "local_retrieval": "UNAVAILABLE" },
+  "local_inference": {
+    "world": { "endpoint": "http://127.0.0.1:5001/v1", "observed_identity": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M", "ownership": "EXTERNAL", "capability_state": "AVAILABLE" },
+    "retrieval": { "endpoint": "http://127.0.0.1:5002/v1", "observed_identity": "UNKNOWN", "ownership": "INACTIVE", "capability_state": "UNAVAILABLE" }
+  },
+  "spend": { "approved_surface": true, "new_paid_spend_possible": false },
+  "authority": { "exact_trust_domain_filter": true, "world_engineering_eligible": false, "verified_by_contract_test": true },
+  "limitation": "Qwen retrieval endpoint was unavailable; no mutation or automatic paid fallback was attempted."
+}

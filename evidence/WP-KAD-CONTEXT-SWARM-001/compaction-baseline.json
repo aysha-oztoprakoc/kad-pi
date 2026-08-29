@@ -1,0 +1,56 @@
+{
+  "schema_version": "kad-context-economy-baseline-v1",
+  "epistemic_class": "OBSERVED",
+  "runtime": {
+    "omp": "18.0.10",
+    "binary": "/home/amdy/.local/share/mise/installs/github-can1357-oh-my-pi/18.0.10/omp",
+    "project_root": "/home/amdy/Work"
+  },
+  "previous_behavior": {
+    "reported": "remote-compacted ~237K -> ~54K",
+    "installed_default_effective": {
+      "contextPromotion.enabled": false,
+      "compaction.enabled": true,
+      "compaction.midTurnEnabled": true,
+      "compaction.methodOrder": ["remote", "snapcompact", "handoff", "shake", "soft"],
+      "compaction.thresholdPercent": -1,
+      "compaction.thresholdTokens": -1,
+      "compaction.keepRecentTokens": 20000,
+      "compaction.autoContinue": true,
+      "compaction.asyncEnabled": true,
+      "compaction.remoteStreamingV2Enabled": true
+    },
+    "root_cause": "remote was first in the installed automatic method order; threshold used legacy reserve behavior"
+  },
+  "effective_project_policy": {
+    "contextPromotion.enabled": false,
+    "compaction.enabled": true,
+    "compaction.methodOrder": ["snapcompact"],
+    "compaction.thresholdPercent": 70,
+    "compaction.thresholdTokens": -1,
+    "compaction.midTurnEnabled": true,
+    "compaction.keepRecentTokens": 20000,
+    "compaction.autoContinue": true,
+    "unsupported_requested_keys_not_set": ["compaction.strategy", "compaction.remoteEnabled"]
+  },
+  "model_capability_probe": [
+    { "role": "@default", "selector": "openai-codex/gpt-5.6-luna:medium", "input": ["text", "image"], "contextWindow": 272000 },
+    { "role": "@plan", "selector": "openai-codex/gpt-5.6-luna:high", "input": ["text", "image"], "contextWindow": 272000 },
+    { "role": "@slow", "selector": "google-antigravity/gemini-3-flash:high", "input": ["text", "image"], "contextWindow": 1048576 }
+  ],
+  "controlled_snapcompact_probe": {
+    "method_selected": "snapcompact",
+    "automatic_events": ["auto_compaction_start", "auto_compaction_end"],
+    "summarizer_model_call": false,
+    "result": "SKIPPED_TOO_SMALL",
+    "detail": "The installed runtime selected snapcompact but refused to rewrite a two-turn history because it would not reduce context; context-full fallback remained available.",
+    "post_context_readable": true,
+    "local_render_completed": false
+  },
+  "spend_guard": {
+    "remote_compaction_configured": false,
+    "openrouter_disabled": true,
+    "oracle_automatic": false,
+    "payg_route_observed": false
+  }
+}

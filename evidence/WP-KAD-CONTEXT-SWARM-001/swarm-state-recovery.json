@@ -1,0 +1,130 @@
+{
+  "schema_version": "kad-swarm-state-v1",
+  "status": "ACTIVE",
+  "schedule": "TIME_MULTIPLEXED",
+  "tasks_completed": 2,
+  "tasks_total": 2,
+  "completed_task_ids": [
+    "SWARM-MVP-QWEN-001",
+    "SWARM-MVP-STHENO-001"
+  ],
+  "resources": [
+    {
+      "id": "kad-local-qwen-amdy",
+      "provider": "kad-local-qwen",
+      "model_identity": "Qwen3.5-9B",
+      "capabilities": [
+        "repository-fact-finding",
+        "structured-extraction"
+      ],
+      "trust_domain": "retrieval",
+      "context_window": 2048,
+      "max_output_tokens": 512,
+      "ownership": "OWNED",
+      "priority": 10,
+      "resource_id": "kad-local-qwen-amdy",
+      "state": "AVAILABLE",
+      "available": true,
+      "effective_context_window": 2048,
+      "effective_max_output_tokens": 512,
+      "state_reason": "task released"
+    },
+    {
+      "id": "kad-local-world-amdy",
+      "provider": "kad-local-world",
+      "model_identity": "L3-8B-Stheno",
+      "capabilities": [
+        "world-simulation"
+      ],
+      "trust_domain": "world",
+      "context_window": 4096,
+      "max_output_tokens": 512,
+      "ownership": "EXTERNAL",
+      "priority": 0,
+      "resource_id": "kad-local-world-amdy",
+      "state": "AVAILABLE",
+      "available": true,
+      "effective_context_window": 4096,
+      "effective_max_output_tokens": 512,
+      "state_reason": "task released"
+    }
+  ],
+  "events": [
+    {
+      "type": "TASK_REQUESTED",
+      "task_id": "SWARM-MVP-QWEN-001",
+      "timestamp": "2026-08-29T11:47:54.222Z",
+      "capability": "repository-fact-finding",
+      "trust_domain": "retrieval"
+    },
+    {
+      "type": "CAPABILITY_MATCHED",
+      "task_id": "SWARM-MVP-QWEN-001",
+      "timestamp": "2026-08-29T11:47:54.222Z",
+      "status": "ROUTED",
+      "resource_id": "kad-local-qwen-amdy",
+      "contract": {
+        "compiled_prompt_tokens": 128,
+        "required_output_reserve": 128,
+        "effective_context_window": 2048,
+        "effective_max_output_tokens": 512,
+        "fits": true,
+        "reason": null
+      },
+      "candidates": [
+        "kad-local-qwen-amdy"
+      ]
+    },
+    {
+      "type": "RESOURCE_ACTIVATED",
+      "task_id": "SWARM-MVP-QWEN-001",
+      "timestamp": "2026-08-29T11:47:54.223Z",
+      "resource_id": "kad-local-qwen-amdy"
+    },
+    {
+      "type": "RESOURCE_RELEASED",
+      "task_id": "SWARM-MVP-QWEN-001",
+      "timestamp": "2026-08-29T11:47:54.223Z",
+      "resource_id": "kad-local-qwen-amdy",
+      "ownership": "OWNED"
+    },
+    {
+      "type": "TASK_REQUESTED",
+      "task_id": "SWARM-MVP-STHENO-001",
+      "timestamp": "2026-08-29T11:47:54.223Z",
+      "capability": "world-simulation",
+      "trust_domain": "world"
+    },
+    {
+      "type": "CAPABILITY_MATCHED",
+      "task_id": "SWARM-MVP-STHENO-001",
+      "timestamp": "2026-08-29T11:47:54.223Z",
+      "status": "ROUTED",
+      "resource_id": "kad-local-world-amdy",
+      "contract": {
+        "compiled_prompt_tokens": 128,
+        "required_output_reserve": 128,
+        "effective_context_window": 4096,
+        "effective_max_output_tokens": 512,
+        "fits": true,
+        "reason": null
+      },
+      "candidates": [
+        "kad-local-world-amdy"
+      ]
+    },
+    {
+      "type": "RESOURCE_ACTIVATED",
+      "task_id": "SWARM-MVP-STHENO-001",
+      "timestamp": "2026-08-29T11:47:54.223Z",
+      "resource_id": "kad-local-world-amdy"
+    },
+    {
+      "type": "RESOURCE_RELEASED",
+      "task_id": "SWARM-MVP-STHENO-001",
+      "timestamp": "2026-08-29T11:47:54.224Z",
+      "resource_id": "kad-local-world-amdy",
+      "ownership": "EXTERNAL"
+    }
+  ]
+}

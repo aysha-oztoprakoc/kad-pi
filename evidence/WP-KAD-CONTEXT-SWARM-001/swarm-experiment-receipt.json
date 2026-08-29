@@ -1,0 +1,34 @@
+{
+  "schema_version": "kad-local-swarm-experiment-v1",
+  "epistemic_class": "EXPERIMENT",
+  "status": "PASS",
+  "experiment": "two independent typed local capability tasks with deterministic aggregation",
+  "orchestration": {
+    "controller": "SwarmCoordinator deterministic controller",
+    "remote_orchestration_tokens": null,
+    "premium_oracle_attempted": false,
+    "payg_attempted": false
+  },
+  "schedule": "TIME_MULTIPLEXED",
+  "aggregation": {
+    "accepted_results": 2,
+    "trust_domains": [
+      "retrieval",
+      "world"
+    ],
+    "trust_domains_separate": true,
+    "complete": true,
+    "model_vote_used": false,
+    "deterministic_gate": true
+  },
+  "telemetry": {
+    "local_inference_calls": 2,
+    "local_activation_time_ms": 0,
+    "local_inference_time_ms": 2,
+    "compactions": 0,
+    "estimated_remote_work_displaced": "UNKNOWN"
+  },
+  "limitations": [
+    "controlled fixture transport; not a live Qwen/Stheno inference receipt"
+  ]
+}

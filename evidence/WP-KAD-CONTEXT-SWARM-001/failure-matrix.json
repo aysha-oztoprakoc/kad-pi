@@ -1,0 +1,19 @@
+{
+  "schema_version": "kad-local-swarm-failure-matrix-v1",
+  "epistemic_class": "OBSERVED",
+  "cases": [
+    { "case": "wrong trust domain", "expected": "REJECT", "observed": "REJECT", "test": "routes only exact capability and trust" },
+    { "case": "unknown capability", "expected": "REJECT", "observed": "REJECT", "test": "rejects unqualified capability" },
+    { "case": "missing contract field", "expected": "REJECT", "observed": "REJECT", "test": "validates all required task fields" },
+    { "case": "malformed worker output", "expected": "REJECT", "observed": "REJECT", "test": "acceptance gate rejects malformed envelope" },
+    { "case": "model identity mismatch", "expected": "REJECT", "observed": "REJECT", "test": "worker and gate verify identity" },
+    { "case": "unavailable resource", "expected": "DEFER", "observed": "DEFER", "test": "router defers unavailable resource" },
+    { "case": "worker self-acceptance", "expected": "forbidden", "observed": "no accepted field in ResultEnvelope", "test": "acceptance gate owns acceptance" },
+    { "case": "Qwen live endpoint", "expected": "DEFER/DEGRADED", "observed": "DEGRADED", "test": "omp-orchestration-preflight evidence" },
+    { "case": "resource contract overflow", "expected": "DEFER", "observed": "DEFER", "test": "admission proves prompt plus output reserve against context and output limits" },
+    { "case": "activation failure rollback", "expected": "release attempted", "observed": "release attempted", "test": "Qwen worker finally cleanup" },
+    { "case": "snapcompact small history", "expected": "safe no-op", "observed": "SKIPPED_TOO_SMALL", "test": "controlled OMP RPC probe" }
+  ],
+  "fail_closed": true,
+  "no_automatic_paid_fallback": true
+}

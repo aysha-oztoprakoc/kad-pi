@@ -50,6 +50,17 @@ memory:
 autolearn:
   enabled: false
   autoContinue: false
+contextPromotion:
+  enabled: false
+compaction:
+  enabled: true
+  methodOrder:
+    - snapcompact
+  thresholdPercent: 70
+  thresholdTokens: -1
+  midTurnEnabled: true
+  keepRecentTokens: 20000
+  autoContinue: true
 skills:
   enabled: true
   enableAgentsProject: true

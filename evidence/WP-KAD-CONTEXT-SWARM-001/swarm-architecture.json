@@ -1,0 +1,27 @@
+{
+  "schema_version": "kad-local-swarm-architecture-v1",
+  "epistemic_class": "DESIGN_DECISION",
+  "control_plane": {
+    "module": "tools/kad/swarm-control-plane.mjs",
+    "worker_adapters": "tools/kad/swarm-workers.mjs",
+    "task_contract": "createTaskContract",
+    "resource_registry": "ResourceRegistry/createResourceRegistry",
+    "capability_router": "ResourceRegistry.route",
+    "lifecycle_manager": "SwarmCoordinator plus worker adapters",
+    "acceptance_gate": "AcceptanceGate",
+    "result_envelope": "ResultEnvelope"
+  },
+  "qualified_workers": [
+    { "provider": "kad-local-qwen", "role": "@local_retrieval", "trust_domain": "retrieval", "capabilities": ["repository-fact-finding", "structured-extraction"], "ownership": "OWNED", "lifecycle": "activate -> identity check -> bounded invoke -> release" },
+    { "provider": "kad-local-world", "role": "@world", "trust_domain": "world", "capabilities": ["world-simulation"], "ownership": "EXTERNAL", "lifecycle": "observe external process -> bounded invoke; no restart or teardown" }
+  ],
+  "scheduler": { "mode": "TIME_MULTIPLEXED", "concurrency": false, "resource_states": ["AVAILABLE", "ACTIVATING", "ACTIVE", "BUSY", "RELEASING", "UNAVAILABLE", "DEGRADED"], "conflict_policy": "DEFER" },
+  "admission": { "proof": "compiled_prompt_tokens + required_output_reserve <= effective_context_window; required_output_reserve <= effective_max_output_tokens", "failure": "DEFER before worker invocation" },
+  "telemetry": { "hook": "SwarmCoordinator telemetryPath", "fields": ["task_id", "acceptance", "runtime_status", "resource_id", "route_status", "route_reason", "timestamp"] },
+  "authority": { "accepted_by": "deterministic AcceptanceGate", "model_self_acceptance": false, "world_may_not_satisfy": ["retrieval", "engineering", "verification"], "qwen_may_not_satisfy": ["world", "engineering", "mutation-authorization"] },
+  "candidates": [
+    { "name": "RP-Hero", "status": "CANDIDATE", "qualification": "REQUIRED" },
+    { "name": "Lumimaid", "status": "CANDIDATE", "qualification": "REQUIRED" }
+  ],
+  "tell": { "status": "NOT_REGISTERED", "required_evidence": ["transport", "endpoint", "runtime", "model identity", "capabilities", "trust domains", "resource ownership", "health"] }
+}
