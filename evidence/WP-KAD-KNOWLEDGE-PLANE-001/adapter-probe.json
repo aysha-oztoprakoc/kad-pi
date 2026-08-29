@@ -1,0 +1,43 @@
+{
+  "workpackage": "WP-KAD-KNOWLEDGE-PLANE-001-R2",
+  "observed_at": "2026-08-29T16:48:00Z",
+  "authority": "KAD",
+  "adapters": {
+    "openviking": {
+      "status": "PASS",
+      "endpoint": "http://127.0.0.1:1933",
+      "health": {"status": "ok", "healthy": true, "version": "0.4.17", "auth_mode": "dev"},
+      "fixture": "Adapter provenance fixture: kp:adapter-v1",
+      "source_ref": "/tmp/kad-openviking-adapter.md",
+      "source_hash": "59ef9d495a175ca0fcbc466ed09f956b780e7480c00d61497bfd4aa437c50578",
+      "target_uri": "viking://resources/kad-adapter",
+      "read_exact": true,
+      "semantic_retrieval": "PASS",
+      "retrieved_uri": "viking://resources/kad-adapter/kad-openviking-adapter.md",
+      "acceptance_state": "PROPOSED",
+      "authority": false
+    },
+    "needle": {
+      "status": "PASS_PROPOSED",
+      "environment": ".state/omp-kad/knowledge-plane-001/venv",
+      "fixture": "log lunch, leftover pad thai",
+      "structured_call": {"name": "log_meal", "arguments": {"description": "leftover pad thai", "meal_type": "lunch"}},
+      "confidence_observed": 0.8058,
+      "confidence_authority": "UNQUALIFIED",
+      "acceptance_state": "PROPOSED",
+      "telemetry_disabled": true
+    }
+  },
+  "stc_lifecycle_and_economy": {
+    "owner": "KAD KnowledgePlane adapter boundary",
+    "operation_states": ["DECLARED", "STARTED", "COMPLETED"],
+    "resource_state": "LOCAL_ONLY",
+    "cancellation": "NOT_EXERCISED",
+    "cleanup": "tracked by isolated runtime process and workspace",
+    "paid_spend": false,
+    "remote_escalation": false,
+    "token_cost": "NOT_MEASURED",
+    "authority_effect": "NONE"
+  },
+  "boundary": "Optional adapters may ingest, retrieve, or propose structured output. They cannot accept knowledge, widen trust, mutate policy, or select routing without separate KAD evidence and validation."
+}

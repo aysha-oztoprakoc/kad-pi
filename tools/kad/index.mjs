@@ -17,3 +17,5 @@ export { normalizeWorkRequest, compileTaskPacket, selectControllerLane, validate
 export { RESOURCE_STATES, ACCEPTANCE_STATES, ResultEnvelope, ResourceRegistry, AcceptanceGate, SwarmCoordinator, createTaskContract, decomposeTaskRequests, createResourceRegistry, aggregateSwarmResults, appendSwarmTelemetry } from './swarm-control-plane.mjs';
 export { createQwenRetrievalWorker, createSthenoWorldWorker } from './swarm-workers.mjs';
 export { EXECUTION_CLASSES as MICROTASK_EXECUTION_CLASSES, ESCALATION_REASONS, classifyMicrotask, compileFreshLocalPacket, buildEscalationPacket, routeMicrotask, executeMicrotask, makeEconomicReceipt, recordDistillationCandidate } from './microtask-router.mjs';
+export { DEFAULT_SOURCE_ALLOWLIST, EPISTEMIC_CLASSES, DeterministicKnowledgePlane, hashSource, parseKnowledgeCliArgs, projectionImpact, runKnowledgeCli, validateAcceptanceTransition } from './knowledge-plane.mjs';
+export { createNeedleAdapter, createOpenVikingAdapter, readFixture, runOptionalAdapterProbe } from './knowledge-plane-adapters.mjs';

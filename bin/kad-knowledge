@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+import { runKnowledgeCli } from '../tools/kad/knowledge-plane.mjs';
+
+process.exitCode = runKnowledgeCli(process.argv.slice(2));

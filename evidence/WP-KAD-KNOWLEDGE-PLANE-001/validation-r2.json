@@ -1,0 +1,17 @@
+{
+  "workpackage": "WP-KAD-KNOWLEDGE-PLANE-001-R2",
+  "status": "PASS_WITH_DEGRADED_OPTIONAL_RUNTIME",
+  "checks": [
+    {"command": "node --test tools/kad/test/knowledge-plane.test.mjs", "result": "PASS", "tests": 9, "failures": 0},
+    {"command": "make verify", "result": "PASS", "prime_directive": "PASS", "librarian": "PASS", "valid_documents": 28, "valid_cards": 32, "valid_concepts": 23},
+    {"command": "make test", "result": "PASS"},
+    {"command": "./bin/kad-knowledge rebuild", "result": "PASS", "projection_id": "kad-knowledge-plane-wiki-v1", "records": 5},
+    {"command": "./bin/kad-knowledge ask \\\"What owns authority in KAD-PI?\\\"", "result": "PASS", "retrieval_mode": "exact", "top_source": "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md"},
+    {"command": "OpenViking adapter fixture roundtrip", "result": "PASS", "exact_read": true, "semantic_retrieval": true, "authority": false},
+    {"command": "Needle constrained fixture", "result": "PASS_PROPOSED", "schema_validated": true, "authority": false}
+  ],
+  "degradation": {
+    "openviking_vlm": "unavailable; exact and embedding paths remain usable",
+    "needle_confidence": "observed but unqualified for routing authority"
+  }
+}
