@@ -1,0 +1,25 @@
+{
+  "receipt_hash": "593609c3351d61b6a41626954ffad4ea55aea63968eef56bc9fd05fa0bb24d1e",
+  "replay_equal": true,
+  "derived_analysis": {
+    "comparison": {
+      "result": "INCOMPARABLE",
+      "reason": "task class or scope is not equivalent"
+    },
+    "shadow": {
+      "recommendation": "INSUFFICIENT_EVIDENCE",
+      "reason_codes": [
+        "NOT_COMPARABLE_TASK_CLASS_OR_SCOPE"
+      ]
+    },
+    "distillation": {
+      "distillation_candidate": false,
+      "promoted": false,
+      "episode_ids": [
+        "episode-SWARM-REAL-001",
+        "episode-TOKENMAX-LIVE-001"
+      ],
+      "reason": "the audit and historical single-rule retrieval are not substantially the same cognitive operation"
+    }
+  }
+}

@@ -1,0 +1,1202 @@
+{
+  "automatic_runtime_origin": true,
+  "receipt": {
+    "schema_version": "kad-economic-1",
+    "task_id": "TOKENMAX-LIVE-001",
+    "episode_id": "episode-TOKENMAX-LIVE-001",
+    "equivalence_key": "retrieval/repository-fact-finding",
+    "semantic_role": "controller",
+    "provider": "openai-codex",
+    "model": "gpt-5.6-luna",
+    "execution_class": "REMOTE_SUBSCRIPTION",
+    "trust_domain": "retrieval",
+    "capability": "repository-fact-finding",
+    "usage": {
+      "input_tokens": 550,
+      "cached_input_tokens": null,
+      "output_tokens": 159,
+      "reasoning_tokens": null,
+      "total_tokens": 709
+    },
+    "economics": {
+      "provider_reported_cost": null,
+      "cost_unit": null,
+      "cost_provenance": null,
+      "billing_class": "SUBSCRIPTION_BACKED",
+      "quota_snapshot_id": "b830f3e556cc100c02f839ab869b4e3536dc94ab00345b61f9628f0f74c2cf70",
+      "quota_state": {
+        "schema_version": "kad-quota-snapshot-1",
+        "captured_at": "2026-08-29T02:42:59.094Z",
+        "mechanism": "bounded run-remote-quota-probe.mjs; no refresh",
+        "selected_controller": {
+          "provider": "openai-codex",
+          "surface": "interactive /status",
+          "result": "PARSE_UNSUPPORTED",
+          "observed_quota": null,
+          "normalized_allowance": {
+            "status": "UNKNOWN",
+            "unit": null,
+            "capacity": null,
+            "used": null,
+            "remaining": null,
+            "reset_at": null,
+            "observed_at": null,
+            "source": null,
+            "confidence": "UNKNOWN",
+            "watermark": "UNKNOWN",
+            "scope": null,
+            "effective_window_id": null,
+            "windows": [
+              {
+                "window_id": "unavailable",
+                "unit": null,
+                "capacity": null,
+                "used": null,
+                "remaining": null,
+                "reset_at": null,
+                "status": "UNKNOWN",
+                "observed_at": 1787971379094,
+                "source": null,
+                "confidence": "UNKNOWN",
+                "watermark": "UNKNOWN",
+                "scope": null
+              }
+            ]
+          },
+          "provenance": {
+            "provider": "openai-codex",
+            "surface": "interactive /status",
+            "availability": "PROBE_UNAVAILABLE",
+            "status": null,
+            "error_class": null,
+            "parser_version": "remote-quota-observation-1",
+            "observed_at": 1787971379094
+          }
+        },
+        "provider_records": [
+          {
+            "kind": "provider_inventory",
+            "provider": "openai-codex",
+            "surface": null,
+            "result": "ready",
+            "http_status": null,
+            "quota": null
+          },
+          {
+            "kind": "provider_inventory",
+            "provider": "opencode-go",
+            "surface": null,
+            "result": "ready",
+            "http_status": null,
+            "quota": null
+          },
+          {
+            "kind": "provider_inventory",
+            "provider": "github-copilot",
+            "surface": null,
+            "result": "ready",
+            "http_status": null,
+            "quota": null
+          },
+          {
+            "kind": "provider_inventory",
+            "provider": "openrouter",
+            "surface": null,
+            "result": "ready",
+            "http_status": null,
+            "quota": null
+          },
+          {
+            "kind": "probe",
+            "provider": "openrouter",
+            "surface": "GET /api/v1/key",
+            "result": "OBSERVED",
+            "http_status": 200,
+            "quota": {
+              "status": "UNKNOWN",
+              "unit": null,
+              "capacity": null,
+              "used": null,
+              "remaining": null,
+              "reset_at": null,
+              "observed_at": null,
+              "source": null,
+              "confidence": "UNKNOWN",
+              "watermark": "UNKNOWN",
+              "scope": null,
+              "effective_window_id": null,
+              "windows": [
+                {
+                  "window_id": "key",
+                  "unit": "USD",
+                  "capacity": null,
+                  "used": 0,
+                  "remaining": null,
+                  "reset_at": null,
+                  "status": "UNKNOWN",
+                  "observed_at": 1787971376538,
+                  "source": "openrouter/GET /api/v1/key",
+                  "confidence": "OBSERVED",
+                  "watermark": "UNKNOWN",
+                  "scope": {
+                    "model": null,
+                    "window": "key"
+                  }
+                },
+                {
+                  "window_id": "daily",
+                  "unit": "USD",
+                  "capacity": null,
+                  "used": 0,
+                  "remaining": null,
+                  "reset_at": null,
+                  "status": "UNKNOWN",
+                  "observed_at": 1787971376538,
+                  "source": "openrouter/GET /api/v1/key",
+                  "confidence": "OBSERVED",
+                  "watermark": "UNKNOWN",
+                  "scope": {
+                    "model": null,
+                    "window": "daily"
+                  }
+                },
+                {
+                  "window_id": "weekly",
+                  "unit": "USD",
+                  "capacity": null,
+                  "used": 0,
+                  "remaining": null,
+                  "reset_at": null,
+                  "status": "UNKNOWN",
+                  "observed_at": 1787971376538,
+                  "source": "openrouter/GET /api/v1/key",
+                  "confidence": "OBSERVED",
+                  "watermark": "UNKNOWN",
+                  "scope": {
+                    "model": null,
+                    "window": "weekly"
+                  }
+                },
+                {
+                  "window_id": "monthly",
+                  "unit": "USD",
+                  "capacity": null,
+                  "used": 0,
+                  "remaining": null,
+                  "reset_at": null,
+                  "status": "UNKNOWN",
+                  "observed_at": 1787971376538,
+                  "source": "openrouter/GET /api/v1/key",
+                  "confidence": "OBSERVED",
+                  "watermark": "UNKNOWN",
+                  "scope": {
+                    "model": null,
+                    "window": "monthly"
+                  }
+                }
+              ],
+              "provenance": {
+                "provider": "openrouter",
+                "surface": "GET /api/v1/key",
+                "availability": "OBSERVED",
+                "observation_mechanism": "provider-owned read-only adapter",
+                "observed_at": 1787971376538,
+                "raw_source_hash": "619373d4a5e71baeda86a03970a5f8a58a05e3b76581c7e12266e01173189e14",
+                "parser_version": "remote-quota-observation-1",
+                "model_scope": null,
+                "window_count": 4
+              }
+            }
+          },
+          {
+            "kind": "probe",
+            "provider": "github-copilot",
+            "surface": "GET /users/{user}/settings/billing/usage",
+            "result": "AUTH_INSUFFICIENT",
+            "http_status": 404,
+            "quota": null
+          },
+          {
+            "kind": "probe",
+            "provider": "openai-codex",
+            "surface": "interactive /status",
+            "result": "PARSE_UNSUPPORTED",
+            "http_status": null,
+            "quota": null
+          },
+          {
+            "kind": "probe",
+            "provider": "opencode-go",
+            "surface": "native allowance status",
+            "result": "NOT_EXPOSED",
+            "http_status": null,
+            "quota": null
+          }
+        ]
+      },
+      "cache": null
+    },
+    "performance": {
+      "latency_ms": 208910,
+      "compiled_context_bytes": 4105
+    },
+    "quality": {
+      "validation": "FAIL",
+      "accepted": false,
+      "repairs": 1,
+      "escalations": 0,
+      "final_outcome": "REJECTED",
+      "accepted_artifact_hash": null
+    },
+    "slop": {
+      "duplicate_calls": null,
+      "unnecessary_retries": null,
+      "validation_failures": 1
+    },
+    "model_calls": 1,
+    "observation_confidence": "OBSERVED",
+    "provenance": {
+      "source": "KAD swarm controller response metadata",
+      "usage_source": "controller telemetry",
+      "provider_metadata_observed": true
+    }
+  },
+  "receipt_hash": "593609c3351d61b6a41626954ffad4ea55aea63968eef56bc9fd05fa0bb24d1e",
+  "episode": {
+    "episode_id": "episode-TOKENMAX-LIVE-001",
+    "schema_version": "1",
+    "causation": {
+      "event_id": "event-TOKENMAX-LIVE-001",
+      "parent_event_id": null,
+      "pon_event": "work.requested"
+    },
+    "task": {
+      "task_id": "TOKENMAX-LIVE-001",
+      "domain": "RETRIEVAL",
+      "task_class": "repository-fact-finding",
+      "objective": "Identify the exact current repository evidence establishing the eligibility trust-domain rule, the advertised trust domains of Qwen retrieval and Stheno WORLD, and whether WORLD can satisfy this RETRIEVAL requirement. Return only bounded evidence-backed facts; do not infer beyond the supplied sources.",
+      "trust_domain": "retrieval"
+    },
+    "state": {
+      "available_capabilities": [
+        "controller",
+        "repository-fact-finding"
+      ],
+      "unavailable_capabilities": [],
+      "scope": "task",
+      "host_state_refs": []
+    },
+    "context": {
+      "available_refs": [
+        "tools/kad/local-router.mjs",
+        "tools/kad/pi/local-models.json",
+        ".omp/models.yml"
+      ],
+      "selected_refs": [
+        "tools/kad/local-router.mjs",
+        "tools/kad/pi/local-models.json",
+        ".omp/models.yml"
+      ],
+      "selected_bytes": 4105,
+      "selected_tokens": null,
+      "provenance": [
+        {
+          "path": "tools/kad/local-router.mjs",
+          "sha256": "04a2aa064f4d2c486735d39106091939ef7e72cd7c17f8476e0eec371bb04491"
+        },
+        {
+          "path": "tools/kad/pi/local-models.json",
+          "sha256": "74366591a844abf573ce4af69f2074f89ca27135b1620c942ee5056962cbf72e"
+        },
+        {
+          "path": ".omp/models.yml",
+          "sha256": "2b35cae76be36676652cd9e668dac732eb708c0b42ace0be124e44e54af5871e"
+        }
+      ]
+    },
+    "decision": {
+      "actor_role": "CAPABILITY_ROUTER",
+      "required_capability": "repository-fact-finding",
+      "selected_resource": "kad-local-retrieval-amdy",
+      "reason_code": "LOCAL_SPECIALIST_SUPPORTED",
+      "confidence": null
+    },
+    "resolution": {
+      "deterministic_capability_available": false,
+      "deterministic_capability_considered": true,
+      "selected_execution_class": "LOCAL_SPECIALIST",
+      "capability_id": "kad-local-retrieval-amdy",
+      "model_avoided": false,
+      "new_tool_created": false,
+      "reason_code": "LOCAL_SPECIALIST_SUPPORTED"
+    },
+    "trajectory": [
+      {
+        "type": "work.requested",
+        "task_id": "TOKENMAX-LIVE-001"
+      },
+      {
+        "type": "requirement.classified",
+        "task_id": "TOKENMAX-LIVE-001",
+        "role": "local_retrieval",
+        "trust_domain": "retrieval",
+        "capability": "repository-fact-finding"
+      },
+      {
+        "type": "route.selected",
+        "task_id": "TOKENMAX-LIVE-001",
+        "role": "controller",
+        "lane": "approved-remote-controller"
+      },
+      {
+        "type": "controller.completed",
+        "task_id": "TOKENMAX-LIVE-001",
+        "lane": "approved-remote-controller",
+        "plan": {
+          "capability": "repository-fact-finding",
+          "source_paths": [
+            "tools/kad/local-router.mjs",
+            "tools/kad/pi/local-models.json",
+            ".omp/models.yml"
+          ],
+          "question": "Inspect only the supplied source paths to identify bounded, exact repository evidence for the eligibility trust-domain rule, the advertised trust domains of Qwen retrieval and Stheno WORLD, and whether WORLD can satisfy the RETRIEVAL requirement. Return no inferred conclusions beyond source-backed facts.",
+          "max_facts": 4
+        }
+      },
+      {
+        "type": "capability.requested",
+        "task_id": "TOKENMAX-LIVE-001",
+        "capability": "repository-fact-finding",
+        "trust_domain": "retrieval"
+      },
+      {
+        "type": "worker.started",
+        "task_id": "TOKENMAX-LIVE-001",
+        "resource_id": "kad-local-retrieval-amdy"
+      },
+      {
+        "type": "repair.requested",
+        "task_id": "TOKENMAX-LIVE-001",
+        "reason": "deterministic-validation-failed",
+        "bounded_to": 1
+      },
+      {
+        "type": "worker.completed",
+        "task_id": "TOKENMAX-LIVE-001",
+        "resource_id": "kad-local-retrieval-amdy",
+        "validation": "FAIL"
+      },
+      {
+        "type": "validation.failed",
+        "task_id": "TOKENMAX-LIVE-001",
+        "validator": "schema-source-evidence-validator",
+        "errors": [
+          "output is not a JSON object",
+          "task_id mismatch",
+          "required arrays are missing"
+        ]
+      },
+      {
+        "type": "result.rejected",
+        "task_id": "TOKENMAX-LIVE-001",
+        "status": "DEGRADED"
+      }
+    ],
+    "validation": {
+      "validator": "schema-source-evidence-validator",
+      "result": "FAIL",
+      "tests": [
+        "output is not a JSON object",
+        "task_id mismatch",
+        "required arrays are missing"
+      ],
+      "postconditions": []
+    },
+    "outcome": {
+      "accepted": false,
+      "remote_escalation": false,
+      "human_correction": false
+    },
+    "economics": {
+      "local_input_tokens": 1856,
+      "local_output_tokens": 192,
+      "remote_input_tokens": 550,
+      "remote_output_tokens": 159,
+      "wall_ms": 208910,
+      "tool_calls": 1,
+      "economic_receipt": {
+        "schema_version": "kad-economic-1",
+        "task_id": "TOKENMAX-LIVE-001",
+        "episode_id": "episode-TOKENMAX-LIVE-001",
+        "equivalence_key": "retrieval/repository-fact-finding",
+        "semantic_role": "controller",
+        "provider": "openai-codex",
+        "model": "gpt-5.6-luna",
+        "execution_class": "REMOTE_SUBSCRIPTION",
+        "trust_domain": "retrieval",
+        "capability": "repository-fact-finding",
+        "usage": {
+          "input_tokens": 550,
+          "cached_input_tokens": null,
+          "output_tokens": 159,
+          "reasoning_tokens": null,
+          "total_tokens": 709
+        },
+        "economics": {
+          "provider_reported_cost": null,
+          "cost_unit": null,
+          "cost_provenance": null,
+          "billing_class": "SUBSCRIPTION_BACKED",
+          "quota_snapshot_id": "b830f3e556cc100c02f839ab869b4e3536dc94ab00345b61f9628f0f74c2cf70",
+          "quota_state": {
+            "schema_version": "kad-quota-snapshot-1",
+            "captured_at": "2026-08-29T02:42:59.094Z",
+            "mechanism": "bounded run-remote-quota-probe.mjs; no refresh",
+            "selected_controller": {
+              "provider": "openai-codex",
+              "surface": "interactive /status",
+              "result": "PARSE_UNSUPPORTED",
+              "observed_quota": null,
+              "normalized_allowance": {
+                "status": "UNKNOWN",
+                "unit": null,
+                "capacity": null,
+                "used": null,
+                "remaining": null,
+                "reset_at": null,
+                "observed_at": null,
+                "source": null,
+                "confidence": "UNKNOWN",
+                "watermark": "UNKNOWN",
+                "scope": null,
+                "effective_window_id": null,
+                "windows": [
+                  {
+                    "window_id": "unavailable",
+                    "unit": null,
+                    "capacity": null,
+                    "used": null,
+                    "remaining": null,
+                    "reset_at": null,
+                    "status": "UNKNOWN",
+                    "observed_at": 1787971379094,
+                    "source": null,
+                    "confidence": "UNKNOWN",
+                    "watermark": "UNKNOWN",
+                    "scope": null
+                  }
+                ]
+              },
+              "provenance": {
+                "provider": "openai-codex",
+                "surface": "interactive /status",
+                "availability": "PROBE_UNAVAILABLE",
+                "status": null,
+                "error_class": null,
+                "parser_version": "remote-quota-observation-1",
+                "observed_at": 1787971379094
+              }
+            },
+            "provider_records": [
+              {
+                "kind": "provider_inventory",
+                "provider": "openai-codex",
+                "surface": null,
+                "result": "ready",
+                "http_status": null,
+                "quota": null
+              },
+              {
+                "kind": "provider_inventory",
+                "provider": "opencode-go",
+                "surface": null,
+                "result": "ready",
+                "http_status": null,
+                "quota": null
+              },
+              {
+                "kind": "provider_inventory",
+                "provider": "github-copilot",
+                "surface": null,
+                "result": "ready",
+                "http_status": null,
+                "quota": null
+              },
+              {
+                "kind": "provider_inventory",
+                "provider": "openrouter",
+                "surface": null,
+                "result": "ready",
+                "http_status": null,
+                "quota": null
+              },
+              {
+                "kind": "probe",
+                "provider": "openrouter",
+                "surface": "GET /api/v1/key",
+                "result": "OBSERVED",
+                "http_status": 200,
+                "quota": {
+                  "status": "UNKNOWN",
+                  "unit": null,
+                  "capacity": null,
+                  "used": null,
+                  "remaining": null,
+                  "reset_at": null,
+                  "observed_at": null,
+                  "source": null,
+                  "confidence": "UNKNOWN",
+                  "watermark": "UNKNOWN",
+                  "scope": null,
+                  "effective_window_id": null,
+                  "windows": [
+                    {
+                      "window_id": "key",
+                      "unit": "USD",
+                      "capacity": null,
+                      "used": 0,
+                      "remaining": null,
+                      "reset_at": null,
+                      "status": "UNKNOWN",
+                      "observed_at": 1787971376538,
+                      "source": "openrouter/GET /api/v1/key",
+                      "confidence": "OBSERVED",
+                      "watermark": "UNKNOWN",
+                      "scope": {
+                        "model": null,
+                        "window": "key"
+                      }
+                    },
+                    {
+                      "window_id": "daily",
+                      "unit": "USD",
+                      "capacity": null,
+                      "used": 0,
+                      "remaining": null,
+                      "reset_at": null,
+                      "status": "UNKNOWN",
+                      "observed_at": 1787971376538,
+                      "source": "openrouter/GET /api/v1/key",
+                      "confidence": "OBSERVED",
+                      "watermark": "UNKNOWN",
+                      "scope": {
+                        "model": null,
+                        "window": "daily"
+                      }
+                    },
+                    {
+                      "window_id": "weekly",
+                      "unit": "USD",
+                      "capacity": null,
+                      "used": 0,
+                      "remaining": null,
+                      "reset_at": null,
+                      "status": "UNKNOWN",
+                      "observed_at": 1787971376538,
+                      "source": "openrouter/GET /api/v1/key",
+                      "confidence": "OBSERVED",
+                      "watermark": "UNKNOWN",
+                      "scope": {
+                        "model": null,
+                        "window": "weekly"
+                      }
+                    },
+                    {
+                      "window_id": "monthly",
+                      "unit": "USD",
+                      "capacity": null,
+                      "used": 0,
+                      "remaining": null,
+                      "reset_at": null,
+                      "status": "UNKNOWN",
+                      "observed_at": 1787971376538,
+                      "source": "openrouter/GET /api/v1/key",
+                      "confidence": "OBSERVED",
+                      "watermark": "UNKNOWN",
+                      "scope": {
+                        "model": null,
+                        "window": "monthly"
+                      }
+                    }
+                  ],
+                  "provenance": {
+                    "provider": "openrouter",
+                    "surface": "GET /api/v1/key",
+                    "availability": "OBSERVED",
+                    "observation_mechanism": "provider-owned read-only adapter",
+                    "observed_at": 1787971376538,
+                    "raw_source_hash": "619373d4a5e71baeda86a03970a5f8a58a05e3b76581c7e12266e01173189e14",
+                    "parser_version": "remote-quota-observation-1",
+                    "model_scope": null,
+                    "window_count": 4
+                  }
+                }
+              },
+              {
+                "kind": "probe",
+                "provider": "github-copilot",
+                "surface": "GET /users/{user}/settings/billing/usage",
+                "result": "AUTH_INSUFFICIENT",
+                "http_status": 404,
+                "quota": null
+              },
+              {
+                "kind": "probe",
+                "provider": "openai-codex",
+                "surface": "interactive /status",
+                "result": "PARSE_UNSUPPORTED",
+                "http_status": null,
+                "quota": null
+              },
+              {
+                "kind": "probe",
+                "provider": "opencode-go",
+                "surface": "native allowance status",
+                "result": "NOT_EXPOSED",
+                "http_status": null,
+                "quota": null
+              }
+            ]
+          },
+          "cache": null
+        },
+        "performance": {
+          "latency_ms": 208910,
+          "compiled_context_bytes": 4105
+        },
+        "quality": {
+          "validation": "FAIL",
+          "accepted": false,
+          "repairs": 1,
+          "escalations": 0,
+          "final_outcome": "REJECTED",
+          "accepted_artifact_hash": null
+        },
+        "slop": {
+          "duplicate_calls": null,
+          "unnecessary_retries": null,
+          "validation_failures": 1
+        },
+        "model_calls": 1,
+        "observation_confidence": "OBSERVED",
+        "provenance": {
+          "source": "KAD swarm controller response metadata",
+          "usage_source": "controller telemetry",
+          "provider_metadata_observed": true
+        }
+      },
+      "quota_snapshot_id": "b830f3e556cc100c02f839ab869b4e3536dc94ab00345b61f9628f0f74c2cf70",
+      "latency_ms": 208910
+    },
+    "slop": {
+      "duplicate_reads": 0,
+      "redundant_tool_calls": 0,
+      "blind_retries": 0,
+      "invalid_structured_outputs": 0,
+      "unused_worker_outputs": 0,
+      "unsupported_claims": 0,
+      "violations": []
+    },
+    "teacher": {
+      "used": true,
+      "provider": "openai-codex",
+      "model": "gpt-5.6-luna",
+      "version": null,
+      "supervision_artifact": null
+    },
+    "ancestry": {
+      "origin": "REAL_SYSTEM_OBSERVATION",
+      "generation_depth": 0,
+      "parents": []
+    },
+    "training_eligibility": {
+      "eligible": false,
+      "rights_status": "UNKNOWN",
+      "quality_status": "UNREVIEWED",
+      "reason": "runtime-episode-only"
+    },
+    "teacher_interest": "NONE",
+    "evidence_refs": [
+      "tools/kad/local-router.mjs#04a2aa064f4d2c486735d39106091939ef7e72cd7c17f8476e0eec371bb04491",
+      "tools/kad/pi/local-models.json#74366591a844abf573ce4af69f2074f89ca27135b1620c942ee5056962cbf72e",
+      ".omp/models.yml#2b35cae76be36676652cd9e668dac732eb708c0b42ace0be124e44e54af5871e"
+    ]
+  },
+  "episode_hash": "606cce0bb5df0317976bbd4b5f4140dd79fe99fb31a94fbac550999d14ff2ad0",
+  "telemetry": {
+    "controller_invocations": 1,
+    "remote_lane": {
+      "role": "controller",
+      "id": "approved-remote-controller",
+      "provider": "openai-codex",
+      "model": "gpt-5.6-luna",
+      "execution_class": "REMOTE_SUBSCRIPTION",
+      "billing_class": "SUBSCRIPTION_BACKED",
+      "quota_snapshot": {
+        "schema_version": "kad-quota-snapshot-1",
+        "captured_at": "2026-08-29T02:42:59.094Z",
+        "mechanism": "bounded run-remote-quota-probe.mjs; no refresh",
+        "selected_controller": {
+          "provider": "openai-codex",
+          "surface": "interactive /status",
+          "result": "PARSE_UNSUPPORTED",
+          "observed_quota": null,
+          "normalized_allowance": {
+            "status": "UNKNOWN",
+            "unit": null,
+            "capacity": null,
+            "used": null,
+            "remaining": null,
+            "reset_at": null,
+            "observed_at": null,
+            "source": null,
+            "confidence": "UNKNOWN",
+            "watermark": "UNKNOWN",
+            "scope": null,
+            "effective_window_id": null,
+            "windows": [
+              {
+                "window_id": "unavailable",
+                "unit": null,
+                "capacity": null,
+                "used": null,
+                "remaining": null,
+                "reset_at": null,
+                "status": "UNKNOWN",
+                "observed_at": 1787971379094,
+                "source": null,
+                "confidence": "UNKNOWN",
+                "watermark": "UNKNOWN",
+                "scope": null
+              }
+            ]
+          },
+          "provenance": {
+            "provider": "openai-codex",
+            "surface": "interactive /status",
+            "availability": "PROBE_UNAVAILABLE",
+            "status": null,
+            "error_class": null,
+            "parser_version": "remote-quota-observation-1",
+            "observed_at": 1787971379094
+          }
+        },
+        "provider_records": [
+          {
+            "kind": "provider_inventory",
+            "provider": "openai-codex",
+            "surface": null,
+            "result": "ready",
+            "http_status": null,
+            "quota": null
+          },
+          {
+            "kind": "provider_inventory",
+            "provider": "opencode-go",
+            "surface": null,
+            "result": "ready",
+            "http_status": null,
+            "quota": null
+          },
+          {
+            "kind": "provider_inventory",
+            "provider": "github-copilot",
+            "surface": null,
+            "result": "ready",
+            "http_status": null,
+            "quota": null
+          },
+          {
+            "kind": "provider_inventory",
+            "provider": "openrouter",
+            "surface": null,
+            "result": "ready",
+            "http_status": null,
+            "quota": null
+          },
+          {
+            "kind": "probe",
+            "provider": "openrouter",
+            "surface": "GET /api/v1/key",
+            "result": "OBSERVED",
+            "http_status": 200,
+            "quota": {
+              "status": "UNKNOWN",
+              "unit": null,
+              "capacity": null,
+              "used": null,
+              "remaining": null,
+              "reset_at": null,
+              "observed_at": null,
+              "source": null,
+              "confidence": "UNKNOWN",
+              "watermark": "UNKNOWN",
+              "scope": null,
+              "effective_window_id": null,
+              "windows": [
+                {
+                  "window_id": "key",
+                  "unit": "USD",
+                  "capacity": null,
+                  "used": 0,
+                  "remaining": null,
+                  "reset_at": null,
+                  "status": "UNKNOWN",
+                  "observed_at": 1787971376538,
+                  "source": "openrouter/GET /api/v1/key",
+                  "confidence": "OBSERVED",
+                  "watermark": "UNKNOWN",
+                  "scope": {
+                    "model": null,
+                    "window": "key"
+                  }
+                },
+                {
+                  "window_id": "daily",
+                  "unit": "USD",
+                  "capacity": null,
+                  "used": 0,
+                  "remaining": null,
+                  "reset_at": null,
+                  "status": "UNKNOWN",
+                  "observed_at": 1787971376538,
+                  "source": "openrouter/GET /api/v1/key",
+                  "confidence": "OBSERVED",
+                  "watermark": "UNKNOWN",
+                  "scope": {
+                    "model": null,
+                    "window": "daily"
+                  }
+                },
+                {
+                  "window_id": "weekly",
+                  "unit": "USD",
+                  "capacity": null,
+                  "used": 0,
+                  "remaining": null,
+                  "reset_at": null,
+                  "status": "UNKNOWN",
+                  "observed_at": 1787971376538,
+                  "source": "openrouter/GET /api/v1/key",
+                  "confidence": "OBSERVED",
+                  "watermark": "UNKNOWN",
+                  "scope": {
+                    "model": null,
+                    "window": "weekly"
+                  }
+                },
+                {
+                  "window_id": "monthly",
+                  "unit": "USD",
+                  "capacity": null,
+                  "used": 0,
+                  "remaining": null,
+                  "reset_at": null,
+                  "status": "UNKNOWN",
+                  "observed_at": 1787971376538,
+                  "source": "openrouter/GET /api/v1/key",
+                  "confidence": "OBSERVED",
+                  "watermark": "UNKNOWN",
+                  "scope": {
+                    "model": null,
+                    "window": "monthly"
+                  }
+                }
+              ],
+              "provenance": {
+                "provider": "openrouter",
+                "surface": "GET /api/v1/key",
+                "availability": "OBSERVED",
+                "observation_mechanism": "provider-owned read-only adapter",
+                "observed_at": 1787971376538,
+                "raw_source_hash": "619373d4a5e71baeda86a03970a5f8a58a05e3b76581c7e12266e01173189e14",
+                "parser_version": "remote-quota-observation-1",
+                "model_scope": null,
+                "window_count": 4
+              }
+            }
+          },
+          {
+            "kind": "probe",
+            "provider": "github-copilot",
+            "surface": "GET /users/{user}/settings/billing/usage",
+            "result": "AUTH_INSUFFICIENT",
+            "http_status": 404,
+            "quota": null
+          },
+          {
+            "kind": "probe",
+            "provider": "openai-codex",
+            "surface": "interactive /status",
+            "result": "PARSE_UNSUPPORTED",
+            "http_status": null,
+            "quota": null
+          },
+          {
+            "kind": "probe",
+            "provider": "opencode-go",
+            "surface": "native allowance status",
+            "result": "NOT_EXPOSED",
+            "http_status": null,
+            "quota": null
+          }
+        ]
+      },
+      "quota_state": null
+    },
+    "remote_input_tokens": 550,
+    "remote_cached_input_tokens": null,
+    "remote_output_tokens": 159,
+    "remote_reasoning_tokens": null,
+    "remote_provider_reported_cost": null,
+    "remote_cache": null,
+    "remote_cost": {
+      "input": 0.00011,
+      "output": 0.0001908,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0.0003008
+    },
+    "local_invocations": 2,
+    "deterministic_tool_invocations": 1,
+    "repairs": 1,
+    "escalations": 0,
+    "accepted": false,
+    "latency_ms": 208910,
+    "context_bytes": 4105,
+    "failure_reason": null,
+    "route": {
+      "status": "ROUTED",
+      "selected_lane": {
+        "role": "controller",
+        "id": "approved-remote-controller",
+        "provider": "openai-codex",
+        "model": "gpt-5.6-luna",
+        "execution_class": "REMOTE_SUBSCRIPTION",
+        "billing_class": "SUBSCRIPTION_BACKED",
+        "quota_snapshot": {
+          "schema_version": "kad-quota-snapshot-1",
+          "captured_at": "2026-08-29T02:42:59.094Z",
+          "mechanism": "bounded run-remote-quota-probe.mjs; no refresh",
+          "selected_controller": {
+            "provider": "openai-codex",
+            "surface": "interactive /status",
+            "result": "PARSE_UNSUPPORTED",
+            "observed_quota": null,
+            "normalized_allowance": {
+              "status": "UNKNOWN",
+              "unit": null,
+              "capacity": null,
+              "used": null,
+              "remaining": null,
+              "reset_at": null,
+              "observed_at": null,
+              "source": null,
+              "confidence": "UNKNOWN",
+              "watermark": "UNKNOWN",
+              "scope": null,
+              "effective_window_id": null,
+              "windows": [
+                {
+                  "window_id": "unavailable",
+                  "unit": null,
+                  "capacity": null,
+                  "used": null,
+                  "remaining": null,
+                  "reset_at": null,
+                  "status": "UNKNOWN",
+                  "observed_at": 1787971379094,
+                  "source": null,
+                  "confidence": "UNKNOWN",
+                  "watermark": "UNKNOWN",
+                  "scope": null
+                }
+              ]
+            },
+            "provenance": {
+              "provider": "openai-codex",
+              "surface": "interactive /status",
+              "availability": "PROBE_UNAVAILABLE",
+              "status": null,
+              "error_class": null,
+              "parser_version": "remote-quota-observation-1",
+              "observed_at": 1787971379094
+            }
+          },
+          "provider_records": [
+            {
+              "kind": "provider_inventory",
+              "provider": "openai-codex",
+              "surface": null,
+              "result": "ready",
+              "http_status": null,
+              "quota": null
+            },
+            {
+              "kind": "provider_inventory",
+              "provider": "opencode-go",
+              "surface": null,
+              "result": "ready",
+              "http_status": null,
+              "quota": null
+            },
+            {
+              "kind": "provider_inventory",
+              "provider": "github-copilot",
+              "surface": null,
+              "result": "ready",
+              "http_status": null,
+              "quota": null
+            },
+            {
+              "kind": "provider_inventory",
+              "provider": "openrouter",
+              "surface": null,
+              "result": "ready",
+              "http_status": null,
+              "quota": null
+            },
+            {
+              "kind": "probe",
+              "provider": "openrouter",
+              "surface": "GET /api/v1/key",
+              "result": "OBSERVED",
+              "http_status": 200,
+              "quota": {
+                "status": "UNKNOWN",
+                "unit": null,
+                "capacity": null,
+                "used": null,
+                "remaining": null,
+                "reset_at": null,
+                "observed_at": null,
+                "source": null,
+                "confidence": "UNKNOWN",
+                "watermark": "UNKNOWN",
+                "scope": null,
+                "effective_window_id": null,
+                "windows": [
+                  {
+                    "window_id": "key",
+                    "unit": "USD",
+                    "capacity": null,
+                    "used": 0,
+                    "remaining": null,
+                    "reset_at": null,
+                    "status": "UNKNOWN",
+                    "observed_at": 1787971376538,
+                    "source": "openrouter/GET /api/v1/key",
+                    "confidence": "OBSERVED",
+                    "watermark": "UNKNOWN",
+                    "scope": {
+                      "model": null,
+                      "window": "key"
+                    }
+                  },
+                  {
+                    "window_id": "daily",
+                    "unit": "USD",
+                    "capacity": null,
+                    "used": 0,
+                    "remaining": null,
+                    "reset_at": null,
+                    "status": "UNKNOWN",
+                    "observed_at": 1787971376538,
+                    "source": "openrouter/GET /api/v1/key",
+                    "confidence": "OBSERVED",
+                    "watermark": "UNKNOWN",
+                    "scope": {
+                      "model": null,
+                      "window": "daily"
+                    }
+                  },
+                  {
+                    "window_id": "weekly",
+                    "unit": "USD",
+                    "capacity": null,
+                    "used": 0,
+                    "remaining": null,
+                    "reset_at": null,
+                    "status": "UNKNOWN",
+                    "observed_at": 1787971376538,
+                    "source": "openrouter/GET /api/v1/key",
+                    "confidence": "OBSERVED",
+                    "watermark": "UNKNOWN",
+                    "scope": {
+                      "model": null,
+                      "window": "weekly"
+                    }
+                  },
+                  {
+                    "window_id": "monthly",
+                    "unit": "USD",
+                    "capacity": null,
+                    "used": 0,
+                    "remaining": null,
+                    "reset_at": null,
+                    "status": "UNKNOWN",
+                    "observed_at": 1787971376538,
+                    "source": "openrouter/GET /api/v1/key",
+                    "confidence": "OBSERVED",
+                    "watermark": "UNKNOWN",
+                    "scope": {
+                      "model": null,
+                      "window": "monthly"
+                    }
+                  }
+                ],
+                "provenance": {
+                  "provider": "openrouter",
+                  "surface": "GET /api/v1/key",
+                  "availability": "OBSERVED",
+                  "observation_mechanism": "provider-owned read-only adapter",
+                  "observed_at": 1787971376538,
+                  "raw_source_hash": "619373d4a5e71baeda86a03970a5f8a58a05e3b76581c7e12266e01173189e14",
+                  "parser_version": "remote-quota-observation-1",
+                  "model_scope": null,
+                  "window_count": 4
+                }
+              }
+            },
+            {
+              "kind": "probe",
+              "provider": "github-copilot",
+              "surface": "GET /users/{user}/settings/billing/usage",
+              "result": "AUTH_INSUFFICIENT",
+              "http_status": 404,
+              "quota": null
+            },
+            {
+              "kind": "probe",
+              "provider": "openai-codex",
+              "surface": "interactive /status",
+              "result": "PARSE_UNSUPPORTED",
+              "http_status": null,
+              "quota": null
+            },
+            {
+              "kind": "probe",
+              "provider": "opencode-go",
+              "surface": "native allowance status",
+              "result": "NOT_EXPOSED",
+              "http_status": null,
+              "quota": null
+            }
+          ]
+        },
+        "quota_state": null
+      },
+      "candidates": [
+        "approved-remote-controller"
+      ],
+      "reason_codes": [
+        "APPROVED",
+        "NON_PAYG",
+        "SUBSCRIPTION_BACKED",
+        "CAPABILITY_SUFFICIENT"
+      ]
+    },
+    "local_input_tokens": 1856,
+    "local_output_tokens": 192
+  }
+}

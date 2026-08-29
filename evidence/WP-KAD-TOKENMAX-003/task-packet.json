@@ -1,0 +1,46 @@
+{
+  "task_id": "TOKENMAX-LIVE-001",
+  "role": "local_retrieval",
+  "capability": "repository-fact-finding",
+  "trust_domain": "retrieval",
+  "sources": [
+    {
+      "path": "tools/kad/local-router.mjs",
+      "sha256": "04a2aa064f4d2c486735d39106091939ef7e72cd7c17f8476e0eec371bb04491",
+      "excerpt": "/** Explainable local-first capability router. No model/provider identity is required by policy. */\nexport class CapabilityRegistry {\n  #resources = new Map();\n  #observations = [];\n\n  register(resource) {\n    if (!resource?.id || !resource.capabilities?.length) throw new Error('resource id and capabilities are required');\n    this.#resources.set(resource.id, { ...resource, available: resource.available !== false });\n  }\n\n  setAvailability(id, available, reason = 'observed state change') {\n    const resource = this.#resources.get(id);\n    if (!resource) return false;\n    resource.available = Boolean(available);\n    resource.availability_reason = reason;\n    return true;\n  }\n\n  eligible(requirement) {\n    return [...this.#resources.values()].filter(resource => resource.available &&\n      requirement.trust_domain === resource.trust_domain &&\n      (requirement.capabilities ?? []).every(capability => resource.capabilities.includes(capability)) &&\n      (requirement.min_context ?? 0) <= (resource.context_window ?? 0));\n  }\n\n  choose(requirement) {\n    const candidates = this.eligible(requirement);\n    if (!candidates.length) return { status: 'DEGRADED', reason: 'no eligible capability', candidates: [] };\n    candidates.sort((a, b) => {\n      if (Boolean(a.deterministic) !== Boolean(b.deterministic)) return a.deterministic ? -1 : 1;\n      if (Boolean(a.local) !== Boolean(b.local)) return a.local ? -1 : 1;\n      return (a.priority ?? 0) - (b.priority ?? 0);\n    });\n    const selected = candidates[0];\n    return { status: 'ROUTED', selected: selected.id, candidates: candidates.map(({ id }) => id) };\n  }\n\n  observe(observation) {\n    if (!observation?.resource_id || typeof observation.accepted !== 'boolean') throw new Error('observation requires resource_id and accepted');\n    this.#observations.push(Object.freeze({ ...observation, recorded_at: observation.recorded_at ?? new Date().toISOString() }));\n  }\n\n  observations() { return [...this.#observations]; }\n  snapshot() { return [...this.#resources.values()].map(resource => ({ ...resource })); }\n}\n"
+    },
+    {
+      "path": "tools/kad/pi/local-models.json",
+      "sha256": "74366591a844abf573ce4af69f2074f89ca27135b1620c942ee5056962cbf72e",
+      "excerpt": "{\n  \"providers\": {\n    \"kad-local-world\": {\n      \"name\": \"KAD external WORLD inference (Stheno)\",\n      \"baseUrl\": \"http://127.0.0.1:5001/v1\",\n      \"api\": \"openai-completions\",\n      \"apiKey\": \"local-no-secret\",\n      \"authHeader\": false,\n      \"models\": [{\"id\":\"stheno-local\",\"name\":\"L3-8B-Stheno-v3.2-Q4_K_M\",\"reasoning\":false,\"input\":[\"text\"],\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0},\"contextWindow\":2048,\"maxTokens\":128,\"compat\":{\"supportsStore\":false,\"supportsDeveloperRole\":false,\"supportsTemperature\":true}}]\n    },\n    \"kad-local-qwen\": {\n      \"name\": \"KAD STC-owned retrieval inference (Qwen)\",\n      \"baseUrl\": \"http://127.0.0.1:5002/v1\",\n      \"api\": \"openai-completions\",\n      \"apiKey\": \"local-no-secret\",\n      \"authHeader\": false,\n      \"models\": [{\"id\":\"qwen-local\",\"name\":\"Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M\",\"reasoning\":true,\"input\":[\"text\"],\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0},\"contextWindow\":2048,\"maxTokens\":192,\"samplingParams\":{\"reasoning_effort\":\"none\",\"max_tokens\":192},\"compat\":{\"supportsStore\":false,\"supportsDeveloperRole\":false,\"supportsTemperature\":true,\"maxTokensField\":\"max_tokens\",\"thinkingFormat\":\"qwen\",\"supportsReasoningEffort\":true}}]\n    }\n  }\n}\n"
+    },
+    {
+      "path": ".omp/models.yml",
+      "sha256": "2b35cae76be36676652cd9e668dac732eb708c0b42ace0be124e44e54af5871e",
+      "excerpt": "# Source-of-truth project declaration for the wrapper-linked Work-local OMP model config.\n# No credential is stored here. The endpoint is KAD STC-owned and localhost-only.\nproviders:\n  kad-local-world:\n    baseUrl: http://127.0.0.1:5001/v1\n    api: openai-completions\n    auth: none\n    models:\n      - id: kad-local-s13\n        name: Stheno v3.2 (KAD WORLD-only)\n        identityContains: L3-8B-Stheno-v3.2-Q4_K_M\n        contextWindow: 4096\n  kad-local-qwen:\n    baseUrl: http://127.0.0.1:5002/v1\n    api: openai-completions\n    auth: none\n    models:\n      - id: qwen-local\n        name: Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M (KAD retrieval-only)\n        identityContains: Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M\n        contextWindow: 4096\n        maxTokens: 256\n"
+    }
+  ],
+  "question": "Inspect only the supplied source paths to identify bounded, exact repository evidence for the eligibility trust-domain rule, the advertised trust domains of Qwen retrieval and Stheno WORLD, and whether WORLD can satisfy the RETRIEVAL requirement. Return no inferred conclusions beyond source-backed facts.",
+  "output_schema": {
+    "task_id": "string",
+    "facts": "array",
+    "unknowns": "array",
+    "conflicts": "array"
+  },
+  "limits": {
+    "max_facts": 4,
+    "allowed_source_paths": [
+      "tools/kad/local-router.mjs",
+      "tools/kad/pi/local-models.json",
+      ".omp/models.yml"
+    ]
+  },
+  "budget": {
+    "max_input_tokens": 4096,
+    "max_output_tokens": 512,
+    "max_model_calls": 1,
+    "max_repairs": 1,
+    "deadline_ms": 240000
+  },
+  "packet_sha256": "91e0384bf7e54a6cac0d83a9315ba4c802759db801b06b449a308689e72cbc5b"
+}

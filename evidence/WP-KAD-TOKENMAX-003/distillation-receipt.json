@@ -1,0 +1,9 @@
+{
+  "distillation_candidate": false,
+  "promoted": false,
+  "episode_ids": [
+    "episode-SWARM-REAL-001",
+    "episode-TOKENMAX-LIVE-001"
+  ],
+  "reason": "the audit and historical single-rule retrieval are not substantially the same cognitive operation"
+}

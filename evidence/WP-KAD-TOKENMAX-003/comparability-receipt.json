@@ -1,0 +1,16 @@
+{
+  "classification": "NOT_COMPARABLE",
+  "reason_codes": [
+    "SAME_TRUST_DOMAIN",
+    "SAME_REQUIRED_CAPABILITY",
+    "SAME_ACCEPTANCE_AUTHORITY",
+    "SAME_LOCAL_RETRIEVAL_TOPOLOGY",
+    "TASK_CLASS_OR_SCOPE_MISMATCH_REPOSITORY_INVARIANT_AUDIT_VS_SINGLE_RULE_FACT_FINDING"
+  ],
+  "live_episode_id": "episode-TOKENMAX-LIVE-001",
+  "historical_episode_id": "episode-SWARM-REAL-001",
+  "comparison": {
+    "result": "INCOMPARABLE",
+    "reason": "task class or scope is not equivalent"
+  }
+}

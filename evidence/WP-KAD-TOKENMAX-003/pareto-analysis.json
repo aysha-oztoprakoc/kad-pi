@@ -1,0 +1,9 @@
+{
+  "comparison": {
+    "result": "INCOMPARABLE",
+    "reason": "task class or scope is not equivalent"
+  },
+  "comparable": "NOT_COMPARABLE",
+  "dimensions": null,
+  "interpretation": "no valid dominance claim"
+}

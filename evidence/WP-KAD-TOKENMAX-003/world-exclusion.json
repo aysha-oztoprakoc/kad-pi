@@ -1,0 +1,23 @@
+{
+  "requirement": {
+    "trust_domain": "retrieval",
+    "capability": "repository-fact-finding"
+  },
+  "world_resource": {
+    "id": "kad-local-world-external",
+    "trust_domain": "world",
+    "capabilities": [
+      "world-generation"
+    ],
+    "ownership": "EXTERNAL"
+  },
+  "registry_selection": {
+    "status": "ROUTED",
+    "selected": "kad-local-retrieval-amdy",
+    "candidates": [
+      "kad-local-retrieval-amdy"
+    ]
+  },
+  "execution_attempted": false,
+  "reason": "deterministic registry trust/capability eligibility excludes WORLD before worker execution"
+}

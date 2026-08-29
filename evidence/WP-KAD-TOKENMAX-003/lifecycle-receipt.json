@@ -1,0 +1,150 @@
+{
+  "activation": {
+    "state": "ACTIVE",
+    "endpoint": "http://127.0.0.1:5002",
+    "ownership": "OWNED",
+    "model_identity": "koboldcpp/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
+    "pid": 136590
+  },
+  "cleanup": {
+    "state": "DISPOSED",
+    "process_owned": true
+  },
+  "qwen_receipt_present_after": false,
+  "qwen_process_after": null,
+  "preflight_after": {
+    "schema_version": "kad-omp-preflight-1",
+    "status": "DEGRADED",
+    "omp": {
+      "version": "18.0.9",
+      "expected_version": "18.0.9",
+      "binary": {
+        "path": ".tools/oh-my-pi/v18.0.9",
+        "exists": true,
+        "executable": true
+      },
+      "wrapper": {
+        "path": "bin/omp-kad",
+        "exists": true,
+        "executable": true
+      },
+      "manifest": {
+        "path": "evidence/WP-KAD-OMP-001/install-manifest.json",
+        "release": "18.0.9",
+        "sha256_observed": "55304008876a61f48c2a1dc1b0998ca36e7e45b8bc25aa25cf24e5c44524412c"
+      },
+      "version_matches": true,
+      "failures": []
+    },
+    "pi": {
+      "available": true,
+      "version": "0.84.3",
+      "provenance": "pi --version",
+      "failures": []
+    },
+    "governance": {
+      "prime_directive": true,
+      "bridge_pointer": true,
+      "rules_reference_kad": true,
+      "failures": []
+    },
+    "skills": {
+      "canonical_source": ".agents/skills",
+      "canonical_exists": true,
+      "evidence_gate": true,
+      "agents_project_discovery": true,
+      "shadow_corpus": false,
+      "failures": []
+    },
+    "learning": {
+      "advisor_enabled": false,
+      "memory_backend": "off",
+      "autolearn_enabled": false,
+      "safe": true,
+      "failures": []
+    },
+    "roles": {
+      "roles": {
+        "world": {
+          "status": "RESOLVED",
+          "selector": "kad-local-world/kad-local-s13:low",
+          "provider": "kad-local-world",
+          "model": "kad-local-s13"
+        },
+        "local_retrieval": {
+          "status": "UNAVAILABLE",
+          "selector": "kad-local-qwen/qwen-local:low",
+          "provider": "kad-local-qwen",
+          "model": "qwen-local"
+        }
+      },
+      "failures": [],
+      "unknowns": []
+    },
+    "local_inference": {
+      "resources": [
+        {
+          "provider": "kad-local-world",
+          "endpoint": "http://127.0.0.1:5001/v1",
+          "expected_model": "kad-local-s13",
+          "expected_identity": "L3-8B-Stheno-v3.2-Q4_K_M",
+          "observed_identity": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M",
+          "endpoint_available": true,
+          "ownership": "EXTERNAL",
+          "capability_state": "AVAILABLE"
+        },
+        {
+          "provider": "kad-local-qwen",
+          "endpoint": "http://127.0.0.1:5002/v1",
+          "expected_model": "qwen-local",
+          "expected_identity": "Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
+          "observed_identity": "UNKNOWN",
+          "endpoint_available": false,
+          "ownership": "INACTIVE",
+          "capability_state": "UNAVAILABLE"
+        }
+      ],
+      "endpoint": "http://127.0.0.1:5002/v1",
+      "endpoint_available": false,
+      "loaded_provider": "kad-local-qwen",
+      "loaded_model": "qwen-local",
+      "ownership": "INACTIVE",
+      "mutation_performed": false,
+      "failures": []
+    },
+    "spend": {
+      "enabled_models": [
+        "kad-local-world/*",
+        "kad-local-qwen/qwen-local"
+      ],
+      "approved_surface": true,
+      "new_paid_spend_possible": false,
+      "failures": []
+    },
+    "authority": {
+      "exact_trust_domain_filter": true,
+      "world_engineering_eligible": false,
+      "verified_by_contract_test": true,
+      "failures": []
+    },
+    "failures": [],
+    "unknowns": []
+  },
+  "world_before": {
+    "endpoint": "http://127.0.0.1:5001/v1",
+    "health": {
+      "result": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M"
+    },
+    "pid": 125225,
+    "ownership": "EXTERNAL"
+  },
+  "world_after": {
+    "endpoint": "http://127.0.0.1:5001/v1",
+    "health": {
+      "result": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M"
+    },
+    "pid": 125225,
+    "ownership": "EXTERNAL"
+  },
+  "external_world_survived": true
+}

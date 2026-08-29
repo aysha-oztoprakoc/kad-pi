@@ -1,0 +1,16 @@
+{
+  "task_id": "TOKENMAX-LIVE-001",
+  "validator": "schema-source-evidence-validator",
+  "validation": {
+    "result": "FAIL",
+    "errors": [
+      "output is not a JSON object",
+      "task_id mismatch",
+      "required arrays are missing"
+    ]
+  },
+  "final_status": "DEGRADED",
+  "accepted": false,
+  "acceptance_authority": "KAD_VALIDATOR",
+  "model_self_acceptance": false
+}
