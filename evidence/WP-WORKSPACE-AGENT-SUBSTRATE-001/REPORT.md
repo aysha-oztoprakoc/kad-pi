@@ -150,11 +150,11 @@ New owned files are under `AGENTS.md`, `.agents/workspace/`, `.agents/work/`, `.
 
 ## COMMITS
 
-No bounded commit created yet.
+Bounded commit: `5dce16b` (`feat: add portable workspace agent substrate`). It contains only the owned substrate and evidence paths; unrelated dirty paths were not staged.
 
 ## REMAINING PARTIALS
 
-Empirical native discovery probes for non-OMP harnesses and full upstream skill revision/update report remain intentionally deferred. The bounded commit follows after final state transition and evidence refresh.
+Empirical native discovery probes for non-OMP harnesses and full upstream skill revision/update report remain intentionally deferred by scope.
 
 ## NEXT RECOMMENDED WORKPACKAGE
 
