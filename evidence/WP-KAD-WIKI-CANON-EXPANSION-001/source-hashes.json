@@ -1,0 +1,162 @@
+[
+  {
+    "source_ref": "README.md",
+    "source_hash": "ac4c254368fe5731e38900a116b7481ed420a89918df0a0a0fa7992f9ac352aa"
+  },
+  {
+    "source_ref": "PRIME_DIRECTIVE.md",
+    "source_hash": "fe02ae3f26da3c542df37bb811d5454e71ff3cda76c36511fe924698a22ccba1"
+  },
+  {
+    "source_ref": "CONTEXT.md",
+    "source_hash": "ddce7a4f7144edbf74be4915f8ab2e53ad142d17afe6804054e3730e13293f66"
+  },
+  {
+    "source_ref": "docs/adr/0001-notification-oriented-causality.md",
+    "source_hash": "21ba8ee1972d3029dffb1605061978aa23dfa0932cbee9889da4eb1d4f84e51c"
+  },
+  {
+    "source_ref": "docs/adr/0002-spatiotemporal-composability-cordis-ownership.md",
+    "source_hash": "56896db809c6859372c9c27db5e155a1386fbdcfd6885e74df7912a5d9f07e2e"
+  },
+  {
+    "source_ref": "docs/adr/0003-intent-authority-boundary.md",
+    "source_hash": "9d289457b1ed2f295cfc5c0593f5407f635ff53df12b1e380c61df5512c7e72f"
+  },
+  {
+    "source_ref": "docs/adr/0004-model-agnostic-control-plane.md",
+    "source_hash": "b9eba4a02e63c59802b18aa56f1409710e4c4a14e649435d24a42114d6556417"
+  },
+  {
+    "source_ref": "docs/adr/0005-deterministic-first-and-epistemic-classification.md",
+    "source_hash": "f85186eb15e51ff6a36ef58e31bd663295c48326eb30270a6dbb4d53871ff9cb"
+  },
+  {
+    "source_ref": "docs/adr/0006-pi-sdk-session-subscribe-integration-seam.md",
+    "source_hash": "516ce751c4d7b1a4fb7703bfb2166b099afaa1ecd443f6a1f59bdbc390e91074"
+  },
+  {
+    "source_ref": "docs/adr/0007-synthetic-knowledge-librarian-architecture.md",
+    "source_hash": "ce4b2e56b167a66e620155c2cea749d7044e9d4d855b5269cd2c3cc64146839a"
+  },
+  {
+    "source_ref": "docs/adr/0008-unified-context-knowledge-plane.md",
+    "source_hash": "6e3d57b5efc7186f84890de5743d12648c8a3c48fcacb4ebadeead7ee755085c"
+  },
+  {
+    "source_ref": "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+    "source_hash": "4af8121c7b4ce2c3a400439d1e1a830deda5706c09c49e32d0599bbc9ad29f78"
+  },
+  {
+    "source_ref": "wiki/KAD_Implementation_Plan.md",
+    "source_hash": "9579bae5bc26728357bb953f7910dbfb1fcc8bedd46b11da17405495f7e14818"
+  },
+  {
+    "source_ref": "wiki/synthetic/01_ARCHITECTURE_PON_STC.md",
+    "source_hash": "fbaee5a37d91089f9f2c156ab05f47bab0d01d4c1992e42601d077bff969b8fd"
+  },
+  {
+    "source_ref": "wiki/synthetic/03_PI_HARNESS_INTEGRATION.md",
+    "source_hash": "2fb8403a7ca9db02305ba9024d902f40f58a7f8bf46b4fbdc203adcfbd6fce7d"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-001/final-report.md",
+    "source_hash": "d8b70b61516e321578ce6527a682db68a7dfe1d7e874880ff27571c9032ec11d"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-002/final-report.md",
+    "source_hash": "4c356626892c7af8f7ec0bb5f2d5a799b67a6da2b7bd4ff59758b5d436511076"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-003/final-report.md",
+    "source_hash": "1dc38bf88503a99fd804938a427401b0aae7a5bdeddbfe810e108d851fb1faec"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-004/final-report.md",
+    "source_hash": "9bfd9c15f1a607f60173571264b620ab6c47e12e9550ced4aa986f57d07871e9"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-005/final-report.md",
+    "source_hash": "49c26442efc3f1b13d48aadd171f4bec3cd9f0a8e02749582f000be853e2534d"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-CONTEXT-SWARM-001/REPORT.md",
+    "source_hash": "dd3f02eaf05143508c51216e731de64eb0d805b8ffa1b34155e6d2647cfb20bc"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
+    "source_hash": "2fb8f5c98c23f21b3e79f31498389217a9cb54ea0e07e4e016c9b2c36b05ae5b"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-OMP-001/final-report.md",
+    "source_hash": "1a78260382ceddeea331d978ea6b3904d5a57bd0a0718ff413ffd04551f025b9"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-LIB-002-R1/final-report.md",
+    "source_hash": "b83c8facf36177ea3b645ff55311a1a5a3cd19d08cfd0b20d5fbeccd0ecbb150"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-SHARED-MODEL-STORE-001/REPORT.md",
+    "source_hash": "2860b50e4b32736218297499265a62ee08acbf686753be6e40670bfddbb638ff"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/adapter-probe.json",
+    "source_hash": "6f2d2875efde2f2e69818e910cc485ea9015c05254871eab3f7c4de7aa925c5a"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-005/rag-experiment-results.json",
+    "source_hash": "af084a6dea482634f9aa46f13500b1041d068e11201ca6f2f7bbd2c792641b43"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-SHARED-MODEL-STORE-001/NEW-MODEL-RESEARCH.md",
+    "source_hash": "1cdb8a3d18a0f47082590111ab3eb7402c304d0b82a0c1064ca4eee50b8fb97b"
+  },
+  {
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079"
+  },
+  {
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884"
+  },
+  {
+    "source_ref": ".agents/agents/kad-master/agent.md",
+    "source_hash": "a31102b51b11a5cc72192db1afe4da8233ee4c426f2a47ec3cadd6e066c0abf1"
+  },
+  {
+    "source_ref": ".agents/agents/kad-builder/agent.md",
+    "source_hash": "6cc678c41d0aa4847e2bef59068785a9de14814c8a6e078dde774b4a1b6f8943"
+  },
+  {
+    "source_ref": ".agents/agents/kad-reviewer/agent.md",
+    "source_hash": "c5db4ff654c7172545e52fcf096d5d6d5b2ea592681ec3a78c12fd1e8e3c6fae"
+  },
+  {
+    "source_ref": ".agents/agents/kad-researcher/agent.md",
+    "source_hash": "313c4ae0d3982212ce92340eab34d7bb98434d38405f82d61fece3a9281abeb3"
+  },
+  {
+    "source_ref": ".agents/agents/kad-tester/agent.md",
+    "source_hash": "54b2e56b1ab4809da65ae4b765bca68d2efd983343244dc68e3565796ac1954d"
+  },
+  {
+    "source_ref": ".agents/capabilities/ask_user/CAPABILITY.md",
+    "source_hash": "e61712ae232e98129332382fdb3991f6636b79d68dad3dd806647c14a42b24ec"
+  },
+  {
+    "source_ref": ".agents/skills/kad-evidence-gate/SKILL.md",
+    "source_hash": "e1118957b052d4170809b0fb1ad83c8274d9e3a1aa23828fe31b483a1ce2da66"
+  },
+  {
+    "source_ref": ".agents/skills/tdd/SKILL.md",
+    "source_hash": "5c1902f0c747725fe2781b68d678f4cebe075bad2ebd4a977a82d5f8d08d00bf"
+  },
+  {
+    "source_ref": ".agents/skills/implement/SKILL.md",
+    "source_hash": "7a624d0a999f6f0d2d45c3a430ed026094827fb55330b06826efda7ca8984c49"
+  },
+  {
+    "source_ref": ".agents/skills/code-review/SKILL.md",
+    "source_hash": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50"
+  }
+]

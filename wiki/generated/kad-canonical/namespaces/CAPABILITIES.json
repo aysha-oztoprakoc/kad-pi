@@ -1,0 +1,26 @@
+[
+  {
+    "id": "capability:ask_user",
+    "title": "ask_user Capability",
+    "kind": "capability",
+    "namespace": "CAPABILITIES",
+    "status": "ACCEPTED",
+    "source_ref": ".agents/capabilities/ask_user/CAPABILITY.md",
+    "source_hash": "e61712ae232e98129332382fdb3991f6636b79d68dad3dd806647c14a42b24ec",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Capability: `ask_user`",
+    "relationships": [
+      {
+        "type": "allowed",
+        "target": "agent:policy-filter"
+      }
+    ],
+    "contract": ".agents/capabilities/ask_user/CAPABILITY.md"
+  }
+]

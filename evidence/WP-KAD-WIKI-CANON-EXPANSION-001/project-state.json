@@ -1,0 +1,40 @@
+[
+  {
+    "id": "record:PRIME_DIRECTIVE.md",
+    "title": "Prime Directive",
+    "kind": "directive",
+    "namespace": "PROJECT",
+    "status": "ACCEPTED",
+    "source_ref": "PRIME_DIRECTIVE.md",
+    "source_hash": "fe02ae3f26da3c542df37bb811d5454e71ff3cda76c36511fe924698a22ccba1",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "PRIME DIRECTIVE",
+    "relationships": [],
+    "source_class": "GOVERNANCE"
+  },
+  {
+    "id": "record:README.md",
+    "title": "KAD-PI Project",
+    "kind": "project",
+    "namespace": "PROJECT",
+    "status": "ACCEPTED",
+    "source_ref": "README.md",
+    "source_hash": "ac4c254368fe5731e38900a116b7481ed420a89918df0a0a0fa7992f9ac352aa",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "KAD-PI: Local AI Experimental Platform & Agent Harness",
+    "relationships": [],
+    "source_class": "PROJECT"
+  }
+]

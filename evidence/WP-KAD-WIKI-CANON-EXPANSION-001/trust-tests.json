@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "unknown_source": "REJECT",
+  "unauthorized_trust_domain": "REJECT",
+  "derived_self_promotion": "REJECT",
+  "evidence": [
+    "tools/kad/test/knowledge-plane.test.mjs",
+    "tools/kad/test/wiki-projection.test.mjs"
+  ]
+}

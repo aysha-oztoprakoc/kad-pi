@@ -1,0 +1,5 @@
+{
+  "status": "CURRENT",
+  "unchanged_projection": true,
+  "changed_source_behavior": "targeted fixture test proves STALE before rebuild"
+}

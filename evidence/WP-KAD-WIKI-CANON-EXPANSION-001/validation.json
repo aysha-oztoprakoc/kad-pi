@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "fixed_point": "0f6063f",
+  "commands": [
+    {"command": "node --check tools/kad/wiki-projection.mjs", "status": "PASS"},
+    {"command": "node --test tools/kad/test/knowledge-plane.test.mjs tools/kad/test/wiki-projection.test.mjs", "status": "PASS", "tests": 15},
+    {"command": "make verify", "status": "PASS"},
+    {"command": "make test", "status": "PASS"},
+    {"command": "bin/kad-knowledge rebuild", "status": "PASS", "sources": 40, "records": 56},
+    {"command": "bin/kad-knowledge health", "status": "PARTIAL", "degraded_components": ["Needle", "OpenViking", "Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M"]},
+    {"command": "git diff --check", "status": "PASS"}
+  ],
+  "generated_projection": "wiki/generated/kad-canonical",
+  "json_parse": "PASS",
+  "source_hash_match": "PASS",
+  "provenance_complete": "PASS",
+  "link_validation": "PASS",
+  "canonical_source_mutation": false
+}

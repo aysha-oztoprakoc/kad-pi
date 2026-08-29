@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "json_files": 27,
+  "source_count": 40,
+  "record_count": 56,
+  "populated_namespaces": ["AGENTS", "CAPABILITIES", "DECISIONS", "EVIDENCE", "FAILURES", "EXPERIMENTS", "RESEARCH", "MODELS", "PROVIDERS", "GLOSSARY", "PROJECT", "ROADMAP", "ARCHITECTURE", "TECHNOLOGIES", "SKILLS"],
+  "provenance_complete": true,
+  "source_hashes_match": true,
+  "links": {"status": "PASS", "checked_files": 16, "broken_links": []},
+  "generated_bytes": 305642
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "commands": [
+    "bin/kad-knowledge rebuild",
+    "bin/kad-knowledge health",
+    "bin/kad-knowledge ask \"What owns authority in KAD-PI?\"",
+    "bin/kad-knowledge ask \"What is the current KnowledgePlane state?\"",
+    "bin/kad-knowledge ask \"Which components are currently degraded?\"",
+    "bin/kad-knowledge ask \"What local models are qualified?\""
+  ],
+  "records": 56,
+  "sources": 40,
+  "cited": true,
+  "retrieval_mode": "exact"
+}

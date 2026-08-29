@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "deterministic_tools": [
+    "git",
+    "node --check",
+    "node --test",
+    "make verify",
+    "make test",
+    "sha256"
+  ],
+  "model_specialist_calls": [
+    "scout: CanonicalCensus",
+    "scout: RegistryCensus",
+    "scout: EvidenceAndTests"
+  ],
+  "semantic_backend_used_for_generation": false,
+  "generated_files_compared": 42
+}

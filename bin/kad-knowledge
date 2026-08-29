@@ -1,4 +1,3 @@
 #!/usr/bin/env node
-import { runKnowledgeCli } from '../tools/kad/knowledge-plane.mjs';
-
-process.exitCode = runKnowledgeCli(process.argv.slice(2));
+import { runCuratedKnowledgeCli } from '../tools/kad/wiki-projection.mjs';
+process.exitCode = runCuratedKnowledgeCli(process.argv.slice(2));

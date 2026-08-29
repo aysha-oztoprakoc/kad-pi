@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "deterministic_projection_without_optional_backends": true,
+  "openviking_required": false,
+  "needle_required": false,
+  "exact_retrieval_mode": "deterministic",
+  "optional_failure_behavior": "DEGRADED/BLOCKED without authority widening",
+  "evidence": "tools/kad/test/wiki-projection.test.mjs and tools/kad/knowledge-plane.mjs"
+}

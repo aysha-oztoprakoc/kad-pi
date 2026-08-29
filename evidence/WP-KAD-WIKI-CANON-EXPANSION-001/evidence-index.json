@@ -1,0 +1,103 @@
+[
+  {
+    "workpackage": "WP-KAD-001",
+    "verdict": "UNKNOWN",
+    "report_path": "evidence/WP-KAD-001/final-report.md",
+    "commit": null,
+    "date": null,
+    "major_capabilities_proven": [],
+    "remaining_blockers": []
+  },
+  {
+    "workpackage": "WP-KAD-002",
+    "verdict": "UNKNOWN",
+    "report_path": "evidence/WP-KAD-002/final-report.md",
+    "commit": null,
+    "date": "2026-08-28",
+    "major_capabilities_proven": [],
+    "remaining_blockers": []
+  },
+  {
+    "workpackage": "WP-KAD-003",
+    "verdict": "UNKNOWN",
+    "report_path": "evidence/WP-KAD-003/final-report.md",
+    "commit": null,
+    "date": "2026-08-28",
+    "major_capabilities_proven": [],
+    "remaining_blockers": []
+  },
+  {
+    "workpackage": "WP-KAD-004",
+    "verdict": "UNKNOWN",
+    "report_path": "evidence/WP-KAD-004/final-report.md",
+    "commit": null,
+    "date": "2026-08-28",
+    "major_capabilities_proven": [],
+    "remaining_blockers": []
+  },
+  {
+    "workpackage": "WP-KAD-005",
+    "verdict": "UNKNOWN",
+    "report_path": "evidence/WP-KAD-005/final-report.md",
+    "commit": null,
+    "date": null,
+    "major_capabilities_proven": [],
+    "remaining_blockers": []
+  },
+  {
+    "workpackage": "WP-KAD-CONTEXT-SWARM-001",
+    "verdict": "UNKNOWN",
+    "report_path": "evidence/WP-KAD-CONTEXT-SWARM-001/REPORT.md",
+    "commit": null,
+    "date": null,
+    "major_capabilities_proven": [],
+    "remaining_blockers": []
+  },
+  {
+    "workpackage": "WP-KAD-KNOWLEDGE-PLANE-001",
+    "verdict": "DEGRADED",
+    "report_path": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/adapter-probe.json",
+    "commit": null,
+    "date": null,
+    "major_capabilities_proven": [],
+    "remaining_blockers": [
+      "KnowledgePlane Adapter Failures"
+    ]
+  },
+  {
+    "workpackage": "WP-KAD-KNOWLEDGE-PLANE-001",
+    "verdict": "PASS",
+    "report_path": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
+    "commit": null,
+    "date": null,
+    "major_capabilities_proven": [],
+    "remaining_blockers": []
+  },
+  {
+    "workpackage": "WP-KAD-LIB-002-R1",
+    "verdict": "UNKNOWN",
+    "report_path": "evidence/WP-KAD-LIB-002-R1/final-report.md",
+    "commit": "33170749930",
+    "date": "2026-08-28",
+    "major_capabilities_proven": [],
+    "remaining_blockers": []
+  },
+  {
+    "workpackage": "WP-KAD-OMP-001",
+    "verdict": "UNKNOWN",
+    "report_path": "evidence/WP-KAD-OMP-001/final-report.md",
+    "commit": null,
+    "date": null,
+    "major_capabilities_proven": [],
+    "remaining_blockers": []
+  },
+  {
+    "workpackage": "WP-KAD-SHARED-MODEL-STORE-001",
+    "verdict": "UNKNOWN",
+    "report_path": "evidence/WP-KAD-SHARED-MODEL-STORE-001/REPORT.md",
+    "commit": "2bae5d6",
+    "date": null,
+    "major_capabilities_proven": [],
+    "remaining_blockers": []
+  }
+]

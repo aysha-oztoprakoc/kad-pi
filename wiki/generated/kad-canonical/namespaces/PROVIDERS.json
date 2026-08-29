@@ -1,0 +1,338 @@
+[
+  {
+    "id": "provider:advisor",
+    "title": "advisor",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "FILE_ONLY",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "OFF",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:advisor"
+      }
+    ],
+    "role": "advisor",
+    "selector": "OFF",
+    "provider": null,
+    "model": null,
+    "declared_trust_domain": "UNKNOWN"
+  },
+  {
+    "id": "provider:builder",
+    "title": "builder",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "UNKNOWN",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "UNKNOWN",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:builder"
+      }
+    ],
+    "role": "builder",
+    "selector": "UNKNOWN",
+    "provider": null,
+    "model": null,
+    "declared_trust_domain": "UNKNOWN"
+  },
+  {
+    "id": "provider:default",
+    "title": "default",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "UNKNOWN",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "UNKNOWN",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:default"
+      }
+    ],
+    "role": "default",
+    "selector": "UNKNOWN",
+    "provider": null,
+    "model": null,
+    "declared_trust_domain": "UNKNOWN"
+  },
+  {
+    "id": "provider:free_fast",
+    "title": "free_fast",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "UNKNOWN",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "UNKNOWN",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:free_fast"
+      }
+    ],
+    "role": "free_fast",
+    "selector": "UNKNOWN",
+    "provider": null,
+    "model": null,
+    "declared_trust_domain": "UNKNOWN"
+  },
+  {
+    "id": "provider:free_reason",
+    "title": "free_reason",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "UNKNOWN",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "UNKNOWN",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:free_reason"
+      }
+    ],
+    "role": "free_reason",
+    "selector": "UNKNOWN",
+    "provider": null,
+    "model": null,
+    "declared_trust_domain": "UNKNOWN"
+  },
+  {
+    "id": "provider:local_retrieval",
+    "title": "local_retrieval",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "UNKNOWN",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "UNKNOWN",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:local_retrieval"
+      }
+    ],
+    "role": "local_retrieval",
+    "selector": "UNKNOWN",
+    "provider": null,
+    "model": null,
+    "declared_trust_domain": "UNKNOWN"
+  },
+  {
+    "id": "provider:plan",
+    "title": "plan",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "UNKNOWN",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "UNKNOWN",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:plan"
+      }
+    ],
+    "role": "plan",
+    "selector": "UNKNOWN",
+    "provider": null,
+    "model": null,
+    "declared_trust_domain": "UNKNOWN"
+  },
+  {
+    "id": "provider:planner",
+    "title": "planner",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "UNKNOWN",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "UNKNOWN",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:planner"
+      }
+    ],
+    "role": "planner",
+    "selector": "UNKNOWN",
+    "provider": null,
+    "model": null,
+    "declared_trust_domain": "UNKNOWN"
+  },
+  {
+    "id": "provider:review",
+    "title": "review",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "UNKNOWN",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "UNKNOWN",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:review"
+      }
+    ],
+    "role": "review",
+    "selector": "UNKNOWN",
+    "provider": null,
+    "model": null,
+    "declared_trust_domain": "UNKNOWN"
+  },
+  {
+    "id": "provider:slow",
+    "title": "slow",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "UNKNOWN",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "UNKNOWN",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:slow"
+      }
+    ],
+    "role": "slow",
+    "selector": "UNKNOWN",
+    "provider": null,
+    "model": null,
+    "declared_trust_domain": "UNKNOWN"
+  },
+  {
+    "id": "provider:smol",
+    "title": "smol",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "UNKNOWN",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "UNKNOWN",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:smol"
+      }
+    ],
+    "role": "smol",
+    "selector": "UNKNOWN",
+    "provider": null,
+    "model": null,
+    "declared_trust_domain": "UNKNOWN"
+  },
+  {
+    "id": "provider:world",
+    "title": "world",
+    "kind": "registry",
+    "namespace": "PROVIDERS",
+    "status": "QUALIFIED",
+    "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Stheno WORLD-only",
+    "relationships": [
+      {
+        "type": "binds_role",
+        "target": "role:world"
+      }
+    ],
+    "role": "world",
+    "selector": "kad-local-world/kad-local-s13:low",
+    "provider": "kad-local-world",
+    "model": "kad-local-s13",
+    "declared_trust_domain": "WORLD"
+  }
+]

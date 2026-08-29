@@ -1,0 +1,74 @@
+[
+  {
+    "id": "decision:0001",
+    "title": "Notification-Oriented Causality",
+    "status": "Accepted",
+    "path": "docs/adr/0001-notification-oriented-causality.md",
+    "date": null,
+    "superseded": false,
+    "related_decisions": []
+  },
+  {
+    "id": "decision:0002",
+    "title": "Spatiotemporal Composability and Cordis Ownership",
+    "status": "Accepted",
+    "path": "docs/adr/0002-spatiotemporal-composability-cordis-ownership.md",
+    "date": null,
+    "superseded": false,
+    "related_decisions": []
+  },
+  {
+    "id": "decision:0003",
+    "title": "Intent Authority Boundary",
+    "status": "Accepted",
+    "path": "docs/adr/0003-intent-authority-boundary.md",
+    "date": null,
+    "superseded": false,
+    "related_decisions": []
+  },
+  {
+    "id": "decision:0004",
+    "title": "Model-Agnostic Control Plane",
+    "status": "Accepted",
+    "path": "docs/adr/0004-model-agnostic-control-plane.md",
+    "date": null,
+    "superseded": false,
+    "related_decisions": []
+  },
+  {
+    "id": "decision:0005",
+    "title": "Deterministic First and Epistemic Classification",
+    "status": "Accepted",
+    "path": "docs/adr/0005-deterministic-first-and-epistemic-classification.md",
+    "date": null,
+    "superseded": false,
+    "related_decisions": []
+  },
+  {
+    "id": "decision:0006",
+    "title": "Pi SDK Session Subscribe Integration Seam",
+    "status": "Accepted",
+    "path": "docs/adr/0006-pi-sdk-session-subscribe-integration-seam.md",
+    "date": null,
+    "superseded": false,
+    "related_decisions": []
+  },
+  {
+    "id": "decision:0007",
+    "title": "Synthetic Knowledge Librarian Architecture",
+    "status": "Accepted",
+    "path": "docs/adr/0007-synthetic-knowledge-librarian-architecture.md",
+    "date": null,
+    "superseded": false,
+    "related_decisions": []
+  },
+  {
+    "id": "decision:0008",
+    "title": "Unified Context and Knowledge Plane",
+    "status": "Accepted",
+    "path": "docs/adr/0008-unified-context-knowledge-plane.md",
+    "date": "2026-08-29",
+    "superseded": false,
+    "related_decisions": []
+  }
+]

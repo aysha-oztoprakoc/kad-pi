@@ -1,0 +1,362 @@
+[
+  {
+    "path": "README.md",
+    "title": "KAD-PI Project",
+    "source_class": "PROJECT",
+    "namespace": "PROJECT",
+    "reason": "Repository orientation and bounded project identity.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "PRIME_DIRECTIVE.md",
+    "title": "Prime Directive",
+    "source_class": "GOVERNANCE",
+    "namespace": "PROJECT",
+    "reason": "Normative authority and epistemic rules.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "CONTEXT.md",
+    "title": "KAD-PI Domain Context",
+    "source_class": "GLOSSARY",
+    "namespace": "GLOSSARY",
+    "reason": "Canonical project vocabulary.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "docs/adr/0001-notification-oriented-causality.md",
+    "title": "Notification-Oriented Causality",
+    "source_class": "DECISION",
+    "namespace": "DECISIONS",
+    "reason": "Accepted ADR defining an explicit architecture boundary.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "docs/adr/0002-spatiotemporal-composability-cordis-ownership.md",
+    "title": "Spatiotemporal Composability and Cordis Ownership",
+    "source_class": "DECISION",
+    "namespace": "DECISIONS",
+    "reason": "Accepted ADR defining an explicit architecture boundary.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "docs/adr/0003-intent-authority-boundary.md",
+    "title": "Intent Authority Boundary",
+    "source_class": "DECISION",
+    "namespace": "DECISIONS",
+    "reason": "Accepted ADR defining an explicit architecture boundary.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "docs/adr/0004-model-agnostic-control-plane.md",
+    "title": "Model-Agnostic Control Plane",
+    "source_class": "DECISION",
+    "namespace": "DECISIONS",
+    "reason": "Accepted ADR defining an explicit architecture boundary.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "docs/adr/0005-deterministic-first-and-epistemic-classification.md",
+    "title": "Deterministic First and Epistemic Classification",
+    "source_class": "DECISION",
+    "namespace": "DECISIONS",
+    "reason": "Accepted ADR defining an explicit architecture boundary.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "docs/adr/0006-pi-sdk-session-subscribe-integration-seam.md",
+    "title": "Pi SDK Session Subscribe Integration Seam",
+    "source_class": "DECISION",
+    "namespace": "DECISIONS",
+    "reason": "Accepted ADR defining an explicit architecture boundary.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "docs/adr/0007-synthetic-knowledge-librarian-architecture.md",
+    "title": "Synthetic Knowledge Librarian Architecture",
+    "source_class": "DECISION",
+    "namespace": "DECISIONS",
+    "reason": "Accepted ADR defining an explicit architecture boundary.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "docs/adr/0008-unified-context-knowledge-plane.md",
+    "title": "Unified Context and Knowledge Plane",
+    "source_class": "DECISION",
+    "namespace": "DECISIONS",
+    "reason": "Accepted ADR defining an explicit architecture boundary.",
+    "projection_eligible": true,
+    "optional": true
+  },
+  {
+    "path": "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+    "title": "KAD Context Knowledge Plane Roadmap",
+    "source_class": "ROADMAP",
+    "namespace": "ROADMAP",
+    "reason": "Current bounded roadmap and sequencing constraints.",
+    "projection_eligible": true,
+    "optional": true
+  },
+  {
+    "path": "wiki/KAD_Implementation_Plan.md",
+    "title": "KAD Implementation Plan",
+    "source_class": "ROADMAP",
+    "namespace": "ROADMAP",
+    "reason": "Historical implementation baseline retained for navigation.",
+    "projection_eligible": true,
+    "optional": true
+  },
+  {
+    "path": "wiki/synthetic/01_ARCHITECTURE_PON_STC.md",
+    "title": "PON/STC Architecture",
+    "source_class": "ARCHITECTURE",
+    "namespace": "ARCHITECTURE",
+    "reason": "Canonical synthetic architecture artifact with explicit derivation boundary.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "wiki/synthetic/03_PI_HARNESS_INTEGRATION.md",
+    "title": "Pi Harness Integration",
+    "source_class": "TECHNOLOGY",
+    "namespace": "TECHNOLOGIES",
+    "reason": "Canonical integration notes for the Pi harness.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-001/final-report.md",
+    "title": "WP-KAD-001 Evidence",
+    "source_class": "EVIDENCE",
+    "namespace": "EVIDENCE",
+    "reason": "Accepted workpackage report and observed integration evidence.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-002/final-report.md",
+    "title": "WP-KAD-002 Evidence",
+    "source_class": "EVIDENCE",
+    "namespace": "EVIDENCE",
+    "reason": "Accepted workpackage report and observed transition evidence.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-003/final-report.md",
+    "title": "WP-KAD-003 Evidence",
+    "source_class": "EVIDENCE",
+    "namespace": "EVIDENCE",
+    "reason": "Accepted workpackage report and observed evidence.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-004/final-report.md",
+    "title": "WP-KAD-004 Evidence",
+    "source_class": "EVIDENCE",
+    "namespace": "EVIDENCE",
+    "reason": "Accepted workpackage report and observed evidence.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-005/final-report.md",
+    "title": "WP-KAD-005 Evidence",
+    "source_class": "EVIDENCE",
+    "namespace": "EVIDENCE",
+    "reason": "Accepted workpackage report and observed evidence.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-CONTEXT-SWARM-001/REPORT.md",
+    "title": "Context Swarm Evidence",
+    "source_class": "EVIDENCE",
+    "namespace": "EVIDENCE",
+    "reason": "Accepted bounded swarm evidence.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
+    "title": "KnowledgePlane Evidence",
+    "source_class": "EVIDENCE",
+    "namespace": "EVIDENCE",
+    "reason": "Latest accepted KnowledgePlane report; preserves optional-runtime degradation.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-OMP-001/final-report.md",
+    "title": "OMP Boundary Evidence",
+    "source_class": "EVIDENCE",
+    "namespace": "EVIDENCE",
+    "reason": "Accepted OMP boundary and role evidence.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-LIB-002-R1/final-report.md",
+    "title": "Librarian Evidence",
+    "source_class": "EVIDENCE",
+    "namespace": "EVIDENCE",
+    "reason": "Reconciled deterministic Librarian evidence.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-SHARED-MODEL-STORE-001/REPORT.md",
+    "title": "Shared Model Store Evidence",
+    "source_class": "EVIDENCE",
+    "namespace": "EVIDENCE",
+    "reason": "Accepted model-store evidence, including unresolved runtime partials.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/adapter-probe.json",
+    "title": "KnowledgePlane Adapter Failures",
+    "source_class": "FAILURE",
+    "namespace": "FAILURES",
+    "reason": "Observed optional adapter degradation and bounded failure matrix.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-005/rag-experiment-results.json",
+    "title": "RAG Experiment Results",
+    "source_class": "EXPERIMENT",
+    "namespace": "EXPERIMENTS",
+    "reason": "Observed experiment results; not architectural proof.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-SHARED-MODEL-STORE-001/NEW-MODEL-RESEARCH.md",
+    "title": "Model Research Candidates",
+    "source_class": "RESEARCH",
+    "namespace": "RESEARCH",
+    "reason": "Research candidates remain non-authoritative.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "config/local-models.registry.json",
+    "title": "Local Model Registry",
+    "source_class": "MODEL",
+    "namespace": "MODELS",
+    "reason": "Current structured model identity, capability, trust, and qualification registry.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+    "title": "Provider Role Map",
+    "source_class": "PROVIDER",
+    "namespace": "PROVIDERS",
+    "reason": "Observed provider role bindings and trust boundary.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": ".agents/agents/kad-master/agent.md",
+    "title": "kad-master Agent",
+    "source_class": "AGENT",
+    "namespace": "AGENTS",
+    "reason": "Authoritative project agent declaration.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": ".agents/agents/kad-builder/agent.md",
+    "title": "kad-builder Agent",
+    "source_class": "AGENT",
+    "namespace": "AGENTS",
+    "reason": "Bounded implementation agent declaration.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": ".agents/agents/kad-reviewer/agent.md",
+    "title": "kad-reviewer Agent",
+    "source_class": "AGENT",
+    "namespace": "AGENTS",
+    "reason": "Independent review agent declaration.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": ".agents/agents/kad-researcher/agent.md",
+    "title": "kad-researcher Agent",
+    "source_class": "AGENT",
+    "namespace": "AGENTS",
+    "reason": "Read-only research agent declaration.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": ".agents/agents/kad-tester/agent.md",
+    "title": "kad-tester Agent",
+    "source_class": "AGENT",
+    "namespace": "AGENTS",
+    "reason": "Deterministic verification agent declaration.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": ".agents/capabilities/ask_user/CAPABILITY.md",
+    "title": "ask_user Capability",
+    "source_class": "CAPABILITY",
+    "namespace": "CAPABILITIES",
+    "reason": "Canonical capability contract and failure semantics.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": ".agents/skills/kad-evidence-gate/SKILL.md",
+    "title": "kad-evidence-gate Skill",
+    "source_class": "SKILL",
+    "namespace": "SKILLS",
+    "reason": "Evidence promotion workflow and authority boundary.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": ".agents/skills/tdd/SKILL.md",
+    "title": "tdd Skill",
+    "source_class": "SKILL",
+    "namespace": "SKILLS",
+    "reason": "Test-first implementation discipline.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": ".agents/skills/implement/SKILL.md",
+    "title": "implement Skill",
+    "source_class": "SKILL",
+    "namespace": "SKILLS",
+    "reason": "Bounded implementation workflow.",
+    "projection_eligible": true,
+    "optional": false
+  },
+  {
+    "path": ".agents/skills/code-review/SKILL.md",
+    "title": "code-review Skill",
+    "source_class": "SKILL",
+    "namespace": "SKILLS",
+    "reason": "Two-axis review workflow.",
+    "projection_eligible": true,
+    "optional": false
+  }
+]

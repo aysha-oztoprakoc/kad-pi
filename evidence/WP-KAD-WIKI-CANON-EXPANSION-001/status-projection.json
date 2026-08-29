@@ -1,0 +1,200 @@
+{
+  "projection_id": "kad-governed-wiki-v1",
+  "status": "PARTIAL",
+  "components": [
+    {
+      "component": "advisor",
+      "state": "FILE_ONLY",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "bge-small-zh-v1.5-f16",
+      "state": "LOADABLE",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "builder",
+      "state": "UNKNOWN",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "Cactus Needle 2",
+      "state": "LOADABLE",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "default",
+      "state": "UNKNOWN",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "free_fast",
+      "state": "UNKNOWN",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "free_reason",
+      "state": "UNKNOWN",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "KnowledgePlane",
+      "state": "PASS",
+      "source_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
+      "evidence_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
+      "source_hash": "2fb8f5c98c23f21b3e79f31498389217a9cb54ea0e07e4e016c9b2c36b05ae5b",
+      "blocking_reason": null
+    },
+    {
+      "component": "L3-8B-Stheno-v3.2-Q4_K_M",
+      "state": "ACTIVE",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "L3.1-RP-Hero-InBetween-8B-D_AU-Q4_k_m",
+      "state": "FILE_ONLY",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "Llama-3-Lumimaid-8B-v0.1-OAS-Q4_K_M-imat",
+      "state": "FILE_ONLY",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "local_retrieval",
+      "state": "UNKNOWN",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "Needle",
+      "state": "BLOCKED",
+      "source_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
+      "evidence_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
+      "source_hash": "2fb8f5c98c23f21b3e79f31498389217a9cb54ea0e07e4e016c9b2c36b05ae5b",
+      "blocking_reason": "qualification evidence is incomplete"
+    },
+    {
+      "component": "OpenViking",
+      "state": "DEGRADED",
+      "source_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
+      "evidence_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
+      "source_hash": "2fb8f5c98c23f21b3e79f31498389217a9cb54ea0e07e4e016c9b2c36b05ae5b",
+      "blocking_reason": null
+    },
+    {
+      "component": "plan",
+      "state": "UNKNOWN",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "planner",
+      "state": "UNKNOWN",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
+      "state": "DEGRADED",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "blocking_reason": "Existing retrieval-only qualification evidence is preserved; endpoint is currently unavailable. Do not substitute stock Qwen.",
+      "degraded_capabilities": [
+        "repository-fact-finding",
+        "structured-extraction"
+      ]
+    },
+    {
+      "component": "review",
+      "state": "UNKNOWN",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "slow",
+      "state": "UNKNOWN",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "smol",
+      "state": "UNKNOWN",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "world",
+      "state": "QUALIFIED",
+      "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
+      "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    }
+  ],
+  "degraded_components": [
+    "Needle",
+    "OpenViking",
+    "Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M"
+  ]
+}

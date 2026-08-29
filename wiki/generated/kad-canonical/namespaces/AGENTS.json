@@ -1,0 +1,142 @@
+[
+  {
+    "id": "agent:kad-builder",
+    "title": "kad-builder Agent",
+    "kind": "agent",
+    "namespace": "AGENTS",
+    "status": "FILE_ONLY",
+    "source_ref": ".agents/agents/kad-builder/agent.md",
+    "source_hash": "6cc678c41d0aa4847e2bef59068785a9de14814c8a6e078dde774b4a1b6f8943",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Bounded implementation worker for approved KAD designs. Delegate small patches with explicit mutation boundaries and acceptance tests here.",
+    "relationships": [
+      {
+        "type": "allowed",
+        "target": "capability:declared-by-agent-policy"
+      }
+    ],
+    "agent_name": "kad-builder",
+    "model_binding": "flash",
+    "command_execution_policy": "sandbox",
+    "main_agent": false,
+    "subagent": true
+  },
+  {
+    "id": "agent:kad-master",
+    "title": "kad-master Agent",
+    "kind": "agent",
+    "namespace": "AGENTS",
+    "status": "FILE_ONLY",
+    "source_ref": ".agents/agents/kad-master/agent.md",
+    "source_hash": "a31102b51b11a5cc72192db1afe4da8233ee4c426f2a47ec3cadd6e066c0abf1",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Master architect and swarm coordinator for KAD/PON/STC experiments. Owns architecture, decomposition, delegation, mutation authority, synthesis, escalation, and acceptance.",
+    "relationships": [
+      {
+        "type": "allowed",
+        "target": "capability:declared-by-agent-policy"
+      }
+    ],
+    "agent_name": "kad-master",
+    "model_binding": "pro",
+    "command_execution_policy": "sandbox",
+    "main_agent": true,
+    "subagent": false
+  },
+  {
+    "id": "agent:kad-researcher",
+    "title": "kad-researcher Agent",
+    "kind": "agent",
+    "namespace": "AGENTS",
+    "status": "FILE_ONLY",
+    "source_ref": ".agents/agents/kad-researcher/agent.md",
+    "source_hash": "313c4ae0d3982212ce92340eab34d7bb98434d38405f82d61fece3a9281abeb3",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Read-only evidence investigator for KAD experiments. Delegate repository discovery, source tracing, API inspection, provenance analysis, and architecture evidence gathering here.",
+    "relationships": [
+      {
+        "type": "allowed",
+        "target": "capability:declared-by-agent-policy"
+      }
+    ],
+    "agent_name": "kad-researcher",
+    "model_binding": "flash",
+    "command_execution_policy": "sandbox",
+    "main_agent": false,
+    "subagent": true
+  },
+  {
+    "id": "agent:kad-reviewer",
+    "title": "kad-reviewer Agent",
+    "kind": "agent",
+    "namespace": "AGENTS",
+    "status": "FILE_ONLY",
+    "source_ref": ".agents/agents/kad-reviewer/agent.md",
+    "source_hash": "c5db4ff654c7172545e52fcf096d5d6d5b2ea592681ec3a78c12fd1e8e3c6fae",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Independent adversarial reviewer for KAD work. Delegate post-implementation architecture, evidence, regression, and scope audits here.",
+    "relationships": [
+      {
+        "type": "allowed",
+        "target": "capability:declared-by-agent-policy"
+      }
+    ],
+    "agent_name": "kad-reviewer",
+    "model_binding": "flash",
+    "command_execution_policy": "sandbox",
+    "main_agent": false,
+    "subagent": true
+  },
+  {
+    "id": "agent:kad-tester",
+    "title": "kad-tester Agent",
+    "kind": "agent",
+    "namespace": "AGENTS",
+    "status": "FILE_ONLY",
+    "source_ref": ".agents/agents/kad-tester/agent.md",
+    "source_hash": "54b2e56b1ab4809da65ae4b765bca68d2efd983343244dc68e3565796ac1954d",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Deterministic test and evidence specialist for KAD experiments. Delegate RED tests, failure injection, lifecycle verification, manifests, and reproducibility checks here.",
+    "relationships": [
+      {
+        "type": "allowed",
+        "target": "capability:declared-by-agent-policy"
+      }
+    ],
+    "agent_name": "kad-tester",
+    "model_binding": "flash",
+    "command_execution_policy": "sandbox",
+    "main_agent": false,
+    "subagent": true
+  }
+]

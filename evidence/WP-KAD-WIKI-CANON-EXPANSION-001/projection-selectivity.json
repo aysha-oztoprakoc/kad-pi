@@ -1,0 +1,25 @@
+{
+  "irrelevant": {
+    "rebuild": false,
+    "affected_paths": [],
+    "affected_namespaces": []
+  },
+  "adr": {
+    "rebuild": true,
+    "affected_paths": [
+      "docs/adr/0001-notification-oriented-causality.md"
+    ],
+    "affected_namespaces": [
+      "DECISIONS"
+    ]
+  },
+  "model": {
+    "rebuild": true,
+    "affected_paths": [
+      "config/local-models.registry.json"
+    ],
+    "affected_namespaces": [
+      "MODELS"
+    ]
+  }
+}
