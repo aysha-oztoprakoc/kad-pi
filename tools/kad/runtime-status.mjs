@@ -12,18 +12,19 @@ export const SELECTED_RUNTIME = Object.freeze({
   owner: 'external KoboldCpp process'
 });
 
-function baseObservation(runtime, observedAt) {
+export function createRuntimeStatus(runtime = SELECTED_RUNTIME, { observedAt = new Date().toISOString(), state = 'UNKNOWN', reason = null } = {}) {
+  if (!validRuntime(runtime)) throw new TypeError('runtime contract is invalid');
   return {
     schema: RUNTIME_STATUS_SCHEMA,
     runtime_id: runtime.runtime_id,
     observed_at: observedAt,
-    state: 'UNKNOWN',
+    state,
     capability: runtime.capability,
     trust_domain: runtime.trust_domain,
     endpoint_class: runtime.endpoint_class,
     identity: null,
     latency_ms: null,
-    reason: null,
+    reason,
     source: 'runtime-probe'
   };
 }
@@ -42,7 +43,7 @@ export async function observeRuntime({ runtime = SELECTED_RUNTIME, fetchImpl = f
   if (!validRuntime(runtime)) throw new TypeError('runtime contract is invalid');
   const observedAt = now();
   const started = monotonic();
-  const result = baseObservation(runtime, observedAt);
+  const result = createRuntimeStatus(runtime, { observedAt });
   const controller = new AbortController();
   let timer;
   const timedOut = new Promise((_, reject) => { timer = setTimeout(() => { controller.abort(); reject(Object.assign(new Error('runtime probe timed out'), { name: 'AbortError' })); }, timeoutMs); });
@@ -100,7 +101,7 @@ export function applyStaleness(observation, { now = Date.now, maxAgeMs = 30000 }
   if (!observation || typeof observation.observed_at !== 'string') return { ...observation, state: 'UNKNOWN', reason: 'observation timestamp is unavailable' };
   const age = now() - Date.parse(observation.observed_at);
   if (!Number.isFinite(age) || age < 0) return { ...observation, state: 'UNKNOWN', reason: 'observation timestamp is invalid' };
-  if (age <= maxAgeMs) return observation;
+  if (age <= maxAgeMs || !['AVAILABLE', 'DEGRADED'].includes(observation.state)) return observation;
   return { ...observation, state: 'STALE', reason: `runtime observation exceeded stale threshold of ${maxAgeMs}ms` };
 }
 

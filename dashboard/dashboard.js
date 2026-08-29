@@ -1,15 +1,20 @@
-import { applyStaleness, validateRuntimeStatus } from '../tools/kad/runtime-status.mjs';
+import { applyStaleness, createRuntimeStatus, runtimeTransition, validateRuntimeStatus } from '../tools/kad/runtime-status.mjs';
 import { displayDate, escapeHtml, loadJson, statusBadge } from '../interface/kad-ui.js';
 
 const content = document.querySelector('#dashboard-content');
 const navLinks = [...document.querySelectorAll('[data-view]')];
 let data;
 let liveState;
-const liveMeta = { last_successful: null, last_failure: null };
+const liveMeta = { last_successful: null, last_failure: null, last_transition: null };
 const LIVE_STALE_THRESHOLD_MS = 30000;
 
 function unavailableLiveState(reason, observedAt = new Date().toISOString()) {
-  return { schema: 'kad-runtime-status-v1', runtime_id: 'stheno-v3.2', observed_at: observedAt, state: 'UNAVAILABLE', capability: 'world', trust_domain: 'world', endpoint_class: 'localhost-openai-models', identity: null, latency_ms: null, reason, source: 'runtime-probe' };
+  return createRuntimeStatus(undefined, { observedAt, state: 'UNAVAILABLE', reason });
+}
+
+function updateLiveState(candidate) {
+  liveMeta.last_transition = runtimeTransition(liveState, candidate);
+  liveState = candidate;
 }
 
 function currentLiveState() {
@@ -22,10 +27,10 @@ async function refreshLiveStatus() {
     if (!response.ok) throw new Error(`live runtime API returned HTTP ${response.status}`);
     const candidate = await response.json();
     if (!validateRuntimeStatus(candidate)) throw new Error('live runtime API returned malformed status');
-    liveState = candidate;
+    updateLiveState(candidate);
     liveMeta.last_successful = candidate.observed_at;
   } catch (error) {
-    liveState = unavailableLiveState('live runtime API unavailable', liveState?.observed_at);
+    updateLiveState(unavailableLiveState('live runtime API unavailable'));
     liveMeta.last_failure = new Date().toISOString();
   }
   if (data) render();
@@ -84,7 +89,7 @@ function evidence() {
 
 function system() {
   const live = currentLiveState();
-  return `<div class="dashboard-title"><div><p class="eyebrow">System / boundary</p><h1>Read-only observation.</h1><p>Generated projections remain the governed snapshot; runtime details come from one bounded localhost probe.</p></div><span class="status status--PASS">READ-ONLY</span></div><div class="grid grid-2"><article class="panel panel--gold"><p class="kicker">Governed snapshot</p><h2>Canonical projections</h2><p>Loaded from <span class="mono">wiki/generated/kad-canonical/</span>. Source references remain visible for local inspection; the dashboard does not rewrite them.</p><div class="meta"><span>Projection: ${escapeHtml(data.state.projection_id)}</span><span>Sources: ${data.state.source_count}</span><span>Records: ${data.state.record_count}</span></div></article><article class="panel panel--accent"><p class="kicker">Live observation</p><h2>${statusBadge(live.state)}</h2><div class="meta"><span>Runtime: ${escapeHtml(live.runtime_id)}</span><span>Identity: ${escapeHtml(live.identity || 'not observed')}</span><span>Qualification: separate governed registry state</span></div><p>${escapeHtml(live.reason || 'Expected identity and health response validated.')}</p></article></div><section class="section"><div class="grid grid-2"><article class="panel panel--cyan"><p class="kicker">Probe contract</p><h2>${escapeHtml(live.source)}</h2><div class="meta"><span>Endpoint class: ${escapeHtml(live.endpoint_class)}</span><span>Capability: ${escapeHtml(live.capability)}</span><span>Trust domain: ${escapeHtml(live.trust_domain)}</span><span>Observed: ${escapeHtml(displayDate(live.observed_at))}</span><span>Latency: ${live.latency_ms == null ? 'not measured' : `${live.latency_ms}ms`}</span></div></article><article class="panel"><p class="kicker">Lifecycle evidence</p><h2>No control path</h2><p>The observer does not own, start, stop, restart, qualify, or mutate the runtime. No automatic reaction is attached to state changes.</p><div class="meta"><span>Last successful observation: ${escapeHtml(displayDate(liveMeta.last_successful))}</span><span>Last interface failure: ${escapeHtml(displayDate(liveMeta.last_failure))}</span><span>Poll interval: 10s</span><span>Stale threshold: 30s</span></div></article></div></section>`;
+  return `<div class="dashboard-title"><div><p class="eyebrow">System / boundary</p><h1>Read-only observation.</h1><p>Generated projections remain the governed snapshot; runtime details come from one bounded localhost probe.</p></div><span class="status status--PASS">READ-ONLY</span></div><div class="grid grid-2"><article class="panel panel--gold"><p class="kicker">Governed snapshot</p><h2>Canonical projections</h2><p>Loaded from <span class="mono">wiki/generated/kad-canonical/</span>. Source references remain visible for local inspection; the dashboard does not rewrite them.</p><div class="meta"><span>Projection: ${escapeHtml(data.state.projection_id)}</span><span>Sources: ${data.state.source_count}</span><span>Records: ${data.state.record_count}</span></div></article><article class="panel panel--accent"><p class="kicker">Live observation</p><h2>${statusBadge(live.state)}</h2><div class="meta"><span>Runtime: ${escapeHtml(live.runtime_id)}</span><span>Identity: ${escapeHtml(live.identity || 'not observed')}</span><span>Qualification: separate governed registry state</span></div><p>${escapeHtml(live.reason || 'Expected identity and health response validated.')}</p></article></div><section class="section"><div class="grid grid-2"><article class="panel panel--cyan"><p class="kicker">Probe contract</p><h2>${escapeHtml(live.source)}</h2><div class="meta"><span>Endpoint class: ${escapeHtml(live.endpoint_class)}</span><span>Capability: ${escapeHtml(live.capability)}</span><span>Trust domain: ${escapeHtml(live.trust_domain)}</span><span>Observed: ${escapeHtml(displayDate(live.observed_at))}</span><span>Latency: ${live.latency_ms == null ? 'not measured' : `${live.latency_ms}ms`}</span></div></article><article class="panel"><p class="kicker">Lifecycle evidence</p><h2>No control path</h2><p>The observer does not own, start, stop, restart, qualify, or mutate the runtime. No automatic reaction is attached to state changes.</p><div class="meta"><span>Last successful observation: ${escapeHtml(displayDate(liveMeta.last_successful))}</span><span>Last interface failure: ${escapeHtml(displayDate(liveMeta.last_failure))}</span><span>Last transition: ${escapeHtml(liveMeta.last_transition || 'none recorded')}</span><span>Poll interval: 10s</span><span>Stale threshold: 30s</span></div></article></div></section>`;
 }
 
 function render(view = location.hash.slice(1) || 'overview') {

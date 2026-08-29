@@ -74,6 +74,13 @@ test('old observation becomes STALE instead of remaining green', () => {
   assert.equal(result.state, 'STALE');
   assert.match(result.reason, /stale threshold/);
 });
+test('old unavailable observation remains unavailable', () => {
+  const observation = { schema: 'kad-runtime-status-v1', observed_at: '2026-08-29T20:00:00.000Z', state: 'UNAVAILABLE', reason: 'runtime endpoint unreachable' };
+  const result = applyStaleness(observation, { now: () => Date.parse('2026-08-29T20:01:00.001Z'), maxAgeMs: 60000 });
+
+  assert.equal(result.state, 'UNAVAILABLE');
+  assert.equal(result.reason, 'runtime endpoint unreachable');
+});
 test('meaningful state transitions are classified without automatic reaction', () => {
   assert.equal(runtimeTransition({ state: 'AVAILABLE' }, { state: 'UNAVAILABLE' }), 'AVAILABLE_TO_UNAVAILABLE');
   assert.equal(runtimeTransition({ state: 'AVAILABLE' }, { state: 'STALE' }), 'FRESH_TO_STALE');

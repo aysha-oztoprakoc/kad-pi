@@ -1,8 +1,9 @@
 import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
-import { observeRuntime, SELECTED_RUNTIME, validateRuntimeStatus } from './runtime-status.mjs';
+import { observeRuntime, createRuntimeStatus, SELECTED_RUNTIME, validateRuntimeStatus } from './runtime-status.mjs';
 
+export const DEFAULT_INTERFACE_PORT = 4173;
 const STATIC_FILES = Object.freeze({
   '/dashboard/index.html': 'dashboard/index.html',
   '/dashboard/dashboard.js': 'dashboard/dashboard.js',
@@ -23,11 +24,7 @@ function json(response, statusCode, value) {
 }
 
 function unavailableObservation(reason) {
-  return {
-    schema: 'kad-runtime-status-v1', runtime_id: SELECTED_RUNTIME.runtime_id, observed_at: new Date().toISOString(), state: 'UNKNOWN',
-    capability: SELECTED_RUNTIME.capability, trust_domain: SELECTED_RUNTIME.trust_domain, endpoint_class: SELECTED_RUNTIME.endpoint_class,
-    identity: null, latency_ms: null, reason, source: 'runtime-probe'
-  };
+  return createRuntimeStatus(SELECTED_RUNTIME, { observedAt: new Date().toISOString(), reason });
 }
 
 function staticFile(rootDir, pathname) {
@@ -85,8 +82,8 @@ export function createInterfaceServer({ rootDir = process.cwd(), host = '127.0.0
 }
 
 if (process.argv[1] === new URL(import.meta.url).pathname) {
-  const requestedPort = Number(process.env.KAD_INTERFACE_PORT ?? 4173);
-  createInterfaceServer({ port: Number.isInteger(requestedPort) ? requestedPort : 4173 }).then(({ address }) => {
+  const requestedPort = Number(process.env.KAD_INTERFACE_PORT ?? DEFAULT_INTERFACE_PORT);
+  createInterfaceServer({ port: Number.isInteger(requestedPort) ? requestedPort : DEFAULT_INTERFACE_PORT }).then(({ address }) => {
     console.log(`KAD interface listening on http://${address.address}:${address.port}`);
   }).catch(error => { console.error(error.message); process.exitCode = 1; });
 }

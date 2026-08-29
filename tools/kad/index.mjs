@@ -19,4 +19,4 @@ export { createQwenRetrievalWorker, createSthenoWorldWorker } from './swarm-work
 export { EXECUTION_CLASSES as MICROTASK_EXECUTION_CLASSES, ESCALATION_REASONS, classifyMicrotask, compileFreshLocalPacket, buildEscalationPacket, routeMicrotask, executeMicrotask, makeEconomicReceipt, recordDistillationCandidate } from './microtask-router.mjs';
 export { DEFAULT_SOURCE_ALLOWLIST, EPISTEMIC_CLASSES, DeterministicKnowledgePlane, hashSource, parseKnowledgeCliArgs, projectionImpact, runKnowledgeCli, validateAcceptanceTransition } from './knowledge-plane.mjs';
 export { createNeedleAdapter, createOpenVikingAdapter, readFixture, runOptionalAdapterProbe } from './knowledge-plane-adapters.mjs';
-export { RUNTIME_STATES, RUNTIME_STATUS_SCHEMA, SELECTED_RUNTIME, applyStaleness, observeRuntime, runtimeTransition, validateRuntimeStatus } from './runtime-status.mjs';
+export { RUNTIME_STATES, RUNTIME_STATUS_SCHEMA, SELECTED_RUNTIME, createRuntimeStatus, applyStaleness, observeRuntime, runtimeTransition, validateRuntimeStatus } from './runtime-status.mjs';
