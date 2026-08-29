@@ -1,0 +1,6 @@
+{"claim":"Attempt-level local usage is complete-or-UNKNOWN","class":"OBSERVED","evidence":"tools/kad/test/tokenmax-r2-preflight.test.mjs:T1-T3"}
+{"claim":"Resume remote accounting is incremental zero with parent lineage","class":"OBSERVED","evidence":"tools/kad/test/tokenmax-r2-preflight.test.mjs:T4-T7"}
+{"claim":"Raw local output is hash-only forensic evidence and excluded from training/distillation","class":"DESIGN_DECISION","evidence":"tools/kad/test/tokenmax-r2-preflight.test.mjs:T8"}
+{"claim":"Deterministic normalizer provenance is machine-readable","class":"OBSERVED","evidence":"tools/kad/test/tokenmax-r2-preflight.test.mjs:T10"}
+{"claim":"Malformed wrappers and multiple candidates fail closed","class":"OBSERVED","evidence":"tools/kad/test/tokenmax-r2-preflight.test.mjs:T11-T13"}
+{"claim":"R1 accepted status and Qwen reliability are not claimed","class":"SOURCE_DERIVED","evidence":"evidence/WP-KAD-TOKENMAX-003-R1/final-report.md"}

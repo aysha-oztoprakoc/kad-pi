@@ -41,6 +41,12 @@ export function normalizeEconomicReceipt(input = {}) {
     trust_domain: text(input.trust_domain) ?? 'UNKNOWN',
     capability: text(input.capability) ?? 'UNKNOWN',
     usage: usage(input.usage),
+    usage_scope: text(input.usage_scope ?? input.usage?.scope) ?? 'INCREMENTAL_ATTEMPT',
+    inherited_parent: input.inherited_parent ? {
+      receipt_id: text(input.inherited_parent.receipt_id),
+      receipt_hash: text(input.inherited_parent.receipt_hash),
+      remote_tokens: finite(input.inherited_parent.remote_tokens),
+    } : null,
     economics: {
       provider_reported_cost: providerCost,
       cost_unit: providerCost === null ? null : text(input.cost_unit ?? input.economics?.cost_unit),
@@ -78,6 +84,21 @@ export function normalizeEconomicReceipt(input = {}) {
   return receipt;
 }
 
+export function aggregateLineageRemoteTokens(receipts = []) {
+  const seen = new Set();
+  let total = 0;
+  for (const input of receipts) {
+    const receipt = input?.schema_version === 'kad-economic-1' ? input : normalizeEconomicReceipt(input);
+    const key = receipt.receipt_hash ?? receipt.episode_id;
+    if (key && seen.has(key)) continue;
+    if (key) seen.add(key);
+    const incremental = receipt.usage.total_tokens;
+    if (incremental === null) return null;
+    total += incremental;
+  }
+  return total;
+}
+
 export function deriveEconomicMetrics(receipts = []) {
   const normalized = receipts.map(receipt => receipt?.schema_version === 'kad-economic-1' ? receipt : normalizeEconomicReceipt(receipt));
   const sumIfComplete = (values, empty = 0) => values.length === 0 ? empty : values.every(value => value !== null) ? values.reduce((sum, value) => sum + value, 0) : null;
@@ -89,6 +110,7 @@ export function deriveEconomicMetrics(receipts = []) {
   const acceptedRemoteTokens = accepted.length === 0 ? 0 : sumIfComplete(knownAcceptedTokens, null);
   const totalModelCalls = sumIfComplete(normalized.map(receipt => receipt.model_calls));
   return {
+    lineage_remote_tokens: aggregateLineageRemoteTokens(normalized),
     episode_count: normalized.length,
     accepted_episode_count: accepted.length,
     rejected_episode_count: normalized.filter(receipt => !receipt.quality.accepted).length,

@@ -6,6 +6,10 @@ import { normalizeEconomicReceipt } from './accepted-work-economics.mjs';
 
 const supportedLocalCapabilities = new Set(['repository-fact-finding', 'structured-extraction']);
 const hash = value => createHash('sha256').update(value, 'utf8').digest('hex');
+const normalizerSourceHash = hash(readFileSync(new URL('./swarm.mjs', import.meta.url), 'utf8'));
+const normalizerVersion = 'kad-worker-normalizer-2';
+const validatorVersion = 'schema-source-evidence-validator-1';
+const runtimeCommit = process.env.KAD_RUNTIME_COMMIT ?? 'UNKNOWN';
 const now = () => Date.now();
 
 export function normalizeWorkRequest(input = {}) {
@@ -93,18 +97,30 @@ function balancedObjectCandidates(text) {
   return candidates.filter(candidate => !candidates.some(other => other !== candidate && other.start <= candidate.start && other.end >= candidate.end));
 }
 
-export function normalizeWorkerOutput(output) {
+function reasoningEnvelope(text) {
+  const tags = [...text.matchAll(/<\/?(?:think|analysis)>/ig)];
+  if (tags.length === 0) return { detected: false, valid: true, content: text };
+  const match = text.match(/^<(think|analysis)>[\s\S]*<\/\1>\s*/i);
+  const remaining = match ? text.slice(match[0].length) : text;
+  const valid = Boolean(match) && !/<\/?(?:think|analysis)>/i.test(remaining) && !/<(?:think|analysis)>[\s\S]*<\/(?:think|analysis)>/i.test(match[0].slice(match[0].indexOf('>') + 1, -(`</${match[1]}>`.length)));
+  return { detected: true, valid, content: match ? remaining : text };
+}
+
+export function normalizeWorkerOutput(output, { attempt_id = null } = {}) {
   const original = typeof output === 'string' ? output : JSON.stringify(output ?? null);
   const trimmed = original.trim();
-  const reasoningWrapperDetected = /<(?:think|analysis)>[\s\S]*?<\/(?:think|analysis)>/i.test(trimmed);
-  const result = { raw_hash: hash(original), classification: 'UNKNOWN', success: false, changed: false, reasoning_wrapper_detected: reasoningWrapperDetected, value: null };
-  if (!trimmed) return { ...result, classification: 'EMPTY' };
-  const exact = parseJson(trimmed);
-  if (exact.ok) return { ...result, classification: original === trimmed ? 'VALID_JSON' : 'WHITESPACE', success: true, changed: original !== trimmed, value: exact.value };
+  const envelope = reasoningEnvelope(trimmed);
+  const reasoningWrapperDetected = envelope.detected;
+  const result = { raw_hash: hash(original), classification: 'UNKNOWN', success: false, changed: false, reasoning_wrapper_detected: reasoningWrapperDetected, value: null, provenance: { normalizer_version: normalizerVersion, normalizer_source_hash: normalizerSourceHash, validator_version: validatorVersion, validator_hash: normalizerSourceHash, runtime_commit: runtimeCommit }, forensic: { attempt_id, raw_output_sha256: hash(original), byte_length: Buffer.byteLength(original), normalization_classification: 'UNKNOWN', validator_result: null, FOR_FORENSICS_ONLY: true, TRAINING_ELIGIBLE: false, DISTILLATION_ELIGIBLE: false } };
+  if (reasoningWrapperDetected && !envelope.valid) return { ...result, classification: 'MALFORMED_REASONING_WRAPPER', forensic: { ...result.forensic, normalization_classification: 'MALFORMED_REASONING_WRAPPER' } };
+  if (!trimmed) return { ...result, classification: 'EMPTY', forensic: { ...result.forensic, normalization_classification: 'EMPTY' } };
+  const exact = parseJson(envelope.content);
+  if (reasoningWrapperDetected && exact.ok) return { ...result, classification: 'VISIBLE_REASONING_WRAPPER', success: true, changed: true, value: exact.value, forensic: { ...result.forensic, normalization_classification: 'VISIBLE_REASONING_WRAPPER' } };
+  if (exact.ok) return { ...result, classification: original === trimmed ? 'VALID_JSON' : 'WHITESPACE', success: true, changed: original !== trimmed, value: exact.value, forensic: { ...result.forensic, normalization_classification: original === trimmed ? 'VALID_JSON' : 'WHITESPACE' } };
   const fenced = trimmed.match(/^```(?:json)?[\t ]*\r?\n?([\s\S]*?)\r?\n?```$/i);
   if (fenced) {
     const parsed = parseJson(fenced[1].trim());
-    if (parsed.ok) return { ...result, classification: 'FENCED_JSON', success: true, changed: true, value: parsed.value };
+    if (parsed.ok) return { ...result, classification: 'FENCED_JSON', success: true, changed: true, value: parsed.value, forensic: { ...result.forensic, normalization_classification: 'FENCED_JSON' } };
   }
   const candidates = balancedObjectCandidates(trimmed);
   if (candidates.length === 1) {
@@ -156,7 +172,10 @@ function baseEpisode(request, packet, route, validation, outcome, telemetry, tra
     billing_class: telemetry.remote_lane.billing_class,
     cache: telemetry.remote_cache,
     quota_snapshot: telemetry.remote_lane.quota_snapshot ?? telemetry.remote_lane.quota_state ?? null,
+    usage_scope: telemetry.usage_scope ?? 'INCREMENTAL_ATTEMPT',
+    inherited_parent: telemetry.inherited_parent ?? null,
     performance: { latency_ms: telemetry.latency_ms, compiled_context_bytes: telemetry.context_bytes },
+    provenance: { source: 'KAD swarm controller response metadata', usage_source: 'controller telemetry', provider_metadata_observed: telemetry.remote_input_tokens !== null || telemetry.remote_output_tokens !== null, normalizer_version: normalizerVersion, normalizer_source_hash: normalizerSourceHash, validator_version: validatorVersion, validator_hash: normalizerSourceHash, runtime_commit: runtimeCommit },
     validation: validation?.result,
     accepted: outcome.accepted,
     acceptance_authority: 'KAD_VALIDATOR',
@@ -178,7 +197,7 @@ function baseEpisode(request, packet, route, validation, outcome, telemetry, tra
     trajectory,
     validation: { validator: 'schema-source-evidence-validator', result: validation?.result ?? 'UNKNOWN', tests: validation?.errors ?? [], postconditions: validation?.accepted ? ['schema-valid', 'source-evidence-valid'] : [] },
     outcome: { accepted: outcome.accepted, remote_escalation: outcome.remote_escalation ?? false },
-    economics: { local_input_tokens: telemetry.local_input_tokens ?? null, local_output_tokens: telemetry.local_output_tokens ?? null, remote_input_tokens: telemetry.remote_input_tokens ?? null, remote_output_tokens: telemetry.remote_output_tokens ?? null, wall_ms: telemetry.latency_ms ?? telemetry.wall_ms ?? null, tool_calls: telemetry.deterministic_tool_invocations ?? null },
+    economics: { local_attempts: telemetry.local_attempts, local_input_tokens_total: telemetry.local_input_tokens_total, local_output_tokens_total: telemetry.local_output_tokens_total, local_tokens_total: telemetry.local_tokens_total, local_input_tokens: telemetry.local_input_tokens ?? null, local_output_tokens: telemetry.local_output_tokens ?? null, remote_input_tokens: telemetry.remote_input_tokens ?? null, remote_output_tokens: telemetry.remote_output_tokens ?? null, incremental_remote_tokens: telemetry.incremental_remote_tokens ?? null, inherited_parent: telemetry.inherited_parent ?? null, usage_scope: telemetry.usage_scope ?? 'INCREMENTAL_ATTEMPT', acceptance_semantics: telemetry.acceptance_semantics, wall_ms: telemetry.latency_ms ?? telemetry.wall_ms ?? null, tool_calls: telemetry.deterministic_tool_invocations ?? null },
     teacher: { used: Boolean(route?.selected_lane), provider: route?.selected_lane?.provider ?? null, model: route?.selected_lane?.model ?? null },
     evidence_refs: packet ? packet.sources.map(source => `${source.path}#${source.sha256}`) : []
   });
@@ -193,7 +212,7 @@ export async function executeSwarm({ request: requestInput, sources, controller,
   const started = now();
   const request = normalizeWorkRequest(requestInput);
   const events = [event('work.requested', request.task_id), event('requirement.classified', request.task_id, { role: request.role, trust_domain: request.trust_domain, capability: request.capability })];
-  const telemetry = { controller_invocations: 0, remote_lane: null, remote_input_tokens: null, remote_cached_input_tokens: null, remote_output_tokens: null, remote_reasoning_tokens: null, remote_provider_reported_cost: null, remote_cache: null, remote_cost: null, local_invocations: 0, model_repair_calls: 0, validation_calls: 0, deterministic_normalization_attempts: 0, deterministic_normalization_successes: 0, normalization_history: [], deterministic_tool_invocations: 1, repairs: 0, escalations: 0, accepted: false, latency_ms: null, context_bytes: 0, failure_reason: null };
+  const telemetry = { controller_invocations: 0, new_remote_controller_calls: 0, remote_lane: null, remote_input_tokens: null, remote_cached_input_tokens: null, remote_output_tokens: null, remote_reasoning_tokens: null, remote_provider_reported_cost: null, remote_cache: null, remote_cost: null, usage_scope: 'INCREMENTAL_ATTEMPT', incremental_remote_tokens: 0, inherited_parent: null, local_invocations: 0, local_attempts: [], local_input_tokens_total: null, local_output_tokens_total: null, local_tokens_total: null, model_repair_calls: 0, validation_calls: 0, deterministic_normalization_attempts: 0, deterministic_normalization_successes: 0, normalization_history: [], deterministic_tool_invocations: 1, repairs: 0, escalations: 0, accepted: false, acceptance_semantics: resume?.acceptance_semantics ?? 'KAD_VALIDATOR_SUFFICIENT', latency_ms: null, context_bytes: 0, failure_reason: null };
   const route = selectControllerLane(controller?.lanes);
   telemetry.route = route;
   emit(events[0]); emit(events[1]);
@@ -215,11 +234,15 @@ export async function executeSwarm({ request: requestInput, sources, controller,
     telemetry.controller_invocations = resume.telemetry?.controller_invocations ?? 0;
     telemetry.new_remote_controller_calls = 0;
     telemetry.resumed_from_episode_id = resume.parent_episode_id ?? null;
-    telemetry.remote_input_tokens = resume.telemetry?.remote_input_tokens ?? resume.telemetry?.input_tokens ?? null;
-    telemetry.remote_cached_input_tokens = resume.telemetry?.remote_cached_input_tokens ?? resume.telemetry?.cached_input_tokens ?? null;
-    telemetry.remote_output_tokens = resume.telemetry?.remote_output_tokens ?? resume.telemetry?.output_tokens ?? null;
-    telemetry.remote_reasoning_tokens = resume.telemetry?.remote_reasoning_tokens ?? resume.telemetry?.reasoning_tokens ?? null;
-    telemetry.remote_provider_reported_cost = Number.isFinite(resume.telemetry?.remote_provider_reported_cost) ? resume.telemetry.remote_provider_reported_cost : null;
+    telemetry.remote_input_tokens = 0;
+    telemetry.remote_cached_input_tokens = 0;
+    telemetry.remote_output_tokens = 0;
+    telemetry.incremental_remote_tokens = 0;
+    const parentInputTokens = resume.telemetry?.remote_input_tokens ?? resume.telemetry?.input_tokens ?? null;
+    const parentOutputTokens = resume.telemetry?.remote_output_tokens ?? resume.telemetry?.output_tokens ?? null;
+    telemetry.inherited_parent = { receipt_id: resume.parent_receipt_id ?? resume.parent_episode_id ?? null, receipt_hash: resume.parent_receipt_hash ?? null, remote_tokens: parentInputTokens != null && parentOutputTokens != null ? parentInputTokens + parentOutputTokens : null };
+    telemetry.remote_reasoning_tokens = 0;
+    telemetry.remote_provider_reported_cost = null;
     telemetry.remote_cache = resume.telemetry?.remote_cache ?? resume.telemetry?.cache ?? null;
     telemetry.remote_cost = resume.telemetry?.remote_cost ?? resume.telemetry?.cost ?? null;
   } else {
@@ -252,6 +275,18 @@ export async function executeSwarm({ request: requestInput, sources, controller,
   }
   events.push(event('worker.started', request.task_id, { resource_id: worker.resource_id })); emit(events.at(-1));
   let workerResult = await worker.execute(packet);
+  const recordLocalAttempt = (attempt, kind, result, validationResult) => {
+    const inputTokens = Number.isFinite(result?.telemetry?.input_tokens) ? result.telemetry.input_tokens : null;
+    const outputTokens = Number.isFinite(result?.telemetry?.output_tokens) ? result.telemetry.output_tokens : null;
+    const latency = Number.isFinite(result?.telemetry?.latency_ms) ? result.telemetry.latency_ms : null;
+    const attemptId = result?.telemetry?.attempt_id ?? `${request.task_id}-local-${attempt}`;
+    telemetry.local_attempts.push({ attempt, attempt_id: attemptId, kind, input_tokens: inputTokens, output_tokens: outputTokens, latency_ms: latency });
+    telemetry.local_input_tokens_total = telemetry.local_attempts.every(item => item.input_tokens !== null) ? telemetry.local_attempts.reduce((sum, item) => sum + item.input_tokens, 0) : null;
+    telemetry.local_output_tokens_total = telemetry.local_attempts.every(item => item.output_tokens !== null) ? telemetry.local_attempts.reduce((sum, item) => sum + item.output_tokens, 0) : null;
+    telemetry.local_tokens_total = telemetry.local_input_tokens_total !== null && telemetry.local_output_tokens_total !== null ? telemetry.local_input_tokens_total + telemetry.local_output_tokens_total : null;
+    const forensic = { ...validationResult.normalization.forensic, validator_result: validationResult.accepted ? 'PASS' : 'FAIL' };
+    telemetry.normalization_history.push({ attempt_id: attemptId, raw_output_sha256: forensic.raw_output_sha256, byte_length: forensic.byte_length, classification: validationResult.normalization.classification, validator_result: forensic.validator_result, reasoning_wrapper_detected: validationResult.normalization.reasoning_wrapper_detected, provenance: { normalizer_version: normalizerVersion, normalizer_source_hash: normalizerSourceHash, validator_version: validatorVersion, validator_hash: normalizerSourceHash, runtime_commit: runtimeCommit } });
+  };
   telemetry.local_invocations = 1;
   telemetry.local_input_tokens = workerResult.telemetry?.input_tokens ?? null;
   telemetry.local_output_tokens = workerResult.telemetry?.output_tokens ?? null;
@@ -259,7 +294,7 @@ export async function executeSwarm({ request: requestInput, sources, controller,
   telemetry.validation_calls += 1;
   telemetry.deterministic_normalization_attempts += 1;
   if (validation.normalization.success) telemetry.deterministic_normalization_successes += 1;
-  telemetry.normalization_history.push({ raw_hash: validation.normalization.raw_hash, classification: validation.normalization.classification, success: validation.normalization.success, reasoning_wrapper_detected: validation.normalization.reasoning_wrapper_detected });
+  recordLocalAttempt(1, 'initial', workerResult, validation);
   let cleanup = workerResult?.dispose;
   const repairBudget = Math.min(max_repairs, request.budget.max_repairs);
   if (!validation.accepted && repairBudget > 0) {
@@ -274,7 +309,7 @@ export async function executeSwarm({ request: requestInput, sources, controller,
     telemetry.validation_calls += 1;
     telemetry.deterministic_normalization_attempts += 1;
     if (validation.normalization.success) telemetry.deterministic_normalization_successes += 1;
-    telemetry.normalization_history.push({ raw_hash: validation.normalization.raw_hash, classification: validation.normalization.classification, success: validation.normalization.success, reasoning_wrapper_detected: validation.normalization.reasoning_wrapper_detected });
+    recordLocalAttempt(2, 'repair', workerResult, validation);
     cleanup = workerResult?.dispose ?? cleanup;
   }
   telemetry.latency_ms = now() - started;
@@ -303,10 +338,16 @@ export async function executeSwarm({ request: requestInput, sources, controller,
     const consumedEvent = event(controllerConsumption.consumed === true ? 'controller.consumed' : 'controller.consumption_failed', request.task_id, { accepted: controllerConsumption.consumed === true });
     events.push(consumedEvent); emit(consumedEvent);
   }
+  if (validation.accepted && resume?.skip_consumption && telemetry.acceptance_semantics === 'CONTROLLER_CONSUMPTION_REQUIRED') {
+    telemetry.failure_reason = 'CONTROLLER_CONSUMPTION_REQUIRED';
+    validation = { ...validation, accepted: false, errors: [...validation.errors, telemetry.failure_reason] };
+  }
+  telemetry.incremental_remote_tokens = telemetry.remote_input_tokens !== null && telemetry.remote_output_tokens !== null ? telemetry.remote_input_tokens + telemetry.remote_output_tokens : null;
+  telemetry.accepted = validation.accepted;
   const status = validation.accepted ? 'ACCEPTED' : 'DEGRADED';
   const outcomeEvent = event(validation.accepted ? 'result.accepted' : 'result.rejected', request.task_id, { status });
   events.push(outcomeEvent); emit(outcomeEvent);
-  const result = { status, failure_reason: validation.accepted ? null : (telemetry.failure_reason ?? 'LOCAL_VALIDATION_FAILED'), request, packet, controller: { lane: route.selected_lane, plan: controllerResult.plan ?? null, consumption: controllerConsumption }, worker: { resource_id: worker.resource_id, provider: worker.resource_id, output: validation.value }, validation: { result: validation.accepted ? 'PASS' : 'FAIL', errors: validation.errors }, events, telemetry, episode: baseEpisode(request, packet, { ...route, selected_resource: worker.resource_id, reason_code: 'LOCAL_SPECIALIST_SUPPORTED' }, { ...validation, result: validation.accepted ? 'PASS' : 'FAIL' }, { accepted: validation.accepted }, telemetry, events), dispose: async () => { await cleanup?.(); } };
+  const result = { status, failure_reason: validation.accepted ? null : (telemetry.failure_reason ?? 'LOCAL_VALIDATION_FAILED'), request, packet, acceptance_semantics: telemetry.acceptance_semantics, controller: { lane: route.selected_lane, plan: controllerResult.plan ?? null, consumption: controllerConsumption }, worker: { resource_id: worker.resource_id, provider: worker.resource_id, output: validation.value }, validation: { result: validation.accepted ? 'PASS' : 'FAIL', errors: validation.errors }, events, telemetry, episode: baseEpisode(request, packet, { ...route, selected_resource: worker.resource_id, reason_code: 'LOCAL_SPECIALIST_SUPPORTED' }, { ...validation, result: validation.accepted ? 'PASS' : 'FAIL' }, { accepted: validation.accepted }, telemetry, events), dispose: async () => { await cleanup?.(); } };
   result.episode.economics.latency_ms = telemetry.latency_ms;
   return result;
 }
