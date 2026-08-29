@@ -1,0 +1,14 @@
+{
+  "workpackage": "WP-KAD-SHARED-MODEL-STORE-001",
+  "canonical_contract": "tools/kad/model-store.mjs and bin/kad-model",
+  "entries": [
+    {"harness":"KAD","classification":"MODEL_REGISTRY","resolution":"resolveModel(id) -> KAD_MODEL_HOME/.models relative_path","status":"PASS"},
+    {"harness":"OMP/Pi-compatible","classification":"PROVIDER_REGISTRY","resolution":"stable provider IDs and localhost endpoints; model bytes are runtime-owned and not directly opened by OMP/Pi","status":"PASS_WITH_ENDPOINT_BOUNDARY"},
+    {"harness":"OpenViking","classification":"MODEL_REGISTRY","resolution":"active ov.conf model_path updated to /home/amdy/Work/.models/embeddings/bge-small-zh-v1.5-f16.gguf","status":"CONFIG_UPDATED_RUNTIME_RESTART_NOT_OBSERVED"},
+    {"harness":"Needle","classification":"MODEL_REGISTRY","resolution":"needle2 resolves to .models/specialists/needle/needle2.cact; engine and venv remain under .state runtime","status":"PASS_PATH_RESOLUTION"},
+    {"harness":"KoboldCpp","classification":"MODEL_REGISTRY","resolution":"runbook invokes bin/kad-model path stable IDs; active external process remains on legacy Stheno path","status":"PARTIAL_RUNTIME_CUTOVER_PENDING"},
+    {"harness":"llama.cpp","classification":"UNSUPPORTED","resolution":"no independent launcher or active process observed; registry exposes canonical paths for compatible runtimes","status":"NOT_OBSERVED"},
+    {"harness":"SillyTavern","classification":"OPENAI_ENDPOINT","resolution":"consumes KoboldCpp localhost endpoint; does not own model store","status":"PASS_WITH_RUNTIME_BOUNDARY"}
+  ],
+  "authority_note": "No harness gains KAD capability authority; registry categories are storage organization only."
+}

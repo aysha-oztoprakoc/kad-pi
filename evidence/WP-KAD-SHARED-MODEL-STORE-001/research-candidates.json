@@ -1,0 +1,11 @@
+{
+  "workpackage": "WP-KAD-SHARED-MODEL-STORE-001",
+  "source_report": "NEW-MODEL-RESEARCH.md",
+  "classification_is_hypothesis": true,
+  "install_now": ["Ministral 3 3B Instruct", "Ministral 3 3B Reasoning", "Gemma 4 E2B Instruct", "Gemma 4 E4B Instruct"],
+  "qualification_queue": ["Qwen3.5-0.8B", "Qwen3.5-4B", "Ministral 3 8B Instruct", "Ministral 3 8B Reasoning", "Nemotron 3 Nano 4B"],
+  "future_hardware": ["Qwen3.8-27B", "Ministral 3 14B", "Gemma 4 12B/26B/31B", "Nemotron Nano 9B v2 parent", "Qwen3.6-27B", "Qwen3.6-35B-A3B", "GPT-OSS 20B", "larger Devstral", "DeepSeek V4 local GGUFs"],
+  "rejected": [],
+  "unknown": ["Exact official quant sizes for several Qwen/Mistral rows", "Authoritative official Qwen3.8-9B release"],
+  "authority_effect": "none; all are research classifications only"
+}

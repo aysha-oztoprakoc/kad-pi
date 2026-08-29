@@ -1,0 +1,11 @@
+{
+  "workpackage": "WP-KAD-SHARED-MODEL-STORE-001",
+  "tests": [
+    {"model_id":"stheno-v3.2","runtime":"KoboldCpp 1.119 external","actual_loaded_model_identity":"koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M","load_time_ms":null,"peak_ram_bytes":null,"vram_bytes":6260367360,"prompt":"Reply exactly: SHARED_STORE_SMOKE","response_status":"PASS; exact response SHARED_STORE_SMOKE","decode_speed":null,"cleanup":"not performed; persistent external runtime preserved","qualification_effect":"none; existing WORLD-only authority retained","path_note":"runtime loaded legacy path; canonical copy hash verified"},
+    {"model_id":"qwen-local","runtime":"KoboldCpp inactive","actual_loaded_model_identity":"NOT OBSERVED","response_status":"DEGRADED; endpoint 127.0.0.1:5002 unavailable","cleanup":"inactive; no activation attempted","qualification_effect":"none; RETRIEVAL-only authority retained"},
+    {"model_id":"needle2","runtime":"Cactus Needle 2.0.11","actual_loaded_model_identity":"prior evidence only","response_status":"prior offline inference PASS; post-migration activation not attempted","cleanup":"runtime engine retained separately","qualification_effect":"none; confidence uncalibrated"},
+    {"model_id":"bge-small-zh-v1.5","runtime":"OpenViking 0.4.17","actual_loaded_model_identity":"prior evidence only","response_status":"prior embedding health/persistence PASS; post-config restart not observed","cleanup":"runtime state retained separately","qualification_effect":"none"},
+    {"model_id":"rp-hero-8b","runtime":"KoboldCpp inactive","actual_loaded_model_identity":"NOT OBSERVED","response_status":"NOT RUN; one substantial worker policy","cleanup":"no activation","qualification_effect":"FILE_ONLY"},
+    {"model_id":"lumimaid-8b","runtime":"KoboldCpp inactive","actual_loaded_model_identity":"NOT OBSERVED","response_status":"NOT RUN; one substantial worker policy","cleanup":"no activation","qualification_effect":"FILE_ONLY"}
+  ]
+}

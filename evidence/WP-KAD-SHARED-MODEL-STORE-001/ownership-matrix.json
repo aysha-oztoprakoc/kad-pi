@@ -1,0 +1,12 @@
+{
+  "byte_owner": "KAD model store under KAD_MODEL_HOME/.models",
+  "runtime_owner": "KoboldCpp/OpenViking/Needle runtime process or adapter",
+  "endpoint_owner": "runtime process exposing localhost endpoint",
+  "task_owner": "KAD capability/router policy",
+  "stheno": {"activation":"external persistent KoboldCpp","health":"127.0.0.1:5001/api/v1/model","identity_verification":"observed Stheno identity","bounded_work":"one short chat smoke","withdrawal":"external owner only","cleanup":"not performed"},
+  "qwen": {"activation":"KAD STC adapter when explicitly activated","health":"127.0.0.1:5002 unavailable","identity_verification":"required before advertise","bounded_work":"none in this WP","withdrawal":"adapter disposal","cleanup":"no process"},
+  "needle2": {"activation":"Needle runtime adapter","health":"prior offline evidence","identity_verification":"prior preflight","bounded_work":"bounded structured call prior evidence","withdrawal":"runtime adapter","cleanup":"engine/venv remain runtime-owned"},
+  "openviking_embedding": {"activation":"OpenViking runtime","health":"prior evidence; config path updated","identity_verification":"sha256 registry check","bounded_work":"embedding runtime-owned","withdrawal":"runtime stop/restart","cleanup":"runtime state retained"},
+  "notifications": ["MODEL_DISCOVERED","MODEL_COPY_STARTED","MODEL_VERIFIED","MODEL_REGISTERED","MODEL_AVAILABLE","MODEL_UNAVAILABLE","MODEL_HASH_MISMATCH","MODEL_RUNTIME_REQUESTED"],
+  "authority_note": "Relocating bytes does not transfer runtime or capability authority"
+}

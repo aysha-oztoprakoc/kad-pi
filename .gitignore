@@ -18,6 +18,7 @@ build/
 .tools/oh-my-pi/
 .tools/kad/pi-sdk/
 .state/omp-kad/
+.models/
 
 # Environment & Secrets
 .env

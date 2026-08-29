@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+import { candidates, listModels, metadata, resolveModel, verifyModel } from '../tools/kad/model-store.mjs';
+
+const [command, id] = process.argv.slice(2);
+
+function usage() {
+  console.error('usage: kad-model list|show <id>|verify <id>|path <id>|candidates');
+  process.exitCode = 2;
+}
+
+try {
+  if (command === 'list') {
+    for (const model of listModels()) {
+      console.log(`${model.id}\t${model.qualification_state}\t${model.trust_domain ?? 'UNKNOWN'}\t${model.size_bytes ?? 'UNKNOWN'}\t${model.sha256 ?? 'UNKNOWN'}`);
+    }
+  } else if (command === 'show' && id) {
+    console.log(JSON.stringify(metadata(id), null, 2));
+  } else if (command === 'verify' && id) {
+    const result = verifyModel(id);
+    console.log(JSON.stringify(result, null, 2));
+    if (result.available !== true) process.exitCode = 1;
+  } else if (command === 'path' && id) {
+    console.log(resolveModel(id).path);
+  } else if (command === 'candidates') {
+    console.log(JSON.stringify(candidates(), null, 2));
+  } else {
+    usage();
+  }
+} catch (error) {
+  console.error(error.message);
+  process.exitCode = 1;
+}

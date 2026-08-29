@@ -1,0 +1,11 @@
+{
+  "workpackage": "WP-KAD-SHARED-MODEL-STORE-001",
+  "downloads_attempted": false,
+  "downloads_completed": false,
+  "reason": "Existing discussed bytes were migrated; new candidate research remains qualification-only and no model authority or paid spend was authorized.",
+  "new_paid_spend": false,
+  "candidate_source": "NEW-MODEL-RESEARCH.md",
+  "tier_a_installed": [],
+  "ambiguous_or_unclassified": ["Qwen3.8-9B reference resolved as no authoritative official release found"],
+  "large_defer": ["Qwen3.8-27B", "Qwen3.6-27B", "Qwen3.6-35B-A3B", "Gemma 4 26B/31B", "Nemotron 30B-class", "GPT-OSS 20B", "larger Devstral", "DeepSeek V4 local GGUFs"]
+}

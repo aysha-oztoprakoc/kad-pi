@@ -1,0 +1,13 @@
+{
+  "workpackage": "WP-KAD-SHARED-MODEL-STORE-001",
+  "cases": [
+    {"failure":"model missing","response":"verifyModel returns MISSING, available=false, capability_state=UNAVAILABLE","authority_effect":"none","status":"PASS"},
+    {"failure":"hash mismatch","response":"verifyModel returns HASH_MISMATCH, available=false, quarantine_required=true","authority_effect":"model cannot become AVAILABLE","status":"PASS"},
+    {"failure":"runtime incompatible","response":"registry qualification remains FILE_ONLY until runtime evidence exists","authority_effect":"none","status":"POLICY_RECORDED"},
+    {"failure":"VRAM insufficient","response":"one substantial worker policy defers concurrent activation; no automatic offload or paid fallback","authority_effect":"none","status":"POLICY_RECORDED"},
+    {"failure":"shared store unavailable","response":"resolver/verification reports explicit missing or unavailable state","authority_effect":"none","status":"PASS"},
+    {"failure":"candidate smoke failure","response":"candidate remains FILE_ONLY or REJECTED; no qualification promotion","authority_effect":"none","status":"POLICY_RECORDED"},
+    {"failure":"unauthorized capability request","response":"existing CapabilityRegistry eligibility requires exact trust_domain and capabilities; no cross-domain route","authority_effect":"preserved","status":"EXISTING_TESTED_SEAM"},
+    {"failure":"local model unavailable","response":"degrade local capability; never auto-select paid API","authority_effect":"no escalation","status":"PASS"}
+  ]
+}

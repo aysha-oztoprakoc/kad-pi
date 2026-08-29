@@ -1,0 +1,11 @@
+{
+  "workpackage": "WP-KAD-SHARED-MODEL-STORE-001",
+  "method": "SHA256 equality, not filename equality",
+  "canonical_unique_models": 6,
+  "canonical_total_bytes": 20450903599,
+  "retired_duplicate_bytes": 15530169359,
+  "retained_duplicate_bytes": 4920734240,
+  "retained_duplicates": [{"sha256":"8e98c1953f9c04e060fd9640bbe866685c844363a2360f09099b79c6c9195fc4","canonical":".models/gguf/world/L3-8B-Stheno-v3.2-Q4_K_M.gguf","legacy":"kad-sillytavern/models/L3-8B-Stheno-v3.2-Q4_K_M.gguf","reason":"active external KoboldCpp process"}],
+  "unnecessary_duplicates": [],
+  "status": "PARTIAL_PENDING_EXTERNAL_STHENO_CUTOVER"
+}

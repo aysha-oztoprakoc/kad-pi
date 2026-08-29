@@ -1,0 +1,13 @@
+{
+  "workpackage": "WP-KAD-SHARED-MODEL-STORE-001",
+  "observed_at": "2026-08-29T15:45:31-03:00",
+  "filesystem": "/home (btrfs)",
+  "free_bytes_before_downloads": 928547909632,
+  "canonical_model_bytes": 20450903599,
+  "duplicate_bytes_retired": 15530169359,
+  "duplicate_bytes_retained_for_active_runtime": 4920734240,
+  "minimum_safety_reserve_bytes": 107374182400,
+  "free_after_planned_downloads_bytes": 928547909632,
+  "budget_status": "PASS",
+  "download_decision": "No downloads in this WP; known models were migrated from existing bytes"
+}

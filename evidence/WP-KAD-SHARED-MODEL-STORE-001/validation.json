@@ -1,0 +1,15 @@
+{
+  "workpackage": "WP-KAD-SHARED-MODEL-STORE-001",
+  "fixed_point": "2bae5d6 feat(kad): add context economy and local swarm MVP",
+  "tests": [
+    {"command":"node --test tools/kad/test/model-store.test.mjs tools/kad/test/model-store-repository.test.mjs tools/kad/test/local-router.test.mjs tools/kad/test/local-qwen-lifecycle.test.mjs","result":"PASS","tests":20,"coverage":["missing model","hash mismatch","duplicate hash","legacy traversal","file and parent symlinks","missing SHA","canonical runtime path","trust-domain authorization","Git exclusion"]},
+    {"command":"make test","result":"PASS","detail":"Prime validation, librarian verification, ask_user contracts, kad-lab, world/PON/router/context suites, and model-store tests passed"},
+    {"command":"git check-ignore -q .models/gguf/world/L3-8B-Stheno-v3.2-Q4_K_M.gguf","result":"PASS"},
+    {"command":"sha256sum canonical model files","result":"PASS","detail":"All six canonical hashes match migration receipts and registry"},
+    {"command":"bin/kad-model list/path/verify","result":"PASS","detail":"Six stable IDs resolve to canonical files; Stheno verification state ACTIVE"},
+    {"command":"curl localhost:5001 health and bounded chat","result":"PASS","detail":"Loaded identity Stheno; exact SHARED_STORE_SMOKE response"}
+  ],
+  "preexisting_dirty_work_preserved": true,
+  "new_paid_spend": false,
+  "secrets_recorded": false
+}

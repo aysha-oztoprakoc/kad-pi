@@ -15,6 +15,7 @@ test: verify
 	node --test tools/kad/test/world-turn.test.mjs
 	node --test tools/kad/test/multi-turn-pon.test.mjs
 	node --test tools/kad/test/local-router.test.mjs
+	node --test tools/kad/test/model-store.test.mjs tools/kad/test/model-store-repository.test.mjs
 	node --test tools/kad/test/context-economy.test.mjs tools/kad/test/context-extension.test.mjs tools/kad/test/swarm-control-plane.test.mjs
 
 test-pi-integration:

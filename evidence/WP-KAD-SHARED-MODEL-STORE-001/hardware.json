@@ -1,0 +1,12 @@
+{
+  "workpackage": "WP-KAD-SHARED-MODEL-STORE-001",
+  "observed_at": "2026-08-29T15:45:31-03:00",
+  "epistemic_class": "OBSERVED",
+  "cpu": {"model": "AMD Ryzen 7 7700 8-Core Processor", "cores": 8, "threads": 16, "architecture": "x86_64"},
+  "memory": {"total_bytes": 15817388032, "available_bytes": 7605862400, "free_bytes": 800776192, "swap_total_bytes": 31634120704, "source": "free -b"},
+  "gpu": {"primary_identity": "AMD Radeon RX 9060 XT", "pci": "03:00.0", "device_id": "1002:7590", "vram_total_bytes": 8539602944, "vram_used_bytes": 6260367360, "source": "lspci and /sys/class/drm/card1/device/mem_info_vram_*"},
+  "vulkan": {"status": "UNAVAILABLE", "reason": "vulkaninfo command not installed"},
+  "rocm_hip": {"status": "UNAVAILABLE", "reason": "rocminfo and hipconfig commands not installed"},
+  "disk": {"mount": "/home", "filesystem": "btrfs", "size_bytes": 998037782528, "available_bytes": 928547909632, "source": "df -B1 -T /home/amdy/Work"},
+  "concurrency_policy": "One substantial 8-9B-class worker at a time until measured otherwise"
+}
