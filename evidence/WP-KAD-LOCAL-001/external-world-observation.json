@@ -1,0 +1,11 @@
+{
+  "endpoint":"http://127.0.0.1:5001/v1",
+  "health":"{\"result\":\"koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M\"}",
+  "model_identity":"L3-8B-Stheno-v3.2-Q4_K_M",
+  "pid":1215627,
+  "parent_pid":1215622,
+  "cwd":"/home/amdy/Work/kad-sillytavern",
+  "argv_contains":"--port 5001 --usevulkan 0 --gpulayers -1 --contextsize 4096",
+  "ownership":"EXTERNAL",
+  "action":"observation only"
+}

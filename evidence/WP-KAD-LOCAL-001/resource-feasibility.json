@@ -1,0 +1,13 @@
+{
+  "phase":"BEFORE_ACTIVATION",
+  "candidate_port":5002,
+  "port_observed_free":true,
+  "external_world_port":5001,
+  "external_world_untouched":true,
+  "qwen_artifact_bytes":5627044224,
+  "ram_available_bytes":7444463616,
+  "vram":"UNKNOWN",
+  "runtime_help_verified":["--usecpu","--contextsize","--batchsize","--threads","--host","--port","--skiplauncher"],
+  "configuration":{"acceleration":"CPU-only","contextsize":2048,"batchsize":128,"threads":4,"host":"127.0.0.1","port":5002},
+  "decision":"attempt conservative owned activation; abort on startup/resource failure"
+}
