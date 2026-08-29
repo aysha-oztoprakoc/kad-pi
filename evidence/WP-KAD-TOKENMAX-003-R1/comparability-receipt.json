@@ -1,0 +1,23 @@
+{
+  "recovery_vs_parent": {
+    "classification": "NOT_COMPARABLE",
+    "reason_codes": [
+      "PARENT_NOT_ACCEPTED",
+      "RECOVERY_LINEAGE_CONTINUATION"
+    ],
+    "result": {
+      "result": "INSUFFICIENT_EVIDENCE",
+      "reason": "both episodes must be accepted"
+    }
+  },
+  "recovery_vs_historical": {
+    "classification": "NOT_COMPARABLE",
+    "reason_codes": [
+      "TASK_CLASS_OR_SCOPE_MISMATCH_REPOSITORY_INVARIANT_AUDIT_VS_SINGLE_RULE_FACT_FINDING"
+    ],
+    "result": {
+      "result": "INSUFFICIENT_EVIDENCE",
+      "reason": "both episodes must be accepted"
+    }
+  }
+}

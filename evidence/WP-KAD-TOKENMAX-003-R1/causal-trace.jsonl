@@ -1,0 +1,13 @@
+{"type":"work.requested","task_id":"TOKENMAX-LIVE-001"}
+{"type":"requirement.classified","task_id":"TOKENMAX-LIVE-001","role":"local_retrieval","trust_domain":"retrieval","capability":"repository-fact-finding"}
+{"type":"route.selected","task_id":"TOKENMAX-LIVE-001","role":"controller","lane":"approved-remote-controller"}
+{"type":"controller.completed","task_id":"TOKENMAX-LIVE-001","lane":"approved-remote-controller","plan":{"capability":"repository-fact-finding","source_paths":["tools/kad/local-router.mjs","tools/kad/pi/local-models.json",".omp/models.yml"],"question":"Inspect only the supplied source paths to identify bounded, exact repository evidence for the eligibility trust-domain rule, the advertised trust domains of Qwen retrieval and Stheno WORLD, and whether WORLD can satisfy the RETRIEVAL requirement. Return no inferred conclusions beyond source-backed facts.","max_facts":4}}
+{"type":"capability.requested","task_id":"TOKENMAX-LIVE-001","capability":"repository-fact-finding","trust_domain":"retrieval"}
+{"type":"worker.started","task_id":"TOKENMAX-LIVE-001","resource_id":"kad-local-retrieval-amdy"}
+{"type":"repair.requested","task_id":"TOKENMAX-LIVE-001","reason":"deterministic-validation-failed","bounded_to":1}
+{"type":"worker.completed","task_id":"TOKENMAX-LIVE-001","resource_id":"kad-local-retrieval-amdy","validation":"FAIL"}
+{"type":"validation.failed","task_id":"TOKENMAX-LIVE-001","validator":"schema-source-evidence-validator","errors":["output is not a JSON object","task_id mismatch","required arrays are missing"]}
+{"type":"result.rejected","task_id":"TOKENMAX-LIVE-001","status":"DEGRADED"}
+{"type":"economic.receipt.recorded","task_id":"TOKENMAX-LIVE-001","receipt_hash":"1873001c8d68e1159993b5c6c4892ac797bcece8f2ceaf4fa4cb7f1413660c9a"}
+{"type":"episode.recorded","task_id":"TOKENMAX-LIVE-001","episode_hash":"ef1f6a09b54e9ef424a824bc3ffcce1312c733b81958e7f82ac1794fc791754d"}
+{"type":"shadow.recommendation.created","task_id":"TOKENMAX-LIVE-001","recommendation":"INSUFFICIENT_EVIDENCE"}

@@ -56,13 +56,74 @@ export function selectControllerLane(lanes = []) {
   return { status: 'ROUTED', selected_lane: { role: 'controller', id: selected.id, provider: selected.provider ?? 'UNKNOWN', model: selected.model ?? 'UNKNOWN', execution_class: selected.execution_class ?? 'REMOTE_SUBSCRIPTION', billing_class: selected.billing_class, quota_snapshot: selected.quota_snapshot ?? null, quota_state: selected.quota_state ?? null }, candidates: eligible.map(lane => lane.id), reason_codes: ['APPROVED', 'NON_PAYG', 'SUBSCRIPTION_BACKED', 'CAPABILITY_SUFFICIENT'] };
 }
 
-function parseWorkerOutput(output) {
-  if (output && typeof output === 'object') return output;
-  try { return JSON.parse(String(output ?? '')); } catch { return null; }
+function parseJson(text) {
+  try { return { ok: true, value: JSON.parse(text) }; } catch { return { ok: false, value: null }; }
+}
+
+function balancedObjectCandidates(text) {
+  const candidates = [];
+  for (let start = 0; start < text.length; start += 1) {
+    if (text[start] !== '{') continue;
+    let curly = 0;
+    let square = 0;
+    let quoted = false;
+    let escaped = false;
+    for (let index = start; index < text.length; index += 1) {
+      const character = text[index];
+      if (quoted) {
+        if (escaped) escaped = false;
+        else if (character === '\\') escaped = true;
+        else if (character === '"') quoted = false;
+        continue;
+      }
+      if (character === '"') { quoted = true; continue; }
+      if (character === '{') curly += 1;
+      else if (character === '}') curly -= 1;
+      else if (character === '[') square += 1;
+      else if (character === ']') square -= 1;
+      if (curly < 0 || square < 0) break;
+      if (curly === 0 && square === 0) {
+        const candidateText = text.slice(start, index + 1);
+        const parsed = parseJson(candidateText);
+        if (parsed.ok && parsed.value && typeof parsed.value === 'object' && !Array.isArray(parsed.value)) candidates.push({ start, end: index + 1, value: parsed.value });
+        break;
+      }
+    }
+  }
+  return candidates.filter(candidate => !candidates.some(other => other !== candidate && other.start <= candidate.start && other.end >= candidate.end));
+}
+
+export function normalizeWorkerOutput(output) {
+  const original = typeof output === 'string' ? output : JSON.stringify(output ?? null);
+  const trimmed = original.trim();
+  const reasoningWrapperDetected = /<(?:think|analysis)>[\s\S]*?<\/(?:think|analysis)>/i.test(trimmed);
+  const result = { raw_hash: hash(original), classification: 'UNKNOWN', success: false, changed: false, reasoning_wrapper_detected: reasoningWrapperDetected, value: null };
+  if (!trimmed) return { ...result, classification: 'EMPTY' };
+  const exact = parseJson(trimmed);
+  if (exact.ok) return { ...result, classification: original === trimmed ? 'VALID_JSON' : 'WHITESPACE', success: true, changed: original !== trimmed, value: exact.value };
+  const fenced = trimmed.match(/^```(?:json)?[\t ]*\r?\n?([\s\S]*?)\r?\n?```$/i);
+  if (fenced) {
+    const parsed = parseJson(fenced[1].trim());
+    if (parsed.ok) return { ...result, classification: 'FENCED_JSON', success: true, changed: true, value: parsed.value };
+  }
+  const candidates = balancedObjectCandidates(trimmed);
+  if (candidates.length === 1) {
+    const candidate = candidates[0];
+    const prefix = trimmed.slice(0, candidate.start).replace(/<(?:think|analysis)>[\s\S]*?<\/(?:think|analysis)>/ig, '').trim();
+    const suffix = trimmed.slice(candidate.end).trim();
+    const allowedPrefix = prefix === '' || /^(?:result|answer|output|json)\s*:?[\s]*$/i.test(prefix);
+    const allowedSuffix = suffix === '' || /^(?:done|end)\.?$/i.test(suffix);
+    if (allowedPrefix && allowedSuffix) return { ...result, classification: reasoningWrapperDetected ? 'VISIBLE_REASONING_WRAPPER' : 'UNIQUE_WRAPPED_JSON', success: true, changed: true, value: candidate.value };
+    return { ...result, classification: 'WRAPPER_TEXT' };
+  }
+  if (candidates.length > 1) return { ...result, classification: 'MULTIPLE_JSON_VALUES' };
+  if (/[{[]/.test(trimmed)) return { ...result, classification: 'TRUNCATED_JSON' };
+  return { ...result, classification: 'WRAPPER_TEXT' };
 }
 
 export function validateWorkerResult(output, packet) {
-  const value = parseWorkerOutput(output);
+  const normalization = normalizeWorkerOutput(output);
+  const value = normalization.value;
   const errors = [];
   if (!value || typeof value !== 'object' || Array.isArray(value)) errors.push('output is not a JSON object');
   if (!value || value.task_id !== packet.task_id) errors.push('task_id mismatch');
@@ -74,7 +135,7 @@ export function validateWorkerResult(output, packet) {
     if (!allowed.has(fact?.source_path)) errors.push(`fact source is outside packet: ${fact?.source_path ?? 'UNKNOWN'}`);
     else if (typeof fact.evidence !== 'string' || !fact.evidence || !allowed.get(fact.source_path).includes(fact.evidence)) errors.push(`fact evidence is not present in source: ${fact.source_path}`);
   }
-  return { accepted: errors.length === 0, value, errors };
+  return { accepted: errors.length === 0, value, errors, normalization };
 }
 
 function event(type, taskId, data = {}) { return { type, task_id: taskId, ...data }; }
@@ -128,11 +189,11 @@ function baseEpisode(request, packet, route, validation, outcome, telemetry, tra
   return episode;
 }
 
-export async function executeSwarm({ request: requestInput, sources, controller, registry, worker, max_repairs = 1, emit = () => {} }) {
+export async function executeSwarm({ request: requestInput, sources, controller, registry, worker, max_repairs = 1, emit = () => {}, resume = null }) {
   const started = now();
   const request = normalizeWorkRequest(requestInput);
   const events = [event('work.requested', request.task_id), event('requirement.classified', request.task_id, { role: request.role, trust_domain: request.trust_domain, capability: request.capability })];
-  const telemetry = { controller_invocations: 0, remote_lane: null, remote_input_tokens: null, remote_cached_input_tokens: null, remote_output_tokens: null, remote_reasoning_tokens: null, remote_provider_reported_cost: null, remote_cache: null, remote_cost: null, local_invocations: 0, deterministic_tool_invocations: 1, repairs: 0, escalations: 0, accepted: false, latency_ms: null, context_bytes: 0, failure_reason: null };
+  const telemetry = { controller_invocations: 0, remote_lane: null, remote_input_tokens: null, remote_cached_input_tokens: null, remote_output_tokens: null, remote_reasoning_tokens: null, remote_provider_reported_cost: null, remote_cache: null, remote_cost: null, local_invocations: 0, model_repair_calls: 0, validation_calls: 0, deterministic_normalization_attempts: 0, deterministic_normalization_successes: 0, normalization_history: [], deterministic_tool_invocations: 1, repairs: 0, escalations: 0, accepted: false, latency_ms: null, context_bytes: 0, failure_reason: null };
   const route = selectControllerLane(controller?.lanes);
   telemetry.route = route;
   emit(events[0]); emit(events[1]);
@@ -147,16 +208,32 @@ export async function executeSwarm({ request: requestInput, sources, controller,
     return { ...result, dispose: async () => {} };
   }
   events.push(event('route.selected', request.task_id, { role: 'controller', lane: route.selected_lane.id })); emit(events.at(-1));
-  const controllerResult = await controller.execute({ ...request, source_manifest: request.source_paths });
-  telemetry.controller_invocations = 1;
+  let controllerResult;
   telemetry.remote_lane = route.selected_lane;
-  telemetry.remote_input_tokens = controllerResult.telemetry?.input_tokens ?? null;
-  telemetry.remote_cached_input_tokens = controllerResult.telemetry?.cached_input_tokens ?? null;
-  telemetry.remote_output_tokens = controllerResult.telemetry?.output_tokens ?? null;
-  telemetry.remote_reasoning_tokens = controllerResult.telemetry?.reasoning_tokens ?? null;
-  telemetry.remote_provider_reported_cost = Number.isFinite(controllerResult.telemetry?.provider_reported_cost) ? controllerResult.telemetry.provider_reported_cost : null;
-  telemetry.remote_cache = controllerResult.telemetry?.cache ?? null;
-  telemetry.remote_cost = controllerResult.telemetry?.cost ?? null;
+  if (resume?.controller_result) {
+    controllerResult = resume.controller_result;
+    telemetry.controller_invocations = resume.telemetry?.controller_invocations ?? 0;
+    telemetry.new_remote_controller_calls = 0;
+    telemetry.resumed_from_episode_id = resume.parent_episode_id ?? null;
+    telemetry.remote_input_tokens = resume.telemetry?.remote_input_tokens ?? resume.telemetry?.input_tokens ?? null;
+    telemetry.remote_cached_input_tokens = resume.telemetry?.remote_cached_input_tokens ?? resume.telemetry?.cached_input_tokens ?? null;
+    telemetry.remote_output_tokens = resume.telemetry?.remote_output_tokens ?? resume.telemetry?.output_tokens ?? null;
+    telemetry.remote_reasoning_tokens = resume.telemetry?.remote_reasoning_tokens ?? resume.telemetry?.reasoning_tokens ?? null;
+    telemetry.remote_provider_reported_cost = Number.isFinite(resume.telemetry?.remote_provider_reported_cost) ? resume.telemetry.remote_provider_reported_cost : null;
+    telemetry.remote_cache = resume.telemetry?.remote_cache ?? resume.telemetry?.cache ?? null;
+    telemetry.remote_cost = resume.telemetry?.remote_cost ?? resume.telemetry?.cost ?? null;
+  } else {
+    controllerResult = await controller.execute({ ...request, source_manifest: request.source_paths });
+    telemetry.controller_invocations = 1;
+    telemetry.new_remote_controller_calls = 1;
+    telemetry.remote_input_tokens = controllerResult.telemetry?.input_tokens ?? null;
+    telemetry.remote_cached_input_tokens = controllerResult.telemetry?.cached_input_tokens ?? null;
+    telemetry.remote_output_tokens = controllerResult.telemetry?.output_tokens ?? null;
+    telemetry.remote_reasoning_tokens = controllerResult.telemetry?.reasoning_tokens ?? null;
+    telemetry.remote_provider_reported_cost = Number.isFinite(controllerResult.telemetry?.provider_reported_cost) ? controllerResult.telemetry.provider_reported_cost : null;
+    telemetry.remote_cache = controllerResult.telemetry?.cache ?? null;
+    telemetry.remote_cost = controllerResult.telemetry?.cost ?? null;
+  }
   const plan = controllerResult.plan ?? {};
   const controllerCompleted = event('controller.completed', request.task_id, { lane: route.selected_lane.id, plan });
   events.push(controllerCompleted); emit(controllerCompleted);
@@ -179,16 +256,25 @@ export async function executeSwarm({ request: requestInput, sources, controller,
   telemetry.local_input_tokens = workerResult.telemetry?.input_tokens ?? null;
   telemetry.local_output_tokens = workerResult.telemetry?.output_tokens ?? null;
   let validation = validateWorkerResult(workerResult?.output ?? workerResult, packet);
+  telemetry.validation_calls += 1;
+  telemetry.deterministic_normalization_attempts += 1;
+  if (validation.normalization.success) telemetry.deterministic_normalization_successes += 1;
+  telemetry.normalization_history.push({ raw_hash: validation.normalization.raw_hash, classification: validation.normalization.classification, success: validation.normalization.success, reasoning_wrapper_detected: validation.normalization.reasoning_wrapper_detected });
   let cleanup = workerResult?.dispose;
   const repairBudget = Math.min(max_repairs, request.budget.max_repairs);
   if (!validation.accepted && repairBudget > 0) {
     telemetry.repairs = 1;
+    telemetry.model_repair_calls = 1;
     events.push(event('repair.requested', request.task_id, { reason: 'deterministic-validation-failed', bounded_to: 1 }));
     workerResult = await worker.execute({ ...packet, repair: { previous_errors: validation.errors } });
     telemetry.local_invocations++;
     telemetry.local_input_tokens = telemetry.local_input_tokens === null ? (workerResult.telemetry?.input_tokens ?? null) : telemetry.local_input_tokens;
     telemetry.local_output_tokens = telemetry.local_output_tokens === null ? (workerResult.telemetry?.output_tokens ?? null) : telemetry.local_output_tokens;
     validation = validateWorkerResult(workerResult?.output ?? workerResult, packet);
+    telemetry.validation_calls += 1;
+    telemetry.deterministic_normalization_attempts += 1;
+    if (validation.normalization.success) telemetry.deterministic_normalization_successes += 1;
+    telemetry.normalization_history.push({ raw_hash: validation.normalization.raw_hash, classification: validation.normalization.classification, success: validation.normalization.success, reasoning_wrapper_detected: validation.normalization.reasoning_wrapper_detected });
     cleanup = workerResult?.dispose ?? cleanup;
   }
   telemetry.latency_ms = now() - started;
@@ -198,9 +284,10 @@ export async function executeSwarm({ request: requestInput, sources, controller,
   const validationEvent = event(validation.accepted ? 'validation.passed' : 'validation.failed', request.task_id, { validator: 'schema-source-evidence-validator', errors: validation.errors });
   events.push(validationEvent); emit(validationEvent);
   let controllerConsumption = null;
-  if (validation.accepted && typeof controller.consume === 'function') {
+  if (validation.accepted && !resume?.skip_consumption && typeof controller.consume === 'function') {
     controllerConsumption = await controller.consume({ request, packet, result: validation.value });
     telemetry.controller_invocations++;
+    telemetry.new_remote_controller_calls++;
     const inputTokens = controllerConsumption.telemetry?.input_tokens;
     const cachedInputTokens = controllerConsumption.telemetry?.cached_input_tokens;
     const outputTokens = controllerConsumption.telemetry?.output_tokens;

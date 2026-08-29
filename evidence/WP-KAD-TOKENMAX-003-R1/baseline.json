@@ -1,0 +1,19 @@
+{
+  "workpackage":"WP-KAD-TOKENMAX-003-R1",
+  "base_commit":"2242012c9fbdfbc83ed7d7e98d05a20f2ae51e7e",
+  "parent_experiment":"TOKENMAX-LIVE-001",
+  "parent_task_id":"TOKENMAX-LIVE-001",
+  "parent_packet_sha256":"91e0384bf7e54a6cac0d83a9315ba4c802759db801b06b449a308689e72cbc5b",
+  "parent_quota_snapshot_id":"b830f3e556cc100c02f839ab869b4e3536dc94ab00345b61f9628f0f74c2cf70",
+  "parent_status":"DEGRADED",
+  "parent_accepted":false,
+  "parent_remote_input_tokens":550,
+  "parent_remote_output_tokens":159,
+  "parent_remote_total_tokens":709,
+  "parent_controller_calls":1,
+  "parent_local_calls":2,
+  "parent_repairs":1,
+  "parent_latency_ms":208910,
+  "parent_validator":"schema-source-evidence-validator",
+  "preserve_unrelated_work":true
+}

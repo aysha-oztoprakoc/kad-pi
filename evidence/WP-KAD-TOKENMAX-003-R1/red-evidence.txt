@@ -1,0 +1,7 @@
+RED evidence
+
+- Parent TOKENMAX-LIVE-001 did not archive raw Qwen assistant bytes, so exact parent raw replay is unavailable; no malformed shape is inferred from validator errors alone.
+- The single live recovery execution reached Qwen, performed two local calls, used one bounded repair, and ended `DEGRADED` with `accepted=false`.
+- Recovery normalization classified the first recovered output as `UNIQUE_WRAPPED_JSON`, but the repair output as `MULTIPLE_JSON_VALUES`; the latter failed closed.
+- No accepted recovery episode, Pareto dominance, savings claim, or distillation promotion is asserted.
+- The first R1 implementation attempt was offline/TDD only; no additional remote controller call was made. The canonical recovery reused the frozen upstream artifacts.

@@ -1,0 +1,7 @@
+{
+  "normalizer":"swarm.normalizeWorkerOutput",
+  "allowed_transformations":["trim surrounding whitespace","remove one allowlisted ``` or ```json fence","extract exactly one complete parseable outer JSON object from harmless wrapper text","separate paired visible <think>/<analysis> wrapper without retaining its content"],
+  "forbidden_transformations":["rename keys","invent fields","alter values","guess truncation","choose multiple candidates","synthesize citations","change task_id","change trust_domain","grant acceptance"],
+  "multiple_candidates":"FAIL_CLOSED",
+  "semantic_validation":"existing schema-source validator"
+}

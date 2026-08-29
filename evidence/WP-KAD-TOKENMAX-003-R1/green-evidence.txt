@@ -1,0 +1,11 @@
+GREEN evidence
+
+- Deterministic output normalization tests pass: 21/21.
+- Exact JSON, fenced JSON, whitespace, unique wrapper, visible reasoning separation, multiple-candidate rejection, truncation rejection, and semantic non-repair are covered.
+- Frozen packet hash and source hashes were verified unchanged; controller decomposition and quota snapshot were reused.
+- Recovery receipt was automatically attached through `executeSwarm`; no new remote controller call occurred.
+- Quota snapshot linkage remained identical to the parent.
+- WORLD was excluded before worker execution.
+- Qwen identity/ownership was verified, then Qwen was disposed and its receipt removed.
+- External Stheno remained healthy and unchanged.
+- Economic UNKNOWN/null semantics and sunk parent cost remain visible.

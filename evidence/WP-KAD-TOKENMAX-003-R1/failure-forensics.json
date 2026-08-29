@@ -1,0 +1,10 @@
+{
+  "parent_experiment":"TOKENMAX-LIVE-001",
+  "raw_output_archived":false,
+  "attempts":[
+    {"attempt":"local-001","raw_output_sha256":null,"classification":"UNKNOWN","reason":"parent evidence retained validator/telemetry but not raw assistant bytes; no inference made","validator_result":"not persisted"},
+    {"attempt":"local-002-repair","raw_output_sha256":null,"classification":"UNKNOWN","reason":"parent evidence retained validator/telemetry but not raw assistant bytes; no inference made","validator_result":"FAIL","validator_errors":["output is not a JSON object","task_id mismatch","required arrays are missing"]}
+  ],
+  "root_cause_status":"UNRESOLVED_FROM_ARCHIVE",
+  "negative_evidence_preserved":true
+}

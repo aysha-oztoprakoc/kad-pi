@@ -1,0 +1,265 @@
+{
+  "recovery_attempt": "TOKENMAX-LIVE-001-R1",
+  "parent_experiment": "TOKENMAX-LIVE-001",
+  "task_id": "TOKENMAX-LIVE-001",
+  "request_hash": "6a30530cc8f84cc40a0dd2132070a67ae64527948b332c6f190c4e93deac9e21",
+  "packet_hash": "91e0384bf7e54a6cac0d83a9315ba4c802759db801b06b449a308689e72cbc5b",
+  "selected_controller_lane": {
+    "role": "controller",
+    "id": "approved-remote-controller",
+    "provider": "openai-codex",
+    "model": "gpt-5.6-luna",
+    "execution_class": "REMOTE_SUBSCRIPTION",
+    "billing_class": "SUBSCRIPTION_BACKED",
+    "quota_snapshot": {
+      "schema_version": "kad-quota-snapshot-1",
+      "captured_at": "2026-08-29T02:42:59.094Z",
+      "mechanism": "bounded run-remote-quota-probe.mjs; no refresh",
+      "selected_controller": {
+        "provider": "openai-codex",
+        "surface": "interactive /status",
+        "result": "PARSE_UNSUPPORTED",
+        "observed_quota": null,
+        "normalized_allowance": {
+          "status": "UNKNOWN",
+          "unit": null,
+          "capacity": null,
+          "used": null,
+          "remaining": null,
+          "reset_at": null,
+          "observed_at": null,
+          "source": null,
+          "confidence": "UNKNOWN",
+          "watermark": "UNKNOWN",
+          "scope": null,
+          "effective_window_id": null,
+          "windows": [
+            {
+              "window_id": "unavailable",
+              "unit": null,
+              "capacity": null,
+              "used": null,
+              "remaining": null,
+              "reset_at": null,
+              "status": "UNKNOWN",
+              "observed_at": 1787971379094,
+              "source": null,
+              "confidence": "UNKNOWN",
+              "watermark": "UNKNOWN",
+              "scope": null
+            }
+          ]
+        },
+        "provenance": {
+          "provider": "openai-codex",
+          "surface": "interactive /status",
+          "availability": "PROBE_UNAVAILABLE",
+          "status": null,
+          "error_class": null,
+          "parser_version": "remote-quota-observation-1",
+          "observed_at": 1787971379094
+        }
+      },
+      "provider_records": [
+        {
+          "kind": "provider_inventory",
+          "provider": "openai-codex",
+          "surface": null,
+          "result": "ready",
+          "http_status": null,
+          "quota": null
+        },
+        {
+          "kind": "provider_inventory",
+          "provider": "opencode-go",
+          "surface": null,
+          "result": "ready",
+          "http_status": null,
+          "quota": null
+        },
+        {
+          "kind": "provider_inventory",
+          "provider": "github-copilot",
+          "surface": null,
+          "result": "ready",
+          "http_status": null,
+          "quota": null
+        },
+        {
+          "kind": "provider_inventory",
+          "provider": "openrouter",
+          "surface": null,
+          "result": "ready",
+          "http_status": null,
+          "quota": null
+        },
+        {
+          "kind": "probe",
+          "provider": "openrouter",
+          "surface": "GET /api/v1/key",
+          "result": "OBSERVED",
+          "http_status": 200,
+          "quota": {
+            "status": "UNKNOWN",
+            "unit": null,
+            "capacity": null,
+            "used": null,
+            "remaining": null,
+            "reset_at": null,
+            "observed_at": null,
+            "source": null,
+            "confidence": "UNKNOWN",
+            "watermark": "UNKNOWN",
+            "scope": null,
+            "effective_window_id": null,
+            "windows": [
+              {
+                "window_id": "key",
+                "unit": "USD",
+                "capacity": null,
+                "used": 0,
+                "remaining": null,
+                "reset_at": null,
+                "status": "UNKNOWN",
+                "observed_at": 1787971376538,
+                "source": "openrouter/GET /api/v1/key",
+                "confidence": "OBSERVED",
+                "watermark": "UNKNOWN",
+                "scope": {
+                  "model": null,
+                  "window": "key"
+                }
+              },
+              {
+                "window_id": "daily",
+                "unit": "USD",
+                "capacity": null,
+                "used": 0,
+                "remaining": null,
+                "reset_at": null,
+                "status": "UNKNOWN",
+                "observed_at": 1787971376538,
+                "source": "openrouter/GET /api/v1/key",
+                "confidence": "OBSERVED",
+                "watermark": "UNKNOWN",
+                "scope": {
+                  "model": null,
+                  "window": "daily"
+                }
+              },
+              {
+                "window_id": "weekly",
+                "unit": "USD",
+                "capacity": null,
+                "used": 0,
+                "remaining": null,
+                "reset_at": null,
+                "status": "UNKNOWN",
+                "observed_at": 1787971376538,
+                "source": "openrouter/GET /api/v1/key",
+                "confidence": "OBSERVED",
+                "watermark": "UNKNOWN",
+                "scope": {
+                  "model": null,
+                  "window": "weekly"
+                }
+              },
+              {
+                "window_id": "monthly",
+                "unit": "USD",
+                "capacity": null,
+                "used": 0,
+                "remaining": null,
+                "reset_at": null,
+                "status": "UNKNOWN",
+                "observed_at": 1787971376538,
+                "source": "openrouter/GET /api/v1/key",
+                "confidence": "OBSERVED",
+                "watermark": "UNKNOWN",
+                "scope": {
+                  "model": null,
+                  "window": "monthly"
+                }
+              }
+            ],
+            "provenance": {
+              "provider": "openrouter",
+              "surface": "GET /api/v1/key",
+              "availability": "OBSERVED",
+              "observation_mechanism": "provider-owned read-only adapter",
+              "observed_at": 1787971376538,
+              "raw_source_hash": "619373d4a5e71baeda86a03970a5f8a58a05e3b76581c7e12266e01173189e14",
+              "parser_version": "remote-quota-observation-1",
+              "model_scope": null,
+              "window_count": 4
+            }
+          }
+        },
+        {
+          "kind": "probe",
+          "provider": "github-copilot",
+          "surface": "GET /users/{user}/settings/billing/usage",
+          "result": "AUTH_INSUFFICIENT",
+          "http_status": 404,
+          "quota": null
+        },
+        {
+          "kind": "probe",
+          "provider": "openai-codex",
+          "surface": "interactive /status",
+          "result": "PARSE_UNSUPPORTED",
+          "http_status": null,
+          "quota": null
+        },
+        {
+          "kind": "probe",
+          "provider": "opencode-go",
+          "surface": "native allowance status",
+          "result": "NOT_EXPOSED",
+          "http_status": null,
+          "quota": null
+        }
+      ]
+    },
+    "quota_state": null
+  },
+  "upstream_reused": true,
+  "new_remote_controller_calls": 0,
+  "quota_snapshot_hash": "b830f3e556cc100c02f839ab869b4e3536dc94ab00345b61f9628f0f74c2cf70",
+  "local_worker": {
+    "resource_id": "kad-local-retrieval-amdy",
+    "provider": "kad-local-qwen",
+    "model_identity": "koboldcpp/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
+    "ownership": "OWNED",
+    "pid": 161844
+  },
+  "normalization": {
+    "attempts": 2,
+    "successes": 1,
+    "history": [
+      {
+        "raw_hash": "a0399540b478ac5a2d9045369999cf4250643fe802200781f132fd790150bc10",
+        "classification": "UNIQUE_WRAPPED_JSON",
+        "success": true,
+        "reasoning_wrapper_detected": false
+      },
+      {
+        "raw_hash": "f5398d6d1243a46f3dbd2d0509a893c9cacd0493a14fda42e86032aecda98ea7",
+        "classification": "MULTIPLE_JSON_VALUES",
+        "success": false,
+        "reasoning_wrapper_detected": false
+      }
+    ]
+  },
+  "validation": {
+    "result": "FAIL",
+    "errors": [
+      "output is not a JSON object",
+      "task_id mismatch",
+      "required arrays are missing"
+    ]
+  },
+  "final_status": "DEGRADED",
+  "economic_receipt_hash": "1873001c8d68e1159993b5c6c4892ac797bcece8f2ceaf4fa4cb7f1413660c9a",
+  "episode_hash": "ef1f6a09b54e9ef424a824bc3ffcce1312c733b81958e7f82ac1794fc791754d"
+}

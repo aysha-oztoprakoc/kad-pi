@@ -1,0 +1,6 @@
+{
+  "result": "NO_CANDIDATE",
+  "promoted": false,
+  "reason": "one recovery observation is insufficient repeated classified evidence; archived parent raw outputs are unavailable",
+  "deterministic_normalizer_observed": true
+}

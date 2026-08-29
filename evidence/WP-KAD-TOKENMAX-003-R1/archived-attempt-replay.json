@@ -1,0 +1,7 @@
+{
+  "status":"ACTUAL_RAW_REPLAY_UNAVAILABLE",
+  "reason":"TOKENMAX-LIVE-001 did not archive assistant raw output or raw hashes; only normalized null worker output and validator errors are available.",
+  "attempt_001":{"raw_hash":null,"classification":"UNKNOWN","normalization":"NOT_RUN_NO_RAW_BYTES","schema_result":"NOT_PERSISTED"},
+  "attempt_002":{"raw_hash":null,"classification":"UNKNOWN","normalization":"NOT_RUN_NO_RAW_BYTES","schema_result":{"result":"FAIL","errors":["output is not a JSON object","task_id mismatch","required arrays are missing"]}},
+  "offline_contract_replay":"GREEN via qwen-output-normalizer.test.mjs; representative fixtures are explicitly not claimed as archived outputs"
+}

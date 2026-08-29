@@ -1,0 +1,18 @@
+{
+  "decision": "UPSTREAM_REUSED",
+  "reason": "controller plan, task packet, source hashes, and quota snapshot verified unchanged",
+  "parent_task_id": "TOKENMAX-LIVE-001",
+  "parent_packet_sha256": "91e0384bf7e54a6cac0d83a9315ba4c802759db801b06b449a308689e72cbc5b",
+  "reused_controller_plan": {
+    "capability": "repository-fact-finding",
+    "source_paths": [
+      "tools/kad/local-router.mjs",
+      "tools/kad/pi/local-models.json",
+      ".omp/models.yml"
+    ],
+    "question": "Inspect only the supplied source paths to identify bounded, exact repository evidence for the eligibility trust-domain rule, the advertised trust domains of Qwen retrieval and Stheno WORLD, and whether WORLD can satisfy the RETRIEVAL requirement. Return no inferred conclusions beyond source-backed facts.",
+    "max_facts": 4
+  },
+  "reused_quota_snapshot_id": "b830f3e556cc100c02f839ab869b4e3536dc94ab00345b61f9628f0f74c2cf70",
+  "new_remote_controller_calls": 0
+}

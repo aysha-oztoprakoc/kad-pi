@@ -1,0 +1,18 @@
+{
+  "result": "INCOMPARABLE",
+  "comparisons": {
+    "parent": {
+      "result": "INSUFFICIENT_EVIDENCE",
+      "reason": "both episodes must be accepted"
+    },
+    "historical": {
+      "result": "INSUFFICIENT_EVIDENCE",
+      "reason": "both episodes must be accepted"
+    }
+  },
+  "reason_codes": [
+    "PARENT_REJECTED",
+    "HISTORICAL_TASK_SCOPE_MISMATCH"
+  ],
+  "generalized_savings_claim": false
+}
