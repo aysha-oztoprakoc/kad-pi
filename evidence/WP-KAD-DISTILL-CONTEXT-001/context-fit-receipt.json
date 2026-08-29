@@ -1,0 +1,7 @@
+{
+  "compiled_prompt_tokens": 1677,
+  "required_output_reserve": 168,
+  "effective_context_window": 2048,
+  "fit": "PASS",
+  "confidence": "CONSERVATIVE_BOUND"
+}

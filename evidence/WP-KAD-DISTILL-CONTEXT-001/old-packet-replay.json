@@ -1,0 +1,79 @@
+{
+  "status": "UNSATISFIABLE",
+  "old_packet_sha256": "91e0384bf7e54a6cac0d83a9315ba4c802759db801b06b449a308689e72cbc5b",
+  "old_selected_bytes": 4105,
+  "old_token_count": {
+    "token_count": 1859,
+    "tokenizer": "conservative-bytes/3",
+    "tokenizer_version_hash": "64a4809e8e8a52cab6a9ff9ec53ac9bf449fd9521a55ad7ec6fd11527cd5bbf1",
+    "confidence": "CONSERVATIVE_BOUND"
+  },
+  "initialGate": {
+    "ok": false,
+    "reason": "PROMPT_PLUS_RESERVE_EXCEEDS_CONTEXT",
+    "code": "LOCAL_TASK_BUDGET_UNSATISFIABLE",
+    "required_prompt_tokens": 2302,
+    "required_output_reserve": 192,
+    "effective_context_window": 2048,
+    "contract": {
+      "resource_id": "kad-local-retrieval-amdy",
+      "trust_domain": "retrieval",
+      "capabilities": [
+        "repository-fact-finding",
+        "structured-extraction"
+      ],
+      "effective_context_window": 2048,
+      "effective_max_output_tokens": 192,
+      "evidence": [
+        "evidence/WP-KAD-QWEN-CONTRACT-002/runtime-process-observation.json",
+        "evidence/WP-KAD-QWEN-CONTRACT-001/effective-request-capture.json"
+      ],
+      "confidence": "OBSERVED_RUNTIME"
+    }
+  },
+  "repairGate": {
+    "ok": false,
+    "reason": "PROMPT_PLUS_RESERVE_EXCEEDS_CONTEXT",
+    "code": "LOCAL_TASK_BUDGET_UNSATISFIABLE",
+    "required_prompt_tokens": 2346,
+    "required_output_reserve": 192,
+    "effective_context_window": 2048,
+    "contract": {
+      "resource_id": "kad-local-retrieval-amdy",
+      "trust_domain": "retrieval",
+      "capabilities": [
+        "repository-fact-finding",
+        "structured-extraction"
+      ],
+      "effective_context_window": 2048,
+      "effective_max_output_tokens": 192,
+      "evidence": [
+        "evidence/WP-KAD-QWEN-CONTRACT-002/runtime-process-observation.json",
+        "evidence/WP-KAD-QWEN-CONTRACT-001/effective-request-capture.json"
+      ],
+      "confidence": "OBSERVED_RUNTIME"
+    }
+  },
+  "outputGate": {
+    "ok": false,
+    "reason": "REQUESTED_OUTPUT_EXCEEDS_RESOURCE_MAX",
+    "code": "LOCAL_TASK_OUTPUT_UNSATISFIABLE",
+    "requested_output_tokens": 512,
+    "effective_max_output_tokens": 192,
+    "contract": {
+      "resource_id": "kad-local-retrieval-amdy",
+      "trust_domain": "retrieval",
+      "capabilities": [
+        "repository-fact-finding",
+        "structured-extraction"
+      ],
+      "effective_context_window": 2048,
+      "effective_max_output_tokens": 192,
+      "evidence": [
+        "evidence/WP-KAD-QWEN-CONTRACT-002/runtime-process-observation.json",
+        "evidence/WP-KAD-QWEN-CONTRACT-001/effective-request-capture.json"
+      ],
+      "confidence": "OBSERVED_RUNTIME"
+    }
+  }
+}

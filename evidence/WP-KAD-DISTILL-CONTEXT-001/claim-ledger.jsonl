@@ -1,0 +1,6 @@
+{"claim":"TASK_RESOURCE_FIT_REQUIRED_BEFORE_INFERENCE is a logical contract distillation","class":"CALCULATED","evidence":"logical-distillation-receipt.json"}
+{"claim":"Old TOKENMAX packet is unsatisfiable under proven 2048/192 Qwen contract","class":"CALCULATED","evidence":"old-packet-replay.json"}
+{"claim":"New selector-compiled packet is fit under the proven resource contract","class":"CALCULATED","evidence":"new-compiled-packet-replay.json"}
+{"claim":"Historical R2 evidence remains immutable and is reinterpreted as invalid for semantic reliability promotion","class":"CALCULATED","evidence":"historical-interpretation-receipt.json"}
+{"claim":"Qwen is unreliable","class":"REJECTED","evidence":"logical-distillation-receipt.json"}
+{"claim":"Zero inference was performed in this WorkPackage","class":"OBSERVED","evidence":"regression-results.md"}

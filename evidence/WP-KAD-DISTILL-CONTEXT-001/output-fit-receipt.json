@@ -1,0 +1,7 @@
+{
+  "required_output_reserve": 168,
+  "effective_max_output_tokens": 192,
+  "requested_task_output": 512,
+  "compiled_output_fit": "PASS",
+  "requested_output_fit": "FAIL"
+}

@@ -1,0 +1,9 @@
+{
+  "expected_head": "081e442 test(kad): prove live qwen resource envelope",
+  "observed_head": "081e442",
+  "proven_contract": {
+    "context_window": 2048,
+    "max_output": 192
+  },
+  "dirty_work_preserved": true
+}

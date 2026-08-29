@@ -1,0 +1,57 @@
+[
+  {
+    "path": "tools/kad/local-router.mjs",
+    "selector": {
+      "kind": "symbol",
+      "value": "CapabilityRegistry.eligible"
+    },
+    "source_sha256": "04a2aa064f4d2c486735d39106091939ef7e72cd7c17f8476e0eec371bb04491",
+    "selected_sha256": "ca884f195581d630918543256cae0cd8fd2f90c758d3aa0f3fa0b01287d14d1b",
+    "selected_bytes": 348,
+    "reason": "trust-domain eligibility rule"
+  },
+  {
+    "path": "tools/kad/pi/local-models.json",
+    "selector": {
+      "kind": "json_pointer",
+      "value": "/providers/kad-local-world"
+    },
+    "source_sha256": "74366591a844abf573ce4af69f2074f89ca27135b1620c942ee5056962cbf72e",
+    "selected_sha256": "322ca8f2e73b60d555302afe87ff5bb606d18d4798e7edf92c2e38bd10d9f55b",
+    "selected_bytes": 648,
+    "reason": "Pi Stheno WORLD declaration"
+  },
+  {
+    "path": "tools/kad/pi/local-models.json",
+    "selector": {
+      "kind": "json_pointer",
+      "value": "/providers/kad-local-qwen"
+    },
+    "source_sha256": "74366591a844abf573ce4af69f2074f89ca27135b1620c942ee5056962cbf72e",
+    "selected_sha256": "ed25837245ded4b4db1faa6f0aa53dca916b7e406be1a60dcddb1ac3a50fb684",
+    "selected_bytes": 884,
+    "reason": "Pi Qwen retrieval declaration"
+  },
+  {
+    "path": ".omp/models.yml",
+    "selector": {
+      "kind": "yaml_path",
+      "value": "providers.kad-local-world"
+    },
+    "source_sha256": "2b35cae76be36676652cd9e668dac732eb708c0b42ace0be124e44e54af5871e",
+    "selected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "selected_bytes": 2,
+    "reason": "OMP Stheno WORLD declaration"
+  },
+  {
+    "path": ".omp/models.yml",
+    "selector": {
+      "kind": "yaml_path",
+      "value": "providers.kad-local-qwen"
+    },
+    "source_sha256": "2b35cae76be36676652cd9e668dac732eb708c0b42ace0be124e44e54af5871e",
+    "selected_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "selected_bytes": 2,
+    "reason": "OMP Qwen retrieval declaration"
+  }
+]

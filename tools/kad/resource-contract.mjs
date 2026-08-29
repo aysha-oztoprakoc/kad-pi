@@ -17,6 +17,9 @@ function classifyEqual(values) {
 export function normalizeResourceContract(input = {}) {
   return {
     resource_id: input.resource_id,
+    model_identity: input.model_identity ?? null,
+    runtime_argv_sha256: input.runtime_argv_sha256 ?? null,
+    runtime_configuration_sha256: input.runtime_configuration_sha256 ?? null,
     trust_domain: input.trust_domain,
     capabilities: [...(input.capabilities ?? [])],
     effective_context_window: limitValue(input.effective_context_window),
@@ -80,6 +83,7 @@ export function preflightResourceContract({ resource, required_prompt_tokens, re
   if (bounded_local_execution && contract.effective_max_output_tokens === null) return { ok: false, reason: 'EFFECTIVE_OUTPUT_UNKNOWN', code: 'LOCAL_TASK_OUTPUT_UNSATISFIABLE', contract };
   const prompt = required_prompt_tokens ?? null;
   const reserve = required_output_reserve ?? requested_output_tokens ?? null;
+  if ((prompt !== null && (!Number.isInteger(prompt) || prompt < 0)) || (reserve !== null && (!Number.isInteger(reserve) || reserve < 0)) || (requested_output_tokens !== null && (!Number.isInteger(requested_output_tokens) || requested_output_tokens < 0))) return { ok: false, reason: 'RESOURCE_REQUIREMENT_UNKNOWN', code: 'LOCAL_TASK_BUDGET_UNSATISFIABLE', contract };
   if (prompt !== null && reserve !== null && contract.effective_context_window !== null && prompt + reserve > contract.effective_context_window) return { ok: false, reason: 'PROMPT_PLUS_RESERVE_EXCEEDS_CONTEXT', code: 'LOCAL_TASK_BUDGET_UNSATISFIABLE', required_prompt_tokens: prompt, required_output_reserve: reserve, effective_context_window: contract.effective_context_window, contract };
   if (requested_output_tokens !== null && contract.effective_max_output_tokens !== null && requested_output_tokens > contract.effective_max_output_tokens) return { ok: false, reason: 'REQUESTED_OUTPUT_EXCEEDS_RESOURCE_MAX', code: 'LOCAL_TASK_OUTPUT_UNSATISFIABLE', requested_output_tokens, effective_max_output_tokens: contract.effective_max_output_tokens, contract };
   return { ok: true, reason: null, code: null, required_prompt_tokens: prompt, required_output_reserve: reserve, requested_output_tokens, contract };

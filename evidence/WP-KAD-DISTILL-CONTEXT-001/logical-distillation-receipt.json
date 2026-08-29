@@ -1,0 +1,147 @@
+{
+  "record": {
+    "ancestry": {
+      "generation_depth": 0,
+      "origin": "DISTILLED",
+      "parents": []
+    },
+    "behavior": {
+      "canonical_strategy": "structured",
+      "forbidden": [
+        "Qwen is unreliable",
+        "Qwen cannot perform retrieval",
+        "Qwen cannot emit schemas",
+        "silent truncation",
+        "probabilistic summarization to fit context"
+      ],
+      "required": [
+        "TASK_RESOURCE_FIT_REQUIRED_BEFORE_INFERENCE",
+        "compiled worker contract cannot advertise aspirational budget",
+        "worker.execute is forbidden when resource fit fails"
+      ]
+    },
+    "distillation": {
+      "lesson": "A task must be compiled against the proven resource envelope of the selected worker before inference is authorized.",
+      "negative_examples": [
+        {
+          "failure_class": "STALE_CONTEXT",
+          "id": "TOKENMAX-LIVE-001-R2",
+          "reason": "task was routed although prompt/output budget exceeded proven local resource envelope"
+        }
+      ],
+      "policies": [
+        "deterministic source selectors must be verified before inclusion",
+        "compiled_prompt_tokens + required_output_reserve <= effective_context_window",
+        "required_output_reserve <= effective_max_output_tokens",
+        "task-fit failure is infrastructure_contract_failure, not model_failure"
+      ]
+    },
+    "evidence_refs": [],
+    "id": "TASK_RESOURCE_FIT_REQUIRED_BEFORE_INFERENCE",
+    "input": {
+      "canonical": {
+        "distillation_type": "LOGICAL_CONTRACT_DISTILLATION",
+        "lesson": "prove resource fit before inference",
+        "model_behavior_claim": "NONE",
+        "observation": "task resource request exceeded proven worker envelope",
+        "promotion": "DETERMINISTIC_POLICY",
+        "source_evidence": [
+          "WP-KAD-TOKENMAX-003-R2",
+          "WP-KAD-QWEN-CONTRACT-001",
+          "WP-KAD-QWEN-CONTRACT-002"
+        ],
+        "target": "deterministic context compiler + admission gate"
+      },
+      "hash": "c57e81a5275cd4e51f835f268fc2248dd7e304b15a9cd52443b04e8921c78e35"
+    },
+    "output": {
+      "canonical_example": {
+        "policy": "TASK_RESOURCE_FIT_REQUIRED_BEFORE_INFERENCE"
+      },
+      "expected_type": "object"
+    },
+    "promotion": {
+      "promoted_by": null,
+      "promotion_evidence": [],
+      "state": "CANDIDATE"
+    },
+    "provenance": {
+      "executor": "GPT-5.6 Luna",
+      "source": "WP-KAD-DISTILL-CONTEXT-001",
+      "source_artifact": "evidence/WP-KAD-QWEN-CONTRACT-002/runtime-resource-contract.json",
+      "source_episode_hash": null,
+      "source_episode_id": null,
+      "source_hash": "27ff0ea504cde4c0915d707a1285c71b13bafb836af49a1975bf4134afe4448a",
+      "source_version": null,
+      "timestamp": "2026-08-29T03:49:46.436Z"
+    },
+    "replay": {
+      "adapter_id": null,
+      "comparison_mode": "BEHAVIOR",
+      "enabled": false,
+      "fixture": null
+    },
+    "schema_version": "kad-distill-1",
+    "source_class": "NEGATIVE_FAILURE",
+    "state": "CANDIDATE",
+    "task": {
+      "class": "LOGICAL_CONTRACT_DISTILLATION",
+      "constraints": [
+        "no empirical model behavior claim",
+        "no inference"
+      ],
+      "objective": "Distill deterministic resource-fit invariant from Qwen TOKENMAX resource mismatch"
+    },
+    "teacher": {
+      "model": null,
+      "provider": null,
+      "used": false,
+      "version": null
+    },
+    "training_eligibility": {
+      "eligible": false,
+      "quality_status": "UNREVIEWED",
+      "reason": "runtime-only until explicitly approved",
+      "rights_status": "UNKNOWN"
+    },
+    "trajectory": [],
+    "verification": {
+      "evidence": [
+        {
+          "exit_code": null,
+          "expected": "schema-valid",
+          "implementation_hash": "6e83630efae900f9e8e40483e812086165f42106b1e4b6b34d885228756c3465",
+          "input_hash": "c57e81a5275cd4e51f835f268fc2248dd7e304b15a9cd52443b04e8921c78e35",
+          "observed": "schema-valid",
+          "passed": true,
+          "receipt_hash": "5806000f80ad2972f5729fc84188b05223dcb832f7c61f0da05978e804080fc3",
+          "verifier_id": "record-schema",
+          "verifier_version": "1"
+        }
+      ],
+      "verdict": "PASS",
+      "verifier_ids": [
+        "record-schema"
+      ]
+    }
+  },
+  "verification": {
+    "verified": true,
+    "errors": [],
+    "evidence": [
+      {
+        "verifier_id": "record-schema",
+        "verifier_version": "1",
+        "implementation_hash": "6e83630efae900f9e8e40483e812086165f42106b1e4b6b34d885228756c3465",
+        "input_hash": "c57e81a5275cd4e51f835f268fc2248dd7e304b15a9cd52443b04e8921c78e35",
+        "observed": "schema-valid",
+        "expected": "schema-valid",
+        "exit_code": null,
+        "passed": true,
+        "receipt_hash": "5806000f80ad2972f5729fc84188b05223dcb832f7c61f0da05978e804080fc3"
+      }
+    ]
+  },
+  "distillation_type": "LOGICAL_CONTRACT_DISTILLATION",
+  "model_behavior_claim": "NONE"
+}

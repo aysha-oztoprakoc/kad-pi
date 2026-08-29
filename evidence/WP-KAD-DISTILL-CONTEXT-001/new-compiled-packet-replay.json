@@ -1,0 +1,20 @@
+{
+  "status": "FIT",
+  "selected_bytes": 1884,
+  "token_count": {
+    "token_count": 1677,
+    "tokenizer": "conservative-bytes/3",
+    "tokenizer_version_hash": "64a4809e8e8a52cab6a9ff9ec53ac9bf449fd9521a55ad7ec6fd11527cd5bbf1",
+    "confidence": "CONSERVATIVE_BOUND"
+  },
+  "required_output_reserve": 168,
+  "resource_fit": "PASS",
+  "packet_sha256": "988d338ad50348436ce57972b7c8fe7b1593e4733a0cbf2f83f721fa73aa542c",
+  "semantic_requirements_preserved": [
+    "trust-domain eligibility rule",
+    "Qwen retrieval declaration",
+    "Stheno WORLD declaration",
+    "WORLD-vs-RETRIEVAL evidence",
+    "schema/source evidence validation"
+  ]
+}

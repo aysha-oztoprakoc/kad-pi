@@ -1,0 +1,6 @@
+{"type":"work.requested","task_id":"TOKENMAX-LIVE-001","noise":false}
+{"type":"resource.selected","task_id":"TOKENMAX-LIVE-001","noise":false}
+{"type":"resource.contract.observed","task_id":"TOKENMAX-LIVE-001","noise":false}
+{"type":"context.compiled","task_id":"TOKENMAX-LIVE-001","noise":false}
+{"type":"resource.fit.evaluated","task_id":"TOKENMAX-LIVE-001","noise":false}
+{"type":"worker.authorized","task_id":"TOKENMAX-LIVE-001","noise":false}

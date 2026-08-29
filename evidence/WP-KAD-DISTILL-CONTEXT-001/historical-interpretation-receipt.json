@@ -1,0 +1,8 @@
+{
+  "task_id": "TOKENMAX-LIVE-001-R2",
+  "execution": "OBSERVED",
+  "acceptance": "FAIL",
+  "historical_evidence_immutable": true,
+  "task_fit_under_current_proven_contract": "FAIL",
+  "QWEN_SEMANTIC_RELIABILITY_SIGNAL": "INVALID_FOR_PROMOTION"
+}

@@ -4,6 +4,7 @@ import { createEpisode } from './episode.mjs';
 import { canonicalize } from './distillation.mjs';
 import { normalizeEconomicReceipt } from './accepted-work-economics.mjs';
 import { preflightResourceContract } from './resource-contract.mjs';
+import { compileResourceAwareTaskPacket, requiredOutputReserve } from './context-compiler.mjs';
 
 const supportedLocalCapabilities = new Set(['repository-fact-finding', 'structured-extraction']);
 const hash = value => createHash('sha256').update(value, 'utf8').digest('hex');
@@ -262,26 +263,52 @@ export async function executeSwarm({ request: requestInput, sources, controller,
   const controllerCompleted = event('controller.completed', request.task_id, { lane: route.selected_lane.id, plan });
   events.push(controllerCompleted); emit(controllerCompleted);
   const planPaths = plan.source_paths ?? request.source_paths;
-  if (planPaths.some(path => !request.source_paths.includes(path))) {
+  let packet;
+  if (!Array.isArray(planPaths) || planPaths.length === 0 || planPaths.some(path => typeof path !== 'string' || !request.source_paths.includes(path))) {
     telemetry.failure_reason = 'CONTROLLER_SCOPE_VIOLATION';
     return { status: 'DEGRADED', failure_reason: telemetry.failure_reason, events, telemetry, episode: baseEpisode(request, null, route, { result: 'FAIL', errors: [telemetry.failure_reason] }, { accepted: false }, telemetry, events), dispose: async () => {} };
   }
-  const packet = compileTaskPacket({ ...request, question: plan.question ?? request.question, max_facts: plan.max_facts ?? request.max_facts, source_paths: planPaths }, sources);
-  telemetry.context_bytes = packet.sources.reduce((sum, source) => sum + Buffer.byteLength(source.excerpt), 0);
   events.push(event('capability.requested', request.task_id, { capability: request.capability, trust_domain: request.trust_domain }));
+  if (plan.max_facts !== undefined && (!Number.isInteger(plan.max_facts) || plan.max_facts < 1 || plan.max_facts > request.max_facts)) {
+    telemetry.failure_reason = 'CONTROLLER_SCOPE_VIOLATION';
+    return { status: 'DEGRADED', failure_reason: telemetry.failure_reason, events, telemetry, episode: baseEpisode(request, null, route, { result: 'FAIL', errors: [telemetry.failure_reason] }, { accepted: false }, telemetry, events), dispose: async () => {} };
+  }
   const selected = registry.choose({ trust_domain: request.trust_domain, capabilities: [request.capability], min_context: request.min_context });
   if (selected.status !== 'ROUTED' || selected.selected !== worker?.resource_id) {
+    packet = compileTaskPacket({ ...request, question: plan.question ?? request.question, max_facts: plan.max_facts ?? request.max_facts, source_paths: planPaths }, sources);
     telemetry.failure_reason = 'TRUST_DOMAIN_UNAVAILABLE';
     return { status: 'DEGRADED', failure_reason: telemetry.failure_reason, events, telemetry, packet, episode: baseEpisode(request, packet, { selected_resource: selected.selected ?? null, reason_code: telemetry.failure_reason }, { result: 'FAIL', errors: [telemetry.failure_reason] }, { accepted: false }, telemetry, events), dispose: async () => {} };
   }
   if (worker.resource_contract) {
-    const contractPreflight = preflightResourceContract({ resource: worker.resource_contract, required_prompt_tokens: worker.required_prompt_tokens ?? packet.required_prompt_tokens ?? null, required_output_reserve: request.budget.max_output_tokens, requested_output_tokens: request.budget.max_output_tokens });
+    events.push(event('resource.contract.observed', request.task_id, { resource_id: worker.resource_id }));
+    const selectors = plan.source_selectors ?? requestInput.source_selectors ?? worker.source_selectors;
+    if (selectors?.some(selector => !planPaths.includes(selector.path))) {
+      telemetry.failure_reason = 'CONTROLLER_SCOPE_VIOLATION';
+      return { status: 'DEGRADED', failure_reason: telemetry.failure_reason, events, telemetry, episode: baseEpisode(request, null, route, { result: 'FAIL', errors: [telemetry.failure_reason] }, { accepted: false }, telemetry, events), dispose: async () => {} };
+    }
+    packet = compileResourceAwareTaskPacket({ request: { ...request, question: plan.question ?? request.question, max_facts: plan.max_facts ?? request.max_facts, source_paths: planPaths }, sources, selectors, resource_contract: worker.resource_contract, output_reserve: worker.output_reserve ?? requiredOutputReserve({ max_facts: plan.max_facts ?? request.max_facts }), requested_output_tokens: request.budget.max_output_tokens });
+    events.push(event('context.compiled', request.task_id, { resource_id: worker.resource_id, packet_sha256: packet.packet_sha256 }));
+    const compiledPromptTokens = packet.token_count?.token_count ?? null;
+    // A worker-supplied requirement may only make admission stricter; it can never
+    // replace the compiler's attributable estimate or make an impossible packet fit.
+    const promptTokens = compiledPromptTokens === null ? worker.required_prompt_tokens ?? null : Math.max(compiledPromptTokens, worker.required_prompt_tokens ?? 0);
+    const reserve = packet.compiled?.output_reserve ?? null;
+    const contractPreflight = preflightResourceContract({ resource: worker.resource_contract, required_prompt_tokens: promptTokens, required_output_reserve: reserve, requested_output_tokens: request.budget.max_output_tokens ?? reserve });
     telemetry.resource_contract_preflight = contractPreflight;
+    events.push(event('resource.fit.evaluated', request.task_id, { resource_id: worker.resource_id, result: contractPreflight.ok ? 'PASS' : 'FAIL' }));
     if (!contractPreflight.ok) {
       telemetry.failure_reason = contractPreflight.code;
+      telemetry.worker_invoked = false;
+      telemetry.model_failure = false;
+      telemetry.infrastructure_contract_failure = true;
+      events.push(event('worker.rejected_resource_fit', request.task_id, { resource_id: worker.resource_id, reason: contractPreflight.reason }));
       return { status: 'DEGRADED', failure_reason: telemetry.failure_reason, events, telemetry, packet, episode: baseEpisode(request, packet, { selected_resource: selected.selected ?? null, reason_code: telemetry.failure_reason }, { result: 'FAIL', errors: [contractPreflight.reason] }, { accepted: false }, telemetry, events), dispose: async () => {} };
     }
+    events.push(event('worker.authorized', request.task_id, { resource_id: worker.resource_id }));
+  } else {
+    packet = compileTaskPacket({ ...request, question: plan.question ?? request.question, max_facts: plan.max_facts ?? request.max_facts, source_paths: planPaths }, sources);
   }
+  telemetry.context_bytes = packet.sources.reduce((sum, source) => sum + Buffer.byteLength(source.excerpt), 0);
   events.push(event('worker.started', request.task_id, { resource_id: worker.resource_id })); emit(events.at(-1));
   let workerResult = await worker.execute(packet);
   const recordLocalAttempt = (attempt, kind, result, validationResult) => {

@@ -1,0 +1,15 @@
+{
+  "resource_id": "kad-local-retrieval-amdy",
+  "trust_domain": "retrieval",
+  "capabilities": [
+    "repository-fact-finding",
+    "structured-extraction"
+  ],
+  "effective_context_window": 2048,
+  "effective_max_output_tokens": 192,
+  "evidence": [
+    "evidence/WP-KAD-QWEN-CONTRACT-002/runtime-process-observation.json",
+    "evidence/WP-KAD-QWEN-CONTRACT-001/effective-request-capture.json"
+  ],
+  "confidence": "OBSERVED_RUNTIME"
+}
