@@ -27,7 +27,7 @@ test('dashboard is read-only and has required operator navigation', () => {
   const html = read('dashboard/index.html');
   assert.match(html, /LOCAL \/ READ-ONLY/);
   for (const view of ['overview', 'knowledge', 'agents', 'models', 'providers', 'evidence', 'research', 'system']) assert.match(html, new RegExp(`data-view="${view}"`));
-  assert.match(read('dashboard/dashboard.js'), /No endpoint, task stream, model heartbeat/);
+  assert.match(read('dashboard/dashboard.js'), /snapshot \+ live observation/);
   assert.match(read('dashboard/dashboard.js'), /Current focus/);
 });
 

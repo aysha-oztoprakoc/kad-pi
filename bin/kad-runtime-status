@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+import { observeRuntime } from '../tools/kad/runtime-status.mjs';
+
+const result = await observeRuntime();
+process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);

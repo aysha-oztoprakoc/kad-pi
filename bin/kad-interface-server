@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+import { createInterfaceServer } from '../tools/kad/interface-server.mjs';
+
+const requestedPort = Number(process.env.KAD_INTERFACE_PORT ?? 4173);
+const { address } = await createInterfaceServer({ port: Number.isInteger(requestedPort) ? requestedPort : 4173 });
+console.log(`KAD interface listening on http://${address.address}:${address.port}`);

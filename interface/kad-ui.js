@@ -1,4 +1,4 @@
-export const STATUS_STATES = Object.freeze(['PASS', 'QUALIFIED', 'PARTIAL', 'DEGRADED', 'BLOCKED', 'FAILED', 'UNKNOWN', 'EXPERIMENTAL', 'FILE_ONLY', 'LOADABLE', 'ACTIVE', 'STALE', 'QUARANTINED']);
+export const STATUS_STATES = Object.freeze(['PASS', 'QUALIFIED', 'AVAILABLE', 'PARTIAL', 'DEGRADED', 'UNAVAILABLE', 'BLOCKED', 'FAILED', 'UNKNOWN', 'EXPERIMENTAL', 'FILE_ONLY', 'LOADABLE', 'ACTIVE', 'STALE', 'QUARANTINED']);
 
 export function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);

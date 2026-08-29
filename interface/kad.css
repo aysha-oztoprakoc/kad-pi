@@ -76,9 +76,9 @@ p { max-width: 68ch; color: var(--muted); }
 .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 16px; color: var(--faint); font: .74rem/1.4 ui-monospace, monospace; }
 .status { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 5px 9px; border: 1px solid currentColor; font: 700 .72rem/1 ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; }
 .status::before { content: ""; width: 7px; height: 7px; border: 1px solid currentColor; background: currentColor; }
-.status--PASS, .status--QUALIFIED, .status--ACTIVE { color: var(--green); }
+.status--PASS, .status--QUALIFIED, .status--AVAILABLE, .status--ACTIVE { color: var(--green); }
 .status--PARTIAL, .status--DEGRADED, .status--EXPERIMENTAL, .status--LOADABLE { color: var(--amber); }
-.status--BLOCKED, .status--FAILED, .status--STALE { color: var(--red); }
+.status--BLOCKED, .status--FAILED, .status--UNAVAILABLE, .status--STALE { color: var(--red); }
 .status--UNKNOWN, .status--FILE_ONLY, .status--QUARANTINED { color: var(--muted); }
 .notice { border: 1px solid var(--gold); border-left: 3px solid var(--gold); padding: 14px 16px; color: var(--paper); background: rgb(231 186 114 / 8%); }
 .flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; align-items: stretch; }

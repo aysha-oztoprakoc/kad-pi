@@ -58,16 +58,26 @@ and never replace canonical artifacts.
 - **[Public explanatory site](site/index.html)** — a static, sanitized human
   explanation of KAD-PI, its research, and its current boundaries.
 - **[Local operational dashboard](dashboard/index.html)** — a read-only view of
-  generated project state for the operator. It has no mutation controls and no
-  invented telemetry.
+  generated project state plus one bounded live runtime observation. It has no
+  mutation controls and no invented telemetry.
 
-Serve the static surfaces locally:
+Serve the public static site with any static server:
 
 ```bash
 python3 -m http.server 4173
 # public site:  http://127.0.0.1:4173/site/
-# dashboard:    http://127.0.0.1:4173/dashboard/
+# static dashboard: http://127.0.0.1:4173/dashboard/
 ```
+
+Serve the dashboard with its localhost-only live status API:
+
+```bash
+bin/kad-interface-server
+# dashboard: http://127.0.0.1:4173/dashboard/
+```
+
+The live API observes the approved Stheno WORLD runtime using `GET /v1/models`.
+It is read-only, bounded, and independent from the public site.
 
 Rebuild the public projection after rebuilding canonical wiki state:
 
@@ -154,9 +164,9 @@ make verify
 make test
 ```
 
-The dashboard is intentionally static for this MVP. No backend is necessary
-for its current feature set, so there is no local endpoint to mutate KAD
-authority and no live service dependency to hide behind a green widget.
+The dashboard keeps the governed projection static and adds one localhost-only
+read-only runtime status endpoint. The endpoint cannot mutate KAD authority,
+control the runtime, execute commands, or expose data to the public site.
 
 ## What is not claimed
 
