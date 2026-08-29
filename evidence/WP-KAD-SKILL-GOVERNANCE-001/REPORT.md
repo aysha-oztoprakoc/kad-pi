@@ -96,7 +96,7 @@ Implementation commit contains the deterministic protocol/doctor, workctl integr
 ## COMMITS
 
 - `7f1131f feat(skills): add KAD governance layer`
-- Evidence commit follows after this report is written.
+- `91b3620 docs(skills): record governance evidence`
 
 ## REMAINING SKILLS TO ADAPT
 
