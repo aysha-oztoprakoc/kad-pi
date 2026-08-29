@@ -1,0 +1,58 @@
+{
+  "id": "WP-WORKSPACE-AGENT-SUBSTRATE-001",
+  "project": "kad-pi",
+  "title": "Implement portable workspace agent substrate",
+  "status": "ACCEPTED",
+  "priority": 100,
+  "spec_ref": "user:/WP-WORKSPACE-AGENT-SUBSTRATE-001",
+  "fixed_point": "7f241585d8fb147f566def39d88e0670d1785852",
+  "scope": [
+    "AGENTS.md",
+    ".agents/workspace",
+    ".agents/work",
+    ".agents/skills/workspace-*",
+    "bin/workctl",
+    "tools/workspace",
+    "evidence/WP-WORKSPACE-AGENT-SUBSTRATE-001"
+  ],
+  "non_scope": [
+    "pre-existing dirty paths",
+    "side projects",
+    "model/provider routing",
+    "public publication"
+  ],
+  "owned_paths": [
+    "AGENTS.md",
+    ".agents/workspace",
+    ".agents/work",
+    ".agents/skills/workspace-orient",
+    ".agents/skills/workspace-pick-work",
+    ".agents/skills/workspace-handoff",
+    ".agents/skills/workspace-finish",
+    ".agents/skills/workspace-doctor",
+    "bin/workctl",
+    "tools/workspace",
+    "evidence/WP-WORKSPACE-AGENT-SUBSTRATE-001"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/workspace/workctl.test.mjs",
+    "bin/workctl doctor",
+    "make verify",
+    "make test",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-WORKSPACE-AGENT-SUBSTRATE-001",
+  "blocked_by": [],
+  "blocks": []
+}

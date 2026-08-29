@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+import { runWorkctl } from '../tools/workspace/workctl.mjs';
+
+const result = runWorkctl(process.argv.slice(2));
+process.stdout.write(`${result.code === 0 ? JSON.stringify(result.value, null, 2) : result.error}\n`);
+process.exitCode = result.code;

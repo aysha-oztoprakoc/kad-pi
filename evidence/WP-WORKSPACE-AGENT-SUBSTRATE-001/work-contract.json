@@ -1,0 +1,1 @@
+{"source":".agents/work/WP-WORKSPACE-AGENT-SUBSTRATE-001.json","required_semantic_fields":["id","project","title","status","fixed_point","scope","non_scope","owned_paths","required_capabilities","trust_domain","authority_required","validation","evidence_target","blocked_by","blocks"],"forbidden_requirements":["model","provider","harness"],"state":"IN_PROGRESS"}

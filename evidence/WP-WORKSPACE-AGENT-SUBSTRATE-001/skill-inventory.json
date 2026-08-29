@@ -1,0 +1,1 @@
+{"command":"bin/workctl skills status","canonical_root":".agents/skills","observed_roots":[".agents/skills",".claude/skills","agent/skills"],"workspace_owned":["workspace-orient","workspace-pick-work","workspace-handoff","workspace-finish","workspace-doctor"],"collision_policy":".agents/skills wins; legacy views are read-only/shadowed","llm_required":false}

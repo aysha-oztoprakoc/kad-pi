@@ -1,0 +1,11 @@
+{
+  "head": "7f241585d8fb147f566def39d88e0670d1785852",
+  "status_at_start": "staged 0, unstaged 9, untracked 18",
+  "classification": {
+    "pre_existing": ["CONTEXT.md", "evidence/WP-KAD-002/causal-journal.jsonl", "tools/kad/context-economy.mjs", "wiki/KAD_Implementation_Plan.md", "wiki/index.md", "wiki/synthetic/CATALOG.json", "wiki/synthetic/RETRIEVAL_INDEX.jsonl", "wiki/synthetic/TAXONOMY.json", "wiki/synthetic/TAXONOMY.md", "ngc-cli.md5", "ngc-cli", "ngccli_linux.zip", "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md"],
+    "this_work": ["AGENTS.md", ".agents/workspace", ".agents/work", ".agents/skills/workspace-*", "bin/workctl", "tools/workspace", "evidence/WP-WORKSPACE-AGENT-SUBSTRATE-001"],
+    "other_project": ["data_workspace", "technopagan-netrunner", "tries/deepseek-harness-lab"],
+    "unknown": ["kad-rpg", "kad-sillytavern"]
+  },
+  "safety": "No reset, clean, or unrelated dirty-path overwrite performed."
+}

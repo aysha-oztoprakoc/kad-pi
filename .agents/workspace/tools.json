@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "tools": [
+    {"id": "workctl", "command": "bin/workctl", "purpose": "portable workspace discovery, work, claim, handoff, and doctor", "project_scope": "workspace", "mutates": true, "deterministic": true, "authority_required": "workspace-coordination", "dependencies": ["node"]},
+    {"id": "kad-knowledge", "command": "bin/kad-knowledge", "purpose": "KAD governed knowledge lookup and projection", "project_scope": "kad-pi", "mutates": false, "deterministic": true, "authority_required": "kad", "dependencies": ["node"]},
+    {"id": "kad-runtime-status", "command": "bin/kad-runtime-status", "purpose": "read-only live KAD runtime observation", "project_scope": "kad-pi", "mutates": false, "deterministic": true, "authority_required": "kad", "dependencies": ["node"]},
+    {"id": "kad-interface-server", "command": "bin/kad-interface-server", "purpose": "KAD governed interface platform", "project_scope": "kad-pi", "mutates": false, "deterministic": true, "authority_required": "kad", "dependencies": ["node"]},
+    {"id": "make-verify", "command": "make verify", "purpose": "KAD directive and Librarian verification", "project_scope": "kad-pi", "mutates": false, "deterministic": true, "authority_required": "kad", "dependencies": ["make", "python3", "node"]},
+    {"id": "data-workspace-test", "command": "npm test", "purpose": "DATA_WORKSPACE project tests", "project_scope": "data-workspace", "mutates": false, "deterministic": true, "authority_required": "project", "dependencies": ["npm"]},
+    {"id": "technopagan-test", "command": "bash tests/run_all.sh", "purpose": "Technopagan Netrunner project suite", "project_scope": "technopagan-netrunner", "mutates": false, "deterministic": true, "authority_required": "project", "dependencies": ["bash", "python3", "node"]}
+  ]
+}

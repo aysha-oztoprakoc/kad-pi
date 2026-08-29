@@ -1,0 +1,1 @@
+{"scenario":"harness-a claims and hands off; a separate CLI process resumes","inputs_to_resume":["projects.json","task contract","handoff JSON/Markdown","project instruction paths","Git fixed point"],"transcript_required":false,"result":"PASS in targeted fixture"}

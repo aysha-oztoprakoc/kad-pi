@@ -1,0 +1,24 @@
+{
+  "task": "WP-WORKSPACE-AGENT-SUBSTRATE-001",
+  "project": "kad-pi",
+  "claim_id": "588115c6-57fd-453a-ab43-d3b0299b1373",
+  "actor_label": "omp-wayfinder",
+  "started_at": "2026-08-29T21:57:28.006Z",
+  "base_commit": "7f241585d8fb147f566def39d88e0670d1785852",
+  "owned_paths": [
+    "AGENTS.md",
+    ".agents/workspace",
+    ".agents/work",
+    ".agents/skills/workspace-orient",
+    ".agents/skills/workspace-pick-work",
+    ".agents/skills/workspace-handoff",
+    ".agents/skills/workspace-finish",
+    ".agents/skills/workspace-doctor",
+    "bin/workctl",
+    "tools/workspace",
+    "evidence/WP-WORKSPACE-AGENT-SUBSTRATE-001"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-29T22:13:42.610Z"
+}

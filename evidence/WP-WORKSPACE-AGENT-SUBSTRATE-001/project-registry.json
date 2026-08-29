@@ -1,0 +1,1 @@
+{"source":".agents/workspace/projects.json","primary":"kad-pi","enrolled":["kad-pi","data-workspace","technopagan-netrunner"],"read_only":["deepseek-harness-reference","kad-rpg-unknown","kad-sillytavern-unknown"],"instruction_precedence":"nearest project instructions, then workspace coordination safety"}

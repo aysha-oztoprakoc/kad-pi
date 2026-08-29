@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "workspace": {
+    "id": "amdy-work",
+    "name": "Amdy Work",
+    "root": ".",
+    "primary_project": "kad-pi",
+    "portable_skill_root": ".agents/skills"
+  },
+  "projects": [
+    {
+      "id": "kad-pi",
+      "name": "KAD-PI",
+      "path": ".",
+      "kind": "PRIMARY",
+      "git_root": ".",
+      "default_branch": "master",
+      "instruction_entrypoint": "PRIME_DIRECTIVE.md",
+      "authority_entrypoints": ["PRIME_DIRECTIVE.md", "CONTEXT.md", "docs/adr"],
+      "status_command": "git status --short",
+      "validation_command": "make test",
+      "agent_enabled": true,
+      "notes": "Workspace repository; KAD authority is project-local."
+    },
+    {
+      "id": "data-workspace",
+      "name": "DATA_WORKSPACE",
+      "path": "data_workspace",
+      "kind": "SIDE_PROJECT",
+      "git_root": ".",
+      "default_branch": "master",
+      "instruction_entrypoint": "README.md",
+      "authority_entrypoints": ["README.md"],
+      "status_command": "git status --short",
+      "validation_command": "npm test && npm run check && omarchy-plugin-validate plugins/data_workspace",
+      "agent_enabled": true,
+      "notes": "Independent nested repository; no KAD canon import or publication."
+    },
+    {
+      "id": "technopagan-netrunner",
+      "name": "Technopagan Netrunner",
+      "path": "technopagan-netrunner",
+      "kind": "SIDE_PROJECT",
+      "git_root": ".",
+      "default_branch": "master",
+      "instruction_entrypoint": "README.md",
+      "authority_entrypoints": ["README.md", "AGENTS.md"],
+      "status_command": "git status --short",
+      "validation_command": "bash tests/run_all.sh",
+      "agent_enabled": true,
+      "notes": "Independent nested repository; project-local shell and theme authority."
+    },
+    {
+      "id": "deepseek-harness-reference",
+      "name": "DeepSeek Harness Reference",
+      "path": "tries/deepseek-harness-lab",
+      "kind": "REFERENCE",
+      "git_root": ".",
+      "default_branch": null,
+      "instruction_entrypoint": "README.md",
+      "authority_entrypoints": ["README.md", "AGENTS.md"],
+      "status_command": null,
+      "validation_command": null,
+      "agent_enabled": false,
+      "notes": "Third-party checkout; read-only."
+    },
+    {
+      "id": "kad-rpg-unknown",
+      "name": "KAD RPG (unclassified)",
+      "path": "kad-rpg",
+      "kind": "UNKNOWN",
+      "git_root": null,
+      "default_branch": null,
+      "instruction_entrypoint": null,
+      "authority_entrypoints": [],
+      "status_command": null,
+      "validation_command": null,
+      "agent_enabled": false,
+      "notes": "No independent git root or unambiguous instruction entrypoint observed."
+    },
+    {
+      "id": "kad-sillytavern-unknown",
+      "name": "KAD SillyTavern (unclassified)",
+      "path": "kad-sillytavern",
+      "kind": "UNKNOWN",
+      "git_root": null,
+      "default_branch": null,
+      "instruction_entrypoint": "RUNBOOK.md",
+      "authority_entrypoints": ["RUNBOOK.md"],
+      "status_command": null,
+      "validation_command": null,
+      "agent_enabled": false,
+      "notes": "Manual localhost stack; not enrolled as a mutating project."
+    }
+  ]
+}

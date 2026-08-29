@@ -1,0 +1,1 @@
+{"source":".agents/workspace/tools.json","tool_count":7,"verified_commands":["bin/workctl","bin/kad-knowledge","bin/kad-runtime-status","bin/kad-interface-server","make verify","npm test","bash tests/run_all.sh"],"scope":"workspace plus explicit project adapters","deterministic":true}

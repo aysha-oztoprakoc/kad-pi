@@ -1,0 +1,13 @@
+{
+  "workspace_root": "/home/amdy/Work",
+  "primary": "kad-pi",
+  "nested_git_roots": ["data_workspace", "technopagan-netrunner", "tries/deepseek-harness-lab"],
+  "projects": [
+    {"id":"kad-pi","kind":"PRIMARY","authority":"PRIME_DIRECTIVE.md + CONTEXT.md + docs/adr"},
+    {"id":"data-workspace","kind":"SIDE_PROJECT","validation":"npm test; npm run check; omarchy-plugin-validate plugins/data_workspace"},
+    {"id":"technopagan-netrunner","kind":"SIDE_PROJECT","validation":"bash tests/run_all.sh"},
+    {"id":"deepseek-harness-reference","kind":"REFERENCE","mutation":"read-only"},
+    {"id":"kad-rpg-unknown","kind":"UNKNOWN","mutation":"read-only"},
+    {"id":"kad-sillytavern-unknown","kind":"UNKNOWN","mutation":"read-only"}
+  ]
+}

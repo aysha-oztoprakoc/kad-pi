@@ -1,0 +1,1 @@
+{"tested":"node --test tools/workspace/workctl.test.mjs","observed":"resume reconstructs task, handoff, project instructions, and validation without chat transcript or execution metadata","mutates":false}
