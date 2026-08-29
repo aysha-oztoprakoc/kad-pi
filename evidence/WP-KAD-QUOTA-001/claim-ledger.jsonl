@@ -1,0 +1,12 @@
+{"status":"OBSERVED","claim":"The selected openai-codex/gpt-5.6-luna surface is authenticated according to the provider-owned Pi status command.","evidence":"provider-inventory.json; live-observation-sanitized.json"}
+{"status":"OBSERVED","claim":"The bounded provider-owned status surface exposed readiness and auth type but no numeric quota, reset, or capacity fields.","evidence":"live-observation-sanitized.json"}
+{"status":"OBSERVED","claim":"The live normalized quota is UNKNOWN with null unit, remaining, capacity, and reset_at, and an observed timestamp.","evidence":"normalized-quota.json"}
+{"status":"CALCULATED","claim":"The normalized UNKNOWN observation routes safely with WATERMARK_UNKNOWN and QUOTA_UNKNOWN reason codes without changing trust or authority policy.","evidence":"routing-receipt.json"}
+{"status":"CALCULATED","claim":"Known provider quota fixtures preserve units, reset timestamps, scope, freshness, and deterministic watermark calculations.","evidence":"provider-quota-adapter.test.mjs; routing-replay.json"}
+{"status":"CALCULATED","claim":"Only a meaningful quota change affects the corresponding lane decision path; identical observations emit quota.unchanged.","evidence":"quota-events.jsonl; provider-quota-adapter.test.mjs T14-T15"}
+{"status":"OBSERVED","claim":"Secret-like values are redacted before sanitized receipts and credential material was not stored.","evidence":"secret-redaction-receipt.json"}
+{"status":"UNKNOWN","claim":"The provider's actual allowance, reset time, quota unit, and remaining quantity remain unknown.","evidence":"normalized-quota.json"}
+{"status":"UNKNOWN","claim":"No generalized provider quota visibility, cost savings, or cross-provider unit equivalence is established.","evidence":"provider-inventory.json; claim-ledger.jsonl"}
+{"status":"REJECTED","claim":"Authentication readiness is equivalent to quota capacity or PAYG authorization.","evidence":"normalized-quota.json; routing-receipt.json"}
+{"status":"REJECTED","claim":"Malformed, stale, or credential-bearing provider output may become fresh routing state.","evidence":"provider-quota-adapter.test.mjs T3/T10/T11"}
+{"status":"PROMOTED","claim":"Provider-edge observation plus deterministic normalization is retained as the approved adapter boundary; automatic billing/training remains disabled.","evidence":"adapter-contract.json; economic-policy.json"}

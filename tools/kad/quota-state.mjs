@@ -13,5 +13,5 @@ export function normalizeQuota(input = {}, policy = {}, now = Date.now()) {
     const resetAt = input.reset_at ? (Number.isFinite(input.reset_at) ? input.reset_at : Date.parse(input.reset_at)) : null;
     if (resetAt && resetAt >= now && resetAt - now <= (policy.expiring_window_ms ?? 86400000) && fraction > (policy.green_min_fraction ?? 0.5) && input.useful_queued_work === true) watermark = WATERMARKS.EXPIRING;
   }
-  return { status, unit: input.unit ?? null, remaining, capacity, reset_at: input.reset_at ?? null, observed_at: observedAt, source: input.source ?? null, confidence: input.confidence ?? (status === 'KNOWN' ? 'OBSERVED' : 'UNKNOWN'), watermark };
+  return { status, unit: input.unit ?? null, remaining, capacity, reset_at: input.reset_at ?? null, observed_at: observedAt, source: input.source ?? null, confidence: input.confidence ?? (status === 'KNOWN' ? 'OBSERVED' : 'UNKNOWN'), watermark, scope: input.scope ?? null };
 }

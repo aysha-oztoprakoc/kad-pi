@@ -1,0 +1,11 @@
+GREEN evidence
+
+- Provider adapter tests: 17/17 passed.
+- Full KAD tests after implementation: 116/116 passed (99 prior + 17 adapter tests).
+- Librarian tests: 11/11 passed.
+- Prime validation: PASS, 1478 estimated tokens within the 1500-token budget.
+- Changed-module syntax, JSON/config parsing, economic fixture replay, and secret-redaction receipt: PASS.
+- Live read-only `pi auth check --provider openai-codex --no-refresh --json`: authenticated status `ready`, auth type `oauth`; no quota or reset fields exposed.
+- Normalization therefore truthfully produced `UNKNOWN` quota/watermark with null remaining/capacity/reset.
+- Economic routing remained eligible and selected the configured controller lane with explicit `WATERMARK_UNKNOWN` and `QUOTA_UNKNOWN` reason codes.
+- No PAYG, refresh, probe request, provider mutation, or credential capture occurred.

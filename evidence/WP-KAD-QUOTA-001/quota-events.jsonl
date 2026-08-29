@@ -1,0 +1,4 @@
+{"type":"provider.quota.observed","provider":"openai-codex","surface":"pi-auth-check","lane_id":"approved-remote-controller","source":"pi auth check --no-refresh --json"}
+{"type":"quota.normalized","lane_id":"approved-remote-controller","status":"UNKNOWN","watermark":"UNKNOWN","unit":null}
+{"type":"quota.unchanged","lane_id":"approved-remote-controller","affected_lane_ids":[]}
+{"type":"economic.route.reconsidered","lane_id":"approved-remote-controller","selected_lane":"approved-remote-controller","reason_codes":["ELIGIBLE","EXECUTION_CLASS_REMOTE_SUBSCRIPTION","WATERMARK_UNKNOWN","QUOTA_UNKNOWN"]}

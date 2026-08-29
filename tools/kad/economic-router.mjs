@@ -22,6 +22,7 @@ function eligible(lane, requirement, policy) {
   if (lane.trust_domain !== requirement.trust_domain) return 'TRUST_DOMAIN_MISMATCH';
   if (!(requirement.capabilities ?? []).every(capability => lane.capabilities.includes(capability))) return 'CAPABILITY_INSUFFICIENT';
   if ((requirement.min_context ?? 0) > lane.context_window) return 'CONTEXT_INSUFFICIENT';
+  if (requirement.model_scope && lane.quota.scope?.model && lane.quota.scope.model !== requirement.model_scope) return 'QUOTA_SCOPE_MISMATCH';
   if (!lane.authority_compatible) return 'AUTHORITY_INCOMPATIBLE';
   if (lane.payg && (!policy.spend.payg_authorized || !policy.spend.allow_paid_fallback)) return 'PAYG_NOT_AUTHORIZED';
   if (lane.marginal_cost > policy.spend.max_incremental_cost) return 'INCREMENTAL_COST_EXCEEDS_BUDGET';

@@ -1,0 +1,13 @@
+{
+  "observation_time":"2026-08-28T00:00:00Z",
+  "inventory_source":"Pi 0.84.3 local auth/model commands; no credentials captured",
+  "controller_priority":"openai-codex/gpt-5.6-luna",
+  "surfaces":[
+    {"provider":"openai-codex","model":"gpt-5.6-luna","auth_check":"ready","auth_type":"oauth","quota_status":"NOT_EXPOSED","classification":"PARTIALLY_OBSERVABLE","selected_for_adapter":true},
+    {"provider":"github-copilot","model":"gpt-5.6-luna","auth_check":"ready","auth_type":"oauth","quota_status":"NOT_EXPOSED","classification":"PARTIALLY_OBSERVABLE","selected_for_adapter":false},
+    {"provider":"opencode-go","model":"gpt-5.6-luna","auth_check":"ready","auth_type":"api_key","quota_status":"NOT_EXPOSED","classification":"PARTIALLY_OBSERVABLE","selected_for_adapter":false},
+    {"provider":"openrouter","model":"openai/gpt-5.6-luna","auth_check":"ready","auth_type":"oauth","quota_status":"NOT_EXPOSED","classification":"PARTIALLY_OBSERVABLE","selected_for_adapter":false}
+  ],
+  "selection_reason":"The currently configured KAD controller is openai-codex; only its bounded no-refresh status command was adapted.",
+  "credential_policy":"No credential-bearing output was read or stored."
+}

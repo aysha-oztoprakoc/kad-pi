@@ -1,0 +1,5 @@
+RED evidence
+
+- Before implementation, `node --test tools/kad/test/provider-quota-adapter.test.mjs` failed with `ERR_MODULE_NOT_FOUND` for `provider-quota-adapter.mjs`.
+- Initial design risk identified: treating `pi auth check` readiness as numeric quota would fabricate capacity. The live adapter instead returns UNKNOWN with null quota dimensions.
+- The adapter test suite initially failed because the assertion used the observation mechanism instead of the command provenance field; the test was corrected to assert the bounded no-refresh command identity.

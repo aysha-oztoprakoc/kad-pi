@@ -1,0 +1,32 @@
+{
+  "source": "live-observation-sanitized.json",
+  "route": {
+    "status": "ROUTED",
+    "selected_lane": "approved-remote-controller",
+    "selected_execution_class": "REMOTE_SUBSCRIPTION",
+    "reason_codes": [
+      "ELIGIBLE",
+      "EXECUTION_CLASS_REMOTE_SUBSCRIPTION",
+      "WATERMARK_UNKNOWN",
+      "QUOTA_UNKNOWN"
+    ],
+    "rejections": [],
+    "candidates": [
+      "approved-remote-controller"
+    ],
+    "observation": {
+      "lane_id": "approved-remote-controller",
+      "watermark": "UNKNOWN",
+      "quota_unit": null,
+      "remaining": null,
+      "capacity": null,
+      "confidence": "UNKNOWN"
+    }
+  },
+  "spend_policy": {
+    "payg_authorized": false,
+    "allow_paid_fallback": false,
+    "allow_auto_topup": false
+  },
+  "provider_parsing": "adapter-only"
+}

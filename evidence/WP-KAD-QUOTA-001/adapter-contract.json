@@ -1,0 +1,12 @@
+{
+  "adapter":"ProviderQuotaAdapter",
+  "implementation":"tools/kad/provider-quota-adapter.mjs",
+  "provider_edge":"pi auth check --provider <id> --no-refresh --json",
+  "read_only":true,
+  "refresh_credentials":false,
+  "raw_to_normalized":"normalizeRawProviderQuota",
+  "canonical_schema":"tools/kad/quota-state.mjs",
+  "provenance":"provider, surface, command identity, timestamp, sanitized-source hash, parser/normalization versions, model/window scope, TTL, warnings",
+  "unknown_policy":"missing quota, malformed output, or command failure produces UNKNOWN with null dimensions",
+  "spend_authority":"never provided by adapter"
+}

@@ -1,0 +1,32 @@
+{
+  "status": "UNKNOWN",
+  "unit": null,
+  "remaining": null,
+  "capacity": null,
+  "reset_at": null,
+  "observed_at": 1787967199776,
+  "source": null,
+  "confidence": "UNKNOWN",
+  "watermark": "UNKNOWN",
+  "scope": {
+    "model": "gpt-5.6-luna",
+    "window": "provider-quota"
+  },
+  "provenance": {
+    "provider": "openai-codex",
+    "surface": "pi-auth-check",
+    "observation_mechanism": "provider-owned read-only adapter",
+    "command_identity": "pi auth check --provider openai-codex --no-refresh --json",
+    "observed_at": 1787967199776,
+    "raw_source_hash": "70554bad2781767d870e029a53ca14de75304d12aa582d12159d10d1c01ddf72",
+    "parser_version": "provider-quota-adapter-1",
+    "normalization_version": "quota-state-1",
+    "model_scope": "gpt-5.6-luna",
+    "window_scope": "provider-quota",
+    "freshness_ttl_ms": 86400000,
+    "parse_warnings": [
+      "quota dimension not exposed or not machine-readable"
+    ],
+    "raw_sanitized": "{\"status\":\"ready\",\"provider\":\"openai-codex\",\"authType\":\"oauth\"}"
+  }
+}

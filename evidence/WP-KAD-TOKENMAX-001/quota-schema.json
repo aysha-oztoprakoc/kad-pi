@@ -4,6 +4,6 @@
   "title":"Normalized quota observation",
   "type":"object",
   "required":["status","unit","remaining","capacity","reset_at","observed_at","source","confidence","watermark"],
-  "properties":{"status":{"enum":["KNOWN","UNKNOWN","STALE"]},"unit":{"type":["string","null"]},"remaining":{"type":["number","null"]},"capacity":{"type":["number","null"]},"reset_at":{"type":["string","number","null"]},"observed_at":{"type":["number","null"]},"source":{"type":["string","null"]},"confidence":{"enum":["OBSERVED","CALCULATED","DECLARED","UNKNOWN"]},"watermark":{"enum":["GREEN","YELLOW","RED","EXPIRING","UNKNOWN","STALE"]}},
+  "properties":{"status":{"enum":["KNOWN","UNKNOWN","STALE"]},"unit":{"type":["string","null"]},"remaining":{"type":["number","null"]},"capacity":{"type":["number","null"]},"reset_at":{"type":["string","number","null"]},"observed_at":{"type":["number","null"]},"source":{"type":["string","null"]},"confidence":{"enum":["OBSERVED","CALCULATED","DECLARED","UNKNOWN"]},"watermark":{"enum":["GREEN","YELLOW","RED","EXPIRING","UNKNOWN","STALE"]},"scope":{"type":["object","null"]},"provenance":{"type":"object"}},
   "additionalProperties":false
 }
