@@ -1,0 +1,5 @@
+name: Models
+views:
+  - type: table
+    filters: 'type == "model"'
+    properties: [title, provider, status, updated]

@@ -1,0 +1,5 @@
+name: Review
+views:
+  - type: table
+    filters: 'review_status == "PENDING"'
+    properties: [proposal, status, target, created, source_count]

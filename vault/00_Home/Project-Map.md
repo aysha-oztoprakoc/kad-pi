@@ -1,0 +1,1 @@
+---\nkad_id: kad-project-map\ntype: documentation\nauthority: CANONICAL_KNOWLEDGE\nepistemic_class: PROJECT_INFERENCE\nreview_status: APPROVED\nvisibility: project\ncontext_eligible: false\ntrain_eligible: false\npublish: false\n---\n\n# KAD-PI Project Map\n\nCanonical project navigation.\n

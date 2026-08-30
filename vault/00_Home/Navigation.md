@@ -1,0 +1,1 @@
+---\nkad_id: kad-navigation\ntype: documentation\nauthority: CANONICAL_KNOWLEDGE\nepistemic_class: PROJECT_INFERENCE\nreview_status: APPROVED\nvisibility: project\ncontext_eligible: false\ntrain_eligible: false\npublish: false\n---\n\n# Navigation\n\nUse the dashboards and filtered Bases views for discovery.\n

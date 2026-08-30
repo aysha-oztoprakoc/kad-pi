@@ -1,0 +1,6 @@
+name: Workpackages
+views:
+  - type: table
+    name: Workpackages
+    filters: 'type == "workpackage"'
+    properties: [kad_id, project, status, phase, verdict, priority, updated]

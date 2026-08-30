@@ -1,0 +1,83 @@
+{
+  "id": "WP-KAD-VAULT-WIKI-UNIFICATION-010",
+  "project": "kad-pi",
+  "title": "Canonical vault and legacy wiki unification",
+  "status": "CLAIMED",
+  "priority": 120,
+  "spec_ref": null,
+  "fixed_point": "2d5ef8b36b36dfa09a6957817c49ecad5c530fa4",
+  "scope": [
+    "vault/",
+    "wiki/",
+    "tools/kad/wiki/",
+    "tools/kad/wiki-library/",
+    "tools/kad/wiki-projection.mjs",
+    "tools/kad/knowledge-plane.mjs",
+    "tools/kad/knowledge-plane-adapters.mjs",
+    "tools/kad/index.mjs",
+    "bin/kad-wiki",
+    "tools/kad/test/wiki*.test.mjs",
+    "tools/kad/test/knowledge-plane.test.mjs",
+    "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010/"
+  ],
+  "non_scope": [
+    "WP-011 Sofia and website data-plane implementation",
+    "WP-012 research ingestion implementation",
+    "live workctl state authority",
+    "provider quotas",
+    "automatic research promotion",
+    "Needle training",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "vault/",
+    "wiki/",
+    "tools/kad/wiki/",
+    "tools/kad/wiki-library/",
+    "tools/kad/wiki-projection.mjs",
+    "tools/kad/knowledge-plane.mjs",
+    "tools/kad/knowledge-plane-adapters.mjs",
+    "tools/kad/index.mjs",
+    "bin/kad-wiki",
+    "tools/kad/test/wiki*.test.mjs",
+    "tools/kad/test/knowledge-plane.test.mjs",
+    "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/wiki*.test.mjs",
+    "node --test tools/kad/test/knowledge-plane.test.mjs",
+    "bin/kad-wiki lint",
+    "bin/kad-wiki rebuild",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010/",
+  "blocked_by": [
+    "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+    "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Every legacy wiki artifact is classified with deterministic destination and provenance",
+    "vault is the only manually authored durable knowledge source",
+    "flat property registry and stable kad_id validation are enforced",
+    "approved context excludes review and private content",
+    "canonical Home and Bases views exist",
+    "compatibility projections are explicitly derived and regenerable",
+    "focused tests and evidence prove no silent data loss"
+  ],
+  "description": "Unify legacy wiki knowledge into the canonical human-editable vault while preserving authority boundaries and deterministic derived projections.",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-VAULT-WIKI-UNIFICATION-010"
+}

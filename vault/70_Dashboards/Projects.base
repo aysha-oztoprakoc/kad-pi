@@ -1,0 +1,11 @@
+name: Projects
+views:
+  - type: table
+    name: Projects
+    filters:
+      and:
+        - 'type == "project"'
+    order:
+      - property: updated
+        direction: DESC
+    properties: [project, status, health, priority, updated]

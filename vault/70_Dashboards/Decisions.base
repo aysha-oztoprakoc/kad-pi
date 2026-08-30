@@ -1,0 +1,5 @@
+name: Decisions
+views:
+  - type: table
+    filters: 'type == "decision"'
+    properties: [status, decision_type, project, accepted_date, supersession]

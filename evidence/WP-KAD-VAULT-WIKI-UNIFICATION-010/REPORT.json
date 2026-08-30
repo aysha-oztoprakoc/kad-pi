@@ -1,0 +1,18 @@
+{
+  "workpackage": "WP-KAD-VAULT-WIKI-UNIFICATION-010",
+  "schema": "kad-evidence-v1",
+  "implementation": "canonical vault structure, flat property registry, stable migration IDs, deterministic legacy inventory, Home and Bases views",
+  "fixed_point": "2d5ef8b36b36dfa09a6957817c49ecad5c530fa4",
+  "migration_manifest": "vault/90_Derived/KnowledgePlane/migration-manifest.json",
+  "legacy_source_count": 75,
+  "classification_counts": {"MIGRATE_CANONICAL": 8, "REVIEW_REQUIRED": 11, "DERIVED_ONLY": 44, "ARCHIVE": 12},
+  "authority_boundary": "wiki remains inventoried compatibility input; no legacy artifact is silently promoted",
+  "focused_tests": {"command": "node --test tools/kad/test/wiki-migration.test.mjs tools/kad/test/wiki-librarian.test.mjs tools/kad/test/wiki-library.test.mjs tools/kad/test/wiki-projection.test.mjs", "result": "12 passed, 0 failed"},
+  "checks": [
+    {"command": "bin/kad-wiki lint --json", "result": "ok: true"},
+    {"command": "node --check tools/kad/wiki/index.mjs tools/kad/wiki/migration.mjs bin/kad-wiki", "result": "passed"},
+    {"command": "git diff --check", "result": "passed"},
+    {"command": "make test", "result": "passed"}
+  ],
+  "unknowns": ["WP-011 Sofia/website consumers remain for the next sequential work package", "WP-012 research ingestion remains for the next sequential work package"]
+}

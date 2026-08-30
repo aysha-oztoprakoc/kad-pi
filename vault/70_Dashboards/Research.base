@@ -1,0 +1,6 @@
+name: Research
+views:
+  - type: table
+    name: Research
+    filters: 'type == "paper"'
+    properties: [title, paper, source, read_status, evidence_status, relevance, year, tags]

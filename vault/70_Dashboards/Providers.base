@@ -1,0 +1,5 @@
+name: Providers
+views:
+  - type: table
+    filters: 'type == "provider"'
+    properties: [title, status, authority, updated]
