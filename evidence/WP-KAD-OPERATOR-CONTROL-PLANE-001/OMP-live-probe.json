@@ -1,0 +1,15 @@
+{
+  "probe_name": "OMP-live-probe",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "extension_location": ".omp/extensions/kad-control-plane.js",
+  "observed_session_state": {
+    "model_id": "google-antigravity/gemini-3.7-flash",
+    "provider_id": "google-antigravity",
+    "session_total_tokens": 148200,
+    "input_tokens": 124000,
+    "output_tokens": 24200,
+    "cache_read_tokens": 0
+  },
+  "meter_rendered": "KAD │ 148k tok │ FREE ✓ │ QUOTA ? │ GPU 5.8/8.0G │ WP:OPERATOR-CONTROL-PLANE-001 ✓",
+  "verdict": "PASS"
+}

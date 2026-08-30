@@ -1,0 +1,14 @@
+{
+  "probe_name": "Context7-probe",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "mcp_config_path": ".omp/mcp.json",
+  "mcp_server": {
+    "name": "context7",
+    "command": "npx",
+    "args": ["-y", "@upstash/context7-mcp@4.0.4"]
+  },
+  "cli_probe_command": "npx -y @upstash/context7-mcp@4.0.4 --help",
+  "cli_probe_exit_code": 0,
+  "auth_requirement": "OPTIONAL (free tier operational without key)",
+  "verdict": "PASS"
+}

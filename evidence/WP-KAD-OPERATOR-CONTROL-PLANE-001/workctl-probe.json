@@ -1,0 +1,21 @@
+{
+  "probe_name": "workctl-probe",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "observed_state": {
+    "has_active_claim": true,
+    "ticket_id": "WP-KAD-OPERATOR-CONTROL-PLANE-001",
+    "actor_label": "unknown-actor",
+    "mode": "mutate",
+    "started_at": "2026-08-30T00:44:53.133Z",
+    "owned_paths_count": 12,
+    "accepted_count": 6,
+    "frontier_count": 0,
+    "blocked_count": 0
+  },
+  "null_claim_test": {
+    "input": null,
+    "output_ticket_id": "NO ACTIVE CLAIM",
+    "has_active_claim": false
+  },
+  "verdict": "PASS"
+}

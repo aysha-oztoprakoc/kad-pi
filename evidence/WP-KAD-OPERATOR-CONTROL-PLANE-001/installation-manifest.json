@@ -1,0 +1,75 @@
+{
+  "manifest_version": "1.0",
+  "project": "kad-pi",
+  "installed_components": [
+    {
+      "component": "kad-control-plane",
+      "type": "omp_extension",
+      "location": ".omp/extensions/kad-control-plane/",
+      "source": "tools/kad/telemetry/control-plane-runtime.mjs",
+      "role": "Native OMP Operator TUI, commands, shortcuts, custom tools"
+    },
+    {
+      "component": "kad-telemetry",
+      "type": "kad_subsystem",
+      "location": "tools/kad/telemetry/",
+      "source": "project_owned",
+      "role": "Normalized token/quota telemetry schema, adapters, ledger, and view-model"
+    },
+    {
+      "component": "context7-mcp",
+      "type": "mcp_server",
+      "location": ".omp/mcp.json",
+      "package": "@upstash/context7-mcp@4.0.4",
+      "license": "MIT",
+      "source": "npm registry",
+      "role": "Project-scoped documentation lookup via MCP"
+    },
+    {
+      "component": "Justfile",
+      "type": "task_runner_config",
+      "location": "Justfile",
+      "source": "project_owned",
+      "role": "Deterministic development and verification recipes"
+    },
+    {
+      "component": ".pre-commit-config.yaml",
+      "type": "commit_gate_config",
+      "location": ".pre-commit-config.yaml",
+      "source": "project_owned",
+      "role": "Prek-driven local commit gates"
+    },
+    {
+      "component": "bin/kad",
+      "type": "cli_executable",
+      "location": "bin/kad",
+      "source": "project_owned",
+      "role": "Standalone operator CLI interface"
+    },
+    {
+      "component": "bin/kad-doctor",
+      "type": "cli_executable",
+      "location": "bin/kad-doctor",
+      "source": "project_owned",
+      "role": "Diagnostic doctor toolchain & service health scanner"
+    }
+  ],
+  "skipped_components": [
+    {
+      "tool": "betterleaks",
+      "reason": "Upstream packaging unverified in Arch/mise; gitleaks 8.30.1 is verified and active."
+    },
+    {
+      "tool": "pi-context-prune",
+      "reason": "OMP provides native compaction (kad-context-economy.js, snapcompact); duplicate plugin avoided."
+    },
+    {
+      "tool": "playwright-mcp",
+      "reason": "OMP provides native browser tool and playwright test runner; large tool schema bloat avoided."
+    },
+    {
+      "tool": "web-dashboard",
+      "reason": "Prohibited by North Star; native OMP TUI components used exclusively."
+    }
+  ]
+}

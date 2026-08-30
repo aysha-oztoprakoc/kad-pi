@@ -1,0 +1,25 @@
+{
+  "task": "WP-KAD-OPERATOR-CONTROL-PLANE-001",
+  "project": "kad-pi",
+  "claim_id": "369e300d-c16b-4066-8a49-a1d5d8523f2a",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T00:44:53.133Z",
+  "base_commit": "445e000b3ad75f4f5a2d9b1be06ebc6a0743a364",
+  "owned_paths": [
+    ".omp/extensions/kad-control-plane",
+    ".omp/mcp.json",
+    "tools/kad/telemetry",
+    "tools/kad/test/telemetry.test.mjs",
+    "tools/kad/test/control-plane.test.mjs",
+    "bin/kad",
+    "bin/kad-doctor",
+    "evidence/WP-KAD-OPERATOR-CONTROL-PLANE-001",
+    "docs/agents/control-plane.md",
+    "wiki/KAD_Operator_Control_Plane_2026-08-29.md",
+    "Justfile",
+    ".pre-commit-config.yaml"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T00:58:41.132Z"
+}

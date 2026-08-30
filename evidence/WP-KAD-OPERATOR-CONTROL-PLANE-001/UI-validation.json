@@ -1,0 +1,52 @@
+{
+  "validation_name": "UI-validation",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "elements_validated": [
+    {
+      "component": "compact_meter",
+      "function": "renderCompactMeter()",
+      "test": "CP2",
+      "verdict": "PASS"
+    },
+    {
+      "component": "detailed_panel",
+      "function": "renderDetailedPanel()",
+      "test": "CP3",
+      "verdict": "PASS"
+    },
+    {
+      "component": "commands",
+      "registered": [
+        "kad", "kad-status", "kad-tokens", "kad-providers",
+        "kad-budget", "kad-services", "kad-work", "kad-refresh", "kad-doctor"
+      ],
+      "test": "CP1, CP6",
+      "verdict": "PASS"
+    },
+    {
+      "component": "agent_tools",
+      "registered": ["kad_telemetry", "kad_policy_status"],
+      "test": "CP1",
+      "verdict": "PASS"
+    },
+    {
+      "component": "keyboard_shortcuts",
+      "registered": ["ctrl+k"],
+      "test": "CP1",
+      "verdict": "PASS"
+    },
+    {
+      "component": "failure_isolation",
+      "scenario": "Collector throws exception",
+      "test": "CP4",
+      "verdict": "PASS"
+    },
+    {
+      "component": "clean_disposal",
+      "scenario": "session_shutdown clears refreshTimer",
+      "test": "CP7",
+      "verdict": "PASS"
+    }
+  ],
+  "overall_verdict": "PASS"
+}

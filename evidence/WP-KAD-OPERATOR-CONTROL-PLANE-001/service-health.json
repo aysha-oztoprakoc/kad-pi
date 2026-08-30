@@ -1,0 +1,28 @@
+{
+  "probe_name": "service-health",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "services": {
+    "openviking": {
+      "state": "UNAVAILABLE",
+      "reason": "OpenViking server offline",
+      "impact": "Degraded to exact KAD librarian retrieval"
+    },
+    "zotero": {
+      "state": "UNAVAILABLE",
+      "reason": "connection refused / loopback offline",
+      "impact": "Degraded to standard export/manifest import"
+    },
+    "needle": {
+      "state": "UNAVAILABLE",
+      "reason": "Needle 2 not configured",
+      "impact": "None"
+    },
+    "local_runtime": {
+      "state": "AVAILABLE",
+      "identity": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M",
+      "impact": "Local WORLD operational"
+    }
+  },
+  "overall_state": "OPERATIONAL_WITH_FALLBACKS",
+  "verdict": "PASS"
+}

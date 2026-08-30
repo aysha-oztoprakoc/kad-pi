@@ -1,0 +1,15 @@
+{
+  "probe_name": "staleness-probe",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "scenario": "Observation transitions to STALE when evaluated past stale_after TTL",
+  "fresh_record": {
+    "provider_id": "google-antigravity",
+    "metric": "requests",
+    "observed_at": 1000,
+    "stale_after": 2000,
+    "state": "OBSERVED"
+  },
+  "evaluation_at_1500": "OBSERVED",
+  "evaluation_at_2500": "STALE",
+  "verdict": "PASS"
+}

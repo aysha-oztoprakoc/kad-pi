@@ -1,0 +1,80 @@
+[
+  {
+    "provider_id": "openai-codex",
+    "configured": true,
+    "enabled": true,
+    "classification": "remote_subscription",
+    "telemetry_adapter": "openai-codex",
+    "models": ["gpt-5.6-luna", "gpt-5.4-mini"],
+    "roles": ["plan", "task", "oracle"],
+    "usage_visible": true,
+    "quota_visible": true,
+    "reset_visible": true,
+    "authoritative_source": "OMP session / documented provider quota"
+  },
+  {
+    "provider_id": "google-antigravity",
+    "configured": true,
+    "enabled": true,
+    "classification": "remote_free",
+    "telemetry_adapter": "google-antigravity",
+    "models": ["gemini-3-flash"],
+    "roles": ["slow", "advisor", "designer", "vision", "verifier", "research"],
+    "usage_visible": true,
+    "quota_visible": true,
+    "reset_visible": false,
+    "authoritative_source": "OMP usage events / rate headers"
+  },
+  {
+    "provider_id": "zai-free",
+    "configured": true,
+    "enabled": true,
+    "classification": "remote_free",
+    "telemetry_adapter": "zai-free",
+    "models": ["glm-4.7-flash"],
+    "roles": ["smol", "tiny", "commit"],
+    "usage_visible": true,
+    "quota_visible": false,
+    "reset_visible": false,
+    "authoritative_source": "OMP session events"
+  },
+  {
+    "provider_id": "kad-local-world",
+    "configured": true,
+    "enabled": true,
+    "classification": "local_inference",
+    "telemetry_adapter": "kad-local-world",
+    "models": ["kad-local-s13"],
+    "roles": ["world"],
+    "usage_visible": true,
+    "quota_visible": false,
+    "reset_visible": false,
+    "authoritative_source": "Local process / VRAM metrics"
+  },
+  {
+    "provider_id": "kad-local-qwen",
+    "configured": true,
+    "enabled": true,
+    "classification": "local_inference",
+    "telemetry_adapter": "kad-local-qwen",
+    "models": ["qwen-local"],
+    "roles": ["local_retrieval"],
+    "usage_visible": true,
+    "quota_visible": false,
+    "reset_visible": false,
+    "authoritative_source": "Local process / VRAM metrics"
+  },
+  {
+    "provider_id": "openrouter",
+    "configured": false,
+    "enabled": false,
+    "classification": "remote_paid",
+    "telemetry_adapter": "openrouter",
+    "models": [],
+    "roles": [],
+    "usage_visible": false,
+    "quota_visible": false,
+    "reset_visible": false,
+    "authoritative_source": "Disabled in project config"
+  }
+]

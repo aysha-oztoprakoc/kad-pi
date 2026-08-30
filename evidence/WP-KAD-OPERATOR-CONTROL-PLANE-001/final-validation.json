@@ -1,0 +1,36 @@
+{
+  "workpackage": "WP-KAD-OPERATOR-CONTROL-PLANE-001",
+  "title": "KAD-PI Native OMP Control Plane, Live Token/Quota Telemetry, Developer Toolchain, Security Gates, and Native Operator UI",
+  "validated_at": "2026-08-30T00:52:00.000Z",
+  "test_suites": {
+    "telemetry_and_control_plane": {
+      "command": "node --test tools/kad/test/telemetry.test.mjs tools/kad/test/control-plane.test.mjs",
+      "total": 23,
+      "passed": 23,
+      "failed": 0
+    },
+    "research_regression": {
+      "command": "node --test tools/kad/test/research*.test.mjs",
+      "total": 47,
+      "passed": 47,
+      "failed": 0
+    },
+    "full_kad_suite": {
+      "command": "node --test tools/kad/test/*.test.mjs",
+      "total": 437,
+      "passed": 437,
+      "failed": 0
+    },
+    "workspace_suite": {
+      "command": "node --test tools/workspace/*.test.mjs",
+      "total": 27,
+      "passed": 27,
+      "failed": 0
+    }
+  },
+  "doctor_status": {
+    "kad_doctor": "PASS",
+    "workctl_doctor": "PASS"
+  },
+  "verdict": "PASS"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "kad-telemetry-v1",
+  "epistemic_states": [
+    "AUTHORITATIVE_REMOTE",
+    "AUTHORITATIVE_LOCAL",
+    "OBSERVED",
+    "DERIVED",
+    "MANUAL",
+    "STALE",
+    "UNKNOWN",
+    "DEGRADED"
+  ],
+  "supported_units": {
+    "tokens": "input, output, cached, reasoning, total tokens",
+    "requests": "provider API request counts",
+    "messages": "subscription message counts (e.g. Claude Code)",
+    "credits": "account balance / credits (e.g. OpenRouter)",
+    "USD": "monetary cost where authoritatively reported",
+    "percent": "direct percentage remaining (0-100%)",
+    "MiB": "GPU VRAM memory units",
+    "C": "temperature in Celsius",
+    "W": "power in Watts"
+  },
+  "invariants": [
+    "No conversion between heterogeneous units (e.g. messages to tokens)",
+    "Unknown limits remain strictly UNKNOWN with null remaining",
+    "Staleness transitions are deterministic based on explicit stale_after timestamp",
+    "Secret patterns in keys or values are stripped via redactSecrets()"
+  ]
+}

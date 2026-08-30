@@ -1,0 +1,26 @@
+{
+  "benchmark_name": "performance-benchmark",
+  "tool": "hyperfine 1.20.0",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "results": [
+    {
+      "command": "bin/kad status --json",
+      "mean_seconds": 1.122,
+      "stddev_seconds": 0.003,
+      "min_seconds": 1.118,
+      "max_seconds": 1.126,
+      "runs": 10,
+      "note": "Dominated by 1.0s amdgpu_top sampling interval"
+    },
+    {
+      "command": "bin/kad doctor --json",
+      "mean_seconds": 0.2212,
+      "stddev_seconds": 0.0036,
+      "min_seconds": 0.2144,
+      "max_seconds": 0.2268,
+      "runs": 13,
+      "note": "Full toolchain, economic, and workctl doctor checks in 221ms"
+    }
+  ],
+  "overhead_assessment": "LIGHTWEIGHT (Zero background CPU usage, event-driven updates in OMP)"
+}

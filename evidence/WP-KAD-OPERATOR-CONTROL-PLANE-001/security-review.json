@@ -1,0 +1,33 @@
+{
+  "review_name": "security-review",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "audit_areas": [
+    {
+      "area": "Secret Exposure",
+      "findings": "Zero secrets or API keys stored in repo, configs, or evidence.",
+      "tool": "Gitleaks + Trivy",
+      "verdict": "PASS"
+    },
+    {
+      "area": "Browser & Scraping Boundaries",
+      "findings": "No web scraping, cookie theft, or unauthorized reverse-engineered endpoints used.",
+      "verdict": "PASS"
+    },
+    {
+      "area": "Loopback Network Boundaries",
+      "findings": "Local runtime and Zotero adapters strictly confined to localhost/127.0.0.1.",
+      "verdict": "PASS"
+    },
+    {
+      "area": "Extension Permissions",
+      "findings": "OMP extension runs within standard project extension sandbox without ambient authority escalation.",
+      "verdict": "PASS"
+    },
+    {
+      "area": "Telemetry Redaction",
+      "findings": "redactSecrets() filters out any field matching authorization, apiKey, session, cookie, password, secret.",
+      "verdict": "PASS"
+    }
+  ],
+  "verdict": "PASS"
+}

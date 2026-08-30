@@ -1,0 +1,17 @@
+{
+  "workpackage": "WP-KAD-OPERATOR-CONTROL-PLANE-001",
+  "fixed_point": "445e000b3ad75f4f5a2d9b1be06ebc6a0743a364",
+  "timestamp": "2026-08-30T00:52:00.000Z",
+  "workstation": {
+    "os": "linux 7.1.9-arch1-2",
+    "distro": "Arch Linux (Omarchy)",
+    "kernel": "#1 SMP PREEMPT_DYNAMIC",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 7 7700 8-Core Processor",
+    "gpu": "AMD Navi 44 [Radeon RX 9060 XT] (rev c0)"
+  },
+  "omp_version": "18.0.10",
+  "node_version": "v26.7.0",
+  "workspace": "/home/amdy/Work",
+  "git_branch": "master"
+}

@@ -1,0 +1,61 @@
+{
+  "matrix": [
+    {
+      "provider": "openai-codex",
+      "metric": "total_tokens",
+      "unit": "tokens",
+      "source_priority": [
+        "1. Authoritative provider quota endpoint",
+        "2. OMP session telemetry",
+        "3. Local ephemeral ledger"
+      ],
+      "fallback_on_unobservable": "UNKNOWN",
+      "current_state": "OBSERVED / UNKNOWN limit (when offline)"
+    },
+    {
+      "provider": "google-antigravity",
+      "metric": "requests",
+      "unit": "requests",
+      "source_priority": [
+        "1. Rate-limit response headers",
+        "2. OMP session turn usage",
+        "3. Local ephemeral ledger"
+      ],
+      "fallback_on_unobservable": "UNKNOWN",
+      "current_state": "OBSERVED"
+    },
+    {
+      "provider": "zai-free",
+      "metric": "total_tokens",
+      "unit": "tokens",
+      "source_priority": [
+        "1. OMP turn usage",
+        "2. Local ephemeral ledger"
+      ],
+      "fallback_on_unobservable": "UNKNOWN",
+      "current_state": "OBSERVED"
+    },
+    {
+      "provider": "kad-local-world",
+      "metric": "vram_used",
+      "unit": "MiB",
+      "source_priority": [
+        "1. amdgpu_top structured JSON",
+        "2. runtime observer probe"
+      ],
+      "fallback_on_unobservable": "UNAVAILABLE",
+      "current_state": "AVAILABLE"
+    },
+    {
+      "provider": "kad-local-qwen",
+      "metric": "vram_used",
+      "unit": "MiB",
+      "source_priority": [
+        "1. amdgpu_top structured JSON",
+        "2. runtime observer probe"
+      ],
+      "fallback_on_unobservable": "UNAVAILABLE",
+      "current_state": "AVAILABLE"
+    }
+  ]
+}

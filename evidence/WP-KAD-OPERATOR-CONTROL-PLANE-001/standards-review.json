@@ -1,0 +1,32 @@
+{
+  "review_name": "standards-review",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "criteria": [
+    {
+      "standard": "Prime Directive validation (tokens <= 1500, lines <= 115)",
+      "command": "python3 validate_prime_directive.py",
+      "result": "PASS"
+    },
+    {
+      "standard": "Librarian verification (documents, concepts, cards)",
+      "command": "node tools/librarian/librarian.mjs verify",
+      "result": "PASS"
+    },
+    {
+      "standard": "Workctl doctor",
+      "command": "bin/workctl doctor",
+      "result": "PASS"
+    },
+    {
+      "standard": "KAD doctor",
+      "command": "bin/kad doctor",
+      "result": "PASS"
+    },
+    {
+      "standard": "Git diff check (no trailing whitespace, clean patch)",
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "verdict": "PASS"
+}

@@ -1,0 +1,33 @@
+{
+  "probe_name": "economic-policy-probe",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "scenarios": [
+    {
+      "name": "Free lane available",
+      "paid_authorized": false,
+      "selected_lane": "free-lane",
+      "status": "ADMITTED",
+      "verdict": "PASS"
+    },
+    {
+      "name": "Free lane exhausted and paid unauthorized",
+      "paid_authorized": false,
+      "paid_fallback_allowed": false,
+      "selected_lane": null,
+      "status": "REJECTED_UNAUTHORIZED_SPEND",
+      "verdict": "PASS"
+    },
+    {
+      "name": "Paid lane explicitly authorized",
+      "paid_authorized": true,
+      "paid_fallback_allowed": true,
+      "selected_lane": "paid-lane",
+      "status": "ADMITTED",
+      "verdict": "PASS"
+    }
+  ],
+  "invariants_preserved": [
+    "No implicit activation of paid routes",
+    "Model cannot authorize its own spend"
+  ]
+}

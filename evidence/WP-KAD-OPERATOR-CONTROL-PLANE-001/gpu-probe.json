@@ -1,0 +1,20 @@
+{
+  "probe_name": "gpu-probe",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "tool": "amdgpu_top v0.11.5 (-J -n 1)",
+  "parsed_device": {
+    "state": "AVAILABLE",
+    "device_name": "AMD Radeon RX 9060 XT",
+    "vram_used_mib": 5958,
+    "vram_total_mib": 8144,
+    "gpu_utilization_percent": 7,
+    "temperature_c": 58,
+    "power_w": 19
+  },
+  "unavailable_fallback_test": {
+    "input": "Error: device not found",
+    "output_state": "UNAVAILABLE",
+    "output_reason": "device not found"
+  },
+  "verdict": "PASS"
+}

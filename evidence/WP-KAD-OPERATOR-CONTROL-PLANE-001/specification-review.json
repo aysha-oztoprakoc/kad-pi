@@ -1,0 +1,67 @@
+{
+  "spec_id": "WP-KAD-OPERATOR-CONTROL-PLANE-001",
+  "review_date": "2026-08-30T00:52:00.000Z",
+  "acceptance_criteria_verification": [
+    {
+      "criterion": "Approved tool census and missing tooling installation complete with zero duplicate plugins.",
+      "status": "MET",
+      "evidence": "evidence/WP-KAD-OPERATOR-CONTROL-PLANE-001/tool-census.json"
+    },
+    {
+      "criterion": "Provider-neutral telemetry schema normalizes token and non-token metrics with explicit epistemic provenance.",
+      "status": "MET",
+      "evidence": "tools/kad/telemetry/schema.mjs, tests T1-T3"
+    },
+    {
+      "criterion": "No fake token conversions for non-token quotas; unknown limits remain UNKNOWN.",
+      "status": "MET",
+      "evidence": "tests T2, T3, T14"
+    },
+    {
+      "criterion": "Deterministic reconciliation and staleness semantics are preserved with local ledger persistence.",
+      "status": "MET",
+      "evidence": "tests T4, T5, T6, T13"
+    },
+    {
+      "criterion": "All configured OMP providers appear in the detailed inventory with truthful capability/quota state.",
+      "status": "MET",
+      "evidence": "tests T7, T14, bin/kad providers"
+    },
+    {
+      "criterion": "Existing economic router, workctl claim/frontier, and service health states are truthfully projected.",
+      "status": "MET",
+      "evidence": "tests T8, T9, T11, T15"
+    },
+    {
+      "criterion": "AMD GPU telemetry (utilization, VRAM, temp, power) is captured via structured amdgpu_top output.",
+      "status": "MET",
+      "evidence": "test T10, gpu-probe.json"
+    },
+    {
+      "criterion": "Native OMP extension implements compact meter, detailed panel, commands, keybinding, and theme integration.",
+      "status": "MET",
+      "evidence": "tests CP1-CP7, .omp/extensions/kad-control-plane.js"
+    },
+    {
+      "criterion": "Context7 MCP is configured project-scoped without credentials.",
+      "status": "MET",
+      "evidence": ".omp/mcp.json, Context7-probe.json"
+    },
+    {
+      "criterion": "Deterministic security gates (gitleaks, trivy, shellcheck, shfmt, actionlint, lychee, prek) are integrated.",
+      "status": "MET",
+      "evidence": "Justfile, .pre-commit-config.yaml, security-scan.json"
+    },
+    {
+      "criterion": "All 47 research regression tests and full test suite remain green.",
+      "status": "MET",
+      "evidence": "437/437 tests passing (including 47 research regression tests)"
+    },
+    {
+      "criterion": "Comprehensive evidence package and operator documentation are produced.",
+      "status": "MET",
+      "evidence": "evidence/WP-KAD-OPERATOR-CONTROL-PLANE-001/, docs/agents/control-plane.md, wiki/"
+    }
+  ],
+  "verdict": "PASS"
+}

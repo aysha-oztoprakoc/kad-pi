@@ -1,0 +1,28 @@
+{
+  "probe_name": "reconciliation-probe",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "scenario": "Authoritative remote observation reconciles with local derived estimate",
+  "local_observation": {
+    "provider_id": "openai-codex",
+    "metric": "total_tokens",
+    "unit": "tokens",
+    "quota": { "limit": 100000, "used": 61000, "remaining": 39000 },
+    "source": { "class": "DERIVED", "adapter": "local-ledger" },
+    "state": "DERIVED"
+  },
+  "remote_observation": {
+    "provider_id": "openai-codex",
+    "metric": "total_tokens",
+    "unit": "tokens",
+    "quota": { "limit": 100000, "used": 58000, "remaining": 42000 },
+    "source": { "class": "AUTHORITATIVE_REMOTE", "adapter": "omp-usage" },
+    "state": "AUTHORITATIVE_REMOTE"
+  },
+  "reconciled_output": {
+    "effective_state": "AUTHORITATIVE_REMOTE",
+    "effective_remaining": 42000,
+    "delta_remaining": 3000,
+    "provenance_count": 2
+  },
+  "verdict": "PASS"
+}

@@ -1,0 +1,76 @@
+{
+  "matrix": [
+    {
+      "failure_scenario": "Provider quota endpoint unavailable",
+      "expected_behavior": "Provider telemetry degraded only, limit UNKNOWN",
+      "tested_in": "T14, CP4",
+      "verdict": "PASS"
+    },
+    {
+      "failure_scenario": "Provider quota unsupported / unexposed",
+      "expected_behavior": "UNKNOWN, never fabricated",
+      "tested_in": "T3, T14",
+      "verdict": "PASS"
+    },
+    {
+      "failure_scenario": "OMP stats unavailable",
+      "expected_behavior": "Live event ledger continues normally",
+      "tested_in": "T6, CP1",
+      "verdict": "PASS"
+    },
+    {
+      "failure_scenario": "Context7 unavailable",
+      "expected_behavior": "Coding continues with optional degradation",
+      "tested_in": "Context7-probe",
+      "verdict": "PASS"
+    },
+    {
+      "failure_scenario": "OpenViking offline",
+      "expected_behavior": "Status degraded, exact KAD retrieval fallback",
+      "tested_in": "T11, research-openviking.test.mjs",
+      "verdict": "PASS"
+    },
+    {
+      "failure_scenario": "Zotero offline",
+      "expected_behavior": "Status degraded, research export fallback survives",
+      "tested_in": "T11, research-zotero.test.mjs",
+      "verdict": "PASS"
+    },
+    {
+      "failure_scenario": "Needle absent",
+      "expected_behavior": "Explicit UNAVAILABLE / not configured",
+      "tested_in": "T11",
+      "verdict": "PASS"
+    },
+    {
+      "failure_scenario": "GPU telemetry unavailable",
+      "expected_behavior": "UI displays AMD GPU UNAVAILABLE without crashing",
+      "tested_in": "T10, CP3",
+      "verdict": "PASS"
+    },
+    {
+      "failure_scenario": "Workctl no active ticket",
+      "expected_behavior": "Explicit NO ACTIVE CLAIM",
+      "tested_in": "T15, CP3",
+      "verdict": "PASS"
+    },
+    {
+      "failure_scenario": "Malformed configuration",
+      "expected_behavior": "Safe fallback to default without corruption",
+      "tested_in": "provider-adapters.test",
+      "verdict": "PASS"
+    },
+    {
+      "failure_scenario": "One telemetry adapter crashes",
+      "expected_behavior": "Extension remains running, error captured",
+      "tested_in": "CP4",
+      "verdict": "PASS"
+    },
+    {
+      "failure_scenario": "Internet offline",
+      "expected_behavior": "Local telemetry and KAD operation continue 100%",
+      "tested_in": "Baseline offline execution",
+      "verdict": "PASS"
+    }
+  ]
+}

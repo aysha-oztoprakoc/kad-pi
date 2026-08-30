@@ -1,0 +1,117 @@
+{
+  "census_date": "2026-08-30T00:52:00.000Z",
+  "tools": [
+    {
+      "name": "jq",
+      "version": "jaq 2.3.0",
+      "path": "/usr/bin/jq",
+      "status": "EXISTING",
+      "purpose": "JSON query and transformation"
+    },
+    {
+      "name": "yq",
+      "version": "v4.53.6",
+      "path": "/home/amdy/.local/share/mise/installs/yq/latest/yq",
+      "status": "EXISTING",
+      "purpose": "YAML query and transformation"
+    },
+    {
+      "name": "just",
+      "version": "1.58.0",
+      "path": "/home/amdy/.local/share/mise/installs/just/latest/just",
+      "status": "EXISTING",
+      "purpose": "Deterministic task runner"
+    },
+    {
+      "name": "watchexec",
+      "version": "2.7.0",
+      "path": "/home/amdy/.local/share/mise/installs/watchexec/latest/.mise-bins/watchexec",
+      "status": "EXISTING",
+      "purpose": "File watching and reactive execution"
+    },
+    {
+      "name": "hyperfine",
+      "version": "1.20.0",
+      "path": "/home/amdy/.local/share/mise/installs/hyperfine/latest/.mise-bins/hyperfine",
+      "status": "EXISTING",
+      "purpose": "CLI performance benchmarking"
+    },
+    {
+      "name": "shellcheck",
+      "version": "v0.11.0",
+      "path": "/home/amdy/.local/share/mise/installs/shellcheck/latest/shellcheck-v0.11.0/shellcheck",
+      "status": "EXISTING",
+      "purpose": "Shell script static analysis"
+    },
+    {
+      "name": "shfmt",
+      "version": "v3.14.0",
+      "path": "/home/amdy/.local/share/mise/installs/shfmt/latest/shfmt",
+      "status": "EXISTING",
+      "purpose": "Shell script formatting"
+    },
+    {
+      "name": "actionlint",
+      "version": "1.7.12",
+      "path": "/home/amdy/.local/share/mise/installs/actionlint/latest/actionlint",
+      "status": "EXISTING",
+      "purpose": "GitHub Actions workflow linting"
+    },
+    {
+      "name": "lychee",
+      "version": "0.24.2",
+      "path": "/home/amdy/.local/share/mise/installs/lychee/latest/.mise-bins/lychee",
+      "status": "EXISTING",
+      "purpose": "Markdown and document link checker"
+    },
+    {
+      "name": "trivy",
+      "version": "0.74.0",
+      "path": "/home/amdy/.local/share/mise/installs/trivy/latest/trivy",
+      "status": "EXISTING",
+      "purpose": "Vulnerability and secret scanner"
+    },
+    {
+      "name": "gitleaks",
+      "version": "8.30.1",
+      "path": "/home/amdy/.local/share/mise/installs/gitleaks/latest/gitleaks",
+      "status": "EXISTING",
+      "purpose": "Git staged and repository secret detection"
+    },
+    {
+      "name": "betterleaks",
+      "version": "N/A",
+      "path": "NOT FOUND",
+      "status": "SKIPPED_USE_GITLEAKS",
+      "purpose": "Unverified packaging upstream; gitleaks 8.30.1 used as verified equivalent"
+    },
+    {
+      "name": "prek",
+      "version": "0.5.0",
+      "path": "/home/amdy/.local/share/mise/installs/prek/latest/.mise-bins/prek",
+      "status": "EXISTING",
+      "purpose": "Fast Rust-based pre-commit Git hook manager"
+    },
+    {
+      "name": "ast-grep",
+      "version": "0.45.2",
+      "path": "/home/amdy/.local/share/mise/installs/ast-grep/latest/ast-grep",
+      "status": "EXISTING",
+      "purpose": "AST structural code analysis and search"
+    },
+    {
+      "name": "amdgpu_top",
+      "version": "v0.11.5",
+      "path": "/home/amdy/.local/bin/amdgpu_top",
+      "status": "EXISTING",
+      "purpose": "AMD GPU metrics with structured machine-readable JSON output"
+    },
+    {
+      "name": "context7",
+      "version": "4.0.4",
+      "path": "npx -y @upstash/context7-mcp@4.0.4",
+      "status": "CONFIGURED_PROJECT_MCP",
+      "purpose": "Official Context7 MCP documentation lookup server"
+    }
+  ]
+}

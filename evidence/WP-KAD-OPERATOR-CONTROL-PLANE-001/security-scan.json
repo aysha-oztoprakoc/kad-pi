@@ -1,0 +1,29 @@
+{
+  "scan_name": "security-scan",
+  "executed_at": "2026-08-30T00:52:00.000Z",
+  "scanners": [
+    {
+      "name": "gitleaks",
+      "command": "gitleaks protect --staged --redact",
+      "exit_code": 0,
+      "findings": 0,
+      "verdict": "PASS"
+    },
+    {
+      "name": "trivy",
+      "command": "trivy fs --scanners vuln,secret --severity HIGH,CRITICAL .",
+      "exit_code": 0,
+      "findings": 0,
+      "verdict": "PASS"
+    },
+    {
+      "name": "prek",
+      "command": "prek run",
+      "hooks_passed": 4,
+      "hooks_failed": 0,
+      "verdict": "PASS"
+    }
+  ],
+  "zero_secrets_verified": true,
+  "overall_verdict": "PASS"
+}
