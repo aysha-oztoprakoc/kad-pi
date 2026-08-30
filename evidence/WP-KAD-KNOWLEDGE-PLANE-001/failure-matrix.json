@@ -1,0 +1,41 @@
+{
+  "observed_at": "2026-08-29T15:19:44-03:00",
+  "cases": [
+    {
+      "failure": "Ollama unavailable",
+      "observed": "OpenViking doctor reports Ollama FAIL; semantic overview retries and logs errors",
+      "safe_state": "exact resource storage, local embedding, raw reads, and semantic retrieval remain usable",
+      "authority_effect": "none",
+      "status": "PASS_DEGRADED"
+    },
+    {
+      "failure": "VLM summary generation unavailable",
+      "observed": "image fixture raw ingestion succeeds; overview remains not generated",
+      "safe_state": "raw source resource remains available",
+      "authority_effect": "none",
+      "status": "PASS_DEGRADED"
+    },
+    {
+      "failure": "Needle confidence unavailable for tuned weights",
+      "observed": "inference succeeds but reports confidence null with uncalibrated-confidence warning",
+      "safe_state": "structured result may be validated as syntax only; routing must defer or use deterministic policy",
+      "authority_effect": "none",
+      "status": "PASS_FAIL_CLOSED"
+    },
+    {
+      "failure": "OpenViking service restart",
+      "observed": "health returns ok after restart and previously ingested fixture remains readable",
+      "safe_state": "workspace-backed derived state persists",
+      "authority_effect": "none",
+      "status": "PASS"
+    },
+    {
+      "failure": "OpenViking unavailable",
+      "observed": "not injected during this live run",
+      "safe_state": "repository and deterministic Librarian remain the required fallback path",
+      "authority_effect": "must remain none",
+      "status": "POLICY_GUARD_NOT_LIVE_PROBED"
+    }
+  ],
+  "rule": "DEGRADE, DON'T ESCALATE AUTHORITY"
+}

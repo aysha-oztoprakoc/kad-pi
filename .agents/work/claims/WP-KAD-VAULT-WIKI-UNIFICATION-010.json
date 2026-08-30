@@ -1,0 +1,25 @@
+{
+  "task": "WP-KAD-VAULT-WIKI-UNIFICATION-010",
+  "project": "kad-pi",
+  "claim_id": "edf7e6bf-3000-4e67-946a-2b9b6de59be6",
+  "actor_label": "codex-main",
+  "started_at": "2026-08-30T03:23:35.924Z",
+  "base_commit": "2d5ef8b36b36dfa09a6957817c49ecad5c530fa4",
+  "owned_paths": [
+    "vault",
+    "wiki",
+    "tools/kad/wiki",
+    "tools/kad/wiki-library",
+    "tools/kad/wiki-projection.mjs",
+    "tools/kad/knowledge-plane.mjs",
+    "tools/kad/knowledge-plane-adapters.mjs",
+    "tools/kad/index.mjs",
+    "bin/kad-wiki",
+    "tools/kad/test/wiki*.test.mjs",
+    "tools/kad/test/knowledge-plane.test.mjs",
+    "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T07:31:45.965Z"
+}

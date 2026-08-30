@@ -1,8 +1,8 @@
 # High-Level Implementation Plan — K.A.D. Local AI Experimental Platform
 
-## 1. Objetivo
+> **Roadmap status:** Historical baseline. The canonical context, knowledge, and local-specialist roadmap is [KAD Context, Knowledge and Local-Specialist Plane Roadmap — 2026-08-29](KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md), with the governing boundary recorded in [ADR 0008](../docs/adr/0008-unified-context-knowledge-plane.md).
 
-O objetivo deste plano é transformar a arquitetura conceitual do K.A.D. em uma sequência de implementação executável na máquina local, preservando a principal fronteira arquitetural do projeto:
+This document preserves the earlier deterministic-core and local-learning plan as a source artifact. Where its later-stage RAG, model, or routing assumptions conflict with the canonical roadmap, the newer roadmap and ADR 0008 take precedence.
 
 ```text
 PROBABILISTIC INTERPRETATION
@@ -1076,7 +1076,8 @@ Assim PON/STC se torna uma hipótese experimental mensurável, não uma dependê
 
 ---
 
-# 25. Roadmap resumido
+# 25. Historical roadmap summary (superseded)
+The phase summary below is retained for historical traceability. Use the [canonical 2026-08-29 roadmap](KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md) and [ADR 0008](../docs/adr/0008-unified-context-knowledge-plane.md) for current sequencing and authority boundaries.
 
 ```text
 STAGE A — FOUNDATION

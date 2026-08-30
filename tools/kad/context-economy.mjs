@@ -88,7 +88,7 @@ export function buildContextCheckpoint({ root = process.cwd(), workpackage = 'UN
     'AUTHORITY',
     `prime_directive: ${fileReference(root, 'PRIME_DIRECTIVE.md')}`,
     `agent_rules: ${fileReference(root, '.omp/AGENTS.md')}`,
-    `relevant_adrs: ${fileReference(root, 'docs/adr/0004-model-agnostic-control-plane.md')}; ${fileReference(root, 'docs/adr/0005-deterministic-first-and-epistemic-classification.md')}`,
+    `relevant_adrs: ${fileReference(root, 'docs/adr/0004-model-agnostic-control-plane.md')}; ${fileReference(root, 'docs/adr/0005-deterministic-first-and-epistemic-classification.md')}; ${fileReference(root, 'docs/adr/0008-unified-context-knowledge-plane.md')}`,
     '',
     'ACTIVE WORK',
     `workpackage: ${String(workpackage).slice(0, 160)}`,

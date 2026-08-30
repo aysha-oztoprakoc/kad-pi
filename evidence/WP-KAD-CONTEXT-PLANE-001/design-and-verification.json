@@ -1,0 +1,71 @@
+{
+  "workpackage": "WP-KAD-CONTEXT-PLANE-001",
+  "artifact": "KAD_CONTEXT_KNOWLEDGE_ROADMAP_2026_08_29",
+  "epistemic_class": "DESIGN_DECISION",
+  "reality_level": "STATIC",
+  "state": "RECORDED_AND_VERIFIED",
+  "authority": "user-supplied canonical roadmap update, bounded by PRIME_DIRECTIVE.md and docs/adr/0008-unified-context-knowledge-plane.md",
+  "scope": {
+    "mutation_boundary": [
+      "CONTEXT.md",
+      "docs/adr/0008-unified-context-knowledge-plane.md",
+      "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+      "wiki/KAD_Implementation_Plan.md",
+      "wiki/index.md",
+      "wiki/synthetic/CATALOG.json",
+      "wiki/synthetic/TAXONOMY.json",
+      "wiki/synthetic/TAXONOMY.md",
+      "wiki/synthetic/RETRIEVAL_INDEX.jsonl",
+      "tools/kad/context-economy.mjs"
+    ],
+    "owner": "KAD documentation and context-economy maintainer",
+    "trust_domain": "KAD_KNOWLEDGE"
+  },
+  "verification": [
+    {
+      "command": "make verify",
+      "result": "PASS",
+      "observed": [
+        "validate_prime_directive.py: VALIDATION SUCCESS",
+        "librarian verify: PASS",
+        "validDocumentsCount: 28",
+        "validCardsCount: 32",
+        "validConceptsCount: 23"
+      ]
+    },
+    {
+      "command": "node tools/librarian/librarian.mjs search \"OpenViking\" --domain KAD_KNOWLEDGE --limit 5 && node tools/librarian/librarian.mjs lookup \"KnowledgePlane\"",
+      "result": "PASS",
+      "observed": [
+        "Roadmap and ADR returned with KAD_KNOWLEDGE provenance.",
+        "KnowledgePlane taxonomy lookup returned DESIGN_DECISION with source locator."
+      ]
+    },
+    {
+      "command": "node --test tools/librarian/test/librarian.test.mjs tools/kad/test/context-economy.test.mjs",
+      "result": "PASS",
+      "observed": {
+        "tests": 15,
+        "pass": 15,
+        "fail": 0
+      }
+    }
+  ],
+  "sha256": {
+    "docs/adr/0008-unified-context-knowledge-plane.md": "6e3d57b5efc7186f84890de5743d12648c8a3c48fcacb4ebadeead7ee755085c",
+    "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md": "acecad4338aeac6f9df67cdac6acd7b4e70cac7033be6e8302726ae00ba5cb19",
+    "wiki/KAD_Implementation_Plan.md": "9579bae5bc26728357bb953f7910dbfb1fcc8bedd46b11da17405495f7e14818",
+    "wiki/index.md": "756d559e580d7251dcf1add29d1134d5e94d050ffce2eadcf3e3e586de8e2a0f",
+    "wiki/synthetic/CATALOG.json": "9f312406e5242ddd1f13344279d0cd61741c464a2596c2797cf9dc0f34d7c666",
+    "wiki/synthetic/TAXONOMY.json": "5c8a3eaf336674ac7bc139bb5fb524ecbbb8d3952e7bece19be98b7f291bcc8b",
+    "wiki/synthetic/RETRIEVAL_INDEX.jsonl": "87223ff60bd3fd056d1fa3fca47857841697a184b9487aae28774fa93a880bed",
+    "CONTEXT.md": "ddce7a4f7144edbf74be4915f8ab2e53ad142d17afe6804054e3730e13293f66",
+    "tools/kad/context-economy.mjs": "ba919dc976492b434037833ceba7fd2ccc50aa7153467b647477d93f134aae09"
+  },
+  "non_claims": [
+    "No OpenViking runtime integration is claimed.",
+    "No Needle 2 runtime integration is claimed.",
+    "No advisory-board runtime integration is claimed.",
+    "This receipt proves static documentation/index integrity and existing context-economy contracts only."
+  ]
+}

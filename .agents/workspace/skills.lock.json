@@ -14,7 +14,7 @@
       "license_path": ".agents/upstream/5-persona-advisory-board/LICENSE",
       "local_mode": "VANILLA",
       "local_delta": "frontmatter normalization only",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "ask-matt",
@@ -23,12 +23,12 @@
       "source_path": ".agents/upstream/matt/skills/engineering/ask-matt/SKILL.md",
       "execution_path": ".agents/skills/ask-matt/SKILL.md",
       "upstream_sha256": "b25d86fb36b1d294eeead5d7db529f86135f9671f2afcd607579a63bb2213769",
-      "execution_sha256": "2e54d6e0448d115656e05435f7f03e5a4f54fbecb31a7198e263ac596a4c91c2",
+      "execution_sha256": "e7a579691c8028119873b0708a6d4042c9291ae093e0e6ffdec0a2e02a96c39b",
       "license": "MIT",
       "license_path": ".agents/upstream/matt/LICENSE",
       "local_mode": "VANILLA + KAD OVERLAY",
       "local_delta": "routing reference to Wayfinder and KAD advisory board",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "code-review",
@@ -37,12 +37,12 @@
       "source_path": ".agents/upstream/matt/skills/engineering/code-review/SKILL.md",
       "execution_path": ".agents/skills/code-review/SKILL.md",
       "upstream_sha256": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50",
-      "execution_sha256": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50",
+      "execution_sha256": "316bea08afd9c36586aeeccc6841f6924b49af4d99047a76d0f3fb6b5afea431",
       "license": "MIT",
       "license_path": ".agents/upstream/matt/LICENSE",
       "local_mode": "VANILLA + CONFIG",
       "local_delta": "canonical skill capability metadata",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "codebase-design",
@@ -56,7 +56,7 @@
       "license_path": ".agents/upstream/matt/LICENSE",
       "local_mode": "VANILLA + CONFIG",
       "local_delta": "canonical skill capability metadata",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "diagnosing-bugs",
@@ -70,7 +70,7 @@
       "license_path": ".agents/upstream/matt/LICENSE",
       "local_mode": "VANILLA + CONFIG",
       "local_delta": "canonical skill capability metadata",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "domain-modeling",
@@ -79,12 +79,12 @@
       "source_path": ".agents/upstream/matt/skills/engineering/domain-modeling/SKILL.md",
       "execution_path": ".agents/skills/domain-modeling/SKILL.md",
       "upstream_sha256": "327a2b50620e2fd70abc6893cd6965e76b20f8d0adb0dc2c8d5eb3845efb643e",
-      "execution_sha256": "327a2b50620e2fd70abc6893cd6965e76b20f8d0adb0dc2c8d5eb3845efb643e",
+      "execution_sha256": "02797c6abe2694d778129fc5e74279def3acfaf39813f13afb4ae0499dbe036e",
       "license": "MIT",
       "license_path": ".agents/upstream/matt/LICENSE",
-      "local_mode": "VANILLA + CONFIG",
-      "local_delta": "canonical skill capability metadata",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "local_mode": "VANILLA + KAD OVERLAY",
+      "local_delta": "canonical skill capability metadata plus terminology authority boundary",
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "grill-with-docs",
@@ -93,12 +93,12 @@
       "source_path": ".agents/upstream/matt/skills/engineering/grill-with-docs/SKILL.md",
       "execution_path": ".agents/skills/grill-with-docs/SKILL.md",
       "upstream_sha256": "7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe",
-      "execution_sha256": "bc4d9b100697001674d415e99b1686e7fb6e11b6c8ca533238dd59c334f90d0a",
+      "execution_sha256": "ffb0240f4b0d8157cbfd9647412751c312659ed4b8b7423393ec3396f7692b9d",
       "license": "MIT",
       "license_path": ".agents/upstream/matt/LICENSE",
-      "local_mode": "VANILLA + CONFIG",
-      "local_delta": "canonical skill capability metadata",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "local_mode": "VANILLA + KAD OVERLAY",
+      "local_delta": "canonical skill capability metadata plus Wayfinder decision boundary",
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "implement",
@@ -107,12 +107,12 @@
       "source_path": ".agents/upstream/matt/skills/engineering/implement/SKILL.md",
       "execution_path": ".agents/skills/implement/SKILL.md",
       "upstream_sha256": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3",
-      "execution_sha256": "7a624d0a999f6f0d2d45c3a430ed026094827fb55330b06826efda7ca8984c49",
+      "execution_sha256": "5b3009410589bd0e89e04bacf65cb6cb23eb755ed6a7b0c5484c016aaef976cf",
       "license": "MIT",
       "license_path": ".agents/upstream/matt/LICENSE",
-      "local_mode": "VANILLA + CONFIG",
-      "local_delta": "canonical skill capability metadata",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "local_mode": "VANILLA + KAD OVERLAY",
+      "local_delta": "canonical skill capability metadata plus workctl claim and handoff boundary",
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "improve-codebase-architecture",
@@ -126,7 +126,7 @@
       "license_path": ".agents/upstream/matt/LICENSE",
       "local_mode": "VANILLA + CONFIG",
       "local_delta": "canonical skill capability metadata",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "prototype",
@@ -135,12 +135,12 @@
       "source_path": ".agents/upstream/matt/skills/engineering/prototype/SKILL.md",
       "execution_path": ".agents/skills/prototype/SKILL.md",
       "upstream_sha256": "714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3",
-      "execution_sha256": "714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3",
+      "execution_sha256": "1341c72d493f07e923adaf44de8efba8f8ff137236305c776ed3968ee58e9821",
       "license": "MIT",
       "license_path": ".agents/upstream/matt/LICENSE",
-      "local_mode": "VANILLA",
-      "local_delta": "no local change",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "local_mode": "VANILLA + KAD OVERLAY",
+      "local_delta": "experimental artifact boundary",
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "research",
@@ -149,12 +149,12 @@
       "source_path": ".agents/upstream/matt/skills/engineering/research/SKILL.md",
       "execution_path": ".agents/skills/research/SKILL.md",
       "upstream_sha256": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4",
-      "execution_sha256": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4",
+      "execution_sha256": "b4c96af5ad49944f6e7e57db3f21f7699b4df4e1fc8562435bbe60d8e4588289",
       "license": "MIT",
       "license_path": ".agents/upstream/matt/LICENSE",
-      "local_mode": "VANILLA",
-      "local_delta": "no local change",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "local_mode": "VANILLA + KAD OVERLAY",
+      "local_delta": "evidence-only decision boundary",
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "resolving-merge-conflicts",
@@ -168,7 +168,7 @@
       "license_path": ".agents/upstream/matt/LICENSE",
       "local_mode": "VANILLA",
       "local_delta": "no local change",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "setup-matt-pocock-skills",
@@ -182,7 +182,7 @@
       "license_path": ".agents/upstream/matt/LICENSE",
       "local_mode": "VANILLA",
       "local_delta": "no local change",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "tdd",
@@ -191,12 +191,12 @@
       "source_path": ".agents/upstream/matt/skills/engineering/tdd/SKILL.md",
       "execution_path": ".agents/skills/tdd/SKILL.md",
       "upstream_sha256": "cb01f66bebfaa25fa1f88e6b7e769cd9fd9f35b1120b8563749820738814c927",
-      "execution_sha256": "5c1902f0c747725fe2781b68d678f4cebe075bad2ebd4a977a82d5f8d08d00bf",
+      "execution_sha256": "8025db4c8bf01bb9bd68b90722ae480107b3a15ee7e0bf1304f594ac5dd9cd75",
       "license": "MIT",
       "license_path": ".agents/upstream/matt/LICENSE",
-      "local_mode": "VANILLA + CONFIG",
-      "local_delta": "canonical skill capability metadata",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "local_mode": "VANILLA + KAD OVERLAY",
+      "local_delta": "canonical skill capability metadata plus conditional KAD acceptance checks",
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "to-spec",
@@ -205,12 +205,12 @@
       "source_path": ".agents/upstream/matt/skills/engineering/to-spec/SKILL.md",
       "execution_path": ".agents/skills/to-spec/SKILL.md",
       "upstream_sha256": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
-      "execution_sha256": "161c467836ae06a04d7101195dc45aae00002586fefd7238b5c6da091b5d6d03",
+      "execution_sha256": "36e191088dd05407b93b27bcc56662712cf3a8cee076fe6993991695d2db9d3e",
       "license": "MIT",
       "license_path": ".agents/upstream/matt/LICENSE",
-      "local_mode": "VANILLA + CONFIG",
-      "local_delta": "canonical skill capability metadata",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "local_mode": "VANILLA + KAD OVERLAY",
+      "local_delta": "canonical skill capability metadata plus decision fidelity boundary",
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "to-tickets",
@@ -219,12 +219,12 @@
       "source_path": ".agents/upstream/matt/skills/engineering/to-tickets/SKILL.md",
       "execution_path": ".agents/skills/to-tickets/SKILL.md",
       "upstream_sha256": "5c9fba69845c2519b9b35b9af42ae5142c21f8ca15ac2123dc2722002c8058ae",
-      "execution_sha256": "c3fa584629393a3b86f94e291fe7b3968ff1b3d338e8b49719ae3152aedac9dc",
+      "execution_sha256": "dff4b3b60c7ce7fae10876aa5e30762d0f2c8043d12379b1a2429969b56b1610",
       "license": "MIT",
       "license_path": ".agents/upstream/matt/LICENSE",
-      "local_mode": "VANILLA + CONFIG",
-      "local_delta": "canonical skill capability metadata",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "local_mode": "VANILLA + KAD OVERLAY",
+      "local_delta": "canonical skill capability metadata plus deterministic workctl bridge",
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "triage",
@@ -238,7 +238,7 @@
       "license_path": ".agents/upstream/matt/LICENSE",
       "local_mode": "VANILLA + CONFIG",
       "local_delta": "canonical skill capability metadata",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "wayfinder",
@@ -252,7 +252,7 @@
       "license_path": ".agents/upstream/matt/LICENSE",
       "local_mode": "VANILLA + KAD OVERLAY",
       "local_delta": "ask_user decision protocol and project-scoped KAD policy",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "verified_at": "2026-08-29T22:50:15.623Z"
     },
     {
       "name": "wizard",
@@ -266,7 +266,7 @@
       "license_path": ".agents/upstream/matt/LICENSE",
       "local_mode": "VANILLA",
       "local_delta": "no local change",
-      "verified_at": "2026-08-29T22:35:11.976Z"
+      "verified_at": "2026-08-29T22:50:15.623Z"
     }
   ]
 }

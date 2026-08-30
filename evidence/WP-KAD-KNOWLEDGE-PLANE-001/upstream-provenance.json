@@ -1,0 +1,83 @@
+{
+  "workpackage": "WP-KAD-KNOWLEDGE-PLANE-001",
+  "fixed_point": {
+    "requested": "2bae5d6",
+    "resolved_head": "2bae5d6065ca17cf1ac85f73f934a6eb9d9a2e9d",
+    "repository": "/home/amdy/Work"
+  },
+  "upstreams": {
+    "openviking": {
+      "repository": "https://github.com/volcengine/OpenViking",
+      "commit_observed": "e8cedaebd72c9bead112a337a58768368af9c5fb",
+      "license_observed": "AGPL-3.0",
+      "supported_install_observed": "pip install openviking --upgrade; openviking-server init; openviking-server doctor; openviking-server",
+      "documented_default_endpoint": "http://127.0.0.1:1933",
+      "documented_storage_default": "~/.openviking/ov.conf and configured workspace",
+      "documented_runtime_dependencies": "Python 3.10+; embedding and VLM provider configuration",
+      "network_behavior": "package installation and configured embedding/VLM providers may use network; no provider configured by this record",
+      "telemetry_behavior": "not established from bounded pre-install evidence",
+      "planned_project_state": ".state/omp-kad/knowledge-plane-001/runtime/openviking-py312/venv and .state/omp-kad/knowledge-plane-001/openviking-data"
+    },
+    "needle": {
+      "repository": "https://github.com/cactus-compute/needle",
+      "commit_observed": "ee221ce7c13579d9809209b979a9b7a50936614c",
+      "license_observed": "Apache-2.0",
+      "supported_install_observed": "pip install cactus-needle",
+      "documented_runtime_dependencies": "Python package; engine fetched from Hugging Face on first use unless preloaded",
+      "documented_runtime_memory": "about 28MB for a full session",
+      "network_behavior": "package installation and first engine fetch may use network; inference is documented as offline after fetch",
+      "telemetry_behavior": "anonymous usage telemetry documented; planned opt-out NEEDLE_TELEMETRY=0 and DO_NOT_TRACK=1",
+      "planned_project_state": ".state/omp-kad/knowledge-plane-001/venv, needle-engine, and needle-weights"
+    },
+    "advisory_board": {
+      "repository": "https://github.com/harryvondiesel-web/5-persona-advisory-board",
+      "commit_observed": "fd58b80648c399f29b36d31739a0b07d459b43cf",
+      "license_observed": "MIT",
+      "supported_install_observed": "copy SKILL.md into a supported project skill directory",
+      "runtime_dependencies": "skill artifact only",
+      "network_behavior": "none after artifact copy",
+      "telemetry_behavior": "not applicable to the skill artifact",
+      "planned_project_state": ".agents/skills/5-persona-advisory-board/SKILL.md"
+    }
+  },
+  "constraints": {
+    "new_paid_spend": false,
+    "inspiration_only_not_installed": [
+      "Bino5150/lumina",
+      "NVIDIA-NeMo/Switchyard",
+      "mat-nolen/tldr-radio"
+    ],
+    "global_user_configuration_mutation": false,
+    "full_repository_ingestion": false,
+    "secrets_recorded": false
+  },
+  "pre_install_environment": {
+    "python": "3.14.7",
+    "pip": "not installed as python3 module; ensurepip reports 26.2.1",
+    "docker": "unavailable to current user: permission denied on /var/run/docker.sock",
+    "local_ollama": "not found on PATH",
+    "observed_at": "2026-08-29"
+  },
+  "observed_install": {
+    "observed_at": "2026-08-29T15:19:44-03:00",
+    "openviking": {
+      "package": "0.4.17",
+      "sdk": "0.1.9",
+      "python": "3.12.14",
+      "embedding_model": "bge-small-zh-v1.5-f16.gguf",
+      "embedding_sha256": "ab9b81d9cd329c712eee379cf0068eabe6a5e2a01d0def61535eba9384085e2c",
+      "server": "http://127.0.0.1:1933",
+      "status": "health and persistence verified; Ollama/VLM degraded"
+    },
+    "needle": {
+      "package": "2.0.11",
+      "engine_sha256": "0d2e125f36269067407ca4460f2d01b9371887366e5949243de9f03d0d93bc78",
+      "weights_sha256": "b43aabfcaf1a6db6acf488076eab71d823c08697c7af4521fc1d174b60ede5ba",
+      "status": "offline structured inference verified; tuned-weight confidence uncalibrated"
+    },
+    "advisory_board": {
+      "skill_sha256": "9c3079e838d92967af5936f99591d9c3908a816d0e49faae9341087f0acc52ae",
+      "status": "skill discoverable"
+    }
+  }
+}

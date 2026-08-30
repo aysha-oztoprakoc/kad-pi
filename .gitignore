@@ -36,3 +36,8 @@ node_modules/
 .DS_Store
 .vscode/
 .idea/
+
+# Local Scratch & External CLI Binaries
+.scratch/
+ngc-cli*
+ngccli_linux.zip

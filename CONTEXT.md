@@ -93,3 +93,27 @@ _Avoid_: Confidence score, belief level
 **Librarian**:
 An autonomous cataloging and retrieval agent operating over structured synthetic knowledge bases to resolve queries with deterministic citations.
 _Avoid_: RAG prompt, search bot
+
+**KnowledgePlane**:
+A KAD-owned interface for durable project knowledge, retrieval, governed ingestion, provenance, and bounded context compilation. An OpenViking adapter may implement it experimentally; it is not an authority layer.
+
+**SourceArtifact**:
+A durable repository, directive, accepted decision, specification, test, evidence receipt, human-authored canonical artifact, or accepted research artifact that outranks derived state.
+
+**DerivedState**:
+Rebuildable indexes, embeddings, summaries, context packets, retrieval caches, memory candidates, or wiki projections that may accelerate access but cannot replace or mutate source artifacts.
+
+**ContextPacket**:
+A bounded, policy-filtered selection of L0/L1/L2 knowledge compiled for an identified agent, role, task, trust domain, authority, and resource budget.
+
+**MemoryCandidate**:
+An extracted or inferred knowledge proposal carrying provenance and an explicit non-accepted state until KAD validation and corroboration accepts or rejects it.
+
+**TinySpecialist**:
+A constrained model tier, such as Needle 2, that classifies, routes, or extracts from bounded packets. Syntax and confidence guide routing; neither grants epistemic authority.
+
+**TrustDomain**:
+An explicit boundary governing which knowledge, capabilities, principals, and context may be combined or exposed.
+
+**AcceptanceState**:
+The explicit lifecycle state of a candidate or artifact (`PROPOSED`, `ACCEPTED`, `REJECTED`, `UNKNOWN`, or `SUPERSEDED`); acceptance requires deterministic evidence and cannot be self-granted by an inference.

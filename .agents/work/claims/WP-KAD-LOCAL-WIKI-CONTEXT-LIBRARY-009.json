@@ -1,0 +1,17 @@
+{
+  "task": "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+  "project": "kad-pi",
+  "claim_id": "3b10ec9b-aabd-4cb2-9aad-a44da575e851",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T03:07:30.913Z",
+  "base_commit": "2d368db84dea83b6347b46063118ed646a0132e1",
+  "owned_paths": [
+    "tools/kad/wiki-library",
+    "tools/kad/test/wiki-library*.test.mjs",
+    "docs/agents/wiki-library.md",
+    "evidence/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T03:08:35.691Z"
+}

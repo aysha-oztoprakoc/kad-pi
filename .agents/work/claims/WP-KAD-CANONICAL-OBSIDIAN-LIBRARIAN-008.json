@@ -1,0 +1,20 @@
+{
+  "task": "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+  "project": "kad-pi",
+  "claim_id": "dca9d184-589b-4c75-9ee4-da3263fad0c8",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T03:06:59.384Z",
+  "base_commit": "2d368db84dea83b6347b46063118ed646a0132e1",
+  "owned_paths": [
+    "tools/kad/wiki",
+    "bin/kad-wiki",
+    ".agents/skills/kad-wiki",
+    "tools/kad/test/wiki*.test.mjs",
+    "docs/agents/kad-wiki.md",
+    "evidence/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+    "wiki"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T03:07:30.865Z"
+}

@@ -7,7 +7,8 @@
     "SWARM_GOVERNANCE": "Multi-agent swarm coordination, role specializations, and mutation authority",
     "SUBSCRIPTION_ECONOMICS": "Multi-provider quota pools, token economics, and dynamic routing matrix",
     "SAFE_LAB_TOOLCHAINS": "DeepHar, Cordis plugin lab, Dream OS, and QuickShell UI customization",
-    "EPISTEMOLOGY_EVIDENCE": "Prime Directive, scientific evidence ledgers, and reality level verification"
+    "EPISTEMOLOGY_EVIDENCE": "Prime Directive, scientific evidence ledgers, and reality level verification",
+    "KAD_KNOWLEDGE": "KAD-owned durable knowledge, provenance, bounded context compilation, wiki, and tiny specialists"
   },
   "concepts": {
     "Notification": {
@@ -156,11 +157,83 @@
       "relationships": {
         "proves": "Claim"
       }
+    },
+    "KnowledgePlane": {
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "A KAD-owned interface for durable knowledge, governed retrieval, provenance, ingestion, and bounded context compilation.",
+      "synonyms": ["Knowledge Plane", "KAD Knowledge Plane"],
+      "relationships": {
+        "implemented_by": "OpenViking Adapter",
+        "compiles": "ContextPacket"
+      }
+    },
+    "SourceArtifact": {
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "A durable authoritative artifact that outranks indexes, summaries, memories, projections, and model inference.",
+      "synonyms": ["Canonical Source", "Durable Truth"],
+      "relationships": {
+        "derives": "DerivedState",
+        "preserves": "Provenance"
+      }
+    },
+    "DerivedState": {
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "Rebuildable indexes, embeddings, summaries, caches, packets, memory candidates, or wiki projections that cannot replace source artifacts.",
+      "synonyms": ["Rebuildable State", "Knowledge Projection"],
+      "relationships": {
+        "derived_from": "SourceArtifact",
+        "degrades_to": "Exact Retrieval"
+      }
+    },
+    "ContextPacket": {
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "A bounded, policy-filtered selection of knowledge compiled for an identified agent and task.",
+      "synonyms": ["Bounded Context", "Compiled Context"],
+      "relationships": {
+        "filtered_by": "TrustDomain",
+        "consumed_by": "Agent"
+      }
+    },
+    "MemoryCandidate": {
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "A provenance-attached proposed or inferred knowledge item awaiting validation and corroboration.",
+      "synonyms": ["Proposed Memory", "Inferred Memory"],
+      "relationships": {
+        "validated_by": "KAD Acceptance Gate",
+        "must_not_self_promote_to": "ACCEPTED"
+      }
+    },
+    "TinySpecialist": {
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_class": "HYPOTHESIS",
+      "definition": "A constrained model tier, such as Needle 2, that classifies, routes, or extracts from bounded packets.",
+      "synonyms": ["Needle 2", "Specialist Tier"],
+      "relationships": {
+        "validated_by": "Deterministic Validator",
+        "escalates_on": "Low Confidence"
+      }
+    },
+    "TrustDomain": {
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_class": "DESIGN_DECISION",
+      "definition": "An explicit boundary governing which knowledge, capabilities, principals, and context may be combined or exposed.",
+      "synonyms": ["Knowledge Trust Boundary", "Capability Trust Domain"],
+      "relationships": {
+        "constrains": "ContextPacket"
+      }
     }
   },
   "relationships": {
     "causal_chain": ["State Change", "Notification", "Premise", "Condition", "Rule", "ActionIntent"],
     "lifecycle_chain": ["Context", "Fiber", "Coeffect Resolution", "Effect Application", "Dispose Unwind"],
-    "simulation_chain": ["Raw Input", "CandidateIntent", "Validator", "ValidatedIntent", "Resolver", "StateDiff", "GameState"]
+    "simulation_chain": ["Raw Input", "CandidateIntent", "Validator", "ValidatedIntent", "Resolver", "StateDiff", "GameState"],
+    "knowledge_chain": ["SourceArtifact", "DerivedState", "KnowledgePlane", "ContextPacket", "Agent"],
+    "memory_acceptance_chain": ["MemoryCandidate", "Provenance", "Validation", "Corroboration", "ACCEPTED or REJECTED"],
+    "specialist_chain": ["Bounded Packet", "TinySpecialist", "Grammar Validation", "Confidence", "ACCEPT or ESCALATE"]
   }
 }

@@ -16,6 +16,7 @@ This taxonomy defines the formal ontological structure of concepts across the KA
 5. **`SUBSCRIPTION_ECONOMICS`**: Quota pools across ChatGPT Plus, Google AI Pro, and OpenCode Go, token efficiency, and routing.
 6. **`SAFE_LAB_TOOLCHAINS`**: DeepSeek Harness (`dsh`) plugin lab, Dream OS, and QuickShell UI customization.
 7. **`EPISTEMOLOGY_EVIDENCE`**: Prime Directive constitution, reality levels (`STATIC`, `SIMULATED`, `INTEGRATION`, `LIVE_OBSERVED`), and claim ledgers.
+8. **`KAD_KNOWLEDGE`**: KAD-owned durable knowledge, provenance, bounded context compilation, wiki projections, and tiny specialists.
 
 ---
 
@@ -47,3 +48,23 @@ graph TD
         SD --> GS[GameState]
     end
 ```
+
+## 3. Knowledge Plane Concept Graph
+
+```mermaid
+graph TD
+    SRC[SourceArtifact] --> DER[DerivedState]
+    SRC --> PROV[Provenance]
+    DER --> KP[KnowledgePlane]
+    KP --> FILTER[Policy Filter]
+    FILTER --> PACK[ContextPacket]
+    PACK --> AGENT[Agent]
+    MC[MemoryCandidate] --> VALIDATE[Validation / Corroboration]
+    VALIDATE --> ACCEPT[ACCEPTED or REJECTED]
+    PACK --> NEEDLE[TinySpecialist / Needle 2]
+    NEEDLE --> GRAMMAR[Grammar Validation]
+    GRAMMAR --> CONF[Confidence Signal]
+    CONF --> ESC[ACCEPT or ESCALATE]
+```
+
+The KAD knowledge plane preserves source artifacts as truth. OpenViking is an adapter candidate, derived indexes are rebuildable, and `TinySpecialist` output remains untrusted until deterministic validation.

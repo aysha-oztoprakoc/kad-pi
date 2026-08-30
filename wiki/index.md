@@ -22,8 +22,13 @@ High-density, structured distillations with explicit epistemic tags (`[SOURCE_DE
 - [Domain Taxonomy & Ontology](synthetic/TAXONOMY.md) — Conceptual hierarchy and entity relationship graph.
 
 ---
+## 2. Current Canonical Roadmap
 
-## 2. Architectural Decision Records (ADRs)
+- [Context, Knowledge & Local-Specialist Roadmap (2026-08-29)](KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md) — KAD/OpenViking boundary, source-versus-derived state, bounded context, governed memory, Needle 2, and advisory policy.
+
+---
+
+## 3. Architectural Decision Records (ADRs)
 
 Canonical system decisions documented in `docs/adr/`:
 
@@ -34,10 +39,10 @@ Canonical system decisions documented in `docs/adr/`:
 - [ADR 0005: Deterministic-First Resolution and Epistemic Classification](../docs/adr/0005-deterministic-first-and-epistemic-classification.md)
 - [ADR 0006: Pi 0.84.3 SDK Session Subscription Integration Seam](../docs/adr/0006-pi-sdk-session-subscribe-integration-seam.md)
 - [ADR 0007: Synthetic Knowledge Base and Librarian Agent Architecture](../docs/adr/0007-synthetic-knowledge-librarian-architecture.md)
-
+- [ADR 0008: Unified Context and Knowledge Plane](../docs/adr/0008-unified-context-knowledge-plane.md)
 ---
 
-## 3. Raw Source Knowledge Layer (Historical Handoffs)
+## 4. Raw Source Knowledge Layer (Historical Handoffs)
 
 - [DSH PON CORDIS Handoff (2026-08-25)](DSH_PON_CORDIS_HANDOFF_2026-08-25.md)
 - [KAD PI AGY Handoff (2026-08-28)](KAD_PI_AGY_HANDOFF_2026-08-28.md)

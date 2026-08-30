@@ -1,0 +1,18 @@
+{
+  "task": "WP-KAD-FUSION-OMP-ADAPTATION-007A",
+  "project": "kad-pi",
+  "claim_id": "c9707409-3ed7-4234-933a-938158584158",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T03:02:01.923Z",
+  "base_commit": "2d368db84dea83b6347b46063118ed646a0132e1",
+  "owned_paths": [
+    "bin/kad-fusion",
+    "tools/kad/fusion",
+    "tools/kad/test/fusion*.test.mjs",
+    "docs/agents/fusion.md",
+    "evidence/WP-KAD-FUSION-OMP-ADAPTATION-007A"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T03:06:59.336Z"
+}

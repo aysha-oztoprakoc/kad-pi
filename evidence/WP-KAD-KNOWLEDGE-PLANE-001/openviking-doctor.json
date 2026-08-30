@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-08-29T15:19:44-03:00",
+  "config": ".state/omp-kad/knowledge-plane-001/ov.conf",
+  "doctor": {
+    "config": "PASS",
+    "python": "PASS 3.12.14",
+    "native_engine": "PASS x86_avx512",
+    "agfs": "PASS AGFS SDK 0.1.7",
+    "authentication": "PASS dev",
+    "embedding": "PASS local/bge-small-zh-v1.5-f16",
+    "vlm": "PASS configured litellm/ollama/qwen3.5:4b",
+    "ollama": "FAIL unreachable at 127.0.0.1:11434",
+    "vikingbot": "PASS aligned with dev OpenViking auth",
+    "disk": "PASS",
+    "overall": "PARTIAL"
+  },
+  "embedding": {
+    "provider": "local",
+    "model": "bge-small-zh-v1.5-f16",
+    "dimension": 512,
+    "model_sha256": "ab9b81d9cd329c712eee379cf0068eabe6a5e2a01d0def61535eba9384085e2c"
+  },
+  "storage": ".state/omp-kad/knowledge-plane-001/openviking-data",
+  "authority_note": "Doctor PASS for configuration does not establish semantic generation availability; Ollama remains an explicit degraded dependency."
+}

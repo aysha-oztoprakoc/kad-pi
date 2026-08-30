@@ -1,0 +1,38 @@
+{
+  "workpackage": "WP-KAD-KNOWLEDGE-PLANE-001-R1",
+  "observed_at": "2026-08-29T15:19:44-03:00",
+  "openviking": {
+    "package": "openviking==0.4.17",
+    "sdk": "openviking-sdk==0.1.9",
+    "python": "3.12.14",
+    "venv": ".state/omp-kad/knowledge-plane-001/runtime/openviking-py312/venv",
+    "config": ".state/omp-kad/knowledge-plane-001/ov.conf",
+    "server": "127.0.0.1:1933",
+    "workspace": ".state/omp-kad/knowledge-plane-001/openviking-data",
+    "embedding_model": "bge-small-zh-v1.5-f16.gguf",
+    "embedding_sha256": "ab9b81d9cd329c712eee379cf0068eabe6a5e2a01d0def61535eba9384085e2c",
+    "status": "RUNNING_WITH_VLM_DEGRADED"
+  },
+  "needle": {
+    "package": "cactus-needle==2.0.11",
+    "venv": ".state/omp-kad/knowledge-plane-001/venv",
+    "engine": ".state/omp-kad/knowledge-plane-001/needle-engine/libneedle.so",
+    "engine_sha256": "0d2e125f36269067407ca4460f2d01b9371887366e5949243de9f03d0d93bc78",
+    "weights": ".state/omp-kad/knowledge-plane-001/needle-weights/needle2.cact",
+    "weights_sha256": "b43aabfcaf1a6db6acf488076eab71d823c08697c7af4521fc1d174b60ede5ba",
+    "status": "OFFLINE_INFERENCE_VERIFIED_CONFIDENCE_UNCALIBRATED"
+  },
+  "advisory_board": {
+    "skill": ".agents/skills/5-persona-advisory-board/SKILL.md",
+    "source_commit": "fd58b80648c399f29b36d31739a0b07d459b43cf",
+    "skill_sha256": "9c3079e838d92967af5936f99591d9c3908a816d0e49faae9341087f0acc52ae",
+    "status": "DISCOVERABLE"
+  },
+  "trust_and_economics": {
+    "new_paid_spend": false,
+    "global_user_configuration_mutated": false,
+    "openviking_authority": false,
+    "needle_authority": false,
+    "inspiration_only": ["Lumina", "Switchyard", "TLDR Radio"]
+  }
+}

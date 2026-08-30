@@ -1,0 +1,22 @@
+{
+  "task": "WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
+  "project": "kad-pi",
+  "claim_id": "a322deea-8ab4-48ea-b43a-26c6a293475c",
+  "actor_label": "codex-main",
+  "started_at": "2026-08-30T07:37:30.718Z",
+  "base_commit": "e3bce03e5b94ada0db6d29e75b6991b18522f2d8",
+  "owned_paths": [
+    "README.md",
+    "docs",
+    "site",
+    "dashboard",
+    "interface",
+    "tools/kad",
+    "bin",
+    "vault",
+    "wiki",
+    "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011"
+  ],
+  "mode": "mutate",
+  "active": true
+}

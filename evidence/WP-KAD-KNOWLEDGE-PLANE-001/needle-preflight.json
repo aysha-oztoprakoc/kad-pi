@@ -1,0 +1,41 @@
+{
+  "observed_at": "2026-08-29T15:19:44-03:00",
+  "package": {
+    "name": "cactus-needle",
+    "version": "2.0.11",
+    "python": "3.14.7",
+    "environment": ".state/omp-kad/knowledge-plane-001/venv",
+    "telemetry": "disabled with NEEDLE_TELEMETRY=0 and DO_NOT_TRACK=1"
+  },
+  "engine": {
+    "library": ".state/omp-kad/knowledge-plane-001/needle-engine/libneedle.so",
+    "library_sha256": "0d2e125f36269067407ca4460f2d01b9371887366e5949243de9f03d0d93bc78",
+    "weights": ".state/omp-kad/knowledge-plane-001/needle-weights/needle2.cact",
+    "weights_sha256": "b43aabfcaf1a6db6acf488076eab71d823c08697c7af4521fc1d174b60ede5ba"
+  },
+  "offline_inference": {
+    "known_fixture": "log lunch, leftover pad thai",
+    "structured_call": {
+      "name": "log_meal",
+      "arguments": {
+        "description": "leftover pad thai",
+        "meal_type": "lunch"
+      }
+    },
+    "result_validation": "PASS",
+    "inference_mode": "offline after local engine and weights were present",
+    "confidence": null,
+    "confidence_note": "Downloaded tuned weights report uncalibrated confidence; no routing decision may rely on this score."
+  },
+  "upstream_frozen_suite": {
+    "passed": 30,
+    "total": 32,
+    "critical_failures": 0,
+    "result": "PASS_WITH_NONCRITICAL_FAILURES",
+    "failures": [
+      "contact creation fixture returned no call",
+      "meal fixture added an unstated meal_type"
+    ]
+  },
+  "boundary": "Needle output is a proposal requiring deterministic schema and policy validation; it is not epistemic authority."
+}

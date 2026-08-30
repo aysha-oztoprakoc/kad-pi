@@ -1,0 +1,33 @@
+{
+  "workpackage": "WP-KAD-KNOWLEDGE-PLANE-001-R1",
+  "observed_at": "2026-08-29T15:19:44-03:00",
+  "fixed_point": "2bae5d6065ca17cf1ac85f73f934a6eb9d9a2e9d",
+  "authority": {
+    "prime_directive": "read before mutation",
+    "source_truth": "repository artifacts and evidence receipts",
+    "global_configuration_mutated": false,
+    "new_paid_spend": false,
+    "full_repository_ingestion": false
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "python_path": ".state/omp-kad/knowledge-plane-001/runtime/openviking-py312/venv/bin/python",
+    "openviking": "0.4.17",
+    "openviking_sdk": "0.1.9",
+    "needle": "2.0.11",
+    "ollama": "unavailable at 127.0.0.1:11434",
+    "docker": "unavailable to current user: permission denied on /var/run/docker.sock"
+  },
+  "checks": {
+    "python312_isolated": "PASS",
+    "openviking_import": "PASS",
+    "openviking_server_cli": "PASS",
+    "openviking_health": "PASS",
+    "openviking_local_embedding": "PASS",
+    "openviking_vlm_provider_reachable": "FAIL",
+    "needle_import": "PASS",
+    "needle_offline_engine": "PASS",
+    "advisory_skill_artifact": "PASS"
+  },
+  "degradation": "VLM-dependent summaries are unavailable; exact resource storage, embedding, retrieval, and raw reads remain available. No authority or paid fallback was enabled."
+}

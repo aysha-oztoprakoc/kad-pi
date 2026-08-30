@@ -1,0 +1,75 @@
+{
+  "id": "WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
+  "project": "kad-pi",
+  "title": "Commit Consolidation, Remote Synchronization & Vault-Driven Project Projection Bootstrap",
+  "status": "CLAIMED",
+  "priority": 140,
+  "spec_ref": "user:/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
+  "fixed_point": "e3bce03e5b94ada0db6d29e75b6991b18522f2d8",
+  "scope": [
+    "README.md",
+    "docs/",
+    "site/",
+    "dashboard/",
+    "interface/",
+    "tools/kad/",
+    "bin/",
+    "vault/",
+    "wiki/",
+    "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011/"
+  ],
+  "non_scope": [
+    "force push",
+    "destructive git operations",
+    "full website redesign",
+    "full Sofia v3 redesign",
+    "committing secrets/caches/model weights"
+  ],
+  "owned_paths": [
+    "README.md",
+    "docs/",
+    "site/",
+    "dashboard/",
+    "interface/",
+    "tools/kad/",
+    "bin/",
+    "vault/",
+    "wiki/",
+    "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-wiki lint",
+    "bin/kad-wiki rebuild",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011/",
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "every dirty path is classified",
+    "legitimate current project changes are committed without secret leakage",
+    "remote synchronization uses fast-forward only",
+    "vault remains sole durable knowledge authority",
+    "README reflects current canonical state",
+    "repository docs and projections are derived and carry provenance",
+    "legacy wiki remains generated-only",
+    "website and Sofia adapters exist and expose explicit authority deviations",
+    "private/unreviewed material cannot enter public docs",
+    "tests and doctors remain GREEN"
+  ],
+  "description": "Consolidate workspace commits, verify remote ancestry, perform fast-forward push to origin/main, and bootstrap canonical vault projection compilation for README, docs, website, and Sofia."
+}

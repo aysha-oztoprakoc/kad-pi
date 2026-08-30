@@ -1,0 +1,30 @@
+# Preflight Baseline Record — WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011
+
+- **Date**: 2026-08-30
+- **Repository Root**: `/home/amdy/Work`
+- **Initial HEAD**: `e3bce03e5b94ada0db6d29e75b6991b18522f2d8`
+- **Branch**: `main`
+- **Remote**: `origin` (`https://github.com/aysha-oztoprakoc/kad-pi.git`)
+- **Remote Tracking HEAD**: `27ed3c67016e330b658aa9be2b049b4020912109`
+- **Divergence**: Local `main` is ahead of `origin/main` by 58 commits (`LOCAL_AHEAD_UNPUSHED`), behind by 0 commits.
+- **Pre-existing Tracked Dirt**:
+  - `.agents/workspace/skills.lock.json`
+  - `.omp/config.yml`
+  - `CONTEXT.md`
+  - `evidence/WP-KAD-002/causal-journal.jsonl`
+  - `tools/kad/context-economy.mjs`
+  - `wiki/KAD_Implementation_Plan.md`
+  - `wiki/index.md`
+  - `wiki/synthetic/CATALOG.json`
+  - `wiki/synthetic/RETRIEVAL_INDEX.jsonl`
+  - `wiki/synthetic/TAXONOMY.json`
+  - `wiki/synthetic/TAXONOMY.md`
+- **Workctl Status**:
+  - `WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011` claimed and in `IN_PROGRESS` (claim ID: `a322deea-8ab4-48ea-b43a-26c6a293475c`).
+  - Predecessor `WP-KAD-VAULT-WIKI-UNIFICATION-010` is `ACCEPTED`.
+- **Vault Status**:
+  - 62 indexed notes across `00_Governance/`, `00_Home/`, `50_Projects/`, `80_Review/Pending/`, `90_Derived/`, `99_Archive/`.
+  - Zero lint errors (`kad-wiki lint --json` -> `ok: true`).
+- **Doctors**:
+  - `workctl doctor`: `healthy`
+  - `kad doctor`: `PASS`

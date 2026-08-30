@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-08-28T09:11:00Z",
+  "generated_at": "2026-08-29T00:00:00Z",
   "documents": [
     {
       "id": "ARCH_PON_STC",
@@ -183,6 +183,26 @@
       "retrieval_keywords": ["ADR", "Decision", "Librarian", "Synthetic Documentation", "Knowledge Base"]
     },
     {
+      "id": "ADR_0008",
+      "title": "ADR 0008: Unified Context and Knowledge Plane",
+      "path": "docs/adr/0008-unified-context-knowledge-plane.md",
+      "type": "adr",
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Decision separating KAD authority from OpenViking-backed derived knowledge, bounded context, governed memory, and tiny-specialist experiments.",
+      "retrieval_keywords": ["ADR", "Knowledge Plane", "OpenViking", "Provenance", "Context Compiler", "Needle 2", "Graceful Degradation"]
+    },
+    {
+      "id": "KAD_CONTEXT_KNOWLEDGE_ROADMAP_2026_08_29",
+      "title": "KAD-PI Canonical Context, Knowledge and Local-Specialist Plane Roadmap",
+      "path": "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+      "type": "roadmap",
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Canonical roadmap for the KAD-owned KnowledgePlane boundary, OpenViking adapter experiment, governed memory, bounded agent context, Needle 2 specialists, and wiki provenance.",
+      "retrieval_keywords": ["Roadmap", "Knowledge Plane", "KnowledgePlane", "OpenViking", "Needle 2", "Wiki", "Memory", "Context Compiler", "Provenance", "Tokenmaxxing"]
+    },
+    {
       "id": "RAW_DSH_PON_CORDIS",
       "title": "Raw Handoff: DeepSeek Harness / Cordis / PON Lab",
       "path": "wiki/DSH_PON_CORDIS_HANDOFF_2026-08-25.md",
@@ -241,6 +261,16 @@
       "epistemic_status": "CONFIRMED",
       "summary": "Verified persistent multi-turn world substrate with PON selective notification engine, STC lifecycle ownership, deterministic replay, and evidence dataset extraction.",
       "retrieval_keywords": ["WP-KAD-003", "Persistent Multi-Turn", "PON Engine", "STC Scope", "Deterministic Replay", "Dataset"]
+    },
+    {
+      "id": "EVID_WP_KAD_CONTEXT_PLANE_001",
+      "title": "Evidence: WP-KAD-CONTEXT-PLANE-001 Roadmap and Static Verification",
+      "path": "evidence/WP-KAD-CONTEXT-PLANE-001/design-and-verification.json",
+      "type": "evidence",
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_status": "OBSERVED",
+      "summary": "Records the canonical knowledge-plane roadmap, static artifact hashes, and deterministic documentation/context-economy verification; explicitly claims no external runtime integration.",
+      "retrieval_keywords": ["WP-KAD-CONTEXT-PLANE-001", "Knowledge Plane", "Static Verification", "OpenViking", "Needle 2", "Provenance"]
     },
     {
       "id": "EVID_WP_KAD_004",

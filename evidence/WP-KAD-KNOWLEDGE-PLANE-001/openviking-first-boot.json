@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-08-29T15:19:44-03:00",
+  "service": {
+    "endpoint": "http://127.0.0.1:1933",
+    "health": {
+      "status": "ok",
+      "healthy": true,
+      "version": "0.4.17",
+      "auth_mode": "dev"
+    },
+    "restart": "PASS: service stopped and restarted; persisted resource remained readable"
+  },
+  "fixture": {
+    "source": ".state/omp-kad/knowledge-plane-001/fixture/knowledge.txt",
+    "target": "viking://resources/kad-first-boot",
+    "stored_uri": "viking://resources/kad-first-boot/knowledge.md",
+    "exact_read": "PASS",
+    "semantic_search": "PASS",
+    "search_result_uri": "viking://resources/kad-first-boot/knowledge.md",
+    "embedding_queue": {
+      "error_count": 0,
+      "processed": 3
+    },
+    "semantic_queue": {
+      "error_count": 0,
+      "processed": 1
+    }
+  },
+  "vlm_probe": {
+    "fixture": ".state/omp-kad/knowledge-plane-001/fixture/pixel.png",
+    "raw_ingest": "PASS",
+    "summary_generation": "DEGRADED: retries against unavailable Ollama; raw image resource remained stored",
+    "authority_effect": "none"
+  },
+  "boundary": "OpenViking is exercised as a KAD knowledge-plane adapter substrate, not as an authority or acceptance layer."
+}

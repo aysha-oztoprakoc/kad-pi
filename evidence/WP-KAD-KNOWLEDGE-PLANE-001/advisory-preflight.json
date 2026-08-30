@@ -1,0 +1,13 @@
+{
+  "observed_at": "2026-08-29T15:19:44-03:00",
+  "repository": "https://github.com/harryvondiesel-web/5-persona-advisory-board",
+  "commit": "fd58b80648c399f29b36d31739a0b07d459b43cf",
+  "license": "MIT",
+  "installed_path": ".agents/skills/5-persona-advisory-board/SKILL.md",
+  "skill_sha256": "9c3079e838d92967af5936f99591d9c3908a816d0e49faae9341087f0acc52ae",
+  "version": "0.2.1",
+  "discovery": "PASS: supported project skill directory contains SKILL.md",
+  "upstream_modified": false,
+  "runtime_invocation": "not performed; this work package records installation and discoverability only",
+  "authority": "ADVISORY output cannot establish evidence, acceptance, or authority."
+}

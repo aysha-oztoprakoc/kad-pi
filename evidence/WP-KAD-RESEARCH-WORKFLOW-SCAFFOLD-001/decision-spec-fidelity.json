@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "kind": "deterministic_decision_to_spec_fidelity_check",
+  "observed_at": "2026-08-29T20:30:00-03:00",
+  "rule": "deriveSpecFromDecision preserves the human-selected option and AUTHOR_DECLARED authority",
+  "decisions": [
+    {"decision_id":"D1","human_selection":"Hybrid explicit ownership — Zotero workspace; KAD canonical identity, provenance, hashes, and source references","derived_selected_option":"OPTION_1","authority":"AUTHOR_DECLARED"},
+    {"decision_id":"D2","human_selection":"Layered candidate → source → document contract","derived_selected_option":"OPTION_1","authority":"AUTHOR_DECLARED"},
+    {"decision_id":"D3","human_selection":"Derived-context mirror with canonical-source references","derived_selected_option":"OPTION_1","authority":"AUTHOR_DECLARED"},
+    {"decision_id":"D4","human_selection":"KAD research library API with a thin namespaced CLI","derived_selected_option":"OPTION_1","authority":"AUTHOR_DECLARED"},
+    {"decision_id":"D5","human_selection":"Capability profiles with refreshable observations","derived_selected_option":"OPTION_1","authority":"AUTHOR_DECLARED"},
+    {"decision_id":"D6","human_selection":"Per-capability degradation state machine","derived_selected_option":"OPTION_1","authority":"AUTHOR_DECLARED"}
+  ],
+  "note": "This is a bridge-fidelity fixture run over the exact labels recorded in the resolved Wayfinder tickets; ticket timestamps and verbatim human notes remain authoritative decision evidence."
+}

@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-08-29T15:19:44-03:00",
+  "commands": [
+    {
+      "command": "python3 -c json-load evidence/WP-KAD-KNOWLEDGE-PLANE-001/*.json",
+      "result": "PASS",
+      "detail": "8 JSON evidence files parsed"
+    },
+    {
+      "command": "make verify",
+      "result": "PASS",
+      "detail": "validate_prime_directive.py and Librarian verify; 28 documents, 32 cards, 23 concepts"
+    },
+    {
+      "command": "node --test tools/librarian/test/librarian.test.mjs tools/kad/test/context-economy.test.mjs",
+      "result": "PASS",
+      "detail": "15 tests passed, 0 failed, 0 cancelled"
+    }
+  ],
+  "scope": "Deterministic repository gates only; no claim of full runtime integration."
+}
