@@ -1,0 +1,8 @@
+{
+  "test_name": "deterministic-replay",
+  "iterations": 100,
+  "frozen_timestamp": 1788052435000,
+  "replay_verdict": "IDENTICAL_HASH",
+  "hash": "sha256:d8c2e683fb0821217e91129b4344be6509f6b98684ad47547d2cebbfa1225ec0",
+  "verdict": "PASS"
+}

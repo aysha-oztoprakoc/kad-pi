@@ -1,0 +1,51 @@
+{
+  "specification_version": "kad-reset-pressure-v1",
+  "defined_at": "2026-08-30T01:16:00.000Z",
+  "constants": {
+    "GREEN_THRESHOLD": 0.50,
+    "YELLOW_THRESHOLD": 0.25,
+    "EXPIRING_URGENCY_THRESHOLD": 0.75,
+    "DEFAULT_EXPIRING_WINDOW_MS": 86400000,
+    "SUBSCRIPTION_OPPORTUNITY_RANK_OFFSET": -1.5,
+    "SCARCE_LONG_WINDOW_RANK_OFFSET": 1.5,
+    "STALE_PENALTY_OFFSET": 2.0
+  },
+  "deterministic_scoring": {
+    "base_rank": {
+      "DETERMINISTIC_EXISTING": 0.0,
+      "DETERMINISTIC_NEW": 1.0,
+      "LOCAL_TINY_SPECIALIST": 2.0,
+      "LOCAL_SPECIALIST": 3.0,
+      "LOCAL_GENERAL": 4.0,
+      "REMOTE_FREE": 5.0,
+      "REMOTE_SUBSCRIPTION": 6.0,
+      "REMOTE_STRONG": 7.0,
+      "HUMAN": 8.0
+    },
+    "adjustments": [
+      {
+        "id": "SUBSCRIPTION_USE_IT_OR_LOSE_IT",
+        "condition": "lane.execution_class == 'REMOTE_SUBSCRIPTION' && binding.remaining_fraction >= GREEN_THRESHOLD && (binding.reset_urgency >= EXPIRING_URGENCY_THRESHOLD || binding.time_until_reset_ms <= EXPIRING_WINDOW_MS) && queued_work == true",
+        "adjustment": "SUBSCRIPTION_OPPORTUNITY_RANK_OFFSET (-1.5 -> rank 4.5, ahead of REMOTE_FREE)",
+        "reason_code": "SUBSCRIPTION_EXPIRING_OPPORTUNITY"
+      },
+      {
+        "id": "PRESERVE_SCARCE_QUOTA",
+        "condition": "binding.remaining_fraction < YELLOW_THRESHOLD && binding.reset_urgency < EXPIRING_URGENCY_THRESHOLD",
+        "adjustment": "SCARCE_LONG_WINDOW_RANK_OFFSET (+1.5 -> demotes preference)",
+        "reason_code": "PRESERVE_SCARCE_QUOTA"
+      },
+      {
+        "id": "STALE_TELEMETRY_PENALTY",
+        "condition": "binding.freshness == 'STALE' || binding.state == 'STALE'",
+        "adjustment": "STALE_PENALTY_OFFSET (+2.0)",
+        "reason_code": "STALE_TELEMETRY_DEMOTION"
+      }
+    ]
+  },
+  "invariants": {
+    "paid_authorized_rule": "If !policy.spend.payg_authorized, any payg/paid lane receives fatal rejection PAYG_NOT_AUTHORIZED and cannot be recommended under any circumstances.",
+    "unknown_quota_rule": "If telemetry is UNKNOWN, remaining_fraction is null, zero bonuses are applied, and reason code UNKNOWN_QUOTA_NEUTRAL is emitted.",
+    "immutability_rule": "Shadow evaluator returns pure object; production routeEconomically is never called with mutated inputs."
+  }
+}

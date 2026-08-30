@@ -1,0 +1,39 @@
+{
+  "workpackage": "WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+  "decision_id": "WAYFINDER-SHADOW-003-01",
+  "evaluated_at": "2026-08-30T01:15:00.000Z",
+  "question": "What is the narrowest deterministic interface for evaluating quota-aware economic preference without granting telemetry mutation authority over routing?",
+  "options": [
+    {
+      "id": "A",
+      "name": "Add advisory scoring directly inside routeEconomically",
+      "verdict": "REJECTED",
+      "rationale": "Risks accidental coupling and mutation of production routing logic; violates separation of concerns between operational authority and advisory telemetry."
+    },
+    {
+      "id": "B",
+      "name": "Pure side-effect-free shadow evaluator wrapping existing router inputs/results",
+      "verdict": "SELECTED",
+      "rationale": "Strictly isolates telemetry advice from execution authority. Evaluator accepts identical inputs and produces an immutable shadow recommendation artifact with zero side effects or routing mutation authority."
+    },
+    {
+      "id": "C",
+      "name": "Separate probabilistic/model-based advisor",
+      "verdict": "REJECTED",
+      "rationale": "Violates KAD prime invariant 'deterministic authority > probabilistic inference'; introduces non-reproducible latency and token waste."
+    },
+    {
+      "id": "D",
+      "name": "Rewrite economic router around telemetry",
+      "verdict": "REJECTED",
+      "rationale": "Violates incremental promotion policy; prematurely grants unverified telemetry authority over production routing."
+    }
+  ],
+  "invariants_enforced": [
+    "Telemetry advises; policy authorizes.",
+    "No paid route recommendation without explicit policy authorization (paid_authorized=true).",
+    "Zero production routing mutation.",
+    "Zero network calls or background polling loops.",
+    "Deterministic replay and inspectable math."
+  ]
+}

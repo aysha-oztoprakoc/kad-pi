@@ -85,6 +85,20 @@ export function renderDetailedPanel(viewModel = {}) {
   lines.push(`  Paid Authorized: ${ov.paid_authorized ? 'YES' : 'NO (FREE/SUBSCRIPTION ONLY)'}`);
   lines.push('');
 
+  // Economic & Shadow Routing
+  lines.push(`▶ ECONOMIC ROUTING & SHADOW EVALUATOR`);
+  const eco = viewModel.economic || {};
+  lines.push(`  Production Route: ${ov.economic_route || 'DEFAULT'} (${ov.execution_class || 'UNKNOWN'})   Status: ${ov.route_status || 'UNKNOWN'}`);
+  if (ov.shadow_route) {
+    const shadowStatus = ov.shadow_same_or_different === 'SAME' ? '[SAME AS PRODUCTION]' : '[DIVERGENT ADVICE]';
+    lines.push(`  [SHADOW] Recommended: ${ov.shadow_route} (${ov.shadow_class || 'UNKNOWN'}) ${shadowStatus}`);
+    if (eco.shadow?.reason_codes?.length) {
+      lines.push(`  [SHADOW] Reasons: ${eco.shadow.reason_codes.join(', ')}`);
+    }
+  } else {
+    lines.push(`  [SHADOW] Recommendation: ${ov.economic_route || 'DEFAULT'} (aligns with production)`);
+  }
+  lines.push('');
   // Providers & Quotas
   lines.push(`▶ TOKENS & QUOTAS`);
   const providers = viewModel.providers || [];
@@ -196,14 +210,21 @@ export async function executeKadCommand(action = 'status', { faultyState = null,
     // fallback gracefully
   }
 
+  let economic = null;
+  try {
+    economic = createEconomicViewModel({ telemetryRecords: nativeRecords });
+  } catch (err) {
+    errors.push(`Economic probe failed: ${err.message}`);
+  }
+
   const vm = buildControlPlaneViewModel({
     telemetryRecords: nativeRecords,
     discoveredProviders: Array.isArray(providers) ? providers : [],
+    economicState: economic,
     gpuState: gpu,
     healthState: health,
     workctlState: workctl,
   });
-
   return {
     ...vm,
     status: errors.length > 0 ? 'DEGRADED' : 'READY',

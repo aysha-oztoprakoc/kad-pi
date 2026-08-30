@@ -1,0 +1,39 @@
+{
+  "traceability_version": "kad-shadow-003-traceability-v1",
+  "usage_bridge_traceability": [
+    { "id": "UB-REQ-01", "description": "Normalize Codex 5h primary window", "tests": ["UB1", "UB3"] },
+    { "id": "UB-REQ-02", "description": "Normalize Codex 7d secondary window", "tests": ["UB1", "UB3"] },
+    { "id": "UB-REQ-03", "description": "Normalize Antigravity daily project quota", "tests": ["UB2"] },
+    { "id": "UB-REQ-04", "description": "Multi-window non-collapsing preservation", "tests": ["UB3"] },
+    { "id": "UB-REQ-05", "description": "Allowed flag precedence over advisory saturation", "tests": ["UB4"] },
+    { "id": "UB-REQ-06", "description": "Deterministic staleness transition after TTL", "tests": ["UB5"] },
+    { "id": "UB-REQ-07", "description": "Malformed report safe degradation without throw", "tests": ["UB6"] },
+    { "id": "UB-REQ-08", "description": "Passive after_provider_response lifecycle hook", "tests": ["UB7"] },
+    { "id": "UB-REQ-09", "description": "Strict credential/cookie redaction in telemetry", "tests": ["UB7"] },
+    { "id": "UB-REQ-10", "description": "View-model multi-window provider representation", "tests": ["UB8"] },
+    { "id": "UB-REQ-11", "description": "Compact meter truthful quota percentage binding", "tests": ["UB8"] },
+    { "id": "UB-REQ-12", "description": "CLI structured usage collection with fallback", "tests": ["UB9"] },
+    { "id": "UB-REQ-13", "description": "No fake token conversions for non-token units", "tests": ["UB1", "UB2", "T2"] },
+    { "id": "UB-REQ-14", "description": "Zero active background polling loops", "tests": ["Code review", "CP7"] }
+  ],
+  "shadow_evaluator_traceability": [
+    { "id": "T1", "scenario": "Abundant quota, distant reset -> baseline scoring, no expiring boost", "test": "T1 abundant quota, distant reset" },
+    { "id": "T2", "scenario": "Abundant quota, imminent reset (queued_work=true) -> USE_IT_OR_LOSE_IT boost for subscription lane", "test": "T2 abundant quota, imminent reset" },
+    { "id": "T3", "scenario": "Scarce quota, distant reset -> PRESERVE_SCARCE_QUOTA demotion", "test": "T3 scarce quota, distant reset" },
+    { "id": "T4", "scenario": "Scarce quota, imminent reset -> no boost (quota is scarce)", "test": "T4 scarce quota, imminent reset" },
+    { "id": "T5", "scenario": "5h + 7d binding-window selection -> chooses bottleneck window", "test": "T5 5h + 7d binding-window selection" },
+    { "id": "T6", "scenario": "Model-scoped quota isolation -> quota for model A does not constrain model B", "test": "T6 model-scoped quota isolation" },
+    { "id": "T7", "scenario": "Account-wide quota application -> account ceiling applies to all matching lanes", "test": "T7 account-wide quota application" },
+    { "id": "T8", "scenario": "UNKNOWN quota -> zero synthetic bonus, handled neutrally", "test": "T8 UNKNOWN quota handling" },
+    { "id": "T9", "scenario": "STALE telemetry -> cannot outrank fresh authoritative telemetry", "test": "T9 STALE telemetry demotion" },
+    { "id": "T10", "scenario": "DEGRADED state -> when all lanes fail eligibility, returns DEGRADED safely", "test": "T10 DEGRADED state on all lanes ineligible" },
+    { "id": "T11", "scenario": "Explicit allowed=true -> does not block lane even if advisory usage is high", "test": "T11 explicit allowed=true precedence" },
+    { "id": "T12", "scenario": "Explicit limitReached=true -> blocks constrained lane immediately", "test": "T12 explicit limitReached=true blocks lane" },
+    { "id": "T13", "scenario": "Free/local lane remains preferred where policy requires", "test": "T13 free/local lane preference preserved" },
+    { "id": "T14", "scenario": "Paid lane cannot be recommended when paid_authorized=false", "test": "T14 paid lane forbidden without explicit spend authorization" },
+    { "id": "T15", "scenario": "Actual and shadow decisions both recorded side-by-side", "test": "T15 side-by-side decision recording" },
+    { "id": "T16", "scenario": "Shadow evaluation cannot mutate actual production decision", "test": "T16 immutability and zero side-effects on actual route" },
+    { "id": "T17", "scenario": "Deterministic replay: identical inputs produce identical output", "test": "T17 deterministic replay consistency" },
+    { "id": "T18", "scenario": "Malformed telemetry fails safely without throwing exceptions", "test": "T18 malformed telemetry graceful degradation" }
+  ]
+}

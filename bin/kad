@@ -77,8 +77,18 @@ Usage:
 
   if (subcommand === 'budget') {
     process.stdout.write(`KAD ECONOMIC ROUTER & BUDGET\n\n`);
-    process.stdout.write(`  Execution class: ${vm.overview?.execution_class || 'UNKNOWN'}\n`);
-    process.stdout.write(`  Paid authorized: ${vm.overview?.paid_authorized ? 'YES' : 'NO (FREE/SUBSCRIPTION ONLY)'}\n`);
+    process.stdout.write(`  Production Route: ${vm.overview?.economic_route || 'DEFAULT'} (${vm.overview?.execution_class || 'UNKNOWN'})\n`);
+    process.stdout.write(`  Paid authorized:  ${vm.overview?.paid_authorized ? 'YES' : 'NO (FREE/SUBSCRIPTION ONLY)'}\n`);
+    process.stdout.write(`  Route status:     ${vm.overview?.route_status || 'UNKNOWN'}\n\n`);
+    process.stdout.write(`SHADOW ECONOMIC EVALUATION [ADVISORY ONLY]:\n`);
+    const eco = vm.economic || {};
+    const shadow = eco.shadow || {};
+    const status = vm.overview?.shadow_same_or_different === 'SAME' ? '[SAME AS PRODUCTION]' : '[DIVERGENT ADVICE]';
+    process.stdout.write(`  Shadow Route:     ${vm.overview?.shadow_route || 'DEFAULT'} (${vm.overview?.shadow_class || 'UNKNOWN'}) ${status}\n`);
+    if (shadow.reason_codes?.length) {
+      process.stdout.write(`  Reason codes:     ${shadow.reason_codes.join(', ')}\n`);
+    }
+    process.stdout.write(`  Telemetry state:  freshness=${shadow.telemetry_freshness || 'UNKNOWN'}, epistemic=${shadow.epistemic_quality || 'UNKNOWN'}\n`);
     return;
   }
 

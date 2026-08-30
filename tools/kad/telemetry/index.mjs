@@ -3,6 +3,7 @@ export * from './quota-ledger.mjs';
 export * from './provider-adapters.mjs';
 export * from './omp-usage-adapter.mjs';
 export * from './economic-adapter.mjs';
+export * from './economic-shadow.mjs';
 export * from './workctl-adapter.mjs';
 export * from './system-metrics.mjs';
 export * from './health.mjs';

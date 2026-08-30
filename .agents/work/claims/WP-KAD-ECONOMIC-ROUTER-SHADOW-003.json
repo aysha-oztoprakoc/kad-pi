@@ -1,0 +1,26 @@
+{
+  "task": "WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+  "project": "kad-pi",
+  "claim_id": "7295f58e-e227-4eba-ac1d-5ac7110ff0f0",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T01:14:50.113Z",
+  "base_commit": "cb59d84f2abe45bc1844f5281535a4cf62765042",
+  "owned_paths": [
+    "tools/kad/telemetry/economic-shadow.mjs",
+    "tools/kad/telemetry/economic-adapter.mjs",
+    "tools/kad/telemetry/view-model.mjs",
+    "tools/kad/telemetry/control-plane-runtime.mjs",
+    "tools/kad/telemetry/index.mjs",
+    "tools/kad/test/economic-shadow.test.mjs",
+    "tools/kad/test/telemetry-usage-bridge.test.mjs",
+    "tools/kad/test/telemetry.test.mjs",
+    "tools/kad/test/control-plane.test.mjs",
+    "evidence/WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+    "docs/agents/economic-shadow.md",
+    "wiki/KAD_Economic_Router_Shadow_2026-08-30.md",
+    "bin/kad"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T01:20:37.905Z"
+}

@@ -1,0 +1,31 @@
+{
+  "matrix_version": "kad-scope-matching-v1",
+  "evaluated_at": "2026-08-30T01:20:00.000Z",
+  "test_cases": [
+    {
+      "lane": { "provider": "openai-codex", "model": "gpt-5.6-luna" },
+      "record": { "provider_id": "openai-codex", "model_id": null },
+      "expected_match": true,
+      "rule": "PROVIDER_WIDE match"
+    },
+    {
+      "lane": { "provider": "google-antigravity", "model": "gemini-3-flash" },
+      "record": { "provider_id": "google-antigravity", "model_id": "claude-3-5-sonnet" },
+      "expected_match": false,
+      "rule": "MODEL_SPECIFIC mismatch (claude != gemini)"
+    },
+    {
+      "lane": { "provider": "google-antigravity", "model": "gemini-3-flash" },
+      "record": { "provider_id": "*", "model_id": null },
+      "expected_match": true,
+      "rule": "ACCOUNT_WIDE wildcard match"
+    },
+    {
+      "lane": { "provider": "anthropic", "model": "claude-3-7-sonnet" },
+      "record": { "provider_id": "openai-codex", "model_id": null },
+      "expected_match": false,
+      "rule": "PROVIDER mismatch"
+    }
+  ],
+  "verdict": "PASS"
+}

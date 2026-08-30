@@ -1,0 +1,20 @@
+{
+  "probe_name": "paid-policy-invariant-probe",
+  "tested_scenarios": [
+    {
+      "scenario": "Paid lane available + abundant quota + paid_authorized=false",
+      "actual_route": "DEGRADED (or free lane)",
+      "shadow_recommended_route": "DEGRADED (or free lane)",
+      "paid_recommended": false,
+      "rejection_reason": "PAYG_NOT_AUTHORIZED",
+      "verdict": "PASS (Hard invariant holds: no paid recommendation without explicit policy authorization)"
+    },
+    {
+      "scenario": "Paid lane available + paid_authorized=true",
+      "actual_route": "remote_paid_lane",
+      "shadow_recommended_route": "remote_paid_lane",
+      "paid_recommended": true,
+      "verdict": "PASS"
+    }
+  ]
+}

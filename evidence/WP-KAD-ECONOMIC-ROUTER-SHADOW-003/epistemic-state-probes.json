@@ -1,0 +1,34 @@
+{
+  "probes": [
+    {
+      "state": "UNKNOWN",
+      "behavior": "Evaluated neutrally with zero bonus/penalty; remaining_fraction null",
+      "test": "T8",
+      "verdict": "PASS"
+    },
+    {
+      "state": "STALE",
+      "behavior": "Receives STALE_PENALTY_OFFSET (+2.0); demoted below fresh lanes",
+      "test": "T9",
+      "verdict": "PASS"
+    },
+    {
+      "state": "DEGRADED",
+      "behavior": "When all lanes are ineligible, returns status DEGRADED without throwing",
+      "test": "T10",
+      "verdict": "PASS"
+    },
+    {
+      "state": "EXPLICIT_ALLOWED",
+      "behavior": "metadata.allowed=true prevents false positive blockage from advisory percentage",
+      "test": "T11",
+      "verdict": "PASS"
+    },
+    {
+      "state": "LIMIT_REACHED",
+      "behavior": "metadata.limitReached=true immediately blocks the affected lane",
+      "test": "T12",
+      "verdict": "PASS"
+    }
+  ]
+}

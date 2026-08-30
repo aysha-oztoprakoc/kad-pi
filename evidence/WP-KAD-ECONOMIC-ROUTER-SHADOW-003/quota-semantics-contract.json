@@ -1,0 +1,67 @@
+{
+  "contract_version": "kad-quota-semantics-v1",
+  "defined_at": "2026-08-30T01:16:00.000Z",
+  "directionality_definitions": {
+    "remaining_fraction": {
+      "formula": "remaining / limit (or remaining / 100 for unit=percent)",
+      "range": "[0.0, 1.0]",
+      "direction": "1.0 is full quota available; 0.0 is completely exhausted",
+      "epistemic_rule": "Null if limit or remaining is unknown; NEVER assumed to be 1.0"
+    },
+    "used_fraction": {
+      "formula": "used / limit (or used / 100 for unit=percent)",
+      "range": "[0.0, 1.0]",
+      "direction": "1.0 is 100% consumed; 0.0 is completely unused",
+      "epistemic_rule": "Null if used or limit is unknown"
+    },
+    "quota_pressure": {
+      "formula": "1.0 - remaining_fraction",
+      "range": "[0.0, 1.0]",
+      "direction": "1.0 is maximum exhaustion pressure; 0.0 is zero pressure",
+      "epistemic_rule": "UNKNOWN if remaining_fraction is null"
+    },
+    "time_until_reset_ms": {
+      "formula": "max(0, reset_at - now)",
+      "unit": "milliseconds",
+      "direction": "Lower values mean reset is closer in time",
+      "epistemic_rule": "Null if reset_at is not documented/observed"
+    },
+    "expiry_fraction": {
+      "formula": "clamp(time_until_reset_ms / window_duration_ms, 0.0, 1.0)",
+      "range": "[0.0, 1.0]",
+      "direction": "0.0 is expiring immediately; 1.0 is just started",
+      "epistemic_rule": "Derived only when both reset_at and window_duration are known"
+    },
+    "reset_urgency": {
+      "formula": "1.0 - expiry_fraction",
+      "range": "[0.0, 1.0]",
+      "direction": "1.0 is highest urgency (expiring right now); 0.0 is lowest urgency",
+      "epistemic_rule": "0.0 if time until reset is unknown"
+    }
+  },
+  "scope_matching": {
+    "rules": [
+      {
+        "scope_type": "MODEL_SPECIFIC",
+        "condition": "record.model_id !== null && record.model_id !== undefined",
+        "matches_lane": "lane.model === record.model_id",
+        "mismatch_action": "REJECT with SCOPE_MISMATCH; do not constrain other models"
+      },
+      {
+        "scope_type": "PROVIDER_WIDE",
+        "condition": "record.model_id === null || record.model_id === undefined",
+        "matches_lane": "lane.provider === record.provider_id",
+        "mismatch_action": "Matches all lanes belonging to record.provider_id"
+      },
+      {
+        "scope_type": "ACCOUNT_WIDE",
+        "condition": "record.provider_id === '*' || record.scope?.kind === 'account'",
+        "matches_lane": "Matches all lanes on the account",
+        "mismatch_action": "Applies account-level ceiling"
+      }
+    ]
+  },
+  "binding_window_rule": {
+    "description": "When multiple scoped windows match a lane, the binding window is the one with min(remaining_fraction), or if tied, min(window_duration_ms). Any window with limitReached=true or remaining_fraction <= 0 immediately blocks the lane."
+  }
+}

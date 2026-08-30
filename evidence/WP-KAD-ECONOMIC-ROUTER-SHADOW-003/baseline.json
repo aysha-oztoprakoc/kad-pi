@@ -1,0 +1,11 @@
+{
+  "baseline_commit": "cb59d84f2abe45bc1844f5281535a4cf62765042",
+  "workpackage": "WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+  "fixed_point": "cb59d84f2abe45bc1844f5281535a4cf62765042",
+  "dependencies": {
+    "WP-KAD-OPERATOR-CONTROL-PLANE-001": "ACCEPTED",
+    "WP-KAD-USAGE-BRIDGE-002": "ACCEPTED"
+  },
+  "initial_tests_count": 446,
+  "verdict": "READY"
+}

@@ -1,0 +1,25 @@
+{
+  "scenarios": [
+    {
+      "name": "Standard interactive execution (free local available)",
+      "production_route": "deterministic_existing",
+      "shadow_recommended_route": "deterministic_existing",
+      "comparison": "SAME",
+      "rationale": "Free deterministic/local execution is preferred by both policy and shadow"
+    },
+    {
+      "name": "Batch queued work with expiring subscription quota",
+      "production_route": "remote_free_gemini",
+      "shadow_recommended_route": "remote_sub_codex",
+      "comparison": "DIFFERENT",
+      "rationale": "Shadow detects expiring 5h window with 80% remaining; promotes subscription to use it before reset"
+    },
+    {
+      "name": "Scarce 7d subscription quota",
+      "production_route": "remote_sub_codex",
+      "shadow_recommended_route": "remote_free_gemini",
+      "comparison": "DIFFERENT",
+      "rationale": "Shadow detects 10% remaining on 7d window with 6 days left; demotes subscription to conserve quota"
+    }
+  ]
+}
