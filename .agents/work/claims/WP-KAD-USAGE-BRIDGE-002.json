@@ -1,0 +1,26 @@
+{
+  "task": "WP-KAD-USAGE-BRIDGE-002",
+  "project": "kad-pi",
+  "claim_id": "d37b0788-a36f-4458-a90c-70db92637ab0",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T01:02:39.012Z",
+  "base_commit": "ea324af566ea2d2ad42340343781d0267bfd558a",
+  "owned_paths": [
+    "tools/kad/telemetry/omp-usage-adapter.mjs",
+    "tools/kad/telemetry/provider-adapters.mjs",
+    "tools/kad/telemetry/schema.mjs",
+    "tools/kad/telemetry/view-model.mjs",
+    "tools/kad/telemetry/control-plane-runtime.mjs",
+    "tools/kad/test/telemetry-usage-bridge.test.mjs",
+    "tools/kad/test/telemetry.test.mjs",
+    "tools/kad/test/control-plane.test.mjs",
+    ".omp/extensions/kad-control-plane.js",
+    ".omp/extensions/kad-control-plane",
+    "evidence/WP-KAD-USAGE-BRIDGE-002",
+    "docs/agents/control-plane.md",
+    "wiki/KAD_Usage_Bridge_2026-08-30.md"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T01:11:14.910Z"
+}

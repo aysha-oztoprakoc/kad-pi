@@ -1,0 +1,19 @@
+{
+  "test_name": "scoped-windows",
+  "scenarios": [
+    {
+      "provider": "openai-codex",
+      "window_1": { "kind": "5h", "durationMs": 18000000, "remaining": 72 },
+      "window_2": { "kind": "7d", "durationMs": 604800000, "remaining": 96 },
+      "collapsed": false,
+      "verdict": "PASS"
+    },
+    {
+      "provider": "github-copilot",
+      "window_chat": { "kind": "monthly", "unit": "requests", "remaining": 200 },
+      "window_completions": { "kind": "monthly", "unit": "requests", "remaining": 2000 },
+      "collapsed": false,
+      "verdict": "PASS"
+    }
+  ]
+}

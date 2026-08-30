@@ -103,6 +103,7 @@ export function createTelemetryRecord(input = {}) {
     observed_at: observedAt,
     stale_after: staleAfter,
     state,
+    ...(input.metadata ? { metadata: redactSecrets(input.metadata) } : {}),
   };
 
   return redactSecrets(record);

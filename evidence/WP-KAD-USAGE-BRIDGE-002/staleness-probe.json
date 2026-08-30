@@ -1,0 +1,8 @@
+{
+  "probe_name": "staleness-probe",
+  "executed_at": "2026-08-30T01:10:00.000Z",
+  "tested_scenario": "OMP UsageReport fetchedAt = 1000000 evaluated at 1000000 + 400000 with ttlMs = 300000",
+  "initial_state": "AUTHORITATIVE_REMOTE",
+  "evaluated_state": "STALE",
+  "verdict": "PASS"
+}

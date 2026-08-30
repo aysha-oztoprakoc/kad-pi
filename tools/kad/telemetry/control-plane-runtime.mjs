@@ -1,6 +1,11 @@
 import { TelemetryLedger } from './quota-ledger.mjs';
 import { discoverProviders, createProviderTelemetry } from './provider-adapters.mjs';
-import { collectOmpSessionUsage } from './omp-usage-adapter.mjs';
+import {
+  collectOmpSessionUsage,
+  collectOmpUsageReportsCli,
+  normalizeOmpUsageReports,
+  handleAfterProviderResponse,
+} from './omp-usage-adapter.mjs';
 import { createEconomicViewModel } from './economic-adapter.mjs';
 import { createWorkctlViewModel, readWorkspaceWorkState } from './workctl-adapter.mjs';
 import { collectGpuTelemetry } from './system-metrics.mjs';
@@ -8,7 +13,6 @@ import { collectServiceHealth } from './health.mjs';
 import { computeTokenmaxxingMetrics } from './tokenmaxxing.mjs';
 import { buildControlPlaneViewModel } from './view-model.mjs';
 import { execFileSync } from 'node:child_process';
-
 export function renderCompactMeter(state = {}) {
   const parts = ['KAD'];
 
@@ -92,7 +96,9 @@ export function renderDetailedPanel(viewModel = {}) {
       const pctLabel = p.percent_remaining !== null ? `${p.percent_remaining}%` : 'UNKNOWN';
       const resetLabel = p.resets_in ? `reset ${p.resets_in}` : '';
       const stateLabel = p.source_class || p.state || 'UNKNOWN';
-      lines.push(`  ${p.provider_id.padEnd(20)} ${bar}  ${pctLabel.padEnd(8)} ${resetLabel.padEnd(12)} [${stateLabel}]`);
+      const label = p.metadata?.limitLabel || (p.window_kind && p.window_kind !== 'session' ? p.window_kind : null);
+      const displayId = label ? `${p.provider_id} (${label})` : p.provider_id;
+      lines.push(`  ${displayId.padEnd(28)} ${bar}  ${pctLabel.padEnd(8)} ${resetLabel.padEnd(12)} [${stateLabel}]`);
     }
   }
   lines.push('');
@@ -182,8 +188,16 @@ export async function executeKadCommand(action = 'status', { faultyState = null,
   } catch (err) {
     errors.push(`Workctl probe failed: ${err.message}`);
   }
+  let nativeRecords = [];
+  try {
+    const rawReports = collectOmpUsageReportsCli();
+    nativeRecords = normalizeOmpUsageReports(rawReports);
+  } catch {
+    // fallback gracefully
+  }
 
   const vm = buildControlPlaneViewModel({
+    telemetryRecords: nativeRecords,
     discoveredProviders: Array.isArray(providers) ? providers : [],
     gpuState: gpu,
     healthState: health,
@@ -196,7 +210,6 @@ export async function executeKadCommand(action = 'status', { faultyState = null,
     errors,
   };
 }
-
 export async function executeKadDoctor({ cwd = process.cwd() } = {}) {
   const checks = [];
 
@@ -269,6 +282,25 @@ export async function executeKadDoctor({ cwd = process.cwd() } = {}) {
 export function createKadControlPlaneExtension(pi) {
   const ledger = new TelemetryLedger();
   let refreshTimer = null;
+  let cachedNativeUsageRecords = [];
+  let lastUsageFetchAt = 0;
+
+  function getNativeUsageRecords(force = false) {
+    const now = Date.now();
+    if (force || now - lastUsageFetchAt > 60000 || cachedNativeUsageRecords.length === 0) {
+      try {
+        const rawReports = collectOmpUsageReportsCli();
+        cachedNativeUsageRecords = normalizeOmpUsageReports(rawReports, { now });
+        for (const rec of cachedNativeUsageRecords) {
+          ledger.record(rec);
+        }
+        lastUsageFetchAt = now;
+      } catch {
+        // fallback
+      }
+    }
+    return cachedNativeUsageRecords;
+  }
 
   async function updateTelemetry(ctx, event = null) {
     try {
@@ -279,9 +311,13 @@ export function createKadControlPlaneExtension(pi) {
       const health = await collectServiceHealth();
       const providers = discoverProviders({ cwd: ctx?.cwd || process.cwd() });
       const economic = createEconomicViewModel();
+      const nativeUsage = getNativeUsageRecords();
+      const ledgerRecords = ledger.getAllLatest();
+      const mergedRecords = [...nativeUsage, ...ledgerRecords];
 
       const vm = buildControlPlaneViewModel({
         sessionUsage: usage,
+        telemetryRecords: mergedRecords,
         discoveredProviders: providers,
         economicState: economic,
         workctlState: workctl,
@@ -292,7 +328,7 @@ export function createKadControlPlaneExtension(pi) {
       const meterText = renderCompactMeter({
         session_tokens: usage.total_tokens,
         economic_route: economic.selected_execution_class,
-        provider_quota_percent: null,
+        provider_quota_percent: vm.overview?.primary_quota_percent,
         gpu: gpu.state === 'AVAILABLE' ? gpu : null,
         workctl,
       });
@@ -326,6 +362,16 @@ export function createKadControlPlaneExtension(pi) {
 
   pi.on('model_select', async (event, ctx) => {
     await updateTelemetry(ctx, event);
+  });
+
+  pi.on('after_provider_response', async (event, ctx) => {
+    try {
+      const record = handleAfterProviderResponse(event, ctx);
+      if (record) ledger.record(record);
+      await updateTelemetry(ctx, event);
+    } catch {
+      // ignore
+    }
   });
 
   pi.on('session_shutdown', () => {

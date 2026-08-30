@@ -1,0 +1,13 @@
+{
+  "reconciliation_rule": "AUTHORITATIVE_REMOTE (OMP UsageReport) > OBSERVED (after_provider_response) > DERIVED > MANUAL > STALE > UNKNOWN",
+  "allowed_flag_precedence": {
+    "rule": "Explicit metadata.allowed=true / limitReached=false outranks advisory 100% saturation",
+    "tested": "UB4",
+    "verdict": "PASS"
+  },
+  "no_fake_units": {
+    "rule": "Requests, messages, percent, tokens stay in their native units without synthetic arithmetic",
+    "tested": "T2, UB1, UB2",
+    "verdict": "PASS"
+  }
+}

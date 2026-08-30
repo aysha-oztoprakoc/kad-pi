@@ -1,0 +1,11 @@
+{
+  "inspection_date": "2026-08-30T01:10:00.000Z",
+  "omp_version": "18.0.10",
+  "binary_path": "/home/amdy/.local/share/mise/installs/github-can1357-oh-my-pi/18.0.10/omp",
+  "capabilities_verified": {
+    "usage_cli": "omp usage --json supported with --provider, --redact, and --history options",
+    "provider_adapters": ["openai-codex", "google-antigravity", "github-copilot", "cursor", "opencode-go", "ollama-cloud"],
+    "extension_events": ["session_start", "turn_end", "message_end", "model_select", "after_provider_response", "session_shutdown"],
+    "codex_header_parser": "Parses x-codex-primary-* and x-codex-secondary-* headers natively into 5h and 7d windows"
+  }
+}

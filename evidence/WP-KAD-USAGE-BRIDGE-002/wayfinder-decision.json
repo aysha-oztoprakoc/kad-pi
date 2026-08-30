@@ -1,0 +1,43 @@
+{
+  "decision_id": "WAYFINDER-WP-KAD-USAGE-BRIDGE-002",
+  "title": "Narrowest Stable Public OMP Boundary for Provider Quota Telemetry",
+  "decided_at": "2026-08-30T01:05:00.000Z",
+  "question": "What is the narrowest stable/public OMP boundary through which KAD should consume native provider usage without importing fork-private internals?",
+  "evaluated_options": [
+    {
+      "option": "A",
+      "name": "Public OMP Usage CLI / Structured JSON (`omp usage --json`)",
+      "pros": "Documented, stable JSON schema (`reports[]`, `limits[]`, `windows`, `metadata`). Isolates KAD from internal JS module paths. Supports offline caching, manual refresh, and CLI inspection.",
+      "cons": "Subprocess execution cost (~50-100ms cached, ~1.5s live remote query).",
+      "verdict": "SELECTED for Authoritative Baseline & Periodic Snapshot"
+    },
+    {
+      "option": "B",
+      "name": "Public Extension Context API",
+      "pros": "In-process execution.",
+      "cons": "Only exposes session-scoped context window stats (`ctx.getContextUsage()`), not multi-account provider quota reports.",
+      "verdict": "RETAINED for live session token counting"
+    },
+    {
+      "option": "C",
+      "name": "Passive `after_provider_response` Extension Hook",
+      "pros": "Zero network overhead, event-driven in-process notification with status, headers, requestId, and ctx.model.",
+      "cons": "Only observes active turn responses; cannot observe baseline quota before first turn without snapshot.",
+      "verdict": "SELECTED for Real-Time Event-Driven Observability"
+    },
+    {
+      "option": "D",
+      "name": "Direct OMP Internal Package / SQLite DB Access",
+      "pros": "Low latency raw database read.",
+      "cons": "Violates isolation; couples KAD to private schema; risks exposing secret authentication rows.",
+      "verdict": "REJECTED"
+    }
+  ],
+  "chosen_architecture": {
+    "principle": "One Authority Chain: OMP interprets provider-specific quota; KAD normalizes into kad-telemetry-v1.",
+    "baseline_adapter": "omp-usage-adapter.mjs consumes `omp usage --json` structured report into AUTHORITATIVE_REMOTE telemetry records.",
+    "passive_hook": "Extension registers `after_provider_response` to track OBSERVED response status/freshness without active polling.",
+    "multi_window_preservation": "Multiple windows (e.g. Codex 5h primary, 7d secondary, Google Antigravity project quotas) are retained independently as distinct scoped records.",
+    "epistemic_rule": "Explicit provider status (allowed=true, limitReached=false) outranks advisory percentages."
+  }
+}

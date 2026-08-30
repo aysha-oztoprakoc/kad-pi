@@ -1,0 +1,22 @@
+{
+  "probe_name": "omp-usage-probe",
+  "executed_at": "2026-08-30T01:10:00.000Z",
+  "command": "omp usage --json",
+  "reports_count": 6,
+  "discovered_providers": [
+    "openai-codex",
+    "github-copilot",
+    "cursor",
+    "google-antigravity",
+    "opencode-go",
+    "ollama-cloud"
+  ],
+  "codex_limits": [
+    { "id": "openai-codex:primary", "window": "5h", "used": 28, "remaining": 72, "unit": "percent", "status": "ok" },
+    { "id": "openai-codex:secondary", "window": "7d", "used": 4, "remaining": 96, "unit": "percent", "status": "ok" }
+  ],
+  "antigravity_limits": [
+    { "id": "google-antigravity:google:default:daily", "window": "daily", "used": 39.2113, "remaining": 60.7887, "unit": "percent", "status": "ok" }
+  ],
+  "verdict": "PASS"
+}

@@ -19,6 +19,7 @@ export function buildControlPlaneViewModel({
   // 2. Providers mapping
   const providerViews = [];
   const processedProviders = new Set();
+  const providerQuotas = new Map();
 
   for (const record of telemetryRecords) {
     const provId = record.provider_id;
@@ -36,8 +37,8 @@ export function buildControlPlaneViewModel({
       percentRemaining = Math.max(0, Math.min(100, Math.round((remaining / limit) * 100)));
       quotaDisplay = `${remaining}/${limit} ${unit} (${percentRemaining}%)`;
     } else if (unit === 'percent' && remaining !== null) {
-      percentRemaining = remaining;
-      quotaDisplay = `${remaining}%`;
+      percentRemaining = Math.max(0, Math.min(100, Math.round(remaining)));
+      quotaDisplay = `${percentRemaining}%`;
     } else if (record.state === 'UNKNOWN' || (limit === null && remaining === null && used === null)) {
       quotaDisplay = 'UNKNOWN';
     } else if (used !== null && limit === null) {
@@ -45,6 +46,7 @@ export function buildControlPlaneViewModel({
     } else {
       quotaDisplay = 'UNKNOWN';
     }
+
     let resetsIn = null;
     if (record.window?.resets_at && record.window.resets_at > now) {
       const ms = record.window.resets_at - now;
@@ -53,7 +55,7 @@ export function buildControlPlaneViewModel({
       resetsIn = hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
     }
 
-    providerViews.push({
+    const viewItem = {
       provider_id: provId,
       model_id: record.model_id ?? null,
       metric: record.metric,
@@ -68,7 +70,19 @@ export function buildControlPlaneViewModel({
       resets_in: resetsIn,
       window_kind: record.window?.kind ?? null,
       observed_at: record.observed_at,
-    });
+      configured: true,
+      enabled: true,
+      metadata: record.metadata || {},
+    };
+
+    providerViews.push(viewItem);
+
+    if (percentRemaining !== null) {
+      const existing = providerQuotas.get(provId);
+      if (existing === undefined || percentRemaining < existing) {
+        providerQuotas.set(provId, percentRemaining);
+      }
+    }
   }
 
   // Include discovered providers not in telemetry records
@@ -76,7 +90,7 @@ export function buildControlPlaneViewModel({
     if (!processedProviders.has(dp.provider_id)) {
       providerViews.push({
         provider_id: dp.provider_id,
-        model_id: dp.models?.[0] ?? null,
+        model_id: Array.from(dp.models || [])[0] ?? null,
         metric: 'total_tokens',
         unit: 'tokens',
         limit: null,
@@ -89,11 +103,15 @@ export function buildControlPlaneViewModel({
         resets_in: null,
         window_kind: null,
         observed_at: now,
-        configured: dp.configured,
-        enabled: dp.enabled,
+        configured: dp.configured ?? true,
+        enabled: dp.enabled ?? true,
+        metadata: {},
       });
     }
   }
+
+  // Primary quota percentage for active provider
+  const primaryQuotaPercent = providerQuotas.get(currentProvider) ?? null;
 
   return {
     overview: {
@@ -104,12 +122,13 @@ export function buildControlPlaneViewModel({
       paid_authorized: paidAuthorized,
       economic_route: economicState?.selected_lane || 'DEFAULT',
       route_status: economicState?.status || 'UNKNOWN',
+      primary_quota_percent: primaryQuotaPercent,
     },
     providers: providerViews,
-    gpu: gpuState || null,
-    services: healthState?.services || {},
-    workctl: workctlState || { has_active_claim: false, ticket_id: 'NO ACTIVE CLAIM' },
-    tokenmaxxing: tokenmaxxingMetrics || null,
+    gpu: gpuState,
+    services: healthState?.services ?? {},
+    workctl: workctlState,
+    tokenmaxxing: tokenmaxxingMetrics,
     generated_at: now,
   };
 }

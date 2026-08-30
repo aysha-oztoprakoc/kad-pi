@@ -1,0 +1,30 @@
+{
+  "provider": "google-antigravity",
+  "normalized_records": [
+    {
+      "schema_version": "kad-telemetry-v1",
+      "provider_id": "google-antigravity",
+      "metric": "quota_usage",
+      "unit": "percent",
+      "window": {
+        "kind": "daily",
+        "resets_at": 1788065540000
+      },
+      "quota": {
+        "limit": 100,
+        "used": 39.2113,
+        "remaining": 60.7887
+      },
+      "source": {
+        "class": "AUTHORITATIVE_REMOTE",
+        "adapter": "omp-usage",
+        "evidence_ref": "google-antigravity:google:default:daily"
+      },
+      "state": "AUTHORITATIVE_REMOTE",
+      "metadata": {
+        "projectId": "aicode-consumers",
+        "status": "ok"
+      }
+    }
+  ]
+}

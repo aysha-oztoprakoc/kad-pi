@@ -52,39 +52,24 @@ Every telemetry observation carries explicit epistemic classification:
 | `DEGRADED` | Telemetry adapter encountered connection error | Timeout probing provider status |
 
 ---
+## 4. OMP Native Usage Bridge & Passive Telemetry
 
-## 3. Telemetry Schema (`kad-telemetry-v1`)
+KAD-PI integrates with OMP 18.0.10's native usage subsystem through a two-tier public boundary:
 
-Normalized telemetry observations adhere to `kad-telemetry-v1`:
+1. **Authoritative Baseline Snapshot (`omp usage --json`)**:
+   * Consumed by `tools/kad/telemetry/omp-usage-adapter.mjs`.
+   * Normalizes native provider reports (`openai-codex`, `google-antigravity`, `github-copilot`, `cursor`, `opencode-go`) into `kad-telemetry-v1` records.
+   * Preserves multi-window scopes (5h primary, 7d secondary, daily, monthly) without window collapsing or fake token conversions.
+   * Respects explicit `allowed=true / limitReached=false` metadata.
 
-```yaml
-schema_version: "kad-telemetry-v1"
-provider_id: "openai-codex"
-model_id: "gpt-5.6-luna"
-metric: "total_tokens"
-unit: "tokens"
-window:
-  kind: "hourly"
-  start: 1788050000000
-  end: 1788053600000
-  resets_at: 1788053600000
-quota:
-  limit: 100000
-  used: 28000
-  remaining: 72000
-source:
-  class: "AUTHORITATIVE_REMOTE"
-  adapter: "omp-usage"
-  evidence_ref: null
-observed_at: 1788051000000
-stale_after: 1788051300000
-state: "AUTHORITATIVE_REMOTE"
-```
+2. **Passive In-Flight Observation (`after_provider_response` event)**:
+   * Extension hook captures response status, sanitized headers, and request metadata per turn.
+   * Zero active network polling; purely event-driven.
+   * Strictly strips credentials, auth headers, and session cookies via `redactSecrets()`.
 
 ---
 
-## 4. OMP Native Extension Architecture
-
+## 5. OMP Native Extension Architecture
 The extension is installed at `.omp/extensions/kad-control-plane/` (and `.omp/extensions/kad-control-plane.js`).
 
 ### Extension Lifecycle Hooks

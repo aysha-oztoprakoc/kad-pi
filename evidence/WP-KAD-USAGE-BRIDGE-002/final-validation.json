@@ -1,0 +1,17 @@
+{
+  "workpackage": "WP-KAD-USAGE-BRIDGE-002",
+  "title": "OMP-Native Usage -> KAD Telemetry Bridge",
+  "validated_at": "2026-08-30T01:10:00.000Z",
+  "acceptance_criteria_results": [
+    { "criterion": "Wayfinder architectural decision selects narrowest stable public OMP usage boundary", "status": "MET", "evidence": "wayfinder-decision.json" },
+    { "criterion": "One authority chain: OMP interprets provider quota -> KAD normalizes", "status": "MET", "evidence": "omp-usage-adapter.mjs" },
+    { "criterion": "Native Codex and Antigravity usage reports map to truthful telemetry records", "status": "MET", "evidence": "UB1, UB2, codex-normalized-fixture.json, antigravity-normalized-fixture.json" },
+    { "criterion": "Multi-window quotas remain distinct and un-collapsed", "status": "MET", "evidence": "UB3, scoped-windows.json" },
+    { "criterion": "Explicit provider allowed=true/limitReached=false outranks misleading advisory 100%", "status": "MET", "evidence": "UB4, epistemic-reconciliation.json" },
+    { "criterion": "Passive after_provider_response hook captures response evidence without secrets", "status": "MET", "evidence": "UB7, passive-response-probe.json" },
+    { "criterion": "Zero active background polling loops or credential scrapers", "status": "MET", "evidence": "Code inspection & zero timers" },
+    { "criterion": "Compact meter replaces 'QUOTA ?' with truthful provider-aware status", "status": "MET", "evidence": "UB8, view-model.mjs" },
+    { "criterion": "All 446 tests passing with zero regressions", "status": "MET", "evidence": "regression-results.json" }
+  ],
+  "verdict": "PASS"
+}

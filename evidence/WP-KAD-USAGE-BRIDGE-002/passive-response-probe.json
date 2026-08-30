@@ -1,0 +1,16 @@
+{
+  "hook": "after_provider_response",
+  "registration": "pi.on('after_provider_response', ...)",
+  "payload_processed": {
+    "status": 200,
+    "headers": {
+      "x-ratelimit-remaining-requests": "990",
+      "authorization": "[REDACTED]",
+      "set-cookie": "[REDACTED]"
+    },
+    "requestId": "req_98765"
+  },
+  "resulting_state": "OBSERVED",
+  "secret_redaction": "PASS",
+  "verdict": "PASS"
+}

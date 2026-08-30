@@ -1,0 +1,59 @@
+{
+  "provider": "openai-codex",
+  "normalized_records": [
+    {
+      "schema_version": "kad-telemetry-v1",
+      "provider_id": "openai-codex",
+      "metric": "quota_usage",
+      "unit": "percent",
+      "window": {
+        "kind": "5h",
+        "resets_at": 1788056523000
+      },
+      "quota": {
+        "limit": 100,
+        "used": 28,
+        "remaining": 72
+      },
+      "source": {
+        "class": "AUTHORITATIVE_REMOTE",
+        "adapter": "omp-usage",
+        "evidence_ref": "openai-codex:primary"
+      },
+      "state": "AUTHORITATIVE_REMOTE",
+      "metadata": {
+        "planType": "plus",
+        "allowed": true,
+        "limitReached": false,
+        "status": "ok"
+      }
+    },
+    {
+      "schema_version": "kad-telemetry-v1",
+      "provider_id": "openai-codex",
+      "metric": "quota_usage",
+      "unit": "percent",
+      "window": {
+        "kind": "7d",
+        "resets_at": 1788643323000
+      },
+      "quota": {
+        "limit": 100,
+        "used": 4,
+        "remaining": 96
+      },
+      "source": {
+        "class": "AUTHORITATIVE_REMOTE",
+        "adapter": "omp-usage",
+        "evidence_ref": "openai-codex:secondary"
+      },
+      "state": "AUTHORITATIVE_REMOTE",
+      "metadata": {
+        "planType": "plus",
+        "allowed": true,
+        "limitReached": false,
+        "status": "ok"
+      }
+    }
+  ]
+}

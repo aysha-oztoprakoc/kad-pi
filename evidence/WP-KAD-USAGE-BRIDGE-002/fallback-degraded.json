@@ -1,0 +1,22 @@
+{
+  "scenarios": [
+    {
+      "scenario": "CLI command fails or unavailable",
+      "behavior": "collectOmpUsageReportsCli returns [] without throwing, UI retains previous ledger or UNKNOWN",
+      "tested": "UB9",
+      "verdict": "PASS"
+    },
+    {
+      "scenario": "Malformed JSON in usage report",
+      "behavior": "Safely returns empty array without throwing",
+      "tested": "UB6",
+      "verdict": "PASS"
+    },
+    {
+      "scenario": "Provider has empty limits list",
+      "behavior": "Safely returns empty array, provider view defaults to UNKNOWN",
+      "tested": "UB6",
+      "verdict": "PASS"
+    }
+  ]
+}
