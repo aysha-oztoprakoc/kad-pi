@@ -1,0 +1,169 @@
+#!/usr/bin/env node
+/**
+ * bin/kad-intent - KAD Intent Fidelity & Decision Ledger CLI
+ *
+ * Usage:
+ *   bin/kad-intent validate [events-file] [normalizations-file]
+ *   bin/kad-intent compile-report [output-file] [events-file] [normalizations-file]
+ *   bin/kad-intent verify-report [report-file] [events-file] [normalizations-file]
+ *   bin/kad-intent status [events-file] [normalizations-file]
+ *   bin/kad-intent list [events-file]
+ */
+
+import { resolve } from 'node:path';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import {
+  readIntentJournal,
+  readIntentNormalizations,
+  validateIntentJournal,
+  compileAlignmentReport,
+  verifyAlignmentReport,
+  DEFAULT_EVENTS_JOURNAL_PATH,
+  DEFAULT_NORMALIZATIONS_PATH
+} from '../tools/kad/intent/index.mjs';
+
+const [,, command, arg1, arg2, arg3] = process.argv;
+
+function help() {
+  console.log(`
+KAD Intent Fidelity & Decision Ledger CLI
+
+Usage:
+  bin/kad-intent validate [events-file] [normalizations-file]
+  bin/kad-intent compile-report [output-file] [events-file] [normalizations-file]
+  bin/kad-intent verify-report [report-file] [events-file] [normalizations-file]
+  bin/kad-intent status [events-file] [normalizations-file]
+  bin/kad-intent list [events-file]
+`);
+  process.exit(1);
+}
+
+if (!command) help();
+
+try {
+  switch (command) {
+    case 'validate': {
+      const eventsPath = arg1 ? resolve(process.cwd(), arg1) : DEFAULT_EVENTS_JOURNAL_PATH;
+      const normsPath = arg2 ? resolve(process.cwd(), arg2) : DEFAULT_NORMALIZATIONS_PATH;
+
+      const { events, errors: eventErrors } = readIntentJournal(eventsPath);
+      const { normalizations, errors: normErrors } = readIntentNormalizations(normsPath);
+
+      const allErrors = [...eventErrors, ...normErrors];
+      const val = validateIntentJournal(events, normalizations);
+      allErrors.push(...val.errors);
+
+      console.log(`=== KAD INTENT JOURNAL VALIDATION ===\n`);
+      console.log(`Events Journal:        ${eventsPath}`);
+      console.log(`Normalizations File:   ${normsPath}`);
+      console.log(`Total Events:          ${val.stats.total_events}`);
+      console.log(`Active Decisions:      ${val.stats.active_events}`);
+      console.log(`Superseded Events:     ${val.stats.superseded_events}`);
+      console.log(`Total Normalizations:  ${val.stats.total_normalizations}\n`);
+
+      if (allErrors.length > 0) {
+        console.error(`[FAIL] Validation found ${allErrors.length} error(s):`);
+        for (const err of allErrors) {
+          console.error(`  ✖ ${err}`);
+        }
+        process.exit(1);
+      } else {
+        console.log(`[PASS] All intent events and normalizations are cryptographically valid and append-only verified.`);
+        process.exit(0);
+      }
+      break;
+    }
+
+    case 'compile-report': {
+      const outputPath = arg1 ? resolve(process.cwd(), arg1) : resolve(process.cwd(), 'docs/architecture/KAD_PI_INTENTION_ALIGNMENT_REPORT_2026-08-30.md');
+      const eventsPath = arg2 ? resolve(process.cwd(), arg2) : DEFAULT_EVENTS_JOURNAL_PATH;
+      const normsPath = arg3 ? resolve(process.cwd(), arg3) : DEFAULT_NORMALIZATIONS_PATH;
+
+      const { events } = readIntentJournal(eventsPath);
+      const { normalizations } = readIntentNormalizations(normsPath);
+
+      const val = validateIntentJournal(events, normalizations);
+      if (!val.valid) {
+        console.error(`[FAIL] Cannot compile report from invalid journal:`);
+        for (const err of val.errors) {
+          console.error(`  ✖ ${err}`);
+        }
+        process.exit(1);
+      }
+
+      const reportMarkdown = compileAlignmentReport(events, normalizations);
+      writeFileSync(outputPath, reportMarkdown, 'utf8');
+      console.log(`[PASS] Compiled alignment report for ${val.stats.active_events} active decisions to:\n  ${outputPath}`);
+      process.exit(0);
+      break;
+    }
+
+    case 'verify-report': {
+      const reportPath = arg1 ? resolve(process.cwd(), arg1) : resolve(process.cwd(), 'docs/architecture/KAD_PI_INTENTION_ALIGNMENT_REPORT_2026-08-30.md');
+      const eventsPath = arg2 ? resolve(process.cwd(), arg2) : DEFAULT_EVENTS_JOURNAL_PATH;
+      const normsPath = arg3 ? resolve(process.cwd(), arg3) : DEFAULT_NORMALIZATIONS_PATH;
+
+      if (!existsSync(reportPath)) {
+        console.error(`[FAIL] Report file does not exist: ${reportPath}`);
+        process.exit(1);
+      }
+
+      const reportContent = readFileSync(reportPath, 'utf8');
+      const { events } = readIntentJournal(eventsPath);
+      const { normalizations } = readIntentNormalizations(normsPath);
+
+      const verifyRes = verifyAlignmentReport(reportContent, events, normalizations);
+      if (!verifyRes.verified) {
+        console.error(`[FAIL] Report verification failed:`);
+        for (const err of verifyRes.errors) {
+          console.error(`  ✖ ${err}`);
+        }
+        process.exit(1);
+      } else {
+        console.log(`[PASS] Alignment report '${reportPath}' is 100% verified against typed intent ledger.`);
+        process.exit(0);
+      }
+      break;
+    }
+
+    case 'status': {
+      const eventsPath = arg1 ? resolve(process.cwd(), arg1) : DEFAULT_EVENTS_JOURNAL_PATH;
+      const normsPath = arg2 ? resolve(process.cwd(), arg2) : DEFAULT_NORMALIZATIONS_PATH;
+
+      const { events } = readIntentJournal(eventsPath);
+      const { normalizations } = readIntentNormalizations(normsPath);
+      const val = validateIntentJournal(events, normalizations);
+
+      console.log(JSON.stringify({
+        status: val.valid ? 'VALID' : 'INVALID',
+        events_path: eventsPath,
+        normalizations_path: normsPath,
+        stats: val.stats,
+        errors: val.errors
+      }, null, 2));
+      process.exit(val.valid ? 0 : 1);
+      break;
+    }
+
+    case 'list': {
+      const eventsPath = arg1 ? resolve(process.cwd(), arg1) : DEFAULT_EVENTS_JOURNAL_PATH;
+      const { events } = readIntentJournal(eventsPath);
+
+      console.log(`=== ACTIVE INTENT DECISIONS (${events.length}) ===\n`);
+      for (const ev of events) {
+        const sel = ev.options.find(o => o.option_id === ev.response.selected_option_id);
+        console.log(`• ${ev.decision_id} [${ev.domain_id}]: [${ev.response.selected_option_id}] ${sel?.raw_label ?? 'Unknown'}`);
+        console.log(`  Actor: ${ev.response.actor_id} | Epistemic: ${ev.response.epistemic_class} | Hash: ${ev.provenance.record_hash.slice(0, 19)}...\n`);
+      }
+      process.exit(0);
+      break;
+    }
+
+    default:
+      console.error(`Unknown command: '${command}'`);
+      help();
+  }
+} catch (err) {
+  console.error(`[ERROR] ${err.message}`);
+  process.exit(1);
+}

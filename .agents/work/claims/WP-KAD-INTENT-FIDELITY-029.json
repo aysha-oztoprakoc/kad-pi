@@ -1,0 +1,21 @@
+{
+  "task": "WP-KAD-INTENT-FIDELITY-029",
+  "project": "kad-pi",
+  "claim_id": "b11c5d9e-cde9-4a88-89c0-dcf672b611d0",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T21:08:08.712Z",
+  "base_commit": "2714398a9e259d0c5a756a9848c4c0c16603646e",
+  "owned_paths": [
+    "tools/kad/intent",
+    "tools/kad/test/intent-fidelity.test.mjs",
+    "bin/kad-intent",
+    "evidence/intent",
+    "evidence/WP-KAD-INTENT-FIDELITY-029",
+    ".agents/work/WP-KAD-INTENT-FIDELITY-029.json",
+    ".agents/work/claims/WP-KAD-INTENT-FIDELITY-029.json",
+    "docs/architecture"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T21:18:13.388Z"
+}

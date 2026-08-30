@@ -1,0 +1,83 @@
+{
+  "id": "WP-KAD-INTENT-FIDELITY-029",
+  "project": "kad-pi",
+  "title": "Lossless Human Intent Event Ledger, Derived Normalization & Deterministic Compilation",
+  "status": "ACCEPTED",
+  "priority": 300,
+  "spec_ref": "user:/WP-KAD-INTENT-FIDELITY-029",
+  "fixed_point": "2714398a9e259d0c5a756a9848c4c0c16603646e",
+  "scope": [
+    "tools/kad/intent/",
+    "tools/kad/test/intent-fidelity.test.mjs",
+    "bin/kad-intent",
+    "evidence/intent/",
+    "evidence/WP-KAD-INTENT-FIDELITY-029/",
+    ".agents/work/WP-KAD-INTENT-FIDELITY-029.json",
+    ".agents/work/claims/WP-KAD-INTENT-FIDELITY-029.json",
+    "docs/architecture/"
+  ],
+  "non_scope": [
+    "reopening architecture debate",
+    "modifying frozen ISA-KAD-SKILL-ROLE-002 v1.1 semantics",
+    "Ideal-State successor implementation",
+    "Warren/Beads/OpenViking/Needle runtime integration",
+    "TELL deployment or orchestration",
+    "capability broker implementation",
+    "broad KnowledgePlane migration",
+    "paid API spend",
+    "secret disclosure"
+  ],
+  "owned_paths": [
+    "tools/kad/intent/",
+    "tools/kad/test/intent-fidelity.test.mjs",
+    "bin/kad-intent",
+    "evidence/intent/",
+    "evidence/WP-KAD-INTENT-FIDELITY-029/",
+    ".agents/work/WP-KAD-INTENT-FIDELITY-029.json",
+    ".agents/work/claims/WP-KAD-INTENT-FIDELITY-029.json",
+    "docs/architecture/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/intent-fidelity.test.mjs",
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-intent validate",
+    "bin/kad-intent verify-report",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "bin/workctl skills doctor",
+    "bin/kad-isa check all",
+    "bin/kad-wiki lint",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-INTENT-FIDELITY-029/",
+  "blocked_by": [],
+  "blocks": [],
+  "claim": null,
+  "spec_details": {
+    "source_ticket": "user:/WP-KAD-INTENT-FIDELITY-029",
+    "claim_authority": "gemini-3.7-flash-high",
+    "tdd_test_suite": "tools/kad/test/intent-fidelity.test.mjs",
+    "evidence_receipts": [
+      "evidence/WP-KAD-INTENT-FIDELITY-029/00-orientation-and-baseline.md",
+      "evidence/WP-KAD-INTENT-FIDELITY-029/01-intent-schema-and-authority-map.md",
+      "evidence/WP-KAD-INTENT-FIDELITY-029/02-tdd-and-regression-receipts.md",
+      "evidence/WP-KAD-INTENT-FIDELITY-029/03-journal-and-provenance-validation.md",
+      "evidence/WP-KAD-INTENT-FIDELITY-029/04-24-decision-ingestion-report.md",
+      "evidence/WP-KAD-INTENT-FIDELITY-029/05-generated-report-reproducibility.md",
+      "evidence/WP-KAD-INTENT-FIDELITY-029/06-independent-verification.md",
+      "evidence/WP-KAD-INTENT-FIDELITY-029/07-backlog-and-experiment-discoveries.md",
+      "evidence/WP-KAD-INTENT-FIDELITY-029/FINAL_REPORT.md"
+    ]
+  }
+}
