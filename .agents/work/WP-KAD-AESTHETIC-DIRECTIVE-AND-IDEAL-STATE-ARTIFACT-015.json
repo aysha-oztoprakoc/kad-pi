@@ -1,0 +1,78 @@
+{
+  "id": "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+  "project": "kad-pi",
+  "title": "Human-Guided Aesthetic Architecture & Ideal State Artifact (ISA) Establishment",
+  "status": "REVIEW",
+  "priority": 180,
+  "spec_ref": "user:/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+  "fixed_point": "27171d9b5ac862afce2c09d8a9c5239185c25d23",
+  "scope": [
+    "vault/00_Governance/",
+    "vault/40_Decisions/",
+    "vault/90_Derived/",
+    "tools/kad/isa.mjs",
+    "tools/kad/test/isa.test.mjs",
+    "bin/kad-isa",
+    "evidence/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015/",
+    ".agents/work/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015.json"
+  ],
+  "non_scope": [
+    "immediate redesign of active Omarchy/Quickshell themes",
+    "immediate rewrite of Sofia v3 or public website",
+    "mutating data_workspace R1 frozen baseline",
+    "deploying unvetted themes as default desktop environment",
+    "paid API spend",
+    "arbitrary shell command execution from markdown"
+  ],
+  "owned_paths": [
+    "vault/00_Governance/",
+    "vault/40_Decisions/",
+    "vault/90_Derived/",
+    "tools/kad/isa.mjs",
+    "tools/kad/test/isa.test.mjs",
+    "bin/kad-isa",
+    "evidence/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015/",
+    ".agents/work/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-isa lint vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+    "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+    "bin/kad-wiki lint",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015/",
+  "blocked_by": [
+    "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014"
+  ],
+  "blocks": [
+    "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016"
+  ],
+  "acceptance_criteria": [
+    "Archaeological inspection of existing KAD presentation, Omarchy/Quickshell, data_workspace, and legacy design assets complete",
+    "Wayfinder decision map establishes 12 bounded aesthetic clusters with explicit dependencies and alternatives",
+    "Grill adversarial review attacks and tests all aesthetic assumptions across 12 mandatory failure modes",
+    "Ask-Me interactive 5+1 protocol resolves all material subjective aesthetic choices with the human",
+    "Canonical Ideal State Artifact (ISA) created in vault/00_Governance/ with qualitative goals, principles, surface profiles, semantic vocabulary, operational constraints, anti-patterns, and testable claims (deterministic, human review, hybrid)",
+    "ISA validator framework implemented in tools/kad/isa.mjs and bin/kad-isa with lint, check, status, and explain commands backed by an allowlisted validator registry (zero arbitrary shell execution)",
+    "Derived machine-readable projection generated at vault/90_Derived/Projections/isa-aesthetic.json",
+    "Full test suite, doctors, and linters pass cleanly with zero regression"
+  ],
+  "description": "Establish the canonical KAD Aesthetic Directive & Ideal State Artifact (ISA) through human-guided discovery (/ask-matt + /wayfinder + /grill + /ask-me), defining cross-surface semantic vocabulary, host profiles (AMDY vs TELL), testable claims, and deterministic validation tooling.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+  "claim": null
+}

@@ -1,0 +1,21 @@
+{
+  "task": "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+  "project": "kad-pi",
+  "claim_id": "8c8f33f0-45b6-4565-aeda-d73f2dd75e57",
+  "actor_label": "codex-main",
+  "started_at": "2026-08-30T09:24:05.637Z",
+  "base_commit": "27171d9b5ac862afce2c09d8a9c5239185c25d23",
+  "owned_paths": [
+    "vault/00_Governance",
+    "vault/40_Decisions",
+    "vault/90_Derived",
+    "tools/kad/isa.mjs",
+    "tools/kad/test/isa.test.mjs",
+    "bin/kad-isa",
+    "evidence/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+    ".agents/work/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T09:48:19.229Z"
+}

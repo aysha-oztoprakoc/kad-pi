@@ -1,0 +1,107 @@
+#!/usr/bin/env node
+/**
+ * bin/kad-isa - KAD Ideal State Artifact (ISA) CLI Tool
+ *
+ * Usage:
+ *   bin/kad-isa lint <isa-file>
+ *   bin/kad-isa check <isa-file>
+ *   bin/kad-isa status <isa-file>
+ *   bin/kad-isa explain <claim-id> [isa-file]
+ *   bin/kad-isa compile <isa-file> [output-json]
+ */
+
+import { resolve } from 'node:path';
+import { lintIsa, checkIsa, statusIsa, explainClaim, buildIsaProjection } from '../tools/kad/isa.mjs';
+
+const [,, command, target, extra] = process.argv;
+const DEFAULT_ISA = resolve(process.cwd(), 'vault/00_Governance/ISA-KAD-AESTHETIC-001.md');
+
+function help() {
+  console.log(`
+KAD Ideal State Artifact (ISA) Engine
+
+Usage:
+  bin/kad-isa lint <isa-file>
+  bin/kad-isa check <isa-file>
+  bin/kad-isa status <isa-file>
+  bin/kad-isa explain <claim-id> [isa-file]
+  bin/kad-isa compile <isa-file> [output-json]
+`);
+  process.exit(1);
+}
+
+if (!command) help();
+
+try {
+  switch (command) {
+    case 'lint': {
+      const file = target ? resolve(process.cwd(), target) : DEFAULT_ISA;
+      const res = lintIsa(file);
+      if (res.ok) {
+        console.log(`[PASS] ISA Lint OK: ${res.kad_id} (${res.claimCount} claims verified)`);
+        process.exit(0);
+      } else {
+        console.error(`[FAIL] ISA Lint Failed:\n- ${res.errors.join('\n- ')}`);
+        process.exit(1);
+      }
+      break;
+    }
+
+    case 'check': {
+      const file = target ? resolve(process.cwd(), target) : DEFAULT_ISA;
+      const res = checkIsa(file, { rootDir: process.cwd() });
+      console.log(`=== ISA CHECK REPORT: ${res.isa_id} (v${res.version}) ===`);
+      console.log(`Summary: ${res.passed_claims}/${res.total_claims} claims PASS\n`);
+      for (const r of res.results) {
+        const icon = r.pass ? '[✓]' : '[✗]';
+        console.log(`${icon} ${r.id} (${r.class}/${r.severity}): ${r.statement}`);
+        console.log(`    Validator: ${r.validator} -> ${r.evidence}`);
+      }
+      process.exit(res.ok ? 0 : 1);
+      break;
+    }
+
+    case 'status': {
+      const file = target ? resolve(process.cwd(), target) : DEFAULT_ISA;
+      const res = statusIsa(file);
+      console.log(JSON.stringify(res, null, 2));
+      process.exit(res.status === 'ACCEPTED' ? 0 : 1);
+      break;
+    }
+
+    case 'explain': {
+      if (!target) {
+        console.error('Error: explain requires a claim ID (e.g. ISA-KAD-AESTHETIC-001)');
+        process.exit(1);
+      }
+      const file = extra ? resolve(process.cwd(), extra) : DEFAULT_ISA;
+      const res = explainClaim(target, file);
+      console.log(`=== CLAIM EXPLANATION: ${res.id} ===`);
+      console.log(`Statement:   ${res.statement}`);
+      console.log(`Class:       ${res.class}`);
+      console.log(`Severity:    ${res.severity}`);
+      console.log(`Status:      ${res.status}`);
+      console.log(`Validator:   ${res.validator} (${res.validator_name})`);
+      console.log(`Surfaces:    ${res.surfaces.join(', ')}`);
+      console.log(`Evidence:    ${res.evidence}`);
+      process.exit(0);
+      break;
+    }
+
+    case 'compile': {
+      const file = target ? resolve(process.cwd(), target) : DEFAULT_ISA;
+      const out = extra ? resolve(process.cwd(), extra) : resolve(process.cwd(), 'vault/90_Derived/Projections/isa-aesthetic.json');
+      const projection = buildIsaProjection(file, out);
+      console.log(`[PASS] Compiled ISA projection to ${out} (${projection.claims.length} claims)`);
+      process.exit(0);
+      break;
+    }
+
+    default:
+      console.error(`Unknown command: ${command}`);
+      help();
+  }
+} catch (err) {
+  console.error(`Execution error: ${err.message}`);
+  process.exit(1);
+}
