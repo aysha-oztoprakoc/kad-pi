@@ -2,10 +2,10 @@
   "id": "WP-KAD-RESEARCH-OPENVIKING-004",
   "project": "kad-pi",
   "title": "OpenViking Derived Research Context",
-  "status": "READY",
+  "status": "ACCEPTED",
   "priority": 80,
   "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
-  "fixed_point": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf",
+  "fixed_point": "178ba6ea39bc9ccf768c3ab3f6c5bd154e0d4734",
   "scope": [
     "tools/kad/research-openviking.mjs",
     "tools/kad/knowledge-plane-adapters.mjs",

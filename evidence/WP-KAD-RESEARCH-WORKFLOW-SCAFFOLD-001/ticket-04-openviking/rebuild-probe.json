@@ -1,0 +1,40 @@
+{
+  "probe_id": "kad-research-context-rebuild-probe",
+  "ticket_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "timestamp": "2026-08-30T00:20:00.000Z",
+  "lifecycle_steps": [
+    {
+      "step": 1,
+      "action": "canonical_ingestion",
+      "canonical_document_id": "doc:doi:10.1000/rebuild-01",
+      "corpus_state": "PERSISTED"
+    },
+    {
+      "step": 2,
+      "action": "index_openviking_context",
+      "resources_created": [
+        "viking://resources/research/doc:doi:10.1000/rebuild-01/l0.json",
+        "viking://resources/research/doc:doi:10.1000/rebuild-01/l1.json"
+      ]
+    },
+    {
+      "step": 3,
+      "action": "delete_openviking_context",
+      "resources_deleted": 2,
+      "canonical_corpus_status": "IDENTICAL_UNTOUCHED"
+    },
+    {
+      "step": 4,
+      "action": "rebuild_openviking_context",
+      "rebuilt_resources": [
+        "viking://resources/research/doc:doi:10.1000/rebuild-01/l0.json",
+        "viking://resources/research/doc:doi:10.1000/rebuild-01/l1.json"
+      ],
+      "trace_validation": "MATCHES_CANONICAL_IDENTITY"
+    }
+  ],
+  "invariants_verified": {
+    "openviking_loss_destroys_zero_evidence": true,
+    "canonical_state_rebuilds_context": true
+  }
+}

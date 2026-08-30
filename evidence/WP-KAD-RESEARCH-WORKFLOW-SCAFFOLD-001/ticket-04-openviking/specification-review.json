@@ -1,0 +1,46 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "reviewer": "gemini-builder (specification review)",
+  "verdict": "PASS",
+  "spec_fidelity": {
+    "D2_layered_research_contract": {
+      "status": "PASS",
+      "evidence": "Derived context layers bind explicitly to canonical ResearchDocument and ResearchSource identifiers and hashes."
+    },
+    "D3_openviking_derived_context_boundary": {
+      "status": "PASS",
+      "evidence": "OpenViking acts strictly as a rebuildable derived-context plane under viking://resources/research/<doc-id>/; authoritative records remain outside OpenViking."
+    },
+    "D6_graceful_degradation": {
+      "status": "PASS",
+      "evidence": "OpenViking outages, missing entries, or stale hashes gracefully degrade to exact KAD/Librarian retrieval without blocking canonical ingestion."
+    }
+  },
+  "acceptance_criteria_matrix": [
+    {
+      "criterion": "Derived resources use a stable KAD-bound research namespace keyed by ResearchDocument identity.",
+      "status": "PASS",
+      "test": "Research URI scheme generates deterministic, reversible OpenViking URIs"
+    },
+    {
+      "criterion": "L0, L1, and bounded L2 preserve canonical IDs, source references, hashes, derivation version, and layer identity.",
+      "status": "PASS",
+      "test": "Derived context layers (L0, L1, L2) preserve canonical trace metadata"
+    },
+    {
+      "criterion": "Original documents and authoritative source state remain outside OpenViking.",
+      "status": "PASS",
+      "test": "Canonical Authority Isolation; Rebuildability"
+    },
+    {
+      "criterion": "Hash/version mismatch marks derived context stale and requires rebuild.",
+      "status": "PASS",
+      "test": "Staleness detection identifies source hash and derivation version mismatches"
+    },
+    {
+      "criterion": "Missing or stale OpenViking falls back to exact deterministic KAD/Librarian retrieval without canonical mutation.",
+      "status": "PASS",
+      "test": "Exact Fallback: Missing, stale, or unavailable OpenViking falls back to exact KAD source retrieval"
+    }
+  ]
+}

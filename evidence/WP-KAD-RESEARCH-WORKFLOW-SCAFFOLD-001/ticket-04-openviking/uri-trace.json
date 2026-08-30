@@ -1,0 +1,27 @@
+{
+  "trace_id": "kad-research-uri-trace",
+  "ticket_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "timestamp": "2026-08-30T00:17:00.000Z",
+  "mapping_rules": {
+    "base_uri_prefix": "viking://resources/research/",
+    "document_scoping": "Keyed strictly by ResearchDocument.document_id",
+    "layer_suffix_l0": "/l0.json",
+    "layer_suffix_l1": "/l1.json",
+    "layer_suffix_l2_root": "/l2.json",
+    "layer_suffix_l2_chunk": "/l2/<chunk_id>.json"
+  },
+  "trace_fields_preserved": [
+    "canonical_document_id",
+    "source_id",
+    "source_ref",
+    "source_hash",
+    "derivation_version",
+    "layer",
+    "derived_at"
+  ],
+  "verified_invariants": {
+    "reversible_uri_parsing": true,
+    "title_change_immunity": true,
+    "provider_change_immunity": true
+  }
+}

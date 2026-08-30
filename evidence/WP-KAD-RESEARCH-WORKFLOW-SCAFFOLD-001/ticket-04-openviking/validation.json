@@ -1,0 +1,54 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "suite": "tools/kad/test/research-openviking.test.mjs",
+  "timestamp": "2026-08-30T00:15:00.000Z",
+  "status": "PASS",
+  "summary": {
+    "total_tests": 8,
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "tests": [
+    {
+      "name": "Research URI scheme generates deterministic, reversible OpenViking URIs",
+      "status": "PASS"
+    },
+    {
+      "name": "Derived context layers (L0, L1, L2) preserve canonical trace metadata",
+      "status": "PASS"
+    },
+    {
+      "name": "Staleness detection identifies source hash and derivation version mismatches",
+      "status": "PASS"
+    },
+    {
+      "name": "Adapter indexes, reads, retrieves, and queries research context progressively",
+      "status": "PASS"
+    },
+    {
+      "name": "Exact Fallback: Missing, stale, or unavailable OpenViking falls back to exact KAD source retrieval",
+      "status": "PASS"
+    },
+    {
+      "name": "Rebuildability: Deleting derived OpenViking context leaves canonical corpus intact and supports full rebuild",
+      "status": "PASS"
+    },
+    {
+      "name": "Canonical Authority Isolation: OpenViking derived context has authority: false and cannot mutate corpus",
+      "status": "PASS"
+    },
+    {
+      "name": "Baseline suite runs offline with zero external LLM or paid services",
+      "status": "PASS"
+    }
+  ],
+  "full_suite_verification": {
+    "make_verify": "PASS",
+    "research_api_tests": "PASS (13/13)",
+    "research_cli_tests": "PASS (6/6)",
+    "research_capabilities_tests": "PASS (13/13)",
+    "research_openviking_tests": "PASS (8/8)"
+  }
+}

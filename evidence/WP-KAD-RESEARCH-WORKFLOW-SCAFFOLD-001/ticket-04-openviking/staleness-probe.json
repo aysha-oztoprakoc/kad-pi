@@ -1,0 +1,36 @@
+{
+  "probe_id": "kad-research-context-staleness-probe",
+  "ticket_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "timestamp": "2026-08-30T00:19:00.000Z",
+  "scenarios": [
+    {
+      "name": "fresh_context",
+      "stored_source_hash": "aaa111bbb222",
+      "canonical_source_hash": "aaa111bbb222",
+      "stored_derivation_version": "kad-research-context-v1",
+      "current_derivation_version": "kad-research-context-v1",
+      "is_stale": false,
+      "outcome": "USE_DERIVED_CONTEXT"
+    },
+    {
+      "name": "source_hash_mismatch",
+      "stored_source_hash": "aaa111bbb222",
+      "canonical_source_hash": "ccc333ddd444",
+      "stored_derivation_version": "kad-research-context-v1",
+      "current_derivation_version": "kad-research-context-v1",
+      "is_stale": true,
+      "reason": "SOURCE_HASH_MISMATCH",
+      "outcome": "FALLBACK_EXACT_OR_REBUILD"
+    },
+    {
+      "name": "derivation_version_mismatch",
+      "stored_source_hash": "aaa111bbb222",
+      "canonical_source_hash": "aaa111bbb222",
+      "stored_derivation_version": "kad-research-context-v0-legacy",
+      "current_derivation_version": "kad-research-context-v1",
+      "is_stale": true,
+      "reason": "DERIVATION_VERSION_MISMATCH",
+      "outcome": "FALLBACK_EXACT_OR_REBUILD"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "contract_id": "kad-research-openviking-layer-contract",
+  "ticket_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "timestamp": "2026-08-30T00:18:00.000Z",
+  "derivation_version": "kad-research-context-v1",
+  "layers": {
+    "L0": {
+      "name": "Compact Discovery Context",
+      "purpose": "High-volume filtering and document orientation without deep context payload",
+      "required_fields": [
+        "canonical_document_id",
+        "layer",
+        "derivation_version",
+        "title",
+        "year",
+        "primary_identifier",
+        "brief_orientation"
+      ],
+      "max_orientation_chars": 200
+    },
+    "L1": {
+      "name": "Structured Overview",
+      "purpose": "Document-level understanding of question, method, contribution, and limitations",
+      "required_fields": [
+        "canonical_document_id",
+        "layer",
+        "derivation_version",
+        "title",
+        "authors",
+        "year",
+        "structured_overview"
+      ]
+    },
+    "L2": {
+      "name": "Bounded Source-Grounded Detail",
+      "purpose": "Precise, source-grounded excerpts and chunks for targeted deep retrieval without full PDF replication",
+      "required_fields": [
+        "canonical_document_id",
+        "layer",
+        "derivation_version",
+        "source_id",
+        "source_ref",
+        "source_hash",
+        "chunk_id",
+        "locator",
+        "content"
+      ],
+      "no_full_mirror_invariant": true
+    }
+  }
+}

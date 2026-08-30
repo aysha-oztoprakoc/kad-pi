@@ -1,0 +1,26 @@
+{
+  "fallback_id": "kad-research-exact-fallback-proof",
+  "ticket_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "timestamp": "2026-08-30T00:22:00.000Z",
+  "test_target": "retrieveProgressiveContext",
+  "mechanisms_tested": [
+    {
+      "trigger": "Context not yet indexed in OpenViking",
+      "status": "FALLBACK_EXACT",
+      "retrieved_entity": "DeterministicResearchCorpus -> ResearchDocument",
+      "evidence": "Returns full canonical document and original source reference."
+    },
+    {
+      "trigger": "OpenViking service unreachable or crashed",
+      "status": "FALLBACK_EXACT",
+      "retrieved_entity": "DeterministicResearchCorpus -> ResearchDocument",
+      "evidence": "Returns full canonical document without error."
+    },
+    {
+      "trigger": "Source hash mismatch (stale context)",
+      "status": "FALLBACK_EXACT",
+      "retrieved_entity": "DeterministicResearchCorpus -> ResearchDocument",
+      "evidence": "Rejects stale derived context and falls back to exact source reference."
+    }
+  ]
+}

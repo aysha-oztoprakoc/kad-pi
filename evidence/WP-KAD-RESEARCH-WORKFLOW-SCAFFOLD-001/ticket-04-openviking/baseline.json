@@ -1,0 +1,22 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "project": "kad-pi",
+  "claim_id": "fe48f325-968f-4091-a03e-a110f8a30bdb",
+  "actor_label": "gemini-builder",
+  "started_at": "2026-08-30T00:12:09.517Z",
+  "title": "OpenViking Derived Research Context",
+  "base_commit": "178ba6ea39bc9ccf768c3ab3f6c5bd154e0d4734",
+  "pre_change_status": {
+    "workctl_status": "READY -> IN_PROGRESS",
+    "git_head": "178ba6ea39bc9ccf768c3ab3f6c5bd154e0d4734",
+    "accepted_prerequisites": [
+      "WP-KAD-RESEARCH-API-001",
+      "WP-KAD-RESEARCH-CLI-002",
+      "WP-KAD-RESEARCH-CAPABILITIES-003"
+    ],
+    "existing_research_api_tests": "PASS (13/13)",
+    "existing_research_cli_tests": "PASS (6/6)",
+    "existing_research_capabilities_tests": "PASS (13/13)",
+    "make_verify": "PASS"
+  }
+}

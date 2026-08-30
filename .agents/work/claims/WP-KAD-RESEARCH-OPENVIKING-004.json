@@ -1,0 +1,16 @@
+{
+  "task": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "project": "kad-pi",
+  "claim_id": "fe48f325-968f-4091-a03e-a110f8a30bdb",
+  "actor_label": "gemini-builder",
+  "started_at": "2026-08-30T00:12:09.517Z",
+  "base_commit": "178ba6ea39bc9ccf768c3ab3f6c5bd154e0d4734",
+  "owned_paths": [
+    "tools/kad/research-openviking.mjs",
+    "tools/kad/knowledge-plane-adapters.mjs",
+    "tools/kad/test/research-openviking.test.mjs"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T00:17:27.372Z"
+}

@@ -1,3 +1,4 @@
+import { ResearchOpenVikingAdapter } from './research-openviking.mjs';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { basename } from 'node:path';
@@ -61,6 +62,10 @@ export function createOpenVikingAdapter({ base_url: baseUrl = 'http://127.0.0.1:
       });
     }
   });
+}
+
+export function createResearchOpenVikingAdapter(options = {}) {
+  return new ResearchOpenVikingAdapter(options);
 }
 
 export function createNeedleAdapter({ infer = null } = {}) {

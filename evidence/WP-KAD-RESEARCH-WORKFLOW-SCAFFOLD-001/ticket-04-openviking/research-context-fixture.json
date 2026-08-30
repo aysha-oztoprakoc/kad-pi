@@ -1,0 +1,48 @@
+{
+  "fixture_id": "kad-research-openviking-l0-l1-l2-fixture",
+  "ticket_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "timestamp": "2026-08-30T00:16:00.000Z",
+  "canonical_document": {
+    "document_id": "doc:doi:10.1000/dist-01",
+    "title": "Deterministic State Machine Consensus",
+    "authors": ["Leslie Lamport", "Barbara Liskov"],
+    "year": 2024
+  },
+  "canonical_source": {
+    "source_id": "src:hash:e3b0c44298fc1c14",
+    "source_ref": "papers/dist-01.pdf",
+    "source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "derived_resources": {
+    "L0": {
+      "uri": "viking://resources/research/doc:doi:10.1000/dist-01/l0.json",
+      "layer": "L0",
+      "derivation_version": "kad-research-context-v1",
+      "title": "Deterministic State Machine Consensus",
+      "year": 2024,
+      "brief_orientation": "A rigorous evaluation of deterministic consensus under network partitions."
+    },
+    "L1": {
+      "uri": "viking://resources/research/doc:doi:10.1000/dist-01/l1.json",
+      "layer": "L1",
+      "derivation_version": "kad-research-context-v1",
+      "structured_overview": {
+        "research_question": "Can state machines reach deterministic consensus under Byzantine faults?",
+        "method": "Formal inductive proofs and executable TLA+ models.",
+        "contribution": "A bounded verification framework for distributed agent systems.",
+        "limitations": "Assumes partially synchronous communication."
+      }
+    },
+    "L2": {
+      "uri": "viking://resources/research/doc:doi:10.1000/dist-01/l2/sec-3-proof.json",
+      "layer": "L2",
+      "chunk_id": "sec-3-proof",
+      "derivation_version": "kad-research-context-v1",
+      "locator": {
+        "section": "3.2 Inductive Step",
+        "page": 7
+      },
+      "content": "Theorem 3.2: If quorum Q1 intersects Q2 in at least f+1 nodes, agreement invariant holds."
+    }
+  }
+}

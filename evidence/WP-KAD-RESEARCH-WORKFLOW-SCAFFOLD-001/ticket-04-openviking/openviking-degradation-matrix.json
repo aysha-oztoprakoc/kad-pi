@@ -1,0 +1,42 @@
+{
+  "matrix_id": "kad-research-openviking-degradation-matrix",
+  "ticket_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "timestamp": "2026-08-30T00:21:00.000Z",
+  "rows": [
+    {
+      "openviking_state": "HEALTHY",
+      "canonical_ingestion": "PASS",
+      "openviking_context_retrieval": "PASS (HIT)",
+      "exact_source_fallback": "AVAILABLE",
+      "authority_impact": "NONE"
+    },
+    {
+      "openviking_state": "UNAVAILABLE",
+      "canonical_ingestion": "PASS",
+      "openviking_context_retrieval": "DEGRADED (OPENVIKING_UNAVAILABLE)",
+      "exact_source_fallback": "FALLBACK_EXACT (PASS)",
+      "authority_impact": "NONE"
+    },
+    {
+      "openviking_state": "STALE_SOURCE_HASH",
+      "canonical_ingestion": "PASS",
+      "openviking_context_retrieval": "STALE (SOURCE_HASH_MISMATCH)",
+      "exact_source_fallback": "FALLBACK_EXACT (PASS)",
+      "authority_impact": "NONE"
+    },
+    {
+      "openviking_state": "STALE_DERIVATION_VERSION",
+      "canonical_ingestion": "PASS",
+      "openviking_context_retrieval": "STALE (DERIVATION_VERSION_MISMATCH)",
+      "exact_source_fallback": "FALLBACK_EXACT (PASS)",
+      "authority_impact": "NONE"
+    },
+    {
+      "openviking_state": "MISSING_CONTEXT",
+      "canonical_ingestion": "PASS",
+      "openviking_context_retrieval": "MISSING (CONTEXT_MISSING)",
+      "exact_source_fallback": "FALLBACK_EXACT (PASS)",
+      "authority_impact": "NONE"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+  "reviewer": "gemini-builder (security review)",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check": "no_full_source_upload",
+      "status": "PASS",
+      "evidence": "L2 chunks are bounded source-grounded excerpts; full local PDFs and source files are not automatically mirrored to OpenViking."
+    },
+    {
+      "check": "zero_credentials_required",
+      "status": "PASS",
+      "evidence": "OpenViking research adapter runs locally without remote cloud dependencies, API keys, or paid tokens."
+    },
+    {
+      "check": "deterministic_uri_confinement",
+      "status": "PASS",
+      "evidence": "URIs are scoped strictly under 'viking://resources/research/<document_id>/' without filesystem traversal or unauthorized path exposure."
+    },
+    {
+      "check": "canonical_authority_isolation",
+      "status": "PASS",
+      "evidence": "Adapter has authority: false and cannot mutate or accept ResearchDocument records."
+    }
+  ]
+}
