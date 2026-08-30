@@ -1,0 +1,84 @@
+{
+  "id": "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+  "project": "kad-pi",
+  "title": "Sofia v3 Canonical Dashboard, Cytoscape Graph Explorer & Hybrid Telemetry Visualization",
+  "status": "REVIEW",
+  "priority": 160,
+  "spec_ref": "user:/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+  "fixed_point": "6881352d96933a32c59fbb494fc339e8a38ac434",
+  "scope": [
+    "dashboard/",
+    "interface/",
+    "tools/interface/",
+    "tools/kad/test/dashboard*.test.mjs",
+    "tools/kad/test/graph*.test.mjs",
+    "package.json",
+    "package-lock.json",
+    "evidence/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013/"
+  ],
+  "non_scope": [
+    "public website redesign",
+    "Obsidian bridge plugin implementation",
+    "community Obsidian plugin installation",
+    "SSE server implementation",
+    "WebSockets",
+    "agentic graph query tools",
+    "OMP extension expansion",
+    "new persistent database",
+    "frontend framework migration",
+    "write-capable Sofia controls"
+  ],
+  "owned_paths": [
+    "dashboard/",
+    "interface/",
+    "tools/interface/",
+    "tools/kad/test/dashboard*.test.mjs",
+    "tools/kad/test/graph*.test.mjs",
+    "package.json",
+    "package-lock.json",
+    "evidence/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "bin/kad-wiki lint",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013/",
+  "blocked_by": [
+    "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012"
+  ],
+  "blocks": [
+    "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-WEBSITE-014",
+    "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-015"
+  ],
+  "acceptance_criteria": [
+    "Vanilla ESM preserved with zero bundler requirement",
+    "Cytoscape.js integrated as interactive semantic graph explorer behind renderer-independent adapter",
+    "Graph distinguishes node types, edge types, and 3-tier epistemic authority (canonical, derived, heuristic)",
+    "Graph supports search, filter, selection, inspection, fit/reset, and neighborhood traversal",
+    "Modular Apache ECharts integrated for real projection distributions without fabricated metrics",
+    "Native HTML/CSS status widgets handle compact meters, badges, and operational summaries",
+    "Runtime-status snapshot integrated with explicit refresh and degraded fallback",
+    "Deterministic scale fixtures (100, 1k, 5k nodes) pass performance benchmarks",
+    "All 5 graceful degradation failure modes verified without global dashboard crash",
+    "Read-only invariant and security authority verified (no write routes, no CDN, no secret leaks)",
+    "Full test suite, doctors, and linters pass cleanly"
+  ],
+  "description": "Implement the canonical Sofia v3 dashboard featuring Cytoscape.js graph exploration, modular ECharts distribution charts, native status widgets, and resilient graceful degradation.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+  "claim": null
+}

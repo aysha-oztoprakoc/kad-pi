@@ -66,3 +66,22 @@ test('server serves only allowlisted dashboard assets', async () => {
     await server.close();
   }
 });
+
+test('server serves vendor ESM libraries and projections with proper MIME types', async () => {
+  const server = await createInterfaceServer({ rootDir: process.cwd() });
+  try {
+    const cy = await getJson(server.address, '/vendor/cytoscape.esm.min.mjs');
+    assert.equal(cy.status, 200);
+    assert.match(cy.headers['content-type'], /text\/javascript/);
+
+    const echarts = await getJson(server.address, '/vendor/echarts.esm.min.mjs');
+    assert.equal(echarts.status, 200);
+    assert.match(echarts.headers['content-type'], /text\/javascript/);
+
+    const graph = await getJson(server.address, '/vault/90_Derived/Projections/graph.json');
+    assert.equal(graph.status, 200);
+    assert.match(graph.headers['content-type'], /application\/json/);
+  } finally {
+    await server.close();
+  }
+});

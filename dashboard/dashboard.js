@@ -1,10 +1,48 @@
 import { applyStaleness, createRuntimeStatus, runtimeTransition, validateRuntimeStatus } from '../tools/kad/runtime-status.mjs';
 import { displayDate, escapeHtml, loadJson, statusBadge } from '../interface/kad-ui.js';
+import {
+  parseCanonicalGraph,
+  filterGraph,
+  searchGraphNodes,
+  getNodeNeighborhood,
+  toCytoscapeElements,
+  GRAPH_NODE_CLASSES,
+  EPISTEMIC_TIERS
+} from './graph-adapter.mjs';
+import {
+  summarizeProjects,
+  summarizeWorkpackages,
+  summarizeResearchCorpus,
+  summarizeTechnologyRegistry,
+  buildWorkpackageStatusChartOptions,
+  buildProjectClassificationChartOptions
+} from './adapter.mjs';
+import { renderChart, disposeAllCharts } from './charts.mjs';
 
 const content = document.querySelector('#dashboard-content');
 const navLinks = [...document.querySelectorAll('[data-view]')];
-let data;
-let liveState;
+const projectionStatusEl = document.querySelector('#projection-status');
+const loadedFromEl = document.querySelector('#loaded-from');
+
+let projections = {
+  graph: null,
+  projects: null,
+  workpackages: null,
+  research: null,
+  technology: null,
+  sofia: null
+};
+
+let graphModel = null;
+let cyInstance = null;
+let selectedNodeId = null;
+let graphFilterState = {
+  query: '',
+  nodeType: '',
+  epistemicTier: ''
+};
+
+let liveState = null;
 const liveMeta = { last_successful: null, last_failure: null, last_transition: null };
 const LIVE_STALE_THRESHOLD_MS = 30000;
 
@@ -24,100 +62,814 @@ function currentLiveState() {
 async function refreshLiveStatus() {
   try {
     const response = await fetch('/api/runtime-status', { cache: 'no-store' });
-    if (!response.ok) throw new Error(`live runtime API returned HTTP ${response.status}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const candidate = await response.json();
-    if (!validateRuntimeStatus(candidate)) throw new Error('live runtime API returned malformed status');
+    if (!validateRuntimeStatus(candidate)) throw new Error('Malformed runtime status');
     updateLiveState(candidate);
     liveMeta.last_successful = candidate.observed_at;
   } catch (error) {
-    updateLiveState(unavailableLiveState('live runtime API unavailable'));
+    updateLiveState(unavailableLiveState(`Runtime API offline: ${error.message}`));
     liveMeta.last_failure = new Date().toISOString();
   }
-  if (data) render();
+
+  const activeView = location.hash.slice(1) || 'overview';
+  if (activeView === 'overview' || activeView === 'telemetry') {
+    render(activeView);
+  }
 }
 
-function safeSourceHref(source) {
-  const value = String(source ?? '');
-  if (!value || value.startsWith('/') || value.includes('..') || value.includes('\\')) return null;
-  return `../${value.split('/').map(encodeURIComponent).join('/')}`;
+function tierBadgeHtml(tier) {
+  const t = String(tier || 'UNKNOWN').toUpperCase();
+  if (t === 'EXPLICIT_CANONICAL') {
+    return `<span class="tier-badge tier-badge--canonical">EXPLICIT CANONICAL</span>`;
+  }
+  if (t === 'DETERMINISTIC_DERIVED') {
+    return `<span class="tier-badge tier-badge--derived">DETERMINISTIC DERIVED</span>`;
+  }
+  if (t === 'HEURISTIC_SUGGESTION') {
+    return `<span class="tier-badge tier-badge--heuristic">HEURISTIC SUGGESTION</span>`;
+  }
+  return `<span class="tier-badge">${escapeHtml(t)}</span>`;
 }
 
-function recordLink(record) {
-  const source = String(record.source_ref ?? '');
-  const href = safeSourceHref(source);
-  return href ? `<a href="${href}" target="_blank" rel="noreferrer">${escapeHtml(source)}</a>` : 'source unavailable';
-}
-
-function recordCard(record) {
-  return `<article class="record"><header><div><p class="kicker">${escapeHtml(record.namespace)} · ${escapeHtml(record.id)}</p><h3>${escapeHtml(record.title)}</h3></div>${statusBadge(record.status)}</header><p>${escapeHtml(record.description || 'No description recorded.')}</p><div class="meta"><span>Epistemic: ${escapeHtml(record.epistemic_class || 'UNKNOWN')}</span><span>Acceptance: ${escapeHtml(record.acceptance_state || 'UNKNOWN')}</span><span>Source: ${recordLink(record)}</span></div></article>`;
-}
-
-function records(namespace) {
-  return data.state.namespaces?.[namespace] ?? [];
-}
-
-function table(rows, columns) {
-  if (!rows.length) return '<div class="empty">No governed records are available for this namespace.</div>';
-  return `<div class="table-wrap"><table class="data-table"><thead><tr>${columns.map(column => `<th>${escapeHtml(column.label)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr>${columns.map(column => `<td>${column.render ? column.render(row) : escapeHtml(row[column.key])}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
-}
-
-function overview() {
+function renderOverview() {
   const live = currentLiveState();
-  const staticAttention = data.status.components.filter(component => ['DEGRADED', 'BLOCKED', 'PARTIAL', 'UNKNOWN'].includes(component.state));
-  const runtimeAttention = ['DEGRADED', 'UNAVAILABLE', 'UNKNOWN', 'STALE'].includes(live.state) ? [{ component: `runtime:${live.runtime_id}`, state: live.state, blocking_reason: live.reason, source_ref: null }] : [];
-  const attention = [...staticAttention, ...runtimeAttention];
-  const counts = data.status.components.reduce((result, component) => { result[component.state] = (result[component.state] ?? 0) + 1; return result; }, {});
-  const recent = data.evidence.slice(-3).reverse();
-  return `<div class="dashboard-title"><div><p class="eyebrow">Overview / snapshot + live observation</p><h1>What needs attention?</h1><p>Governed projections remain static; the runtime panel is a bounded read-only observation.</p></div>${statusBadge(data.status.status)}</div><div class="grid grid-4"><article class="panel metric"><span class="metric-label">Projection state</span><strong class="metric-value">${escapeHtml(data.status.status)}</strong><span class="kicker">${escapeHtml(data.state.projection_id)}</span></article><article class="panel metric"><span class="metric-label">Canonical sources</span><strong class="metric-value">${data.state.source_count}</strong><span class="kicker">hashed input set</span></article><article class="panel metric"><span class="metric-label">Governed records</span><strong class="metric-value">${data.state.record_count}</strong><span class="kicker">derived, not authority</span></article><article class="panel metric"><span class="metric-label">Needs attention</span><strong class="metric-value">${attention.length}</strong><span class="kicker">snapshot + live state</span></article></div><section class="section"><div class="section-head"><div><p class="eyebrow">Live runtime / observed now</p><h2>Runtime state</h2><p>Health is observed separately from capability qualification.</p></div>${statusBadge(live.state)}</div><div class="grid grid-2"><article class="panel panel--accent"><p class="kicker">Runtime</p><h2>${escapeHtml(live.runtime_id)}</h2><div class="meta"><span>Identity: ${escapeHtml(live.identity || 'not observed')}</span><span>Capability: ${escapeHtml(live.capability)}</span><span>Trust: ${escapeHtml(live.trust_domain)}</span></div></article><article class="panel panel--cyan"><p class="kicker">Observation</p><h2>${escapeHtml(displayDate(live.observed_at))}</h2><div class="meta"><span>Source: ${escapeHtml(live.source)}</span><span>Endpoint: ${escapeHtml(live.endpoint_class)}</span><span>Latency: ${live.latency_ms == null ? 'not measured' : `${live.latency_ms}ms`}</span></div><p>${escapeHtml(live.reason || 'Expected runtime identity observed and health response validated.')}</p></article></div></section><section class="section"><div class="grid grid-2"><article class="panel panel--gold"><p class="eyebrow">Current focus</p><h2>Governed wiki projection</h2><p class="mono">${escapeHtml(data.state.projection_id)}</p><p>Static projection boundary. Runtime observation is shown above and does not change project authority.</p></article><article class="panel panel--cyan"><p class="eyebrow">Indexed evidence</p><h2>Recent receipts</h2>${recent.length ? `<ul class="list">${recent.map(item => `<li><a href="../${item.report_path}">${escapeHtml(item.workpackage)}</a> · ${escapeHtml(item.verdict || 'UNKNOWN')}</li>`).join('')}</ul>` : '<div class="empty">No evidence index is available.</div>'}</article></div></section><section class="section"><div class="section-head"><div><p class="eyebrow">Attention queue</p><h2>Capability and runtime states</h2></div></div>${attention.length ? table(attention, [{ label: 'Component', key: 'component' }, { label: 'State', render: row => statusBadge(row.state) }, { label: 'Reason', render: row => escapeHtml(row.blocking_reason || row.degraded_capabilities?.join(', ') || 'No qualification evidence recorded') }, { label: 'Evidence', render: recordLink }]) : '<div class="empty">No degraded, blocked, partial, unknown, or live runtime problems are recorded.</div>'}</section><section class="section"><div class="grid grid-3">${Object.entries(counts).sort().map(([state, count]) => `<article class="panel"><span class="metric-label">${escapeHtml(state)}</span><strong class="metric-value">${count}</strong></article>`).join('')}</div></section>`;
+  const wpSummary = summarizeWorkpackages(projections.workpackages);
+  const projSummary = summarizeProjects(projections.projects);
+  const resSummary = summarizeResearchCorpus(projections.research);
+  const graphCount = graphModel ? graphModel.nodeCount : (projections.sofia?.records?.length || 0);
+
+  const attentionItems = [];
+  if (['DEGRADED', 'UNAVAILABLE', 'UNKNOWN', 'STALE'].includes(live.state)) {
+    attentionItems.push({
+      label: `Runtime Control Plane (${live.runtime_id || 'unidentified'})`,
+      state: live.state,
+      reason: live.reason || 'Telemetry snapshot unavailable'
+    });
+  }
+  if (wpSummary.reviewCount > 0) {
+    attentionItems.push({
+      label: `${wpSummary.reviewCount} Workpackage(s) Awaiting Review`,
+      state: 'REVIEW',
+      reason: 'Workpackages require human or gate review before acceptance'
+    });
+  }
+
+  return `
+    <div class="dashboard-title">
+      <div>
+        <p class="eyebrow">Sofia v3 / Canonical Cockpit</p>
+        <h1>Operational Overview</h1>
+        <p>Ground-truth state compiled from canonical Obsidian vault (<code class="mono">vault/</code>).</p>
+      </div>
+      ${statusBadge(wpSummary.reviewCount > 0 ? 'REVIEW' : 'PASS')}
+    </div>
+
+    <div class="grid grid-4">
+      <article class="panel metric">
+        <span class="metric-label">Active Projects</span>
+        <strong class="metric-value">${projSummary.activeCount} <span style="font-size: 1rem; color: var(--faint);">/ ${projSummary.total}</span></strong>
+        <span class="kicker">${projSummary.byClassification.CORE || 0} Core · ${projSummary.byClassification.ACTIVE_SUPPORTING || 0} Supporting</span>
+      </article>
+      <article class="panel metric">
+        <span class="metric-label">Workpackage Progress</span>
+        <strong class="metric-value">${wpSummary.completionRate}%</strong>
+        <span class="kicker">${wpSummary.acceptedCount} Accepted · ${wpSummary.inProgressCount} In-Flight</span>
+      </article>
+      <article class="panel metric">
+        <span class="metric-label">Knowledge Topology</span>
+        <strong class="metric-value">${graphCount}</strong>
+        <span class="kicker">${graphModel ? `${graphModel.edgeCount} relationships` : 'nodes indexed'}</span>
+      </article>
+      <article class="panel metric">
+        <span class="metric-label">Live Telemetry</span>
+        <strong class="metric-value" style="font-size: 1.8rem;">${escapeHtml(live.state)}</strong>
+        <span class="kicker">${escapeHtml(live.runtime_id || 'localhost')} · ${live.latency_ms ? `${live.latency_ms}ms` : 'no probe'}</span>
+      </article>
+    </div>
+
+    ${attentionItems.length ? `
+      <section class="section" style="margin-top: 28px;">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Attention Items</p>
+            <h2>Items Requiring Observation or Action</h2>
+          </div>
+        </div>
+        <div class="record-list">
+          ${attentionItems.map(item => `
+            <article class="record">
+              <header>
+                <div><h3>${escapeHtml(item.label)}</h3></div>
+                ${statusBadge(item.state)}
+              </header>
+              <p>${escapeHtml(item.reason)}</p>
+            </article>
+          `).join('')}
+        </div>
+      </section>
+    ` : ''}
+
+    <section class="section" style="margin-top: 32px;">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Workpackages</p>
+          <h2>Recent Workpackage Lifecycle</h2>
+        </div>
+        <a href="#workpackages" class="graph-btn">View All Workpackages →</a>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Workpackage ID</th>
+              <th>Title</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${(projections.workpackages?.workpackages || []).slice(0, 5).map(wp => `
+              <tr>
+                <td><code class="mono">${escapeHtml(wp.wp_id)}</code></td>
+                <td>${escapeHtml(wp.title)}</td>
+                <td>${statusBadge(wp.status)}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  `;
 }
 
-function namespaceView(namespace, eyebrow, title, intro) {
-  const items = records(namespace);
-  return `<div class="dashboard-title"><div><p class="eyebrow">${eyebrow}</p><h1>${title}</h1><p>${intro}</p></div><span class="chip">${items.length} records</span></div><div class="record-list">${items.length ? items.map(recordCard).join('') : '<div class="empty">This namespace is unavailable or empty. No healthy fallback is implied.</div>'}</div>`;
+function renderGraphView() {
+  if (!graphModel) {
+    return `
+      <div class="dashboard-title">
+        <div>
+          <p class="eyebrow">Graph Explorer</p>
+          <h1>Canonical Knowledge Topology</h1>
+        </div>
+      </div>
+      <div class="error">
+        <strong>Graph projection unavailable.</strong>
+        <p>Could not load <code class="mono">vault/90_Derived/Projections/graph.json</code>.</p>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="dashboard-title">
+      <div>
+        <p class="eyebrow">Interactive Explorer</p>
+        <h1>Canonical Knowledge Graph</h1>
+        <p>Explore typed nodes, explicit edges, and 3-tier epistemic authority in real-time.</p>
+      </div>
+      <div class="chip-row">
+        <span class="chip" id="graph-node-counter">${graphModel.nodeCount} Nodes</span>
+        <span class="chip" id="graph-edge-counter">${graphModel.edgeCount} Edges</span>
+      </div>
+    </div>
+
+    <div class="graph-controls">
+      <div class="graph-controls-group">
+        <input type="search" id="graph-search-input" class="graph-input" placeholder="Search nodes (ID, title)..." value="${escapeHtml(graphFilterState.query)}">
+        <select id="graph-node-type-select" class="graph-select">
+          <option value="">All Node Types</option>
+          ${GRAPH_NODE_CLASSES.map(cls => `<option value="${cls}" ${graphFilterState.nodeType === cls ? 'selected' : ''}>${cls}</option>`).join('')}
+        </select>
+        <select id="graph-tier-select" class="graph-select">
+          <option value="">All Epistemic Tiers</option>
+          ${EPISTEMIC_TIERS.map(tier => `<option value="${tier}" ${graphFilterState.epistemicTier === tier ? 'selected' : ''}>${tier.replace(/_/g, ' ')}</option>`).join('')}
+        </select>
+      </div>
+      <div class="graph-controls-group">
+        <button type="button" id="btn-graph-fit" class="graph-btn">Fit View</button>
+        <button type="button" id="btn-graph-reset" class="graph-btn">Reset</button>
+      </div>
+    </div>
+
+    <div class="graph-layout">
+      <div class="graph-canvas-container">
+        <div id="cy-container"></div>
+      </div>
+      <aside class="graph-inspector" id="graph-inspector">
+        <div class="inspector-header">
+          <p class="kicker">Node Inspector</p>
+          <h3 class="inspector-title">Select a node</h3>
+          <p class="faint" style="font-size: .8rem; margin-top: 4px;">Click any node in the graph canvas to inspect metadata, epistemic authority, and connected neighborhood.</p>
+        </div>
+      </aside>
+    </div>
+  `;
 }
 
-function agents() {
-  const agentRecords = [...records('AGENTS'), ...records('CAPABILITIES')];
-  return `<div class="dashboard-title"><div><p class="eyebrow">Agents / declarations</p><h1>Agents and capabilities</h1><p>Declared roles, trust domains, and capabilities only. Runtime activity is not invented.</p></div><span class="chip">${agentRecords.length} records</span></div><div class="record-list">${agentRecords.length ? agentRecords.map(recordCard).join('') : '<div class="empty">No agent or capability declarations are available.</div>'}</div>`;
+function updateInspector(nodeId) {
+  const inspector = document.querySelector('#graph-inspector');
+  if (!inspector || !graphModel) return;
+
+  const hood = getNodeNeighborhood(graphModel, nodeId);
+  if (!hood || !hood.center) {
+    inspector.innerHTML = `
+      <div class="inspector-header">
+        <p class="kicker">Node Inspector</p>
+        <h3 class="inspector-title">Node not found</h3>
+      </div>
+    `;
+    return;
+  }
+
+  const { center, neighbors, edges } = hood;
+  const metaEntries = Object.entries(center.metadata || {});
+
+  inspector.innerHTML = `
+    <div class="inspector-header">
+      <p class="kicker">${escapeHtml(center.type)} · <code class="mono">${escapeHtml(center.id)}</code></p>
+      <h3 class="inspector-title">${escapeHtml(center.label)}</h3>
+      <div class="inspector-badge-row">
+        ${tierBadgeHtml(center.epistemic_tier)}
+        ${center.metadata?.status ? statusBadge(center.metadata.status) : ''}
+      </div>
+    </div>
+
+    ${metaEntries.length ? `
+      <div style="margin-top: 12px;">
+        <strong style="font-size: .75rem; text-transform: uppercase; color: var(--faint);">Attributes</strong>
+        <div style="margin-top: 6px; font-size: .82rem; display: grid; gap: 4px;">
+          ${metaEntries.map(([k, v]) => `
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 3px 0;">
+              <span class="faint">${escapeHtml(k)}:</span>
+              <span class="mono">${escapeHtml(typeof v === 'object' ? JSON.stringify(v) : String(v))}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    ` : ''}
+
+    <div style="margin-top: 16px;">
+      <strong style="font-size: .75rem; text-transform: uppercase; color: var(--faint);">Connected Relationships (${edges.length})</strong>
+      <ul class="neighbor-list">
+        ${neighbors.length ? neighbors.map(n => {
+          const edge = edges.find(e => (e.source === n.id && e.target === center.id) || (e.target === n.id && e.source === center.id));
+          return `
+            <li class="neighbor-item" data-node-id="${escapeHtml(n.id)}">
+              <div style="display: flex; justify-content: space-between;">
+                <strong>${escapeHtml(n.label)}</strong>
+                <span class="mono faint" style="font-size: .7rem;">${escapeHtml(edge?.type || 'RELATES_TO')}</span>
+              </div>
+              <div style="font-size: .72rem; margin-top: 2px;">
+                <span class="faint">${escapeHtml(n.type)}</span> · ${tierBadgeHtml(n.epistemic_tier)}
+              </div>
+            </li>
+          `;
+        }).join('') : '<li class="faint" style="font-size: .8rem; padding: 6px 0;">No connected neighbors.</li>'}
+      </ul>
+    </div>
+  `;
+
+  inspector.querySelectorAll('.neighbor-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const targetId = item.dataset.nodeId;
+      if (targetId) focusGraphNode(targetId);
+    });
+  });
 }
 
-function evidence() {
-  const items = data.evidence ?? [];
-  const recordsForReview = [...records('EVIDENCE'), ...records('FAILURES')];
-  return `<div class="dashboard-title"><div><p class="eyebrow">Evidence / receipts</p><h1>What has been observed?</h1><p>Evidence is navigable here, but this surface cannot accept, alter, or promote it.</p></div></div>${table(items, [{ label: 'Workpackage', key: 'workpackage' }, { label: 'Verdict', render: row => statusBadge(row.verdict === 'PASS' ? 'PASS' : row.verdict) }, { label: 'Commit', render: row => escapeHtml(row.commit || 'not recorded') }, { label: 'Report', render: row => row.report_path ? recordLink({ source_ref: row.report_path }) : 'not recorded' }, { label: 'Blockers', render: row => escapeHtml((row.remaining_blockers ?? []).join('; ') || 'none recorded') }])}<section class="section"><div class="section-head"><div><p class="eyebrow">Governed records</p><h2>Evidence and failures</h2></div></div><div class="record-list">${recordsForReview.length ? recordsForReview.map(recordCard).join('') : '<div class="empty">No evidence records are available.</div>'}</div></section>`;
+async function initCytoscape() {
+  const container = document.querySelector('#cy-container');
+  if (!container || !graphModel) return;
+
+  let cytoscape;
+  try {
+    const mod = await import('cytoscape');
+    cytoscape = mod.default || mod;
+  } catch (error) {
+    console.warn('[Sofia Graph] Cytoscape failed to load:', error);
+    container.innerHTML = `
+      <div class="degraded-chart-fallback">
+        <div>
+          <p><strong>Interactive canvas visualization unavailable.</strong></p>
+          <p class="faint">Native tabular inspection and search remain fully active.</p>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  const filtered = filterGraph(graphModel, {
+    nodeTypes: graphFilterState.nodeType ? [graphFilterState.nodeType] : null,
+    epistemicTiers: graphFilterState.epistemicTier ? [graphFilterState.epistemicTier] : null,
+    query: graphFilterState.query || null
+  });
+
+  const elements = toCytoscapeElements(filtered);
+
+  try {
+    if (cyInstance) cyInstance.destroy();
+
+    cyInstance = cytoscape({
+      container,
+      elements,
+      style: [
+        {
+          selector: 'node',
+          style: {
+            'label': 'data(label)',
+            'color': '#f0ede6',
+            'font-family': 'ui-monospace, monospace',
+            'font-size': '10px',
+            'text-valign': 'center',
+            'text-halign': 'right',
+            'text-margin-x': 6,
+            'background-color': '#1f293d',
+            'border-width': 1.5,
+            'border-color': '#8b9bb4',
+            'width': 24,
+            'height': 24
+          }
+        },
+        {
+          selector: 'node.node-project',
+          style: { 'background-color': '#00e5ff', 'border-color': '#ffffff', 'width': 32, 'height': 32 }
+        },
+        {
+          selector: 'node.node-workpackage',
+          style: { 'background-color': '#ffd700', 'border-color': '#ffffff', 'width': 28, 'height': 28 }
+        },
+        {
+          selector: 'node.node-decision',
+          style: { 'background-color': '#a78bfa', 'border-color': '#ffffff', 'width': 26, 'height': 26 }
+        },
+        {
+          selector: 'node.node-research-paper',
+          style: { 'background-color': '#4ade80', 'border-color': '#ffffff', 'width': 24, 'height': 24 }
+        },
+        {
+          selector: 'node.tier-explicit-canonical',
+          style: { 'border-style': 'solid', 'border-width': 2 }
+        },
+        {
+          selector: 'node.tier-deterministic-derived',
+          style: { 'border-style': 'solid', 'border-width': 1.5, 'border-color': '#00e5ff' }
+        },
+        {
+          selector: 'node.tier-heuristic-suggestion',
+          style: { 'border-style': 'dashed', 'border-width': 1.5, 'border-color': '#ffd700' }
+        },
+        {
+          selector: 'edge',
+          style: {
+            'width': 1.5,
+            'line-color': 'rgba(255, 255, 255, 0.25)',
+            'target-arrow-color': 'rgba(255, 255, 255, 0.4)',
+            'target-arrow-shape': 'triangle',
+            'curve-style': 'bezier',
+            'arrow-scale': 0.8
+          }
+        },
+        {
+          selector: 'edge.tier-heuristic-suggestion',
+          style: { 'line-style': 'dashed', 'line-color': 'rgba(255, 215, 0, 0.4)' }
+        },
+        {
+          selector: ':selected',
+          style: {
+            'border-color': '#ff003c',
+            'border-width': 3,
+            'line-color': '#ff003c',
+            'target-arrow-color': '#ff003c'
+          }
+        }
+      ],
+      layout: {
+        name: 'cose',
+        animate: false,
+        padding: 30,
+        nodeRepulsion: 450000,
+        idealEdgeLength: 100
+      }
+    });
+
+    cyInstance.on('tap', 'node', evt => {
+      const node = evt.target;
+      selectedNodeId = node.id();
+      updateInspector(selectedNodeId);
+    });
+
+    cyInstance.on('tap', evt => {
+      if (evt.target === cyInstance) {
+        selectedNodeId = null;
+      }
+    });
+
+    if (selectedNodeId) {
+      const node = cyInstance.getElementById(selectedNodeId);
+      if (node && node.length) {
+        node.select();
+        updateInspector(selectedNodeId);
+      }
+    }
+  } catch (error) {
+    console.error('[Sofia Graph] Cytoscape init error:', error);
+  }
 }
 
-function system() {
+function focusGraphNode(nodeId) {
+  selectedNodeId = nodeId;
+  updateInspector(nodeId);
+  if (cyInstance) {
+    const node = cyInstance.getElementById(nodeId);
+    if (node && node.length) {
+      cyInstance.elements().unselect();
+      node.select();
+      cyInstance.animate({
+        center: { eles: node },
+        zoom: 1.5,
+        duration: 300
+      });
+    }
+  }
+}
+
+function attachGraphEvents() {
+  const searchInput = document.querySelector('#graph-search-input');
+  const typeSelect = document.querySelector('#graph-node-type-select');
+  const tierSelect = document.querySelector('#graph-tier-select');
+  const btnFit = document.querySelector('#btn-graph-fit');
+  const btnReset = document.querySelector('#btn-graph-reset');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      graphFilterState.query = e.target.value;
+      initCytoscape();
+    });
+  }
+  if (typeSelect) {
+    typeSelect.addEventListener('change', (e) => {
+      graphFilterState.nodeType = e.target.value;
+      initCytoscape();
+    });
+  }
+  if (tierSelect) {
+    tierSelect.addEventListener('change', (e) => {
+      graphFilterState.epistemicTier = e.target.value;
+      initCytoscape();
+    });
+  }
+  if (btnFit && cyInstance) {
+    btnFit.addEventListener('click', () => { cyInstance.fit(null, 30); });
+  }
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      graphFilterState = { query: '', nodeType: '', epistemicTier: '' };
+      selectedNodeId = null;
+      render('graph');
+    });
+  }
+}
+
+function renderProjectsView() {
+  const summary = summarizeProjects(projections.projects);
+  return `
+    <div class="dashboard-title">
+      <div>
+        <p class="eyebrow">Ecosystem Projects</p>
+        <h1>Governed Projects</h1>
+        <p>All active, supporting, reference, and legacy projects in the KAD ecosystem.</p>
+      </div>
+      <span class="chip">${summary.total} Projects Registered</span>
+    </div>
+
+    <div class="chart-grid">
+      <article class="chart-panel">
+        <p class="kicker">Project Classification Breakdown</p>
+        <div id="projects-classification-chart" class="chart-box"></div>
+      </article>
+    </div>
+
+    <section class="section" style="margin-top: 28px;">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th>Name</th>
+              <th>Classification</th>
+              <th>Status</th>
+              <th>Languages</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${summary.projects.map(p => `
+              <tr>
+                <td><code class="mono">${escapeHtml(p.id)}</code></td>
+                <td><strong>${escapeHtml(p.name)}</strong></td>
+                <td><span class="chip">${escapeHtml(p.classification)}</span></td>
+                <td>${statusBadge(p.status)}</td>
+                <td class="faint">${escapeHtml((p.languages || []).join(', ') || 'N/A')}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  `;
+}
+
+function renderWorkpackagesView() {
+  const summary = summarizeWorkpackages(projections.workpackages);
+  return `
+    <div class="dashboard-title">
+      <div>
+        <p class="eyebrow">Workpackage Ledger</p>
+        <h1>Workpackages & Milestones</h1>
+        <p>Deterministic workpackages tracked with explicit claims and verification evidence.</p>
+      </div>
+      <div class="chip-row">
+        <span class="chip">${summary.acceptedCount} / ${summary.total} Accepted</span>
+        <span class="chip">${summary.completionRate}% Complete</span>
+      </div>
+    </div>
+
+    <div class="chart-grid">
+      <article class="chart-panel">
+        <p class="kicker">Workpackage Status Distribution</p>
+        <div id="workpackages-status-chart" class="chart-box"></div>
+      </article>
+    </div>
+
+    <section class="section" style="margin-top: 28px;">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>WP ID</th>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Verdict</th>
+              <th>Commit</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${summary.workpackages.map(wp => `
+              <tr>
+                <td><code class="mono">${escapeHtml(wp.wp_id)}</code></td>
+                <td>${escapeHtml(wp.title)}</td>
+                <td>${statusBadge(wp.status)}</td>
+                <td>${statusBadge(wp.verdict || 'NONE')}</td>
+                <td><code class="mono faint">${escapeHtml(wp.commit ? wp.commit.slice(0, 7) : 'pending')}</code></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  `;
+}
+
+function renderResearchView() {
+  const summary = summarizeResearchCorpus(projections.research);
+  return `
+    <div class="dashboard-title">
+      <div>
+        <p class="eyebrow">Scientific Corpus</p>
+        <h1>Research Papers & Claims</h1>
+        <p>Audited primary scientific literature backing the KAD agentic architecture.</p>
+      </div>
+      <span class="chip">${summary.totalPapers} Papers Audited</span>
+    </div>
+
+    <div class="record-list" style="margin-top: 20px;">
+      ${summary.papers.map(paper => `
+        <article class="record">
+          <header>
+            <div>
+              <p class="kicker">${escapeHtml(paper.id)} · ${paper.year || 'Unknown Year'}</p>
+              <h3>${escapeHtml(paper.title)}</h3>
+              <p class="faint" style="font-size: .8rem;">${escapeHtml((paper.authors || []).join(', '))}</p>
+            </div>
+            <span class="tier-badge tier-badge--canonical">${escapeHtml(paper.epistemic_verification)}</span>
+          </header>
+          <p>${escapeHtml(paper.core_findings || 'No findings abstract recorded.')}</p>
+          <div class="meta" style="margin-top: 10px;">
+            <span>Relevance: ${escapeHtml(paper.relevance_to_kad || 'General')}</span>
+            ${paper.arxiv ? `<span><a href="https://arxiv.org/abs/${encodeURIComponent(paper.arxiv)}" target="_blank" rel="noreferrer">arXiv:${escapeHtml(paper.arxiv)}</a></span>` : ''}
+            ${paper.doi ? `<span><a href="https://doi.org/${encodeURIComponent(paper.doi)}" target="_blank" rel="noreferrer">DOI:${escapeHtml(paper.doi)}</a></span>` : ''}
+          </div>
+        </article>
+      `).join('')}
+    </div>
+  `;
+}
+
+function renderTelemetryView() {
   const live = currentLiveState();
-  return `<div class="dashboard-title"><div><p class="eyebrow">System / boundary</p><h1>Read-only observation.</h1><p>Generated projections remain the governed snapshot; runtime details come from one bounded localhost probe.</p></div><span class="status status--PASS">READ-ONLY</span></div><div class="grid grid-2"><article class="panel panel--gold"><p class="kicker">Governed snapshot</p><h2>Canonical projections</h2><p>Loaded from <span class="mono">wiki/generated/kad-canonical/</span>. Source references remain visible for local inspection; the dashboard does not rewrite them.</p><div class="meta"><span>Projection: ${escapeHtml(data.state.projection_id)}</span><span>Sources: ${data.state.source_count}</span><span>Records: ${data.state.record_count}</span></div></article><article class="panel panel--accent"><p class="kicker">Live observation</p><h2>${statusBadge(live.state)}</h2><div class="meta"><span>Runtime: ${escapeHtml(live.runtime_id)}</span><span>Identity: ${escapeHtml(live.identity || 'not observed')}</span><span>Qualification: separate governed registry state</span></div><p>${escapeHtml(live.reason || 'Expected identity and health response validated.')}</p></article></div><section class="section"><div class="grid grid-2"><article class="panel panel--cyan"><p class="kicker">Probe contract</p><h2>${escapeHtml(live.source)}</h2><div class="meta"><span>Endpoint class: ${escapeHtml(live.endpoint_class)}</span><span>Capability: ${escapeHtml(live.capability)}</span><span>Trust domain: ${escapeHtml(live.trust_domain)}</span><span>Observed: ${escapeHtml(displayDate(live.observed_at))}</span><span>Latency: ${live.latency_ms == null ? 'not measured' : `${live.latency_ms}ms`}</span></div></article><article class="panel"><p class="kicker">Lifecycle evidence</p><h2>No control path</h2><p>The observer does not own, start, stop, restart, qualify, or mutate the runtime. No automatic reaction is attached to state changes.</p><div class="meta"><span>Last successful observation: ${escapeHtml(displayDate(liveMeta.last_successful))}</span><span>Last interface failure: ${escapeHtml(displayDate(liveMeta.last_failure))}</span><span>Last transition: ${escapeHtml(liveMeta.last_transition || 'none recorded')}</span><span>Poll interval: 10s</span><span>Stale threshold: 30s</span></div></article></div></section>`;
+  return `
+    <div class="dashboard-title">
+      <div>
+        <p class="eyebrow">Runtime Probe</p>
+        <h1>Telemetry & Control Plane HUD</h1>
+        <p>Localhost control-plane telemetry snapshot with staleness detection.</p>
+      </div>
+      <button type="button" id="btn-refresh-telemetry" class="hud-refresh-btn">Refresh Snapshot ↻</button>
+    </div>
+
+    <div class="grid grid-4">
+      <article class="panel metric">
+        <span class="metric-label">Runtime State</span>
+        <strong class="metric-value" style="font-size: 1.8rem;">${escapeHtml(live.state)}</strong>
+        <span class="kicker">${live.reason ? escapeHtml(live.reason) : 'Operational'}</span>
+      </article>
+      <article class="panel metric">
+        <span class="metric-label">Runtime ID</span>
+        <strong class="metric-value" style="font-size: 1.4rem;">${escapeHtml(live.runtime_id || 'none')}</strong>
+        <span class="kicker">${escapeHtml(live.endpoint_class || 'localhost')}</span>
+      </article>
+      <article class="panel metric">
+        <span class="metric-label">Probe Latency</span>
+        <strong class="metric-value">${live.latency_ms ? `${live.latency_ms}ms` : '--'}</strong>
+        <span class="kicker">Local loopback</span>
+      </article>
+      <article class="panel metric">
+        <span class="metric-label">Trust Domain</span>
+        <strong class="metric-value" style="font-size: 1.4rem;">${escapeHtml(live.trust_domain || 'unknown')}</strong>
+        <span class="kicker">Capability: ${escapeHtml(live.capability || 'none')}</span>
+      </article>
+    </div>
+
+    <section class="section" style="margin-top: 32px;">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Probe Receipts</p>
+          <h2>Observation Timestamps</h2>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <tbody>
+            <tr><td><strong>Observed At:</strong></td><td><code class="mono">${escapeHtml(live.observed_at || 'never')}</code></td></tr>
+            <tr><td><strong>Last Successful:</strong></td><td><code class="mono">${escapeHtml(liveMeta.last_successful || 'never')}</code></td></tr>
+            <tr><td><strong>Last Failure:</strong></td><td><code class="mono">${escapeHtml(liveMeta.last_failure || 'none')}</code></td></tr>
+            <tr><td><strong>Last State Transition:</strong></td><td><code class="mono">${escapeHtml(liveMeta.last_transition ? `${liveMeta.last_transition.from} → ${liveMeta.last_transition.to}` : 'none')}</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  `;
+}
+
+function renderSystemView() {
+  const techSummary = summarizeTechnologyRegistry(projections.technology);
+  return `
+    <div class="dashboard-title">
+      <div>
+        <p class="eyebrow">System & Governance</p>
+        <h1>Canonical Provenance & Tech Registry</h1>
+        <p>Projection verification and classified technology stack decisions from ADRs 0009–0012.</p>
+      </div>
+      <span class="status status--PASS">READ-ONLY</span>
+    </div>
+
+    <div class="grid grid-2">
+      <article class="panel panel--gold">
+        <p class="kicker">Projection Metadata</p>
+        <h3>Canonical Vault Source</h3>
+        <p>Loaded from <code class="mono">vault/90_Derived/Projections/</code>.</p>
+        <div class="meta" style="margin-top: 12px;">
+          <span>Vault Revision: <code class="mono">${escapeHtml(graphModel?.source_vault_revision || 'unknown')}</code></span>
+          <span>Generated: <code class="mono">${displayDate((graphModel?.generated_at || new Date().toISOString()).slice(0, 10))}</code></span>
+        </div>
+      </article>
+
+      <article class="panel">
+        <p class="kicker">Technology Stack Decisions</p>
+        <h3>${techSummary.total} Governed Technologies</h3>
+        <div class="inspector-badge-row" style="margin-top: 10px;">
+          <span class="chip">${techSummary.byDecision.KEEP || 0} KEEP</span>
+          <span class="chip">${techSummary.byDecision.ADOPT || 0} ADOPT</span>
+          <span class="chip">${techSummary.byDecision.AUGMENT || 0} AUGMENT</span>
+          <span class="chip">${techSummary.byDecision.EXPERIMENTAL || 0} EXPERIMENTAL</span>
+          <span class="chip">${techSummary.byDecision.RETIRE || 0} RETIRE</span>
+        </div>
+      </article>
+    </div>
+
+    <section class="section" style="margin-top: 32px;">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Technology Registry</p>
+          <h2>Classified Architectural Components</h2>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Technology ID</th>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Decision</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${techSummary.technologies.map(t => `
+              <tr>
+                <td><code class="mono">${escapeHtml(t.id)}</code></td>
+                <td><strong>${escapeHtml(t.name)}</strong></td>
+                <td class="faint">${escapeHtml(t.role)}</td>
+                <td><span class="chip">${escapeHtml(t.decision)}</span></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  `;
 }
 
 function render(view = location.hash.slice(1) || 'overview') {
-  const allowed = new Set(['overview', 'knowledge', 'agents', 'models', 'providers', 'evidence', 'research', 'system']);
+  disposeAllCharts();
+  const allowed = new Set(['overview', 'graph', 'projects', 'workpackages', 'research', 'telemetry', 'system']);
   const selected = allowed.has(view) ? view : 'overview';
+
   navLinks.forEach(link => {
     if (link.dataset.view === selected) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   });
-  const views = { overview, knowledge: () => namespaceView('PROJECT', 'Knowledge / projection', 'Knowledge', 'Canonical source counts, derived records, and provenance remain distinct.'), agents, models: () => namespaceView('MODELS', 'Models / qualification', 'Models', 'Registry identity and qualification states; presence does not mean active.'), providers: () => namespaceView('PROVIDERS', 'Providers / evidence', 'Providers', 'Configured, qualified, degraded, and unknown states stay separate.'), evidence, research: () => namespaceView('RESEARCH', 'Research / epistemic class', 'Research', 'Hypotheses, experiments, observations, and future work remain labelled.'), system };
+
+  const views = {
+    overview: renderOverview,
+    graph: renderGraphView,
+    projects: renderProjectsView,
+    workpackages: renderWorkpackagesView,
+    research: renderResearchView,
+    telemetry: renderTelemetryView,
+    system: renderSystemView
+  };
+
   content.innerHTML = views[selected]();
+
+  if (selected === 'graph') {
+    initCytoscape();
+    attachGraphEvents();
+  } else if (selected === 'projects') {
+    const chartContainer = document.querySelector('#projects-classification-chart');
+    if (chartContainer && projections.projects) {
+      renderChart(chartContainer, buildProjectClassificationChartOptions(projections.projects));
+    }
+  } else if (selected === 'workpackages') {
+    const chartContainer = document.querySelector('#workpackages-status-chart');
+    if (chartContainer && projections.workpackages) {
+      renderChart(chartContainer, buildWorkpackageStatusChartOptions(projections.workpackages));
+    }
+  } else if (selected === 'telemetry') {
+    const refreshBtn = document.querySelector('#btn-refresh-telemetry');
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', refreshLiveStatus);
+    }
+  }
 }
 
-try {
-  const [state, status, evidenceIndex] = await Promise.all([
-    loadJson('../wiki/generated/kad-canonical/project-state.json'),
-    loadJson('../wiki/generated/kad-canonical/status.json'),
-    loadJson('../wiki/generated/kad-canonical/evidence-index.json')
-  ]);
-  data = { state, status, evidence: evidenceIndex };
-  document.querySelector('#projection-status').textContent = `STATE ${status.status}`;
-  document.querySelector('#loaded-from').textContent = `${state.record_count} records · ${displayDate(new Date().toISOString().slice(0, 10))}`;
-  render();
-  refreshLiveStatus();
-  window.setInterval(refreshLiveStatus, 10000);
-} catch (error) {
-  document.querySelector('#projection-status').textContent = 'STATE UNKNOWN';
-  content.innerHTML = `<div class="error"><strong>Governed projection unavailable.</strong><p>${escapeHtml(error.message)}</p><p>Static dashboard content cannot claim health without its source projection.</p></div>`;
+async function bootstrap() {
+  try {
+    const [graph, projects, workpackages, research, technology, sofia] = await Promise.all([
+      loadJson('/vault/90_Derived/Projections/graph.json').catch(e => null),
+      loadJson('/vault/90_Derived/Projections/projects.json').catch(e => null),
+      loadJson('/vault/90_Derived/Projections/workpackages.json').catch(e => null),
+      loadJson('/vault/90_Derived/Projections/research.json').catch(e => null),
+      loadJson('/vault/90_Derived/Projections/technology-registry.json').catch(e => null),
+      loadJson('/vault/90_Derived/Projections/sofia-projection.json').catch(e => null)
+    ]);
+
+    projections = { graph, projects, workpackages, research, technology, sofia };
+
+    if (graph) {
+      try {
+        graphModel = parseCanonicalGraph(graph);
+      } catch (err) {
+        console.warn('[Sofia] Could not parse graph projection:', err);
+      }
+    }
+
+    if (projectionStatusEl) {
+      projectionStatusEl.textContent = 'STATE ACTIVE';
+    }
+    if (loadedFromEl && graphModel) {
+      loadedFromEl.textContent = `Revision ${graphModel.source_vault_revision.slice(0, 10)} · ${displayDate(new Date().toISOString().slice(0, 10))}`;
+    }
+
+    render();
+    refreshLiveStatus();
+  } catch (error) {
+    if (projectionStatusEl) projectionStatusEl.textContent = 'STATE ERROR';
+    content.innerHTML = `
+      <div class="error">
+        <strong>Projection bootstrap failed.</strong>
+        <p>${escapeHtml(error.message)}</p>
+      </div>
+    `;
+  }
 }
 
-window.addEventListener('hashchange', () => { if (data) render(); });
+bootstrap();
+window.addEventListener('hashchange', () => { render(); });
