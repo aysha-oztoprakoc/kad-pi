@@ -1,0 +1,22 @@
+{
+  "task": "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
+  "project": "kad-pi",
+  "claim_id": "b64200fa-7fd0-4074-9b3f-d268912decb8",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T09:57:55.377Z",
+  "base_commit": "2da2266eb76bfb5571838017449d553fbc8b4bee",
+  "owned_paths": [
+    "vault/00_Governance",
+    "docs/adr",
+    "docs/architecture",
+    "vault/90_Derived",
+    "tools/kad/isa.mjs",
+    "tools/kad/test/isa.test.mjs",
+    "bin/kad-isa",
+    "evidence/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
+    ".agents/work/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T10:16:28.487Z"
+}

@@ -1,0 +1,28 @@
+{
+  "registry_type": "KAD_ISA_REGISTRY",
+  "version": "1.0.0",
+  "generated_at": "2026-08-30T10:14:42.236Z",
+  "artifacts_count": 2,
+  "artifacts": [
+    {
+      "id": "ISA-KAD-AESTHETIC-001",
+      "title": "KAD Aesthetic Ideal State Artifact (ISA)",
+      "domain": "aesthetic",
+      "version": "1.0.0",
+      "source_file": "/home/amdy/Work/vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "projection_file": "/home/amdy/Work/vault/90_Derived/Projections/isa-aesthetic.json",
+      "claims_count": 10,
+      "ok": true
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-FABRIC-001",
+      "title": "KAD Compute Fabric Ideal State Artifact (ISA)",
+      "domain": "compute-fabric",
+      "version": "1.0.0",
+      "source_file": "/home/amdy/Work/vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "projection_file": "/home/amdy/Work/vault/90_Derived/Projections/isa-compute-fabric.json",
+      "claims_count": 12,
+      "ok": true
+    }
+  ]
+}

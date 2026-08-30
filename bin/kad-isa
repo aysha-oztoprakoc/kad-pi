@@ -3,15 +3,24 @@
  * bin/kad-isa - KAD Ideal State Artifact (ISA) CLI Tool
  *
  * Usage:
- *   bin/kad-isa lint <isa-file>
- *   bin/kad-isa check <isa-file>
- *   bin/kad-isa status <isa-file>
+ *   bin/kad-isa list
+ *   bin/kad-isa lint [isa-file|all]
+ *   bin/kad-isa check [isa-file|all]
+ *   bin/kad-isa status [isa-file|all]
  *   bin/kad-isa explain <claim-id> [isa-file]
- *   bin/kad-isa compile <isa-file> [output-json]
+ *   bin/kad-isa compile [isa-file|all] [output-json]
  */
 
 import { resolve } from 'node:path';
-import { lintIsa, checkIsa, statusIsa, explainClaim, buildIsaProjection } from '../tools/kad/isa.mjs';
+import {
+  lintIsa,
+  checkIsa,
+  statusIsa,
+  explainClaim,
+  buildIsaProjection,
+  discoverIsas,
+  compileAllIsas
+} from '../tools/kad/isa.mjs';
 
 const [,, command, target, extra] = process.argv;
 const DEFAULT_ISA = resolve(process.cwd(), 'vault/00_Governance/ISA-KAD-AESTHETIC-001.md');
@@ -21,11 +30,12 @@ function help() {
 KAD Ideal State Artifact (ISA) Engine
 
 Usage:
-  bin/kad-isa lint <isa-file>
-  bin/kad-isa check <isa-file>
-  bin/kad-isa status <isa-file>
+  bin/kad-isa list
+  bin/kad-isa lint [isa-file|all]
+  bin/kad-isa check [isa-file|all]
+  bin/kad-isa status [isa-file|all]
   bin/kad-isa explain <claim-id> [isa-file]
-  bin/kad-isa compile <isa-file> [output-json]
+  bin/kad-isa compile [isa-file|all] [output-json]
 `);
   process.exit(1);
 }
@@ -34,66 +44,126 @@ if (!command) help();
 
 try {
   switch (command) {
+    case 'list': {
+      const isas = discoverIsas(process.cwd());
+      console.log(`=== DISCOVERED KAD IDEAL STATE ARTIFACTS (${isas.length}) ===\n`);
+      for (const isa of isas) {
+        console.log(`• ${isa.kad_id} (v${isa.version}) [${isa.domain}] - ${isa.status}`);
+        console.log(`  Title:  ${isa.title}`);
+        console.log(`  File:   ${isa.file}`);
+        console.log(`  Claims: ${isa.claims_count}\n`);
+      }
+      process.exit(0);
+      break;
+    }
+
     case 'lint': {
-      const file = target ? resolve(process.cwd(), target) : DEFAULT_ISA;
-      const res = lintIsa(file);
-      if (res.ok) {
-        console.log(`[PASS] ISA Lint OK: ${res.kad_id} (${res.claimCount} claims verified)`);
-        process.exit(0);
+      if (!target || target === 'all') {
+        const isas = discoverIsas(process.cwd());
+        let allOk = true;
+        for (const isa of isas) {
+          const res = lintIsa(isa.file);
+          if (res.ok) {
+            console.log(`[PASS] ISA Lint OK: ${res.kad_id} (${res.claimCount} claims verified)`);
+          } else {
+            console.error(`[FAIL] ISA Lint Failed for ${isa.kad_id}:\n- ${res.errors.join('\n- ')}`);
+            allOk = false;
+          }
+        }
+        process.exit(allOk ? 0 : 1);
       } else {
-        console.error(`[FAIL] ISA Lint Failed:\n- ${res.errors.join('\n- ')}`);
-        process.exit(1);
+        const file = resolve(process.cwd(), target);
+        const res = lintIsa(file);
+        if (res.ok) {
+          console.log(`[PASS] ISA Lint OK: ${res.kad_id} (${res.claimCount} claims verified)`);
+          process.exit(0);
+        } else {
+          console.error(`[FAIL] ISA Lint Failed:\n- ${res.errors.join('\n- ')}`);
+          process.exit(1);
+        }
       }
       break;
     }
 
     case 'check': {
-      const file = target ? resolve(process.cwd(), target) : DEFAULT_ISA;
-      const res = checkIsa(file, { rootDir: process.cwd() });
-      console.log(`=== ISA CHECK REPORT: ${res.isa_id} (v${res.version}) ===`);
-      console.log(`Summary: ${res.passed_claims}/${res.total_claims} claims PASS\n`);
-      for (const r of res.results) {
-        const icon = r.pass ? '[✓]' : '[✗]';
-        console.log(`${icon} ${r.id} (${r.class}/${r.severity}): ${r.statement}`);
-        console.log(`    Validator: ${r.validator} -> ${r.evidence}`);
+      if (target === 'all') {
+        const isas = discoverIsas(process.cwd());
+        let allOk = true;
+        for (const isa of isas) {
+          const res = checkIsa(isa.file, { rootDir: process.cwd() });
+          console.log(`=== ISA CHECK REPORT: ${res.isa_id} (v${res.version}, domain: ${res.domain}) ===`);
+          console.log(`Summary: ${res.passed_claims}/${res.total_claims} claims PASS\n`);
+          for (const r of res.results) {
+            const icon = r.pass ? '[✓]' : '[✗]';
+            console.log(`${icon} ${r.id} (${r.class}/${r.severity}) [${r.target_state || 'TARGET'}]: ${r.statement}`);
+            console.log(`    Validator: ${r.validator} -> ${r.evidence}`);
+          }
+          console.log('');
+          if (!res.ok) allOk = false;
+        }
+        process.exit(allOk ? 0 : 1);
+      } else {
+        const file = target ? resolve(process.cwd(), target) : DEFAULT_ISA;
+        const res = checkIsa(file, { rootDir: process.cwd() });
+        console.log(`=== ISA CHECK REPORT: ${res.isa_id} (v${res.version}, domain: ${res.domain}) ===`);
+        console.log(`Summary: ${res.passed_claims}/${res.total_claims} claims PASS\n`);
+        for (const r of res.results) {
+          const icon = r.pass ? '[✓]' : '[✗]';
+          console.log(`${icon} ${r.id} (${r.class}/${r.severity}) [${r.target_state || 'TARGET'}]: ${r.statement}`);
+          console.log(`    Validator: ${r.validator} -> ${r.evidence}`);
+        }
+        process.exit(res.ok ? 0 : 1);
       }
-      process.exit(res.ok ? 0 : 1);
       break;
     }
 
     case 'status': {
-      const file = target ? resolve(process.cwd(), target) : DEFAULT_ISA;
-      const res = statusIsa(file);
-      console.log(JSON.stringify(res, null, 2));
-      process.exit(res.status === 'ACCEPTED' ? 0 : 1);
+      if (!target || target === 'all') {
+        const res = statusIsa('all');
+        console.log(JSON.stringify(res, null, 2));
+        process.exit(res.status === 'ACCEPTED' ? 0 : 1);
+      } else {
+        const file = resolve(process.cwd(), target);
+        const res = statusIsa(file);
+        console.log(JSON.stringify(res, null, 2));
+        process.exit(res.status === 'ACCEPTED' ? 0 : 1);
+      }
       break;
     }
 
     case 'explain': {
       if (!target) {
-        console.error('Error: explain requires a claim ID (e.g. ISA-KAD-AESTHETIC-001)');
+        console.error('Error: explain requires a claim ID (e.g. ISA-KAD-AESTHETIC-001 or ISA-KAD-COMPUTE-001)');
         process.exit(1);
       }
-      const file = extra ? resolve(process.cwd(), extra) : DEFAULT_ISA;
+      const file = extra ? resolve(process.cwd(), extra) : undefined;
       const res = explainClaim(target, file);
       console.log(`=== CLAIM EXPLANATION: ${res.id} ===`);
-      console.log(`Statement:   ${res.statement}`);
-      console.log(`Class:       ${res.class}`);
-      console.log(`Severity:    ${res.severity}`);
-      console.log(`Status:      ${res.status}`);
-      console.log(`Validator:   ${res.validator} (${res.validator_name})`);
-      console.log(`Surfaces:    ${res.surfaces.join(', ')}`);
-      console.log(`Evidence:    ${res.evidence}`);
+      console.log(`Statement:    ${res.statement}`);
+      console.log(`Class:        ${res.class}`);
+      console.log(`Target State: ${res.target_state}`);
+      console.log(`Severity:     ${res.severity}`);
+      console.log(`Status:       ${res.status}`);
+      console.log(`Validator:    ${res.validator} (${res.validator_name})`);
+      if (res.surfaces && res.surfaces.length) console.log(`Surfaces:     ${res.surfaces.join(', ')}`);
+      if (res.components && res.components.length) console.log(`Components:   ${res.components.join(', ')}`);
+      if (res.hosts && res.hosts.length) console.log(`Hosts:        ${res.hosts.join(', ')}`);
+      console.log(`Evidence:     ${res.evidence}`);
       process.exit(0);
       break;
     }
 
     case 'compile': {
-      const file = target ? resolve(process.cwd(), target) : DEFAULT_ISA;
-      const out = extra ? resolve(process.cwd(), extra) : resolve(process.cwd(), 'vault/90_Derived/Projections/isa-aesthetic.json');
-      const projection = buildIsaProjection(file, out);
-      console.log(`[PASS] Compiled ISA projection to ${out} (${projection.claims.length} claims)`);
-      process.exit(0);
+      if (!target || target === 'all') {
+        const res = compileAllIsas(process.cwd());
+        console.log(`[PASS] Compiled ${res.compiled_count} ISA projections and updated registry at ${res.registry_path}`);
+        process.exit(res.ok ? 0 : 1);
+      } else {
+        const file = resolve(process.cwd(), target);
+        const projection = buildIsaProjection(file, extra ? resolve(process.cwd(), extra) : undefined);
+        console.log(`[PASS] Compiled ISA projection for ${projection.isa.id} (${projection.claims.length} claims)`);
+        process.exit(0);
+      }
       break;
     }
 

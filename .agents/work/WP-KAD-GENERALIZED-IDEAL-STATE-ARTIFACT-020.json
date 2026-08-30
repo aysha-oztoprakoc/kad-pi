@@ -1,0 +1,77 @@
+{
+  "id": "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
+  "project": "kad-pi",
+  "title": "Generalized Ideal State Artifact (ISA) Architecture & Canonical Compute Fabric Governance",
+  "status": "REVIEW",
+  "priority": 190,
+  "spec_ref": "user:/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
+  "fixed_point": "2da2266eb76bfb5571838017449d553fbc8b4bee",
+  "scope": [
+    "vault/00_Governance/",
+    "docs/adr/",
+    "docs/architecture/",
+    "vault/90_Derived/",
+    "tools/kad/isa.mjs",
+    "tools/kad/test/isa.test.mjs",
+    "bin/kad-isa",
+    "evidence/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020/",
+    ".agents/work/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020.json"
+  ],
+  "non_scope": [
+    "implementing the distributed compute scheduler or runtime fabric",
+    "live telemetry streaming daemon implementation",
+    "benchmarking remote providers or paid API spend",
+    "arbitrary shell command execution from markdown",
+    "weakening existing aesthetic ISA validations or tests"
+  ],
+  "owned_paths": [
+    "vault/00_Governance/",
+    "docs/adr/",
+    "docs/architecture/",
+    "vault/90_Derived/",
+    "tools/kad/isa.mjs",
+    "tools/kad/test/isa.test.mjs",
+    "bin/kad-isa",
+    "evidence/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020/",
+    ".agents/work/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-isa lint vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+    "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+    "bin/kad-isa lint vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+    "bin/kad-isa check vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+    "bin/kad-wiki lint",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020/",
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Generalized ISA contract and domain adapter architecture designed and documented in ADR 0014",
+    "Generic ISA validation and projection engine supporting multi-ISA linting, checking, explanation, compilation, and registry discovery",
+    "Backward compatibility preserved for canonical aesthetic ISA (ISA-KAD-AESTHETIC-001)",
+    "Canonical compute fabric ISA established in vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md with PON, STC, TDD, graceful degradation, TOKENMAXXING, heterogeneous host profiles (AMDY vs TELL), cognition classes, and self-measurement experimental tuples",
+    "Deterministic and human review claims explicitly classified distinguishing CANONICAL_TARGET from CURRENT_CONFIRMED/DERIVED/HEURISTIC/UNKNOWN/BLOCKED",
+    "Derived machine-readable projections compiled under vault/90_Derived/Projections/",
+    "Zero arbitrary shell execution from markdown preserved",
+    "Full test suite, typechecks, doctors, and linters pass cleanly"
+  ],
+  "description": "Generalize the KAD Ideal State Artifact (ISA) governance pattern into a reusable multi-domain primitive and instantiate the canonical compute fabric ISA (ISA-KAD-COMPUTE-FABRIC-001).",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
+  "claim": null
+}

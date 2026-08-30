@@ -1,0 +1,243 @@
+{
+  "projection_type": "KAD_COMPUTE_FABRIC_ISA_PROJECTION",
+  "version": "1.0.0",
+  "domain": "compute-fabric",
+  "generated_at": "2026-08-30T10:14:42.236Z",
+  "source_file": "/home/amdy/Work/vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+  "isa": {
+    "id": "ISA-KAD-COMPUTE-FABRIC-001",
+    "title": "KAD Compute Fabric Ideal State Artifact (ISA)",
+    "version": "1.0.0",
+    "status": "ACCEPTED",
+    "authority": "CANONICAL_KNOWLEDGE",
+    "epistemic_class": "PROJECT_INFERENCE",
+    "owner": "Human Project Lead & KAD Architecture",
+    "affected_surfaces": [],
+    "affected_hosts": []
+  },
+  "validation_summary": {
+    "ok": true,
+    "total_claims": 12,
+    "passed_claims": 12,
+    "failed_claims": 0
+  },
+  "claims": [
+    {
+      "id": "ISA-KAD-COMPUTE-001",
+      "statement": "Meaningful compute state transitions emit typed PON notifications rather than relying on active polling.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "compute.pon.typed_notifications",
+      "pass": true,
+      "severity": "BLOCKER",
+      "evidence": "PON typed notification contract codified in PRIME_DIRECTIVE.md and implemented in tools/kad/pon-engine.mjs",
+      "checked_count": 2
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-002",
+      "statement": "Tasks request spatial capability contracts (cognition, quality, context) rather than hardcoded machine identities.",
+      "class": "DETERMINISTIC",
+      "target_state": "CURRENT_CONFIRMED",
+      "validator": "compute.stc.spatial_capability_contracts",
+      "pass": true,
+      "severity": "BLOCKER",
+      "evidence": "Tasks request spatial capability contracts via resource-contract.mjs and economic-router.mjs without machine identity coupling",
+      "checked_count": 2
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-003",
+      "statement": "Local models, runtimes, and worker processes enforce explicit temporal lifecycle ownership and LIFO teardown.",
+      "class": "DETERMINISTIC",
+      "target_state": "CURRENT_CONFIRMED",
+      "validator": "compute.stc.temporal_lifecycle_ownership",
+      "pass": true,
+      "severity": "BLOCKER",
+      "evidence": "Explicit worker/runtime lifecycle ownership and LIFO teardown enforced in tools/kad/swarm-workers.mjs",
+      "checked_count": 1
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-004",
+      "statement": "Route promotion requires local empirical evidence; theoretical capability creates a hypothesis only.",
+      "class": "DETERMINISTIC",
+      "target_state": "CURRENT_CONFIRMED",
+      "validator": "compute.tdd.empirical_route_promotion",
+      "pass": true,
+      "severity": "BLOCKER",
+      "evidence": "Route promotion strictly gated on append-only empirical observatory journal and readiness verifier",
+      "checked_count": 2
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-005",
+      "statement": "Capability degradation gracefully steps through lower tiers without silently escalating authority or spend.",
+      "class": "DETERMINISTIC",
+      "target_state": "CURRENT_CONFIRMED",
+      "validator": "compute.degradation.fail_safe_hierarchy",
+      "pass": true,
+      "severity": "BLOCKER",
+      "evidence": "Economic router enforces fail-safe downward degradation hierarchy across EXECUTION_CLASSES",
+      "checked_count": 2
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-006",
+      "statement": "System optimizes for useful work per scarce resource used and rejects ungrounded token generation (TOKENMAXXING).",
+      "class": "DETERMINISTIC",
+      "target_state": "CURRENT_CONFIRMED",
+      "validator": "compute.tokenmaxxing.efficiency_metric",
+      "pass": true,
+      "severity": "HIGH",
+      "evidence": "Objective function accepted_useful_work / scarce_resources_used implemented in telemetry/tokenmaxxing.mjs",
+      "checked_count": 1
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-007",
+      "statement": "Heterogeneous host definitions (AMDY vs TELL) adapt into canonical capability contracts without OS leakage.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "compute.hosts.heterogeneous_adapter_boundary",
+      "pass": true,
+      "severity": "HIGH",
+      "evidence": "AMDY (Omarchy 4) and TELL (NixOS) host definitions adapt into canonical capability contracts without OS leakage",
+      "checked_count": 3
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-008",
+      "statement": "Ten distinct capability-oriented cognition classes define task classification and routing contracts.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "compute.cognition.ten_class_taxonomy",
+      "pass": true,
+      "severity": "HIGH",
+      "evidence": "All 10 standardized capability-oriented cognition classes defined in compute fabric ISA",
+      "checked_count": 10
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-009",
+      "statement": "Inference execution configurations are evaluated against the 9-dimensional experimental tuple schema.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "compute.measurement.experimental_tuple_schema",
+      "pass": true,
+      "severity": "HIGH",
+      "evidence": "Experimental 9-tuple schema and 11 telemetry metrics codified in compute fabric ISA",
+      "checked_count": 2
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-010",
+      "statement": "Repeated accepted probabilistic work generates candidates for downward distillation and deterministic replacement.",
+      "class": "DETERMINISTIC",
+      "target_state": "CURRENT_CONFIRMED",
+      "validator": "compute.distillation.downward_migration_policy",
+      "pass": true,
+      "severity": "HIGH",
+      "evidence": "Repeated accepted probabilistic work generates candidates for deterministic or smaller model migration via distillation.mjs",
+      "checked_count": 1
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-011",
+      "statement": "Presentation, observation, and telemetry layers have zero direct mutation authority over compute routing state.",
+      "class": "DETERMINISTIC",
+      "target_state": "CURRENT_CONFIRMED",
+      "validator": "compute.governance.zero_shell_mutation",
+      "pass": true,
+      "severity": "BLOCKER",
+      "evidence": "Compute fabric observation and presentation planes isolated from direct un-gated mutation",
+      "checked_count": 1
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-012",
+      "statement": "Canonical compute fabric architecture and self-measuring governance approved by Human Project Lead.",
+      "class": "HUMAN_REVIEW",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "compute.architecture.human_governed_target",
+      "pass": true,
+      "severity": "BLOCKER",
+      "evidence": "Target state governed by Human Project Lead and canonical KAD Architecture (WP-020)",
+      "checked_count": 1
+    }
+  ],
+  "host_profiles": {
+    "amdy": {
+      "role": "control plane / primary inference experiment / workstation",
+      "os": "Omarchy 4 Quattro (Arch Linux)",
+      "cpu": "AMD Ryzen 7 7700 8-Core",
+      "gpu": "AMD Radeon RX 9060 XT (16GB VRAM)",
+      "execution_classes": [
+        "deterministic",
+        "interactive_inference",
+        "control_plane",
+        "fast_batch"
+      ]
+    },
+    "tell": {
+      "role": "server / homelab / heterogeneous inference experiment",
+      "os": "NixOS",
+      "execution_classes": [
+        "deterministic",
+        "long_running_inference",
+        "batch_worker",
+        "distributed_node"
+      ]
+    }
+  },
+  "cognition_classes": [
+    "deterministic_transformation",
+    "classification_extraction",
+    "retrieval_ranking",
+    "summarization",
+    "structured_generation",
+    "coding_review",
+    "planning_reasoning",
+    "research_synthesis",
+    "verification_critique",
+    "simulation"
+  ],
+  "routing_hierarchy": [
+    "existing_deterministic_tool",
+    "justified_deterministic_tool",
+    "tiny_specialist",
+    "small_local_model",
+    "strong_local_model",
+    "free_remote",
+    "cheap_paid_remote",
+    "frontier_remote",
+    "human"
+  ],
+  "experimental_tuple_schema": {
+    "dimensions": [
+      "model",
+      "quant",
+      "runtime",
+      "devices",
+      "context",
+      "kv_format",
+      "speculation",
+      "threading",
+      "network"
+    ],
+    "metrics": [
+      "ttft_ms",
+      "prefill_tok_per_sec",
+      "decode_tok_per_sec",
+      "peak_vram_bytes",
+      "peak_ram_bytes",
+      "network_transfer_bytes",
+      "failure_rate",
+      "task_acceptance_rate",
+      "structured_output_validity",
+      "quality_score",
+      "scarce_resource_cost"
+    ]
+  },
+  "scarce_resources": [
+    "remote_quota",
+    "money",
+    "latency",
+    "vram",
+    "ram",
+    "compute",
+    "bandwidth",
+    "energy",
+    "context_tokens",
+    "human_attention"
+  ]
+}
