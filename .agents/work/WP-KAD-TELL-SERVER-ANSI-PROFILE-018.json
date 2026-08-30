@@ -1,0 +1,70 @@
+{
+  "id": "WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+  "project": "kad-pi",
+  "title": "TELL Server Monospace ANSI Profile, Headless TUI & Host Observability Baseline",
+  "status": "PROPOSED",
+  "priority": 130,
+  "spec_ref": "user:/WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+  "fixed_point": "784a84a499aee027a0fe9059d4815dba0e51cd65",
+  "scope": [
+    "interface/themes/tell/",
+    "tools/kad/test/tell-profile*.test.mjs",
+    "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018/",
+    ".agents/work/WP-KAD-TELL-SERVER-ANSI-PROFILE-018.json"
+  ],
+  "non_scope": [
+    "distributed inference runtime implementation or dynamic model loading daemons",
+    "full heterogeneous compute benchmarking suite execution across tell hardware",
+    "live SSE telemetry streaming daemon implementation",
+    "NixOS system reconfiguration or unmanaged daemon deployment",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "interface/themes/tell/",
+    "tools/kad/test/tell-profile*.test.mjs",
+    "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018/",
+    ".agents/work/WP-KAD-TELL-SERVER-ANSI-PROFILE-018.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-isa lint vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+    "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+    "bin/kad-isa lint vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+    "bin/kad-isa check vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+    "bin/kad-wiki lint",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018/",
+  "blocked_by": [
+    "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+    "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Monospace ANSI 16-color and 24-bit TrueColor palettes implemented for headless server profile (surface.tell.server, KAD_PROFILE_SERVER)",
+    "High-density terminal status meters and compact ASCII/ANSI views render telemetry without graphical or audio dependencies",
+    "Host-specific capability adapter contract defined for host.tell.server without leaking NixOS package managers or system paths into cognition policy",
+    "Instant 0ms animation overhead and strict NO_AUDIO_UI verified",
+    "Deterministic contrast validation on standard ANSI black/dark backgrounds exceeds 14:1",
+    "Zero graphical or X11/Wayland dependencies verified over headless SSH and PTY multiplexers",
+    "Zero mutation authority over production routing or canonical vault verified",
+    "Full test suite, ISA checks, and doctor diagnostics remain GREEN"
+  ],
+  "description": "Harden the headless server presentation layer on tell (NixOS homelab node) with pure 16-color ANSI / 24-bit TrueColor monospace TUI profiles, 0ms latency, zero GUI/audio dependencies, and establish the minimal host capability adapter contract required for compute fabric node discovery.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+  "claim": null
+}

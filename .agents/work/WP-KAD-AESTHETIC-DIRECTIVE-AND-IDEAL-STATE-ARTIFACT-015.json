@@ -59,7 +59,9 @@
     "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014"
   ],
   "blocks": [
-    "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016"
+    "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+    "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+    "WP-KAD-TELL-SERVER-ANSI-PROFILE-018"
   ],
   "acceptance_criteria": [
     "Archaeological inspection of existing KAD presentation, Omarchy/Quickshell, data_workspace, and legacy design assets complete",

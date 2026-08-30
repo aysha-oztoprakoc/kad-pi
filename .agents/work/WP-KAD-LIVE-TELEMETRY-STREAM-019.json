@@ -1,0 +1,71 @@
+{
+  "id": "WP-KAD-LIVE-TELEMETRY-STREAM-019",
+  "project": "kad-pi",
+  "title": "Live PON/SSE Telemetry Streaming Transport & Read-Only Observer Projection",
+  "status": "PROPOSED",
+  "priority": 120,
+  "spec_ref": "user:/WP-KAD-LIVE-TELEMETRY-STREAM-019",
+  "fixed_point": "784a84a499aee027a0fe9059d4815dba0e51cd65",
+  "scope": [
+    "tools/kad/interface-server.mjs",
+    "tools/kad/telemetry/stream-adapter.mjs",
+    "tools/kad/test/interface-server-stream.test.mjs",
+    "evidence/WP-KAD-LIVE-TELEMETRY-STREAM-019/",
+    ".agents/work/WP-KAD-LIVE-TELEMETRY-STREAM-019.json"
+  ],
+  "non_scope": [
+    "bidirectional WebSocket control plane or unauthenticated write routes",
+    "granting UI clients direct execution or routing mutation authority",
+    "synthetic workload generation or automated benchmarking daemon",
+    "external cloud streaming brokers or third-party message queues (Redis, Kafka)",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "tools/kad/interface-server.mjs",
+    "tools/kad/telemetry/stream-adapter.mjs",
+    "tools/kad/test/interface-server-stream.test.mjs",
+    "evidence/WP-KAD-LIVE-TELEMETRY-STREAM-019/",
+    ".agents/work/WP-KAD-LIVE-TELEMETRY-STREAM-019.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-isa lint vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+    "bin/kad-isa check vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+    "bin/kad-wiki lint",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-LIVE-TELEMETRY-STREAM-019/",
+  "blocked_by": [
+    "WP-KAD-USAGE-BRIDGE-002",
+    "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+    "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+    "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Lightweight Server-Sent Events (SSE) streaming endpoint implemented at /api/telemetry/stream in tools/kad/interface-server.mjs",
+    "Event producer publishes typed PON state transition notifications (NODE_AVAILABLE, MODEL_READY, CAPABILITY_REMOVED, ROUTE_STALE, QUOTA_REFRESHED) and kad-telemetry-v1 records",
+    "Broadcast frames carry monotonically increasing sequence numbers, event types, and keep-alive heartbeats",
+    "Client subscription handlers support automatic reconnect, backpressure handling, and graceful fallback to static /api/runtime-status polling",
+    "Strict read-only outbound invariant verified: zero write routes or incoming control mutation over SSE transport",
+    "Fail-safe client isolation: slow or disconnected clients are cleaned up cleanly without leaking server resources",
+    "Full test suite, ISA checks, and doctor diagnostics remain GREEN"
+  ],
+  "description": "Implement lightweight Server-Sent Events (SSE) streaming transport in tools/kad/interface-server.mjs (/api/telemetry/stream), publishing typed PON state transition notifications and normalized kad-telemetry-v1 records to read-only observers with strict authority boundary enforcement.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-LIVE-TELEMETRY-STREAM-019",
+  "claim": null
+}

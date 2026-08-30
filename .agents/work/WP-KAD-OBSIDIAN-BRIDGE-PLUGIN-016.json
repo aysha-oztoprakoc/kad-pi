@@ -1,0 +1,70 @@
+{
+  "id": "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+  "project": "kad-pi",
+  "title": "Canonical Obsidian Bridge Plugin & Governed Visual Workspace Integration",
+  "status": "PROPOSED",
+  "priority": 150,
+  "spec_ref": "user:/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+  "fixed_point": "784a84a499aee027a0fe9059d4815dba0e51cd65",
+  "scope": [
+    "tools/kad/obsidian-bridge/",
+    "tools/kad/test/obsidian-bridge*.test.mjs",
+    "evidence/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016/",
+    ".agents/work/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016.json"
+  ],
+  "non_scope": [
+    "direct uncontrolled mutation of canonical markdown notes or derived JSON projections",
+    "installing unreviewed community plugins or granting arbitrary vault write access",
+    "remote network access, cloud sync, or external telemetry streaming daemons",
+    "modifying production routing authority or executing un-sandboxed shell commands",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "tools/kad/obsidian-bridge/",
+    "tools/kad/test/obsidian-bridge*.test.mjs",
+    "evidence/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016/",
+    ".agents/work/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-isa lint vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+    "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+    "bin/kad-wiki lint",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016/",
+  "blocked_by": [
+    "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+    "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+    "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+    "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Project-owned read-only Obsidian bridge plugin implemented in ESM under tools/kad/obsidian-bridge/",
+    "Custom Bases views render compiled projection metadata (projects.json, workpackages.json, isa-registry.json, isa-aesthetic.json, isa-compute-fabric.json)",
+    "Interactive 1-hop and 2-hop local graph neighborhood explorer rendered in Obsidian sidebar using canonical graph adapter",
+    "Strict surface.obsidian theme compliance with WCAG AAA contrast (>14:1), zero ambient looping motion, and NO_AUDIO_UI",
+    "Zero note mutation invariant verified: plugin operates as read-only observer of vault notes and derived projections",
+    "Zero network access and 100% offline local-first operation verified",
+    "Graceful degradation verified: missing projections or plugin disablement leaves raw Markdown editing 100% intact",
+    "Full test suite, ISA checks, and doctor diagnostics remain GREEN"
+  ],
+  "description": "Implement the read-only, project-owned Obsidian companion plugin (kad-obsidian-bridge) integrating compiled vault and compute ISA projections, custom Bases views, and local graph neighborhood exploration without granting direct mutation authority over canonical vault state.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+  "claim": null
+}

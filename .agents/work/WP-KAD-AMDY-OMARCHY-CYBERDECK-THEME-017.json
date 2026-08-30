@@ -1,0 +1,70 @@
+{
+  "id": "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+  "project": "kad-pi",
+  "title": "AMDY Omarchy 4 Quattro & Quickshell KAD Cyberdeck Theme Implementation",
+  "status": "PROPOSED",
+  "priority": 140,
+  "spec_ref": "user:/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+  "fixed_point": "784a84a499aee027a0fe9059d4815dba0e51cd65",
+  "scope": [
+    "interface/themes/omarchy/",
+    "tools/kad/test/desktop-theme*.test.mjs",
+    "evidence/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017/",
+    ".agents/work/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017.json"
+  ],
+  "non_scope": [
+    "granting desktop UI widgets authority to execute mutating shell commands or alter routing",
+    "coupling desktop shell lifecycle to remote compute nodes or requiring live SSE daemons for basic theming",
+    "mutating data_workspace R1 frozen baseline",
+    "arbitrary un-sandboxed shell command execution",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "interface/themes/omarchy/",
+    "tools/kad/test/desktop-theme*.test.mjs",
+    "evidence/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017/",
+    ".agents/work/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-isa lint vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+    "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+    "bin/kad-wiki lint",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017/",
+  "blocked_by": [
+    "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+    "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+    "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Quickshell / QML / LayerShell theme widgets implement Tier A diegetic cyberdeck aesthetic (surface.amdy.quickshell) based on ISA-KAD-AESTHETIC-001 tokens",
+    "Hyprland window decoration, border styling, and 45-degree polygon chamfer geometry configured for AMDY workstation (surface.amdy.hyprland)",
+    "Terminal 24-bit TrueColor profile and color scheme configured (surface.terminal.omarchy)",
+    "Event-driven 200Hz state transitions implemented with 150ms-200ms duration and zero infinite ambient looping animations",
+    "WCAG AAA contrast (>14:1) verified for cyan/bone on dark ink/oxblood backgrounds",
+    "Strict NO_AUDIO_UI enforcement verified across all desktop widgets",
+    "Zero shell mutation authority invariant verified (desktop UI cannot directly execute mutating commands)",
+    "Graceful degradation verified: compositor or GPU failure drops cleanly to 0ms monospace / static rendering",
+    "Full test suite, ISA checks, and doctors remain GREEN"
+  ],
+  "description": "Implement the canonical Tier A diegetic cyberdeck presentation layer on developer workstation amdy across Omarchy 4 Quattro (Hyprland, Quickshell, Waybar, Terminal) enforcing ISA-KAD-AESTHETIC-001 without turning desktop components into compute fabric dependencies or granting UI widgets mutation authority.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+  "claim": null
+}
