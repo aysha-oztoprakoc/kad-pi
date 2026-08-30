@@ -1,0 +1,53 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "audit_focus": "Resolution of metadata status terminology and distinction across source identity, bibliographic metadata completeness, and content provenance",
+  "provenance_dimensions": {
+    "dimension_1_source_identity": "Unambiguous resolution of paper identity via canonical identifiers (DOI, arXiv ID)",
+    "dimension_2_bibliographic_metadata": "Completeness of bibliographic publication fields (title, full author list, publication venue, volume, year)",
+    "dimension_3_content_provenance": "Immutability and traceability of source content bytes (SHA-256 hash, byte size, ingestion method, actor, timestamp)"
+  },
+  "corpus_status_matrix": [
+    {
+      "source_id": "doc:doi:10.48550/arxiv.2210.03629",
+      "short_name": "ReAct",
+      "source_identity_status": "VERIFIED (DOI: 10.48550/arxiv.2210.03629, arXiv: 2210.03629)",
+      "bibliographic_metadata_status": "COMPLETE (ICLR 2023)",
+      "content_provenance_status": "COMPLETE (SHA-256: ec5216b7...)",
+      "composite_classification": "VERIFIED_SOURCE"
+    },
+    {
+      "source_id": "doc:doi:10.48550/arxiv.2310.06770",
+      "short_name": "SWE-bench",
+      "source_identity_status": "VERIFIED (DOI: 10.48550/arxiv.2310.06770, arXiv: 2310.06770)",
+      "bibliographic_metadata_status": "COMPLETE (ICLR 2024)",
+      "content_provenance_status": "COMPLETE (SHA-256: 7014cded...)",
+      "composite_classification": "VERIFIED_SOURCE"
+    },
+    {
+      "source_id": "doc:doi:10.48550/arxiv.2302.04761",
+      "short_name": "Toolformer",
+      "source_identity_status": "VERIFIED (DOI: 10.48550/arxiv.2302.04761, arXiv: 2302.04761)",
+      "bibliographic_metadata_status": "COMPLETE (NeurIPS 2023)",
+      "content_provenance_status": "COMPLETE (SHA-256: 092036dc...)",
+      "composite_classification": "VERIFIED_SOURCE"
+    },
+    {
+      "source_id": "doc:doi:10.48550/arxiv.2303.11366",
+      "short_name": "Reflexion",
+      "source_identity_status": "VERIFIED (DOI: 10.48550/arxiv.2303.11366, arXiv: 2303.11366)",
+      "bibliographic_metadata_status": "COMPLETE (NeurIPS 2023)",
+      "content_provenance_status": "COMPLETE (SHA-256: 9dd6a655...)",
+      "composite_classification": "VERIFIED_SOURCE"
+    },
+    {
+      "source_id": "doc:doi:10.48550/arxiv.2303.17651",
+      "short_name": "Self-Refine",
+      "source_identity_status": "VERIFIED (arXiv: 2303.17651, DOI: 10.48550/arxiv.2303.17651)",
+      "bibliographic_metadata_status": "PARTIAL_METADATA (Imported via preprint manifest with partial 16-author list before full NeurIPS proceedings metadata ingestion)",
+      "content_provenance_status": "COMPLETE (SHA-256: da4c142b...)",
+      "composite_classification": "PARTIAL_METADATA"
+    }
+  ],
+  "reconciliation_summary": "PARTIAL_METADATA is preserved for Self-Refine to honestly reflect preprint-origin metadata while confirming that source identity and content byte provenance are 100% verified across all 5 documents.",
+  "verdict": "PASS"
+}

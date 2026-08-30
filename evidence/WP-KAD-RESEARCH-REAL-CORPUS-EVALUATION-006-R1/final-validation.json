@@ -1,0 +1,58 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "title": "Epistemic Claim Audit & Source-Fidelity Repair",
+  "validated_at": "2026-08-30T02:20:00.000Z",
+  "acceptance_criteria_results": [
+    {
+      "criterion": "Every claim labeled SOURCE_FACT is directly supported by its primary source text",
+      "status": "MET",
+      "evidence": "claim-ledger.json, source-by-source-audit.json"
+    },
+    {
+      "criterion": "Toolformer audit separates actual paper findings (self-supervised API filtering on perplexity) from KAD architectural framing",
+      "status": "MET",
+      "evidence": "toolformer-audit.json, claim-ledger.json"
+    },
+    {
+      "criterion": "SWE-bench audit corrects overstatement regarding universal ground-truth validation",
+      "status": "MET",
+      "evidence": "swe-bench-audit.json, claim-ledger.json"
+    },
+    {
+      "criterion": "Reflexion and Self-Refine are disentangled with separate source-grounded descriptions",
+      "status": "MET",
+      "evidence": "reflexion-self-refine-separation-audit.json, claim-ledger.json"
+    },
+    {
+      "criterion": "Metadata status consistency is resolved across source identity, bibliographic metadata completeness, and content provenance",
+      "status": "MET",
+      "evidence": "metadata-status-audit.json"
+    },
+    {
+      "criterion": "Deterministic claim-ledger.json documents claim-level verification statuses and supporting locations",
+      "status": "MET",
+      "evidence": "claim-ledger.json"
+    },
+    {
+      "criterion": "Revised synthesis strictly separates SOURCE_FACT, DERIVED_SYNTHESIS, PROJECT_INFERENCE, and UNKNOWN",
+      "status": "MET",
+      "evidence": "revised-synthesis.md"
+    },
+    {
+      "criterion": "Epistemic gap diagnosis identifies root cause without unnecessary production code churn",
+      "status": "MET",
+      "evidence": "workflow-gap-diagnosis.json"
+    },
+    {
+      "criterion": "Full regression suite (510+ tests) remains green and doctors report healthy/PASS",
+      "status": "MET",
+      "evidence": "regression-results.json"
+    }
+  ],
+  "knowledge_plane_seed_readiness": {
+    "trustworthy_as_seed_input": true,
+    "claim_level_integrity_verified": true,
+    "recommendation": "The five-source closed corpus is now epistemically trustworthy and verified to serve as seed material for the governed KAD KnowledgePlane."
+  },
+  "verdict": "PASS"
+}

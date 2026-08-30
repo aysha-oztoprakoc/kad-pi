@@ -1,0 +1,30 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "audit_focus": "Disentangling Reflexion (external feedback / episodic memory) from Self-Refine (internal critique / training-free iterative refinement)",
+  "papers": {
+    "reflexion": {
+      "citation": "Shinn et al., NeurIPS 2023 [arXiv:2303.11366]",
+      "architecture": "Actor + Evaluator + Self-Reflection + Episodic Memory",
+      "feedback_source": "External task feedback (unit test failure output, environment execution errors, scalar reward signals)",
+      "memory_mechanism": "Episodic memory buffer retaining linguistic self-reflections across consecutive trials",
+      "key_results": "Improves HumanEval pass@1 from 67.0% to 91.0% via test-feedback reflection loops"
+    },
+    "self_refine": {
+      "citation": "Madaan et al., NeurIPS 2023 [arXiv:2303.17651]",
+      "architecture": "Generator + Critic + Refiner (single frozen LLM)",
+      "feedback_source": "Self-generated multi-aspect critique and actionable feedback without external tool or test execution",
+      "memory_mechanism": "Multi-turn dialogue context within a single iterative refinement session",
+      "key_results": "Improves one-step generation by ~20% absolute across 7 diverse generation tasks without training"
+    }
+  },
+  "conflation_in_wp006": {
+    "flawed_statement": "WP-006 claimed under Section 3.4 that 'Storing verbal self-reflections derived from execution failure signals in an episodic memory buffer enables agents to rapidly correct errors on subsequent attempts (Shinn et al. [Reflexion]; Madaan et al. [Self-Refine]).'",
+    "error_analysis": "This attributed Reflexion's specific mechanisms (execution failure signals, episodic memory buffer) to Self-Refine. Self-Refine does NOT execute code, does NOT receive test failure signals, and does NOT use an episodic memory buffer across trials."
+  },
+  "remediation": {
+    "reflexion_source_fact": "Reflexion endows language agents with verbal reinforcement learning by converting external environment feedback (e.g. test failures, scalar rewards) into natural language self-reflections stored in an episodic memory buffer across consecutive trials.",
+    "self_refine_source_fact": "Self-Refine iteratively improves text generation using self-generated multi-aspect critique on a single frozen LLM without external execution feedback, training data, or human annotations.",
+    "legitimate_synthesis": "Both architectures demonstrate that iterative refinement driven by natural language feedback improves task performance without fine-tuning; Reflexion grounds feedback in external execution signals, whereas Self-Refine grounds feedback in internal multi-aspect self-critique.",
+    "status": "RESOLVED"
+  }
+}

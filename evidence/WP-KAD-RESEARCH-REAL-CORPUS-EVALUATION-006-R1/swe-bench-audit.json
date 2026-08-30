@@ -1,0 +1,21 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "paper": {
+    "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+    "authors": ["Carlos E. Jimenez", "John Yang", "Alexander Wettig", "Shunyu Yao", "Kexin Pei", "Ofir Press", "Karthik Narasimhan"],
+    "citation": "ICLR 2024 / arXiv:2310.06770",
+    "identifier": "doc:doi:10.48550/arxiv.2310.06770"
+  },
+  "audit_focus": "Audit of claim that unit/reproduction tests provide 'unambiguous ground-truth validation'",
+  "investigation": {
+    "primary_paper_text": "SWE-bench evaluates LLMs on 2,294 real software engineering problems from GitHub. An agent is provided with an issue description and codebase repository, and must generate a patch. The evaluation runs the repo test suite: a patch is resolved if it passes all pre-existing tests (PASS_TO_PASS) plus all newly added reproducer tests (FAIL_TO_PASS).",
+    "paper_terminology": ["automated benchmark evaluation", "PASS_TO_PASS tests", "FAIL_TO_PASS reproducer tests", "patch execution", "issue resolution rate"],
+    "kad_overstatement": "Claiming that unit/reproduction test execution provides 'unambiguous universal ground-truth validation for software correctness.'",
+    "diagnosis": "Unit and fail-to-pass tests provide automated, objective execution grading within the benchmark. However, tests themselves may have incomplete coverage, test suites can pass flawed work, and benchmark tests do not establish universal semantic ground truth. WP-006 overstated the guarantee provided by tests."
+  },
+  "remediation": {
+    "source_fact_restated": "SWE-bench provides an automated benchmark framework evaluating multi-file code patches against pre-existing tests and new fail-to-pass unit tests across 2,294 real GitHub problems, finding that zero-shot frontier models resolve under 5% of issues.",
+    "synthesis_narrowed": "Executable unit test suites provide concrete behavioral verification signals that expose when syntactically plausible model completions break regressions, while acknowledging that test passage alone is not a guarantee of total program correctness.",
+    "status": "RESOLVED"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "evaluated_at": "2026-08-30T02:15:00.000Z",
+  "audited_sources": [
+    {
+      "source_id": "doc:doi:10.48550/arxiv.2210.03629",
+      "short_name": "ReAct",
+      "citation": "Yao et al., ICLR 2023",
+      "claims_audited": 2,
+      "claims_supported": 2,
+      "claims_narrowed": 0,
+      "claims_reclassified": 0,
+      "claims_unsupported": 0,
+      "findings": "All ReAct claims in WP-006 were accurate and directly grounded in the paper's HotpotQA/Fever and ALFWorld/WebShop benchmarks."
+    },
+    {
+      "source_id": "doc:doi:10.48550/arxiv.2310.06770",
+      "short_name": "SWE-bench",
+      "citation": "Jimenez et al., ICLR 2024",
+      "claims_audited": 3,
+      "claims_supported": 2,
+      "claims_narrowed": 1,
+      "claims_reclassified": 1,
+      "claims_unsupported": 0,
+      "findings": "Repaired overstatement attributing 'unambiguous universal ground truth' to unit test execution. Preserved SWE-bench's real contribution: automated execution-based evaluation on 2,294 GitHub problems exposing low baseline model pass rates."
+    },
+    {
+      "source_id": "doc:doi:10.48550/arxiv.2302.04761",
+      "short_name": "Toolformer",
+      "citation": "Schick et al., NeurIPS 2023",
+      "claims_audited": 3,
+      "claims_supported": 2,
+      "claims_narrowed": 0,
+      "claims_reclassified": 1,
+      "claims_unsupported": 0,
+      "findings": "Separated Toolformer's actual findings (self-supervised API insertion filtered by perplexity loss on next token prediction) from KAD's architectural framing ('overcoming probabilistic limits with deterministic execution'). Reclassified framing as DERIVED_SYNTHESIS."
+    },
+    {
+      "source_id": "doc:doi:10.48550/arxiv.2303.11366",
+      "short_name": "Reflexion",
+      "citation": "Shinn et al., NeurIPS 2023",
+      "claims_audited": 3,
+      "claims_supported": 2,
+      "claims_narrowed": 0,
+      "claims_reclassified": 0,
+      "claims_unsupported": 1,
+      "findings": "Audited Reflexion's verbal reinforcement architecture with episodic memory and unit-test/scalar feedback. Removed conflated claim linking it with Self-Refine under a single mechanism."
+    },
+    {
+      "source_id": "doc:doi:10.48550/arxiv.2303.17651",
+      "short_name": "Self-Refine",
+      "citation": "Madaan et al., NeurIPS 2023",
+      "claims_audited": 3,
+      "claims_supported": 2,
+      "claims_narrowed": 0,
+      "claims_reclassified": 0,
+      "claims_unsupported": 1,
+      "findings": "Restored Self-Refine's true source mechanism: training-free, execution-free iterative refinement driven by multi-aspect self-critique. Removed conflated claim linking it to execution failure signals."
+    }
+  ],
+  "overall_verdict": "AUDIT_COMPLETE (Source fidelity restored across all 5 papers)"
+}

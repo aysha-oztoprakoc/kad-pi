@@ -1,0 +1,57 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "evaluated_at": "2026-08-30T02:15:00.000Z",
+  "audit_summary": {
+    "total_claims_audited": 15,
+    "claims_unchanged": 8,
+    "claims_narrowed": 2,
+    "claims_reclassified": 3,
+    "claims_removed_as_unsupported": 2
+  },
+  "counts_comparison": {
+    "source_fact": {
+      "wp006_before": 8,
+      "r1_after": 8,
+      "delta_notes": "Repaired 2 overbroad claims, reclassified 2 synthesis claims, added 2 explicit narrow source facts for Reflexion and Self-Refine"
+    },
+    "derived_synthesis": {
+      "wp006_before": 2,
+      "r1_after": 4,
+      "delta_notes": "Added reclassified Toolformer deterministic framing and explicit Reflexion vs Self-Refine comparative synthesis"
+    },
+    "project_inference": {
+      "wp006_before": 3,
+      "r1_after": 3,
+      "delta_notes": "Maintained explicit KAD-PI architectural application boundaries"
+    },
+    "unknown": {
+      "wp006_before": 2,
+      "r1_after": 2,
+      "delta_notes": "Maintained explicit empirical unknowns"
+    }
+  },
+  "detailed_diffs": [
+    {
+      "claim_id": "CLM-005-SWEBENCH-GROUND-TRUTH-OVERSTATEMENT",
+      "before_classification": "SOURCE_FACT",
+      "after_classification": "DERIVED_NOT_SOURCE_FACT",
+      "change": "NARROWED_AND_RECLASSIFIED",
+      "reason": "SWE-bench provides benchmark execution grading on 2,294 real problems; attributing 'unambiguous universal ground truth' was an overstatement."
+    },
+    {
+      "claim_id": "CLM-008-TOOLFORMER-DETERMINISTIC-FRAMING",
+      "before_classification": "SOURCE_FACT",
+      "after_classification": "DERIVED_SYNTHESIS",
+      "change": "RECLASSIFIED",
+      "reason": "Toolformer demonstrates API filtering based on perplexity loss; framing this as 'deterministic API execution overcoming probabilistic limits' is KAD architectural synthesis."
+    },
+    {
+      "claim_id": "CLM-013-REFLEXION-SELFREFINE-CONFLATION",
+      "before_classification": "SOURCE_FACT",
+      "after_classification": "UNSUPPORTED",
+      "change": "REMOVED_AND_DISENTANGLED",
+      "reason": "Conflated Self-Refine into Reflexion's execution failure feedback and episodic memory buffer. Disentangled into two distinct SOURCE_FACTs."
+    }
+  ],
+  "verdict": "PASS"
+}

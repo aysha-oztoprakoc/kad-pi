@@ -1,0 +1,72 @@
+{
+  "id": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "project": "kad-pi",
+  "title": "Epistemic Claim Audit & Source-Fidelity Repair",
+  "status": "ACCEPTED",
+  "priority": 100,
+  "spec_ref": "user:/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "fixed_point": "0ba74b9aedfd59a33857fdb81eead40dd48683c7",
+  "scope": [
+    "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1/",
+    "corpus/research/",
+    "wiki/research/",
+    "wiki/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md",
+    "docs/agents/research-workflow.md"
+  ],
+  "non_scope": [
+    "rebuilding the research workflow or adding new infrastructure",
+    "expanding the 5-paper research corpus",
+    "generating artificial traffic or modifying observatory readiness",
+    "claiming empirical savings without intervention",
+    "fabricating synthetic citations or papers"
+  ],
+  "owned_paths": [
+    "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1/",
+    "corpus/research/",
+    "wiki/research/",
+    "wiki/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md",
+    "docs/agents/research-workflow.md"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/research*.test.mjs",
+    "node --test tools/kad/test/readiness.test.mjs",
+    "node --test tools/kad/test/observatory.test.mjs",
+    "node --test tools/kad/test/economic-shadow.test.mjs",
+    "node --test tools/kad/test/telemetry-usage-bridge.test.mjs",
+    "node --test tools/kad/test/telemetry.test.mjs",
+    "node --test tools/kad/test/control-plane.test.mjs",
+    "node --test tools/kad/test/*.test.mjs",
+    "just verify",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Every claim labeled SOURCE_FACT is directly supported by its primary source text.",
+    "Toolformer audit separates actual paper findings (self-supervised API filtering on perplexity) from KAD architectural framing.",
+    "SWE-bench audit corrects overstatement regarding universal ground-truth validation.",
+    "Reflexion and Self-Refine are disentangled with separate source-grounded descriptions.",
+    "Metadata status consistency is resolved across source identity, bibliographic metadata completeness, and content provenance.",
+    "Deterministic claim-ledger.json documents claim-level verification statuses and supporting locations.",
+    "Revised synthesis strictly separates SOURCE_FACT, DERIVED_SYNTHESIS, PROJECT_INFERENCE, and UNKNOWN.",
+    "Epistemic gap diagnosis identifies root cause without unnecessary production code churn.",
+    "Full regression suite (510+ tests) remains green and doctors report healthy/PASS."
+  ],
+  "description": "Rigorous epistemic claim audit, source-fidelity repair, and claim-level ledger for the five-source research corpus ensuring seed trustworthiness for the governed KAD KnowledgePlane.",
+  "source_ticket": "user:/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "claim": null
+}

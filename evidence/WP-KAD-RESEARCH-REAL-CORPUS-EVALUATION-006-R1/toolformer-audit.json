@@ -1,0 +1,21 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "paper": {
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "authors": ["Timo Schick", "Jane Dwivedi-Yu", "Roberto Dessì", "Roberta Raileanu", "Maria Lomeli", "Luke Zettlemoyer", "Nicola Cancedda", "Thomas Scialom"],
+    "citation": "NeurIPS 2023 / arXiv:2302.04761",
+    "identifier": "doc:doi:10.48550/arxiv.2302.04761"
+  },
+  "audit_focus": "Separation of paper's empirical findings from KAD deterministic/probabilistic architectural framing",
+  "investigation": {
+    "primary_paper_text": "Toolformer is trained to decide which APIs to call, when to call them, what arguments to pass, and how to incorporate the results... Filtering criterion: given a position i and candidate API call c_i with execution result r_i, we compute the weighted cross-entropy loss over subsequent tokens. An API call is kept if L_i(r_i) - min(L_i(empty), L_i(r_empty)) > tau_f (threshold).",
+    "paper_terminology": ["self-supervised tool use", "language modeling loss", "perplexity reduction", "API call filtering", "zero-shot performance"],
+    "kad_injected_terminology": ["deterministic API execution", "probabilistic failure modes", "overcoming probabilistic weaknesses", "deterministic anchor"],
+    "diagnosis": "The finding that Toolformer achieves strong zero-shot performance on downstream benchmarks by filtering API calls that reduce next-token perplexity is a SOURCE_FACT. Framing this as 'deterministic execution overcoming probabilistic limits' is a valid KAD-PI systems engineering synthesis, but was incorrectly labeled as a direct paper finding in WP-006."
+  },
+  "remediation": {
+    "source_fact_restated": "Toolformer learns self-supervised API call insertion by retaining only those calls where the tool execution result strictly reduces cross-entropy loss on subsequent token prediction, improving zero-shot benchmark performance on arithmetic (ASDiv, SVAMP), QA (LAMA), and temporal reasoning (TempLAMA).",
+    "synthesis_reclassified": "Interpreting API execution as a deterministic verification and grounding mechanism that bounds probabilistic language model generation is classified as DERIVED_SYNTHESIS / PROJECT_INFERENCE.",
+    "status": "RESOLVED"
+  }
+}

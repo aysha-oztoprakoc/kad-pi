@@ -1,0 +1,16 @@
+{
+  "baseline_commit": "0ba74b9aedfd59a33857fdb81eead40dd48683c7",
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "fixed_point": "0ba74b9aedfd59a33857fdb81eead40dd48683c7",
+  "audit_target": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "closed_corpus_size": 5,
+  "sources": [
+    "doc:doi:10.48550/arxiv.2210.03629",
+    "doc:doi:10.48550/arxiv.2310.06770",
+    "doc:doi:10.48550/arxiv.2302.04761",
+    "doc:doi:10.48550/arxiv.2303.11366",
+    "doc:doi:10.48550/arxiv.2303.17651"
+  ],
+  "initial_tests_count": 510,
+  "verdict": "READY"
+}

@@ -1,0 +1,28 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "evaluated_at": "2026-08-30T02:15:00.000Z",
+  "diagnosis_question": "What was the root cause of epistemic misclassification in WP-006?",
+  "investigated_causes": [
+    {
+      "cause": "A. Artifact-Authoring Error Only",
+      "findings": "PRIMARY CAUSE. Narrative synthesis in WP-006 blended source findings with architectural interpretation without maintaining an explicit sentence-by-sentence claim ledger.",
+      "contribution_level": "PRIMARY"
+    },
+    {
+      "cause": "B. Missing Research-Workflow Claim Validation",
+      "findings": "CONTRIBUTING FACTOR. The existing Research API validates document/source/identifier integrity and path safety, but claim-level extraction and verification was performed in narrative markdown without an automated claim ledger verifier.",
+      "contribution_level": "CONTRIBUTING"
+    },
+    {
+      "cause": "C. Schema Incapable of Representing Evidence",
+      "findings": "NOT THE CAUSE. The underlying schema (kad-research-corpus-v1, knowledge-plane EPISTEMIC_CLASSES) fully supports distinguishing SOURCE_FACT, DERIVED_SYNTHESIS, PROJECT_INFERENCE, and UNKNOWN.",
+      "contribution_level": "DISPROVEN"
+    }
+  ],
+  "remediation_strategy": {
+    "immediate_fix": "Authored deterministic claim-ledger.json and revised-synthesis.md with explicit claim-level provenance, locations, and verification statuses.",
+    "future_promotion_invariant": "Before any research corpus is promoted to seed status in the governed KnowledgePlane, a deterministic claim ledger must be validated against primary source excerpts.",
+    "production_code_impact": "Zero unnecessary code churn required; data and documentation models restored to full epistemic honesty."
+  },
+  "verdict": "PASS"
+}

@@ -1,0 +1,157 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+  "audit_version": "kad-claim-ledger-v1",
+  "generated_at": "2026-08-30T02:15:00.000Z",
+  "claims": [
+    {
+      "claim_id": "CLM-001-REACT-REASONING-ACTING",
+      "claim_text": "Prompting language models to generate interleaved reasoning traces and task-specific actions improves multi-step decision-making and factual retrieval over reasoning-only or action-only baselines.",
+      "classification": "SOURCE_FACT",
+      "source_id": "doc:doi:10.48550/arxiv.2210.03629",
+      "support_location": "Yao et al., 2023 [ReAct], Abstract, §1, §3 (HotpotQA/Fever, ALFWorld/WebShop)",
+      "support_type": "EXPLICIT_SOURCE_PASSAGE",
+      "verification_status": "SUPPORTED",
+      "notes": "Directly supported by empirical benchmarks in the paper comparing ReAct against Chain-of-Thought (reasoning-only) and Act-only baselines."
+    },
+    {
+      "claim_id": "CLM-002-REACT-STATE-SEPARATION",
+      "claim_text": "Separating thoughts (internal mental state representation) from acts (external state transitions) provides a human-interpretable trace for diagnosing agent behavior.",
+      "classification": "SOURCE_FACT",
+      "source_id": "doc:doi:10.48550/arxiv.2210.03629",
+      "support_location": "Yao et al., 2023 [ReAct], §3.1, §4",
+      "support_type": "EXPLICIT_SOURCE_PASSAGE",
+      "verification_status": "SUPPORTED",
+      "notes": "Paper explicitly details how trajectory inspection of thought vs action steps enables error diagnosis."
+    },
+    {
+      "claim_id": "CLM-003-SWEBENCH-BENCHMARK-HARNESS",
+      "claim_text": "SWE-bench evaluates LLM code generation on 2,294 real-world GitHub issues using existing repository unit tests and issue-reproducing fail-to-pass tests.",
+      "classification": "SOURCE_FACT",
+      "source_id": "doc:doi:10.48550/arxiv.2310.06770",
+      "support_location": "Jimenez et al., 2024 [SWE-bench], Abstract, §2, §3",
+      "support_type": "EXPLICIT_SOURCE_PASSAGE",
+      "verification_status": "SUPPORTED",
+      "notes": "Direct factual description of the SWE-bench dataset, repos, and test harness."
+    },
+    {
+      "claim_id": "CLM-004-SWEBENCH-BASELINE-ACCURACY",
+      "claim_text": "Baseline language models in a zero-shot scaffold resolved fewer than 5% of SWE-bench GitHub issues (Claude 2: 4.8%, GPT-4: 1.7%).",
+      "classification": "SOURCE_FACT",
+      "source_id": "doc:doi:10.48550/arxiv.2310.06770",
+      "support_location": "Jimenez et al., 2024 [SWE-bench], §4 (Table 1, Table 3)",
+      "support_type": "EXPLICIT_SOURCE_METRIC",
+      "verification_status": "SUPPORTED",
+      "notes": "Direct factual metric from SWE-bench empirical evaluation table."
+    },
+    {
+      "claim_id": "CLM-005-SWEBENCH-GROUND-TRUTH-OVERSTATEMENT",
+      "claim_text": "Unit test suites and reproduction tests provide unambiguous universal ground-truth validation for software correctness.",
+      "classification": "DERIVED_NOT_SOURCE_FACT",
+      "source_id": "doc:doi:10.48550/arxiv.2310.06770",
+      "support_location": "Jimenez et al., 2024 [SWE-bench], §1, §3",
+      "support_type": "KAD_OVERSTATEMENT_REPAIR",
+      "verification_status": "DERIVED_NOT_SOURCE_FACT",
+      "notes": "WP-006 overstatement repaired: SWE-bench establishes executable unit tests as an automated benchmark grading mechanism, not universal semantic truth."
+    },
+    {
+      "claim_id": "CLM-006-TOOLFORMER-PERPLEXITY-FILTER",
+      "claim_text": "Toolformer self-supervises API call generation and execution, retaining only those tool calls that reduce language modeling perplexity on predicting subsequent tokens.",
+      "classification": "SOURCE_FACT",
+      "source_id": "doc:doi:10.48550/arxiv.2302.04761",
+      "support_location": "Schick et al., 2023 [Toolformer], Abstract, §2, §3",
+      "support_type": "EXPLICIT_SOURCE_PASSAGE",
+      "verification_status": "SUPPORTED",
+      "notes": "Direct factual description of the Toolformer loss filtering formula and self-supervised training algorithm."
+    },
+    {
+      "claim_id": "CLM-007-TOOLFORMER-BENCHMARKS",
+      "claim_text": "Toolformer achieves improved zero-shot performance on math (ASDiv, SVAMP), QA (LAMA), and temporal reasoning (TempLAMA) benchmarks via API execution.",
+      "classification": "SOURCE_FACT",
+      "source_id": "doc:doi:10.48550/arxiv.2302.04761",
+      "support_location": "Schick et al., 2023 [Toolformer], §4 (Table 1, Table 2, Table 3)",
+      "support_type": "EXPLICIT_SOURCE_METRIC",
+      "verification_status": "SUPPORTED",
+      "notes": "Direct factual metric from Toolformer benchmark tables across calculator, QA, Wikipedia, and calendar tools."
+    },
+    {
+      "claim_id": "CLM-008-TOOLFORMER-DETERMINISTIC-FRAMING",
+      "claim_text": "Deterministic API execution overcomes probabilistic weaknesses in arithmetic, temporal reasoning, and factual retrieval.",
+      "classification": "DERIVED_SYNTHESIS",
+      "source_id": "doc:doi:10.48550/arxiv.2302.04761",
+      "support_location": "Schick et al., 2023 combined with KAD Systems Engineering",
+      "support_type": "SYNTHESIS_RECLASSIFICATION",
+      "verification_status": "DERIVED_NOT_SOURCE_FACT",
+      "notes": "Reclassified from SOURCE_FACT to DERIVED_SYNTHESIS. The deterministic vs probabilistic framing is a KAD synthesis; Toolformer frames its contribution as perplexity reduction via API calls."
+    },
+    {
+      "claim_id": "CLM-009-REFLEXION-EPISODIC-FEEDBACK",
+      "claim_text": "Reflexion endows language agents with verbal reinforcement learning by storing natural language self-reflections derived from external environment signals (e.g. test failures, scalar rewards) in an episodic memory buffer.",
+      "classification": "SOURCE_FACT",
+      "source_id": "doc:doi:10.48550/arxiv.2303.11366",
+      "support_location": "Shinn et al., 2023 [Reflexion], Abstract, §2, §3",
+      "support_type": "EXPLICIT_SOURCE_PASSAGE",
+      "verification_status": "SUPPORTED",
+      "notes": "Direct factual description of the Reflexion architecture (Actor, Evaluator, Self-Reflection, Episodic Memory)."
+    },
+    {
+      "claim_id": "CLM-010-REFLEXION-HUMANEVAL-SCORE",
+      "claim_text": "Reflexion improves GPT-4 pass@1 accuracy on the HumanEval Python coding benchmark from 67.0% to 91.0% through iterative self-reflection on unit test feedback.",
+      "classification": "SOURCE_FACT",
+      "source_id": "doc:doi:10.48550/arxiv.2303.11366",
+      "support_location": "Shinn et al., 2023 [Reflexion], §4.1 (Table 1)",
+      "support_type": "EXPLICIT_SOURCE_METRIC",
+      "verification_status": "SUPPORTED",
+      "notes": "Direct factual metric from Reflexion code generation experiments."
+    },
+    {
+      "claim_id": "CLM-011-SELFREFINE-INTERNAL-CRITIQUE",
+      "claim_text": "Self-Refine iteratively improves text generation using self-generated multi-aspect critique without requiring external environment execution feedback, task-specific training, or human annotations.",
+      "classification": "SOURCE_FACT",
+      "source_id": "doc:doi:10.48550/arxiv.2303.17651",
+      "support_location": "Madaan et al., 2023 [Self-Refine], Abstract, §2, §3",
+      "support_type": "EXPLICIT_SOURCE_PASSAGE",
+      "verification_status": "SUPPORTED",
+      "notes": "Direct factual description of Self-Refine's generator-critic-refiner loop on a single frozen model."
+    },
+    {
+      "claim_id": "CLM-012-SELFREFINE-PERFORMANCE",
+      "claim_text": "Self-Refine achieves an average absolute performance gain of ~20% across 7 generation tasks including code optimization, acronym generation, and constrained dialogue.",
+      "classification": "SOURCE_FACT",
+      "source_id": "doc:doi:10.48550/arxiv.2303.17651",
+      "support_location": "Madaan et al., 2023 [Self-Refine], §4 (Table 1)",
+      "support_type": "EXPLICIT_SOURCE_METRIC",
+      "verification_status": "SUPPORTED",
+      "notes": "Direct factual metric from Self-Refine experimental evaluation across tasks."
+    },
+    {
+      "claim_id": "CLM-013-REFLEXION-SELFREFINE-CONFLATION",
+      "claim_text": "Both Reflexion and Self-Refine store verbal self-reflections derived from execution failure signals in an episodic memory buffer.",
+      "classification": "UNSUPPORTED",
+      "source_id": "doc:doi:10.48550/arxiv.2303.11366; doc:doi:10.48550/arxiv.2303.17651",
+      "support_location": "WP-006 Section 3.4 Conflation",
+      "support_type": "CONFLATION_REMOVAL",
+      "verification_status": "UNSUPPORTED",
+      "notes": "WP-006 conflation identified and marked UNSUPPORTED. Self-Refine does NOT use execution failure signals or episodic memory; Reflexion does."
+    },
+    {
+      "claim_id": "CLM-014-ITERATIVE-REFINEMENT-SYNTHESIS",
+      "claim_text": "Inference-time iterative refinement and linguistic critique can improve generation quality without gradient descent; Reflexion anchors critique on external execution signals, while Self-Refine anchors critique on internal self-evaluation.",
+      "classification": "DERIVED_SYNTHESIS",
+      "source_id": "doc:doi:10.48550/arxiv.2303.11366; doc:doi:10.48550/arxiv.2303.17651",
+      "support_location": "Synthesis across Shinn et al. and Madaan et al.",
+      "support_type": "SYNTHESIS_COMPARISON",
+      "verification_status": "SUPPORTED",
+      "notes": "Legitimate derived synthesis explicitly identifying the commonality (training-free iterative refinement) and the key operational distinction (external feedback vs internal critique)."
+    },
+    {
+      "claim_id": "CLM-015-KAD-TRIPARTITE-ARCHITECTURE",
+      "claim_text": "Reconciling probabilistic model generation with deterministic software engineering invariants is best achieved via a tripartite architecture separating probabilistic generators, deterministic harnesses, and deterministic verifiers.",
+      "classification": "PROJECT_INFERENCE",
+      "source_id": "KAD-PI Architecture Specification",
+      "support_location": "PRIME_DIRECTIVE.md, KAD Governance",
+      "support_type": "PROJECT_INFERENCE",
+      "verification_status": "SUPPORTED",
+      "notes": "Explicitly classified as KAD-PI Project Inference. The five papers inform this architecture but do not collectively assert it as a unified framework."
+    }
+  ]
+}
