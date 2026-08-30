@@ -1,0 +1,40 @@
+[
+  {
+    "id": "record:wiki:KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+    "title": "KAD Context Knowledge Plane Roadmap",
+    "kind": "roadmap",
+    "namespace": "ROADMAP",
+    "status": "ACCEPTED",
+    "source_ref": "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+    "source_hash": "4af8121c7b4ce2c3a400439d1e1a830deda5706c09c49e32d0599bbc9ad29f78",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "KAD-PI Canonical Context, Knowledge and Local-Specialist Plane Roadmap",
+    "relationships": [],
+    "source_class": "ROADMAP"
+  },
+  {
+    "id": "record:wiki:KAD_Implementation_Plan.md",
+    "title": "KAD Implementation Plan",
+    "kind": "roadmap",
+    "namespace": "ROADMAP",
+    "status": "SUPERSEDED",
+    "source_ref": "wiki/KAD_Implementation_Plan.md",
+    "source_hash": "9579bae5bc26728357bb953f7910dbfb1fcc8bedd46b11da17405495f7e14818",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "High-Level Implementation Plan — K.A.D. Local AI Experimental Platform",
+    "relationships": [],
+    "source_class": "ROADMAP"
+  }
+]

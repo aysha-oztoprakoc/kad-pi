@@ -1,0 +1,31 @@
+[
+  {
+    "id": "evidence:WP-KAD-KNOWLEDGE-PLANE-001:adapter-probe.json",
+    "title": "KnowledgePlane Adapter Failures",
+    "kind": "failure",
+    "namespace": "FAILURES",
+    "status": "DEGRADED",
+    "source_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/adapter-probe.json",
+    "source_hash": "6f2d2875efde2f2e69818e910cc485ea9015c05254871eab3f7c4de7aa925c5a",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "KnowledgePlane Adapter Failures",
+    "relationships": [
+      {
+        "type": "supports",
+        "target": "status:WP-KAD-KNOWLEDGE-PLANE-001"
+      }
+    ],
+    "workpackage": "WP-KAD-KNOWLEDGE-PLANE-001",
+    "verdict": "DEGRADED",
+    "report_path": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/adapter-probe.json",
+    "commit": null,
+    "date": null,
+    "evidence_type": "FAILURE"
+  }
+]

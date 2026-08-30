@@ -1,0 +1,21 @@
+[
+  {
+    "id": "record:CONTEXT.md",
+    "title": "KAD-PI Domain Context",
+    "kind": "glossary",
+    "namespace": "GLOSSARY",
+    "status": "ACCEPTED",
+    "source_ref": "CONTEXT.md",
+    "source_hash": "ddce7a4f7144edbf74be4915f8ab2e53ad142d17afe6804054e3730e13293f66",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "KAD-PI Domain Context",
+    "relationships": [],
+    "source_class": "GLOSSARY"
+  }
+]

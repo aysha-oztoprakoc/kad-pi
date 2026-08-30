@@ -1,0 +1,21 @@
+[
+  {
+    "id": "record:wiki:synthetic:03_PI_HARNESS_INTEGRATION.md",
+    "title": "Pi Harness Integration",
+    "kind": "technology",
+    "namespace": "TECHNOLOGIES",
+    "status": "ACCEPTED",
+    "source_ref": "wiki/synthetic/03_PI_HARNESS_INTEGRATION.md",
+    "source_hash": "2fb8403a7ca9db02305ba9024d902f40f58a7f8bf46b4fbdc203adcfbd6fce7d",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Integration: Pi Coding Agent SDK & Lifecycle Seams",
+    "relationships": [],
+    "source_class": "TECHNOLOGY"
+  }
+]

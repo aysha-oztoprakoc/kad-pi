@@ -45,4 +45,43 @@ export function migrationManifest({ root = vaultRoot(), legacyRoot = path.resolv
   fs.writeFileSync(path.join(root, '90_Derived/KnowledgePlane/migration-manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
   return manifest;
 }
-export function migrateLegacyWiki(options = {}) { return migrationManifest(options); }
+export function executeMigration({ root = vaultRoot(), legacyRoot = path.resolve('wiki') } = {}) {
+  ensureVault(root);
+  const manifest = migrationManifest({ root, legacyRoot });
+  let migrated = 0, review = 0, archive = 0, derived = 0;
+  for (const entry of manifest.entries) {
+    const sourceFile = path.join(legacyRoot, entry.old_path);
+    const destFile = path.join(root, entry.destination);
+    fs.mkdirSync(path.dirname(destFile), { recursive: true });
+    const content = fs.readFileSync(sourceFile, 'utf8');
+
+    if (entry.classification === 'MIGRATE_CANONICAL') {
+      const isRoadmap = entry.old_path.toLowerCase().includes('roadmap');
+      const title = path.basename(entry.old_path, '.md').replaceAll('_', ' ');
+      const type = isRoadmap ? 'roadmap' : 'workpackage';
+      const cleanContent = content.replace(/^---[\s\S]*?---\n/, '');
+      const frontmatter = `---\nkad_id: ${entry.canonical_id}\ntitle: ${title}\ntype: ${type}\nauthority: CANONICAL_KNOWLEDGE\nepistemic_class: PROJECT_INFERENCE\nreview_status: APPROVED\nvisibility: project\ncontext_eligible: true\ntrain_eligible: false\npublish: false\ntemporal_status: CURRENT\nlegacy_source: wiki/${entry.old_path}\n---\n\n`;
+      fs.writeFileSync(destFile, frontmatter + cleanContent.trimStart());
+      entry.migration_status = 'MIGRATED';
+      migrated += 1;
+    } else if (entry.classification === 'REVIEW_REQUIRED') {
+      const title = `Review: ${path.basename(entry.old_path)}`;
+      const cleanContent = content.replace(/^---[\s\S]*?---\n/, '');
+      const frontmatter = `---\nkad_id: ${entry.canonical_id}\ntitle: ${title}\ntype: review_record\nauthority: PROPOSAL_UNREVIEWED\nepistemic_class: UNKNOWN\nreview_status: PENDING\nvisibility: project\ncontext_eligible: false\ntrain_eligible: false\npublish: false\ntemporal_status: HISTORICAL\nlegacy_source: wiki/${entry.old_path}\n---\n\n`;
+      fs.writeFileSync(destFile, frontmatter + cleanContent.trimStart());
+      entry.migration_status = 'REVIEW_PENDING';
+      review += 1;
+    } else if (entry.classification === 'ARCHIVE') {
+      fs.copyFileSync(sourceFile, destFile);
+      entry.migration_status = 'ARCHIVED';
+      archive += 1;
+    } else if (entry.classification === 'DERIVED_ONLY') {
+      fs.copyFileSync(sourceFile, destFile);
+      entry.migration_status = 'DERIVED';
+      derived += 1;
+    }
+  }
+  fs.writeFileSync(path.join(root, '90_Derived/KnowledgePlane/migration-manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
+  return { migrated, review, archive, derived, total: manifest.entries.length, manifest };
+}
+export function migrateLegacyWiki(options = {}) { return executeMigration(options); }

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "experiment:evidence:WP-KAD-005:rag-experiment-results.json",
+    "title": "RAG Experiment Results",
+    "kind": "experiment",
+    "namespace": "EXPERIMENTS",
+    "status": "EXPERIMENTAL",
+    "source_ref": "evidence/WP-KAD-005/rag-experiment-results.json",
+    "source_hash": "af084a6dea482634f9aa46f13500b1041d068e11201ca6f2f7bbd2c792641b43",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "RAG Experiment Results",
+    "relationships": [
+      {
+        "type": "tests",
+        "target": "hypothesis:bounded-retrieval"
+      }
+    ],
+    "research_type": "EXPERIMENT",
+    "tested_hypothesis": "UNKNOWN"
+  }
+]

@@ -1,5 +1,86 @@
 {
   "schema": "kad-canonical-manifest-v1",
-  "canonical_revision": "4909af21cfb1cf0ddcd447461ec4a7aae5a3b41663e3ec5a5186e374b88829a4",
-  "notes": []
+  "canonical_revision": "583f35eecbbc6f6eafbbc9dd98ecefebb3d6a197cb2bd47a1db1ba22c9be47a8",
+  "notes": [
+    {
+      "kad_id": "kad-current-architecture",
+      "path": "50_Projects/KAD-PI/Architecture/Current-Architecture.md",
+      "content_hash": "de259d1e49f58a05fef3bd37b14da1d0ae4bdecb9a0ac833795b609c5704cfd6",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "review_status": "APPROVED"
+    },
+    {
+      "kad_id": "kad-pi-overview",
+      "path": "50_Projects/KAD-PI/Overview/KAD-PI-Overview.md",
+      "content_hash": "7a69281aec9042c29ff21e466757b7e5b098bc52e6cf06ba8df808aa270060ca",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "review_status": "APPROVED"
+    },
+    {
+      "kad_id": "kad-6ce9170fbc7d4d5940dee47f",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Counterfactual_Observatory_2026-08-30.md",
+      "content_hash": "55591d18fdb8c62c2ed9c53b3cadba321493a94fdd0ca9daa30a6a3863ff72cc",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "review_status": "APPROVED"
+    },
+    {
+      "kad_id": "kad-fa1e2eade887444402d4f67e",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Counterfactual_Promotion_Readiness_2026-08-30.md",
+      "content_hash": "519a203b43a8f47feedc633e6ed5c73244d5538e37f6dfc80e197285283c1bd1",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "review_status": "APPROVED"
+    },
+    {
+      "kad_id": "kad-7b6cfdcb43554a02fdede3e0",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Economic_Router_Shadow_2026-08-30.md",
+      "content_hash": "3e759e7cc587665a5fc28482d9ea5972dd071af5bf456673b3c5e71114734b84",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "review_status": "APPROVED"
+    },
+    {
+      "kad_id": "kad-f147e92c50de78c6b941a4f0",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Knowledge_Plane_Seed_Promotion_2026-08-30.md",
+      "content_hash": "6cfae3e25f7e2e91e097242f51fc06fafef33f87b03a4e856560997f8872e993",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "review_status": "APPROVED"
+    },
+    {
+      "kad_id": "kad-9a8fabf777cac7f99276ed02",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Operator_Control_Plane_2026-08-29.md",
+      "content_hash": "32464f15d87b7dae61fd11fd0312b75959325a8135643e3e8bb15e94183ebc22",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "review_status": "APPROVED"
+    },
+    {
+      "kad_id": "kad-721d25aaed5cf16bd64167b5",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md",
+      "content_hash": "92d20defde3abcbe8d64ddcd37faa7fb219a486753d28d7575bba1a11e779b02",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "review_status": "APPROVED"
+    },
+    {
+      "kad_id": "kad-841db1a378d9c7ddbcc45812",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Research_Workflow_Implementation_Roadmap_2026-08-29.md",
+      "content_hash": "a6b1180d26ed3cd143dba48835d14474c9dc65ed2b97d501200086f6b355e315",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "review_status": "APPROVED"
+    },
+    {
+      "kad_id": "kad-63517e1567e1d643bfa2f23a",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Usage_Bridge_2026-08-30.md",
+      "content_hash": "9c97b651eec05f4edef5794c2b55975673fb445760cbbf0cb860db1d2a26de4f",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "review_status": "APPROVED"
+    }
+  ]
 }

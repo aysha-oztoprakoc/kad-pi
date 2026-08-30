@@ -1,0 +1,27 @@
+{
+  "task": "WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1",
+  "project": "kad-pi",
+  "claim_id": "3be8e210-27b9-4697-966a-dca1c59a6f4d",
+  "actor_label": "codex-main",
+  "started_at": "2026-08-30T07:17:57.997Z",
+  "base_commit": "ca1f56a020a3416eeffa3d49f3c34f113b536902",
+  "owned_paths": [
+    "vault",
+    "wiki",
+    "tools/kad/wiki",
+    "tools/kad/wiki-library",
+    "tools/kad/wiki-projection.mjs",
+    "tools/kad/knowledge-plane.mjs",
+    "tools/kad/knowledge-plane-adapters.mjs",
+    "tools/kad/index.mjs",
+    "bin/kad-wiki",
+    "tools/kad/test/wiki*.test.mjs",
+    "tools/kad/test/knowledge-plane.test.mjs",
+    "evidence/WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1",
+    "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010",
+    "docs"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T07:31:55.640Z"
+}

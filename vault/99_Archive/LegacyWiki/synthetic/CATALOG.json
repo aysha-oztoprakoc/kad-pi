@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-29T00:00:00Z",
+  "documents": [
+    {
+      "id": "ARCH_PON_STC",
+      "title": "Architecture: Notification-Oriented Paradigm (PON) & Spatiotemporal Composability (STC)",
+      "path": "wiki/synthetic/01_ARCHITECTURE_PON_STC.md",
+      "type": "synthetic_distillation",
+      "domain": "PON_STC_CORE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "summary": "Formal specification of PON causal reaction and STC / Cordis spatiotemporal lifetime management, managed effects, and degradation loops.",
+      "retrieval_keywords": ["PON", "STC", "Cordis", "Fiber", "Context", "Notification", "Causality", "Managed Effect", "Coeffect"]
+    },
+    {
+      "id": "SIM_AUTHORITY_CORE",
+      "title": "Simulation & Core: Deterministic Authority Boundary & World Simulation",
+      "path": "wiki/synthetic/02_DETERMINISTIC_AUTHORITY_SIMULATION.md",
+      "type": "synthetic_distillation",
+      "domain": "KAD_SIMULATION",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Specification of the authority boundary separating probabilistic LLM interpretation (CandidateIntent) from deterministic validation and state resolution.",
+      "retrieval_keywords": ["Authority Boundary", "CandidateIntent", "ValidatedIntent", "Validator", "Resolver", "StateDiff", "GameState", "RPG"]
+    },
+    {
+      "id": "PI_HARNESS_INTEGRATION",
+      "title": "Integration: Pi Coding Agent SDK & Lifecycle Seams (WP-KAD-001)",
+      "path": "wiki/synthetic/03_PI_HARNESS_INTEGRATION.md",
+      "type": "synthetic_distillation",
+      "domain": "PI_INTEGRATION",
+      "epistemic_status": "CONFIRMED",
+      "summary": "Empirically verified integration seam for Pi 0.84.3 SDK session subscription, Cordis lifecycle mounting, and unsubscription teardown.",
+      "retrieval_keywords": ["Pi Coding Agent", "SDK", "createAgentSession", "session.subscribe", "session.steer", "queue_update", "WP-KAD-001"]
+    },
+    {
+      "id": "SWARM_GOVERNANCE",
+      "title": "Governance: Agent Swarm Architecture & Antigravity (AGY) Workflows",
+      "path": "wiki/synthetic/04_SWARM_GOVERNANCE_AGENTS.md",
+      "type": "synthetic_distillation",
+      "domain": "SWARM_GOVERNANCE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Multi-agent swarm governance on Antigravity (AGY) specifying role specialization, Flash exploration vs Pro decision, and STOP conditions.",
+      "retrieval_keywords": ["AGY", "Swarm", "kad-master", "kad-researcher", "kad-builder", "kad-tester", "kad-reviewer", "WorkPackage"]
+    },
+    {
+      "id": "ECON_ROUTING",
+      "title": "Economics: Subscription Quota Economics & Dynamic Swarm Routing",
+      "path": "wiki/synthetic/05_SUBSCRIPTION_ECONOMICS_ROUTING.md",
+      "type": "synthetic_distillation",
+      "domain": "SUBSCRIPTION_ECONOMICS",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Economic analysis across ChatGPT Plus, Google AI Pro, and OpenCode Go with cost-per-accepted-step metric and dynamic model-to-role routing.",
+      "retrieval_keywords": ["Subscription Economics", "Quota Pools", "ChatGPT Plus", "Google AI Pro", "OpenCode Go", "Routing Matrix"]
+    },
+    {
+      "id": "SAFE_LAB_TOOLCHAINS",
+      "title": "Lab & Toolchains: DeepHar, Safe Plugins & Omarchy Workstation Customization",
+      "path": "wiki/synthetic/06_SAFE_PLUGIN_LAB_TOOLCHAINS.md",
+      "type": "synthetic_distillation",
+      "domain": "SAFE_LAB_TOOLCHAINS",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Isolated staging environment for DeepSeek Harness (dsh) / Cordis plugins, Dream OS customizations, and QuickShell UI design.",
+      "retrieval_keywords": ["DeepHar", "DeepSeek Harness", "Dream OS", "QuickShell", "Omarchy", "Plugin Sandbox", "Hyprland"]
+    },
+    {
+      "id": "EVIDENCE_EPISTEMOLOGY",
+      "title": "Epistemology: Prime Directive, Evidence Ledgers & Scientific Reconstructability",
+      "path": "wiki/synthetic/07_EVIDENCE_EPISTEMOLOGY_LEDGER.md",
+      "type": "synthetic_distillation",
+      "domain": "EPISTEMOLOGY_EVIDENCE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Normative standards for scientific reconstructability, epistemic classification tags, testing reality levels, and claim ledgers.",
+      "retrieval_keywords": ["Prime Directive", "Epistemic Status", "Reality Levels", "Claim Ledger", "Reconstructability", "Evidence"]
+    },
+    {
+      "id": "LIBRARIAN_PROTOCOL",
+      "title": "Librarian Agent Protocol & Operating Manual",
+      "path": "wiki/synthetic/LIBRARIAN.md",
+      "type": "governance",
+      "domain": "EPISTEMOLOGY_EVIDENCE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Authoritative operating manual and retrieval protocol for the autonomous Librarian Agent.",
+      "retrieval_keywords": ["Librarian", "Agent Protocol", "Retrieval", "Multi-Hop", "Ontology", "Search Engine"]
+    },
+    {
+      "id": "TAXONOMY_SPEC",
+      "title": "Domain Taxonomy & Semantic Ontology",
+      "path": "wiki/synthetic/TAXONOMY.md",
+      "type": "governance",
+      "domain": "PON_STC_CORE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "summary": "Ontological mapping of terms, relationships, and concepts across KAD domains.",
+      "retrieval_keywords": ["Taxonomy", "Ontology", "Glossary", "Concepts", "Domain Graph"]
+    },
+    {
+      "id": "DOMAIN_CONTEXT",
+      "title": "KAD-PI Domain Context Glossary",
+      "path": "CONTEXT.md",
+      "type": "governance",
+      "domain": "PON_STC_CORE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Canonical domain vocabulary and avoidance terms for the project root.",
+      "retrieval_keywords": ["Context", "Glossary", "Vocabulary", "Language", "Domain Model"]
+    },
+    {
+      "id": "PRIME_DIRECTIVE_CONST",
+      "title": "PRIME DIRECTIVE — Constitution for KAD Harness",
+      "path": "PRIME_DIRECTIVE.md",
+      "type": "governance",
+      "domain": "EPISTEMOLOGY_EVIDENCE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "The normative constitution establishing PON, STC, TDD, Graceful Degradation, and Scientific Evidence directives.",
+      "retrieval_keywords": ["Prime Directive", "Constitution", "Axioms", "STOP Conditions", "Epistemic Status"]
+    },
+    {
+      "id": "ADR_0001",
+      "title": "ADR 0001: Notification-Oriented Causality over Polling",
+      "path": "docs/adr/0001-notification-oriented-causality.md",
+      "type": "adr",
+      "domain": "PON_STC_CORE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Decision to enforce PON notification cascades and forbid polling across reactive components.",
+      "retrieval_keywords": ["ADR", "Decision", "PON", "Notification", "Polling"]
+    },
+    {
+      "id": "ADR_0002",
+      "title": "ADR 0002: Spatiotemporal Composability and Cordis Lifetime Ownership",
+      "path": "docs/adr/0002-spatiotemporal-composability-cordis-ownership.md",
+      "type": "adr",
+      "domain": "PON_STC_CORE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Decision to govern component lifecycles, dependencies, and managed effect rollback using Cordis contexts.",
+      "retrieval_keywords": ["ADR", "Decision", "STC", "Cordis", "Lifetime", "Rollback"]
+    },
+    {
+      "id": "ADR_0003",
+      "title": "ADR 0003: Intent Authority Boundary in Simulation and Game Core",
+      "path": "docs/adr/0003-intent-authority-boundary.md",
+      "type": "adr",
+      "domain": "KAD_SIMULATION",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Decision to decouple probabilistic natural language interpreters from deterministic state mutation via Validator and Resolver.",
+      "retrieval_keywords": ["ADR", "Decision", "Authority Boundary", "Validator", "Resolver"]
+    },
+    {
+      "id": "ADR_0004",
+      "title": "ADR 0004: Model-Agnostic Control Plane and Role-Based Swarm Routing",
+      "path": "docs/adr/0004-model-agnostic-control-plane.md",
+      "type": "adr",
+      "domain": "SWARM_GOVERNANCE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Decision enforcing complete decoupling between control logic and proprietary model/provider backends.",
+      "retrieval_keywords": ["ADR", "Decision", "Model-Agnostic", "Swarm", "Routing"]
+    },
+    {
+      "id": "ADR_0005",
+      "title": "ADR 0005: Deterministic-First Resolution and Epistemic Classification",
+      "path": "docs/adr/0005-deterministic-first-and-epistemic-classification.md",
+      "type": "adr",
+      "domain": "EPISTEMOLOGY_EVIDENCE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Decision mandating deterministic execution before LLM delegation and explicit epistemic labeling on all claims.",
+      "retrieval_keywords": ["ADR", "Decision", "Deterministic-First", "Epistemic Status", "Evidence"]
+    },
+    {
+      "id": "ADR_0006",
+      "title": "ADR 0006: Pi 0.84.3 SDK Session Subscription Integration Seam",
+      "path": "docs/adr/0006-pi-sdk-session-subscribe-integration-seam.md",
+      "type": "adr",
+      "domain": "PI_INTEGRATION",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Decision adopting Pi 0.84.3 SDK createAgentSession subscription unsubscription closures for WP-KAD-001 integration.",
+      "retrieval_keywords": ["ADR", "Decision", "Pi SDK", "Subscription", "WP-KAD-001"]
+    },
+    {
+      "id": "ADR_0007",
+      "title": "ADR 0007: Synthetic Knowledge Base and Librarian Agent Architecture",
+      "path": "docs/adr/0007-synthetic-knowledge-librarian-architecture.md",
+      "type": "adr",
+      "domain": "EPISTEMOLOGY_EVIDENCE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Decision establishing the two-tier knowledge layer and deterministic Librarian query tools.",
+      "retrieval_keywords": ["ADR", "Decision", "Librarian", "Synthetic Documentation", "Knowledge Base"]
+    },
+    {
+      "id": "ADR_0008",
+      "title": "ADR 0008: Unified Context and Knowledge Plane",
+      "path": "docs/adr/0008-unified-context-knowledge-plane.md",
+      "type": "adr",
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Decision separating KAD authority from OpenViking-backed derived knowledge, bounded context, governed memory, and tiny-specialist experiments.",
+      "retrieval_keywords": ["ADR", "Knowledge Plane", "OpenViking", "Provenance", "Context Compiler", "Needle 2", "Graceful Degradation"]
+    },
+    {
+      "id": "KAD_CONTEXT_KNOWLEDGE_ROADMAP_2026_08_29",
+      "title": "KAD-PI Canonical Context, Knowledge and Local-Specialist Plane Roadmap",
+      "path": "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+      "type": "roadmap",
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Canonical roadmap for the KAD-owned KnowledgePlane boundary, OpenViking adapter experiment, governed memory, bounded agent context, Needle 2 specialists, and wiki provenance.",
+      "retrieval_keywords": ["Roadmap", "Knowledge Plane", "KnowledgePlane", "OpenViking", "Needle 2", "Wiki", "Memory", "Context Compiler", "Provenance", "Tokenmaxxing"]
+    },
+    {
+      "id": "RAW_DSH_PON_CORDIS",
+      "title": "Raw Handoff: DeepSeek Harness / Cordis / PON Lab",
+      "path": "wiki/DSH_PON_CORDIS_HANDOFF_2026-08-25.md",
+      "type": "raw_source",
+      "domain": "PON_STC_CORE",
+      "epistemic_status": "OBSERVED",
+      "summary": "Initial exploration and probe records for DeepSeek Harness, Cordis context mechanisms, and PON event pipelines.",
+      "retrieval_keywords": ["Handoff", "DeepSeek Harness", "Cordis Probes", "PON Kernel"]
+    },
+    {
+      "id": "RAW_KAD_PI_AGY",
+      "title": "Raw Master Handoff: KAD / PI / AGY Swarm",
+      "path": "wiki/KAD_PI_AGY_HANDOFF_2026-08-28.md",
+      "type": "raw_source",
+      "domain": "SWARM_GOVERNANCE",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Comprehensive handoff covering Prime Directive synthesis, custom AGY subagents, Pi discovery, and WP-KAD-001 tracer planning.",
+      "retrieval_keywords": ["Master Handoff", "KAD", "PI", "AGY", "Swarm", "WP-KAD-001"]
+    },
+    {
+      "id": "RAW_KAD_PLAN",
+      "title": "Raw Plan: KAD Local AI Experimental Platform Implementation Plan",
+      "path": "wiki/KAD_Implementation_Plan.md",
+      "type": "raw_source",
+      "domain": "KAD_SIMULATION",
+      "epistemic_status": "DESIGN_DECISION",
+      "summary": "Comprehensive 13-phase data science and ML systems roadmap from deterministic core to local QLoRA distillation.",
+      "retrieval_keywords": ["Implementation Plan", "Roadmap", "Data Science", "EXPERIMENT-001", "Distillation", "QLoRA"]
+    },
+    {
+      "id": "RAW_CLI_ECONOMICS",
+      "title": "Raw Handoff: CLI Subscription Quota Economics Matrix",
+      "path": "wiki/CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md",
+      "type": "raw_source",
+      "domain": "SUBSCRIPTION_ECONOMICS",
+      "epistemic_status": "OBSERVED",
+      "summary": "Detailed capacity and quota comparison across ChatGPT Plus, Google AI Pro, and OpenCode Go.",
+      "retrieval_keywords": ["Economics", "Quota", "ChatGPT Plus", "Google AI Pro", "OpenCode Go"]
+    },
+    {
+      "id": "EVID_WP_KAD_002",
+      "title": "Evidence: WP-KAD-002 End-to-End World Transition Vertical Slice",
+      "path": "evidence/WP-KAD-002/final-report.md",
+      "type": "evidence",
+      "domain": "KAD_SIMULATION",
+      "epistemic_status": "CONFIRMED",
+      "summary": "Verified end-to-end vertical slice connecting natural language interpretation to C++20 Validator, Resolver, atomic StateDiff, and Causal Journaling.",
+      "retrieval_keywords": ["WP-KAD-002", "Vertical Slice", "World Turn", "CandidateIntent", "StateDiff", "Causal Journal", "run-turn"]
+    },
+    {
+      "id": "EVID_WP_KAD_003",
+      "title": "Evidence: WP-KAD-003 Persistent Multi-Turn World + PON Causal Reaction Graph",
+      "path": "evidence/WP-KAD-003/final-report.md",
+      "type": "evidence",
+      "domain": "PON_STC_CORE",
+      "epistemic_status": "CONFIRMED",
+      "summary": "Verified persistent multi-turn world substrate with PON selective notification engine, STC lifecycle ownership, deterministic replay, and evidence dataset extraction.",
+      "retrieval_keywords": ["WP-KAD-003", "Persistent Multi-Turn", "PON Engine", "STC Scope", "Deterministic Replay", "Dataset"]
+    },
+    {
+      "id": "EVID_WP_KAD_CONTEXT_PLANE_001",
+      "title": "Evidence: WP-KAD-CONTEXT-PLANE-001 Roadmap and Static Verification",
+      "path": "evidence/WP-KAD-CONTEXT-PLANE-001/design-and-verification.json",
+      "type": "evidence",
+      "domain": "KAD_KNOWLEDGE",
+      "epistemic_status": "OBSERVED",
+      "summary": "Records the canonical knowledge-plane roadmap, static artifact hashes, and deterministic documentation/context-economy verification; explicitly claims no external runtime integration.",
+      "retrieval_keywords": ["WP-KAD-CONTEXT-PLANE-001", "Knowledge Plane", "Static Verification", "OpenViking", "Needle 2", "Provenance"]
+    },
+    {
+      "id": "EVID_WP_KAD_004",
+      "title": "Evidence: WP-KAD-004 Real Pi Harness Persistent World Runtime",
+      "path": "evidence/WP-KAD-004/final-report.md",
+      "type": "evidence",
+      "domain": "PI_INTEGRATION",
+      "epistemic_status": "CONFIRMED",
+      "summary": "Verified real Pi SDK AgentSession integration driving persistent multi-turn world transitions with PON selectivity, Cordis effect unsubscription, and zero provider invocations.",
+      "retrieval_keywords": ["WP-KAD-004", "Real Pi Harness", "AgentSession", "session.steer", "PON Selectivity", "Cordis Lifecycle", "Zero Provider Calls"]
+    }
+  ]
+}

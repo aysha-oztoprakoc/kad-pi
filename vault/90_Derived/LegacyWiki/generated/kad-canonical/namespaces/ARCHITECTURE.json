@@ -1,0 +1,21 @@
+[
+  {
+    "id": "record:wiki:synthetic:01_ARCHITECTURE_PON_STC.md",
+    "title": "PON/STC Architecture",
+    "kind": "architecture",
+    "namespace": "ARCHITECTURE",
+    "status": "ACCEPTED",
+    "source_ref": "wiki/synthetic/01_ARCHITECTURE_PON_STC.md",
+    "source_hash": "fbaee5a37d91089f9f2c156ab05f47bab0d01d4c1992e42601d077bff969b8fd",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Architecture: PON & Spatiotemporal Composability (STC)",
+    "relationships": [],
+    "source_class": "ARCHITECTURE"
+  }
+]

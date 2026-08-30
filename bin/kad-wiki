@@ -13,7 +13,8 @@ try { ensureVault(root);
  else if(cmd==='approve'){out(approve({root,proposalId:args[1]}));}
  else if(cmd==='apply'){out(applyProposal({root,proposalId:args[1]}));}
  else if(cmd==='query'){out(query({root,query:args.slice(1).filter(x=>x!=='--json').join(' ')}));}
- else if(cmd==='migrate'){out(migrationManifest({root,legacyRoot:path.resolve(val('--legacy-root')||'wiki')}));}
+ else if(cmd==='migrate'){out((await import('../tools/kad/wiki/migration.mjs')).executeMigration({root,legacyRoot:path.resolve(val('--legacy-root')||'wiki')}));}
+ else if(cmd==='rebuild'){out(rebuild(root));}
  else if(cmd==='context'){out(buildContextPack({root,query:val('--query')||args[1],task:val('--task')||''}));}
  else {out('Usage: kad-wiki status|lint|ingest|propose|approve|apply|query|rebuild|context|migrate'); process.exitCode=2;}
 } catch(e){process.stderr.write(`kad-wiki: ${e.message}\n`); process.exitCode=1;}

@@ -1,0 +1,88 @@
+{
+  "AGENTS": [
+    "agent:kad-builder",
+    "agent:kad-master",
+    "agent:kad-researcher",
+    "agent:kad-reviewer",
+    "agent:kad-tester"
+  ],
+  "CAPABILITIES": [
+    "capability:ask_user"
+  ],
+  "DECISIONS": [
+    "decision:0001",
+    "decision:0002",
+    "decision:0003",
+    "decision:0004",
+    "decision:0005",
+    "decision:0006",
+    "decision:0007",
+    "decision:0008"
+  ],
+  "EVIDENCE": [
+    "evidence:WP-KAD-001:final-report.md",
+    "evidence:WP-KAD-002:final-report.md",
+    "evidence:WP-KAD-003:final-report.md",
+    "evidence:WP-KAD-004:final-report.md",
+    "evidence:WP-KAD-005:final-report.md",
+    "evidence:WP-KAD-CONTEXT-SWARM-001:REPORT.md",
+    "evidence:WP-KAD-KNOWLEDGE-PLANE-001:REPORT-R2.md",
+    "evidence:WP-KAD-LIB-002-R1:final-report.md",
+    "evidence:WP-KAD-OMP-001:final-report.md",
+    "evidence:WP-KAD-SHARED-MODEL-STORE-001:REPORT.md"
+  ],
+  "FAILURES": [
+    "evidence:WP-KAD-KNOWLEDGE-PLANE-001:adapter-probe.json"
+  ],
+  "EXPERIMENTS": [
+    "experiment:evidence:WP-KAD-005:rag-experiment-results.json"
+  ],
+  "RESEARCH": [
+    "future_research:evidence:WP-KAD-SHARED-MODEL-STORE-001:NEW-MODEL-RESEARCH.md"
+  ],
+  "MODELS": [
+    "model:bge-small-zh-v1.5",
+    "model:lumimaid-8b",
+    "model:needle2",
+    "model:qwen-local",
+    "model:rp-hero-8b",
+    "model:stheno-v3.2"
+  ],
+  "PROVIDERS": [
+    "provider:advisor",
+    "provider:builder",
+    "provider:default",
+    "provider:free_fast",
+    "provider:free_reason",
+    "provider:local_retrieval",
+    "provider:plan",
+    "provider:planner",
+    "provider:review",
+    "provider:slow",
+    "provider:smol",
+    "provider:world"
+  ],
+  "GLOSSARY": [
+    "record:CONTEXT.md"
+  ],
+  "PROJECT": [
+    "record:PRIME_DIRECTIVE.md",
+    "record:README.md"
+  ],
+  "ROADMAP": [
+    "record:wiki:KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+    "record:wiki:KAD_Implementation_Plan.md"
+  ],
+  "ARCHITECTURE": [
+    "record:wiki:synthetic:01_ARCHITECTURE_PON_STC.md"
+  ],
+  "TECHNOLOGIES": [
+    "record:wiki:synthetic:03_PI_HARNESS_INTEGRATION.md"
+  ],
+  "SKILLS": [
+    "skill:code-review",
+    "skill:implement",
+    "skill:kad-evidence-gate",
+    "skill:tdd"
+  ]
+}

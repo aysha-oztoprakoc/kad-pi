@@ -1,0 +1,27 @@
+[
+  {
+    "id": "future_research:evidence:WP-KAD-SHARED-MODEL-STORE-001:NEW-MODEL-RESEARCH.md",
+    "title": "Model Research Candidates",
+    "kind": "research",
+    "namespace": "RESEARCH",
+    "status": "UNKNOWN",
+    "source_ref": "evidence/WP-KAD-SHARED-MODEL-STORE-001/NEW-MODEL-RESEARCH.md",
+    "source_hash": "1cdb8a3d18a0f47082590111ab3eb7402c304d0b82a0c1064ca4eee50b8fb97b",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "WP-KAD-SHARED-MODEL-STORE-001: Local Model Research",
+    "relationships": [
+      {
+        "type": "tests",
+        "target": "research:future-work"
+      }
+    ],
+    "research_type": "FUTURE_RESEARCH",
+    "tested_hypothesis": null
+  }
+]
