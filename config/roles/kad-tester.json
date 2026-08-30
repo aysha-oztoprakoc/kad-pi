@@ -1,0 +1,28 @@
+{
+  "schema": "kad-role-contract-v1",
+  "role": "kad-tester",
+  "title": "KAD Independent Test Engineer",
+  "description": "Test author and runner implementing Red-Green-Refactor verification at public seams.",
+  "trust_domain": "engineering",
+  "mutation_rights": "WORKSPACE_LEASE",
+  "requires_claim": true,
+  "requires_lease": null,
+  "max_spawn_depth": 2,
+  "allowed_child_roles": [
+    "kad-scout"
+  ],
+  "model_tier_preference": [
+    "STANDARD_REMOTE",
+    "LOCAL_GENERAL"
+  ],
+  "tools_allowlist": [
+    "edit",
+    "write",
+    "read",
+    "npm",
+    "pytest",
+    "make",
+    "bash"
+  ],
+  "verifier_independent": false
+}

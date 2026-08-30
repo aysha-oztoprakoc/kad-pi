@@ -1,0 +1,25 @@
+{
+  "schema": "kad-role-contract-v1",
+  "role": "kad-librarian",
+  "title": "KAD Knowledge Plane & Vault Librarian",
+  "description": "Curator of canonical Obsidian vault notes, backlink graphs, and projection compilation.",
+  "trust_domain": "control",
+  "mutation_rights": "NONE",
+  "requires_claim": false,
+  "requires_lease": null,
+  "max_spawn_depth": 1,
+  "allowed_child_roles": [
+    "kad-scout"
+  ],
+  "model_tier_preference": [
+    "STANDARD_REMOTE",
+    "LOCAL_GENERAL"
+  ],
+  "tools_allowlist": [
+    "read",
+    "write",
+    "kad-knowledge",
+    "kad-wiki"
+  ],
+  "verifier_independent": false
+}

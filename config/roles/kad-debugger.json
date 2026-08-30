@@ -1,0 +1,27 @@
+{
+  "schema": "kad-role-contract-v1",
+  "role": "kad-debugger",
+  "title": "KAD Debugger & Root Cause Investigator",
+  "description": "Diagnostic specialist investigating hard bugs, leaks, and race conditions using DAP and repro scripts.",
+  "trust_domain": "engineering",
+  "mutation_rights": "NONE",
+  "requires_claim": false,
+  "requires_lease": null,
+  "max_spawn_depth": 2,
+  "allowed_child_roles": [
+    "kad-scout"
+  ],
+  "model_tier_preference": [
+    "STANDARD_REMOTE",
+    "FRONTIER_REASONING"
+  ],
+  "tools_allowlist": [
+    "debug",
+    "browser",
+    "read",
+    "grep",
+    "bash",
+    "make"
+  ],
+  "verifier_independent": false
+}

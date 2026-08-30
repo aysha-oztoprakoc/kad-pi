@@ -1,0 +1,80 @@
+{
+  "id": "WP-KAD-SKILL-ROLE-FABRIC-024",
+  "project": "kad-pi",
+  "title": "Unified KAD-PI Skills & Role ISA, Fabric Reconciliation & Execution Substrate Alignment",
+  "status": "ACCEPTED",
+  "priority": 240,
+  "spec_ref": "user:/WP-KAD-SKILL-ROLE-FABRIC-024",
+  "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+  "scope": [
+    "docs/architecture/",
+    "docs/adr/",
+    ".agents/skills/",
+    ".agents/workspace/",
+    ".agents/agents/",
+    ".omp/",
+    "tools/kad/",
+    "tools/workspace/",
+    "vault/00_Governance/",
+    "evidence/WP-KAD-SKILL-ROLE-FABRIC-024/",
+    ".agents/work/WP-KAD-SKILL-ROLE-FABRIC-024.json"
+  ],
+  "non_scope": [
+    "arbitrary un-sandboxed shell command execution",
+    "unapproved paid API spend",
+    "weakening existing deterministic tests, gates, or governance policies",
+    "introducing competing task/lifecycle authorities out-of-band of workctl",
+    "silent capability or trust escalations"
+  ],
+  "owned_paths": [
+    "docs/architecture/",
+    "docs/adr/",
+    ".agents/skills/",
+    ".agents/workspace/",
+    ".agents/agents/",
+    ".omp/",
+    "tools/kad/",
+    "tools/workspace/",
+    "vault/00_Governance/",
+    "evidence/WP-KAD-SKILL-ROLE-FABRIC-024/",
+    ".agents/work/WP-KAD-SKILL-ROLE-FABRIC-024.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/*.test.mjs",
+    "bin/workctl doctor",
+    "bin/workctl skills doctor",
+    "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+    "bin/kad-isa check vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+    "bin/kad doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-SKILL-ROLE-FABRIC-024/",
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Phase 0 orientation, doctor diagnostics, and baseline evidence established",
+    "Phase 1 Wayfinder design map and 5-advisor adversarial stress-test completed with 5+1 decision records",
+    "Phase 2 Canonical Unified Skills & Role ISA (KAD_PI_UNIFIED_SKILL_ROLE_ISA.md) generated and frozen with SHA256 digest covering Sections A-G",
+    "Phase 3 Deterministic reconciliation plan and gap matrix generated mapping legacy skills/roles to ISA targets",
+    "Phase 4 Implementation of consolidated canonical skill surface (12-15 concepts), Wayfinder V2 (with POSTFLIGHT), canonical 5-advisor board, ROLE_CONTRACT_V1, role/capability router, deterministic model policy, STC worktree lease adapter, bounded KAD_GOAL_V1, human-runbook, and OMP projection adapters",
+    "Phase 5 TDD routing fixtures (SHOULD_TRIGGER, SHOULD_NOT_TRIGGER, AMBIGUOUS, CONFLICT_WITH) and role contract safety tests (authority leakage, spawn depth, model degradation, verifier independence) fully green",
+    "Phase 6 Ideal-state reconciliation against frozen ISA showing MATCH / JUSTIFIED_DEVIATION with zero unexplained defects",
+    "All 10 required final deliverable artifacts compiled in evidence/WP-KAD-SKILL-ROLE-FABRIC-024/ and docs/",
+    "Final verdict PASS established with full deterministic test and doctor passes"
+  ],
+  "description": "Generate the canonical KAD-PI Unified Skills & Role ISA, freeze it as the implementation target, then reconcile and update the repository so the actual skill/role architecture conforms to that ISA.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-SKILL-ROLE-FABRIC-024",
+  "claim": null
+}

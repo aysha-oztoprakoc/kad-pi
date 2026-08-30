@@ -1,0 +1,19 @@
+{
+  "schema": "kad-role-contract-v1",
+  "role": "kad-world",
+  "title": "KAD Stheno World Simulation",
+  "description": "Persistent world simulation engine. Strictly isolated from engineering tasks.",
+  "trust_domain": "world",
+  "mutation_rights": "NONE",
+  "requires_claim": false,
+  "requires_lease": null,
+  "max_spawn_depth": 0,
+  "allowed_child_roles": [],
+  "model_tier_preference": [
+    "LOCAL_WORLD"
+  ],
+  "tools_allowlist": [
+    "read"
+  ],
+  "verifier_independent": false
+}

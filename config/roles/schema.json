@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KAD Role Contract V1",
+  "type": "object",
+  "required": [
+    "schema",
+    "role",
+    "title",
+    "trust_domain",
+    "mutation_rights",
+    "requires_claim",
+    "max_spawn_depth",
+    "allowed_child_roles",
+    "model_tier_preference",
+    "tools_allowlist",
+    "verifier_independent"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "enum": [
+        "kad-role-contract-v1"
+      ]
+    },
+    "role": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "trust_domain": {
+      "type": "string",
+      "enum": [
+        "control",
+        "engineering",
+        "research",
+        "audit",
+        "world"
+      ]
+    },
+    "mutation_rights": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "EXCLUSIVE_OWNED_PATHS",
+        "WORKSPACE_LEASE"
+      ]
+    },
+    "requires_claim": {
+      "type": "boolean"
+    },
+    "requires_lease": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "max_spawn_depth": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4
+    },
+    "allowed_child_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "model_tier_preference": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "DETERMINISTIC",
+          "TINY_SPECIALIST",
+          "LOCAL_NARROW",
+          "LOCAL_GENERAL",
+          "FREE_REMOTE",
+          "STANDARD_REMOTE",
+          "INDEPENDENT_VERIFIER",
+          "LITERATURE_SYNTHESIS",
+          "FRONTIER_REASONING",
+          "LOCAL_WORLD"
+        ]
+      }
+    },
+    "tools_allowlist": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verifier_independent": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "kad-role-contract-v1",
+  "role": "advisor-epistemic",
+  "title": "KAD Epistemic Risk & Provenance Advisor",
+  "description": "Advisory specialist on knowledge provenance, claim classification, and anti-poisoning.",
+  "trust_domain": "audit",
+  "mutation_rights": "NONE",
+  "requires_claim": false,
+  "requires_lease": null,
+  "max_spawn_depth": 1,
+  "allowed_child_roles": [
+    "kad-scout"
+  ],
+  "model_tier_preference": [
+    "INDEPENDENT_VERIFIER",
+    "LITERATURE_SYNTHESIS"
+  ],
+  "tools_allowlist": [
+    "read",
+    "task"
+  ],
+  "verifier_independent": true
+}

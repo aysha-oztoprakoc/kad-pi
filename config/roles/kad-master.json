@@ -1,0 +1,37 @@
+{
+  "schema": "kad-role-contract-v1",
+  "role": "kad-master",
+  "title": "KAD Master Orchestrator",
+  "description": "Primary orchestrator. Directs task decomposition, planning, and high-level routing. Non-mutating.",
+  "trust_domain": "control",
+  "mutation_rights": "NONE",
+  "requires_claim": false,
+  "requires_lease": null,
+  "max_spawn_depth": 2,
+  "allowed_child_roles": [
+    "kad-builder",
+    "kad-debugger",
+    "kad-tester",
+    "kad-reviewer",
+    "kad-researcher",
+    "kad-librarian",
+    "kad-scout",
+    "advisor-architecture",
+    "advisor-security",
+    "advisor-economics",
+    "advisor-verification",
+    "advisor-epistemic"
+  ],
+  "model_tier_preference": [
+    "FRONTIER_REASONING",
+    "STANDARD_REMOTE"
+  ],
+  "tools_allowlist": [
+    "read",
+    "task",
+    "ask",
+    "workctl",
+    "hub"
+  ],
+  "verifier_independent": false
+}

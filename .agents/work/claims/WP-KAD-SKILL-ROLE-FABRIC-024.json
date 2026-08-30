@@ -1,0 +1,24 @@
+{
+  "task": "WP-KAD-SKILL-ROLE-FABRIC-024",
+  "project": "kad-pi",
+  "claim_id": "8d257728-a8bf-4a33-b52e-b4218eb94284",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T11:55:02.410Z",
+  "base_commit": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+  "owned_paths": [
+    "docs/architecture",
+    "docs/adr",
+    ".agents/skills",
+    ".agents/workspace",
+    ".agents/agents",
+    ".omp",
+    "tools/kad",
+    "tools/workspace",
+    "vault/00_Governance",
+    "evidence/WP-KAD-SKILL-ROLE-FABRIC-024",
+    ".agents/work/WP-KAD-SKILL-ROLE-FABRIC-024.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T12:03:20.558Z"
+}

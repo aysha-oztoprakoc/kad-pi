@@ -1,0 +1,10 @@
+{
+  "document_id": "ISA-KAD-SKILL-ROLE-001",
+  "version": "1.0.0",
+  "status": "FROZEN_TARGET",
+  "sha256": "116a25ab111968283dca39a64be38fd6e673621f31801c56bb59c97edf01435b",
+  "canonical_skill_count": 15,
+  "logical_role_count": 15,
+  "max_spawn_depth": 2,
+  "frozen_at": "2026-08-30T12:05:00.000Z"
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "kad-role-contract-v1",
+  "role": "advisor-verification",
+  "title": "KAD Verification & Scientific Validity Advisor",
+  "description": "Advisory specialist on test completeness, TDD seams, and deterministic reproduction.",
+  "trust_domain": "audit",
+  "mutation_rights": "NONE",
+  "requires_claim": false,
+  "requires_lease": null,
+  "max_spawn_depth": 1,
+  "allowed_child_roles": [
+    "kad-scout"
+  ],
+  "model_tier_preference": [
+    "INDEPENDENT_VERIFIER",
+    "FRONTIER_REASONING"
+  ],
+  "tools_allowlist": [
+    "read",
+    "task"
+  ],
+  "verifier_independent": true
+}

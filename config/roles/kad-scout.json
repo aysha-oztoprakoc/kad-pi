@@ -1,0 +1,23 @@
+{
+  "schema": "kad-role-contract-v1",
+  "role": "kad-scout",
+  "title": "KAD Lightweight Read-Only Scout",
+  "description": "Fast exploratory agent for directory mapping, file listing, and broad pattern discovery.",
+  "trust_domain": "research",
+  "mutation_rights": "NONE",
+  "requires_claim": false,
+  "requires_lease": null,
+  "max_spawn_depth": 0,
+  "allowed_child_roles": [],
+  "model_tier_preference": [
+    "TINY_SPECIALIST",
+    "FREE_REMOTE",
+    "DETERMINISTIC"
+  ],
+  "tools_allowlist": [
+    "read",
+    "grep",
+    "glob"
+  ],
+  "verifier_independent": false
+}

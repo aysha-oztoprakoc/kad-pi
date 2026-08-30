@@ -1,0 +1,32 @@
+{
+  "schema": "kad-role-contract-v1",
+  "role": "kad-builder",
+  "title": "KAD Builder / Implementer",
+  "description": "Primary engineering implementation worker. Possesses exclusive mutating authority over claimed paths.",
+  "trust_domain": "engineering",
+  "mutation_rights": "EXCLUSIVE_OWNED_PATHS",
+  "requires_claim": true,
+  "requires_lease": "fusion_writer_lease",
+  "max_spawn_depth": 2,
+  "allowed_child_roles": [
+    "kad-tester",
+    "kad-scout",
+    "kad-debugger"
+  ],
+  "model_tier_preference": [
+    "STANDARD_REMOTE",
+    "LOCAL_GENERAL"
+  ],
+  "tools_allowlist": [
+    "edit",
+    "write",
+    "read",
+    "lsp",
+    "ast_edit",
+    "npm",
+    "make",
+    "git",
+    "workctl"
+  ],
+  "verifier_independent": false
+}

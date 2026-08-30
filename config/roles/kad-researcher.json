@@ -1,0 +1,26 @@
+{
+  "schema": "kad-role-contract-v1",
+  "role": "kad-researcher",
+  "title": "KAD Primary Research Fabric Worker",
+  "description": "Literature and primary source investigator extracting facts and citation provenance.",
+  "trust_domain": "research",
+  "mutation_rights": "NONE",
+  "requires_claim": false,
+  "requires_lease": null,
+  "max_spawn_depth": 2,
+  "allowed_child_roles": [
+    "kad-scout",
+    "kad-local-extractor"
+  ],
+  "model_tier_preference": [
+    "LITERATURE_SYNTHESIS",
+    "FREE_REMOTE"
+  ],
+  "tools_allowlist": [
+    "read",
+    "task",
+    "write",
+    "web_search"
+  ],
+  "verifier_independent": false
+}
