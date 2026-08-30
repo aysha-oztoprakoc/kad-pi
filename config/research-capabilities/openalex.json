@@ -1,0 +1,35 @@
+{
+  "schema_version": "kad-research-capabilities-v1",
+  "provider_id": "openalex",
+  "display_name": "OpenAlex Scholarly Graph",
+  "description": "Open catalog of global research papers, citations, and authors.",
+  "trust_domain": "retrieval",
+  "capabilities": {
+    "api_search": {
+      "supported": true,
+      "constraint_classes": [
+        "unlimited",
+        "free_quota"
+      ],
+      "support_mode": "api"
+    },
+    "citation_graph": {
+      "supported": true,
+      "constraint_classes": [
+        "unlimited"
+      ],
+      "support_mode": "api"
+    },
+    "bulk_export": {
+      "supported": true,
+      "constraint_classes": [
+        "unlimited"
+      ],
+      "support_mode": "api"
+    }
+  },
+  "provenance": {
+    "origin": "kad_baseline",
+    "created_at": "2026-08-30T00:00:00.000Z"
+  }
+}

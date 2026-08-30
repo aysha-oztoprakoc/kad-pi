@@ -1,0 +1,47 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-CAPABILITIES-003",
+  "reviewer": "gemini-builder (specification review)",
+  "verdict": "PASS",
+  "spec_fidelity": {
+    "D5_capability_profiles_and_observations": {
+      "status": "PASS",
+      "evidence": "Stable capability profiles (ResearchCapabilityProfile) are strictly decoupled from dated observations (ResearchCapabilityObservation) and economic admission."
+    },
+    "D6_graceful_degradation": {
+      "status": "PASS",
+      "evidence": "Capability state machine independently models AVAILABLE, DEGRADED, UNAVAILABLE, QUOTA_EXHAUSTED, STALE, UNAUTHORIZED, and MISSING. Paid routes never activate implicitly."
+    }
+  },
+  "acceptance_criteria_matrix": [
+    {
+      "criterion": "Stable capability declarations are separate from dated runtime/human observations and economic admission policy.",
+      "status": "PASS",
+      "test": "Separation verified; changing observations or economic policies does not alter static profiles."
+    },
+    {
+      "criterion": "Profiles can represent paper search, semantic search, deep review, structured extraction, API search, bulk export, citation graph, full text, manual-only, free quota, monthly quota, unlimited, API-key, paid-tier, and unavailable constraints.",
+      "status": "PASS",
+      "test": "Provider-neutral capability vocabulary and constraints are strictly enforced"
+    },
+    {
+      "criterion": "CapabilityRegistry consumes availability observations and economic routing consumes quota/cost/admissibility facts without becoming corpus authority.",
+      "status": "PASS",
+      "test": "CapabilityRegistry integration registers research capabilities and routes deterministically; Canonical Authority Isolation"
+    },
+    {
+      "criterion": "Missing, stale, unavailable, unauthorized, and quota-exhausted states reduce only the affected capability.",
+      "status": "PASS",
+      "test": "Per-capability isolation: Degradation of one capability leaves other capabilities intact"
+    },
+    {
+      "criterion": "Explicit deterministic/local/manual/free fallbacks remain usable; paid lanes never activate implicitly.",
+      "status": "PASS",
+      "test": "Hard Invariant: Paid fallback is PROHIBITED when free quota is exhausted; Manual/Free Fallback"
+    },
+    {
+      "criterion": "Baseline tests require no provider credentials or paid service.",
+      "status": "PASS",
+      "test": "Baseline suite executes completely offline with zero credentials or network"
+    }
+  ]
+}

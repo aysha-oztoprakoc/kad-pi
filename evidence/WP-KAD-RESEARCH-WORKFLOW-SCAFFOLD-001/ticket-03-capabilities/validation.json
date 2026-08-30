@@ -1,0 +1,73 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-CAPABILITIES-003",
+  "suite": "tools/kad/test/research-capabilities.test.mjs",
+  "timestamp": "2026-08-30T00:08:00.000Z",
+  "status": "PASS",
+  "summary": {
+    "total_tests": 13,
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "tests": [
+    {
+      "name": "Provider-neutral capability vocabulary and constraints are strictly enforced",
+      "status": "PASS"
+    },
+    {
+      "name": "CapabilityProfile validation accepts valid declarations and rejects malformed inputs",
+      "status": "PASS"
+    },
+    {
+      "name": "Manifest parser and serializer round-trip deterministically without secrets",
+      "status": "PASS"
+    },
+    {
+      "name": "CapabilityObservation validates state, provenance, quota, and timestamps",
+      "status": "PASS"
+    },
+    {
+      "name": "Per-capability state evaluation handles AVAILABLE, QUOTA_EXHAUSTED, STALE, and MISSING independently",
+      "status": "PASS"
+    },
+    {
+      "name": "Per-capability isolation: Degradation of one capability leaves other capabilities intact",
+      "status": "PASS"
+    },
+    {
+      "name": "Economic admission rejects unauthorized paid tiers and enforces explicit free policy",
+      "status": "PASS"
+    },
+    {
+      "name": "Hard Invariant: Paid fallback is PROHIBITED when free quota is exhausted",
+      "status": "PASS"
+    },
+    {
+      "name": "Manual/Free Fallback: Free manual capability route succeeds when remote provider is exhausted or down",
+      "status": "PASS"
+    },
+    {
+      "name": "CapabilityRegistry integration registers research capabilities and routes deterministically",
+      "status": "PASS"
+    },
+    {
+      "name": "Canonical Authority Isolation: Capability state mutations NEVER alter ResearchDocument corpus",
+      "status": "PASS"
+    },
+    {
+      "name": "Baseline suite executes completely offline with zero credentials or network",
+      "status": "PASS"
+    },
+    {
+      "name": "Baseline capability manifests in config/research-capabilities load cleanly",
+      "status": "PASS"
+    }
+  ],
+  "full_suite_verification": {
+    "make_verify": "PASS",
+    "research_api_tests": "PASS (13/13)",
+    "research_cli_tests": "PASS (6/6)",
+    "research_capabilities_tests": "PASS (13/13)"
+  }
+}

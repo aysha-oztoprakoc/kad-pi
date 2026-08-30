@@ -1,0 +1,35 @@
+{
+  "schema_version": "kad-research-capabilities-v1",
+  "provider_id": "elicit",
+  "display_name": "Elicit Research Assistant",
+  "description": "Systematic literature search and structured paper extraction provider.",
+  "trust_domain": "research",
+  "capabilities": {
+    "paper_search": {
+      "supported": true,
+      "constraint_classes": [
+        "free_quota",
+        "monthly_quota"
+      ],
+      "support_mode": "hosted"
+    },
+    "structured_extraction": {
+      "supported": true,
+      "constraint_classes": [
+        "free_quota"
+      ],
+      "support_mode": "hosted"
+    },
+    "deep_review": {
+      "supported": true,
+      "constraint_classes": [
+        "requires_paid_tier"
+      ],
+      "support_mode": "hosted"
+    }
+  },
+  "provenance": {
+    "origin": "kad_baseline",
+    "created_at": "2026-08-30T00:00:00.000Z"
+  }
+}

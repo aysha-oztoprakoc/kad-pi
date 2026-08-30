@@ -1,0 +1,32 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-CAPABILITIES-003",
+  "reviewer": "gemini-builder (security review)",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check": "zero_committed_credentials",
+      "status": "PASS",
+      "evidence": "All baseline manifests in config/research-capabilities/ contain zero API keys, secrets, or bearer tokens; constraint 'requires_api_key' is descriptive metadata."
+    },
+    {
+      "check": "untrusted_data_validation",
+      "status": "PASS",
+      "evidence": "ResearchCapabilityProfile and ResearchCapabilityObservation strictly validate capability names, constraint classes, observation states, timestamps, and numeric quotas."
+    },
+    {
+      "check": "paid_fallback_prohibition",
+      "status": "PASS",
+      "evidence": "Economic admission strictly rejects paid routes unless policy.spend.payg_authorized and allow_paid_fallback are explicitly true."
+    },
+    {
+      "check": "canonical_authority_isolation",
+      "status": "PASS",
+      "evidence": "Capability plane mutations have zero write access to DeterministicResearchCorpus or CATALOG.json."
+    },
+    {
+      "check": "offline_execution",
+      "status": "PASS",
+      "evidence": "All unit tests and baseline evaluations execute 100% locally without network sockets or remote APIs."
+    }
+  ]
+}

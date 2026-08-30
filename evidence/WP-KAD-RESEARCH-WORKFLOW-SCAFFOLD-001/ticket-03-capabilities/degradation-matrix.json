@@ -1,0 +1,71 @@
+{
+  "matrix_id": "kad-research-capability-degradation-matrix",
+  "ticket_id": "WP-KAD-RESEARCH-CAPABILITIES-003",
+  "timestamp": "2026-08-30T00:09:00.000Z",
+  "rows": [
+    {
+      "situation": "no_profile",
+      "profile_state": "absent",
+      "observation_state": "absent",
+      "evaluated_state": "MISSING",
+      "economic_admission": "ineligible",
+      "routing_outcome": "DEGRADED"
+    },
+    {
+      "situation": "profile_exists_no_observation",
+      "profile_state": "declared",
+      "observation_state": "absent",
+      "evaluated_state": "MISSING",
+      "economic_admission": "ineligible",
+      "routing_outcome": "DEGRADED"
+    },
+    {
+      "situation": "provider_unavailable",
+      "profile_state": "supported",
+      "observation_state": "UNAVAILABLE",
+      "evaluated_state": "UNAVAILABLE",
+      "economic_admission": "ineligible",
+      "routing_outcome": "DEGRADED"
+    },
+    {
+      "situation": "quota_exhausted",
+      "profile_state": "supported (free_quota)",
+      "observation_state": "AVAILABLE (remaining: 0)",
+      "evaluated_state": "QUOTA_EXHAUSTED",
+      "economic_admission": "ineligible",
+      "routing_outcome": "DEGRADED"
+    },
+    {
+      "situation": "credentials_missing",
+      "profile_state": "supported (requires_api_key)",
+      "observation_state": "AVAILABLE",
+      "evaluated_state": "AVAILABLE",
+      "economic_admission": "UNAUTHORIZED (ineligible)",
+      "routing_outcome": "DEGRADED"
+    },
+    {
+      "situation": "manual_fallback_available",
+      "profile_state": "manual supported",
+      "observation_state": "AVAILABLE",
+      "evaluated_state": "AVAILABLE",
+      "economic_admission": "ELIGIBLE",
+      "routing_outcome": "ROUTED (manual selected)"
+    },
+    {
+      "situation": "paid_route_unauthorized",
+      "profile_state": "supported (requires_paid_tier)",
+      "observation_state": "AVAILABLE",
+      "evaluated_state": "AVAILABLE",
+      "economic_admission": "PAID_NOT_AUTHORIZED (ineligible)",
+      "routing_outcome": "DEGRADED (paid route never selected)"
+    },
+    {
+      "situation": "canonical_corpus_isolation",
+      "profile_state": "any mutation",
+      "observation_state": "any mutation",
+      "evaluated_state": "independent",
+      "economic_admission": "independent",
+      "routing_outcome": "canonical corpus ResearchDocument state untouched"
+    }
+  ]
+}

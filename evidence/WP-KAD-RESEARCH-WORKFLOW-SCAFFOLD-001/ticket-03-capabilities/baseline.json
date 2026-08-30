@@ -1,0 +1,20 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-CAPABILITIES-003",
+  "project": "kad-pi",
+  "claim_id": "3e2982d5-2f21-48b9-8c3d-58ec3511f348",
+  "actor_label": "gemini-builder",
+  "started_at": "2026-08-30T00:04:38.231Z",
+  "title": "Provider Capability Profiles and Degradation",
+  "base_commit": "33b0128e652814c6a5506caa7529f047ec086e1c",
+  "pre_change_status": {
+    "workctl_status": "READY -> IN_PROGRESS",
+    "git_head": "33b0128e652814c6a5506caa7529f047ec086e1c",
+    "accepted_prerequisites": [
+      "WP-KAD-RESEARCH-API-001",
+      "WP-KAD-RESEARCH-CLI-002"
+    ],
+    "existing_research_api_tests": "PASS (13/13)",
+    "existing_research_cli_tests": "PASS (6/6)",
+    "make_verify": "PASS"
+  }
+}

@@ -23,3 +23,6 @@ export { RUNTIME_STATES, RUNTIME_STATUS_SCHEMA, SELECTED_RUNTIME, createRuntimeS
 
 // WP-KAD-RESEARCH-API-001 Exports
 export { RESEARCH_SCHEMA_VERSION, IDENTIFIER_TYPES, IDENTIFIER_PRECEDENCE, ResearchError, ResearchSecurityError, ResearchConflictError, ResearchValidationError, ResearchIdentifier, ResearchProvenance, ResearchCandidate, ResearchSource, ResearchDocument, DeterministicResearchCorpus, hashSourceBytes, assertSafePath, normalizeIdentifier, createIdentifier, createProvenance, createCandidate, createSource, createDocument } from './research.mjs';
+
+// WP-KAD-RESEARCH-CAPABILITIES-003 Exports
+export { RESEARCH_CAPABILITY_SCHEMA_VERSION, CAPABILITY_NAMES, CONSTRAINT_CLASSES, OBSERVATION_STATES, SUPPORT_MODES, ResearchCapabilityError, ResearchCapabilityValidationError, ResearchCapabilityProfile, ResearchCapabilityObservation, ResearchCapabilityPlane, validateCapabilityProfile, validateCapabilityObservation, parseCapabilityManifest, serializeCapabilityManifest, evaluateCapabilityState, evaluateEconomicAdmission, selectResearchCapabilityRoute, registerResearchCapabilities } from './research-capabilities.mjs';

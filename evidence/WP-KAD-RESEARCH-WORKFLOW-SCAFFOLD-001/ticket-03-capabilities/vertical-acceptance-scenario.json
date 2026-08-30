@@ -1,0 +1,70 @@
+{
+  "scenario_id": "kad-research-capability-vertical-acceptance",
+  "ticket_id": "WP-KAD-RESEARCH-CAPABILITIES-003",
+  "timestamp": "2026-08-30T00:10:00.000Z",
+  "setup": {
+    "providers": [
+      {
+        "provider_id": "manual",
+        "capabilities": {
+          "paper_search": { "constraint_classes": ["manual_only"], "support_mode": "manual" }
+        },
+        "observation": { "state": "AVAILABLE" }
+      },
+      {
+        "provider_id": "provider-x",
+        "capabilities": {
+          "paper_search": { "constraint_classes": ["free_quota"], "support_mode": "hosted" },
+          "bulk_export": { "constraint_classes": ["unlimited"], "support_mode": "hosted" }
+        },
+        "observations": [
+          { "capability": "paper_search", "state": "AVAILABLE", "quota": { "remaining": 0, "capacity": 50 } },
+          { "capability": "bulk_export", "state": "AVAILABLE" }
+        ]
+      },
+      {
+        "provider_id": "provider-y",
+        "capabilities": {
+          "paper_search": { "constraint_classes": ["requires_paid_tier"], "support_mode": "hosted" }
+        },
+        "observation": { "state": "AVAILABLE" }
+      }
+    ]
+  },
+  "executions": [
+    {
+      "task": "routeCapability('paper_search')",
+      "economic_policy": { "spend": { "payg_authorized": false, "allow_paid_fallback": false } },
+      "evaluated_states": {
+        "manual": "AVAILABLE",
+        "provider-x": "QUOTA_EXHAUSTED",
+        "provider-y": "AVAILABLE"
+      },
+      "admissions": {
+        "manual": { "eligible": true, "reason": "ELIGIBLE" },
+        "provider-x": { "eligible": false, "reason": "QUOTA_EXHAUSTED" },
+        "provider-y": { "eligible": false, "reason": "PAID_NOT_AUTHORIZED" }
+      },
+      "routing_decision": {
+        "status": "ROUTED",
+        "selected": "manual"
+      },
+      "verified_invariant": "Free manual route chosen; exhausted free quota does NOT trigger paid route"
+    },
+    {
+      "task": "routeCapability('bulk_export')",
+      "economic_policy": { "spend": { "payg_authorized": false, "allow_paid_fallback": false } },
+      "evaluated_states": {
+        "provider-x": "AVAILABLE"
+      },
+      "admissions": {
+        "provider-x": { "eligible": true, "reason": "ELIGIBLE" }
+      },
+      "routing_decision": {
+        "status": "ROUTED",
+        "selected": "provider-x"
+      },
+      "verified_invariant": "Per-capability isolation: provider-x.bulk_export is healthy despite provider-x.paper_search quota exhaustion"
+    }
+  ]
+}

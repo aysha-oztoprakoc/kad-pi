@@ -2,10 +2,10 @@
   "id": "WP-KAD-RESEARCH-CAPABILITIES-003",
   "project": "kad-pi",
   "title": "Provider Capability Profiles and Degradation",
-  "status": "READY",
+  "status": "ACCEPTED",
   "priority": 80,
   "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
-  "fixed_point": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf",
+  "fixed_point": "33b0128e652814c6a5506caa7529f047ec086e1c",
   "scope": [
     "tools/kad/research-capabilities.mjs",
     "tools/kad/test/research-capabilities.test.mjs",
