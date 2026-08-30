@@ -1,0 +1,37 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "decision_id": "WF-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "question": "What is the smallest real-corpus evaluation that can tell us whether the current KAD research workflow produces useful, traceable, reproducible research artifacts without prematurely building a larger knowledge platform?",
+  "evaluated_options": [
+    {
+      "option": "A",
+      "name": "Synthetic Mock Corpus Evaluation",
+      "pros": ["Trivial to generate", "Zero external dependencies"],
+      "cons": ["Violates non-synthetic real-research rule", "Fails to exercise authentic bibliographic and content variability", "Provides zero genuine evidentiary confidence"],
+      "selected": false
+    },
+    {
+      "option": "B",
+      "name": "Large-Scale Multi-Domain Academic Corpus (>50 papers)",
+      "pros": ["Exhaustive coverage of multiple disciplines"],
+      "cons": ["High token/storage cost", "Violates TOKENMAXXING doctrine", "Prematurely builds knowledge platform scale before verifying core workflow primitives"],
+      "selected": false
+    },
+    {
+      "option": "C",
+      "name": "Bounded 5-Source Real Corpus on Deterministic Agent Control & Evidence-Grounded Execution",
+      "pros": [
+        "Uses 100% real published academic literature with canonical DOIs and arXiv identifiers",
+        "Directly relevant to KAD-PI architecture (deterministic agents, verifiable tools, reflection loops, test-driven validation)",
+        "Sufficient to exercise all 10 target workflow capabilities end-to-end",
+        "Exercises verified sources, preprints, deduplication, citation linkage, and graceful degradation",
+        "Minimal bounded footprint adhering strictly to TOKENMAXXING"
+      ],
+      "cons": ["Requires curated source texts and extraction manifests"],
+      "selected": true
+    }
+  ],
+  "rationale": "Option C provides authentic empirical evidence of research workflow fidelity on real scientific papers while remaining strictly bounded and token-efficient. It exercises all 10 pipeline capabilities without premature infrastructure expansion.",
+  "epistemic_classification": "WAYFINDER_DECISION",
+  "verdict": "ACCEPTED"
+}

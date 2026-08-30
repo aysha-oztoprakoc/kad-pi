@@ -1,0 +1,18 @@
+{
+  "task": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "project": "kad-pi",
+  "claim_id": "cbb53129-1925-437e-8fc8-8cc6ea3caaa7",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T01:56:43.040Z",
+  "base_commit": "9342702a97afdcb9d6681c6ec21f74d44e42a1b0",
+  "owned_paths": [
+    "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+    "docs/agents/research-workflow.md",
+    "wiki/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md",
+    "corpus/research",
+    "wiki/research"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T02:01:08.864Z"
+}

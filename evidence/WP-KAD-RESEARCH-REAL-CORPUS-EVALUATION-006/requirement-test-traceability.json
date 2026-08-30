@@ -1,0 +1,49 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "traceability": [
+    {
+      "requirement": "AC-01: Preflight forensic checks verify observed_at determinism (Check A) and threshold semantics (Check B)",
+      "evidence_artifact": "baseline.json",
+      "test_coverage": "tools/kad/test/readiness.test.mjs, tools/kad/test/observatory.test.mjs",
+      "status": "PASS"
+    },
+    {
+      "requirement": "AC-02: Wayfinder decision selects smallest bounded real-corpus evaluation",
+      "evidence_artifact": "wayfinder-decision.json",
+      "test_coverage": "Wayfinder decision protocol",
+      "status": "PASS"
+    },
+    {
+      "requirement": "AC-03: Real corpus assembled with complete provenance metadata and verified epistemic classes",
+      "evidence_artifact": "corpus-manifest.json, provenance-report.json",
+      "test_coverage": "corpus/research/manifests/*.json, tools/kad/test/research.test.mjs",
+      "status": "PASS"
+    },
+    {
+      "requirement": "AC-04: Existing research pipeline exercised end-to-end (import, normalization, deduplication, retrieval, extraction, citation, synthesis, context handoff, fallback)",
+      "evidence_artifact": "workflow-capability-matrix.json, retrieval-evaluation.json, citation-traceability.json, fallback-evaluation.json, synthesis.md",
+      "test_coverage": "bin/kad-knowledge research, tools/kad/test/research-cli.test.mjs",
+      "status": "PASS"
+    },
+    {
+      "requirement": "AC-05: Free-first/TOKENMAXXING policy preserved without unnecessary premium token expenditure",
+      "evidence_artifact": "workflow-capability-matrix.json, observatory-before-after.json",
+      "test_coverage": "tools/kad/telemetry/economic-shadow.mjs",
+      "status": "PASS"
+    },
+    {
+      "requirement": "AC-06: Observatory records natural operational metrics passively without synthetic workload or routing overrides",
+      "evidence_artifact": "observatory-before-after.json",
+      "test_coverage": "tools/kad/test/observatory.test.mjs",
+      "status": "PASS"
+    },
+    {
+      "requirement": "AC-07: All 510+ regression tests remain green and doctor diagnostics report PASS",
+      "evidence_artifact": "regression-results.json, final-validation.json",
+      "test_coverage": "node --test tools/kad/test/*.test.mjs, bin/kad doctor, bin/workctl doctor",
+      "status": "PASS"
+    }
+  ],
+  "verdict": "PASS"
+}

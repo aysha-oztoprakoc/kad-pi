@@ -1,0 +1,29 @@
+{
+  "schema_version": "kad-research-manifest-v1",
+  "candidate": {
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "authors": [
+      "Shunyu Yao",
+      "Jeffrey Zhao",
+      "Dian Yu",
+      "Nan Du",
+      "Izhak Shafran",
+      "Karthik Narasimhan",
+      "Yuan Cao"
+    ],
+    "year": 2023,
+    "abstract": "While large language models (LLMs) have demonstrated impressive performance across diverse NLP tasks, their capabilities for multi-step reasoning and environment grounding remain distinct challenges. We present ReAct, a paradigm that synergizes reasoning and acting in language models by prompting them to generate interleaved reasoning traces and task-specific actions.",
+    "identifiers": [
+      { "type": "doi", "value": "10.48550/arxiv.2210.03629" },
+      { "type": "arxiv", "value": "2210.03629" }
+    ]
+  },
+  "source": {
+    "source_path": "corpus/research/react-iclr2023.txt"
+  },
+  "provenance": {
+    "method": "manifest",
+    "origin": "curated_real_corpus",
+    "actor": "operator"
+  }
+}

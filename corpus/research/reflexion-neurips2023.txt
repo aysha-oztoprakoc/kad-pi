@@ -1,0 +1,14 @@
+Title: Reflexion: Language Agents with Verbal Reinforcement Learning
+Authors: Noah Shinn, Federico Cassano, Edward Berman, Ashwin Gopinath, Karthik Narasimhan, Shunyu Yao
+Publication: Advances in Neural Information Processing Systems (NeurIPS), 2023
+Identifier: arXiv:2303.11366 / DOI: 10.48550/arXiv.2303.11366
+
+Abstract:
+Large language model (LLM) agents deployed in interactive environments frequently fail to complete multi-step tasks due to inefficient exploration, repetition of mistakes, and lack of self-correction mechanisms. Traditional reinforcement learning algorithms require updating model weights via policy gradients, which is computationally expensive and sample inefficient for massive LLMs.
+
+We introduce Reflexion, an architecture that endows LLM agents with dynamic verbal reinforcement learning without weight updates. Reflexion agents reflect upon task-feedback signals (e.g., failed test cases, environment execution errors, scalar reward signals) by generating linguistic self-reflections that are stored in an episodic memory buffer. These verbal reflections act as semantic context in subsequent trials, enabling the agent to rapidly correct errors, prune unproductive search branches, and synthesize effective execution strategies.
+
+Key Empirical Findings:
+1. Coding Performance: On HumanEval Python coding benchmarks, Reflexion achieves a 91.0% pass@1 accuracy (improving from 67.0% baseline GPT-4) purely through iterative self-reflection driven by unit test feedback.
+2. Decision-Making Grounding: In interactive environments (ALFWorld, WebShop), verbal reflections provide targeted memory context that prevents repetitive looping in failure trajectories.
+3. Lightweight Adaptation: Reflexion operates entirely in-context at inference time without requiring gradient computations, fine-tuning datasets, or parameter mutations.

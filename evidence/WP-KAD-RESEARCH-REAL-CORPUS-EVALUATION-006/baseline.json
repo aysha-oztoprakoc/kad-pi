@@ -1,0 +1,34 @@
+{
+  "baseline_commit": "9342702a97afdcb9d6681c6ec21f74d44e42a1b0",
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "fixed_point": "9342702a97afdcb9d6681c6ec21f74d44e42a1b0",
+  "accepted_dependencies": {
+    "WP-KAD-RESEARCH-API-001": "ACCEPTED",
+    "WP-KAD-RESEARCH-CLI-002": "ACCEPTED",
+    "WP-KAD-RESEARCH-CAPABILITIES-003": "ACCEPTED",
+    "WP-KAD-RESEARCH-OPENVIKING-004": "ACCEPTED",
+    "WP-KAD-RESEARCH-ZOTERO-005": "ACCEPTED",
+    "WP-KAD-OPERATOR-CONTROL-PLANE-001": "ACCEPTED",
+    "WP-KAD-USAGE-BRIDGE-002": "ACCEPTED",
+    "WP-KAD-ECONOMIC-ROUTER-SHADOW-003": "ACCEPTED",
+    "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004": "ACCEPTED",
+    "WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005": "ACCEPTED"
+  },
+  "preflight_forensic_checks": {
+    "check_a_observed_at_determinism": {
+      "assigned_once": true,
+      "persisted_in_journal": true,
+      "reused_on_replay": true,
+      "recomputes_wall_clock": false,
+      "verdict": "PASS"
+    },
+    "check_b_readiness_threshold_semantics": {
+      "thresholds_are_operational_policies": true,
+      "no_statistical_significance_claims": true,
+      "no_causal_claims_without_intervention": true,
+      "verdict": "PASS"
+    }
+  },
+  "initial_tests_count": 510,
+  "verdict": "READY"
+}

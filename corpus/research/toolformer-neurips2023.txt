@@ -1,0 +1,14 @@
+Title: Toolformer: Language Models Can Teach Themselves to Use Tools
+Authors: Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Luke Zettlemoyer, Nicola Cancedda, Thomas Scialom
+Publication: Advances in Neural Information Processing Systems (NeurIPS), 2023
+Identifier: arXiv:2302.04761 / DOI: 10.48550/arXiv.2302.04761
+
+Abstract:
+Large language models demonstrate strong few-shot capabilities across diverse tasks, but struggle with basic arithmetic, factual lookup over dynamic knowledge bases, precise temporal reasoning, and understanding how to operate external tools.
+
+We introduce Toolformer, a model trained to decide which tools to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is achieved in a self-supervised manner without requiring massive human annotation: given a dataset of raw text, the model generates potential API calls, executes them via external tools (e.g., calculator, QA system, search engine, translation system, calendar), and filters the calls based on whether the API execution output significantly reduces language modeling perplexity on subsequent tokens.
+
+Key Empirical Findings:
+1. Tool Autonomy: Toolformer learns to invoke diverse APIs (Calculator, Calendar, QA, Wikipedia search, Machine Translation) without task-specific fine-tuning.
+2. Filtering Criterion: Self-supervised execution filtering retains only API calls where the returned result strictly improves sequence log-likelihood, ensuring that tools are invoked only when they provide deterministic factual precision over probabilistic guessing.
+3. Zero-Shot Generalization: Toolformer achieves substantially higher zero-shot performance on downstream math, question answering, and temporal reasoning benchmarks while retaining its core language modeling competence.

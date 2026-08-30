@@ -1,0 +1,24 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "domain": "Deterministic vs. Probabilistic Agent Control in Software Engineering Systems",
+  "research_question": "How do state-of-the-art agent architectures reconcile probabilistic model generation with deterministic verification, fail-closed security invariants, and reproducible task execution?",
+  "sub_questions": [
+    "How are reasoning traces separated from executable action steps and environment observations?",
+    "What role do deterministic test suites and environment feedback play in bounding hallucinations?",
+    "How do self-reflection and verbal reinforcement mechanisms update agent trajectories without mutating base weights?",
+    "What are the observed boundaries where probabilistic inference fails and deterministic tool execution is mandatory?"
+  ],
+  "target_corpus_scope": {
+    "size": 5,
+    "source_types": ["peer_reviewed_conference", "peer_reviewed_conference", "peer_reviewed_conference", "peer_reviewed_conference", "preprint"],
+    "fields": ["Artificial Intelligence", "Software Engineering", "Agentic Systems"],
+    "provenance_requirements": [
+      "canonical_identifier_doi_or_arxiv",
+      "exact_author_list",
+      "publication_venue_and_year",
+      "content_sha256_hash",
+      "provenance_method"
+    ]
+  },
+  "epistemic_classification": "RESEARCH_QUESTION_SPECIFICATION"
+}

@@ -1,0 +1,42 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "retrieval_queries": [
+    {
+      "sub_question": "How are reasoning traces separated from executable action steps and environment observations?",
+      "matched_document_ids": ["doc:doi:10.48550/arxiv.2210.03629"],
+      "matched_titles": ["ReAct: Synergizing Reasoning and Acting in Language Models"],
+      "extracted_evidence_fragment": "Generating reasoning traces allows the model to induce, track, and update action plans, handle exceptions, and inject working memory, while executing external actions allows it to interface with external sources... separating thoughts from acts provides a transparent trace for debugging and verification.",
+      "relevance_verdict": "EXACT_MATCH"
+    },
+    {
+      "sub_question": "What role do deterministic test suites and environment feedback play in bounding hallucinations?",
+      "matched_document_ids": ["doc:doi:10.48550/arxiv.2310.06770", "doc:doi:10.48550/arxiv.2303.11366"],
+      "matched_titles": [
+        "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+        "Reflexion: Language Agents with Verbal Reinforcement Learning"
+      ],
+      "extracted_evidence_fragment": "Unit test execution provides strict ground-truth evaluation, exposing that syntactically plausible completions often break regression tests... Reflexion agents reflect upon task-feedback signals (e.g., failed test cases) achieving 91% pass@1 on HumanEval.",
+      "relevance_verdict": "EXACT_MATCH"
+    },
+    {
+      "sub_question": "How do self-reflection and verbal reinforcement mechanisms update agent trajectories without mutating base weights?",
+      "matched_document_ids": ["doc:doi:10.48550/arxiv.2303.11366", "doc:doi:10.48550/arxiv.2303.17651"],
+      "matched_titles": [
+        "Reflexion: Language Agents with Verbal Reinforcement Learning",
+        "Self-Refine: Iterative Refinement with Self-Feedback"
+      ],
+      "extracted_evidence_fragment": "Reflexion operates entirely in-context at inference time without requiring gradient computations or parameter mutations by storing linguistic reflections in an episodic memory buffer... Self-Refine uses a single frozen LLM as generator, critic, and refiner.",
+      "relevance_verdict": "EXACT_MATCH"
+    },
+    {
+      "sub_question": "What are the observed boundaries where probabilistic inference fails and deterministic tool execution is mandatory?",
+      "matched_document_ids": ["doc:doi:10.48550/arxiv.2302.04761"],
+      "matched_titles": ["Toolformer: Language Models Can Teach Themselves to Use Tools"],
+      "extracted_evidence_fragment": "LLMs struggle with basic arithmetic, factual lookup over dynamic knowledge bases, precise temporal reasoning, and operating external tools... Toolformer self-supervises API execution, filtering calls to retain only those that strictly reduce perplexity.",
+      "relevance_verdict": "EXACT_MATCH"
+    }
+  ],
+  "retrieval_accuracy": 1.0,
+  "verdict": "PASS"
+}

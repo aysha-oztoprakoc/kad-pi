@@ -1,0 +1,14 @@
+Title: Self-Refine: Iterative Refinement with Self-Feedback
+Authors: Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Shashank Gupta, Bodhisattwa Prasad Majumder, Katherine Hermann, Sean Welleck, Amir Yazdanbakhsh, Peter Clark
+Publication: Advances in Neural Information Processing Systems (NeurIPS), 2023
+Identifier: arXiv:2303.17651 / DOI: 10.48550/arXiv.2303.17651
+
+Abstract:
+Generating complex, multi-attribute text in a single pass is challenging for large language models. While human authors iteratively draft, critique, and refine their work, standard LLM decoding remains largely feed-forward.
+
+We introduce Self-Refine, an iterative refinement approach where a single LLM acts as the generator, critic, and refiner. The model initial produces an initial output, generates actionable feedback evaluating its own output along specific task dimensions (e.g., readability, style, code efficiency, constraint satisfaction), and then refines the output using this self-generated feedback.
+
+Key Empirical Findings:
+1. Multi-Task Efficacy: Across 7 diverse generation tasks (including code optimization, math reasoning, constrained generation, and dialog response), Self-Refine outperforms one-step generation by ~20% absolute.
+2. Training-Free: Self-Refine uses a single frozen LLM without additional training, reinforcement learning, or human-in-the-loop annotations.
+3. Multi-Turn Feedback Quality: Iterative self-critique progressively improves generation quality, with diminishing returns observed after 3-4 refinement rounds.

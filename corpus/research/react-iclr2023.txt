@@ -1,0 +1,14 @@
+Title: ReAct: Synergizing Reasoning and Acting in Language Models
+Authors: Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, Yuan Cao
+Publication: International Conference on Learning Representations (ICLR), 2023
+Identifier: arXiv:2210.03629 / DOI: 10.48550/arXiv.2210.03629
+
+Abstract:
+While large language models (LLMs) have demonstrated impressive performance across diverse natural language processing tasks, their capabilities for multi-step reasoning and environment grounding remain distinct challenges. Reasoning-only approaches (e.g., chain-of-thought prompting) suffer from hallucination and error propagation due to the lack of external grounding. Action-only architectures (e.g., WebGPT, SayCan) lack deliberate reasoning capabilities necessary for planning and tracking state over extended horizons.
+
+In this work, we present ReAct, a paradigm that synergizes reasoning and acting in language models. ReAct prompts language models to generate interleaved reasoning traces and task-specific actions. Generating reasoning traces allows the model to induce, track, and update action plans, handle exceptions, and inject working memory, while executing external actions allows it to interface with external sources (e.g., search APIs, environments) to retrieve factual information and observe execution results.
+
+Key Empirical Findings:
+1. Synergy: On Question Answering (HotpotQA) and Fact Verification (Fever), ReAct overcomes issues of hallucination and error propagation by interacting with a Wikipedia API, generating human-interpretable reasoning traces alongside search actions.
+2. Grounding: In interactive decision-making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning baselines with an absolute success rate improvement of 34% and 10% respectively, requiring only one to two in-context demonstrations.
+3. Diagnostic Separation: ReAct demonstrates that separating thoughts (internal mental state representation) from acts (external state transitions) provides a transparent trace for debugging and verification.

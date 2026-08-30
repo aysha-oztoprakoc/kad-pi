@@ -1,0 +1,49 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "claims": [
+    {
+      "claim_id": "CLM-01-REACT-SEPARATION",
+      "statement": "Interleaving reasoning traces (thoughts) with external environment interactions (acts) improves decision grounding and mitigates error propagation.",
+      "epistemic_class": "SOURCE_FACT",
+      "primary_source": "doc:doi:10.48550/arxiv.2210.03629",
+      "citation": "Yao et al., 2023 (ReAct)",
+      "verified_in_corpus": true
+    },
+    {
+      "claim_id": "CLM-02-SWEBENCH-VERIFICATION",
+      "statement": "Unit test suites and reproduction tests provide unambiguous ground-truth validation for evaluating multi-file software engineering tasks.",
+      "epistemic_class": "SOURCE_FACT",
+      "primary_source": "doc:doi:10.48550/arxiv.2310.06770",
+      "citation": "Jimenez et al., 2024 (SWE-bench)",
+      "verified_in_corpus": true
+    },
+    {
+      "claim_id": "CLM-03-TOOLFORMER-FILTERING",
+      "statement": "Deterministic API execution enables language models to overcome probabilistic weaknesses in arithmetic, temporal reasoning, and factual retrieval.",
+      "epistemic_class": "SOURCE_FACT",
+      "primary_source": "doc:doi:10.48550/arxiv.2302.04761",
+      "citation": "Schick et al., 2023 (Toolformer)",
+      "verified_in_corpus": true
+    },
+    {
+      "claim_id": "CLM-04-REFLEXION-MEMORY",
+      "statement": "Dynamic episodic verbal reflection driven by environment feedback improves task completion rates without gradient descent or model weight mutation.",
+      "epistemic_class": "SOURCE_FACT",
+      "primary_source": "doc:doi:10.48550/arxiv.2303.11366",
+      "citation": "Shinn et al., 2023 (Reflexion)",
+      "verified_in_corpus": true
+    },
+    {
+      "claim_id": "CLM-05-KAD-SYNTHESIS-HYBRID",
+      "statement": "Reconciling probabilistic model generation with deterministic verification requires strict structural separation: models propose changes, deterministic harnesses enforce invariants, and test suites validate acceptance.",
+      "epistemic_class": "DERIVED_SYNTHESIS",
+      "primary_source": "Multiple (Yao et al., Jimenez et al., Schick et al., Shinn et al.)",
+      "citation": "KAD-PI Synthesis, 2026",
+      "verified_in_corpus": true
+    }
+  ],
+  "unsupported_claims_count": 0,
+  "fabricated_citations_count": 0,
+  "verdict": "PASS"
+}

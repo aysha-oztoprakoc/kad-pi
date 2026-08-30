@@ -1,0 +1,14 @@
+Title: SWE-bench: Can Language Models Resolve Real-World GitHub Issues?
+Authors: Carlos E. Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press, Karthik Narasimhan
+Publication: International Conference on Learning Representations (ICLR), 2024
+Identifier: arXiv:2310.06770 / DOI: 10.48550/arXiv.2310.06770
+
+Abstract:
+Language models have demonstrated impressive capabilities on synthetic and self-contained coding benchmarks (such as HumanEval and MBPP). However, real-world software engineering involves navigating complex codebases, coordinating multiple files, reasoning about long execution contexts, and validating patches against pre-existing unit test suites.
+
+We introduce SWE-bench, an evaluation framework consisting of 2,294 software engineering problems drawn from real GitHub issues and corresponding pull requests across 12 popular Python repositories. SWE-bench evaluates whether an agent can generate a code patch that successfully passes existing tests plus newly introduced fail-to-pass unit tests designed to reproduce the reported bug.
+
+Key Empirical Findings:
+1. Baseline Limitations: State-of-the-art models resolve only a fraction of real issues (Claude-2 resolves 4.8%, GPT-4 resolves 1.7% in the zero-shot scaffold).
+2. Deterministic Verification: Unit test execution provides strict ground-truth evaluation, exposing that syntactically plausible or seemingly correct LLM completions often break regression tests or fail edge cases.
+3. Multi-File Reasoning: Resolving real issues requires navigating large directory structures, searching for symbol definitions, editing across files, and executing unit test verification loops.

@@ -1,0 +1,64 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "provenance_invariants": {
+    "zero_synthetic_papers": true,
+    "zero_fabricated_citations": true,
+    "immutable_source_hashes": true,
+    "canonical_identifier_precedence": true,
+    "idempotent_deduplication": true
+  },
+  "provenance_entries": [
+    {
+      "document_id": "doc:doi:10.48550/arxiv.2210.03629",
+      "canonical_identifier": "doi:10.48550/arxiv.2210.03629",
+      "import_method": "manifest",
+      "origin": "curated_real_corpus",
+      "actor": "operator",
+      "source_hash": "ec5216b74c23182e3c9899d1e84582954b5f115d93d9b7982b424c42cbff17dc",
+      "provenance_retained": true,
+      "epistemic_state": "VERIFIED"
+    },
+    {
+      "document_id": "doc:doi:10.48550/arxiv.2310.06770",
+      "canonical_identifier": "doi:10.48550/arxiv.2310.06770",
+      "import_method": "manifest",
+      "origin": "curated_real_corpus",
+      "actor": "operator",
+      "source_hash": "7014cded3f4b165bca4b525f6df5ae5eb6730251248e505b802a2067cd0b542c",
+      "provenance_retained": true,
+      "epistemic_state": "VERIFIED"
+    },
+    {
+      "document_id": "doc:doi:10.48550/arxiv.2302.04761",
+      "canonical_identifier": "doi:10.48550/arxiv.2302.04761",
+      "import_method": "manifest",
+      "origin": "curated_real_corpus",
+      "actor": "operator",
+      "source_hash": "092036dc592088a056cad8f5d36d603dbf9969035d65a07cef91dcfc44dd39db",
+      "provenance_retained": true,
+      "epistemic_state": "VERIFIED"
+    },
+    {
+      "document_id": "doc:doi:10.48550/arxiv.2303.11366",
+      "canonical_identifier": "doi:10.48550/arxiv.2303.11366",
+      "import_method": "manifest",
+      "origin": "curated_real_corpus",
+      "actor": "operator",
+      "source_hash": "9dd6a6550dd6d5a72205217eb7cf08849c7c8da56b2dd53ba5f56176577643ca",
+      "provenance_retained": true,
+      "epistemic_state": "VERIFIED"
+    },
+    {
+      "document_id": "doc:doi:10.48550/arxiv.2303.17651",
+      "canonical_identifier": "doi:10.48550/arxiv.2303.17651",
+      "import_method": "manifest",
+      "origin": "curated_real_corpus",
+      "actor": "operator",
+      "source_hash": "da4c142b68a7da1ed45ccd5064a2bf547b8ae8624c609c9177a2f3c3ba08eae6",
+      "provenance_retained": true,
+      "epistemic_state": "VERIFIED"
+    }
+  ],
+  "verdict": "PASS"
+}

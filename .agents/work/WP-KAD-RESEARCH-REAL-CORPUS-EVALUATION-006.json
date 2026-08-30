@@ -1,0 +1,72 @@
+{
+  "id": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "project": "kad-pi",
+  "title": "Evidence-Gated Real-Corpus Research Workflow Evaluation",
+  "status": "ACCEPTED",
+  "priority": 100,
+  "spec_ref": "user:/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "fixed_point": "9342702a97afdcb9d6681c6ec21f74d44e42a1b0",
+  "scope": [
+    "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006/",
+    "docs/agents/research-workflow.md",
+    "wiki/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md",
+    "corpus/research/",
+    "wiki/research/"
+  ],
+  "non_scope": [
+    "altering production routing authority (routeEconomically)",
+    "forcing artificial workload to manipulate observatory readiness",
+    "claiming empirical savings without intervention",
+    "fabricating synthetic papers or citations",
+    "paid API spend without authorization"
+  ],
+  "owned_paths": [
+    "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006/",
+    "docs/agents/research-workflow.md",
+    "wiki/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md",
+    "corpus/research/",
+    "wiki/research/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/research*.test.mjs",
+    "node --test tools/kad/test/readiness.test.mjs",
+    "node --test tools/kad/test/observatory.test.mjs",
+    "node --test tools/kad/test/economic-shadow.test.mjs",
+    "node --test tools/kad/test/telemetry-usage-bridge.test.mjs",
+    "node --test tools/kad/test/telemetry.test.mjs",
+    "node --test tools/kad/test/control-plane.test.mjs",
+    "node --test tools/kad/test/*.test.mjs",
+    "just verify",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Preflight forensic checks verify observed_at determinism (Check A) and operational threshold semantics (Check B).",
+    "Wayfinder decision establishes smallest real-corpus research evaluation without premature platform expansion.",
+    "Narrow KAD-PI research question formulated in deterministic vs probabilistic agent control / evidence-grounded execution.",
+    "Bounded real corpus assembled with complete provenance metadata and verified epistemic classes (no synthetic papers or fabricated citations).",
+    "Existing research pipeline exercised end-to-end: import, canonical normalization, provenance retention, deduplication, retrieval, evidence extraction, citation linkage, synthesis, context handoff, and graceful fallback.",
+    "Free-first/TOKENMAXXING policy preserved without unnecessary premium token expenditure.",
+    "Observatory records natural operational metrics passively without synthetic workload or routing overrides.",
+    "Complete 14-file evidence package generated in evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006/.",
+    "All 510+ regression tests remain green and doctor diagnostics report PASS."
+  ],
+  "description": "Evidence-gated real-corpus research workflow evaluation testing existing KAD research stack on a bounded set of real papers with full provenance, retrieval, extraction, and fallback verification.",
+  "source_ticket": "user:/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "claim": null
+}

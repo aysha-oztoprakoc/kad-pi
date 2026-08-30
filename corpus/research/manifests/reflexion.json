@@ -1,0 +1,28 @@
+{
+  "schema_version": "kad-research-manifest-v1",
+  "candidate": {
+    "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+    "authors": [
+      "Noah Shinn",
+      "Federico Cassano",
+      "Edward Berman",
+      "Ashwin Gopinath",
+      "Karthik Narasimhan",
+      "Shunyu Yao"
+    ],
+    "year": 2023,
+    "abstract": "We introduce Reflexion, an architecture that endows LLM agents with dynamic verbal reinforcement learning without weight updates. Reflexion agents reflect upon task-feedback signals by generating linguistic self-reflections that are stored in an episodic memory buffer and injected into future trials.",
+    "identifiers": [
+      { "type": "doi", "value": "10.48550/arxiv.2303.11366" },
+      { "type": "arxiv", "value": "2303.11366" }
+    ]
+  },
+  "source": {
+    "source_path": "corpus/research/reflexion-neurips2023.txt"
+  },
+  "provenance": {
+    "method": "manifest",
+    "origin": "curated_real_corpus",
+    "actor": "operator"
+  }
+}

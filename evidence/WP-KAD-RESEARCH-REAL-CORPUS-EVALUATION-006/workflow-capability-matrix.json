@@ -1,0 +1,67 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "capabilities": [
+    {
+      "id": "CAP-01-ACQUISITION-IMPORT",
+      "name": "Acquisition and Manifest Ingestion",
+      "status": "CONFIRMED",
+      "evidence": "Imported 5 real academic manifests via kad-knowledge research import; validated path confinement and schema validation."
+    },
+    {
+      "id": "CAP-02-NORMALIZATION",
+      "name": "Canonical Normalized Representation",
+      "status": "CONFIRMED",
+      "evidence": "All DOIs and arXiv identifiers normalized deterministically into canonical ResearchDocument representations."
+    },
+    {
+      "id": "CAP-03-PROVENANCE-RETENTION",
+      "name": "Provenance and Epistemic Tracking",
+      "status": "CONFIRMED",
+      "evidence": "Provenance actor, method, timestamps, and SHA-256 byte hashes retained and verified across persistence."
+    },
+    {
+      "id": "CAP-04-DEDUPLICATION",
+      "name": "Idempotency and Conflict Detection",
+      "status": "CONFIRMED",
+      "evidence": "Re-importing existing manifest yielded IDEMPOTENT_EXISTING without duplicate creation or canonical corruption."
+    },
+    {
+      "id": "CAP-05-DOCUMENT-RETRIEVAL",
+      "name": "Deterministic Document Retrieval",
+      "status": "CONFIRMED",
+      "evidence": "Retrieved documents by exact canonical ID, DOI, and year filter via kad-knowledge research inspect/list."
+    },
+    {
+      "id": "CAP-06-EVIDENCE-EXTRACTION",
+      "name": "Evidence Extraction",
+      "status": "CONFIRMED",
+      "evidence": "Extracted exact empirical excerpts, benchmark scores, and architecture mechanisms from local source files."
+    },
+    {
+      "id": "CAP-07-CITATION-LINKAGE",
+      "name": "Citation Traceability",
+      "status": "CONFIRMED",
+      "evidence": "Mapped all synthesis claims to canonical identifiers (arXiv:2210.03629, arXiv:2310.06770, arXiv:2302.04761, arXiv:2303.11366, arXiv:2303.17651)."
+    },
+    {
+      "id": "CAP-08-SYNTHESIS",
+      "name": "Evidence-Grounded Synthesis",
+      "status": "CONFIRMED",
+      "evidence": "Produced structured synthesis with strict epistemic tagging (SOURCE_FACT vs DERIVED_SYNTHESIS vs PROJECT_INFERENCE vs UNKNOWN)."
+    },
+    {
+      "id": "CAP-09-CONTEXT-HANDOFF",
+      "name": "Context Handoff & Knowledge Plane Integration",
+      "status": "CONFIRMED",
+      "evidence": "Research catalog integrates with Librarian and KAD knowledge plane without LLM context pollution."
+    },
+    {
+      "id": "CAP-10-FALLBACK-BEHAVIOR",
+      "name": "Graceful Degradation & Free/Manual Fallback",
+      "status": "CONFIRMED",
+      "evidence": "Fully operational with Zotero unconfigured, OpenViking offline, and zero paid API spend."
+    }
+  ],
+  "overall_verdict": "PASS (10/10 Capabilities Confirmed)"
+}

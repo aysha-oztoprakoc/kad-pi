@@ -1,0 +1,30 @@
+{
+  "schema_version": "kad-research-manifest-v1",
+  "candidate": {
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "authors": [
+      "Timo Schick",
+      "Jane Dwivedi-Yu",
+      "Roberto Dessì",
+      "Roberta Raileanu",
+      "Maria Lomeli",
+      "Luke Zettlemoyer",
+      "Nicola Cancedda",
+      "Thomas Scialom"
+    ],
+    "year": 2023,
+    "abstract": "We introduce Toolformer, a model trained to decide which tools to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is achieved in a self-supervised manner without requiring massive human annotation by filtering API calls based on whether execution reduces perplexity.",
+    "identifiers": [
+      { "type": "doi", "value": "10.48550/arxiv.2302.04761" },
+      { "type": "arxiv", "value": "2302.04761" }
+    ]
+  },
+  "source": {
+    "source_path": "corpus/research/toolformer-neurips2023.txt"
+  },
+  "provenance": {
+    "method": "manifest",
+    "origin": "curated_real_corpus",
+    "actor": "operator"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "kad-research-manifest-v1",
+  "candidate": {
+    "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+    "authors": [
+      "Carlos E. Jimenez",
+      "John Yang",
+      "Alexander Wettig",
+      "Shunyu Yao",
+      "Kexin Pei",
+      "Ofir Press",
+      "Karthik Narasimhan"
+    ],
+    "year": 2024,
+    "abstract": "We introduce SWE-bench, an evaluation framework consisting of 2,294 software engineering problems drawn from real GitHub issues and pull requests across 12 popular Python repositories. SWE-bench evaluates whether an agent can generate a code patch that successfully passes existing tests plus newly introduced fail-to-pass unit tests.",
+    "identifiers": [
+      { "type": "doi", "value": "10.48550/arxiv.2310.06770" },
+      { "type": "arxiv", "value": "2310.06770" }
+    ]
+  },
+  "source": {
+    "source_path": "corpus/research/swe-bench-iclr2024.txt"
+  },
+  "provenance": {
+    "method": "manifest",
+    "origin": "curated_real_corpus",
+    "actor": "operator"
+  }
+}

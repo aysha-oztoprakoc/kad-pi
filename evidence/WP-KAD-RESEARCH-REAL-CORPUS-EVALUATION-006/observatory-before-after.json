@@ -1,0 +1,28 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "passive_observatory_statement": "Observatory measurements were passive by-products of useful project work and were not used to steer workload generation.",
+  "before_state": {
+    "total_observations": 12,
+    "comparable_observations": 12,
+    "divergence_count": 12,
+    "divergence_rate": 1.0,
+    "readiness_status": "UNKNOWN_DOMINATED",
+    "quality_gate": "UNKNOWN_DOMINATED",
+    "integrity_gate": "PASS",
+    "policy_drift_gate": "PASS"
+  },
+  "after_state": {
+    "total_observations": 12,
+    "comparable_observations": 12,
+    "divergence_count": 12,
+    "divergence_rate": 1.0,
+    "natural_observations_added": 0,
+    "readiness_status": "UNKNOWN_DOMINATED",
+    "quality_gate": "UNKNOWN_DOMINATED",
+    "integrity_gate": "PASS",
+    "policy_drift_gate": "PASS"
+  },
+  "readiness_verdict": "INSUFFICIENT_DATA (Expected fail-closed scientific baseline preserved)",
+  "verdict": "PASS"
+}

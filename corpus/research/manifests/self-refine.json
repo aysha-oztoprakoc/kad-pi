@@ -1,0 +1,38 @@
+{
+  "schema_version": "kad-research-manifest-v1",
+  "candidate": {
+    "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+    "authors": [
+      "Aman Madaan",
+      "Niket Tandon",
+      "Prakhar Gupta",
+      "Skyler Hallinan",
+      "Luyu Gao",
+      "Sarah Wiegreffe",
+      "Uri Alon",
+      "Nouha Dziri",
+      "Shrimai Prabhumoye",
+      "Yiming Yang",
+      "Shashank Gupta",
+      "Bodhisattwa Prasad Majumder",
+      "Katherine Hermann",
+      "Sean Welleck",
+      "Amir Yazdanbakhsh",
+      "Peter Clark"
+    ],
+    "year": 2023,
+    "abstract": "We introduce Self-Refine, an iterative refinement approach where a single LLM acts as the generator, critic, and refiner. The model produces an initial output, generates actionable feedback evaluating its own output along specific task dimensions, and refines the output using this self-generated feedback.",
+    "identifiers": [
+      { "type": "doi", "value": "10.48550/arxiv.2303.17651" },
+      { "type": "arxiv", "value": "2303.17651" }
+    ]
+  },
+  "source": {
+    "source_path": "corpus/research/self-refine-neurips2023.txt"
+  },
+  "provenance": {
+    "method": "manifest",
+    "origin": "curated_real_corpus",
+    "actor": "operator"
+  }
+}

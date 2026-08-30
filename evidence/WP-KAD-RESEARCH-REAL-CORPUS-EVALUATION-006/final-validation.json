@@ -1,0 +1,43 @@
+{
+  "workpackage": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+  "title": "Evidence-Gated Real-Corpus Research Workflow Evaluation",
+  "validated_at": "2026-08-30T02:00:00.000Z",
+  "acceptance_criteria_results": [
+    {
+      "criterion": "Preflight forensic checks verify observed_at determinism (Check A) and threshold semantics (Check B)",
+      "status": "MET",
+      "evidence": "baseline.json"
+    },
+    {
+      "criterion": "Wayfinder decision selects smallest bounded real-corpus evaluation",
+      "status": "MET",
+      "evidence": "wayfinder-decision.json"
+    },
+    {
+      "criterion": "Real corpus assembled with complete provenance metadata and verified epistemic classes (no synthetic papers or fabricated citations)",
+      "status": "MET",
+      "evidence": "corpus-manifest.json, provenance-report.json"
+    },
+    {
+      "criterion": "Existing research pipeline exercised end-to-end (import, normalization, deduplication, retrieval, extraction, citation, synthesis, context handoff, fallback)",
+      "status": "MET",
+      "evidence": "workflow-capability-matrix.json, retrieval-evaluation.json, citation-traceability.json, fallback-evaluation.json, synthesis.md"
+    },
+    {
+      "criterion": "Free-first/TOKENMAXXING policy preserved without unnecessary premium token expenditure",
+      "status": "MET",
+      "evidence": "workflow-capability-matrix.json, observatory-before-after.json"
+    },
+    {
+      "criterion": "Observatory records natural operational metrics passively without synthetic workload or routing overrides",
+      "status": "MET",
+      "evidence": "observatory-before-after.json"
+    },
+    {
+      "criterion": "All 510+ regression tests remain green and doctor diagnostics report PASS",
+      "status": "MET",
+      "evidence": "regression-results.json"
+    }
+  ],
+  "verdict": "PASS"
+}
