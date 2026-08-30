@@ -1,0 +1,30 @@
+repos:
+  - repo: local
+    hooks:
+      - id: prime-directive-validation
+        name: Prime Directive Budget & Invariants
+        entry: python3 validate_prime_directive.py
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: kad-doctor
+        name: KAD Operator Doctor
+        entry: bin/kad doctor
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: workctl-doctor
+        name: Workctl Doctor
+        entry: bin/workctl doctor
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: gitleaks
+        name: Local Gitleaks Secret Detection
+        entry: gitleaks protect --staged --redact
+        language: system
+        pass_filenames: false
+        always_run: true
