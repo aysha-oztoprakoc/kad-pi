@@ -1,0 +1,7 @@
+{
+  "workpackage": "WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+  "baseline_commit": "ccafcc7baf958103ee7c537bb2b967b14c6a0412",
+  "audit_source": "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1/claim-ledger.json",
+  "source_documents": 5,
+  "audited_claims": 15
+}

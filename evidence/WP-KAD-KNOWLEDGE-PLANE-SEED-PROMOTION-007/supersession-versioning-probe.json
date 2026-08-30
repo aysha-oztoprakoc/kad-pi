@@ -1,0 +1,4 @@
+{
+  "behavior": "supersede marks prior record SUPERSEDED, links replacement, and retains history",
+  "history_preserved": true
+}

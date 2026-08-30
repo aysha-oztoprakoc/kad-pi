@@ -1,0 +1,14 @@
+{
+  "canonical_authority": "KAD KnowledgePlane claim records",
+  "classes": {
+    "SOURCE_FACT": "directly supported and audited primary-source claim; authoritative evidence",
+    "DERIVED_SYNTHESIS": "audited project synthesis; never source fact",
+    "PROJECT_INFERENCE": "project-specific interpretation; never universal fact",
+    "UNKNOWN": "retained uncertainty; never promotable as fact"
+  },
+  "derived": [
+    "wiki projection",
+    "OpenViking index",
+    "future training manifests"
+  ]
+}

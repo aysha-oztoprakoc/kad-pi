@@ -1,0 +1,73 @@
+{
+  "id": "WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+  "project": "kad-pi",
+  "title": "Governed Scientific Evidence Promotion, Wiki Projection and Derived Index Contract",
+  "status": "ACCEPTED",
+  "priority": 100,
+  "spec_ref": "user:/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+  "fixed_point": "ccafcc7baf958103ee7c537bb2b967b14c6a0412",
+  "scope": [
+    "tools/kad/knowledge-plane.mjs",
+    "tools/kad/wiki-projection.mjs",
+    "tools/kad/research-openviking.mjs",
+    "tools/kad/index.mjs",
+    "tools/kad/test/seed-promotion.test.mjs",
+    "evidence/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007/",
+    "docs/agents/knowledge-plane.md",
+    "wiki/KAD_Knowledge_Plane_Seed_Promotion_2026-08-30.md"
+  ],
+  "non_scope": [
+    "Needle training or fine-tuning",
+    "new literature or corpus expansion",
+    "OpenViking canonical authority",
+    "paid API spend",
+    "changing economic routing",
+    "modifying accepted source documents"
+  ],
+  "owned_paths": [
+    "tools/kad/knowledge-plane.mjs",
+    "tools/kad/wiki-projection.mjs",
+    "tools/kad/research-openviking.mjs",
+    "tools/kad/index.mjs",
+    "tools/kad/test/seed-promotion.test.mjs",
+    "evidence/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007/",
+    "docs/agents/knowledge-plane.md",
+    "wiki/KAD_Knowledge_Plane_Seed_Promotion_2026-08-30.md"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/seed-promotion.test.mjs",
+    "node --test tools/kad/test/*.test.mjs",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Claim-level promotion is deterministic and fail-closed",
+    "SOURCE_FACT remains distinct from DERIVED_SYNTHESIS, PROJECT_INFERENCE, and UNKNOWN",
+    "Provenance and canonical IDs survive promotion",
+    "Duplicate promotion is idempotent and supersession preserves history",
+    "Wiki and OpenViking outputs are derived, deterministic, and backlink canonical IDs",
+    "Derived projections cannot mutate canonical state",
+    "Training eligibility cannot erase epistemic class",
+    "OpenViking unavailability degrades gracefully",
+    "No Needle training, fine-tuning, or distillation occurs",
+    "Existing regression suite and doctors remain green"
+  ],
+  "description": "Smallest deterministic path from audited five-paper claims into governed KnowledgePlane and derived projections.",
+  "source_ticket": "user:/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+  "claim": null
+}

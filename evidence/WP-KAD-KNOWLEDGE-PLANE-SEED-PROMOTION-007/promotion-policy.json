@@ -1,0 +1,15 @@
+{
+  "required": [
+    "claim_id",
+    "claim_text",
+    "source_id",
+    "support_location",
+    "support_type",
+    "verification_status"
+  ],
+  "source_fact_requires": "verification_status=SUPPORTED",
+  "derived_requires": "verification_status=DERIVED_NOT_SOURCE_FACT or SUPPORTED",
+  "unknown": "retain without promotion",
+  "invalid": "reject closed",
+  "idempotency": "canonical claim_id is stable"
+}

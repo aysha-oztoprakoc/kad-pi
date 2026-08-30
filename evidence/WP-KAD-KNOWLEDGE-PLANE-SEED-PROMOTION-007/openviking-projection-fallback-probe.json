@@ -1,0 +1,23 @@
+{
+  "unavailable": {
+    "status": "DEGRADED",
+    "canonical_mutation": false
+  },
+  "available": {
+    "status": "PASS",
+    "canonical_ids": [
+      "kp:claim:CLM-001-REACT-REASONING-ACTING",
+      "kp:claim:CLM-002-REACT-STATE-SEPARATION",
+      "kp:claim:CLM-003-SWEBENCH-BENCHMARK-HARNESS",
+      "kp:claim:CLM-004-SWEBENCH-BASELINE-ACCURACY",
+      "kp:claim:CLM-006-TOOLFORMER-PERPLEXITY-FILTER",
+      "kp:claim:CLM-007-TOOLFORMER-BENCHMARKS",
+      "kp:claim:CLM-008-TOOLFORMER-DETERMINISTIC-FRAMING",
+      "kp:claim:CLM-009-REFLEXION-EPISODIC-FEEDBACK",
+      "kp:claim:CLM-010-REFLEXION-HUMANEVAL-SCORE",
+      "kp:claim:CLM-011-SELFREFINE-INTERNAL-CRITIQUE",
+      "kp:claim:CLM-012-SELFREFINE-PERFORMANCE"
+    ]
+  },
+  "fallback": "exact canonical retrieval remains available"
+}

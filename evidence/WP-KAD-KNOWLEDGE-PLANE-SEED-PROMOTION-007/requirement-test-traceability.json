@@ -1,0 +1,14 @@
+{
+  "tests": "tools/kad/test/seed-promotion.test.mjs",
+  "cases": 18,
+  "coverage": [
+    "promotion",
+    "fail-closed validation",
+    "provenance",
+    "idempotency",
+    "supersession",
+    "derived isolation",
+    "OpenViking fallback",
+    "training boundary"
+  ]
+}

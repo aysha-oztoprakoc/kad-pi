@@ -1,0 +1,60 @@
+{
+  "considered": 15,
+  "source_facts": 10,
+  "derived_synthesis": 1,
+  "project_inference": 0,
+  "unknown_retained": [
+    {
+      "claim_id": "CLM-005-SWEBENCH-GROUND-TRUTH-OVERSTATEMENT",
+      "claim_text": "Unit test suites and reproduction tests provide unambiguous universal ground-truth validation for software correctness.",
+      "classification": "UNKNOWN",
+      "source_id": "doc:doi:10.48550/arxiv.2310.06770",
+      "support_location": "Jimenez et al., 2024 [SWE-bench], §1, §3",
+      "support_type": "KAD_OVERSTATEMENT_REPAIR",
+      "verification_status": "DERIVED_NOT_SOURCE_FACT",
+      "notes": "WP-006 overstatement repaired: SWE-bench establishes executable unit tests as an automated benchmark grading mechanism, not universal semantic truth.",
+      "epistemic_class": "UNKNOWN",
+      "promotion_state": "RETAINED",
+      "acceptance_state": "UNKNOWN",
+      "training_eligibility": "UNKNOWN"
+    },
+    {
+      "claim_id": "CLM-013-REFLEXION-SELFREFINE-CONFLATION",
+      "claim_text": "Both Reflexion and Self-Refine store verbal self-reflections derived from execution failure signals in an episodic memory buffer.",
+      "classification": "UNKNOWN",
+      "source_id": "doc:doi:10.48550/arxiv.2303.11366; doc:doi:10.48550/arxiv.2303.17651",
+      "support_location": "WP-006 Section 3.4 Conflation",
+      "support_type": "CONFLATION_REMOVAL",
+      "verification_status": "UNSUPPORTED",
+      "notes": "WP-006 conflation identified and marked UNSUPPORTED. Self-Refine does NOT use execution failure signals or episodic memory; Reflexion does.",
+      "epistemic_class": "UNKNOWN",
+      "promotion_state": "RETAINED",
+      "acceptance_state": "UNKNOWN",
+      "training_eligibility": "UNKNOWN"
+    }
+  ],
+  "rejected": [
+    {
+      "claim_id": "CLM-014-ITERATIVE-REFINEMENT-SYNTHESIS",
+      "reason": "source linkage is not present"
+    },
+    {
+      "claim_id": "CLM-015-KAD-TRIPARTITE-ARCHITECTURE",
+      "reason": "source linkage is not present"
+    }
+  ],
+  "source_documents": 5,
+  "promoted_ids": [
+    "kp:claim:CLM-001-REACT-REASONING-ACTING",
+    "kp:claim:CLM-002-REACT-STATE-SEPARATION",
+    "kp:claim:CLM-003-SWEBENCH-BENCHMARK-HARNESS",
+    "kp:claim:CLM-004-SWEBENCH-BASELINE-ACCURACY",
+    "kp:claim:CLM-006-TOOLFORMER-PERPLEXITY-FILTER",
+    "kp:claim:CLM-007-TOOLFORMER-BENCHMARKS",
+    "kp:claim:CLM-008-TOOLFORMER-DETERMINISTIC-FRAMING",
+    "kp:claim:CLM-009-REFLEXION-EPISODIC-FEEDBACK",
+    "kp:claim:CLM-010-REFLEXION-HUMANEVAL-SCORE",
+    "kp:claim:CLM-011-SELFREFINE-INTERNAL-CRITIQUE",
+    "kp:claim:CLM-012-SELFREFINE-PERFORMANCE"
+  ]
+}

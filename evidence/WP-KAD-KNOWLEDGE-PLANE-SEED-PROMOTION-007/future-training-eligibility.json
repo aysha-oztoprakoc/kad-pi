@@ -1,0 +1,12 @@
+{
+  "eligible_classes": [
+    "SOURCE_FACT",
+    "DERIVED_SYNTHESIS",
+    "PROJECT_INFERENCE"
+  ],
+  "ineligible_classes": [
+    "UNKNOWN"
+  ],
+  "constraint": "eligibility metadata cannot change epistemic_class",
+  "needle_training": false
+}

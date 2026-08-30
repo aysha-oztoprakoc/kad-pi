@@ -1,0 +1,7 @@
+{
+  "secrets_persisted": false,
+  "full_source_text_copied": false,
+  "source_hashes_and_bounded_excerpts_only": true,
+  "network_calls": false,
+  "needle_training": false
+}

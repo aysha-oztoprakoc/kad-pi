@@ -257,6 +257,164 @@ export class DeterministicKnowledgePlane {
   }
 }
 
+export const CLAIM_CLASSES = Object.freeze({
+  SOURCE_FACT: 'SOURCE_FACT',
+  DERIVED_SYNTHESIS: 'DERIVED_SYNTHESIS',
+  PROJECT_INFERENCE: 'PROJECT_INFERENCE',
+  UNKNOWN: 'UNKNOWN'
+});
+
+export const TRAINING_ELIGIBILITY = Object.freeze({
+  TRAIN_ELIGIBLE: 'TRAIN_ELIGIBLE',
+  TRAIN_INELIGIBLE: 'TRAIN_INELIGIBLE',
+  UNKNOWN: 'UNKNOWN'
+});
+
+function clone(value) {
+  return JSON.parse(JSON.stringify(value));
+}
+
+function claimRecord(claim, source) {
+  const epistemicClass = claim.classification;
+  const authoritative = epistemicClass === CLAIM_CLASSES.SOURCE_FACT;
+  return Object.freeze({
+    id: `kp:claim:${claim.claim_id}`,
+    canonical_id: `kp:claim:${claim.claim_id}`,
+    claim_id: claim.claim_id,
+    claim_text: claim.claim_text,
+    epistemic_class: epistemicClass,
+    authority_class: authoritative ? 'AUTHORITATIVE_EVIDENCE' : 'DERIVED_KAD_KNOWLEDGE',
+    acceptance_state: ACCEPTANCE_STATES.ACCEPTED,
+    promotion_state: 'PROMOTED',
+    source_id: source.source_id,
+    source_ref: source.source_ref,
+    source_hash: source.source_hash,
+    support_location: claim.support_location,
+    support_type: claim.support_type,
+    verification_status: claim.verification_status,
+    provenance: {
+      source_id: source.source_id,
+      source_ref: source.source_ref,
+      source_hash: source.source_hash,
+      support_location: claim.support_location,
+      audit_status: claim.verification_status
+    },
+    training_eligibility: epistemicClass === CLAIM_CLASSES.UNKNOWN
+      ? TRAINING_ELIGIBILITY.UNKNOWN
+      : TRAINING_ELIGIBILITY.TRAIN_ELIGIBLE,
+    version: 1,
+    supersedes: null
+  });
+}
+
+function validateAuditedClaim(claim, sources) {
+  if (!claim || !claim.claim_id || !claim.claim_text) return 'claim_id and claim_text are required';
+  if (claim.classification === CLAIM_CLASSES.UNKNOWN) return null;
+  if (!Object.values(CLAIM_CLASSES).includes(claim.classification)) return 'invalid epistemic class';
+  if (!claim.source_id) return 'source_id is required';
+  const source = sources.get(claim.source_id);
+  if (!source) return 'source linkage is not present';
+  if (!claim.support_location || !claim.support_type) return 'support provenance is required';
+  if (claim.verification_status !== 'SUPPORTED' && claim.verification_status !== 'DERIVED_NOT_SOURCE_FACT') return 'verification_status must be SUPPORTED';
+  if (claim.classification === CLAIM_CLASSES.SOURCE_FACT && claim.verification_status !== 'SUPPORTED') return 'SOURCE_FACT requires SUPPORTED verification';
+  return null;
+}
+
+export class ClaimKnowledgePlane {
+  #sources;
+  #records = new Map();
+  #history = [];
+
+  constructor({ sources = [] } = {}) {
+    this.#sources = new Map(sources.map(source => [source.source_id, Object.freeze({ ...source })]));
+  }
+
+  promote(claims = []) {
+    const promoted = [];
+    const retained = [];
+    const rejected = [];
+    const duplicates = [];
+    for (const claim of claims) {
+      if (claim?.classification === CLAIM_CLASSES.UNKNOWN) {
+        retained.push(Object.freeze({ ...clone(claim), epistemic_class: CLAIM_CLASSES.UNKNOWN, promotion_state: 'RETAINED', acceptance_state: ACCEPTANCE_STATES.UNKNOWN, training_eligibility: TRAINING_ELIGIBILITY.UNKNOWN }));
+        continue;
+      }
+      const reason = validateAuditedClaim(claim, this.#sources);
+      if (reason) {
+        rejected.push({ claim_id: claim?.claim_id ?? null, reason });
+        continue;
+      }
+      const id = `kp:claim:${claim.claim_id}`;
+      if (this.#records.has(id)) {
+        duplicates.push(id);
+        continue;
+      }
+      const record = claimRecord(claim, this.#sources.get(claim.source_id));
+      this.#records.set(id, record);
+      this.#history.push(record);
+      promoted.push(record);
+    }
+    return { promoted, retained, rejected, duplicates };
+  }
+
+  supersede(claimId, replacement) {
+    const prior = this.#records.get(`kp:claim:${claimId}`);
+    if (!prior) throw new Error(`claim not found: ${claimId}`);
+    const result = this.promote([{ ...replacement, claim_id: replacement.claim_id }]);
+    if (result.promoted.length !== 1) throw new Error(result.rejected[0]?.reason ?? 'replacement was not promoted');
+    const current = result.promoted[0];
+    const priorRecord = Object.freeze({ ...prior, acceptance_state: ACCEPTANCE_STATES.SUPERSEDED, superseded_by: current.id });
+    const currentRecord = Object.freeze({ ...current, supersedes: prior.id, version: prior.version + 1 });
+    const priorIndex = this.#history.findIndex(item => item.id === prior.id);
+    const currentIndex = this.#history.findIndex(item => item.id === current.id);
+    if (priorIndex < 0 || currentIndex < 0) throw new Error('claim history is inconsistent');
+    this.#records.set(prior.id, priorRecord);
+    this.#records.set(current.id, currentRecord);
+    this.#history[priorIndex] = priorRecord;
+    this.#history[currentIndex] = currentRecord;
+    return { previous: priorRecord, current: currentRecord };
+  }
+
+  list() { return [...this.#records.values()].filter(record => record.acceptance_state !== ACCEPTANCE_STATES.SUPERSEDED); }
+  show(claimId) { return this.#records.get(`kp:claim:${claimId}`) ?? null; }
+  history() { return [...this.#history]; }
+
+  projectOpenViking({ available = false } = {}) {
+    if (!available) return { status: 'DEGRADED', canonical_mutation: false, entries: [], reason: 'OpenViking unavailable; exact canonical fallback remains available' };
+    return { status: 'PASS', canonical_mutation: false, entries: this.list().map(record => ({ uri: `viking://resources/kad-claims/${record.claim_id}.json`, canonical_id: record.id, epistemic_class: record.epistemic_class, source_ref: record.source_ref, source_hash: record.source_hash })) };
+  }
+}
+
+export function createClaimKnowledgePlane(options = {}) {
+  return new ClaimKnowledgePlane(options);
+}
+
+export function projectClaims(records = []) {
+  const safeRecords = records.map(clone).sort((left, right) => left.id.localeCompare(right.id));
+  const lines = ['# KAD KnowledgePlane Claim Projection', '', '<!-- DERIVED: canonical claim records remain authoritative. -->', ''];
+  for (const record of safeRecords) {
+    lines.push(`## ${record.claim_id}`, '', `- Canonical ID: \`${record.canonical_id}\``, `- Epistemic class: \`${record.epistemic_class}\``, `- Authority: \`${record.authority_class}\``, `- Source: \`${record.source_ref}\``, `- Source hash: \`${record.source_hash}\``, `- Claim: ${record.claim_text}`, '');
+  }
+  return { projection_id: 'kad-claim-projection-v1', status: 'DERIVED', records: safeRecords, markdown: `${lines.join('\n')}\n` };
+}
+
+export function promoteAuditedClaims({ claims = [], sources = [] } = {}) {
+  const plane = createClaimKnowledgePlane({ sources });
+  const result = plane.promote(claims);
+  return {
+    ...result,
+    counts: {
+      considered: claims.length,
+      source_facts: result.promoted.filter(record => record.epistemic_class === CLAIM_CLASSES.SOURCE_FACT).length,
+      derived_synthesis: result.promoted.filter(record => record.epistemic_class === CLAIM_CLASSES.DERIVED_SYNTHESIS).length,
+      project_inference: result.promoted.filter(record => record.epistemic_class === CLAIM_CLASSES.PROJECT_INFERENCE).length,
+      unknown_retained: result.retained.length,
+      rejected: result.rejected.length
+    },
+    plane
+  };
+}
+
 export function parseKnowledgeCliArgs(args) {
   const [command, ...rest] = args;
   const json = rest.includes('--json');

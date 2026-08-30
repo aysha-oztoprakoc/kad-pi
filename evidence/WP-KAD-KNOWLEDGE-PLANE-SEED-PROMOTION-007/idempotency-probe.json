@@ -1,0 +1,5 @@
+{
+  "first_promotion_count": 11,
+  "replay_promotion_count": 0,
+  "duplicate_policy": "stable canonical claim_id; replay is a duplicate"
+}

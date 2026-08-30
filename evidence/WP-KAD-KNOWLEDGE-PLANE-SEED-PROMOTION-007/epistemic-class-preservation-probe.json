@@ -1,0 +1,68 @@
+[
+  {
+    "id": "kp:claim:CLM-001-REACT-REASONING-ACTING",
+    "before": "SOURCE_FACT",
+    "after_projection": "SOURCE_FACT",
+    "training_eligibility": "TRAIN_ELIGIBLE"
+  },
+  {
+    "id": "kp:claim:CLM-002-REACT-STATE-SEPARATION",
+    "before": "SOURCE_FACT",
+    "after_projection": "SOURCE_FACT",
+    "training_eligibility": "TRAIN_ELIGIBLE"
+  },
+  {
+    "id": "kp:claim:CLM-003-SWEBENCH-BENCHMARK-HARNESS",
+    "before": "SOURCE_FACT",
+    "after_projection": "SOURCE_FACT",
+    "training_eligibility": "TRAIN_ELIGIBLE"
+  },
+  {
+    "id": "kp:claim:CLM-004-SWEBENCH-BASELINE-ACCURACY",
+    "before": "SOURCE_FACT",
+    "after_projection": "SOURCE_FACT",
+    "training_eligibility": "TRAIN_ELIGIBLE"
+  },
+  {
+    "id": "kp:claim:CLM-006-TOOLFORMER-PERPLEXITY-FILTER",
+    "before": "SOURCE_FACT",
+    "after_projection": "SOURCE_FACT",
+    "training_eligibility": "TRAIN_ELIGIBLE"
+  },
+  {
+    "id": "kp:claim:CLM-007-TOOLFORMER-BENCHMARKS",
+    "before": "SOURCE_FACT",
+    "after_projection": "SOURCE_FACT",
+    "training_eligibility": "TRAIN_ELIGIBLE"
+  },
+  {
+    "id": "kp:claim:CLM-008-TOOLFORMER-DETERMINISTIC-FRAMING",
+    "before": "DERIVED_SYNTHESIS",
+    "after_projection": "DERIVED_SYNTHESIS",
+    "training_eligibility": "TRAIN_ELIGIBLE"
+  },
+  {
+    "id": "kp:claim:CLM-009-REFLEXION-EPISODIC-FEEDBACK",
+    "before": "SOURCE_FACT",
+    "after_projection": "SOURCE_FACT",
+    "training_eligibility": "TRAIN_ELIGIBLE"
+  },
+  {
+    "id": "kp:claim:CLM-010-REFLEXION-HUMANEVAL-SCORE",
+    "before": "SOURCE_FACT",
+    "after_projection": "SOURCE_FACT",
+    "training_eligibility": "TRAIN_ELIGIBLE"
+  },
+  {
+    "id": "kp:claim:CLM-011-SELFREFINE-INTERNAL-CRITIQUE",
+    "before": "SOURCE_FACT",
+    "after_projection": "SOURCE_FACT",
+    "training_eligibility": "TRAIN_ELIGIBLE"
+  },
+  {
+    "id": "kp:claim:CLM-012-SELFREFINE-PERFORMANCE",
+    "before": "SOURCE_FACT",
+    "after_projection": "SOURCE_FACT",
+    "training_eligibility": "TRAIN_ELIGIBLE"
+  }
+]

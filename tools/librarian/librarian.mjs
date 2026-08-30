@@ -566,6 +566,24 @@ export function parseCliArgs(args) {
   };
 }
 
+/**
+ * Read-only claim traceability over canonical KnowledgePlane records.
+ * Derived projections are accepted as references, never as authority.
+ */
+export function queryClaimTraceability(claimId, { records = [], derived = [] } = {}) {
+  const canonicalId = claimId.startsWith('kp:claim:') ? claimId : `kp:claim:${claimId}`;
+  const canonical = records.find(record => record.id === canonicalId || record.canonical_id === canonicalId) ?? null;
+  const references = derived.filter(item => item.canonical_id === canonicalId).map(item => ({ ...item, authority: 'DERIVED' }));
+  return {
+    status: canonical ? 'PASS' : 'UNKNOWN',
+    canonical,
+    derived_references: references,
+    authority: canonical?.authority_class ?? 'UNKNOWN',
+    epistemic_class: canonical?.epistemic_class ?? 'UNKNOWN',
+    superseded: canonical?.acceptance_state === 'SUPERSEDED'
+  };
+}
+
 // CLI Execution
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const cli = parseCliArgs(process.argv.slice(2));

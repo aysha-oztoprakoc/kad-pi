@@ -1,0 +1,10 @@
+{
+  "decision": "Option B: claim-level canonical evidence records",
+  "alternatives": {
+    "A": "promote whole research documents",
+    "B": "promote audited claims with evidence links",
+    "C": "graph-first knowledge authority"
+  },
+  "selected": "B",
+  "rationale": "It is the smallest durable model that preserves claim-level epistemic distinctions and supports deterministic projections without adding graph infrastructure."
+}

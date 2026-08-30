@@ -1,0 +1,21 @@
+{
+  "task": "WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+  "project": "kad-pi",
+  "claim_id": "ae6e2573-f5c5-4c59-8df5-9068332815f6",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T02:20:34.829Z",
+  "base_commit": "ccafcc7baf958103ee7c537bb2b967b14c6a0412",
+  "owned_paths": [
+    "tools/kad/knowledge-plane.mjs",
+    "tools/kad/wiki-projection.mjs",
+    "tools/kad/research-openviking.mjs",
+    "tools/kad/index.mjs",
+    "tools/kad/test/seed-promotion.test.mjs",
+    "evidence/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+    "docs/agents/knowledge-plane.md",
+    "wiki/KAD_Knowledge_Plane_Seed_Promotion_2026-08-30.md"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T02:28:23.290Z"
+}
