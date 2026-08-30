@@ -1,0 +1,13 @@
+{
+  "schema": "kad-docs-projection-manifest-v1",
+  "generator_version": "1.0.0",
+  "source_vault_revision": "583f35eecbbc6f6eafbbc9dd98ecefebb3d6a197cb2bd47a1db1ba22c9be47a8",
+  "generated_at": "2026-08-30T07:51:44.225Z",
+  "files": [
+    "README.md",
+    "overview.md",
+    "architecture.md",
+    "timeline.md",
+    "governance.md"
+  ]
+}

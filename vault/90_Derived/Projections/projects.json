@@ -1,0 +1,78 @@
+{
+  "schema": "kad-project-status-v1",
+  "generator_version": "1.0.0",
+  "source_vault_revision": "583f35eecbbc6f6eafbbc9dd98ecefebb3d6a197cb2bd47a1db1ba22c9be47a8",
+  "generated_at": "2026-08-30T07:51:44.210Z",
+  "projects": [
+    {
+      "project_id": "kad-pi",
+      "name": "KAD-PI",
+      "path": "/home/amdy/Work",
+      "role": "CORE",
+      "status": "ACTIVE",
+      "epistemic_class": "CONFIRMED",
+      "canonical_note": "50_Projects/KAD-PI/Overview/KAD-PI-Overview.md",
+      "description": "Primary sovereign cognitive cyberdeck workspace, telemetry control plane, and canonical knowledge vault."
+    },
+    {
+      "project_id": "data-workspace",
+      "name": "DATA_WORKSPACE",
+      "path": "data_workspace",
+      "role": "ACTIVE_SUPPORTING",
+      "status": "ACTIVE",
+      "epistemic_class": "CONFIRMED",
+      "canonical_note": "50_Projects/SideProjects/DATA-WORKSPACE.md",
+      "description": "Quickshell / Omarchy desktop input matrix adapter for Redragon M908 physical keypad."
+    },
+    {
+      "project_id": "technopagan-netrunner",
+      "name": "Technopagan Netrunner",
+      "path": "technopagan-netrunner",
+      "role": "ACTIVE_SUPPORTING",
+      "status": "ACTIVE",
+      "epistemic_class": "CONFIRMED",
+      "canonical_note": "50_Projects/SideProjects/Technopagan-Netrunner.md",
+      "description": "Desktop shell theme, soundscapes, and AI summoner TUI integration."
+    },
+    {
+      "project_id": "deepseek-harness-reference",
+      "name": "DeepSeek Harness Lab",
+      "path": "tries/deepseek-harness-lab",
+      "role": "REFERENCE",
+      "status": "FROZEN",
+      "epistemic_class": "CONFIRMED",
+      "canonical_note": "50_Projects/Reference/DeepSeek-Harness-Lab.md",
+      "description": "Upstream read-only reference repository for harness comparative analysis."
+    },
+    {
+      "project_id": "legacy-data-rein",
+      "name": "DATA_REIN Predecessor",
+      "path": "/run/media/amdy/amdy-HDD/data_rein",
+      "role": "LEGACY",
+      "status": "QUARANTINED",
+      "epistemic_class": "CONFIRMED",
+      "canonical_note": "50_Projects/Legacy/DATA-REIN-Dossier.md",
+      "description": "Historical monolithic predecessor quarantined on external HDD under AMDY-003 Decision D10."
+    },
+    {
+      "project_id": "kad-sillytavern",
+      "name": "KAD SillyTavern",
+      "path": "kad-sillytavern",
+      "role": "ACTIVE_SUPPORTING",
+      "status": "ACTIVE",
+      "epistemic_class": "CONFIRMED",
+      "canonical_note": "00_Home/Project-Map.md",
+      "description": "Local LLM model host integration and Stheno world simulation testbed."
+    },
+    {
+      "project_id": "kad-presentation",
+      "name": "KAD Presentation Layer",
+      "path": "site/",
+      "role": "CORE",
+      "status": "DEFERRED",
+      "epistemic_class": "CONFIRMED",
+      "canonical_note": "50_Projects/KAD-PI/Architecture/Current-Architecture.md",
+      "description": "Public documentation and website presentation layer."
+    }
+  ]
+}

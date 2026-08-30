@@ -1,0 +1,450 @@
+{
+  "schema": "kad-canonical-graph-v1",
+  "generator_version": "1.0.0",
+  "source_vault_revision": "583f35eecbbc6f6eafbbc9dd98ecefebb3d6a197cb2bd47a1db1ba22c9be47a8",
+  "generated_at": "2026-08-30T07:51:44.208Z",
+  "nodes": [
+    {
+      "kad_id": "kad-source-index",
+      "path": "00_Governance/CANONICAL_SOURCE_INDEX.md",
+      "title": "Canonical Source Index",
+      "type": "governance",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-home",
+      "path": "00_Home/Home.md",
+      "title": "KAD-PI Knowledge Home",
+      "type": "documentation",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-navigation",
+      "path": "00_Home/Navigation.md",
+      "title": "Vault Navigation Guide",
+      "type": "documentation",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-project-map",
+      "path": "00_Home/Project-Map.md",
+      "title": "KAD Ecosystem Project Map",
+      "type": "documentation",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-current-architecture",
+      "path": "50_Projects/KAD-PI/Architecture/Current-Architecture.md",
+      "title": "Current KAD-PI Architecture",
+      "type": "architecture",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-pi-overview",
+      "path": "50_Projects/KAD-PI/Overview/KAD-PI-Overview.md",
+      "title": "KAD-PI Project Overview",
+      "type": "project",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-project-timeline",
+      "path": "50_Projects/KAD-PI/Timeline/Timeline.md",
+      "title": "KAD Program Timeline",
+      "type": "documentation",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-6ce9170fbc7d4d5940dee47f",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Counterfactual_Observatory_2026-08-30.md",
+      "title": "KAD Counterfactual Observatory 2026-08-30",
+      "type": "workpackage",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-fa1e2eade887444402d4f67e",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Counterfactual_Promotion_Readiness_2026-08-30.md",
+      "title": "KAD Counterfactual Promotion Readiness 2026-08-30",
+      "type": "workpackage",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-7b6cfdcb43554a02fdede3e0",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Economic_Router_Shadow_2026-08-30.md",
+      "title": "KAD Economic Router Shadow 2026-08-30",
+      "type": "workpackage",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-f147e92c50de78c6b941a4f0",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Knowledge_Plane_Seed_Promotion_2026-08-30.md",
+      "title": "KAD Knowledge Plane Seed Promotion 2026-08-30",
+      "type": "workpackage",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-9a8fabf777cac7f99276ed02",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Operator_Control_Plane_2026-08-29.md",
+      "title": "KAD Operator Control Plane 2026-08-29",
+      "type": "workpackage",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-721d25aaed5cf16bd64167b5",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md",
+      "title": "KAD Research Real Corpus Evaluation 2026-08-30",
+      "type": "workpackage",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-841db1a378d9c7ddbcc45812",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Research_Workflow_Implementation_Roadmap_2026-08-29.md",
+      "title": "KAD Research Workflow Implementation Roadmap 2026-08-29",
+      "type": "roadmap",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-63517e1567e1d643bfa2f23a",
+      "path": "50_Projects/KAD-PI/Workpackages/KAD_Usage_Bridge_2026-08-30.md",
+      "title": "KAD Usage Bridge 2026-08-30",
+      "type": "workpackage",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-dossier-data-rein",
+      "path": "50_Projects/Legacy/DATA-REIN-Dossier.md",
+      "title": "Historical Dossier: DATA_REIN Predecessor",
+      "type": "dossier",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "SUPERSEDED",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-ref-deepseek-harness",
+      "path": "50_Projects/Reference/DeepSeek-Harness-Lab.md",
+      "title": "Reference Dossier: DeepSeek Harness Lab",
+      "type": "reference",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "HISTORICAL",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-dossier-data-workspace",
+      "path": "50_Projects/SideProjects/DATA-WORKSPACE.md",
+      "title": "Project Dossier: DATA_WORKSPACE",
+      "type": "dossier",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-dossier-technopagan",
+      "path": "50_Projects/SideProjects/Technopagan-Netrunner.md",
+      "title": "Project Dossier: Technopagan Netrunner Cyberdeck",
+      "type": "dossier",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-28d0116a43002f3dd82d3d1a",
+      "path": "80_Review/Pending/legacy-cli_subscription_quota_economics_handoff.md.md",
+      "title": "Review: CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md",
+      "type": "review_record",
+      "authority": "PROPOSAL_UNREVIEWED",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "HISTORICAL",
+      "review_status": "PENDING",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-a45bbfa737f956c25a814bd2",
+      "path": "80_Review/Pending/legacy-deephar_dream_os_safe_plugin_lab_handoff.md.md",
+      "title": "Review: DEEPHAR_DREAM_OS_SAFE_PLUGIN_LAB_HANDOFF.md",
+      "type": "review_record",
+      "authority": "PROPOSAL_UNREVIEWED",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "HISTORICAL",
+      "review_status": "PENDING",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-9777dc52926670913bb329fc",
+      "path": "80_Review/Pending/legacy-dsh_pon_cordis_handoff_2026-08-25.md.md",
+      "title": "Review: DSH_PON_CORDIS_HANDOFF_2026-08-25.md",
+      "type": "review_record",
+      "authority": "PROPOSAL_UNREVIEWED",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "HISTORICAL",
+      "review_status": "PENDING",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-3480e7a93a9d33f2a534e819",
+      "path": "80_Review/Pending/legacy-handoff-omarchy-quickshell-aesthetic-design-via-opencode-harness.md.md",
+      "title": "Review: HANDOFF — Omarchy QuickShell Aesthetic Design via OpenCode Harness.md",
+      "type": "review_record",
+      "authority": "PROPOSAL_UNREVIEWED",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "HISTORICAL",
+      "review_status": "PENDING",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-76aff88bc5fb4084b8f4fb20",
+      "path": "80_Review/Pending/legacy-index.md.md",
+      "title": "Review: index.md",
+      "type": "review_record",
+      "authority": "PROPOSAL_UNREVIEWED",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "HISTORICAL",
+      "review_status": "PENDING",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-590e74208a8ab509fbf83667",
+      "path": "80_Review/Pending/legacy-kad_context_knowledge_plane_roadmap_2026-08-29.md.md",
+      "title": "Review: KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+      "type": "review_record",
+      "authority": "PROPOSAL_UNREVIEWED",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "HISTORICAL",
+      "review_status": "PENDING",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-f40a860727ffb7eba609436b",
+      "path": "80_Review/Pending/legacy-kad_implementation_plan.md.md",
+      "title": "Review: KAD_Implementation_Plan.md",
+      "type": "review_record",
+      "authority": "PROPOSAL_UNREVIEWED",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "HISTORICAL",
+      "review_status": "PENDING",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-604a843770c3906ce08e219b",
+      "path": "80_Review/Pending/legacy-kad_pi_agy_handoff_2026-08-28.md.md",
+      "title": "Review: KAD_PI_AGY_HANDOFF_2026-08-28.md",
+      "type": "review_record",
+      "authority": "PROPOSAL_UNREVIEWED",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "HISTORICAL",
+      "review_status": "PENDING",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-fe4904400bb4dfc792b988aa",
+      "path": "80_Review/Pending/legacy-official_sol_reviewer_handoff_dream_setup_r2.md.md",
+      "title": "Review: OFFICIAL_SOL_REVIEWER_HANDOFF_DREAM_SETUP_R2.md",
+      "type": "review_record",
+      "authority": "PROPOSAL_UNREVIEWED",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "HISTORICAL",
+      "review_status": "PENDING",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-fcbe5aba0b1b5fc7b4579598",
+      "path": "80_Review/Pending/legacy-opencode_go_economic_model_matrix_handoff.md.md",
+      "title": "Review: OPENCODE_GO_ECONOMIC_MODEL_MATRIX_HANDOFF.md",
+      "type": "review_record",
+      "authority": "PROPOSAL_UNREVIEWED",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "HISTORICAL",
+      "review_status": "PENDING",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-878a0c3a2facdd17496195ff",
+      "path": "80_Review/Pending/legacy-research-catalog.json.md",
+      "title": "Review: CATALOG.json",
+      "type": "review_record",
+      "authority": "PROPOSAL_UNREVIEWED",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "HISTORICAL",
+      "review_status": "PENDING",
+      "visibility": "project"
+    }
+  ],
+  "edges": [
+    {
+      "source": "kad-home",
+      "target": "kad-project-map",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "kad-pi-overview",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "kad-current-architecture",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "kad-project-timeline",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "kad-dossier-data-workspace",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "kad-dossier-technopagan",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "kad-dossier-data-rein",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "kad-ref-deepseek-harness",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "AUTHORITY",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "CONTEXT_POLICY",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "PROPERTY_REGISTRY",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "SCHEMA",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-home",
+      "target": "kad-source-index",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-navigation",
+      "target": "kad-home",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-navigation",
+      "target": "kad-project-map",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-navigation",
+      "target": "PROPERTY_REGISTRY",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-project-map",
+      "target": "kad-pi-overview",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-project-map",
+      "target": "kad-dossier-data-workspace",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-project-map",
+      "target": "kad-dossier-technopagan",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-project-map",
+      "target": "kad-ref-deepseek-harness",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-project-map",
+      "target": "kad-dossier-data-rein",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-project-map",
+      "target": "kad-current-architecture",
+      "relation": "REFERENCES"
+    }
+  ]
+}

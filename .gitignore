@@ -41,3 +41,5 @@ node_modules/
 .scratch/
 ngc-cli*
 ngccli_linux.zip
+.obsidian/
+**/.obsidian/

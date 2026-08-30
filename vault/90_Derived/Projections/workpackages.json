@@ -1,0 +1,207 @@
+{
+  "schema": "kad-workpackage-export-v1",
+  "generator_version": "1.0.0",
+  "source_vault_revision": "583f35eecbbc6f6eafbbc9dd98ecefebb3d6a197cb2bd47a1db1ba22c9be47a8",
+  "generated_at": "2026-08-30T07:51:44.212Z",
+  "workpackages": [
+    {
+      "wp_id": "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+      "project": "kad-pi",
+      "title": "Canonical Obsidian agentic librarian",
+      "status": "ACCEPTED",
+      "priority": 109,
+      "fixed_point": "2d368db84dea83b6347b46063118ed646a0132e1",
+      "evidence_target": "evidence/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+      "description": "Human-editable canonical Obsidian vault with deterministic review and anti-poisoning gates."
+    },
+    {
+      "wp_id": "WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
+      "project": "kad-pi",
+      "title": "Commit Consolidation, Remote Synchronization & Vault-Driven Project Projection Bootstrap",
+      "status": "CLAIMED",
+      "priority": 140,
+      "fixed_point": "e3bce03e5b94ada0db6d29e75b6991b18522f2d8",
+      "evidence_target": "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011/",
+      "description": "Consolidate workspace commits, verify remote ancestry, perform fast-forward push to origin/main, and bootstrap canonical vault projection compilation for README, docs, website, and Sofia."
+    },
+    {
+      "wp_id": "WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1",
+      "project": "kad-pi",
+      "title": "Full /Work Inventory, Legacy Reconciliation & Canonical Vault Synchronization",
+      "status": "REVIEW",
+      "priority": 130,
+      "fixed_point": "ca1f56a020a3416eeffa3d49f3c34f113b536902",
+      "evidence_target": "evidence/WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1/",
+      "description": "Reconcile the entire current /Work knowledge state into the canonical Obsidian vault, resolve demonstrated deviations, surface unresolved ambiguity to the human, and produce a trustworthy canonical project baseline."
+    },
+    {
+      "wp_id": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+      "project": "kad-pi",
+      "title": "KAD-PI Counterfactual Observatory & Longitudinal Divergence Journal",
+      "status": "ACCEPTED",
+      "priority": 100,
+      "fixed_point": "5f2a615f513157c2ad9170e0d292f20163894e70",
+      "evidence_target": "evidence/WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+      "description": "Longitudinal counterfactual observatory and append-only tamper-evident divergence journal tracking actual vs shadow economic routing decisions without granting shadow execution authority or making unsupported empirical savings claims."
+    },
+    {
+      "wp_id": "WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+      "project": "kad-pi",
+      "title": "KAD-PI Deterministic Promotion Readiness Gate",
+      "status": "ACCEPTED",
+      "priority": 100,
+      "fixed_point": "8774f8d28e1d8920576719911d4050e7cb0e4a76",
+      "evidence_target": "evidence/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+      "description": "Deterministic promotion readiness gate evaluating longitudinal observational evidence sufficiency for controlled canary experiment design without granting shadow execution authority or making unsupported causal claims."
+    },
+    {
+      "wp_id": "WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+      "project": "kad-pi",
+      "title": "KAD-PI Deterministic Shadow Economic Evaluator",
+      "status": "ACCEPTED",
+      "priority": 100,
+      "fixed_point": "cb59d84f2abe45bc1844f5281535a4cf62765042",
+      "evidence_target": "evidence/WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+      "description": "Deterministic shadow economic evaluator evaluating quota-aware economic preference without granting telemetry mutation authority over routing."
+    },
+    {
+      "wp_id": "WP-KAD-FUSION-OMP-ADAPTATION-007A",
+      "project": "kad-pi",
+      "title": "Optional pinned Fusion Harness under OMP",
+      "status": "ACCEPTED",
+      "priority": 110,
+      "fixed_point": "2d368db84dea83b6347b46063118ed646a0132e1",
+      "evidence_target": "evidence/WP-KAD-FUSION-OMP-ADAPTATION-007A",
+      "description": "Thin optional OMP-native compatibility layer for pinned Fusion Harness."
+    },
+    {
+      "wp_id": "WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+      "project": "kad-pi",
+      "title": "Governed Scientific Evidence Promotion, Wiki Projection and Derived Index Contract",
+      "status": "ACCEPTED",
+      "priority": 100,
+      "fixed_point": "ccafcc7baf958103ee7c537bb2b967b14c6a0412",
+      "evidence_target": "evidence/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+      "description": "Smallest deterministic path from audited five-paper claims into governed KnowledgePlane and derived projections."
+    },
+    {
+      "wp_id": "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+      "project": "kad-pi",
+      "title": "Local canonical wiki context library",
+      "status": "ACCEPTED",
+      "priority": 108,
+      "fixed_point": "2d368db84dea83b6347b46063118ed646a0132e1",
+      "evidence_target": "evidence/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+      "description": "Offline-first derived indexes and bounded context materialization for OMP and Fusion."
+    },
+    {
+      "wp_id": "WP-KAD-OPERATOR-CONTROL-PLANE-001",
+      "project": "kad-pi",
+      "title": "KAD-PI Native OMP Control Plane, Live Token/Quota Telemetry, Developer Toolchain, Security Gates, and Native Operator UI",
+      "status": "ACCEPTED",
+      "priority": 100,
+      "fixed_point": "445e000b3ad75f4f5a2d9b1be06ebc6a0743a364",
+      "evidence_target": "evidence/WP-KAD-OPERATOR-CONTROL-PLANE-001",
+      "description": "Deterministic operator control plane for KAD-PI providing live token/quota telemetry, economic/workctl projection, developer toolchain security gates, and native OMP TUI components."
+    },
+    {
+      "wp_id": "WP-KAD-RESEARCH-API-001",
+      "project": "kad-pi",
+      "title": "Canonical Research API and Persistence",
+      "status": "ACCEPTED",
+      "priority": 100,
+      "fixed_point": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf",
+      "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-01-canonical-research-api",
+      "description": "Reusable deterministic research-domain API owns validation, normalization, identifier precedence, hashing, deduplication/conflict detection, provenance, and canonical persistence."
+    },
+    {
+      "wp_id": "WP-KAD-RESEARCH-CAPABILITIES-003",
+      "project": "kad-pi",
+      "title": "Provider Capability Profiles and Degradation",
+      "status": "ACCEPTED",
+      "priority": 80,
+      "fixed_point": "33b0128e652814c6a5506caa7529f047ec086e1c",
+      "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-03-capabilities",
+      "description": "Provider-neutral profiles, observations, and per-capability degradation behavior that preserve free/manual operation."
+    },
+    {
+      "wp_id": "WP-KAD-RESEARCH-CLI-002",
+      "project": "kad-pi",
+      "title": "Research Operator Namespace and Manifests",
+      "status": "ACCEPTED",
+      "priority": 90,
+      "fixed_point": "cad814f01bda0d4aac32d34ef1153e5a94f55598",
+      "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-02-research-cli",
+      "description": "Thin operator transport and supported manifest import/export for free/manual research workflows."
+    },
+    {
+      "wp_id": "WP-KAD-RESEARCH-OPENVIKING-004",
+      "project": "kad-pi",
+      "title": "OpenViking Derived Research Context",
+      "status": "ACCEPTED",
+      "priority": 80,
+      "fixed_point": "178ba6ea39bc9ccf768c3ab3f6c5bd154e0d4734",
+      "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-04-openviking",
+      "description": "Optional derived-context adapter with traceability, stale detection, rebuild, and exact fallback behavior."
+    },
+    {
+      "wp_id": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+      "project": "kad-pi",
+      "title": "Epistemic Claim Audit & Source-Fidelity Repair",
+      "status": "ACCEPTED",
+      "priority": 100,
+      "fixed_point": "0ba74b9aedfd59a33857fdb81eead40dd48683c7",
+      "evidence_target": "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+      "description": "Rigorous epistemic claim audit, source-fidelity repair, and claim-level ledger for the five-source research corpus ensuring seed trustworthiness for the governed KAD KnowledgePlane."
+    },
+    {
+      "wp_id": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+      "project": "kad-pi",
+      "title": "Evidence-Gated Real-Corpus Research Workflow Evaluation",
+      "status": "ACCEPTED",
+      "priority": 100,
+      "fixed_point": "9342702a97afdcb9d6681c6ec21f74d44e42a1b0",
+      "evidence_target": "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+      "description": "Evidence-gated real-corpus research workflow evaluation testing existing KAD research stack on a bounded set of real papers with full provenance, retrieval, extraction, and fallback verification."
+    },
+    {
+      "wp_id": "WP-KAD-RESEARCH-ZOTERO-005",
+      "project": "kad-pi",
+      "title": "Read-Only Zotero Local API Integration",
+      "status": "ACCEPTED",
+      "priority": 70,
+      "fixed_point": "b057ffc425261e7d67f65c6b7b7068f87901aa7e",
+      "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-05-zotero",
+      "description": "Optional read-only Zotero Local HTTP API adapter converting local bibliography items into canonical research candidates with permanent export fallback."
+    },
+    {
+      "wp_id": "WP-KAD-USAGE-BRIDGE-002",
+      "project": "kad-pi",
+      "title": "OMP-Native Usage -> KAD Telemetry Bridge",
+      "status": "ACCEPTED",
+      "priority": 100,
+      "fixed_point": "ea324af566ea2d2ad42340343781d0267bfd558a",
+      "evidence_target": "evidence/WP-KAD-USAGE-BRIDGE-002",
+      "description": "Thin bridge consuming native OMP 18.0.10 provider usage/quota reports and passive after_provider_response telemetry into KAD normalized telemetry plane."
+    },
+    {
+      "wp_id": "WP-KAD-VAULT-WIKI-UNIFICATION-010",
+      "project": "kad-pi",
+      "title": "Canonical vault and legacy wiki unification",
+      "status": "ACCEPTED",
+      "priority": 120,
+      "fixed_point": "2d5ef8b36b36dfa09a6957817c49ecad5c530fa4",
+      "evidence_target": "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010/",
+      "description": "Unify legacy wiki knowledge into the canonical human-editable vault while preserving authority boundaries and deterministic derived projections."
+    },
+    {
+      "wp_id": "WP-WORKSPACE-AGENT-SUBSTRATE-001",
+      "project": "kad-pi",
+      "title": "Implement portable workspace agent substrate",
+      "status": "ACCEPTED",
+      "priority": 100,
+      "fixed_point": "7f241585d8fb147f566def39d88e0670d1785852",
+      "evidence_target": "evidence/WP-WORKSPACE-AGENT-SUBSTRATE-001"
+    }
+  ]
+}

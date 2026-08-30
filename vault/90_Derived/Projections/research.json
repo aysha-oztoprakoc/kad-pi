@@ -1,0 +1,112 @@
+{
+  "schema": "kad-research-corpus-v1",
+  "generator_version": "1.0.0",
+  "source_vault_revision": "583f35eecbbc6f6eafbbc9dd98ecefebb3d6a197cb2bd47a1db1ba22c9be47a8",
+  "generated_at": "2026-08-30T07:51:44.213Z",
+  "corpus": [
+    {
+      "id": "toolformer-schick-2023",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "authors": [
+        "Timo Schick",
+        "Jane Dwivedi-Yu",
+        "Roberto Dessi",
+        "Roberta Raileanu",
+        "Maria Lomeli",
+        "Luke Zettlemoyer",
+        "Nicola Cancedda",
+        "Thomas Scialom"
+      ],
+      "year": 2023,
+      "arxiv": "2302.04761",
+      "doi": "10.48550/arXiv.2302.04761",
+      "epistemic_verification": "SOURCE_FACT_VERIFIED",
+      "core_findings": "Self-supervised API call insertion and perplexity filtering on downstream loss.",
+      "relevance_to_kad": "Foundational mechanism for self-supervised tool call annotation and verification."
+    },
+    {
+      "id": "reflexion-shinn-2023",
+      "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "authors": [
+        "Noah Shinn",
+        "Federico Cassano",
+        "Ashwin Gopinath",
+        "Karthik Narasimhan",
+        "Shunyu Yao"
+      ],
+      "year": 2023,
+      "arxiv": "2303.11366",
+      "doi": "10.48550/arXiv.2303.11366",
+      "epistemic_verification": "SOURCE_FACT_VERIFIED",
+      "core_findings": "Episodic memory buffer of verbal self-reflections improving multi-step decision loops without fine-tuning.",
+      "relevance_to_kad": "Informs KAD agentic retrospective evaluation and error diagnosis without parameter mutation."
+    },
+    {
+      "id": "self-refine-madaan-2023",
+      "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+      "authors": [
+        "Aman Madaan",
+        "Niket Tandon",
+        "Prakhar Gupta",
+        "Skyler Hallinan",
+        "Luyu Gao",
+        "Sarah Wiegreffe",
+        "Uri Alon",
+        "Nouha Dziri",
+        "Shrimai Prabhumoye",
+        "Yiming Yang",
+        "Shashank Gupta",
+        "Bodhisattwa Prasad Majumder",
+        "Katherine Hermann",
+        "Sean Welleck",
+        "Amir Yazdanbakhsh",
+        "Peter Clark"
+      ],
+      "year": 2023,
+      "arxiv": "2303.17651",
+      "doi": "10.48550/arXiv.2303.17651",
+      "epistemic_verification": "SOURCE_FACT_VERIFIED",
+      "core_findings": "Single-session iterative output refinement via structured self-feedback prompts without external reward models.",
+      "relevance_to_kad": "Applies to deterministic single-turn code and synthesis validation within OMP tools."
+    },
+    {
+      "id": "swe-bench-jimenez-2024",
+      "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "authors": [
+        "Carlos E. Jimenez",
+        "John Yang",
+        "Alexander Wettig",
+        "Shunyu Yao",
+        "Kexin Pei",
+        "Ofir Press",
+        "Karthik Narasimhan"
+      ],
+      "year": 2024,
+      "arxiv": "2310.06770",
+      "doi": "10.48550/arXiv.2310.06770",
+      "epistemic_verification": "SOURCE_FACT_VERIFIED",
+      "core_findings": "Benchmark evaluating end-to-end software engineering issue resolution against existing unit and regression test suites.",
+      "relevance_to_kad": "Validates deterministic unit-test execution as the rigorous authority boundary for code mutations."
+    },
+    {
+      "id": "gorilla-patil-2023",
+      "title": "Gorilla: Large Language Model Connected with Massive APIs",
+      "authors": [
+        "Shishir G. Patil",
+        "Tianjun Zhang",
+        "Xin Wang",
+        "Vikas Shenoy",
+        "Silvia Amarasinghe",
+        "Joseph E. Gonzalez",
+        "Hao Zhang",
+        "Ion Stoica"
+      ],
+      "year": 2023,
+      "arxiv": "2305.15334",
+      "doi": "10.48550/arXiv.2305.15334",
+      "epistemic_verification": "SOURCE_FACT_VERIFIED",
+      "core_findings": "Retriever-aware instruction tuning for accurate API invocation with dynamic documentation updates.",
+      "relevance_to_kad": "Informs Librarian tool schema synthesis and context retrieval boundaries."
+    }
+  ]
+}

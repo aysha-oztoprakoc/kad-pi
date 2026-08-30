@@ -18,5 +18,6 @@
     "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011"
   ],
   "mode": "mutate",
-  "active": true
+  "active": false,
+  "released_at": "2026-08-30T07:53:40.681Z"
 }

@@ -40,7 +40,7 @@ function fileReference(root, relativePath) {
 function dirtyPaths(root) {
   const status = git(root, ['status', '--porcelain=v1']);
   if (status === 'UNKNOWN' || status === '') return status === 'UNKNOWN' ? ['UNKNOWN'] : [];
-  return status.split('\n').map(line => line.slice(3).trim()).filter(Boolean).slice(0, 40);
+  return status.split('\n').map(line => line.slice(3).trim()).filter(Boolean).sort().slice(0, 40);
 }
 
 function boundedList(values, fallback = 'none') {
