@@ -2,7 +2,7 @@
   "id": "WP-KAD-BASELINE-PUBLICATION-028A",
   "project": "kad-pi",
   "title": "Frozen Baseline Verification, GitHub Bootstrap Publication & Exact-SHA Vault Projection",
-  "status": "CLAIMED",
+  "status": "ACCEPTED",
   "priority": 290,
   "spec_ref": "user:/WP-KAD-BASELINE-PUBLICATION-028A",
   "fixed_point": "0ea896b54d799ca98fa3b45fe45f519655135807",

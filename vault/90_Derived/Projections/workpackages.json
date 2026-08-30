@@ -1,9 +1,39 @@
 {
   "schema": "kad-workpackage-export-v1",
   "generator_version": "1.0.0",
-  "source_vault_revision": "583f35eecbbc6f6eafbbc9dd98ecefebb3d6a197cb2bd47a1db1ba22c9be47a8",
-  "generated_at": "2026-08-30T08:19:46.502Z",
+  "source_vault_revision": "77d181f2a9359fc3502678616692b356ca940f509b1aae2c9cbf3efdf0dc3afe",
+  "generated_at": "2026-08-30T18:40:03.111Z",
   "workpackages": [
+    {
+      "wp_id": "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+      "project": "kad-pi",
+      "title": "Human-Guided Aesthetic Architecture & Ideal State Artifact (ISA) Establishment",
+      "status": "REVIEW",
+      "priority": 180,
+      "fixed_point": "27171d9b5ac862afce2c09d8a9c5239185c25d23",
+      "evidence_target": "evidence/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015/",
+      "description": "Establish the canonical KAD Aesthetic Directive & Ideal State Artifact (ISA) through human-guided discovery (/ask-matt + /wayfinder + /grill + /ask-me), defining cross-surface semantic vocabulary, host profiles (AMDY vs TELL), testable claims, and deterministic validation tooling."
+    },
+    {
+      "wp_id": "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+      "project": "kad-pi",
+      "title": "AMDY Omarchy 4 Quattro & Quickshell KAD Cyberdeck Theme Implementation",
+      "status": "ACCEPTED",
+      "priority": 140,
+      "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+      "evidence_target": "evidence/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017/",
+      "description": "Implement the canonical Tier A diegetic cyberdeck presentation layer on developer workstation amdy across Omarchy 4 Quattro (Hyprland, Quickshell, Waybar, Terminal) enforcing ISA-KAD-AESTHETIC-001 without turning desktop components into compute fabric dependencies or granting UI widgets mutation authority."
+    },
+    {
+      "wp_id": "WP-KAD-BASELINE-PUBLICATION-028A",
+      "project": "kad-pi",
+      "title": "Frozen Baseline Verification, GitHub Bootstrap Publication & Exact-SHA Vault Projection",
+      "status": "CLAIMED",
+      "priority": 290,
+      "fixed_point": "0ea896b54d799ca98fa3b45fe45f519655135807",
+      "evidence_target": "evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
+      "description": "Publish the exact frozen WP-028 content to GitHub, obtain independent remote CI evidence on the exact commit, activate required status check branch protection, and project the Vault from that exact pushed SHA."
+    },
     {
       "wp_id": "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
       "project": "kad-pi",
@@ -33,6 +63,16 @@
       "fixed_point": "ca1f56a020a3416eeffa3d49f3c34f113b536902",
       "evidence_target": "evidence/WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1/",
       "description": "Reconcile the entire current /Work knowledge state into the canonical Obsidian vault, resolve demonstrated deviations, surface unresolved ambiguity to the human, and produce a trustworthy canonical project baseline."
+    },
+    {
+      "wp_id": "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
+      "project": "kad-pi",
+      "title": "Compute Fabric Empirical Benchmark Probe & Telemetry Baseline: Ideal-State Convergence → Capability Admission → Empirical Compute Fabric Probe",
+      "status": "REVIEW",
+      "priority": 200,
+      "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+      "evidence_target": "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/",
+      "description": "Establish the canonical Compute Fabric Ideal State Architecture, OMP capability admission framework, human architectural decisions (D021-*), and implement the deterministic empirical benchmark probe runner with local hardware telemetry."
     },
     {
       "wp_id": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
@@ -75,6 +115,26 @@
       "description": "Thin optional OMP-native compatibility layer for pinned Fusion Harness."
     },
     {
+      "wp_id": "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
+      "project": "kad-pi",
+      "title": "Generalized Ideal State Artifact (ISA) Architecture & Canonical Compute Fabric Governance",
+      "status": "REVIEW",
+      "priority": 190,
+      "fixed_point": "2da2266eb76bfb5571838017449d553fbc8b4bee",
+      "evidence_target": "evidence/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020/",
+      "description": "Generalize the KAD Ideal State Artifact (ISA) governance pattern into a reusable multi-domain primitive and instantiate the canonical compute fabric ISA (ISA-KAD-COMPUTE-FABRIC-001)."
+    },
+    {
+      "wp_id": "WP-KAD-ISA-FINAL-SNAPSHOT-028",
+      "project": "kad-pi",
+      "title": "Implement ISA-KAD-SKILL-ROLE-002 / v1.1 and Freeze the Pre-GitHub KAD-PI Baseline",
+      "status": "ACCEPTED",
+      "priority": 280,
+      "fixed_point": "0ea896b54d799ca98fa3b45fe45f519655135807",
+      "evidence_target": "evidence/WP-KAD-ISA-FINAL-SNAPSHOT-028/",
+      "description": "Reconcile latest repository evidence, implement ISA-KAD-SKILL-ROLE-002 / v1.1, validate authority boundaries deterministically, freeze an auditable local pre-GitHub baseline snapshot, and prepare an exact machine-actionable handoff for GitHub, Commit, and Vault phases."
+    },
+    {
       "wp_id": "WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
       "project": "kad-pi",
       "title": "Governed Scientific Evidence Promotion, Wiki Projection and Derived Index Contract",
@@ -85,6 +145,16 @@
       "description": "Smallest deterministic path from audited five-paper claims into governed KnowledgePlane and derived projections."
     },
     {
+      "wp_id": "WP-KAD-LIVE-TELEMETRY-STREAM-019",
+      "project": "kad-pi",
+      "title": "Live PON/SSE Telemetry Streaming Transport & Read-Only Observer Projection",
+      "status": "ACCEPTED",
+      "priority": 120,
+      "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+      "evidence_target": "evidence/WP-KAD-LIVE-TELEMETRY-STREAM-019/",
+      "description": "Implement lightweight Server-Sent Events (SSE) streaming transport in tools/kad/interface-server.mjs (/api/telemetry/stream), publishing typed PON state transition notifications and normalized kad-telemetry-v1 records to read-only observers with strict authority boundary enforcement."
+    },
+    {
       "wp_id": "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
       "project": "kad-pi",
       "title": "Local canonical wiki context library",
@@ -93,6 +163,16 @@
       "fixed_point": "2d368db84dea83b6347b46063118ed646a0132e1",
       "evidence_target": "evidence/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
       "description": "Offline-first derived indexes and bounded context materialization for OMP and Fusion."
+    },
+    {
+      "wp_id": "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+      "project": "kad-pi",
+      "title": "Canonical Obsidian Bridge Plugin & Governed Visual Workspace Integration",
+      "status": "ACCEPTED",
+      "priority": 150,
+      "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+      "evidence_target": "evidence/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016/",
+      "description": "Implement the read-only, project-owned Obsidian companion plugin (kad-obsidian-bridge) integrating compiled vault and compute ISA projections, custom Bases views, and local graph neighborhood exploration without granting direct mutation authority over canonical vault state."
     },
     {
       "wp_id": "WP-KAD-OPERATOR-CONTROL-PLANE-001",
@@ -175,14 +255,54 @@
       "description": "Optional read-only Zotero Local HTTP API adapter converting local bibliography items into canonical research candidates with permanent export fallback."
     },
     {
+      "wp_id": "WP-KAD-SKILL-ROLE-FABRIC-024",
+      "project": "kad-pi",
+      "title": "Unified KAD-PI Skills & Role ISA, Fabric Reconciliation & Execution Substrate Alignment",
+      "status": "ACCEPTED",
+      "priority": 240,
+      "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+      "evidence_target": "evidence/WP-KAD-SKILL-ROLE-FABRIC-024/",
+      "description": "Generate the canonical KAD-PI Unified Skills & Role ISA, freeze it as the implementation target, then reconcile and update the repository so the actual skill/role architecture conforms to that ISA."
+    },
+    {
+      "wp_id": "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+      "project": "kad-pi",
+      "title": "Sofia v3 Canonical Dashboard, Cytoscape Graph Explorer & Hybrid Telemetry Visualization",
+      "status": "REVIEW",
+      "priority": 160,
+      "fixed_point": "6881352d96933a32c59fbb494fc339e8a38ac434",
+      "evidence_target": "evidence/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013/",
+      "description": "Implement the canonical Sofia v3 dashboard featuring Cytoscape.js graph exploration, modular ECharts distribution charts, native status widgets, and resilient graceful degradation."
+    },
+    {
       "wp_id": "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012",
       "project": "kad-pi",
       "title": "Technology Stack, Cross-Project Reuse & Agentic Visualization Architecture",
-      "status": "CLAIMED",
+      "status": "ACCEPTED",
       "priority": 150,
       "fixed_point": "69949954455d2509f5d72ef7dd54ea51db3726d0",
       "evidence_target": "evidence/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012/",
       "description": "Establish the evidence-backed technology stack, cross-project reuse architecture, Obsidian and OMP extension models, visualization bake-off benchmarks, and agentic graph contract for KAD-PI before Sofia v3 implementation."
+    },
+    {
+      "wp_id": "WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+      "project": "kad-pi",
+      "title": "TELL Server Monospace ANSI Profile, Headless TUI & Host Observability Baseline",
+      "status": "ACCEPTED",
+      "priority": 130,
+      "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+      "evidence_target": "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018/",
+      "description": "Harden the headless server presentation layer on tell (NixOS homelab node) with pure 16-color ANSI / 24-bit TrueColor monospace TUI profiles, 0ms latency, zero GUI/audio dependencies, and establish the minimal host capability adapter contract required for compute fabric node discovery."
+    },
+    {
+      "wp_id": "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+      "project": "kad-pi",
+      "title": "Unified KAD Design System, Shared Presentation Foundation & Modernized Public Website",
+      "status": "ACCEPTED",
+      "priority": 170,
+      "fixed_point": "a0f631c588f57f8101c06d2ea2360b22af4935f8",
+      "evidence_target": "evidence/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014/",
+      "description": "Extract reusable KAD visual design foundation (tokens, foundation, components), migrate Sofia v3 without regression, and modernize the static public website across architecture, research, knowledge, and roadmap surfaces."
     },
     {
       "wp_id": "WP-KAD-USAGE-BRIDGE-002",

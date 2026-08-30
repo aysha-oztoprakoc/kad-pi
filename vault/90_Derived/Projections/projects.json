@@ -1,8 +1,8 @@
 {
   "schema": "kad-project-status-v1",
   "generator_version": "1.0.0",
-  "source_vault_revision": "583f35eecbbc6f6eafbbc9dd98ecefebb3d6a197cb2bd47a1db1ba22c9be47a8",
-  "generated_at": "2026-08-30T08:19:46.500Z",
+  "source_vault_revision": "77d181f2a9359fc3502678616692b356ca940f509b1aae2c9cbf3efdf0dc3afe",
+  "generated_at": "2026-08-30T18:40:03.110Z",
   "projects": [
     {
       "project_id": "kad-pi",

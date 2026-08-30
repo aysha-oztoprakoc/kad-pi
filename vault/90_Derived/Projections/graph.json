@@ -1,13 +1,35 @@
 {
   "schema": "kad-canonical-graph-v1",
   "generator_version": "1.0.0",
-  "source_vault_revision": "583f35eecbbc6f6eafbbc9dd98ecefebb3d6a197cb2bd47a1db1ba22c9be47a8",
-  "generated_at": "2026-08-30T08:19:46.499Z",
+  "source_vault_revision": "77d181f2a9359fc3502678616692b356ca940f509b1aae2c9cbf3efdf0dc3afe",
+  "generated_at": "2026-08-30T18:40:03.108Z",
   "nodes": [
     {
       "kad_id": "kad-source-index",
       "path": "00_Governance/CANONICAL_SOURCE_INDEX.md",
       "title": "Canonical Source Index",
+      "type": "governance",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "ISA-KAD-AESTHETIC-001",
+      "path": "00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "title": "KAD Aesthetic Ideal State Artifact (ISA)",
+      "type": "governance",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "ISA-KAD-COMPUTE-FABRIC-001",
+      "path": "00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "title": "KAD Compute Fabric Ideal State Artifact (ISA)",
       "type": "governance",
       "authority": "CANONICAL_KNOWLEDGE",
       "epistemic_class": "PROJECT_INFERENCE",
