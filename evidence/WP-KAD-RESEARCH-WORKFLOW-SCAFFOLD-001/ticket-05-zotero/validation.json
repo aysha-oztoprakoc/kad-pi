@@ -1,0 +1,52 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-ZOTERO-005",
+  "suite": "tools/kad/test/research-zotero.test.mjs",
+  "timestamp": "2026-08-30T00:30:00.000Z",
+  "status": "PASS",
+  "summary": {
+    "total_tests": 7,
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "tests": [
+    {
+      "name": "Loopback confinement: Only localhost, 127.0.0.1, and [::1] are permitted",
+      "status": "PASS"
+    },
+    {
+      "name": "Read-only enforcement: Adapter rejects mutation methods locally",
+      "status": "PASS"
+    },
+    {
+      "name": "Zotero item normalization maps creators, dates, identifiers, and provenance correctly",
+      "status": "PASS"
+    },
+    {
+      "name": "Zotero mock server probe, list, inspect, and degradation states work end-to-end",
+      "status": "PASS"
+    },
+    {
+      "name": "Transport Equivalence & Idempotency: Zotero import and manifest import produce identical canonical state",
+      "status": "PASS"
+    },
+    {
+      "name": "Attachment Safety: Attachment metadata does NOT create source without local file validation",
+      "status": "PASS"
+    },
+    {
+      "name": "Zero external credentials or remote dependencies required in baseline tests",
+      "status": "PASS"
+    }
+  ],
+  "full_suite_verification": {
+    "make_verify": "PASS",
+    "research_api_tests": "PASS (13/13)",
+    "research_cli_tests": "PASS (6/6)",
+    "research_capabilities_tests": "PASS (13/13)",
+    "research_openviking_tests": "PASS (8/8)",
+    "research_zotero_tests": "PASS (7/7)",
+    "total_research_tests": "47/47 PASS"
+  }
+}

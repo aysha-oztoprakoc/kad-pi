@@ -1,0 +1,43 @@
+{
+  "matrix_id": "kad-zotero-degradation-matrix",
+  "ticket_id": "WP-KAD-RESEARCH-ZOTERO-005",
+  "timestamp": "2026-08-30T00:36:00.000Z",
+  "rows": [
+    {
+      "condition": "Zotero Local API healthy (200)",
+      "zotero_adapter_state": "AVAILABLE",
+      "canonical_ingestion": "PASS",
+      "standard_export_fallback": "PASS"
+    },
+    {
+      "condition": "Zotero desktop not running (ECONNREFUSED)",
+      "zotero_adapter_state": "UNAVAILABLE (CONNECTION_REFUSED)",
+      "canonical_ingestion": "PASS",
+      "standard_export_fallback": "PASS"
+    },
+    {
+      "condition": "Local API disabled in Zotero settings (403)",
+      "zotero_adapter_state": "UNAUTHORIZED (LOCAL_API_DISABLED)",
+      "canonical_ingestion": "PASS",
+      "standard_export_fallback": "PASS"
+    },
+    {
+      "condition": "Local API timed out (408)",
+      "zotero_adapter_state": "DEGRADED (TIMEOUT)",
+      "canonical_ingestion": "PASS",
+      "standard_export_fallback": "PASS"
+    },
+    {
+      "condition": "Requested item not found in Zotero (404)",
+      "zotero_adapter_state": "NOT_FOUND (ITEM_NOT_FOUND)",
+      "canonical_ingestion": "PASS",
+      "standard_export_fallback": "PASS"
+    },
+    {
+      "condition": "Remote non-loopback host attempted",
+      "zotero_adapter_state": "REJECTED (ZoteroSecurityError)",
+      "canonical_ingestion": "PASS",
+      "standard_export_fallback": "PASS"
+    }
+  ]
+}

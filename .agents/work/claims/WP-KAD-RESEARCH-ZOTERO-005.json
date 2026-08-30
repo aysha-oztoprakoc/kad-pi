@@ -1,0 +1,16 @@
+{
+  "task": "WP-KAD-RESEARCH-ZOTERO-005",
+  "project": "kad-pi",
+  "claim_id": "10f06a0a-a7a0-4d0f-8d26-bb2b49c2b0d9",
+  "actor_label": "gemini-builder",
+  "started_at": "2026-08-30T00:25:04.039Z",
+  "base_commit": "b057ffc425261e7d67f65c6b7b7068f87901aa7e",
+  "owned_paths": [
+    "tools/kad/research-zotero.mjs",
+    "tools/kad/test/research-zotero.test.mjs",
+    "config/research-capabilities/zotero.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T00:33:07.603Z"
+}

@@ -1,0 +1,32 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-ZOTERO-005",
+  "reviewer": "gemini-builder (security review)",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check": "loopback_confinement",
+      "status": "PASS",
+      "evidence": "ZoteroLocalAdapter strictly enforces loopback hosts (localhost, 127.0.0.1, [::1]); remote hosts and external IPs are rejected with ZoteroSecurityError."
+    },
+    {
+      "check": "get_only_http_enforcement",
+      "status": "PASS",
+      "evidence": "Adapter exposes zero mutation methods and structurally blocks non-GET/HEAD HTTP methods locally before making network calls."
+    },
+    {
+      "check": "no_write_credentials_or_keys",
+      "status": "PASS",
+      "evidence": "Zero write keys, API keys, or write authorization endpoints (/api/local/authorize) are implemented or requested."
+    },
+    {
+      "check": "no_remote_zotero_web_api_fallback",
+      "status": "PASS",
+      "evidence": "Outages do not trigger requests to api.zotero.org; fallback remains local/manual export."
+    },
+    {
+      "check": "untrusted_json_and_attachment_safety",
+      "status": "PASS",
+      "evidence": "Attachment paths must pass T1 root confinement and traversal checks; KAD computes its own SHA-256."
+    }
+  ]
+}

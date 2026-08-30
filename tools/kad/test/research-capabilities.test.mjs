@@ -458,7 +458,7 @@ test('Baseline suite executes completely offline with zero credentials or networ
 test('Baseline capability manifests in config/research-capabilities load cleanly', () => {
   const plane = new ResearchCapabilityPlane();
   const loaded = plane.loadProfilesFromDir('config/research-capabilities');
-  assert.equal(loaded, 5);
+  assert.equal(loaded, 6);
 
   const manual = plane.getProfile('manual');
   assert.ok(manual);
@@ -467,4 +467,8 @@ test('Baseline capability manifests in config/research-capabilities load cleanly
   const consensus = plane.getProfile('consensus');
   assert.ok(consensus);
   assert.equal(consensus.capabilities.deep_review.constraint_classes.includes('requires_paid_tier'), true);
+
+  const zotero = plane.getProfile('zotero');
+  assert.ok(zotero);
+  assert.equal(zotero.capabilities.structured_extraction.supported, true);
 });

@@ -1,0 +1,38 @@
+{
+  "fixture_id": "kad-mock-zotero-fixture",
+  "ticket_id": "WP-KAD-RESEARCH-ZOTERO-005",
+  "timestamp": "2026-08-30T00:31:00.000Z",
+  "items": [
+    {
+      "key": "ZOT001",
+      "version": 1,
+      "data": {
+        "key": "ZOT001",
+        "itemType": "journalArticle",
+        "title": "Verifiable Computing Systems",
+        "creators": [
+          { "creatorType": "author", "firstName": "Alan", "lastName": "Turing" }
+        ],
+        "date": "1936",
+        "publicationTitle": "Proceedings of the London Mathematical Society",
+        "DOI": "10.1000/turing1936",
+        "abstractNote": "On computable numbers, with an application to the Entscheidungsproblem."
+      }
+    },
+    {
+      "key": "ZOT002",
+      "version": 2,
+      "data": {
+        "key": "ZOT002",
+        "itemType": "conferencePaper",
+        "title": "Universal Transport Invariance",
+        "creators": [
+          { "creatorType": "author", "firstName": "Grace", "lastName": "Hopper" }
+        ],
+        "date": "2024",
+        "DOI": "10.1000/transport-invariance-01",
+        "extra": "arXiv: 2405.00001\nPMID: 99887766"
+      }
+    }
+  ]
+}

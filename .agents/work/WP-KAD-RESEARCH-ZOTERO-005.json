@@ -1,0 +1,61 @@
+{
+  "id": "WP-KAD-RESEARCH-ZOTERO-005",
+  "project": "kad-pi",
+  "title": "Read-Only Zotero Local API Integration",
+  "status": "ACCEPTED",
+  "priority": 70,
+  "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
+  "fixed_point": "b057ffc425261e7d67f65c6b7b7068f87901aa7e",
+  "scope": [
+    "tools/kad/research-zotero.mjs",
+    "tools/kad/test/research-zotero.test.mjs",
+    "config/research-capabilities/zotero.json"
+  ],
+  "non_scope": [
+    "direct SQLite access",
+    "Zotero writes",
+    "automatic background sync",
+    "Zotero Web API remote fallback",
+    "canonical authority in Zotero"
+  ],
+  "owned_paths": [
+    "tools/kad/research-zotero.mjs",
+    "tools/kad/test/research-zotero.test.mjs",
+    "config/research-capabilities/zotero.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "code_build",
+    "shell_readonly"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/research-zotero.test.mjs",
+    "read-only loopback and export fallback scenario",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-05-zotero",
+  "blocked_by": [
+    "WP-KAD-RESEARCH-API-001",
+    "WP-KAD-RESEARCH-CLI-002"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Documented Zotero Local HTTP API (localhost:23119/api/) is used without direct SQLite coupling or Zotero writes.",
+    "Adapter normalizes Zotero bibliographic metadata into ResearchCandidate and passes through canonical Research API.",
+    "Loopback-only network boundary is strictly enforced; arbitrary remote host overrides are rejected.",
+    "Zotero item keys remain provenance and cannot overwrite durable identifier precedence or canonical identity.",
+    "Zotero absence, connection refusal, or 403 degrades only Zotero capability while standard export/manual paths remain fully operational."
+  ],
+  "description": "Optional read-only Zotero Local HTTP API adapter converting local bibliography items into canonical research candidates with permanent export fallback.",
+  "spec_decisions": [
+    "D1",
+    "D2",
+    "D4",
+    "D7"
+  ],
+  "source_ticket": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001-IMPLEMENTATION/issues/05-zotero-local-integration.md"
+}

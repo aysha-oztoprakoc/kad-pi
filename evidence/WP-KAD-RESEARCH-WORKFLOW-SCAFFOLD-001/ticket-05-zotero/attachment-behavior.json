@@ -1,0 +1,19 @@
+{
+  "contract_id": "kad-zotero-attachment-behavior",
+  "ticket_id": "WP-KAD-RESEARCH-ZOTERO-005",
+  "timestamp": "2026-08-30T00:35:00.000Z",
+  "rules": {
+    "metadata_only_candidate": {
+      "behavior": "Zotero item with attachment metadata creates metadata-only ResearchCandidate (sources: [])",
+      "verified": true
+    },
+    "admitted_local_attachment": {
+      "behavior": "Operator explicitly admitting local file invokes T1 ingestSource with path confinement and KAD SHA-256 computation",
+      "verified": true
+    },
+    "unsafe_path_rejection": {
+      "behavior": "Path traversal ('..') and root escapes in attachment references fail safely before source creation",
+      "verified": true
+    }
+  }
+}

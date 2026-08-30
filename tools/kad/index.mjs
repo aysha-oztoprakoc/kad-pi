@@ -30,3 +30,6 @@ export { RESEARCH_CAPABILITY_SCHEMA_VERSION, CAPABILITY_NAMES, CONSTRAINT_CLASSE
 // WP-KAD-RESEARCH-OPENVIKING-004 Exports
 export { RESEARCH_CONTEXT_DERIVATION_VERSION, RESEARCH_VIKING_PREFIX, ResearchContextError, buildResearchResourceUri, parseResearchResourceUri, deriveL0Context, deriveL1Context, deriveL2Chunk, evaluateContextStaleness, ResearchOpenVikingAdapter } from './research-openviking.mjs';
 export { createResearchOpenVikingAdapter } from './knowledge-plane-adapters.mjs';
+
+// WP-KAD-RESEARCH-ZOTERO-005 Exports
+export { DEFAULT_ZOTERO_LOCAL_URL, ZoteroError, ZoteroSecurityError, ZoteroClientError, isLoopbackUrl, normalizeZoteroItem, ZoteroLocalAdapter } from './research-zotero.mjs';

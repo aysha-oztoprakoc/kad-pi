@@ -1,0 +1,40 @@
+{
+  "trace_id": "kad-zotero-candidate-normalization-trace",
+  "ticket_id": "WP-KAD-RESEARCH-ZOTERO-005",
+  "timestamp": "2026-08-30T00:33:00.000Z",
+  "zotero_source_item": {
+    "key": "ITEM1234",
+    "title": "Decentralized Consensus in Open Multi-Agent Systems",
+    "creators": [
+      { "firstName": "Leslie", "lastName": "Lamport" },
+      { "name": "Satoshi Nakamoto" }
+    ],
+    "date": "2024-05-12",
+    "DOI": "10.1145/3300852.1234567",
+    "extra": "arXiv: 2405.00001\nPMID: 99887766"
+  },
+  "normalized_candidate": {
+    "title": "Decentralized Consensus in Open Multi-Agent Systems",
+    "authors": ["Leslie Lamport", "Satoshi Nakamoto"],
+    "year": 2024,
+    "identifiers": [
+      { "type": "doi", "value": "10.1145/3300852.1234567" },
+      { "type": "arxiv", "value": "2405.00001" },
+      { "type": "pmid", "value": "99887766" }
+    ],
+    "provenance": {
+      "method": "zotero_local_api",
+      "origin": "zotero",
+      "origin_record_id": "ITEM1234",
+      "server_id": "zotero-srv-01",
+      "api_version": "3"
+    },
+    "metadata_only": true
+  },
+  "canonical_identity_outcome": "doc:doi:10.1145/3300852.1234567",
+  "verified_invariants": {
+    "zotero_key_is_provenance_not_canonical_id": true,
+    "doi_takes_precedence": true,
+    "missing_fields_remain_null": true
+  }
+}

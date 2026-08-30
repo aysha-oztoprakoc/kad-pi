@@ -1,0 +1,24 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-ZOTERO-005",
+  "project": "kad-pi",
+  "claim_id": "10f06a0a-a7a0-4d0f-8d26-bb2b49c2b0d9",
+  "actor_label": "gemini-builder",
+  "started_at": "2026-08-30T00:25:04.039Z",
+  "title": "Read-Only Zotero Local API Integration",
+  "base_commit": "b057ffc425261e7d67f65c6b7b7068f87901aa7e",
+  "pre_change_status": {
+    "workctl_status": "READY -> IN_PROGRESS",
+    "git_head": "b057ffc425261e7d67f65c6b7b7068f87901aa7e",
+    "accepted_prerequisites": [
+      "WP-KAD-RESEARCH-API-001",
+      "WP-KAD-RESEARCH-CLI-002",
+      "WP-KAD-RESEARCH-CAPABILITIES-003",
+      "WP-KAD-RESEARCH-OPENVIKING-004"
+    ],
+    "existing_research_api_tests": "PASS (13/13)",
+    "existing_research_cli_tests": "PASS (6/6)",
+    "existing_research_capabilities_tests": "PASS (13/13)",
+    "existing_research_openviking_tests": "PASS (8/8)",
+    "make_verify": "PASS"
+  }
+}

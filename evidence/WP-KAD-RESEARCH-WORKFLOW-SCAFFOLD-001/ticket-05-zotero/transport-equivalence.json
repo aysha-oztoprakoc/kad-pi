@@ -1,0 +1,33 @@
+{
+  "proof_id": "kad-zotero-transport-equivalence",
+  "ticket_id": "WP-KAD-RESEARCH-ZOTERO-005",
+  "timestamp": "2026-08-30T00:34:00.000Z",
+  "paper": {
+    "title": "Universal Transport Invariance",
+    "authors": ["Grace Hopper"],
+    "year": 2024,
+    "doi": "10.1000/transport-invariance-01"
+  },
+  "ingestion_channels": [
+    {
+      "channel": "zotero_local_api",
+      "status": "INGESTED",
+      "canonical_document_id": "doc:doi:10.1000/transport-invariance-01"
+    },
+    {
+      "channel": "kad_research_manifest_v1",
+      "status": "IDEMPOTENT_EXISTING",
+      "canonical_document_id": "doc:doi:10.1000/transport-invariance-01"
+    },
+    {
+      "channel": "zotero_repeat_import",
+      "status": "IDEMPOTENT_EXISTING",
+      "canonical_document_id": "doc:doi:10.1000/transport-invariance-01"
+    }
+  ],
+  "invariants_verified": {
+    "identical_canonical_document_id": true,
+    "no_duplicate_document_created": true,
+    "transport_independence_proven": true
+  }
+}

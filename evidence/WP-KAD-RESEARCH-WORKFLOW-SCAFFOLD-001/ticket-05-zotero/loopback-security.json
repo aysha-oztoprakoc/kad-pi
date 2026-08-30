@@ -1,0 +1,25 @@
+{
+  "check_id": "kad-zotero-loopback-security",
+  "ticket_id": "WP-KAD-RESEARCH-ZOTERO-005",
+  "timestamp": "2026-08-30T00:32:00.000Z",
+  "loopback_validation": {
+    "allowed_hosts": [
+      "localhost",
+      "127.0.0.1",
+      "::1",
+      "[::1]"
+    ],
+    "rejected_hosts": [
+      "example.com",
+      "192.168.1.50",
+      "api.zotero.org"
+    ],
+    "enforcement_point": "ZoteroLocalAdapter constructor & request URL preflight"
+  },
+  "read_only_validation": {
+    "allowed_methods": ["GET", "HEAD"],
+    "forbidden_methods": ["POST", "PUT", "PATCH", "DELETE"],
+    "mutation_helpers_present": false,
+    "write_auth_requested": false
+  }
+}

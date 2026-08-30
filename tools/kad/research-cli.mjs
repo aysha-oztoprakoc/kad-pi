@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { ZoteroLocalAdapter, normalizeZoteroItem } from './research-zotero.mjs';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import {
@@ -436,7 +437,58 @@ export function runResearchCli(args, options = {}) {
     }
     return 0;
   }
+  if (subcommand === 'zotero') {
+    return runZoteroCli(positional, parsed, corpus, { stdout, stderr });
+  }
 
-  stderr('usage: kad-knowledge research import|inspect|verify|list|export [options]');
+  stderr('usage: kad-knowledge research import|inspect|verify|list|export|zotero [options]');
+  return 2;
+}
+
+async function runZoteroCli(positional, parsed, corpus, { stdout, stderr }) {
+  const action = positional[0] || 'status';
+  const adapter = new ZoteroLocalAdapter();
+
+  if (action === 'status' || action === 'probe') {
+    const probe = await adapter.probe();
+    stdout(JSON.stringify(probe, null, 2));
+    return probe.healthy ? 0 : 1;
+  }
+
+  if (action === 'import') {
+    const itemKey = positional[1];
+    if (!itemKey) {
+      stderr('usage: kad-knowledge research zotero import <item_key>');
+      return 2;
+    }
+    try {
+      const item = await adapter.getItem(itemKey);
+      const candidate = normalizeZoteroItem(item);
+      const result = corpus.ingestCandidate(candidate);
+      corpus.saveSync();
+      stdout(JSON.stringify({
+        status: result.status,
+        document_id: result.document.document_id,
+        title: result.document.title
+      }, null, 2));
+      return 0;
+    } catch (err) {
+      stderr(`Zotero import failed: ${err.message}`);
+      return 1;
+    }
+  }
+
+  if (action === 'list') {
+    try {
+      const items = await adapter.listItems({ limit: 50 });
+      stdout(JSON.stringify({ count: items.length, items }, null, 2));
+      return 0;
+    } catch (err) {
+      stderr(`Zotero list failed: ${err.message}`);
+      return 1;
+    }
+  }
+
+  stderr(`Unknown zotero action: '${action}'. Allowed: status, import, list`);
   return 2;
 }

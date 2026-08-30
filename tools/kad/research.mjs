@@ -254,12 +254,15 @@ export function createIdentifier(input, options) {
 export class ResearchProvenance {
   constructor(input = {}) {
     const opts = input || {};
-    this.method = opts.method || 'manual';
+    this.method = opts.method || opts.ingestion_method || 'manual';
+    this.ingestion_method = this.method;
     this.origin = opts.origin || 'manual_entry';
     this.origin_record_id = opts.origin_record_id || null;
     this.observed_at = opts.observed_at || new Date().toISOString();
     this.actor = opts.actor || 'unknown';
     this.evidence_ref = opts.evidence_ref || null;
+    this.server_id = opts.server_id || null;
+    this.api_version = opts.api_version || null;
     Object.freeze(this);
   }
 }

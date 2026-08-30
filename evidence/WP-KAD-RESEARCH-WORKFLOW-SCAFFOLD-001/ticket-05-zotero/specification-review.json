@@ -1,0 +1,50 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-ZOTERO-005",
+  "reviewer": "gemini-builder (specification review)",
+  "verdict": "PASS",
+  "spec_fidelity": {
+    "D1_hybrid_literature_ownership": {
+      "status": "PASS",
+      "evidence": "Zotero remains human bibliography workspace; KAD owns canonical identity, provenance, and source hashes."
+    },
+    "D2_layered_research_contract": {
+      "status": "PASS",
+      "evidence": "Zotero bibliographic metadata normalizes to non-authoritative ResearchCandidate before entering canonical Research API."
+    },
+    "D4_research_api_authority": {
+      "status": "PASS",
+      "evidence": "All Zotero data passes through existing T1 Research API; adapter does not bypass or duplicate canonical persistence."
+    },
+    "D7_staged_readonly_zotero_local_api": {
+      "status": "PASS",
+      "evidence": "Documented Local HTTP API is used; zero direct SQLite coupling, zero writes, permanent export fallback preserved."
+    }
+  },
+  "acceptance_criteria_matrix": [
+    {
+      "criterion": "Documented Zotero Local HTTP API (localhost:23119/api/) is used without direct SQLite coupling or Zotero writes.",
+      "status": "PASS",
+      "test": "Read-only enforcement: Adapter rejects mutation methods locally; Loopback confinement"
+    },
+    {
+      "criterion": "Adapter normalizes Zotero bibliographic metadata into ResearchCandidate and passes through canonical Research API.",
+      "status": "PASS",
+      "test": "Zotero item normalization maps creators, dates, identifiers, and provenance correctly"
+    },
+    {
+      "criterion": "Loopback-only network boundary is strictly enforced; arbitrary remote host overrides are rejected.",
+      "status": "PASS",
+      "test": "Loopback confinement: Only localhost, 127.0.0.1, and [::1] are permitted"
+    },
+    {
+      "criterion": "Zotero item keys remain provenance and cannot overwrite durable identifier precedence or canonical identity.",
+      "status": "PASS",
+      "test": "Zotero item normalization trace; Transport Equivalence & Idempotency"
+    },
+    {
+      "criterion": "Zotero absence, connection refusal, or 403 degrades only Zotero capability while standard export/manual paths remain fully operational.",
+      "status": "PASS",
+      "test": "Zotero mock server probe, list, inspect, and degradation states work end-to-end"
+    }
+  ]
+}
