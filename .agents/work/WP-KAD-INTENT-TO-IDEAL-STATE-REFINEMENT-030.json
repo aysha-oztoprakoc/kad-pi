@@ -1,0 +1,85 @@
+{
+  "id": "WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
+  "project": "kad-pi",
+  "title": "Typed-Intent -> Successor Ideal State, Requirement Traceability, Gap Model & Evidence-Gated Roadmap",
+  "status": "ACCEPTED",
+  "priority": 310,
+  "spec_ref": "user:/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
+  "fixed_point": "17f91ac49b4430ea04b7b933b204d6645ffbd3f3",
+  "scope": [
+    "docs/architecture/",
+    "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/",
+    "tools/kad/intent/",
+    "tools/kad/test/",
+    ".agents/work/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030.json",
+    ".agents/work/claims/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030.json"
+  ],
+  "non_scope": [
+    "runtime architecture implementation",
+    "deploying TELL workers",
+    "integrating Warren or Beads runtime",
+    "installing context providers",
+    "implementing capability broker",
+    "fine-tuning models",
+    "autonomously merging implementation changes",
+    "rewriting frozen ISA-002 v1.1 in place",
+    "broad legacy migrations",
+    "paid API spend",
+    "secret disclosure"
+  ],
+  "owned_paths": [
+    "docs/architecture/",
+    "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/",
+    "tools/kad/intent/",
+    "tools/kad/test/",
+    ".agents/work/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030.json",
+    ".agents/work/claims/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/intent-fidelity.test.mjs",
+    "node --test tools/kad/test/ideal-state-traceability.test.mjs",
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-intent validate",
+    "bin/kad-intent verify-report",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "bin/workctl skills doctor",
+    "bin/kad-isa check all",
+    "bin/kad-wiki lint",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/",
+  "blocked_by": [],
+  "blocks": [],
+  "claim": null,
+  "spec_details": {
+    "source_ticket": "user:/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
+    "claim_authority": "gemini-3.7-flash-high",
+    "evidence_receipts": [
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/00-orientation-and-authority-baseline.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/01-intent-event-traceability.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/02-current-state-evidence-map.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/03-requirement-registry.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/04-current-target-gap-analysis.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/05-target-architecture.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/06-experiment-register.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/07-advisor-adversarial-review.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/08-reverse-contradiction-review.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/09-roadmap-and-successor-workpackages.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/10-validation-receipts.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/11-backlog-and-open-decisions.md",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/FINAL_REPORT.md"
+    ]
+  }
+}

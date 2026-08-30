@@ -1,0 +1,19 @@
+{
+  "task": "WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
+  "project": "kad-pi",
+  "claim_id": "ee66975f-7a8b-4da8-b339-081bb13515b4",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T21:23:07.195Z",
+  "base_commit": "17f91ac49b4430ea04b7b933b204d6645ffbd3f3",
+  "owned_paths": [
+    "docs/architecture",
+    "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
+    "tools/kad/intent",
+    "tools/kad/test",
+    ".agents/work/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030.json",
+    ".agents/work/claims/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T21:29:32.012Z"
+}
