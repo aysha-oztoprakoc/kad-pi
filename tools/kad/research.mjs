@@ -456,9 +456,11 @@ export class ResearchDocument {
     this.authors = authors ? Object.freeze([...authors]) : null;
     this.year = year !== null && year !== undefined ? Number(year) : null;
     this.abstract = abstract;
-    this.identifiers = Object.freeze([...identifiers]);
-    this.primary_identifier = primary_identifier || selectPrimaryIdentifier(this.identifiers);
-    this.sources = Object.freeze([...sources]);
+    this.identifiers = Object.freeze((identifiers || []).map(id => id instanceof ResearchIdentifier ? id : new ResearchIdentifier(id)));
+    this.primary_identifier = primary_identifier
+      ? (primary_identifier instanceof ResearchIdentifier ? primary_identifier : new ResearchIdentifier(primary_identifier))
+      : selectPrimaryIdentifier(this.identifiers);
+    this.sources = Object.freeze((sources || []).map(src => src instanceof ResearchSource ? src : new ResearchSource(src)));
     this.provenance = createProvenance(provenance);
     this.epistemic_class = epistemic_class;
     this.authority_class = authority_class;
@@ -786,8 +788,8 @@ export class DeterministicResearchCorpus {
     return updated;
   }
 
-  async save() {
-    await mkdir(this.storageDir, { recursive: true });
+  saveSync() {
+    mkdirSync(this.storageDir, { recursive: true });
     const catalogData = {
       schema_version: RESEARCH_SCHEMA_VERSION,
       updated_at: new Date().toISOString(),
@@ -799,18 +801,18 @@ export class DeterministicResearchCorpus {
     const tempFile = join(this.storageDir, `CATALOG.tmp.${Date.now()}.${Math.random().toString(36).slice(2)}.json`);
     const finalFile = join(this.storageDir, 'CATALOG.json');
 
-    await writeFile(tempFile, JSON.stringify(catalogData, null, 2), 'utf8');
-    await rename(tempFile, finalFile);
+    writeFileSync(tempFile, JSON.stringify(catalogData, null, 2), 'utf8');
+    renameSync(tempFile, finalFile);
     return { status: 'SAVED', path: finalFile, count: this.documents.size };
   }
 
-  async load() {
+  loadSync() {
     const catalogFile = join(this.storageDir, 'CATALOG.json');
     if (!existsSync(catalogFile)) {
       return { status: 'EMPTY', count: 0 };
     }
 
-    const raw = await readFile(catalogFile, 'utf8');
+    const raw = readFileSync(catalogFile, 'utf8');
     const data = JSON.parse(raw);
     if (data.schema_version !== RESEARCH_SCHEMA_VERSION) {
       throw new ResearchValidationError(`Unsupported catalog schema version: ${data.schema_version}`);
@@ -823,6 +825,14 @@ export class DeterministicResearchCorpus {
     }
 
     return { status: 'LOADED', count: this.documents.size };
+  }
+
+  async save() {
+    return this.saveSync();
+  }
+
+  async load() {
+    return this.loadSync();
   }
 
   verifyIntegrity() {

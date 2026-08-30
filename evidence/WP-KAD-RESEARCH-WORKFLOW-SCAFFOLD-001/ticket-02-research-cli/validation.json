@@ -1,0 +1,45 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-CLI-002",
+  "suite": "tools/kad/test/research-cli.test.mjs",
+  "timestamp": "2026-08-30T00:03:00.000Z",
+  "status": "PASS",
+  "summary": {
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "tests": [
+    {
+      "name": "Research CLI routes subcommands and unknown actions fail deterministically",
+      "status": "PASS"
+    },
+    {
+      "name": "Research CLI import handles DOI, arXiv, and direct metadata inputs",
+      "status": "PASS"
+    },
+    {
+      "name": "Research CLI import handles local source files and enforces path safety",
+      "status": "PASS"
+    },
+    {
+      "name": "Research Manifest parsing, serialization, and CLI import work deterministically",
+      "status": "PASS"
+    },
+    {
+      "name": "Research CLI inspect, list, verify, and export work end-to-end",
+      "status": "PASS"
+    },
+    {
+      "name": "Transport equivalence: CLI import and Direct API import produce identical canonical state",
+      "status": "PASS"
+    }
+  ],
+  "full_suite_verification": {
+    "make_verify": "PASS",
+    "make_test": "PASS",
+    "research_api_tests": "PASS (13/13)",
+    "research_cli_tests": "PASS (6/6)"
+  }
+}

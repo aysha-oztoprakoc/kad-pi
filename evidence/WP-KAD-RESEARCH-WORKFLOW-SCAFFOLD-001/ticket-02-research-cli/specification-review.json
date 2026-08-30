@@ -1,0 +1,46 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-CLI-002",
+  "reviewer": "gemini-builder (specification review)",
+  "verdict": "PASS",
+  "spec_fidelity": {
+    "D2_layered_research_contract": {
+      "status": "PASS",
+      "evidence": "Manifests and CLI arguments cleanly map to Candidate -> Source -> Document without conflating discovery and acquisition."
+    },
+    "D4_thin_cli_operator_surface": {
+      "status": "PASS",
+      "evidence": "Existing kad-knowledge research namespace routes directly to DeterministicResearchCorpus; CLI does not duplicate normalization or persistence logic."
+    },
+    "D6_graceful_degradation": {
+      "status": "PASS",
+      "evidence": "CLI is 100% functional offline without OpenViking, Zotero, or paid providers."
+    }
+  },
+  "acceptance_criteria_matrix": [
+    {
+      "criterion": "Existing kad-knowledge research namespace delegates domain behavior to the reusable research API.",
+      "status": "PASS",
+      "test": "Research CLI routes subcommands and unknown actions fail deterministically; Transport equivalence: CLI import and Direct API import produce identical canonical state"
+    },
+    {
+      "criterion": "DOI, arXiv, standard export, metadata, and local PDF workflows require no provider credentials.",
+      "status": "PASS",
+      "test": "Research CLI import handles DOI, arXiv, and direct metadata inputs; Research CLI import handles local source files and enforces path safety"
+    },
+    {
+      "criterion": "Manifests support deterministic import/export but are not the sole mutation interface.",
+      "status": "PASS",
+      "test": "Research Manifest parsing, serialization, and CLI import work deterministically; Research CLI inspect, list, verify, and export work end-to-end"
+    },
+    {
+      "criterion": "Unsafe paths, malformed input, duplicates, and conflicts produce deterministic non-success results without canonical corruption.",
+      "status": "PASS",
+      "test": "Research CLI import handles local source files and enforces path safety"
+    },
+    {
+      "criterion": "OpenViking absence does not prevent canonical import or exact source inspection.",
+      "status": "PASS",
+      "test": "Full suite runs 100% locally without OpenViking service dependency"
+    }
+  ]
+}

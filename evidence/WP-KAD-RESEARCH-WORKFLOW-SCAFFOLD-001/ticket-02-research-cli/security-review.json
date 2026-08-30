@@ -1,0 +1,27 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-CLI-002",
+  "reviewer": "gemini-builder (security review)",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check": "cli_path_traversal_enforcement",
+      "status": "PASS",
+      "evidence": "CLI delegates all file operations to T1 Research API assertSafePath; traversal paths ('..') and null bytes fail before filesystem interaction with exit code 1."
+    },
+    {
+      "check": "manifest_schema_validation",
+      "status": "PASS",
+      "evidence": "parseResearchManifest rejects unsupported schema versions and malformed JSON before invoking corpus mutations."
+    },
+    {
+      "check": "no_credentials_required",
+      "status": "PASS",
+      "evidence": "Zero credentials, API keys, or network connections are used across the CLI operator interface."
+    },
+    {
+      "check": "authority_isolation",
+      "status": "PASS",
+      "evidence": "CLI does not duplicate domain normalization or create backdoors to mutate canonical corpus state outside Research API rules."
+    }
+  ]
+}

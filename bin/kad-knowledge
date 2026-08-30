@@ -1,3 +1,10 @@
 #!/usr/bin/env node
 import { runCuratedKnowledgeCli } from '../tools/kad/wiki-projection.mjs';
-process.exitCode = runCuratedKnowledgeCli(process.argv.slice(2));
+import { runResearchCli } from '../tools/kad/research-cli.mjs';
+
+const args = process.argv.slice(2);
+if (args[0] === 'research') {
+  process.exitCode = runResearchCli(args.slice(1));
+} else {
+  process.exitCode = runCuratedKnowledgeCli(args);
+}

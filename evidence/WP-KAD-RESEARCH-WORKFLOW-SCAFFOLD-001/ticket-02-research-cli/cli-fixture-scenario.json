@@ -1,0 +1,52 @@
+{
+  "scenario": "kad-knowledge-research-cli-fixture-import-export",
+  "ticket_id": "WP-KAD-RESEARCH-CLI-002",
+  "timestamp": "2026-08-30T00:04:00.000Z",
+  "steps": [
+    {
+      "step": 1,
+      "action": "kad-knowledge research import --manifest manifest.json",
+      "result": {
+        "status": "INGESTED",
+        "document_id": "doc:doi:10.1098/rssl.1843.0001",
+        "title": "Manifest-Driven Research Ingestion"
+      }
+    },
+    {
+      "step": 2,
+      "action": "kad-knowledge research inspect doc:doi:10.1098/rssl.1843.0001",
+      "result": {
+        "found": true,
+        "document_id": "doc:doi:10.1098/rssl.1843.0001",
+        "authors": ["Ada Lovelace", "Charles Babbage"],
+        "year": 1843
+      }
+    },
+    {
+      "step": 3,
+      "action": "kad-knowledge research export doc:doi:10.1098/rssl.1843.0001",
+      "result": {
+        "schema_version": "kad-research-manifest-v1",
+        "exported": true
+      }
+    },
+    {
+      "step": 4,
+      "action": "kad-knowledge research verify",
+      "result": {
+        "valid": true,
+        "issues": []
+      }
+    },
+    {
+      "step": 5,
+      "action": "Repeat import of identical manifest",
+      "result": {
+        "status": "IDEMPOTENT_EXISTING",
+        "document_id": "doc:doi:10.1098/rssl.1843.0001"
+      }
+    }
+  ],
+  "idempotence_verified": true,
+  "transport_equivalence_verified": true
+}

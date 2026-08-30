@@ -2,10 +2,10 @@
   "id": "WP-KAD-RESEARCH-CLI-002",
   "project": "kad-pi",
   "title": "Research Operator Namespace and Manifests",
-  "status": "READY",
+  "status": "ACCEPTED",
   "priority": 90,
   "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
-  "fixed_point": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf",
+  "fixed_point": "cad814f01bda0d4aac32d34ef1153e5a94f55598",
   "scope": [
     "bin/kad-knowledge",
     "tools/kad/research-cli.mjs",

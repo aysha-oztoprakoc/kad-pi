@@ -1,0 +1,33 @@
+{
+  "ticket_id": "WP-KAD-RESEARCH-CLI-002",
+  "title": "Research Operator Namespace and Manifests",
+  "claim": {
+    "task": "WP-KAD-RESEARCH-CLI-002",
+    "project": "kad-pi",
+    "claim_id": "f5450982-ab29-42cf-a74c-1552e514b5bc",
+    "actor_label": "gemini-builder",
+    "started_at": "2026-08-29T23:58:45.839Z",
+    "base_commit": "cad814f01bda0d4aac32d34ef1153e5a94f55598",
+    "owned_paths": [
+      "bin/kad-knowledge",
+      "tools/kad/research-cli.mjs",
+      "tools/kad/test/research-cli.test.mjs",
+      "docs/agents/research-workflow.md"
+    ],
+    "mode": "mutate",
+    "active": true
+  },
+  "fixed_point": "cad814f01bda0d4aac32d34ef1153e5a94f55598",
+  "spec_decisions": ["D2", "D4", "D6"],
+  "scope": [
+    "bin/kad-knowledge",
+    "tools/kad/research-cli.mjs",
+    "tools/kad/test/research-cli.test.mjs",
+    "docs/agents/research-workflow.md"
+  ],
+  "pre_change_verification": {
+    "workctl_status": "READY -> IN_PROGRESS",
+    "git_head": "cad814f01bda0d4aac32d34ef1153e5a94f55598",
+    "canonical_research_api_tests": "PASS (13/13)"
+  }
+}
