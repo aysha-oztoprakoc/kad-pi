@@ -1,0 +1,84 @@
+{
+  "id": "WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
+  "project": "kad-pi",
+  "title": "Intent-Ledger Regression Repair, Normative Semantic Validation & Ideal-State V2 Recompilation",
+  "status": "ACCEPTED",
+  "priority": 320,
+  "spec_ref": "user:/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
+  "fixed_point": "4ba5b05cb7f019649ea8d6677efd4d1883826bd9",
+  "scope": [
+    "docs/architecture/KAD_PI_IDEAL_STATE_V2.json",
+    "docs/architecture/KAD_PI_IDEAL_STATE_V2.md",
+    "tools/kad/intent/ideal-state-engine.mjs",
+    "tools/kad/intent/compile-ideal-state-v2.mjs",
+    "tools/kad/test/ideal-state-traceability.test.mjs",
+    "evidence/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R/",
+    ".agents/work/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R.json"
+  ],
+  "non_scope": [
+    "implementing cognitive telemetry (WP-031)",
+    "implementing governance gates (WP-032)",
+    "running offline survival experiment",
+    "deploying TELL",
+    "integrating Warren/Beads",
+    "mutating frozen ISA-002 baseline in place",
+    "redesigning full Ideal State architecture",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "docs/architecture/KAD_PI_IDEAL_STATE_V2.json",
+    "docs/architecture/KAD_PI_IDEAL_STATE_V2.md",
+    "tools/kad/intent/ideal-state-engine.mjs",
+    "tools/kad/intent/compile-ideal-state-v2.mjs",
+    "tools/kad/test/ideal-state-traceability.test.mjs",
+    "evidence/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R/",
+    ".agents/work/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/ideal-state-traceability.test.mjs",
+    "node --test tools/kad/test/intent-fidelity.test.mjs",
+    "npm test",
+    "bin/kad-intent validate",
+    "bin/kad-intent verify-report",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "bin/workctl skills doctor",
+    "bin/kad-isa check all",
+    "bin/kad-wiki lint",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R/",
+  "blocked_by": [
+    "WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030"
+  ],
+  "blocks": [
+    "WP-KAD-COGNITIVE-TELEMETRY-031"
+  ],
+  "acceptance_criteria": [
+    "FinOps zero-spend regression fixed with pre-authorized envelopes and value-gated escalation",
+    "KnowledgePlane sovereign authority model restored without reducing authority solely to Markdown/Vault",
+    "Contradiction handling restored to impact-scoped containment rather than global fail-closed",
+    "Offline core design preserved as TARGET while full offline survival remains EXPERIMENT_REQUIRED",
+    "Architectural harmony overclaims replaced with evidence-bounded language",
+    "All 20 target requirements audited and classified for semantic alignment",
+    "Semantic intent regression tests (S01-S12) added and passing",
+    "Ideal-State V2 recompiled deterministically from structured source",
+    "24 intent events and ISA-002 remain unchanged",
+    "Full workspace test suite, doctors, and linters PASS"
+  ],
+  "description": "Corrective specification workpackage repairing semantic regressions introduced during WP-030 and strengthening the ideal-state compiler substrate to prevent semantic drift.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
+  "claim": null
+}

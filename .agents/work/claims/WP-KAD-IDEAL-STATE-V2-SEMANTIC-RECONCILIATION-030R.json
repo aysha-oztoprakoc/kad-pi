@@ -1,0 +1,20 @@
+{
+  "task": "WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
+  "project": "kad-pi",
+  "claim_id": "e4349860-ccac-4e74-9160-abe4e3e18da2",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T21:33:24.737Z",
+  "base_commit": "4ba5b05cb7f019649ea8d6677efd4d1883826bd9",
+  "owned_paths": [
+    "docs/architecture/KAD_PI_IDEAL_STATE_V2.json",
+    "docs/architecture/KAD_PI_IDEAL_STATE_V2.md",
+    "tools/kad/intent/ideal-state-engine.mjs",
+    "tools/kad/intent/compile-ideal-state-v2.mjs",
+    "tools/kad/test/ideal-state-traceability.test.mjs",
+    "evidence/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
+    ".agents/work/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T21:39:11.643Z"
+}

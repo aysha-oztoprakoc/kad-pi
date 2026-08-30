@@ -1,10 +1,11 @@
 /**
  * KAD-PI Ideal State V2 Compiler & Traceability Engine
- * Workpackage: WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030
+ * Workpackage: WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R
  *
  * Compiles validated human intent (INTENT_DECISION_EVENT_V1 + INTENT_DECISION_NORMALIZATION_V1)
  * and repository facts into typed requirements, traceability graph, gap analysis,
  * experiment register, roadmaps, and normative Ideal State Artifact V2.
+ * Enforces structured semantic invariant rules against semantic drift.
  */
 
 import { calculateEventHash } from './crypto.mjs';
@@ -48,7 +49,11 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: [],
       implementation_status: 'PARTIAL',
       target_horizon: 'NOW',
-      reversibility_or_change_cost: 'IRREVERSIBLE_CONSTITUTIONAL'
+      reversibility_or_change_cost: 'IRREVERSIBLE_CONSTITUTIONAL',
+      system_identity: {
+        primary_identity: 'PERSONAL_ENGINEERING_OS_AND_RESEARCH_LAB',
+        multi_tenant_saas: 'EXCLUDED'
+      }
     },
     {
       requirement_id: 'REQ-KAD-ID-002',
@@ -67,7 +72,12 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-ID-001'],
       implementation_status: 'IMPLEMENTED',
       target_horizon: 'NOW',
-      reversibility_or_change_cost: 'HIGH_REARCHITECT'
+      reversibility_or_change_cost: 'HIGH_REARCHITECT',
+      stakeholder_model: {
+        primary_user: 'PROJECT_LEAD_AMDY',
+        trusted_collaborator_ring: '2_TO_5_PEERS',
+        enterprise_multi_user: 'EXCLUDED'
+      }
     },
     {
       requirement_id: 'REQ-KAD-ID-003',
@@ -86,13 +96,17 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-ID-001', 'REQ-KAD-ID-002'],
       implementation_status: 'PARTIAL',
       target_horizon: '6_MONTH',
-      reversibility_or_change_cost: 'MEDIUM_MIGRATION'
+      reversibility_or_change_cost: 'MEDIUM_MIGRATION',
+      open_source_model: {
+        core_repository: 'PRIVATE',
+        public_artifacts: 'STAGED_GOVERNED_EXTRACTION'
+      }
     },
 
     // Domain B: Human Cognitive Model & Sovereignty (DEC_ID_03, DEC_ID_04)
     {
       requirement_id: 'REQ-KAD-COG-001',
-      statement: 'The project lead MUST retain sole sovereign authority as Strategic Governor and Research Director over charter, scope, risk tolerance, financial expenditure, canonical knowledge doctrine, and policy changes, while delegating bounded routine implementation and validation to agents.',
+      statement: 'The project lead MUST retain sole sovereign authority as Strategic Governor and Research Director over charter, scope, risk tolerance, financial expenditure, canonical knowledge doctrine, and policy changes, while delegating bounded routine implementation and validation to agents under policy-bounded execution.',
       normative_level: 'MUST',
       plane: 'TARGET',
       domain_id: 'SOVEREIGN_HUMAN_ROLE',
@@ -107,7 +121,11 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-ID-001'],
       implementation_status: 'PARTIAL',
       target_horizon: 'NOW',
-      reversibility_or_change_cost: 'IRREVERSIBLE_CONSTITUTIONAL'
+      reversibility_or_change_cost: 'IRREVERSIBLE_CONSTITUTIONAL',
+      governance_authority: {
+        authority_level: 'HUMAN_SOVEREIGN',
+        autonomy_model: 'POLICY_BOUNDED_DELEGATION'
+      }
     },
     {
       requirement_id: 'REQ-KAD-COG-002',
@@ -126,7 +144,11 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-COG-001'],
       implementation_status: 'PARTIAL',
       target_horizon: 'NOW',
-      reversibility_or_change_cost: 'IRREVERSIBLE_CONSTITUTIONAL'
+      reversibility_or_change_cost: 'IRREVERSIBLE_CONSTITUTIONAL',
+      failure_criteria: {
+        cognitive_fatigue_is_failure: true,
+        raw_token_speed_subordinated: true
+      }
     },
 
     // Domain C: Authority Constitution & Autonomy (DEC_ID_05, DEC_ID_06)
@@ -147,7 +169,11 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-COG-001'],
       implementation_status: 'PARTIAL',
       target_horizon: 'NOW',
-      reversibility_or_change_cost: 'HIGH_REARCHITECT'
+      reversibility_or_change_cost: 'HIGH_REARCHITECT',
+      autonomy_policy: {
+        model: 'TIERED_BOUNDED_AUTONOMY',
+        mutation_lease_required: true
+      }
     },
     {
       requirement_id: 'REQ-KAD-AUTH-002',
@@ -166,7 +192,11 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-COG-001'],
       implementation_status: 'IMPLEMENTED',
       target_horizon: 'NOW',
-      reversibility_or_change_cost: 'IRREVERSIBLE_CONSTITUTIONAL'
+      reversibility_or_change_cost: 'IRREVERSIBLE_CONSTITUTIONAL',
+      promotion_authority: {
+        models_propose_only: true,
+        human_or_gate_authorization_required: true
+      }
     },
 
     // Domain D: PM Kernel & Work Lifecycle (DEC_ID_17, DEC_ID_18)
@@ -187,7 +217,11 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-AUTH-001'],
       implementation_status: 'PARTIAL',
       target_horizon: '3_MONTH',
-      reversibility_or_change_cost: 'MEDIUM_MIGRATION'
+      reversibility_or_change_cost: 'MEDIUM_MIGRATION',
+      pm_kernel: {
+        topology: 'LEAN_DETERMINISTIC_DAG',
+        workctl_native: true
+      }
     },
     {
       requirement_id: 'REQ-KAD-PM-002',
@@ -206,7 +240,11 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-PM-001'],
       implementation_status: 'PARTIAL',
       target_horizon: '3_MONTH',
-      reversibility_or_change_cost: 'MEDIUM_MIGRATION'
+      reversibility_or_change_cost: 'MEDIUM_MIGRATION',
+      decomposition_model: {
+        hierarchical_wbs: true,
+        explicit_acceptance_contracts: true
+      }
     },
 
     // Domain E: Quality Architecture & Verification Independence (DEC_ID_19)
@@ -227,7 +265,11 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-AUTH-001'],
       implementation_status: 'IMPLEMENTED',
       target_horizon: 'NOW',
-      reversibility_or_change_cost: 'HIGH_REARCHITECT'
+      reversibility_or_change_cost: 'HIGH_REARCHITECT',
+      verification_independence: {
+        rule: 'MUTATOR_NEQ_VERIFIER_NEQ_ACCEPTANCE',
+        self_certification: 'FORBIDDEN'
+      }
     },
 
     // Domain F: Research Operating System (DEC_ID_13)
@@ -248,13 +290,17 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-AUTH-002'],
       implementation_status: 'PARTIAL',
       target_horizon: '3_MONTH',
-      reversibility_or_change_cost: 'MEDIUM_MIGRATION'
+      reversibility_or_change_cost: 'MEDIUM_MIGRATION',
+      research_pipeline: {
+        tiered_epistemic_levels: ['R0', 'R1', 'R2', 'R3', 'R4'],
+        provenance_tracking: 'MANDATORY'
+      }
     },
 
     // Domain G: KnowledgePlane & Storage Topology (DEC_ID_14, DEC_ID_16)
     {
       requirement_id: 'REQ-KAD-KNOW-001',
-      statement: 'The KnowledgePlane MUST maintain the canonical Obsidian Vault (human-readable Markdown with structured frontmatter) as the sole durable source of truth; vector databases, semantic embeddings, and graph indices MUST remain rebuildable derived projections.',
+      statement: 'The KnowledgePlane MUST maintain sovereign epistemic authority across typed representations (Canonical Doctrine, Authoritative Evidence Records, Derived Projections, Candidate, Contested, and Historical states); the Obsidian Vault serves as the primary human-readable, git-diffable, portable offline doctrine surface, while structured records/receipts serve as authoritative evidence without storage format alone conferring authority.',
       normative_level: 'MUST',
       plane: 'TARGET',
       domain_id: 'KNOWLEDGE_PLANE_STORAGE_TOPOLOGY',
@@ -263,17 +309,23 @@ export function compileIdealStateData(events = [], normalizations = []) {
       normalization_refs: ['DEC_ID_14'],
       current_state_refs: ['vault/', 'wiki/', 'bin/kad-wiki'],
       research_refs: [],
-      rationale: 'Authoritative choice in DEC_ID_14 prevents black-box vector stores from usurping human-auditable Markdown as authority.',
+      rationale: 'Authoritative choice in DEC_ID_14 establishes KnowledgePlane sovereign authority across multiple typed representations without storage format dogma.',
       verification_strategy: 'Vault projection rebuild tests verifying complete state can be reconstructed from Markdown files alone.',
       risk_class: 'CONSTITUTIONAL',
       dependencies: ['REQ-KAD-AUTH-002'],
       implementation_status: 'IMPLEMENTED',
       target_horizon: 'NOW',
-      reversibility_or_change_cost: 'HIGH_REARCHITECT'
+      reversibility_or_change_cost: 'HIGH_REARCHITECT',
+      knowledge_authority: {
+        authority_owner: 'KNOWLEDGEPLANE',
+        markdown_role: 'CANONICAL_HUMAN_READABLE_DOCTRINE',
+        structured_evidence_role: 'AUTHORITATIVE_EVIDENCE_RECORD',
+        derived_projections_role: 'REBUILDABLE_DERIVED'
+      }
     },
     {
       requirement_id: 'REQ-KAD-KNOW-002',
-      statement: 'The KnowledgePlane MUST manage epistemic conflicts, stale doctrines, and invalidated claims through explicit contradiction journaling; affected claims MUST fail closed on dependent execution paths while preserving historical provenance.',
+      statement: 'The KnowledgePlane MUST manage epistemic conflicts, stale doctrines, and invalidated claims through explicit contradiction journaling with impact-scoped containment (informational conflicts annotate CONTESTED without blocking unrelated work; operational/epistemic conflicts block dependent automation/promotion; constitutional conflicts fail closed on privileged operations).',
       normative_level: 'MUST',
       plane: 'TARGET',
       domain_id: 'CONTRADICTION_INVALIDATION_MANAGEMENT',
@@ -282,13 +334,20 @@ export function compileIdealStateData(events = [], normalizations = []) {
       normalization_refs: ['DEC_ID_16'],
       current_state_refs: ['tools/kad/wiki/'],
       research_refs: [],
-      rationale: 'Authoritative choice in DEC_ID_16 mandates explicit contradiction tracking instead of silent overwrites.',
+      rationale: 'Authoritative choice in DEC_ID_16 mandates explicit impact-scoped contradiction containment rather than global fail-closed halts.',
       verification_strategy: 'Contradiction validator tests verifying claims marked CONTESTED block downstream automated promotion.',
       risk_class: 'HIGH',
       dependencies: ['REQ-KAD-KNOW-001'],
       implementation_status: 'PARTIAL',
       target_horizon: '3_MONTH',
-      reversibility_or_change_cost: 'MEDIUM_MIGRATION'
+      reversibility_or_change_cost: 'MEDIUM_MIGRATION',
+      contradiction_containment: {
+        containment_model: 'IMPACT_SCOPED',
+        informational: 'ANNOTATE_CONTESTED_NON_BLOCKING',
+        operational: 'BLOCK_DEPENDENT_AUTOMATION',
+        epistemic: 'BLOCK_AFFECTED_PROMOTION',
+        constitutional: 'FAIL_CLOSED_PRIVILEGED'
+      }
     },
 
     // Domain H: ContextPlane & Semantic Retrieval (DEC_ID_14)
@@ -309,7 +368,12 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-KNOW-001'],
       implementation_status: 'NOT_IMPLEMENTED',
       target_horizon: '6_MONTH',
-      reversibility_or_change_cost: 'LOW_REVERSIBLE'
+      reversibility_or_change_cost: 'LOW_REVERSIBLE',
+      context_plane: {
+        vendor_agnostic_interface: true,
+        candidate_providers: ['OpenViking', 'Needle'],
+        qualification_required: true
+      }
     },
 
     // Domain I: Distillation & Downward Hierarchy (DEC_ID_15)
@@ -330,7 +394,11 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-AUTH-001'],
       implementation_status: 'PARTIAL',
       target_horizon: '6_MONTH',
-      reversibility_or_change_cost: 'HIGH_REARCHITECT'
+      reversibility_or_change_cost: 'HIGH_REARCHITECT',
+      distillation_policy: {
+        execution_neq_learning: true,
+        offline_trajectory_analysis: true
+      }
     },
 
     // Domain J: Security & Trust Domains (DEC_ID_08)
@@ -351,7 +419,11 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-ID-002'],
       implementation_status: 'PARTIAL',
       target_horizon: '3_MONTH',
-      reversibility_or_change_cost: 'HIGH_REARCHITECT'
+      reversibility_or_change_cost: 'HIGH_REARCHITECT',
+      security_policy: {
+        multi_domain_isolation: true,
+        ambient_prompt_secrets: 'FORBIDDEN'
+      }
     },
 
     // Domain K: Compute Fabric & Asymmetric Hardware (DEC_ID_11, DEC_ID_23)
@@ -372,7 +444,12 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-ID-001', 'REQ-KAD-SEC-001'],
       implementation_status: 'PARTIAL',
       target_horizon: '6_MONTH',
-      reversibility_or_change_cost: 'MEDIUM_MIGRATION'
+      reversibility_or_change_cost: 'MEDIUM_MIGRATION',
+      compute_topology: {
+        dual_node_asymmetric: true,
+        interactive_node: 'AMDY',
+        batch_node: 'TELL'
+      }
     },
 
     // Domain L: Execution Fabric & Workload Providers (DEC_ID_09)
@@ -393,7 +470,13 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-AUTH-001'],
       implementation_status: 'PARTIAL',
       target_horizon: '3_MONTH',
-      reversibility_or_change_cost: 'MEDIUM_MIGRATION'
+      reversibility_or_change_cost: 'MEDIUM_MIGRATION',
+      execution_runtime: {
+        workload_abstraction: 'KAD_WORKLOAD_V1',
+        primary_controller: 'OMP',
+        portable_worker: 'Pi',
+        detached_canary: 'Warren'
+      }
     },
 
     // Domain M: Git & GitHub Operating Model (DEC_ID_12)
@@ -414,13 +497,17 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-ID-001', 'REQ-KAD-PM-001'],
       implementation_status: 'IMPLEMENTED',
       target_horizon: 'NOW',
-      reversibility_or_change_cost: 'HIGH_REARCHITECT'
+      reversibility_or_change_cost: 'HIGH_REARCHITECT',
+      git_authority: {
+        canonical_authority: 'LOCAL_GIT_WORKCTL',
+        github_role: 'DOWNSTREAM_PROJECTION_AND_CI'
+      }
     },
 
     // Domain N: Resource & FinOps Governance (DEC_ID_07, DEC_ID_20)
     {
       requirement_id: 'REQ-KAD-FIN-001',
-      statement: 'Financial governance MUST enforce zero-marginal metered API spend by default, executing tasks on local compute and fixed subscriptions unless an explicit human lease with a capped budget is granted per workpackage.',
+      statement: 'Financial governance MUST enforce pre-authorized economic envelopes with value-gated escalation; unauthorized metered spend is strictly FORBIDDEN, while authorized metered spend is PERMITTED within explicit budget caps when expected value, human attention leverage, or quality requirements justify it.',
       normative_level: 'MUST',
       plane: 'TARGET',
       domain_id: 'ECONOMIC_FINOPS_GOVERNANCE',
@@ -429,13 +516,18 @@ export function compileIdealStateData(events = [], normalizations = []) {
       normalization_refs: ['DEC_ID_07'],
       current_state_refs: ['bin/kad doctor', 'tools/kad/economic-router.mjs'],
       research_refs: [],
-      rationale: 'Authoritative choice in DEC_ID_07 enforces strict FinOps control against unbounded model spend.',
-      verification_strategy: 'Economic router tests (economic-router.test.mjs) verifying zero-spend policy enforcement.',
+      rationale: 'Authoritative choice in DEC_ID_07 establishes pre-authorized economic envelopes with value-gated escalation rather than a zero-spend mandate.',
+      verification_strategy: 'Economic router tests (economic-router.test.mjs) verifying pre-authorized envelope and value-gating enforcement.',
       risk_class: 'HIGH',
       dependencies: ['REQ-KAD-COG-001'],
       implementation_status: 'IMPLEMENTED',
       target_horizon: 'NOW',
-      reversibility_or_change_cost: 'MEDIUM_MIGRATION'
+      reversibility_or_change_cost: 'MEDIUM_MIGRATION',
+      economic_policy: {
+        metered_spend: 'PREAUTHORIZED_ALLOWED',
+        unauthorized_spend: 'FORBIDDEN',
+        escalation_model: 'VALUE_GATED_ENVELOPE'
+      }
     },
     {
       requirement_id: 'REQ-KAD-FIN-002',
@@ -454,13 +546,20 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-COG-002'],
       implementation_status: 'PARTIAL',
       target_horizon: '3_MONTH',
-      reversibility_or_change_cost: 'IRREVERSIBLE_CONSTITUTIONAL'
+      reversibility_or_change_cost: 'IRREVERSIBLE_CONSTITUTIONAL',
+      resource_hierarchy: [
+        'HUMAN_ATTENTION',
+        'EPISTEMIC_INTEGRITY',
+        'MAINTAINABILITY',
+        'MONEY_QUOTA',
+        'LOCAL_COMPUTE'
+      ]
     },
 
     // Domain O: Local-First & Full Offline Boundary (DEC_ID_10)
     {
       requirement_id: 'REQ-KAD-OFFLINE-001',
-      statement: 'KAD-PI MUST maintain full core engineering, research, knowledge, verification, and work package execution capabilities completely offline using deterministic tools, local models, and the local Knowledge Vault.',
+      statement: 'KAD-PI core engineering, research, knowledge, verification, and work package execution MUST be designed to operate completely offline; empirical validation of full autonomous offline survival remains EXPERIMENT_REQUIRED under EXP-KAD-OFFLINE-SURVIVAL-001.',
       normative_level: 'MUST',
       plane: 'TARGET',
       domain_id: 'LOCAL_FIRST_OFFLINE_BOUNDARY',
@@ -469,13 +568,19 @@ export function compileIdealStateData(events = [], normalizations = []) {
       normalization_refs: ['DEC_ID_10'],
       current_state_refs: ['bin/workctl', 'bin/kad doctor'],
       research_refs: [],
-      rationale: 'Authoritative choice in DEC_ID_10 mandates complete autonomous survival during total WAN disconnect.',
+      rationale: 'Authoritative choice in DEC_ID_10 mandates core offline design while recognizing full empirical survival is experiment-gated.',
       verification_strategy: 'Simulated WAN fault-injection benchmark (EXP-KAD-OFFLINE-SURVIVAL-001).',
       risk_class: 'HIGH',
       dependencies: ['REQ-KAD-ID-001', 'REQ-KAD-KNOW-001'],
       implementation_status: 'PARTIAL',
       target_horizon: '3_MONTH',
-      reversibility_or_change_cost: 'HIGH_REARCHITECT'
+      reversibility_or_change_cost: 'HIGH_REARCHITECT',
+      offline_qualification: {
+        target_specification: 'FULL_CORE_OFFLINE_DESIGN',
+        normative_level: 'MUST',
+        qualification_status: 'EXPERIMENT_REQUIRED',
+        experiment_ref: 'EXP-KAD-OFFLINE-SURVIVAL-001'
+      }
     },
 
     // Domain P: Strategic Horizons & Milestones (DEC_ID_22, DEC_ID_23, DEC_ID_24)
@@ -496,7 +601,8 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-ID-001', 'REQ-KAD-PM-001'],
       implementation_status: 'PARTIAL',
       target_horizon: '3_MONTH',
-      reversibility_or_change_cost: 'MEDIUM_MIGRATION'
+      reversibility_or_change_cost: 'MEDIUM_MIGRATION',
+      milestone_horizon: '3_MONTH'
     },
     {
       requirement_id: 'REQ-KAD-HORIZON-002',
@@ -515,7 +621,8 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-COMP-001', 'REQ-KAD-HORIZON-001'],
       implementation_status: 'NOT_IMPLEMENTED',
       target_horizon: '6_MONTH',
-      reversibility_or_change_cost: 'MEDIUM_MIGRATION'
+      reversibility_or_change_cost: 'MEDIUM_MIGRATION',
+      milestone_horizon: '6_MONTH'
     },
     {
       requirement_id: 'REQ-KAD-HORIZON-003',
@@ -534,7 +641,8 @@ export function compileIdealStateData(events = [], normalizations = []) {
       dependencies: ['REQ-KAD-HORIZON-002', 'REQ-KAD-DIST-001'],
       implementation_status: 'NOT_IMPLEMENTED',
       target_horizon: '12_MONTH',
-      reversibility_or_change_cost: 'HIGH_REARCHITECT'
+      reversibility_or_change_cost: 'HIGH_REARCHITECT',
+      milestone_horizon: '12_MONTH'
     }
   ];
 
@@ -622,8 +730,8 @@ export function compileIdealStateData(events = [], normalizations = []) {
     {
       domain_id: 'ECONOMIC_FINOPS_GOVERNANCE',
       current_state: 'Economic router enforces zero paid API spend by default via local policy; metered calls fail closed.',
-      target_state: 'Granular per-workpackage paid API spend lease system with cryptographic quota tracking.',
-      gap_description: 'Metered spend requires manual toggle; needs workpackage-scoped programmatic budget caps.',
+      target_state: 'Pre-authorized economic envelopes with value-gated escalation; unauthorized spend forbidden, justified metered spend permitted within budget caps.',
+      gap_description: 'Economic router defaults to zero-spend policy; needs envelope configuration and value-gating integration.',
       evidence_refs: ['tools/kad/economic-router.mjs', 'bin/kad doctor'],
       risk_level: 'MEDIUM',
       target_horizon: '3_MONTH',
@@ -652,8 +760,8 @@ export function compileIdealStateData(events = [], normalizations = []) {
     {
       domain_id: 'LOCAL_FIRST_OFFLINE_BOUNDARY',
       current_state: 'Core tools run locally on Linux workstation; local LLM execution tested via Ollama/llama.cpp.',
-      target_state: 'Formally verified WAN-disconnected operational baseline capable of completing complex workpackages offline.',
-      gap_description: 'WAN fault-injection experiment (EXP-KAD-OFFLINE-SURVIVAL-001) required to establish offline empirical proof.',
+      target_state: 'Full core offline design (TARGET) with empirical qualification pending under EXP-KAD-OFFLINE-SURVIVAL-001.',
+      gap_description: 'Deterministic core is offline-capable; full multi-day survival under WAN disconnect requires empirical stress testing.',
       evidence_refs: ['bin/workctl', 'bin/kad doctor'],
       risk_level: 'HIGH',
       target_horizon: '3_MONTH',
@@ -692,8 +800,8 @@ export function compileIdealStateData(events = [], normalizations = []) {
     {
       domain_id: 'KNOWLEDGE_PLANE_STORAGE_TOPOLOGY',
       current_state: 'Markdown Vault in vault/ is canonical; wiki lint and projection synchronization verified (WP-010, WP-011).',
-      target_state: 'Unified KnowledgePlane with schema-validated properties, rebuildable projections, and zero data loss.',
-      gap_description: 'Context plane indexing and search acceleration layers require formal integration.',
+      target_state: 'KnowledgePlane sovereign authority with typed representations (Doctrine in Vault, Evidence in structured records, derived projections rebuildable).',
+      gap_description: 'Vault is primary doctrine surface; need formal multi-representation epistemic indexing.',
       evidence_refs: ['vault/', 'bin/kad-wiki', 'evidence/WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1/'],
       risk_level: 'LOW',
       target_horizon: 'NOW',
@@ -712,8 +820,8 @@ export function compileIdealStateData(events = [], normalizations = []) {
     {
       domain_id: 'CONTRADICTION_INVALIDATION_MANAGEMENT',
       current_state: 'Epistemic status tags exist in metadata; manual dispute recording in vault notes.',
-      target_state: 'Structured contradiction journal with automated fail-closed dependency invalidation.',
-      gap_description: 'Contradiction journaling engine linking conflicting claims to downstream blocking gates.',
+      target_state: 'Impact-scoped contradiction containment (informational annotated, operational/epistemic blocked, constitutional fail-closed).',
+      gap_description: 'Contradiction journaling engine linking conflicting claims to downstream impact-scoped blocking gates.',
       evidence_refs: ['vault/00_Governance/', 'tools/kad/wiki/'],
       risk_level: 'HIGH',
       target_horizon: '3_MONTH',
@@ -932,7 +1040,7 @@ export function compileIdealStateData(events = [], normalizations = []) {
     },
     {
       workpackage_id: 'WP-KAD-CONTRADICTION-JOURNAL-040',
-      title: 'Structured Contradiction Journal, Epistemic Conflict Invalidation & Fail-Closed Gating',
+      title: 'Structured Contradiction Journal, Epistemic Conflict Invalidation & Impact-Scoped Gating',
       why_now: 'Required by REQ-KAD-KNOW-002 to prevent stale or contradictory claims from polluting execution plans.',
       intent_refs: ['DEC_ID_16'],
       dependencies: ['WP-KAD-KNOWLEDGE-LIFECYCLE-034'],
@@ -940,7 +1048,7 @@ export function compileIdealStateData(events = [], normalizations = []) {
       non_scope: ['probabilistic conflict resolution'],
       authority_class: 'epistemic',
       risk_level: 'HIGH',
-      acceptance_evidence: 'Conflicting claims are journaled, tagged CONTESTED, and block downstream dependent automated actions until resolved.',
+      acceptance_evidence: 'Conflicting claims are journaled, tagged CONTESTED, and block downstream dependent automated actions via impact-scoped containment without halting unrelated tasks.',
       estimated_resource_class: 'LOCAL_DETERMINISTIC',
       candidate_execution_provider: 'OMP'
     }
@@ -962,7 +1070,7 @@ export function compileIdealStateData(events = [], normalizations = []) {
 }
 
 /**
- * Validates the Requirements Registry
+ * Validates the Requirements Registry with strict semantic invariant checks
  */
 export function validateRequirementsRegistry(requirements = [], events = []) {
   const errors = [];
@@ -1000,6 +1108,43 @@ export function validateRequirementsRegistry(requirements = [], events = []) {
 
     if (!req.verification_strategy) {
       errors.push(`Requirement ${req.requirement_id} missing verification_strategy`);
+    }
+
+    // Semantic Invariant Checks (Anti-Drift Rules)
+    if (req.economic_policy) {
+      if (req.economic_policy.metered_spend === 'FORBIDDEN_GLOBAL') {
+        errors.push(`Semantic inversion in economic_policy for ${req.requirement_id}: zero metered spend cannot be a global requirement`);
+      }
+      if (req.economic_policy.unauthorized_spend !== 'FORBIDDEN') {
+        errors.push(`Semantic violation in economic_policy for ${req.requirement_id}: unauthorized spend must be FORBIDDEN`);
+      }
+    }
+
+    if (req.knowledge_authority) {
+      if (req.knowledge_authority.authority_owner !== 'KNOWLEDGEPLANE') {
+        errors.push(`Semantic inversion in knowledge_authority for ${req.requirement_id}: KnowledgePlane must be sovereign authority owner, not ${req.knowledge_authority.authority_owner}`);
+      }
+      if (req.knowledge_authority.derived_projections_role === 'CANONICAL_TRUTH') {
+        errors.push(`Semantic inversion in knowledge_authority for ${req.requirement_id}: derived projections cannot be declared canonical truth`);
+      }
+    }
+
+    if (req.contradiction_containment) {
+      if (req.contradiction_containment.containment_model !== 'IMPACT_SCOPED') {
+        errors.push(`Semantic inversion in contradiction_containment for ${req.requirement_id}: containment must be IMPACT_SCOPED, not ${req.contradiction_containment.containment_model}`);
+      }
+    }
+
+    if (req.offline_qualification) {
+      if (req.offline_qualification.qualification_status === 'VERIFIED_CURRENT') {
+        errors.push(`Semantic inversion in offline_qualification for ${req.requirement_id}: full offline survival cannot be claimed as VERIFIED_CURRENT before experiment passes`);
+      }
+    }
+
+    if (req.governance_authority) {
+      if (req.governance_authority.authority_level === 'ADVISORY_OVERRIDE_HUMAN') {
+        errors.push(`Semantic violation in governance_authority for ${req.requirement_id}: advisory consensus cannot override human sovereignty`);
+      }
     }
   }
 
@@ -1113,11 +1258,13 @@ export function renderIdealStateMarkdown(data) {
   lines.push('KAD-PI is an advanced, local-first **Personal Engineering Operating System and Scientific Research Laboratory** designed to maximize human cognitive leverage, epistemic integrity, scientific reproducibility, and practical engineering maintainability.');
   lines.push('');
   lines.push('### Constitutional Core Principles:');
-  lines.push('1. **Human Epistemic Sovereignty**: The project lead (`actor.project_lead`) retains exclusive authority over charter, scope, policy, capital, and canonical doctrine. Models propose; deterministic policy authorizes.');
-  lines.push('2. **TOKENMAXXING over SLOPMAXXING**: Optimize accepted useful work and durable learning per scarce unit of human cognitive attention, remote quota, compute, and money. Raw token speed is explicitly subordinated to correctness.');
+  lines.push('1. **Human Epistemic Sovereignty**: The project lead (`actor.project_lead`) retains exclusive authority over charter, scope, policy, capital, and canonical doctrine. Models propose; deterministic policy authorizes under policy-bounded delegation.');
+  lines.push('2. **TOKENMAXXING over SLOPMAXXING**: Optimize accepted useful work and durable learning per scarce unit of human cognitive attention, remote quota, compute, and money under pre-authorized economic envelopes with value-gated escalation. Raw token speed is explicitly subordinated to correctness.');
   lines.push('3. **Downward Distillation (EXECUTION != LEARNING)**: Execution is strictly decoupled from learning. Validated execution trajectories are distilled offline into deterministic tools, tests, schemas, and compact local specialists.');
   lines.push('4. **Verification Independence**: `MUTATOR != SOLE VERIFIER != ACCEPTANCE AUTHORITY`. No mutating agent may self-certify architectural or code changes.');
-  lines.push('5. **Local-First Baseline Sovereignty**: Core engineering, research, verification, and work package execution MUST remain fully operational offline with zero network connectivity.');
+  lines.push('5. **Local-First Core Design**: Core engineering, research, verification, and work package execution MUST be designed for complete offline operation, with full autonomous offline survival governed under experimental qualification (EXP-KAD-OFFLINE-SURVIVAL-001).');
+  lines.push('6. **KnowledgePlane Epistemic Sovereignty**: The KnowledgePlane maintains authority across multiple typed representations (Canonical Doctrine, Authoritative Evidence Records, Derived Projections). Storage format does not confer authority by itself.');
+  lines.push('7. **Impact-Scoped Contradiction Containment**: Contradictions are journaled and contained strictly to affected dependent paths rather than halting unrelated automation.');
   lines.push('');
   lines.push('---');
   lines.push('');
