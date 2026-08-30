@@ -1,0 +1,20 @@
+{
+  "task": "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+  "project": "kad-pi",
+  "claim_id": "3f869cf6-64af-4a26-a341-dc0060781a90",
+  "actor_label": "codex-main",
+  "started_at": "2026-08-30T08:52:26.578Z",
+  "base_commit": "a0f631c588f57f8101c06d2ea2360b22af4935f8",
+  "owned_paths": [
+    "interface",
+    "site",
+    "dashboard",
+    "tools/kad/test/site*.test.mjs",
+    "tools/kad/test/design*.test.mjs",
+    "tools/kad/test/publication*.test.mjs",
+    "evidence/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T09:07:59.130Z"
+}

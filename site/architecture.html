@@ -1,4 +1,151 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The KAD-PI architecture separates probabilistic proposals from deterministic authority."><title>Architecture — KAD-PI</title><link rel="stylesheet" href="../interface/kad.css"></head>
-<body><header class="site-header"><div class="shell header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">K</span><span class="brand-text">KAD-PI / PUBLIC BRIEF</span></a><nav class="nav" aria-label="Public site"><a href="index.html">Home</a><a aria-current="page" href="architecture.html">Architecture</a><a href="research.html">Research</a><a href="knowledge.html">Knowledge</a><a href="local-ai.html">Local AI</a><a href="roadmap.html">Roadmap</a></nav></div></header>
-<main><section class="shell hero"><p class="eyebrow">Architecture / authority path</p><h1>Probabilistic input. Deterministic acceptance.</h1><p class="lede">KAD-PI treats models as bounded interpreters and assistants. They can produce a CandidateIntent or a research proposal; they cannot silently become the system of record.</p></section><section class="shell section"><div class="flow"><div class="flow-step"><strong>Source</strong><span>directive · ADR · evidence</span></div><div class="flow-step"><strong>KnowledgePlane</strong><span>provenance · trust · retrieval</span></div><div class="flow-step"><strong>Policy</strong><span>schema · authority · scope</span></div><div class="flow-step"><strong>Resolver</strong><span>canonical state transition</span></div><div class="flow-step"><strong>Interface</strong><span>read-only presentation</span></div></div></section><section class="shell section grid grid-2"><article class="panel panel--accent"><p class="eyebrow">PON</p><h2>Selective reaction</h2><p>Notifications represent relevant state changes. They are not a reason to create a global event bus or blind polling loop. Conditions and causal dependencies remain typed and inspectable.</p></article><article class="panel panel--gold"><p class="eyebrow">STC</p><h2>Scoped capability</h2><p>Components declare required coeffects and provided capabilities. Managed effects register inverses; failure unwinds tracked work and reduces the affected capability.</p></article><article class="panel panel--cyan"><p class="eyebrow">TDD</p><h2>Executable evidence</h2><p>Tests exercise seams where behavior is observable: trust filtering, lifecycle recovery, deterministic replay, and graceful degradation.</p></article><article class="panel"><p class="eyebrow">KnowledgePlane</p><h2>Derived state stays derived.</h2><p>Indexes, summaries, retrieval caches, and wiki projections accelerate access. Canonical artifacts outrank them and remain recoverable when adapters fail.</p><a href="knowledge.html">How the knowledge plane works →</a></article></section></main><footer class="footer"><div class="shell footer-inner"><span>KAD-PI / architecture</span><span>Source > derivation > interface</span></div></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The KAD-PI architecture strictly separates probabilistic proposals from deterministic canonical authority.">
+  <title>Architecture — KAD-PI</title>
+  <link rel="stylesheet" href="../interface/kad.css">
+</head>
+<body data-page="architecture">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span class="brand-text">KAD-PI / PUBLIC BRIEF</span>
+      </a>
+      <nav class="nav" aria-label="Public site">
+        <a href="index.html">Home</a>
+        <a aria-current="page" href="architecture.html">Architecture</a>
+        <a href="research.html">Research</a>
+        <a href="knowledge.html">Knowledge</a>
+        <a href="local-ai.html">Local AI</a>
+        <a href="roadmap.html">Roadmap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="shell hero">
+      <p class="eyebrow">Architecture / Authority Separation</p>
+      <h1>Probabilistic input. Deterministic acceptance.</h1>
+      <p class="lede">KAD-PI treats models as bounded interpreters and assistants. They can produce candidate proposals and execute scoped work; they cannot unilaterally mutate canonical state or grant themselves acceptance.</p>
+    </section>
+
+    <section class="shell section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">01 / Pipeline</p>
+          <h2>The Canonical Authority Flow</h2>
+        </div>
+      </div>
+      <div class="flow" aria-label="KAD-PI authority flow pipeline">
+        <div class="flow-step"><strong>Source</strong><span>directive · ADR · evidence</span></div>
+        <div class="flow-step"><strong>KnowledgePlane</strong><span>provenance · trust · retrieval</span></div>
+        <div class="flow-step"><strong>Policy</strong><span>schema · authority · scope</span></div>
+        <div class="flow-step"><strong>Resolver</strong><span>canonical state transition</span></div>
+        <div class="flow-step"><strong>Observation</strong><span>append-only journal</span></div>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">02 / Architectural Planes</p>
+          <h2>Five strictly separated execution boundaries.</h2>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="panel panel--accent">
+          <p class="kicker">PLANE 01</p>
+          <h3>Canonical Knowledge Vault</h3>
+          <p>Human-editable Obsidian Markdown vault (<code>vault/</code>) structured into explicit authority zones (Governance, Corpus, Research, Systems, Archive). The single durable source of truth.</p>
+        </article>
+        <article class="panel panel--gold">
+          <p class="kicker">PLANE 02</p>
+          <h3>Projection Compiler</h3>
+          <p>Deterministic compiler (<code>bin/kad-wiki rebuild</code>) transforming canonical notes into typed projections for Sofia, the public site, README, and downstream tools with cryptographic provenance.</p>
+        </article>
+        <article class="panel panel--cyan">
+          <p class="kicker">PLANE 03</p>
+          <h3>Workpackage Engine</h3>
+          <p>Deterministic state machine (<code>workctl</code>) governing claims, mutating locks, preflight verification, execution scopes, test requirements, and transition gates.</p>
+        </article>
+        <article class="panel panel--green">
+          <p class="kicker">PLANE 04</p>
+          <h3>Observatory & Telemetry</h3>
+          <p>Append-only tamper-evident causal journal tracking actual vs shadow economic routing decisions, token usage, and execution telemetry without altering production authority.</p>
+        </article>
+        <article class="panel">
+          <p class="kicker">PLANE 05</p>
+          <h3>Presentation Interfaces</h3>
+          <p>Read-only observation surfaces: the Sofia v3 Cockpit for local interactive graph exploration, and the static public site for architecture briefs and public research dissemination.</p>
+        </article>
+        <article class="panel">
+          <p class="kicker">INVARIANT</p>
+          <h3>Zero Back-Propagation</h3>
+          <p>No presentation surface, browser script, or AI assistant can write directly to canonical state without passing through the workpackage claim, review, and verification gate.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">03 / Technology Decisions</p>
+          <h2>Architecture Decisions (ADRs)</h2>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ADR</th>
+              <th>Title</th>
+              <th>Decision</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ADR-0009</code></td>
+              <td>Frontend & Visualization Technology Stack</td>
+              <td>Adopt Cytoscape.js (graph) + Apache ECharts (telemetry) over Vanilla ESM</td>
+              <td><span class="status status--ACTIVE">ACCEPTED</span></td>
+            </tr>
+            <tr>
+              <td><code>ADR-0010</code></td>
+              <td>Obsidian Governance & Plugin Model</td>
+              <td>Preserve zero-plugin core degraded mode; audit community bridge plugins</td>
+              <td><span class="status status--ACTIVE">ACCEPTED</span></td>
+            </tr>
+            <tr>
+              <td><code>ADR-0011</code></td>
+              <td>OMP Extension Model & Tool Boundary</td>
+              <td>Keep OMP extension thin; bridge telemetry without coupling authority</td>
+              <td><span class="status status--ACTIVE">ACCEPTED</span></td>
+            </tr>
+            <tr>
+              <td><code>ADR-0012</code></td>
+              <td>Agentic Visualization & Typed Graph</td>
+              <td>3-Tier Epistemic Authority: Canonical (solid), Derived (cyan), Heuristic (dashed)</td>
+              <td><span class="status status--ACTIVE">ACCEPTED</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <span>KAD-PI / Governed Local AI Research Platform</span>
+      <span>Fail-Closed Public Projection · Zero Direct Vault Write Authority</span>
+    </div>
+  </footer>
+
+  <script type="module" src="site.js"></script>
+</body>
+</html>

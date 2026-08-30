@@ -1,0 +1,137 @@
+/**
+ * KAD-PI Design System Foundation
+ * Global CSS resets, body texture, typography scale, links, and accessibility rules
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--ink);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: linear-gradient(135deg, #0a0b0f 0%, #0e1118 48%, #131019 100%);
+  color: var(--paper);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .14;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 2%) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(to bottom, black, transparent 82%);
+}
+
+/* Accessibility: Skip to Content */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 16px;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  text-decoration: none;
+  border-radius: var(--radius);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.skip-link:focus {
+  top: 16px;
+  outline: var(--focus-ring);
+  outline-offset: 4px;
+}
+
+/* Links & Buttons */
+a {
+  color: var(--cyan);
+  text-decoration-thickness: .08em;
+  text-underline-offset: .2em;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--paper);
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 4px;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: var(--paper);
+  line-height: 1.1;
+  letter-spacing: -.025em;
+}
+
+h1 {
+  max-width: 900px;
+  font-size: var(--font-size-3xl);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, var(--font-size-2xl));
+}
+
+h3 {
+  font-size: var(--font-size-md);
+}
+
+h4 {
+  font-size: var(--font-size-base);
+}
+
+p {
+  max-width: 68ch;
+  color: var(--muted);
+  margin: 0 0 1em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.lede {
+  max-width: 700px;
+  margin: 22px 0 0;
+  font-size: clamp(1rem, 2vw, 1.24rem);
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}

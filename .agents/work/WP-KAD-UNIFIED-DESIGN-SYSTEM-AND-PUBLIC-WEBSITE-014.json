@@ -1,0 +1,74 @@
+{
+  "id": "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+  "project": "kad-pi",
+  "title": "Unified KAD Design System, Shared Presentation Foundation & Modernized Public Website",
+  "status": "REVIEW",
+  "priority": 170,
+  "spec_ref": "user:/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+  "fixed_point": "a0f631c588f57f8101c06d2ea2360b22af4935f8",
+  "scope": [
+    "interface/",
+    "site/",
+    "dashboard/",
+    "tools/kad/test/site*.test.mjs",
+    "tools/kad/test/design*.test.mjs",
+    "tools/kad/test/publication*.test.mjs",
+    "evidence/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014/"
+  ],
+  "non_scope": [
+    "Obsidian bridge plugin implementation (WP-015)",
+    "live SSE telemetry stream (WP-016)",
+    "agentic graph query engine (WP-017)",
+    "new frontend frameworks or SPAs (React, Vue, Svelte, Vite, Astro)",
+    "public site write endpoints or auth",
+    "raw vault exposure to browser"
+  ],
+  "owned_paths": [
+    "interface/",
+    "site/",
+    "dashboard/",
+    "tools/kad/test/site*.test.mjs",
+    "tools/kad/test/design*.test.mjs",
+    "tools/kad/test/publication*.test.mjs",
+    "evidence/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-wiki lint",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014/",
+  "blocked_by": [
+    "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012"
+  ],
+  "blocks": [
+    "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-015"
+  ],
+  "acceptance_criteria": [
+    "Reusable KAD design tokens, foundation, and shared UI components extracted into interface/",
+    "Sofia v3 migrated to shared design foundation with zero regression across graph, charts, and telemetry",
+    "Public website modernized with consistent information architecture, semantic landmarks, and responsive navigation",
+    "Fail-closed publication filter verified with zero private/internal vault leakage",
+    "Public knowledge/project explorer implemented lightweight with DOM filtering and progressive enhancement",
+    "Static-first deployment readiness verified with no runtime daemon/server requirement",
+    "Accessibility, reduced motion, and 6 graceful degradation failure modes verified",
+    "Full test suite, doctors, and linters pass cleanly"
+  ],
+  "description": "Extract reusable KAD visual design foundation (tokens, foundation, components), migrate Sofia v3 without regression, and modernize the static public website across architecture, research, knowledge, and roadmap surfaces.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+  "claim": null
+}

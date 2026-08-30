@@ -1,4 +1,86 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="How local AI fits into the governed KAD-PI platform."><title>Local AI — KAD-PI</title><link rel="stylesheet" href="../interface/kad.css"></head>
-<body><header class="site-header"><div class="shell header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">K</span><span class="brand-text">KAD-PI / PUBLIC BRIEF</span></a><nav class="nav" aria-label="Public site"><a href="index.html">Home</a><a href="architecture.html">Architecture</a><a href="research.html">Research</a><a href="knowledge.html">Knowledge</a><a aria-current="page" href="local-ai.html">Local AI</a><a href="roadmap.html">Roadmap</a></nav></div></header>
-<main><section class="shell hero"><p class="eyebrow">Local AI / bounded capability</p><h1>Local models are tools, not sovereigns.</h1><p class="lede">KAD-PI treats a model binding as a capability with identity, scope, resource constraints, and qualification evidence. A model can be present without being qualified or active.</p></section><section class="shell section grid grid-2"><article class="panel panel--green"><p class="kicker">QUALIFICATION</p><h2>State beats implication.</h2><p><strong>FILE_ONLY</strong> means a declaration exists. <strong>LOADABLE</strong> means registry resources can load. <strong>QUALIFIED</strong> means evidence passed its gate. <strong>ACTIVE</strong> means runtime observation supports that claim.</p></article><article class="panel panel--accent"><p class="kicker">FAILURE</p><h2>Unavailable is visible.</h2><p>A missing endpoint or degraded model reduces the affected capability. It does not silently substitute another model, widen permissions, or alter authority.</p></article></section><section class="shell section"><div class="panel"><p class="eyebrow">Why local?</p><h2>Control the boundary.</h2><ul class="list"><li>Keep sensitive work inside the narrowest valid trust domain.</li><li>Make resource cost and lifecycle observable.</li><li>Preserve deterministic fallback when cognition is unavailable.</li><li>Record provenance instead of treating generated text as accepted knowledge.</li></ul></div></section></main><footer class="footer"><div class="shell footer-inner"><span>KAD-PI / local AI</span><span>Role ≠ model ≠ provider</span></div></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How local AI models and hardware execution fit into the governed KAD-PI platform.">
+  <title>Local AI — KAD-PI</title>
+  <link rel="stylesheet" href="../interface/kad.css">
+</head>
+<body data-page="local-ai">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span class="brand-text">KAD-PI / PUBLIC BRIEF</span>
+      </a>
+      <nav class="nav" aria-label="Public site">
+        <a href="index.html">Home</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="research.html">Research</a>
+        <a href="knowledge.html">Knowledge</a>
+        <a aria-current="page" href="local-ai.html">Local AI</a>
+        <a href="roadmap.html">Roadmap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="shell hero">
+      <p class="eyebrow">Local AI / Bounded Capability</p>
+      <h1>Local models are tools, not sovereigns.</h1>
+      <p class="lede">KAD-PI treats a model binding as an observable capability with explicit identity, scope, resource bounds, and qualification evidence. A model can be locally present without being qualified or active.</p>
+    </section>
+
+    <section class="shell section grid grid-2">
+      <article class="panel panel--green">
+        <p class="kicker">QUALIFICATION</p>
+        <h2>State beats implication.</h2>
+        <p><strong>FILE_ONLY</strong> means a model weight file exists on disk. <strong>LOADABLE</strong> means the runtime adapter can successfully initialize it. <strong>QUALIFIED</strong> means empirical evidence passed the benchmark gate. <strong>ACTIVE</strong> means live telemetry confirms stable inference.</p>
+      </article>
+      <article class="panel panel--gold">
+        <p class="kicker">ECONOMIC ROUTING</p>
+        <h2>TOKENMAXXING over SLOPMAXXING.</h2>
+        <p>Free, deterministic, and local tools are executed first. Premium commercial models require explicit operator authorization. Inferences are budgeted, tracked, and counterfactually evaluated.</p>
+      </article>
+    </section>
+
+    <section class="shell section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">02 / Local Stack</p>
+          <h2>Hardware & Execution Infrastructure</h2>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="panel">
+          <p class="kicker">HARDWARE ACCELERATION</p>
+          <h3>AMD ROCm & Vulkan</h3>
+          <p>Navi 44 (Radeon RX 9060 XT) and CPU fallback execution with deterministic vRAM quota management and telemetry monitoring via <code>amdgpu_top</code>.</p>
+        </article>
+        <article class="panel">
+          <p class="kicker">LOCAL MODELS</p>
+          <h3>Stheno & Specialized LMs</h3>
+          <p>Local GGUF models bound to strict task domains (Stheno v3.2 for world/persona simulation; Qwen2.5-Coder for deterministic coding assistants).</p>
+        </article>
+        <article class="panel">
+          <p class="kicker">ISOLATION</p>
+          <h3>Process & State Safety</h3>
+          <p>Local inference runs in dedicated subprocesses with timeout ceilings and memory caps to prevent system lockups or memory leaks.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <span>KAD-PI / Governed Local AI Research Platform</span>
+      <span>Fail-Closed Public Projection · Zero Direct Vault Write Authority</span>
+    </div>
+  </footer>
+
+  <script type="module" src="site.js"></script>
+</body>
+</html>

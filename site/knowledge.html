@@ -1,4 +1,85 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="KAD-PI KnowledgePlane: exact sources, derived projections, and graceful semantic degradation."><title>KnowledgePlane — KAD-PI</title><link rel="stylesheet" href="../interface/kad.css"></head>
-<body data-page="knowledge"><header class="site-header"><div class="shell header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">K</span><span class="brand-text">KAD-PI / PUBLIC BRIEF</span></a><nav class="nav" aria-label="Public site"><a href="index.html">Home</a><a href="architecture.html">Architecture</a><a href="research.html">Research</a><a aria-current="page" href="knowledge.html">Knowledge</a><a href="local-ai.html">Local AI</a><a href="roadmap.html">Roadmap</a></nav></div></header>
-<main><section class="shell hero"><p class="eyebrow">KnowledgePlane / governed projection</p><h1>Useful context without a new authority layer.</h1><p class="lede">The KnowledgePlane gives KAD-PI a stable place to recover exact facts, preserve provenance, and compile bounded context. Projections are rebuildable. Canonical sources remain in charge.</p></section><section class="shell section grid grid-3"><article class="panel panel--accent"><p class="kicker">CANONICAL</p><h3>Sources of truth</h3><p>Directives, accepted ADRs, tests, evidence receipts, and human-authored artifacts outrank indexes and summaries.</p></article><article class="panel panel--gold"><p class="kicker">DERIVED</p><h3>Projections</h3><p>Generated wiki records carry source hashes, epistemic classes, acceptance state, and trust metadata. Losing them does not lose the source.</p></article><article class="panel panel--cyan"><p class="kicker">FALLBACK</p><h3>Exact retrieval</h3><p>OpenViking is optional. If semantic capability is unavailable or stale, deterministic exact retrieval remains usable and visibly degraded only where appropriate.</p></article></section><section class="shell section"><div class="panel panel--gold"><p class="eyebrow">Public data contract</p><h2 id="knowledge-state">Loading reviewed state…</h2><p>The website receives a sanitized build-time projection, not the internal project-state database. Internal records, hashes, paths, prompts, traces, and operational controls stay behind the publication boundary.</p><div class="meta"><span id="public-record-count">Records: —</span><span id="public-projection-id">Projection: —</span></div></div></section></main><footer class="footer"><div class="shell footer-inner"><span>KAD-PI / KnowledgePlane</span><span>Canonical sources remain authoritative</span></div></footer><script type="module" src="site.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KAD-PI KnowledgePlane: exact sources, derived projections, and graceful semantic degradation.">
+  <title>KnowledgePlane — KAD-PI</title>
+  <link rel="stylesheet" href="../interface/kad.css">
+</head>
+<body data-page="knowledge">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span class="brand-text">KAD-PI / PUBLIC BRIEF</span>
+      </a>
+      <nav class="nav" aria-label="Public site">
+        <a href="index.html">Home</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="research.html">Research</a>
+        <a aria-current="page" href="knowledge.html">Knowledge</a>
+        <a href="local-ai.html">Local AI</a>
+        <a href="roadmap.html">Roadmap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="shell hero">
+      <p class="eyebrow">KnowledgePlane / Governed Projection</p>
+      <h1>Useful context without a new authority layer.</h1>
+      <p class="lede">The KnowledgePlane provides a deterministic mechanism to recover exact facts, preserve provenance, and compile bounded context. Projections are rebuildable; canonical sources remain in charge.</p>
+    </section>
+
+    <section class="shell section grid grid-3">
+      <article class="panel panel--accent">
+        <p class="kicker">CANONICAL</p>
+        <h3>Sources of Truth</h3>
+        <p>Directives, accepted ADRs, tests, evidence receipts, and human-authored notes outrank compiled indexes and model-generated summaries.</p>
+      </article>
+      <article class="panel panel--gold">
+        <p class="kicker">DERIVED</p>
+        <h3>Projections</h3>
+        <p>Generated records carry source hashes, epistemic tiers, and timestamps. If a projection conflicts with a canonical note, the projection is rebuilt or discarded.</p>
+      </article>
+      <article class="panel panel--cyan">
+        <p class="kicker">DEGRADATION</p>
+        <h3>Graceful Fallback</h3>
+        <p>If specialized retrieval tools or daemon indices are offline, retrieval falls back to deterministic filesystem and linear text parsing without loss of truth.</p>
+      </article>
+    </section>
+
+    <section class="shell section">
+      <div id="knowledge-explorer-container">
+        <!-- Progressive Enhancement: interactive search and filter rendered by site.js if JS is active -->
+        <div class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Public Records</p>
+              <h2>Governed Knowledge Projections</h2>
+            </div>
+          </div>
+          <p>The KnowledgePlane compiles public records from reviewed canonical sources. Enable JavaScript for real-time text search and category filtering.</p>
+          <div class="meta" style="margin-top: 14px;">
+            <span id="knowledge-state">Public projection status: <span class="status status--ACTIVE">ACTIVE</span></span>
+            <span id="public-record-count">Public records: 62</span>
+            <span id="public-projection-id">Schema: kad-public-state-v1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <span>KAD-PI / Governed Local AI Research Platform</span>
+      <span>Fail-Closed Public Projection · Zero Direct Vault Write Authority</span>
+    </div>
+  </footer>
+
+  <script type="module" src="site.js"></script>
+</body>
+</html>

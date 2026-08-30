@@ -4,29 +4,150 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="KAD-PI is a local-first, evidence-gated research platform for governed AI and agent systems.">
-  <title>KAD-PI — governed local AI research</title>
+  <title>KAD-PI — Governed Local AI Research</title>
   <link rel="stylesheet" href="../interface/kad.css">
 </head>
 <body data-page="home">
-  <header class="site-header"><div class="shell header-inner">
-    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">K</span><span class="brand-text">KAD-PI / PUBLIC BRIEF</span></a>
-    <nav class="nav" aria-label="Public site"><a aria-current="page" href="index.html">Home</a><a href="architecture.html">Architecture</a><a href="research.html">Research</a><a href="knowledge.html">Knowledge</a><a href="local-ai.html">Local AI</a><a href="roadmap.html">Roadmap</a></nav>
-  </div></header>
-  <main>
-    <section class="shell hero"><div class="hero-grid">
-      <div><p class="eyebrow">KAD-PI / research platform</p><h1>Build systems that can explain what they did.</h1><p class="lede">KAD-PI is a local-first experimental platform for governed AI, agent harnesses, and deterministic knowledge. Models may propose. Evidence and policy decide.</p><div class="cta-row"><a class="button button--hot" href="architecture.html">Read the architecture</a><a class="button" href="../README.md">Open the repository</a></div></div>
-      <aside class="panel panel--accent hero-aside" aria-label="Current project signal"><p class="kicker">Current signal</p><div id="project-status"><span class="loading">Loading public state…</span></div><div class="signal"><div class="signal-row"><span>Projection sources</span><strong id="source-count">—</strong></div><div class="signal-row"><span>Governed records</span><strong id="record-count">—</strong></div><div class="signal-row"><span>Publication</span><strong>PUBLIC</strong></div></div></aside>
-    </div></section>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <section class="shell section"><div class="section-head"><div><p class="eyebrow">01 / definition</p><h2>A research platform, not an oracle.</h2></div></div><div class="grid grid-3"><article class="panel panel--accent"><h3>Local-first</h3><p>Local models and tools are preferred when they fit the task. Their availability and qualification remain observable states, not assumptions.</p></article><article class="panel panel--gold"><h3>Evidence-gated</h3><p>Claims are tied to durable sources, tests, receipts, and explicit epistemic classes. A model saying “pass” is not evidence of pass.</p></article><article class="panel panel--cyan"><h3>Deterministic authority</h3><p>Probabilistic interpretation stays outside canonical mutation. Validation, resolution, and acceptance are explicit seams.</p></article></div></section>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span class="brand-text">KAD-PI / PUBLIC BRIEF</span>
+      </a>
+      <nav class="nav" aria-label="Public site">
+        <a aria-current="page" href="index.html">Home</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="research.html">Research</a>
+        <a href="knowledge.html">Knowledge</a>
+        <a href="local-ai.html">Local AI</a>
+        <a href="roadmap.html">Roadmap</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="shell section"><div class="section-head"><div><p class="eyebrow">02 / system shape</p><h2>Authority flows down. No interface writes it back.</h2></div></div><div class="flow" aria-label="KAD-PI authority flow"><div class="flow-step"><strong>Evidence</strong><span>sources, decisions, tests</span></div><div class="flow-step"><strong>Knowledge</strong><span>bounded projection</span></div><div class="flow-step"><strong>Orchestration</strong><span>PON / STC lifecycle</span></div><div class="flow-step"><strong>Capabilities</strong><span>local and remote, qualified</span></div><div class="flow-step"><strong>Interfaces</strong><span>display, never author</span></div></div></section>
+  <main id="main-content">
+    <section class="shell hero">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">KAD-PI / Research Platform</p>
+          <h1>Build systems that can explain what they did.</h1>
+          <p class="lede">KAD-PI is a local-first experimental platform for governed AI, agent harnesses, and deterministic knowledge. Models may propose; deterministic evidence and policy decide.</p>
+          <div class="cta-row">
+            <a class="button button--hot" href="architecture.html">Read Architecture</a>
+            <a class="button" href="knowledge.html">Explore Knowledge</a>
+          </div>
+        </div>
+        <aside class="panel panel--accent hero-aside" aria-label="Current project signal">
+          <p class="kicker">Current Signal</p>
+          <div id="project-status">
+            <span class="status status--ACTIVE">ACTIVE PLATFORM</span>
+          </div>
+          <div class="signal">
+            <div class="signal-row"><span>Projection sources</span><strong id="source-count">62</strong></div>
+            <div class="signal-row"><span>Governed records</span><strong id="record-count">62</strong></div>
+            <div class="signal-row"><span>Publication</span><strong>FAIL_CLOSED</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-    <section class="shell section"><div class="section-head"><div><p class="eyebrow">03 / doctrines</p><h2>Four ideas keep the system honest.</h2></div></div><div class="grid grid-2"><article class="panel"><h3>PON — notify, don't poll</h3><p>Relevant state changes should produce bounded notifications. Causal dependencies stay explicit and selective.</p></article><article class="panel"><h3>STC — declare, don't reach</h3><p>Components declare coeffects and capabilities. Effects are scoped, attributable, and recoverable inside their boundary.</p></article><article class="panel"><h3>TDD — test, don't claim</h3><p>RED → minimum GREEN → REFACTOR → VERIFY. Observable behavior outranks implementation confidence.</p></article><article class="panel"><h3>Graceful degradation</h3><p>Failure reduces a capability and preserves the safest useful path. It never widens trust, authority, permissions, or spend.</p></article></div></section>
+    <section class="shell section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">01 / Foundation</p>
+          <h2>A research platform, not an oracle.</h2>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="panel panel--accent">
+          <h3>Local-First</h3>
+          <p>Local models and tools are prioritized. Availability and qualification remain observable states backed by empirical test receipts, not assumptions.</p>
+        </article>
+        <article class="panel panel--gold">
+          <h3>Evidence-gated</h3>
+          <p>Claims are anchored to primary sources, deterministic tests, receipts, and 3-tier epistemic classes. A model asserting success is never evidence of success.</p>
+        </article>
+        <article class="panel panel--cyan">
+          <h3>Deterministic authority</h3>
+          <p>Probabilistic interpretation remains strictly outside canonical state mutation. Policy validation, state reconciliation, and acceptance criteria outrank inference.</p>
+        </article>
+      </div>
+    </section>
 
-    <section class="shell section"><div class="grid grid-2"><article class="panel panel--gold"><p class="eyebrow">04 / now</p><h2 id="state-heading">Current state is loaded from a reviewed public projection.</h2><p id="state-copy">The public site is static-first. It does not connect to OpenViking, Needle, model runtimes, or the operational dashboard.</p><a href="knowledge.html">Inspect the knowledge plane →</a></article><article class="panel"><p class="eyebrow">05 / continue</p><h2>Start with the evidence.</h2><p>Go deeper through the repository’s directive, context, ADRs, generated project state, tests, and workpackage receipts.</p><div class="cta-row"><a class="button" href="../README.md">GitHub landing</a><a class="button" href="../wiki/generated/kad-canonical/index.md">Generated wiki</a></div></article></div></section>
+    <section class="shell section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">02 / System Shape</p>
+          <h2>Authority flows down. No presentation surface writes back.</h2>
+        </div>
+      </div>
+      <div class="flow" aria-label="KAD-PI authority flow">
+        <div class="flow-step"><strong>Evidence</strong><span>sources, decisions, tests</span></div>
+        <div class="flow-step"><strong>Knowledge</strong><span>bounded projection</span></div>
+        <div class="flow-step"><strong>Orchestration</strong><span>PON / STC lifecycle</span></div>
+        <div class="flow-step"><strong>Capabilities</strong><span>local and remote, qualified</span></div>
+        <div class="flow-step"><strong>Interfaces</strong><span>display, never author</span></div>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">03 / Core Doctrines</p>
+          <h2>Four operational doctrines govern every execution.</h2>
+        </div>
+      </div>
+      <div class="grid grid-2">
+        <article class="panel">
+          <h3>PON — Notify, Don't Poll</h3>
+          <p>Observable state changes produce bounded notifications. Causal dependencies stay explicit, traceable, and tamper-evident.</p>
+        </article>
+        <article class="panel">
+          <h3>STC — Declare, Don't Reach</h3>
+          <p>Components explicitly declare their coeffects, required capabilities, and owned paths. Execution boundaries prevent cross-domain contamination.</p>
+        </article>
+        <article class="panel">
+          <h3>TDD — Test, Don't Claim</h3>
+          <p>Failing contract test (RED) → minimal fix (GREEN) → refactor → deterministic verification. Observable test behavior outranks model confidence.</p>
+        </article>
+        <article class="panel">
+          <h3>GD — Graceful Degradation</h3>
+          <p>Subsystem failure narrows capability rather than corrupting authority. Offline APIs, missing projections, or disabled JavaScript degrade safely.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="grid grid-2">
+        <article class="panel panel--gold">
+          <p class="eyebrow">04 / Knowledge Plane</p>
+          <h2>Reviewed canonical projections.</h2>
+          <p>The public site is static-first. It consumes only approved public projection artifacts and requires no runtime server, database, or external CDN.</p>
+          <div class="cta-row">
+            <a class="button button--cyan" href="knowledge.html">Inspect Public Knowledge →</a>
+          </div>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">05 / Roadmap & Milestones</p>
+          <h2>Verified Increments.</h2>
+          <p>Review completed architectural workpackages, active research corpora, and planned increments.</p>
+          <div class="cta-row">
+            <a class="button" href="roadmap.html">View Roadmap →</a>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
-  <footer class="footer"><div class="shell footer-inner"><span>KAD-PI / public explanatory surface</span><span>PUBLIC projection · no operational controls</span></div></footer>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <span>KAD-PI / Governed Local AI Research Platform</span>
+      <span>Fail-Closed Public Projection · Zero Direct Vault Write Authority</span>
+    </div>
+  </footer>
+
   <script type="module" src="site.js"></script>
 </body>
 </html>
