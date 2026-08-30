@@ -1,0 +1,28 @@
+{
+  "task": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+  "project": "kad-pi",
+  "claim_id": "5d7adb18-284f-4277-88f0-2f547d690a0a",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T01:24:07.020Z",
+  "base_commit": "5f2a615f513157c2ad9170e0d292f20163894e70",
+  "owned_paths": [
+    "tools/kad/telemetry/observatory.mjs",
+    "tools/kad/telemetry/economic-shadow.mjs",
+    "tools/kad/telemetry/economic-adapter.mjs",
+    "tools/kad/telemetry/view-model.mjs",
+    "tools/kad/telemetry/control-plane-runtime.mjs",
+    "tools/kad/telemetry/index.mjs",
+    "tools/kad/test/observatory.test.mjs",
+    "tools/kad/test/economic-shadow.test.mjs",
+    "tools/kad/test/telemetry-usage-bridge.test.mjs",
+    "tools/kad/test/telemetry.test.mjs",
+    "tools/kad/test/control-plane.test.mjs",
+    "evidence/WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+    "docs/agents/observatory.md",
+    "wiki/KAD_Counterfactual_Observatory_2026-08-30.md",
+    "bin/kad"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T01:30:55.252Z"
+}

@@ -7,6 +7,7 @@ export function buildControlPlaneViewModel({
   gpuState = null,
   healthState = null,
   tokenmaxxingMetrics = null,
+  observatoryState = null,
   now = Date.now(),
 } = {}) {
   // 1. Overview
@@ -128,6 +129,7 @@ export function buildControlPlaneViewModel({
       shadow_same_or_different: economicState?.shadow?.same_or_different ?? null,
     },
     economic: economicState,
+    observatory: observatoryState,
     providers: providerViews,
     gpu: gpuState,
     services: healthState?.services ?? {},

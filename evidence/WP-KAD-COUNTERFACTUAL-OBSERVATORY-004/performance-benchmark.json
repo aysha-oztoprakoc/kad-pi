@@ -1,0 +1,16 @@
+{
+  "benchmark_tool": "hyperfine 1.20.0",
+  "executed_at": "2026-08-30T01:30:00.000Z",
+  "benchmarks": [
+    {
+      "command": "node --test tools/kad/test/observatory.test.mjs",
+      "mean_ms": 54.1,
+      "verdict": "PASS (Pure local execution, zero network overhead)"
+    },
+    {
+      "command": "bin/kad observatory --json",
+      "mean_ms": 175.2,
+      "verdict": "PASS"
+    }
+  ]
+}

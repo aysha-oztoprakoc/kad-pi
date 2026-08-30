@@ -1,0 +1,37 @@
+{
+  "probe_name": "counterfactual-classification-probe",
+  "tested_at": "2026-08-30T01:30:00.000Z",
+  "checks": [
+    {
+      "claim": "Counterfactual empirical token savings",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "Counterfactual quality delta",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "Counterfactual pass rate",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "Observed actual tokens",
+      "expected_classification": "OBSERVED",
+      "actual_classification": "OBSERVED",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "Divergence rates and opportunity counts",
+      "expected_classification": "DERIVED",
+      "actual_classification": "DERIVED",
+      "verdict": "PASS"
+    }
+  ],
+  "overall_verdict": "PASS"
+}

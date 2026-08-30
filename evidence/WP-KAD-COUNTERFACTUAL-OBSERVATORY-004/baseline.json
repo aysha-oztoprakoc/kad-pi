@@ -1,0 +1,12 @@
+{
+  "baseline_commit": "5f2a615f513157c2ad9170e0d292f20163894e70",
+  "workpackage": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+  "fixed_point": "5f2a615f513157c2ad9170e0d292f20163894e70",
+  "dependencies": {
+    "WP-KAD-OPERATOR-CONTROL-PLANE-001": "ACCEPTED",
+    "WP-KAD-USAGE-BRIDGE-002": "ACCEPTED",
+    "WP-KAD-ECONOMIC-ROUTER-SHADOW-003": "ACCEPTED"
+  },
+  "initial_tests_count": 464,
+  "verdict": "READY"
+}

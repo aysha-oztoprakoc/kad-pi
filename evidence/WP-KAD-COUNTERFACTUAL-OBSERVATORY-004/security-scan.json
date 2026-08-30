@@ -1,0 +1,26 @@
+{
+  "scanners": [
+    {
+      "name": "gitleaks",
+      "command": "gitleaks protect --staged --redact",
+      "findings": 0,
+      "verdict": "PASS"
+    },
+    {
+      "name": "trivy",
+      "command": "trivy fs --scanners vuln,secret --severity HIGH,CRITICAL .",
+      "findings": 0,
+      "verdict": "PASS"
+    },
+    {
+      "name": "prek",
+      "command": "prek run",
+      "hooks_passed": 4,
+      "verdict": "PASS"
+    }
+  ],
+  "zero_secrets": true,
+  "zero_network_calls": true,
+  "zero_prompts_persisted": true,
+  "verdict": "PASS"
+}

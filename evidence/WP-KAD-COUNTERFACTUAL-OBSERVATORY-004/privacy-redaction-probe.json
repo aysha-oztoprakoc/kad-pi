@@ -1,0 +1,33 @@
+{
+  "probe_name": "privacy-redaction-probe",
+  "tested_at": "2026-08-30T01:30:00.000Z",
+  "prohibited_fields_tested": [
+    "prompt",
+    "completion",
+    "messages",
+    "chain_of_thought",
+    "cot",
+    "thought",
+    "api_key",
+    "authorization",
+    "headers",
+    "cookies"
+  ],
+  "results": [
+    {
+      "test": "T4",
+      "payload": "prompt, completion, chain_of_thought, user messages",
+      "persisted_in_event": false,
+      "persisted_in_journal": false,
+      "verdict": "PASS"
+    },
+    {
+      "test": "T5",
+      "payload": "api_key, authorization header, session cookies",
+      "persisted_in_event": false,
+      "persisted_in_journal": false,
+      "verdict": "PASS"
+    }
+  ],
+  "verdict": "PASS"
+}

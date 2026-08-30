@@ -1,0 +1,15 @@
+{
+  "canary_name": "observatory-live-canary",
+  "executed_at": "2026-08-30T01:30:00.000Z",
+  "status": "COMPLETED",
+  "observations_collected": 0,
+  "natural_divergence_status": "INSUFFICIENT_OBSERVATIONS",
+  "invariants_verified": [
+    "Zero forced route changes",
+    "Zero artificial divergence generation",
+    "Zero PAYG spend",
+    "Zero background network polling",
+    "Zero git dirtying during runtime"
+  ],
+  "verdict": "PASS"
+}

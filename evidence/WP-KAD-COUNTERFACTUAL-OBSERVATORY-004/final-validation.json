@@ -1,0 +1,58 @@
+{
+  "workpackage": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+  "title": "KAD-PI Counterfactual Observatory & Longitudinal Divergence Journal",
+  "validated_at": "2026-08-30T01:30:00.000Z",
+  "acceptance_criteria_results": [
+    {
+      "criterion": "Wayfinder decision establishes runtime append-only tamper-evident journal under XDG state + bounded deterministic evidence export",
+      "status": "MET",
+      "evidence": "wayfinder-decision.json"
+    },
+    {
+      "criterion": "Machine-readable schema kad-shadow-observation-v1 defines structured observation event with deterministic sequence and hash chaining",
+      "status": "MET",
+      "evidence": "observation-schema.json"
+    },
+    {
+      "criterion": "Epistemic separation contract enforces strict distinction between OBSERVED, COUNTERFACTUAL, DERIVED, and ESTIMATED_COUNTERFACTUAL without claiming unexecuted empirical savings",
+      "status": "MET",
+      "evidence": "epistemic-contract.json"
+    },
+    {
+      "criterion": "Evaluation policy is frozen with deterministic fingerprinting (policy fingerprint + evaluator fingerprint); changes create distinct logical experiments",
+      "status": "MET",
+      "evidence": "policy-fingerprint.json"
+    },
+    {
+      "criterion": "Append-only journal implements atomic writes, hash-chain integrity (previous_hash + current_event -> event_hash), historical tampering detection, malformed-tail recovery, and bounded retention",
+      "status": "MET",
+      "evidence": "journal-integrity-probe.json"
+    },
+    {
+      "criterion": "Privacy and secret protection strictly enforced: prompts, completions, CoT, files, Authorization headers, cookies, API keys are never persisted",
+      "status": "MET",
+      "evidence": "privacy-redaction-probe.json"
+    },
+    {
+      "criterion": "Longitudinal aggregation computes total, comparable, agreement/divergence counts, divergence rates, opportunity classes, actual tokens/costs, and tokenmaxxing metrics",
+      "status": "MET",
+      "evidence": "aggregation-fixtures.json"
+    },
+    {
+      "criterion": "Deterministic evidence export command/function creates bounded snapshot in evidence/WP-KAD-COUNTERFACTUAL-OBSERVATORY-004/",
+      "status": "MET",
+      "evidence": "deterministic-export-probe.json"
+    },
+    {
+      "criterion": "Observatory surfaced through bin/kad observatory and bin/kad observatory --json with zero verbose noise in compact status bar",
+      "status": "MET",
+      "evidence": "live-canary-summary.json"
+    },
+    {
+      "criterion": "All 24 required TDD test cases (T1-T24) pass and all 488 regression tests remain green",
+      "status": "MET",
+      "evidence": "regression-results.json"
+    }
+  ],
+  "verdict": "PASS"
+}

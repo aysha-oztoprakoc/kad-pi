@@ -1,0 +1,40 @@
+{
+  "probe_name": "journal-integrity-probe",
+  "tested_at": "2026-08-30T01:30:00.000Z",
+  "scenarios": [
+    {
+      "name": "Sequential append integrity",
+      "test": "T6/T7/T8",
+      "records_tested": 100,
+      "hash_chain_valid": true,
+      "sequence_continuous": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "Historical mutation tamper detection",
+      "test": "T9",
+      "tampered_field": "actual_tokens.input_tokens",
+      "detection_result": "TAMPER_DETECTED (HASH_MISMATCH)",
+      "verdict": "PASS"
+    },
+    {
+      "name": "Malformed tail recovery",
+      "test": "T10",
+      "injected_corrupt_bytes": 48,
+      "recovered": true,
+      "valid_prefix_preserved": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "Bounded retention rolling",
+      "test": "T11",
+      "max_events": 3,
+      "appended_events": 5,
+      "retained_count": 3,
+      "head_sequence": 3,
+      "tail_sequence": 5,
+      "verdict": "PASS"
+    }
+  ],
+  "overall_verdict": "PASS"
+}

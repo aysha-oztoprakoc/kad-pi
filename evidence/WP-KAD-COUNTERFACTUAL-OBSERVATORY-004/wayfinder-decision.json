@@ -1,0 +1,40 @@
+{
+  "workpackage": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+  "decision_id": "WAYFINDER-OBSERVATORY-004-01",
+  "evaluated_at": "2026-08-30T01:25:00.000Z",
+  "question": "What is the smallest durable observation model that allows deterministic longitudinal evaluation of actual-vs-shadow routing without turning counterfactual estimates into claimed empirical savings?",
+  "options_evaluated": [
+    {
+      "option": "A",
+      "name": "Append every event directly into repository evidence/*.jsonl",
+      "verdict": "REJECTED",
+      "rationale": "Runtime telemetry continuously dirties git working tree, creates unbounded repository bloat, and couples runtime speed to repository IO."
+    },
+    {
+      "option": "B",
+      "name": "Runtime append-only tamper-evident journal under XDG state + bounded deterministic evidence exports",
+      "verdict": "SELECTED",
+      "rationale": "Keeps git clean during live operation; uses simple append-only JSONL under $XDG_STATE_HOME/kad-pi/shadow-observatory/ with SHA-256 hash chaining for tamper evidence, malformed-tail recovery, bounded retention, and deterministic export snapshots into evidence/."
+    },
+    {
+      "option": "C",
+      "name": "New SQLite/database subsystem",
+      "verdict": "REJECTED",
+      "rationale": "Unnecessary dependency overhead, binary lock files, schema migration complexity, and non-text diffs for a straightforward sequential stream of observation events."
+    },
+    {
+      "option": "D",
+      "name": "External analytics or LLM-based evaluator",
+      "verdict": "REJECTED",
+      "rationale": "Violates 'deterministic authority > probabilistic inference', wastes tokens/budget on telemetry analysis, and risks non-reproducible evaluation."
+    }
+  ],
+  "selected_option": "B",
+  "invariants_enforced": [
+    "No git dirtying during runtime session turns",
+    "Append-only tamper-evident hash chaining (previous_hash + canonical_event -> event_hash)",
+    "Strict epistemic separation (OBSERVED vs COUNTERFACTUAL vs ESTIMATED_COUNTERFACTUAL)",
+    "Zero production routing mutation authority",
+    "Zero secret, prompt, or completion persistence"
+  ]
+}

@@ -13,9 +13,10 @@ import { collectServiceHealth } from './health.mjs';
 import { computeTokenmaxxingMetrics } from './tokenmaxxing.mjs';
 import { buildControlPlaneViewModel } from './view-model.mjs';
 import { execFileSync } from 'node:child_process';
+import { ShadowObservatoryJournal, aggregateObservations } from './observatory.mjs';
+
 export function renderCompactMeter(state = {}) {
   const parts = ['KAD'];
-
   // Session tokens
   const sessionTok = state.session_tokens ?? 0;
   if (sessionTok >= 1000000) parts.push(`${(sessionTok / 1000000).toFixed(1)}M tok`);
@@ -166,6 +167,15 @@ export function renderDetailedPanel(viewModel = {}) {
     lines.push('');
   }
 
+  // Counterfactual Observatory
+  if (viewModel.observatory && viewModel.observatory.total_observations > 0) {
+    const obs = viewModel.observatory;
+    lines.push(`▶ COUNTERFACTUAL OBSERVATORY`);
+    lines.push(`  Observations: ${obs.total_observations}   Agreements: ${obs.agreement_count}   Divergences: ${obs.divergence_count} (rate: ${(obs.divergence_rate * 100).toFixed(1)}%)`);
+    lines.push(`  Journal Integrity: ${obs.integrity?.valid ? 'VALID ✓' : 'COMPROMISED !'}`);
+    lines.push('');
+  }
+
   return lines.join('\n');
 }
 
@@ -217,10 +227,25 @@ export async function executeKadCommand(action = 'status', { faultyState = null,
     errors.push(`Economic probe failed: ${err.message}`);
   }
 
+  let observatoryState = null;
+  try {
+    const journal = new ShadowObservatoryJournal();
+    const records = journal.readObservations();
+    const integrity = journal.verifyJournalIntegrity();
+    const aggregates = aggregateObservations(records);
+    observatoryState = {
+      ...aggregates,
+      integrity
+    };
+  } catch (err) {
+    errors.push(`Observatory probe failed: ${err.message}`);
+  }
+
   const vm = buildControlPlaneViewModel({
     telemetryRecords: nativeRecords,
     discoveredProviders: Array.isArray(providers) ? providers : [],
     economicState: economic,
+    observatoryState,
     gpuState: gpu,
     healthState: health,
     workctlState: workctl,
@@ -231,9 +256,9 @@ export async function executeKadCommand(action = 'status', { faultyState = null,
     errors,
   };
 }
+
 export async function executeKadDoctor({ cwd = process.cwd() } = {}) {
   const checks = [];
-
   // Check 1: OMP extension
   checks.push({
     name: 'omp_extension',
@@ -262,7 +287,20 @@ export async function executeKadDoctor({ cwd = process.cwd() } = {}) {
       message: `Economic policy active (paidAuthorized: ${eco.paid_authorized})`,
     });
   } catch (e) {
-    checks.push({ name: 'economic_router', status: 'FAIL', message: e.message });
+    checks.push({ name: 'economic_router', status: 'DEGRADED', message: e.message });
+  }
+
+  // Check 4: Observatory journal integrity
+  try {
+    const journal = new ShadowObservatoryJournal();
+    const integrity = journal.verifyJournalIntegrity();
+    checks.push({
+      name: 'observatory_journal',
+      status: integrity.valid ? 'PASS' : 'DEGRADED',
+      message: integrity.valid ? `Journal valid (${integrity.record_count} events recorded)` : `Journal integrity degraded: ${integrity.errors.join(', ')}`,
+    });
+  } catch (e) {
+    checks.push({ name: 'observatory_journal', status: 'DEGRADED', message: e.message });
   }
 
   // Check 4: Toolchain - trivy

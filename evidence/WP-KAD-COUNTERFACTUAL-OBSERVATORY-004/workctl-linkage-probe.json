@@ -1,0 +1,21 @@
+{
+  "probe_name": "workctl-linkage-probe",
+  "tested_at": "2026-08-30T01:30:00.000Z",
+  "scenarios": [
+    {
+      "name": "Linked workctl active ticket",
+      "ticket_id": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+      "actual_outcome": "PASS",
+      "persisted_linkage": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+      "verdict": "PASS"
+    },
+    {
+      "name": "Unlinked / null claim state",
+      "ticket_id": null,
+      "actual_outcome": null,
+      "persisted_linkage": null,
+      "verdict": "PASS"
+    }
+  ],
+  "overall_verdict": "PASS"
+}

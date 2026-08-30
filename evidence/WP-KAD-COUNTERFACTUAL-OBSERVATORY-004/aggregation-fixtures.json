@@ -1,0 +1,36 @@
+{
+  "fixture_name": "observatory-aggregation-test-fixtures",
+  "tested_at": "2026-08-30T01:30:00.000Z",
+  "fixtures": [
+    {
+      "name": "Balanced 50% divergence dataset",
+      "total_events": 4,
+      "agreement_count": 2,
+      "divergence_count": 2,
+      "expected_divergence_rate": 0.5,
+      "observed_divergence_rate": 0.5,
+      "verdict": "PASS"
+    },
+    {
+      "name": "Multi-token accumulation",
+      "events": [
+        { "input_tokens": 100, "output_tokens": 50, "cached_input_tokens": 20, "total_tokens": 150 },
+        { "input_tokens": 200, "output_tokens": 100, "cached_input_tokens": 50, "total_tokens": 300 }
+      ],
+      "expected_actual_tokens": {
+        "input_tokens": 300,
+        "output_tokens": 150,
+        "cached_input_tokens": 70,
+        "total_tokens": 450
+      },
+      "observed_actual_tokens": {
+        "input_tokens": 300,
+        "output_tokens": 150,
+        "cached_input_tokens": 70,
+        "total_tokens": 450
+      },
+      "verdict": "PASS"
+    }
+  ],
+  "overall_verdict": "PASS"
+}

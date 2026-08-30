@@ -36,6 +36,7 @@ Usage:
   kad tokens [--json]      Show token and quota usage
   kad providers [--json]   List discovered providers and telemetry state
   kad budget [--json]      Show economic router and budget authorization
+  kad observatory [--json] Show longitudinal actual vs shadow divergence metrics
   kad services [--json]    Show service health (OpenViking, Zotero, etc.)
   kad work [--json]        Show workctl active claim and frontier
   kad ui                   Render the full native panel in terminal
@@ -109,6 +110,26 @@ Usage:
       process.stdout.write(`  NO ACTIVE CLAIM\n`);
     }
     if (w.frontier?.length) process.stdout.write(`  Frontier: ${w.frontier.join(', ')}\n`);
+    return;
+  }
+  if (subcommand === 'observatory') {
+    const obs = vm.observatory || {};
+    process.stdout.write(`KAD COUNTERFACTUAL OBSERVATORY\n\n`);
+    process.stdout.write(`  Total observations:    ${obs.total_observations ?? 0}\n`);
+    process.stdout.write(`  Comparable:            ${obs.comparable_observations ?? 0}\n`);
+    process.stdout.write(`  Agreement count:       ${obs.agreement_count ?? 0}\n`);
+    process.stdout.write(`  Divergence count:      ${obs.divergence_count ?? 0} (rate: ${((obs.divergence_rate ?? 0) * 100).toFixed(1)}%)\n\n`);
+    process.stdout.write(`OPPORTUNITY CLASSES (COUNTERFACTUAL ESTIMATES):\n`);
+    const opp = obs.opportunity_counts || {};
+    for (const [key, count] of Object.entries(opp)) {
+      process.stdout.write(`  ${key.padEnd(36)} ${count}\n`);
+    }
+    process.stdout.write(`\nACTUAL TOKENS OBSERVED:\n`);
+    const tok = obs.actual_tokens || {};
+    process.stdout.write(`  Input: ${tok.input_tokens ?? 0}  Output: ${tok.output_tokens ?? 0}  Cache: ${tok.cached_input_tokens ?? 0}  Total: ${tok.total_tokens ?? 0}\n`);
+    process.stdout.write(`\nJOURNAL INTEGRITY:\n`);
+    const integrity = obs.integrity || {};
+    process.stdout.write(`  Valid: ${integrity.valid ? 'YES' : 'NO'}  Records: ${integrity.record_count ?? 0}\n`);
     return;
   }
 

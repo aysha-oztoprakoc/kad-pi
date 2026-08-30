@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KADShadowObservationEventV1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_id",
+    "sequence",
+    "observed_at",
+    "previous_hash",
+    "event_hash",
+    "session_id",
+    "production_route",
+    "shadow_route",
+    "same_or_different",
+    "divergence_reasons",
+    "quota_windows_considered",
+    "binding_window",
+    "epistemic_states",
+    "freshness",
+    "paid_authorized",
+    "shadow_policy_fingerprint",
+    "actual_tokens"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["kad-shadow-observation-v1"]
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^evt-[0-9a-f]{8,32}$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "observed_at": {
+      "type": "integer",
+      "description": "Epoch ms"
+    },
+    "previous_hash": {
+      "type": "string",
+      "description": "SHA-256 hex of previous event or 'GENESIS'"
+    },
+    "event_hash": {
+      "type": "string",
+      "description": "SHA-256 hex of previous_hash + canonical JSON representation"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "workctl_ticket_id": {
+      "type": ["string", "null"]
+    },
+    "production_route": {
+      "type": "object",
+      "required": ["execution_class", "provider", "model", "status"],
+      "properties": {
+        "execution_class": { "type": "string" },
+        "provider": { "type": "string" },
+        "model": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "shadow_route": {
+      "type": "object",
+      "required": ["execution_class", "provider", "model"],
+      "properties": {
+        "execution_class": { "type": "string" },
+        "provider": { "type": ["string", "null"] },
+        "model": { "type": ["string", "null"] }
+      }
+    },
+    "same_or_different": {
+      "type": "string",
+      "enum": ["SAME", "DIFFERENT"]
+    },
+    "divergence_reasons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "quota_windows_considered": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "binding_window": {
+      "type": ["object", "null"],
+      "properties": {
+        "window_duration_ms": { "type": "integer" },
+        "remaining_fraction": { "type": "number" },
+        "used_fraction": { "type": "number" },
+        "scope": { "type": "string" }
+      }
+    },
+    "rejected_windows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "reason": { "type": "string" },
+          "scope": { "type": "string" }
+        }
+      }
+    },
+    "epistemic_states": {
+      "type": "object",
+      "required": ["production", "shadow", "telemetry"],
+      "properties": {
+        "production": { "type": "string" },
+        "shadow": { "type": "string" },
+        "telemetry": { "type": "string" }
+      }
+    },
+    "freshness": {
+      "type": "string"
+    },
+    "paid_authorized": {
+      "type": "boolean"
+    },
+    "shadow_policy_fingerprint": {
+      "type": "string"
+    },
+    "production_policy_fingerprint": {
+      "type": ["string", "null"]
+    },
+    "actual_tokens": {
+      "type": "object",
+      "required": ["input_tokens", "output_tokens", "cached_input_tokens", "total_tokens"],
+      "properties": {
+        "input_tokens": { "type": ["integer", "null"] },
+        "output_tokens": { "type": ["integer", "null"] },
+        "cached_input_tokens": { "type": ["integer", "null"] },
+        "total_tokens": { "type": ["integer", "null"] }
+      }
+    },
+    "actual_cost_usd": {
+      "type": ["number", "null"]
+    },
+    "actual_outcome": {
+      "type": ["string", "null"],
+      "enum": ["SUCCESS", "FAILURE", "PASS", "FAIL", "ACCEPTED", "REJECTED", null]
+    }
+  },
+  "additionalProperties": false
+}

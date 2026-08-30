@@ -1,0 +1,151 @@
+{
+  "traceability_version": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004-traceability-v1",
+  "total_requirements": 24,
+  "test_file": "tools/kad/test/observatory.test.mjs",
+  "requirements": [
+    {
+      "id": "T1",
+      "name": "actual=shadow agreement event",
+      "description": "When production and shadow select the same lane/class, event records same_or_different='SAME' and empty/neutral divergence reasons.",
+      "test_name": "T1 actual=shadow agreement event"
+    },
+    {
+      "id": "T2",
+      "name": "actual≠shadow divergence event",
+      "description": "When production and shadow differ, event records same_or_different='DIFFERENT' and captured reason codes.",
+      "test_name": "T2 actual!=shadow divergence event"
+    },
+    {
+      "id": "T3",
+      "name": "deterministic reason codes",
+      "description": "Divergence reason codes match defined canonical classes (e.g. USE_IT_OR_LOSE_IT, PRESERVE_SCARCE_QUOTA).",
+      "test_name": "T3 deterministic reason codes"
+    },
+    {
+      "id": "T4",
+      "name": "no prompt/model-output content persisted",
+      "description": "Observation events and journal contain zero prompt, user message, model completion, or reasoning text.",
+      "test_name": "T4 no prompt or model output content persisted"
+    },
+    {
+      "id": "T5",
+      "name": "secret redaction",
+      "description": "Sanitizer removes Authorization headers, API keys, cookies, tokens from all observation fields.",
+      "test_name": "T5 secret redaction"
+    },
+    {
+      "id": "T6",
+      "name": "append-only journal behavior",
+      "description": "Journal writes append records line-by-line atomically without truncating prior history.",
+      "test_name": "T6 append-only journal behavior"
+    },
+    {
+      "id": "T7",
+      "name": "deterministic sequence",
+      "description": "Event sequences strictly increment (1, 2, 3...) per journal.",
+      "test_name": "T7 deterministic sequence"
+    },
+    {
+      "id": "T8",
+      "name": "hash-chain integrity",
+      "description": "Each event carries previous_hash and event_hash = SHA256(previous_hash + canonical_event), verified via verifyJournalIntegrity().",
+      "test_name": "T8 hash-chain integrity"
+    },
+    {
+      "id": "T9",
+      "name": "historical tampering detection",
+      "description": "Mutating an earlier event or deleting a middle record fails verifyJournalIntegrity() with TAMPER_DETECTED.",
+      "test_name": "T9 historical tampering detection"
+    },
+    {
+      "id": "T10",
+      "name": "malformed-tail recovery",
+      "description": "Partial or corrupt trailing lines are cleanly isolated/recovered without losing valid prefix records.",
+      "test_name": "T10 malformed-tail recovery"
+    },
+    {
+      "id": "T11",
+      "name": "bounded retention",
+      "description": "Journal enforces max_events retention window while preserving head hash-chain boundary or rolling cleanly.",
+      "test_name": "T11 bounded retention"
+    },
+    {
+      "id": "T12",
+      "name": "policy fingerprint stability",
+      "description": "Identical frozen policy parameters produce identical policy_fingerprint across runs.",
+      "test_name": "T12 policy fingerprint stability"
+    },
+    {
+      "id": "T13",
+      "name": "policy change creates distinguishable experiment/version",
+      "description": "Mutating evaluator parameters produces a different policy_fingerprint and requires a new experiment ID.",
+      "test_name": "T13 policy change creates distinguishable experiment"
+    },
+    {
+      "id": "T14",
+      "name": "observed vs counterfactual epistemic separation",
+      "description": "Schema and aggregates strictly isolate OBSERVED from COUNTERFACTUAL and ESTIMATED_COUNTERFACTUAL.",
+      "test_name": "T14 observed vs counterfactual epistemic separation"
+    },
+    {
+      "id": "T15",
+      "name": "actual-token aggregation",
+      "description": "Aggregator accurately sums actual observed tokens (input, output, cache, total) across events.",
+      "test_name": "T15 actual-token aggregation"
+    },
+    {
+      "id": "T16",
+      "name": "divergence-rate calculation",
+      "description": "Divergence rate is computed as divergence_count / comparable_observations with explicit denominator.",
+      "test_name": "T16 divergence-rate calculation"
+    },
+    {
+      "id": "T17",
+      "name": "UNKNOWN instead of unsupported counterfactual claim",
+      "description": "Counterfactual tokens, costs, or quality without ground truth explicitly report UNKNOWN rather than fabricated savings.",
+      "test_name": "T17 UNKNOWN instead of unsupported counterfactual claim"
+    },
+    {
+      "id": "T18",
+      "name": "workctl linkage when available",
+      "description": "Events capture workctl ticket_id and outcome when active claim is present.",
+      "test_name": "T18 workctl linkage when available"
+    },
+    {
+      "id": "T19",
+      "name": "graceful operation without workctl linkage",
+      "description": "When no workctl claim is active, workctl_ticket_id is null and observatory functions normally.",
+      "test_name": "T19 graceful operation without workctl linkage"
+    },
+    {
+      "id": "T20",
+      "name": "deterministic evidence export",
+      "description": "Export function generates bounded, reproducible summary artifact in evidence/ matching export schema.",
+      "test_name": "T20 deterministic evidence export"
+    },
+    {
+      "id": "T21",
+      "name": "runtime journal does not require Git mutation",
+      "description": "Journal writes strictly target XDG state path; git working tree remains 100% clean.",
+      "test_name": "T21 runtime journal does not require Git mutation"
+    },
+    {
+      "id": "T22",
+      "name": "no network activity",
+      "description": "Observatory append, verification, aggregation, and export make zero external network requests.",
+      "test_name": "T22 no network activity"
+    },
+    {
+      "id": "T23",
+      "name": "existing shadow evaluator remains side-effect free",
+      "description": "Observatory invokes shadow evaluator without mutating its inputs or internal state.",
+      "test_name": "T23 existing shadow evaluator remains side-effect free"
+    },
+    {
+      "id": "T24",
+      "name": "production router output remains unchanged",
+      "description": "Observatory hooks do not alter routeEconomically return values or authority.",
+      "test_name": "T24 production router output remains unchanged"
+    }
+  ]
+}

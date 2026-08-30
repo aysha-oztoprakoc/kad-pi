@@ -1,0 +1,28 @@
+{
+  "evaluator_version": "kad-economic-shadow-v1",
+  "policy_name": "kad-shadow-policy-frozen-v1",
+  "frozen_at": "2026-08-30T01:27:00.000Z",
+  "parameters": {
+    "EXPIRING_URGENCY_THRESHOLD": 0.75,
+    "EXPIRING_TIME_HORIZON_MS": 86400000,
+    "GREEN_THRESHOLD": 0.50,
+    "YELLOW_THRESHOLD": 0.25,
+    "SUBSCRIPTION_OPPORTUNITY_BOOST": 1.5,
+    "PRESERVE_SCARCE_QUOTA_PENALTY": 1.5,
+    "STALE_PENALTY_OFFSET": 2.0,
+    "DEFAULT_EXPIRING_WINDOW_MS": 86400000
+  },
+  "scope_rules": {
+    "MODEL_SPECIFIC": "record.model_id === lane.model",
+    "PROVIDER_WIDE": "record.model_id === null",
+    "ACCOUNT_WIDE": "record.provider_id === '*'"
+  },
+  "binding_window_rule": "min(remaining_fraction), tie: min(window_duration_ms)",
+  "invariants": {
+    "paid_authorized_barrier": "paid_authorized === false -> PAYG_NOT_AUTHORIZED",
+    "zero_production_mutation": "routeEconomically outputs 100% untouched",
+    "epistemic_honesty": "UNKNOWN limits remain UNKNOWN"
+  },
+  "policy_fingerprint": "sha256:7e8d35f410c596b6b7a5a87b1c313a17e0a0d4c8f5f4b5952dbdb288a8767da6",
+  "evaluator_fingerprint": "sha256:c221415df8a5e016a75908cfbcfa6c95d3ef8411d5f3d45ef4ba48c581e285d8"
+}

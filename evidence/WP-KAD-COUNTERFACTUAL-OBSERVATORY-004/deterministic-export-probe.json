@@ -1,0 +1,10 @@
+{
+  "probe_name": "deterministic-export-probe",
+  "tested_at": "2026-08-30T01:30:00.000Z",
+  "export_contract": {
+    "schema": "kad-observatory-export-v1",
+    "export_target": "evidence/WP-KAD-COUNTERFACTUAL-OBSERVATORY-004/snapshot.json",
+    "deterministic_hash_validation": true,
+    "verdict": "PASS"
+  }
+}

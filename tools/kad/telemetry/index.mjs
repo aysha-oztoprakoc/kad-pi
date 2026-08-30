@@ -10,3 +10,4 @@ export * from './health.mjs';
 export * from './tokenmaxxing.mjs';
 export * from './view-model.mjs';
 export * from './control-plane-runtime.mjs';
+export * from './observatory.mjs';
