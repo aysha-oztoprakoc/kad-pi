@@ -2,7 +2,7 @@
   "projection_type": "KAD_COMPUTE_FABRIC_ISA_PROJECTION",
   "version": "1.0.0",
   "domain": "compute-fabric",
-  "generated_at": "2026-08-30T10:14:42.236Z",
+  "generated_at": "2026-08-30T10:17:27.812Z",
   "source_file": "/home/amdy/Work/vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
   "isa": {
     "id": "ISA-KAD-COMPUTE-FABRIC-001",
