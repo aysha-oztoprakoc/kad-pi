@@ -15,7 +15,8 @@ import {
   compileWebsiteState,
   compileSofiaAdapter,
   isProjectionFresh,
-  sofiaDeviationReport
+  sofiaDeviationReport,
+  exportTechnologyRegistry
 } from '../wiki/projection.mjs';
 import { revision, ensureVault, lintVault } from '../wiki/index.mjs';
 
@@ -160,4 +161,27 @@ test('Projection Compiler: Sofia deviation report classifies subsystems accurate
   assert.ok(report.deviations.length >= 4);
   assert.ok(report.deviations.some(d => d.subsystem === 'Storage & Persistence' && d.classification === 'ADAPTER_REQUIRED'));
   assert.ok(report.deviations.some(d => d.subsystem === 'Knowledge Model' && d.classification === 'DIRECT_COMPAT'));
+});
+
+test('Projection Compiler: exports technology-registry.json with classified tech stack decisions', () => {
+  const registry = exportTechnologyRegistry();
+  assert.equal(registry.schema, 'kad-technology-registry-v1');
+  assert.ok(Array.isArray(registry.technologies));
+  assert.ok(registry.technologies.length >= 8);
+
+  const nodeEsm = registry.technologies.find(t => t.id === 'node-esm');
+  assert.ok(nodeEsm);
+  assert.equal(nodeEsm.decision, 'KEEP');
+
+  const cytoscape = registry.technologies.find(t => t.id === 'cytoscape-js');
+  assert.ok(cytoscape);
+  assert.equal(cytoscape.decision, 'ADOPT');
+
+  const echarts = registry.technologies.find(t => t.id === 'apache-echarts');
+  assert.ok(echarts);
+  assert.equal(echarts.decision, 'ADOPT');
+
+  const vega = registry.technologies.find(t => t.id === 'vega-lite');
+  assert.ok(vega);
+  assert.equal(vega.decision, 'EXPERIMENTAL');
 });

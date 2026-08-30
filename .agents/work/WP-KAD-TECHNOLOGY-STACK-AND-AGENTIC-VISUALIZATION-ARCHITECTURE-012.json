@@ -1,0 +1,68 @@
+{
+  "id": "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012",
+  "project": "kad-pi",
+  "title": "Technology Stack, Cross-Project Reuse & Agentic Visualization Architecture",
+  "status": "REVIEW",
+  "priority": 150,
+  "spec_ref": "user:/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012",
+  "fixed_point": "69949954455d2509f5d72ef7dd54ea51db3726d0",
+  "scope": [
+    "evidence/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012/",
+    "docs/adr/",
+    "docs/architecture/",
+    "tools/kad/",
+    "vault/",
+    ".agents/work/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012.json"
+  ],
+  "non_scope": [
+    "rebuilding Sofia v3 in this WP",
+    "mass-installing unapproved Obsidian plugins",
+    "rewriting public website framework",
+    "modifying production routing authority",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "evidence/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012/",
+    "docs/adr/",
+    "docs/architecture/",
+    "tools/kad/",
+    "vault/",
+    ".agents/work/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-wiki lint",
+    "bin/kad-wiki rebuild",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012/",
+  "blocked_by": [],
+  "blocks": [
+    "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013"
+  ],
+  "acceptance_criteria": [
+    "current stack inventory is evidence-backed across KAD-PI, data_rein, data_workspace, Sofia, and site",
+    "cross-project reuse opportunities and primitives are identified",
+    "Obsidian core capabilities and community candidate plugins are audited with zero-plugin degraded mode preserved",
+    "OMP toolchain and project-owned extension capabilities are evaluated",
+    "visualization bake-off benchmarks graphs (Cytoscape, Sigma) and charts (ECharts, Vega-Lite) using real KAD data",
+    "agentic typed graph contract is defined distinguishing canonical, derived, and heuristic edges",
+    "consequential architectural choices pass through Wayfinder / ask-me protocol",
+    "ADRs and technology decision matrix are established",
+    "full test suite (564+ tests) and doctors remain GREEN"
+  ],
+  "description": "Establish the evidence-backed technology stack, cross-project reuse architecture, Obsidian and OMP extension models, visualization bake-off benchmarks, and agentic graph contract for KAD-PI before Sofia v3 implementation."
+}

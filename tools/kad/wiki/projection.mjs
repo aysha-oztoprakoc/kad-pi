@@ -289,6 +289,83 @@ export function exportResearchIndex({ root = vaultRoot() } = {}) {
     corpus
   };
 }
+export function exportTechnologyRegistry({ root = vaultRoot() } = {}) {
+  const technologies = [
+    {
+      id: 'node-esm',
+      name: 'Node.js Strict Native ESM',
+      category: 'backend_runtime',
+      decision: 'KEEP',
+      role: 'Core backend tooling, CLI utilities, and projection compiler',
+      epistemic_class: 'SOURCE_FACT_VERIFIED'
+    },
+    {
+      id: 'vanilla-esm',
+      name: 'Vanilla ECMAScript Modules (Web Standards)',
+      category: 'frontend_runtime',
+      decision: 'KEEP',
+      role: 'Sofia v3 dashboard, public website, and client presentation',
+      epistemic_class: 'SOURCE_FACT_VERIFIED'
+    },
+    {
+      id: 'kad-css-tokens',
+      name: 'KAD Design Tokens & Layout CSS (interface/kad.css)',
+      category: 'design_system',
+      decision: 'AUGMENT',
+      role: 'Unified dark cyberdeck theme, status badges, and responsive layouts',
+      epistemic_class: 'SOURCE_FACT_VERIFIED'
+    },
+    {
+      id: 'obsidian-bases',
+      name: 'Obsidian Core Bases (.base)',
+      category: 'knowledge_management',
+      decision: 'KEEP',
+      role: 'Declarative property database views with zero JavaScript lock-in',
+      epistemic_class: 'SOURCE_FACT_VERIFIED'
+    },
+    {
+      id: 'cytoscape-js',
+      name: 'Cytoscape.js',
+      category: 'graph_visualization',
+      decision: 'ADOPT',
+      role: 'Primary interactive graph explorer for Sofia v3 and visual topologies',
+      epistemic_class: 'PROJECT_INFERENCE'
+    },
+    {
+      id: 'apache-echarts',
+      name: 'Apache ECharts (Modular)',
+      category: 'chart_visualization',
+      decision: 'ADOPT',
+      role: 'Modular time-series telemetry and research distribution visualizations',
+      epistemic_class: 'PROJECT_INFERENCE'
+    },
+    {
+      id: 'vega-lite',
+      name: 'Vega-Lite',
+      category: 'research_visualization',
+      decision: 'EXPERIMENTAL',
+      role: 'Declarative, reproducible specification backend for scientific paper figures',
+      epistemic_class: 'PROJECT_INFERENCE'
+    },
+    {
+      id: 'omp-extension-api',
+      name: 'OMP Project-Scoped ExtensionAPI',
+      category: 'agentic_toolchain',
+      decision: 'KEEP',
+      role: 'Project-scoped operator HUD, telemetry bridges, and token compaction',
+      epistemic_class: 'SOURCE_FACT_VERIFIED'
+    }
+  ];
+
+  return {
+    schema: 'kad-technology-registry-v1',
+    generator_version: PROJECTION_COMPILER_VERSION,
+    source_vault_revision: revision(root),
+    generated_at: new Date().toISOString(),
+    technologies
+  };
+}
+
 
 export function compileRepoDocs({ root = vaultRoot(), outputDir = path.resolve(root, '..', 'docs/generated') } = {}) {
   fs.mkdirSync(outputDir, { recursive: true });
@@ -596,13 +673,14 @@ export function compileProjections({ root = vaultRoot(), projectRoot = path.reso
   const research = exportResearchIndex({ root });
   const sofiaData = compileSofiaAdapter({ root });
   const websiteState = compileWebsiteState({ root });
+  const techRegistry = exportTechnologyRegistry({ root });
 
   fs.writeFileSync(path.join(projDir, 'graph.json'), JSON.stringify(graph, null, 2) + '\n');
   fs.writeFileSync(path.join(projDir, 'projects.json'), JSON.stringify(projectStatus, null, 2) + '\n');
   fs.writeFileSync(path.join(projDir, 'workpackages.json'), JSON.stringify(workpackages, null, 2) + '\n');
   fs.writeFileSync(path.join(projDir, 'research.json'), JSON.stringify(research, null, 2) + '\n');
   fs.writeFileSync(path.join(projDir, 'sofia-projection.json'), JSON.stringify(sofiaData, null, 2) + '\n');
-
+  fs.writeFileSync(path.join(projDir, 'technology-registry.json'), JSON.stringify(techRegistry, null, 2) + '\n');
   // Compile docs/generated/
   const docsDir = path.join(projectRoot, 'docs/generated');
   compileRepoDocs({ root, outputDir: docsDir });
@@ -625,6 +703,7 @@ export function compileProjections({ root = vaultRoot(), projectRoot = path.reso
       'workpackages.json',
       'research.json',
       'sofia-projection.json',
+      'technology-registry.json',
       'docs/generated/',
       'site/generated/public-state.json',
       'README.md'

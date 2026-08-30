@@ -1,0 +1,72 @@
+{
+  "schema": "kad-technology-registry-v1",
+  "generator_version": "1.0.0",
+  "source_vault_revision": "583f35eecbbc6f6eafbbc9dd98ecefebb3d6a197cb2bd47a1db1ba22c9be47a8",
+  "generated_at": "2026-08-30T08:19:46.514Z",
+  "technologies": [
+    {
+      "id": "node-esm",
+      "name": "Node.js Strict Native ESM",
+      "category": "backend_runtime",
+      "decision": "KEEP",
+      "role": "Core backend tooling, CLI utilities, and projection compiler",
+      "epistemic_class": "SOURCE_FACT_VERIFIED"
+    },
+    {
+      "id": "vanilla-esm",
+      "name": "Vanilla ECMAScript Modules (Web Standards)",
+      "category": "frontend_runtime",
+      "decision": "KEEP",
+      "role": "Sofia v3 dashboard, public website, and client presentation",
+      "epistemic_class": "SOURCE_FACT_VERIFIED"
+    },
+    {
+      "id": "kad-css-tokens",
+      "name": "KAD Design Tokens & Layout CSS (interface/kad.css)",
+      "category": "design_system",
+      "decision": "AUGMENT",
+      "role": "Unified dark cyberdeck theme, status badges, and responsive layouts",
+      "epistemic_class": "SOURCE_FACT_VERIFIED"
+    },
+    {
+      "id": "obsidian-bases",
+      "name": "Obsidian Core Bases (.base)",
+      "category": "knowledge_management",
+      "decision": "KEEP",
+      "role": "Declarative property database views with zero JavaScript lock-in",
+      "epistemic_class": "SOURCE_FACT_VERIFIED"
+    },
+    {
+      "id": "cytoscape-js",
+      "name": "Cytoscape.js",
+      "category": "graph_visualization",
+      "decision": "ADOPT",
+      "role": "Primary interactive graph explorer for Sofia v3 and visual topologies",
+      "epistemic_class": "PROJECT_INFERENCE"
+    },
+    {
+      "id": "apache-echarts",
+      "name": "Apache ECharts (Modular)",
+      "category": "chart_visualization",
+      "decision": "ADOPT",
+      "role": "Modular time-series telemetry and research distribution visualizations",
+      "epistemic_class": "PROJECT_INFERENCE"
+    },
+    {
+      "id": "vega-lite",
+      "name": "Vega-Lite",
+      "category": "research_visualization",
+      "decision": "EXPERIMENTAL",
+      "role": "Declarative, reproducible specification backend for scientific paper figures",
+      "epistemic_class": "PROJECT_INFERENCE"
+    },
+    {
+      "id": "omp-extension-api",
+      "name": "OMP Project-Scoped ExtensionAPI",
+      "category": "agentic_toolchain",
+      "decision": "KEEP",
+      "role": "Project-scoped operator HUD, telemetry bridges, and token compaction",
+      "epistemic_class": "SOURCE_FACT_VERIFIED"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "schema": "kad-workpackage-export-v1",
   "generator_version": "1.0.0",
   "source_vault_revision": "583f35eecbbc6f6eafbbc9dd98ecefebb3d6a197cb2bd47a1db1ba22c9be47a8",
-  "generated_at": "2026-08-30T07:51:44.212Z",
+  "generated_at": "2026-08-30T08:19:46.502Z",
   "workpackages": [
     {
       "wp_id": "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
@@ -18,7 +18,7 @@
       "wp_id": "WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
       "project": "kad-pi",
       "title": "Commit Consolidation, Remote Synchronization & Vault-Driven Project Projection Bootstrap",
-      "status": "CLAIMED",
+      "status": "REVIEW",
       "priority": 140,
       "fixed_point": "e3bce03e5b94ada0db6d29e75b6991b18522f2d8",
       "evidence_target": "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011/",
@@ -173,6 +173,16 @@
       "fixed_point": "b057ffc425261e7d67f65c6b7b7068f87901aa7e",
       "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-05-zotero",
       "description": "Optional read-only Zotero Local HTTP API adapter converting local bibliography items into canonical research candidates with permanent export fallback."
+    },
+    {
+      "wp_id": "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012",
+      "project": "kad-pi",
+      "title": "Technology Stack, Cross-Project Reuse & Agentic Visualization Architecture",
+      "status": "CLAIMED",
+      "priority": 150,
+      "fixed_point": "69949954455d2509f5d72ef7dd54ea51db3726d0",
+      "evidence_target": "evidence/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012/",
+      "description": "Establish the evidence-backed technology stack, cross-project reuse architecture, Obsidian and OMP extension models, visualization bake-off benchmarks, and agentic graph contract for KAD-PI before Sofia v3 implementation."
     },
     {
       "wp_id": "WP-KAD-USAGE-BRIDGE-002",

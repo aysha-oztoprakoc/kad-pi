@@ -1,0 +1,19 @@
+{
+  "task": "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012",
+  "project": "kad-pi",
+  "claim_id": "5b046b44-811b-4209-a6f6-449333e6062f",
+  "actor_label": "codex-main",
+  "started_at": "2026-08-30T08:03:15.831Z",
+  "base_commit": "69949954455d2509f5d72ef7dd54ea51db3726d0",
+  "owned_paths": [
+    "evidence/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012",
+    "docs/adr",
+    "docs/architecture",
+    "tools/kad",
+    "vault",
+    ".agents/work/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T08:20:08.207Z"
+}
