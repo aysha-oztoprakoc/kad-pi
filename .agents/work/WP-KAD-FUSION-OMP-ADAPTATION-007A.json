@@ -1,0 +1,60 @@
+{
+  "id": "WP-KAD-FUSION-OMP-ADAPTATION-007A",
+  "project": "kad-pi",
+  "title": "Optional pinned Fusion Harness under OMP",
+  "status": "ACCEPTED",
+  "priority": 110,
+  "spec_ref": "user:/WP-KAD-FUSION-OMP-ADAPTATION-007A",
+  "fixed_point": "2d368db84dea83b6347b46063118ed646a0132e1",
+  "scope": [
+    "bin/kad-fusion",
+    "tools/kad/fusion/",
+    "tools/kad/test/fusion*.test.mjs",
+    "docs/agents/fusion.md",
+    "evidence/WP-KAD-FUSION-OMP-ADAPTATION-007A/"
+  ],
+  "non_scope": [
+    "KAD authority",
+    "ordinary omp behavior",
+    "unrelated workspace dirt"
+  ],
+  "owned_paths": [
+    "bin/kad-fusion",
+    "tools/kad/fusion/",
+    "tools/kad/test/fusion*.test.mjs",
+    "docs/agents/fusion.md",
+    "evidence/WP-KAD-FUSION-OMP-ADAPTATION-007A/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/fusion*.test.mjs",
+    "bin/kad-fusion --help",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-FUSION-OMP-ADAPTATION-007A",
+  "blocked_by": [],
+  "blocks": [
+    "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008"
+  ],
+  "acceptance_criteria": [
+    "Pinned upstream provenance is reproducible",
+    "OMP remains host and children use OMP",
+    "Read-only operations work without mutation authority",
+    "Mutation requires Fusion lease and KAD authorization",
+    "Setup is idempotent and ordinary omp is unchanged"
+  ],
+  "description": "Thin optional OMP-native compatibility layer for pinned Fusion Harness.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-FUSION-OMP-ADAPTATION-007A"
+}

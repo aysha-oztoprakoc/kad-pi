@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+import { setup, stack, launch, UPSTREAM } from '../tools/kad/fusion/index.mjs';
+const [cmd='help',arg]=process.argv.slice(2);
+try { if(cmd==='setup'){console.log(JSON.stringify(setup(),null,2));} else if(['economy','standard','frontier'].includes(cmd)){console.log(`KAD Fusion ${cmd}: ${stack(cmd).models.join(', ')}`); process.exitCode=launch(cmd,process.argv.slice(3));} else if(cmd==='status'){console.log(JSON.stringify({host:'omp',upstream:UPSTREAM,stacks:{economy:stack('economy'),standard:stack('standard'),frontier:stack('frontier')}},null,2));} else {console.log('Usage: kad-fusion setup|economy|standard|frontier|status');} } catch(e){console.error(`kad-fusion: ${e.message}`);process.exitCode=1;}

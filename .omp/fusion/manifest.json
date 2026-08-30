@@ -1,0 +1,35 @@
+{
+  "schema": "kad-fusion-omp-v1",
+  "upstream": {
+    "repository": "https://github.com/disler/fusion-harness",
+    "commit": "01a348202482cad0e7d3c34eada180f711aaddd7"
+  },
+  "host": "omp",
+  "child_command": "omp --headless --json",
+  "ambient_extensions": false,
+  "ambient_skills": false,
+  "ambient_rules": false,
+  "mutation": {
+    "requires": [
+      "fusion_writer_lease",
+      "kad_workctl_mutation_authorization"
+    ],
+    "default": "deny"
+  },
+  "stacks": {
+    "economy": [
+      "gpt-5.1-codex-mini",
+      "gpt-5-mini"
+    ],
+    "standard": [
+      "gpt-5.2-codex",
+      "claude-4.5-sonnet",
+      "gemini-3-flash"
+    ],
+    "frontier": [
+      "gpt-5.6-luna",
+      "claude-4.6-opus-high",
+      "gemini-3-pro"
+    ]
+  }
+}

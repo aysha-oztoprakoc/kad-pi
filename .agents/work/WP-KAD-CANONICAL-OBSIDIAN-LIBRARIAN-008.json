@@ -1,0 +1,67 @@
+{
+  "id": "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+  "project": "kad-pi",
+  "title": "Canonical Obsidian agentic librarian",
+  "status": "ACCEPTED",
+  "priority": 109,
+  "spec_ref": "user:/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+  "fixed_point": "2d368db84dea83b6347b46063118ed646a0132e1",
+  "scope": [
+    "tools/kad/wiki/",
+    "bin/kad-wiki",
+    ".agents/skills/kad-wiki/",
+    "tools/kad/test/wiki*.test.mjs",
+    "docs/agents/kad-wiki.md",
+    "evidence/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008/",
+    "wiki/"
+  ],
+  "non_scope": [
+    "Needle training",
+    "private personal vault paths",
+    "silent promotion of legacy pages"
+  ],
+  "owned_paths": [
+    "tools/kad/wiki/",
+    "bin/kad-wiki",
+    ".agents/skills/kad-wiki/",
+    "tools/kad/test/wiki*.test.mjs",
+    "docs/agents/kad-wiki.md",
+    "evidence/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008/",
+    "wiki/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/wiki*.test.mjs",
+    "bin/kad-wiki lint",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+  "blocked_by": [
+    "WP-KAD-FUSION-OMP-ADAPTATION-007A"
+  ],
+  "blocks": [
+    "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009"
+  ],
+  "acceptance_criteria": [
+    "Canonical vault and authority zones exist",
+    "Approval binds exact proposal hash and modified proposals fail closed",
+    "Human edits remain direct Markdown edits",
+    "Normal context excludes unreviewed content deterministically",
+    "Legacy wiki is classified without silent promotion",
+    "Independent Git checkpoint and recovery work"
+  ],
+  "description": "Human-editable canonical Obsidian vault with deterministic review and anti-poisoning gates.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008"
+}

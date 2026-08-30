@@ -1,0 +1,59 @@
+{
+  "id": "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+  "project": "kad-pi",
+  "title": "Local canonical wiki context library",
+  "status": "ACCEPTED",
+  "priority": 108,
+  "spec_ref": "user:/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+  "fixed_point": "2d368db84dea83b6347b46063118ed646a0132e1",
+  "scope": [
+    "tools/kad/wiki-library/",
+    "tools/kad/test/wiki-library*.test.mjs",
+    "docs/agents/wiki-library.md",
+    "evidence/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009/"
+  ],
+  "non_scope": [
+    "Canonical authority",
+    "Needle training",
+    "mandatory OpenViking",
+    "paid model calls"
+  ],
+  "owned_paths": [
+    "tools/kad/wiki-library/",
+    "tools/kad/test/wiki-library*.test.mjs",
+    "docs/agents/wiki-library.md",
+    "evidence/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/wiki-library*.test.mjs",
+    "bin/kad-wiki rebuild",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+  "blocked_by": [
+    "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Canonical Markdown remains authority",
+    "Offline deterministic search works without LLM",
+    "KnowledgePlane and semantic indexes are derived and stale-detectable",
+    "Bounded context packs include approved content only",
+    "OpenViking failure falls back safely"
+  ],
+  "description": "Offline-first derived indexes and bounded context materialization for OMP and Fusion.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009"
+}
