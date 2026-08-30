@@ -1,0 +1,23 @@
+{
+  "task": "WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+  "project": "kad-pi",
+  "claim_id": "98a9b1f8-7fa3-4c77-83ea-863cc152baf1",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T01:36:18.954Z",
+  "base_commit": "8774f8d28e1d8920576719911d4050e7cb0e4a76",
+  "owned_paths": [
+    "tools/kad/telemetry/observatory.mjs",
+    "tools/kad/telemetry/view-model.mjs",
+    "tools/kad/telemetry/control-plane-runtime.mjs",
+    "tools/kad/telemetry/index.mjs",
+    "tools/kad/test/observatory.test.mjs",
+    "tools/kad/test/readiness.test.mjs",
+    "evidence/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+    "docs/agents/observatory.md",
+    "wiki/KAD_Counterfactual_Promotion_Readiness_2026-08-30.md",
+    "bin/kad"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T01:44:01.926Z"
+}

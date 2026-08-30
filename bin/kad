@@ -4,6 +4,10 @@ import {
   executeKadDoctor,
   renderDetailedPanel,
 } from '../tools/kad/telemetry/control-plane-runtime.mjs';
+import {
+  ShadowObservatoryJournal,
+  evaluateJournalReadiness
+} from '../tools/kad/telemetry/observatory.mjs';
 
 const args = process.argv.slice(2);
 const isJson = args.includes('--json') || args.includes('-j');
@@ -36,11 +40,42 @@ Usage:
   kad tokens [--json]      Show token and quota usage
   kad providers [--json]   List discovered providers and telemetry state
   kad budget [--json]      Show economic router and budget authorization
-  kad observatory [--json] Show longitudinal actual vs shadow divergence metrics
-  kad services [--json]    Show service health (OpenViking, Zotero, etc.)
-  kad work [--json]        Show workctl active claim and frontier
-  kad ui                   Render the full native panel in terminal
+  kad observatory [--json]           Show longitudinal actual vs shadow divergence metrics
+  kad observatory readiness [--json] Show deterministic promotion readiness gate status
+  kad readiness [--json]             Alias for observatory readiness
+  kad services [--json]              Show service health (OpenViking, Zotero, etc.)
+  kad work [--json]                  Show workctl active claim and frontier
+  kad ui                             Render the full native panel in terminal
 \n`);
+    return;
+  }
+  if ((subcommand === 'observatory' && filteredArgs[1] === 'readiness') || subcommand === 'readiness') {
+    const journal = new ShadowObservatoryJournal();
+    const readiness = evaluateJournalReadiness(journal);
+
+    if (isJson) {
+      process.stdout.write(`${JSON.stringify(readiness, null, 2)}\n`);
+      return;
+    }
+
+    process.stdout.write(`KAD PROMOTION READINESS GATE\n\n`);
+    process.stdout.write(`  Global Status:      ${readiness.global_readiness.status}\n`);
+    process.stdout.write(`  Reason Codes:       ${readiness.global_readiness.reason_codes.join(', ')}\n`);
+    process.stdout.write(`  Observations:       ${readiness.global_readiness.metrics.total_observations} examined (comparable: ${readiness.global_readiness.metrics.comparable_observations})\n`);
+    process.stdout.write(`  Divergence Rate:    ${(readiness.global_readiness.metrics.divergence_rate * 100).toFixed(1)}% (${readiness.global_readiness.metrics.divergence_count} divergences)\n\n`);
+    process.stdout.write(`GATES:\n`);
+    process.stdout.write(`  Integrity Gate:     ${readiness.integrity_gate.passed ? 'PASS ✓' : 'FAIL ✗'}\n`);
+    process.stdout.write(`  Policy Drift Gate:  ${readiness.policy_drift_gate.passed ? 'PASS ✓' : 'DRIFT DETECTED !'}\n`);
+    process.stdout.write(`  Quality Gate:       ${readiness.quality_gate.passed ? 'PASS ✓' : 'UNKNOWN-DOMINATED !'} (unknown rate: ${(readiness.quality_gate.unknown_rate * 100).toFixed(1)}%)\n\n`);
+    process.stdout.write(`ADVISORY CLASS READINESS:\n`);
+    for (const [cls, stat] of Object.entries(readiness.advisory_class_readiness || {})) {
+      const badge = stat.ready_for_canary_design ? '[READY FOR CANARY DESIGN]' : '[INSUFFICIENT DATA]';
+      process.stdout.write(`  ${cls.padEnd(36)} ${badge}  (occurrences: ${stat.occurrences}, divergences: ${stat.divergences})\n`);
+    }
+    process.stdout.write(`\nAUTHORITY CONTRACT:\n`);
+    process.stdout.write(`  Canary Authorized:  NO (readiness evaluation only)\n`);
+    process.stdout.write(`  Routing Mutation:   NO (production router immutable)\n`);
+    process.stdout.write(`  Empirical Savings:  UNKNOWN (no causal claims without intervention)\n`);
     return;
   }
 
@@ -50,7 +85,6 @@ Usage:
     process.stdout.write(`${JSON.stringify(vm, null, 2)}\n`);
     return;
   }
-
   if (subcommand === 'ui' || subcommand === 'status') {
     process.stdout.write(`${renderDetailedPanel(vm)}\n`);
     return;

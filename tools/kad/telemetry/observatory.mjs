@@ -11,9 +11,61 @@ import os from 'node:os';
 import crypto from 'node:crypto';
 
 export const OBSERVATION_SCHEMA_VERSION = 'kad-shadow-observation-v1';
+export const SHADOW_OBSERVATION_SCHEMA_VERSION = 'kad-shadow-observation-v1';
 export const FROZEN_SHADOW_POLICY_NAME = 'kad-shadow-policy-frozen-v1';
 export const FROZEN_EVALUATOR_VERSION = 'kad-economic-shadow-v1';
+export const EVALUATOR_VERSION = 'kad-economic-shadow-v1';
+export const READINESS_SCHEMA_VERSION = 'kad-promotion-readiness-v1';
 
+export const READINESS_STATES = Object.freeze({
+  INSUFFICIENT_DATA: 'INSUFFICIENT_DATA',
+  INVALID_EVIDENCE: 'INVALID_EVIDENCE',
+  POLICY_DRIFT: 'POLICY_DRIFT',
+  UNKNOWN_DOMINATED: 'UNKNOWN_DOMINATED',
+  READY_FOR_CANARY_DESIGN: 'READY_FOR_CANARY_DESIGN'
+});
+
+export const READINESS_REASON_CODES = Object.freeze({
+  JOURNAL_EMPTY: 'JOURNAL_EMPTY',
+  BELOW_GLOBAL_OBSERVATION_THRESHOLD: 'BELOW_GLOBAL_OBSERVATION_THRESHOLD',
+  BELOW_CLASS_OCCURRENCE_THRESHOLD: 'BELOW_CLASS_OCCURRENCE_THRESHOLD',
+  BELOW_CLASS_DIVERGENCE_THRESHOLD: 'BELOW_CLASS_DIVERGENCE_THRESHOLD',
+  HASH_CHAIN_CORRUPTED: 'HASH_CHAIN_CORRUPTED',
+  SEQUENCE_GAP_DETECTED: 'SEQUENCE_GAP_DETECTED',
+  HISTORICAL_TAMPERING_DETECTED: 'HISTORICAL_TAMPERING_DETECTED',
+  POLICY_FINGERPRINT_DRIFT: 'POLICY_FINGERPRINT_DRIFT',
+  EVALUATOR_VERSION_DRIFT: 'EVALUATOR_VERSION_DRIFT',
+  SCHEMA_VERSION_DRIFT: 'SCHEMA_VERSION_DRIFT',
+  EXCESSIVE_UNKNOWN_RATE: 'EXCESSIVE_UNKNOWN_RATE',
+  CANARY_DESIGN_EVIDENCE_SUFFICIENT: 'CANARY_DESIGN_EVIDENCE_SUFFICIENT'
+});
+
+export const OPPORTUNITY_CLASSES = Object.freeze([
+  'EXPIRING_SUBSCRIPTION_OPPORTUNITY',
+  'SCARCE_QUOTA_PRESERVATION',
+  'PAID_AUTHORITY_BARRIER',
+  'STALE_TELEMETRY_SUPPRESSED',
+  'UNKNOWN_QUOTA_NEUTRAL',
+  'LIMIT_REACHED_AVOIDANCE',
+  'SCOPE_MISMATCH'
+]);
+
+export const DEFAULT_READINESS_THRESHOLDS = Object.freeze({
+  global: {
+    min_total_observations: 10,
+    min_comparable_observations: 5,
+    max_unknown_rate: 0.30
+  },
+  classes: {
+    EXPIRING_SUBSCRIPTION_OPPORTUNITY: { min_occurrences: 5, min_divergences: 3 },
+    SCARCE_QUOTA_PRESERVATION: { min_occurrences: 5, min_divergences: 3 },
+    PAID_AUTHORITY_BARRIER: { min_occurrences: 5, min_divergences: 3 },
+    STALE_TELEMETRY_SUPPRESSED: { min_occurrences: 5, min_divergences: 3 },
+    UNKNOWN_QUOTA_NEUTRAL: { min_occurrences: 5, min_divergences: 3 },
+    LIMIT_REACHED_AVOIDANCE: { min_occurrences: 5, min_divergences: 3 },
+    SCOPE_MISMATCH: { min_occurrences: 5, min_divergences: 3 }
+  }
+});
 export const DEFAULT_FROZEN_SHADOW_PARAMS = Object.freeze({
   EXPIRING_URGENCY_THRESHOLD: 0.75,
   EXPIRING_TIME_HORIZON_MS: 86400000,
@@ -513,4 +565,263 @@ export function exportObservatorySnapshot(journal, targetDir, metadata = {}) {
     total_exported: observations.length,
     integrity_valid: integrity.valid
   };
+}
+
+export function evaluatePromotionReadiness(events = [], options = {}) {
+  const evaluatedAt = options.evaluatedAt || new Date().toISOString();
+  const expectedPolicyFingerprint = options.policyFingerprint || FROZEN_SHADOW_POLICY_FINGERPRINT;
+  const expectedEvaluatorVersion = options.evaluatorVersion || EVALUATOR_VERSION;
+  const expectedSchemaVersion = options.schemaVersion || SHADOW_OBSERVATION_SCHEMA_VERSION;
+  const thresholds = {
+    global: { ...DEFAULT_READINESS_THRESHOLDS.global, ...(options.thresholds?.global || {}) },
+    classes: { ...DEFAULT_READINESS_THRESHOLDS.classes, ...(options.thresholds?.classes || {}) }
+  };
+
+  const totalExamined = events.length;
+  const start = totalExamined > 0 ? (events[0].observed_at ? (typeof events[0].observed_at === 'number' ? new Date(events[0].observed_at).toISOString() : String(events[0].observed_at)) : null) : null;
+  const end = totalExamined > 0 ? (events[totalExamined - 1].observed_at ? (typeof events[totalExamined - 1].observed_at === 'number' ? new Date(events[totalExamined - 1].observed_at).toISOString() : String(events[totalExamined - 1].observed_at)) : null) : null;
+
+  // 1. Integrity gate
+  let hashChainValid = true;
+  let sequenceValid = true;
+  let tamperingDetected = false;
+  const integrityErrors = [];
+
+  let expectedPrevHash = totalExamined > 0 ? events[0].previous_hash : '0000000000000000000000000000000000000000000000000000000000000000';
+  let expectedSeq = totalExamined > 0 ? events[0].sequence : 1;
+
+  for (let i = 0; i < events.length; i++) {
+    const ev = events[i];
+    if (ev.sequence !== expectedSeq) {
+      sequenceValid = false;
+      integrityErrors.push(`Event ${i + 1}: SEQUENCE_MISMATCH (expected ${expectedSeq}, found ${ev.sequence})`);
+    }
+
+    if (ev.previous_hash !== expectedPrevHash) {
+      hashChainValid = false;
+      tamperingDetected = true;
+      integrityErrors.push(`Event ${i + 1}: PREVIOUS_HASH_MISMATCH (expected ${expectedPrevHash}, found ${ev.previous_hash})`);
+    }
+
+    const copy = { ...ev };
+    const storedHash = copy.event_hash;
+    delete copy.event_hash;
+    const computedHash = computeCanonicalEventHash(ev.previous_hash, copy);
+
+    if (storedHash !== computedHash) {
+      hashChainValid = false;
+      tamperingDetected = true;
+      integrityErrors.push(`Event ${i + 1}: HASH_MISMATCH (stored ${storedHash}, computed ${computedHash})`);
+    }
+
+    expectedPrevHash = ev.event_hash;
+    expectedSeq = ev.sequence + 1;
+  }
+
+  const integrityPassed = hashChainValid && sequenceValid && !tamperingDetected && integrityErrors.length === 0;
+
+  // 2. Policy drift gate
+  const observedPolicyFingerprintsSet = new Set();
+  const observedEvaluatorVersionsSet = new Set();
+  const observedSchemaVersionsSet = new Set();
+
+  for (const ev of events) {
+    const fp = ev.shadow_recommendation?.shadow_policy_fingerprint || ev.shadow_policy_fingerprint || null;
+    if (fp) observedPolicyFingerprintsSet.add(fp);
+
+    const evVer = ev.shadow_recommendation?.evaluator_version || ev.evaluator_version || null;
+    if (evVer) observedEvaluatorVersionsSet.add(evVer);
+
+    if (ev.schema_version) observedSchemaVersionsSet.add(ev.schema_version);
+  }
+
+  const observedPolicyFingerprints = Array.from(observedPolicyFingerprintsSet);
+  const observedEvaluatorVersions = Array.from(observedEvaluatorVersionsSet);
+  const observedSchemaVersions = Array.from(observedSchemaVersionsSet);
+
+  let driftDetected = false;
+  const driftReasons = [];
+
+  if (observedPolicyFingerprints.some(fp => fp !== expectedPolicyFingerprint) || observedPolicyFingerprints.length > 1) {
+    driftDetected = true;
+    driftReasons.push(READINESS_REASON_CODES.POLICY_FINGERPRINT_DRIFT);
+  }
+  if (observedEvaluatorVersions.some(v => v !== expectedEvaluatorVersion) || observedEvaluatorVersions.length > 1) {
+    driftDetected = true;
+    driftReasons.push(READINESS_REASON_CODES.EVALUATOR_VERSION_DRIFT);
+  }
+  if (observedSchemaVersions.some(s => s !== expectedSchemaVersion) || observedSchemaVersions.length > 1) {
+    driftDetected = true;
+    driftReasons.push(READINESS_REASON_CODES.SCHEMA_VERSION_DRIFT);
+  }
+
+  const policyDriftPassed = !driftDetected;
+
+  // 3. Quality gate
+  let unknownCount = 0;
+  for (const ev of events) {
+    const actualStatus = ev.actual_route?.status || ev.production_route?.status || null;
+    const shadowStatus = ev.shadow_recommendation?.status || null;
+    if (actualStatus === 'UNKNOWN' || shadowStatus === 'UNKNOWN') {
+      unknownCount++;
+    }
+  }
+
+  const unknownRate = totalExamined > 0 ? (unknownCount / totalExamined) : 0;
+  const qualityPassed = unknownRate <= thresholds.global.max_unknown_rate;
+
+  // 4. Metrics & Per-advisory-class analysis
+  let comparableCount = 0;
+  let totalDivergences = 0;
+  const classStats = {};
+
+  for (const cls of OPPORTUNITY_CLASSES) {
+    classStats[cls] = { occurrences: 0, divergences: 0 };
+  }
+
+  for (const ev of events) {
+    comparableCount++;
+    const isSame = ev.divergence ? ev.divergence.is_same : (ev.same_or_different === 'SAME');
+    if (!isSame) {
+      totalDivergences++;
+    }
+
+    const reasons = ev.divergence?.divergence_reasons || ev.shadow_recommendation?.opportunity_classes || ev.divergence_reasons || [];
+    for (const r of reasons) {
+      if (classStats[r]) {
+        classStats[r].occurrences++;
+        if (!isSame) {
+          classStats[r].divergences++;
+        }
+      }
+    }
+  }
+
+  const divergenceRate = comparableCount > 0 ? (totalDivergences / comparableCount) : 0;
+
+  // Per-advisory-class readiness map
+  const advisoryClassReadiness = {};
+  let anyClassReady = false;
+
+  for (const cls of OPPORTUNITY_CLASSES) {
+    const stat = classStats[cls];
+    const clsThreshold = thresholds.classes[cls] || { min_occurrences: 5, min_divergences: 3 };
+    const clsDivergenceRate = stat.occurrences > 0 ? (stat.divergences / stat.occurrences) : 0;
+
+    let clsStatus = READINESS_STATES.INSUFFICIENT_DATA;
+    const clsReasons = [];
+    let clsReady = false;
+
+    if (!integrityPassed) {
+      clsStatus = READINESS_STATES.INVALID_EVIDENCE;
+      clsReasons.push(READINESS_REASON_CODES.HASH_CHAIN_CORRUPTED);
+    } else if (driftDetected) {
+      clsStatus = READINESS_STATES.POLICY_DRIFT;
+      clsReasons.push(...driftReasons);
+    } else if (stat.occurrences < clsThreshold.min_occurrences) {
+      clsStatus = READINESS_STATES.INSUFFICIENT_DATA;
+      clsReasons.push(READINESS_REASON_CODES.BELOW_CLASS_OCCURRENCE_THRESHOLD);
+    } else if (stat.divergences < clsThreshold.min_divergences) {
+      clsStatus = READINESS_STATES.INSUFFICIENT_DATA;
+      clsReasons.push(READINESS_REASON_CODES.BELOW_CLASS_DIVERGENCE_THRESHOLD);
+    } else {
+      clsStatus = READINESS_STATES.READY_FOR_CANARY_DESIGN;
+      clsReasons.push(READINESS_REASON_CODES.CANARY_DESIGN_EVIDENCE_SUFFICIENT);
+      clsReady = true;
+      anyClassReady = true;
+    }
+
+    advisoryClassReadiness[cls] = {
+      status: clsStatus,
+      reason_codes: clsReasons,
+      occurrences: stat.occurrences,
+      divergences: stat.divergences,
+      divergence_rate: Math.round(clsDivergenceRate * 1000) / 1000,
+      ready_for_canary_design: clsReady,
+      thresholds: clsThreshold
+    };
+  }
+
+  // Global status determination
+  let globalStatus = READINESS_STATES.INSUFFICIENT_DATA;
+  const globalReasonCodes = [];
+
+  if (!integrityPassed) {
+    globalStatus = READINESS_STATES.INVALID_EVIDENCE;
+    if (tamperingDetected) globalReasonCodes.push(READINESS_REASON_CODES.HISTORICAL_TAMPERING_DETECTED);
+    if (!hashChainValid) globalReasonCodes.push(READINESS_REASON_CODES.HASH_CHAIN_CORRUPTED);
+    if (!sequenceValid) globalReasonCodes.push(READINESS_REASON_CODES.SEQUENCE_GAP_DETECTED);
+  } else if (driftDetected) {
+    globalStatus = READINESS_STATES.POLICY_DRIFT;
+    globalReasonCodes.push(...driftReasons);
+  } else if (!qualityPassed) {
+    globalStatus = READINESS_STATES.UNKNOWN_DOMINATED;
+    globalReasonCodes.push(READINESS_REASON_CODES.EXCESSIVE_UNKNOWN_RATE);
+  } else if (totalExamined === 0) {
+    globalStatus = READINESS_STATES.INSUFFICIENT_DATA;
+    globalReasonCodes.push(READINESS_REASON_CODES.JOURNAL_EMPTY);
+  } else if (totalExamined < thresholds.global.min_total_observations || comparableCount < thresholds.global.min_comparable_observations) {
+    globalStatus = READINESS_STATES.INSUFFICIENT_DATA;
+    globalReasonCodes.push(READINESS_REASON_CODES.BELOW_GLOBAL_OBSERVATION_THRESHOLD);
+  } else if (anyClassReady) {
+    globalStatus = READINESS_STATES.READY_FOR_CANARY_DESIGN;
+    globalReasonCodes.push(READINESS_REASON_CODES.CANARY_DESIGN_EVIDENCE_SUFFICIENT);
+  } else {
+    globalStatus = READINESS_STATES.INSUFFICIENT_DATA;
+    globalReasonCodes.push(READINESS_REASON_CODES.BELOW_CLASS_OCCURRENCE_THRESHOLD);
+  }
+
+  return {
+    schema_version: READINESS_SCHEMA_VERSION,
+    evaluated_at: evaluatedAt,
+    evaluation_window: {
+      start,
+      end,
+      total_records_examined: totalExamined
+    },
+    integrity_gate: {
+      passed: integrityPassed,
+      hash_chain_valid: hashChainValid,
+      sequence_valid: sequenceValid,
+      tampering_detected: tamperingDetected,
+      errors: integrityErrors
+    },
+    policy_drift_gate: {
+      passed: policyDriftPassed,
+      drift_detected: driftDetected,
+      expected_policy_fingerprint: expectedPolicyFingerprint,
+      observed_policy_fingerprints: observedPolicyFingerprints,
+      expected_evaluator_version: expectedEvaluatorVersion,
+      observed_evaluator_versions: observedEvaluatorVersions
+    },
+    quality_gate: {
+      passed: qualityPassed,
+      unknown_rate: Math.round(unknownRate * 1000) / 1000,
+      max_unknown_rate: thresholds.global.max_unknown_rate,
+      corrupt_records_count: integrityErrors.length
+    },
+    global_readiness: {
+      status: globalStatus,
+      reason_codes: globalReasonCodes,
+      metrics: {
+        total_observations: totalExamined,
+        comparable_observations: comparableCount,
+        divergence_count: totalDivergences,
+        divergence_rate: Math.round(divergenceRate * 1000) / 1000
+      }
+    },
+    advisory_class_readiness: advisoryClassReadiness,
+    epistemic_class: 'DERIVED',
+    authority_contract: {
+      execution_authority_granted: false,
+      canary_authorized: false,
+      routing_mutation_allowed: false,
+      empirical_savings_claimed: false
+    }
+  };
+}
+
+export function evaluateJournalReadiness(journal, options = {}) {
+  const observations = journal.readObservations(options);
+  return evaluatePromotionReadiness(observations, options);
 }

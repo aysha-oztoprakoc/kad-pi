@@ -1,0 +1,48 @@
+{
+  "workpackage": "WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+  "title": "KAD-PI Deterministic Promotion Readiness Gate",
+  "validated_at": "2026-08-30T02:00:00.000Z",
+  "acceptance_criteria_results": [
+    {
+      "criterion": "Wayfinder decision establishes multi-dimensional deterministic readiness contract with per-advisory-class evaluation",
+      "status": "MET",
+      "evidence": "wayfinder-decision.json"
+    },
+    {
+      "criterion": "Machine-readable schema kad-promotion-readiness-v1 and policy contract define unambiguous states (INSUFFICIENT_DATA, INVALID_EVIDENCE, POLICY_DRIFT, READY_FOR_CANARY_DESIGN)",
+      "status": "MET",
+      "evidence": "readiness-schema.json, readiness-policy.json"
+    },
+    {
+      "criterion": "Readiness evaluation is strictly fail-closed on hash-chain corruption, sequence gaps, historical tampering, and policy/evaluator fingerprint drift",
+      "status": "MET",
+      "evidence": "integrity-failure-probe.json, policy-drift-probe.json"
+    },
+    {
+      "criterion": "Per-advisory-class evaluation assesses opportunity class occurrences, divergence counts, and UNKNOWN rates independently",
+      "status": "MET",
+      "evidence": "sufficient-data-fixture-probe.json, deterministic-fixtures.json"
+    },
+    {
+      "criterion": "Strict epistemic separation enforced: READY_FOR_CANARY_DESIGN means only readiness to design an intervention, never promotion authorization or empirical savings claim",
+      "status": "MET",
+      "evidence": "epistemic-contract.json, no-authority-no-routing-mutation-probe.json"
+    },
+    {
+      "criterion": "Synthetic test fixtures are unmistakably labeled and cannot masquerade as live evidence",
+      "status": "MET",
+      "evidence": "deterministic-fixtures.json, tools/kad/test/readiness.test.mjs"
+    },
+    {
+      "criterion": "Operator interface surfaces readiness via bin/kad observatory readiness and bin/kad observatory readiness --json without noisy compact status degradation",
+      "status": "MET",
+      "evidence": "bin/kad, tools/kad/telemetry/control-plane-runtime.mjs"
+    },
+    {
+      "criterion": "All 22 required TDD test cases (T1-T22) pass and all 510 regression tests remain green with zero routing mutations",
+      "status": "MET",
+      "evidence": "regression-results.json, tools/kad/test/readiness.test.mjs"
+    }
+  ],
+  "verdict": "PASS"
+}

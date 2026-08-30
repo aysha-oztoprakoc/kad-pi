@@ -41,3 +41,22 @@ bin/kad observatory
 # Machine readable JSON
 bin/kad observatory --json
 ```
+
+## Promotion Readiness Gate
+
+The **Promotion Readiness Gate** evaluates whether sufficient longitudinal observational evidence exists to justify designing a controlled canary experiment for a specific opportunity class.
+
+### Epistemic Boundary
+* **`READY_FOR_CANARY_DESIGN`** authorizes designing a bounded experiment only.
+* It **NEVER** authorizes promotion, modifies routing, or asserts empirical cost/quality superiority.
+* If data is below threshold, the gate returns **`INSUFFICIENT_DATA`**.
+* If integrity checks fail or policy drift is detected, the gate fails closed with **`INVALID_EVIDENCE`** or **`POLICY_DRIFT`**.
+
+### CLI Commands
+```bash
+# View readiness evaluation summary
+bin/kad observatory readiness
+
+# View machine-readable JSON
+bin/kad observatory readiness --json
+```

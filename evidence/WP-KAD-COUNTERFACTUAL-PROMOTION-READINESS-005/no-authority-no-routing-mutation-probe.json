@@ -1,0 +1,27 @@
+{
+  "probe_name": "no-authority-no-routing-mutation-probe",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "invariants_tested": [
+    {
+      "claim": "Readiness evaluation executes shadow routes or canaries",
+      "observed": "Zero execution (evaluation is pure read-only metadata transformation)",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "Readiness evaluation mutates routeEconomically policy or lanes",
+      "observed": "Production router output remains 100% deterministic and unaffected",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "READY_FOR_CANARY_DESIGN authorizes promotion or grants shadow authority",
+      "observed": "authority_contract explicitly enforces execution_authority_granted: false, canary_authorized: false, routing_mutation_allowed: false",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "Empirical savings or quality superiority claimed from counterfactuals",
+      "observed": "Strictly labeled UNKNOWN and empirical_savings_claimed: false",
+      "verdict": "PASS"
+    }
+  ],
+  "overall_verdict": "PASS"
+}

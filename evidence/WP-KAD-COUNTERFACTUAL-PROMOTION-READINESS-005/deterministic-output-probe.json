@@ -1,0 +1,10 @@
+{
+  "probe_name": "deterministic-output-probe",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "contract": {
+    "repeat_evaluations_count": 100,
+    "input_fixture": "synthetic-10-events",
+    "byte_identical_results": true,
+    "verdict": "PASS"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "baseline_commit": "8774f8d28e1d8920576719911d4050e7cb0e4a76",
+  "workpackage": "WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+  "fixed_point": "8774f8d28e1d8920576719911d4050e7cb0e4a76",
+  "dependencies": {
+    "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004": "ACCEPTED",
+    "WP-KAD-ECONOMIC-ROUTER-SHADOW-003": "ACCEPTED",
+    "WP-KAD-USAGE-BRIDGE-002": "ACCEPTED",
+    "WP-KAD-OPERATOR-CONTROL-PLANE-001": "ACCEPTED"
+  },
+  "initial_tests_count": 488,
+  "verdict": "READY"
+}

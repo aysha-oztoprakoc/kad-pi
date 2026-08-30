@@ -1,0 +1,51 @@
+{
+  "policy_name": "kad-counterfactual-promotion-readiness-policy-v1",
+  "policy_version": "1.0.0",
+  "policy_fingerprint": "sha256:7e8d35f410c596b6b7a5a87b1c313a17e0a0d4c8f5f4b5952dbdb288a8767da6",
+  "evaluator_version": "kad-economic-shadow-v1",
+  "observation_schema_version": "kad-shadow-observation-v1",
+  "readiness_schema_version": "kad-promotion-readiness-v1",
+  "global_thresholds": {
+    "min_total_observations": 10,
+    "min_comparable_observations": 5,
+    "max_unknown_rate": 0.30
+  },
+  "class_thresholds": {
+    "EXPIRING_SUBSCRIPTION_OPPORTUNITY": {
+      "min_occurrences": 5,
+      "min_divergences": 3
+    },
+    "SCARCE_QUOTA_PRESERVATION": {
+      "min_occurrences": 5,
+      "min_divergences": 3
+    },
+    "PAID_AUTHORITY_BARRIER": {
+      "min_occurrences": 5,
+      "min_divergences": 3
+    },
+    "STALE_TELEMETRY_SUPPRESSED": {
+      "min_occurrences": 5,
+      "min_divergences": 3
+    },
+    "UNKNOWN_QUOTA_NEUTRAL": {
+      "min_occurrences": 5,
+      "min_divergences": 3
+    },
+    "LIMIT_REACHED_AVOIDANCE": {
+      "min_occurrences": 5,
+      "min_divergences": 3
+    },
+    "SCOPE_MISMATCH": {
+      "min_occurrences": 5,
+      "min_divergences": 3
+    }
+  },
+  "invariants": {
+    "fail_closed_on_integrity_error": true,
+    "fail_closed_on_policy_drift": true,
+    "fail_closed_on_version_drift": true,
+    "zero_execution_authority": true,
+    "zero_canary_authorization": true,
+    "zero_empirical_savings_claim": true
+  }
+}

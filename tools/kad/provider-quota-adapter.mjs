@@ -24,7 +24,7 @@ function parseRaw(raw) {
   try { return { value: JSON.parse(String(raw)), warnings: [] }; } catch { return { value: {}, warnings: ['raw output is not valid JSON'] }; }
 }
 
-export function normalizeRawProviderQuota({ provider, surface, raw, model_scope = null, window_scope = null, observed_at = Date.now(), policy = {}, now = observed_at } = {}) {
+export function normalizeRawProviderQuota({ provider, surface, raw, model_scope = null, window_scope = null, now = Date.now(), observed_at = now, policy = {} } = {}) {
   const parsed = parseRaw(raw);
   const sanitized = redactProviderOutput(raw);
   const candidate = parsed.value?.quota;

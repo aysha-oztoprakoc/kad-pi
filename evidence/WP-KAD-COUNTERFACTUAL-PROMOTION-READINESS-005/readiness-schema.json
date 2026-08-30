@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "kad-promotion-readiness-v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "evaluated_at",
+    "evaluation_window",
+    "integrity_gate",
+    "policy_drift_gate",
+    "quality_gate",
+    "global_readiness",
+    "advisory_class_readiness",
+    "epistemic_class",
+    "authority_contract"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "kad-promotion-readiness-v1" },
+    "evaluated_at": { "type": "string", "format": "date-time" },
+    "evaluation_window": {
+      "type": "object",
+      "required": ["start", "end", "total_records_examined"],
+      "properties": {
+        "start": { "type": ["string", "null"] },
+        "end": { "type": ["string", "null"] },
+        "total_records_examined": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "integrity_gate": {
+      "type": "object",
+      "required": ["passed", "hash_chain_valid", "sequence_valid", "tampering_detected", "errors"],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "hash_chain_valid": { "type": "boolean" },
+        "sequence_valid": { "type": "boolean" },
+        "tampering_detected": { "type": "boolean" },
+        "errors": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "policy_drift_gate": {
+      "type": "object",
+      "required": ["passed", "drift_detected", "expected_policy_fingerprint", "observed_policy_fingerprints", "expected_evaluator_version", "observed_evaluator_versions"],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "drift_detected": { "type": "boolean" },
+        "expected_policy_fingerprint": { "type": "string" },
+        "observed_policy_fingerprints": { "type": "array", "items": { "type": "string" } },
+        "expected_evaluator_version": { "type": "string" },
+        "observed_evaluator_versions": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "quality_gate": {
+      "type": "object",
+      "required": ["passed", "unknown_rate", "max_unknown_rate", "corrupt_records_count"],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "unknown_rate": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "max_unknown_rate": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "corrupt_records_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "global_readiness": {
+      "type": "object",
+      "required": ["status", "reason_codes", "metrics"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["INSUFFICIENT_DATA", "INVALID_EVIDENCE", "POLICY_DRIFT", "UNKNOWN_DOMINATED", "READY_FOR_CANARY_DESIGN"]
+        },
+        "reason_codes": { "type": "array", "items": { "type": "string" } },
+        "metrics": {
+          "type": "object",
+          "required": ["total_observations", "comparable_observations", "divergence_count", "divergence_rate"],
+          "properties": {
+            "total_observations": { "type": "integer", "minimum": 0 },
+            "comparable_observations": { "type": "integer", "minimum": 0 },
+            "divergence_count": { "type": "integer", "minimum": 0 },
+            "divergence_rate": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+          }
+        }
+      }
+    },
+    "advisory_class_readiness": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["status", "reason_codes", "occurrences", "divergences", "divergence_rate", "ready_for_canary_design", "thresholds"],
+        "properties": {
+          "status": { "type": "string" },
+          "reason_codes": { "type": "array", "items": { "type": "string" } },
+          "occurrences": { "type": "integer", "minimum": 0 },
+          "divergences": { "type": "integer", "minimum": 0 },
+          "divergence_rate": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "ready_for_canary_design": { "type": "boolean" },
+          "thresholds": {
+            "type": "object",
+            "required": ["min_occurrences", "min_divergences"],
+            "properties": {
+              "min_occurrences": { "type": "integer" },
+              "min_divergences": { "type": "integer" }
+            }
+          }
+        }
+      }
+    },
+    "epistemic_class": { "type": "string", "const": "DERIVED" },
+    "authority_contract": {
+      "type": "object",
+      "required": ["execution_authority_granted", "canary_authorized", "routing_mutation_allowed", "empirical_savings_claimed"],
+      "properties": {
+        "execution_authority_granted": { "type": "boolean", "const": false },
+        "canary_authorized": { "type": "boolean", "const": false },
+        "routing_mutation_allowed": { "type": "boolean", "const": false },
+        "empirical_savings_claimed": { "type": "boolean", "const": false }
+      }
+    }
+  },
+  "additionalProperties": false
+}

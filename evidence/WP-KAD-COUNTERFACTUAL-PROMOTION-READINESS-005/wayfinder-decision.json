@@ -1,0 +1,33 @@
+{
+  "decision_id": "WAYFINDER-WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "question": "What is the smallest deterministic evidence model that can distinguish insufficient longitudinal evidence from sufficient evidence to DESIGN a controlled canary, without turning observational correlation into a promotion decision?",
+  "options_considered": [
+    {
+      "option": "A",
+      "name": "Fixed global sample threshold",
+      "summary": "Single threshold across all observations (e.g., 50 total records) regardless of class representation or policy consistency.",
+      "tradeoffs": "Too coarse; obscures class-specific absence; ignores policy drift and hash-chain corruption."
+    },
+    {
+      "option": "B",
+      "name": "Multi-dimensional deterministic readiness contract with per-advisory-class evaluation",
+      "summary": "Deterministic multi-gate evaluation combining journal integrity (hash-chain/sequence), policy consistency (zero fingerprint/version drift), observation quality (bounded UNKNOWN rate), and per-advisory-class occurrence/divergence thresholds.",
+      "tradeoffs": "Rigorous, fail-closed on integrity/drift, strictly limits output semantics to READY_FOR_CANARY_DESIGN without granting promotion or execution authority."
+    },
+    {
+      "option": "C",
+      "name": "Probabilistic Bayesian confidence model with arbitrary priors",
+      "summary": "Statistical inference attempting to estimate promotion likelihood without an intervention.",
+      "tradeoffs": "Violates KAD deterministic doctrine; pretends unexecuted counterfactuals provide causal empirical evidence."
+    }
+  ],
+  "selected_option": "B",
+  "rationale": "Option B enforces multi-dimensional deterministic validation (integrity, policy consistency, quality, class-level counts) and strictly respects the epistemic invariant 'No causal claims without intervention'. Output states are limited to INSUFFICIENT_DATA, INVALID_EVIDENCE, POLICY_DRIFT, and READY_FOR_CANARY_DESIGN.",
+  "invariants": [
+    "No causal claims without intervention.",
+    "READY_FOR_CANARY_DESIGN authorizes experiment design only, never promotion or routing mutation.",
+    "Fail-closed on broken hash chain, sequence gaps, or policy fingerprint drift.",
+    "Synthetic test fixtures can never masquerade as live evidence."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "probe_name": "integrity-failure-probe",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "scenarios": [
+    {
+      "name": "Corrupted event hash in middle of journal",
+      "integrity_passed": false,
+      "status": "INVALID_EVIDENCE",
+      "reason": "HASH_CHAIN_CORRUPTED",
+      "verdict": "PASS"
+    },
+    {
+      "name": "Sequence gap between events",
+      "integrity_passed": false,
+      "status": "INVALID_EVIDENCE",
+      "reason": "SEQUENCE_GAP_DETECTED",
+      "verdict": "PASS"
+    },
+    {
+      "name": "Historical payload tampering without hash update",
+      "integrity_passed": false,
+      "tampering_detected": true,
+      "status": "INVALID_EVIDENCE",
+      "reason": "HISTORICAL_TAMPERING_DETECTED",
+      "verdict": "PASS"
+    },
+    {
+      "name": "Malformed tail recovery",
+      "integrity_passed": true,
+      "recovered_valid_records": 6,
+      "verdict": "PASS"
+    }
+  ],
+  "overall_verdict": "PASS (Fail-Closed on all tampering/corruption)"
+}

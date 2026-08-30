@@ -1,0 +1,82 @@
+{
+  "id": "WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+  "project": "kad-pi",
+  "title": "KAD-PI Deterministic Promotion Readiness Gate",
+  "status": "ACCEPTED",
+  "priority": 100,
+  "spec_ref": "user:/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+  "fixed_point": "8774f8d28e1d8920576719911d4050e7cb0e4a76",
+  "scope": [
+    "tools/kad/telemetry/observatory.mjs",
+    "tools/kad/telemetry/view-model.mjs",
+    "tools/kad/telemetry/control-plane-runtime.mjs",
+    "tools/kad/telemetry/index.mjs",
+    "tools/kad/test/observatory.test.mjs",
+    "tools/kad/test/readiness.test.mjs",
+    "evidence/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005/",
+    "docs/agents/observatory.md",
+    "wiki/KAD_Counterfactual_Promotion_Readiness_2026-08-30.md",
+    "bin/kad"
+  ],
+  "non_scope": [
+    "executing shadow routes or canary experiments",
+    "altering production routing authority (routeEconomically)",
+    "enabling automatic promotion or granting shadow authority",
+    "benchmarking remote providers or spending paid tokens for synthetic traffic",
+    "claiming empirical savings, quality equivalence, or causal benefit without intervention",
+    "probabilistic authorization or fuzzy statistical priors"
+  ],
+  "owned_paths": [
+    "tools/kad/telemetry/observatory.mjs",
+    "tools/kad/telemetry/view-model.mjs",
+    "tools/kad/telemetry/control-plane-runtime.mjs",
+    "tools/kad/telemetry/index.mjs",
+    "tools/kad/test/observatory.test.mjs",
+    "tools/kad/test/readiness.test.mjs",
+    "evidence/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005/",
+    "docs/agents/observatory.md",
+    "wiki/KAD_Counterfactual_Promotion_Readiness_2026-08-30.md",
+    "bin/kad"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/readiness.test.mjs",
+    "node --test tools/kad/test/observatory.test.mjs",
+    "node --test tools/kad/test/economic-shadow.test.mjs",
+    "node --test tools/kad/test/telemetry-usage-bridge.test.mjs",
+    "node --test tools/kad/test/telemetry.test.mjs",
+    "node --test tools/kad/test/control-plane.test.mjs",
+    "node --test tools/kad/test/research*.test.mjs",
+    "node --test tools/kad/test/*.test.mjs",
+    "just verify",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Wayfinder decision establishes multi-dimensional deterministic readiness contract with per-advisory-class evaluation.",
+    "Machine-readable schema kad-promotion-readiness-v1 and policy contract define unambiguous states (INSUFFICIENT_DATA, INVALID_EVIDENCE, POLICY_DRIFT, READY_FOR_CANARY_DESIGN).",
+    "Readiness evaluation is strictly fail-closed on hash-chain corruption, sequence gaps, historical tampering, and policy/evaluator fingerprint drift.",
+    "Per-advisory-class evaluation assesses opportunity class occurrences, divergence counts, and UNKNOWN rates independently.",
+    "Strict epistemic separation enforced: READY_FOR_CANARY_DESIGN means only readiness to design an intervention, never promotion authorization or empirical savings claim.",
+    "Synthetic test fixtures are unmistakably labeled and cannot masquerade as live evidence.",
+    "Operator interface surfaces readiness via bin/kad observatory readiness and bin/kad observatory readiness --json without noisy compact status degradation.",
+    "All required TDD test cases pass and full regression suite remains green with zero routing mutations."
+  ],
+  "description": "Deterministic promotion readiness gate evaluating longitudinal observational evidence sufficiency for controlled canary experiment design without granting shadow execution authority or making unsupported causal claims.",
+  "source_ticket": "user:/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+  "claim": null
+}

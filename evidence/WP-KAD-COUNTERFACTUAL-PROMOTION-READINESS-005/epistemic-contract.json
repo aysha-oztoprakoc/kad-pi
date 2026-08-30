@@ -1,0 +1,28 @@
+{
+  "contract_name": "KAD-COUNTERFACTUAL-PROMOTION-READINESS-EPISTEMIC-CONTRACT",
+  "version": "1.0.0",
+  "defined_at": "2026-08-30T02:00:00.000Z",
+  "classes": {
+    "OBSERVED": {
+      "definition": "Factual properties of the production routing and runtime execution as recorded in the tamper-evident journal."
+    },
+    "COUNTERFACTUAL": {
+      "definition": "The shadow recommendation that was explicitly NOT executed during production runtime."
+    },
+    "DERIVED": {
+      "definition": "Mathematically exact calculations computed from valid journal records, including readiness scores, agreement counts, and divergence rates."
+    },
+    "ESTIMATED_COUNTERFACTUAL": {
+      "definition": "Hypothetical opportunity classifications indicating conditions under which shadow routing would have diverged."
+    },
+    "UNKNOWN": {
+      "definition": "All causal assertions about empirical cost savings, quality differences, or promotion fitness prior to a controlled intervention."
+    }
+  ],
+  "inviolable_principles": [
+    "No causal claims without intervention.",
+    "READY_FOR_CANARY_DESIGN does not mean the shadow route is superior.",
+    "READY_FOR_CANARY_DESIGN does not mean promotion is authorized.",
+    "Synthetic test fixtures can never be counted as live empirical evidence."
+  ]
+}

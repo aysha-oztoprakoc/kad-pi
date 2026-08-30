@@ -1,0 +1,29 @@
+{
+  "traceability_version": "1.0.0",
+  "workpackage": "WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+  "tests_file": "tools/kad/test/readiness.test.mjs",
+  "mappings": [
+    { "req": "T1", "desc": "Empty journal -> INSUFFICIENT_DATA with JOURNAL_EMPTY reason code" },
+    { "req": "T2", "desc": "Below global threshold -> INSUFFICIENT_DATA with BELOW_GLOBAL_OBSERVATION_THRESHOLD" },
+    { "req": "T3", "desc": "Sufficient observations but below class threshold -> INSUFFICIENT_DATA for that class" },
+    { "req": "T4", "desc": "Sufficient class occurrences but below divergence threshold -> INSUFFICIENT_DATA for that class" },
+    { "req": "T5", "desc": "Sufficient occurrences and divergences for a class -> READY_FOR_CANARY_DESIGN for that class" },
+    { "req": "T6", "desc": "Broken hash chain in journal -> INVALID_EVIDENCE (fail-closed)" },
+    { "req": "T7", "desc": "Sequence gap in journal -> INVALID_EVIDENCE (fail-closed)" },
+    { "req": "T8", "desc": "Historical tampering detected -> INVALID_EVIDENCE (fail-closed)" },
+    { "req": "T9", "desc": "Malformed tail recovery preserves valid prefix for evaluation" },
+    { "req": "T10", "desc": "Policy fingerprint drift -> POLICY_DRIFT (fail-closed)" },
+    { "req": "T11", "desc": "Evaluator version drift -> POLICY_DRIFT (fail-closed)" },
+    { "req": "T12", "desc": "Observation schema drift -> POLICY_DRIFT (fail-closed)" },
+    { "req": "T13", "desc": "Multiple policy fingerprints present -> POLICY_DRIFT with full list" },
+    { "req": "T14", "desc": "Excessive UNKNOWN rate (> 30%) -> UNKNOWN_DOMINATED status" },
+    { "req": "T15", "desc": "Strict epistemic separation: output contains only DERIVED and UNKNOWN, zero fake empirical savings" },
+    { "req": "T16", "desc": "Zero execution authority granted: authority_contract fields strictly false" },
+    { "req": "T17", "desc": "Zero routing mutation: production economic router remains untouched" },
+    { "req": "T18", "desc": "Deterministic repeat evaluation: identical journal yields byte-equivalent result" },
+    { "req": "T19", "desc": "CLI bin/kad observatory readiness displays formatted summary cleanly" },
+    { "req": "T20", "desc": "CLI bin/kad observatory readiness --json outputs valid schema-conforming JSON" },
+    { "req": "T21", "desc": "Synthetic test fixtures explicitly flagged and cannot masquerade as live evidence" },
+    { "req": "T22", "desc": "Current live journal evaluation returns INSUFFICIENT_DATA without crashing" }
+  ]
+}

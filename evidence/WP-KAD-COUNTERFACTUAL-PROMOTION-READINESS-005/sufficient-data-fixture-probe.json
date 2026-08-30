@@ -1,0 +1,22 @@
+{
+  "probe_name": "sufficient-data-fixture-probe",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "fixture_properties": {
+    "synthetic_test_fixture": true,
+    "total_observations": 10,
+    "target_class": "EXPIRING_SUBSCRIPTION_OPPORTUNITY",
+    "occurrences": 6,
+    "divergences": 4,
+    "divergence_rate": 0.667,
+    "resulting_class_status": "READY_FOR_CANARY_DESIGN",
+    "reason_codes": ["CANARY_DESIGN_EVIDENCE_SUFFICIENT"],
+    "ready_for_canary_design": true,
+    "authority_contract": {
+      "execution_authority_granted": false,
+      "canary_authorized": false,
+      "routing_mutation_allowed": false,
+      "empirical_savings_claimed": false
+    }
+  },
+  "verdict": "PASS"
+}

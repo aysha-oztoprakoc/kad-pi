@@ -13,7 +13,7 @@ import { collectServiceHealth } from './health.mjs';
 import { computeTokenmaxxingMetrics } from './tokenmaxxing.mjs';
 import { buildControlPlaneViewModel } from './view-model.mjs';
 import { execFileSync } from 'node:child_process';
-import { ShadowObservatoryJournal, aggregateObservations } from './observatory.mjs';
+import { ShadowObservatoryJournal, aggregateObservations, evaluateJournalReadiness } from './observatory.mjs';
 
 export function renderCompactMeter(state = {}) {
   const parts = ['KAD'];
@@ -167,15 +167,17 @@ export function renderDetailedPanel(viewModel = {}) {
     lines.push('');
   }
 
-  // Counterfactual Observatory
+  // Counterfactual Observatory & Promotion Readiness
   if (viewModel.observatory && viewModel.observatory.total_observations > 0) {
     const obs = viewModel.observatory;
     lines.push(`▶ COUNTERFACTUAL OBSERVATORY`);
     lines.push(`  Observations: ${obs.total_observations}   Agreements: ${obs.agreement_count}   Divergences: ${obs.divergence_count} (rate: ${(obs.divergence_rate * 100).toFixed(1)}%)`);
     lines.push(`  Journal Integrity: ${obs.integrity?.valid ? 'VALID ✓' : 'COMPROMISED !'}`);
+    if (obs.readiness) {
+      lines.push(`  Canary Readiness: ${obs.readiness.global_readiness?.status || 'UNKNOWN'}`);
+    }
     lines.push('');
   }
-
   return lines.join('\n');
 }
 
@@ -233,9 +235,11 @@ export async function executeKadCommand(action = 'status', { faultyState = null,
     const records = journal.readObservations();
     const integrity = journal.verifyJournalIntegrity();
     const aggregates = aggregateObservations(records);
+    const readiness = evaluateJournalReadiness(journal);
     observatoryState = {
       ...aggregates,
-      integrity
+      integrity,
+      readiness
     };
   } catch (err) {
     errors.push(`Observatory probe failed: ${err.message}`);
@@ -301,6 +305,18 @@ export async function executeKadDoctor({ cwd = process.cwd() } = {}) {
     });
   } catch (e) {
     checks.push({ name: 'observatory_journal', status: 'DEGRADED', message: e.message });
+  }
+  // Check 5: Promotion Readiness Gate
+  try {
+    const journal = new ShadowObservatoryJournal();
+    const readiness = evaluateJournalReadiness(journal);
+    checks.push({
+      name: 'readiness_gate',
+      status: 'PASS',
+      message: `Gate active (status: ${readiness.global_readiness.status}, canary authorized: ${readiness.authority_contract.canary_authorized})`,
+    });
+  } catch (e) {
+    checks.push({ name: 'readiness_gate', status: 'DEGRADED', message: e.message });
   }
 
   // Check 4: Toolchain - trivy

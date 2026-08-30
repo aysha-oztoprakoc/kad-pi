@@ -1,0 +1,40 @@
+{
+  "fixture_name": "readiness-evaluation-test-fixtures",
+  "evaluated_at": "2026-08-30T02:00:00.000Z",
+  "fixtures": [
+    {
+      "name": "empty-journal",
+      "event_count": 0,
+      "expected_status": "INSUFFICIENT_DATA",
+      "expected_reason": "JOURNAL_EMPTY",
+      "verdict": "PASS"
+    },
+    {
+      "name": "insufficient-global-observations",
+      "event_count": 4,
+      "expected_status": "INSUFFICIENT_DATA",
+      "expected_reason": "BELOW_GLOBAL_OBSERVATION_THRESHOLD",
+      "verdict": "PASS"
+    },
+    {
+      "name": "sufficient-global-insufficient-class",
+      "event_count": 12,
+      "target_class": "EXPIRING_SUBSCRIPTION_OPPORTUNITY",
+      "class_occurrences": 2,
+      "expected_status": "INSUFFICIENT_DATA",
+      "expected_reason": "BELOW_CLASS_OCCURRENCE_THRESHOLD",
+      "verdict": "PASS"
+    },
+    {
+      "name": "sufficient-class-ready-for-canary",
+      "event_count": 10,
+      "target_class": "EXPIRING_SUBSCRIPTION_OPPORTUNITY",
+      "class_occurrences": 6,
+      "class_divergences": 4,
+      "expected_status": "READY_FOR_CANARY_DESIGN",
+      "expected_reason": "CANARY_DESIGN_EVIDENCE_SUFFICIENT",
+      "verdict": "PASS"
+    }
+  ],
+  "overall_verdict": "PASS"
+}
