@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+import { executeKadDoctor } from '../tools/kad/telemetry/control-plane-runtime.mjs';
+
+const isJson = process.argv.includes('--json') || process.argv.includes('-j');
+
+async function main() {
+  const result = await executeKadDoctor();
+  if (isJson) {
+    process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
+  } else {
+    process.stdout.write(`KAD DOCTOR: ${result.verdict}\n\n`);
+    for (const check of result.checks) {
+      const icon = check.status === 'PASS' ? '✓' : check.status === 'DEGRADED' ? '!' : '✗';
+      process.stdout.write(`  [${icon}] ${check.name.padEnd(24)} ${check.message}\n`);
+    }
+    process.stdout.write('\n');
+  }
+  process.exitCode = result.verdict === 'FAIL' ? 1 : 0;
+}
+
+main().catch((err) => {
+  process.stderr.write(`kad-doctor error: ${err.message}\n`);
+  process.exitCode = 1;
+});

@@ -1,0 +1,112 @@
+#!/usr/bin/env node
+import {
+  executeKadCommand,
+  executeKadDoctor,
+  renderDetailedPanel,
+} from '../tools/kad/telemetry/control-plane-runtime.mjs';
+
+const args = process.argv.slice(2);
+const isJson = args.includes('--json') || args.includes('-j');
+const filteredArgs = args.filter((a) => a !== '--json' && a !== '-j');
+const subcommand = filteredArgs[0] || 'status';
+
+async function main() {
+  if (subcommand === 'doctor') {
+    const result = await executeKadDoctor();
+    if (isJson) {
+      process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
+    } else {
+      process.stdout.write(`KAD DOCTOR: ${result.verdict}\n\n`);
+      for (const check of result.checks) {
+        const icon = check.status === 'PASS' ? '✓' : check.status === 'DEGRADED' ? '!' : '✗';
+        process.stdout.write(`  [${icon}] ${check.name.padEnd(24)} ${check.message}\n`);
+      }
+      process.stdout.write('\n');
+    }
+    process.exitCode = result.verdict === 'FAIL' ? 1 : 0;
+    return;
+  }
+
+  if (subcommand === 'help' || subcommand === '--help' || subcommand === '-h') {
+    process.stdout.write(`KAD Operator Control Plane CLI
+
+Usage:
+  kad status [--json]      Show current normalized control plane status
+  kad doctor [--json]      Run comprehensive doctor diagnostic checks
+  kad tokens [--json]      Show token and quota usage
+  kad providers [--json]   List discovered providers and telemetry state
+  kad budget [--json]      Show economic router and budget authorization
+  kad services [--json]    Show service health (OpenViking, Zotero, etc.)
+  kad work [--json]        Show workctl active claim and frontier
+  kad ui                   Render the full native panel in terminal
+\n`);
+    return;
+  }
+
+  const vm = await executeKadCommand(subcommand);
+
+  if (isJson) {
+    process.stdout.write(`${JSON.stringify(vm, null, 2)}\n`);
+    return;
+  }
+
+  if (subcommand === 'ui' || subcommand === 'status') {
+    process.stdout.write(`${renderDetailedPanel(vm)}\n`);
+    return;
+  }
+
+  if (subcommand === 'tokens') {
+    process.stdout.write(`KAD TOKENS & QUOTAS\n`);
+    process.stdout.write(`Session tokens: ${vm.overview?.session_tokens ?? 0}\n\n`);
+    for (const p of vm.providers || []) {
+      process.stdout.write(`  ${p.provider_id.padEnd(24)} ${p.quota_display} [${p.source_class || p.state || 'UNKNOWN'}]\n`);
+    }
+    return;
+  }
+
+  if (subcommand === 'providers') {
+    process.stdout.write(`KAD PROVIDERS INVENTORY\n\n`);
+    for (const p of vm.providers || []) {
+      process.stdout.write(`  ${p.provider_id.padEnd(24)} status: ${p.status || 'UNKNOWN'}  source: ${p.source_class || p.state || 'UNKNOWN'}\n`);
+      if (p.models?.length) {
+        process.stdout.write(`    models: ${p.models.join(', ')}\n`);
+      }
+    }
+    return;
+  }
+
+  if (subcommand === 'budget') {
+    process.stdout.write(`KAD ECONOMIC ROUTER & BUDGET\n\n`);
+    process.stdout.write(`  Execution class: ${vm.overview?.execution_class || 'UNKNOWN'}\n`);
+    process.stdout.write(`  Paid authorized: ${vm.overview?.paid_authorized ? 'YES' : 'NO (FREE/SUBSCRIPTION ONLY)'}\n`);
+    return;
+  }
+
+  if (subcommand === 'services') {
+    process.stdout.write(`KAD SERVICES HEALTH\n\n`);
+    for (const [srv, state] of Object.entries(vm.services || {})) {
+      process.stdout.write(`  ${srv.padEnd(20)} ${state.state} ${state.reason ? `(${state.reason})` : ''}\n`);
+    }
+    return;
+  }
+
+  if (subcommand === 'work') {
+    process.stdout.write(`KAD WORKCTL STATE\n\n`);
+    const w = vm.workctl || {};
+    if (w.has_active_claim) {
+      process.stdout.write(`  Active Claim: ${w.ticket_id} (actor: ${w.actor_label})\n`);
+    } else {
+      process.stdout.write(`  NO ACTIVE CLAIM\n`);
+    }
+    if (w.frontier?.length) process.stdout.write(`  Frontier: ${w.frontier.join(', ')}\n`);
+    return;
+  }
+
+  // Default fallback
+  process.stdout.write(`${renderDetailedPanel(vm)}\n`);
+}
+
+main().catch((err) => {
+  process.stderr.write(`kad error: ${err.message}\n`);
+  process.exitCode = 1;
+});
