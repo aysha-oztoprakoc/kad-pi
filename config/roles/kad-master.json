@@ -33,5 +33,16 @@
     "workctl",
     "hub"
   ],
-  "verifier_independent": false
+  "verifier_independent": false,
+  "offload_allowed": false,
+  "detached_execution_safe": false,
+  "preferred_workload_providers": [
+    "omp-native-executor"
+  ],
+  "minimum_required_context": "FULL_CONSTITUTIONAL",
+  "expected_human_attention_savings": "LOW_INTERACTIVE_SUPERVISED",
+  "acceptance_evidence_requirements": [
+    "DOUBLE_AXIS_REVIEW",
+    "5_ADVISOR_VERDICT"
+  ]
 }

@@ -1,9 +1,9 @@
 {
   "schema": "kad-role-contract-v1",
   "role": "kad-local-extractor",
-  "title": "KAD Local Extraction Specialist",
-  "description": "Local Qwen worker for bounded structured JSON extraction and entity identification.",
-  "trust_domain": "research",
+  "title": "Local Qwen Bounded Extractor",
+  "description": "Local bounded worker for structured JSON and entity extraction.",
+  "trust_domain": "engineering",
   "mutation_rights": "NONE",
   "requires_claim": false,
   "requires_lease": null,
@@ -15,5 +15,16 @@
   "tools_allowlist": [
     "read"
   ],
-  "verifier_independent": false
+  "verifier_independent": false,
+  "offload_allowed": true,
+  "detached_execution_safe": true,
+  "preferred_workload_providers": [
+    "pi-worker",
+    "local-process-runner"
+  ],
+  "minimum_required_context": "TASK_ONLY",
+  "expected_human_attention_savings": "ZERO_HUMAN_IN_THE_LOOP",
+  "acceptance_evidence_requirements": [
+    "STRUCTURED_JSON_SCHEMA_VALIDITY"
+  ]
 }

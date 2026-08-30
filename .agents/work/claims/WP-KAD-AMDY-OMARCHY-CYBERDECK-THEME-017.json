@@ -1,0 +1,17 @@
+{
+  "task": "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+  "project": "kad-pi",
+  "claim_id": "781c4edd-40c0-4383-a6b7-8377cb21bcde",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T10:48:49.831Z",
+  "base_commit": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+  "owned_paths": [
+    "interface/themes/omarchy",
+    "tools/kad/test/desktop-theme*.test.mjs",
+    "evidence/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+    ".agents/work/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T11:07:23.905Z"
+}

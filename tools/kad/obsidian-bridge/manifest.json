@@ -1,0 +1,10 @@
+{
+  "id": "kad-obsidian-bridge",
+  "name": "KAD Knowledge & Compute Bridge",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Canonical read-only bridge connecting Obsidian to governed KAD vault projections, Bases views, and local semantic graphs.",
+  "author": "KAD Architecture",
+  "authorUrl": "",
+  "isDesktopOnly": true
+}

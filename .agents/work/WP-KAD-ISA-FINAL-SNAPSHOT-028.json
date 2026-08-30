@@ -1,0 +1,74 @@
+{
+  "id": "WP-KAD-ISA-FINAL-SNAPSHOT-028",
+  "project": "kad-pi",
+  "title": "Implement ISA-KAD-SKILL-ROLE-002 / v1.1 and Freeze the Pre-GitHub KAD-PI Baseline",
+  "status": "ACCEPTED",
+  "priority": 280,
+  "spec_ref": "user:/WP-KAD-ISA-FINAL-SNAPSHOT-028",
+  "fixed_point": "0ea896b54d799ca98fa3b45fe45f519655135807",
+  "scope": [
+    "docs/architecture/",
+    "docs/adr/",
+    "config/",
+    "tools/kad/",
+    "evidence/WP-KAD-ISA-FINAL-SNAPSHOT-028/",
+    ".agents/work/WP-KAD-ISA-FINAL-SNAPSHOT-028.json"
+  ],
+  "non_scope": [
+    "configuring remote GitHub branch protection or Actions policies in this WP",
+    "pushing commits to remote origin",
+    "mutating local canonical Vault/Wiki in this WP",
+    "claiming Warren/Beads canaries are executed without repository evidence",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "docs/architecture/",
+    "docs/adr/",
+    "config/",
+    "tools/kad/",
+    "evidence/WP-KAD-ISA-FINAL-SNAPSHOT-028/",
+    ".agents/work/WP-KAD-ISA-FINAL-SNAPSHOT-028.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "npm test",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "bin/workctl skills doctor",
+    "bin/kad-isa check all",
+    "bin/kad-wiki lint",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-ISA-FINAL-SNAPSHOT-028/",
+  "blocked_by": [
+    "WP-KAD-SKILL-ROLE-FABRIC-024"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "ISA-KAD-SKILL-ROLE-002 / v1.1 established and frozen with SHA256 digest in docs/architecture/",
+    "Formal separation of WORK_LIFECYCLE (workctl) and EXECUTION_RUN_LIFECYCLE (execution provider) enforced",
+    "External provider taxonomy codified across 5 classes (WORKLOAD_PROVIDER, INTENT_GRAPH_PROJECTION, EXTERNAL_DOCTRINE_SOURCE, RESEARCH_PROVIDER, PRESENTATION_PROVIDER)",
+    "KAD_WORKLOAD_V1 typed transient workload contract and receipt validator implemented in tools/kad/workload-contract.mjs and config/workload-schema.json",
+    "External infrastructure positions explicitly defined (Warren: CANARY_PLANNED/LIKELY_ADOPT; Beads: SHADOW_CANARY/MINE; Agentic Engineering: ADOPT_RESEARCH_UPSTREAM)",
+    "Execution vs Learning separation invariant (EXECUTION != LEARNING) enforced with governed distillation pipeline",
+    "Role contracts extended with execution/offload semantics (offload_allowed, detached_execution_safe, preferred_workload_providers, minimum_required_context, expected_human_attention_savings, acceptance_evidence_requirements)",
+    "TDD test suite validating all authority boundaries passes with 675/675 green tests",
+    "Doctor and ISA lint/check diagnostics pass with 100% clean health",
+    "Canonical Pre-GitHub Final Snapshot report generated with complete implemented vs proposed matrix and successor handoff",
+    "Zero remote GitHub or Vault/Wiki mutation occurred during this workpackage"
+  ],
+  "description": "Reconcile latest repository evidence, implement ISA-KAD-SKILL-ROLE-002 / v1.1, validate authority boundaries deterministically, freeze an auditable local pre-GitHub baseline snapshot, and prepare an exact machine-actionable handoff for GitHub, Commit, and Vault phases.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-ISA-FINAL-SNAPSHOT-028",
+  "claim": null
+}

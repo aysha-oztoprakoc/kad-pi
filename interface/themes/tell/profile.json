@@ -1,0 +1,50 @@
+{
+  "schema": "kad-server-profile-v1",
+  "profile_id": "surface.tell.server",
+  "host": "host.tell.server",
+  "execution_class": "KAD_PROFILE_SERVER",
+  "motion_duration_ms": 0,
+  "audio_ui": false,
+  "monospace_only": true,
+  "color_support": {
+    "ansi_16": true,
+    "truecolor_24bit": true,
+    "plain_text_fallback": true
+  },
+  "ansi_16_palette": {
+    "black": 30,
+    "red": 31,
+    "green": 32,
+    "yellow": 33,
+    "blue": 34,
+    "magenta": 35,
+    "cyan": 36,
+    "white": 37,
+    "bright_black": 90,
+    "bright_red": 91,
+    "bright_green": 92,
+    "bright_yellow": 93,
+    "bright_blue": 94,
+    "bright_magenta": 95,
+    "bright_cyan": 96,
+    "bright_white": 97
+  },
+  "truecolor_palette": {
+    "canvas": "#07090e",
+    "panel": "#151923",
+    "crimson": "#1a080a",
+    "cyan": "#68d5e8",
+    "bone": "#e7e8e6",
+    "gold": "#e7ba72",
+    "green": "#79d69a",
+    "red": "#f05252",
+    "purple": "#c084fc",
+    "border": "#303746"
+  },
+  "authority_contract": {
+    "may_render": true,
+    "may_propose_capabilities": true,
+    "may_mutate_routing": false,
+    "may_mutate_vault": false
+  }
+}

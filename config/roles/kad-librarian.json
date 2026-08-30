@@ -1,9 +1,9 @@
 {
   "schema": "kad-role-contract-v1",
   "role": "kad-librarian",
-  "title": "KAD Knowledge Plane & Vault Librarian",
-  "description": "Curator of canonical Obsidian vault notes, backlink graphs, and projection compilation.",
-  "trust_domain": "control",
+  "title": "KAD KnowledgePlane & Vault Curator",
+  "description": "Obsidian vault and KnowledgePlane curator. Validates notes, projections, and backlinks.",
+  "trust_domain": "audit",
   "mutation_rights": "NONE",
   "requires_claim": false,
   "requires_lease": null,
@@ -12,14 +12,22 @@
     "kad-scout"
   ],
   "model_tier_preference": [
-    "STANDARD_REMOTE",
-    "LOCAL_GENERAL"
+    "STANDARD_REMOTE"
   ],
   "tools_allowlist": [
     "read",
-    "write",
-    "kad-knowledge",
-    "kad-wiki"
+    "task"
   ],
-  "verifier_independent": false
+  "verifier_independent": false,
+  "offload_allowed": false,
+  "detached_execution_safe": false,
+  "preferred_workload_providers": [
+    "omp-native-executor"
+  ],
+  "minimum_required_context": "FULL_CONSTITUTIONAL",
+  "expected_human_attention_savings": "LOW_INTERACTIVE_SUPERVISED",
+  "acceptance_evidence_requirements": [
+    "PROJECTION_INTEGRITY",
+    "VAULT_LINT_PASS"
+  ]
 }

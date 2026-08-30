@@ -1,0 +1,185 @@
+/**
+ * KAD Obsidian Bridge Plugin Stylesheet
+ * Surface Profile: surface.obsidian (ISA-KAD-AESTHETIC-001)
+ *
+ * Directives:
+ * 1. Tier A/B Occult Cyberpunk + Clinical Bureaucracy visual vocabulary.
+ * 2. WCAG AAA contrast ratio (>14:1) for cyan and bone prose on dark ink/oxblood.
+ * 3. 150ms-200ms state-driven transitions; zero ambient looping animations.
+ * 4. Strict NO_AUDIO_UI.
+ */
+
+:root {
+  --kad-canvas: #07090e;
+  --kad-panel: #151923;
+  --kad-crimson: #1a080a;
+  --kad-lift: #1b202b;
+  
+  --kad-text-cyan: #68d5e8;
+  --kad-text-bone: #e7e8e6;
+  --kad-text-secondary: #9da5b2;
+  --kad-text-faint: #515d70;
+  
+  --kad-sanctity-gold: #e7ba72;
+  --kad-pass-green: #79d69a;
+  --kad-fail-red: #f05252;
+  --kad-historical-purple: #c084fc;
+  
+  --kad-border-base: #303746;
+  --kad-border-hot: #68d5e8;
+  --kad-border-gold: #e7ba72;
+  
+  --kad-font-mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Liberation Mono, monospace;
+  --kad-font-prose: Inter, ui-sans-serif, system-ui, -apple-system, Roboto, sans-serif;
+  --kad-radius: 2px;
+  --kad-transition: 150ms ease-out;
+}
+
+/* Base Container */
+.kad-bridge-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+  background-color: var(--kad-canvas);
+  color: var(--kad-text-bone);
+  font-family: var(--kad-font-prose);
+  font-size: 13px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Header & Metadata */
+.kad-bridge-header {
+  border-bottom: 1px solid var(--kad-border-base);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.kad-bridge-title {
+  font-family: var(--kad-font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--kad-text-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 4px 0;
+}
+
+.kad-bridge-subtitle {
+  font-size: 11px;
+  color: var(--kad-text-secondary);
+  margin: 0;
+}
+
+/* Bases Table Views */
+.kad-bases-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-family: var(--kad-font-mono);
+  font-size: 11px;
+}
+
+.kad-bases-table th {
+  text-align: left;
+  padding: 6px 8px;
+  background-color: var(--kad-panel);
+  color: var(--kad-text-cyan);
+  border: 1px solid var(--kad-border-base);
+  font-weight: 600;
+}
+
+.kad-bases-table td {
+  padding: 6px 8px;
+  border: 1px solid var(--kad-border-base);
+  background-color: var(--kad-canvas);
+  color: var(--kad-text-bone);
+  transition: background-color var(--kad-transition);
+}
+
+.kad-bases-table tr:hover td {
+  background-color: var(--kad-lift);
+}
+
+/* Epistemic Badges */
+.kad-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  font-family: var(--kad-font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: var(--kad-radius);
+  border: 1px solid transparent;
+  text-transform: uppercase;
+}
+
+.tier-canonical,
+.kad-badge-canonical {
+  background-color: rgba(231, 186, 114, 0.12);
+  color: var(--kad-sanctity-gold);
+  border-color: var(--kad-sanctity-gold);
+}
+
+.tier-derived,
+.kad-badge-derived {
+  background-color: rgba(104, 213, 232, 0.12);
+  color: var(--kad-text-cyan);
+  border-color: var(--kad-text-cyan);
+}
+
+.tier-heuristic,
+.kad-badge-heuristic {
+  background-color: rgba(240, 195, 109, 0.12);
+  color: #f0c36d;
+  border-color: #f0c36d;
+}
+
+/* Graph Explorer Viewport */
+.kad-graph-viewport {
+  width: 100%;
+  min-height: 260px;
+  flex: 1;
+  background-color: var(--kad-crimson);
+  border: 1px solid var(--kad-border-base);
+  border-radius: var(--kad-radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.kad-graph-node {
+  padding: 4px 8px;
+  border-radius: var(--kad-radius);
+  border: 1px solid var(--kad-border-base);
+  background-color: var(--kad-panel);
+  color: var(--kad-text-bone);
+  font-family: var(--kad-font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  transition: border-color var(--kad-transition), background-color var(--kad-transition);
+}
+
+.kad-graph-node:hover,
+.kad-graph-node:focus {
+  border-color: var(--kad-border-hot);
+  outline: 2px solid var(--kad-text-cyan);
+  outline-offset: 1px;
+}
+
+/* Degraded State Notice */
+.kad-degraded-notice {
+  background-color: rgba(240, 82, 82, 0.1);
+  border: 1px solid var(--kad-fail-red);
+  padding: 10px;
+  border-radius: var(--kad-radius);
+  margin-bottom: 12px;
+  color: var(--kad-text-bone);
+  font-size: 12px;
+}
+
+.kad-degraded-title {
+  color: var(--kad-fail-red);
+  font-family: var(--kad-font-mono);
+  font-weight: 700;
+  margin-bottom: 4px;
+}

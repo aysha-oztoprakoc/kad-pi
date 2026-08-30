@@ -1,0 +1,19 @@
+{
+  "task": "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
+  "project": "kad-pi",
+  "claim_id": "43847469-ad86-4786-8b96-7f1d4a9d4665",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T11:08:29.810Z",
+  "base_commit": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+  "owned_paths": [
+    "docs/architecture/KAD_COMPUTE_FABRIC_IDEAL_STATE_V1.md",
+    "docs/architecture/KAD_COMPUTE_FABRIC_IDEAL_STATE_V1.json",
+    "tools/kad/compute",
+    "tools/kad/test/compute-probe*.test.mjs",
+    "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
+    ".agents/work/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T11:17:50.682Z"
+}

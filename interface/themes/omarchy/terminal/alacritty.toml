@@ -1,0 +1,28 @@
+# Alacritty Cyberdeck Color Scheme (surface.terminal.omarchy)
+[colors.primary]
+background = "#07090e"
+foreground = "#e7e8e6"
+
+[colors.cursor]
+text = "#07090e"
+cursor = "#68d5e8"
+
+[colors.normal]
+black   = "#151923"
+red     = "#f05252"
+green   = "#79d69a"
+yellow  = "#e7ba72"
+blue    = "#68d5e8"
+magenta = "#c084fc"
+cyan    = "#68d5e8"
+white   = "#e7e8e6"
+
+[colors.bright]
+black   = "#303746"
+red     = "#f05252"
+green   = "#79d69a"
+yellow  = "#e7ba72"
+blue    = "#68d5e8"
+magenta = "#c084fc"
+cyan    = "#68d5e8"
+white   = "#ffffff"

@@ -2,6 +2,7 @@ import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { observeRuntime, createRuntimeStatus, SELECTED_RUNTIME, validateRuntimeStatus } from './runtime-status.mjs';
+import { TelemetryStreamBroadcaster } from './telemetry/stream-adapter.mjs';
 
 export const DEFAULT_INTERFACE_PORT = 4173;
 const STATIC_FILES = Object.freeze({
@@ -44,10 +45,19 @@ function staticFile(rootDir, pathname) {
   return { path: join(rootDir, relative), contentType: CONTENT_TYPES[relative.slice(relative.lastIndexOf('.'))] ?? 'application/octet-stream' };
 }
 
-export function createInterfaceServer({ rootDir = process.cwd(), host = '127.0.0.1', port = 0, runtime = SELECTED_RUNTIME, observe = () => observeRuntime({ runtime }) } = {}) {
+export function createInterfaceServer({ rootDir = process.cwd(), host = '127.0.0.1', port = 0, runtime = SELECTED_RUNTIME, observe = () => observeRuntime({ runtime }), broadcaster = new TelemetryStreamBroadcaster() } = {}) {
   const root = resolve(rootDir);
   const server = createServer(async (request, response) => {
     const url = new URL(request.url ?? '/', `http://${request.headers.host ?? `${host}:${port}`}`);
+    if (url.pathname === '/api/telemetry/stream') {
+      if (request.method !== 'GET') {
+        response.writeHead(405, { allow: 'GET', 'content-type': 'text/plain; charset=utf-8' });
+        response.end('GET only');
+        return;
+      }
+      broadcaster.addClient(request, response);
+      return;
+    }
     if (request.method !== 'GET') {
       response.writeHead(405, { allow: 'GET', 'content-type': 'text/plain; charset=utf-8' });
       response.end('GET only');
@@ -88,7 +98,11 @@ export function createInterfaceServer({ rootDir = process.cwd(), host = '127.0.0
   return ready.then(() => ({
     server,
     address: server.address(),
-    close: () => new Promise((resolveClose, rejectClose) => server.close(error => error ? rejectClose(error) : resolveClose()))
+    broadcaster,
+    close: () => {
+      broadcaster.close();
+      return new Promise((resolveClose, rejectClose) => server.close(error => error ? rejectClose(error) : resolveClose()));
+    }
   }));
 }
 

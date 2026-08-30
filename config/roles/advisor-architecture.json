@@ -19,5 +19,16 @@
     "read",
     "task"
   ],
-  "verifier_independent": true
+  "verifier_independent": true,
+  "offload_allowed": false,
+  "detached_execution_safe": false,
+  "preferred_workload_providers": [
+    "omp-native-executor"
+  ],
+  "minimum_required_context": "FULL_CONSTITUTIONAL",
+  "expected_human_attention_savings": "LOW_INTERACTIVE_SUPERVISED",
+  "acceptance_evidence_requirements": [
+    "ADVISOR_VERDICT",
+    "SEAM_MODULARITY_ANALYSIS"
+  ]
 }

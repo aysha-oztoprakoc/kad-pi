@@ -18,8 +18,22 @@ export const VALID_MODEL_TIERS = new Set([
   'LOCAL_WORLD'
 ]);
 
+export const VALID_MINIMUM_REQUIRED_CONTEXT = new Set([
+  'TASK_ONLY',
+  'BOUNDED_WORKPACKAGE',
+  'WORKSPACE_TOPOLOGY',
+  'FULL_CONSTITUTIONAL'
+]);
+
+export const VALID_EXPECTED_ATTENTION_SAVINGS = new Set([
+  'HIGH_UNATTENDED',
+  'MODERATE_BATCH',
+  'LOW_INTERACTIVE_SUPERVISED',
+  'ZERO_HUMAN_IN_THE_LOOP'
+]);
+
 /**
- * Validate a ROLE_CONTRACT_V1 object against schema invariants.
+ * Validate a ROLE_CONTRACT_V1 / V2 object against schema invariants.
  * @param {object} contract
  * @returns {{ valid: boolean, errors: string[] }}
  */
@@ -29,10 +43,9 @@ export function validateRoleContract(contract) {
     return { valid: false, errors: ['Role contract must be an object'] };
   }
 
-  if (contract.schema !== 'kad-role-contract-v1') {
-    errors.push(`Invalid schema: expected 'kad-role-contract-v1', got '${contract.schema}'`);
+  if (contract.schema !== 'kad-role-contract-v1' && contract.schema !== 'kad-role-contract-v2') {
+    errors.push(`Invalid schema: expected 'kad-role-contract-v1' or 'kad-role-contract-v2', got '${contract.schema}'`);
   }
-
   if (!contract.role || typeof contract.role !== 'string' || !/^[a-z0-9-]+$/.test(contract.role)) {
     errors.push(`Invalid role identifier: '${contract.role}'`);
   }
@@ -75,6 +88,29 @@ export function validateRoleContract(contract) {
     errors.push('verifier_independent must be a boolean');
   }
 
+  if (contract.offload_allowed !== undefined && typeof contract.offload_allowed !== 'boolean') {
+    errors.push('offload_allowed must be a boolean');
+  }
+
+  if (contract.detached_execution_safe !== undefined && typeof contract.detached_execution_safe !== 'boolean') {
+    errors.push('detached_execution_safe must be a boolean');
+  }
+
+  if (contract.preferred_workload_providers !== undefined && !Array.isArray(contract.preferred_workload_providers)) {
+    errors.push('preferred_workload_providers must be an array');
+  }
+
+  if (contract.minimum_required_context !== undefined && !VALID_MINIMUM_REQUIRED_CONTEXT.has(contract.minimum_required_context)) {
+    errors.push(`Invalid minimum_required_context: '${contract.minimum_required_context}'`);
+  }
+
+  if (contract.expected_human_attention_savings !== undefined && !VALID_EXPECTED_ATTENTION_SAVINGS.has(contract.expected_human_attention_savings)) {
+    errors.push(`Invalid expected_human_attention_savings: '${contract.expected_human_attention_savings}'`);
+  }
+
+  if (contract.acceptance_evidence_requirements !== undefined && !Array.isArray(contract.acceptance_evidence_requirements)) {
+    errors.push('acceptance_evidence_requirements must be an array');
+  }
   return {
     valid: errors.length === 0,
     errors

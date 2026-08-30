@@ -1,0 +1,17 @@
+{
+  "task": "WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+  "project": "kad-pi",
+  "claim_id": "222ae77d-1324-4a9b-a456-18be501c6678",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T10:51:26.526Z",
+  "base_commit": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+  "owned_paths": [
+    "interface/themes/tell",
+    "tools/kad/test/tell-profile*.test.mjs",
+    "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+    ".agents/work/WP-KAD-TELL-SERVER-ANSI-PROFILE-018.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T11:07:23.954Z"
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "KAD-COMPUTE-FABRIC-IDEAL-STATE-V1",
+  "version": "1.0.0",
+  "status": "FROZEN",
+  "authority": "CANONICAL_KNOWLEDGE",
+  "governing_directives": [
+    "PRIME_DIRECTIVE.md",
+    "docs/adr/0001-notification-oriented-causality.md",
+    "docs/adr/0002-spatiotemporal-composability-cordis-ownership.md",
+    "docs/adr/0004-model-agnostic-control-plane.md",
+    "docs/adr/0005-deterministic-first-and-epistemic-classification.md",
+    "docs/adr/0014-generalized-ideal-state-artifact-and-compute-fabric-governance.md",
+    "vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md"
+  ],
+  "decisions": {
+    "D021_001": {
+      "topic": "topology_and_coordination",
+      "resolution": "Asymmetric Coordinator Hub (AMDY primary, TELL headless worker)",
+      "coordinator_host": "host.amdy.workstation",
+      "worker_hosts": ["host.tell.server"],
+      "fail_closed": true
+    },
+    "D021_002": {
+      "topic": "omp_plugin_admission_governance",
+      "resolution": "6-Stage / Full Lifecycle Admission Contract in WP-021, Defer Plugin Canaries",
+      "lifecycle_stages": [
+        "DISCOVER",
+        "SANDBOX",
+        "MEASURE",
+        "VERIFY",
+        "PROMOTE_NARROWLY",
+        "DEGRADE_SAFELY",
+        "REPLACE_FREELY"
+      ],
+      "plugin_authority": "NON_AUTHORITATIVE_OBSERVER"
+    },
+    "D021_003": {
+      "topic": "interception_precedence_ordering",
+      "resolution": "Standard Deterministic Pipeline (Security -> Context -> Safety -> Loop -> Diagnostics -> UI)",
+      "pipeline_stages": [
+        { "order": 1, "stage": "AUTHORITY_SECURITY", "veto_power": true },
+        { "order": 2, "stage": "CONTEXT_SAFETY", "veto_power": true },
+        { "order": 3, "stage": "EDIT_WRITE_SAFETY", "veto_power": true },
+        { "order": 4, "stage": "LOOP_REDUNDANCY_GUARD", "veto_power": true },
+        { "order": 5, "stage": "TELEMETRY_DIAGNOSTICS", "veto_power": false },
+        { "order": 6, "stage": "PRESENTATION_UI", "veto_power": false }
+      ]
+    },
+    "D021_004": {
+      "topic": "empirical_probe_scope_and_confounder_isolation",
+      "resolution": "Standard 9-Tuple x 11 Metrics Empirical Probe with Baselines",
+      "tuple_dimensions": [
+        "model",
+        "quant",
+        "runtime",
+        "devices",
+        "context",
+        "KV",
+        "speculation",
+        "threading",
+        "network"
+      ],
+      "metrics": [
+        "ttft_ms",
+        "prefill_tok_per_sec",
+        "decode_tok_per_sec",
+        "peak_vram_bytes",
+        "peak_ram_bytes",
+        "network_transfer_bytes",
+        "failure_rate",
+        "task_acceptance_rate",
+        "structured_output_validity",
+        "quality_score",
+        "scarce_resource_cost"
+      ],
+      "confounder_controls": [
+        "thermal_baseline",
+        "compositor_background_load",
+        "warmup_isolation",
+        "rocm_version_recording"
+      ]
+    }
+  },
+  "cognition_taxonomy": [
+    "deterministic_transformation",
+    "classification_extraction",
+    "retrieval_ranking",
+    "summarization",
+    "structured_generation",
+    "coding_review",
+    "planning_reasoning",
+    "research_synthesis",
+    "verification_critique",
+    "simulation"
+  ]
+}

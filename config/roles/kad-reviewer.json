@@ -20,5 +20,17 @@
     "git",
     "task"
   ],
-  "verifier_independent": true
+  "verifier_independent": true,
+  "offload_allowed": true,
+  "detached_execution_safe": true,
+  "preferred_workload_providers": [
+    "omp-native-executor",
+    "pi-worker"
+  ],
+  "minimum_required_context": "WORKSPACE_TOPOLOGY",
+  "expected_human_attention_savings": "MODERATE_BATCH",
+  "acceptance_evidence_requirements": [
+    "DOUBLE_AXIS_REVIEW",
+    "STANDARDS_SPEC_VERDICT"
+  ]
 }

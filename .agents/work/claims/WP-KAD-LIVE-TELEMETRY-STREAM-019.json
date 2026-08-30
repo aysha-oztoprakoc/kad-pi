@@ -1,0 +1,18 @@
+{
+  "task": "WP-KAD-LIVE-TELEMETRY-STREAM-019",
+  "project": "kad-pi",
+  "claim_id": "c3624cd0-75cd-4d9f-b00a-181b3e23387c",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T10:53:29.322Z",
+  "base_commit": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+  "owned_paths": [
+    "tools/kad/interface-server.mjs",
+    "tools/kad/telemetry/stream-adapter.mjs",
+    "tools/kad/test/interface-server-stream.test.mjs",
+    "evidence/WP-KAD-LIVE-TELEMETRY-STREAM-019",
+    ".agents/work/WP-KAD-LIVE-TELEMETRY-STREAM-019.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T11:07:24.004Z"
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "KAD Role Contract V1",
+  "title": "KAD Role Contract V1 / V2 Compatible",
   "type": "object",
   "required": [
     "schema",
@@ -13,18 +13,21 @@
     "allowed_child_roles",
     "model_tier_preference",
     "tools_allowlist",
-    "verifier_independent"
+    "verifier_independent",
+    "offload_allowed",
+    "detached_execution_safe",
+    "preferred_workload_providers",
+    "minimum_required_context",
+    "expected_human_attention_savings",
+    "acceptance_evidence_requirements"
   ],
   "properties": {
     "schema": {
       "type": "string",
-      "enum": [
-        "kad-role-contract-v1"
-      ]
+      "enum": ["kad-role-contract-v1", "kad-role-contract-v2"]
     },
     "role": {
-      "type": "string",
-      "pattern": "^[a-z0-9-]+$"
+      "type": "string"
     },
     "title": {
       "type": "string"
@@ -96,6 +99,42 @@
     },
     "verifier_independent": {
       "type": "boolean"
+    },
+    "offload_allowed": {
+      "type": "boolean"
+    },
+    "detached_execution_safe": {
+      "type": "boolean"
+    },
+    "preferred_workload_providers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "minimum_required_context": {
+      "type": "string",
+      "enum": [
+        "TASK_ONLY",
+        "BOUNDED_WORKPACKAGE",
+        "WORKSPACE_TOPOLOGY",
+        "FULL_CONSTITUTIONAL"
+      ]
+    },
+    "expected_human_attention_savings": {
+      "type": "string",
+      "enum": [
+        "HIGH_UNATTENDED",
+        "MODERATE_BATCH",
+        "LOW_INTERACTIVE_SUPERVISED",
+        "ZERO_HUMAN_IN_THE_LOOP"
+      ]
+    },
+    "acceptance_evidence_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   }
 }

@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KAD Workload Contract V1",
+  "type": "object",
+  "required": [
+    "schema",
+    "workload_id",
+    "workpackage_ref",
+    "claim_ref",
+    "role_contract_ref",
+    "objective",
+    "acceptance_criteria_ref",
+    "source_revision",
+    "mutation_scope",
+    "trust_domain",
+    "network_class",
+    "credential_class",
+    "command_authority",
+    "human_escalation_policy",
+    "requested_capability_class",
+    "execution_provider",
+    "host_resource_class",
+    "timeout_seconds",
+    "concurrency_limit",
+    "budget_class",
+    "delivery_policy",
+    "required_receipts"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "enum": ["kad-workload-v1"]
+    },
+    "workload_id": {
+      "type": "string"
+    },
+    "workpackage_ref": {
+      "type": "string"
+    },
+    "claim_ref": {
+      "type": "string"
+    },
+    "role_contract_ref": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "acceptance_criteria_ref": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "source_revision": {
+      "type": "string"
+    },
+    "mutation_scope": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "trust_domain": {
+      "type": "string",
+      "enum": ["control", "engineering", "research", "audit", "world"]
+    },
+    "network_class": {
+      "type": "string",
+      "enum": ["OFFLINE", "LOCAL_LOOPBACK", "RESTRICTED_EGRESS", "UNRESTRICTED"]
+    },
+    "credential_class": {
+      "type": "string",
+      "enum": ["NONE", "LOCAL_PROCESS", "REDACTED_ENV"]
+    },
+    "command_authority": {
+      "type": "string",
+      "enum": ["READONLY", "EXCLUSIVE_MUTATION", "WORKSPACE_LEASE"]
+    },
+    "human_escalation_policy": {
+      "type": "string",
+      "enum": ["FAIL_CLOSED", "WAYFINDER_ASK_ME", "DEGRADE_LOCAL"]
+    },
+    "requested_capability_class": {
+      "type": "string",
+      "enum": [
+        "DETERMINISTIC",
+        "TINY_SPECIALIST",
+        "LOCAL_NARROW",
+        "LOCAL_GENERAL",
+        "FREE_REMOTE",
+        "STANDARD_REMOTE",
+        "INDEPENDENT_VERIFIER",
+        "LITERATURE_SYNTHESIS",
+        "FRONTIER_REASONING",
+        "LOCAL_WORLD"
+      ]
+    },
+    "execution_provider": {
+      "type": "string"
+    },
+    "host_resource_class": {
+      "type": "string"
+    },
+    "timeout_seconds": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "concurrency_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 32
+    },
+    "budget_class": {
+      "type": "string",
+      "enum": ["ZERO_MARGINAL_SPEND", "SUBSCRIPTION_QUOTA", "PAID_AUTHORIZED_METERED"]
+    },
+    "delivery_policy": {
+      "type": "string",
+      "enum": ["BRANCH_ONLY", "ARTIFACT_ONLY", "DIRECT_WORKSPACE"]
+    },
+    "required_receipts": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "$schema": "kad-external-providers-v1",
+  "version": "1.0.0",
+  "authority": "CANONICAL_KNOWLEDGE",
+  "providers": [
+    {
+      "id": "omp-native-executor",
+      "name": "Oh My Pi Native Subagent Executor",
+      "class": "WORKLOAD_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "subordinate_to_workctl": true,
+      "allows_autonomous_work_transition": false,
+      "allows_autonomous_merge": false,
+      "allows_canonical_tracker_authority": false,
+      "allows_isa_authority": false,
+      "permitted_delivery_modes": ["DIRECT_WORKSPACE", "BRANCH_ONLY", "ARTIFACT_ONLY"],
+      "description": "Rich interactive controller and runtime transport for active human turns and bounded subagent swarms."
+    },
+    {
+      "id": "pi-worker",
+      "name": "Pi Persistent Worker Runtime",
+      "class": "WORKLOAD_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "OBSERVED",
+      "subordinate_to_workctl": true,
+      "allows_autonomous_work_transition": false,
+      "allows_autonomous_merge": false,
+      "allows_canonical_tracker_authority": false,
+      "allows_isa_authority": false,
+      "permitted_delivery_modes": ["DIRECT_WORKSPACE", "BRANCH_ONLY", "ARTIFACT_ONLY"],
+      "description": "Deterministic local worker substrate powering persistent multi-turn episodes and PON state transitions."
+    },
+    {
+      "id": "warren",
+      "name": "Warren Factory-Floor Execution Candidate",
+      "class": "WORKLOAD_PROVIDER",
+      "status": "CANARY_PLANNED",
+      "epistemic_class": "HYPOTHESIS",
+      "subordinate_to_workctl": true,
+      "allows_autonomous_work_transition": false,
+      "allows_autonomous_merge": false,
+      "allows_canonical_tracker_authority": false,
+      "allows_isa_authority": false,
+      "permitted_delivery_modes": ["BRANCH_ONLY", "ARTIFACT_ONLY"],
+      "description": "Detached execution and software factory substrate candidate. Owns physical run lifecycles; KAD owns meaning and acceptance."
+    },
+    {
+      "id": "local-process-runner",
+      "name": "Local Deterministic Process Runner",
+      "class": "WORKLOAD_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "subordinate_to_workctl": true,
+      "allows_autonomous_work_transition": false,
+      "allows_autonomous_merge": false,
+      "allows_canonical_tracker_authority": false,
+      "allows_isa_authority": false,
+      "permitted_delivery_modes": ["DIRECT_WORKSPACE"],
+      "description": "Direct child process execution of deterministic linters, compilers, and test suites."
+    },
+    {
+      "id": "cytoscape-adapter",
+      "name": "Sofia Cytoscape Interactive Semantic Graph",
+      "class": "INTENT_GRAPH_PROJECTION",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "authority_direction": "WORKCTL_TO_BEADS_ONLY",
+      "allows_canonical_claims": false,
+      "allows_closure": false,
+      "allows_priority_authority": false,
+      "allows_work_lifecycle_mutation": false,
+      "allows_knowledge_plane_replacement": false,
+      "description": "Interactive browser graph projection visualizing causal and spatial relationships with zero write authority."
+    },
+    {
+      "id": "beads",
+      "name": "Beads Intent Graph Projection Candidate",
+      "class": "INTENT_GRAPH_PROJECTION",
+      "status": "SHADOW_CANARY",
+      "epistemic_class": "HYPOTHESIS",
+      "authority_direction": "WORKCTL_TO_BEADS_ONLY",
+      "allows_canonical_claims": false,
+      "allows_closure": false,
+      "allows_priority_authority": false,
+      "allows_work_lifecycle_mutation": false,
+      "allows_knowledge_plane_replacement": false,
+      "description": "Shadow intent graph projection candidate for DAG analysis, cycle detection, and scheduling recommendations."
+    },
+    {
+      "id": "agentic-engineering",
+      "name": "Agentic Engineering Research Upstream",
+      "class": "EXTERNAL_DOCTRINE_SOURCE",
+      "status": "ADOPT_RESEARCH_UPSTREAM",
+      "epistemic_class": "PRACTITIONER_DERIVED + HUMAN_REVIEWED + NON_PRIMARY",
+      "requires_kad_evidence_for_promotion": true,
+      "allows_direct_vendor_injection": false,
+      "description": "External practitioner doctrine source used for hypothesis generation, benchmark comparison, and context engineering research."
+    },
+    {
+      "id": "deepapi",
+      "name": "DeepAPI High-Trust Search & Scraping Bridge",
+      "class": "RESEARCH_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "description": "Dedicated research bridge providing structured web search, platform scraping, and literature extraction."
+    },
+    {
+      "id": "zotero-local",
+      "name": "Zotero Local HTTP Read-Only Bridge",
+      "class": "RESEARCH_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "description": "Local loopback HTTP bridge normalizing bibliography metadata into canonical research candidates."
+    },
+    {
+      "id": "crossref",
+      "name": "CrossRef Academic DOI Metadata Provider",
+      "class": "RESEARCH_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "description": "Public academic publication and citation linkage service."
+    },
+    {
+      "id": "openalex",
+      "name": "OpenAlex Open Academic Graph Provider",
+      "class": "RESEARCH_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "description": "Open knowledge graph provider for academic literature exploration."
+    },
+    {
+      "id": "openviking-derived",
+      "name": "OpenViking Vector & Structural Index Projection",
+      "class": "RESEARCH_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "description": "Derived vector embedding and hierarchical chunking index with strictly derived non-canonical authority."
+    },
+    {
+      "id": "sofia-v3",
+      "name": "Sofia v3 Canonical Dashboard",
+      "class": "PRESENTATION_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "description": "Vanilla ESM read-only cockpit with graph exploration, charts, and telemetry meters."
+    },
+    {
+      "id": "tell-ansi-tui",
+      "name": "TELL Server Headless ANSI Monospace Profile",
+      "class": "PRESENTATION_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "description": "Zero-overhead 16-color ANSI and 24-bit TrueColor monospace TUI presentation for headless nodes."
+    },
+    {
+      "id": "omarchy-cyberdeck-theme",
+      "name": "AMDY Omarchy 4 Quickshell Cyberdeck Theme",
+      "class": "PRESENTATION_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "description": "Diegetic workstation shell widgets and window decorations enforcing zero shell mutation authority."
+    },
+    {
+      "id": "obsidian-bridge",
+      "name": "Obsidian Local Bridge Plugin",
+      "class": "PRESENTATION_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "DESIGN_DECISION",
+      "description": "Read-only viewport connecting Obsidian vault views to KAD telemetry streams."
+    }
+  ]
+}

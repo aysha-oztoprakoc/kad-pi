@@ -1,9 +1,9 @@
 {
   "schema": "kad-role-contract-v1",
   "role": "kad-scout",
-  "title": "KAD Lightweight Read-Only Scout",
-  "description": "Fast exploratory agent for directory mapping, file listing, and broad pattern discovery.",
-  "trust_domain": "research",
+  "title": "KAD Lightweight Exploratory Scout",
+  "description": "Fast, lightweight read-only exploratory agent for directory mapping and pattern discovery.",
+  "trust_domain": "engineering",
   "mutation_rights": "NONE",
   "requires_claim": false,
   "requires_lease": null,
@@ -11,13 +11,24 @@
   "allowed_child_roles": [],
   "model_tier_preference": [
     "TINY_SPECIALIST",
-    "FREE_REMOTE",
-    "DETERMINISTIC"
+    "FREE_REMOTE"
   ],
   "tools_allowlist": [
     "read",
     "grep",
     "glob"
   ],
-  "verifier_independent": false
+  "verifier_independent": false,
+  "offload_allowed": true,
+  "detached_execution_safe": true,
+  "preferred_workload_providers": [
+    "omp-native-executor",
+    "pi-worker",
+    "local-process-runner"
+  ],
+  "minimum_required_context": "TASK_ONLY",
+  "expected_human_attention_savings": "HIGH_UNATTENDED",
+  "acceptance_evidence_requirements": [
+    "COMPACT_TOPOLOGY_REPORT"
+  ]
 }

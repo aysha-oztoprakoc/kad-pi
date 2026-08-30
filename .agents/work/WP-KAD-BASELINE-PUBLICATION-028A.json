@@ -1,0 +1,74 @@
+{
+  "id": "WP-KAD-BASELINE-PUBLICATION-028A",
+  "project": "kad-pi",
+  "title": "Frozen Baseline Verification, GitHub Bootstrap Publication & Exact-SHA Vault Projection",
+  "status": "CLAIMED",
+  "priority": 290,
+  "spec_ref": "user:/WP-KAD-BASELINE-PUBLICATION-028A",
+  "fixed_point": "0ea896b54d799ca98fa3b45fe45f519655135807",
+  "scope": [
+    "evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
+    ".agents/work/WP-KAD-BASELINE-PUBLICATION-028A.json",
+    ".agents/work/claims/WP-KAD-BASELINE-PUBLICATION-028A.json",
+    ".github/",
+    "vault/90_Derived/Projections/"
+  ],
+  "non_scope": [
+    "reopening architecture debate",
+    "modifying frozen ISA-KAD-SKILL-ROLE-002 v1.1 semantics",
+    "implementing intent-fidelity substrate or 24-decision engine in this WP",
+    "implementing Warren/Beads runtime canaries",
+    "unauthorized manual merges",
+    "force-pushing or rewriting Git history",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
+    ".agents/work/WP-KAD-BASELINE-PUBLICATION-028A.json",
+    ".agents/work/claims/WP-KAD-BASELINE-PUBLICATION-028A.json",
+    ".github/",
+    "vault/90_Derived/Projections/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "npm test",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "bin/workctl skills doctor",
+    "bin/kad-isa check all",
+    "bin/kad-wiki lint",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
+  "blocked_by": [
+    "WP-KAD-ISA-FINAL-SNAPSHOT-028"
+  ],
+  "blocks": [
+    "WP-KAD-INTENT-FIDELITY-029"
+  ],
+  "acceptance_criteria": [
+    "Phase 0 frozen baseline verification against WP-028 evidence snapshot and manifest completed",
+    "Canonical local Git commit created matching frozen tree SHA",
+    "GitHub repository bootstrap protections inspected and configured",
+    "Authorized one-time bootstrap push executed to origin/main with fast-forward only",
+    "GitHub Actions CI verified PASS on exact pushed commit SHA",
+    "Required status check branch protection enabled and verified on GitHub main branch",
+    "Vault and ISA projections compiled from exact remote main SHA with recorded provenance",
+    "Dense final evidence report and receipts compiled in evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
+    "Zero unauthorized scope expansion, zero architecture debate reopening, zero secret leaks"
+  ],
+  "description": "Publish the exact frozen WP-028 content to GitHub, obtain independent remote CI evidence on the exact commit, activate required status check branch protection, and project the Vault from that exact pushed SHA.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-BASELINE-PUBLICATION-028A",
+  "claim": null
+}

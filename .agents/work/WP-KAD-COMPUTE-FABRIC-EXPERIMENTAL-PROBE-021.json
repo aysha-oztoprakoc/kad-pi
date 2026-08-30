@@ -1,0 +1,75 @@
+{
+  "id": "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
+  "project": "kad-pi",
+  "title": "Compute Fabric Empirical Benchmark Probe & Telemetry Baseline: Ideal-State Convergence → Capability Admission → Empirical Compute Fabric Probe",
+  "status": "REVIEW",
+  "priority": 200,
+  "spec_ref": "user:/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
+  "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+  "scope": [
+    "docs/architecture/KAD_COMPUTE_FABRIC_IDEAL_STATE_V1.md",
+    "docs/architecture/KAD_COMPUTE_FABRIC_IDEAL_STATE_V1.json",
+    "tools/kad/compute/",
+    "tools/kad/test/compute-probe*.test.mjs",
+    "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/",
+    ".agents/work/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021.json"
+  ],
+  "non_scope": [
+    "autonomous routing mutation without human approval",
+    "distributed network orchestration across unverified hosts",
+    "paid API spend",
+    "bypassing human architectural decision convergence"
+  ],
+  "owned_paths": [
+    "docs/architecture/KAD_COMPUTE_FABRIC_IDEAL_STATE_V1.md",
+    "docs/architecture/KAD_COMPUTE_FABRIC_IDEAL_STATE_V1.json",
+    "tools/kad/compute/",
+    "tools/kad/test/compute-probe*.test.mjs",
+    "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/",
+    ".agents/work/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "bin/kad-isa lint vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+    "bin/kad-isa check vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+    "bin/kad-wiki lint",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/",
+  "blocked_by": [
+    "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+    "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+    "WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+    "WP-KAD-LIVE-TELEMETRY-STREAM-019"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "WP-016..019 prerequisite contracts verified and accepted",
+    "Wayfinder decision map established across compute fabric purpose, host roles, model lifecycles, and PON/STC semantics",
+    "OMP plugin admission and capability benchmark contract evaluated",
+    "Five-advisor adversarial review and convergence matrix produced",
+    "Human architectural decisions (D021-*) resolved via 5+1 decision protocol",
+    "Canonical Compute Fabric Ideal State Artifact (V1 Markdown & JSON schema) established and frozen with stable SHA256 digest",
+    "Implementation matrix mapping requirements to existing/new components with zero unexplained deviations",
+    "Deterministic TDD empirical benchmark probe runner implemented under tools/kad/compute/ with ROCm and amdgpu_top telemetry capture",
+    "Graceful degradation, fail-closed isolation, and zero authority leakage verified",
+    "Full test suite, ISA checks, and doctors remain GREEN"
+  ],
+  "description": "Establish the canonical Compute Fabric Ideal State Architecture, OMP capability admission framework, human architectural decisions (D021-*), and implement the deterministic empirical benchmark probe runner with local hardware telemetry.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
+  "claim": null
+}

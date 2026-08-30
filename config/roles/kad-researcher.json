@@ -1,26 +1,37 @@
 {
   "schema": "kad-role-contract-v1",
   "role": "kad-researcher",
-  "title": "KAD Primary Research Fabric Worker",
-  "description": "Literature and primary source investigator extracting facts and citation provenance.",
+  "title": "KAD High-Trust Literature Researcher",
+  "description": "Literature and source investigator. Extracts verified facts, papers, and citations.",
   "trust_domain": "research",
   "mutation_rights": "NONE",
   "requires_claim": false,
   "requires_lease": null,
-  "max_spawn_depth": 2,
+  "max_spawn_depth": 1,
   "allowed_child_roles": [
-    "kad-scout",
-    "kad-local-extractor"
+    "kad-scout"
   ],
   "model_tier_preference": [
     "LITERATURE_SYNTHESIS",
-    "FREE_REMOTE"
+    "STANDARD_REMOTE"
   ],
   "tools_allowlist": [
     "read",
-    "task",
-    "write",
-    "web_search"
+    "deepapi",
+    "zotero",
+    "task"
   ],
-  "verifier_independent": false
+  "verifier_independent": false,
+  "offload_allowed": true,
+  "detached_execution_safe": true,
+  "preferred_workload_providers": [
+    "omp-native-executor",
+    "pi-worker"
+  ],
+  "minimum_required_context": "TASK_ONLY",
+  "expected_human_attention_savings": "HIGH_UNATTENDED",
+  "acceptance_evidence_requirements": [
+    "PROVENANCE_CITATIONS",
+    "EVIDENCE_ARTIFACTS"
+  ]
 }

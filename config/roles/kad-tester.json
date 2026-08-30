@@ -1,13 +1,13 @@
 {
   "schema": "kad-role-contract-v1",
   "role": "kad-tester",
-  "title": "KAD Independent Test Engineer",
-  "description": "Test author and runner implementing Red-Green-Refactor verification at public seams.",
+  "title": "KAD Test Author & Runner",
+  "description": "Independent test author and verifier. Enforces TDD Red-Green-Refactor cycles.",
   "trust_domain": "engineering",
-  "mutation_rights": "WORKSPACE_LEASE",
-  "requires_claim": true,
+  "mutation_rights": "NONE",
+  "requires_claim": false,
   "requires_lease": null,
-  "max_spawn_depth": 2,
+  "max_spawn_depth": 1,
   "allowed_child_roles": [
     "kad-scout"
   ],
@@ -16,13 +16,23 @@
     "LOCAL_GENERAL"
   ],
   "tools_allowlist": [
-    "edit",
-    "write",
     "read",
     "npm",
-    "pytest",
     "make",
-    "bash"
+    "task"
   ],
-  "verifier_independent": false
+  "verifier_independent": false,
+  "offload_allowed": true,
+  "detached_execution_safe": true,
+  "preferred_workload_providers": [
+    "omp-native-executor",
+    "pi-worker",
+    "warren"
+  ],
+  "minimum_required_context": "BOUNDED_WORKPACKAGE",
+  "expected_human_attention_savings": "HIGH_UNATTENDED",
+  "acceptance_evidence_requirements": [
+    "DETERMINISTIC_TESTS",
+    "PASSING_ASSERTIONS"
+  ]
 }

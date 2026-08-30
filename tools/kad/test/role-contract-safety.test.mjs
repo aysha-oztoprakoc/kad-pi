@@ -115,7 +115,7 @@ test('Role Safety: Role allowlist blocks unauthorized child role spawns', () => 
   const builder = loadRoleContract('kad-builder');
 
   // kad-debugger can only spawn kad-scout, cannot spawn kad-builder
-  const check = canRoleSpawnChild(debuggerContract, builder, 1);
+  const check = canRoleSpawnChild(debuggerContract, builder, 0);
   assert.equal(check.allowed, false);
   assert.ok(check.reason.includes('not permitted to spawn child role'));
 });
@@ -140,4 +140,30 @@ test('Role Safety: Verifier independence check detects same-provider coupling', 
   // Independent -> Passed
   const independentCheck = verifyVerifierIndependence(builderBinding, verifierIndependent);
   assert.equal(independentCheck.independent, true);
+});
+
+test('Role Safety: Role contracts contain valid execution and offload semantics', () => {
+  const contracts = listRoleContracts();
+  const interactiveRoles = new Set([
+    'kad-master',
+    'advisor-architecture',
+    'advisor-security',
+    'advisor-economics',
+    'advisor-verification',
+    'advisor-epistemic'
+  ]);
+
+  for (const c of contracts) {
+    assert.equal(typeof c.offload_allowed, 'boolean', `Role ${c.role} must define offload_allowed`);
+    assert.equal(typeof c.detached_execution_safe, 'boolean', `Role ${c.role} must define detached_execution_safe`);
+    assert.ok(Array.isArray(c.preferred_workload_providers), `Role ${c.role} must define preferred_workload_providers array`);
+    assert.equal(typeof c.minimum_required_context, 'string', `Role ${c.role} must define minimum_required_context`);
+    assert.equal(typeof c.expected_human_attention_savings, 'string', `Role ${c.role} must define expected_human_attention_savings`);
+    assert.ok(Array.isArray(c.acceptance_evidence_requirements), `Role ${c.role} must define acceptance_evidence_requirements`);
+
+    if (interactiveRoles.has(c.role)) {
+      assert.equal(c.offload_allowed, false, `Interactive control role ${c.role} must not permit offload`);
+      assert.equal(c.detached_execution_safe, false, `Interactive control role ${c.role} is not detached execution safe`);
+    }
+  }
 });

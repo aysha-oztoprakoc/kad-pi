@@ -1,0 +1,17 @@
+{
+  "task": "WP-KAD-BASELINE-PUBLICATION-028A",
+  "project": "kad-pi",
+  "claim_id": "cd299d30-dbf2-449f-ac98-beee170c5d25",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T18:34:14.771Z",
+  "base_commit": "0ea896b54d799ca98fa3b45fe45f519655135807",
+  "owned_paths": [
+    "evidence/WP-KAD-BASELINE-PUBLICATION-028A",
+    ".agents/work/WP-KAD-BASELINE-PUBLICATION-028A.json",
+    ".agents/work/claims/WP-KAD-BASELINE-PUBLICATION-028A.json",
+    ".github",
+    "vault/90_Derived/Projections"
+  ],
+  "mode": "mutate",
+  "active": true
+}

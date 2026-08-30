@@ -1,0 +1,19 @@
+{
+  "task": "WP-KAD-ISA-FINAL-SNAPSHOT-028",
+  "project": "kad-pi",
+  "claim_id": "a98e3b21-72f1-4c99-b36e-d018ef229410",
+  "actor_label": "gemini-3.7-flash-high",
+  "started_at": "2026-08-30T12:30:00.000Z",
+  "base_commit": "0ea896b54d799ca98fa3b45fe45f519655135807",
+  "owned_paths": [
+    "docs/architecture",
+    "docs/adr",
+    "config",
+    "tools/kad",
+    "evidence/WP-KAD-ISA-FINAL-SNAPSHOT-028",
+    ".agents/work/WP-KAD-ISA-FINAL-SNAPSHOT-028.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T12:50:00.000Z"
+}

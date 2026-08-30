@@ -2,10 +2,10 @@
   "id": "WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
   "project": "kad-pi",
   "title": "TELL Server Monospace ANSI Profile, Headless TUI & Host Observability Baseline",
-  "status": "PROPOSED",
+  "status": "ACCEPTED",
   "priority": 130,
   "spec_ref": "user:/WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
-  "fixed_point": "784a84a499aee027a0fe9059d4815dba0e51cd65",
+  "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
   "scope": [
     "interface/themes/tell/",
     "tools/kad/test/tell-profile*.test.mjs",
@@ -48,11 +48,10 @@
     "git diff --check"
   ],
   "evidence_target": "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018/",
-  "blocked_by": [
-    "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
-    "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020"
+  "blocked_by": [],
+  "blocks": [
+    "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021"
   ],
-  "blocks": [],
   "acceptance_criteria": [
     "Monospace ANSI 16-color and 24-bit TrueColor palettes implemented for headless server profile (surface.tell.server, KAD_PROFILE_SERVER)",
     "High-density terminal status meters and compact ASCII/ANSI views render telemetry without graphical or audio dependencies",

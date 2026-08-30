@@ -1,0 +1,17 @@
+{
+  "task": "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+  "project": "kad-pi",
+  "claim_id": "860a8263-5e3e-45cf-b372-365471a72815",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-08-30T10:44:52.426Z",
+  "base_commit": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+  "owned_paths": [
+    "tools/kad/obsidian-bridge",
+    "tools/kad/test/obsidian-bridge*.test.mjs",
+    "evidence/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+    ".agents/work/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T11:07:23.854Z"
+}

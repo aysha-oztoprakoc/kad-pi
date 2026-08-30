@@ -2,10 +2,10 @@
   "id": "WP-KAD-LIVE-TELEMETRY-STREAM-019",
   "project": "kad-pi",
   "title": "Live PON/SSE Telemetry Streaming Transport & Read-Only Observer Projection",
-  "status": "PROPOSED",
+  "status": "ACCEPTED",
   "priority": 120,
   "spec_ref": "user:/WP-KAD-LIVE-TELEMETRY-STREAM-019",
-  "fixed_point": "784a84a499aee027a0fe9059d4815dba0e51cd65",
+  "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
   "scope": [
     "tools/kad/interface-server.mjs",
     "tools/kad/telemetry/stream-adapter.mjs",
@@ -50,11 +50,11 @@
   "evidence_target": "evidence/WP-KAD-LIVE-TELEMETRY-STREAM-019/",
   "blocked_by": [
     "WP-KAD-USAGE-BRIDGE-002",
-    "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
-    "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
-    "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020"
+    "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004"
   ],
-  "blocks": [],
+  "blocks": [
+    "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021"
+  ],
   "acceptance_criteria": [
     "Lightweight Server-Sent Events (SSE) streaming endpoint implemented at /api/telemetry/stream in tools/kad/interface-server.mjs",
     "Event producer publishes typed PON state transition notifications (NODE_AVAILABLE, MODEL_READY, CAPABILITY_REMOVED, ROUTE_STALE, QUOTA_REFRESHED) and kad-telemetry-v1 records",

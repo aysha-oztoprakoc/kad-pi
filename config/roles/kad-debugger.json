@@ -1,27 +1,37 @@
 {
   "schema": "kad-role-contract-v1",
   "role": "kad-debugger",
-  "title": "KAD Debugger & Root Cause Investigator",
-  "description": "Diagnostic specialist investigating hard bugs, leaks, and race conditions using DAP and repro scripts.",
+  "title": "KAD Root-Cause Debugger",
+  "description": "Diagnostic specialist using DAP debugger and reproduction test scripts. Non-mutating.",
   "trust_domain": "engineering",
   "mutation_rights": "NONE",
   "requires_claim": false,
   "requires_lease": null,
-  "max_spawn_depth": 2,
+  "max_spawn_depth": 1,
   "allowed_child_roles": [
     "kad-scout"
   ],
   "model_tier_preference": [
     "STANDARD_REMOTE",
-    "FRONTIER_REASONING"
+    "LOCAL_GENERAL"
   ],
   "tools_allowlist": [
-    "debug",
-    "browser",
     "read",
+    "debug",
     "grep",
-    "bash",
-    "make"
+    "task"
   ],
-  "verifier_independent": false
+  "verifier_independent": false,
+  "offload_allowed": true,
+  "detached_execution_safe": true,
+  "preferred_workload_providers": [
+    "omp-native-executor",
+    "pi-worker"
+  ],
+  "minimum_required_context": "BOUNDED_WORKPACKAGE",
+  "expected_human_attention_savings": "MODERATE_BATCH",
+  "acceptance_evidence_requirements": [
+    "REPRODUCTION_SCRIPT",
+    "ROOT_CAUSE_DIAGNOSIS"
+  ]
 }

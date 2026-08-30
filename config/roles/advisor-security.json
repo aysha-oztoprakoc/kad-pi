@@ -1,8 +1,8 @@
 {
   "schema": "kad-role-contract-v1",
   "role": "advisor-security",
-  "title": "KAD Security & Authority Advisor",
-  "description": "Advisory specialist on trust domains, mutation leases, credential safety, and attack surfaces.",
+  "title": "KAD Security Advisor",
+  "description": "Advisory specialist on trust domains, mutation leases, credential redaction, and attack surfaces. Non-mutating.",
   "trust_domain": "audit",
   "mutation_rights": "NONE",
   "requires_claim": false,
@@ -19,5 +19,16 @@
     "read",
     "task"
   ],
-  "verifier_independent": true
+  "verifier_independent": true,
+  "offload_allowed": false,
+  "detached_execution_safe": false,
+  "preferred_workload_providers": [
+    "omp-native-executor"
+  ],
+  "minimum_required_context": "FULL_CONSTITUTIONAL",
+  "expected_human_attention_savings": "LOW_INTERACTIVE_SUPERVISED",
+  "acceptance_evidence_requirements": [
+    "ADVISOR_VERDICT",
+    "TRUST_BOUNDARY_AUDIT"
+  ]
 }

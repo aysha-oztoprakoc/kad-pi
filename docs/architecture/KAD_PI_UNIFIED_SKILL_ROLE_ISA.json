@@ -1,10 +1,14 @@
 {
-  "document_id": "ISA-KAD-SKILL-ROLE-001",
-  "version": "1.0.0",
-  "status": "FROZEN_TARGET",
-  "sha256": "116a25ab111968283dca39a64be38fd6e673621f31801c56bb59c97edf01435b",
+  "document_id": "ISA-KAD-SKILL-ROLE-002",
+  "version": "1.1.0",
+  "status": "ACCEPTED_SNAPSHOT",
+  "sha256": "dece6d53488e5820221d88f0bb0e3a0338699dbcffbe5ab486c1965d3130eb79",
   "canonical_skill_count": 15,
   "logical_role_count": 15,
   "max_spawn_depth": 2,
-  "frozen_at": "2026-08-30T12:05:00.000Z"
+  "supersedes": "ISA-KAD-SKILL-ROLE-001",
+  "workload_contract_schema": "kad-workload-v1",
+  "role_contract_schema": "kad-role-contract-v2",
+  "external_provider_count": 16,
+  "frozen_at": "2026-08-30T12:45:00.000Z"
 }

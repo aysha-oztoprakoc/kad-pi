@@ -1,10 +1,12 @@
-# KAD-PI Unified Skills & Role ISA (V1.0.0)
+# KAD-PI Unified Skills & Role ISA (V1.1.0)
 
-* **Document Identifier**: `ISA-KAD-SKILL-ROLE-001`
-* **Version**: `1.0.0`
-* **Status**: `FROZEN_TARGET`
-* **Authority**: Wayfinder + KAD Epistemic Evidence Gate (WP-024)
+* **Document Identifier**: `ISA-KAD-SKILL-ROLE-002`
+* **Version**: `1.1.0`
+* **Status**: `ACCEPTED_SNAPSHOT`
+* **Authority**: Wayfinder + KAD Epistemic Evidence Gate + Pre-GitHub Freeze (WP-028)
+* **Supersedes**: `ISA-KAD-SKILL-ROLE-001` (v1.0.0)
 * **Constitutional Precedence**: `PRIME_DIRECTIVE.md` outranks OMP conventions.
+* **Governing Rule**: *Repository evidence is authoritative. Research proposes. Deterministic policy authorizes.*
 
 ---
 
@@ -15,38 +17,57 @@
 │                        TIER 1: HUMAN & EPISTEMIC GOVERNANCE                            │
 │  [Human Operator] ──(ask_user: 5+1)──> [Wayfinder V2] ──> [5-Advisor Board]           │
 └──────────────────────────────────────────┬─────────────────────────────────────────────┘
-                                           │ (AUTHOR_DECLARED Selection)
+                                           │ (AUTHOR_DECLARED Selection & Human Intent)
 ┌──────────────────────────────────────────▼─────────────────────────────────────────────┐
 │                    TIER 2: WORKSPACE COORDINATION & LEDGER LIFECYCLE                   │
 │   [Planning Compiler] ──> [workctl import] ──> [workctl claim] ──> [STC Lease]         │
+│   • WORK_LIFECYCLE: READY -> CLAIMED -> IN_PROGRESS -> REVIEW -> ACCEPTED/BLOCKED     │
 └──────────────────────────────────────────┬─────────────────────────────────────────────┘
                                            │ (Mutating Claim + fusion_writer_lease)
 ┌──────────────────────────────────────────▼─────────────────────────────────────────────┐
-│                 TIER 3: COGNITIVE GUIDANCE & TYPED ROLES (ROLE_CONTRACT_V1)            │
+│                 TIER 3: COGNITIVE GUIDANCE & TYPED ROLES (ROLE_CONTRACT_V2)            │
 │  [kad-builder] ──> [kad-tester] ──> [kad-reviewer] ──> [kad-evidence-gate]             │
+│  • Role Offload Semantics: preferred_workload_providers, offload_allowed, safe_context │
 └──────────────────────────────────────────┬─────────────────────────────────────────────┘
-                                           │ (Capability-First Resource Routing)
+                                           │ (KAD_WORKLOAD_V1 Typed Transient Contract)
 ┌──────────────────────────────────────────▼─────────────────────────────────────────────┐
-│                          TIER 4: EXECUTION SUBSTRATE & RUNTIME                         │
-│  • Resource Tiers: Deterministic -> Tiny -> Local -> Free -> Standard -> Frontier     │
-│  • OMP Transport: task native executor (Max Spawn Depth: 2)                            │
-│  • Mutation Gate: fusion_writer_lease (Default Deny)                                   │
+│                  TIER 4: DELEGATED EXECUTION SUBSTRATE & PROVIDERS                     │
+│  • WORKLOAD_PROVIDERS: OMP Native Executor (Active), Pi Worker (Active), Warren (Canary)│
+│  • INTENT_GRAPH_PROJECTIONS: Cytoscape (Active), Beads (Shadow Canary, workctl -> Beads)│
+│  • EXTERNAL_DOCTRINE_SOURCE: Agentic Engineering Upstream (Research Only)             │
+│  • EXECUTION_RUN_LIFECYCLE: QUEUED -> RUNNING -> SUCCEEDED / FAILED / CANCELLED        │
+│  • Invariant: EXECUTION != LEARNING (Workers consume doctrine, distillation updates)   │
 │  • Single Knowledge Authority: KAD KnowledgePlane / Canonical Obsidian Vault           │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Invariants:
-1. **Cognitive vs Authoritative Separation**: Skills provide cognitive guidance; they do not possess mutating authority over project lifecycle or claims.
-2. **Deterministic Lifecycle Authority**: `bin/workctl` and deterministic KAD code own work lifecycle, tickets, claims, state transitions, and acceptance.
-3. **Transport Subordination**: OMP owns execution and subagent transport, NOT KAD lifecycle semantics.
-4. **Model Proposes, Policy Authorizes**: Probabilistic model output is a candidate proposal; deterministic policy gates authorize.
-5. **Zero-Model Work Ledger**: Work contracts in `.agents/work/` contain no vendor, provider, or model identities.
-6. **TOKENMAXXING & Local-First**: Local and free deterministic execution outranks cloud inference. Strong cloud models are reserved strictly for genuine ambiguity.
-7. **Single Knowledge Authority**: The Canonical Obsidian Vault (`vault/`) and KAD KnowledgePlane are the sole durable truth authority. All vector indexes, OpenViking stores, and projections are derived and have `authority: false`.
+### Sovereign Invariants:
+1. **Constitutional Delegation Boundary**: KAD may delegate execution, retrieval, graph projection, research, analytics, and presentation. External systems may own their transient internal state, but **MUST NOT** become authoritative over:
+   - Human intent;
+   - Work lifecycle;
+   - Canonical claims;
+   - Canonical evidence;
+   - Work acceptance;
+   - Project knowledge truth;
+   - ISA authority.
+2. **Lifecycle Separation Invariant**: `WORK_LIFECYCLE != EXECUTION_RUN_LIFECYCLE`.
+   - Work lifecycle is owned exclusively by `workctl`.
+   - Execution-run lifecycle is owned by the delegated execution provider.
+   - Run results provide evidence receipts; they **MUST NOT** autonomously mutate canonical work state.
+3. **Execution vs Learning Invariant**: `EXECUTION != LEARNING`. Workers consume accepted knowledge while executing; workers **MUST NOT** continuously rewrite canonical doctrine while performing assigned tasks. Learning flows strictly through the governed distillation pipeline.
+4. **Cognitive vs Authoritative Separation**: Skills provide cognitive guidance; they do not possess mutating authority over project lifecycle or claims.
+5. **Deterministic Lifecycle Authority**: `bin/workctl` and deterministic KAD code own work lifecycle, tickets, claims, state transitions, and acceptance.
+6. **Transport Subordination**: OMP and external execution providers own run transport, NOT KAD lifecycle semantics.
+7. **Model Proposes, Policy Authorizes**: Probabilistic model output is a candidate proposal; deterministic policy gates authorize.
+8. **Zero-Model Work Ledger**: Work contracts in `.agents/work/` and `KAD_WORKLOAD_V1` definitions contain zero vendor, provider, or model identities. Dispatch binding belongs in the execution receipt.
+9. **TOKENMAXXING & Local-First**: Local and free deterministic execution outranks cloud inference. Strong cloud models are reserved strictly for genuine ambiguity.
+10. **Single Knowledge Authority**: The Canonical Obsidian Vault (`vault/`) and KAD KnowledgePlane are the sole durable truth authority. All vector indexes, graph projections, OpenViking stores, and views are derived and have `authority: false`.
 
 ---
 
 ## 2. Section A: Canonical Skill Surface (15 Concepts)
+
+The canonical cognitive-skill catalog remains strictly 15 skills across 6 typed classes:
 
 | # | Canonical Skill | Class | Core Intent & Operational Responsibility | Primary Tools / CLIs |
 |---|---|---|---|---|
@@ -68,59 +89,19 @@
 
 ---
 
-## 3. Section B: Complete Skill Migration & Merge Matrix
+## 3. Section B: Migration & Supersession Matrix (ISA-001 -> ISA-002)
 
-| Legacy / Reviewed Skill | Disposition | Target Canonical Skill / Subsystem | Justification & Mechanism |
+| Component / Subsystem | ISA-001 (v1.0.0) Baseline | ISA-002 (v1.1.0) Target | Supersession Justification |
 |---|---|---|---|
-| `5-persona-advisory-board` | `MERGE` | `kad-advisory-board` | Merged into 5-lens KAD advisory architecture. |
-| `ask-matt` | `KEEP` | `ask-matt` | Retained as canonical skill router. |
-| `claude-handoff` | `MERGE` | `handoff` | Absorbed as Claude Code export adapter. |
-| `code-review` | `KEEP` | `code-review` | Retained as canonical dual-axis reviewer. |
-| `codebase-design` | `KEEP` | `codebase-design` | Retained as canonical deep module design discipline. |
-| `diagnosing-bugs` | `KEEP` | `diagnosing-bugs` | Retained as canonical root-cause debugging loop. |
-| `domain-modeling` | `KEEP` | `domain-modeling` | Retained as canonical domain modeler. |
-| `git-guardrails-claude-code` | `DETERMINISTIC_CODE` | `workctl` / Git Hooks | Enforced deterministically by `workctl` and pre-commit hooks. |
-| `grill-me` | `MERGE` | `grilling` | Merged into unified Socratic grilling engine. |
-| `grill-with-docs` | `MERGE` | `grilling` | Merged as contemporaneous ADR authoring mode in `grilling`. |
-| `grilling` | `KEEP` | `grilling` | Retained as canonical adversarial interrogation engine. |
-| `handoff` | `KEEP` | `handoff` | Retained as canonical durable handoff skill. |
-| `implement` | `KEEP` | `implement` | Retained as canonical implementation discipline. |
-| `implement-spec` | `ABSORB` | `implement` | Absorbed directly into `implement`. |
-| `improve-codebase-architecture` | `MERGE` | `codebase-design` | Merged into `codebase-design` static analysis rules. |
-| `kad-advisory-board` | `KEEP` | `kad-advisory-board` | Retained as canonical 5-lens advisory board. |
-| `kad-evidence-gate` | `POLICY_FRONTEND` | `kad-evidence-gate` | Retained as policy pointer to deterministic evidence verifiers. |
-| `kad-wiki` | `CAPABILITY_FRONTEND` | `kad-wiki` | Retained as frontend for `bin/kad-knowledge` and `bin/kad-wiki`. |
-| `loop-me` | `RETIRE` | Bounded `KAD_GOAL_V1` | Unbounded loops prohibited; replaced by bounded goal engine. |
-| `migrate-to-shoehorn` | `PROCEDURE` | `implement` | Retained as specialized TS test refactoring procedure. |
-| `prototype` | `KEEP` | `prototype` | Retained as canonical disposable prototype skill. |
-| `research` | `KEEP` | `research` | Retained as canonical high-trust research fabric. |
-| `resolving-merge-conflicts` | `PROCEDURE` | `implement` | Retained as AST-aware git conflict procedure. |
-| `retro` | `MERGE` | `skill-governance` / `distillation.mjs` | Merged into deterministic distillation pipeline. |
-| `scaffold-exercises` | `OPTIONAL` | `teach` / External | Retained as non-core optional educational utility. |
-| `setup-matt-pocock-skills` | `RETIRE` | `skill-governance` | Replaced by deterministic skill governance tooling. |
-| `setup-pre-commit` | `PROCEDURE` | `implement` | Retained as tooling setup procedure. |
-| `setup-ts-deep-modules` | `PROCEDURE` | `codebase-design` | Retained as TS configuration procedure. |
-| `tdd` | `KEEP` | `tdd` | Retained as canonical TDD engineering discipline. |
-| `teach` | `OPTIONAL` | Educational Subsystem | Retained as optional tutorial authoring skill. |
-| `to-questionnaire` | `MERGE` | `domain-modeling` | Merged as requirements discovery mode in `domain-modeling`. |
-| `to-spec` | `MERGE` | `wayfinder` (Spec Mode) | Merged into Wayfinder planning compiler. |
-| `to-tickets` | `DETERMINISTIC_CODE` | `bin/workctl import-tickets` | Ticket decomposition and import handled deterministically. |
-| `triage` | `MERGE` | `ask-matt` / `wayfinder` | Triaging folded into skill router and Wayfinder preflight. |
-| `wait-what` | `MERGE` | `code-review` | Merged as Skeptical Logic Analyzer in `code-review`. |
-| `wayfinder` | `KEEP` | `wayfinder` | Retained as canonical strategic decision router. |
-| `wizard` | `MERGE` | `human-runbook` | Merged into canonical interactive human runbook generator. |
-| `workspace-doctor` | `POLICY_FRONTEND` | `bin/workctl doctor` | Frontend for deterministic workspace doctor. |
-| `workspace-finish` | `POLICY_FRONTEND` | `bin/workctl release` | Frontend for deterministic claim release. |
-| `workspace-handoff` | `HARNESS_ADAPTER` | `bin/workctl handoff` | Frontend for deterministic continuation persistence. |
-| `workspace-orient` | `HARNESS_ADAPTER` | `bin/workctl orient` | Frontend for deterministic orientation bootstrap. |
-| `workspace-pick-work` | `POLICY_FRONTEND` | `bin/workctl claim` | Frontend for deterministic ticket claim. |
-| `writing-beats` | `RETIRE` | Prose Authoring | Non-engineering narrative skill retired. |
-| `writing-for-agents` | `MERGE` | `skill-governance` | Merged as skill authoring standard in `skill-governance`. |
-| `writing-fragments` | `MERGE` | `writing-shape` | Micro-prose rules folded into `writing-shape`. |
-| `writing-shape` | `OPTIONAL` | Technical Writing | Optional documentation styling skill. |
-| `deepapi` | `CAPABILITY_FRONTEND` | Global DeepAPI Tooling | Global tool bridge for high-trust search/scraping. |
-| `omarchy` | `PRESENTATION` | Host Desktop Subsystem | Host desktop and Hyprland styling manager. |
-| `diagnose-crash` | `PROCEDURE` | `diagnosing-bugs` | Host core dump analysis procedure under `diagnosing-bugs`. |
+| **Lifecycle Model** | Monolithic execution in OMP turns | Formal separation: `WORK_LIFECYCLE != EXECUTION_RUN_LIFECYCLE` | Decouples physical execution runs from work authorization. |
+| **External Providers** | Implicit OMP-only execution transport | 5-class External Provider Taxonomy (`WORKLOAD`, `GRAPH_PROJECTION`, `DOCTRINE_SOURCE`, `RESEARCH`, `PRESENTATION`) | Unifies infrastructure without diluting cognitive skills. |
+| **Workload Contract** | Ad-hoc subagent prompt payloads | Typed `KAD_WORKLOAD_V1` contract with receipt validation | Enforces model neutrality and boundary verification. |
+| **Warren Integration** | Unclassified | `WORKLOAD_PROVIDER` (`CANARY_PLANNED / LIKELY_ADOPT`), branch/artifact delivery only, subordinate to `workctl` | Factory-floor candidate; KAD retains authority over meaning. |
+| **Beads Integration** | Unclassified | `INTENT_GRAPH_PROJECTION` (`SHADOW_CANARY`), `workctl -> Beads` authority direction ONLY | Prevents shadow task tracker from usurping `workctl`. |
+| **Agentic Engineering** | Informal reference | `EXTERNAL_DOCTRINE_SOURCE` (`ADOPT_RESEARCH_UPSTREAM`, non-primary, requires evidence for promotion) | Establishes research upstream without code vendoring. |
+| **Learning Pipeline** | Informal distillation notes | Strict invariant: `EXECUTION != LEARNING` with governed distillation pipeline | Prevents in-flight doctrine corruption by active workers. |
+| **Role Fabric** | `ROLE_CONTRACT_V1` | `ROLE_CONTRACT_V2` with execution and offload semantics | Governs detached execution safety and context scoping. |
+| **Offload Policy** | Implicit | Explicit positive vs negative factor evaluation matrix | Eliminates offload for the sake of offload. |
 
 ---
 
@@ -135,92 +116,243 @@
 
 ---
 
-## 5. Section D: Role Fabric (`ROLE_CONTRACT_V1`)
+## 5. Section D: Role Fabric & Execution Semantics (`ROLE_CONTRACT_V2`)
 
-### Role Contract Schema (`ROLE_CONTRACT_V1`):
-Each agent spawned in the system is governed by an immutable contract:
+Each role contract defines immutable boundaries, mutation rights, and execution offload semantics:
+
 ```json
 {
-  "$schema": "kad-role-contract-v1",
+  "$schema": "kad-role-contract-v2",
   "role": "kad-builder",
   "trust_domain": "engineering",
   "mutation_rights": "EXCLUSIVE_OWNED_PATHS",
   "requires_claim": true,
   "requires_lease": "fusion_writer_lease",
   "max_spawn_depth": 2,
-  "allowed_child_roles": ["kad-tester", "kad-scout"],
+  "allowed_child_roles": ["kad-tester", "kad-scout", "kad-debugger"],
   "model_tier_preference": ["STANDARD_REMOTE", "LOCAL_GENERAL"],
-  "tools_allowlist": ["edit", "write", "read", "lsp", "ast_edit", "npm", "make"],
-  "verifier_independent": false
+  "tools_allowlist": ["edit", "write", "read", "lsp", "ast_edit", "npm", "make", "git", "workctl"],
+  "verifier_independent": false,
+  "offload_allowed": true,
+  "detached_execution_safe": true,
+  "preferred_workload_providers": ["omp-native-executor", "pi-worker", "warren"],
+  "minimum_required_context": "BOUNDED_WORKPACKAGE",
+  "expected_human_attention_savings": "HIGH_UNATTENDED",
+  "acceptance_evidence_requirements": ["DETERMINISTIC_TESTS", "DIFF_PATCH", "DOUBLE_AXIS_REVIEW"]
 }
 ```
 
-### The 15 Logical Roles:
-1. **`kad-master`**: Primary orchestrator. Directs decomposition and review. Non-mutating (`mutation_rights: NONE`). Model tier: `FRONTIER_REASONING` (`@plan`).
-2. **`kad-builder`**: Primary implementation worker. Possesses exclusive mutating authority over claimed paths. Requires active `workctl` claim and `fusion_writer_lease`. Model tier: `STANDARD_REMOTE` / `LOCAL_GENERAL` (`@task`).
-3. **`kad-debugger`**: Root-cause diagnostic specialist. Non-mutating probe using DAP debugger and reproduction scripts. Model tier: `STANDARD_REMOTE` (`@task`).
-4. **`kad-tester`**: Independent test author and runner. Verifies public seams via TDD. Model tier: `STANDARD_REMOTE` / `LOCAL_GENERAL` (`@task`).
-5. **`kad-reviewer`**: Independent verifier. Dual-axis Standards + Spec auditor. Must be independent from builder. Non-mutating. Model tier: `INDEPENDENT_VERIFIER` (`@verifier`).
-6. **`kad-researcher`**: High-trust literature and source investigator. Extracts verified facts and citations. Model tier: `LITERATURE_SYNTHESIS` (`@research`).
-7. **`kad-librarian`**: KnowledgePlane and Obsidian vault curator. Validates notes, projections, and backlinks. Model tier: `STANDARD_REMOTE`.
-8. **`kad-scout`**: Fast, lightweight read-only exploratory agent for directory mapping and broad pattern discovery. Model tier: `TINY_SPECIALIST` / `FREE_REMOTE` (`@smol`).
-9. **`kad-local-extractor`**: Local Qwen bounded worker for structured JSON and entity extraction. Model tier: `LOCAL_NARROW` (`@local_retrieval`).
-10. **`kad-world`**: Stheno persistent local world simulation. Strictly isolated from engineering tasks. Model tier: `LOCAL_WORLD` (`@world`).
-11. **`advisor-architecture`**: Advisory specialist on system structure, modularity, and seam design. Non-mutating. Model tier: `INDEPENDENT_VERIFIER`.
-12. **`advisor-security`**: Advisory specialist on trust domains, mutation leases, credential redaction, and attack surfaces. Non-mutating. Model tier: `INDEPENDENT_VERIFIER`.
-13. **`advisor-economics`**: Advisory specialist on token expenditure, local-first routing, and TOKENMAXXING. Non-mutating. Model tier: `INDEPENDENT_VERIFIER`.
-14. **`advisor-verification`**: Advisory specialist on test completeness, TDD seams, and deterministic reproduction. Non-mutating. Model tier: `INDEPENDENT_VERIFIER`.
-15. **`advisor-epistemic`**: Advisory specialist on knowledge provenance, claim classification, and anti-poisoning. Non-mutating. Model tier: `INDEPENDENT_VERIFIER`.
+### The 15 Logical Roles & Execution Profiles:
 
-### Spawn Hierarchy & Depth Rules:
-- **Max Recursive Spawn Depth**: **`2`** (Level 0: User/Master $	o$ Level 1: Subagent $	o$ Level 2: Leaf Scout/Tester).
+1. **`kad-master`**: Primary orchestrator. Non-mutating (`mutation_rights: NONE`). Interactive only (`offload_allowed: false`, `detached_execution_safe: false`). Minimum context: `FULL_CONSTITUTIONAL`. Model tier: `FRONTIER_REASONING` (`@plan`).
+2. **`kad-builder`**: Primary implementation worker. Possesses exclusive mutating authority over claimed paths. Offload capable (`offload_allowed: true`, `detached_execution_safe: true`). Preferred providers: `omp-native-executor`, `pi-worker`, `warren`. Context: `BOUNDED_WORKPACKAGE`. Model tier: `STANDARD_REMOTE` / `LOCAL_GENERAL` (`@task`).
+3. **`kad-debugger`**: Diagnostic specialist using DAP debugger and repro scripts. Non-mutating. Offload capable (`offload_allowed: true`). Context: `BOUNDED_WORKPACKAGE`. Model tier: `STANDARD_REMOTE` / `LOCAL_GENERAL` (`@task`).
+4. **`kad-tester`**: Independent test author and runner. Verifies public seams via TDD. Offload capable (`offload_allowed: true`, `detached_execution_safe: true`). Preferred providers: `omp-native-executor`, `pi-worker`, `warren`. Context: `BOUNDED_WORKPACKAGE`. Model tier: `STANDARD_REMOTE` / `LOCAL_GENERAL` (`@task`).
+5. **`kad-reviewer`**: Independent verifier. Dual-axis Standards + Spec auditor. Strictly independent from builder. Offload capable (`offload_allowed: true`). Context: `WORKSPACE_TOPOLOGY`. Model tier: `INDEPENDENT_VERIFIER` (`@verifier`).
+6. **`kad-researcher`**: Literature and source investigator. Extracts verified facts and citations. Offload capable (`offload_allowed: true`). Context: `TASK_ONLY`. Model tier: `LITERATURE_SYNTHESIS` (`@research`).
+7. **`kad-librarian`**: KnowledgePlane and Obsidian vault curator. Validates notes, projections, and backlinks. Interactive only (`offload_allowed: false`). Context: `FULL_CONSTITUTIONAL`. Model tier: `STANDARD_REMOTE`.
+8. **`kad-scout`**: Lightweight exploratory agent for directory mapping and pattern discovery. Offload capable (`offload_allowed: true`). Context: `TASK_ONLY`. Model tier: `TINY_SPECIALIST` / `FREE_REMOTE` (`@smol`).
+9. **`kad-local-extractor`**: Local Qwen worker for structured JSON extraction. Offload capable (`offload_allowed: true`). Context: `TASK_ONLY`. Model tier: `LOCAL_NARROW` (`@local_retrieval`).
+10. **`kad-world`**: Stheno persistent local world simulation. Strictly isolated from engineering. Interactive / local only (`offload_allowed: false`). Context: `TASK_ONLY`. Model tier: `LOCAL_WORLD` (`@world`).
+11. **`advisor-architecture`**: Advisory specialist on system structure and seam design. Non-mutating. Interactive only (`offload_allowed: false`). Model tier: `INDEPENDENT_VERIFIER`.
+12. **`advisor-security`**: Advisory specialist on trust domains and mutation leases. Non-mutating. Interactive only (`offload_allowed: false`). Model tier: `INDEPENDENT_VERIFIER`.
+13. **`advisor-economics`**: Advisory specialist on token expenditure and TOKENMAXXING. Non-mutating. Interactive only (`offload_allowed: false`). Model tier: `INDEPENDENT_VERIFIER`.
+14. **`advisor-verification`**: Advisory specialist on test completeness and TDD seams. Non-mutating. Interactive only (`offload_allowed: false`). Model tier: `INDEPENDENT_VERIFIER`.
+15. **`advisor-epistemic`**: Advisory specialist on knowledge provenance and anti-poisoning. Non-mutating. Interactive only (`offload_allowed: false`). Model tier: `INDEPENDENT_VERIFIER`.
+
+### Spawn Hierarchy & Independence Rules:
+- **Max Recursive Spawn Depth**: `2` (Level 0: User/Master -> Level 1: Subagent -> Level 2: Leaf Scout/Tester).
 - **No Self-Replication**: A subagent cannot spawn an identical role.
-- **Verifier Independence**: `kad-reviewer` and the 5 advisors MUST NOT be spawned with the same model/provider family as the active `kad-builder` on that workpackage.
+- **Verifier Independence**: `kad-reviewer` and the 5 advisors **MUST NOT** be spawned with the same model/provider family as the active `kad-builder` on that workpackage.
 
 ---
 
-## 6. Section E: Capability-First Resource Routing
+## 6. Section E: Two Distinct Lifecycles
 
 ```text
-Deterministic Code / Tool (workctl, make, git)
-  └─► Tiny Specialist / Scout (glm-4.7-flash, tiny regex)
-        └─► Local Narrow Model (Qwen-2.5-Coder on AMDY)
-              └─► Local General Model (Local Ollama / Stheno)
-                    └─► Free / Cheap Remote Lane (Antigravity / Gemini Flash)
-                          └─► Standard Remote Lane (Codex Mini / GPT-5.4-Mini)
-                                └─► Strong Frontier Reasoning (GPT-5.6-Luna / Claude Opus)
-                                      └─► Human Operator (Wayfinder 5+1 Protocol)
+CANONICAL WORK LIFECYCLE (Owned exclusively by workctl)
+┌───────────┐     ┌───────────┐     ┌───────────────┐     ┌────────────┐     ┌────────────┐
+│   READY   │ ──> │  CLAIMED  │ ──> │  IN_PROGRESS  │ ──> │   REVIEW   │ ──> │  ACCEPTED  │
+└───────────┘     └───────────┘     └───────────────┘     └────────────┘     └────────────┘
+      │                                                           │                 ▲
+      ▼                                                           ▼                 │
+┌───────────┐                                               ┌────────────┐          │
+│  BLOCKED  │                                               │  REJECTED  │ ─────────┘
+└───────────┘                                               └────────────┘
+
+                                ▲
+                                │ (Evidence Receipts Submitted via workctl release)
+                                │
+DELEGATED EXECUTION-RUN LIFECYCLE (Owned by Delegated Provider)
+┌───────────┐     ┌───────────┐     ┌───────────────┐
+│  QUEUED   │ ──> │  RUNNING  │ ──> │   SUCCEEDED   │ ──> [Evidence Receipts Generated]
+└───────────┘     └───────────┘     └───────────────┘
+      │                                     │
+      ▼                                     ▼
+┌───────────┐                       ┌───────────────┐
+│ CANCELLED │                       │ FAILED / LOST │
+└───────────┘                       └───────────────┘
 ```
 
-1. **Deterministic-First**: If a task can be resolved via static analysis, tests, schema validation, or `workctl`, no model is invoked.
-2. **Local Qualification Invariant**: A local model receives ONLY roles for which it has empirically demonstrated passing benchmarks (e.g. Qwen for bounded JSON extraction, not for security architecture).
-3. **Zero Marginal Spend**: Paid API spend (`PAYG`) remains disabled by default; subscription and free allocations are prioritized.
+1. **Work Lifecycle**: Exclusively owned and authorized by `workctl`. Only human decisions and deterministic policy verifiers can transition a workpackage between states.
+2. **Execution Run Lifecycle**: Owned by the execution provider (OMP, Pi runtime, Warren). Tracks the physical execution of a dispatched workload.
+3. **Cardinality**: A single workpackage may generate `0..N` execution runs.
+4. **Receipt Integrity**: Execution runs generate structured execution receipts (`kad-execution-run-receipt-v1`). A receipt provides evidence; it **NEVER** directly mutates canonical work state.
 
 ---
 
-## 7. Section F: Context & Knowledge Authority
+## 7. Section F: External Provider Taxonomy & Positions
 
-1. **Sole Durable Truth Authority**: The Canonical Obsidian Vault (`vault/`) and KAD KnowledgePlane.
-2. **Projections are Derived**: OpenViking trees, Vector embeddings, wiki pages (`wiki/`), and dashboard viewmodels (`dashboard/`) are strictly derived projections with `authority: false`.
-3. **STC Context Packets**: Context is packaged into bounded, immutable `ContextPackets` scoped strictly to the active workpackage claim.
-4. **Anti-Poisoning**: Unreviewed proposals, raw scratchpads, and rejected candidates fail closed and NEVER enter context packs for production roles.
+### 1. `WORKLOAD_PROVIDER`
+- **Role**: Physical lifecycle management of delegated execution runs.
+- **Active Providers**:
+  - `omp-native-executor`: Rich interactive controller for active human sessions.
+  - `pi-worker`: Local deterministic worker substrate for multi-turn episodes.
+  - `local-process-runner`: Deterministic CLI execution runner.
+- **Warren Position (`CANARY_PLANNED / LIKELY_ADOPT`)**:
+  - Warren may own the physical lifecycle of delegated factory-floor runs; KAD owns their meaning and acceptance.
+  - Subordinate to `workctl`.
+  - Delivery mode: **Branch-only or Artifact-only**.
+  - Prohibited: Autonomous merge, canonical work transitions, tracker authority, ISA authority.
+  - Pi workers are the currently justified worker path. Warren installation remains a separate evidence-gated workpackage.
+
+### 2. `INTENT_GRAPH_PROJECTION`
+- **Role**: Read-only projection and graph analysis of dependencies and scheduling.
+- **Active Providers**:
+  - `cytoscape-adapter`: In-browser interactive semantic graph explorer.
+- **Beads Position (`SHADOW_CANARY / MINE`)**:
+  - Authority direction: **`workctl -> Beads` ONLY**.
+  - Permitted: DAG queries, cycle detection, dependency analysis, scheduling recommendations, visualization.
+  - Prohibited: Task claims, task closure, priority authority, work lifecycle mutation, canonical memory, KnowledgePlane replacement.
+
+### 3. `EXTERNAL_DOCTRINE_SOURCE`
+- **Role**: External practitioner literature, architecture comparison, and workflow research.
+- **Agentic Engineering Position (`ADOPT_RESEARCH_UPSTREAM`)**:
+  - Epistemic status: `PRACTITIONER_DERIVED + HUMAN_REVIEWED + NON_PRIMARY`.
+  - Permitted: Hypothesis generation, architecture comparison, context engineering research, evaluation design.
+  - Invariant: Consequential claims require empirical KAD evidence before promotion to accepted doctrine. Zero unreviewed code vendoring.
+
+### 4. `RESEARCH_PROVIDER`
+- **Role**: External corpus retrieval, bibliography normalization, and academic graph querying.
+- **Active Providers**: `deepapi`, `zotero-local`, `crossref`, `openalex`, `openviking-derived`.
+
+### 5. `PRESENTATION_PROVIDER`
+- **Role**: Read-only viewmodels, TUI palettes, desktop themes, and status dashboards.
+- **Active Providers**: `sofia-v3`, `tell-ansi-tui`, `omarchy-cyberdeck-theme`, `obsidian-bridge`.
+- **Invariant**: Presentation layers possess **zero shell mutation authority**.
 
 ---
 
-## 8. Section G: Governed Self-Evolution Loop
+## 8. Section G: Typed Transient Workload Contract (`KAD_WORKLOAD_V1`)
+
+Workloads dispatched to execution providers are encapsulated in a typed, model-neutral contract:
+
+```json
+{
+  "schema": "kad-workload-v1",
+  "workload_id": "wl-2026-08-30-001",
+  "workpackage_ref": "WP-KAD-ISA-FINAL-SNAPSHOT-028",
+  "claim_ref": "claim-028",
+  "role_contract_ref": "kad-builder",
+  "objective": "Implement ISA-KAD-SKILL-ROLE-002 and freeze baseline snapshot",
+  "acceptance_criteria_ref": ["AC-01-LIFECYCLE-SEPARATION", "AC-02-PROVIDER-TAXONOMY"],
+  "source_revision": "0ea896b54d799ca98fa3b45fe45f519655135807",
+  "mutation_scope": ["docs/architecture/", "tools/kad/", "config/"],
+  "trust_domain": "engineering",
+  "network_class": "LOCAL_LOOPBACK",
+  "credential_class": "NONE",
+  "command_authority": "EXCLUSIVE_MUTATION",
+  "human_escalation_policy": "WAYFINDER_ASK_ME",
+  "requested_capability_class": "STANDARD_REMOTE",
+  "execution_provider": "omp-native-executor",
+  "host_resource_class": "host.amdy.workstation",
+  "timeout_seconds": 3600,
+  "concurrency_limit": 4,
+  "budget_class": "ZERO_MARGINAL_SPEND",
+  "delivery_policy": "DIRECT_WORKSPACE",
+  "required_receipts": ["telemetry_metrics", "test_results", "diff_patch"]
+}
+```
+
+### Execution Run Receipt (`kad-execution-run-receipt-v1`):
+```json
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "receipt_id": "rcpt-2026-08-30-001",
+  "workload_id": "wl-2026-08-30-001",
+  "execution_provider": "omp-native-executor",
+  "run_status": "SUCCEEDED",
+  "dispatched_model_binding": {
+    "provider": "google-antigravity",
+    "model": "gemini-3.7-flash",
+    "tier": "FREE_REMOTE"
+  },
+  "started_at": "2026-08-30T12:00:00.000Z",
+  "completed_at": "2026-08-30T12:05:00.000Z",
+  "exit_code": 0,
+  "receipts": {
+    "test_results": { "total": 19, "passed": 19, "failed": 0 },
+    "diff_patch": "..."
+  }
+}
+```
+
+---
+
+## 9. Section H: Execution vs Learning Invariant (`EXECUTION != LEARNING`)
+
+Workers consume accepted knowledge while executing. Workers **MUST NOT** continuously rewrite canonical doctrine while performing their assigned work.
 
 ```text
-Observe Performance / Telemetry
-  └─► Blameless Retrospective (retro)
-        └─► Generate Evolution Candidate
-              └─► Wayfinder 5+1 Decision
-                    └─► 5-Advisor Stress-Test
-                          └─► Bounded Experiment (prototype)
-                                └─► Measure Telemetry & Receipts
-                                      └─► Epistemic Evidence Verification
-                                            └─► Human Acceptance (AUTHOR_DECLARED)
-                                                  └─► Narrow Promotion (skills.lock.json)
-                                                        └─► Downward Distillation (to deterministic code)
+[Execution Run] ──> [Evidence Receipts] ──> [Retrospective / Evaluation]
+                                                      │
+                                                      ▼
+[KnowledgePlane] <── [Human Acceptance] <── [Distillation & Verification]
 ```
 
-No model possesses the authority to autonomously rewrite skills, constitutional rules, or role contracts. Every promotion requires deterministic evidence receipts and explicit human approval.
+### Governed Learning Sequence:
+1. **Execution**: Dispatched workers execute bounded tasks against immutable accepted doctrine.
+2. **Receipts / Evidence**: Outputs, diffs, tests, and telemetry are captured in append-only evidence journals.
+3. **Evaluation / Retro**: Post-flight evaluation measures divergence, errors, or performance gaps.
+4. **Dedicated Distillation**: Off-line distillation extracts reusable heuristics or candidate knowledge.
+5. **Advisory / Wayfinder Review**: Proposed candidate knowledge is stress-tested through the 5-advisor board.
+6. **Empirical Verification**: Candidate is tested against regression test suites.
+7. **Human Acceptance**: Human Project Lead authorizes promotion (`AUTHOR_DECLARED`).
+8. **KnowledgePlane Incorporation**: Accepted knowledge is committed to the canonical Obsidian vault.
+
+---
+
+## 10. Section I: Offload Policy & Economics
+
+Work is delegated to external or detached providers **ONLY** when delegation demonstrably improves the system.
+
+### Decision Matrix:
+| Evaluation Dimension | Positive Factor (Favors Offload) | Negative Factor (Favors Local/Interactive) |
+|---|---|---|
+| **Duration & Attention** | Long unattended execution (>10 min), human attention saved. | Short interactive feedback loop (<1 min), human in loop required. |
+| **Task Independence** | Bounded, decoupled, single-module scope. | Tightly coupled, cross-cutting architectural refactor. |
+| **Verification** | Deterministic tests, automated linters, clear oracle. | Ambiguous subjective acceptance, qualitative human review. |
+| **Resource & Cost** | Utilizes existing free quota or paid subscription. | Incurs unapproved marginal PAYG spend. |
+| **Trust & Credentials** | Zero secrets required, local loopback network. | Requires private keys, production credentials, wide network. |
+| **Merge Safety** | Isolated branch delivery, low merge collision risk. | High merge contention on shared hot paths. |
+
+**Constitutional Rule**: The mere availability of Warren or any other workload provider is **not itself justification for offloading**.
+
+---
+
+## 11. Section J: Authority Matrix & Invariants
+
+| System / Component | Canonical Authority Scope | Subordinate To | Permitted Mutations | Forbidden Operations |
+|---|---|---|---|---|
+| **Human Project Lead** | Constitutional Intent, Final Acceptance | None | Entire Workspace | Unrecorded silent mutation |
+| **`bin/workctl`** | Work Lifecycle, Tickets, Claims, Priority | Human Intent | `.agents/work/`, Leases | Autonomous code generation |
+| **KAD KnowledgePlane** | Sole Durable Project Truth, Vault | Human Acceptance | `vault/`, `docs/` | Model self-promotion |
+| **Role Contracts** | Spatiotemporal Boundaries, Tool Permissions | ISA & Governance | Runtime Execution | Self-expansion of rights |
+| **STC Lease Manager** | Worktree Mutation Concurrency | `workctl` Claims | Lockfiles, Leases | Ambiguous lease grant |
+| **Goal Engine** | Bounded Task Decomposition | Role Contracts | Workload Packets | Unbounded loops |
+| **OMP Harness** | Interactive Session & Subagent Transport | `workctl` & ISA | Subagent Runtimes | Autonomous ledger mutation |
+| **Warren** | Physical Execution Run Lifecycle | `workctl` & Workload | Branch / Artifact Diffs | Ledger mutation, auto-merge |
+| **Beads** | Derived Graph Query & Scheduling Projection | `workctl` State | Ephemeral Projections | Task claims, closing tasks |
+| **Agentic Engineering**| Upstream Practitioner Research | Evidence Gates | None (External Source) | Direct code vendoring |
+| **Research Providers** | External Corpus Retrieval & Extraction | Research API | Derived Candidates | Canonical promotion |
+| **Presentation Layer** | Views, Dashboards, Monospace TUIs, Themes | KnowledgePlane | None (Read-Only) | Shell mutation, command execution |

@@ -1,8 +1,8 @@
 {
   "schema": "kad-role-contract-v1",
   "role": "kad-world",
-  "title": "KAD Stheno World Simulation",
-  "description": "Persistent world simulation engine. Strictly isolated from engineering tasks.",
+  "title": "Stheno Local Persistent World",
+  "description": "Stheno persistent local world simulation. Strictly isolated from engineering tasks.",
   "trust_domain": "world",
   "mutation_rights": "NONE",
   "requires_claim": false,
@@ -12,8 +12,16 @@
   "model_tier_preference": [
     "LOCAL_WORLD"
   ],
-  "tools_allowlist": [
-    "read"
+  "tools_allowlist": [],
+  "verifier_independent": false,
+  "offload_allowed": false,
+  "detached_execution_safe": false,
+  "preferred_workload_providers": [
+    "pi-worker"
   ],
-  "verifier_independent": false
+  "minimum_required_context": "TASK_ONLY",
+  "expected_human_attention_savings": "ZERO_HUMAN_IN_THE_LOOP",
+  "acceptance_evidence_requirements": [
+    "PERSISTENT_WORLD_JOURNAL"
+  ]
 }
