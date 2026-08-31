@@ -19,3 +19,12 @@ ba6efef697101814c7e130bff6d094405d427c0a8d245d222567375edcab42c3  tools/kad/test
 ```
 
 The tree includes unrelated concurrent workspace changes and the untracked WP-032R evidence plus governance implementation. This closure does not claim a clean tree or repository commit identity for uncommitted files.
+
+## Durable Commit Binding
+
+- **Previous base HEAD:** `15483b6c87757358ab046d50d94498c9fdfb1ebe`
+- **Commit A:** `7eee4df` — `fix(kad): harden governance authorization semantics`
+- **Commit A path set:** the 7 governance implementation modules, 3 governance test modules, and WP-032R evidence files `00` through `13` plus `FINAL_REPORT.md`, exactly as explicitly staged.
+- **Relationship:** the independent reviewer reviewed the content-addressed working-tree snapshot above; Commit A later materialized that same implementation/test snapshot unchanged.
+- **Commit B:** this provenance-only commit; its SHA is captured in the final closure record.
+- **Remaining dirty state:** unrelated pre-existing workspace changes remain outside the Commit A path set. No clean-tree claim is made.
