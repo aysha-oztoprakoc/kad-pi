@@ -1,0 +1,82 @@
+{
+  "schema": "kad-closure-current-state-v1",
+  "workpackage": "WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043",
+  "generated_at": "2026-09-01T21:35:00Z",
+  "head": "9b518dd",
+  "origin_main": "6077630598980c7876395ef80a07e047d61824a6",
+  "ahead": 4,
+  "behind": 0,
+  "dirty_tracked": [".omp/config.yml", "skills-lock.json"],
+  "untracked": [".agents/skills/system-atlas/", ".agents/telemetry/"],
+  "ignored_policy": "documented in .gitignore (incl. .scratch/, .tmp/ added by WP-042)",
+  "work_items_by_status": {
+    "ACCEPTED": 33,
+    "REVIEW": 7,
+    "CLAIMED": 1,
+    "READY": 1
+  },
+  "review_items": [
+    "WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042",
+    "WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1",
+    "WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
+    "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+    "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+    "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
+    "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021"
+  ],
+  "ready_items": ["EXP-KAD-OFFLINE-SURVIVAL-001-R1"],
+  "active_claims": 1,
+  "active_claim": { "task": "WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043", "actor": "deepseek-v4-flash" },
+  "stale_claims": 0,
+  "project_config": {
+    "modelRoles.default": "opencode-go/deepseek-v4-flash:high",
+    "memory.backend": "off",
+    "autolearn.enabled": false,
+    "contextPromotion.enabled": false,
+    "advisor.enabled": false,
+    "compaction.enabled": true,
+    "skills.enabled": true,
+    "disabledProviders": ["openrouter"]
+  },
+  "effective_config": {
+    "tools.approvalMode": "yolo",
+    "secrets.enabled": true,
+    "ttsr.enabled": true,
+    "recap.enabled": true,
+    "source": "omp config get (installed OMP 18.0.11)"
+  },
+  "global_config_presence": "/home/amdy/.omp/agent/config.yml",
+  "skill_lock_state": {
+    "kad_governance_lock": ".agents/workspace/skills.lock.json (array, 19 entries, code-validated)",
+    "omp_installer_lock": "skills-lock.json (map, 38 entries; dirty system-atlas entry)",
+    "local_delta_warnings": 16,
+    "system_atlas": { "untracked": true, "lock_hash": "ca484cdd...", "installed_sha256": "18c89dcf..." }
+  },
+  "telemetry_state": {
+    "path": ".agents/telemetry/",
+    "records": 37,
+    "validate_no_arg": { "total": 37, "valid": 37 },
+    "lifecycle": "UNRESOLVED (D3)",
+    "contract_finding": "CLOSED: validate <dir> is non-recursive flat-dir semantics; no-arg validates live store. Documented contract, no defect."
+  },
+  "runtime_endpoints": {
+    "world_5001": { "state": "AVAILABLE", "latency_ms": 24, "model": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M" },
+    "qwen_5002": { "state": "UNAVAILABLE", "required": false },
+    "gpu": "RX 9060 XT idle, ROCm userspace absent"
+  },
+  "security_sensitive_effective": {
+    "tools.approvalMode": { "value": "yolo", "valid": ["always-ask", "write", "yolo"], "policy": "REQUIRES_HUMAN_POLICY" },
+    "secrets.enabled": { "value": true, "policy": "REQUIRES_HUMAN_POLICY" },
+    "ttsr.enabled": { "value": true, "policy": "KAD_RESTRICTED" },
+    "recap.enabled": { "value": true, "policy": "KAD_RESTRICTED" }
+  },
+  "tests": {
+    "npm_test": { "run_at": "2026-09-01T20:44Z", "tests": 781, "pass": 781, "fail": 0 },
+    "docs_state_tests": "NOT_YET_RUN in this WP (docs/state/test/state-artifacts.test.mjs)",
+    "complete_surface": "PENDING full suite run"
+  },
+  "known_evidence_gaps": [
+    { "id": "WP-KAD-RESEARCH-ZOTERO-005", "disposition": "RETROSPECTIVE_EVIDENCE_INDEX created" }
+  ],
+  "human_decisions_pending": ["D1", "D2", "D3", "D4", "D5", "D6", "D7", "WP-042 acceptance", "publication authorization"]
+}
