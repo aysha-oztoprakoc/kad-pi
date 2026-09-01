@@ -3,7 +3,6 @@
 **Schema**: `kad.settings-matrix/v1` · **OMP**: 18.0.11 · **Source revision**: `b8ce33a5`
 
 Distinguishes `schema_default` (exact OMP 18.0.11 source) from `effective_value` (installed runtime).
-Compatibility is evaluated separately: `default_compatibility` (upstream) vs `effective_compatibility` (current).
 
 ## `advisor.*`
 
@@ -228,7 +227,7 @@ Compatibility is evaluated separately: `default_compatibility` (upstream) vs `ef
 |---|---|---|---|---|---|
 | dev.autoqa | true | true | PASS_THROUGH | N/A | N/A |
 | dev.autoqaConsent | "unset" | "unset" | REQUIRES_HUMAN_POLICY | N/A | N/A |
-| dev.autoqaPush.endpoint | UNKNOWN | "https://qa.omp.sh/v1/gr | PASS_THROUGH | N/A | N/A |
+| dev.autoqaPush.endpoint | "https://qa.omp.sh/v1/gr | "https://qa.omp.sh/v1/gr | PASS_THROUGH | N/A | N/A |
 | dev.autoqaPush.token | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
 
 ## `disabledExtensions.*`

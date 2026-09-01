@@ -222,7 +222,7 @@
     "statusLine.segmentOptions": {
       "type": "record",
       "schema_default": {},
-      "default_kind": "constant"
+      "default_kind": "literal-object"
     },
     "terminal.showImages": {
       "type": "boolean",
@@ -262,12 +262,12 @@
     "images.urls.options": {
       "type": "record",
       "schema_default": {},
-      "default_kind": "constant"
+      "default_kind": "literal-object"
     },
     "images.urls.credentials": {
       "type": "record",
       "schema_default": {},
-      "default_kind": "constant"
+      "default_kind": "literal-object"
     },
     "images.urls.command": {
       "type": "string",
@@ -584,7 +584,7 @@
     "retry.fallbackChains": {
       "type": "record",
       "schema_default": {},
-      "default_kind": "constant"
+      "default_kind": "literal-object"
     },
     "retry.fallbackRevertPolicy": {
       "type": "enum",
@@ -1156,7 +1156,7 @@
     "hindsight.apiUrl": {
       "type": "string",
       "schema_default": "http://localhost:8888",
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "hindsight.apiToken": {
       "type": "string",
@@ -1254,22 +1254,22 @@
     "hindsight.requestTimeoutMs": {
       "type": "number",
       "schema_default": 30000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "hindsight.reflectTimeoutMs": {
       "type": "number",
       "schema_default": 120000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "hindsight.recallTimeoutMs": {
       "type": "number",
       "schema_default": 30000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "hindsight.retainTimeoutMs": {
       "type": "number",
       "schema_default": 60000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "hindsight.mentalModelsEnabled": {
       "type": "boolean",
@@ -1289,7 +1289,7 @@
     "hindsight.mentalModelMaxRenderChars": {
       "type": "number",
       "schema_default": 16000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "ttsr.enabled": {
       "type": "boolean",
@@ -1489,7 +1489,7 @@
     "bash.direnvLoadTimeoutMs": {
       "type": "number",
       "schema_default": 30000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "shellMinimizer.enabled": {
       "type": "boolean",
@@ -1554,7 +1554,7 @@
     "eval.autoBackground.thresholdMs": {
       "type": "number",
       "schema_default": 60000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "python.kernelMode": {
       "type": "enum",
@@ -1689,7 +1689,7 @@
     "inspect_image.timeoutMs": {
       "type": "number",
       "schema_default": 300000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "checkpoint.enabled": {
       "type": "boolean",
@@ -1809,12 +1809,12 @@
     "irc.timeoutMs": {
       "type": "number",
       "schema_default": 120000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "bash.autoBackground.thresholdMs": {
       "type": "number",
       "schema_default": 60000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "tools.xdev": {
       "type": "boolean",
@@ -1946,7 +1946,7 @@
     "task.agentIdleTtlMs": {
       "type": "number",
       "schema_default": 420000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "task.softRequestBudget": {
       "type": "number",
@@ -1976,12 +1976,12 @@
     "task.agentPrewalk": {
       "type": "record",
       "schema_default": {},
-      "default_kind": "constant"
+      "default_kind": "literal-object"
     },
     "task.agentAdvisor": {
       "type": "record",
       "schema_default": {},
-      "default_kind": "constant"
+      "default_kind": "literal-object"
     },
     "task.prewalk": {
       "type": "boolean",
@@ -2271,7 +2271,7 @@
     "exa.searchDelayMs": {
       "type": "number",
       "schema_default": 1000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "searxng.endpoint": {
       "type": "string",
@@ -2346,7 +2346,7 @@
     "extensionHandlers.toolCallTimeoutMs": {
       "type": "number",
       "schema_default": 30000,
-      "default_kind": "constant"
+      "default_kind": "literal"
     },
     "dev.autoqa": {
       "type": "boolean",
@@ -2355,8 +2355,8 @@
     },
     "dev.autoqaPush.endpoint": {
       "type": "string",
-      "schema_default": null,
-      "default_kind": "unknown"
+      "schema_default": "https://qa.omp.sh/v1/grievances",
+      "default_kind": "literal"
     },
     "dev.autoqaPush.token": {
       "type": "string",
