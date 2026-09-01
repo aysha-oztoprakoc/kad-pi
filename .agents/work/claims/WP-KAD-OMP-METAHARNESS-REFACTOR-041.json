@@ -1,0 +1,15 @@
+{
+  "task": "WP-KAD-OMP-METAHARNESS-REFACTOR-041",
+  "project": "kad-pi",
+  "claim_id": "e8d73da8-926e-4c0a-b2d0-62ffa3bcfe05",
+  "actor_label": "deepseek-v4-pro",
+  "started_at": "2026-09-01T18:35:29.564Z",
+  "base_commit": "c029d908d0e902ae2750dd32806bc6557c8d6191",
+  "owned_paths": [
+    "docs/state",
+    "evidence/WP-KAD-OMP-METAHARNESS-REFACTOR-041",
+    ".agents/work/WP-KAD-OMP-METAHARNESS-REFACTOR-041.json"
+  ],
+  "mode": "mutate",
+  "active": true
+}

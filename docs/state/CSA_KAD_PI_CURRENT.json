@@ -1,0 +1,196 @@
+{
+  "schema": "kad.csa/v1",
+  "state": "CURRENT",
+  "generated_at": "2026-09-01T18:36:00Z",
+  "evidence_cutoff": "c029d908d0e902ae2750dd32806bc6557c8d6191",
+  "repository": {
+    "head": "c029d908d0e902ae2750dd32806bc6557c8d6191",
+    "branch": "main",
+    "remote": "https://github.com/aysha-oztoprakoc/kad-pi.git",
+    "remote_head": "c029d908d0e902ae2750dd32806bc6557c8d6191",
+    "dirty": true,
+    "divergence": 0,
+    "state_class": "VERIFIED_CURRENT",
+    "evidence": {
+      "source": "git",
+      "command": "git rev-parse HEAD; git ls-remote origin refs/heads/main",
+      "hash": "c029d908d0e902ae2750dd32806bc6557c8d6191"
+    }
+  },
+  "hosts": {
+    "amdy": {
+      "cpu": "AMD Ryzen 7 7700 8-Core",
+      "threads": 16,
+      "ram": "~14.7 GiB (MemTotal 15,446,668 kB)",
+      "gpu": "Navi 44 [Radeon RX 9060 XT] + Raphael iGPU",
+      "vram": "UNKNOWN",
+      "rocm": "UNKNOWN",
+      "state_class": "VERIFIED_CURRENT",
+      "evidence": {
+        "source": "HARDWARE_PROBE",
+        "command": "lscpu; free -h; lspci | grep -iE 'vga|3d'"
+      }
+    },
+    "tell": {
+      "availability": "UNKNOWN",
+      "note": "known_hosts alias 'tell' present; tell-ansi-tui referenced in config; no live probe performed",
+      "state_class": "UNKNOWN",
+      "evidence": {
+        "source": "FILE",
+        "path": "~/.ssh/known_hosts"
+      }
+    }
+  },
+  "workspace": {
+    "root": "/home/amdy/Work",
+    "primary_project": "kad-pi"
+  },
+  "harnesses": {
+    "omp": {
+      "version": "18.0.11",
+      "origin": "mise (github-can1357-oh-my-pi/latest)",
+      "binary": "/home/amdy/.local/bin/omp",
+      "alt_binary": ".tools/oh-my-pi/v18.0.9",
+      "project_config": ".omp/config.yml",
+      "global_config": "~/.omp/agent/config.yml (divergent toggles)",
+      "settings_schema": "UNKNOWN (binary-only install; source-backed precedence not readable)",
+      "state_class": "VERIFIED_CURRENT",
+      "evidence": {
+        "source": "COMMAND",
+        "command": "omp --version",
+        "hash": "651308275f4dfdab3178f549303cc5da90037761876d8ca881430d7ba41bf1bf"
+      }
+    },
+    "pi": {
+      "role": "reference/portable worker adapter",
+      "path": "tools/kad/pi/, .pi/"
+    }
+  },
+  "knowledge_plane": {
+    "vault": {
+      "role": "canonical doctrine",
+      "path": "vault/"
+    },
+    "openviking": {
+      "state": "LIVE",
+      "endpoint": "127.0.0.1:1933",
+      "version": "0.4.17",
+      "role": "non-authoritative context substrate"
+    },
+    "context": {
+      "compiler": "tools/kad/context-compiler.mjs",
+      "economy": "tools/kad/context-economy.mjs",
+      "promotion": "disabled",
+      "compaction": "snapcompact@70%"
+    },
+    "projections": {
+      "path": "vault/90_Derived/Projections/",
+      "authority": "derived, rebuildable"
+    }
+  },
+  "skills": {
+    "canonical_catalog": 15,
+    "lockfile_count": 39,
+    "surface_dirs": 49,
+    "local_delta": 16,
+    "dual_lockfile": {
+      "root": "skills-lock.json (canonical candidate)",
+      "workspace": ".agents/workspace/skills.lock.json"
+    },
+    "note": "15-canonical (ISA-KAD-SKILL-ROLE-002) vs ~49 operational surface reconciled; LOCAL_DELTA = expected local adaptation"
+  },
+  "tools": {
+    "component_dirs": [
+      "governance/",
+      "telemetry/",
+      "intent/",
+      "compute/",
+      "wiki/",
+      "pi/",
+      "test/"
+    ],
+    "authority_modules": [
+      "workload-contract.mjs",
+      "role-contract.mjs",
+      "external-providers.mjs"
+    ],
+    "note": "14 WP-031 streams mapped; ~80% implemented"
+  },
+  "plugins": {
+    "extensions": [
+      "kad-control-plane.js",
+      "kad-context-economy.js (bootstrap shims \u2192 tools/kad/telemetry/control-plane-runtime.mjs)"
+    ],
+    "mcp": {
+      "context7": "npx @upstash/context7-mcp@4.0.4 \u2014 AUTHORITY-INVERSION RISK (fetches remote code)"
+    },
+    "fusion": {
+      ".omp/fusion/manifest.json": "ambient extensions/skills/rules disabled; mutation gated on leases"
+    },
+    "local_agents": [
+      "kad-local-extractor (read-only retrieval)",
+      "kad-local-world (read-only WORLD)"
+    ]
+  },
+  "compute": {
+    "router": "tools/kad/economic-router.mjs",
+    "lane_order": [
+      "DETERMINISTIC_EXISTING",
+      "DETERMINISTIC_NEW",
+      "LOCAL_TINY_SPECIALIST",
+      "LOCAL_SPECIALIST",
+      "LOCAL_GENERAL",
+      "REMOTE_FREE",
+      "REMOTE_SUBSCRIPTION",
+      "REMOTE_STRONG",
+      "HUMAN"
+    ],
+    "local_models": {
+      "stheno": {
+        "endpoint": "127.0.0.1:5001",
+        "state": "UP",
+        "model": "L3-8B-Stheno-v3.2-Q4_K_M",
+        "state_class": "VERIFIED_CURRENT",
+        "evidence": {
+          "source": "PROBE",
+          "command": "curl /v1/models"
+        }
+      },
+      "qwen": {
+        "endpoint": "127.0.0.1:5002",
+        "state": "DOWN",
+        "state_class": "VOLATILE_CURRENT",
+        "evidence": {
+          "source": "PROBE",
+          "command": "curl /v1/models (unreachable)"
+        }
+      }
+    },
+    "remote": [
+      "openai-codex/gpt-5.6-luna (SUBSCRIPTION_BACKED, quota UNKNOWN)",
+      "google-antigravity/gemini-3-flash",
+      "zai-free/glm-4.7-flash (FREE)"
+    ]
+  },
+  "security": {
+    "governance": "tools/kad/governance/ (schema, policy-resolver, preflight-evaluator)",
+    "authority_inversion_risk": "context7 MCP launched via npx (fetches remote package code)",
+    "secret_handling": "no raw secrets in configs; local endpoints auth:none (localhost)"
+  },
+  "verification": {
+    "note": "see evidence/WP-KAD-OMP-METAHARNESS-REFACTOR-041/ and test receipts"
+  },
+  "unknowns": [
+    "TELL reachability / hardware (not probed)",
+    "AMDY GPU VRAM + ROCm version",
+    "Qwen :5002 down cause",
+    "OMP settings schema + precedence source (binary-only install)",
+    ".omp/config.yml default-role change owner (1-line: default \u2192 null)"
+  ],
+  "deviations": [
+    "local modelRoles default null vs global divergent toggles",
+    "dual skill lockfiles (root vs .agents/workspace)",
+    ".dsh-ptc-canary/ = placeholder; real surface is omp-orchestration-preflight.mjs",
+    "two OMP binaries (18.0.11 mise active, 18.0.9 staged)"
+  ]
+}

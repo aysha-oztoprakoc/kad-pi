@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "kad.csa/v1",
+  "title": "KAD-PI Current State Artifact",
+  "type": "object",
+  "required": ["schema", "state", "generated_at", "repository", "hosts", "harnesses", "knowledge_plane", "compute", "security", "verification", "unknowns", "deviations"],
+  "properties": {
+    "schema": { "const": "kad.csa/v1" },
+    "state": { "const": "CURRENT" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "evidence_cutoff": { "type": "string" },
+    "repository": {
+      "type": "object",
+      "required": ["head", "branch", "remote", "dirty", "divergence"],
+      "properties": {
+        "head": { "type": "string" },
+        "branch": { "type": "string" },
+        "remote": { "type": "string" },
+        "dirty": { "type": "boolean" },
+        "divergence": { "type": "integer" },
+        "evidence": { "type": "object" }
+      }
+    },
+    "hosts": { "type": "object" },
+    "workspace": { "type": "object" },
+    "harnesses": { "type": "object" },
+    "knowledge_plane": { "type": "object" },
+    "skills": { "type": "object" },
+    "tools": { "type": "object" },
+    "plugins": { "type": "object" },
+    "compute": { "type": "object" },
+    "security": { "type": "object" },
+    "verification": { "type": "object" },
+    "unknowns": { "type": "array" },
+    "deviations": { "type": "array" },
+    "state_class": { "enum": ["VERIFIED_CURRENT", "VOLATILE_CURRENT", "UNKNOWN", "BLOCKED", "STALE", "SUPERSEDED", "REQUIRES_REVERIFICATION"] }
+  }
+}

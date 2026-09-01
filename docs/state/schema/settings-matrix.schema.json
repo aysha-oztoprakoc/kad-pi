@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "kad.settings-matrix/v1",
+  "title": "OMP Settings Compatibility Matrix",
+  "type": "object",
+  "required": ["schema", "omp_version", "settings"],
+  "properties": {
+    "schema": { "const": "kad.settings-matrix/v1" },
+    "omp_version": { "type": "string" },
+    "settings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["setting_id", "omp_version", "type", "kad_policy", "security_class", "mutability", "test_method", "current_result", "deviation", "rationale"],
+        "properties": {
+          "setting_id": { "type": "string" },
+          "schema_source": { "type": "string" },
+          "type": { "type": "string" },
+          "upstream_default": {},
+          "global_support": { "type": "boolean" },
+          "project_support": { "type": "boolean" },
+          "cli_override": { "type": "boolean" },
+          "runtime_override": { "type": "boolean" },
+          "precedence": { "type": "string" },
+          "kad_policy": { "enum": ["PASS_THROUGH", "KAD_DEFAULT", "KAD_RESTRICTED", "KAD_WRAPPED", "NOT_APPLICABLE", "REQUIRES_HUMAN_POLICY"] },
+          "kad_default": {},
+          "security_class": { "type": "string" },
+          "mutability": { "type": "string" },
+          "test_method": { "type": "string" },
+          "current_result": { "type": "string" },
+          "expected_result": { "type": "string" },
+          "deviation": { "type": "string" },
+          "rationale": { "type": "string" }
+        }
+      }
+    }
+  }
+}

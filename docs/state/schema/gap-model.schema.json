@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "kad.csa-isa-gap/v1",
+  "title": "KAD-PI CSA to ISA Gap Model",
+  "type": "object",
+  "required": ["schema", "generated_at", "csa_ref", "isa_ref", "gaps"],
+  "properties": {
+    "schema": { "const": "kad.csa-isa-gap/v1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "csa_ref": { "type": "string" },
+    "isa_ref": { "type": "string" },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gap_id", "domain", "current", "target", "evidence", "status", "impact", "owner", "ownership_status", "recommended_action", "acceptance_test"],
+        "properties": {
+          "gap_id": { "type": "string" },
+          "domain": { "type": "string" },
+          "current": { "type": "string" },
+          "target": { "type": "string" },
+          "evidence": { "type": "string" },
+          "status": { "type": "string" },
+          "impact": { "type": "string" },
+          "owner": { "type": "string" },
+          "ownership_status": { "enum": ["OWNED_BY_WP041", "EXISTING_SUCCESSOR_WP", "PROPOSE_SUCCESSOR_WP", "BLOCKED_BY_IN_FLIGHT_WORK", "HUMAN_DECISION_REQUIRED", "NO_ACTION_REQUIRED"] },
+          "dependencies": { "type": "array", "items": { "type": "string" } },
+          "blocked_by": { "type": "array", "items": { "type": "string" } },
+          "recommended_action": { "type": "string" },
+          "acceptance_test": { "type": "string" },
+          "successor_wp": { "type": "string" }
+        }
+      }
+    }
+  }
+}
