@@ -1,0 +1,72 @@
+{
+  "id": "WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043",
+  "project": "kad-pi",
+  "title": "Project closure, debt burn-down and zero-pending baseline",
+  "status": "CLAIMED",
+  "priority": 3,
+  "spec_ref": "user:/WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043",
+  "fixed_point": "c4f218b38e0b4f81c9a883a9a43741f1567e7d76",
+  "scope": [
+    "evidence/WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043/",
+    ".agents/work/",
+    ".agents/work/claims/",
+    ".omp/config.yml",
+    "skills-lock.json",
+    ".agents/skills/system-atlas/",
+    ".agents/telemetry/",
+    ".gitignore"
+  ],
+  "non_scope": [
+    "new architectural refinement",
+    "feature development",
+    "skill architecture redesign",
+    "global OMP configuration",
+    "network fault injection",
+    "remote writes beyond fast-forward publication"
+  ],
+  "owned_paths": [
+    "evidence/WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043/",
+    ".agents/work/",
+    ".agents/work/claims/",
+    ".omp/config.yml",
+    "skills-lock.json",
+    ".agents/skills/system-atlas/",
+    ".agents/telemetry/",
+    ".gitignore"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "full regression suite",
+    "kad doctor",
+    "workctl doctor",
+    "git diff --check",
+    "security acceptance gate"
+  ],
+  "evidence_target": "evidence/WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043/",
+  "blocked_by": [
+    "WP-KAD-OMP-METAHARNESS-REFACTOR-041"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "WP-042 has canonical ledger identity and human acceptance",
+    "zero accidental REVIEW/READY work items",
+    "config and security policy explicit",
+    "skill state reconciled with zero unexplained LOCAL_DELTA",
+    "telemetry lifecycle resolved",
+    "complete test surface green",
+    "tracked tree clean with zero unexplained untracked state",
+    "accepted commits published; remote == local"
+  ],
+  "description": "Final closure gate: burn down all pre-existing maintenance, lifecycle, configuration, security, evidence, skill-governance and workspace-state debt before the next architectural phase. Transforms REFINEMENT_READY_WITH_KNOWN_DEFERRED_ITEMS into REFINEMENT_READY (ZERO_PENDING_BASELINE). Executed under workctl lifecycle with human decision board D1-D7.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043"
+}

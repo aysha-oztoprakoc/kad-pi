@@ -1,0 +1,20 @@
+{
+  "task": "WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043",
+  "project": "kad-pi",
+  "claim_id": "9d3944c8-0c3c-4758-b53d-417180d116cb",
+  "actor_label": "deepseek-v4-flash",
+  "started_at": "2026-09-01T21:24:48.544Z",
+  "base_commit": "c4f218b38e0b4f81c9a883a9a43741f1567e7d76",
+  "owned_paths": [
+    "evidence/WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043",
+    ".agents/work",
+    ".agents/work/claims",
+    ".omp/config.yml",
+    "skills-lock.json",
+    ".agents/skills/system-atlas",
+    ".agents/telemetry",
+    ".gitignore"
+  ],
+  "mode": "mutate",
+  "active": true
+}
