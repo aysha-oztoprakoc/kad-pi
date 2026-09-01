@@ -2,7 +2,7 @@
   "id": "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
   "project": "kad-pi",
   "title": "Compute Fabric Empirical Benchmark Probe & Telemetry Baseline: Ideal-State Convergence → Capability Admission → Empirical Compute Fabric Probe",
-  "status": "REVIEW",
+  "status": "ACCEPTED",
   "priority": 200,
   "spec_ref": "user:/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
   "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",

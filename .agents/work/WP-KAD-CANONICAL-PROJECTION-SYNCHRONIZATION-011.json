@@ -2,7 +2,7 @@
   "id": "WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
   "project": "kad-pi",
   "title": "Commit Consolidation, Remote Synchronization & Vault-Driven Project Projection Bootstrap",
-  "status": "REVIEW",
+  "status": "ACCEPTED",
   "priority": 140,
   "spec_ref": "user:/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
   "fixed_point": "e3bce03e5b94ada0db6d29e75b6991b18522f2d8",

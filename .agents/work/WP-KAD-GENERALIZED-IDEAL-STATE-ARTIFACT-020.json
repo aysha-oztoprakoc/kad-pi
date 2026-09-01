@@ -2,7 +2,7 @@
   "id": "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
   "project": "kad-pi",
   "title": "Generalized Ideal State Artifact (ISA) Architecture & Canonical Compute Fabric Governance",
-  "status": "REVIEW",
+  "status": "ACCEPTED",
   "priority": 190,
   "spec_ref": "user:/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
   "fixed_point": "2da2266eb76bfb5571838017449d553fbc8b4bee",

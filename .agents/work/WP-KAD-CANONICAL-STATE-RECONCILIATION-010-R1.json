@@ -2,7 +2,7 @@
   "id": "WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1",
   "project": "kad-pi",
   "title": "Full /Work Inventory, Legacy Reconciliation & Canonical Vault Synchronization",
-  "status": "REVIEW",
+  "status": "ACCEPTED",
   "priority": 130,
   "spec_ref": "user:/WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1",
   "fixed_point": "ca1f56a020a3416eeffa3d49f3c34f113b536902",

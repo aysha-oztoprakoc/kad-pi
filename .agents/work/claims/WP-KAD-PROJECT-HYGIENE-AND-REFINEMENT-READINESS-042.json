@@ -10,7 +10,7 @@
   ],
   "mode": "mutate",
   "active": false,
-  "released_at": "2026-09-01T21:12:00.000Z",
+  "released_at": "2026-09-01T21:53:39.592Z",
   "registration_kind": "RETROACTIVE_RECONCILIATION",
   "note": "Claim record created retroactively during WP-043 closure to represent the historical WP-042 execution truthfully. WP-042 was executed without a contemporaneous workctl claim; this record reconciles that lifecycle omission and enables the REVIEW->ACCEPTED transition. Timestamps reflect the actual execution window (recon started ~20:32Z, deliverables committed ~21:12Z). Acceptance transition requires --actor deepseek-v4-flash."
 }

@@ -2,7 +2,7 @@
   "id": "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
   "project": "kad-pi",
   "title": "Sofia v3 Canonical Dashboard, Cytoscape Graph Explorer & Hybrid Telemetry Visualization",
-  "status": "REVIEW",
+  "status": "ACCEPTED",
   "priority": 160,
   "spec_ref": "user:/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
   "fixed_point": "6881352d96933a32c59fbb494fc339e8a38ac434",
