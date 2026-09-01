@@ -11,5 +11,6 @@
     ".agents/work/WP-KAD-OMP-METAHARNESS-REFACTOR-041.json"
   ],
   "mode": "mutate",
-  "active": true
+  "active": false,
+  "released_at": "2026-09-01T18:45:29.097Z"
 }
