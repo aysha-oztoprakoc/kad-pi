@@ -1,0 +1,59 @@
+{
+  "id": "WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042",
+  "project": "kad-pi",
+  "title": "Project hygiene, maintenance and refinement-readiness reconciliation",
+  "status": "REVIEW",
+  "priority": 5,
+  "spec_ref": "user:/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042",
+  "fixed_point": "6077630598980c7876395ef80a07e047d61824a6",
+  "scope": [
+    "evidence/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042/"
+  ],
+  "non_scope": [
+    "new feature development",
+    "executable skill rationalization",
+    "security policy changes",
+    "remote writes",
+    "network fault injection"
+  ],
+  "owned_paths": [
+    "evidence/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "git_read",
+    "shell_readonly",
+    "code_review",
+    "filesystem_write"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "hygiene acceptance gate",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042/",
+  "blocked_by": [
+    "WP-KAD-OMP-METAHARNESS-REFACTOR-041"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "repository state understood",
+    "dirty state classified with owner/authority/action",
+    "WP-041 verification residue reconciled",
+    "hygiene deliverables produced and committed"
+  ],
+  "description": "Retroactively registered hygiene workpackage. WP-042 executed repository hygiene, maintenance and refinement-readiness reconciliation after WP-041 acceptance. Executed by an OMP harness session (model opencode-go/deepseek-v4-flash) on 2026-09-01; outputs committed in affe828 and ecab2f6. Registered during WP-043 closure because the original execution lacked a workctl lifecycle record. Awaiting human acceptance.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042",
+  "registration_kind": "RETROACTIVE_RECONCILIATION",
+  "historical_execution_commits": [
+    "affe8280822185ce6113013fe12230a6985f58b6",
+    "ecab2f68e85c9c769e6d8c3e958b485c78b8cb6a"
+  ],
+  "historical_evidence": [
+    "evidence/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042/PROJECT_HYGIENE_AND_REFINEMENT_READINESS.md",
+    "evidence/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042/PROJECT_HYGIENE_STATE.json",
+    "evidence/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042/hygiene-action-ledger.json"
+  ]
+}

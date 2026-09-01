@@ -1,0 +1,16 @@
+{
+  "task": "WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042",
+  "project": "kad-pi",
+  "claim_id": "d3b4f2a1-6c8e-4f0b-9a2d-5e7c1b8f4a03",
+  "actor_label": "deepseek-v4-flash",
+  "started_at": "2026-09-01T20:32:00.000Z",
+  "base_commit": "6077630598980c7876395ef80a07e047d61824a6",
+  "owned_paths": [
+    "evidence/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-01T21:12:00.000Z",
+  "registration_kind": "RETROACTIVE_RECONCILIATION",
+  "note": "Claim record created retroactively during WP-043 closure to represent the historical WP-042 execution truthfully. WP-042 was executed without a contemporaneous workctl claim; this record reconciles that lifecycle omission and enables the REVIEW->ACCEPTED transition. Timestamps reflect the actual execution window (recon started ~20:32Z, deliverables committed ~21:12Z). Acceptance transition requires --actor deepseek-v4-flash."
+}
