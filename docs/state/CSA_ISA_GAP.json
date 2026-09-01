@@ -10,27 +10,29 @@
       "current": "No CURRENT-state artifact exists",
       "target": "Machine+human CSA from re-verified state",
       "evidence": "docs/state/ absent before WP-041",
-      "status": "OPEN",
+      "status": "RESOLVED",
       "impact": "agents cannot deterministically locate CURRENT truth",
       "owner": "WP-KAD-OMP-METAHARNESS-REFACTOR-041",
       "ownership_status": "OWNED_BY_WP041",
       "recommended_action": "generate CSA_KAD_PI_CURRENT.json+.md",
       "acceptance_test": "CSA schema + provenance tests pass",
-      "successor_wp": null
+      "successor_wp": null,
+      "baseline": "absent before WP-041"
     },
     {
       "gap_id": "GAP-GAPMODEL-002",
       "domain": "STATE_MODEL",
-      "current": "No machine CSA\u2194ISA comparison",
+      "current": "No machine CSA↔ISA comparison",
       "target": "Gap model consuming CSA + ISA V2",
-      "evidence": "ISA V2 \u00a74 has prose gap matrix only",
-      "status": "OPEN",
-      "impact": "CURRENT\u2194TARGET not machine-comparable",
+      "evidence": "ISA V2 §4 has prose gap matrix only",
+      "status": "RESOLVED",
+      "impact": "CURRENT↔TARGET not machine-comparable",
       "owner": "WP-KAD-OMP-METAHARNESS-REFACTOR-041",
       "ownership_status": "OWNED_BY_WP041",
       "recommended_action": "generate CSA_ISA_GAP.json+.md",
       "acceptance_test": "gap model contract tests pass",
-      "successor_wp": null
+      "successor_wp": null,
+      "baseline": "no machine CSA↔ISA comparison before WP-041"
     },
     {
       "gap_id": "GAP-SETTINGS-003",
@@ -38,13 +40,14 @@
       "current": "Only decision matrix (prose)",
       "target": "18-field per-key machine matrix",
       "evidence": "OMP_TOOLING_DECISION_MATRIX.md is not schema-level",
-      "status": "OPEN",
+      "status": "RESOLVED",
       "impact": "settings not regression-characterized",
       "owner": "WP-KAD-OMP-METAHARNESS-REFACTOR-041",
       "ownership_status": "OWNED_BY_WP041",
       "recommended_action": "generate OMP_SETTINGS_COMPATIBILITY_MATRIX.json+.md",
       "acceptance_test": "settings matrix completeness/classification tests pass",
-      "successor_wp": null
+      "successor_wp": null,
+      "baseline": "only decision matrix (prose) before WP-041"
     },
     {
       "gap_id": "GAP-SKILLRAT-004",
@@ -108,13 +111,14 @@
       "current": ".dsh-ptc-canary/ = 3 placeholder text files",
       "target": "Real reduced tool surface (exists: omp-orchestration-preflight.mjs)",
       "evidence": ".dsh-ptc-canary/alpha.txt,beta.txt,result.txt trivial",
-      "status": "SUPERSEDED",
+      "status": "BASELINE",
       "impact": "none (placeholder)",
       "owner": "none",
       "ownership_status": "NO_ACTION_REQUIRED",
       "recommended_action": "classify SUPERSEDED; no build",
       "acceptance_test": "n/a",
-      "successor_wp": null
+      "successor_wp": null,
+      "baseline": "placeholder files before WP-041"
     },
     {
       "gap_id": "GAP-CONTEXT7-009",

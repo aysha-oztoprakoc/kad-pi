@@ -20,6 +20,22 @@ const GAP_OWNERSHIP = new Set([
   'OWNED_BY_WP041', 'EXISTING_SUCCESSOR_WP', 'PROPOSE_SUCCESSOR_WP',
   'BLOCKED_BY_IN_FLIGHT_WORK', 'HUMAN_DECISION_REQUIRED', 'NO_ACTION_REQUIRED',
 ]);
+const GAP_STATUS = new Set(['OPEN', 'RESOLVED', 'BASELINE', 'UNKNOWN']);
+
+// Important mutable CURRENT facts that MUST carry provenance by contract.
+// Omitting state_class does not exempt them from provenance.
+const REQUIRED_EVIDENCE = [
+  'repository', 'hosts.amdy', 'hosts.tell', 'harnesses.omp',
+  'knowledge_plane', 'skills', 'compute', 'security',
+];
+
+function evidenceFor(node, trail) {
+  if (!node || typeof node !== 'object') return null;
+  if (!node.evidence || typeof node.evidence !== 'object') return null;
+  const hasSource = typeof node.evidence.source === 'string';
+  const hasProbe = ['command', 'hash', 'path'].some((k) => typeof node.evidence[k] === 'string');
+  return hasSource && hasProbe ? node.evidence : null;
+}
 
 test('CSA: schema fields and identity are present', () => {
   const csa = readJson('CSA_KAD_PI_CURRENT.json');
@@ -31,12 +47,20 @@ test('CSA: schema fields and identity are present', () => {
   assert.ok(Array.isArray(csa.deviations), 'deviations must be an array');
 });
 
-test('CSA: provenance model — every fact carries source evidence', () => {
+test('CSA: provenance is mandatory on important facts (not opt-in)', () => {
+  const csa = readJson('CSA_KAD_PI_CURRENT.json');
+  for (const key of REQUIRED_EVIDENCE) {
+    assert.ok(csa[key], `CSA missing section ${key}`);
+    assert.ok(evidenceFor(csa[key], key), `CSA section ${key} must carry evidence {source, command|hash|path}`);
+  }
+});
+
+test('CSA: state_class always co-occurs with evidence', () => {
   const csa = readJson('CSA_KAD_PI_CURRENT.json');
   const walk = (node, trail = []) => {
     if (Array.isArray(node)) { node.forEach((v, i) => walk(v, [...trail, i])); return; }
     if (node && typeof node === 'object') {
-      if (typeof node.state_class === 'string' && typeof node.evidence === 'undefined') {
+      if (typeof node.state_class === 'string' && !evidenceFor(node, trail.join('.'))) {
         assert.fail(`fact at ${trail.join('.')} declares state_class but no evidence`);
       }
       for (const [k, v] of Object.entries(node)) walk(v, [...trail, k]);
@@ -59,34 +83,54 @@ test('CSA: state classes are valid enum values', () => {
   walk(csa);
 });
 
-test('Settings matrix: every setting is classified and complete', () => {
+test('Settings matrix: exhaustive — equals the discovered OMP surface exactly', () => {
+  const surface = readJson('schema/omp-settings-surface.json');
   const matrix = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json');
-  assert.ok(Array.isArray(matrix.settings), 'settings must be an array');
-  assert.ok(matrix.settings.length > 0, 'settings must not be empty');
+  const expected = Object.values(surface.sections).flat();
+  const actual = matrix.settings.map((row) => row.setting_id);
+  const expectedSet = new Set(expected);
+  const actualSet = new Set(actual);
+  assert.equal(expected.length, expectedSet.size, 'surface must be duplicate-free');
+  const missing = [...expectedSet].filter((id) => !actualSet.has(id));
+  const extra = [...actualSet].filter((id) => !expectedSet.has(id));
+  const dupes = actual.filter((id, i) => actual.indexOf(id) !== i);
+  assert.deepEqual(missing, [], 'matrix is missing settings');
+  assert.deepEqual(extra, [], 'matrix has settings not in surface (grouped/invented)');
+  assert.deepEqual(dupes, [], 'matrix has duplicate settings');
+});
+
+test('Settings matrix: every row is complete and validly classified', () => {
+  const matrix = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json');
   const required = ['setting_id', 'omp_version', 'type', 'kad_policy', 'security_class', 'mutability', 'test_method', 'current_result', 'deviation', 'rationale'];
   for (const row of matrix.settings) {
     for (const field of required) {
       assert.ok(field in row, `setting ${row.setting_id} missing ${field}`);
     }
-    assert.ok(SETTING_CLASSES.has(row.kad_policy), `setting ${row.setting_id} has invalid kad_policy ${row.kad_policy}`);
+    assert.ok(SETTING_CLASSES.has(row.kad_policy), `setting ${row.setting_id} invalid kad_policy ${row.kad_policy}`);
   }
 });
 
-test('Settings matrix: no applicable setting remains unclassified', () => {
+test('Settings matrix: no inferred upstream defaults', () => {
   const matrix = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json');
-  const unclassified = matrix.settings.filter((row) => !row.kad_policy || row.kad_policy === 'NOT_APPLICABLE' && row.rationale === undefined);
-  assert.equal(unclassified.length, 0, 'found settings without classification rationale');
+  for (const row of matrix.settings) {
+    if (row.upstream_default === undefined) {
+      assert.fail(`setting ${row.setting_id} has undefined upstream_default (must be verbatim or null, not inferred)`);
+    }
+  }
 });
 
-test('Gap model: consumes CSA and ISA; valid ownership enums', () => {
+test('Gap model: post-WP gaps that WP-041 resolved are marked RESOLVED', () => {
   const gap = readJson('CSA_ISA_GAP.json');
   assert.equal(gap.schema, 'kad.csa-isa-gap/v1');
-  assert.ok(Array.isArray(gap.gaps), 'gaps must be an array');
+  const wp041Gaps = gap.gaps.filter((g) => g.ownership_status === 'OWNED_BY_WP041');
+  assert.ok(wp041Gaps.length > 0, 'expected OWNED_BY_WP041 gaps');
+  for (const g of wp041Gaps) {
+    assert.equal(g.status, 'RESOLVED', `WP-041 gap ${g.gap_id} must be RESOLVED (was ${g.status})`);
+    assert.ok(g.baseline, `gap ${g.gap_id} must record baseline pre-WP state`);
+  }
   for (const g of gap.gaps) {
-    assert.ok(g.gap_id, 'gap_id required');
-    assert.ok(g.domain, `gap ${g.gap_id} missing domain`);
-    assert.ok(g.owner, `gap ${g.gap_id} missing owner`);
-    assert.ok(GAP_OWNERSHIP.has(g.ownership_status), `gap ${g.gap_id} invalid ownership_status ${g.ownership_status}`);
+    assert.ok(GAP_STATUS.has(g.status), `gap ${g.gap_id} invalid status ${g.status}`);
+    assert.ok(GAP_OWNERSHIP.has(g.ownership_status), `gap ${g.gap_id} invalid ownership ${g.ownership_status}`);
     assert.ok(g.evidence, `gap ${g.gap_id} missing evidence`);
   }
 });

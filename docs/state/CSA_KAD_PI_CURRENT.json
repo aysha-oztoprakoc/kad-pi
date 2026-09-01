@@ -86,6 +86,10 @@
     "projections": {
       "path": "vault/90_Derived/Projections/",
       "authority": "derived, rebuildable"
+    },
+    "evidence": {
+      "source": "FILE",
+      "path": "vault/"
     }
   },
   "skills": {
@@ -97,7 +101,11 @@
       "root": "skills-lock.json (canonical candidate)",
       "workspace": ".agents/workspace/skills.lock.json"
     },
-    "note": "15-canonical (ISA-KAD-SKILL-ROLE-002) vs ~49 operational surface reconciled; LOCAL_DELTA = expected local adaptation"
+    "note": "15-canonical (ISA-KAD-SKILL-ROLE-002) vs ~49 operational surface reconciled; LOCAL_DELTA = expected local adaptation",
+    "evidence": {
+      "source": "FILE",
+      "path": "skills-lock.json"
+    }
   },
   "tools": {
     "component_dirs": [
@@ -119,10 +127,10 @@
   "plugins": {
     "extensions": [
       "kad-control-plane.js",
-      "kad-context-economy.js (bootstrap shims \u2192 tools/kad/telemetry/control-plane-runtime.mjs)"
+      "kad-context-economy.js (bootstrap shims → tools/kad/telemetry/control-plane-runtime.mjs)"
     ],
     "mcp": {
-      "context7": "npx @upstash/context7-mcp@4.0.4 \u2014 AUTHORITY-INVERSION RISK (fetches remote code)"
+      "context7": "npx @upstash/context7-mcp@4.0.4 — AUTHORITY-INVERSION RISK (fetches remote code)"
     },
     "fusion": {
       ".omp/fusion/manifest.json": "ambient extensions/skills/rules disabled; mutation gated on leases"
@@ -170,12 +178,20 @@
       "openai-codex/gpt-5.6-luna (SUBSCRIPTION_BACKED, quota UNKNOWN)",
       "google-antigravity/gemini-3-flash",
       "zai-free/glm-4.7-flash (FREE)"
-    ]
+    ],
+    "evidence": {
+      "source": "FILE",
+      "path": "tools/kad/economic-router.mjs"
+    }
   },
   "security": {
     "governance": "tools/kad/governance/ (schema, policy-resolver, preflight-evaluator)",
     "authority_inversion_risk": "context7 MCP launched via npx (fetches remote package code)",
-    "secret_handling": "no raw secrets in configs; local endpoints auth:none (localhost)"
+    "secret_handling": "no raw secrets in configs; local endpoints auth:none (localhost)",
+    "evidence": {
+      "source": "FILE",
+      "path": "tools/kad/governance/"
+    }
   },
   "verification": {
     "note": "see evidence/WP-KAD-OMP-METAHARNESS-REFACTOR-041/ and test receipts"
@@ -185,12 +201,49 @@
     "AMDY GPU VRAM + ROCm version",
     "Qwen :5002 down cause",
     "OMP settings schema + precedence source (binary-only install)",
-    ".omp/config.yml default-role change owner (1-line: default \u2192 null)"
+    ".omp/config.yml default-role change owner (1-line: default → null)"
   ],
   "deviations": [
     "local modelRoles default null vs global divergent toggles",
     "dual skill lockfiles (root vs .agents/workspace)",
     ".dsh-ptc-canary/ = placeholder; real surface is omp-orchestration-preflight.mjs",
     "two OMP binaries (18.0.11 mise active, 18.0.9 staged)"
-  ]
+  ],
+  "hosts.amdy": {
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "threads": 16,
+    "ram": "~14.7 GiB (MemTotal 15,446,668 kB)",
+    "gpu": "Navi 44 [Radeon RX 9060 XT] + Raphael iGPU",
+    "vram": "UNKNOWN",
+    "rocm": "UNKNOWN",
+    "state_class": "VERIFIED_CURRENT",
+    "evidence": {
+      "source": "HARDWARE_PROBE",
+      "command": "lscpu; free -h; lspci | grep -iE 'vga|3d'"
+    }
+  },
+  "hosts.tell": {
+    "availability": "UNKNOWN",
+    "note": "known_hosts alias 'tell' present; tell-ansi-tui referenced in config; no live probe performed",
+    "state_class": "UNKNOWN",
+    "evidence": {
+      "source": "FILE",
+      "path": "~/.ssh/known_hosts"
+    }
+  },
+  "harnesses.omp": {
+    "version": "18.0.11",
+    "origin": "mise (github-can1357-oh-my-pi/latest)",
+    "binary": "/home/amdy/.local/bin/omp",
+    "alt_binary": ".tools/oh-my-pi/v18.0.9",
+    "project_config": ".omp/config.yml",
+    "global_config": "~/.omp/agent/config.yml (divergent toggles)",
+    "settings_schema": "UNKNOWN (binary-only install; source-backed precedence not readable)",
+    "state_class": "VERIFIED_CURRENT",
+    "evidence": {
+      "source": "COMMAND",
+      "command": "omp --version",
+      "hash": "651308275f4dfdab3178f549303cc5da90037761876d8ca881430d7ba41bf1bf"
+    }
+  }
 }
