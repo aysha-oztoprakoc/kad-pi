@@ -1,536 +1,1167 @@
 # OMP Settings Compatibility Matrix
 
-**Schema**: `kad.settings-matrix/v1` · **OMP**: `18.0.11` · **Source**: `omp config list`
+**Schema**: `kad.settings-matrix/v1` · **OMP**: 18.0.11 · **Source revision**: `b8ce33a5`
 
-## appearance
+Distinguishes `schema_default` (exact OMP 18.0.11 source) from `effective_value` (installed runtime).
+Compatibility is evaluated separately: `default_compatibility` (upstream) vs `effective_compatibility` (current).
 
-| Setting | Type | Policy | Deviation | Current | Expected | Rationale |
-|---|---|---|---|---|---|---|
-| `colorBlindMode` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `composer.shape` | string | PASS_THROUGH | none | `band` | `PASS_THROUGH` | OMP default acceptable |
-| `display.cacheMissMarker` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `display.collapseCompacted` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `display.hideToolActivity` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `display.shimmer` | classic|kitt|disabled | PASS_THROUGH | none | `classic` | `PASS_THROUGH` | OMP default acceptable |
-| `display.showTokenUsage` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `display.showTurnTime` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `display.smoothStreaming` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `images.autoResize` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `images.blockImages` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `showHardwareCursor` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `statusLine.compactThinkingLevel` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `statusLine.contextLine` | off|percentage|annotated|embedded | PASS_THROUGH | none | `embedded` | `PASS_THROUGH` | OMP default acceptable |
-| `statusLine.preset` | default|minimal|compact|full|nerd|ascii|custom | PASS_THROUGH | none | `default` | `PASS_THROUGH` | OMP default acceptable |
-| `statusLine.separator` | powerline|powerline-thin|slash|pipe|block|none|ascii | PASS_THROUGH | none | `powerline-thin` | `PASS_THROUGH` | OMP default acceptable |
-| `statusLine.sessionAccent` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `statusLine.showHookStatus` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `statusLine.transparent` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `symbolPreset` | unicode|nerd|ascii | PASS_THROUGH | none | `unicode` | `PASS_THROUGH` | OMP default acceptable |
-| `task.showResolvedModelBadge` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `terminal.showImages` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `terminal.showProgress` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `theme.dark` | string | PASS_THROUGH | none | `obsidian` | `PASS_THROUGH` | OMP default acceptable |
-| `theme.light` | string | PASS_THROUGH | none | `light` | `PASS_THROUGH` | OMP default acceptable |
-| `tui.codexResetFireworks` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `tui.hyperlinks` | off|auto|always | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `tui.imeSafeCursor` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `tui.renderMermaid` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `tui.resizeScrollback` | append|rebuild|preserve | PASS_THROUGH | none | `rebuild` | `PASS_THROUGH` | OMP default acceptable |
-| `tui.textSizing` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `tui.tight` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `tui.titleState` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
+## `advisor.*`
 
-## context
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| advisor.enabled | false | false | KAD_RESTRICTED | PASS | PASS |
+| advisor.immuneTurns | 3 | 3 | PASS_THROUGH | N/A | N/A |
+| advisor.syncBacklog | "off" | "off" | PASS_THROUGH | N/A | N/A |
 
-| Setting | Type | Policy | Deviation | Current | Expected | Rationale |
-|---|---|---|---|---|---|---|
-| `branchSummary.enabled` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `compaction.asyncEnabled` | boolean | KAD_WRAPPED | none | `true` | `true` | KAD project-scoped policy |
-| `compaction.dropUseless` | boolean | KAD_WRAPPED | none | `true` | `true` | KAD project-scoped policy |
-| `compaction.enabled` | boolean | KAD_WRAPPED | none | `true` | `true` | KAD project-scoped policy |
-| `compaction.handoffSaveToDisk` | boolean | KAD_WRAPPED | none | `false` | `false` | KAD project-scoped policy |
-| `compaction.idleEnabled` | boolean | KAD_WRAPPED | none | `false` | `false` | KAD project-scoped policy |
-| `compaction.idleThresholdTokens` | number | KAD_WRAPPED | none | `200000` | `200000` | KAD project-scoped policy |
-| `compaction.idleTimeoutSeconds` | number | KAD_WRAPPED | none | `300` | `300` | KAD project-scoped policy |
-| `compaction.methodOrder` | array | KAD_WRAPPED | none | `["snapcompact"]` | `["snapcompact"]` | KAD project-scoped policy |
-| `compaction.midTurnEnabled` | boolean | KAD_WRAPPED | none | `true` | `true` | KAD project-scoped policy |
-| `compaction.remoteStreamingV2Enabled` | boolean | KAD_WRAPPED | none | `true` | `true` | KAD project-scoped policy |
-| `compaction.supersedeReads` | boolean | KAD_WRAPPED | none | `true` | `true` | KAD project-scoped policy |
-| `compaction.thresholdPercent` | number | KAD_WRAPPED | none | `70` | `70` | KAD project-scoped policy |
-| `compaction.thresholdTokens` | number | KAD_WRAPPED | none | `-1` | `-1` | KAD project-scoped policy |
-| `contextPromotion.enabled` | boolean | KAD_RESTRICTED | none | `false` | `false` | KAD project-scoped policy |
-| `extendedContext` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `snapcompact.shape` | auto|8x8r-bw|8x8r-sent|8x8u-bw|8x8u-sent|6x6u-bw|6x6u-sent|5x8-bw|5x8-sent|6x12-dim|8x13-bw|8on16-bw|8on22-bw|11on16-bw|silver16-bw|doc-8on16-bw|doc-8on16-sent|doc-8on16-sent-dim | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `snapcompact.systemPrompt` | none|agents-md|all | PASS_THROUGH | none | `none` | `PASS_THROUGH` | OMP default acceptable |
-| `snapcompact.toolResults` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.format` | auto|native|glm|hermes|kimi|xml|anthropic|deepseek|harmony|qwen3|gemini|gemma|minimax | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `ttsr.builtinRules` | boolean | KAD_RESTRICTED | none | `true` | `true` | KAD project-scoped policy |
-| `ttsr.contextMode` | discard|keep | KAD_RESTRICTED | none | `discard` | `discard` | KAD project-scoped policy |
-| `ttsr.disabledRules` | array | KAD_RESTRICTED | none | `[]` | `[]` | KAD project-scoped policy |
-| `ttsr.enabled` | boolean | KAD_RESTRICTED | none | `true` | `true` | KAD project-scoped policy |
-| `ttsr.interruptMode` | never|prose-only|tool-only|always | KAD_RESTRICTED | none | `always` | `always` | KAD project-scoped policy |
-| `ttsr.repeatGap` | number | KAD_RESTRICTED | none | `10` | `10` | KAD project-scoped policy |
-| `ttsr.repeatMode` | once|after-gap | KAD_RESTRICTED | none | `once` | `once` | KAD project-scoped policy |
-| `workspace.additionalDirectories` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
+## `ask.*`
 
-## files
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| ask.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| ask.notify | "on" | "on" | PASS_THROUGH | N/A | N/A |
+| ask.timeout | 0 | 0 | PASS_THROUGH | N/A | N/A |
 
-| Setting | Type | Policy | Deviation | Current | Expected | Rationale |
-|---|---|---|---|---|---|---|
-| `edit.autoRepair.enabled` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `edit.blackbox.enabled` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `edit.blockAutoGenerated` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `edit.enforceSeenLines` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `edit.fuzzyMatch` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `edit.fuzzyThreshold` | number | PASS_THROUGH | none | `0.95` | `PASS_THROUGH` | OMP default acceptable |
-| `edit.mode` | apply_patch|hashline|patch|replace|sloppy | PASS_THROUGH | none | `hashline` | `PASS_THROUGH` | OMP default acceptable |
-| `edit.streamingAbort` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `lsp.diagnosticsDeduplicate` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `lsp.diagnosticsOnEdit` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `lsp.diagnosticsOnWrite` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `lsp.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `lsp.formatOnWrite` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `lsp.lazy` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `lsp.shared` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `read.defaultLimit` | number | PASS_THROUGH | none | `300` | `PASS_THROUGH` | OMP default acceptable |
-| `read.renderMarkdown` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `read.summarize.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `read.summarize.minBodyLines` | number | PASS_THROUGH | none | `4` | `PASS_THROUGH` | OMP default acceptable |
-| `read.summarize.minCommentLines` | number | PASS_THROUGH | none | `6` | `PASS_THROUGH` | OMP default acceptable |
-| `read.summarize.minTotalLines` | number | PASS_THROUGH | none | `100` | `PASS_THROUGH` | OMP default acceptable |
-| `read.summarize.prose` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `read.summarize.unfoldLimit` | number | PASS_THROUGH | none | `100` | `PASS_THROUGH` | OMP default acceptable |
-| `read.summarize.unfoldUntil` | number | PASS_THROUGH | none | `50` | `PASS_THROUGH` | OMP default acceptable |
-| `read.toolResultPreview` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `readLineNumbers` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
+## `astEdit.*`
 
-## interaction
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| astEdit.enabled | true | true | PASS_THROUGH | N/A | N/A |
 
-| Setting | Type | Policy | Deviation | Current | Expected | Rationale |
-|---|---|---|---|---|---|---|
-| `ask.notify` | on|off | PASS_THROUGH | none | `on` | `PASS_THROUGH` | OMP default acceptable |
-| `ask.timeout` | number | PASS_THROUGH | none | `0` | `PASS_THROUGH` | OMP default acceptable |
-| `autoResume` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `autocompleteMaxVisible` | number | PASS_THROUGH | none | `10` | `PASS_THROUGH` | OMP default acceptable |
-| `collab.displayName` | string | REQUIRES_HUMAN_POLICY | none | `` | `` | KAD project-scoped policy |
-| `collab.relayUrl` | string | REQUIRES_HUMAN_POLICY | none | `wss://my.omp.sh` | `wss://my.omp.sh` | KAD project-scoped policy |
-| `collab.webUrl` | string | REQUIRES_HUMAN_POLICY | none | `` | `` | KAD project-scoped policy |
-| `completion.notify` | on|off | PASS_THROUGH | none | `on` | `PASS_THROUGH` | OMP default acceptable |
-| `doubleEscapeAction` | branch|tree|none | PASS_THROUGH | none | `tree` | `PASS_THROUGH` | OMP default acceptable |
-| `emojiAutocomplete` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `error.notify` | on|off | PASS_THROUGH | none | `off` | `PASS_THROUGH` | OMP default acceptable |
-| `features.unexpectedStopDetection` | none|mechanical|smart | PASS_THROUGH | none | `mechanical` | `PASS_THROUGH` | OMP default acceptable |
-| `followUpMode` | all|one-at-a-time | PASS_THROUGH | none | `one-at-a-time` | `PASS_THROUGH` | OMP default acceptable |
-| `git.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `interruptMode` | immediate|wait | PASS_THROUGH | none | `immediate` | `PASS_THROUGH` | OMP default acceptable |
-| `loop.mode` | prompt|compact|reset | PASS_THROUGH | none | `prompt` | `PASS_THROUGH` | OMP default acceptable |
-| `magicKeywords.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `magicKeywords.orchestrate` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `magicKeywords.ultrathink` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `magicKeywords.workflow` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `marketplace.autoUpdate` | off|notify|auto | PASS_THROUGH | none | `notify` | `PASS_THROUGH` | OMP default acceptable |
-| `paste.largeMenuThreshold` | number | PASS_THROUGH | none | `100` | `PASS_THROUGH` | OMP default acceptable |
-| `power.sleepPrevention` | off|idle|display|system | PASS_THROUGH | none | `idle` | `PASS_THROUGH` | OMP default acceptable |
-| `recap.enabled` | boolean | KAD_RESTRICTED | none | `true` | `true` | KAD project-scoped policy |
-| `recap.idleSeconds` | number | KAD_RESTRICTED | none | `240` | `240` | KAD project-scoped policy |
-| `share.redactSecrets` | boolean | REQUIRES_HUMAN_POLICY | none | `true` | `true` | KAD project-scoped policy |
-| `share.serverUrl` | string | REQUIRES_HUMAN_POLICY | none | `https://my.omp.sh/s` | `https://my.omp.sh/s` | KAD project-scoped policy |
-| `share.store` | blob|gist | REQUIRES_HUMAN_POLICY | none | `blob` | `blob` | KAD project-scoped policy |
-| `spelling.autocomplete` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `spelling.autocorrect` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `spelling.typoDetection` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `startup.changelogMode` | summary|expanded|hidden | PASS_THROUGH | none | `summary` | `PASS_THROUGH` | OMP default acceptable |
-| `startup.checkUpdate` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `startup.quiet` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `startup.setupWizard` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `startup.showSplash` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `steeringMode` | all|one-at-a-time | PASS_THROUGH | none | `one-at-a-time` | `PASS_THROUGH` | OMP default acceptable |
-| `stt.enabled` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `stt.modelName` | fast|balanced|turbo|parakeet | PASS_THROUGH | none | `parakeet` | `PASS_THROUGH` | OMP default acceptable |
-| `stt.submitTrigger` | never|release|release-complete|say-submit | PASS_THROUGH | none | `never` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.approval` | record | REQUIRES_HUMAN_POLICY | none | `{}` | `{}` | KAD project-scoped policy |
-| `tools.approvalMode` | always-ask|write|yolo | REQUIRES_HUMAN_POLICY | none | `yolo` | `yolo` | KAD project-scoped policy |
-| `treeFilterMode` | default|no-tools|user-only|labeled-only|all | PASS_THROUGH | none | `default` | `PASS_THROUGH` | OMP default acceptable |
-| `update.channel` | stable|canary | PASS_THROUGH | none | `stable` | `PASS_THROUGH` | OMP default acceptable |
+## `astGrep.*`
 
-## internal
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| astGrep.enabled | false | true | PASS_THROUGH | N/A | N/A |
 
-| Setting | Type | Policy | Deviation | Current | Expected | Rationale |
-|---|---|---|---|---|---|---|
-| `async.maxJobs` | number | PASS_THROUGH | none | `100` | `PASS_THROUGH` | OMP default acceptable |
-| `auth.broker.token` | string | REQUIRES_HUMAN_POLICY | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `auth.broker.url` | string | REQUIRES_HUMAN_POLICY | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `autolearn.minToolCalls` | number | PASS_THROUGH | none | `5` | `PASS_THROUGH` | OMP default acceptable |
-| `bash.autoBackground.thresholdMs` | number | PASS_THROUGH | none | `60000` | `PASS_THROUGH` | OMP default acceptable |
-| `bashInterceptor.patterns` | array | PASS_THROUGH | none | `[{"pattern":"^\\s*(cat|head|tail|less|more)\\s+","tool":"read","message":"Use the `read` tool instead of cat/head/tail. It provides better context and handles binary files."},{"pattern":"^\\s*(grep|rg|ripgrep|ag|ack)\\s+","tool":"grep","message":"Use the `grep` tool instead of grep/rg. It respects .gitignore and provides structured output."},{"pattern":"^\\s*(find|fd|locate)\\s+.*(-name|-iname|-type|--type|-glob)","tool":"glob","message":"Use the `glob` tool instead of find/fd. It respects .gitignore and is faster for glob patterns."},{"pattern":"^\\s*sed\\s+(-i|--in-place)","tool":"edit","message":"Use the `edit` tool instead of sed -i. It provides diff preview and fuzzy matching."},{"pattern":"^\\s*perl\\s+.*-[pn]?i","tool":"edit","message":"Use the `edit` tool instead of perl -i. It provides diff preview and fuzzy matching."},{"pattern":"^\\s*awk\\s+.*-i\\s+inplace","tool":"edit","message":"Use the `edit` tool instead of awk -i inplace. It provides diff preview and fuzzy matching."},{"pattern":"^\\s*(echo|printf|cat\\s*<<)\\s+(?:(?:[^\"'>]|\"[^\"]*\"|'[^']*')|(?<!\\|)>{1,2}\\|?\\s*(?:\"/dev/(?:null|tty|stdout|stderr)\"|'/dev/(?:null|tty|stdout|stderr)'|/dev/(?:null|tty|stdout|stderr))(?:[\\s;&|]|$))*(?<!\\|)>{1,2}\\|?\\s*(?!(?:\"/dev/(?:null|tty|stdout|stderr)\"|'/dev/(?:null|tty|stdout|stderr)'|/dev/(?:null|tty|stdout|stderr))(?:[\\s;&|]|$))[$\\w./~\"'-]","tool":"write","message":"Use the `write` tool instead of echo/cat redirection. It handles encoding and provides confirmation."},{"pattern":"^\\s*nohup\\s+|(?<!&)\\&\\s*$","tool":"hub","message":"Use the `hub` tool (`op:\"start\"`) instead of nohup or background shell syntax so the process stays observable and managed."},{"pattern":"^\\s*(?:(?:bun|npm|pnpm|yarn)\\s+(?:run\\s+)?(?:dev|start)(?:\\s|$)|(?:vite|next\\s+dev|nuxt\\s+dev|nodemon|lldb|gdb|tail\\s+-f)(?:\\s|$)|docker\\s+compose\\s+up(?!.*(?:\\s-d(?:\\s|$)|--detach))(?:\\s|$))","tool":"hub","message":"Use the `hub` tool (`op:\"start\"`) for services, watchers, and debuggers so other omp instances can observe and control them."},{"pattern":"^\\s*(?:(?:bun|npm|pnpm|yarn)\\s+(?:run\\s+)?\\S+|cargo\\s+watch|watchexec|pytest|vitest|jest|tsc)(?:.|\\n)*(?:--watch|-w)(?:\\s|$)","tool":"hub","message":"Use the `hub` tool (`op:\"start\"`) for watch mode so its output, input, and lifecycle stay managed."}]` | `PASS_THROUGH` | OMP default acceptable |
-| `branchSummary.reserveTokens` | number | PASS_THROUGH | none | `16384` | `PASS_THROUGH` | OMP default acceptable |
-| `commit.cacheEnabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `commit.cacheTtlDays` | number | PASS_THROUGH | none | `14` | `PASS_THROUGH` | OMP default acceptable |
-| `commit.changelogMaxDiffChars` | number | PASS_THROUGH | none | `120000` | `PASS_THROUGH` | OMP default acceptable |
-| `commit.mapBatchTokenBudget` | number | PASS_THROUGH | none | `16000` | `PASS_THROUGH` | OMP default acceptable |
-| `commit.mapReduceEnabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `commit.mapReduceThreshold` | number | PASS_THROUGH | none | `5000` | `PASS_THROUGH` | OMP default acceptable |
-| `compaction.autoContinue` | boolean | KAD_WRAPPED | none | `true` | `true` | KAD project-scoped policy |
-| `compaction.keepRecentTokens` | number | KAD_WRAPPED | none | `20000` | `20000` | KAD project-scoped policy |
-| `compaction.remoteEndpoint` | string | KAD_WRAPPED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `compaction.reserveTokens` | number | KAD_WRAPPED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `compaction.v2RetainedMessageBudget` | number | KAD_WRAPPED | none | `64000` | `64000` | KAD project-scoped policy |
-| `cycleOrder` | array | KAD_WRAPPED | none | `["smol","default","slow"]` | `["smol","default","slow"]` | KAD project-scoped policy |
-| `dev.autoqaConsent` | unset|granted|denied | REQUIRES_HUMAN_POLICY | none | `unset` | `unset` | KAD project-scoped policy |
-| `dev.autoqaPush.token` | string | REQUIRES_HUMAN_POLICY | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `disabledExtensions` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `disabledProviders` | array | KAD_RESTRICTED | none | `["openrouter"]` | `["openrouter"]` | KAD project-scoped policy |
-| `enabledModels` | array | KAD_DEFAULT | none | `["kad-local-world/*","kad-local-qwen/qwen-local"]` | `["kad-local-world/*","kad-local-qwen/qwen-local"]` | KAD project-scoped policy |
-| `eval.autoBackground.thresholdMs` | number | PASS_THROUGH | none | `60000` | `PASS_THROUGH` | OMP default acceptable |
-| `extensions` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `gc.archive` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `gc.blobs` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `gc.coldArchiveAfterDays` | number | PASS_THROUGH | none | `30` | `PASS_THROUGH` | OMP default acceptable |
-| `gc.retainNewestGlobal` | number | PASS_THROUGH | none | `20` | `PASS_THROUGH` | OMP default acceptable |
-| `gc.retainNewestPerCwd` | number | PASS_THROUGH | none | `10` | `PASS_THROUGH` | OMP default acceptable |
-| `gc.wal` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `hindsight.bankIdPrefix` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `hindsight.bankMission` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `hindsight.debug` | boolean | KAD_RESTRICTED | none | `false` | `false` | KAD project-scoped policy |
-| `hindsight.mentalModelMaxRenderChars` | number | KAD_RESTRICTED | none | `16000` | `16000` | KAD project-scoped policy |
-| `hindsight.mentalModelRefreshIntervalMs` | number | KAD_RESTRICTED | none | `300000` | `300000` | KAD project-scoped policy |
-| `hindsight.recallBudget` | low|mid|high | KAD_RESTRICTED | none | `mid` | `mid` | KAD project-scoped policy |
-| `hindsight.recallContextTurns` | number | KAD_RESTRICTED | none | `1` | `1` | KAD project-scoped policy |
-| `hindsight.recallMaxQueryChars` | number | KAD_RESTRICTED | none | `800` | `800` | KAD project-scoped policy |
-| `hindsight.recallMaxTokens` | number | KAD_RESTRICTED | none | `1024` | `1024` | KAD project-scoped policy |
-| `hindsight.recallTimeoutMs` | number | KAD_RESTRICTED | none | `30000` | `30000` | KAD project-scoped policy |
-| `hindsight.recallTypes` | array | KAD_RESTRICTED | none | `["world","experience"]` | `["world","experience"]` | KAD project-scoped policy |
-| `hindsight.reflectTimeoutMs` | number | KAD_RESTRICTED | none | `120000` | `120000` | KAD project-scoped policy |
-| `hindsight.requestTimeoutMs` | number | KAD_RESTRICTED | none | `30000` | `30000` | KAD project-scoped policy |
-| `hindsight.retainContext` | string | KAD_RESTRICTED | none | `omp` | `omp` | KAD project-scoped policy |
-| `hindsight.retainEveryNTurns` | number | KAD_RESTRICTED | none | `3` | `3` | KAD project-scoped policy |
-| `hindsight.retainMission` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `hindsight.retainOverlapTurns` | number | KAD_RESTRICTED | none | `2` | `2` | KAD project-scoped policy |
-| `hindsight.retainTimeoutMs` | number | KAD_RESTRICTED | none | `60000` | `60000` | KAD project-scoped policy |
-| `images.urls.credentials` | record | NOT_APPLICABLE | none | `********` | `********` | KAD project-scoped policy |
-| `images.urls.options` | record | NOT_APPLICABLE | none | `{}` | `{}` | KAD project-scoped policy |
-| `inspect_image.enabled` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `memories.enabled` | boolean | KAD_RESTRICTED | none | `false` | `false` | KAD project-scoped policy |
-| `memories.fallbackTokenLimit` | number | KAD_RESTRICTED | none | `16000` | `16000` | KAD project-scoped policy |
-| `memories.maxRawMemoriesForGlobal` | number | KAD_RESTRICTED | none | `200` | `200` | KAD project-scoped policy |
-| `memories.maxRolloutAgeDays` | number | KAD_RESTRICTED | none | `30` | `30` | KAD project-scoped policy |
-| `memories.maxRolloutsPerStartup` | number | KAD_RESTRICTED | none | `64` | `64` | KAD project-scoped policy |
-| `memories.minRolloutIdleHours` | number | KAD_RESTRICTED | none | `12` | `12` | KAD project-scoped policy |
-| `memories.phase1InputTokenLimit` | number | KAD_RESTRICTED | none | `4000` | `4000` | KAD project-scoped policy |
-| `memories.phase2HeartbeatSeconds` | number | KAD_RESTRICTED | none | `30` | `30` | KAD project-scoped policy |
-| `memories.phase2LeaseSeconds` | number | KAD_RESTRICTED | none | `180` | `180` | KAD project-scoped policy |
-| `memories.phase2RetryDelaySeconds` | number | KAD_RESTRICTED | none | `180` | `180` | KAD project-scoped policy |
-| `memories.rolloutPayloadPercent` | number | KAD_RESTRICTED | none | `0.7` | `0.7` | KAD project-scoped policy |
-| `memories.stage1Concurrency` | number | KAD_RESTRICTED | none | `8` | `8` | KAD project-scoped policy |
-| `memories.stage1LeaseSeconds` | number | KAD_RESTRICTED | none | `120` | `120` | KAD project-scoped policy |
-| `memories.stage1RetryDelaySeconds` | number | KAD_RESTRICTED | none | `120` | `120` | KAD project-scoped policy |
-| `memories.summaryInjectionTokenLimit` | number | KAD_RESTRICTED | none | `5000` | `5000` | KAD project-scoped policy |
-| `memories.threadScanLimit` | number | KAD_RESTRICTED | none | `300` | `300` | KAD project-scoped policy |
-| `mnemopi.debug` | boolean | KAD_RESTRICTED | none | `false` | `false` | KAD project-scoped policy |
-| `mnemopi.injectionTokenLimit` | number | KAD_RESTRICTED | none | `5000` | `5000` | KAD project-scoped policy |
-| `mnemopi.recallContextTurns` | number | KAD_RESTRICTED | none | `3` | `3` | KAD project-scoped policy |
-| `mnemopi.recallLimit` | number | KAD_RESTRICTED | none | `8` | `8` | KAD project-scoped policy |
-| `mnemopi.recallMaxQueryChars` | number | KAD_RESTRICTED | none | `4000` | `4000` | KAD project-scoped policy |
-| `mnemopi.retainEveryNTurns` | number | KAD_RESTRICTED | none | `4` | `4` | KAD project-scoped policy |
-| `modelProviderOrder` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `modelRoles` | record | KAD_DEFAULT | default conflict | `{"advisor":"google-antigravity/gemini-3-flash:low","plan":"openai-codex/gpt-5.6-luna:high","slow":"google-antigravity/gemini-3-flash:high","task":"openai-codex/gpt-5.4-mini:low","smol":"zai-free/glm-4.7-flash:minimal","tiny":"zai-free/glm-4.7-flash:minimal","commit":"zai-free/glm-4.7-flash:low","designer":"google-antigravity/gemini-3-flash:high","vision":"google-antigravity/gemini-3-flash:high","oracle":"openai-codex/gpt-5.6-luna:max","verifier":"google-antigravity/gemini-3-flash:high","research":"google-antigravity/gemini-3-flash:medium","world":"kad-local-world/kad-local-s13:low","local_retrieval":"kad-local-qwen/qwen-local:low"}` | `{"default":null,"plan":"openai-codex/gpt-5.6-luna:high","slow":"google-antigravity/gemini-3-flash:high","advisor":"google-antigravity/gemini-3-flash:low","task":"openai-codex/gpt-5.4-mini:low","smol":"zai-free/glm-4.7-flash:minimal","tiny":"zai-free/glm-4.7-flash:minimal","commit":"zai-free/glm-4.7-flash:low","designer":"google-antigravity/gemini-3-flash:high","vision":"google-antigravity/gemini-3-flash:high","oracle":"openai-codex/gpt-5.6-luna:max","verifier":"google-antigravity/gemini-3-flash:high","research":"google-antigravity/gemini-3-flash:medium","world":"kad-local-world/kad-local-s13:low","local_retrieval":"kad-local-qwen/qwen-local:low"}` | KAD project-scoped policy |
-| `modelTags` | record | KAD_DEFAULT | none | `{"oracle":{"name":"Oracle (manual premium escalation)","hidden":true},"verifier":{"name":"Verifier (independent provider-family review)"},"research":{"name":"Research (literature and technical synthesis)"},"world":{"name":"World (Stheno WORLD-only)"},"local_retrieval":{"name":"Local Retrieval (Qwen retrieval-only)"},"local_general":{"name":"Local General (unqualified)","hidden":true}}` | `{"oracle":{"name":"Oracle (manual premium escalation)","hidden":true},"verifier":{"name":"Verifier (independent provider-family review)"},"research":{"name":"Research (literature and technical synthesis)"},"world":{"name":"World (Stheno WORLD-only)"},"local_retrieval":{"name":"Local Retrieval (Qwen retrieval-only)"},"local_general":{"name":"Local General (unqualified)","hidden":true}}` | KAD project-scoped policy |
-| `retry.baseDelayMs` | number | KAD_WRAPPED | none | `500` | `500` | KAD project-scoped policy |
-| `retry.enabled` | boolean | KAD_WRAPPED | none | `true` | `true` | KAD project-scoped policy |
-| `searxng.basicPassword` | string | REQUIRES_HUMAN_POLICY | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `searxng.basicUsername` | string | REQUIRES_HUMAN_POLICY | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `searxng.categories` | string | REQUIRES_HUMAN_POLICY | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `searxng.engines` | string | REQUIRES_HUMAN_POLICY | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `searxng.language` | string | REQUIRES_HUMAN_POLICY | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `searxng.safesearch` | number | REQUIRES_HUMAN_POLICY | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `searxng.token` | string | REQUIRES_HUMAN_POLICY | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `setupVersion` | number | PASS_THROUGH | none | `2` | `PASS_THROUGH` | OMP default acceptable |
-| `sharpshooter.injectionTokenLimit` | number | KAD_RESTRICTED | none | `15000` | `15000` | KAD project-scoped policy |
-| `sharpshooter.intervalMinutes` | number | KAD_RESTRICTED | none | `5` | `5` | KAD project-scoped policy |
-| `shellMinimizer.except` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `shellMinimizer.legacyFilters` | boolean | PASS_THROUGH | none | `UNKNOWN` | `PASS_THROUGH` | OMP default acceptable |
-| `shellMinimizer.maxCaptureBytes` | number | PASS_THROUGH | none | `4194304` | `PASS_THROUGH` | OMP default acceptable |
-| `shellMinimizer.only` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `shellMinimizer.settingsPath` | string | PASS_THROUGH | none | `UNKNOWN` | `PASS_THROUGH` | OMP default acceptable |
-| `shellPath` | string | PASS_THROUGH | none | `UNKNOWN` | `PASS_THROUGH` | OMP default acceptable |
-| `skills.customDirectories` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `skills.enableAgentsProject` | boolean | KAD_DEFAULT | none | `true` | `true` | KAD project-scoped policy |
-| `skills.enableAgentsUser` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `skills.enableClaudeProject` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `skills.enableClaudeUser` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `skills.enableCodexUser` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `skills.enablePiProject` | boolean | KAD_DEFAULT | none | `false` | `false` | KAD project-scoped policy |
-| `skills.enablePiUser` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `skills.enabled` | boolean | KAD_DEFAULT | none | `true` | `true` | KAD project-scoped policy |
-| `skills.ignoredSkills` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `skills.includeSkills` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `statusLine.leftSegments` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `statusLine.rightSegments` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `statusLine.segmentOptions` | record | PASS_THROUGH | none | `{}` | `PASS_THROUGH` | OMP default acceptable |
-| `stt.language` | string | PASS_THROUGH | none | `en` | `PASS_THROUGH` | OMP default acceptable |
-| `task.agentAdvisor` | record | KAD_WRAPPED | none | `{"kad-master":"off","kad-builder":"off","kad-tester":"off","kad-reviewer":"off","kad-researcher":"off","kad-local-world":"off","kad-local-extractor":"off","scout":"off","sonic":"off","designer":"off","reviewer":"off","security-reviewer":"off","librarian":"off"}` | `{"kad-master":"off","kad-builder":"off","kad-tester":"off","kad-reviewer":"off","kad-researcher":"off","kad-local-world":"off","kad-local-extractor":"off","scout":"off","sonic":"off","designer":"off","reviewer":"off","security-reviewer":"off","librarian":"off"}` | KAD project-scoped policy |
-| `task.agentModelOverrides` | record | KAD_WRAPPED | none | `{"kad-master":"@plan","kad-builder":"@task","kad-tester":"@verifier","kad-reviewer":"@verifier","kad-researcher":"@research","kad-local-world":"@world","kad-local-extractor":"@local_retrieval","scout":"@smol","sonic":"@tiny","designer":"@designer","reviewer":"@verifier","security-reviewer":"@verifier","librarian":"@research"}` | `{"kad-master":"@plan","kad-builder":"@task","kad-tester":"@verifier","kad-reviewer":"@verifier","kad-researcher":"@research","kad-local-world":"@world","kad-local-extractor":"@local_retrieval","scout":"@smol","sonic":"@tiny","designer":"@designer","reviewer":"@verifier","security-reviewer":"@verifier","librarian":"@research"}` | KAD project-scoped policy |
-| `task.agentPrewalk` | record | PASS_THROUGH | none | `{}` | `PASS_THROUGH` | OMP default acceptable |
-| `task.disabledAgents` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `thinkingBudgets.high` | number | PASS_THROUGH | none | `16384` | `PASS_THROUGH` | OMP default acceptable |
-| `thinkingBudgets.low` | number | PASS_THROUGH | none | `2048` | `PASS_THROUGH` | OMP default acceptable |
-| `thinkingBudgets.max` | number | PASS_THROUGH | none | `32768` | `PASS_THROUGH` | OMP default acceptable |
-| `thinkingBudgets.medium` | number | PASS_THROUGH | none | `8192` | `PASS_THROUGH` | OMP default acceptable |
-| `thinkingBudgets.minimal` | number | PASS_THROUGH | none | `1024` | `PASS_THROUGH` | OMP default acceptable |
-| `thinkingBudgets.xhigh` | number | PASS_THROUGH | none | `32768` | `PASS_THROUGH` | OMP default acceptable |
-| `tui.maxInlineImageColumns` | number | PASS_THROUGH | none | `100` | `PASS_THROUGH` | OMP default acceptable |
-| `tui.maxInlineImageRows` | number | PASS_THROUGH | none | `20` | `PASS_THROUGH` | OMP default acceptable |
-| `tui.maxInlineImages` | number | PASS_THROUGH | none | `8` | `PASS_THROUGH` | OMP default acceptable |
+## `async.*`
 
-## memory
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| async.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| async.maxJobs | 100 | 100 | PASS_THROUGH | N/A | N/A |
+| async.pollWaitDuration | "smart" | "smart" | PASS_THROUGH | N/A | N/A |
 
-| Setting | Type | Policy | Deviation | Current | Expected | Rationale |
-|---|---|---|---|---|---|---|
-| `autolearn.autoContinue` | boolean | KAD_RESTRICTED | none | `false` | `false` | KAD project-scoped policy |
-| `autolearn.enabled` | boolean | KAD_RESTRICTED | none | `false` | `false` | KAD project-scoped policy |
-| `hindsight.apiToken` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `hindsight.apiUrl` | string | KAD_RESTRICTED | none | `http://localhost:8888` | `http://localhost:8888` | KAD project-scoped policy |
-| `hindsight.autoRecall` | boolean | KAD_RESTRICTED | none | `true` | `true` | KAD project-scoped policy |
-| `hindsight.autoRetain` | boolean | KAD_RESTRICTED | none | `true` | `true` | KAD project-scoped policy |
-| `hindsight.bankId` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `hindsight.mentalModelAutoSeed` | boolean | KAD_RESTRICTED | none | `true` | `true` | KAD project-scoped policy |
-| `hindsight.mentalModelsEnabled` | boolean | KAD_RESTRICTED | none | `true` | `true` | KAD project-scoped policy |
-| `hindsight.retainMode` | full-session|last-turn | KAD_RESTRICTED | none | `full-session` | `full-session` | KAD project-scoped policy |
-| `hindsight.scoping` | global|per-project|per-project-tagged | KAD_RESTRICTED | none | `per-project-tagged` | `per-project-tagged` | KAD project-scoped policy |
-| `memory.backend` | off|local|hindsight|mnemopi|sharpshooter | KAD_RESTRICTED | none | `off` | `off` | KAD project-scoped policy |
-| `mnemopi.autoRecall` | boolean | KAD_RESTRICTED | none | `true` | `true` | KAD project-scoped policy |
-| `mnemopi.autoRetain` | boolean | KAD_RESTRICTED | none | `true` | `true` | KAD project-scoped policy |
-| `mnemopi.bank` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `mnemopi.dbPath` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `mnemopi.embeddingApiKey` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `mnemopi.embeddingApiUrl` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `mnemopi.embeddingModel` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `mnemopi.embeddingVariant` | en|multilingual | KAD_RESTRICTED | none | `en` | `en` | KAD project-scoped policy |
-| `mnemopi.enhancedRecall` | boolean | KAD_RESTRICTED | none | `false` | `false` | KAD project-scoped policy |
-| `mnemopi.llmApiKey` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `mnemopi.llmBaseUrl` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `mnemopi.llmMode` | none|smol|remote | KAD_RESTRICTED | none | `smol` | `smol` | KAD project-scoped policy |
-| `mnemopi.llmModel` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `mnemopi.noEmbeddings` | boolean | KAD_RESTRICTED | none | `false` | `false` | KAD project-scoped policy |
-| `mnemopi.polyphonicRecall` | boolean | KAD_RESTRICTED | none | `false` | `false` | KAD project-scoped policy |
-| `mnemopi.proactiveLinking` | boolean | KAD_RESTRICTED | none | `false` | `false` | KAD project-scoped policy |
-| `mnemopi.scoping` | global|per-project|per-project-tagged | KAD_RESTRICTED | none | `per-project` | `per-project` | KAD project-scoped policy |
-| `providers.memoryModel` | online|qwen3-1.7b|llama3.2:3b|gemma-3-1b|qwen2.5-1.5b|lfm2-1.2b | PASS_THROUGH | none | `online` | `PASS_THROUGH` | OMP default acceptable |
-| `sharpshooter.model` | string | KAD_RESTRICTED | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
+## `auth.*`
 
-## model
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| auth.broker.token | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| auth.broker.url | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
 
-| Setting | Type | Policy | Deviation | Current | Expected | Rationale |
-|---|---|---|---|---|---|---|
-| `advisor.enabled` | boolean | KAD_RESTRICTED | none | `false` | `false` | KAD project-scoped policy |
-| `advisor.immuneTurns` | number | PASS_THROUGH | none | `3` | `PASS_THROUGH` | OMP default acceptable |
-| `advisor.syncBacklog` | off|1|3|5 | PASS_THROUGH | none | `off` | `PASS_THROUGH` | OMP default acceptable |
-| `defaultThinkingLevel` | minimal|low|medium|high|xhigh|max|auto | PASS_THROUGH | none | `high` | `PASS_THROUGH` | OMP default acceptable |
-| `externalThinking` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `hideThinkingBlock` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `images.describeForTextModels` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `images.urls.backends` | array | NOT_APPLICABLE | none | `["provider-files","tailscale","cloudflared","litterbox"]` | `["provider-files","tailscale","cloudflared","litterbox"]` | KAD project-scoped policy |
-| `images.urls.bindHost` | string | NOT_APPLICABLE | none | `127.0.0.1` | `127.0.0.1` | KAD project-scoped policy |
-| `images.urls.command` | string | NOT_APPLICABLE | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `images.urls.enabled` | boolean | NOT_APPLICABLE | none | `false` | `false` | KAD project-scoped policy |
-| `images.urls.publicBaseUrl` | string | NOT_APPLICABLE | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `images.urls.sshRemotePort` | number | NOT_APPLICABLE | none | `8787` | `8787` | KAD project-scoped policy |
-| `images.urls.sshTarget` | string | NOT_APPLICABLE | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `images.urls.ttlHours` | number | NOT_APPLICABLE | none | `72` | `72` | KAD project-scoped policy |
-| `includeModelInPrompt` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `includeWorkspaceTree` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `inlineToolDescriptors` | auto|on|off | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `minP` | number | PASS_THROUGH | none | `-1` | `PASS_THROUGH` | OMP default acceptable |
-| `model.loopGuard.checkAssistantContent` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `model.loopGuard.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `model.loopGuard.toolCallReminder` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `model.toolCallLoopGuard.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `model.toolCallLoopGuard.exemptTools` | array | PASS_THROUGH | none | `["hub"]` | `PASS_THROUGH` | OMP default acceptable |
-| `model.toolCallLoopGuard.threshold` | number | PASS_THROUGH | none | `5` | `PASS_THROUGH` | OMP default acceptable |
-| `modelRoleStorage` | global|project | KAD_DEFAULT | none | `project` | `project` | KAD project-scoped policy |
-| `omitThinking` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `personality` | default|friendly|pragmatic|none | PASS_THROUGH | none | `default` | `PASS_THROUGH` | OMP default acceptable |
-| `presencePenalty` | number | PASS_THROUGH | none | `-1` | `PASS_THROUGH` | OMP default acceptable |
-| `prewalk.enabled` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `proseOnlyThinking` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.anthropic.serverSideFallback` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.autoThinkingMaxEffort` | xhigh|max | PASS_THROUGH | none | `xhigh` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.autoThinkingModel` | online|qwen3-1.7b|llama3.2:3b|gemma-3-1b|qwen2.5-1.5b|lfm2-1.2b | PASS_THROUGH | none | `online` | `PASS_THROUGH` | OMP default acceptable |
-| `repetitionPenalty` | number | PASS_THROUGH | none | `-1` | `PASS_THROUGH` | OMP default acceptable |
-| `retry.fallbackChains` | record | KAD_WRAPPED | none | `{"default":["google-antigravity/gemini-3-flash:medium"],"plan":["google-antigravity/gemini-3-flash:high"],"slow":["openai-codex/gpt-5.6-luna:high"],"advisor":["openai-codex/gpt-5.4-mini:low"],"task":["zai-free/glm-4.7-flash:low"],"smol":["openai-codex/gpt-5.4-mini:minimal"],"tiny":["openai-codex/gpt-5.4-mini:minimal"],"commit":["openai-codex/gpt-5.4-mini:low"],"designer":["openai-codex/gpt-5.6-luna:high"],"vision":["openai-codex/gpt-5.6-luna:high"],"verifier":["openai-codex/gpt-5.6-luna:high"],"research":["openai-codex/gpt-5.4-mini:low"],"oracle":[],"world":[],"local_retrieval":[],"local_general":[]}` | `{"default":["google-antigravity/gemini-3-flash:medium"],"plan":["google-antigravity/gemini-3-flash:high"],"slow":["openai-codex/gpt-5.6-luna:high"],"advisor":["openai-codex/gpt-5.4-mini:low"],"task":["zai-free/glm-4.7-flash:low"],"smol":["openai-codex/gpt-5.4-mini:minimal"],"tiny":["openai-codex/gpt-5.4-mini:minimal"],"commit":["openai-codex/gpt-5.4-mini:low"],"designer":["openai-codex/gpt-5.6-luna:high"],"vision":["openai-codex/gpt-5.6-luna:high"],"verifier":["openai-codex/gpt-5.6-luna:high"],"research":["openai-codex/gpt-5.4-mini:low"],"oracle":[],"world":[],"local_retrieval":[],"local_general":[]}` | KAD project-scoped policy |
-| `retry.fallbackRevertPolicy` | cooldown-expiry|never | KAD_WRAPPED | none | `cooldown-expiry` | `cooldown-expiry` | KAD project-scoped policy |
-| `retry.maxDelayMs` | number | KAD_WRAPPED | none | `300000` | `300000` | KAD project-scoped policy |
-| `retry.maxRetries` | number | KAD_WRAPPED | none | `10` | `10` | KAD project-scoped policy |
-| `retry.modelFallback` | boolean | KAD_WRAPPED | none | `true` | `true` | KAD project-scoped policy |
-| `retry.usageAwareFallback` | boolean | KAD_WRAPPED | none | `false` | `false` | KAD project-scoped policy |
-| `retry.usageReservePct` | number | KAD_WRAPPED | none | `10` | `10` | KAD project-scoped policy |
-| `retry.usageReservePolicy` | confirm|auto|fail-closed | KAD_WRAPPED | none | `confirm` | `confirm` | KAD project-scoped policy |
-| `temperature` | number | PASS_THROUGH | none | `-1` | `PASS_THROUGH` | OMP default acceptable |
-| `textVerbosity` | low|medium|high | PASS_THROUGH | none | `medium` | `PASS_THROUGH` | OMP default acceptable |
-| `tier.advisor` | inherit|none|auto|default|flex|scale|priority | PASS_THROUGH | none | `none` | `PASS_THROUGH` | OMP default acceptable |
-| `tier.anthropic` | none|priority | PASS_THROUGH | none | `none` | `PASS_THROUGH` | OMP default acceptable |
-| `tier.google` | none|flex|priority | PASS_THROUGH | none | `none` | `PASS_THROUGH` | OMP default acceptable |
-| `tier.openai` | none|auto|default|flex|scale|priority | PASS_THROUGH | none | `none` | `PASS_THROUGH` | OMP default acceptable |
-| `tier.subagent` | inherit|none|auto|default|flex|scale|priority | PASS_THROUGH | none | `inherit` | `PASS_THROUGH` | OMP default acceptable |
-| `topK` | number | PASS_THROUGH | none | `-1` | `PASS_THROUGH` | OMP default acceptable |
-| `topP` | number | PASS_THROUGH | none | `-1` | `PASS_THROUGH` | OMP default acceptable |
+## `autoResume.*`
 
-## providers
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| autoResume | false | false | PASS_THROUGH | N/A | N/A |
 
-| Setting | Type | Policy | Deviation | Current | Expected | Rationale |
-|---|---|---|---|---|---|---|
-| `codexResets.autoRedeem` | unset|yes|no | NOT_APPLICABLE | none | `unset` | `unset` | KAD project-scoped policy |
-| `codexResets.keepCredits` | number | NOT_APPLICABLE | none | `0` | `0` | KAD project-scoped policy |
-| `codexResets.minBlockedMinutes` | number | NOT_APPLICABLE | none | `60` | `60` | KAD project-scoped policy |
-| `codexResets.salvageHorizonHours` | number | NOT_APPLICABLE | none | `12` | `12` | KAD project-scoped policy |
-| `exa.enabled` | boolean | NOT_APPLICABLE | none | `true` | `true` | KAD project-scoped policy |
-| `exa.searchDelayMs` | number | NOT_APPLICABLE | none | `1000` | `1000` | KAD project-scoped policy |
-| `live.voice` | arbor|breeze|cove|ember|juniper|maple|sol|spruce|vale | NOT_APPLICABLE | none | `sol` | `sol` | KAD project-scoped policy |
-| `provider.appendOnlyContext` | auto|on|off | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.antigravityEndpoint` | auto|production|sandbox | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.cacheRetention` | auto|short|long|none | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.fetch` | auto|native|trafilatura|lynx|parallel|jina | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.fireworksTier` | standard|priority | PASS_THROUGH | none | `standard` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.imageOrder` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.kimiApiFormat` | auto|openai|anthropic | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.maxInFlightRequests` | record | PASS_THROUGH | none | `{}` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.openaiWebsockets` | auto|off|on | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.openrouterVariant` | default|nitro|floor|online|exacto | PASS_THROUGH | none | `default` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.streamFirstEventTimeoutSeconds` | number | PASS_THROUGH | none | `-1` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.streamIdleTimeoutSeconds` | number | PASS_THROUGH | none | `-1` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.tinyModel` | online|lfm2-350m|qwen3-0.6b|gemma-270m|qwen2.5-0.5b|lfm2-700m | PASS_THROUGH | none | `online` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.tinyModelDevice` | default|gpu|cpu|metal|webgpu|cuda|dml|coreml|auto|wasm|webnn|webnn-gpu|webnn-cpu|webnn-npu | PASS_THROUGH | none | `default` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.tinyModelDtype` | default|q4|q4f16|q8|fp16|fp32|int8|uint8|bnb4|q2|q2f16|q1|q1f16|auto | PASS_THROUGH | none | `default` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.tts` | auto|local|xai|deepinfra | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.unexpectedStopModel` | online|qwen3-1.7b|llama3.2:3b|gemma-3-1b|qwen2.5-1.5b|lfm2-1.2b | PASS_THROUGH | none | `online` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.webSearchExclude` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.webSearchGeminiModel` | string | PASS_THROUGH | none | `UNKNOWN` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.webSearchOrder` | array | PASS_THROUGH | none | `["gemini","perplexity","anthropic","codex","xai","zai","exa","tinyfish","jina","kagi","tavily","firecrawl","brave","kimi","parallel","synthetic","searxng","startpage","duckduckgo","ecosia","google","mojeek","public"]` | `PASS_THROUGH` | OMP default acceptable |
-| `providers.webSearchTimeoutSeconds` | number | PASS_THROUGH | none | `60` | `PASS_THROUGH` | OMP default acceptable |
-| `searxng.endpoint` | string | REQUIRES_HUMAN_POLICY | none | `UNKNOWN` | `UNKNOWN` | KAD project-scoped policy |
-| `secrets.enabled` | boolean | REQUIRES_HUMAN_POLICY | none | `true` | `true` | KAD project-scoped policy |
-| `speech.enabled` | boolean | NOT_APPLICABLE | none | `false` | `false` | KAD project-scoped policy |
-| `speech.enhanced` | boolean | NOT_APPLICABLE | none | `false` | `false` | KAD project-scoped policy |
-| `speech.mode` | all|assistant|yield | NOT_APPLICABLE | none | `assistant` | `assistant` | KAD project-scoped policy |
-| `speech.voice` | af_heart|af_bella|af_nicole|af_aoede|af_kore|af_sarah|am_michael|am_fenrir|am_puck|bf_emma|bm_george|bm_fable | NOT_APPLICABLE | none | `af_heart` | `af_heart` | KAD project-scoped policy |
-| `tts.localModel` | kokoro | NOT_APPLICABLE | none | `kokoro` | `kokoro` | KAD project-scoped policy |
-| `tts.localVoice` | af_heart|af_bella|af_nicole|af_aoede|af_kore|af_sarah|am_michael|am_fenrir|am_puck|bf_emma|bm_george|bm_fable | NOT_APPLICABLE | none | `af_heart` | `af_heart` | KAD project-scoped policy |
+## `autocompleteMaxVisible.*`
 
-## shell
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| autocompleteMaxVisible | 10 | 10 | PASS_THROUGH | N/A | N/A |
 
-| Setting | Type | Policy | Deviation | Current | Expected | Rationale |
-|---|---|---|---|---|---|---|
-| `bash.autoBackground.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `bash.direnv` | auto|off | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `bash.direnvLoadTimeoutMs` | number | PASS_THROUGH | none | `30000` | `PASS_THROUGH` | OMP default acceptable |
-| `bash.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `bash.patterns` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `bashInterceptor.enabled` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `eval.autoBackground.enabled` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `eval.jl` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `eval.js` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `eval.py` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `eval.rb` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `julia.interpreter` | string | PASS_THROUGH | none | `` | `PASS_THROUGH` | OMP default acceptable |
-| `python.interpreter` | string | PASS_THROUGH | none | `` | `PASS_THROUGH` | OMP default acceptable |
-| `python.kernelMode` | session|per-call | PASS_THROUGH | none | `session` | `PASS_THROUGH` | OMP default acceptable |
-| `ruby.interpreter` | string | PASS_THROUGH | none | `` | `PASS_THROUGH` | OMP default acceptable |
-| `shellMinimizer.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `shellMinimizer.sourceOutlineLevel` | default|aggressive | PASS_THROUGH | none | `default` | `PASS_THROUGH` | OMP default acceptable |
+## `autolearn.*`
 
-## tasks
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| autolearn.autoContinue | false | false | KAD_RESTRICTED | PASS | PASS |
+| autolearn.enabled | false | false | KAD_RESTRICTED | PASS | PASS |
+| autolearn.minToolCalls | 5 | 5 | PASS_THROUGH | N/A | N/A |
 
-| Setting | Type | Policy | Deviation | Current | Expected | Rationale |
-|---|---|---|---|---|---|---|
-| `commands.enableClaudeProject` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `commands.enableClaudeUser` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `commands.enableOpencodeProject` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `commands.enableOpencodeUser` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `goal.continuationModes` | array | PASS_THROUGH | none | `["interactive"]` | `PASS_THROUGH` | OMP default acceptable |
-| `goal.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `goal.statusInFooter` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `plan.defaultOnStartup` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `plan.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `skills.enableSkillCommands` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `task.agentIdleTtlMs` | number | PASS_THROUGH | none | `420000` | `PASS_THROUGH` | OMP default acceptable |
-| `task.batch` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `task.eager` | default|preferred|always | PASS_THROUGH | none | `default` | `PASS_THROUGH` | OMP default acceptable |
-| `task.enableEffort` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `task.enableLsp` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `task.isolation.apply` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `task.isolation.commits` | generic|ai | PASS_THROUGH | none | `generic` | `PASS_THROUGH` | OMP default acceptable |
-| `task.isolation.merge` | patch|branch | PASS_THROUGH | none | `patch` | `PASS_THROUGH` | OMP default acceptable |
-| `task.isolation.mode` | none|auto|apfs|btrfs|zfs|reflink|overlayfs|projfs|block-clone|rcopy | PASS_THROUGH | none | `none` | `PASS_THROUGH` | OMP default acceptable |
-| `task.maxConcurrency` | number | PASS_THROUGH | none | `32` | `PASS_THROUGH` | OMP default acceptable |
-| `task.maxEffort` | minimal|low|medium|high|xhigh|max | PASS_THROUGH | none | `max` | `PASS_THROUGH` | OMP default acceptable |
-| `task.maxRecursionDepth` | number | PASS_THROUGH | none | `2` | `PASS_THROUGH` | OMP default acceptable |
-| `task.maxRuntimeMs` | number | PASS_THROUGH | none | `0` | `PASS_THROUGH` | OMP default acceptable |
-| `task.prewalk` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `task.softRequestBudget` | number | PASS_THROUGH | none | `200` | `PASS_THROUGH` | OMP default acceptable |
-| `task.softRequestBudgetNotice` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `title.refreshOnReplan` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `worktree.base` | string | PASS_THROUGH | none | `UNKNOWN` | `PASS_THROUGH` | OMP default acceptable |
+## `bash.*`
 
-## tools
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| bash.autoBackground.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| bash.autoBackground.thresholdMs | 60000 | 60000 | PASS_THROUGH | N/A | N/A |
+| bash.direnv | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+| bash.direnvLoadTimeoutMs | 30000 | 30000 | PASS_THROUGH | N/A | N/A |
+| bash.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| bash.patterns | [] | [] | PASS_THROUGH | N/A | N/A |
 
-| Setting | Type | Policy | Deviation | Current | Expected | Rationale |
-|---|---|---|---|---|---|---|
-| `ask.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `astEdit.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `astGrep.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `async.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `async.pollWaitDuration` | 5s|10s|30s|1m|5m|smart | PASS_THROUGH | none | `smart` | `PASS_THROUGH` | OMP default acceptable |
-| `browser.cdpUrl` | string | PASS_THROUGH | none | `UNKNOWN` | `PASS_THROUGH` | OMP default acceptable |
-| `browser.cmux` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `browser.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `browser.headless` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `browser.relay` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `browser.relayUrl` | string | PASS_THROUGH | none | `UNKNOWN` | `PASS_THROUGH` | OMP default acceptable |
-| `browser.screenshotDir` | string | PASS_THROUGH | none | `UNKNOWN` | `PASS_THROUGH` | OMP default acceptable |
-| `checkpoint.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `computer.display` | string | PASS_THROUGH | none | `all` | `PASS_THROUGH` | OMP default acceptable |
-| `computer.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `computer.maxHeight` | number | PASS_THROUGH | none | `2400` | `PASS_THROUGH` | OMP default acceptable |
-| `computer.maxWidth` | number | PASS_THROUGH | none | `3840` | `PASS_THROUGH` | OMP default acceptable |
-| `debug.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `dev.autoqa` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `dev.autoqaPush.endpoint` | string | PASS_THROUGH | none | `https://qa.omp.sh/v1/grievances` | `PASS_THROUGH` | OMP default acceptable |
-| `extensionHandlers.toolCallTimeoutMs` | number | PASS_THROUGH | none | `30000` | `PASS_THROUGH` | OMP default acceptable |
-| `fetch.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `generate_image.enabled` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `github.cache.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `github.cache.hardTtlSec` | number | PASS_THROUGH | none | `604800` | `PASS_THROUGH` | OMP default acceptable |
-| `github.cache.softTtlSec` | number | PASS_THROUGH | none | `300` | `PASS_THROUGH` | OMP default acceptable |
-| `github.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `glob.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `grep.contextAfter` | number | PASS_THROUGH | none | `3` | `PASS_THROUGH` | OMP default acceptable |
-| `grep.contextBefore` | number | PASS_THROUGH | none | `1` | `PASS_THROUGH` | OMP default acceptable |
-| `grep.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `inspect_image.mode` | auto|on|off | PASS_THROUGH | none | `auto` | `PASS_THROUGH` | OMP default acceptable |
-| `inspect_image.timeoutMs` | number | PASS_THROUGH | none | `300000` | `PASS_THROUGH` | OMP default acceptable |
-| `irc.timeoutMs` | number | PASS_THROUGH | none | `120000` | `PASS_THROUGH` | OMP default acceptable |
-| `launch.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `mcp.enableProjectConfig` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `mcp.notificationDebounceMs` | number | PASS_THROUGH | none | `500` | `PASS_THROUGH` | OMP default acceptable |
-| `mcp.notifications` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `mcp.renderMarkdownResults` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `security.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `speechgen.enabled` | boolean | PASS_THROUGH | none | `false` | `PASS_THROUGH` | OMP default acceptable |
-| `tasks.todoClearDelay` | number | PASS_THROUGH | none | `60` | `PASS_THROUGH` | OMP default acceptable |
-| `todo.eager` | default|preferred|always | PASS_THROUGH | none | `default` | `PASS_THROUGH` | OMP default acceptable |
-| `todo.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `todo.reminders` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `todo.remindersMax` | number | PASS_THROUGH | none | `3` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.abortOnFabricatedResult` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.artifactHeadBytes` | number | PASS_THROUGH | none | `20` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.artifactSpillThreshold` | number | PASS_THROUGH | none | `50` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.artifactTailBytes` | number | PASS_THROUGH | none | `20` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.artifactTailLines` | number | PASS_THROUGH | none | `500` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.intentTracing` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.maxTimeout` | number | PASS_THROUGH | none | `0` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.outputMaxColumns` | number | PASS_THROUGH | none | `768` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.xdev` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.xdevDocs` | inline|builtins|catalog | PASS_THROUGH | none | `builtins` | `PASS_THROUGH` | OMP default acceptable |
-| `tools.xdevInlineDevices` | array | PASS_THROUGH | none | `[]` | `PASS_THROUGH` | OMP default acceptable |
-| `vault.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
-| `web_search.enabled` | boolean | PASS_THROUGH | none | `true` | `PASS_THROUGH` | OMP default acceptable |
+## `bashInterceptor.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| bashInterceptor.enabled | false | false | PASS_THROUGH | N/A | N/A |
+| bashInterceptor.patterns | "[non-empty object array | [{"pattern": "^\\s*(cat| | PASS_THROUGH | N/A | N/A |
+
+## `branchSummary.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| branchSummary.enabled | false | false | PASS_THROUGH | N/A | N/A |
+| branchSummary.reserveTokens | 16384 | 16384 | PASS_THROUGH | N/A | N/A |
+
+## `browser.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| browser.cdpUrl | UNKNOWN | UNSET | PASS_THROUGH | N/A | N/A |
+| browser.cmux | true | true | PASS_THROUGH | N/A | N/A |
+| browser.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| browser.headless | true | true | PASS_THROUGH | N/A | N/A |
+| browser.relay | false | false | PASS_THROUGH | N/A | N/A |
+| browser.relayUrl | UNKNOWN | UNSET | PASS_THROUGH | N/A | N/A |
+| browser.screenshotDir | UNKNOWN | UNSET | PASS_THROUGH | N/A | N/A |
+
+## `checkpoint.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| checkpoint.enabled | false | true | PASS_THROUGH | N/A | N/A |
+
+## `codexResets.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| codexResets.autoRedeem | "unset" | "unset" | NOT_APPLICABLE | N/A | N/A |
+| codexResets.keepCredits | 0 | 0 | NOT_APPLICABLE | N/A | N/A |
+| codexResets.minBlockedMinutes | 60 | 60 | NOT_APPLICABLE | N/A | N/A |
+| codexResets.salvageHorizonHours | 12 | 12 | NOT_APPLICABLE | N/A | N/A |
+
+## `collab.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| collab.displayName | "" | "" | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| collab.relayUrl | "wss://my.omp.sh" | "wss://my.omp.sh" | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| collab.webUrl | "" | "" | REQUIRES_HUMAN_POLICY | N/A | N/A |
+
+## `colorBlindMode.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| colorBlindMode | false | false | PASS_THROUGH | N/A | N/A |
+
+## `commands.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| commands.enableClaudeProject | true | true | PASS_THROUGH | N/A | N/A |
+| commands.enableClaudeUser | true | true | PASS_THROUGH | N/A | N/A |
+| commands.enableOpencodeProject | true | true | PASS_THROUGH | N/A | N/A |
+| commands.enableOpencodeUser | true | true | PASS_THROUGH | N/A | N/A |
+
+## `commit.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| commit.cacheEnabled | true | true | PASS_THROUGH | N/A | N/A |
+| commit.cacheTtlDays | 14 | 14 | PASS_THROUGH | N/A | N/A |
+| commit.changelogMaxDiffChars | 120000 | 120000 | PASS_THROUGH | N/A | N/A |
+| commit.mapBatchTokenBudget | 16000 | 16000 | PASS_THROUGH | N/A | N/A |
+| commit.mapReduceEnabled | true | true | PASS_THROUGH | N/A | N/A |
+| commit.mapReduceThreshold | 5000 | 5000 | PASS_THROUGH | N/A | N/A |
+
+## `compaction.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| compaction.asyncEnabled | true | true | KAD_WRAPPED | N/A | N/A |
+| compaction.autoContinue | true | true | KAD_WRAPPED | N/A | N/A |
+| compaction.dropUseless | true | true | KAD_WRAPPED | N/A | N/A |
+| compaction.enabled | true | true | KAD_WRAPPED | PASS | PASS |
+| compaction.handoffSaveToDisk | false | false | KAD_WRAPPED | N/A | N/A |
+| compaction.idleEnabled | false | false | KAD_WRAPPED | N/A | N/A |
+| compaction.idleThresholdTokens | 200000 | 200000 | KAD_WRAPPED | N/A | N/A |
+| compaction.idleTimeoutSeconds | 300 | 300 | KAD_WRAPPED | N/A | N/A |
+| compaction.keepRecentTokens | 20000 | 20000 | KAD_WRAPPED | N/A | N/A |
+| compaction.methodOrder | ["snapcompact"] | ["snapcompact"] | KAD_WRAPPED | N/A | N/A |
+| compaction.midTurnEnabled | true | true | KAD_WRAPPED | N/A | N/A |
+| compaction.remoteEndpoint | UNKNOWN | UNSET | KAD_WRAPPED | N/A | N/A |
+| compaction.remoteStreamingV2Enabled | true | true | KAD_WRAPPED | N/A | N/A |
+| compaction.reserveTokens | UNKNOWN | UNSET | KAD_WRAPPED | N/A | N/A |
+| compaction.supersedeReads | true | true | KAD_WRAPPED | N/A | N/A |
+| compaction.thresholdPercent | -1 | 70 | KAD_WRAPPED | N/A | N/A |
+| compaction.thresholdTokens | -1 | -1 | KAD_WRAPPED | N/A | N/A |
+| compaction.v2RetainedMessageBudget | 64000 | 64000 | KAD_WRAPPED | N/A | N/A |
+
+## `completion.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| completion.notify | "on" | "on" | PASS_THROUGH | N/A | N/A |
+
+## `composer.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| composer.shape | "band" | "band" | PASS_THROUGH | N/A | N/A |
+
+## `computer.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| computer.display | "all" | "all" | PASS_THROUGH | N/A | N/A |
+| computer.enabled | false | true | PASS_THROUGH | N/A | N/A |
+| computer.maxHeight | 2400 | 2400 | PASS_THROUGH | N/A | N/A |
+| computer.maxWidth | 3840 | 3840 | PASS_THROUGH | N/A | N/A |
+
+## `contextPromotion.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| contextPromotion.enabled | false | false | KAD_RESTRICTED | PASS | PASS |
+
+## `cycleOrder.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| cycleOrder | ["smol", "default", "slo | ["smol", "default", "slo | KAD_WRAPPED | N/A | N/A |
+
+## `debug.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| debug.enabled | true | true | PASS_THROUGH | N/A | N/A |
+
+## `defaultThinkingLevel.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| defaultThinkingLevel | "high" | "high" | PASS_THROUGH | N/A | N/A |
+
+## `dev.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| dev.autoqa | true | true | PASS_THROUGH | N/A | N/A |
+| dev.autoqaConsent | "unset" | "unset" | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| dev.autoqaPush.endpoint | UNKNOWN | "https://qa.omp.sh/v1/gr | PASS_THROUGH | N/A | N/A |
+| dev.autoqaPush.token | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
+
+## `disabledExtensions.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| disabledExtensions | [] | [] | PASS_THROUGH | N/A | N/A |
+
+## `disabledProviders.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| disabledProviders | [] | ["openrouter"] | KAD_RESTRICTED | FAIL | PASS |
+
+## `display.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| display.cacheMissMarker | false | false | PASS_THROUGH | N/A | N/A |
+| display.collapseCompacted | true | true | PASS_THROUGH | N/A | N/A |
+| display.hideToolActivity | false | false | PASS_THROUGH | N/A | N/A |
+| display.shimmer | "classic" | "classic" | PASS_THROUGH | N/A | N/A |
+| display.showTokenUsage | false | false | PASS_THROUGH | N/A | N/A |
+| display.showTurnTime | false | false | PASS_THROUGH | N/A | N/A |
+| display.smoothStreaming | true | true | PASS_THROUGH | N/A | N/A |
+
+## `doubleEscapeAction.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| doubleEscapeAction | "tree" | "tree" | PASS_THROUGH | N/A | N/A |
+
+## `edit.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| edit.autoRepair.enabled | false | false | PASS_THROUGH | N/A | N/A |
+| edit.blackbox.enabled | false | false | PASS_THROUGH | N/A | N/A |
+| edit.blockAutoGenerated | true | true | PASS_THROUGH | N/A | N/A |
+| edit.enforceSeenLines | false | false | PASS_THROUGH | N/A | N/A |
+| edit.fuzzyMatch | true | true | PASS_THROUGH | N/A | N/A |
+| edit.fuzzyThreshold | 0.95 | 0.95 | PASS_THROUGH | N/A | N/A |
+| edit.mode | "hashline" | "hashline" | PASS_THROUGH | N/A | N/A |
+| edit.streamingAbort | false | false | PASS_THROUGH | N/A | N/A |
+
+## `emojiAutocomplete.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| emojiAutocomplete | true | true | PASS_THROUGH | N/A | N/A |
+
+## `enabledModels.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| enabledModels | [] | ["kad-local-world/*", "k | KAD_DEFAULT | N/A | N/A |
+
+## `error.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| error.notify | "off" | "off" | PASS_THROUGH | N/A | N/A |
+
+## `eval.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| eval.autoBackground.enabled | false | false | PASS_THROUGH | N/A | N/A |
+| eval.autoBackground.thresholdMs | 60000 | 60000 | PASS_THROUGH | N/A | N/A |
+| eval.jl | false | false | PASS_THROUGH | N/A | N/A |
+| eval.js | true | true | PASS_THROUGH | N/A | N/A |
+| eval.py | true | true | PASS_THROUGH | N/A | N/A |
+| eval.rb | false | false | PASS_THROUGH | N/A | N/A |
+
+## `exa.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| exa.enabled | true | true | NOT_APPLICABLE | N/A | N/A |
+| exa.searchDelayMs | 1000 | 1000 | NOT_APPLICABLE | N/A | N/A |
+
+## `extendedContext.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| extendedContext | false | false | PASS_THROUGH | N/A | N/A |
+
+## `extensionHandlers.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| extensionHandlers.toolCallTimeoutMs | 30000 | 30000 | PASS_THROUGH | N/A | N/A |
+
+## `extensions.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| extensions | [] | [] | PASS_THROUGH | N/A | N/A |
+
+## `externalThinking.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| externalThinking | false | false | PASS_THROUGH | N/A | N/A |
+
+## `features.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| features.unexpectedStopDetection | "mechanical" | "mechanical" | PASS_THROUGH | N/A | N/A |
+
+## `fetch.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| fetch.enabled | true | true | PASS_THROUGH | N/A | N/A |
+
+## `followUpMode.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| followUpMode | "one-at-a-time" | "one-at-a-time" | PASS_THROUGH | N/A | N/A |
+
+## `gc.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| gc.archive | true | true | PASS_THROUGH | N/A | N/A |
+| gc.blobs | true | true | PASS_THROUGH | N/A | N/A |
+| gc.coldArchiveAfterDays | 30 | 30 | PASS_THROUGH | N/A | N/A |
+| gc.retainNewestGlobal | 20 | 20 | PASS_THROUGH | N/A | N/A |
+| gc.retainNewestPerCwd | 10 | 10 | PASS_THROUGH | N/A | N/A |
+| gc.wal | true | true | PASS_THROUGH | N/A | N/A |
+
+## `generate_image.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| generate_image.enabled | false | false | PASS_THROUGH | N/A | N/A |
+
+## `git.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| git.enabled | true | true | PASS_THROUGH | N/A | N/A |
+
+## `github.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| github.cache.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| github.cache.hardTtlSec | 604800 | 604800 | PASS_THROUGH | N/A | N/A |
+| github.cache.softTtlSec | 300 | 300 | PASS_THROUGH | N/A | N/A |
+| github.enabled | false | true | PASS_THROUGH | N/A | N/A |
+
+## `glob.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| glob.enabled | true | true | PASS_THROUGH | N/A | N/A |
+
+## `goal.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| goal.continuationModes | ["interactive"] | ["interactive"] | PASS_THROUGH | N/A | N/A |
+| goal.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| goal.statusInFooter | true | true | PASS_THROUGH | N/A | N/A |
+
+## `grep.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| grep.contextAfter | 3 | 3 | PASS_THROUGH | N/A | N/A |
+| grep.contextBefore | 1 | 1 | PASS_THROUGH | N/A | N/A |
+| grep.enabled | true | true | PASS_THROUGH | N/A | N/A |
+
+## `hideThinkingBlock.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| hideThinkingBlock | false | false | PASS_THROUGH | N/A | N/A |
+
+## `hindsight.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| hindsight.apiToken | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| hindsight.apiUrl | "http://localhost:8888" | "http://localhost:8888" | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.autoRecall | true | true | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.autoRetain | true | true | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.bankId | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| hindsight.bankIdPrefix | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| hindsight.bankMission | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| hindsight.debug | false | false | KAD_RESTRICTED | PASS | PASS |
+| hindsight.mentalModelAutoSeed | true | true | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.mentalModelMaxRenderChars | 16000 | 16000 | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.mentalModelRefreshIntervalMs | 300000 | 300000 | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.mentalModelsEnabled | true | true | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.recallBudget | "mid" | "mid" | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.recallContextTurns | 1 | 1 | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.recallMaxQueryChars | 800 | 800 | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.recallMaxTokens | 1024 | 1024 | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.recallTimeoutMs | 30000 | 30000 | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.recallTypes | ["world", "experience"] | ["world", "experience"] | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.reflectTimeoutMs | 120000 | 120000 | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.requestTimeoutMs | 30000 | 30000 | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.retainContext | "omp" | "omp" | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.retainEveryNTurns | 3 | 3 | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.retainMission | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| hindsight.retainMode | "full-session" | "full-session" | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.retainOverlapTurns | 2 | 2 | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.retainTimeoutMs | 60000 | 60000 | KAD_RESTRICTED | FAIL | FAIL |
+| hindsight.scoping | "per-project-tagged" | "per-project-tagged" | KAD_RESTRICTED | FAIL | FAIL |
+
+## `images.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| images.autoResize | true | true | PASS_THROUGH | N/A | N/A |
+| images.blockImages | false | false | PASS_THROUGH | N/A | N/A |
+| images.describeForTextModels | true | true | PASS_THROUGH | N/A | N/A |
+| images.urls.backends | ["provider-files", "tail | ["provider-files", "tail | NOT_APPLICABLE | N/A | N/A |
+| images.urls.bindHost | "127.0.0.1" | "127.0.0.1" | NOT_APPLICABLE | N/A | N/A |
+| images.urls.command | UNKNOWN | UNSET | NOT_APPLICABLE | N/A | N/A |
+| images.urls.credentials | {} | UNSET | NOT_APPLICABLE | N/A | N/A |
+| images.urls.enabled | false | false | NOT_APPLICABLE | N/A | N/A |
+| images.urls.options | {} | {} | NOT_APPLICABLE | N/A | N/A |
+| images.urls.publicBaseUrl | UNKNOWN | UNSET | NOT_APPLICABLE | N/A | N/A |
+| images.urls.sshRemotePort | 8787 | 8787 | NOT_APPLICABLE | N/A | N/A |
+| images.urls.sshTarget | UNKNOWN | UNSET | NOT_APPLICABLE | N/A | N/A |
+| images.urls.ttlHours | 72 | 72 | NOT_APPLICABLE | N/A | N/A |
+
+## `includeModelInPrompt.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| includeModelInPrompt | true | true | PASS_THROUGH | N/A | N/A |
+
+## `includeWorkspaceTree.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| includeWorkspaceTree | false | false | PASS_THROUGH | N/A | N/A |
+
+## `inlineToolDescriptors.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| inlineToolDescriptors | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+
+## `inspect_image.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| inspect_image.enabled | false | false | PASS_THROUGH | N/A | N/A |
+| inspect_image.mode | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+| inspect_image.timeoutMs | 300000 | 300000 | PASS_THROUGH | N/A | N/A |
+
+## `interruptMode.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| interruptMode | "immediate" | "immediate" | PASS_THROUGH | N/A | N/A |
+
+## `irc.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| irc.timeoutMs | 120000 | 120000 | PASS_THROUGH | N/A | N/A |
+
+## `julia.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| julia.interpreter | "" | "" | PASS_THROUGH | N/A | N/A |
+
+## `launch.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| launch.enabled | true | true | PASS_THROUGH | N/A | N/A |
+
+## `live.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| live.voice | "sol" | "sol" | NOT_APPLICABLE | N/A | N/A |
+
+## `loop.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| loop.mode | "prompt" | "prompt" | PASS_THROUGH | N/A | N/A |
+
+## `lsp.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| lsp.diagnosticsDeduplicate | true | true | PASS_THROUGH | N/A | N/A |
+| lsp.diagnosticsOnEdit | false | false | PASS_THROUGH | N/A | N/A |
+| lsp.diagnosticsOnWrite | true | true | PASS_THROUGH | N/A | N/A |
+| lsp.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| lsp.formatOnWrite | false | false | PASS_THROUGH | N/A | N/A |
+| lsp.lazy | true | true | PASS_THROUGH | N/A | N/A |
+| lsp.shared | true | true | PASS_THROUGH | N/A | N/A |
+
+## `magicKeywords.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| magicKeywords.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| magicKeywords.orchestrate | true | true | PASS_THROUGH | N/A | N/A |
+| magicKeywords.ultrathink | true | true | PASS_THROUGH | N/A | N/A |
+| magicKeywords.workflow | true | true | PASS_THROUGH | N/A | N/A |
+
+## `marketplace.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| marketplace.autoUpdate | "notify" | "notify" | PASS_THROUGH | N/A | N/A |
+
+## `mcp.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| mcp.enableProjectConfig | true | true | PASS_THROUGH | N/A | N/A |
+| mcp.notificationDebounceMs | 500 | 500 | PASS_THROUGH | N/A | N/A |
+| mcp.notifications | false | false | PASS_THROUGH | N/A | N/A |
+| mcp.renderMarkdownResults | true | true | PASS_THROUGH | N/A | N/A |
+
+## `memories.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| memories.enabled | false | false | KAD_RESTRICTED | PASS | PASS |
+| memories.fallbackTokenLimit | 16000 | 16000 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.maxRawMemoriesForGlobal | 200 | 200 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.maxRolloutAgeDays | 30 | 30 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.maxRolloutsPerStartup | 64 | 64 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.minRolloutIdleHours | 12 | 12 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.phase1InputTokenLimit | 4000 | 4000 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.phase2HeartbeatSeconds | 30 | 30 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.phase2LeaseSeconds | 180 | 180 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.phase2RetryDelaySeconds | 180 | 180 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.rolloutPayloadPercent | 0.7 | 0.7 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.stage1Concurrency | 8 | 8 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.stage1LeaseSeconds | 120 | 120 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.stage1RetryDelaySeconds | 120 | 120 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.summaryInjectionTokenLimit | 5000 | 5000 | KAD_RESTRICTED | FAIL | FAIL |
+| memories.threadScanLimit | 300 | 300 | KAD_RESTRICTED | FAIL | FAIL |
+
+## `memory.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| memory.backend | "off" | "off" | KAD_RESTRICTED | PASS | PASS |
+
+## `minP.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| minP | -1 | -1 | PASS_THROUGH | N/A | N/A |
+
+## `mnemopi.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| mnemopi.autoRecall | true | true | KAD_RESTRICTED | FAIL | FAIL |
+| mnemopi.autoRetain | true | true | KAD_RESTRICTED | FAIL | FAIL |
+| mnemopi.bank | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.dbPath | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.debug | false | false | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.embeddingApiKey | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.embeddingApiUrl | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.embeddingModel | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.embeddingVariant | "en" | "en" | KAD_RESTRICTED | FAIL | FAIL |
+| mnemopi.enhancedRecall | false | false | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.injectionTokenLimit | 5000 | 5000 | KAD_RESTRICTED | FAIL | FAIL |
+| mnemopi.llmApiKey | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.llmBaseUrl | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.llmMode | "smol" | "smol" | KAD_RESTRICTED | FAIL | FAIL |
+| mnemopi.llmModel | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.noEmbeddings | false | false | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.polyphonicRecall | false | false | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.proactiveLinking | false | false | KAD_RESTRICTED | PASS | PASS |
+| mnemopi.recallContextTurns | 3 | 3 | KAD_RESTRICTED | FAIL | FAIL |
+| mnemopi.recallLimit | 8 | 8 | KAD_RESTRICTED | FAIL | FAIL |
+| mnemopi.recallMaxQueryChars | 4000 | 4000 | KAD_RESTRICTED | FAIL | FAIL |
+| mnemopi.retainEveryNTurns | 4 | 4 | KAD_RESTRICTED | FAIL | FAIL |
+| mnemopi.scoping | "per-project" | "per-project" | KAD_RESTRICTED | FAIL | FAIL |
+
+## `model.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| model.loopGuard.checkAssistantContent | true | true | PASS_THROUGH | N/A | N/A |
+| model.loopGuard.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| model.loopGuard.toolCallReminder | true | true | PASS_THROUGH | N/A | N/A |
+| model.toolCallLoopGuard.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| model.toolCallLoopGuard.exemptTools | ["hub"] | ["hub"] | PASS_THROUGH | N/A | N/A |
+| model.toolCallLoopGuard.threshold | 5 | 5 | PASS_THROUGH | N/A | N/A |
+
+## `modelProviderOrder.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| modelProviderOrder | [] | [] | PASS_THROUGH | N/A | N/A |
+
+## `modelRoleStorage.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| modelRoleStorage | "global" | "project" | KAD_DEFAULT | FAIL | PASS |
+
+## `modelRoles.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| modelRoles | {} | {"advisor": "google-anti | KAD_DEFAULT | N/A | N/A |
+
+## `modelTags.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| modelTags | {} | {"oracle": {"name": "Ora | KAD_DEFAULT | N/A | N/A |
+
+## `omitThinking.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| omitThinking | false | false | PASS_THROUGH | N/A | N/A |
+
+## `paste.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| paste.largeMenuThreshold | 100 | 100 | PASS_THROUGH | N/A | N/A |
+
+## `personality.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| personality | "default" | "default" | PASS_THROUGH | N/A | N/A |
+
+## `plan.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| plan.defaultOnStartup | false | false | PASS_THROUGH | N/A | N/A |
+| plan.enabled | true | true | PASS_THROUGH | N/A | N/A |
+
+## `power.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| power.sleepPrevention | "idle" | "idle" | PASS_THROUGH | N/A | N/A |
+
+## `presencePenalty.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| presencePenalty | -1 | -1 | PASS_THROUGH | N/A | N/A |
+
+## `prewalk.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| prewalk.enabled | false | false | PASS_THROUGH | N/A | N/A |
+
+## `proseOnlyThinking.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| proseOnlyThinking | true | true | PASS_THROUGH | N/A | N/A |
+
+## `provider.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| provider.appendOnlyContext | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+
+## `providers.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| providers.anthropic.serverSideFallback | false | false | PASS_THROUGH | N/A | N/A |
+| providers.antigravityEndpoint | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+| providers.autoThinkingMaxEffort | "xhigh" | "xhigh" | PASS_THROUGH | N/A | N/A |
+| providers.autoThinkingModel | "online" | "online" | PASS_THROUGH | N/A | N/A |
+| providers.cacheRetention | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+| providers.fetch | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+| providers.fireworksTier | "standard" | "standard" | PASS_THROUGH | N/A | N/A |
+| providers.imageOrder | [] | [] | PASS_THROUGH | N/A | N/A |
+| providers.kimiApiFormat | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+| providers.maxInFlightRequests | {} | {} | PASS_THROUGH | N/A | N/A |
+| providers.memoryModel | "online" | "online" | PASS_THROUGH | N/A | N/A |
+| providers.ollama-cloud.maxConcurrency | 3 | 3 | NOT_APPLICABLE | N/A | N/A |
+| providers.openai-codex.codeMode | "off" | "off" | NOT_APPLICABLE | N/A | N/A |
+| providers.openai-codex.codeModeDirectTools | [] | [] | NOT_APPLICABLE | N/A | N/A |
+| providers.openaiWebsockets | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+| providers.openrouterVariant | "default" | "default" | PASS_THROUGH | N/A | N/A |
+| providers.streamFirstEventTimeoutSeconds | -1 | -1 | PASS_THROUGH | N/A | N/A |
+| providers.streamIdleTimeoutSeconds | -1 | -1 | PASS_THROUGH | N/A | N/A |
+| providers.tinyModel | "online" | "online" | PASS_THROUGH | N/A | N/A |
+| providers.tinyModelDevice | "default" | "default" | PASS_THROUGH | N/A | N/A |
+| providers.tinyModelDtype | "default" | "default" | PASS_THROUGH | N/A | N/A |
+| providers.tts | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+| providers.unexpectedStopModel | "online" | "online" | PASS_THROUGH | N/A | N/A |
+| providers.webSearchExclude | [] | [] | PASS_THROUGH | N/A | N/A |
+| providers.webSearchGeminiModel | UNKNOWN | UNSET | PASS_THROUGH | N/A | N/A |
+| providers.webSearchOrder | [] | ["gemini", "perplexity", | PASS_THROUGH | N/A | N/A |
+| providers.webSearchTimeoutSeconds | 60 | 60 | PASS_THROUGH | N/A | N/A |
+
+## `python.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| python.interpreter | "" | "" | PASS_THROUGH | N/A | N/A |
+| python.kernelMode | "session" | "session" | PASS_THROUGH | N/A | N/A |
+
+## `read.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| read.defaultLimit | 300 | 300 | PASS_THROUGH | N/A | N/A |
+| read.renderMarkdown | false | false | PASS_THROUGH | N/A | N/A |
+| read.summarize.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| read.summarize.minBodyLines | 4 | 4 | PASS_THROUGH | N/A | N/A |
+| read.summarize.minCommentLines | 6 | 6 | PASS_THROUGH | N/A | N/A |
+| read.summarize.minTotalLines | 100 | 100 | PASS_THROUGH | N/A | N/A |
+| read.summarize.prose | false | false | PASS_THROUGH | N/A | N/A |
+| read.summarize.unfoldLimit | 100 | 100 | PASS_THROUGH | N/A | N/A |
+| read.summarize.unfoldUntil | 50 | 50 | PASS_THROUGH | N/A | N/A |
+| read.toolResultPreview | false | false | PASS_THROUGH | N/A | N/A |
+
+## `readLineNumbers.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| readLineNumbers | false | false | PASS_THROUGH | N/A | N/A |
+
+## `recap.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| recap.enabled | true | true | KAD_RESTRICTED | FAIL | FAIL |
+| recap.idleSeconds | 240 | 240 | KAD_RESTRICTED | FAIL | FAIL |
+
+## `repetitionPenalty.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| repetitionPenalty | -1 | -1 | PASS_THROUGH | N/A | N/A |
+
+## `retry.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| retry.baseDelayMs | 500 | 500 | KAD_WRAPPED | N/A | N/A |
+| retry.enabled | true | true | KAD_WRAPPED | N/A | N/A |
+| retry.fallbackChains | {} | {"default": ["google-ant | KAD_WRAPPED | N/A | N/A |
+| retry.fallbackRevertPolicy | "cooldown-expiry" | "cooldown-expiry" | KAD_WRAPPED | N/A | N/A |
+| retry.maxDelayMs | 300000 | 300000 | KAD_WRAPPED | N/A | N/A |
+| retry.maxRetries | 10 | 10 | KAD_WRAPPED | N/A | N/A |
+| retry.modelFallback | true | true | KAD_WRAPPED | N/A | N/A |
+| retry.usageAwareFallback | false | false | KAD_WRAPPED | N/A | N/A |
+| retry.usageReservePct | 10 | 10 | KAD_WRAPPED | N/A | N/A |
+| retry.usageReservePolicy | "confirm" | "confirm" | KAD_WRAPPED | N/A | N/A |
+
+## `ruby.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| ruby.interpreter | "" | "" | PASS_THROUGH | N/A | N/A |
+
+## `searxng.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| searxng.basicPassword | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| searxng.basicUsername | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| searxng.categories | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| searxng.endpoint | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| searxng.engines | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| searxng.language | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| searxng.safesearch | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| searxng.token | UNKNOWN | UNSET | REQUIRES_HUMAN_POLICY | N/A | N/A |
+
+## `secrets.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| secrets.enabled | false | true | REQUIRES_HUMAN_POLICY | N/A | N/A |
+
+## `security.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| security.enabled | false | true | PASS_THROUGH | N/A | N/A |
+
+## `setupVersion.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| setupVersion | 0 | 2 | PASS_THROUGH | N/A | N/A |
+
+## `share.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| share.redactSecrets | true | true | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| share.serverUrl | "https://my.omp.sh/s" | "https://my.omp.sh/s" | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| share.store | "blob" | "blob" | REQUIRES_HUMAN_POLICY | N/A | N/A |
+
+## `sharpshooter.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| sharpshooter.injectionTokenLimit | 15000 | 15000 | KAD_RESTRICTED | FAIL | FAIL |
+| sharpshooter.intervalMinutes | 5 | 5 | KAD_RESTRICTED | FAIL | FAIL |
+| sharpshooter.model | UNKNOWN | UNSET | KAD_RESTRICTED | PASS | PASS |
+
+## `shellMinimizer.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| shellMinimizer.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| shellMinimizer.except | [] | [] | PASS_THROUGH | N/A | N/A |
+| shellMinimizer.legacyFilters | UNKNOWN | UNSET | PASS_THROUGH | N/A | N/A |
+| shellMinimizer.maxCaptureBytes | 4194304 | 4194304 | PASS_THROUGH | N/A | N/A |
+| shellMinimizer.only | [] | [] | PASS_THROUGH | N/A | N/A |
+| shellMinimizer.settingsPath | UNKNOWN | UNSET | PASS_THROUGH | N/A | N/A |
+| shellMinimizer.sourceOutlineLevel | "default" | "default" | PASS_THROUGH | N/A | N/A |
+
+## `shellPath.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| shellPath | UNKNOWN | UNSET | PASS_THROUGH | N/A | N/A |
+
+## `showHardwareCursor.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| showHardwareCursor | true | true | PASS_THROUGH | N/A | N/A |
+
+## `skills.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| skills.customDirectories | [] | [] | PASS_THROUGH | N/A | N/A |
+| skills.enableAgentsProject | true | true | KAD_DEFAULT | PASS | PASS |
+| skills.enableAgentsUser | true | true | PASS_THROUGH | N/A | N/A |
+| skills.enableClaudeProject | true | true | PASS_THROUGH | N/A | N/A |
+| skills.enableClaudeUser | true | true | PASS_THROUGH | N/A | N/A |
+| skills.enableCodexUser | true | true | PASS_THROUGH | N/A | N/A |
+| skills.enablePiProject | true | false | KAD_DEFAULT | FAIL | PASS |
+| skills.enablePiUser | true | true | PASS_THROUGH | N/A | N/A |
+| skills.enableSkillCommands | true | true | PASS_THROUGH | N/A | N/A |
+| skills.enabled | true | true | KAD_DEFAULT | PASS | PASS |
+| skills.ignoredSkills | [] | [] | PASS_THROUGH | N/A | N/A |
+| skills.includeSkills | [] | [] | PASS_THROUGH | N/A | N/A |
+
+## `snapcompact.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| snapcompact.shape | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+| snapcompact.systemPrompt | "none" | "none" | PASS_THROUGH | N/A | N/A |
+| snapcompact.toolResults | false | false | PASS_THROUGH | N/A | N/A |
+
+## `speech.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| speech.enabled | false | false | NOT_APPLICABLE | N/A | N/A |
+| speech.enhanced | false | false | NOT_APPLICABLE | N/A | N/A |
+| speech.mode | "assistant" | "assistant" | NOT_APPLICABLE | N/A | N/A |
+| speech.voice | "af_heart" | "af_heart" | NOT_APPLICABLE | N/A | N/A |
+
+## `speechgen.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| speechgen.enabled | false | false | PASS_THROUGH | N/A | N/A |
+
+## `spelling.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| spelling.autocomplete | true | true | PASS_THROUGH | N/A | N/A |
+| spelling.autocorrect | false | false | PASS_THROUGH | N/A | N/A |
+| spelling.typoDetection | true | true | PASS_THROUGH | N/A | N/A |
+
+## `startup.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| startup.changelogMode | "summary" | "summary" | PASS_THROUGH | N/A | N/A |
+| startup.checkUpdate | true | true | PASS_THROUGH | N/A | N/A |
+| startup.quiet | false | false | PASS_THROUGH | N/A | N/A |
+| startup.setupWizard | true | true | PASS_THROUGH | N/A | N/A |
+| startup.showSplash | false | false | PASS_THROUGH | N/A | N/A |
+
+## `statusLine.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| statusLine.compactThinkingLevel | true | true | PASS_THROUGH | N/A | N/A |
+| statusLine.contextLine | "embedded" | "embedded" | PASS_THROUGH | N/A | N/A |
+| statusLine.leftSegments | [] | [] | PASS_THROUGH | N/A | N/A |
+| statusLine.preset | "default" | "default" | PASS_THROUGH | N/A | N/A |
+| statusLine.rightSegments | [] | [] | PASS_THROUGH | N/A | N/A |
+| statusLine.segmentOptions | {} | {} | PASS_THROUGH | N/A | N/A |
+| statusLine.separator | "powerline-thin" | "powerline-thin" | PASS_THROUGH | N/A | N/A |
+| statusLine.sessionAccent | true | true | PASS_THROUGH | N/A | N/A |
+| statusLine.showHookStatus | true | true | PASS_THROUGH | N/A | N/A |
+| statusLine.transparent | false | false | PASS_THROUGH | N/A | N/A |
+
+## `steeringMode.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| steeringMode | "one-at-a-time" | "one-at-a-time" | PASS_THROUGH | N/A | N/A |
+
+## `stt.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| stt.enabled | false | false | PASS_THROUGH | N/A | N/A |
+| stt.language | "en" | "en" | PASS_THROUGH | N/A | N/A |
+| stt.modelName | "parakeet" | "parakeet" | PASS_THROUGH | N/A | N/A |
+| stt.submitTrigger | "never" | "never" | PASS_THROUGH | N/A | N/A |
+
+## `symbolPreset.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| symbolPreset | "unicode" | "unicode" | PASS_THROUGH | N/A | N/A |
+
+## `task.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| task.agentAdvisor | {} | {"kad-master": "off", "k | KAD_WRAPPED | N/A | N/A |
+| task.agentIdleTtlMs | 420000 | 420000 | PASS_THROUGH | N/A | N/A |
+| task.agentModelOverrides | {} | {"kad-master": "@plan",  | KAD_WRAPPED | N/A | N/A |
+| task.agentPrewalk | {} | {} | PASS_THROUGH | N/A | N/A |
+| task.batch | true | true | PASS_THROUGH | N/A | N/A |
+| task.disabledAgents | [] | [] | PASS_THROUGH | N/A | N/A |
+| task.eager | "default" | "default" | PASS_THROUGH | N/A | N/A |
+| task.enableEffort | false | false | PASS_THROUGH | N/A | N/A |
+| task.enableLsp | false | false | PASS_THROUGH | N/A | N/A |
+| task.isolation.apply | true | true | PASS_THROUGH | N/A | N/A |
+| task.isolation.commits | "generic" | "generic" | PASS_THROUGH | N/A | N/A |
+| task.isolation.merge | "patch" | "patch" | PASS_THROUGH | N/A | N/A |
+| task.isolation.mode | "none" | "none" | PASS_THROUGH | N/A | N/A |
+| task.maxConcurrency | 32 | 32 | PASS_THROUGH | N/A | N/A |
+| task.maxEffort | "max" | "max" | PASS_THROUGH | N/A | N/A |
+| task.maxRecursionDepth | 2 | 2 | PASS_THROUGH | N/A | N/A |
+| task.maxRuntimeMs | 0 | 0 | PASS_THROUGH | N/A | N/A |
+| task.prewalk | false | false | PASS_THROUGH | N/A | N/A |
+| task.showResolvedModelBadge | false | false | PASS_THROUGH | N/A | N/A |
+| task.softRequestBudget | 200 | 200 | PASS_THROUGH | N/A | N/A |
+| task.softRequestBudgetNotice | true | true | PASS_THROUGH | N/A | N/A |
+
+## `tasks.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| tasks.todoClearDelay | 60 | 60 | PASS_THROUGH | N/A | N/A |
+
+## `temperature.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| temperature | -1 | -1 | PASS_THROUGH | N/A | N/A |
+
+## `terminal.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| terminal.showImages | true | true | PASS_THROUGH | N/A | N/A |
+| terminal.showProgress | false | false | PASS_THROUGH | N/A | N/A |
+
+## `textVerbosity.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| textVerbosity | "medium" | "medium" | PASS_THROUGH | N/A | N/A |
+
+## `theme.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| theme.dark | "titanium" | "obsidian" | PASS_THROUGH | N/A | N/A |
+| theme.light | "light" | "light" | PASS_THROUGH | N/A | N/A |
+
+## `thinkingBudgets.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| thinkingBudgets.high | 16384 | 16384 | PASS_THROUGH | N/A | N/A |
+| thinkingBudgets.low | 2048 | 2048 | PASS_THROUGH | N/A | N/A |
+| thinkingBudgets.max | 32768 | 32768 | PASS_THROUGH | N/A | N/A |
+| thinkingBudgets.medium | 8192 | 8192 | PASS_THROUGH | N/A | N/A |
+| thinkingBudgets.minimal | 1024 | 1024 | PASS_THROUGH | N/A | N/A |
+| thinkingBudgets.xhigh | 32768 | 32768 | PASS_THROUGH | N/A | N/A |
+
+## `tier.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| tier.advisor | "none" | "none" | PASS_THROUGH | N/A | N/A |
+| tier.anthropic | "none" | "none" | PASS_THROUGH | N/A | N/A |
+| tier.google | "none" | "none" | PASS_THROUGH | N/A | N/A |
+| tier.openai | "none" | "none" | PASS_THROUGH | N/A | N/A |
+| tier.subagent | "inherit" | "inherit" | PASS_THROUGH | N/A | N/A |
+
+## `title.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| title.refreshOnReplan | true | true | PASS_THROUGH | N/A | N/A |
+
+## `todo.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| todo.eager | "default" | "default" | PASS_THROUGH | N/A | N/A |
+| todo.enabled | true | true | PASS_THROUGH | N/A | N/A |
+| todo.reminders | true | true | PASS_THROUGH | N/A | N/A |
+| todo.remindersMax | 3 | 3 | PASS_THROUGH | N/A | N/A |
+
+## `tools.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| tools.abortOnFabricatedResult | true | true | PASS_THROUGH | N/A | N/A |
+| tools.approval | {} | {} | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| tools.approvalMode | "yolo" | "yolo" | REQUIRES_HUMAN_POLICY | N/A | N/A |
+| tools.artifactHeadBytes | 20 | 20 | PASS_THROUGH | N/A | N/A |
+| tools.artifactSpillThreshold | 50 | 50 | PASS_THROUGH | N/A | N/A |
+| tools.artifactTailBytes | 20 | 20 | PASS_THROUGH | N/A | N/A |
+| tools.artifactTailLines | 500 | 500 | PASS_THROUGH | N/A | N/A |
+| tools.format | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+| tools.intentTracing | true | true | PASS_THROUGH | N/A | N/A |
+| tools.maxTimeout | 0 | 0 | PASS_THROUGH | N/A | N/A |
+| tools.outputMaxColumns | 768 | 768 | PASS_THROUGH | N/A | N/A |
+| tools.xdev | true | true | PASS_THROUGH | N/A | N/A |
+| tools.xdevDocs | "builtins" | "builtins" | PASS_THROUGH | N/A | N/A |
+| tools.xdevInlineDevices | [] | [] | PASS_THROUGH | N/A | N/A |
+
+## `topK.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| topK | -1 | -1 | PASS_THROUGH | N/A | N/A |
+
+## `topP.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| topP | -1 | -1 | PASS_THROUGH | N/A | N/A |
+
+## `treeFilterMode.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| treeFilterMode | "default" | "default" | PASS_THROUGH | N/A | N/A |
+
+## `tts.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| tts.localModel | "kokoro" | "kokoro" | NOT_APPLICABLE | N/A | N/A |
+| tts.localVoice | "af_heart" | "af_heart" | NOT_APPLICABLE | N/A | N/A |
+
+## `ttsr.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| ttsr.builtinRules | true | true | KAD_RESTRICTED | FAIL | FAIL |
+| ttsr.contextMode | "discard" | "discard" | KAD_RESTRICTED | FAIL | FAIL |
+| ttsr.disabledRules | [] | [] | KAD_RESTRICTED | FAIL | FAIL |
+| ttsr.enabled | true | true | KAD_RESTRICTED | FAIL | FAIL |
+| ttsr.interruptMode | "always" | "always" | KAD_RESTRICTED | FAIL | FAIL |
+| ttsr.repeatGap | 10 | 10 | KAD_RESTRICTED | FAIL | FAIL |
+| ttsr.repeatMode | "once" | "once" | KAD_RESTRICTED | FAIL | FAIL |
+
+## `tui.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| tui.codexResetFireworks | false | false | PASS_THROUGH | N/A | N/A |
+| tui.hyperlinks | "auto" | "auto" | PASS_THROUGH | N/A | N/A |
+| tui.imeSafeCursor | false | false | PASS_THROUGH | N/A | N/A |
+| tui.maxInlineImageColumns | 100 | 100 | PASS_THROUGH | N/A | N/A |
+| tui.maxInlineImageRows | 20 | 20 | PASS_THROUGH | N/A | N/A |
+| tui.maxInlineImages | 8 | 8 | PASS_THROUGH | N/A | N/A |
+| tui.renderMermaid | true | true | PASS_THROUGH | N/A | N/A |
+| tui.resizeScrollback | "rebuild" | "rebuild" | PASS_THROUGH | N/A | N/A |
+| tui.textSizing | false | false | PASS_THROUGH | N/A | N/A |
+| tui.tight | false | false | PASS_THROUGH | N/A | N/A |
+| tui.titleState | true | true | PASS_THROUGH | N/A | N/A |
+
+## `update.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| update.channel | "stable" | "stable" | PASS_THROUGH | N/A | N/A |
+
+## `vault.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| vault.enabled | false | true | PASS_THROUGH | N/A | N/A |
+
+## `web_search.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| web_search.enabled | true | true | PASS_THROUGH | N/A | N/A |
+
+## `workspace.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| workspace.additionalDirectories | [] | [] | PASS_THROUGH | N/A | N/A |
+
+## `worktree.*`
+
+| Setting | Schema default | Effective | KAD policy | Default compat | Effective compat |
+|---|---|---|---|---|---|
+| worktree.base | UNKNOWN | UNSET | PASS_THROUGH | N/A | N/A |

@@ -1,0 +1,2432 @@
+{
+  "schema": "kad.omp-schema-defaults/v1",
+  "omp_version": "18.0.11",
+  "source_revision": "b8ce33a58911c26bed1d84f0db9a5e2e727c49a2",
+  "source_path": "packages/coding-agent/src/config/settings-schema.ts",
+  "extraction_method": "static-schema-extraction",
+  "settings": {
+    "setupVersion": {
+      "type": "number",
+      "schema_default": 0,
+      "default_kind": "literal"
+    },
+    "auth.broker.url": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "auth.broker.token": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "autoResume": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "power.sleepPrevention": {
+      "type": "enum",
+      "schema_default": "idle",
+      "default_kind": "literal"
+    },
+    "advisor.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "prewalk.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "advisor.syncBacklog": {
+      "type": "enum",
+      "schema_default": "off",
+      "default_kind": "literal"
+    },
+    "advisor.immuneTurns": {
+      "type": "number",
+      "schema_default": 3,
+      "default_kind": "literal"
+    },
+    "shellPath": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "git.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "extensions": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "constant"
+    },
+    "enabledModels": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "constant"
+    },
+    "disabledProviders": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "constant"
+    },
+    "providers.maxInFlightRequests": {
+      "type": "record",
+      "schema_default": {},
+      "default_kind": "constant"
+    },
+    "providers.openai-codex.codeMode": {
+      "type": "enum",
+      "schema_default": "off",
+      "default_kind": "literal"
+    },
+    "providers.openai-codex.codeModeDirectTools": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "constant"
+    },
+    "disabledExtensions": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "constant"
+    },
+    "modelRoleStorage": {
+      "type": "enum",
+      "schema_default": "global",
+      "default_kind": "literal"
+    },
+    "modelRoles": {
+      "type": "record",
+      "schema_default": {},
+      "default_kind": "constant"
+    },
+    "modelTags": {
+      "type": "record",
+      "schema_default": {},
+      "default_kind": "constant"
+    },
+    "modelProviderOrder": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "constant"
+    },
+    "cycleOrder": {
+      "type": "array",
+      "schema_default": [
+        "smol",
+        "default",
+        "slow"
+      ],
+      "default_kind": "constant"
+    },
+    "theme.dark": {
+      "type": "string",
+      "schema_default": "titanium",
+      "default_kind": "literal"
+    },
+    "theme.light": {
+      "type": "string",
+      "schema_default": "light",
+      "default_kind": "literal"
+    },
+    "symbolPreset": {
+      "type": "enum",
+      "schema_default": "unicode",
+      "default_kind": "literal"
+    },
+    "colorBlindMode": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "composer.shape": {
+      "type": "string",
+      "schema_default": "band",
+      "default_kind": "literal"
+    },
+    "statusLine.preset": {
+      "type": "enum",
+      "schema_default": "default",
+      "default_kind": "literal"
+    },
+    "statusLine.separator": {
+      "type": "enum",
+      "schema_default": "powerline-thin",
+      "default_kind": "literal"
+    },
+    "statusLine.contextLine": {
+      "type": "enum",
+      "schema_default": "embedded",
+      "default_kind": "literal"
+    },
+    "statusLine.sessionAccent": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "statusLine.transparent": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "statusLine.compactThinkingLevel": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "tools.artifactSpillThreshold": {
+      "type": "number",
+      "schema_default": 50,
+      "default_kind": "literal"
+    },
+    "tools.artifactTailBytes": {
+      "type": "number",
+      "schema_default": 20,
+      "default_kind": "literal"
+    },
+    "tools.artifactHeadBytes": {
+      "type": "number",
+      "schema_default": 20,
+      "default_kind": "literal"
+    },
+    "tools.outputMaxColumns": {
+      "type": "number",
+      "schema_default": 768,
+      "default_kind": "literal"
+    },
+    "tools.artifactTailLines": {
+      "type": "number",
+      "schema_default": 500,
+      "default_kind": "literal"
+    },
+    "statusLine.showHookStatus": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "statusLine.leftSegments": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "statusLine.rightSegments": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "statusLine.segmentOptions": {
+      "type": "record",
+      "schema_default": {},
+      "default_kind": "constant"
+    },
+    "terminal.showImages": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "images.autoResize": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "images.blockImages": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "images.describeForTextModels": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "images.urls.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "images.urls.backends": {
+      "type": "array",
+      "schema_default": [
+        "provider-files",
+        "tailscale",
+        "cloudflared",
+        "litterbox"
+      ],
+      "default_kind": "literal-array"
+    },
+    "images.urls.options": {
+      "type": "record",
+      "schema_default": {},
+      "default_kind": "constant"
+    },
+    "images.urls.credentials": {
+      "type": "record",
+      "schema_default": {},
+      "default_kind": "constant"
+    },
+    "images.urls.command": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "images.urls.publicBaseUrl": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "images.urls.ttlHours": {
+      "type": "number",
+      "schema_default": 72,
+      "default_kind": "literal"
+    },
+    "images.urls.bindHost": {
+      "type": "string",
+      "schema_default": "127.0.0.1",
+      "default_kind": "literal"
+    },
+    "images.urls.sshTarget": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "images.urls.sshRemotePort": {
+      "type": "number",
+      "schema_default": 8787,
+      "default_kind": "literal"
+    },
+    "tui.maxInlineImageColumns": {
+      "type": "number",
+      "schema_default": 100,
+      "default_kind": "literal"
+    },
+    "tui.maxInlineImageRows": {
+      "type": "number",
+      "schema_default": 20,
+      "default_kind": "literal"
+    },
+    "tui.maxInlineImages": {
+      "type": "number",
+      "schema_default": 8,
+      "default_kind": "literal"
+    },
+    "tui.resizeScrollback": {
+      "type": "enum",
+      "schema_default": "rebuild",
+      "default_kind": "literal"
+    },
+    "terminal.showProgress": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "tui.textSizing": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "tui.renderMermaid": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "tui.codexResetFireworks": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "tui.titleState": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "tui.hyperlinks": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "tui.tight": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "display.shimmer": {
+      "type": "enum",
+      "schema_default": "classic",
+      "default_kind": "literal"
+    },
+    "display.smoothStreaming": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "display.hideToolActivity": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "display.showTokenUsage": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "display.showTurnTime": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "display.cacheMissMarker": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "display.collapseCompacted": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "showHardwareCursor": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "tui.imeSafeCursor": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "defaultThinkingLevel": {
+      "type": "enum",
+      "schema_default": "high",
+      "default_kind": "literal"
+    },
+    "hideThinkingBlock": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "proseOnlyThinking": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "omitThinking": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "externalThinking": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "model.loopGuard.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "model.loopGuard.checkAssistantContent": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "model.loopGuard.toolCallReminder": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "model.toolCallLoopGuard.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "model.toolCallLoopGuard.threshold": {
+      "type": "number",
+      "schema_default": 5,
+      "default_kind": "literal"
+    },
+    "model.toolCallLoopGuard.exemptTools": {
+      "type": "array",
+      "schema_default": [
+        "hub"
+      ],
+      "default_kind": "constant"
+    },
+    "inlineToolDescriptors": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "includeModelInPrompt": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "includeWorkspaceTree": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "workspace.additionalDirectories": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "personality": {
+      "type": "enum",
+      "schema_default": "default",
+      "default_kind": "literal"
+    },
+    "temperature": {
+      "type": "number",
+      "schema_default": -1,
+      "default_kind": "literal"
+    },
+    "topP": {
+      "type": "number",
+      "schema_default": -1,
+      "default_kind": "literal"
+    },
+    "topK": {
+      "type": "number",
+      "schema_default": -1,
+      "default_kind": "literal"
+    },
+    "minP": {
+      "type": "number",
+      "schema_default": -1,
+      "default_kind": "literal"
+    },
+    "presencePenalty": {
+      "type": "number",
+      "schema_default": -1,
+      "default_kind": "literal"
+    },
+    "repetitionPenalty": {
+      "type": "number",
+      "schema_default": -1,
+      "default_kind": "literal"
+    },
+    "textVerbosity": {
+      "type": "enum",
+      "schema_default": "medium",
+      "default_kind": "literal"
+    },
+    "tier.openai": {
+      "type": "enum",
+      "schema_default": "none",
+      "default_kind": "literal"
+    },
+    "tier.anthropic": {
+      "type": "enum",
+      "schema_default": "none",
+      "default_kind": "literal"
+    },
+    "tier.google": {
+      "type": "enum",
+      "schema_default": "none",
+      "default_kind": "literal"
+    },
+    "tier.subagent": {
+      "type": "enum",
+      "schema_default": "inherit",
+      "default_kind": "literal"
+    },
+    "tier.advisor": {
+      "type": "enum",
+      "schema_default": "none",
+      "default_kind": "literal"
+    },
+    "retry.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "retry.maxRetries": {
+      "type": "number",
+      "schema_default": 10,
+      "default_kind": "literal"
+    },
+    "retry.baseDelayMs": {
+      "type": "number",
+      "schema_default": 500,
+      "default_kind": "literal"
+    },
+    "retry.maxDelayMs": {
+      "type": "number",
+      "schema_default": 300000,
+      "default_kind": "arithmetic"
+    },
+    "retry.modelFallback": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "retry.usageAwareFallback": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "retry.usageReservePct": {
+      "type": "number",
+      "schema_default": 10,
+      "default_kind": "literal"
+    },
+    "retry.usageReservePolicy": {
+      "type": "enum",
+      "schema_default": "confirm",
+      "default_kind": "literal"
+    },
+    "retry.fallbackChains": {
+      "type": "record",
+      "schema_default": {},
+      "default_kind": "constant"
+    },
+    "retry.fallbackRevertPolicy": {
+      "type": "enum",
+      "schema_default": "cooldown-expiry",
+      "default_kind": "literal"
+    },
+    "providers.anthropic.serverSideFallback": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "steeringMode": {
+      "type": "enum",
+      "schema_default": "one-at-a-time",
+      "default_kind": "literal"
+    },
+    "followUpMode": {
+      "type": "enum",
+      "schema_default": "one-at-a-time",
+      "default_kind": "literal"
+    },
+    "interruptMode": {
+      "type": "enum",
+      "schema_default": "immediate",
+      "default_kind": "literal"
+    },
+    "loop.mode": {
+      "type": "enum",
+      "schema_default": "prompt",
+      "default_kind": "literal"
+    },
+    "doubleEscapeAction": {
+      "type": "enum",
+      "schema_default": "tree",
+      "default_kind": "literal"
+    },
+    "treeFilterMode": {
+      "type": "enum",
+      "schema_default": "default",
+      "default_kind": "literal"
+    },
+    "autocompleteMaxVisible": {
+      "type": "number",
+      "schema_default": 10,
+      "default_kind": "literal"
+    },
+    "spelling.typoDetection": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "spelling.autocomplete": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "spelling.autocorrect": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "emojiAutocomplete": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "paste.largeMenuThreshold": {
+      "type": "number",
+      "schema_default": 100,
+      "default_kind": "literal"
+    },
+    "startup.quiet": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "startup.showSplash": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "startup.setupWizard": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "startup.checkUpdate": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "update.channel": {
+      "type": "enum",
+      "schema_default": "stable",
+      "default_kind": "literal"
+    },
+    "marketplace.autoUpdate": {
+      "type": "enum",
+      "schema_default": "notify",
+      "default_kind": "literal"
+    },
+    "startup.changelogMode": {
+      "type": "enum",
+      "schema_default": "summary",
+      "default_kind": "literal"
+    },
+    "magicKeywords.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "magicKeywords.ultrathink": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "magicKeywords.orchestrate": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "magicKeywords.workflow": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "completion.notify": {
+      "type": "enum",
+      "schema_default": "on",
+      "default_kind": "literal"
+    },
+    "error.notify": {
+      "type": "enum",
+      "schema_default": "off",
+      "default_kind": "literal"
+    },
+    "ask.timeout": {
+      "type": "number",
+      "schema_default": 0,
+      "default_kind": "literal"
+    },
+    "ask.notify": {
+      "type": "enum",
+      "schema_default": "on",
+      "default_kind": "literal"
+    },
+    "recap.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "recap.idleSeconds": {
+      "type": "number",
+      "schema_default": 240,
+      "default_kind": "literal"
+    },
+    "collab.relayUrl": {
+      "type": "string",
+      "schema_default": "wss://my.omp.sh",
+      "default_kind": "constant"
+    },
+    "collab.webUrl": {
+      "type": "string",
+      "schema_default": "",
+      "default_kind": "literal"
+    },
+    "collab.displayName": {
+      "type": "string",
+      "schema_default": "",
+      "default_kind": "literal"
+    },
+    "share.serverUrl": {
+      "type": "string",
+      "schema_default": "https://my.omp.sh/s",
+      "default_kind": "constant"
+    },
+    "share.store": {
+      "type": "enum",
+      "schema_default": "blob",
+      "default_kind": "literal"
+    },
+    "share.redactSecrets": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "stt.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "stt.language": {
+      "type": "string",
+      "schema_default": "en",
+      "default_kind": "literal"
+    },
+    "stt.modelName": {
+      "type": "enum",
+      "schema_default": "parakeet",
+      "default_kind": "constant"
+    },
+    "stt.submitTrigger": {
+      "type": "enum",
+      "schema_default": "never",
+      "default_kind": "literal"
+    },
+    "contextPromotion.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "extendedContext": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "compaction.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "compaction.midTurnEnabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "compaction.methodOrder": {
+      "type": "array",
+      "schema_default": [
+        "snapcompact"
+      ],
+      "default_kind": "constant"
+    },
+    "compaction.thresholdPercent": {
+      "type": "number",
+      "schema_default": -1,
+      "default_kind": "literal"
+    },
+    "compaction.thresholdTokens": {
+      "type": "number",
+      "schema_default": -1,
+      "default_kind": "literal"
+    },
+    "compaction.handoffSaveToDisk": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "compaction.remoteStreamingV2Enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "compaction.asyncEnabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "compaction.reserveTokens": {
+      "type": "number",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "compaction.keepRecentTokens": {
+      "type": "number",
+      "schema_default": 20000,
+      "default_kind": "literal"
+    },
+    "compaction.autoContinue": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "compaction.remoteEndpoint": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "compaction.v2RetainedMessageBudget": {
+      "type": "number",
+      "schema_default": 64000,
+      "default_kind": "literal"
+    },
+    "compaction.idleEnabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "compaction.idleThresholdTokens": {
+      "type": "number",
+      "schema_default": 200000,
+      "default_kind": "literal"
+    },
+    "compaction.idleTimeoutSeconds": {
+      "type": "number",
+      "schema_default": 300,
+      "default_kind": "literal"
+    },
+    "compaction.supersedeReads": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "compaction.dropUseless": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "snapcompact.systemPrompt": {
+      "type": "enum",
+      "schema_default": "none",
+      "default_kind": "literal"
+    },
+    "snapcompact.toolResults": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "tools.format": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "snapcompact.shape": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "branchSummary.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "branchSummary.reserveTokens": {
+      "type": "number",
+      "schema_default": 16384,
+      "default_kind": "literal"
+    },
+    "memories.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "memories.maxRolloutsPerStartup": {
+      "type": "number",
+      "schema_default": 64,
+      "default_kind": "literal"
+    },
+    "memories.maxRolloutAgeDays": {
+      "type": "number",
+      "schema_default": 30,
+      "default_kind": "literal"
+    },
+    "memories.minRolloutIdleHours": {
+      "type": "number",
+      "schema_default": 12,
+      "default_kind": "literal"
+    },
+    "memories.threadScanLimit": {
+      "type": "number",
+      "schema_default": 300,
+      "default_kind": "literal"
+    },
+    "memories.maxRawMemoriesForGlobal": {
+      "type": "number",
+      "schema_default": 200,
+      "default_kind": "literal"
+    },
+    "memories.stage1Concurrency": {
+      "type": "number",
+      "schema_default": 8,
+      "default_kind": "literal"
+    },
+    "memories.stage1LeaseSeconds": {
+      "type": "number",
+      "schema_default": 120,
+      "default_kind": "literal"
+    },
+    "memories.stage1RetryDelaySeconds": {
+      "type": "number",
+      "schema_default": 120,
+      "default_kind": "literal"
+    },
+    "memories.phase2LeaseSeconds": {
+      "type": "number",
+      "schema_default": 180,
+      "default_kind": "literal"
+    },
+    "memories.phase2RetryDelaySeconds": {
+      "type": "number",
+      "schema_default": 180,
+      "default_kind": "literal"
+    },
+    "memories.phase2HeartbeatSeconds": {
+      "type": "number",
+      "schema_default": 30,
+      "default_kind": "literal"
+    },
+    "memories.rolloutPayloadPercent": {
+      "type": "number",
+      "schema_default": 0.7,
+      "default_kind": "literal"
+    },
+    "memories.phase1InputTokenLimit": {
+      "type": "number",
+      "schema_default": 4000,
+      "default_kind": "literal"
+    },
+    "memories.fallbackTokenLimit": {
+      "type": "number",
+      "schema_default": 16000,
+      "default_kind": "literal"
+    },
+    "memories.summaryInjectionTokenLimit": {
+      "type": "number",
+      "schema_default": 5000,
+      "default_kind": "literal"
+    },
+    "memory.backend": {
+      "type": "enum",
+      "schema_default": "off",
+      "default_kind": "literal"
+    },
+    "sharpshooter.model": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "sharpshooter.intervalMinutes": {
+      "type": "number",
+      "schema_default": 5,
+      "default_kind": "literal"
+    },
+    "sharpshooter.injectionTokenLimit": {
+      "type": "number",
+      "schema_default": 15000,
+      "default_kind": "literal"
+    },
+    "autolearn.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "autolearn.autoContinue": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "autolearn.minToolCalls": {
+      "type": "number",
+      "schema_default": 5,
+      "default_kind": "literal"
+    },
+    "mnemopi.dbPath": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "mnemopi.bank": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "mnemopi.scoping": {
+      "type": "enum",
+      "schema_default": "per-project",
+      "default_kind": "literal"
+    },
+    "mnemopi.embeddingVariant": {
+      "type": "enum",
+      "schema_default": "en",
+      "default_kind": "literal"
+    },
+    "mnemopi.autoRecall": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "mnemopi.autoRetain": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "mnemopi.polyphonicRecall": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "mnemopi.enhancedRecall": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "mnemopi.proactiveLinking": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "mnemopi.noEmbeddings": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "mnemopi.embeddingModel": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "mnemopi.embeddingApiUrl": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "mnemopi.embeddingApiKey": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "mnemopi.llmMode": {
+      "type": "enum",
+      "schema_default": "smol",
+      "default_kind": "literal"
+    },
+    "mnemopi.llmBaseUrl": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "mnemopi.llmApiKey": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "mnemopi.llmModel": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "mnemopi.retainEveryNTurns": {
+      "type": "number",
+      "schema_default": 4,
+      "default_kind": "literal"
+    },
+    "mnemopi.recallLimit": {
+      "type": "number",
+      "schema_default": 8,
+      "default_kind": "literal"
+    },
+    "mnemopi.recallContextTurns": {
+      "type": "number",
+      "schema_default": 3,
+      "default_kind": "literal"
+    },
+    "mnemopi.recallMaxQueryChars": {
+      "type": "number",
+      "schema_default": 4000,
+      "default_kind": "literal"
+    },
+    "mnemopi.injectionTokenLimit": {
+      "type": "number",
+      "schema_default": 5000,
+      "default_kind": "literal"
+    },
+    "mnemopi.debug": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "hindsight.apiUrl": {
+      "type": "string",
+      "schema_default": "http://localhost:8888",
+      "default_kind": "constant"
+    },
+    "hindsight.apiToken": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "hindsight.bankId": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "hindsight.bankIdPrefix": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "hindsight.scoping": {
+      "type": "enum",
+      "schema_default": "per-project-tagged",
+      "default_kind": "literal"
+    },
+    "hindsight.bankMission": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "hindsight.retainMission": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "hindsight.autoRecall": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "hindsight.autoRetain": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "hindsight.retainMode": {
+      "type": "enum",
+      "schema_default": "full-session",
+      "default_kind": "literal"
+    },
+    "hindsight.retainEveryNTurns": {
+      "type": "number",
+      "schema_default": 3,
+      "default_kind": "literal"
+    },
+    "hindsight.retainOverlapTurns": {
+      "type": "number",
+      "schema_default": 2,
+      "default_kind": "literal"
+    },
+    "hindsight.retainContext": {
+      "type": "string",
+      "schema_default": "omp",
+      "default_kind": "literal"
+    },
+    "hindsight.recallBudget": {
+      "type": "enum",
+      "schema_default": "mid",
+      "default_kind": "literal"
+    },
+    "hindsight.recallMaxTokens": {
+      "type": "number",
+      "schema_default": 1024,
+      "default_kind": "literal"
+    },
+    "hindsight.recallContextTurns": {
+      "type": "number",
+      "schema_default": 1,
+      "default_kind": "literal"
+    },
+    "hindsight.recallMaxQueryChars": {
+      "type": "number",
+      "schema_default": 800,
+      "default_kind": "literal"
+    },
+    "hindsight.recallTypes": {
+      "type": "array",
+      "schema_default": [
+        "world",
+        "experience"
+      ],
+      "default_kind": "constant"
+    },
+    "hindsight.debug": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "hindsight.requestTimeoutMs": {
+      "type": "number",
+      "schema_default": 30000,
+      "default_kind": "constant"
+    },
+    "hindsight.reflectTimeoutMs": {
+      "type": "number",
+      "schema_default": 120000,
+      "default_kind": "constant"
+    },
+    "hindsight.recallTimeoutMs": {
+      "type": "number",
+      "schema_default": 30000,
+      "default_kind": "constant"
+    },
+    "hindsight.retainTimeoutMs": {
+      "type": "number",
+      "schema_default": 60000,
+      "default_kind": "constant"
+    },
+    "hindsight.mentalModelsEnabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "hindsight.mentalModelAutoSeed": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "hindsight.mentalModelRefreshIntervalMs": {
+      "type": "number",
+      "schema_default": 300000,
+      "default_kind": "arithmetic"
+    },
+    "hindsight.mentalModelMaxRenderChars": {
+      "type": "number",
+      "schema_default": 16000,
+      "default_kind": "constant"
+    },
+    "ttsr.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "ttsr.contextMode": {
+      "type": "enum",
+      "schema_default": "discard",
+      "default_kind": "literal"
+    },
+    "ttsr.interruptMode": {
+      "type": "enum",
+      "schema_default": "always",
+      "default_kind": "literal"
+    },
+    "ttsr.repeatMode": {
+      "type": "enum",
+      "schema_default": "once",
+      "default_kind": "literal"
+    },
+    "ttsr.repeatGap": {
+      "type": "number",
+      "schema_default": 10,
+      "default_kind": "literal"
+    },
+    "ttsr.builtinRules": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "ttsr.disabledRules": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "edit.mode": {
+      "type": "enum",
+      "schema_default": "hashline",
+      "default_kind": "literal"
+    },
+    "edit.fuzzyMatch": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "edit.fuzzyThreshold": {
+      "type": "number",
+      "schema_default": 0.95,
+      "default_kind": "literal"
+    },
+    "edit.streamingAbort": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "edit.blockAutoGenerated": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "edit.enforceSeenLines": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "edit.blackbox.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "edit.autoRepair.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "readLineNumbers": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "read.defaultLimit": {
+      "type": "number",
+      "schema_default": 300,
+      "default_kind": "literal"
+    },
+    "read.renderMarkdown": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "read.summarize.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "read.summarize.prose": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "read.summarize.minBodyLines": {
+      "type": "number",
+      "schema_default": 4,
+      "default_kind": "literal"
+    },
+    "read.summarize.minCommentLines": {
+      "type": "number",
+      "schema_default": 6,
+      "default_kind": "literal"
+    },
+    "read.summarize.minTotalLines": {
+      "type": "number",
+      "schema_default": 100,
+      "default_kind": "literal"
+    },
+    "read.summarize.unfoldUntil": {
+      "type": "number",
+      "schema_default": 50,
+      "default_kind": "literal"
+    },
+    "read.summarize.unfoldLimit": {
+      "type": "number",
+      "schema_default": 100,
+      "default_kind": "literal"
+    },
+    "read.toolResultPreview": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "lsp.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "lsp.lazy": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "lsp.shared": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "lsp.formatOnWrite": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "lsp.diagnosticsOnWrite": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "lsp.diagnosticsOnEdit": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "lsp.diagnosticsDeduplicate": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "bash.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "bash.autoBackground.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "bash.patterns": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "bashInterceptor.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "bashInterceptor.patterns": {
+      "type": "array",
+      "schema_default": "[non-empty object array: 5 bash interceptor rules]",
+      "default_kind": "constant"
+    },
+    "bash.direnv": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "bash.direnvLoadTimeoutMs": {
+      "type": "number",
+      "schema_default": 30000,
+      "default_kind": "constant"
+    },
+    "shellMinimizer.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "shellMinimizer.settingsPath": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "shellMinimizer.only": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "constant"
+    },
+    "shellMinimizer.except": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "constant"
+    },
+    "shellMinimizer.maxCaptureBytes": {
+      "type": "number",
+      "schema_default": 4194304,
+      "default_kind": "arithmetic"
+    },
+    "shellMinimizer.sourceOutlineLevel": {
+      "type": "enum",
+      "schema_default": "default",
+      "default_kind": "literal"
+    },
+    "shellMinimizer.legacyFilters": {
+      "type": "boolean",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "eval.py": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "eval.js": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "eval.rb": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "eval.jl": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "eval.autoBackground.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "eval.autoBackground.thresholdMs": {
+      "type": "number",
+      "schema_default": 60000,
+      "default_kind": "constant"
+    },
+    "python.kernelMode": {
+      "type": "enum",
+      "schema_default": "session",
+      "default_kind": "literal"
+    },
+    "python.interpreter": {
+      "type": "string",
+      "schema_default": "",
+      "default_kind": "literal"
+    },
+    "ruby.interpreter": {
+      "type": "string",
+      "schema_default": "",
+      "default_kind": "literal"
+    },
+    "julia.interpreter": {
+      "type": "string",
+      "schema_default": "",
+      "default_kind": "literal"
+    },
+    "tools.approval": {
+      "type": "record",
+      "schema_default": {},
+      "default_kind": "literal-object"
+    },
+    "tools.approvalMode": {
+      "type": "enum",
+      "schema_default": "yolo",
+      "default_kind": "literal"
+    },
+    "todo.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "todo.reminders": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "todo.remindersMax": {
+      "type": "number",
+      "schema_default": 3,
+      "default_kind": "literal"
+    },
+    "todo.eager": {
+      "type": "enum",
+      "schema_default": "default",
+      "default_kind": "literal"
+    },
+    "glob.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "grep.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "grep.contextBefore": {
+      "type": "number",
+      "schema_default": 1,
+      "default_kind": "literal"
+    },
+    "grep.contextAfter": {
+      "type": "number",
+      "schema_default": 3,
+      "default_kind": "literal"
+    },
+    "astGrep.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "astEdit.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "debug.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "launch.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "speechgen.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "generate_image.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "inspect_image.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "inspect_image.mode": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "computer.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "computer.display": {
+      "type": "string",
+      "schema_default": "all",
+      "default_kind": "literal"
+    },
+    "computer.maxWidth": {
+      "type": "number",
+      "schema_default": 3840,
+      "default_kind": "literal"
+    },
+    "computer.maxHeight": {
+      "type": "number",
+      "schema_default": 2400,
+      "default_kind": "literal"
+    },
+    "inspect_image.timeoutMs": {
+      "type": "number",
+      "schema_default": 300000,
+      "default_kind": "constant"
+    },
+    "checkpoint.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "fetch.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "vault.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "github.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "github.cache.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "github.cache.softTtlSec": {
+      "type": "number",
+      "schema_default": 300,
+      "default_kind": "literal"
+    },
+    "github.cache.hardTtlSec": {
+      "type": "number",
+      "schema_default": 604800,
+      "default_kind": "literal"
+    },
+    "web_search.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "security.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "ask.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "browser.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "browser.cdpUrl": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "browser.relay": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "browser.relayUrl": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "browser.headless": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "browser.cmux": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "browser.screenshotDir": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "tools.intentTracing": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "tools.abortOnFabricatedResult": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "tools.maxTimeout": {
+      "type": "number",
+      "schema_default": 0,
+      "default_kind": "literal"
+    },
+    "async.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "async.maxJobs": {
+      "type": "number",
+      "schema_default": 100,
+      "default_kind": "literal"
+    },
+    "async.pollWaitDuration": {
+      "type": "enum",
+      "schema_default": "smart",
+      "default_kind": "literal"
+    },
+    "irc.timeoutMs": {
+      "type": "number",
+      "schema_default": 120000,
+      "default_kind": "constant"
+    },
+    "bash.autoBackground.thresholdMs": {
+      "type": "number",
+      "schema_default": 60000,
+      "default_kind": "constant"
+    },
+    "tools.xdev": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "tools.xdevDocs": {
+      "type": "enum",
+      "schema_default": "builtins",
+      "default_kind": "literal"
+    },
+    "tools.xdevInlineDevices": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "constant"
+    },
+    "mcp.enableProjectConfig": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "mcp.renderMarkdownResults": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "mcp.notifications": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "mcp.notificationDebounceMs": {
+      "type": "number",
+      "schema_default": 500,
+      "default_kind": "literal"
+    },
+    "plan.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "plan.defaultOnStartup": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "goal.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "goal.statusInFooter": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "goal.continuationModes": {
+      "type": "array",
+      "schema_default": [
+        "interactive"
+      ],
+      "default_kind": "literal-array"
+    },
+    "title.refreshOnReplan": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "task.isolation.mode": {
+      "type": "enum",
+      "schema_default": "none",
+      "default_kind": "literal"
+    },
+    "task.isolation.apply": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "task.isolation.merge": {
+      "type": "enum",
+      "schema_default": "patch",
+      "default_kind": "literal"
+    },
+    "task.isolation.commits": {
+      "type": "enum",
+      "schema_default": "generic",
+      "default_kind": "literal"
+    },
+    "worktree.base": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "task.eager": {
+      "type": "enum",
+      "schema_default": "default",
+      "default_kind": "literal"
+    },
+    "task.batch": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "task.enableEffort": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "task.maxConcurrency": {
+      "type": "number",
+      "schema_default": 32,
+      "default_kind": "literal"
+    },
+    "task.enableLsp": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "task.maxRecursionDepth": {
+      "type": "number",
+      "schema_default": 2,
+      "default_kind": "literal"
+    },
+    "task.maxRuntimeMs": {
+      "type": "number",
+      "schema_default": 0,
+      "default_kind": "literal"
+    },
+    "task.agentIdleTtlMs": {
+      "type": "number",
+      "schema_default": 420000,
+      "default_kind": "constant"
+    },
+    "task.softRequestBudget": {
+      "type": "number",
+      "schema_default": 200,
+      "default_kind": "literal"
+    },
+    "task.softRequestBudgetNotice": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "task.maxEffort": {
+      "type": "enum",
+      "schema_default": "max",
+      "default_kind": "literal"
+    },
+    "task.disabledAgents": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "task.agentModelOverrides": {
+      "type": "record",
+      "schema_default": {},
+      "default_kind": "constant"
+    },
+    "task.agentPrewalk": {
+      "type": "record",
+      "schema_default": {},
+      "default_kind": "constant"
+    },
+    "task.agentAdvisor": {
+      "type": "record",
+      "schema_default": {},
+      "default_kind": "constant"
+    },
+    "task.prewalk": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "tasks.todoClearDelay": {
+      "type": "number",
+      "schema_default": 60,
+      "default_kind": "literal"
+    },
+    "task.showResolvedModelBadge": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "skills.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "skills.enableSkillCommands": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "skills.enableCodexUser": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "skills.enableClaudeUser": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "skills.enableClaudeProject": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "skills.enablePiUser": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "skills.enablePiProject": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "skills.enableAgentsUser": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "skills.enableAgentsProject": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "skills.customDirectories": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "skills.ignoredSkills": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "skills.includeSkills": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "commands.enableClaudeUser": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "commands.enableClaudeProject": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "commands.enableOpencodeUser": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "commands.enableOpencodeProject": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "secrets.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "providers.ollama-cloud.maxConcurrency": {
+      "type": "number",
+      "schema_default": 3,
+      "default_kind": "literal"
+    },
+    "providers.webSearchOrder": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "providers.webSearchExclude": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "providers.webSearchTimeoutSeconds": {
+      "type": "number",
+      "schema_default": 60,
+      "default_kind": "constant"
+    },
+    "providers.webSearchGeminiModel": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "providers.antigravityEndpoint": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "providers.imageOrder": {
+      "type": "array",
+      "schema_default": [],
+      "default_kind": "literal-array"
+    },
+    "providers.fireworksTier": {
+      "type": "enum",
+      "schema_default": "standard",
+      "default_kind": "literal"
+    },
+    "live.voice": {
+      "type": "enum",
+      "schema_default": "sol",
+      "default_kind": "constant"
+    },
+    "providers.tts": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "tts.localModel": {
+      "type": "enum",
+      "schema_default": "kokoro",
+      "default_kind": "constant"
+    },
+    "tts.localVoice": {
+      "type": "enum",
+      "schema_default": "af_heart",
+      "default_kind": "constant"
+    },
+    "speech.enabled": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "speech.mode": {
+      "type": "enum",
+      "schema_default": "assistant",
+      "default_kind": "literal"
+    },
+    "speech.enhanced": {
+      "type": "boolean",
+      "schema_default": false,
+      "default_kind": "literal"
+    },
+    "speech.voice": {
+      "type": "enum",
+      "schema_default": "af_heart",
+      "default_kind": "constant"
+    },
+    "providers.tinyModel": {
+      "type": "enum",
+      "schema_default": "online",
+      "default_kind": "constant"
+    },
+    "providers.tinyModelDevice": {
+      "type": "enum",
+      "schema_default": "default",
+      "default_kind": "constant"
+    },
+    "providers.tinyModelDtype": {
+      "type": "enum",
+      "schema_default": "default",
+      "default_kind": "constant"
+    },
+    "providers.memoryModel": {
+      "type": "enum",
+      "schema_default": "online",
+      "default_kind": "constant"
+    },
+    "providers.autoThinkingModel": {
+      "type": "enum",
+      "schema_default": "online",
+      "default_kind": "constant"
+    },
+    "providers.autoThinkingMaxEffort": {
+      "type": "enum",
+      "schema_default": "xhigh",
+      "default_kind": "literal"
+    },
+    "features.unexpectedStopDetection": {
+      "type": "enum",
+      "schema_default": "mechanical",
+      "default_kind": "literal"
+    },
+    "providers.unexpectedStopModel": {
+      "type": "enum",
+      "schema_default": "online",
+      "default_kind": "constant"
+    },
+    "providers.kimiApiFormat": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "providers.openaiWebsockets": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "providers.cacheRetention": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "providers.streamFirstEventTimeoutSeconds": {
+      "type": "number",
+      "schema_default": -1,
+      "default_kind": "literal"
+    },
+    "providers.streamIdleTimeoutSeconds": {
+      "type": "number",
+      "schema_default": -1,
+      "default_kind": "literal"
+    },
+    "providers.openrouterVariant": {
+      "type": "enum",
+      "schema_default": "default",
+      "default_kind": "literal"
+    },
+    "providers.fetch": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "codexResets.autoRedeem": {
+      "type": "enum",
+      "schema_default": "unset",
+      "default_kind": "literal"
+    },
+    "codexResets.minBlockedMinutes": {
+      "type": "number",
+      "schema_default": 60,
+      "default_kind": "literal"
+    },
+    "codexResets.keepCredits": {
+      "type": "number",
+      "schema_default": 0,
+      "default_kind": "literal"
+    },
+    "codexResets.salvageHorizonHours": {
+      "type": "number",
+      "schema_default": 12,
+      "default_kind": "literal"
+    },
+    "provider.appendOnlyContext": {
+      "type": "enum",
+      "schema_default": "auto",
+      "default_kind": "literal"
+    },
+    "exa.enabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "exa.searchDelayMs": {
+      "type": "number",
+      "schema_default": 1000,
+      "default_kind": "constant"
+    },
+    "searxng.endpoint": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "searxng.token": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "searxng.basicUsername": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "searxng.basicPassword": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "searxng.categories": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "searxng.engines": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "searxng.language": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "searxng.safesearch": {
+      "type": "number",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "commit.mapReduceEnabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "commit.mapReduceThreshold": {
+      "type": "number",
+      "schema_default": 5000,
+      "default_kind": "literal"
+    },
+    "commit.mapBatchTokenBudget": {
+      "type": "number",
+      "schema_default": 16000,
+      "default_kind": "literal"
+    },
+    "commit.cacheEnabled": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "commit.cacheTtlDays": {
+      "type": "number",
+      "schema_default": 14,
+      "default_kind": "literal"
+    },
+    "commit.changelogMaxDiffChars": {
+      "type": "number",
+      "schema_default": 120000,
+      "default_kind": "literal"
+    },
+    "extensionHandlers.toolCallTimeoutMs": {
+      "type": "number",
+      "schema_default": 30000,
+      "default_kind": "constant"
+    },
+    "dev.autoqa": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "dev.autoqaPush.endpoint": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "unknown"
+    },
+    "dev.autoqaPush.token": {
+      "type": "string",
+      "schema_default": null,
+      "default_kind": "undefined"
+    },
+    "dev.autoqaConsent": {
+      "type": "enum",
+      "schema_default": "unset",
+      "default_kind": "literal"
+    },
+    "gc.blobs": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "gc.archive": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "gc.wal": {
+      "type": "boolean",
+      "schema_default": true,
+      "default_kind": "literal"
+    },
+    "gc.coldArchiveAfterDays": {
+      "type": "number",
+      "schema_default": 30,
+      "default_kind": "literal"
+    },
+    "gc.retainNewestGlobal": {
+      "type": "number",
+      "schema_default": 20,
+      "default_kind": "literal"
+    },
+    "gc.retainNewestPerCwd": {
+      "type": "number",
+      "schema_default": 10,
+      "default_kind": "literal"
+    },
+    "thinkingBudgets.minimal": {
+      "type": "number",
+      "schema_default": 1024,
+      "default_kind": "literal"
+    },
+    "thinkingBudgets.low": {
+      "type": "number",
+      "schema_default": 2048,
+      "default_kind": "literal"
+    },
+    "thinkingBudgets.medium": {
+      "type": "number",
+      "schema_default": 8192,
+      "default_kind": "literal"
+    },
+    "thinkingBudgets.high": {
+      "type": "number",
+      "schema_default": 16384,
+      "default_kind": "literal"
+    },
+    "thinkingBudgets.xhigh": {
+      "type": "number",
+      "schema_default": 32768,
+      "default_kind": "literal"
+    },
+    "thinkingBudgets.max": {
+      "type": "number",
+      "schema_default": 32768,
+      "default_kind": "literal"
+    }
+  }
+}

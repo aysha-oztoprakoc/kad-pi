@@ -2,9 +2,8 @@
   "schema": "kad.omp-settings-surface/v1",
   "omp_version": "18.0.11",
   "source": "omp config list",
-  "captured_at": "2026-09-01T19:00:00Z",
   "section_count": 11,
-  "setting_count": 478,
+  "setting_count": 481,
   "sections": {
     "appearance": [
       "colorBlindMode",
@@ -374,6 +373,9 @@
       "providers.imageOrder",
       "providers.kimiApiFormat",
       "providers.maxInFlightRequests",
+      "providers.ollama-cloud.maxConcurrency",
+      "providers.openai-codex.codeMode",
+      "providers.openai-codex.codeModeDirectTools",
       "providers.openaiWebsockets",
       "providers.openrouterVariant",
       "providers.streamFirstEventTimeoutSeconds",

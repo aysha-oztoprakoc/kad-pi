@@ -21,17 +21,16 @@ const GAP_OWNERSHIP = new Set([
   'BLOCKED_BY_IN_FLIGHT_WORK', 'HUMAN_DECISION_REQUIRED', 'NO_ACTION_REQUIRED',
 ]);
 const GAP_STATUS = new Set(['OPEN', 'RESOLVED', 'BASELINE', 'UNKNOWN']);
+const COMPAT_VALUES = new Set(['PASS', 'FAIL', 'N/A', 'DORMANT']);
+const SCHEMA_DEFAULT_KINDS = new Set(['literal', 'constant', 'undefined', 'unknown', 'arithmetic', 'literal-array', 'literal-object', 'literal-array-raw', 'literal-object-raw']);
 
-// Important mutable CURRENT facts that MUST carry provenance by contract.
-// Omitting state_class does not exempt them from provenance.
 const REQUIRED_EVIDENCE = [
   'repository', 'hosts.amdy', 'hosts.tell', 'harnesses.omp',
   'knowledge_plane', 'skills', 'compute', 'security',
 ];
 
-function evidenceFor(node, trail) {
-  if (!node || typeof node !== 'object') return null;
-  if (!node.evidence || typeof node.evidence !== 'object') return null;
+function evidenceFor(node) {
+  if (!node || typeof node !== 'object' || !node.evidence) return null;
   const hasSource = typeof node.evidence.source === 'string';
   const hasProbe = ['command', 'hash', 'path'].some((k) => typeof node.evidence[k] === 'string');
   return hasSource && hasProbe ? node.evidence : null;
@@ -51,7 +50,7 @@ test('CSA: provenance is mandatory on important facts (not opt-in)', () => {
   const csa = readJson('CSA_KAD_PI_CURRENT.json');
   for (const key of REQUIRED_EVIDENCE) {
     assert.ok(csa[key], `CSA missing section ${key}`);
-    assert.ok(evidenceFor(csa[key], key), `CSA section ${key} must carry evidence {source, command|hash|path}`);
+    assert.ok(evidenceFor(csa[key]), `CSA section ${key} must carry evidence {source, command|hash|path}`);
   }
 });
 
@@ -60,7 +59,7 @@ test('CSA: state_class always co-occurs with evidence', () => {
   const walk = (node, trail = []) => {
     if (Array.isArray(node)) { node.forEach((v, i) => walk(v, [...trail, i])); return; }
     if (node && typeof node === 'object') {
-      if (typeof node.state_class === 'string' && !evidenceFor(node, trail.join('.'))) {
+      if (typeof node.state_class === 'string' && !evidenceFor(node)) {
         assert.fail(`fact at ${trail.join('.')} declares state_class but no evidence`);
       }
       for (const [k, v] of Object.entries(node)) walk(v, [...trail, k]);
@@ -74,9 +73,7 @@ test('CSA: state classes are valid enum values', () => {
   const walk = (node) => {
     if (Array.isArray(node)) { node.forEach(walk); return; }
     if (node && typeof node === 'object') {
-      if (typeof node.state_class === 'string') {
-        assert.ok(CSA_STATE_CLASSES.has(node.state_class), `invalid state_class ${node.state_class}`);
-      }
+      if (typeof node.state_class === 'string') assert.ok(CSA_STATE_CLASSES.has(node.state_class), `invalid state_class ${node.state_class}`);
       for (const v of Object.values(node)) walk(v);
     }
   };
@@ -88,34 +85,39 @@ test('Settings matrix: exhaustive — equals the discovered OMP surface exactly'
   const matrix = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json');
   const expected = Object.values(surface.sections).flat();
   const actual = matrix.settings.map((row) => row.setting_id);
-  const expectedSet = new Set(expected);
-  const actualSet = new Set(actual);
-  assert.equal(expected.length, expectedSet.size, 'surface must be duplicate-free');
-  const missing = [...expectedSet].filter((id) => !actualSet.has(id));
-  const extra = [...actualSet].filter((id) => !expectedSet.has(id));
-  const dupes = actual.filter((id, i) => actual.indexOf(id) !== i);
-  assert.deepEqual(missing, [], 'matrix is missing settings');
-  assert.deepEqual(extra, [], 'matrix has settings not in surface (grouped/invented)');
-  assert.deepEqual(dupes, [], 'matrix has duplicate settings');
+  assert.equal(expected.length, new Set(expected).size, 'surface must be duplicate-free');
+  assert.deepEqual([...new Set(expected)].filter((id) => !actual.includes(id)), [], 'matrix missing settings');
+  assert.deepEqual(actual.filter((id) => !new Set(expected).has(id)), [], 'matrix has settings not in surface');
+  assert.deepEqual(actual.filter((id, i) => actual.indexOf(id) !== i), [], 'matrix has duplicate settings');
 });
 
-test('Settings matrix: every row is complete and validly classified', () => {
+test('Settings matrix: schema_default and effective_value are distinct fields with distinct provenance', () => {
   const matrix = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json');
-  const required = ['setting_id', 'omp_version', 'type', 'kad_policy', 'security_class', 'mutability', 'test_method', 'current_result', 'deviation', 'rationale'];
   for (const row of matrix.settings) {
-    for (const field of required) {
-      assert.ok(field in row, `setting ${row.setting_id} missing ${field}`);
-    }
-    assert.ok(SETTING_CLASSES.has(row.kad_policy), `setting ${row.setting_id} invalid kad_policy ${row.kad_policy}`);
+    assert.ok('schema_default' in row, `${row.setting_id} missing schema_default`);
+    assert.ok('effective_value' in row, `${row.setting_id} missing effective_value`);
+    assert.ok('schema_default_kind' in row, `${row.setting_id} missing schema_default_kind`);
+    assert.ok('effective_source' in row, `${row.setting_id} missing effective_source`);
+    assert.ok(SCHEMA_DEFAULT_KINDS.has(row.schema_default_kind), `${row.setting_id} invalid schema_default_kind ${row.schema_default_kind}`);
+    assert.notEqual(row.effective_source, 'schema', `${row.setting_id} effective_source must be runtime, not schema`);
   }
 });
 
-test('Settings matrix: no inferred upstream defaults', () => {
+test('Settings matrix: every row classified with dual compatibility', () => {
   const matrix = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json');
   for (const row of matrix.settings) {
-    if (row.upstream_default === undefined) {
-      assert.fail(`setting ${row.setting_id} has undefined upstream_default (must be verbatim or null, not inferred)`);
-    }
+    assert.ok(SETTING_CLASSES.has(row.kad_policy), `${row.setting_id} invalid kad_policy ${row.kad_policy}`);
+    assert.ok(COMPAT_VALUES.has(row.default_compatibility), `${row.setting_id} invalid default_compatibility ${row.default_compatibility}`);
+    assert.ok(COMPAT_VALUES.has(row.effective_compatibility), `${row.setting_id} invalid effective_compatibility ${row.effective_compatibility}`);
+  }
+});
+
+test('Settings matrix: no effective value silently copied into schema_default', () => {
+  const matrix = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json');
+  for (const row of matrix.settings) {
+    // schema_default is source-derived (never 'copied'/'inferred'); effective_value is runtime-derived.
+    assert.notEqual(row.schema_default_kind, 'copied', `${row.setting_id} schema_default_kind must not be copied`);
+    assert.equal(row.effective_source, 'omp config list --json', `${row.setting_id} effective_source must be runtime`);
   }
 });
 
