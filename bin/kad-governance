@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+import { runGovernanceCli } from '../tools/kad/governance/cli.mjs';
+
+const exitCode = await runGovernanceCli(process.argv.slice(2));
+process.exit(exitCode);

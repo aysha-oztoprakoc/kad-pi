@@ -1,0 +1,87 @@
+{
+  "id": "WP-KAD-GOVERNANCE-GATES-032",
+  "project": "kad-pi",
+  "title": "Deterministic Governance Gates, Authority Tiering, Pre-Flight Verification & Protected Mutation Admission",
+  "status": "ACCEPTED",
+  "priority": 340,
+  "spec_ref": "user:/WP-KAD-GOVERNANCE-GATES-032",
+  "fixed_point": "15483b6c87757358ab046d50d94498c9fdfb1ebe",
+  "scope": [
+    "tools/kad/governance/",
+    "tools/kad/test/governance*.test.mjs",
+    "bin/kad-governance",
+    "evidence/WP-KAD-GOVERNANCE-GATES-032/",
+    ".agents/work/WP-KAD-GOVERNANCE-GATES-032.json"
+  ],
+  "non_scope": [
+    "Warren implementation",
+    "TELL deployment",
+    "Beads",
+    "OpenViking/Needle",
+    "full offline experiment",
+    "autonomous merge policy expansion",
+    "budget increases",
+    "new model routing",
+    "Ideal State redesign",
+    "ISA-002 mutation",
+    "large skills refactor",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "tools/kad/governance/",
+    "tools/kad/test/governance*.test.mjs",
+    "bin/kad-governance",
+    "evidence/WP-KAD-GOVERNANCE-GATES-032/",
+    ".agents/work/WP-KAD-GOVERNANCE-GATES-032.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "npm test",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "bin/workctl skills doctor",
+    "bin/kad-isa check all",
+    "bin/kad-wiki lint",
+    "bin/kad-intent validate",
+    "bin/kad-intent verify-report",
+    "bin/kad-telemetry validate",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-GOVERNANCE-GATES-032/",
+  "blocked_by": [
+    "WP-KAD-COGNITIVE-TELEMETRY-031"
+  ],
+  "blocks": [
+    "EXP-KAD-OFFLINE-SURVIVAL-001"
+  ],
+  "acceptance_criteria": [
+    "GOVERNANCE_PREFLIGHT_V1 and GOVERNANCE_DECISION_V1 contracts implemented with typed reason codes",
+    "Explicit authority taxonomy implemented (HUMAN_ONLY, HUMAN_PREAUTHORIZED, DETERMINISTIC_POLICY, DELEGATED_WITH_GATE, AUTONOMOUS_WITHIN_LEASE, FORBIDDEN)",
+    "CAPABILITY != AUTHORITY strictly enforced (models/providers cannot acquire authority merely by being capable)",
+    "Target authority vs current active enforcement distinguished (unavailable capabilities fall back closed)",
+    "Human authorization receipt contract implemented with content hashing (model cannot claim approval in prose)",
+    "Preflight pipeline implemented (scope, STC lease, FinOps envelope, secrets, trust domain, readiness, reversibility)",
+    "Raw secret access and constitutional mutation permanently forbidden for agents",
+    "Confused deputy and cross-WP/cross-resource authority reuse strictly prevented",
+    "Short-lived decisions and TOCTOU stale authorization defense implemented",
+    "FinOps pre-authorized envelope gate enforced with zero self-budget escalation",
+    "Readiness gate integration distinguishes relevant from irrelevant unknown metrics",
+    "Governance evaluation telemetry emitted without policy feedback loop",
+    "Mandatory adversarial TDD fixtures (G01-G30) fully passing",
+    "Full repository test suite, doctor checks, linters, and independent review PASS"
+  ],
+  "description": "Deterministic governance preflight and admission gate subsystem providing typed preflight contracts, multi-tier authority resolution, human authorization receipt verification, FinOps envelopes, and confused-deputy protection.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-GOVERNANCE-GATES-032",
+  "claim": null
+}

@@ -1,0 +1,18 @@
+{
+  "task": "WP-KAD-GOVERNANCE-GATES-032",
+  "project": "kad-pi",
+  "claim_id": "dfbb91fd-3ac0-415b-8c85-7f33fe8e6f22",
+  "actor_label": "gemini-3.7-flash-high",
+  "started_at": "2026-08-30T22:08:57.181Z",
+  "base_commit": "15483b6c87757358ab046d50d94498c9fdfb1ebe",
+  "owned_paths": [
+    "tools/kad/governance",
+    "tools/kad/test/governance*.test.mjs",
+    "bin/kad-governance",
+    "evidence/WP-KAD-GOVERNANCE-GATES-032",
+    ".agents/work/WP-KAD-GOVERNANCE-GATES-032.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T22:26:47.459Z"
+}
