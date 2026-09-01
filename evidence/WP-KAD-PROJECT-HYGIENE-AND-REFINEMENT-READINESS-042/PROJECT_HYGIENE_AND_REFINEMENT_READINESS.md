@@ -139,7 +139,7 @@ No mutation of TELL, systemd, firewall, drivers, ROCm, or privileged state perfo
 - `bin/kad-doctor`: PASS; `bin/workctl doctor`: healthy.
 - No new maintenance guard added (none demonstrated RED-required this pass; guards are successor material).
 
-# 11. Mutations Performed
+Both mutations below were published in a single local commit `affe828` (parent `6077630`, not pushed — push requires explicit publication authorization). The `.gitignore` M2 content inside the commit contains the corrected rules (`.scratch/` preserved, `.tmp/` added, no duplicates; `git check-ignore` verified).
 
 ## M1 — Commit reconciliation of evidence + ledger residue (COMMIT_ACCEPTED)
 Purpose: publish WP-041 verification residue (regenerated deterministic projections/journals) and EXP offline-survival ledger/evidence records so tracked state matches the work ledger and evidence surface.
