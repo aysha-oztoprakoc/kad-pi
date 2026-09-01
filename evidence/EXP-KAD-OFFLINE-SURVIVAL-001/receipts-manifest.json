@@ -1,0 +1,14 @@
+{
+  "experiment": "EXP-KAD-OFFLINE-SURVIVAL-001",
+  "status": "BLOCKED",
+  "offline_phase_entered": false,
+  "fault_injection": "NOT_ATTEMPTED",
+  "reason": "HUMAN_AUTHORIZATION_RECEIPT_V1 cannot express machine-verifiable issuer/delegate separation",
+  "offline_capabilities": "NOT_TESTED",
+  "baseline_validation": "PASS",
+  "evidence_files": 47,
+  "attempt": "R2",
+  "claim_released": false,
+  "independent_review": "PENDING",
+  "claim_created": false
+}

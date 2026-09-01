@@ -1,0 +1,12 @@
+$ bin/kad-intent validate
+exit=0
+=== KAD INTENT JOURNAL VALIDATION ===
+
+Events Journal:        /home/amdy/Work/evidence/intent/events.jsonl
+Normalizations File:   /home/amdy/Work/evidence/intent/normalizations.jsonl
+Total Events:          24
+Active Decisions:      24
+Superseded Events:     0
+Total Normalizations:  24
+
+[PASS] All intent events and normalizations are cryptographically valid and append-only verified.

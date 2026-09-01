@@ -1,0 +1,115 @@
+{
+  "schema_version": "GOVERNANCE_PREFLIGHT_V1",
+  "request_id": "exp-offline-survival-r4-a003-preflight-001",
+  "actor": {
+    "actor_id": "actor.project_lead",
+    "actor_class": "HUMAN_ACTOR"
+  },
+  "work": {
+    "workpackage_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A003",
+    "ticket_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A003",
+    "run_id": "r4-a003-live-001",
+    "lifecycle_state": "IN_PROGRESS"
+  },
+  "operation": {
+    "operation_class": "INFRASTRUCTURE_MUTATION",
+    "action": "route.delete.default",
+    "action_kind": "PRIMARY",
+    "resource_refs": [
+      "host.amdy.workstation",
+      "network-interface:enp7s0",
+      "route:ipv4-default-via-192.168.0.1-dev-enp7s0-proto-dhcp-metric-100"
+    ]
+  },
+  "scope": {
+    "owned_paths": [
+      "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A003/"
+    ],
+    "requested_paths": [
+      "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A003/"
+    ]
+  },
+  "authority": {
+    "required_level": "HUMAN_ONLY",
+    "target_authority": "HUMAN_ONLY",
+    "claimed_human_approval_in_prose": null,
+    "require_v2_delegation": true
+  },
+  "risk": {
+    "risk_tier": "TIER_3_HIGH",
+    "reversible": true,
+    "containment_ref": "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A003/01-human-terminal-preparation.md",
+    "unknown_risk_factors": false
+  },
+  "evidence": {
+    "tests_passed": "A001/A002 accepted safe-abort evidence and fresh A003 baseline",
+    "independent_verification_ref": "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A002/06-independent-review.md",
+    "human_authorization_receipt": {
+      "schema_version": "HUMAN_AUTHORIZATION_RECEIPT_V2",
+      "receipt_id": "har-v2-exp-offline-survival-r4-a003-live-001",
+      "issuer": {
+        "subject_type": "ACTOR",
+        "subject_id": "actor.project_lead"
+      },
+      "authorized_subject": {
+        "subject_type": "ACTOR",
+        "subject_id": "actor.project_lead"
+      },
+      "work_context": {
+        "workpackage_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A003",
+        "experiment_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A003"
+      },
+      "operation": {
+        "operation_class": "INFRASTRUCTURE_MUTATION",
+        "action": "route.delete.default",
+        "action_hash": "sha256:2db2944e3bb5db5eb28232465daddc40135af18e6045842d88c9e1a1a6fd7141"
+      },
+      "resources": [
+        "host.amdy.workstation",
+        "network-interface:enp7s0",
+        "route:ipv4-default-via-192.168.0.1-dev-enp7s0-proto-dhcp-metric-100"
+      ],
+      "scope": {
+        "canonical_paths": [
+          "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A003"
+        ]
+      },
+      "validity": {
+        "not_before": "2026-09-01T13:14:07.063Z",
+        "action_valid_until": "2026-09-01T13:29:07.063Z"
+      },
+      "rollback": {
+        "authorized": true,
+        "action": "/usr/bin/nmcli device reapply enp7s0",
+        "action_hash": "sha256:f81e30dfc143110fe8e1580de2e0125cdcc92e5dd89c0f1951acc9345a245666",
+        "recovery_deadline": "2026-09-01T13:32:07.063Z"
+      },
+      "delegation": {
+        "redelegation_allowed": false
+      },
+      "policy": {
+        "policy_version": "KAD_GOVERNANCE_POLICY_V1",
+        "policy_hash": "sha256:651235adf464cf83bfc88854dca66ca1ddf48e9f224bec2ec73604ef6a423b78"
+      },
+      "provenance": {
+        "human_event_ref": "ask_user:a003_final_authorization:APPROVE_FRESH_A003_SCOPE",
+        "record_hash": "sha256:467db31d110edd6cc0d7069468c24a7433c443896de2e43da96385f4d554b062"
+      },
+      "receipt_hash": "sha256:df8a94f7a17945d3adcef0bb0fbb0d5d7742c0adda5c07361444c1492b2bb4d7"
+    },
+    "has_unresolved_contradiction": false,
+    "past_telemetry_success": true
+  },
+  "resource": {
+    "stc_lease_ref": null,
+    "lease_valid": null,
+    "budget_envelope_ref": null,
+    "estimated_cost_usd": 0,
+    "envelope_remaining_usd": null,
+    "requested_increase_usd": null
+  },
+  "provenance": {
+    "requested_at": "2026-09-01T13:14:22.059Z",
+    "request_hash": "sha256:99be8e1a85323d90e061ee8e2415760316a932adcfc7b0d3bdb85ce6ebecc064"
+  }
+}

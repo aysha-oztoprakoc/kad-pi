@@ -1,0 +1,13 @@
+{
+  "schema_version": "GOVERNANCE_PREFLIGHT_V1",
+  "request_id": "EXP-KAD-OFFLINE-SURVIVAL-001-infrastructure",
+  "actor": {"actor_id": "actor.experiment-lead", "actor_class": "AGENT_ROLE"},
+  "work": {"workpackage_id": "EXP-KAD-OFFLINE-SURVIVAL-001", "ticket_id": null, "run_id": "offline-survival-001", "lifecycle_state": "IN_PROGRESS"},
+  "operation": {"operation_class": "INFRASTRUCTURE_MUTATION", "action": "disable-wan-preserve-loopback-lan", "resource_refs": ["network.wan", "host.amdy.workstation"]},
+  "scope": {"owned_paths": ["evidence/EXP-KAD-OFFLINE-SURVIVAL-001/"], "requested_paths": []},
+  "authority": {"required_level": "HUMAN_ONLY", "target_authority": "HUMAN_ONLY"},
+  "risk": {"risk_tier": "TIER_3_HIGH", "reversible": true, "containment_ref": "restore-before-reconcile", "unknown_risk_factors": true},
+  "evidence": {"tests_passed": null, "human_authorization_receipt": null, "has_unresolved_contradiction": false},
+  "resource": {"estimated_cost_usd": 0},
+  "provenance": {"requested_at": "2026-08-30T22:35:00.000Z"}
+}

@@ -1,0 +1,13 @@
+$ ip -brief addr && printf "\nROUTES\n" && ip route && printf "\nDNS\n" && getent hosts github.com && getent hosts api.openai.com
+exit=0
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp7s0           UP             192.168.0.2/24 fd00::502e:9f50:5a06:d283/64 fe80::6a93:934d:8997:6366/64 
+
+ROUTES
+default via 192.168.0.1 dev enp7s0 proto dhcp src 192.168.0.2 metric 100 
+192.168.0.0/24 dev enp7s0 proto kernel scope link src 192.168.0.2 metric 100 
+
+DNS
+4.228.31.150    github.com
+172.66.0.243    api.openai.com
+162.159.140.245 api.openai.com

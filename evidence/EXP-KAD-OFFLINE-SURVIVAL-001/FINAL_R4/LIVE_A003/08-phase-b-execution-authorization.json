@@ -1,0 +1,87 @@
+{
+  "schema_version": "GOVERNANCE_PREFLIGHT_V1",
+  "request_id": "exp-offline-survival-r4-a003-live-exec-auth-002",
+  "actor": {
+    "actor_id": "actor.project_lead",
+    "actor_class": "HUMAN_ACTOR"
+  },
+  "work": {
+    "workpackage_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A003",
+    "ticket_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A003",
+    "run_id": "r4-a003-live-exec-001",
+    "lifecycle_state": "IN_PROGRESS"
+  },
+  "operation": {
+    "operation_class": "INFRASTRUCTURE_MUTATION",
+    "action": "route.delete.default",
+    "action_kind": "PRIMARY",
+    "resource_refs": [
+      "host.amdy.workstation",
+      "network-interface:enp7s0",
+      "route:ipv4-default-via-192.168.0.1-dev-enp7s0-proto-dhcp-metric-100"
+    ]
+  },
+  "execution_contract": {
+    "route_observation_timestamp": "2026-09-01T10:19:07-03:00",
+    "route_observation": "default via 192.168.0.1 dev enp7s0 proto dhcp src 192.168.0.3 metric 100",
+    "route_delete_command": "sudo /usr/bin/ip -4 route del default via 192.168.0.1 dev enp7s0 proto dhcp metric 100",
+    "rollback_guard_command": "sudo /usr/bin/systemd-run --unit=kad-offline-survival-r4-a003-live-exec-rollback --on-active=60s --collect --property=TimeoutStartSec=15s /usr/bin/nmcli device reapply enp7s0",
+    "observer_unit": "kad-offline-survival-r4-a003-live-exec-observer.service",
+    "observer_duration_seconds": 180,
+    "observer_requirement": "STARTED and deterministically VERIFIED ACTIVE immediately before guard arming; remains active continuously through guard arming, route deletion, complete 30-second offline observation, rollback, and post-recovery verification",
+    "observer_remaining_minimum_seconds": 120,
+    "guard_delay_seconds": 60,
+    "mutation_deadline_after_guard_seconds": 15,
+    "offline_observation_seconds": 30,
+    "zero_time_predicate": "exactly one canonical DHCP IPv4 default via 192.168.0.1 on enp7s0 proto dhcp metric 100; no duplicate/default-route condition; exact authorized target match",
+    "human_sudo_preparation": "sudo -v in the human local terminal before Phase B; password never exposed to agent",
+    "fallback": null,
+    "prohibitions": [
+      "no interface disablement",
+      "no NetworkManager stop/restart",
+      "no profile/firewall/sudoers mutation",
+      "no persistent privileged service",
+      "no unrelated route deletion",
+      "no redelegation"
+    ]
+  },
+  "scope": {
+    "owned_paths": [
+      "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A003/"
+    ],
+    "requested_paths": [
+      "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A003/"
+    ]
+  },
+  "authority": {
+    "required_level": "HUMAN_ONLY",
+    "target_authority": "HUMAN_ONLY",
+    "claimed_human_approval_in_prose": null,
+    "require_v2_delegation": true
+  },
+  "risk": {
+    "risk_tier": "TIER_3_HIGH",
+    "reversible": true,
+    "containment_ref": "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A003/01-human-terminal-preparation.md",
+    "unknown_risk_factors": false
+  },
+  "evidence": {
+    "tests_passed": "A003 preparation artifacts and fresh route observation",
+    "independent_verification_ref": "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A002/06-independent-review.md",
+    "human_authorization_receipt": null,
+    "has_unresolved_contradiction": false,
+    "past_telemetry_success": true
+  },
+  "resource": {
+    "stc_lease_ref": null,
+    "lease_valid": null,
+    "budget_envelope_ref": null,
+    "estimated_cost_usd": 0,
+    "envelope_remaining_usd": null,
+    "requested_increase_usd": null
+  },
+  "provenance": {
+    "requested_at": "2026-09-01T13:19:07.000Z",
+    "request_hash": "sha256:64c0ce510963df801d6ab1d9332d4bb5a7841b5c3a25807694a9a22f415d8ac8"
+  }
+}

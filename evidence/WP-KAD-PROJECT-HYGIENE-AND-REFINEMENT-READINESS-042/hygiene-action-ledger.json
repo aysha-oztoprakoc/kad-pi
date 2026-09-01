@@ -1,0 +1,227 @@
+{
+  "schema": "kad-hygiene-action-ledger-v1",
+  "workpackage": "WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042",
+  "generated_at": "2026-09-01T21:10:00Z",
+  "findings": [
+    {
+      "finding_id": "F-001",
+      "surface": ".omp/config.yml",
+      "current": "modelRoles.default = opencode-go/deepseek-v4-flash:high (uncommitted; mtime 2026-09-01T20:36:33Z)",
+      "expected": "committed routing baseline XOR committed gemini-3.7-flash baseline",
+      "evidence": "git diff; MODEL_ROUTING_DECISION.md (canary role kad-builder -> deepseek-v4-flash); current session runs this model; mtime 5.5min after WP-041 release",
+      "classification": "RUNTIME_EFFECTIVE / POLICY_CONSISTENT",
+      "owner": "human + KAD routing policy",
+      "action": "HUMAN_DECISION_REQUIRED: commit as routing baseline or revert",
+      "status": "DEFERRED_HUMAN"
+    },
+    {
+      "finding_id": "F-002",
+      "surface": "evidence/WP-KAD-002/causal-journal.jsonl",
+      "current": "144 lines; 13+ lines appended by WP-041-era verification runs (20:26Z) and by runtime probe during this WP (20:49:00Z)",
+      "expected": "append-only causal evidence journal, tracked",
+      "evidence": "git diff (append-only); tail timestamps; probe correlation (kad-runtime-status at 20:48:59.845Z -> journal append 20:49:00.659Z); sha256 84f3954e",
+      "classification": "EVIDENCE / RUNTIME_WRITTEN",
+      "owner": "KAD evidence (WP-002 causal machinery)",
+      "action": "COMMIT_ACCEPTED (M1)",
+      "status": "COMMITTED"
+    },
+    {
+      "finding_id": "F-003",
+      "surface": "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/test-receipts/probe-journal.jsonl",
+      "current": "2 deterministic receipts; timestamps regenerated 20:26:49Z (WP-041) and 20:48:59Z (runtime probe during this WP)",
+      "expected": "hash-chained receipts; identical receipt hashes across regenerations",
+      "evidence": "receipts abf8ebfd..., ba062385... byte-identical; seq2.previous_hash == seq1.receipt_hash; writer tools/kad/compute/evidence-recorder.mjs",
+      "classification": "DERIVED_REGENERABLE (deterministic)",
+      "owner": "compute probe tooling",
+      "action": "COMMIT_ACCEPTED (M1)",
+      "status": "COMMITTED"
+    },
+    {
+      "finding_id": "F-004",
+      "surface": "vault/90_Derived/Projections/isa-aesthetic.json",
+      "current": "generated_at 2026-09-01T20:26:49.286Z (was 08-30T21:37:06.816Z)",
+      "expected": "current compiled projection",
+      "evidence": "git diff = generated_at only; generator tools/kad/isa.mjs; committed regen precedent (15483b6, 17f91ac)",
+      "classification": "DERIVED_REGENERABLE",
+      "owner": "kad-isa tooling",
+      "action": "COMMIT_ACCEPTED (M1)",
+      "status": "COMMITTED"
+    },
+    {
+      "finding_id": "F-005",
+      "surface": "vault/90_Derived/Projections/isa-compute-fabric.json",
+      "current": "generated_at 2026-09-01T20:26:49.287Z",
+      "expected": "current compiled projection",
+      "evidence": "git diff = generated_at only; generator tools/kad/isa.mjs",
+      "classification": "DERIVED_REGENERABLE",
+      "owner": "kad-isa tooling",
+      "action": "COMMIT_ACCEPTED (M1)",
+      "status": "COMMITTED"
+    },
+    {
+      "finding_id": "F-006",
+      "surface": "vault/90_Derived/Projections/isa-registry.json",
+      "current": "generated_at 2026-09-01T20:26:49.288Z",
+      "expected": "current compiled projection",
+      "evidence": "git diff = generated_at only; generator tools/kad/isa.mjs",
+      "classification": "DERIVED_REGENERABLE",
+      "owner": "kad-isa tooling",
+      "action": "COMMIT_ACCEPTED (M1)",
+      "status": "COMMITTED"
+    },
+    {
+      "finding_id": "F-007",
+      "surface": ".agents/skills/system-atlas/ + skills-lock.json",
+      "current": "skill installed 2026-08-31; dir untracked; OMP lockfile entry added; computedHash ca484cdd... vs installed 18c89dcf...",
+      "expected": "lockfile hash verifies against installed content OR install reverted",
+      "evidence": "sha256sum .agents/skills/system-atlas/SKILL.md; skills-lock.json entry; mtime 2026-08-31T11:59:37Z",
+      "classification": "UNRECONCILED_SKILL_STATE",
+      "owner": "skill-governance (successor)",
+      "action": "ROUTE_TO_SUCCESSOR + HUMAN_DECISION (complete/remove/defer)",
+      "status": "DEFERRED_SUCCESSOR"
+    },
+    {
+      "finding_id": "F-008",
+      "surface": ".agents/workspace/skills.lock.json (KAD lock) vs skills-lock.json (OMP lock)",
+      "current": "dual tracked lockfiles: array schema 19 entries (code-validated) vs map schema 38 entries (installer); 16/19 LOCAL_DELTA; 10 tracked KAD skills registered in neither",
+      "expected": "single authoritative lockfile with defined synchronization",
+      "evidence": "tools/workspace/skill-governance.mjs:8 (LOCK_RELATIVE), :111 (Array.isArray); workctl.mjs:306; jq counts; workctl doctor warnings",
+      "classification": "AUTHORITY_AMBIGUITY / DRIFT",
+      "owner": "skill-governance (successor)",
+      "action": "ROUTE_TO_SUCCESSOR (executable skill rationalization); no mutation per WP-041 boundary",
+      "status": "DEFERRED_SUCCESSOR"
+    },
+    {
+      "finding_id": "F-009",
+      "surface": ".agents/telemetry/",
+      "current": "37 outcome records; single backfill snapshot 2026-08-30T21:51:28Z; untracked, never committed",
+      "expected": "retention policy: versioned evidence OR ignored runtime store",
+      "evidence": "kad-doctor validates 37 records at this path; kad-telemetry backfill exists (regenerable); git log --all shows no telemetry history",
+      "classification": "RUNTIME_STATE / DERIVED",
+      "owner": "human (evidence-retention policy)",
+      "action": "HUMAN_DECISION_REQUIRED: commit snapshot, add ignore rule, or leave",
+      "status": "DEFERRED_HUMAN"
+    },
+    {
+      "finding_id": "F-010",
+      "surface": ".tmp/",
+      "current": ".tmp/test-intent-fidelity/intent-journal-tamper.jsonl (test scratch, regenerated at 20:26:49Z and by every test run)",
+      "expected": "scratch not polluting git status",
+      "evidence": "writer tools/kad/test/intent-fidelity.test.mjs:21,378; no canonical content; precedent .scratch/ and build/ ignore rules",
+      "classification": "TEMPORARY / TEST_SCRATCH",
+      "owner": "test tooling",
+      "action": "IGNORE_RULE_CANDIDATE (M2: add .tmp/ to .gitignore)",
+      "status": "IGNORED_M2"
+    },
+    {
+      "finding_id": "F-011",
+      "surface": ".agents/work/EXP-KAD-OFFLINE-SURVIVAL-001-R1.json + claims/EXP-KAD-OFFLINE-SURVIVAL-001-R1.json",
+      "current": "READY experiment records; untracked (all other work item records tracked)",
+      "expected": "ledger records tracked like every other work item",
+      "evidence": "git ls-files .agents/work (80 files, pattern excludes EXP); workctl status READY; claim released",
+      "classification": "LEDGER_RECORD",
+      "owner": "workctl",
+      "action": "COMMIT_ACCEPTED (M1)",
+      "status": "COMMITTED"
+    },
+    {
+      "finding_id": "F-012",
+      "surface": "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/",
+      "current": "47 files; experiment BLOCKED; fault_injection NOT_ATTEMPTED; R3 preflight PASS; R4 C5 PASS; LIVE A001/A002 ABORTED_SAFE; no network mutation executed",
+      "expected": "canonical experiment evidence tracked",
+      "evidence": "00-experiment-contract-and-core-definition.md; FINAL_REPORT.md; receipts-manifest.json; r3-authorization-preflight.md; FINAL_R4 reports",
+      "classification": "EVIDENCE (canonical experiment record)",
+      "owner": "experiment governance",
+      "action": "COMMIT_ACCEPTED (M1); experiment status unchanged (READY, human-gated)",
+      "status": "COMMITTED"
+    },
+    {
+      "finding_id": "F-013",
+      "surface": "workctl lifecycle: 6 REVIEW items",
+      "current": "WP-013, 015, 020, 021, 011, 010-R1 in REVIEW; claims released; evidence committed",
+      "expected": "ACCEPTED or retained REVIEW by authority",
+      "evidence": "bin/workctl status; .agents/work/*.json status fields; evidence dirs present",
+      "classification": "READY_TO_CLOSE / PENDING_ACCEPTANCE",
+      "owner": "human (acceptance authority)",
+      "action": "HUMAN_DECISION_REQUIRED: transition to ACCEPTED or retain",
+      "status": "DEFERRED_HUMAN"
+    },
+    {
+      "finding_id": "F-014",
+      "surface": "evidence gap: WP-KAD-RESEARCH-ZOTERO-005",
+      "current": "work item accepted; no evidence dir",
+      "expected": "evidence dir or documented no-evidence rationale",
+      "evidence": "evidence/ dir enumeration; .agents/work/WP-KAD-RESEARCH-ZOTERO-005.json ACCEPTED",
+      "classification": "MINOR_GAP",
+      "owner": "workctl lifecycle (successor)",
+      "action": "ROUTE_TO_SUCCESSOR (document or add evidence)",
+      "status": "DEFERRED_SUCCESSOR"
+    },
+    {
+      "finding_id": "F-015",
+      "surface": "tools.approvalMode / secrets.enabled",
+      "current": "effective yolo; effective secrets true (global)",
+      "expected": "explicit human policy decision",
+      "evidence": "docs/state/OMP_SETTINGS_COMPATIBILITY_MATRIX.md rows 824, 1072; ~/.omp/agent/config.yml",
+      "classification": "REQUIRES_HUMAN_POLICY",
+      "owner": "human (security policy)",
+      "action": "HUMAN_DECISION_REQUIRED; no weakening of gates",
+      "status": "DEFERRED_HUMAN"
+    },
+    {
+      "finding_id": "F-016",
+      "surface": "global config ~/.omp/agent/config.yml",
+      "current": "autolearn true, compaction false, advisor gemini-3.7-flash, 20 search providers; diverges from project",
+      "expected": "accepted authority semantics for global vs project",
+      "evidence": "file read; WP-041 report flagged global-config divergence for human",
+      "classification": "DIVERGENT / REQUIRES_HUMAN_POLICY",
+      "owner": "human (global config authority)",
+      "action": "HUMAN_DECISION_REQUIRED: reconcile or accept",
+      "status": "DEFERRED_HUMAN"
+    },
+    {
+      "finding_id": "F-017",
+      "surface": "runtime: qwen local_retrieval endpoint :5002",
+      "current": "no response on /v1/models",
+      "expected": "available when local_retrieval role used",
+      "evidence": "curl 127.0.0.1:5002/v1/models (empty); models.yml declares endpoint",
+      "classification": "DEGRADED / NOT_REQUIRED_NOW",
+      "owner": "compute fabric (successor)",
+      "action": "ROUTE_TO_SUCCESSOR (start or document); no privileged mutation here",
+      "status": "DEFERRED_SUCCESSOR"
+    },
+    {
+      "finding_id": "F-018",
+      "surface": "tooling: kad-telemetry validate path semantics",
+      "current": "validate <dir> returns total 0 at live telemetry path while kad-doctor validates 37 records there",
+      "expected": "consistent path semantics between commands",
+      "evidence": "bin/kad-telemetry validate .agents/telemetry --json (total 0); kad-doctor outcome_telemetry valid (37)",
+      "classification": "TOOLING_NOTE",
+      "owner": "projection/tooling successor",
+      "action": "ROUTE_TO_SUCCESSOR; no defect mutation",
+      "status": "DEFERRED_SUCCESSOR"
+    },
+    {
+      "finding_id": "F-019",
+      "surface": "economic router",
+      "current": "DEGRADED, NO_ELIGIBLE_LANE, paid_authorized false",
+      "expected": "policy-accepted local-first state",
+      "evidence": "bin/kad status --json; kad-doctor economic_router paidAuthorized false",
+      "classification": "ACCEPTED_POLICY_STATE",
+      "owner": "KAD economic policy",
+      "action": "NO_ACTION_REQUIRED",
+      "status": "KEEP"
+    },
+    {
+      "finding_id": "F-020",
+      "surface": "projection metadata: generator field absent",
+      "current": "isa-*.json carry generated_at only, no generator name/version",
+      "expected": "generator/version provenance for derived artifacts",
+      "evidence": "jq on the three projection files",
+      "classification": "IMPROVEMENT_CANDIDATE",
+      "owner": "projection tooling successor",
+      "action": "ROUTE_TO_SUCCESSOR",
+      "status": "DEFERRED_SUCCESSOR"
+    }
+  ]
+}

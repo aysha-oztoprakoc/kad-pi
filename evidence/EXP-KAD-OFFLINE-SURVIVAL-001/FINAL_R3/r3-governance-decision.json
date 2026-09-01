@@ -1,0 +1,15 @@
+{
+  "schema_version": "GOVERNANCE_DECISION_V1",
+  "request_hash": "sha256:ed7ac6a6eaac60275c0facf468c1623cc4b4021fdb5b39c5de8fbb0b6f75d4cf",
+  "decision": "ALLOW",
+  "reason_codes": [
+    "AUTHORIZED_BY_HUMAN_RECEIPT"
+  ],
+  "evaluated_policy": "KAD_GOVERNANCE_POLICY_V1",
+  "authority_level": "HUMAN_PREAUTHORIZED",
+  "missing_requirements": [],
+  "human_gate_required": false,
+  "evaluated_at": "2026-08-31T00:20:32.446Z",
+  "valid_until": "2026-08-31T00:25:32.446Z",
+  "decision_hash": "sha256:0569effe6b2ad0c5a424c7f25ba643db6233ccf2c6c5163e9567468e80c31709"
+}

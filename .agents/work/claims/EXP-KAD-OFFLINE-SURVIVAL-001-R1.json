@@ -1,0 +1,14 @@
+{
+  "task": "EXP-KAD-OFFLINE-SURVIVAL-001-R1",
+  "project": "kad-pi",
+  "claim_id": "567c6380-9fa2-4103-9408-3f4603f34cff",
+  "actor_label": "actor.experiment-lead",
+  "started_at": "2026-08-30T22:49:17.486Z",
+  "base_commit": "15483b6c87757358ab046d50d94498c9fdfb1ebe",
+  "owned_paths": [
+    "evidence/EXP-KAD-OFFLINE-SURVIVAL-001"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T22:50:50.160Z"
+}

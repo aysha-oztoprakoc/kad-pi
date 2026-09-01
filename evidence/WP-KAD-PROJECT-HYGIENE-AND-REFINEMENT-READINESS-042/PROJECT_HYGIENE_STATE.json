@@ -1,0 +1,145 @@
+{
+  "schema": "kad-project-hygiene-state-v1",
+  "workpackage": "WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042",
+  "generated_at": "2026-09-01T21:10:00Z",
+  "baseline_commit": "6077630598980c7876395ef80a07e047d61824a6",
+  "remote_commit": "6077630598980c7876395ef80a07e047d61824a6",
+  "repository": {
+    "root": "/home/amdy/Work",
+    "branch": "main",
+    "ahead": 0,
+    "behind": 0,
+    "remote": "https://github.com/aysha-oztoprakoc/kad-pi.git",
+    "stash": 0,
+    "worktrees": 1,
+    "tags": 0,
+    "dirty_tracked_before": 8,
+    "untracked_before": 6,
+    "ignored_entries": 29
+  },
+  "work_items": {
+    "total": 40,
+    "accepted": 33,
+    "review": ["WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013", "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015", "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020", "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021", "WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011", "WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1"],
+    "ready": ["EXP-KAD-OFFLINE-SURVIVAL-001-R1"],
+    "active_claims": 0,
+    "claims_total": 40,
+    "claims_released": 40
+  },
+  "dirty_paths": {
+    "committed_m1": [
+      "vault/90_Derived/Projections/isa-aesthetic.json",
+      "vault/90_Derived/Projections/isa-compute-fabric.json",
+      "vault/90_Derived/Projections/isa-registry.json",
+      "evidence/WP-KAD-002/causal-journal.jsonl",
+      "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/test-receipts/probe-journal.jsonl",
+      "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/",
+      ".agents/work/EXP-KAD-OFFLINE-SURVIVAL-001-R1.json",
+      ".agents/work/claims/EXP-KAD-OFFLINE-SURVIVAL-001-R1.json"
+    ],
+    "human_decision": [
+      ".omp/config.yml",
+      ".agents/telemetry/"
+    ],
+    "successor_routed": [
+      "skills-lock.json",
+      ".agents/skills/system-atlas/"
+    ],
+    "ignore_ruled_m2": [
+      ".tmp/"
+    ]
+  },
+  "configuration": {
+    "project": {
+      "modelRoles.default": "opencode-go/deepseek-v4-flash:high",
+      "modelRoles.plan": "openai-codex/gpt-5.6-luna:high",
+      "modelRoles.slow": "google-antigravity/gemini-3-flash:high",
+      "memory.backend": "off",
+      "autolearn.enabled": false,
+      "contextPromotion.enabled": false,
+      "advisor.enabled": false,
+      "compaction.enabled": true,
+      "skills.enabled": true,
+      "disabledProviders": ["openrouter"],
+      "local_endpoints": { "kad-local-world": "http://127.0.0.1:5001/v1", "kad-local-qwen": "http://127.0.0.1:5002/v1" }
+    },
+    "global": {
+      "path": "/home/amdy/.omp/agent/config.yml",
+      "secrets.enabled": true,
+      "autolearn.enabled": true,
+      "compaction.enabled": false,
+      "modelRoles.advisor": "google-antigravity/gemini-3.7-flash:high",
+      "webSearchOrder_providers": 20,
+      "status": "DIVERGENT_REQUIRES_HUMAN_POLICY"
+    },
+    "accepted_matrix": {
+      "tools.approvalMode": { "effective": "yolo", "kad_policy": "REQUIRES_HUMAN_POLICY" },
+      "secrets.enabled": { "effective": true, "kad_policy": "REQUIRES_HUMAN_POLICY" },
+      "ttsr.enabled": { "effective": true, "kad_policy": "KAD_RESTRICTED", "compat": "FAIL" },
+      "recap.enabled": { "effective": true, "kad_policy": "KAD_RESTRICTED", "compat": "FAIL" }
+    }
+  },
+  "generated_artifacts": {
+    "isa_projections": { "count": 3, "generator": "tools/kad/isa.mjs", "reproducible": true, "generator_field": false, "regen_at": "2026-09-01T20:26:49Z" },
+    "probe_journal": { "generator": "tools/kad/compute/evidence-recorder.mjs", "receipts": ["abf8ebfd2b670d71fbd136354f83ae378bfbc6647f5007a35d64c179adf3e892", "ba062385419b76fdfca437d53d88967e693454c38cb28e5eda33ba636415a6ac"], "chain_verified": true, "runtime_regenerated": true },
+    "causal_journal": { "lines": 144, "append_only": true, "runtime_written": true },
+    "telemetry": { "records": 37, "snapshot_at": "2026-08-30T21:51:28Z", "regenerable": true, "tracked": false },
+    "tmp_scratch": { "path": ".tmp/", "writer": "tools/kad/test/intent-fidelity.test.mjs", "status": "IGNORED_M2" }
+  },
+  "skills": {
+    "project_tracked": 49,
+    "project_untracked": ["system-atlas"],
+    "dual_lockfile": {
+      "kad_governance": { "path": ".agents/workspace/skills.lock.json", "schema": "array", "entries": 19, "code_validated": true, "local_delta": 16 },
+      "omp_installer": { "path": "skills-lock.json", "schema": "map", "entries": 38, "code_validated": false, "dirty": "system-atlas entry", "hash_mismatch": { "lockfile_hash": "ca484cddba418418e5d1c79ebf1f86f44791687781e03d2a6394a960a2e2b85f", "installed_sha256": "18c89dcf211ac5c3b48d5973eee97e14a65910b0bc27f7a674dddf3f69719e4d" } }
+    },
+    "unregistered_tracked_skills": 10,
+    "local_delta_warnings": 16,
+    "action": "ROUTE_TO_SUCCESSOR"
+  },
+  "knowledge_plane": {
+    "evidence_dirs": 78,
+    "work_without_evidence": ["WP-KAD-RESEARCH-ZOTERO-005"],
+    "evidence_without_work_item": ["WP-KAD-GOVERNANCE-AUTHORIZATION-SEMANTICS-032R"],
+    "broken_commit_refs": 0,
+    "wp041_baseline_valid": true
+  },
+  "runtime": {
+    "world_endpoint": { "url": "http://127.0.0.1:5001/v1", "state": "AVAILABLE", "latency_ms": 23, "model": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M" },
+    "qwen_endpoint": { "url": "http://127.0.0.1:5002/v1", "state": "UNAVAILABLE", "required": false },
+    "gpu": { "device": "AMD RX 9060 XT", "state": "AVAILABLE_IDLE", "util_pct": 0, "rocms_userspace": null },
+    "economic_router": { "state": "DEGRADED", "reason": "NO_ELIGIBLE_LANE", "paid_authorized": false, "policy_accepted": true }
+  },
+  "security": {
+    "approval_mode": { "effective": "yolo", "class": "REQUIRES_HUMAN_POLICY" },
+    "secrets_enabled": { "effective": true, "class": "REQUIRES_HUMAN_POLICY" },
+    "secrets_exposed": false,
+    "context7_npx": { "class": "REQUIRES_HUMAN_POLICY", "flagged_by": "WP-041" },
+    "gates_active": 17,
+    "gitleaks": "8.30.1"
+  },
+  "verification": {
+    "test_suite": { "command": "npm test", "tests": 781, "pass": 781, "fail": 0, "skipped": 0 },
+    "kad_doctor": "PASS",
+    "workctl_doctor": "healthy",
+    "git_diff_check": "clean"
+  },
+  "unknowns": [],
+  "human_decisions": [
+    ".omp/config.yml default model: commit or revert",
+    "skills-lock/system-atlas: complete install, remove, or defer",
+    ".agents/telemetry: commit, ignore, or leave unversioned",
+    "6 REVIEW work items: transition to ACCEPTED or retain",
+    "approvalMode yolo + secrets.enabled true: accept as policy or change",
+    "global config divergence: reconcile or accept",
+    "EXP-KAD-OFFLINE-SURVIVAL-001-R1: authorize R5 or close"
+  ],
+  "successor_candidates": [
+    "EXECUTABLE_SKILL_RATIONALIZATION",
+    "SECURITY_POLICY_RESOLUTION",
+    "MODEL_ROLE_EMPIRICAL_ROUTING_FABRIC",
+    "PROJECTION_TOOLING_REFINEMENT",
+    "WORKCTL_LIFECYCLE_COMPLETION"
+  ],
+  "refinement_readiness": "REFINEMENT_READY_WITH_KNOWN_DEFERRED_ITEMS"
+}

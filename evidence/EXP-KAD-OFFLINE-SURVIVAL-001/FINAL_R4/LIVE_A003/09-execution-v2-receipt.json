@@ -1,0 +1,53 @@
+{
+  "schema_version": "HUMAN_AUTHORIZATION_RECEIPT_V2",
+  "receipt_id": "har-v2-exp-offline-survival-r4-a003-live-exec-001",
+  "issuer": {
+    "subject_type": "ACTOR",
+    "subject_id": "actor.project_lead"
+  },
+  "authorized_subject": {
+    "subject_type": "ACTOR",
+    "subject_id": "actor.project_lead"
+  },
+  "work_context": {
+    "workpackage_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A003",
+    "experiment_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A003"
+  },
+  "operation": {
+    "operation_class": "INFRASTRUCTURE_MUTATION",
+    "action": "route.delete.default",
+    "action_hash": "sha256:2db2944e3bb5db5eb28232465daddc40135af18e6045842d88c9e1a1a6fd7141"
+  },
+  "resources": [
+    "host.amdy.workstation",
+    "network-interface:enp7s0",
+    "route:ipv4-default-via-192.168.0.1-dev-enp7s0-proto-dhcp-metric-100"
+  ],
+  "scope": {
+    "canonical_paths": [
+      "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A003"
+    ]
+  },
+  "validity": {
+    "not_before": "2026-09-01T13:23:24.978Z",
+    "action_valid_until": "2026-09-01T13:38:24.978Z"
+  },
+  "rollback": {
+    "authorized": true,
+    "action": "/usr/bin/nmcli device reapply enp7s0",
+    "action_hash": "sha256:f81e30dfc143110fe8e1580de2e0125cdcc92e5dd89c0f1951acc9345a245666",
+    "recovery_deadline": "2026-09-01T13:41:24.978Z"
+  },
+  "delegation": {
+    "redelegation_allowed": false
+  },
+  "policy": {
+    "policy_version": "KAD_GOVERNANCE_POLICY_V1",
+    "policy_hash": "sha256:651235adf464cf83bfc88854dca66ca1ddf48e9f224bec2ec73604ef6a423b78"
+  },
+  "provenance": {
+    "human_event_ref": "ask_user:a003_live_execution:APPROVE_LIVE_A003_EXECUTION",
+    "record_hash": "sha256:64c0ce510963df801d6ab1d9332d4bb5a7841b5c3a25807694a9a22f415d8ac8"
+  },
+  "receipt_hash": "sha256:676e7e9c25a4d6f96eac54d3364bafb262f09564e0214a5055be2498a144e5fe"
+}

@@ -1,0 +1,38 @@
+$ bin/kad-telemetry status --json
+exit=0
+{
+  "schema_version": "KAD_OUTCOME_COST_TELEMETRY_V1",
+  "storage_dir": ".agents/telemetry/outcomes",
+  "total_records": 37,
+  "accepted_outcomes": 30,
+  "clean_outcome_rate_percent": 81.08108108108108,
+  "total_interventions": 0,
+  "low_leverage_friction_ratio": 0,
+  "stratification": {
+    "work_classes": {
+      "GOVERNANCE": 3,
+      "IMPLEMENTATION": 17,
+      "PROJECTION": 3,
+      "DEBUGGING": 4,
+      "BENCHMARK": 1,
+      "DOCUMENTATION": 3,
+      "RESEARCH": 6
+    },
+    "risk_tiers": {
+      "TIER_2_MEDIUM": 10,
+      "TIER_1_LOW": 23,
+      "TIER_3_HIGH": 4
+    },
+    "provider_classes": {
+      "UNKNOWN": 37
+    },
+    "origin_classes": {
+      "RECONSTRUCTED": 37
+    }
+  },
+  "integrity": {
+    "total": 37,
+    "valid": 37,
+    "corrupted": 0
+  }
+}

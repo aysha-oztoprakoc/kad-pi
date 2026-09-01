@@ -1,0 +1,115 @@
+{
+  "schema_version": "GOVERNANCE_PREFLIGHT_V1",
+  "request_id": "exp-offline-survival-r3-preflight-001",
+  "actor": {
+    "actor_id": "role.kad-builder",
+    "actor_class": "AGENT_ROLE"
+  },
+  "work": {
+    "workpackage_id": "WP-KAD-GOVERNANCE-AUTHORIZATION-SEMANTICS-032R",
+    "ticket_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R3",
+    "run_id": "r3-preflight-001",
+    "lifecycle_state": "IN_PROGRESS"
+  },
+  "operation": {
+    "operation_class": "INFRASTRUCTURE_MUTATION",
+    "action": "route.delete.default",
+    "action_kind": "PRIMARY",
+    "resource_refs": [
+      "host.amdy.workstation",
+      "network-interface:enp7s0",
+      "route:ipv4-default-via-192.168.0.1"
+    ]
+  },
+  "scope": {
+    "owned_paths": [
+      "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R3/"
+    ],
+    "requested_paths": [
+      "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R3/"
+    ]
+  },
+  "authority": {
+    "required_level": "HUMAN_ONLY",
+    "target_authority": "HUMAN_ONLY",
+    "claimed_human_approval_in_prose": null,
+    "require_v2_delegation": true
+  },
+  "risk": {
+    "risk_tier": "TIER_3_HIGH",
+    "reversible": true,
+    "containment_ref": "r3-experiment-contract.md",
+    "unknown_risk_factors": false
+  },
+  "evidence": {
+    "tests_passed": "WP-032R focused governance/V2/adversarial suite 40/40",
+    "independent_verification_ref": "evidence/WP-KAD-GOVERNANCE-AUTHORIZATION-SEMANTICS-032R/13-fresh-final-security-review.md",
+    "human_authorization_receipt": {
+      "schema_version": "HUMAN_AUTHORIZATION_RECEIPT_V2",
+      "receipt_id": "har-v2-exp-offline-survival-r3-001",
+      "issuer": {
+        "subject_type": "ACTOR",
+        "subject_id": "actor.project_lead"
+      },
+      "authorized_subject": {
+        "subject_type": "ROLE_OR_ACTOR",
+        "subject_id": "role.kad-builder"
+      },
+      "work_context": {
+        "workpackage_id": "WP-KAD-GOVERNANCE-AUTHORIZATION-SEMANTICS-032R",
+        "experiment_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R3"
+      },
+      "operation": {
+        "operation_class": "INFRASTRUCTURE_MUTATION",
+        "action": "route.delete.default",
+        "action_hash": "sha256:2db2944e3bb5db5eb28232465daddc40135af18e6045842d88c9e1a1a6fd7141"
+      },
+      "resources": [
+        "host.amdy.workstation",
+        "network-interface:enp7s0",
+        "route:ipv4-default-via-192.168.0.1"
+      ],
+      "scope": {
+        "canonical_paths": [
+          "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R3"
+        ]
+      },
+      "validity": {
+        "not_before": "2026-08-31T00:20:05.000Z",
+        "action_valid_until": "2026-08-31T02:20:05.000Z"
+      },
+      "rollback": {
+        "authorized": true,
+        "action": "route.replace.default",
+        "action_hash": "sha256:c2a19c916cd5e1650b70b826882e37653c9308aad3379b98f8ca0483890492ba",
+        "recovery_deadline": "2026-08-31T02:25:05.000Z"
+      },
+      "delegation": {
+        "redelegation_allowed": false
+      },
+      "policy": {
+        "policy_version": "KAD_GOVERNANCE_POLICY_V1",
+        "policy_hash": "sha256:651235adf464cf83bfc88854dca66ca1ddf48e9f224bec2ec73604ef6a423b78"
+      },
+      "provenance": {
+        "human_event_ref": "ask_user:r3_authorization:APPROVE_R3_EXACT_SCOPE_AUTHORIZATION",
+        "record_hash": "sha256:227db1121cc5eb61fda4d6883cfe261a424b982e9524714afd85315c46343b4c"
+      },
+      "receipt_hash": "sha256:a83260f0f85aa400d5925efa124d0f79d503bb34a50e113632569f7d406bf6b7"
+    },
+    "has_unresolved_contradiction": false,
+    "past_telemetry_success": true
+  },
+  "resource": {
+    "stc_lease_ref": null,
+    "lease_valid": null,
+    "budget_envelope_ref": null,
+    "estimated_cost_usd": 0,
+    "envelope_remaining_usd": null,
+    "requested_increase_usd": null
+  },
+  "provenance": {
+    "requested_at": "2026-08-31T00:20:05.000Z",
+    "request_hash": "sha256:ed7ac6a6eaac60275c0facf468c1623cc4b4021fdb5b39c5de8fbb0b6f75d4cf"
+  }
+}

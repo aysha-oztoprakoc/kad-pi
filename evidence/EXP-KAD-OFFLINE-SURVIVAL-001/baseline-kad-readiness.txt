@@ -1,0 +1,153 @@
+$ bin/kad readiness --json
+exit=0
+{
+  "schema_version": "kad-promotion-readiness-v1",
+  "evaluated_at": "2026-08-30T22:34:14.514Z",
+  "evaluation_window": {
+    "start": "2026-08-30T01:38:21.544Z",
+    "end": "2026-08-30T01:40:02.714Z",
+    "total_records_examined": 12
+  },
+  "integrity_gate": {
+    "passed": true,
+    "hash_chain_valid": true,
+    "sequence_valid": true,
+    "tampering_detected": false,
+    "errors": []
+  },
+  "policy_drift_gate": {
+    "passed": true,
+    "drift_detected": false,
+    "expected_policy_fingerprint": "sha256:d0af24281f4f9201b81a2212d8517a4cbfadbd2bc1eb6ae942e4c10193b062c3",
+    "observed_policy_fingerprints": [
+      "sha256:d0af24281f4f9201b81a2212d8517a4cbfadbd2bc1eb6ae942e4c10193b062c3"
+    ],
+    "expected_evaluator_version": "kad-economic-shadow-v1",
+    "observed_evaluator_versions": []
+  },
+  "quality_gate": {
+    "passed": false,
+    "unknown_rate": 1,
+    "max_unknown_rate": 0.3,
+    "corrupt_records_count": 0
+  },
+  "global_readiness": {
+    "status": "UNKNOWN_DOMINATED",
+    "reason_codes": [
+      "EXCESSIVE_UNKNOWN_RATE"
+    ],
+    "metrics": {
+      "total_observations": 12,
+      "comparable_observations": 12,
+      "divergence_count": 12,
+      "divergence_rate": 1
+    }
+  },
+  "advisory_class_readiness": {
+    "EXPIRING_SUBSCRIPTION_OPPORTUNITY": {
+      "status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+      ],
+      "occurrences": 0,
+      "divergences": 0,
+      "divergence_rate": 0,
+      "ready_for_canary_design": false,
+      "thresholds": {
+        "min_occurrences": 5,
+        "min_divergences": 3
+      }
+    },
+    "SCARCE_QUOTA_PRESERVATION": {
+      "status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+      ],
+      "occurrences": 0,
+      "divergences": 0,
+      "divergence_rate": 0,
+      "ready_for_canary_design": false,
+      "thresholds": {
+        "min_occurrences": 5,
+        "min_divergences": 3
+      }
+    },
+    "PAID_AUTHORITY_BARRIER": {
+      "status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+      ],
+      "occurrences": 0,
+      "divergences": 0,
+      "divergence_rate": 0,
+      "ready_for_canary_design": false,
+      "thresholds": {
+        "min_occurrences": 5,
+        "min_divergences": 3
+      }
+    },
+    "STALE_TELEMETRY_SUPPRESSED": {
+      "status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+      ],
+      "occurrences": 0,
+      "divergences": 0,
+      "divergence_rate": 0,
+      "ready_for_canary_design": false,
+      "thresholds": {
+        "min_occurrences": 5,
+        "min_divergences": 3
+      }
+    },
+    "UNKNOWN_QUOTA_NEUTRAL": {
+      "status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+      ],
+      "occurrences": 0,
+      "divergences": 0,
+      "divergence_rate": 0,
+      "ready_for_canary_design": false,
+      "thresholds": {
+        "min_occurrences": 5,
+        "min_divergences": 3
+      }
+    },
+    "LIMIT_REACHED_AVOIDANCE": {
+      "status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+      ],
+      "occurrences": 0,
+      "divergences": 0,
+      "divergence_rate": 0,
+      "ready_for_canary_design": false,
+      "thresholds": {
+        "min_occurrences": 5,
+        "min_divergences": 3
+      }
+    },
+    "SCOPE_MISMATCH": {
+      "status": "INSUFFICIENT_DATA",
+      "reason_codes": [
+        "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+      ],
+      "occurrences": 0,
+      "divergences": 0,
+      "divergence_rate": 0,
+      "ready_for_canary_design": false,
+      "thresholds": {
+        "min_occurrences": 5,
+        "min_divergences": 3
+      }
+    }
+  },
+  "epistemic_class": "DERIVED",
+  "authority_contract": {
+    "execution_authority_granted": false,
+    "canary_authorized": false,
+    "routing_mutation_allowed": false,
+    "empirical_savings_claimed": false
+  }
+}

@@ -1,0 +1,37 @@
+$ bin/kad-governance status
+exit=0
+=== KAD DETERMINISTIC GOVERNANCE GATE STATUS ===
+
+Evaluated Decisions:   2
+  - ALLOW:             0
+  - DENY:              0
+  - REQUIRE_HUMAN:     0
+  - BLOCKED:           2
+
+Active Authority Classes (6):
+  - HUMAN_ONLY
+  - HUMAN_PREAUTHORIZED
+  - DETERMINISTIC_POLICY
+  - DELEGATED_WITH_GATE
+  - AUTONOMOUS_WITHIN_LEASE
+  - FORBIDDEN
+
+Governed Operation Classes (17):
+  - READ_LOCAL                     -> [AUTONOMOUS_WITHIN_LEASE] (status: IMPLEMENTED)
+  - PUBLIC_NETWORK_READ            -> [DELEGATED_WITH_GATE] (status: IMPLEMENTED)
+  - AUTHENTICATED_READ             -> [HUMAN_PREAUTHORIZED] (status: NOT_IMPLEMENTED)
+  - WORKSPACE_MUTATION             -> [AUTONOMOUS_WITHIN_LEASE] (status: IMPLEMENTED)
+  - LOCAL_GIT_COMMIT               -> [AUTONOMOUS_WITHIN_LEASE] (status: IMPLEMENTED)
+  - REMOTE_GIT_PUSH                -> [HUMAN_PREAUTHORIZED] (status: IMPLEMENTED)
+  - PR_CREATE                      -> [HUMAN_PREAUTHORIZED] (status: IMPLEMENTED)
+  - MAIN_MERGE                     -> [HUMAN_PREAUTHORIZED] (status: IMPLEMENTED)
+  - RELEASE_PUBLISH                -> [HUMAN_ONLY] (status: IMPLEMENTED)
+  - CANONICAL_KNOWLEDGE_PROMOTION  -> [HUMAN_ONLY] (status: IMPLEMENTED)
+  - DERIVED_PROJECTION_REBUILD     -> [DETERMINISTIC_POLICY] (status: IMPLEMENTED)
+  - METERED_API_CALL               -> [DELEGATED_WITH_GATE] (status: IMPLEMENTED)
+  - SCOPED_CREDENTIAL_USE          -> [HUMAN_PREAUTHORIZED] (status: NOT_IMPLEMENTED)
+  - RAW_SECRET_ACCESS              -> [FORBIDDEN] (status: IMPLEMENTED)
+  - INFRASTRUCTURE_MUTATION        -> [HUMAN_ONLY] (status: IMPLEMENTED)
+  - POLICY_MUTATION                -> [HUMAN_ONLY] (status: IMPLEMENTED)
+  - CONSTITUTIONAL_MUTATION        -> [HUMAN_ONLY] (status: IMPLEMENTED)
+

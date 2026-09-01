@@ -1,0 +1,72 @@
+{
+  "schema_version": "GOVERNANCE_PREFLIGHT_V1",
+  "request_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R1-infrastructure",
+  "actor": {
+    "actor_id": "actor.project_lead",
+    "actor_class": "AGENT_ROLE"
+  },
+  "work": {
+    "workpackage_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R1",
+    "ticket_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R1",
+    "run_id": "r1",
+    "lifecycle_state": "IN_PROGRESS"
+  },
+  "operation": {
+    "operation_class": "INFRASTRUCTURE_MUTATION",
+    "action": "delete-then-restore-ipv4-default-route",
+    "resource_refs": [
+      "experiment:EXP-KAD-OFFLINE-SURVIVAL-001-R1",
+      "host:amdy",
+      "interface:enp7s0",
+      "route:ipv4-default:192.168.0.1"
+    ]
+  },
+  "scope": {
+    "owned_paths": [
+      "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/"
+    ],
+    "requested_paths": []
+  },
+  "authority": {
+    "required_level": "HUMAN_ONLY",
+    "target_authority": "HUMAN_ONLY"
+  },
+  "risk": {
+    "risk_tier": "TIER_3_HIGH",
+    "reversible": true,
+    "containment_ref": "local-120-second-watchdog",
+    "unknown_risk_factors": false
+  },
+  "evidence": {
+    "tests_passed": null,
+    "human_authorization_receipt": {
+      "schema_version": "HUMAN_AUTHORIZATION_RECEIPT_V1",
+      "receipt_id": "har-exp-kad-offline-survival-001-r1",
+      "actor_id": "actor.project_lead",
+      "workpackage_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R1",
+      "operation_class": "INFRASTRUCTURE_MUTATION",
+      "scope": [
+        "host.amdy.workstation",
+        "interface.enp7s0",
+        "route.ipv4-default"
+      ],
+      "resource_refs": [
+        "experiment:EXP-KAD-OFFLINE-SURVIVAL-001-R1",
+        "host:amdy",
+        "interface:enp7s0",
+        "route:ipv4-default:192.168.0.1"
+      ],
+      "note": "Authorize only deletion of the IPv4 default route via 192.168.0.1 on enp7s0 for a maximum intended outage of 90 seconds, with a local 120-second automatic restoration watchdog. Preserve LAN 192.168.0.0/24 and localhost. Restore only by adding the identified default route with metric 100. No persistent configuration, service, credential, firewall, policy, or project-state mutation is authorized.",
+      "issued_at": "2026-08-30T22:40:00.000Z",
+      "valid_until": "2026-08-30T22:50:00.000Z",
+      "receipt_hash": "sha256:890044174cf6eb357af6fbc55045eb483349c0cc6893503ddf3a8f74068d8aa9"
+    },
+    "has_unresolved_contradiction": false
+  },
+  "resource": {
+    "estimated_cost_usd": 0
+  },
+  "provenance": {
+    "requested_at": "2026-08-30T22:47:00.000Z"
+  }
+}

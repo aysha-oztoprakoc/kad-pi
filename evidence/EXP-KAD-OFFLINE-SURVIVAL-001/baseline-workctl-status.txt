@@ -1,0 +1,2860 @@
+$ bin/workctl status
+exit=0
+[
+  {
+    "id": "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+    "project": "kad-pi",
+    "title": "Human-Guided Aesthetic Architecture & Ideal State Artifact (ISA) Establishment",
+    "status": "REVIEW",
+    "priority": 180,
+    "spec_ref": "user:/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+    "fixed_point": "27171d9b5ac862afce2c09d8a9c5239185c25d23",
+    "scope": [
+      "vault/00_Governance/",
+      "vault/40_Decisions/",
+      "vault/90_Derived/",
+      "tools/kad/isa.mjs",
+      "tools/kad/test/isa.test.mjs",
+      "bin/kad-isa",
+      "evidence/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015/",
+      ".agents/work/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015.json"
+    ],
+    "non_scope": [
+      "immediate redesign of active Omarchy/Quickshell themes",
+      "immediate rewrite of Sofia v3 or public website",
+      "mutating data_workspace R1 frozen baseline",
+      "deploying unvetted themes as default desktop environment",
+      "paid API spend",
+      "arbitrary shell command execution from markdown"
+    ],
+    "owned_paths": [
+      "vault/00_Governance/",
+      "vault/40_Decisions/",
+      "vault/90_Derived/",
+      "tools/kad/isa.mjs",
+      "tools/kad/test/isa.test.mjs",
+      "bin/kad-isa",
+      "evidence/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015/",
+      ".agents/work/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-isa lint vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "bin/kad-wiki lint",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015/",
+    "blocked_by": [
+      "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014"
+    ],
+    "blocks": [
+      "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+      "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+      "WP-KAD-TELL-SERVER-ANSI-PROFILE-018"
+    ],
+    "acceptance_criteria": [
+      "Archaeological inspection of existing KAD presentation, Omarchy/Quickshell, data_workspace, and legacy design assets complete",
+      "Wayfinder decision map establishes 12 bounded aesthetic clusters with explicit dependencies and alternatives",
+      "Grill adversarial review attacks and tests all aesthetic assumptions across 12 mandatory failure modes",
+      "Ask-Me interactive 5+1 protocol resolves all material subjective aesthetic choices with the human",
+      "Canonical Ideal State Artifact (ISA) created in vault/00_Governance/ with qualitative goals, principles, surface profiles, semantic vocabulary, operational constraints, anti-patterns, and testable claims (deterministic, human review, hybrid)",
+      "ISA validator framework implemented in tools/kad/isa.mjs and bin/kad-isa with lint, check, status, and explain commands backed by an allowlisted validator registry (zero arbitrary shell execution)",
+      "Derived machine-readable projection generated at vault/90_Derived/Projections/isa-aesthetic.json",
+      "Full test suite, doctors, and linters pass cleanly with zero regression"
+    ],
+    "description": "Establish the canonical KAD Aesthetic Directive & Ideal State Artifact (ISA) through human-guided discovery (/ask-matt + /wayfinder + /grill + /ask-me), defining cross-surface semantic vocabulary, host profiles (AMDY vs TELL), testable claims, and deterministic validation tooling.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+    "project": "kad-pi",
+    "title": "AMDY Omarchy 4 Quattro & Quickshell KAD Cyberdeck Theme Implementation",
+    "status": "ACCEPTED",
+    "priority": 140,
+    "spec_ref": "user:/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+    "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+    "scope": [
+      "interface/themes/omarchy/",
+      "tools/kad/test/desktop-theme*.test.mjs",
+      "evidence/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017/",
+      ".agents/work/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017.json"
+    ],
+    "non_scope": [
+      "granting desktop UI widgets authority to execute mutating shell commands or alter routing",
+      "coupling desktop shell lifecycle to remote compute nodes or requiring live SSE daemons for basic theming",
+      "mutating data_workspace R1 frozen baseline",
+      "arbitrary un-sandboxed shell command execution",
+      "paid API spend"
+    ],
+    "owned_paths": [
+      "interface/themes/omarchy/",
+      "tools/kad/test/desktop-theme*.test.mjs",
+      "evidence/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017/",
+      ".agents/work/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-isa lint vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "bin/kad-wiki lint",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017/",
+    "blocked_by": [
+      "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014"
+    ],
+    "blocks": [
+      "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021"
+    ],
+    "acceptance_criteria": [
+      "Quickshell / QML / LayerShell theme widgets implement Tier A diegetic cyberdeck aesthetic (surface.amdy.quickshell) based on ISA-KAD-AESTHETIC-001 tokens",
+      "Hyprland window decoration, border styling, and 45-degree polygon chamfer geometry configured for AMDY workstation (surface.amdy.hyprland)",
+      "Terminal 24-bit TrueColor profile and color scheme configured (surface.terminal.omarchy)",
+      "Event-driven 200Hz state transitions implemented with 150ms-200ms duration and zero infinite ambient looping animations",
+      "WCAG AAA contrast (>14:1) verified for cyan/bone on dark ink/oxblood backgrounds",
+      "Strict NO_AUDIO_UI enforcement verified across all desktop widgets",
+      "Zero shell mutation authority invariant verified (desktop UI cannot directly execute mutating commands)",
+      "Graceful degradation verified: compositor or GPU failure drops cleanly to 0ms monospace / static rendering",
+      "Full test suite, ISA checks, and doctors remain GREEN"
+    ],
+    "description": "Implement the canonical Tier A diegetic cyberdeck presentation layer on developer workstation amdy across Omarchy 4 Quattro (Hyprland, Quickshell, Waybar, Terminal) enforcing ISA-KAD-AESTHETIC-001 without turning desktop components into compute fabric dependencies or granting UI widgets mutation authority.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-BASELINE-PUBLICATION-028A",
+    "project": "kad-pi",
+    "title": "Frozen Baseline Verification, GitHub Bootstrap Publication & Exact-SHA Vault Projection",
+    "status": "ACCEPTED",
+    "priority": 290,
+    "spec_ref": "user:/WP-KAD-BASELINE-PUBLICATION-028A",
+    "fixed_point": "0ea896b54d799ca98fa3b45fe45f519655135807",
+    "scope": [
+      "evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
+      ".agents/work/WP-KAD-BASELINE-PUBLICATION-028A.json",
+      ".agents/work/claims/WP-KAD-BASELINE-PUBLICATION-028A.json",
+      ".github/",
+      "vault/90_Derived/Projections/"
+    ],
+    "non_scope": [
+      "reopening architecture debate",
+      "modifying frozen ISA-KAD-SKILL-ROLE-002 v1.1 semantics",
+      "implementing intent-fidelity substrate or 24-decision engine in this WP",
+      "implementing Warren/Beads runtime canaries",
+      "unauthorized manual merges",
+      "force-pushing or rewriting Git history",
+      "paid API spend"
+    ],
+    "owned_paths": [
+      "evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
+      ".agents/work/WP-KAD-BASELINE-PUBLICATION-028A.json",
+      ".agents/work/claims/WP-KAD-BASELINE-PUBLICATION-028A.json",
+      ".github/",
+      "vault/90_Derived/Projections/"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "npm test",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "bin/workctl skills doctor",
+      "bin/kad-isa check all",
+      "bin/kad-wiki lint",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
+    "blocked_by": [
+      "WP-KAD-ISA-FINAL-SNAPSHOT-028"
+    ],
+    "blocks": [
+      "WP-KAD-INTENT-FIDELITY-029"
+    ],
+    "acceptance_criteria": [
+      "Phase 0 frozen baseline verification against WP-028 evidence snapshot and manifest completed",
+      "Canonical local Git commit created matching frozen tree SHA",
+      "GitHub repository bootstrap protections inspected and configured",
+      "Authorized one-time bootstrap push executed to origin/main with fast-forward only",
+      "GitHub Actions CI verified PASS on exact pushed commit SHA",
+      "Required status check branch protection enabled and verified on GitHub main branch",
+      "Vault and ISA projections compiled from exact remote main SHA with recorded provenance",
+      "Dense final evidence report and receipts compiled in evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
+      "Zero unauthorized scope expansion, zero architecture debate reopening, zero secret leaks"
+    ],
+    "description": "Publish the exact frozen WP-028 content to GitHub, obtain independent remote CI evidence on the exact commit, activate required status check branch protection, and project the Vault from that exact pushed SHA.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-BASELINE-PUBLICATION-028A",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+    "project": "kad-pi",
+    "title": "Canonical Obsidian agentic librarian",
+    "status": "ACCEPTED",
+    "priority": 109,
+    "spec_ref": "user:/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+    "fixed_point": "2d368db84dea83b6347b46063118ed646a0132e1",
+    "scope": [
+      "tools/kad/wiki/",
+      "bin/kad-wiki",
+      ".agents/skills/kad-wiki/",
+      "tools/kad/test/wiki*.test.mjs",
+      "docs/agents/kad-wiki.md",
+      "evidence/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008/",
+      "wiki/"
+    ],
+    "non_scope": [
+      "Needle training",
+      "private personal vault paths",
+      "silent promotion of legacy pages"
+    ],
+    "owned_paths": [
+      "tools/kad/wiki/",
+      "bin/kad-wiki",
+      ".agents/skills/kad-wiki/",
+      "tools/kad/test/wiki*.test.mjs",
+      "docs/agents/kad-wiki.md",
+      "evidence/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008/",
+      "wiki/"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/wiki*.test.mjs",
+      "bin/kad-wiki lint",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+    "blocked_by": [
+      "WP-KAD-FUSION-OMP-ADAPTATION-007A"
+    ],
+    "blocks": [
+      "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009"
+    ],
+    "acceptance_criteria": [
+      "Canonical vault and authority zones exist",
+      "Approval binds exact proposal hash and modified proposals fail closed",
+      "Human edits remain direct Markdown edits",
+      "Normal context excludes unreviewed content deterministically",
+      "Legacy wiki is classified without silent promotion",
+      "Independent Git checkpoint and recovery work"
+    ],
+    "description": "Human-editable canonical Obsidian vault with deterministic review and anti-poisoning gates.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
+    "project": "kad-pi",
+    "title": "Commit Consolidation, Remote Synchronization & Vault-Driven Project Projection Bootstrap",
+    "status": "REVIEW",
+    "priority": 140,
+    "spec_ref": "user:/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
+    "fixed_point": "e3bce03e5b94ada0db6d29e75b6991b18522f2d8",
+    "scope": [
+      "README.md",
+      "docs/",
+      "site/",
+      "dashboard/",
+      "interface/",
+      "tools/kad/",
+      "bin/",
+      "vault/",
+      "wiki/",
+      "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011/"
+    ],
+    "non_scope": [
+      "force push",
+      "destructive git operations",
+      "full website redesign",
+      "full Sofia v3 redesign",
+      "committing secrets/caches/model weights"
+    ],
+    "owned_paths": [
+      "README.md",
+      "docs/",
+      "site/",
+      "dashboard/",
+      "interface/",
+      "tools/kad/",
+      "bin/",
+      "vault/",
+      "wiki/",
+      "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011/"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-wiki lint",
+      "bin/kad-wiki rebuild",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011/",
+    "blocked_by": [],
+    "blocks": [],
+    "acceptance_criteria": [
+      "every dirty path is classified",
+      "legitimate current project changes are committed without secret leakage",
+      "remote synchronization uses fast-forward only",
+      "vault remains sole durable knowledge authority",
+      "README reflects current canonical state",
+      "repository docs and projections are derived and carry provenance",
+      "legacy wiki remains generated-only",
+      "website and Sofia adapters exist and expose explicit authority deviations",
+      "private/unreviewed material cannot enter public docs",
+      "tests and doctors remain GREEN"
+    ],
+    "description": "Consolidate workspace commits, verify remote ancestry, perform fast-forward push to origin/main, and bootstrap canonical vault projection compilation for README, docs, website, and Sofia.",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1",
+    "project": "kad-pi",
+    "title": "Full /Work Inventory, Legacy Reconciliation & Canonical Vault Synchronization",
+    "status": "REVIEW",
+    "priority": 130,
+    "spec_ref": "user:/WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1",
+    "fixed_point": "ca1f56a020a3416eeffa3d49f3c34f113b536902",
+    "scope": [
+      "vault/",
+      "wiki/",
+      "tools/kad/wiki/",
+      "tools/kad/wiki-library/",
+      "tools/kad/wiki-projection.mjs",
+      "tools/kad/knowledge-plane.mjs",
+      "tools/kad/knowledge-plane-adapters.mjs",
+      "tools/kad/index.mjs",
+      "bin/kad-wiki",
+      "tools/kad/test/wiki*.test.mjs",
+      "tools/kad/test/knowledge-plane.test.mjs",
+      "evidence/WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1/",
+      "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010/",
+      "docs/"
+    ],
+    "non_scope": [
+      "Sofia v3 integration",
+      "website publishing",
+      "GitHub landing-page rewrite",
+      "Needle training",
+      "new OpenViking architecture",
+      "new training pipelines",
+      "new agent orchestration features",
+      "unrelated refactors"
+    ],
+    "owned_paths": [
+      "vault/",
+      "wiki/",
+      "tools/kad/wiki/",
+      "tools/kad/wiki-library/",
+      "tools/kad/wiki-projection.mjs",
+      "tools/kad/knowledge-plane.mjs",
+      "tools/kad/knowledge-plane-adapters.mjs",
+      "tools/kad/index.mjs",
+      "bin/kad-wiki",
+      "tools/kad/test/wiki*.test.mjs",
+      "tools/kad/test/knowledge-plane.test.mjs",
+      "evidence/WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1/",
+      "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010/",
+      "docs/"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/wiki*.test.mjs",
+      "node --test tools/kad/test/knowledge-plane.test.mjs",
+      "bin/kad-wiki lint",
+      "bin/kad-wiki rebuild",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1/",
+    "blocked_by": [],
+    "blocks": [],
+    "acceptance_criteria": [
+      "current /Work inventory is complete enough for meaningful project reconciliation",
+      "every significant project is classified",
+      "KAD-PI current state is represented correctly",
+      "local vs remote state is explicit",
+      "DATA_REIN/data_workspace lineage is either resolved or explicitly UNKNOWN/user-decided",
+      "all legacy wiki/ items have actionable disposition",
+      "MIGRATE_CANONICAL items are actually migrated where safe",
+      "REVIEW_REQUIRED remains gated",
+      "generated/derived material cannot masquerade as canonical",
+      "current vs historical architecture is explicit",
+      "canonical vault navigation is useful",
+      "context poisoning audit passes",
+      "proposal target authority is safely bounded or clearly documented",
+      "context retrieval is bounded",
+      "canonical IDs/properties are valid",
+      "no unrelated workspace state is damaged",
+      "tests/doctors remain GREEN"
+    ],
+    "description": "Reconcile the entire current /Work knowledge state into the canonical Obsidian vault, resolve demonstrated deviations, surface unresolved ambiguity to the human, and produce a trustworthy canonical project baseline.",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-COGNITIVE-TELEMETRY-031",
+    "project": "kad-pi",
+    "title": "Human Cognitive Attention, Intervention Friction, Outcome Quality & Total-Cost Telemetry Baseline",
+    "status": "ACCEPTED",
+    "priority": 330,
+    "spec_ref": "user:/WP-KAD-COGNITIVE-TELEMETRY-031",
+    "fixed_point": "15483b6c87757358ab046d50d94498c9fdfb1ebe",
+    "scope": [
+      "tools/kad/telemetry/",
+      "tools/kad/observatory/",
+      "bin/kad-telemetry",
+      "tools/kad/test/telemetry*.test.mjs",
+      "tools/kad/test/observatory*.test.mjs",
+      "tools/kad/test/cognitive-telemetry*.test.mjs",
+      "evidence/WP-KAD-COGNITIVE-TELEMETRY-031/",
+      ".agents/work/WP-KAD-COGNITIVE-TELEMETRY-031.json"
+    ],
+    "non_scope": [
+      "Warren integration",
+      "TELL deployment",
+      "Beads integration",
+      "OpenViking/Needle implementation",
+      "offline survival execution",
+      "capability broker",
+      "autonomy expansion",
+      "provider promotion",
+      "routing optimization",
+      "budget changes",
+      "Ideal State redesign",
+      "ISA-002 mutation",
+      "paid API spend"
+    ],
+    "owned_paths": [
+      "tools/kad/telemetry/",
+      "tools/kad/observatory/",
+      "bin/kad-telemetry",
+      "tools/kad/test/telemetry*.test.mjs",
+      "tools/kad/test/observatory*.test.mjs",
+      "tools/kad/test/cognitive-telemetry*.test.mjs",
+      "evidence/WP-KAD-COGNITIVE-TELEMETRY-031/",
+      ".agents/work/WP-KAD-COGNITIVE-TELEMETRY-031.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "npm test",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "bin/workctl skills doctor",
+      "bin/kad-isa check all",
+      "bin/kad-wiki lint",
+      "bin/kad-intent validate",
+      "bin/kad-intent verify-report",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-COGNITIVE-TELEMETRY-031/",
+    "blocked_by": [
+      "WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R"
+    ],
+    "blocks": [
+      "WP-KAD-GOVERNANCE-GATES-032"
+    ],
+    "acceptance_criteria": [
+      "KAD_OUTCOME_COST_TELEMETRY_V1 schema implemented with typed separation of outcome, quality, human, execution, context, economic, compute, maintenance, and provenance dimensions",
+      "Epistemic origin classes explicit (DIRECTLY_OBSERVED, DERIVED_DETERMINISTIC, HUMAN_REPORTED, ESTIMATED, RECONSTRUCTED, UNKNOWN) with UNKNOWN != ZERO strictly enforced",
+      "Human intervention taxonomy implemented distinguishing strategic design / research interpretation from corrective friction and babysitting",
+      "Quality and escaped defect metrics preserved (escaped_regressions, acceptance_reversals, rollbacks, post_acceptance_defects)",
+      "Provider-neutral workload semantics preserved (model/vendor only in run metadata, not required in workload contract)",
+      "Local-first storage verified with zero raw-secret capture and SHA-256 record integrity hashing",
+      "Telemetry does not own lifecycle state (passively observes workctl/intent/execution evidence without competing authority)",
+      "Lightweight complexity telemetry and observer overhead accounting implemented",
+      "Goodhart and metric-gaming protections verified via comprehensive semantic TDD suite (T01-T20)",
+      "Historical reconstruction from accepted WP receipts classified honestly as RECONSTRUCTED without fabricating unknown metrics",
+      "Prospective baseline protocol and initial baseline report generated distinguishing observations, reconstructions, and missing data",
+      "Zero automatic policy-feedback control loops implemented (measurement before optimization invariant preserved)",
+      "Full repository test suite, doctors, and linters pass cleanly with independent review verification"
+    ],
+    "description": "Human cognitive attention, intervention friction, outcome quality, and total-cost telemetry baseline subsystem establishing KAD_OUTCOME_COST_TELEMETRY_V1, observation origin tracking, Goodhart protections, historical reconstruction, and prospective baseline reporting.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-COGNITIVE-TELEMETRY-031",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
+    "project": "kad-pi",
+    "title": "Compute Fabric Empirical Benchmark Probe & Telemetry Baseline: Ideal-State Convergence → Capability Admission → Empirical Compute Fabric Probe",
+    "status": "REVIEW",
+    "priority": 200,
+    "spec_ref": "user:/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
+    "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+    "scope": [
+      "docs/architecture/KAD_COMPUTE_FABRIC_IDEAL_STATE_V1.md",
+      "docs/architecture/KAD_COMPUTE_FABRIC_IDEAL_STATE_V1.json",
+      "tools/kad/compute/",
+      "tools/kad/test/compute-probe*.test.mjs",
+      "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/",
+      ".agents/work/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021.json"
+    ],
+    "non_scope": [
+      "autonomous routing mutation without human approval",
+      "distributed network orchestration across unverified hosts",
+      "paid API spend",
+      "bypassing human architectural decision convergence"
+    ],
+    "owned_paths": [
+      "docs/architecture/KAD_COMPUTE_FABRIC_IDEAL_STATE_V1.md",
+      "docs/architecture/KAD_COMPUTE_FABRIC_IDEAL_STATE_V1.json",
+      "tools/kad/compute/",
+      "tools/kad/test/compute-probe*.test.mjs",
+      "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/",
+      ".agents/work/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-isa lint vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "bin/kad-isa check vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "bin/kad-wiki lint",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/",
+    "blocked_by": [
+      "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+      "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+      "WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+      "WP-KAD-LIVE-TELEMETRY-STREAM-019"
+    ],
+    "blocks": [],
+    "acceptance_criteria": [
+      "WP-016..019 prerequisite contracts verified and accepted",
+      "Wayfinder decision map established across compute fabric purpose, host roles, model lifecycles, and PON/STC semantics",
+      "OMP plugin admission and capability benchmark contract evaluated",
+      "Five-advisor adversarial review and convergence matrix produced",
+      "Human architectural decisions (D021-*) resolved via 5+1 decision protocol",
+      "Canonical Compute Fabric Ideal State Artifact (V1 Markdown & JSON schema) established and frozen with stable SHA256 digest",
+      "Implementation matrix mapping requirements to existing/new components with zero unexplained deviations",
+      "Deterministic TDD empirical benchmark probe runner implemented under tools/kad/compute/ with ROCm and amdgpu_top telemetry capture",
+      "Graceful degradation, fail-closed isolation, and zero authority leakage verified",
+      "Full test suite, ISA checks, and doctors remain GREEN"
+    ],
+    "description": "Establish the canonical Compute Fabric Ideal State Architecture, OMP capability admission framework, human architectural decisions (D021-*), and implement the deterministic empirical benchmark probe runner with local hardware telemetry.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+    "project": "kad-pi",
+    "title": "KAD-PI Counterfactual Observatory & Longitudinal Divergence Journal",
+    "status": "ACCEPTED",
+    "priority": 100,
+    "spec_ref": "user:/WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+    "fixed_point": "5f2a615f513157c2ad9170e0d292f20163894e70",
+    "scope": [
+      "tools/kad/telemetry/observatory.mjs",
+      "tools/kad/telemetry/economic-shadow.mjs",
+      "tools/kad/telemetry/economic-adapter.mjs",
+      "tools/kad/telemetry/view-model.mjs",
+      "tools/kad/telemetry/control-plane-runtime.mjs",
+      "tools/kad/telemetry/index.mjs",
+      "tools/kad/test/observatory.test.mjs",
+      "tools/kad/test/economic-shadow.test.mjs",
+      "tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "tools/kad/test/telemetry.test.mjs",
+      "tools/kad/test/control-plane.test.mjs",
+      "evidence/WP-KAD-COUNTERFACTUAL-OBSERVATORY-004/",
+      "docs/agents/observatory.md",
+      "wiki/KAD_Counterfactual_Observatory_2026-08-30.md",
+      "bin/kad"
+    ],
+    "non_scope": [
+      "altering production routing authority (routeEconomically)",
+      "executing counterfactual routes or interventions",
+      "logging prompts, completions, chain-of-thought, or auth tokens",
+      "external databases or network polling daemons",
+      "claiming empirical savings without intervention"
+    ],
+    "owned_paths": [
+      "tools/kad/telemetry/observatory.mjs",
+      "tools/kad/telemetry/economic-shadow.mjs",
+      "tools/kad/telemetry/economic-adapter.mjs",
+      "tools/kad/telemetry/view-model.mjs",
+      "tools/kad/telemetry/control-plane-runtime.mjs",
+      "tools/kad/telemetry/index.mjs",
+      "tools/kad/test/observatory.test.mjs",
+      "tools/kad/test/economic-shadow.test.mjs",
+      "tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "tools/kad/test/telemetry.test.mjs",
+      "tools/kad/test/control-plane.test.mjs",
+      "evidence/WP-KAD-COUNTERFACTUAL-OBSERVATORY-004/",
+      "docs/agents/observatory.md",
+      "wiki/KAD_Counterfactual_Observatory_2026-08-30.md",
+      "bin/kad"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/observatory.test.mjs",
+      "node --test tools/kad/test/economic-shadow.test.mjs",
+      "node --test tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "node --test tools/kad/test/telemetry.test.mjs",
+      "node --test tools/kad/test/control-plane.test.mjs",
+      "node --test tools/kad/test/research*.test.mjs",
+      "node --test tools/kad/test/*.test.mjs",
+      "just verify",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+    "blocked_by": [],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Wayfinder decision establishes runtime append-only tamper-evident journal under XDG state + bounded deterministic evidence export.",
+      "Machine-readable schema kad-shadow-observation-v1 defines structured observation event with deterministic sequence and hash chaining.",
+      "Epistemic separation contract enforces strict distinction between OBSERVED, COUNTERFACTUAL, DERIVED, and ESTIMATED_COUNTERFACTUAL without claiming unexecuted empirical savings.",
+      "Evaluation policy is frozen with deterministic fingerprinting (policy fingerprint + evaluator fingerprint); changes create distinct logical experiments.",
+      "Append-only journal implements atomic writes, hash-chain integrity (previous_hash + current_event -> event_hash), historical tampering detection, malformed-tail recovery, and bounded retention.",
+      "Privacy and secret protection strictly enforced: prompts, completions, CoT, files, Authorization headers, cookies, API keys are never persisted.",
+      "Longitudinal aggregation computes total, comparable, agreement/divergence counts, divergence rates, opportunity classes, actual tokens/costs, and tokenmaxxing metrics.",
+      "Deterministic evidence export command/function creates bounded snapshot in evidence/WP-KAD-COUNTERFACTUAL-OBSERVATORY-004/.",
+      "Observatory surfaced through bin/kad observatory and bin/kad observatory --json with zero verbose noise in compact status bar.",
+      "All 24 required TDD test cases (T1-T24) pass and all 464+ regression tests remain green."
+    ],
+    "description": "Longitudinal counterfactual observatory and append-only tamper-evident divergence journal tracking actual vs shadow economic routing decisions without granting shadow execution authority or making unsupported empirical savings claims.",
+    "source_ticket": "user:/WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+    "project": "kad-pi",
+    "title": "KAD-PI Deterministic Promotion Readiness Gate",
+    "status": "ACCEPTED",
+    "priority": 100,
+    "spec_ref": "user:/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+    "fixed_point": "8774f8d28e1d8920576719911d4050e7cb0e4a76",
+    "scope": [
+      "tools/kad/telemetry/observatory.mjs",
+      "tools/kad/telemetry/view-model.mjs",
+      "tools/kad/telemetry/control-plane-runtime.mjs",
+      "tools/kad/telemetry/index.mjs",
+      "tools/kad/test/observatory.test.mjs",
+      "tools/kad/test/readiness.test.mjs",
+      "evidence/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005/",
+      "docs/agents/observatory.md",
+      "wiki/KAD_Counterfactual_Promotion_Readiness_2026-08-30.md",
+      "bin/kad"
+    ],
+    "non_scope": [
+      "executing shadow routes or canary experiments",
+      "altering production routing authority (routeEconomically)",
+      "enabling automatic promotion or granting shadow authority",
+      "benchmarking remote providers or spending paid tokens for synthetic traffic",
+      "claiming empirical savings, quality equivalence, or causal benefit without intervention",
+      "probabilistic authorization or fuzzy statistical priors"
+    ],
+    "owned_paths": [
+      "tools/kad/telemetry/observatory.mjs",
+      "tools/kad/telemetry/view-model.mjs",
+      "tools/kad/telemetry/control-plane-runtime.mjs",
+      "tools/kad/telemetry/index.mjs",
+      "tools/kad/test/observatory.test.mjs",
+      "tools/kad/test/readiness.test.mjs",
+      "evidence/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005/",
+      "docs/agents/observatory.md",
+      "wiki/KAD_Counterfactual_Promotion_Readiness_2026-08-30.md",
+      "bin/kad"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/readiness.test.mjs",
+      "node --test tools/kad/test/observatory.test.mjs",
+      "node --test tools/kad/test/economic-shadow.test.mjs",
+      "node --test tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "node --test tools/kad/test/telemetry.test.mjs",
+      "node --test tools/kad/test/control-plane.test.mjs",
+      "node --test tools/kad/test/research*.test.mjs",
+      "node --test tools/kad/test/*.test.mjs",
+      "just verify",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+    "blocked_by": [],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Wayfinder decision establishes multi-dimensional deterministic readiness contract with per-advisory-class evaluation.",
+      "Machine-readable schema kad-promotion-readiness-v1 and policy contract define unambiguous states (INSUFFICIENT_DATA, INVALID_EVIDENCE, POLICY_DRIFT, READY_FOR_CANARY_DESIGN).",
+      "Readiness evaluation is strictly fail-closed on hash-chain corruption, sequence gaps, historical tampering, and policy/evaluator fingerprint drift.",
+      "Per-advisory-class evaluation assesses opportunity class occurrences, divergence counts, and UNKNOWN rates independently.",
+      "Strict epistemic separation enforced: READY_FOR_CANARY_DESIGN means only readiness to design an intervention, never promotion authorization or empirical savings claim.",
+      "Synthetic test fixtures are unmistakably labeled and cannot masquerade as live evidence.",
+      "Operator interface surfaces readiness via bin/kad observatory readiness and bin/kad observatory readiness --json without noisy compact status degradation.",
+      "All required TDD test cases pass and full regression suite remains green with zero routing mutations."
+    ],
+    "description": "Deterministic promotion readiness gate evaluating longitudinal observational evidence sufficiency for controlled canary experiment design without granting shadow execution authority or making unsupported causal claims.",
+    "source_ticket": "user:/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+    "project": "kad-pi",
+    "title": "KAD-PI Deterministic Shadow Economic Evaluator",
+    "status": "ACCEPTED",
+    "priority": 100,
+    "spec_ref": "user:/WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+    "fixed_point": "cb59d84f2abe45bc1844f5281535a4cf62765042",
+    "scope": [
+      "tools/kad/telemetry/economic-shadow.mjs",
+      "tools/kad/telemetry/economic-adapter.mjs",
+      "tools/kad/telemetry/view-model.mjs",
+      "tools/kad/telemetry/control-plane-runtime.mjs",
+      "tools/kad/telemetry/index.mjs",
+      "tools/kad/test/economic-shadow.test.mjs",
+      "tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "tools/kad/test/telemetry.test.mjs",
+      "tools/kad/test/control-plane.test.mjs",
+      "evidence/WP-KAD-ECONOMIC-ROUTER-SHADOW-003/",
+      "docs/agents/economic-shadow.md",
+      "wiki/KAD_Economic_Router_Shadow_2026-08-30.md",
+      "bin/kad"
+    ],
+    "non_scope": [
+      "changing production economic router execution authority (routeEconomically)",
+      "altering production route selection or executing paid spend",
+      "background network polling loops or credential scraping",
+      "web dashboards or electron apps"
+    ],
+    "owned_paths": [
+      "tools/kad/telemetry/economic-shadow.mjs",
+      "tools/kad/telemetry/economic-adapter.mjs",
+      "tools/kad/telemetry/view-model.mjs",
+      "tools/kad/telemetry/control-plane-runtime.mjs",
+      "tools/kad/telemetry/index.mjs",
+      "tools/kad/test/economic-shadow.test.mjs",
+      "tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "tools/kad/test/telemetry.test.mjs",
+      "tools/kad/test/control-plane.test.mjs",
+      "evidence/WP-KAD-ECONOMIC-ROUTER-SHADOW-003/",
+      "docs/agents/economic-shadow.md",
+      "wiki/KAD_Economic_Router_Shadow_2026-08-30.md",
+      "bin/kad"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/economic-shadow.test.mjs",
+      "node --test tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "node --test tools/kad/test/telemetry.test.mjs",
+      "node --test tools/kad/test/control-plane.test.mjs",
+      "node --test tools/kad/test/research*.test.mjs",
+      "node --test tools/kad/test/*.test.mjs",
+      "just verify",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+    "blocked_by": [],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Wayfinder architectural decision establishes side-effect-free shadow evaluator wrapping existing router inputs/results.",
+      "Explicit quota semantics contract distinguishes remaining_fraction, used_fraction, reset_at, window_duration, scope, allowed, limit_reached, freshness, epistemic_class.",
+      "Deterministic scope matching isolates model-specific from provider/account-wide quota windows without collapsing.",
+      "Reset-aware economic scoring optimizes for useful utilization subject to accepted policy without ML or hidden weights.",
+      "Invariants strictly enforced: paid_authorized=false never recommends paid; UNKNOWN never treated as 100%; STALE cannot outrank fresh.",
+      "Shadow evaluation has zero authority to mutate actual production routing or trigger network calls.",
+      "All 18 required TDD test cases (T1-T18) pass, and previous usage-bridge behaviors are verified traceable.",
+      "Shadow evaluation is surfaced through bin/kad budget and control plane view-model with distinct [SHADOW]/[ADVISORY] labeling.",
+      "All 446+ regression tests and full test suite remain green with zero regressions."
+    ],
+    "description": "Deterministic shadow economic evaluator evaluating quota-aware economic preference without granting telemetry mutation authority over routing.",
+    "source_ticket": "user:/WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-FUSION-OMP-ADAPTATION-007A",
+    "project": "kad-pi",
+    "title": "Optional pinned Fusion Harness under OMP",
+    "status": "ACCEPTED",
+    "priority": 110,
+    "spec_ref": "user:/WP-KAD-FUSION-OMP-ADAPTATION-007A",
+    "fixed_point": "2d368db84dea83b6347b46063118ed646a0132e1",
+    "scope": [
+      "bin/kad-fusion",
+      "tools/kad/fusion/",
+      "tools/kad/test/fusion*.test.mjs",
+      "docs/agents/fusion.md",
+      "evidence/WP-KAD-FUSION-OMP-ADAPTATION-007A/"
+    ],
+    "non_scope": [
+      "KAD authority",
+      "ordinary omp behavior",
+      "unrelated workspace dirt"
+    ],
+    "owned_paths": [
+      "bin/kad-fusion",
+      "tools/kad/fusion/",
+      "tools/kad/test/fusion*.test.mjs",
+      "docs/agents/fusion.md",
+      "evidence/WP-KAD-FUSION-OMP-ADAPTATION-007A/"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/fusion*.test.mjs",
+      "bin/kad-fusion --help",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-FUSION-OMP-ADAPTATION-007A",
+    "blocked_by": [],
+    "blocks": [
+      "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008"
+    ],
+    "acceptance_criteria": [
+      "Pinned upstream provenance is reproducible",
+      "OMP remains host and children use OMP",
+      "Read-only operations work without mutation authority",
+      "Mutation requires Fusion lease and KAD authorization",
+      "Setup is idempotent and ordinary omp is unchanged"
+    ],
+    "description": "Thin optional OMP-native compatibility layer for pinned Fusion Harness.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-FUSION-OMP-ADAPTATION-007A",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
+    "project": "kad-pi",
+    "title": "Generalized Ideal State Artifact (ISA) Architecture & Canonical Compute Fabric Governance",
+    "status": "REVIEW",
+    "priority": 190,
+    "spec_ref": "user:/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
+    "fixed_point": "2da2266eb76bfb5571838017449d553fbc8b4bee",
+    "scope": [
+      "vault/00_Governance/",
+      "docs/adr/",
+      "docs/architecture/",
+      "vault/90_Derived/",
+      "tools/kad/isa.mjs",
+      "tools/kad/test/isa.test.mjs",
+      "bin/kad-isa",
+      "evidence/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020/",
+      ".agents/work/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020.json"
+    ],
+    "non_scope": [
+      "implementing the distributed compute scheduler or runtime fabric",
+      "live telemetry streaming daemon implementation",
+      "benchmarking remote providers or paid API spend",
+      "arbitrary shell command execution from markdown",
+      "weakening existing aesthetic ISA validations or tests"
+    ],
+    "owned_paths": [
+      "vault/00_Governance/",
+      "docs/adr/",
+      "docs/architecture/",
+      "vault/90_Derived/",
+      "tools/kad/isa.mjs",
+      "tools/kad/test/isa.test.mjs",
+      "bin/kad-isa",
+      "evidence/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020/",
+      ".agents/work/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-isa lint vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "bin/kad-isa lint vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "bin/kad-isa check vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "bin/kad-wiki lint",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020/",
+    "blocked_by": [],
+    "blocks": [
+      "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+      "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+      "WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+      "WP-KAD-LIVE-TELEMETRY-STREAM-019"
+    ],
+    "acceptance_criteria": [
+      "Generalized ISA contract and domain adapter architecture designed and documented in ADR 0014",
+      "Generic ISA validation and projection engine supporting multi-ISA linting, checking, explanation, compilation, and registry discovery",
+      "Backward compatibility preserved for canonical aesthetic ISA (ISA-KAD-AESTHETIC-001)",
+      "Canonical compute fabric ISA established in vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md with PON, STC, TDD, graceful degradation, TOKENMAXXING, heterogeneous host profiles (AMDY vs TELL), cognition classes, and self-measurement experimental tuples",
+      "Deterministic and human review claims explicitly classified distinguishing CANONICAL_TARGET from CURRENT_CONFIRMED/DERIVED/HEURISTIC/UNKNOWN/BLOCKED",
+      "Derived machine-readable projections compiled under vault/90_Derived/Projections/",
+      "Zero arbitrary shell execution from markdown preserved",
+      "Full test suite, typechecks, doctors, and linters pass cleanly"
+    ],
+    "description": "Generalize the KAD Ideal State Artifact (ISA) governance pattern into a reusable multi-domain primitive and instantiate the canonical compute fabric ISA (ISA-KAD-COMPUTE-FABRIC-001).",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-GOVERNANCE-GATES-032",
+    "project": "kad-pi",
+    "title": "Deterministic Governance Gates, Authority Tiering, Pre-Flight Verification & Protected Mutation Admission",
+    "status": "ACCEPTED",
+    "priority": 340,
+    "spec_ref": "user:/WP-KAD-GOVERNANCE-GATES-032",
+    "fixed_point": "15483b6c87757358ab046d50d94498c9fdfb1ebe",
+    "scope": [
+      "tools/kad/governance/",
+      "tools/kad/test/governance*.test.mjs",
+      "bin/kad-governance",
+      "evidence/WP-KAD-GOVERNANCE-GATES-032/",
+      ".agents/work/WP-KAD-GOVERNANCE-GATES-032.json"
+    ],
+    "non_scope": [
+      "Warren implementation",
+      "TELL deployment",
+      "Beads",
+      "OpenViking/Needle",
+      "full offline experiment",
+      "autonomous merge policy expansion",
+      "budget increases",
+      "new model routing",
+      "Ideal State redesign",
+      "ISA-002 mutation",
+      "large skills refactor",
+      "paid API spend"
+    ],
+    "owned_paths": [
+      "tools/kad/governance/",
+      "tools/kad/test/governance*.test.mjs",
+      "bin/kad-governance",
+      "evidence/WP-KAD-GOVERNANCE-GATES-032/",
+      ".agents/work/WP-KAD-GOVERNANCE-GATES-032.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "npm test",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "bin/workctl skills doctor",
+      "bin/kad-isa check all",
+      "bin/kad-wiki lint",
+      "bin/kad-intent validate",
+      "bin/kad-intent verify-report",
+      "bin/kad-telemetry validate",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-GOVERNANCE-GATES-032/",
+    "blocked_by": [
+      "WP-KAD-COGNITIVE-TELEMETRY-031"
+    ],
+    "blocks": [
+      "EXP-KAD-OFFLINE-SURVIVAL-001"
+    ],
+    "acceptance_criteria": [
+      "GOVERNANCE_PREFLIGHT_V1 and GOVERNANCE_DECISION_V1 contracts implemented with typed reason codes",
+      "Explicit authority taxonomy implemented (HUMAN_ONLY, HUMAN_PREAUTHORIZED, DETERMINISTIC_POLICY, DELEGATED_WITH_GATE, AUTONOMOUS_WITHIN_LEASE, FORBIDDEN)",
+      "CAPABILITY != AUTHORITY strictly enforced (models/providers cannot acquire authority merely by being capable)",
+      "Target authority vs current active enforcement distinguished (unavailable capabilities fall back closed)",
+      "Human authorization receipt contract implemented with content hashing (model cannot claim approval in prose)",
+      "Preflight pipeline implemented (scope, STC lease, FinOps envelope, secrets, trust domain, readiness, reversibility)",
+      "Raw secret access and constitutional mutation permanently forbidden for agents",
+      "Confused deputy and cross-WP/cross-resource authority reuse strictly prevented",
+      "Short-lived decisions and TOCTOU stale authorization defense implemented",
+      "FinOps pre-authorized envelope gate enforced with zero self-budget escalation",
+      "Readiness gate integration distinguishes relevant from irrelevant unknown metrics",
+      "Governance evaluation telemetry emitted without policy feedback loop",
+      "Mandatory adversarial TDD fixtures (G01-G30) fully passing",
+      "Full repository test suite, doctor checks, linters, and independent review PASS"
+    ],
+    "description": "Deterministic governance preflight and admission gate subsystem providing typed preflight contracts, multi-tier authority resolution, human authorization receipt verification, FinOps envelopes, and confused-deputy protection.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-GOVERNANCE-GATES-032",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
+    "project": "kad-pi",
+    "title": "Intent-Ledger Regression Repair, Normative Semantic Validation & Ideal-State V2 Recompilation",
+    "status": "ACCEPTED",
+    "priority": 320,
+    "spec_ref": "user:/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
+    "fixed_point": "4ba5b05cb7f019649ea8d6677efd4d1883826bd9",
+    "scope": [
+      "docs/architecture/KAD_PI_IDEAL_STATE_V2.json",
+      "docs/architecture/KAD_PI_IDEAL_STATE_V2.md",
+      "tools/kad/intent/ideal-state-engine.mjs",
+      "tools/kad/intent/compile-ideal-state-v2.mjs",
+      "tools/kad/test/ideal-state-traceability.test.mjs",
+      "evidence/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R/",
+      ".agents/work/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R.json"
+    ],
+    "non_scope": [
+      "implementing cognitive telemetry (WP-031)",
+      "implementing governance gates (WP-032)",
+      "running offline survival experiment",
+      "deploying TELL",
+      "integrating Warren/Beads",
+      "mutating frozen ISA-002 baseline in place",
+      "redesigning full Ideal State architecture",
+      "paid API spend"
+    ],
+    "owned_paths": [
+      "docs/architecture/KAD_PI_IDEAL_STATE_V2.json",
+      "docs/architecture/KAD_PI_IDEAL_STATE_V2.md",
+      "tools/kad/intent/ideal-state-engine.mjs",
+      "tools/kad/intent/compile-ideal-state-v2.mjs",
+      "tools/kad/test/ideal-state-traceability.test.mjs",
+      "evidence/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R/",
+      ".agents/work/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/ideal-state-traceability.test.mjs",
+      "node --test tools/kad/test/intent-fidelity.test.mjs",
+      "npm test",
+      "bin/kad-intent validate",
+      "bin/kad-intent verify-report",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "bin/workctl skills doctor",
+      "bin/kad-isa check all",
+      "bin/kad-wiki lint",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R/",
+    "blocked_by": [
+      "WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030"
+    ],
+    "blocks": [
+      "WP-KAD-COGNITIVE-TELEMETRY-031"
+    ],
+    "acceptance_criteria": [
+      "FinOps zero-spend regression fixed with pre-authorized envelopes and value-gated escalation",
+      "KnowledgePlane sovereign authority model restored without reducing authority solely to Markdown/Vault",
+      "Contradiction handling restored to impact-scoped containment rather than global fail-closed",
+      "Offline core design preserved as TARGET while full offline survival remains EXPERIMENT_REQUIRED",
+      "Architectural harmony overclaims replaced with evidence-bounded language",
+      "All 20 target requirements audited and classified for semantic alignment",
+      "Semantic intent regression tests (S01-S12) added and passing",
+      "Ideal-State V2 recompiled deterministically from structured source",
+      "24 intent events and ISA-002 remain unchanged",
+      "Full workspace test suite, doctors, and linters PASS"
+    ],
+    "description": "Corrective specification workpackage repairing semantic regressions introduced during WP-030 and strengthening the ideal-state compiler substrate to prevent semantic drift.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-INTENT-FIDELITY-029",
+    "project": "kad-pi",
+    "title": "Lossless Human Intent Event Ledger, Derived Normalization & Deterministic Compilation",
+    "status": "ACCEPTED",
+    "priority": 300,
+    "spec_ref": "user:/WP-KAD-INTENT-FIDELITY-029",
+    "fixed_point": "2714398a9e259d0c5a756a9848c4c0c16603646e",
+    "scope": [
+      "tools/kad/intent/",
+      "tools/kad/test/intent-fidelity.test.mjs",
+      "bin/kad-intent",
+      "evidence/intent/",
+      "evidence/WP-KAD-INTENT-FIDELITY-029/",
+      ".agents/work/WP-KAD-INTENT-FIDELITY-029.json",
+      ".agents/work/claims/WP-KAD-INTENT-FIDELITY-029.json",
+      "docs/architecture/"
+    ],
+    "non_scope": [
+      "reopening architecture debate",
+      "modifying frozen ISA-KAD-SKILL-ROLE-002 v1.1 semantics",
+      "Ideal-State successor implementation",
+      "Warren/Beads/OpenViking/Needle runtime integration",
+      "TELL deployment or orchestration",
+      "capability broker implementation",
+      "broad KnowledgePlane migration",
+      "paid API spend",
+      "secret disclosure"
+    ],
+    "owned_paths": [
+      "tools/kad/intent/",
+      "tools/kad/test/intent-fidelity.test.mjs",
+      "bin/kad-intent",
+      "evidence/intent/",
+      "evidence/WP-KAD-INTENT-FIDELITY-029/",
+      ".agents/work/WP-KAD-INTENT-FIDELITY-029.json",
+      ".agents/work/claims/WP-KAD-INTENT-FIDELITY-029.json",
+      "docs/architecture/"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/intent-fidelity.test.mjs",
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-intent validate",
+      "bin/kad-intent verify-report",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "bin/workctl skills doctor",
+      "bin/kad-isa check all",
+      "bin/kad-wiki lint",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-INTENT-FIDELITY-029/",
+    "blocked_by": [],
+    "blocks": [],
+    "claim": null,
+    "spec_details": {
+      "source_ticket": "user:/WP-KAD-INTENT-FIDELITY-029",
+      "claim_authority": "gemini-3.7-flash-high",
+      "tdd_test_suite": "tools/kad/test/intent-fidelity.test.mjs",
+      "evidence_receipts": [
+        "evidence/WP-KAD-INTENT-FIDELITY-029/00-orientation-and-baseline.md",
+        "evidence/WP-KAD-INTENT-FIDELITY-029/01-intent-schema-and-authority-map.md",
+        "evidence/WP-KAD-INTENT-FIDELITY-029/02-tdd-and-regression-receipts.md",
+        "evidence/WP-KAD-INTENT-FIDELITY-029/03-journal-and-provenance-validation.md",
+        "evidence/WP-KAD-INTENT-FIDELITY-029/04-24-decision-ingestion-report.md",
+        "evidence/WP-KAD-INTENT-FIDELITY-029/05-generated-report-reproducibility.md",
+        "evidence/WP-KAD-INTENT-FIDELITY-029/06-independent-verification.md",
+        "evidence/WP-KAD-INTENT-FIDELITY-029/07-backlog-and-experiment-discoveries.md",
+        "evidence/WP-KAD-INTENT-FIDELITY-029/FINAL_REPORT.md"
+      ]
+    }
+  },
+  {
+    "id": "WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
+    "project": "kad-pi",
+    "title": "Typed-Intent -> Successor Ideal State, Requirement Traceability, Gap Model & Evidence-Gated Roadmap",
+    "status": "ACCEPTED",
+    "priority": 310,
+    "spec_ref": "user:/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
+    "fixed_point": "17f91ac49b4430ea04b7b933b204d6645ffbd3f3",
+    "scope": [
+      "docs/architecture/",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/",
+      "tools/kad/intent/",
+      "tools/kad/test/",
+      ".agents/work/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030.json",
+      ".agents/work/claims/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030.json"
+    ],
+    "non_scope": [
+      "runtime architecture implementation",
+      "deploying TELL workers",
+      "integrating Warren or Beads runtime",
+      "installing context providers",
+      "implementing capability broker",
+      "fine-tuning models",
+      "autonomously merging implementation changes",
+      "rewriting frozen ISA-002 v1.1 in place",
+      "broad legacy migrations",
+      "paid API spend",
+      "secret disclosure"
+    ],
+    "owned_paths": [
+      "docs/architecture/",
+      "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/",
+      "tools/kad/intent/",
+      "tools/kad/test/",
+      ".agents/work/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030.json",
+      ".agents/work/claims/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/intent-fidelity.test.mjs",
+      "node --test tools/kad/test/ideal-state-traceability.test.mjs",
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-intent validate",
+      "bin/kad-intent verify-report",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "bin/workctl skills doctor",
+      "bin/kad-isa check all",
+      "bin/kad-wiki lint",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/",
+    "blocked_by": [],
+    "blocks": [],
+    "claim": null,
+    "spec_details": {
+      "source_ticket": "user:/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
+      "claim_authority": "gemini-3.7-flash-high",
+      "evidence_receipts": [
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/00-orientation-and-authority-baseline.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/01-intent-event-traceability.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/02-current-state-evidence-map.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/03-requirement-registry.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/04-current-target-gap-analysis.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/05-target-architecture.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/06-experiment-register.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/07-advisor-adversarial-review.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/08-reverse-contradiction-review.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/09-roadmap-and-successor-workpackages.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/10-validation-receipts.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/11-backlog-and-open-decisions.md",
+        "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/FINAL_REPORT.md"
+      ]
+    }
+  },
+  {
+    "id": "WP-KAD-ISA-FINAL-SNAPSHOT-028",
+    "project": "kad-pi",
+    "title": "Implement ISA-KAD-SKILL-ROLE-002 / v1.1 and Freeze the Pre-GitHub KAD-PI Baseline",
+    "status": "ACCEPTED",
+    "priority": 280,
+    "spec_ref": "user:/WP-KAD-ISA-FINAL-SNAPSHOT-028",
+    "fixed_point": "0ea896b54d799ca98fa3b45fe45f519655135807",
+    "scope": [
+      "docs/architecture/",
+      "docs/adr/",
+      "config/",
+      "tools/kad/",
+      "evidence/WP-KAD-ISA-FINAL-SNAPSHOT-028/",
+      ".agents/work/WP-KAD-ISA-FINAL-SNAPSHOT-028.json"
+    ],
+    "non_scope": [
+      "configuring remote GitHub branch protection or Actions policies in this WP",
+      "pushing commits to remote origin",
+      "mutating local canonical Vault/Wiki in this WP",
+      "claiming Warren/Beads canaries are executed without repository evidence",
+      "paid API spend"
+    ],
+    "owned_paths": [
+      "docs/architecture/",
+      "docs/adr/",
+      "config/",
+      "tools/kad/",
+      "evidence/WP-KAD-ISA-FINAL-SNAPSHOT-028/",
+      ".agents/work/WP-KAD-ISA-FINAL-SNAPSHOT-028.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "npm test",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "bin/workctl skills doctor",
+      "bin/kad-isa check all",
+      "bin/kad-wiki lint",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-ISA-FINAL-SNAPSHOT-028/",
+    "blocked_by": [
+      "WP-KAD-SKILL-ROLE-FABRIC-024"
+    ],
+    "blocks": [],
+    "acceptance_criteria": [
+      "ISA-KAD-SKILL-ROLE-002 / v1.1 established and frozen with SHA256 digest in docs/architecture/",
+      "Formal separation of WORK_LIFECYCLE (workctl) and EXECUTION_RUN_LIFECYCLE (execution provider) enforced",
+      "External provider taxonomy codified across 5 classes (WORKLOAD_PROVIDER, INTENT_GRAPH_PROJECTION, EXTERNAL_DOCTRINE_SOURCE, RESEARCH_PROVIDER, PRESENTATION_PROVIDER)",
+      "KAD_WORKLOAD_V1 typed transient workload contract and receipt validator implemented in tools/kad/workload-contract.mjs and config/workload-schema.json",
+      "External infrastructure positions explicitly defined (Warren: CANARY_PLANNED/LIKELY_ADOPT; Beads: SHADOW_CANARY/MINE; Agentic Engineering: ADOPT_RESEARCH_UPSTREAM)",
+      "Execution vs Learning separation invariant (EXECUTION != LEARNING) enforced with governed distillation pipeline",
+      "Role contracts extended with execution/offload semantics (offload_allowed, detached_execution_safe, preferred_workload_providers, minimum_required_context, expected_human_attention_savings, acceptance_evidence_requirements)",
+      "TDD test suite validating all authority boundaries passes with 675/675 green tests",
+      "Doctor and ISA lint/check diagnostics pass with 100% clean health",
+      "Canonical Pre-GitHub Final Snapshot report generated with complete implemented vs proposed matrix and successor handoff",
+      "Zero remote GitHub or Vault/Wiki mutation occurred during this workpackage"
+    ],
+    "description": "Reconcile latest repository evidence, implement ISA-KAD-SKILL-ROLE-002 / v1.1, validate authority boundaries deterministically, freeze an auditable local pre-GitHub baseline snapshot, and prepare an exact machine-actionable handoff for GitHub, Commit, and Vault phases.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-ISA-FINAL-SNAPSHOT-028",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+    "project": "kad-pi",
+    "title": "Governed Scientific Evidence Promotion, Wiki Projection and Derived Index Contract",
+    "status": "ACCEPTED",
+    "priority": 100,
+    "spec_ref": "user:/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+    "fixed_point": "ccafcc7baf958103ee7c537bb2b967b14c6a0412",
+    "scope": [
+      "tools/kad/knowledge-plane.mjs",
+      "tools/kad/wiki-projection.mjs",
+      "tools/kad/research-openviking.mjs",
+      "tools/kad/index.mjs",
+      "tools/kad/test/seed-promotion.test.mjs",
+      "evidence/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007/",
+      "docs/agents/knowledge-plane.md",
+      "wiki/KAD_Knowledge_Plane_Seed_Promotion_2026-08-30.md"
+    ],
+    "non_scope": [
+      "Needle training or fine-tuning",
+      "new literature or corpus expansion",
+      "OpenViking canonical authority",
+      "paid API spend",
+      "changing economic routing",
+      "modifying accepted source documents"
+    ],
+    "owned_paths": [
+      "tools/kad/knowledge-plane.mjs",
+      "tools/kad/wiki-projection.mjs",
+      "tools/kad/research-openviking.mjs",
+      "tools/kad/index.mjs",
+      "tools/kad/test/seed-promotion.test.mjs",
+      "evidence/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007/",
+      "docs/agents/knowledge-plane.md",
+      "wiki/KAD_Knowledge_Plane_Seed_Promotion_2026-08-30.md"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/seed-promotion.test.mjs",
+      "node --test tools/kad/test/*.test.mjs",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+    "blocked_by": [],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Claim-level promotion is deterministic and fail-closed",
+      "SOURCE_FACT remains distinct from DERIVED_SYNTHESIS, PROJECT_INFERENCE, and UNKNOWN",
+      "Provenance and canonical IDs survive promotion",
+      "Duplicate promotion is idempotent and supersession preserves history",
+      "Wiki and OpenViking outputs are derived, deterministic, and backlink canonical IDs",
+      "Derived projections cannot mutate canonical state",
+      "Training eligibility cannot erase epistemic class",
+      "OpenViking unavailability degrades gracefully",
+      "No Needle training, fine-tuning, or distillation occurs",
+      "Existing regression suite and doctors remain green"
+    ],
+    "description": "Smallest deterministic path from audited five-paper claims into governed KnowledgePlane and derived projections.",
+    "source_ticket": "user:/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-LIVE-TELEMETRY-STREAM-019",
+    "project": "kad-pi",
+    "title": "Live PON/SSE Telemetry Streaming Transport & Read-Only Observer Projection",
+    "status": "ACCEPTED",
+    "priority": 120,
+    "spec_ref": "user:/WP-KAD-LIVE-TELEMETRY-STREAM-019",
+    "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+    "scope": [
+      "tools/kad/interface-server.mjs",
+      "tools/kad/telemetry/stream-adapter.mjs",
+      "tools/kad/test/interface-server-stream.test.mjs",
+      "evidence/WP-KAD-LIVE-TELEMETRY-STREAM-019/",
+      ".agents/work/WP-KAD-LIVE-TELEMETRY-STREAM-019.json"
+    ],
+    "non_scope": [
+      "bidirectional WebSocket control plane or unauthenticated write routes",
+      "granting UI clients direct execution or routing mutation authority",
+      "synthetic workload generation or automated benchmarking daemon",
+      "external cloud streaming brokers or third-party message queues (Redis, Kafka)",
+      "paid API spend"
+    ],
+    "owned_paths": [
+      "tools/kad/interface-server.mjs",
+      "tools/kad/telemetry/stream-adapter.mjs",
+      "tools/kad/test/interface-server-stream.test.mjs",
+      "evidence/WP-KAD-LIVE-TELEMETRY-STREAM-019/",
+      ".agents/work/WP-KAD-LIVE-TELEMETRY-STREAM-019.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-isa lint vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "bin/kad-isa check vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "bin/kad-wiki lint",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-LIVE-TELEMETRY-STREAM-019/",
+    "blocked_by": [
+      "WP-KAD-USAGE-BRIDGE-002",
+      "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004"
+    ],
+    "blocks": [
+      "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021"
+    ],
+    "acceptance_criteria": [
+      "Lightweight Server-Sent Events (SSE) streaming endpoint implemented at /api/telemetry/stream in tools/kad/interface-server.mjs",
+      "Event producer publishes typed PON state transition notifications (NODE_AVAILABLE, MODEL_READY, CAPABILITY_REMOVED, ROUTE_STALE, QUOTA_REFRESHED) and kad-telemetry-v1 records",
+      "Broadcast frames carry monotonically increasing sequence numbers, event types, and keep-alive heartbeats",
+      "Client subscription handlers support automatic reconnect, backpressure handling, and graceful fallback to static /api/runtime-status polling",
+      "Strict read-only outbound invariant verified: zero write routes or incoming control mutation over SSE transport",
+      "Fail-safe client isolation: slow or disconnected clients are cleaned up cleanly without leaking server resources",
+      "Full test suite, ISA checks, and doctor diagnostics remain GREEN"
+    ],
+    "description": "Implement lightweight Server-Sent Events (SSE) streaming transport in tools/kad/interface-server.mjs (/api/telemetry/stream), publishing typed PON state transition notifications and normalized kad-telemetry-v1 records to read-only observers with strict authority boundary enforcement.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-LIVE-TELEMETRY-STREAM-019",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+    "project": "kad-pi",
+    "title": "Local canonical wiki context library",
+    "status": "ACCEPTED",
+    "priority": 108,
+    "spec_ref": "user:/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+    "fixed_point": "2d368db84dea83b6347b46063118ed646a0132e1",
+    "scope": [
+      "tools/kad/wiki-library/",
+      "tools/kad/test/wiki-library*.test.mjs",
+      "docs/agents/wiki-library.md",
+      "evidence/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009/"
+    ],
+    "non_scope": [
+      "Canonical authority",
+      "Needle training",
+      "mandatory OpenViking",
+      "paid model calls"
+    ],
+    "owned_paths": [
+      "tools/kad/wiki-library/",
+      "tools/kad/test/wiki-library*.test.mjs",
+      "docs/agents/wiki-library.md",
+      "evidence/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/wiki-library*.test.mjs",
+      "bin/kad-wiki rebuild",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+    "blocked_by": [
+      "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008"
+    ],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Canonical Markdown remains authority",
+      "Offline deterministic search works without LLM",
+      "KnowledgePlane and semantic indexes are derived and stale-detectable",
+      "Bounded context packs include approved content only",
+      "OpenViking failure falls back safely"
+    ],
+    "description": "Offline-first derived indexes and bounded context materialization for OMP and Fusion.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+    "project": "kad-pi",
+    "title": "Canonical Obsidian Bridge Plugin & Governed Visual Workspace Integration",
+    "status": "ACCEPTED",
+    "priority": 150,
+    "spec_ref": "user:/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+    "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+    "scope": [
+      "tools/kad/obsidian-bridge/",
+      "tools/kad/test/obsidian-bridge*.test.mjs",
+      "evidence/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016/",
+      ".agents/work/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016.json"
+    ],
+    "non_scope": [
+      "direct uncontrolled mutation of canonical markdown notes or derived JSON projections",
+      "installing unreviewed community plugins or granting arbitrary vault write access",
+      "remote network access, cloud sync, or external telemetry streaming daemons",
+      "modifying production routing authority or executing un-sandboxed shell commands",
+      "paid API spend"
+    ],
+    "owned_paths": [
+      "tools/kad/obsidian-bridge/",
+      "tools/kad/test/obsidian-bridge*.test.mjs",
+      "evidence/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016/",
+      ".agents/work/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-isa lint vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "bin/kad-wiki lint",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016/",
+    "blocked_by": [
+      "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014"
+    ],
+    "blocks": [
+      "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021"
+    ],
+    "acceptance_criteria": [
+      "Project-owned read-only Obsidian bridge plugin implemented in ESM under tools/kad/obsidian-bridge/",
+      "Custom Bases views render compiled projection metadata (projects.json, workpackages.json, isa-registry.json, isa-aesthetic.json, isa-compute-fabric.json)",
+      "Interactive 1-hop and 2-hop local graph neighborhood explorer rendered in Obsidian sidebar using canonical graph adapter",
+      "Strict surface.obsidian theme compliance with WCAG AAA contrast (>14:1), zero ambient looping motion, and NO_AUDIO_UI",
+      "Zero note mutation invariant verified: plugin operates as read-only observer of vault notes and derived projections",
+      "Zero network access and 100% offline local-first operation verified",
+      "Graceful degradation verified: missing projections or plugin disablement leaves raw Markdown editing 100% intact",
+      "Full test suite, ISA checks, and doctor diagnostics remain GREEN"
+    ],
+    "description": "Implement the read-only, project-owned Obsidian companion plugin (kad-obsidian-bridge) integrating compiled vault and compute ISA projections, custom Bases views, and local graph neighborhood exploration without granting direct mutation authority over canonical vault state.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-OPERATOR-CONTROL-PLANE-001",
+    "project": "kad-pi",
+    "title": "KAD-PI Native OMP Control Plane, Live Token/Quota Telemetry, Developer Toolchain, Security Gates, and Native Operator UI",
+    "status": "ACCEPTED",
+    "priority": 100,
+    "spec_ref": "user:/WP-KAD-OPERATOR-CONTROL-PLANE-001",
+    "fixed_point": "445e000b3ad75f4f5a2d9b1be06ebc6a0743a364",
+    "scope": [
+      ".omp/extensions/kad-control-plane/",
+      ".omp/mcp.json",
+      "tools/kad/telemetry/",
+      "tools/kad/test/telemetry.test.mjs",
+      "tools/kad/test/control-plane.test.mjs",
+      "bin/kad",
+      "bin/kad-doctor",
+      "evidence/WP-KAD-OPERATOR-CONTROL-PLANE-001/",
+      "docs/agents/control-plane.md",
+      "wiki/KAD_Operator_Control_Plane_2026-08-29.md",
+      "Justfile",
+      ".pre-commit-config.yaml"
+    ],
+    "non_scope": [
+      "autonomous literature review",
+      "paid API spend without authorization",
+      "browser scraping for quota",
+      "web dashboards / Electron apps",
+      "mutating canonical research document authority"
+    ],
+    "owned_paths": [
+      ".omp/extensions/kad-control-plane/",
+      ".omp/mcp.json",
+      "tools/kad/telemetry/",
+      "tools/kad/test/telemetry.test.mjs",
+      "tools/kad/test/control-plane.test.mjs",
+      "bin/kad",
+      "bin/kad-doctor",
+      "evidence/WP-KAD-OPERATOR-CONTROL-PLANE-001/",
+      "docs/agents/control-plane.md",
+      "wiki/KAD_Operator_Control_Plane_2026-08-29.md",
+      "Justfile",
+      ".pre-commit-config.yaml"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/telemetry.test.mjs",
+      "node --test tools/kad/test/control-plane.test.mjs",
+      "node --test tools/kad/test/research*.test.mjs",
+      "node --test tools/kad/test/*.test.mjs",
+      "just verify",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-OPERATOR-CONTROL-PLANE-001",
+    "blocked_by": [],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Approved tool census and missing tooling installation complete with zero duplicate plugins.",
+      "Provider-neutral telemetry schema normalizes token and non-token metrics with explicit epistemic provenance.",
+      "No fake token conversions for non-token quotas; unknown limits remain UNKNOWN.",
+      "Deterministic reconciliation and staleness semantics are preserved with local ledger persistence.",
+      "All configured OMP providers appear in the detailed inventory with truthful capability/quota state.",
+      "Existing economic router, workctl claim/frontier, and service health states are truthfully projected.",
+      "AMD GPU telemetry (utilization, VRAM, temp, power) is captured via structured amdgpu_top output.",
+      "Native OMP extension implements compact meter, detailed panel, commands, keybinding, and theme integration.",
+      "Context7 MCP is configured project-scoped without credentials.",
+      "Deterministic security gates (gitleaks, trivy, shellcheck, shfmt, actionlint, lychee, prek) are integrated.",
+      "All 47 research regression tests and full test suite remain green.",
+      "Comprehensive evidence package and operator documentation are produced."
+    ],
+    "description": "Deterministic operator control plane for KAD-PI providing live token/quota telemetry, economic/workctl projection, developer toolchain security gates, and native OMP TUI components.",
+    "source_ticket": "user:/WP-KAD-OPERATOR-CONTROL-PLANE-001",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-RESEARCH-API-001",
+    "project": "kad-pi",
+    "title": "Canonical Research API and Persistence",
+    "status": "ACCEPTED",
+    "priority": 100,
+    "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
+    "fixed_point": "4ef704ba98b79be5437a08bc0f8cff6efb9aaabf",
+    "scope": [
+      "tools/kad/research.mjs",
+      "tools/kad/index.mjs",
+      "tools/kad/test/research.test.mjs"
+    ],
+    "non_scope": [
+      "autonomous literature review",
+      "provider SDKs",
+      "paid credentials",
+      "OpenViking authority",
+      "ResearchClaim acceptance",
+      "workctl orchestration"
+    ],
+    "owned_paths": [
+      "tools/kad/research.mjs",
+      "tools/kad/index.mjs",
+      "tools/kad/test/research.test.mjs"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "code_build",
+      "shell_readonly"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/research.test.mjs",
+      "deterministic fixture import and idempotency scenario",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-01-canonical-research-api",
+    "blocked_by": [],
+    "blocks": [
+      "WP-KAD-RESEARCH-CLI-002",
+      "WP-KAD-RESEARCH-CAPABILITIES-003",
+      "WP-KAD-RESEARCH-OPENVIKING-004"
+    ],
+    "acceptance_criteria": [
+      "Layered ResearchCandidate, ResearchIdentifier, ResearchSource, ResearchDocument, and ResearchProvenance state is deterministic and explicit about unknown values.",
+      "Identifiers and local source hashes support duplicate detection, idempotent import, and conflict rejection.",
+      "Malformed metadata and unsafe paths fail before canonical mutation.",
+      "Provenance and source references survive persistence; derived metadata cannot overwrite canonical source state.",
+      "Baseline tests require no API key, paid provider, remote model, or OpenViking service."
+    ],
+    "description": "Reusable deterministic research-domain API owns validation, normalization, identifier precedence, hashing, deduplication/conflict detection, provenance, and canonical persistence.",
+    "spec_decisions": [
+      "D1",
+      "D2",
+      "D4"
+    ],
+    "source_ticket": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001-IMPLEMENTATION/issues/01-canonical-research-api.md",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-RESEARCH-CAPABILITIES-003",
+    "project": "kad-pi",
+    "title": "Provider Capability Profiles and Degradation",
+    "status": "ACCEPTED",
+    "priority": 80,
+    "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
+    "fixed_point": "33b0128e652814c6a5506caa7529f047ec086e1c",
+    "scope": [
+      "tools/kad/research-capabilities.mjs",
+      "tools/kad/test/research-capabilities.test.mjs",
+      "config/research-capabilities/"
+    ],
+    "non_scope": [
+      "provider SDKs",
+      "paid credentials",
+      "canonical source mutation",
+      "OpenViking implementation",
+      "durable enhancement queue"
+    ],
+    "owned_paths": [
+      "tools/kad/research-capabilities.mjs",
+      "tools/kad/test/research-capabilities.test.mjs",
+      "config/research-capabilities/"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "code_build",
+      "shell_readonly"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/research-capabilities.test.mjs",
+      "free/manual capability and outage scenario",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-03-capabilities",
+    "blocked_by": [
+      "WP-KAD-RESEARCH-API-001"
+    ],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Stable capability profiles are separate from dated availability/quota observations and economic admission.",
+      "Credential-free manifests represent manual/free/API/paid/unavailable constraint classes.",
+      "Missing, stale, unavailable, unauthorized, and quota-exhausted states reduce only the affected capability.",
+      "Explicit deterministic/local/manual/free fallback remains usable and paid lanes never activate implicitly.",
+      "Capability data cannot mutate canonical research authority."
+    ],
+    "description": "Provider-neutral profiles, observations, and per-capability degradation behavior that preserve free/manual operation.",
+    "spec_decisions": [
+      "D5",
+      "D6"
+    ],
+    "source_ticket": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001-IMPLEMENTATION/issues/03-capabilities-degradation.md",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-RESEARCH-CLI-002",
+    "project": "kad-pi",
+    "title": "Research Operator Namespace and Manifests",
+    "status": "ACCEPTED",
+    "priority": 90,
+    "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
+    "fixed_point": "cad814f01bda0d4aac32d34ef1153e5a94f55598",
+    "scope": [
+      "bin/kad-knowledge",
+      "tools/kad/research-cli.mjs",
+      "tools/kad/test/research-cli.test.mjs",
+      "docs/agents/research-workflow.md"
+    ],
+    "non_scope": [
+      "canonical research API internals",
+      "provider SDKs",
+      "paid credentials",
+      "workctl orchestration",
+      "autonomous Zotero writes"
+    ],
+    "owned_paths": [
+      "bin/kad-knowledge",
+      "tools/kad/research-cli.mjs",
+      "tools/kad/test/research-cli.test.mjs",
+      "docs/agents/research-workflow.md"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "code_build",
+      "shell_readonly"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/research-cli.test.mjs",
+      "kad-knowledge research fixture import/export scenario",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-02-research-cli",
+    "blocked_by": [
+      "WP-KAD-RESEARCH-API-001"
+    ],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Existing kad-knowledge research namespace delegates domain behavior to the reusable research API.",
+      "DOI, arXiv, standard export, metadata, and local PDF workflows require no provider credentials.",
+      "Manifests support deterministic import/export but are not the sole mutation interface.",
+      "Unsafe paths, malformed input, duplicates, and conflicts produce deterministic non-success results without canonical corruption.",
+      "OpenViking absence does not prevent canonical import or exact source inspection."
+    ],
+    "description": "Thin operator transport and supported manifest import/export for free/manual research workflows.",
+    "spec_decisions": [
+      "D2",
+      "D4",
+      "D6"
+    ],
+    "source_ticket": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001-IMPLEMENTATION/issues/02-research-operator-manifests.md",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-RESEARCH-OPENVIKING-004",
+    "project": "kad-pi",
+    "title": "OpenViking Derived Research Context",
+    "status": "ACCEPTED",
+    "priority": 80,
+    "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
+    "fixed_point": "178ba6ea39bc9ccf768c3ab3f6c5bd154e0d4734",
+    "scope": [
+      "tools/kad/research-openviking.mjs",
+      "tools/kad/knowledge-plane-adapters.mjs",
+      "tools/kad/test/research-openviking.test.mjs"
+    ],
+    "non_scope": [
+      "original-document authority in OpenViking",
+      "automatic full-document upload",
+      "paid services",
+      "Needle extraction",
+      "canonical source mutation"
+    ],
+    "owned_paths": [
+      "tools/kad/research-openviking.mjs",
+      "tools/kad/knowledge-plane-adapters.mjs",
+      "tools/kad/test/research-openviking.test.mjs"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "code_build",
+      "shell_readonly"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/research-openviking.test.mjs",
+      "derived context trace and stale fallback scenario",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-04-openviking",
+    "blocked_by": [
+      "WP-KAD-RESEARCH-API-001"
+    ],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Derived resources use a stable KAD-bound research namespace keyed by ResearchDocument identity.",
+      "L0, L1, and bounded L2 preserve canonical IDs, source references, hashes, derivation version, and layer identity.",
+      "Original documents and authoritative source state remain outside OpenViking.",
+      "Hash/version mismatch marks derived context stale and requires rebuild.",
+      "Missing or stale OpenViking falls back to exact deterministic KAD/Librarian retrieval without canonical mutation."
+    ],
+    "description": "Optional derived-context adapter with traceability, stale detection, rebuild, and exact fallback behavior.",
+    "spec_decisions": [
+      "D2",
+      "D3",
+      "D6"
+    ],
+    "source_ticket": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001-IMPLEMENTATION/issues/04-openviking-context.md",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+    "project": "kad-pi",
+    "title": "Epistemic Claim Audit & Source-Fidelity Repair",
+    "status": "ACCEPTED",
+    "priority": 100,
+    "spec_ref": "user:/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+    "fixed_point": "0ba74b9aedfd59a33857fdb81eead40dd48683c7",
+    "scope": [
+      "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1/",
+      "corpus/research/",
+      "wiki/research/",
+      "wiki/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md",
+      "docs/agents/research-workflow.md"
+    ],
+    "non_scope": [
+      "rebuilding the research workflow or adding new infrastructure",
+      "expanding the 5-paper research corpus",
+      "generating artificial traffic or modifying observatory readiness",
+      "claiming empirical savings without intervention",
+      "fabricating synthetic citations or papers"
+    ],
+    "owned_paths": [
+      "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1/",
+      "corpus/research/",
+      "wiki/research/",
+      "wiki/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md",
+      "docs/agents/research-workflow.md"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/research*.test.mjs",
+      "node --test tools/kad/test/readiness.test.mjs",
+      "node --test tools/kad/test/observatory.test.mjs",
+      "node --test tools/kad/test/economic-shadow.test.mjs",
+      "node --test tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "node --test tools/kad/test/telemetry.test.mjs",
+      "node --test tools/kad/test/control-plane.test.mjs",
+      "node --test tools/kad/test/*.test.mjs",
+      "just verify",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+    "blocked_by": [],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Every claim labeled SOURCE_FACT is directly supported by its primary source text.",
+      "Toolformer audit separates actual paper findings (self-supervised API filtering on perplexity) from KAD architectural framing.",
+      "SWE-bench audit corrects overstatement regarding universal ground-truth validation.",
+      "Reflexion and Self-Refine are disentangled with separate source-grounded descriptions.",
+      "Metadata status consistency is resolved across source identity, bibliographic metadata completeness, and content provenance.",
+      "Deterministic claim-ledger.json documents claim-level verification statuses and supporting locations.",
+      "Revised synthesis strictly separates SOURCE_FACT, DERIVED_SYNTHESIS, PROJECT_INFERENCE, and UNKNOWN.",
+      "Epistemic gap diagnosis identifies root cause without unnecessary production code churn.",
+      "Full regression suite (510+ tests) remains green and doctors report healthy/PASS."
+    ],
+    "description": "Rigorous epistemic claim audit, source-fidelity repair, and claim-level ledger for the five-source research corpus ensuring seed trustworthiness for the governed KAD KnowledgePlane.",
+    "source_ticket": "user:/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+    "project": "kad-pi",
+    "title": "Evidence-Gated Real-Corpus Research Workflow Evaluation",
+    "status": "ACCEPTED",
+    "priority": 100,
+    "spec_ref": "user:/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+    "fixed_point": "9342702a97afdcb9d6681c6ec21f74d44e42a1b0",
+    "scope": [
+      "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006/",
+      "docs/agents/research-workflow.md",
+      "wiki/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md",
+      "corpus/research/",
+      "wiki/research/"
+    ],
+    "non_scope": [
+      "altering production routing authority (routeEconomically)",
+      "forcing artificial workload to manipulate observatory readiness",
+      "claiming empirical savings without intervention",
+      "fabricating synthetic papers or citations",
+      "paid API spend without authorization"
+    ],
+    "owned_paths": [
+      "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006/",
+      "docs/agents/research-workflow.md",
+      "wiki/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md",
+      "corpus/research/",
+      "wiki/research/"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/research*.test.mjs",
+      "node --test tools/kad/test/readiness.test.mjs",
+      "node --test tools/kad/test/observatory.test.mjs",
+      "node --test tools/kad/test/economic-shadow.test.mjs",
+      "node --test tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "node --test tools/kad/test/telemetry.test.mjs",
+      "node --test tools/kad/test/control-plane.test.mjs",
+      "node --test tools/kad/test/*.test.mjs",
+      "just verify",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+    "blocked_by": [],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Preflight forensic checks verify observed_at determinism (Check A) and operational threshold semantics (Check B).",
+      "Wayfinder decision establishes smallest real-corpus research evaluation without premature platform expansion.",
+      "Narrow KAD-PI research question formulated in deterministic vs probabilistic agent control / evidence-grounded execution.",
+      "Bounded real corpus assembled with complete provenance metadata and verified epistemic classes (no synthetic papers or fabricated citations).",
+      "Existing research pipeline exercised end-to-end: import, canonical normalization, provenance retention, deduplication, retrieval, evidence extraction, citation linkage, synthesis, context handoff, and graceful fallback.",
+      "Free-first/TOKENMAXXING policy preserved without unnecessary premium token expenditure.",
+      "Observatory records natural operational metrics passively without synthetic workload or routing overrides.",
+      "Complete 14-file evidence package generated in evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006/.",
+      "All 510+ regression tests remain green and doctor diagnostics report PASS."
+    ],
+    "description": "Evidence-gated real-corpus research workflow evaluation testing existing KAD research stack on a bounded set of real papers with full provenance, retrieval, extraction, and fallback verification.",
+    "source_ticket": "user:/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-RESEARCH-ZOTERO-005",
+    "project": "kad-pi",
+    "title": "Read-Only Zotero Local API Integration",
+    "status": "ACCEPTED",
+    "priority": 70,
+    "spec_ref": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/spec.md",
+    "fixed_point": "b057ffc425261e7d67f65c6b7b7068f87901aa7e",
+    "scope": [
+      "tools/kad/research-zotero.mjs",
+      "tools/kad/test/research-zotero.test.mjs",
+      "config/research-capabilities/zotero.json"
+    ],
+    "non_scope": [
+      "direct SQLite access",
+      "Zotero writes",
+      "automatic background sync",
+      "Zotero Web API remote fallback",
+      "canonical authority in Zotero"
+    ],
+    "owned_paths": [
+      "tools/kad/research-zotero.mjs",
+      "tools/kad/test/research-zotero.test.mjs",
+      "config/research-capabilities/zotero.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "code_build",
+      "shell_readonly"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/research-zotero.test.mjs",
+      "read-only loopback and export fallback scenario",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-05-zotero",
+    "blocked_by": [
+      "WP-KAD-RESEARCH-API-001",
+      "WP-KAD-RESEARCH-CLI-002"
+    ],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Documented Zotero Local HTTP API (localhost:23119/api/) is used without direct SQLite coupling or Zotero writes.",
+      "Adapter normalizes Zotero bibliographic metadata into ResearchCandidate and passes through canonical Research API.",
+      "Loopback-only network boundary is strictly enforced; arbitrary remote host overrides are rejected.",
+      "Zotero item keys remain provenance and cannot overwrite durable identifier precedence or canonical identity.",
+      "Zotero absence, connection refusal, or 403 degrades only Zotero capability while standard export/manual paths remain fully operational."
+    ],
+    "description": "Optional read-only Zotero Local HTTP API adapter converting local bibliography items into canonical research candidates with permanent export fallback.",
+    "spec_decisions": [
+      "D1",
+      "D2",
+      "D4",
+      "D7"
+    ],
+    "source_ticket": ".scratch/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001-IMPLEMENTATION/issues/05-zotero-local-integration.md",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-SKILL-ROLE-FABRIC-024",
+    "project": "kad-pi",
+    "title": "Unified KAD-PI Skills & Role ISA, Fabric Reconciliation & Execution Substrate Alignment",
+    "status": "ACCEPTED",
+    "priority": 240,
+    "spec_ref": "user:/WP-KAD-SKILL-ROLE-FABRIC-024",
+    "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+    "scope": [
+      "docs/architecture/",
+      "docs/adr/",
+      ".agents/skills/",
+      ".agents/workspace/",
+      ".agents/agents/",
+      ".omp/",
+      "tools/kad/",
+      "tools/workspace/",
+      "vault/00_Governance/",
+      "evidence/WP-KAD-SKILL-ROLE-FABRIC-024/",
+      ".agents/work/WP-KAD-SKILL-ROLE-FABRIC-024.json"
+    ],
+    "non_scope": [
+      "arbitrary un-sandboxed shell command execution",
+      "unapproved paid API spend",
+      "weakening existing deterministic tests, gates, or governance policies",
+      "introducing competing task/lifecycle authorities out-of-band of workctl",
+      "silent capability or trust escalations"
+    ],
+    "owned_paths": [
+      "docs/architecture/",
+      "docs/adr/",
+      ".agents/skills/",
+      ".agents/workspace/",
+      ".agents/agents/",
+      ".omp/",
+      "tools/kad/",
+      "tools/workspace/",
+      "vault/00_Governance/",
+      "evidence/WP-KAD-SKILL-ROLE-FABRIC-024/",
+      ".agents/work/WP-KAD-SKILL-ROLE-FABRIC-024.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/*.test.mjs",
+      "bin/workctl doctor",
+      "bin/workctl skills doctor",
+      "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "bin/kad-isa check vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "bin/kad doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-SKILL-ROLE-FABRIC-024/",
+    "blocked_by": [],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Phase 0 orientation, doctor diagnostics, and baseline evidence established",
+      "Phase 1 Wayfinder design map and 5-advisor adversarial stress-test completed with 5+1 decision records",
+      "Phase 2 Canonical Unified Skills & Role ISA (KAD_PI_UNIFIED_SKILL_ROLE_ISA.md) generated and frozen with SHA256 digest covering Sections A-G",
+      "Phase 3 Deterministic reconciliation plan and gap matrix generated mapping legacy skills/roles to ISA targets",
+      "Phase 4 Implementation of consolidated canonical skill surface (12-15 concepts), Wayfinder V2 (with POSTFLIGHT), canonical 5-advisor board, ROLE_CONTRACT_V1, role/capability router, deterministic model policy, STC worktree lease adapter, bounded KAD_GOAL_V1, human-runbook, and OMP projection adapters",
+      "Phase 5 TDD routing fixtures (SHOULD_TRIGGER, SHOULD_NOT_TRIGGER, AMBIGUOUS, CONFLICT_WITH) and role contract safety tests (authority leakage, spawn depth, model degradation, verifier independence) fully green",
+      "Phase 6 Ideal-state reconciliation against frozen ISA showing MATCH / JUSTIFIED_DEVIATION with zero unexplained defects",
+      "All 10 required final deliverable artifacts compiled in evidence/WP-KAD-SKILL-ROLE-FABRIC-024/ and docs/",
+      "Final verdict PASS established with full deterministic test and doctor passes"
+    ],
+    "description": "Generate the canonical KAD-PI Unified Skills & Role ISA, freeze it as the implementation target, then reconcile and update the repository so the actual skill/role architecture conforms to that ISA.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-SKILL-ROLE-FABRIC-024",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+    "project": "kad-pi",
+    "title": "Sofia v3 Canonical Dashboard, Cytoscape Graph Explorer & Hybrid Telemetry Visualization",
+    "status": "REVIEW",
+    "priority": 160,
+    "spec_ref": "user:/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+    "fixed_point": "6881352d96933a32c59fbb494fc339e8a38ac434",
+    "scope": [
+      "dashboard/",
+      "interface/",
+      "tools/interface/",
+      "tools/kad/test/dashboard*.test.mjs",
+      "tools/kad/test/graph*.test.mjs",
+      "package.json",
+      "package-lock.json",
+      "evidence/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013/"
+    ],
+    "non_scope": [
+      "public website redesign",
+      "Obsidian bridge plugin implementation",
+      "community Obsidian plugin installation",
+      "SSE server implementation",
+      "WebSockets",
+      "agentic graph query tools",
+      "OMP extension expansion",
+      "new persistent database",
+      "frontend framework migration",
+      "write-capable Sofia controls"
+    ],
+    "owned_paths": [
+      "dashboard/",
+      "interface/",
+      "tools/interface/",
+      "tools/kad/test/dashboard*.test.mjs",
+      "tools/kad/test/graph*.test.mjs",
+      "package.json",
+      "package-lock.json",
+      "evidence/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013/"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "bin/kad-wiki lint",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013/",
+    "blocked_by": [
+      "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012"
+    ],
+    "blocks": [
+      "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-WEBSITE-014",
+      "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-015"
+    ],
+    "acceptance_criteria": [
+      "Vanilla ESM preserved with zero bundler requirement",
+      "Cytoscape.js integrated as interactive semantic graph explorer behind renderer-independent adapter",
+      "Graph distinguishes node types, edge types, and 3-tier epistemic authority (canonical, derived, heuristic)",
+      "Graph supports search, filter, selection, inspection, fit/reset, and neighborhood traversal",
+      "Modular Apache ECharts integrated for real projection distributions without fabricated metrics",
+      "Native HTML/CSS status widgets handle compact meters, badges, and operational summaries",
+      "Runtime-status snapshot integrated with explicit refresh and degraded fallback",
+      "Deterministic scale fixtures (100, 1k, 5k nodes) pass performance benchmarks",
+      "All 5 graceful degradation failure modes verified without global dashboard crash",
+      "Read-only invariant and security authority verified (no write routes, no CDN, no secret leaks)",
+      "Full test suite, doctors, and linters pass cleanly"
+    ],
+    "description": "Implement the canonical Sofia v3 dashboard featuring Cytoscape.js graph exploration, modular ECharts distribution charts, native status widgets, and resilient graceful degradation.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012",
+    "project": "kad-pi",
+    "title": "Technology Stack, Cross-Project Reuse & Agentic Visualization Architecture",
+    "status": "ACCEPTED",
+    "priority": 150,
+    "spec_ref": "user:/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012",
+    "fixed_point": "69949954455d2509f5d72ef7dd54ea51db3726d0",
+    "scope": [
+      "evidence/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012/",
+      "docs/adr/",
+      "docs/architecture/",
+      "tools/kad/",
+      "vault/",
+      ".agents/work/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012.json"
+    ],
+    "non_scope": [
+      "rebuilding Sofia v3 in this WP",
+      "mass-installing unapproved Obsidian plugins",
+      "rewriting public website framework",
+      "modifying production routing authority",
+      "paid API spend"
+    ],
+    "owned_paths": [
+      "evidence/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012/",
+      "docs/adr/",
+      "docs/architecture/",
+      "tools/kad/",
+      "vault/",
+      ".agents/work/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-wiki lint",
+      "bin/kad-wiki rebuild",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012/",
+    "blocked_by": [],
+    "blocks": [
+      "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013"
+    ],
+    "acceptance_criteria": [
+      "current stack inventory is evidence-backed across KAD-PI, data_rein, data_workspace, Sofia, and site",
+      "cross-project reuse opportunities and primitives are identified",
+      "Obsidian core capabilities and community candidate plugins are audited with zero-plugin degraded mode preserved",
+      "OMP toolchain and project-owned extension capabilities are evaluated",
+      "visualization bake-off benchmarks graphs (Cytoscape, Sigma) and charts (ECharts, Vega-Lite) using real KAD data",
+      "agentic typed graph contract is defined distinguishing canonical, derived, and heuristic edges",
+      "consequential architectural choices pass through Wayfinder / ask-me protocol",
+      "ADRs and technology decision matrix are established",
+      "full test suite (564+ tests) and doctors remain GREEN"
+    ],
+    "description": "Establish the evidence-backed technology stack, cross-project reuse architecture, Obsidian and OMP extension models, visualization bake-off benchmarks, and agentic graph contract for KAD-PI before Sofia v3 implementation.",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+    "project": "kad-pi",
+    "title": "TELL Server Monospace ANSI Profile, Headless TUI & Host Observability Baseline",
+    "status": "ACCEPTED",
+    "priority": 130,
+    "spec_ref": "user:/WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+    "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
+    "scope": [
+      "interface/themes/tell/",
+      "tools/kad/test/tell-profile*.test.mjs",
+      "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018/",
+      ".agents/work/WP-KAD-TELL-SERVER-ANSI-PROFILE-018.json"
+    ],
+    "non_scope": [
+      "distributed inference runtime implementation or dynamic model loading daemons",
+      "full heterogeneous compute benchmarking suite execution across tell hardware",
+      "live SSE telemetry streaming daemon implementation",
+      "NixOS system reconfiguration or unmanaged daemon deployment",
+      "paid API spend"
+    ],
+    "owned_paths": [
+      "interface/themes/tell/",
+      "tools/kad/test/tell-profile*.test.mjs",
+      "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018/",
+      ".agents/work/WP-KAD-TELL-SERVER-ANSI-PROFILE-018.json"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-isa lint vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "bin/kad-isa check vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "bin/kad-isa lint vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "bin/kad-isa check vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "bin/kad-wiki lint",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018/",
+    "blocked_by": [],
+    "blocks": [
+      "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021"
+    ],
+    "acceptance_criteria": [
+      "Monospace ANSI 16-color and 24-bit TrueColor palettes implemented for headless server profile (surface.tell.server, KAD_PROFILE_SERVER)",
+      "High-density terminal status meters and compact ASCII/ANSI views render telemetry without graphical or audio dependencies",
+      "Host-specific capability adapter contract defined for host.tell.server without leaking NixOS package managers or system paths into cognition policy",
+      "Instant 0ms animation overhead and strict NO_AUDIO_UI verified",
+      "Deterministic contrast validation on standard ANSI black/dark backgrounds exceeds 14:1",
+      "Zero graphical or X11/Wayland dependencies verified over headless SSH and PTY multiplexers",
+      "Zero mutation authority over production routing or canonical vault verified",
+      "Full test suite, ISA checks, and doctor diagnostics remain GREEN"
+    ],
+    "description": "Harden the headless server presentation layer on tell (NixOS homelab node) with pure 16-color ANSI / 24-bit TrueColor monospace TUI profiles, 0ms latency, zero GUI/audio dependencies, and establish the minimal host capability adapter contract required for compute fabric node discovery.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+    "project": "kad-pi",
+    "title": "Unified KAD Design System, Shared Presentation Foundation & Modernized Public Website",
+    "status": "ACCEPTED",
+    "priority": 170,
+    "spec_ref": "user:/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+    "fixed_point": "a0f631c588f57f8101c06d2ea2360b22af4935f8",
+    "scope": [
+      "interface/",
+      "site/",
+      "dashboard/",
+      "tools/kad/test/site*.test.mjs",
+      "tools/kad/test/design*.test.mjs",
+      "tools/kad/test/publication*.test.mjs",
+      "evidence/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014/"
+    ],
+    "non_scope": [
+      "Obsidian bridge plugin implementation (WP-015)",
+      "live SSE telemetry stream (WP-016)",
+      "agentic graph query engine (WP-017)",
+      "new frontend frameworks or SPAs (React, Vue, Svelte, Vite, Astro)",
+      "public site write endpoints or auth",
+      "raw vault exposure to browser"
+    ],
+    "owned_paths": [
+      "interface/",
+      "site/",
+      "dashboard/",
+      "tools/kad/test/site*.test.mjs",
+      "tools/kad/test/design*.test.mjs",
+      "tools/kad/test/publication*.test.mjs",
+      "evidence/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014/"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+      "bin/kad-wiki lint",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014/",
+    "blocked_by": [
+      "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012"
+    ],
+    "blocks": [
+      "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-015"
+    ],
+    "acceptance_criteria": [
+      "Reusable KAD design tokens, foundation, and shared UI components extracted into interface/",
+      "Sofia v3 migrated to shared design foundation with zero regression across graph, charts, and telemetry",
+      "Public website modernized with consistent information architecture, semantic landmarks, and responsive navigation",
+      "Fail-closed publication filter verified with zero private/internal vault leakage",
+      "Public knowledge/project explorer implemented lightweight with DOM filtering and progressive enhancement",
+      "Static-first deployment readiness verified with no runtime daemon/server requirement",
+      "Accessibility, reduced motion, and 6 graceful degradation failure modes verified",
+      "Full test suite, doctors, and linters pass cleanly"
+    ],
+    "description": "Extract reusable KAD visual design foundation (tokens, foundation, components), migrate Sofia v3 without regression, and modernize the static public website across architecture, research, knowledge, and roadmap surfaces.",
+    "spec_decisions": [],
+    "source_ticket": "user:/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-USAGE-BRIDGE-002",
+    "project": "kad-pi",
+    "title": "OMP-Native Usage -> KAD Telemetry Bridge",
+    "status": "ACCEPTED",
+    "priority": 100,
+    "spec_ref": "user:/WP-KAD-USAGE-BRIDGE-002",
+    "fixed_point": "ea324af566ea2d2ad42340343781d0267bfd558a",
+    "scope": [
+      "tools/kad/telemetry/omp-usage-adapter.mjs",
+      "tools/kad/telemetry/provider-adapters.mjs",
+      "tools/kad/telemetry/schema.mjs",
+      "tools/kad/telemetry/view-model.mjs",
+      "tools/kad/telemetry/control-plane-runtime.mjs",
+      "tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "tools/kad/test/telemetry.test.mjs",
+      "tools/kad/test/control-plane.test.mjs",
+      ".omp/extensions/kad-control-plane.js",
+      ".omp/extensions/kad-control-plane/",
+      "evidence/WP-KAD-USAGE-BRIDGE-002/",
+      "docs/agents/control-plane.md",
+      "wiki/KAD_Usage_Bridge_2026-08-30.md"
+    ],
+    "non_scope": [
+      "reopening WP-KAD-OPERATOR-CONTROL-PLANE-001",
+      "re-interpreting provider quotas independently from OMP authority",
+      "active polling loops or background provider scraping",
+      "persisting credentials or authorization headers",
+      "web dashboards or electron apps"
+    ],
+    "owned_paths": [
+      "tools/kad/telemetry/omp-usage-adapter.mjs",
+      "tools/kad/telemetry/provider-adapters.mjs",
+      "tools/kad/telemetry/schema.mjs",
+      "tools/kad/telemetry/view-model.mjs",
+      "tools/kad/telemetry/control-plane-runtime.mjs",
+      "tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "tools/kad/test/telemetry.test.mjs",
+      "tools/kad/test/control-plane.test.mjs",
+      ".omp/extensions/kad-control-plane.js",
+      ".omp/extensions/kad-control-plane/",
+      "evidence/WP-KAD-USAGE-BRIDGE-002/",
+      "docs/agents/control-plane.md",
+      "wiki/KAD_Usage_Bridge_2026-08-30.md"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/telemetry-usage-bridge.test.mjs",
+      "node --test tools/kad/test/telemetry.test.mjs",
+      "node --test tools/kad/test/control-plane.test.mjs",
+      "node --test tools/kad/test/research*.test.mjs",
+      "node --test tools/kad/test/*.test.mjs",
+      "just verify",
+      "bin/kad doctor",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-USAGE-BRIDGE-002",
+    "blocked_by": [],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Wayfinder architectural decision selects the narrowest stable public OMP usage boundary.",
+      "One authority chain: OMP provider adapters interpret quota -> KAD normalizes into kad-telemetry-v1.",
+      "Native Codex and Antigravity usage reports map to truthful telemetry records without invented units.",
+      "Multi-window quotas (primary, secondary, model/tier scopes) remain distinct and un-collapsed.",
+      "Explicit provider allowed=true/limitReached=false outranks misleading advisory 100% percentages.",
+      "Passive after_provider_response hook captures response evidence without secret persistence or active polling.",
+      "Zero active background polling loops or credential scrapers.",
+      "Compact meter replaces 'QUOTA ?' with truthful provider-aware status when known.",
+      "All previous research regression tests (47/47) and control-plane tests remain green."
+    ],
+    "description": "Thin bridge consuming native OMP 18.0.10 provider usage/quota reports and passive after_provider_response telemetry into KAD normalized telemetry plane.",
+    "source_ticket": "user:/WP-KAD-USAGE-BRIDGE-002",
+    "claim": null
+  },
+  {
+    "id": "WP-KAD-VAULT-WIKI-UNIFICATION-010",
+    "project": "kad-pi",
+    "title": "Canonical vault and legacy wiki unification",
+    "status": "ACCEPTED",
+    "priority": 120,
+    "spec_ref": null,
+    "fixed_point": "2d5ef8b36b36dfa09a6957817c49ecad5c530fa4",
+    "scope": [
+      "vault/",
+      "wiki/",
+      "tools/kad/wiki/",
+      "tools/kad/wiki-library/",
+      "tools/kad/wiki-projection.mjs",
+      "tools/kad/knowledge-plane.mjs",
+      "tools/kad/knowledge-plane-adapters.mjs",
+      "tools/kad/index.mjs",
+      "bin/kad-wiki",
+      "tools/kad/test/wiki*.test.mjs",
+      "tools/kad/test/knowledge-plane.test.mjs",
+      "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010/"
+    ],
+    "non_scope": [
+      "WP-011 Sofia and website data-plane implementation",
+      "WP-012 research ingestion implementation",
+      "live workctl state authority",
+      "provider quotas",
+      "automatic research promotion",
+      "Needle training",
+      "paid API spend"
+    ],
+    "owned_paths": [
+      "vault/",
+      "wiki/",
+      "tools/kad/wiki/",
+      "tools/kad/wiki-library/",
+      "tools/kad/wiki-projection.mjs",
+      "tools/kad/knowledge-plane.mjs",
+      "tools/kad/knowledge-plane-adapters.mjs",
+      "tools/kad/index.mjs",
+      "bin/kad-wiki",
+      "tools/kad/test/wiki*.test.mjs",
+      "tools/kad/test/knowledge-plane.test.mjs",
+      "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010/"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/kad/test/wiki*.test.mjs",
+      "node --test tools/kad/test/knowledge-plane.test.mjs",
+      "bin/kad-wiki lint",
+      "bin/kad-wiki rebuild",
+      "bin/workctl doctor",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010/",
+    "blocked_by": [
+      "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+      "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009"
+    ],
+    "blocks": [],
+    "acceptance_criteria": [
+      "Every legacy wiki artifact is classified with deterministic destination and provenance",
+      "vault is the only manually authored durable knowledge source",
+      "flat property registry and stable kad_id validation are enforced",
+      "approved context excludes review and private content",
+      "canonical Home and Bases views exist",
+      "compatibility projections are explicitly derived and regenerable",
+      "focused tests and evidence prove no silent data loss"
+    ],
+    "description": "Unify legacy wiki knowledge into the canonical human-editable vault while preserving authority boundaries and deterministic derived projections.",
+    "spec_decisions": [],
+    "source_ticket": "WP-KAD-VAULT-WIKI-UNIFICATION-010",
+    "claim": null
+  },
+  {
+    "id": "WP-WORKSPACE-AGENT-SUBSTRATE-001",
+    "project": "kad-pi",
+    "title": "Implement portable workspace agent substrate",
+    "status": "ACCEPTED",
+    "priority": 100,
+    "spec_ref": "user:/WP-WORKSPACE-AGENT-SUBSTRATE-001",
+    "fixed_point": "7f241585d8fb147f566def39d88e0670d1785852",
+    "scope": [
+      "AGENTS.md",
+      ".agents/workspace",
+      ".agents/work",
+      ".agents/skills/workspace-*",
+      "bin/workctl",
+      "tools/workspace",
+      "evidence/WP-WORKSPACE-AGENT-SUBSTRATE-001"
+    ],
+    "non_scope": [
+      "pre-existing dirty paths",
+      "side projects",
+      "model/provider routing",
+      "public publication"
+    ],
+    "owned_paths": [
+      "AGENTS.md",
+      ".agents/workspace",
+      ".agents/work",
+      ".agents/skills/workspace-orient",
+      ".agents/skills/workspace-pick-work",
+      ".agents/skills/workspace-handoff",
+      ".agents/skills/workspace-finish",
+      ".agents/skills/workspace-doctor",
+      "bin/workctl",
+      "tools/workspace",
+      "evidence/WP-WORKSPACE-AGENT-SUBSTRATE-001"
+    ],
+    "required_capabilities": [
+      "filesystem_read",
+      "filesystem_write",
+      "git_read",
+      "git_write",
+      "shell_readonly",
+      "code_build",
+      "code_review"
+    ],
+    "trust_domain": "engineering",
+    "authority_required": "kad-pi-project",
+    "validation": [
+      "node --test tools/workspace/workctl.test.mjs",
+      "bin/workctl doctor",
+      "make verify",
+      "make test",
+      "git diff --check"
+    ],
+    "evidence_target": "evidence/WP-WORKSPACE-AGENT-SUBSTRATE-001",
+    "blocked_by": [],
+    "blocks": [],
+    "claim": null
+  }
+]

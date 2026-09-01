@@ -39,6 +39,8 @@ node_modules/
 
 # Local Scratch & External CLI Binaries
 .scratch/
+
+.tmp/
 ngc-cli*
 ngccli_linux.zip
 .obsidian/

@@ -1,0 +1,3 @@
+$ bin/kad-intent verify-report
+exit=0
+[PASS] Alignment report '/home/amdy/Work/docs/architecture/KAD_PI_INTENTION_ALIGNMENT_REPORT_2026-08-30.md' is 100% verified against typed intent ledger.

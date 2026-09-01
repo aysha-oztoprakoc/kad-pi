@@ -1,0 +1,54 @@
+$ bin/kad-isa check all
+exit=0
+=== ISA CHECK REPORT: ISA-KAD-AESTHETIC-001 (v1.0.0, domain: aesthetic) ===
+Summary: 10/10 claims PASS
+
+[✓] ISA-KAD-AESTHETIC-001 (DETERMINISTIC/BLOCKER) [CURRENT_CONFIRMED]: All public, dashboard, and documentation assets must be 100% locally hosted with zero remote CDN or Google Font dependencies.
+    Validator: aesthetic.assets.local_only -> Zero external CDN or remote asset dependencies found
+[✓] ISA-KAD-AESTHETIC-002 (DETERMINISTIC/HIGH) [CURRENT_CONFIRMED]: All color styling in governed stylesheets must use registered semantic tokens without unmapped raw hex literals.
+    Validator: aesthetic.tokens.no_unregistered_hex -> All core semantic tokens registered in interface/tokens.css
+[✓] ISA-KAD-AESTHETIC-003 (DETERMINISTIC/BLOCKER) [CURRENT_CONFIRMED]: Primary paper and cyan text on dark ink and crimson surfaces must exceed WCAG AAA contrast ratio (14:1).
+    Validator: aesthetic.contrast.text_readability -> Primary cyan (#68d5e8) and paper (#e7e8e6) exceed 14:1 contrast on dark ink (#0a0b0f)
+[✓] ISA-KAD-AESTHETIC-004 (DETERMINISTIC/HIGH) [CURRENT_CONFIRMED]: Core stylesheets and UI presentation must not contain infinite looping ambient animations.
+    Validator: aesthetic.motion.no_ambient_loop -> Zero infinite ambient looping animations in core foundation stylesheet
+[✓] ISA-KAD-AESTHETIC-005 (DETERMINISTIC/HIGH) [CURRENT_CONFIRMED]: Canonical KAD baseline enforces explicit NO_AUDIO_UI with zero audio element or API dependencies.
+    Validator: aesthetic.sound.no_audio_ui -> Zero audio UI elements or APIs found in public site
+[✓] ISA-KAD-AESTHETIC-006 (DETERMINISTIC/BLOCKER) [CURRENT_CONFIRMED]: All web and dashboard surfaces must provide accessible skip links and high-contrast visible focus rings.
+    Validator: aesthetic.accessibility.skip_link_and_focus -> Skip links and visible focus rings properly declared
+[✓] ISA-KAD-AESTHETIC-007 (DETERMINISTIC/BLOCKER) [CURRENT_CONFIRMED]: Desktop shell and UI presentation layers have zero authority to directly execute mutating canonical commands.
+    Validator: aesthetic.governance.zero_shell_mutation -> Shell and UI presentation layers isolated from direct canonical vault mutation
+[✓] ISA-KAD-AESTHETIC-008 (HUMAN_REVIEW/HIGH) [CURRENT_CONFIRMED]: Internal workstation and Sofia cockpit embody the Cyberpunk 2077 terminal + Occult clinical bureaucracy aesthetic.
+    Validator: aesthetic.identity.cyberpunk_2077_terminal -> Approved by Human Project Lead in WP-015 Decision 1 (Occult Cyberpunk + Clinical Bureaucracy with Cyberpunk 2077 dataterm influence)
+[✓] ISA-KAD-AESTHETIC-009 (HUMAN_REVIEW/HIGH) [CURRENT_CONFIRMED]: Public literature, website, and GitHub README maintain clean scientific presentation free of unexplained fictional lore.
+    Validator: aesthetic.stratification.two_tier_balance -> Approved by Human Project Lead in WP-015 Decision 2 (Diegetic Internal Workstation vs Scientific Literature Public Brief)
+[✓] ISA-KAD-AESTHETIC-010 (HYBRID/HIGH) [CURRENT_CONFIRMED]: All epistemic tiers and health states use 4-way redundant visual encoding (Color + Border + Badge + Shape).
+    Validator: aesthetic.visualization.multi_redundant_encoding -> Epistemic states mapped redundantly across Color, Border Style, Badge Text, and Geometric Shape
+
+=== ISA CHECK REPORT: ISA-KAD-COMPUTE-FABRIC-001 (v1.0.0, domain: compute-fabric) ===
+Summary: 12/12 claims PASS
+
+[✓] ISA-KAD-COMPUTE-001 (DETERMINISTIC/BLOCKER) [CANONICAL_TARGET]: Meaningful compute state transitions emit typed PON notifications rather than relying on active polling.
+    Validator: compute.pon.typed_notifications -> PON typed notification contract codified in PRIME_DIRECTIVE.md and implemented in tools/kad/pon-engine.mjs
+[✓] ISA-KAD-COMPUTE-002 (DETERMINISTIC/BLOCKER) [CURRENT_CONFIRMED]: Tasks request spatial capability contracts (cognition, quality, context) rather than hardcoded machine identities.
+    Validator: compute.stc.spatial_capability_contracts -> Tasks request spatial capability contracts via resource-contract.mjs and economic-router.mjs without machine identity coupling
+[✓] ISA-KAD-COMPUTE-003 (DETERMINISTIC/BLOCKER) [CURRENT_CONFIRMED]: Local models, runtimes, and worker processes enforce explicit temporal lifecycle ownership and LIFO teardown.
+    Validator: compute.stc.temporal_lifecycle_ownership -> Explicit worker/runtime lifecycle ownership and LIFO teardown enforced in tools/kad/swarm-workers.mjs
+[✓] ISA-KAD-COMPUTE-004 (DETERMINISTIC/BLOCKER) [CURRENT_CONFIRMED]: Route promotion requires local empirical evidence; theoretical capability creates a hypothesis only.
+    Validator: compute.tdd.empirical_route_promotion -> Route promotion strictly gated on append-only empirical observatory journal and readiness verifier
+[✓] ISA-KAD-COMPUTE-005 (DETERMINISTIC/BLOCKER) [CURRENT_CONFIRMED]: Capability degradation gracefully steps through lower tiers without silently escalating authority or spend.
+    Validator: compute.degradation.fail_safe_hierarchy -> Economic router enforces fail-safe downward degradation hierarchy across EXECUTION_CLASSES
+[✓] ISA-KAD-COMPUTE-006 (DETERMINISTIC/HIGH) [CURRENT_CONFIRMED]: System optimizes for useful work per scarce resource used and rejects ungrounded token generation (TOKENMAXXING).
+    Validator: compute.tokenmaxxing.efficiency_metric -> Objective function accepted_useful_work / scarce_resources_used implemented in telemetry/tokenmaxxing.mjs
+[✓] ISA-KAD-COMPUTE-007 (DETERMINISTIC/HIGH) [CANONICAL_TARGET]: Heterogeneous host definitions (AMDY vs TELL) adapt into canonical capability contracts without OS leakage.
+    Validator: compute.hosts.heterogeneous_adapter_boundary -> AMDY (Omarchy 4) and TELL (NixOS) host definitions adapt into canonical capability contracts without OS leakage
+[✓] ISA-KAD-COMPUTE-008 (DETERMINISTIC/HIGH) [CANONICAL_TARGET]: Ten distinct capability-oriented cognition classes define task classification and routing contracts.
+    Validator: compute.cognition.ten_class_taxonomy -> All 10 standardized capability-oriented cognition classes defined in compute fabric ISA
+[✓] ISA-KAD-COMPUTE-009 (DETERMINISTIC/HIGH) [CANONICAL_TARGET]: Inference execution configurations are evaluated against the 9-dimensional experimental tuple schema.
+    Validator: compute.measurement.experimental_tuple_schema -> Experimental 9-tuple schema and 11 telemetry metrics codified in compute fabric ISA
+[✓] ISA-KAD-COMPUTE-010 (DETERMINISTIC/HIGH) [CURRENT_CONFIRMED]: Repeated accepted probabilistic work generates candidates for downward distillation and deterministic replacement.
+    Validator: compute.distillation.downward_migration_policy -> Repeated accepted probabilistic work generates candidates for deterministic or smaller model migration via distillation.mjs
+[✓] ISA-KAD-COMPUTE-011 (DETERMINISTIC/BLOCKER) [CURRENT_CONFIRMED]: Presentation, observation, and telemetry layers have zero direct mutation authority over compute routing state.
+    Validator: compute.governance.zero_shell_mutation -> Compute fabric observation and presentation planes isolated from direct un-gated mutation
+[✓] ISA-KAD-COMPUTE-012 (HUMAN_REVIEW/BLOCKER) [CANONICAL_TARGET]: Canonical compute fabric architecture and self-measuring governance approved by Human Project Lead.
+    Validator: compute.architecture.human_governed_target -> Target state governed by Human Project Lead and canonical KAD Architecture (WP-020)
+

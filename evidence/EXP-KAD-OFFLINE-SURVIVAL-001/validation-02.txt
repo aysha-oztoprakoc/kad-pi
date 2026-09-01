@@ -1,0 +1,15 @@
+$ bin/kad doctor
+exit=0
+KAD DOCTOR: PASS
+
+  [✓] omp_extension            kad-control-plane extension registered
+  [✓] workctl                  Workctl state clean (no active claim)
+  [✓] economic_router          Economic policy active (paidAuthorized: false)
+  [✓] observatory_journal      Journal valid (12 events recorded)
+  [✓] readiness_gate           Gate active (status: UNKNOWN_DOMINATED, canary authorized: false)
+  [✓] outcome_telemetry        Outcome telemetry valid (37 records verified)
+  [✓] governance_gates         Deterministic governance active (17 governed operation classes)
+  [✓] toolchain_trivy          Version: 0.74.0
+  [✓] toolchain_gitleaks       gitleaks 8.30.1
+  [✓] toolchain_amdgpu_top     amdgpu_top v0.11.5
+

@@ -1,0 +1,42 @@
+$ bin/kad-governance status --json
+exit=0
+{
+  "schema_version": "KAD_GOVERNANCE_STATUS_V1",
+  "total_evaluations": 0,
+  "stats": {
+    "total_evaluations": 0,
+    "allow_count": 0,
+    "deny_count": 0,
+    "require_human_count": 0,
+    "blocked_count": 0,
+    "reason_code_distribution": {}
+  },
+  "authority_classes": [
+    "HUMAN_ONLY",
+    "HUMAN_PREAUTHORIZED",
+    "DETERMINISTIC_POLICY",
+    "DELEGATED_WITH_GATE",
+    "AUTONOMOUS_WITHIN_LEASE",
+    "FORBIDDEN"
+  ],
+  "operation_classes": [
+    "READ_LOCAL",
+    "PUBLIC_NETWORK_READ",
+    "AUTHENTICATED_READ",
+    "WORKSPACE_MUTATION",
+    "LOCAL_GIT_COMMIT",
+    "REMOTE_GIT_PUSH",
+    "PR_CREATE",
+    "MAIN_MERGE",
+    "RELEASE_PUBLISH",
+    "CANONICAL_KNOWLEDGE_PROMOTION",
+    "DERIVED_PROJECTION_REBUILD",
+    "METERED_API_CALL",
+    "SCOPED_CREDENTIAL_USE",
+    "RAW_SECRET_ACCESS",
+    "INFRASTRUCTURE_MUTATION",
+    "POLICY_MUTATION",
+    "CONSTITUTIONAL_MUTATION"
+  ],
+  "policies_count": 17
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "GOVERNANCE_PREFLIGHT_V1",
+  "request_id": "exp-offline-survival-r4-a002-preflight-002",
+  "actor": {
+    "actor_id": "actor.project_lead",
+    "actor_class": "HUMAN_ACTOR"
+  },
+  "work": {
+    "workpackage_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A002",
+    "ticket_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A002",
+    "run_id": "r4-a002-live-001",
+    "lifecycle_state": "IN_PROGRESS"
+  },
+  "operation": {
+    "operation_class": "INFRASTRUCTURE_MUTATION",
+    "action": "route.delete.default",
+    "action_kind": "PRIMARY",
+    "resource_refs": [
+      "host.amdy.workstation",
+      "network-interface:enp7s0",
+      "route:ipv4-default-via-192.168.0.1-dev-enp7s0-proto-dhcp-metric-100"
+    ]
+  },
+  "scope": {
+    "owned_paths": [
+      "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A002/"
+    ],
+    "requested_paths": [
+      "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A002/"
+    ]
+  },
+  "authority": {
+    "required_level": "HUMAN_ONLY",
+    "target_authority": "HUMAN_ONLY",
+    "claimed_human_approval_in_prose": null,
+    "require_v2_delegation": true
+  },
+  "risk": {
+    "risk_tier": "TIER_3_HIGH",
+    "reversible": true,
+    "containment_ref": "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A002/02-exact-scope.md",
+    "unknown_risk_factors": false
+  },
+  "evidence": {
+    "tests_passed": "C5 rollback assurance, A001 accepted safe-abort evidence, fresh A002 baseline, and fresh exact route observation",
+    "independent_verification_ref": "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A001/09-independent-review.md",
+    "human_authorization_receipt": {
+      "schema_version": "HUMAN_AUTHORIZATION_RECEIPT_V2",
+      "receipt_id": "har-v2-exp-offline-survival-r4-a002-live-002",
+      "issuer": {
+        "subject_type": "ACTOR",
+        "subject_id": "actor.project_lead"
+      },
+      "authorized_subject": {
+        "subject_type": "ACTOR",
+        "subject_id": "actor.project_lead"
+      },
+      "work_context": {
+        "workpackage_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A002",
+        "experiment_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R4-A002"
+      },
+      "operation": {
+        "operation_class": "INFRASTRUCTURE_MUTATION",
+        "action": "route.delete.default",
+        "action_hash": "sha256:2db2944e3bb5db5eb28232465daddc40135af18e6045842d88c9e1a1a6fd7141"
+      },
+      "resources": [
+        "host.amdy.workstation",
+        "network-interface:enp7s0",
+        "route:ipv4-default-via-192.168.0.1-dev-enp7s0-proto-dhcp-metric-100"
+      ],
+      "scope": {
+        "canonical_paths": [
+          "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/FINAL_R4/LIVE_A002"
+        ]
+      },
+      "validity": {
+        "not_before": "2026-08-31T18:01:55.088Z",
+        "action_valid_until": "2026-08-31T18:16:55.088Z"
+      },
+      "rollback": {
+        "authorized": true,
+        "action": "/usr/bin/nmcli device reapply enp7s0",
+        "action_hash": "sha256:f81e30dfc143110fe8e1580de2e0125cdcc92e5dd89c0f1951acc9345a245666",
+        "recovery_deadline": "2026-08-31T18:19:55.088Z"
+      },
+      "delegation": {
+        "redelegation_allowed": false
+      },
+      "policy": {
+        "policy_version": "KAD_GOVERNANCE_POLICY_V1",
+        "policy_hash": "sha256:651235adf464cf83bfc88854dca66ca1ddf48e9f224bec2ec73604ef6a423b78"
+      },
+      "provenance": {
+        "human_event_ref": "ask_user:a002_final_hash_approval:APPROVE_FINAL_EXACT_A002_SCOPE",
+        "record_hash": "sha256:361b52e8f3de6071c2e924337e8ff74105705a2b1607003930756282b2e7f40e"
+      },
+      "receipt_hash": "sha256:e16e38e91e18e857cae47a3fe009906e3cceba9555c033552805237ee01cb5ff"
+    },
+    "has_unresolved_contradiction": false,
+    "past_telemetry_success": true
+  },
+  "resource": {
+    "stc_lease_ref": null,
+    "lease_valid": null,
+    "budget_envelope_ref": null,
+    "estimated_cost_usd": 0,
+    "envelope_remaining_usd": null,
+    "requested_increase_usd": null
+  },
+  "provenance": {
+    "requested_at": "2026-08-31T18:02:10.001Z",
+    "request_hash": "sha256:add5fc22c292a3d69baff562401eb33ca57014e11697c3f389a4eb2f23b1dad1"
+  }
+}

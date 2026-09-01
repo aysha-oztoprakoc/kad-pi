@@ -1,0 +1,14 @@
+$ bin/kad-governance explain INFRASTRUCTURE_MUTATION --json
+exit=0
+{
+  "operation_class": "INFRASTRUCTURE_MUTATION",
+  "target_authority": "HUMAN_ONLY",
+  "current_authority": "HUMAN_ONLY",
+  "default_risk_tier": "TIER_3_HIGH",
+  "enforcement_capability": "HOST_MUTATION_GUARD",
+  "enforcement_status": "IMPLEMENTED",
+  "requires_human_receipt": true,
+  "requires_stc_lease": false,
+  "requires_budget_envelope": false,
+  "requires_independent_verification": false
+}

@@ -1,0 +1,811 @@
+$ bin/kad status --json
+exit=0
+{
+  "overview": {
+    "model": "unknown",
+    "provider": "unknown",
+    "session_tokens": 0,
+    "execution_class": "UNKNOWN",
+    "paid_authorized": false,
+    "economic_route": "DEFAULT",
+    "route_status": "DEGRADED",
+    "primary_quota_percent": null,
+    "shadow_route": null,
+    "shadow_class": "UNKNOWN",
+    "shadow_same_or_different": "SAME"
+  },
+  "economic": {
+    "status": "DEGRADED",
+    "selected_lane": null,
+    "selected_provider": null,
+    "selected_model": null,
+    "selected_execution_class": "UNKNOWN",
+    "paid_authorized": false,
+    "reason_codes": [
+      "NO_ELIGIBLE_LANE"
+    ],
+    "rejections": [],
+    "candidates": [],
+    "quota_pressure": "UNKNOWN",
+    "observation": {
+      "watermark": "UNKNOWN",
+      "quota_unit": null
+    },
+    "shadow": {
+      "recommended_lane": null,
+      "recommended_execution_class": "UNKNOWN",
+      "same_or_different": "SAME",
+      "reason_codes": [
+        "NO_ELIGIBLE_LANE"
+      ],
+      "telemetry_freshness": "FRESH",
+      "epistemic_quality": "AUTHORITATIVE_REMOTE",
+      "candidate_lanes": [],
+      "quota_windows_considered": []
+    }
+  },
+  "observatory": {
+    "total_observations": 12,
+    "comparable_observations": 12,
+    "agreement_count": 0,
+    "divergence_count": 12,
+    "divergence_rate": 1,
+    "opportunity_counts": {
+      "EXPIRING_SUBSCRIPTION_OPPORTUNITY": 0,
+      "SCARCE_QUOTA_PRESERVATION": 0,
+      "PAID_AUTHORITY_BARRIER": 0,
+      "STALE_TELEMETRY_SUPPRESSED": 0,
+      "UNKNOWN_QUOTA_NEUTRAL": 0,
+      "LIMIT_REACHED_AVOIDANCE": 0,
+      "SCOPE_MISMATCH": 0
+    },
+    "actual_tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cached_input_tokens": 0,
+      "total_tokens": 0
+    },
+    "tokenmaxxing_metrics": {
+      "cache_hit_rate": 0,
+      "actual_tokens_per_pass": null,
+      "actual_tokens_per_accepted_ticket": null
+    },
+    "counterfactual_empirical_savings": "UNKNOWN",
+    "counterfactual_quality_delta": "UNKNOWN",
+    "counterfactual_pass_rate": "UNKNOWN",
+    "epistemic_classification": {
+      "actual_tokens": "OBSERVED",
+      "rates_and_counts": "DERIVED",
+      "opportunity_counts": "DERIVED",
+      "hypothetical_savings": "UNKNOWN"
+    },
+    "integrity": {
+      "valid": true,
+      "record_count": 12,
+      "errors": []
+    },
+    "readiness": {
+      "schema_version": "kad-promotion-readiness-v1",
+      "evaluated_at": "2026-08-30T22:34:12.827Z",
+      "evaluation_window": {
+        "start": "2026-08-30T01:38:21.544Z",
+        "end": "2026-08-30T01:40:02.714Z",
+        "total_records_examined": 12
+      },
+      "integrity_gate": {
+        "passed": true,
+        "hash_chain_valid": true,
+        "sequence_valid": true,
+        "tampering_detected": false,
+        "errors": []
+      },
+      "policy_drift_gate": {
+        "passed": true,
+        "drift_detected": false,
+        "expected_policy_fingerprint": "sha256:d0af24281f4f9201b81a2212d8517a4cbfadbd2bc1eb6ae942e4c10193b062c3",
+        "observed_policy_fingerprints": [
+          "sha256:d0af24281f4f9201b81a2212d8517a4cbfadbd2bc1eb6ae942e4c10193b062c3"
+        ],
+        "expected_evaluator_version": "kad-economic-shadow-v1",
+        "observed_evaluator_versions": []
+      },
+      "quality_gate": {
+        "passed": false,
+        "unknown_rate": 1,
+        "max_unknown_rate": 0.3,
+        "corrupt_records_count": 0
+      },
+      "global_readiness": {
+        "status": "UNKNOWN_DOMINATED",
+        "reason_codes": [
+          "EXCESSIVE_UNKNOWN_RATE"
+        ],
+        "metrics": {
+          "total_observations": 12,
+          "comparable_observations": 12,
+          "divergence_count": 12,
+          "divergence_rate": 1
+        }
+      },
+      "advisory_class_readiness": {
+        "EXPIRING_SUBSCRIPTION_OPPORTUNITY": {
+          "status": "INSUFFICIENT_DATA",
+          "reason_codes": [
+            "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+          ],
+          "occurrences": 0,
+          "divergences": 0,
+          "divergence_rate": 0,
+          "ready_for_canary_design": false,
+          "thresholds": {
+            "min_occurrences": 5,
+            "min_divergences": 3
+          }
+        },
+        "SCARCE_QUOTA_PRESERVATION": {
+          "status": "INSUFFICIENT_DATA",
+          "reason_codes": [
+            "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+          ],
+          "occurrences": 0,
+          "divergences": 0,
+          "divergence_rate": 0,
+          "ready_for_canary_design": false,
+          "thresholds": {
+            "min_occurrences": 5,
+            "min_divergences": 3
+          }
+        },
+        "PAID_AUTHORITY_BARRIER": {
+          "status": "INSUFFICIENT_DATA",
+          "reason_codes": [
+            "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+          ],
+          "occurrences": 0,
+          "divergences": 0,
+          "divergence_rate": 0,
+          "ready_for_canary_design": false,
+          "thresholds": {
+            "min_occurrences": 5,
+            "min_divergences": 3
+          }
+        },
+        "STALE_TELEMETRY_SUPPRESSED": {
+          "status": "INSUFFICIENT_DATA",
+          "reason_codes": [
+            "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+          ],
+          "occurrences": 0,
+          "divergences": 0,
+          "divergence_rate": 0,
+          "ready_for_canary_design": false,
+          "thresholds": {
+            "min_occurrences": 5,
+            "min_divergences": 3
+          }
+        },
+        "UNKNOWN_QUOTA_NEUTRAL": {
+          "status": "INSUFFICIENT_DATA",
+          "reason_codes": [
+            "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+          ],
+          "occurrences": 0,
+          "divergences": 0,
+          "divergence_rate": 0,
+          "ready_for_canary_design": false,
+          "thresholds": {
+            "min_occurrences": 5,
+            "min_divergences": 3
+          }
+        },
+        "LIMIT_REACHED_AVOIDANCE": {
+          "status": "INSUFFICIENT_DATA",
+          "reason_codes": [
+            "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+          ],
+          "occurrences": 0,
+          "divergences": 0,
+          "divergence_rate": 0,
+          "ready_for_canary_design": false,
+          "thresholds": {
+            "min_occurrences": 5,
+            "min_divergences": 3
+          }
+        },
+        "SCOPE_MISMATCH": {
+          "status": "INSUFFICIENT_DATA",
+          "reason_codes": [
+            "BELOW_CLASS_OCCURRENCE_THRESHOLD"
+          ],
+          "occurrences": 0,
+          "divergences": 0,
+          "divergence_rate": 0,
+          "ready_for_canary_design": false,
+          "thresholds": {
+            "min_occurrences": 5,
+            "min_divergences": 3
+          }
+        }
+      },
+      "epistemic_class": "DERIVED",
+      "authority_contract": {
+        "execution_authority_granted": false,
+        "canary_authorized": false,
+        "routing_mutation_allowed": false,
+        "empirical_savings_claimed": false
+      }
+    }
+  },
+  "providers": [
+    {
+      "provider_id": "openai-codex",
+      "model_id": null,
+      "metric": "quota_usage",
+      "unit": "percent",
+      "limit": 100,
+      "used": 0,
+      "remaining": 100,
+      "percent_remaining": 100,
+      "quota_display": "100/100 percent (100%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "4h 56m",
+      "window_kind": "5h",
+      "observed_at": 1788129044100,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": "plus",
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": null,
+        "meterStates": {
+          "chat": {
+            "allowed": true,
+            "limitReached": false
+          }
+        },
+        "limitId": "openai-codex:primary",
+        "limitLabel": "5 hours",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "openai-codex",
+      "model_id": null,
+      "metric": "quota_usage",
+      "unit": "percent",
+      "limit": 100,
+      "used": 7,
+      "remaining": 93,
+      "percent_remaining": 93,
+      "quota_display": "93/100 percent (93%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "142h 47m",
+      "window_kind": "7d",
+      "observed_at": 1788129044100,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": "plus",
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": null,
+        "meterStates": {
+          "chat": {
+            "allowed": true,
+            "limitReached": false
+          }
+        },
+        "limitId": "openai-codex:secondary",
+        "limitLabel": "7 days",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "github-copilot",
+      "model_id": null,
+      "metric": "requests",
+      "unit": "requests",
+      "limit": 0,
+      "used": 0,
+      "remaining": 0,
+      "percent_remaining": null,
+      "quota_display": "UNKNOWN",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "25h 25m",
+      "window_kind": "monthly",
+      "observed_at": 1788129240524,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": "individual",
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": null,
+        "limitId": "copilot:premium",
+        "limitLabel": "Premium Requests",
+        "status": "unknown"
+      }
+    },
+    {
+      "provider_id": "github-copilot",
+      "model_id": null,
+      "metric": "requests",
+      "unit": "requests",
+      "limit": 200,
+      "used": 0,
+      "remaining": 200,
+      "percent_remaining": 100,
+      "quota_display": "200/200 requests (100%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "25h 25m",
+      "window_kind": "monthly",
+      "observed_at": 1788129240524,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": "individual",
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": null,
+        "limitId": "copilot:chat",
+        "limitLabel": "Chat Requests",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "github-copilot",
+      "model_id": null,
+      "metric": "requests",
+      "unit": "requests",
+      "limit": 2000,
+      "used": 0,
+      "remaining": 2000,
+      "percent_remaining": 100,
+      "quota_display": "2000/2000 requests (100%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "25h 25m",
+      "window_kind": "monthly",
+      "observed_at": 1788129240524,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": "individual",
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": null,
+        "limitId": "copilot:completions",
+        "limitLabel": "Completions",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "cursor",
+      "model_id": null,
+      "metric": "requests",
+      "unit": "requests",
+      "limit": null,
+      "used": 0,
+      "remaining": null,
+      "percent_remaining": null,
+      "quota_display": "UNKNOWN",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "UNKNOWN",
+      "resets_in": "706h 5m",
+      "window_kind": "monthly",
+      "observed_at": 1788129238829,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": null,
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": null,
+        "limitId": "cursor:requests:gpt-4",
+        "limitLabel": "gpt-4 requests",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "cursor",
+      "model_id": null,
+      "metric": "quota_usage",
+      "unit": "percent",
+      "limit": 100,
+      "used": 0,
+      "remaining": 100,
+      "percent_remaining": 100,
+      "quota_display": "100/100 percent (100%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "706h 5m",
+      "window_kind": "monthly",
+      "observed_at": 1788129238829,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": null,
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": null,
+        "limitId": "cursor:usd:individual-auto",
+        "limitLabel": "Cursor Models",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "cursor",
+      "model_id": null,
+      "metric": "quota_usage",
+      "unit": "percent",
+      "limit": 100,
+      "used": 0,
+      "remaining": 100,
+      "percent_remaining": 100,
+      "quota_display": "100/100 percent (100%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "706h 5m",
+      "window_kind": "monthly",
+      "observed_at": 1788129238829,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": null,
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": null,
+        "limitId": "cursor:usd:individual-api",
+        "limitLabel": "Other Models",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "google-antigravity",
+      "model_id": null,
+      "metric": "quota_usage",
+      "unit": "percent",
+      "limit": 100,
+      "used": 91.9754066,
+      "remaining": 8.0245934,
+      "percent_remaining": 8,
+      "quota_display": "8.0245934/100 percent (8%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "89h 32m",
+      "window_kind": "weekly",
+      "observed_at": 1788129070271,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": null,
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": "https://daily-cloudcode-pa.googleapis.com",
+        "limitId": "google-antigravity:google:default:weekly",
+        "limitLabel": "Usage (Google)",
+        "status": "warning"
+      }
+    },
+    {
+      "provider_id": "google-antigravity",
+      "model_id": null,
+      "metric": "quota_usage",
+      "unit": "percent",
+      "limit": 100,
+      "used": 0,
+      "remaining": 100,
+      "percent_remaining": 100,
+      "quota_display": "100/100 percent (100%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "4h 56m",
+      "window_kind": "daily",
+      "observed_at": 1788129070271,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": null,
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": "https://daily-cloudcode-pa.googleapis.com",
+        "limitId": "google-antigravity:anthropic:default:daily",
+        "limitLabel": "Usage (Anthropic)",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "google-antigravity",
+      "model_id": null,
+      "metric": "quota_usage",
+      "unit": "percent",
+      "limit": 100,
+      "used": 0,
+      "remaining": 100,
+      "percent_remaining": 100,
+      "quota_display": "100/100 percent (100%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": null,
+      "window_kind": "daily",
+      "observed_at": 1788129070271,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": null,
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": "https://daily-cloudcode-pa.googleapis.com",
+        "limitId": "google-antigravity:google:default:daily",
+        "limitLabel": "Usage (Google)",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "google-antigravity",
+      "model_id": null,
+      "metric": "quota_usage",
+      "unit": "percent",
+      "limit": 100,
+      "used": 0,
+      "remaining": 100,
+      "percent_remaining": 100,
+      "quota_display": "100/100 percent (100%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "4h 56m",
+      "window_kind": "daily",
+      "observed_at": 1788129070271,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": null,
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": "https://daily-cloudcode-pa.googleapis.com",
+        "limitId": "google-antigravity:openai:default:daily",
+        "limitLabel": "Usage (OpenAI)",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": null,
+      "metric": "quota_usage",
+      "unit": "percent",
+      "limit": 100,
+      "used": 0,
+      "remaining": 100,
+      "percent_remaining": 100,
+      "quota_display": "100/100 percent (100%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "4h 58m",
+      "window_kind": "5h",
+      "observed_at": 1788129170354,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": "OpenCode Go",
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": "https://opencode.ai/zen/go/v1/usage",
+        "limitId": "rolling-5h",
+        "limitLabel": "5 Hour limit",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": null,
+      "metric": "quota_usage",
+      "unit": "percent",
+      "limit": 100,
+      "used": 97,
+      "remaining": 3.0000000000000027,
+      "percent_remaining": 3,
+      "quota_display": "3.0000000000000027/100 percent (3%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "1h 25m",
+      "window_kind": "7d",
+      "observed_at": 1788129170354,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": "OpenCode Go",
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": "https://opencode.ai/zen/go/v1/usage",
+        "limitId": "weekly",
+        "limitLabel": "Weekly limit",
+        "status": "warning"
+      }
+    },
+    {
+      "provider_id": "opencode-go",
+      "model_id": null,
+      "metric": "quota_usage",
+      "unit": "percent",
+      "limit": 100,
+      "used": 48,
+      "remaining": 52,
+      "percent_remaining": 52,
+      "quota_display": "52/100 percent (52%)",
+      "source_class": "AUTHORITATIVE_REMOTE",
+      "state": "AUTHORITATIVE_REMOTE",
+      "resets_in": "607h 50m",
+      "window_kind": "monthly",
+      "observed_at": 1788129170354,
+      "configured": true,
+      "enabled": true,
+      "metadata": {
+        "planType": "OpenCode Go",
+        "allowed": true,
+        "limitReached": false,
+        "endpoint": "https://opencode.ai/zen/go/v1/usage",
+        "limitId": "monthly",
+        "limitLabel": "Monthly limit",
+        "status": "ok"
+      }
+    },
+    {
+      "provider_id": "zai-free",
+      "model_id": "glm-4.7-flash",
+      "metric": "total_tokens",
+      "unit": "tokens",
+      "limit": null,
+      "used": null,
+      "remaining": null,
+      "percent_remaining": null,
+      "quota_display": "UNKNOWN",
+      "source_class": "UNKNOWN",
+      "state": "UNKNOWN",
+      "resets_in": null,
+      "window_kind": null,
+      "observed_at": 1788129252827,
+      "configured": true,
+      "enabled": true,
+      "metadata": {}
+    },
+    {
+      "provider_id": "kad-local-world",
+      "model_id": "kad-local-s13",
+      "metric": "total_tokens",
+      "unit": "tokens",
+      "limit": null,
+      "used": null,
+      "remaining": null,
+      "percent_remaining": null,
+      "quota_display": "UNKNOWN",
+      "source_class": "UNKNOWN",
+      "state": "UNKNOWN",
+      "resets_in": null,
+      "window_kind": null,
+      "observed_at": 1788129252827,
+      "configured": true,
+      "enabled": true,
+      "metadata": {}
+    },
+    {
+      "provider_id": "kad-local-qwen",
+      "model_id": "qwen-local",
+      "metric": "total_tokens",
+      "unit": "tokens",
+      "limit": null,
+      "used": null,
+      "remaining": null,
+      "percent_remaining": null,
+      "quota_display": "UNKNOWN",
+      "source_class": "UNKNOWN",
+      "state": "UNKNOWN",
+      "resets_in": null,
+      "window_kind": null,
+      "observed_at": 1788129252827,
+      "configured": true,
+      "enabled": true,
+      "metadata": {}
+    },
+    {
+      "provider_id": "openrouter",
+      "model_id": null,
+      "metric": "total_tokens",
+      "unit": "tokens",
+      "limit": null,
+      "used": null,
+      "remaining": null,
+      "percent_remaining": null,
+      "quota_display": "UNKNOWN",
+      "source_class": "UNKNOWN",
+      "state": "UNKNOWN",
+      "resets_in": null,
+      "window_kind": null,
+      "observed_at": 1788129252827,
+      "configured": false,
+      "enabled": false,
+      "metadata": {}
+    }
+  ],
+  "gpu": {
+    "state": "AVAILABLE",
+    "device_name": "AMD Radeon RX 9060 XT",
+    "vram_used_mib": 5873,
+    "vram_total_mib": 8144,
+    "gpu_utilization_percent": 6,
+    "temperature_c": 58,
+    "power_w": 19,
+    "observed_at": 1788129250109
+  },
+  "services": {
+    "openviking": {
+      "state": "UNAVAILABLE",
+      "reason": "OpenViking server offline"
+    },
+    "zotero": {
+      "state": "UNAVAILABLE",
+      "reason": "connection refused / loopback offline"
+    },
+    "needle": {
+      "state": "UNAVAILABLE",
+      "reason": "Needle 2 not configured"
+    },
+    "local_runtime": {
+      "state": "AVAILABLE",
+      "reason": null,
+      "identity": "koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M"
+    }
+  },
+  "workctl": {
+    "has_active_claim": false,
+    "ticket_id": "NO ACTIVE CLAIM",
+    "actor_label": null,
+    "mode": null,
+    "started_at": null,
+    "owned_paths": [],
+    "frontier": [],
+    "accepted": [
+      "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+      "WP-KAD-BASELINE-PUBLICATION-028A",
+      "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+      "WP-KAD-COGNITIVE-TELEMETRY-031",
+      "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+      "WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+      "WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+      "WP-KAD-FUSION-OMP-ADAPTATION-007A",
+      "WP-KAD-GOVERNANCE-GATES-032",
+      "WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
+      "WP-KAD-INTENT-FIDELITY-029",
+      "WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
+      "WP-KAD-ISA-FINAL-SNAPSHOT-028",
+      "WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+      "WP-KAD-LIVE-TELEMETRY-STREAM-019",
+      "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+      "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+      "WP-KAD-OPERATOR-CONTROL-PLANE-001",
+      "WP-KAD-RESEARCH-API-001",
+      "WP-KAD-RESEARCH-CAPABILITIES-003",
+      "WP-KAD-RESEARCH-CLI-002",
+      "WP-KAD-RESEARCH-OPENVIKING-004",
+      "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
+      "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+      "WP-KAD-RESEARCH-ZOTERO-005",
+      "WP-KAD-SKILL-ROLE-FABRIC-024",
+      "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012",
+      "WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+      "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+      "WP-KAD-USAGE-BRIDGE-002",
+      "WP-KAD-VAULT-WIKI-UNIFICATION-010",
+      "WP-WORKSPACE-AGENT-SUBSTRATE-001"
+    ],
+    "blocked": []
+  },
+  "tokenmaxxing": null,
+  "generated_at": 1788129252827,
+  "status": "READY",
+  "errors": []
+}

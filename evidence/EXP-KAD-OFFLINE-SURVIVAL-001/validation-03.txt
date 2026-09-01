@@ -1,0 +1,62 @@
+$ bin/workctl doctor
+exit=0
+{
+  "status": "healthy",
+  "errors": [],
+  "warnings": [
+    "skill-governance: 5-persona-advisory-board: LOCAL_DELTA",
+    "skill-governance: ask-matt: LOCAL_DELTA",
+    "skill-governance: code-review: LOCAL_DELTA",
+    "skill-governance: codebase-design: LOCAL_DELTA",
+    "skill-governance: diagnosing-bugs: LOCAL_DELTA",
+    "skill-governance: domain-modeling: LOCAL_DELTA",
+    "skill-governance: grill-with-docs: LOCAL_DELTA",
+    "skill-governance: implement: LOCAL_DELTA",
+    "skill-governance: improve-codebase-architecture: LOCAL_DELTA",
+    "skill-governance: prototype: LOCAL_DELTA",
+    "skill-governance: research: LOCAL_DELTA",
+    "skill-governance: tdd: LOCAL_DELTA",
+    "skill-governance: to-spec: LOCAL_DELTA",
+    "skill-governance: to-tickets: LOCAL_DELTA",
+    "skill-governance: triage: LOCAL_DELTA",
+    "skill-governance: wayfinder: LOCAL_DELTA"
+  ],
+  "toolStatus": [
+    {
+      "id": "workctl",
+      "command": "bin/workctl",
+      "available": true
+    },
+    {
+      "id": "kad-knowledge",
+      "command": "bin/kad-knowledge",
+      "available": true
+    },
+    {
+      "id": "kad-runtime-status",
+      "command": "bin/kad-runtime-status",
+      "available": true
+    },
+    {
+      "id": "kad-interface-server",
+      "command": "bin/kad-interface-server",
+      "available": true
+    },
+    {
+      "id": "make-verify",
+      "command": "make verify",
+      "available": true
+    },
+    {
+      "id": "data-workspace-test",
+      "command": "npm test",
+      "available": true
+    },
+    {
+      "id": "technopagan-test",
+      "command": "bash tests/run_all.sh",
+      "available": true
+    }
+  ],
+  "llm_required": false
+}

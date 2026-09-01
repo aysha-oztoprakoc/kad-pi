@@ -1,0 +1,54 @@
+{
+  "tickets": [
+    {
+      "id": "EXP-KAD-OFFLINE-SURVIVAL-001-R1",
+      "project": "kad-pi",
+      "title": "Authorized deterministic WAN fault injection and offline survival qualification",
+      "status": "READY",
+      "priority": 1,
+      "spec_ref": "user:/EXP-KAD-OFFLINE-SURVIVAL-001-R1",
+      "fixed_point": "15483b6c87757358ab046d50d94498c9fdfb1ebe",
+      "scope": [
+        "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/"
+      ],
+      "non_scope": [
+        "all project code",
+        "unrelated work items",
+        "governance policy",
+        "ISA",
+        "Vault doctrine",
+        "remote operations",
+        "persistent network configuration"
+      ],
+      "owned_paths": [
+        "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/"
+      ],
+      "required_capabilities": [
+        "filesystem_read",
+        "filesystem_write",
+        "git_read",
+        "shell_readonly",
+        "code_review"
+      ],
+      "trust_domain": "engineering",
+      "authority_required": "kad-pi-project",
+      "validation": [
+        "experiment-specific receipts",
+        "post-restore required validation",
+        "git diff --check"
+      ],
+      "evidence_target": "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/",
+      "blocked_by": [],
+      "blocks": [],
+      "acceptance_criteria": [
+        "preserve attempt 0 evidence",
+        "execute only specifically authorized reversible route fault",
+        "capture deterministic offline and recovery receipts",
+        "release claim after reconciliation"
+      ],
+      "description": "Experiment-only lifecycle authority for R1; no architecture or unrelated project mutation.",
+      "spec_decisions": [],
+      "source_ticket": "user:/EXP-KAD-OFFLINE-SURVIVAL-001-R1"
+    }
+  ]
+}

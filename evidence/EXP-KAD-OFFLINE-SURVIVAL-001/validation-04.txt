@@ -1,0 +1,564 @@
+$ bin/workctl skills doctor
+exit=0
+{
+  "status": "WARN",
+  "errors": [],
+  "warnings": [
+    {
+      "name": "5-persona-advisory-board",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "9c3079e838d92967af5936f99591d9c3908a816d0e49faae9341087f0acc52ae",
+      "execution_sha256": "77e4fed9484881c5956e59c6adf6379bfb569f2e809f885d35f746d646e6f5bc"
+    },
+    {
+      "name": "ask-matt",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "b25d86fb36b1d294eeead5d7db529f86135f9671f2afcd607579a63bb2213769",
+      "execution_sha256": "63f5b2b76854d07af3e7f6533686804bff492ba605bcb6bda57a5cfb7ad095e3"
+    },
+    {
+      "name": "code-review",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50",
+      "execution_sha256": "c4c7e604d7b24635cd4a949228e1a2332e348abdc18a65be9a7e2d01223a31ee"
+    },
+    {
+      "name": "codebase-design",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "execution_sha256": "905e3024552641bafa40f96628990c589c70bbce7638a106b62af33e1745558b"
+    },
+    {
+      "name": "diagnosing-bugs",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "77f3cf31bc99b2f49af943222526531fcc9fc41d047626d3640e875e85af3e84",
+      "execution_sha256": "59c1edc55d074c989c16aee5a4677dda18f8ce4df411150dbe3abe7ffac837b0"
+    },
+    {
+      "name": "domain-modeling",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "327a2b50620e2fd70abc6893cd6965e76b20f8d0adb0dc2c8d5eb3845efb643e",
+      "execution_sha256": "4a770c655b1c56e3b50b441b970907bf237c30e29374b013d389ea394658320a"
+    },
+    {
+      "name": "grill-with-docs",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe",
+      "execution_sha256": "ffb0240f4b0d8157cbfd9647412751c312659ed4b8b7423393ec3396f7692b9d"
+    },
+    {
+      "name": "implement",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3",
+      "execution_sha256": "91d618b0dcbd7bc781eb8bd39b3e067888b28b26532a39af5975e1b68b63c19b"
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "d1ac25511a936ff4250a48dbcefda363837d6bb9321b3cba73df99fa37270a75",
+      "execution_sha256": "103ee6e1b83bb4e2221f9337ec463daafd0d7f16a1511b92ebffe67099b46927"
+    },
+    {
+      "name": "prototype",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3",
+      "execution_sha256": "3877cd47f39eeeaff9b735f3309efd5d6ab47d6249a83a76b7d07a4eeeec5a7c"
+    },
+    {
+      "name": "research",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4",
+      "execution_sha256": "33f44648d5c3e9e2d638c8d80afba6ee1ff46a27c97d7f83c3c57eef2c097344"
+    },
+    {
+      "name": "tdd",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "cb01f66bebfaa25fa1f88e6b7e769cd9fd9f35b1120b8563749820738814c927",
+      "execution_sha256": "ad9668f83e9c8482b121871120bc558aa24e8c93873e8db2b435253ad0131819"
+    },
+    {
+      "name": "to-spec",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+      "execution_sha256": "36e191088dd05407b93b27bcc56662712cf3a8cee076fe6993991695d2db9d3e"
+    },
+    {
+      "name": "to-tickets",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "5c9fba69845c2519b9b35b9af42ae5142c21f8ca15ac2123dc2722002c8058ae",
+      "execution_sha256": "dff4b3b60c7ce7fae10876aa5e30762d0f2c8043d12379b1a2429969b56b1610"
+    },
+    {
+      "name": "triage",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "623a2ed692bdc77d2090e2a3dea3b627dd722ad3bbaca0be83aada75292c8fc4",
+      "execution_sha256": "57b46ed96577e4b4b6317f238206c765b47b5441757027186b9197889ad56278"
+    },
+    {
+      "name": "wayfinder",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "fee6e1d0c50f0e736b4ef8a599060c959afae904c9a97d82c97f049fcc3aa0f1",
+      "execution_sha256": "a14b5819aa478b394dad78505a81dfade97415233a21de718eca75e916f336bc"
+    }
+  ],
+  "entries": [
+    {
+      "name": "5-persona-advisory-board",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "9c3079e838d92967af5936f99591d9c3908a816d0e49faae9341087f0acc52ae",
+      "execution_sha256": "77e4fed9484881c5956e59c6adf6379bfb569f2e809f885d35f746d646e6f5bc"
+    },
+    {
+      "name": "ask-matt",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "b25d86fb36b1d294eeead5d7db529f86135f9671f2afcd607579a63bb2213769",
+      "execution_sha256": "63f5b2b76854d07af3e7f6533686804bff492ba605bcb6bda57a5cfb7ad095e3"
+    },
+    {
+      "name": "code-review",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50",
+      "execution_sha256": "c4c7e604d7b24635cd4a949228e1a2332e348abdc18a65be9a7e2d01223a31ee"
+    },
+    {
+      "name": "codebase-design",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "execution_sha256": "905e3024552641bafa40f96628990c589c70bbce7638a106b62af33e1745558b"
+    },
+    {
+      "name": "diagnosing-bugs",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "77f3cf31bc99b2f49af943222526531fcc9fc41d047626d3640e875e85af3e84",
+      "execution_sha256": "59c1edc55d074c989c16aee5a4677dda18f8ce4df411150dbe3abe7ffac837b0"
+    },
+    {
+      "name": "domain-modeling",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "327a2b50620e2fd70abc6893cd6965e76b20f8d0adb0dc2c8d5eb3845efb643e",
+      "execution_sha256": "4a770c655b1c56e3b50b441b970907bf237c30e29374b013d389ea394658320a"
+    },
+    {
+      "name": "grill-with-docs",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe",
+      "execution_sha256": "ffb0240f4b0d8157cbfd9647412751c312659ed4b8b7423393ec3396f7692b9d"
+    },
+    {
+      "name": "implement",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3",
+      "execution_sha256": "91d618b0dcbd7bc781eb8bd39b3e067888b28b26532a39af5975e1b68b63c19b"
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "d1ac25511a936ff4250a48dbcefda363837d6bb9321b3cba73df99fa37270a75",
+      "execution_sha256": "103ee6e1b83bb4e2221f9337ec463daafd0d7f16a1511b92ebffe67099b46927"
+    },
+    {
+      "name": "prototype",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3",
+      "execution_sha256": "3877cd47f39eeeaff9b735f3309efd5d6ab47d6249a83a76b7d07a4eeeec5a7c"
+    },
+    {
+      "name": "research",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4",
+      "execution_sha256": "33f44648d5c3e9e2d638c8d80afba6ee1ff46a27c97d7f83c3c57eef2c097344"
+    },
+    {
+      "name": "resolving-merge-conflicts",
+      "status": "CURRENT",
+      "upstream_sha256": "9d8114f8ef0b31f535a265fc05c364bd8cf2e2895a830040e06c22acb11f54b0",
+      "execution_sha256": "9d8114f8ef0b31f535a265fc05c364bd8cf2e2895a830040e06c22acb11f54b0"
+    },
+    {
+      "name": "setup-matt-pocock-skills",
+      "status": "CURRENT",
+      "upstream_sha256": "2bcd89e97777cdb705914424e39c97d5db524c8eb4eafac8120778a07774f0ec",
+      "execution_sha256": "2bcd89e97777cdb705914424e39c97d5db524c8eb4eafac8120778a07774f0ec"
+    },
+    {
+      "name": "tdd",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "cb01f66bebfaa25fa1f88e6b7e769cd9fd9f35b1120b8563749820738814c927",
+      "execution_sha256": "ad9668f83e9c8482b121871120bc558aa24e8c93873e8db2b435253ad0131819"
+    },
+    {
+      "name": "to-spec",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+      "execution_sha256": "36e191088dd05407b93b27bcc56662712cf3a8cee076fe6993991695d2db9d3e"
+    },
+    {
+      "name": "to-tickets",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "5c9fba69845c2519b9b35b9af42ae5142c21f8ca15ac2123dc2722002c8058ae",
+      "execution_sha256": "dff4b3b60c7ce7fae10876aa5e30762d0f2c8043d12379b1a2429969b56b1610"
+    },
+    {
+      "name": "triage",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "623a2ed692bdc77d2090e2a3dea3b627dd722ad3bbaca0be83aada75292c8fc4",
+      "execution_sha256": "57b46ed96577e4b4b6317f238206c765b47b5441757027186b9197889ad56278"
+    },
+    {
+      "name": "wayfinder",
+      "status": "LOCAL_DELTA",
+      "upstream_sha256": "fee6e1d0c50f0e736b4ef8a599060c959afae904c9a97d82c97f049fcc3aa0f1",
+      "execution_sha256": "a14b5819aa478b394dad78505a81dfade97415233a21de718eca75e916f336bc"
+    },
+    {
+      "name": "wizard",
+      "status": "CURRENT",
+      "upstream_sha256": "bdf31d48211ea559878f95a4f344aeabf8d85897488ba564382bab0b000daac1",
+      "execution_sha256": "bdf31d48211ea559878f95a4f344aeabf8d85897488ba564382bab0b000daac1"
+    }
+  ],
+  "workflow": {
+    "errors": [],
+    "warnings": []
+  },
+  "counts": {
+    "LOCAL_DELTA": 16,
+    "CURRENT": 3
+  },
+  "collisions": [
+    {
+      "name": "ask-matt",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "claude-handoff",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "code-review",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "codebase-design",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "diagnosing-bugs",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "domain-modeling",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "git-guardrails-claude-code",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "grill-me",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "grill-with-docs",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "grilling",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "handoff",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "implement",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "implement-spec",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "loop-me",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "migrate-to-shoehorn",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "prototype",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "research",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "resolving-merge-conflicts",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "retro",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "scaffold-exercises",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "setup-matt-pocock-skills",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "setup-pre-commit",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "setup-ts-deep-modules",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "tdd",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "teach",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "to-questionnaire",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "to-spec",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "to-tickets",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "triage",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "wait-what",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "wayfinder",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "wizard",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "writing-beats",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "writing-for-agents",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "writing-fragments",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    },
+    {
+      "name": "writing-shape",
+      "locations": [
+        ".agents/skills",
+        "agent/skills"
+      ],
+      "canonical": ".agents/skills",
+      "resolution": "canonical root wins; legacy views remain read-only"
+    }
+  ],
+  "issues": []
+}
