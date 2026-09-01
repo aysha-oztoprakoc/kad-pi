@@ -2,7 +2,7 @@
   "id": "WP-KAD-OMP-METAHARNESS-REFACTOR-041",
   "project": "kad-pi",
   "title": "OMP Meta-Harness Reconciliation, Current-State Artifact, Settings Compatibility Matrix, and CSA↔ISA Gap Model",
-  "status": "REVIEW",
+  "status": "ACCEPTED",
   "priority": 350,
   "spec_ref": "user:/WP-KAD-OMP-METAHARNESS-REFACTOR-041",
   "fixed_point": "c029d908d0e902ae2750dd32806bc6557c8d6191",
