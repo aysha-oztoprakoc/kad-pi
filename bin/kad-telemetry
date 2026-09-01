@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+import { runTelemetryCli } from '../tools/kad/telemetry/cli.mjs';
+
+const exitCode = await runTelemetryCli(process.argv.slice(2));
+process.exit(exitCode);

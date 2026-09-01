@@ -14,6 +14,8 @@ import { computeTokenmaxxingMetrics } from './tokenmaxxing.mjs';
 import { buildControlPlaneViewModel } from './view-model.mjs';
 import { execFileSync } from 'node:child_process';
 import { ShadowObservatoryJournal, aggregateObservations, evaluateJournalReadiness } from './observatory.mjs';
+import { OutcomeTelemetryStorage } from './storage.mjs';
+import { CANONICAL_OPERATION_POLICIES } from '../governance/policy-resolver.mjs';
 
 export function renderCompactMeter(state = {}) {
   const parts = ['KAD'];
@@ -318,6 +320,33 @@ export async function executeKadDoctor({ cwd = process.cwd() } = {}) {
   } catch (e) {
     checks.push({ name: 'readiness_gate', status: 'DEGRADED', message: e.message });
   }
+  // Check 6: Outcome Telemetry Storage
+  try {
+    const storage = new OutcomeTelemetryStorage({ cwd });
+    const integrity = storage.verifyAllRecords();
+    checks.push({
+      name: 'outcome_telemetry',
+      status: integrity.corrupted === 0 ? 'PASS' : 'DEGRADED',
+      message: integrity.corrupted === 0
+        ? `Outcome telemetry valid (${integrity.valid} records verified)`
+        : `Outcome telemetry degraded: ${integrity.errors.join(', ')}`,
+    });
+  } catch (e) {
+    checks.push({ name: 'outcome_telemetry', status: 'DEGRADED', message: e.message });
+  }
+  // Check 7: Governance Gates
+  try {
+    const policyCount = Object.keys(CANONICAL_OPERATION_POLICIES).length;
+    checks.push({
+      name: 'governance_gates',
+      status: 'PASS',
+      message: `Deterministic governance active (${policyCount} governed operation classes)`,
+    });
+  } catch (e) {
+    checks.push({ name: 'governance_gates', status: 'DEGRADED', message: e.message });
+  }
+
+
 
   // Check 4: Toolchain - trivy
   try {

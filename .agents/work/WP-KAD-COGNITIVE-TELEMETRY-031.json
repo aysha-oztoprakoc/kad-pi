@@ -1,0 +1,92 @@
+{
+  "id": "WP-KAD-COGNITIVE-TELEMETRY-031",
+  "project": "kad-pi",
+  "title": "Human Cognitive Attention, Intervention Friction, Outcome Quality & Total-Cost Telemetry Baseline",
+  "status": "ACCEPTED",
+  "priority": 330,
+  "spec_ref": "user:/WP-KAD-COGNITIVE-TELEMETRY-031",
+  "fixed_point": "15483b6c87757358ab046d50d94498c9fdfb1ebe",
+  "scope": [
+    "tools/kad/telemetry/",
+    "tools/kad/observatory/",
+    "bin/kad-telemetry",
+    "tools/kad/test/telemetry*.test.mjs",
+    "tools/kad/test/observatory*.test.mjs",
+    "tools/kad/test/cognitive-telemetry*.test.mjs",
+    "evidence/WP-KAD-COGNITIVE-TELEMETRY-031/",
+    ".agents/work/WP-KAD-COGNITIVE-TELEMETRY-031.json"
+  ],
+  "non_scope": [
+    "Warren integration",
+    "TELL deployment",
+    "Beads integration",
+    "OpenViking/Needle implementation",
+    "offline survival execution",
+    "capability broker",
+    "autonomy expansion",
+    "provider promotion",
+    "routing optimization",
+    "budget changes",
+    "Ideal State redesign",
+    "ISA-002 mutation",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "tools/kad/telemetry/",
+    "tools/kad/observatory/",
+    "bin/kad-telemetry",
+    "tools/kad/test/telemetry*.test.mjs",
+    "tools/kad/test/observatory*.test.mjs",
+    "tools/kad/test/cognitive-telemetry*.test.mjs",
+    "evidence/WP-KAD-COGNITIVE-TELEMETRY-031/",
+    ".agents/work/WP-KAD-COGNITIVE-TELEMETRY-031.json"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "npm test",
+    "bin/kad doctor",
+    "bin/workctl doctor",
+    "bin/workctl skills doctor",
+    "bin/kad-isa check all",
+    "bin/kad-wiki lint",
+    "bin/kad-intent validate",
+    "bin/kad-intent verify-report",
+    "git diff --check"
+  ],
+  "evidence_target": "evidence/WP-KAD-COGNITIVE-TELEMETRY-031/",
+  "blocked_by": [
+    "WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R"
+  ],
+  "blocks": [
+    "WP-KAD-GOVERNANCE-GATES-032"
+  ],
+  "acceptance_criteria": [
+    "KAD_OUTCOME_COST_TELEMETRY_V1 schema implemented with typed separation of outcome, quality, human, execution, context, economic, compute, maintenance, and provenance dimensions",
+    "Epistemic origin classes explicit (DIRECTLY_OBSERVED, DERIVED_DETERMINISTIC, HUMAN_REPORTED, ESTIMATED, RECONSTRUCTED, UNKNOWN) with UNKNOWN != ZERO strictly enforced",
+    "Human intervention taxonomy implemented distinguishing strategic design / research interpretation from corrective friction and babysitting",
+    "Quality and escaped defect metrics preserved (escaped_regressions, acceptance_reversals, rollbacks, post_acceptance_defects)",
+    "Provider-neutral workload semantics preserved (model/vendor only in run metadata, not required in workload contract)",
+    "Local-first storage verified with zero raw-secret capture and SHA-256 record integrity hashing",
+    "Telemetry does not own lifecycle state (passively observes workctl/intent/execution evidence without competing authority)",
+    "Lightweight complexity telemetry and observer overhead accounting implemented",
+    "Goodhart and metric-gaming protections verified via comprehensive semantic TDD suite (T01-T20)",
+    "Historical reconstruction from accepted WP receipts classified honestly as RECONSTRUCTED without fabricating unknown metrics",
+    "Prospective baseline protocol and initial baseline report generated distinguishing observations, reconstructions, and missing data",
+    "Zero automatic policy-feedback control loops implemented (measurement before optimization invariant preserved)",
+    "Full repository test suite, doctors, and linters pass cleanly with independent review verification"
+  ],
+  "description": "Human cognitive attention, intervention friction, outcome quality, and total-cost telemetry baseline subsystem establishing KAD_OUTCOME_COST_TELEMETRY_V1, observation origin tracking, Goodhart protections, historical reconstruction, and prospective baseline reporting.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-KAD-COGNITIVE-TELEMETRY-031",
+  "claim": null
+}

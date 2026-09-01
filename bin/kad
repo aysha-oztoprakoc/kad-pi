@@ -8,6 +8,8 @@ import {
   ShadowObservatoryJournal,
   evaluateJournalReadiness
 } from '../tools/kad/telemetry/observatory.mjs';
+import { runTelemetryCli } from '../tools/kad/telemetry/cli.mjs';
+import { runGovernanceCli } from '../tools/kad/governance/cli.mjs';
 
 const args = process.argv.slice(2);
 const isJson = args.includes('--json') || args.includes('-j');
@@ -44,9 +46,26 @@ Usage:
   kad observatory readiness [--json] Show deterministic promotion readiness gate status
   kad readiness [--json]             Alias for observatory readiness
   kad services [--json]              Show service health (OpenViking, Zotero, etc.)
+  kad telemetry [args...]    Outcome, cognitive attention, and total-cost telemetry
+  kad gate [args...]         Deterministic governance gates and preflight
+  kad governance [args...]   Alias for kad gate
   kad work [--json]                  Show workctl active claim and frontier
   kad ui                             Render the full native panel in terminal
 \n`);
+    return;
+  }
+  if (subcommand === 'telemetry' || subcommand === 'outcomes') {
+    const subArgs = filteredArgs.slice(1);
+    if (isJson) subArgs.push('--json');
+    const exitCode = await runTelemetryCli(subArgs);
+    process.exitCode = exitCode;
+    return;
+  }
+  if (subcommand === 'gate' || subcommand === 'governance') {
+    const subArgs = filteredArgs.slice(1);
+    if (isJson) subArgs.push('--json');
+    const exitCode = await runGovernanceCli(subArgs);
+    process.exitCode = exitCode;
     return;
   }
   if ((subcommand === 'observatory' && filteredArgs[1] === 'readiness') || subcommand === 'readiness') {

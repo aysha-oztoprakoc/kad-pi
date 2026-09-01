@@ -1,0 +1,21 @@
+{
+  "task": "WP-KAD-COGNITIVE-TELEMETRY-031",
+  "project": "kad-pi",
+  "claim_id": "37abf061-663e-4fd7-b1ae-8ec6264099b5",
+  "actor_label": "gemini-3.7-flash-high",
+  "started_at": "2026-08-30T21:45:26.141Z",
+  "base_commit": "15483b6c87757358ab046d50d94498c9fdfb1ebe",
+  "owned_paths": [
+    "tools/kad/telemetry",
+    "tools/kad/observatory",
+    "bin/kad-telemetry",
+    "tools/kad/test/telemetry*.test.mjs",
+    "tools/kad/test/observatory*.test.mjs",
+    "tools/kad/test/cognitive-telemetry*.test.mjs",
+    "evidence/WP-KAD-COGNITIVE-TELEMETRY-031",
+    ".agents/work/WP-KAD-COGNITIVE-TELEMETRY-031.json"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-08-30T22:04:40.423Z"
+}
