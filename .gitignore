@@ -40,6 +40,7 @@ node_modules/
 # Local Scratch & External CLI Binaries
 .scratch/
 .tmp/
+bin/omp-patched-canary
 
 # KAD runtime telemetry store (live, regenerable via kad-telemetry backfill; canonical
 # telemetry evidence must be exported/snapshotted into the owning WP evidence/ dir) — D3, WP-043

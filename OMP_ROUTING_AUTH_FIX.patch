@@ -1,0 +1,220 @@
+diff --git i/packages/coding-agent/src/config/settings.ts w/packages/coding-agent/src/config/settings.ts
+index 107aaab..edbf599 100644
+--- i/packages/coding-agent/src/config/settings.ts
++++ w/packages/coding-agent/src/config/settings.ts
+@@ -1103,6 +1103,13 @@ export class Settings {
+ 		const current: Record<string, unknown> = isRecord(projectRoles) ? { ...projectRoles } : {};
+ 		current[role] = modelId;
+ 		setByPath(this.#project, ["modelRoles"], current);
++		logger.debug("Settings: model role mutation", {
++			role,
++			scope: "project",
++			oldValue: prev && isRecord(prev) ? prev[role] : undefined,
++			newValue: modelId,
++			authority: "EXPLICIT_USER_ROLE_ASSIGNMENT",
++		});
+ 		this.#modifiedProjectModelRoles.add(role);
+ 		this.#persistedMutationGeneration++;
+ 		this.#rebuildMerged();
+@@ -1138,6 +1145,13 @@ export class Settings {
+ 		// file, so a concurrent external edit to a sibling role is not
+ 		// clobbered by this process's stale in-memory snapshot.
+ 		setByPath(this.#global, ["modelRoles"], current);
++		logger.debug("Settings: model role mutation", {
++			role,
++			scope: "global",
++			oldValue: prev && isRecord(prev) ? prev[role] : undefined,
++			newValue: modelId,
++			authority: "EXPLICIT_USER_ROLE_ASSIGNMENT",
++		});
+ 		this.#modifiedGlobalModelRoles.add(role);
+ 		this.#persistedMutationGeneration++;
+ 		this.#rebuildMerged();
+@@ -2421,6 +2435,7 @@ export class Settings {
+ 				// malformed file aside, recover from its last in-memory state
+ 				// rather than recreating the config from only the pending path.
+ 				const loaded = await this.#loadYamlIfPresentForWriteLocked(configPath, writePath);
++				const loadedSnapshot = structuredClone(loaded.settings);
+ 				const current =
+ 					loaded.settings ?? (this.#quarantinedYamlTargets.has(configPath) ? structuredClone(this.#global) : {});
+ 				let shouldWrite = false;
+@@ -2500,6 +2515,11 @@ export class Settings {
+ 
+ 				// Update our global with any external changes we preserved.
+ 				this.#global = current;
++				if (shouldWrite) {
++					if (loadedSnapshot && Bun.deepEquals(this.#global, loadedSnapshot)) {
++						shouldWrite = false;
++					}
++				}
+ 				if (shouldWrite) {
+ 					await this.#writeYamlAtomically(writePath, this.#global);
+ 				}
+@@ -2604,6 +2624,7 @@ export class Settings {
+ 			await fs.promises.mkdir(path.dirname(projectConfigPath), { recursive: true });
+ 			await this.#withYamlWriteLock(projectConfigPath, async writePath => {
+ 				const loaded = await this.#loadYamlIfPresentForWriteLocked(projectConfigPath, writePath);
++				const loadedSnapshot = structuredClone(loaded.settings);
+ 				const projectSettings =
+ 					loaded.settings ??
+ 					(this.#quarantinedYamlTargets.has(projectConfigPath) ? structuredClone(this.#projectFileSettings) : {});
+@@ -2613,6 +2634,11 @@ export class Settings {
+ 					const value = isRecord(projectRoles) ? projectRoles[role] : undefined;
+ 					setByPath(projectSettings, ["modelRoles", role], value);
+ 				}
++				if (loadedSnapshot && Bun.deepEquals(projectSettings, loadedSnapshot)) {
++					this.#projectFileSettings = structuredClone(projectSettings);
++					this.#quarantinedYamlTargets.delete(projectConfigPath);
++					return;
++				}
+ 
+ 				await this.#writeYamlAtomically(writePath, projectSettings);
+ 				this.#projectFileSettings = structuredClone(projectSettings);
+diff --git i/packages/coding-agent/src/modes/controllers/selector-controller.ts w/packages/coding-agent/src/modes/controllers/selector-controller.ts
+index 037584d..8cbccfc 100644
+--- i/packages/coding-agent/src/modes/controllers/selector-controller.ts
++++ w/packages/coding-agent/src/modes/controllers/selector-controller.ts
+@@ -957,6 +957,10 @@ export class SelectorController {
+ 									selector,
+ 									thinkingLevel: isAuto ? ThinkingLevel.Inherit : concreteThinking,
+ 									persist: targetScope === "global",
++									persistRole: {
++										scope: targetScope,
++										reason: "EXPLICIT_USER_ROLE_ASSIGNMENT",
++									},
+ 								});
+ 								if (!switched) return;
+ 								if (targetScope === "project") {
+diff --git i/packages/coding-agent/src/modes/setup-wizard/scenes/model.ts w/packages/coding-agent/src/modes/setup-wizard/scenes/model.ts
+index 59bf358..31f4ccc 100644
+--- i/packages/coding-agent/src/modes/setup-wizard/scenes/model.ts
++++ w/packages/coding-agent/src/modes/setup-wizard/scenes/model.ts
+@@ -108,7 +108,14 @@ class ModelSceneController implements SetupSceneController {
+ 		this.host.requestRender();
+ 		try {
+ 			const projectScope = this.host.ctx.settings.get("modelRoleStorage") === "project";
+-			await this.host.ctx.session.setModel(model, "default", { selector, persist: !projectScope });
++			await this.host.ctx.session.setModel(model, "default", {
++				selector,
++				persist: !projectScope,
++				persistRole: {
++					scope: projectScope ? "project" : "global",
++					reason: "EXPLICIT_USER_ROLE_ASSIGNMENT",
++				},
++			});
+ 			if (projectScope) {
+ 				this.host.ctx.settings.setProjectModelRole("default", selector);
+ 			}
+diff --git i/packages/coding-agent/src/session/agent-session.ts w/packages/coding-agent/src/session/agent-session.ts
+index cac051a..d165ff6 100644
+--- i/packages/coding-agent/src/session/agent-session.ts
++++ w/packages/coding-agent/src/session/agent-session.ts
+@@ -321,7 +321,13 @@ import {
+ 	sanitizeAssistantForReparentedHistory,
+ 	USER_INTERRUPT_LABEL,
+ } from "./messages";
+-import { ModelControls, type ModelControlsHost } from "./model-controls";
++import {
++	ModelControls,
++	type ModelControlsHost,
++	type ModelRolePersistence,
++	type SetModelOptions,
++} from "./model-controls";
++export type { ModelRolePersistence, SetModelOptions };
+ import { isPrewalkPlanNudge, PrewalkCoordinator, type PrewalkCoordinatorHost } from "./prewalk";
+ import {
+ 	isAdvisorCard,
+@@ -7398,11 +7404,7 @@ export class AgentSession {
+ 	async setModel(
+ 		model: Model,
+ 		role: string = "default",
+-		options?: {
+-			selector?: string;
+-			thinkingLevel?: ThinkingLevel;
+-			persist?: boolean;
+-		},
++		options?: SetModelOptions,
+ 	): Promise<{ switched: boolean }> {
+ 		return this.#models.setModel(model, role, options);
+ 	}
+diff --git i/packages/coding-agent/src/session/model-controls.ts w/packages/coding-agent/src/session/model-controls.ts
+index 6477cf1..e6e5060 100644
+--- i/packages/coding-agent/src/session/model-controls.ts
++++ w/packages/coding-agent/src/session/model-controls.ts
+@@ -41,6 +41,18 @@ import { formatRoleModelValue, resolveRoleModelFull } from "./role-models";
+ import { EPHEMERAL_MODEL_CHANGE_ROLE } from "./session-entries";
+ import type { SessionManager } from "./session-manager";
+ 
++export type ModelRolePersistence = {
++	scope: "global" | "project";
++	reason: "EXPLICIT_USER_ROLE_ASSIGNMENT";
++};
++
++export interface SetModelOptions {
++	selector?: string;
++	thinkingLevel?: ThinkingLevel;
++	persist?: boolean;
++	persistRole?: ModelRolePersistence;
++}
++
+ /** Capabilities borrowed from the owning AgentSession. */
+ export interface ModelControlsHost {
+ 	agent: Agent;
+@@ -211,15 +223,10 @@ export class ModelControls {
+ 
+ 		return undefined;
+ 	}
+-
+ 	async setModel(
+ 		model: Model,
+ 		role: string = "default",
+-		options?: {
+-			selector?: string;
+-			thinkingLevel?: ThinkingLevel;
+-			persist?: boolean;
+-		},
++		options?: SetModelOptions,
+ 	): Promise<{ switched: boolean }> {
+ 		const previousEditMode = this.#host.resolveActiveEditMode();
+ 		if (!this.#host.modelRegistry.hasConfiguredAuth(model)) {
+@@ -232,18 +239,30 @@ export class ModelControls {
+ 		this.#host.clearActiveRetryFallback();
+ 		await this.#host.setModelWithProviderSessionReset(targetModel);
+ 		this.#host.sessionManager.appendModelChange(`${targetModel.provider}/${targetModel.id}`, role);
+-		if (options?.persist) {
+-			this.#host.settings.setModelRole(
++		// ONLY explicit user role assignment may persist a role.
++		// Persistence scope must be explicit and CANNOT be inferred from ambient configuration
++		// (e.g. modelRoleStorage) after the UI/controller has resolved the user's target.
++		const persistScope = options?.persistRole?.scope ?? (options?.persist ? "global" : undefined);
++		if (persistScope === "project") {
++			const formattedValue = formatRoleModelValue(
++				this.#host.settings,
++				this.#host.modelRegistry,
+ 				role,
+-				formatRoleModelValue(
+-					this.#host.settings,
+-					this.#host.modelRegistry,
+-					role,
+-					targetModel,
+-					options.selector,
+-					options.thinkingLevel,
+-				),
++				targetModel,
++				options?.selector,
++				options?.thinkingLevel,
+ 			);
++			this.#host.settings.setProjectModelRole(role, formattedValue);
++		} else if (persistScope === "global") {
++			const formattedValue = formatRoleModelValue(
++				this.#host.settings,
++				this.#host.modelRegistry,
++				role,
++				targetModel,
++				options?.selector,
++				options?.thinkingLevel,
++			);
++			this.#host.settings.setModelRole(role, formattedValue);
+ 		}
+ 		this.#host.settings.getStorage()?.recordModelUsage(`${targetModel.provider}/${targetModel.id}`);
+ 

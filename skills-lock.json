@@ -145,6 +145,12 @@
       "skillPath": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
       "computedHash": "61508216ede38d8cfa712879197a76f75f4896615dbf7abc3f62571f8f5923cc"
     },
+    "system-atlas": {
+      "source": "inkboard/system-atlas",
+      "sourceType": "github",
+      "skillPath": "skills/system-atlas/SKILL.md",
+      "computedHash": "ca484cddba418418e5d1c79ebf1f86f44791687781e03d2a6394a960a2e2b85f"
+    },
     "tdd": {
       "source": "mattpocock/skills",
       "sourceType": "github",
