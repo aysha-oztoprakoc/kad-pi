@@ -2,7 +2,7 @@
 
 - **Date**: 2026-09-01 (incident window ~21:56Z–23:10Z; report written ~23:15Z)
 - **Reporter**: human (project lead)
-- **Investigator**: OMP harness session (`omp` pid 17351, model `opencode-go/deepseek-v4-flash`)
+- **Investigator**: OMP harness session (model `opencode-go/deepseek-v4-flash`)
 - **Context**: incident occurred during `WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043` (now suspended per directive)
 - **Method**: read-only forensics — no configuration, credential, network, or Git mutation performed
 
@@ -57,7 +57,7 @@ CLASSIFICATION: CONFIRMED OMP ROUTING-PERSISTENCE BUG (candidate) —
 | OMP schema default | (unset) | global | schema |
 | Global config `~/.omp/agent/config.yml` | **`opencode-go/deepseek-v4-flash:high`** | **`global`** (incident-appended) | **incident write** (22:02:01Z + 23:03:05Z) — no human command found |
 | Project config `.omp/config.yml` | `opencode-go/deepseek-v4-flash:high` | `project` | **human decision D1** (WP-043, committed `ac8b7f7`) — bootstrap/canary |
-| Effective (in `/home/amdy/Work`) | deepseek-v4-flash (project wins) | `project` | — |
+| Effective (in `<workspace-root>`) | deepseek-v4-flash (project wins) | `project` | — |
 | Effective (outside project) | deepseek-v4-flash (global now sets it) | `global` | **incident-driven** |
 
 The PROJECT default being deepseek-v4-flash is the human-authorized WP-043 D1 canary (committed). The GLOBAL default + `modelRoleStorage: global` are incident-injected and were never human-selected.
@@ -192,7 +192,7 @@ Requires: OMP source/maintainer confirmation of the exact write path; a guard th
 ### 3. Regression Coverage
 - **Characterization Tests (T1–T13)**: 13/13 PASS (T6, T9, and T10 were verified RED on baseline, now GREEN).
 - **50-Cycle Stress Regression**: 50 failure/retry/recovery cycles verified with zero config hash drift (206/206 assertions pass).
-- **Phase 9 KAD Integration**: Cross-project isolation and inheritance verified against `/home/amdy/Work` and a neutral side project.
+- **Phase 9 KAD Integration**: Cross-project isolation and inheritance verified against KAD project root and a neutral side project.
 - **Runtime Canary Verification (C1–C7)**: 7/7 PASS using standalone compiled binary `omp-patched-canary` against isolated fixtures.
 - **Canonical KAD Test Surface**: 790/790 PASS (0 fail, 0 cancelled, 0 skipped).
 - **Diagnostics**: `bin/kad doctor` PASS, `bin/workctl doctor` Healthy, `bin/kad-telemetry validate` 37/37 valid, `gitleaks` clean, `git diff --check` clean.

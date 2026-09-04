@@ -2,7 +2,7 @@
 
 **Date**: 2026-09-03  
 **Target Repository**: `github:can1357/oh-my-pi@18.0.11`  
-**Workspace**: `/home/amdy/Work`  
+**Workspace**: `<workspace-root>`  
 **Author**: Incident Investigator + Builder + Verifier  
 **Classification**: Root Cause Investigation & Architectural Analysis
 

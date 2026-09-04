@@ -8,11 +8,10 @@ KAD-PI is a local-first engineering workstation, research engine, and agent cont
 ---
 
 ## Status
-- **Phase**: Canonical Knowledge & Presentation Synchronization (`WP-011`)
+- **Phase**: Baseline Stabilization & Zero-Pending Baseline (`WP-043`)
 - **Canonical Vault Revision**: `77d181f2a9359fc3502678616692b356ca940f509b1aae2c9cbf3efdf0dc3afe`
 - **Remote Synchronization**: `origin/main` Synchronized
-- **Test Suite**: 555+ unit & integration tests passing (100% GREEN)
-
+- **Test Suite**: 790 unit & integration tests passing (100% GREEN)
 ---
 
 ## Core Principles
@@ -42,7 +41,7 @@ KAD-PI is a local-first engineering workstation, research engine, and agent cont
 | `corpus/research/` | **CURRENT** | 5-Paper Audited Corpus | Scientific Primary Source |
 | `wiki/` | **DERIVED** | Legacy Compatibility | Generated Only |
 | `docs/generated/` | **DERIVED** | Repository Documentation | Generated Only |
-| `site/` | **PLANNED** | Public Website | Presentation Layer |
+| `site/` | **CURRENT** | Public Website | Presentation Layer |
 | `dashboard/` | **EXPERIMENTAL** | Sofia v3 Dashboard | Telemetry Visualization |
 
 ---
@@ -63,7 +62,7 @@ KAD-PI is a local-first engineering workstation, research engine, and agent cont
 
 ### Run Test Suite
 ```bash
-node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs
+node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs docs/state/test/*.test.mjs
 ```
 
 ### Rebuild Canonical Projections

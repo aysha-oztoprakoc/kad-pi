@@ -2,7 +2,7 @@
 
 **Date**: 2026-09-03  
 **Target Repository**: `github:can1357/oh-my-pi@18.0.11` (commit `b8ce33a58911c26bed1d48f0d9ba5e2e727c49a2`)  
-**Workspace**: `/home/amdy/Work`  
+**Workspace**: `<workspace-root>`  
 **Author**: Incident Investigator + Builder + Verifier  
 **Final Verdict**: `UPSTREAM_DEFECT_MITIGATED_LOCALLY`
 
@@ -47,7 +47,7 @@
 
 ## 3. Runtime Canary Verification (C1–C7)
 
-**Executable**: `/home/amdy/Work/bin/omp-patched-canary` (SHA256: `e0ff9cf2fc622d775597c970d6dcbba6b1ca93ea10c52ae2ad60b0ef9cc34ed3`)  
+**Executable**: `bin/omp-patched-canary` (SHA256: `e0ff9cf2fc622d775597c970d6dcbba6b1ca93ea10c52ae2ad60b0ef9cc34ed3`)  
 **Script**: `bun scripts/runtime-canary-suite.mjs`
 
 - **C1: Binary version check** → `omp/18.0.11` (PASS)
@@ -83,7 +83,7 @@
 
 ## 5. Source Code Changes Summary
 
-Patch exported to `/home/amdy/Work/OMP_ROUTING_AUTH_FIX.patch` (220 lines):
+Patch exported to `OMP_ROUTING_AUTH_FIX.patch` (220 lines):
 - `packages/coding-agent/src/session/model-controls.ts`:
   Introduced `ModelRolePersistence` type. Removed ambient `modelRoleStorage` query inside `setModel`. Scope is strictly taken from explicit caller intent (`options.persistRole.scope`).
 - `packages/coding-agent/src/session/agent-session.ts`:

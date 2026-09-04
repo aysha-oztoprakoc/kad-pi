@@ -2,7 +2,7 @@
 
 **Date**: 2026-09-03  
 **Target Repository**: `github:can1357/oh-my-pi@18.0.11` (commit `b8ce33a58911c26bed1d48f0d9ba5e2e727c49a2`)  
-**Workspace**: `/home/amdy/Work`  
+**Workspace**: `<workspace-root>`  
 **Verdict**: `UPSTREAM_DEFECT_MITIGATED_LOCALLY`  
 **Status**: Bounded patched canary deployed and verified in isolation. Stock OMP binary retained intact.
 
@@ -12,10 +12,10 @@
 
 | Component | Path | SHA256 Checksum | Version / Ref |
 |---|---|---|---|
-| **Stock OMP Executable** | `/home/amdy/.local/share/mise/installs/github-can1357-oh-my-pi/latest/omp` | `23f92de8671db116515ab93c5dd728e63238ebf75025e2430a81f8aa6b4c036f` | `omp/18.0.11` |
-| **Patched Canary Executable** | `/home/amdy/Work/bin/omp-patched-canary` | `e0ff9cf2fc622d775597c970d6dcbba6b1ca93ea10c52ae2ad60b0ef9cc34ed3` | `omp/18.0.11` (patched) |
+| **Stock OMP Executable** | `~/.local/share/mise/installs/github-can1357-oh-my-pi/latest/omp` | `23f92de8671db116515ab93c5dd728e63238ebf75025e2430a81f8aa6b4c036f` | `omp/18.0.11` |
+| **Patched Canary Executable** | `bin/omp-patched-canary` | `e0ff9cf2fc622d775597c970d6dcbba6b1ca93ea10c52ae2ad60b0ef9cc34ed3` | `omp/18.0.11` (patched) |
 | **Upstream Git Revision** | `/tmp/oh-my-pi` | `b8ce33a58911c26bed1d48f0d9ba5e2e727c49a2` | `tag: v18.0.11` |
-| **Unified Source Patch** | `/home/amdy/Work/OMP_ROUTING_AUTH_FIX.patch` | `88c9cfddc38096f4df3d47ad96e2a225434ce88ec0c5417ae41e5446f25091a1` | 220 lines (81 additions, 23 deletions) |
+| **Unified Source Patch** | `OMP_ROUTING_AUTH_FIX.patch` | `88c9cfddc38096f4df3d47ad96e2a225434ce88ec0c5417ae41e5446f25091a1` | 220 lines (81 additions, 23 deletions) |
 
 ---
 
@@ -25,7 +25,7 @@
 - **Working Directory**: `/tmp/oh-my-pi/packages/coding-agent`
 - **Build Command**: `mise exec -- bun scripts/build-binary.ts`
 - **Build Artifact**: `/tmp/oh-my-pi/packages/coding-agent/dist/omp` (192MB ELF 64-bit binary)
-- **Archive Copy**: `cp dist/omp /home/amdy/Work/bin/omp-patched-canary && chmod +x /home/amdy/Work/bin/omp-patched-canary`
+- **Archive Copy**: `cp dist/omp ./bin/omp-patched-canary && chmod +x ./bin/omp-patched-canary`
 
 ```text
 $ bun scripts/generate-client-bundle.ts --generate
@@ -47,7 +47,7 @@ Reset src/embedded-client.generated.txt
 ## 3. Runtime Canary Verification Results
 
 **Test Script**: `bun scripts/runtime-canary-suite.mjs`  
-**Execution Mode**: Exercises `/home/amdy/Work/bin/omp-patched-canary` and patched runtime modules against isolated fixtures in `/tmp/canary-*`.  
+**Execution Mode**: Exercises `bin/omp-patched-canary` and patched runtime modules against isolated fixtures in `/tmp/canary-*`.  
 **Overall Result**: **7/7 PASS (100% Deterministic)**
 
 | Scenario ID | Test Scenario | Verified Behavior | Pre/Post SHA256 Invariance |
@@ -63,9 +63,9 @@ Reset src/embedded-client.generated.txt
 ### Exact Canary Execution Output
 ```text
 === OMP RUNTIME CANARY VERIFICATION SUITE ===
-Target Executable: /home/amdy/Work/bin/omp-patched-canary
+Target Executable: bin/omp-patched-canary
 Executable SHA256: e0ff9cf2fc622d775597c970d6dcbba6b1ca93ea10c52ae2ad60b0ef9cc34ed3
-Stock Executable:  /home/amdy/.local/share/mise/installs/github-can1357-oh-my-pi/latest/omp
+Stock Executable:  ~/.local/share/mise/installs/github-can1357-oh-my-pi/latest/omp
 Stock SHA256:       23f92de8671db116515ab93c5dd728e63238ebf75025e2430a81f8aa6b4c036f
 
 [PASS] C1: Canary binary version
@@ -103,7 +103,7 @@ CANARY VERIFICATION SUCCESS: All runtime scenarios verified.
 
 ## 4. Current KAD Configuration State
 
-- **File**: `/home/amdy/Work/.omp/config.yml`
+- **File**: `.omp/config.yml`
 - **Accepted Baseline Restored**:
   - `modelRoleStorage: project`
   - `modelRoles.default: opencode-go/deepseek-v4-flash:high` (human-authorized canary)
@@ -122,11 +122,11 @@ Because the user's primary OMP binary was **NOT overwritten**, rolling back or r
 
 1. **Remove Patched Canary Binary**:
    ```bash
-   rm /home/amdy/Work/bin/omp-patched-canary
+   rm bin/omp-patched-canary
    ```
 2. **Revert Temporary Git Checkout in `/tmp`**:
    ```bash
    rm -rf /tmp/oh-my-pi
    ```
 3. **No changes were made to system PATH or mise configuration**:
-   `which omp` remains `/home/amdy/.local/share/mise/installs/github-can1357-oh-my-pi/latest/omp`.
+   `which omp` remains `~/.local/share/mise/installs/github-can1357-oh-my-pi/latest/omp`.

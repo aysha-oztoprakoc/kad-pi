@@ -4,8 +4,12 @@ import * as os from "node:os";
 import * as crypto from "node:crypto";
 import { execFileSync, spawnSync } from "node:child_process";
 
-const CANARY_BIN = "/home/amdy/Work/bin/omp-patched-canary";
-const STOCK_BIN = "/home/amdy/.local/share/mise/installs/github-can1357-oh-my-pi/latest/omp";
+const SCRIPT_DIR = path.dirname(new URL(import.meta.url).pathname);
+const WORKSPACE_ROOT = process.env.WORKSPACE_ROOT || path.resolve(SCRIPT_DIR, "..");
+const CANARY_BIN = process.env.CANARY_BIN || path.join(WORKSPACE_ROOT, "bin/omp-patched-canary");
+const STOCK_BIN = process.env.STOCK_BIN || (process.env.HOME ? path.join(process.env.HOME, ".local/share/mise/installs/github-can1357-oh-my-pi/latest/omp") : "omp");
+const OMP_SOURCE_DIR = process.env.OMP_SOURCE_DIR || "/tmp/oh-my-pi";
+const OMP_PKG_DIR = path.join(OMP_SOURCE_DIR, "packages/coding-agent");
 
 function sha256(filePath) {
 	if (!fs.existsSync(filePath)) return "MISSING";
@@ -121,12 +125,12 @@ function recordResult(name, passed, details) {
 
 	// Use node script invoking the patched module directly to simulate UI explicit assignment
 	const nodeScript = `
-import { Settings } from "/tmp/oh-my-pi/packages/coding-agent/src/config/settings.ts";
+import { Settings } from "${OMP_PKG_DIR}/src/config/settings.ts";
 const settings = await Settings.loadIsolated({ cwd: "${fixture.projectDir}", agentDir: "${fixture.agentDir}" });
 settings.setProjectModelRole("default", "google/gemini-2.5-flash:high");
 await settings.flush();
 `;
-	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: "/tmp/oh-my-pi/packages/coding-agent" });
+	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: OMP_PKG_DIR });
 
 	const gAfter = sha256(fixture.globalConfigPath);
 	const pAfter = sha256(fixture.projectConfigPath);
@@ -149,13 +153,13 @@ await settings.flush();
 	const pBefore = sha256(fixture.projectConfigPath);
 
 	const nodeScript = `
-import { Settings } from "/tmp/oh-my-pi/packages/coding-agent/src/config/settings.ts";
-import { AgentSession } from "/tmp/oh-my-pi/packages/coding-agent/src/session/agent-session.ts";
-import { SessionManager } from "/tmp/oh-my-pi/packages/coding-agent/src/session/session-manager.ts";
+import { Settings } from "${OMP_PKG_DIR}/src/config/settings.ts";
+import { AgentSession } from "${OMP_PKG_DIR}/src/session/agent-session.ts";
+import { SessionManager } from "${OMP_PKG_DIR}/src/session/session-manager.ts";
 import { Agent } from "@oh-my-pi/pi-agent-core";
 import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
-import { ModelRegistry } from "/tmp/oh-my-pi/packages/coding-agent/src/config/model-registry.ts";
-import { AuthStorage } from "/tmp/oh-my-pi/packages/coding-agent/src/session/auth-storage.ts";
+import { ModelRegistry } from "${OMP_PKG_DIR}/src/config/model-registry.ts";
+import { AuthStorage } from "${OMP_PKG_DIR}/src/session/auth-storage.ts";
 import * as path from "node:path";
 
 const settings = await Settings.loadIsolated({ cwd: "${fixture.projectDir}", agentDir: "${fixture.agentDir}" });
@@ -175,7 +179,7 @@ await session.setModel(model, "default", {
 await settings.flush();
 await session.dispose();
 `;
-	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: "/tmp/oh-my-pi/packages/coding-agent" });
+	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: OMP_PKG_DIR });
 
 	const gAfter = sha256(fixture.globalConfigPath);
 	const pAfter = sha256(fixture.projectConfigPath);
@@ -199,13 +203,13 @@ await session.dispose();
 	const mtimeBefore = statMtime(fixture.projectConfigPath);
 
 	const nodeScript = `
-import { Settings } from "/tmp/oh-my-pi/packages/coding-agent/src/config/settings.ts";
+import { Settings } from "${OMP_PKG_DIR}/src/config/settings.ts";
 const settings = await Settings.loadIsolated({ cwd: "${fixture.projectDir}", agentDir: "${fixture.agentDir}" });
 // Re-assign identical value
 settings.setProjectModelRole("default", "anthropic/claude-sonnet-4-5:high");
 await settings.flush();
 `;
-	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: "/tmp/oh-my-pi/packages/coding-agent" });
+	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: OMP_PKG_DIR });
 
 	const gAfter = sha256(fixture.globalConfigPath);
 	const pAfter = sha256(fixture.projectConfigPath);
@@ -230,13 +234,13 @@ await settings.flush();
 	const pBefore = sha256(fixture.projectConfigPath);
 
 	const nodeScript = `
-import { Settings } from "/tmp/oh-my-pi/packages/coding-agent/src/config/settings.ts";
-import { AgentSession } from "/tmp/oh-my-pi/packages/coding-agent/src/session/agent-session.ts";
-import { SessionManager } from "/tmp/oh-my-pi/packages/coding-agent/src/session/session-manager.ts";
+import { Settings } from "${OMP_PKG_DIR}/src/config/settings.ts";
+import { AgentSession } from "${OMP_PKG_DIR}/src/session/agent-session.ts";
+import { SessionManager } from "${OMP_PKG_DIR}/src/session/session-manager.ts";
 import { Agent } from "@oh-my-pi/pi-agent-core";
 import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
-import { ModelRegistry } from "/tmp/oh-my-pi/packages/coding-agent/src/config/model-registry.ts";
-import { AuthStorage } from "/tmp/oh-my-pi/packages/coding-agent/src/session/auth-storage.ts";
+import { ModelRegistry } from "${OMP_PKG_DIR}/src/config/model-registry.ts";
+import { AuthStorage } from "${OMP_PKG_DIR}/src/session/auth-storage.ts";
 import * as path from "node:path";
 
 const settings = await Settings.loadIsolated({ cwd: "${fixture.projectDir}", agentDir: "${fixture.agentDir}" });
@@ -254,7 +258,7 @@ await session.setModelTemporary(model);
 await settings.flush();
 await session.dispose();
 `;
-	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: "/tmp/oh-my-pi/packages/coding-agent" });
+	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: OMP_PKG_DIR });
 
 	const gAfter = sha256(fixture.globalConfigPath);
 	const pAfter = sha256(fixture.projectConfigPath);
@@ -275,10 +279,10 @@ await session.dispose();
 	const pBefore = sha256(fixture.projectConfigPath);
 
 	const nodeScript = `
-import { Settings } from "/tmp/oh-my-pi/packages/coding-agent/src/config/settings.ts";
-import { createAgentSession } from "/tmp/oh-my-pi/packages/coding-agent/src/sdk.ts";
-import { ModelRegistry } from "/tmp/oh-my-pi/packages/coding-agent/src/config/model-registry.ts";
-import { AuthStorage } from "/tmp/oh-my-pi/packages/coding-agent/src/session/auth-storage.ts";
+import { Settings } from "${OMP_PKG_DIR}/src/config/settings.ts";
+import { createAgentSession } from "${OMP_PKG_DIR}/src/sdk.ts";
+import { ModelRegistry } from "${OMP_PKG_DIR}/src/config/model-registry.ts";
+import { AuthStorage } from "${OMP_PKG_DIR}/src/session/auth-storage.ts";
 import * as path from "node:path";
 
 const settings = await Settings.loadIsolated({ cwd: "${fixture.projectDir}", agentDir: "${fixture.agentDir}" });
@@ -299,7 +303,7 @@ const { session } = await createAgentSession({
 await settings.flush();
 await session.dispose();
 `;
-	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: "/tmp/oh-my-pi/packages/coding-agent" });
+	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: OMP_PKG_DIR });
 
 	const gAfter = sha256(fixture.globalConfigPath);
 	const pAfter = sha256(fixture.projectConfigPath);
