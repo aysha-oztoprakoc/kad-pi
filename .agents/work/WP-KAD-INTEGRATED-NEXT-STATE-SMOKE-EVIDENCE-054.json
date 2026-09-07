@@ -1,0 +1,55 @@
+{
+  "id": "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054",
+  "project": "kad-pi",
+  "title": "Integrated smoke proof and 10-row acceptance matrix evidence collection (P11)",
+  "status": "ACCEPTED",
+  "priority": 20,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P11",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054/"
+  ],
+  "non_scope": [
+    "new platform feature development",
+    "paid API spend"
+  ],
+  "owned_paths": [
+    "evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "shell_readonly",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "npm test",
+    "bin/kad doctor",
+    "bin/workctl doctor"
+  ],
+  "evidence_target": "evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054/",
+  "blocked_by": [
+    "WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045",
+    "WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046",
+    "WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047",
+    "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+    "WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049",
+    "WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050",
+    "WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051",
+    "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052",
+    "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053"
+  ],
+  "blocks": [
+    "WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055"
+  ],
+  "acceptance_criteria": [
+    "Integrated smoke evidence collected across S1-S10 scenarios",
+    "Zero unexplained authority or spend excursions",
+    "Creative WORLD workflow separation verified"
+  ],
+  "description": "Exercise the integrated next-state acceptance matrix across S1-S10 scenarios (P11).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+}

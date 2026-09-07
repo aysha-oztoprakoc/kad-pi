@@ -1,0 +1,17 @@
+{
+  "task": "WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051",
+  "project": "kad-pi",
+  "claim_id": "46212e4c-e92a-4e58-b62c-3166011d5e7c",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-06T23:23:46.195Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "tools/kad/wiki-projection.mjs",
+    "tools/kad/wiki/projection.mjs",
+    "bin/kad-wiki",
+    "evidence/WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-06T23:35:49.953Z"
+}

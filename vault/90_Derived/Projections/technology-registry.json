@@ -2,7 +2,7 @@
   "schema": "kad-technology-registry-v1",
   "generator_version": "1.0.0",
   "source_vault_revision": "77d181f2a9359fc3502678616692b356ca940f509b1aae2c9cbf3efdf0dc3afe",
-  "generated_at": "2026-08-30T18:40:03.124Z",
+  "generated_at": "2026-09-07T01:22:33.331Z",
   "technologies": [
     {
       "id": "node-esm",

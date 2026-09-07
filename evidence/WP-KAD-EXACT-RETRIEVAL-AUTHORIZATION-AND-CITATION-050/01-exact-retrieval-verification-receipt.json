@@ -1,0 +1,39 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050",
+  "planning_id": "P07",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-06T22:45:00.000Z",
+  "status": "COMPLETED",
+  "owned_paths_mutated": [
+    "tools/kad/knowledge-plane.mjs",
+    "tools/kad/test/knowledge-plane.test.mjs"
+  ],
+  "verification": {
+    "red_phase": {
+      "command": "node --test tools/kad/test/knowledge-plane.test.mjs",
+      "exit_code": 1,
+      "reproduced_defects": [
+        "KnowledgePlane read all allowlisted files before checking trust domain, crashing on unauthorized missing files",
+        "Exact spans were missing; results only contained trimmed joined strings with loose line bounds",
+        "Unknown queries with zero matches returned status PASS instead of explicit NO_MATCH"
+      ]
+    },
+    "green_phase": {
+      "command": "node --test tools/kad/test/knowledge-plane.test.mjs",
+      "exit_code": 0,
+      "tests_passed": 13,
+      "tests_failed": 0,
+      "observations": [
+        "Pre-authorization enforces trust_domain filtering before opening any files",
+        "Canonical path enforces realpath resolution to prevent symlink escape",
+        "lineSpans preserves raw line content without stripping whitespace",
+        "Locators are exact: single line, contiguous range (#Lstart-Lend), or discrete line lists (#L5,L20), never a false contiguous range over non-matching lines",
+        "Individual spans contain line_number, exact text, locator, and span_hash",
+        "Zero-match queries return status NO_MATCH"
+      ]
+    }
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

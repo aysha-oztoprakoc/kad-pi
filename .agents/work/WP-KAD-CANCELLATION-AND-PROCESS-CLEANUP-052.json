@@ -1,0 +1,51 @@
+{
+  "id": "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052",
+  "project": "kad-pi",
+  "title": "Enforce observable process group cancellation and tracked teardown under failure (P09)",
+  "status": "ACCEPTED",
+  "priority": 18,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P09",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "tools/kad/stc-scope.mjs",
+    "tools/kad/local-inference-capability.mjs",
+    "tools/kad/test/runtime-resource-inspection.test.mjs"
+  ],
+  "non_scope": [
+    "killing unrelated system processes",
+    "modifying systemd units"
+  ],
+  "owned_paths": [
+    "tools/kad/stc-scope.mjs",
+    "tools/kad/local-inference-capability.mjs",
+    "tools/kad/test/runtime-resource-inspection.test.mjs",
+    "evidence/WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/runtime-resource-inspection.test.mjs"
+  ],
+  "evidence_target": "evidence/WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052/",
+  "blocked_by": [
+    "WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047",
+    "WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049"
+  ],
+  "blocks": [
+    "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053",
+    "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+  ],
+  "acceptance_criteria": [
+    "Track owned process groups and wait for actual exit",
+    "ChildProcess.killed alone is not proof of exit",
+    "Unwind effects in reverse STC order and retain explicit cleanup debt on failure"
+  ],
+  "description": "Prove cancellation and cleanup of owned processes and descendants without zombie processes (P09).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052"
+}

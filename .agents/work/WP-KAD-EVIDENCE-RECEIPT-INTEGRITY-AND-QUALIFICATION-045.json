@@ -1,0 +1,47 @@
+{
+  "id": "WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045",
+  "project": "kad-pi",
+  "title": "Make evidence verification mean what it claims and quarantine unanchored claims (P02)",
+  "status": "ACCEPTED",
+  "priority": 11,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P02",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "tools/kad/compute/evidence-recorder.mjs",
+    "tools/kad/isa.mjs"
+  ],
+  "non_scope": [
+    "rewriting historical JSONL receipts",
+    "inventing a new evidence format"
+  ],
+  "owned_paths": [
+    "tools/kad/compute/evidence-recorder.mjs",
+    "evidence/WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/compute-probe.test.mjs"
+  ],
+  "evidence_target": "evidence/WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045/",
+  "blocked_by": [
+    "WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044"
+  ],
+  "blocks": [
+    "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+    "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+  ],
+  "acceptance_criteria": [
+    "Recompute digests from defined payload serialization and fail closed on corrupt tails",
+    "Distinguish structure validity, empirical qualification, and human acceptance",
+    "Tampered or unqualified records rejected with clear reasons"
+  ],
+  "description": "Make evidence verification recompute each digest and distinguish structural validity from empirical qualification (P02).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051",
+  "project": "kad-pi",
+  "title": "Assign single authoritative generator per derived projection and isolate inspection (P08)",
+  "status": "ACCEPTED",
+  "priority": 17,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P08",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "tools/kad/wiki-projection.mjs",
+    "tools/kad/wiki/projection.mjs",
+    "bin/kad-wiki"
+  ],
+  "non_scope": [
+    "modifying human vault notes",
+    "changing canonical source structure"
+  ],
+  "owned_paths": [
+    "tools/kad/wiki-projection.mjs",
+    "tools/kad/wiki/projection.mjs",
+    "bin/kad-wiki",
+    "evidence/WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "bin/kad-wiki lint"
+  ],
+  "evidence_target": "evidence/WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051/",
+  "blocked_by": [
+    "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+    "WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050"
+  ],
+  "blocks": [
+    "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053",
+    "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+  ],
+  "acceptance_criteria": [
+    "Assign one authoritative generator per derived output path",
+    "Inspection and status commands are strictly read-only and do not initialize vault",
+    "Rebuilding writes only declared derived paths and never cleans human-authored notes"
+  ],
+  "description": "Ensure single-writer output ownership for projections and isolate inspection from initialization (P08).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051"
+}

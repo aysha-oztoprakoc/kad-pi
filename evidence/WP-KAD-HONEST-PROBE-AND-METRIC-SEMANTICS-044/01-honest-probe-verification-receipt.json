@@ -1,0 +1,43 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044",
+  "planning_id": "P01",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-06T22:42:00.000Z",
+  "status": "COMPLETED",
+  "owned_paths_mutated": [
+    "tools/kad/compute/confounder.mjs",
+    "tools/kad/compute/metrics.mjs",
+    "tools/kad/compute/probe-runner.mjs",
+    "tools/kad/test/compute-probe.test.mjs"
+  ],
+  "verification": {
+    "red_phase": {
+      "command": "node --test tools/kad/test/compute-probe.test.mjs",
+      "exit_code": 1,
+      "reproduced_defects": [
+        "Missing adapter returned MEASURED with simulated formulas",
+        "Failed telemetry returned default 45C/20W and NOMINAL",
+        "Omitted acceptance/quality metrics defaulted to 1.0",
+        "Cost calculation silently completed missing inputs",
+        "Simulated adapter labeled output as MEASURED"
+      ]
+    },
+    "green_phase": {
+      "command": "node --test tools/kad/test/compute-probe.test.mjs",
+      "exit_code": 0,
+      "tests_passed": 11,
+      "tests_failed": 0,
+      "observations": [
+        "Unprovided execution adapter returns status NON_MEASURED, qualification UNQUALIFIED",
+        "Failed hardware telemetry returns confounder_status UNAVAILABLE with null metrics",
+        "Omitted metrics preserved as null with metrics_coverage PARTIAL",
+        "calculateScarceCost returns null when required inputs are missing",
+        "Simulated adapter labeled status SIMULATED, qualification SIMULATED_NOT_EMPIRICAL",
+        "Test receipt ledger isolated to temp directory; historical WP-021 evidence unmodified"
+      ]
+    }
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

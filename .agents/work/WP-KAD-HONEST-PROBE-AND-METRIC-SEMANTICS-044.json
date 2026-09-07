@@ -1,0 +1,51 @@
+{
+  "id": "WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044",
+  "project": "kad-pi",
+  "title": "Remove invented empirical observations and enforce honest probe/metric semantics (P01)",
+  "status": "ACCEPTED",
+  "priority": 10,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P01",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "tools/kad/compute/probe-runner.mjs",
+    "tools/kad/compute/confounder.mjs",
+    "tools/kad/compute/metrics.mjs",
+    "tools/kad/test/compute-probe.test.mjs"
+  ],
+  "non_scope": [
+    "hardware driver installation",
+    "changing historical evidence receipts"
+  ],
+  "owned_paths": [
+    "tools/kad/compute/probe-runner.mjs",
+    "tools/kad/compute/confounder.mjs",
+    "tools/kad/compute/metrics.mjs",
+    "tools/kad/test/compute-probe.test.mjs",
+    "evidence/WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/compute-probe.test.mjs"
+  ],
+  "evidence_target": "evidence/WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044/",
+  "blocked_by": [],
+  "blocks": [
+    "WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045"
+  ],
+  "acceptance_criteria": [
+    "Explicitly identified real execution adapter required for measured results",
+    "Preserve unavailable metrics as unavailable with reason and provenance",
+    "Validate finite values, required dimensions, and sample counts without false defaults",
+    "Derived cost computed only from adequately observed inputs",
+    "Tests use isolated destination and never append to historical journals"
+  ],
+  "description": "Remove invented empirical observations, ensure missing adapter returns non-measured, and isolate probe tests from historical journals (P01).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044"
+}

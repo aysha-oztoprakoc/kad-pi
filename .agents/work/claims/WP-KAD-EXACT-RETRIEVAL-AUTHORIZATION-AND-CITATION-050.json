@@ -1,0 +1,19 @@
+{
+  "task": "WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050",
+  "project": "kad-pi",
+  "claim_id": "cbc7e484-3e4a-4a66-be2b-aeed3b0a20e1",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-06T22:41:34.423Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "tools/kad/knowledge-plane.mjs",
+    "tools/kad/knowledge-plane-adapters.mjs",
+    "tools/kad/context-compiler.mjs",
+    "bin/kad-knowledge",
+    "tools/kad/test/knowledge-plane.test.mjs",
+    "evidence/WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-06T22:55:17.388Z"
+}

@@ -1,0 +1,14 @@
+{
+  "task": "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054",
+  "project": "kad-pi",
+  "claim_id": "55a74aa6-faed-4b7a-b856-696e2476f4c3",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-07T00:05:42.540Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-07T00:08:29.256Z"
+}

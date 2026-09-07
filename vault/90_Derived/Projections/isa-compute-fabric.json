@@ -2,7 +2,7 @@
   "projection_type": "KAD_COMPUTE_FABRIC_ISA_PROJECTION",
   "version": "1.0.0",
   "domain": "compute-fabric",
-  "generated_at": "2026-09-01T20:49:00.202Z",
+  "generated_at": "2026-09-07T01:20:56.489Z",
   "source_file": "/home/amdy/Work/vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
   "isa": {
     "id": "ISA-KAD-COMPUTE-FABRIC-001",
@@ -151,7 +151,7 @@
       "validator": "compute.architecture.human_governed_target",
       "pass": true,
       "severity": "BLOCKER",
-      "evidence": "Target state governed by Human Project Lead and canonical KAD Architecture (WP-020)",
+      "evidence": "Verified human governance target in WP-020 FINAL_REPORT.md and ADR 0014",
       "checked_count": 1
     }
   ],

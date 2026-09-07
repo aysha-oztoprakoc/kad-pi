@@ -2,7 +2,7 @@
   "projection_type": "KAD_AESTHETIC_ISA_PROJECTION",
   "version": "1.0.0",
   "domain": "aesthetic",
-  "generated_at": "2026-09-01T20:49:00.201Z",
+  "generated_at": "2026-09-07T01:20:56.488Z",
   "source_file": "/home/amdy/Work/vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
   "isa": {
     "id": "ISA-KAD-AESTHETIC-001",
@@ -107,7 +107,7 @@
       "validator": "aesthetic.identity.cyberpunk_2077_terminal",
       "pass": true,
       "severity": "HIGH",
-      "evidence": "Approved by Human Project Lead in WP-015 Decision 1 (Occult Cyberpunk + Clinical Bureaucracy with Cyberpunk 2077 dataterm influence)",
+      "evidence": "Verified human review decision in WP-015 05-human-decisions.md (Decision 1)",
       "checked_count": 1
     },
     {
@@ -118,7 +118,7 @@
       "validator": "aesthetic.stratification.two_tier_balance",
       "pass": true,
       "severity": "HIGH",
-      "evidence": "Approved by Human Project Lead in WP-015 Decision 2 (Diegetic Internal Workstation vs Scientific Literature Public Brief)",
+      "evidence": "Verified human review decision in WP-015 05-human-decisions.md (Decision 2)",
       "checked_count": 1
     },
     {

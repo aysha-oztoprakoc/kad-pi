@@ -1,0 +1,15 @@
+{
+  "task": "WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045",
+  "project": "kad-pi",
+  "claim_id": "fcff5916-26ae-4006-a988-87a2cb103343",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-06T22:55:50.725Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "tools/kad/compute/evidence-recorder.mjs",
+    "evidence/WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-06T23:03:22.163Z"
+}

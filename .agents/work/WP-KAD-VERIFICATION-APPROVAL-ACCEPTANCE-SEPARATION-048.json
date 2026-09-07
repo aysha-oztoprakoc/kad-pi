@@ -1,0 +1,53 @@
+{
+  "id": "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+  "project": "kad-pi",
+  "title": "Separate verification, approval, and acceptance boundaries across workctl and wiki (P05)",
+  "status": "ACCEPTED",
+  "priority": 14,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P05",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "tools/workspace/workctl.mjs",
+    "tools/kad/wiki/index.mjs",
+    "tools/kad/isa.mjs"
+  ],
+  "non_scope": [
+    "external identity providers",
+    "cryptographic PKI"
+  ],
+  "owned_paths": [
+    "tools/workspace/workctl.mjs",
+    "tools/kad/wiki/index.mjs",
+    "tools/kad/isa.mjs",
+    "evidence/WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/workspace/workctl.test.mjs"
+  ],
+  "evidence_target": "evidence/WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048/",
+  "blocked_by": [
+    "WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045",
+    "WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047"
+  ],
+  "blocks": [
+    "WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051",
+    "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053",
+    "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+  ],
+  "acceptance_criteria": [
+    "Bind approvals to exact action, source revisions, hashes, and authority",
+    "CLI actor strings cannot substitute for human authentication",
+    "Remove unconditional human review pass from validator registry",
+    "Work acceptance requires independent verification and genuine human decision"
+  ],
+  "description": "Enforce strict separation between implementer verification, independent review, and human acceptance authority (P05).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048"
+}

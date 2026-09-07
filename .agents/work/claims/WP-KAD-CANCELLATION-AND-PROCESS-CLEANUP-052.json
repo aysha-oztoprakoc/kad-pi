@@ -1,0 +1,17 @@
+{
+  "task": "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052",
+  "project": "kad-pi",
+  "claim_id": "9a46354a-9848-4817-90bb-4fef5e62ab76",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-06T23:03:49.672Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "tools/kad/stc-scope.mjs",
+    "tools/kad/local-inference-capability.mjs",
+    "tools/kad/test/runtime-resource-inspection.test.mjs",
+    "evidence/WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-06T23:23:15.478Z"
+}

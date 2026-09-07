@@ -1,0 +1,29 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049",
+  "planning_id": "P06",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-06T23:02:00.000Z",
+  "status": "COMPLETED",
+  "owned_paths_mutated": [
+    "tools/kad/workload-contract.mjs",
+    "tools/kad/economic-router.mjs"
+  ],
+  "verification": {
+    "economic_tests": {
+      "command": "node --test tools/kad/test/economic-router.test.mjs tools/kad/test/resource-contract.test.mjs",
+      "exit_code": 0,
+      "tests_passed": 37,
+      "tests_failed": 0,
+      "observations": [
+        "normalizeLane preserves unknown marginal_cost as null rather than defaulting to 0 ($0/free)",
+        "Metered and PAYG lanes with unknown marginal cost reject with MARGINAL_COST_UNKNOWN",
+        "routeEconomically records selected_route, actual_route, provider_identity, and model_identity separately",
+        "createWorkloadContract enforces directional containment: child claim cannot authorize parent directory mutation scope",
+        "Zero ambient authority inheritance across trust domains"
+      ]
+    }
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

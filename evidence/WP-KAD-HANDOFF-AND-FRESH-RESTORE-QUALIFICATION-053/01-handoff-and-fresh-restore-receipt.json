@@ -1,0 +1,26 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053",
+  "planning_id": "P10",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-06T23:38:00.000Z",
+  "status": "COMPLETED",
+  "owned_paths_mutated": [
+    "tools/workspace/workctl.test.mjs"
+  ],
+  "verification": {
+    "workctl_test_suite": {
+      "command": "node --test tools/workspace/workctl.test.mjs",
+      "exit_code": 0,
+      "tests_passed": 8,
+      "tests_failed": 0,
+      "observations": [
+        "P10 test exercises fresh temporary directory restore from minimal manifest",
+        "workctl status, claim, and handoff succeed without conversational dependencies",
+        "Chat-independent resume and durable handoffs verified across distinct OS CLI processes"
+      ]
+    }
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

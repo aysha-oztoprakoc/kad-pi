@@ -1,0 +1,54 @@
+{
+  "id": "WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050",
+  "project": "kad-pi",
+  "title": "Make exact knowledge retrieval pre-authorized and byte-faithful (P07)",
+  "status": "ACCEPTED",
+  "priority": 16,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P07",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "tools/kad/knowledge-plane.mjs",
+    "tools/kad/knowledge-plane-adapters.mjs",
+    "tools/kad/context-compiler.mjs",
+    "bin/kad-knowledge",
+    "tools/kad/test/knowledge-plane.test.mjs"
+  ],
+  "non_scope": [
+    "external vector database",
+    "bulk repository ingestion"
+  ],
+  "owned_paths": [
+    "tools/kad/knowledge-plane.mjs",
+    "tools/kad/knowledge-plane-adapters.mjs",
+    "tools/kad/context-compiler.mjs",
+    "bin/kad-knowledge",
+    "tools/kad/test/knowledge-plane.test.mjs",
+    "evidence/WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/knowledge-plane.test.mjs"
+  ],
+  "evidence_target": "evidence/WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050/",
+  "blocked_by": [],
+  "blocks": [
+    "WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051",
+    "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+  ],
+  "acceptance_criteria": [
+    "Authorize source domain and visibility before reading files or scoring text",
+    "Enforce canonical path bounds and reject traversal/symlink escape",
+    "Return contiguous exact spans or individually located spans, preserving bytes and whitespace",
+    "Never join separated trimmed lines into a single synthetic exact quote",
+    "Explicit no-answer outcome when unsupported"
+  ],
+  "description": "Make exact retrieval pre-authorized and byte-faithful with verifiable locators (P07).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050"
+}

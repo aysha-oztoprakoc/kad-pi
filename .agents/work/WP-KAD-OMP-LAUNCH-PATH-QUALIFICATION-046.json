@@ -1,0 +1,50 @@
+{
+  "id": "WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046",
+  "project": "kad-pi",
+  "title": "Qualify one project OMP launch path with isolated runtime writes and durable source pin (P03)",
+  "status": "ACCEPTED",
+  "priority": 12,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P03",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "bin/omp-kad",
+    "scripts/runtime-canary-suite.mjs",
+    "OMP_ROUTING_AUTH_FIX.patch",
+    ".omp/config.yml"
+  ],
+  "non_scope": [
+    "global ~/.omp modification",
+    "installing global packages"
+  ],
+  "owned_paths": [
+    "bin/omp-kad",
+    "scripts/runtime-canary-suite.mjs",
+    "OMP_ROUTING_AUTH_FIX.patch",
+    ".omp/config.yml",
+    "evidence/WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node scripts/runtime-canary-suite.mjs"
+  ],
+  "evidence_target": "evidence/WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046/",
+  "blocked_by": [],
+  "blocks": [
+    "WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049",
+    "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+  ],
+  "acceptance_criteria": [
+    "Remove recursive cleanup of $HOME/.omp from bin/omp-kad",
+    "Choose qualified project binary and fail explicitly on missing artifacts",
+    "Canary tests check process exit, fixture ownership, and teardown"
+  ],
+  "description": "Qualify project OMP launch path, eliminate directory-wide home cleanup, and verify project-only role storage (P03).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046"
+}

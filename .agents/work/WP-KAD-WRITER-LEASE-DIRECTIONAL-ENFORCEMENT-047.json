@@ -1,0 +1,48 @@
+{
+  "id": "WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047",
+  "project": "kad-pi",
+  "title": "Make writer leases directional, expiration-aware, and lifecycle-safe (P04)",
+  "status": "ACCEPTED",
+  "priority": 13,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P04",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "tools/workspace/stc-lease.mjs",
+    "tools/kad/test/stc-lease.test.mjs"
+  ],
+  "non_scope": [
+    "external container runtimes",
+    "kernel sandboxing"
+  ],
+  "owned_paths": [
+    "tools/workspace/stc-lease.mjs",
+    "tools/kad/test/stc-lease.test.mjs",
+    "evidence/WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/stc-lease.test.mjs"
+  ],
+  "evidence_target": "evidence/WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047/",
+  "blocked_by": [],
+  "blocks": [
+    "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+    "WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049",
+    "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052",
+    "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+  ],
+  "acceptance_criteria": [
+    "Directional containment for authorization: child claim cannot authorize parent path",
+    "Validate active state, expiration, and actor/task binding at use",
+    "Safe re-acquisition and conflict handling preserve prior evidence"
+  ],
+  "description": "Make STC writer leases directional, expiration-aware, and atomic against collisions (P04).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047"
+}

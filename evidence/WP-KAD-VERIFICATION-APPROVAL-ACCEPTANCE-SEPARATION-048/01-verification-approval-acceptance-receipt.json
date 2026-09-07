@@ -1,0 +1,29 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+  "planning_id": "P05",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-06T23:12:00.000Z",
+  "status": "COMPLETED",
+  "owned_paths_mutated": [
+    "tools/workspace/workctl.mjs",
+    "tools/kad/isa.mjs"
+  ],
+  "verification": {
+    "red_phase": {
+      "reproduced_defects": [
+        "HUMAN_REVIEW ISA validators previously returned pass: true unconditionally without inspecting actual human decisions",
+        "Workpackage state transitions to ACCEPTED did not verify presence of actual evidence receipts in evidence_target"
+      ]
+    },
+    "green_phase": {
+      "tests_passed": [
+        "HUMAN_REVIEW validators in isa.mjs now verify genuine human decision evidence receipts in vault and evidence targets",
+        "workctl transition enforces evidence existence check on ACCEPTED",
+        "All 18 ISA and workctl regression tests PASS cleanly"
+      ]
+    }
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

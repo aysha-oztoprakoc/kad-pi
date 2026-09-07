@@ -1,0 +1,49 @@
+{
+  "id": "WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055",
+  "project": "kad-pi",
+  "title": "Safe retirement of redundant active machinery and documentation cutover (P12)",
+  "status": "ACCEPTED",
+  "priority": 21,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P12",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "docs/",
+    "README.md"
+  ],
+  "non_scope": [
+    "deleting historical evidence journals",
+    "erasing ADR records"
+  ],
+  "owned_paths": [
+    "docs/",
+    "README.md",
+    "evidence/WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "npm test",
+    "bin/kad-wiki lint",
+    "bin/workctl doctor"
+  ],
+  "evidence_target": "evidence/WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055/",
+  "blocked_by": [
+    "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+  ],
+  "blocks": [
+    "WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056"
+  ],
+  "acceptance_criteria": [
+    "Deletion manifest generated from actual callers and output ownership",
+    "Obsolete duplicate writers and unused shims removed cleanly",
+    "Historical evidence and canonical human decisions preserved"
+  ],
+  "description": "Retire redundant active machinery, obsolete duplicate writers, and update documentation after smoke verification (P12).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055"
+}

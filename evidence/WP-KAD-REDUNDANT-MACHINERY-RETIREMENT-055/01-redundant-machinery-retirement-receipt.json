@@ -1,0 +1,45 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055",
+  "planning_id": "P12",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-07T00:15:00.000Z",
+  "status": "COMPLETED",
+  "deletion_manifest": {
+    "scope": "Active redundant machinery and status declarations",
+    "retired_items": [
+      {
+        "item": "scripts/runtime-canary-suite.mjs memory canary requirement",
+        "reason": "Memory canary is not an active milestone prerequisite per P12",
+        "action": "Preserved test structure but isolated requirement from active launch path"
+      },
+      {
+        "item": "README.md legacy phase and test count",
+        "reason": "Updated to reflect 798 passing tests and WP-044..WP-056 milestone",
+        "action": "Updated in place"
+      },
+      {
+        "item": "Obsolete proposal approval bypasses",
+        "reason": "Cleaned up in WP-048; no remaining callers"
+      }
+    ],
+    "preserved_items": [
+      "All historical evidence journals in evidence/",
+      "All accepted ADR records in docs/adr/",
+      "Canonical vault notes in vault/"
+    ]
+  },
+  "verification": {
+    "full_test_suite": {
+      "command": "npm test",
+      "exit_code": 0,
+      "passed_tests": 798
+    },
+    "wiki_lint": {
+      "command": "bin/kad-wiki lint",
+      "exit_code": 0
+    }
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

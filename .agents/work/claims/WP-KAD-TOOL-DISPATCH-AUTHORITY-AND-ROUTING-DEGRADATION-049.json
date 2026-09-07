@@ -1,0 +1,18 @@
+{
+  "task": "WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049",
+  "project": "kad-pi",
+  "claim_id": "b4e55c9b-ebac-4410-859b-4bc9dc6cd503",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-06T22:58:11.691Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "tools/kad/workload-contract.mjs",
+    "tools/kad/external-providers.mjs",
+    "tools/kad/economic-router.mjs",
+    "tools/kad/resource-contract.mjs",
+    "evidence/WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-06T23:03:22.201Z"
+}

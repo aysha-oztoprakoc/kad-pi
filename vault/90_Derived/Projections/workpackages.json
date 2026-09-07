@@ -2,13 +2,23 @@
   "schema": "kad-workpackage-export-v1",
   "generator_version": "1.0.0",
   "source_vault_revision": "77d181f2a9359fc3502678616692b356ca940f509b1aae2c9cbf3efdf0dc3afe",
-  "generated_at": "2026-08-30T18:40:03.111Z",
+  "generated_at": "2026-09-07T01:22:33.318Z",
   "workpackages": [
+    {
+      "wp_id": "EXP-KAD-OFFLINE-SURVIVAL-001-R1",
+      "project": "kad-pi",
+      "title": "Authorized deterministic WAN fault injection and offline survival qualification",
+      "status": "BLOCKED",
+      "priority": 1,
+      "fixed_point": "15483b6c87757358ab046d50d94498c9fdfb1ebe",
+      "evidence_target": "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/",
+      "description": "Experiment-only lifecycle authority for R1; no architecture or unrelated project mutation."
+    },
     {
       "wp_id": "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
       "project": "kad-pi",
       "title": "Human-Guided Aesthetic Architecture & Ideal State Artifact (ISA) Establishment",
-      "status": "REVIEW",
+      "status": "ACCEPTED",
       "priority": 180,
       "fixed_point": "27171d9b5ac862afce2c09d8a9c5239185c25d23",
       "evidence_target": "evidence/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015/",
@@ -28,11 +38,21 @@
       "wp_id": "WP-KAD-BASELINE-PUBLICATION-028A",
       "project": "kad-pi",
       "title": "Frozen Baseline Verification, GitHub Bootstrap Publication & Exact-SHA Vault Projection",
-      "status": "CLAIMED",
+      "status": "ACCEPTED",
       "priority": 290,
       "fixed_point": "0ea896b54d799ca98fa3b45fe45f519655135807",
       "evidence_target": "evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
       "description": "Publish the exact frozen WP-028 content to GitHub, obtain independent remote CI evidence on the exact commit, activate required status check branch protection, and project the Vault from that exact pushed SHA."
+    },
+    {
+      "wp_id": "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052",
+      "project": "kad-pi",
+      "title": "Enforce observable process group cancellation and tracked teardown under failure (P09)",
+      "status": "ACCEPTED",
+      "priority": 18,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052/",
+      "description": "Prove cancellation and cleanup of owned processes and descendants without zombie processes (P09)."
     },
     {
       "wp_id": "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
@@ -48,7 +68,7 @@
       "wp_id": "WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
       "project": "kad-pi",
       "title": "Commit Consolidation, Remote Synchronization & Vault-Driven Project Projection Bootstrap",
-      "status": "REVIEW",
+      "status": "ACCEPTED",
       "priority": 140,
       "fixed_point": "e3bce03e5b94ada0db6d29e75b6991b18522f2d8",
       "evidence_target": "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011/",
@@ -58,17 +78,27 @@
       "wp_id": "WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1",
       "project": "kad-pi",
       "title": "Full /Work Inventory, Legacy Reconciliation & Canonical Vault Synchronization",
-      "status": "REVIEW",
+      "status": "ACCEPTED",
       "priority": 130,
       "fixed_point": "ca1f56a020a3416eeffa3d49f3c34f113b536902",
       "evidence_target": "evidence/WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1/",
       "description": "Reconcile the entire current /Work knowledge state into the canonical Obsidian vault, resolve demonstrated deviations, surface unresolved ambiguity to the human, and produce a trustworthy canonical project baseline."
     },
     {
+      "wp_id": "WP-KAD-COGNITIVE-TELEMETRY-031",
+      "project": "kad-pi",
+      "title": "Human Cognitive Attention, Intervention Friction, Outcome Quality & Total-Cost Telemetry Baseline",
+      "status": "ACCEPTED",
+      "priority": 330,
+      "fixed_point": "15483b6c87757358ab046d50d94498c9fdfb1ebe",
+      "evidence_target": "evidence/WP-KAD-COGNITIVE-TELEMETRY-031/",
+      "description": "Human cognitive attention, intervention friction, outcome quality, and total-cost telemetry baseline subsystem establishing KAD_OUTCOME_COST_TELEMETRY_V1, observation origin tracking, Goodhart protections, historical reconstruction, and prospective baseline reporting."
+    },
+    {
       "wp_id": "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
       "project": "kad-pi",
       "title": "Compute Fabric Empirical Benchmark Probe & Telemetry Baseline: Ideal-State Convergence → Capability Admission → Empirical Compute Fabric Probe",
-      "status": "REVIEW",
+      "status": "ACCEPTED",
       "priority": 200,
       "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
       "evidence_target": "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/",
@@ -105,6 +135,36 @@
       "description": "Deterministic shadow economic evaluator evaluating quota-aware economic preference without granting telemetry mutation authority over routing."
     },
     {
+      "wp_id": "WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045",
+      "project": "kad-pi",
+      "title": "Make evidence verification mean what it claims and quarantine unanchored claims (P02)",
+      "status": "ACCEPTED",
+      "priority": 11,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045/",
+      "description": "Make evidence verification recompute each digest and distinguish structural validity from empirical qualification (P02)."
+    },
+    {
+      "wp_id": "WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050",
+      "project": "kad-pi",
+      "title": "Make exact knowledge retrieval pre-authorized and byte-faithful (P07)",
+      "status": "ACCEPTED",
+      "priority": 16,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050/",
+      "description": "Make exact retrieval pre-authorized and byte-faithful with verifiable locators (P07)."
+    },
+    {
+      "wp_id": "WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056",
+      "project": "kad-pi",
+      "title": "Final regression ladder, independent verification, and scoped acceptance package (P13)",
+      "status": "REVIEW",
+      "priority": 22,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056/",
+      "description": "Execute final validation ladder, record independent verification receipts, and assemble human acceptance package (P13)."
+    },
+    {
       "wp_id": "WP-KAD-FUSION-OMP-ADAPTATION-007A",
       "project": "kad-pi",
       "title": "Optional pinned Fusion Harness under OMP",
@@ -118,11 +178,79 @@
       "wp_id": "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
       "project": "kad-pi",
       "title": "Generalized Ideal State Artifact (ISA) Architecture & Canonical Compute Fabric Governance",
-      "status": "REVIEW",
+      "status": "ACCEPTED",
       "priority": 190,
       "fixed_point": "2da2266eb76bfb5571838017449d553fbc8b4bee",
       "evidence_target": "evidence/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020/",
       "description": "Generalize the KAD Ideal State Artifact (ISA) governance pattern into a reusable multi-domain primitive and instantiate the canonical compute fabric ISA (ISA-KAD-COMPUTE-FABRIC-001)."
+    },
+    {
+      "wp_id": "WP-KAD-GOVERNANCE-GATES-032",
+      "project": "kad-pi",
+      "title": "Deterministic Governance Gates, Authority Tiering, Pre-Flight Verification & Protected Mutation Admission",
+      "status": "ACCEPTED",
+      "priority": 340,
+      "fixed_point": "15483b6c87757358ab046d50d94498c9fdfb1ebe",
+      "evidence_target": "evidence/WP-KAD-GOVERNANCE-GATES-032/",
+      "description": "Deterministic governance preflight and admission gate subsystem providing typed preflight contracts, multi-tier authority resolution, human authorization receipt verification, FinOps envelopes, and confused-deputy protection."
+    },
+    {
+      "wp_id": "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053",
+      "project": "kad-pi",
+      "title": "Make continuation handoff operational and qualify fresh-directory restore (P10)",
+      "status": "ACCEPTED",
+      "priority": 19,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053/",
+      "description": "Make workctl handoff operational and test fresh-directory restore without transcript dependency (P10)."
+    },
+    {
+      "wp_id": "WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044",
+      "project": "kad-pi",
+      "title": "Remove invented empirical observations and enforce honest probe/metric semantics (P01)",
+      "status": "ACCEPTED",
+      "priority": 10,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044/",
+      "description": "Remove invented empirical observations, ensure missing adapter returns non-measured, and isolate probe tests from historical journals (P01)."
+    },
+    {
+      "wp_id": "WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
+      "project": "kad-pi",
+      "title": "Intent-Ledger Regression Repair, Normative Semantic Validation & Ideal-State V2 Recompilation",
+      "status": "ACCEPTED",
+      "priority": 320,
+      "fixed_point": "4ba5b05cb7f019649ea8d6677efd4d1883826bd9",
+      "evidence_target": "evidence/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R/",
+      "description": "Corrective specification workpackage repairing semantic regressions introduced during WP-030 and strengthening the ideal-state compiler substrate to prevent semantic drift."
+    },
+    {
+      "wp_id": "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054",
+      "project": "kad-pi",
+      "title": "Integrated smoke proof and 10-row acceptance matrix evidence collection (P11)",
+      "status": "ACCEPTED",
+      "priority": 20,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054/",
+      "description": "Exercise the integrated next-state acceptance matrix across S1-S10 scenarios (P11)."
+    },
+    {
+      "wp_id": "WP-KAD-INTENT-FIDELITY-029",
+      "project": "kad-pi",
+      "title": "Lossless Human Intent Event Ledger, Derived Normalization & Deterministic Compilation",
+      "status": "ACCEPTED",
+      "priority": 300,
+      "fixed_point": "2714398a9e259d0c5a756a9848c4c0c16603646e",
+      "evidence_target": "evidence/WP-KAD-INTENT-FIDELITY-029/"
+    },
+    {
+      "wp_id": "WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
+      "project": "kad-pi",
+      "title": "Typed-Intent -> Successor Ideal State, Requirement Traceability, Gap Model & Evidence-Gated Roadmap",
+      "status": "ACCEPTED",
+      "priority": 310,
+      "fixed_point": "17f91ac49b4430ea04b7b933b204d6645ffbd3f3",
+      "evidence_target": "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/"
     },
     {
       "wp_id": "WP-KAD-ISA-FINAL-SNAPSHOT-028",
@@ -175,6 +303,26 @@
       "description": "Implement the read-only, project-owned Obsidian companion plugin (kad-obsidian-bridge) integrating compiled vault and compute ISA projections, custom Bases views, and local graph neighborhood exploration without granting direct mutation authority over canonical vault state."
     },
     {
+      "wp_id": "WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046",
+      "project": "kad-pi",
+      "title": "Qualify one project OMP launch path with isolated runtime writes and durable source pin (P03)",
+      "status": "ACCEPTED",
+      "priority": 12,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046/",
+      "description": "Qualify project OMP launch path, eliminate directory-wide home cleanup, and verify project-only role storage (P03)."
+    },
+    {
+      "wp_id": "WP-KAD-OMP-METAHARNESS-REFACTOR-041",
+      "project": "kad-pi",
+      "title": "OMP Meta-Harness Reconciliation, Current-State Artifact, Settings Compatibility Matrix, and CSA↔ISA Gap Model",
+      "status": "ACCEPTED",
+      "priority": 350,
+      "fixed_point": "c029d908d0e902ae2750dd32806bc6557c8d6191",
+      "evidence_target": "evidence/WP-KAD-OMP-METAHARNESS-REFACTOR-041/",
+      "description": "Read-only reconciliation of the KAD-PI OMP meta-harness completed; this WP materializes the canonical CURRENT-state artifact (CSA), the CSA↔ISA gap model, the OMP Settings Compatibility Matrix, and the skill semantic/disposition analysis. Executable skill rationalization and other domain remediation are explicitly out of scope and routed to successor workpackages."
+    },
+    {
       "wp_id": "WP-KAD-OPERATOR-CONTROL-PLANE-001",
       "project": "kad-pi",
       "title": "KAD-PI Native OMP Control Plane, Live Token/Quota Telemetry, Developer Toolchain, Security Gates, and Native Operator UI",
@@ -183,6 +331,46 @@
       "fixed_point": "445e000b3ad75f4f5a2d9b1be06ebc6a0743a364",
       "evidence_target": "evidence/WP-KAD-OPERATOR-CONTROL-PLANE-001",
       "description": "Deterministic operator control plane for KAD-PI providing live token/quota telemetry, economic/workctl projection, developer toolchain security gates, and native OMP TUI components."
+    },
+    {
+      "wp_id": "WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043",
+      "project": "kad-pi",
+      "title": "Project closure, debt burn-down and zero-pending baseline",
+      "status": "SUPERSEDED",
+      "priority": 3,
+      "fixed_point": "c4f218b38e0b4f81c9a883a9a43741f1567e7d76",
+      "evidence_target": "evidence/WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043/",
+      "description": "Final closure gate: burn down all pre-existing maintenance, lifecycle, configuration, security, evidence, skill-governance and workspace-state debt before the next architectural phase. Transforms REFINEMENT_READY_WITH_KNOWN_DEFERRED_ITEMS into REFINEMENT_READY (ZERO_PENDING_BASELINE). Executed under workctl lifecycle with human decision board D1-D7."
+    },
+    {
+      "wp_id": "WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042",
+      "project": "kad-pi",
+      "title": "Project hygiene, maintenance and refinement-readiness reconciliation",
+      "status": "ACCEPTED",
+      "priority": 5,
+      "fixed_point": "6077630598980c7876395ef80a07e047d61824a6",
+      "evidence_target": "evidence/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042/",
+      "description": "Retroactively registered hygiene workpackage. WP-042 executed repository hygiene, maintenance and refinement-readiness reconciliation after WP-041 acceptance. Executed by an OMP harness session (model opencode-go/deepseek-v4-flash) on 2026-09-01; outputs committed in affe828 and ecab2f6. Registered during WP-043 closure because the original execution lacked a workctl lifecycle record. Awaiting human acceptance."
+    },
+    {
+      "wp_id": "WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051",
+      "project": "kad-pi",
+      "title": "Assign single authoritative generator per derived projection and isolate inspection (P08)",
+      "status": "ACCEPTED",
+      "priority": 17,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051/",
+      "description": "Ensure single-writer output ownership for projections and isolate inspection from initialization (P08)."
+    },
+    {
+      "wp_id": "WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055",
+      "project": "kad-pi",
+      "title": "Safe retirement of redundant active machinery and documentation cutover (P12)",
+      "status": "ACCEPTED",
+      "priority": 21,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055/",
+      "description": "Retire redundant active machinery, obsolete duplicate writers, and update documentation after smoke verification (P12)."
     },
     {
       "wp_id": "WP-KAD-RESEARCH-API-001",
@@ -268,7 +456,7 @@
       "wp_id": "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
       "project": "kad-pi",
       "title": "Sofia v3 Canonical Dashboard, Cytoscape Graph Explorer & Hybrid Telemetry Visualization",
-      "status": "REVIEW",
+      "status": "ACCEPTED",
       "priority": 160,
       "fixed_point": "6881352d96933a32c59fbb494fc339e8a38ac434",
       "evidence_target": "evidence/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013/",
@@ -293,6 +481,16 @@
       "fixed_point": "b78aaf778bc1d34ef02ae47a2dd1f9ebefd8f7c4",
       "evidence_target": "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018/",
       "description": "Harden the headless server presentation layer on tell (NixOS homelab node) with pure 16-color ANSI / 24-bit TrueColor monospace TUI profiles, 0ms latency, zero GUI/audio dependencies, and establish the minimal host capability adapter contract required for compute fabric node discovery."
+    },
+    {
+      "wp_id": "WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049",
+      "project": "kad-pi",
+      "title": "Enforce tool and dispatch authority with fail-closed route degradation (P06)",
+      "status": "ACCEPTED",
+      "priority": 15,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049/",
+      "description": "Enforce tool dispatch authority, prevent out-of-scope effects, and default unknown eligibility to ineligible (P06)."
     },
     {
       "wp_id": "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
@@ -323,6 +521,26 @@
       "fixed_point": "2d5ef8b36b36dfa09a6957817c49ecad5c530fa4",
       "evidence_target": "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010/",
       "description": "Unify legacy wiki knowledge into the canonical human-editable vault while preserving authority boundaries and deterministic derived projections."
+    },
+    {
+      "wp_id": "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+      "project": "kad-pi",
+      "title": "Separate verification, approval, and acceptance boundaries across workctl and wiki (P05)",
+      "status": "ACCEPTED",
+      "priority": 14,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048/",
+      "description": "Enforce strict separation between implementer verification, independent review, and human acceptance authority (P05)."
+    },
+    {
+      "wp_id": "WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047",
+      "project": "kad-pi",
+      "title": "Make writer leases directional, expiration-aware, and lifecycle-safe (P04)",
+      "status": "ACCEPTED",
+      "priority": 13,
+      "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+      "evidence_target": "evidence/WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047/",
+      "description": "Make STC writer leases directional, expiration-aware, and atomic against collisions (P04)."
     },
     {
       "wp_id": "WP-WORKSPACE-AGENT-SUBSTRATE-001",

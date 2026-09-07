@@ -1,0 +1,18 @@
+{
+  "task": "WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046",
+  "project": "kad-pi",
+  "claim_id": "2296fede-fa71-4ba0-936f-bfc6b507d775",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-06T22:48:45.867Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "bin/omp-kad",
+    "scripts/runtime-canary-suite.mjs",
+    "OMP_ROUTING_AUTH_FIX.patch",
+    ".omp/config.yml",
+    "evidence/WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-06T22:55:17.304Z"
+}

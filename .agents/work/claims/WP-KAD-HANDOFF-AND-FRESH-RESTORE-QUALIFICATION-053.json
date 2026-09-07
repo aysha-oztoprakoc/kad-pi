@@ -1,0 +1,15 @@
+{
+  "task": "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053",
+  "project": "kad-pi",
+  "claim_id": "561f8993-7d22-4502-b166-38b688d24d6b",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-06T23:36:23.818Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "tools/workspace/workctl.test.mjs",
+    "evidence/WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-07T00:05:21.563Z"
+}

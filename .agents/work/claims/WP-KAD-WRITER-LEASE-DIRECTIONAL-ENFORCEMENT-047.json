@@ -1,0 +1,16 @@
+{
+  "task": "WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047",
+  "project": "kad-pi",
+  "claim_id": "e2b369e6-3487-448b-800c-df010fb0da6a",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-06T22:45:48.956Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "tools/workspace/stc-lease.mjs",
+    "tools/kad/test/stc-lease.test.mjs",
+    "evidence/WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-06T22:55:17.345Z"
+}

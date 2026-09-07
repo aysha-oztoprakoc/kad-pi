@@ -1,0 +1,48 @@
+{
+  "id": "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053",
+  "project": "kad-pi",
+  "title": "Make continuation handoff operational and qualify fresh-directory restore (P10)",
+  "status": "ACCEPTED",
+  "priority": 19,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P10",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "tools/workspace/workctl.mjs",
+    "tools/workspace/workctl.test.mjs"
+  ],
+  "non_scope": [
+    "commercial backup products",
+    "backing up model weights or credentials"
+  ],
+  "owned_paths": [
+    "tools/workspace/workctl.test.mjs",
+    "evidence/WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/workspace/workctl.test.mjs"
+  ],
+  "evidence_target": "evidence/WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053/",
+  "blocked_by": [
+    "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+    "WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051",
+    "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052"
+  ],
+  "blocks": [
+    "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+  ],
+  "acceptance_criteria": [
+    "Populate handoff with actual completed/remaining work, fixed points, and clean state",
+    "Resume checks recorded fixed point against reality",
+    "Rehearse restore procedure to a fresh directory verifying source and evidence integrity"
+  ],
+  "description": "Make workctl handoff operational and test fresh-directory restore without transcript dependency (P10).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053"
+}

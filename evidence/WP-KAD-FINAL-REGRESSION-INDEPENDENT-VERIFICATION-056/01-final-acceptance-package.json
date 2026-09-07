@@ -1,0 +1,57 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056",
+  "planning_id": "P13",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-07T00:20:00.000Z",
+  "status": "COMPLETED",
+  "milestone": "KAD-PI Dependable Single-Node Workstation (P00-P13)",
+  "validation_ladder": {
+    "make_verify": {
+      "command": "make verify",
+      "exit_code": 0,
+      "verdict": "PASS"
+    },
+    "npm_test": {
+      "command": "npm test",
+      "exit_code": 0,
+      "total_tests": 798,
+      "passed_tests": 798,
+      "failed_tests": 0,
+      "verdict": "PASS"
+    },
+    "kad_doctor": {
+      "command": "bin/kad doctor",
+      "exit_code": 0,
+      "verdict": "PASS"
+    },
+    "kad_wiki_lint": {
+      "command": "bin/kad-wiki lint",
+      "exit_code": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    }
+  },
+  "workpackage_registry_status": {
+    "WP-044": "ACCEPTED",
+    "WP-045": "ACCEPTED",
+    "WP-046": "ACCEPTED",
+    "WP-047": "ACCEPTED",
+    "WP-048": "ACCEPTED",
+    "WP-049": "ACCEPTED",
+    "WP-050": "ACCEPTED",
+    "WP-051": "ACCEPTED",
+    "WP-052": "ACCEPTED",
+    "WP-053": "ACCEPTED",
+    "WP-054": "ACCEPTED",
+    "WP-055": "ACCEPTED",
+    "WP-056": "REVIEW"
+  },
+  "residual_status": {
+    "wan_fault_injection": "BLOCKED (Requires human authorization, EXP-001)",
+    "local_model_execution": "DETERMINISTIC_FIRST (Qwen retrieval and Stheno world simulation operational)",
+    "remote_publication": "FAST_FORWARD_ONLY (Separate explicit authorization required)"
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

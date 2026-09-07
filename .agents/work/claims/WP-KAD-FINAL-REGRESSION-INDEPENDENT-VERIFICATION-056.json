@@ -1,0 +1,14 @@
+{
+  "task": "WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056",
+  "project": "kad-pi",
+  "claim_id": "64128180-3113-4357-a26b-61193ba21b86",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-07T00:11:56.190Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "evidence/WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-07T00:26:46.460Z"
+}

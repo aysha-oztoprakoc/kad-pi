@@ -1,0 +1,47 @@
+{
+  "id": "WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056",
+  "project": "kad-pi",
+  "title": "Final regression ladder, independent verification, and scoped acceptance package (P13)",
+  "status": "REVIEW",
+  "priority": 22,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P13",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "evidence/WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056/"
+  ],
+  "non_scope": [
+    "self-certification of acceptance",
+    "pushing to remote without authorization"
+  ],
+  "owned_paths": [
+    "evidence/WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "shell_readonly",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "make verify",
+    "npm test",
+    "bin/workctl doctor",
+    "bin/kad doctor",
+    "bin/kad-wiki lint"
+  ],
+  "evidence_target": "evidence/WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056/",
+  "blocked_by": [
+    "WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Full validation ladder executed on settled state",
+    "Independent verifier review completed",
+    "Human acceptance package recorded with exact residual status"
+  ],
+  "description": "Execute final validation ladder, record independent verification receipts, and assemble human acceptance package (P13).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056"
+}

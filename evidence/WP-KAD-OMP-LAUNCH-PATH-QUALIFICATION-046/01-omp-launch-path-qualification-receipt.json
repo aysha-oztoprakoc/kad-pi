@@ -1,0 +1,39 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046",
+  "planning_id": "P03",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-06T22:52:00.000Z",
+  "status": "COMPLETED",
+  "owned_paths_mutated": [
+    "bin/omp-kad",
+    "scripts/runtime-canary-suite.mjs"
+  ],
+  "verification": {
+    "canary_suite": {
+      "command": "node scripts/runtime-canary-suite.mjs",
+      "exit_code": 0,
+      "scenarios_passed": 8,
+      "scenarios_failed": 0,
+      "scenarios": [
+        "C1: Canary binary version omp/18.0.11",
+        "C2: Config read produces ZERO mutation",
+        "C3: Value-neutral operation preserves mtime, SHA256 & comments",
+        "C4: Launcher bin/omp-kad executes qualified binary with digest validation (e0ff9cf2fc622d775597c970d6dcbba6b1ca93ea10c52ae2ad60b0ef9cc34ed3)",
+        "C5: Launcher bin/omp-kad fails explicitly on missing binary (exit 127)",
+        "C6: Launcher bin/omp-kad refuses binary with digest mismatch (exit 126)",
+        "C7: Launcher bin/omp-kad preserves global HOME directory without recursive cleanup",
+        "C8: Complete process exit, state isolation & zero unexpected writes"
+      ]
+    },
+    "binary_provenance": {
+      "launcher_script": "bin/omp-kad",
+      "executable": "bin/omp-patched-canary",
+      "sha256": "e0ff9cf2fc622d775597c970d6dcbba6b1ca93ea10c52ae2ad60b0ef9cc34ed3",
+      "version": "omp/18.0.11",
+      "patch_applied": "OMP_ROUTING_AUTH_FIX.patch"
+    }
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

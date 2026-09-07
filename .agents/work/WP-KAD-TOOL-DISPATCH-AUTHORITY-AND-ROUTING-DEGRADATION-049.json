@@ -1,0 +1,54 @@
+{
+  "id": "WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049",
+  "project": "kad-pi",
+  "title": "Enforce tool and dispatch authority with fail-closed route degradation (P06)",
+  "status": "ACCEPTED",
+  "priority": 15,
+  "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P06",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "scope": [
+    "tools/kad/workload-contract.mjs",
+    "tools/kad/external-providers.mjs",
+    "tools/kad/economic-router.mjs",
+    "tools/kad/resource-contract.mjs"
+  ],
+  "non_scope": [
+    "new proxy service",
+    "live paid API usage"
+  ],
+  "owned_paths": [
+    "tools/kad/workload-contract.mjs",
+    "tools/kad/external-providers.mjs",
+    "tools/kad/economic-router.mjs",
+    "tools/kad/resource-contract.mjs",
+    "evidence/WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/kad/test/resource-contract.test.mjs"
+  ],
+  "evidence_target": "evidence/WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049/",
+  "blocked_by": [
+    "WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046",
+    "WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047"
+  ],
+  "blocks": [
+    "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052",
+    "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054"
+  ],
+  "acceptance_criteria": [
+    "Trace effects from claim to policy check to subprocess/file effect",
+    "Bind effects to current lease, capability, trust domain, and spend ceiling",
+    "Default unknown cost, quota, and eligibility to fail-closed non-eligible",
+    "Unknown quota remains unknown, not FREE"
+  ],
+  "description": "Enforce tool dispatch authority, prevent out-of-scope effects, and default unknown eligibility to ineligible (P06).",
+  "spec_decisions": [],
+  "source_ticket": "WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049"
+}

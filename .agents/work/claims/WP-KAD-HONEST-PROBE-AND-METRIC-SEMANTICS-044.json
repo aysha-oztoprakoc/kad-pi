@@ -1,0 +1,18 @@
+{
+  "task": "WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044",
+  "project": "kad-pi",
+  "claim_id": "35c49234-1de8-40fa-bf46-5f0842af8bc2",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-06T22:36:40.489Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "tools/kad/compute/probe-runner.mjs",
+    "tools/kad/compute/confounder.mjs",
+    "tools/kad/compute/metrics.mjs",
+    "tools/kad/test/compute-probe.test.mjs",
+    "evidence/WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-06T22:55:17.266Z"
+}

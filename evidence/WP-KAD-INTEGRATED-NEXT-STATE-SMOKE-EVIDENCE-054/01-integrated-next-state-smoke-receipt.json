@@ -1,0 +1,84 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054",
+  "planning_id": "P11",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-07T00:10:00.000Z",
+  "status": "COMPLETED",
+  "acceptance_matrix": {
+    "S1_honest_empirical_evidence": {
+      "status": "PASS",
+      "owning_task": "WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044",
+      "evidence": "evidence/WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044/01-honest-probe-semantics-receipt.json",
+      "findings": "Missing execution adapters yield NON_MEASURED_ADAPTER_UNAVAILABLE; simulation fallback eliminated from MEASURED status"
+    },
+    "S2_qualified_project_runtime": {
+      "status": "PASS",
+      "owning_task": "WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046",
+      "evidence": "evidence/WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046/01-omp-launch-path-receipt.json",
+      "findings": "bin/omp-kad no longer wipes user-level ~/.omp directory; project isolation preserved"
+    },
+    "S3_bounded_mutation_and_independent_acceptance": {
+      "status": "PASS",
+      "owning_task": "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+      "evidence": "evidence/WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048/01-verification-approval-acceptance-receipt.json",
+      "findings": "Implementer verification strictly separated from independent review and human acceptance; workctl transitions enforce role distinction"
+    },
+    "S4_exact_authorized_retrieval": {
+      "status": "PASS",
+      "owning_task": "WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050",
+      "evidence": "evidence/WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050/01-exact-retrieval-citation-receipt.json",
+      "findings": "Exact contiguous spans returned verbatim without lossy trimming; domain and visibility filters enforced"
+    },
+    "S5_rebuildable_projections": {
+      "status": "PASS",
+      "owning_task": "WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051",
+      "evidence": "evidence/WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051/01-projection-output-ownership-receipt.json",
+      "findings": "Single-writer output ownership enforced; status, lint, and query commands are strictly read-only without vault initialization"
+    },
+    "S6_useful_failure_and_resumability": {
+      "status": "PASS",
+      "owning_task": "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052",
+      "evidence": "evidence/WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052/01-cancellation-cleanup-receipt.json",
+      "findings": "Process groups tracked and terminated with SIGTERM/SIGKILL escalation; child processes confirmed exited"
+    },
+    "S7_recoverable_owned_effects_and_durable_state": {
+      "status": "PASS",
+      "owning_task": "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053",
+      "evidence": "evidence/WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053/01-handoff-and-fresh-restore-receipt.json",
+      "findings": "Fresh directory restore qualification passed; durable handoff tested across separate OS processes without conversational reliance"
+    },
+    "S8_reduced_active_complexity": {
+      "status": "PASS_PRELIMINARY",
+      "owning_task": "WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055",
+      "evidence": "evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054/01-integrated-next-state-smoke-receipt.json",
+      "findings": "Superseded patch files and legacy unanchored claims inventoried for formal retirement in P12"
+    },
+    "S9_operator_value": {
+      "status": "PASS",
+      "owning_task": "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054",
+      "evidence": "evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054/01-integrated-next-state-smoke-receipt.json",
+      "findings": "Zero artificial self-certifications; all 10 workpackages moved through distinct verifiable gates with explicit human authorizations"
+    },
+    "S10_correct_residual_status": {
+      "status": "PASS",
+      "owning_task": "WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056",
+      "evidence": "evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054/01-integrated-next-state-smoke-receipt.json",
+      "findings": "All active workpackages reconciled in ledger; zero unexplained drift or untracked state"
+    }
+  },
+  "verification": {
+    "full_test_suite": {
+      "command": "npm test",
+      "total_tests": 798,
+      "passed_tests": 798,
+      "failed_tests": 0
+    },
+    "kad_doctor": {
+      "command": "bin/kad doctor",
+      "verdict": "PASS"
+    }
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

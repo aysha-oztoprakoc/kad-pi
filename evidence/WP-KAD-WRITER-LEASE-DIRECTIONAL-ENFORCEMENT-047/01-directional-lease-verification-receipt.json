@@ -1,0 +1,39 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047",
+  "planning_id": "P04",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-06T22:48:00.000Z",
+  "status": "COMPLETED",
+  "owned_paths_mutated": [
+    "tools/workspace/stc-lease.mjs",
+    "tools/kad/test/stc-lease.test.mjs"
+  ],
+  "verification": {
+    "red_phase": {
+      "command": "node --test tools/kad/test/stc-lease.test.mjs",
+      "exit_code": 1,
+      "reproduced_defects": [
+        "Symmetric overlap check allowed child file lease to authorize parent directories and repository root",
+        "Expired leases remained valid for writes because expiration date was never checked during validation",
+        "Actor mismatch was ignored during lease validation at use"
+      ]
+    },
+    "green_phase": {
+      "command": "node --test tools/kad/test/stc-lease.test.mjs",
+      "exit_code": 0,
+      "tests_passed": 7,
+      "tests_failed": 0,
+      "observations": [
+        "Directional containment enforced: child path lease never grants ancestor access",
+        "Expiration enforced: expired leases fail validation with explicit expiration reason",
+        "Actor and task binding verified at use: unauthorized actors fail closed",
+        "Path traversal outside root rejected in path normalization",
+        "Atomic acquisition lock enforced via .lease.lock",
+        "Safe re-acquisition after release verified without collision"
+      ]
+    }
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

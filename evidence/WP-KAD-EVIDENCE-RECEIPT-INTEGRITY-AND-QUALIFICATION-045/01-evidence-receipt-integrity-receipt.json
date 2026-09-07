@@ -1,0 +1,32 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045",
+  "planning_id": "P02",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-06T22:58:00.000Z",
+  "status": "COMPLETED",
+  "owned_paths_mutated": [
+    "tools/kad/compute/evidence-recorder.mjs"
+  ],
+  "verification": {
+    "red_phase": {
+      "reproduced_defects": [
+        "verifyEvidenceChain previously checked only sequence and previous link without recomputing payload digests",
+        "Payload alterations with preserved receipt_hash passed verification without detection",
+        "Malformed JSON or corrupt records caused unhandled exceptions instead of fail-closed rejection",
+        "Append fallback silently created fresh genesis records on top of corrupted journals"
+      ]
+    },
+    "green_phase": {
+      "tests_passed": [
+        "Recomputed SHA256 digest on every entry detects payload tampering with PAYLOAD_TAMPERED_AT_<seq>",
+        "Safe JSON parsing fails closed with MALFORMED_JSON_AT_LINE_<line>",
+        "Appending to a corrupted evidence journal is strictly refused with an error",
+        "Support for expectedHead and expectedCount anchors rollback and truncation detection",
+        "Historical WP-021 evidence remains unmutated and read-only"
+      ]
+    }
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

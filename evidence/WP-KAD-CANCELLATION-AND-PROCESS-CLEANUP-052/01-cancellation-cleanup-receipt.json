@@ -1,0 +1,29 @@
+{
+  "schema": "kad-execution-run-receipt-v1",
+  "workpackage": "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052",
+  "planning_id": "P09",
+  "actor": "gemini-3.8-flash-high",
+  "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
+  "timestamp": "2026-09-06T23:05:00.000Z",
+  "status": "COMPLETED",
+  "owned_paths_mutated": [
+    "tools/kad/stc-scope.mjs",
+    "tools/kad/local-inference-capability.mjs",
+    "tools/kad/test/runtime-resource-inspection.test.mjs"
+  ],
+  "verification": {
+    "runtime_resource_tests": {
+      "command": "node --test tools/kad/test/runtime-resource-inspection.test.mjs",
+      "exit_code": 0,
+      "tests_passed": 12,
+      "tests_failed": 0,
+      "observations": [
+        "StcScope records explicit recovery debt when effect inverse fails, continuing cleanup while declaring unresolved residue",
+        "LocalInferenceCapability tracks actual exit via exit event, not just ChildProcess.killed flag",
+        "Process termination targets process group (-pid) and escalates from SIGTERM to SIGKILL on timeout",
+        "Activation failures unwind registered effects and dispose process cleanly"
+      ]
+    }
+  },
+  "epistemic_verdict": "VERIFIED_PASS"
+}

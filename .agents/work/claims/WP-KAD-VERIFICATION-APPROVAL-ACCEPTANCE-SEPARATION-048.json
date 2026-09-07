@@ -1,0 +1,17 @@
+{
+  "task": "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+  "project": "kad-pi",
+  "claim_id": "9c4bc8ec-a02e-488a-b6d4-adb7ad07fc83",
+  "actor_label": "gemini-3.8-flash-high",
+  "started_at": "2026-09-06T23:06:56.598Z",
+  "base_commit": "337a42021f71e7cf51b908be886836ecd4212790",
+  "owned_paths": [
+    "tools/workspace/workctl.mjs",
+    "tools/kad/wiki/index.mjs",
+    "tools/kad/isa.mjs",
+    "evidence/WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-06T23:23:15.437Z"
+}
