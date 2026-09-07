@@ -2,7 +2,7 @@
   "id": "WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056",
   "project": "kad-pi",
   "title": "Final regression ladder, independent verification, and scoped acceptance package (P13)",
-  "status": "REVIEW",
+  "status": "ACCEPTED",
   "priority": 22,
   "spec_ref": "report:/home/amdy/Downloads/reports/KAD_PI_IMPLEMENTATION_PLAN_NEXT_2026-09-06.md#P13",
   "fixed_point": "337a42021f71e7cf51b908be886836ecd4212790",
