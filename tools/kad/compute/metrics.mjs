@@ -22,14 +22,28 @@ export const TELEMETRY_11_METRICS_SCHEMA = 'kad-compute-11-metrics-v1';
  * Calculates multi-dimensional scarce resource cost weighting across latency, memory, network, and failures.
  * Lower cost = superior efficiency.
  */
+function parseFiniteOrNull(val) {
+  if (val === null || val === undefined || val === '') return null;
+  const num = Number(val);
+  return Number.isFinite(num) ? num : null;
+}
+
 export function calculateScarceCost(metrics = {}) {
-  const ttft = Number(metrics.ttft_ms) || 50;
-  const decodeRate = Math.max(1, Number(metrics.decode_tok_per_sec) || 30);
+  if (metrics.ttft_ms === null || metrics.ttft_ms === undefined || !Number.isFinite(Number(metrics.ttft_ms))) return null;
+  if (metrics.decode_tok_per_sec === null || metrics.decode_tok_per_sec === undefined || !Number.isFinite(Number(metrics.decode_tok_per_sec))) return null;
+  const ttft = Number(metrics.ttft_ms);
+  const decodeRate = Number(metrics.decode_tok_per_sec);
+  if (ttft <= 0 || decodeRate <= 0) return null;
+
   const vramGb = (Number(metrics.peak_vram_bytes) || 0) / (1024 ** 3);
   const ramGb = (Number(metrics.peak_ram_bytes) || 0) / (1024 ** 3);
   const netMb = (Number(metrics.network_transfer_bytes) || 0) / (1024 ** 2);
-  const failureRate = Math.max(0, Math.min(1, Number(metrics.failure_rate) || 0));
-  const acceptance = Math.max(0.01, Math.min(1, Number(metrics.task_acceptance_rate) || 1));
+  const failureRate = metrics.failure_rate != null && Number.isFinite(Number(metrics.failure_rate))
+    ? Math.max(0, Math.min(1, Number(metrics.failure_rate)))
+    : 0;
+  const acceptance = metrics.task_acceptance_rate != null && Number.isFinite(Number(metrics.task_acceptance_rate))
+    ? Math.max(0.01, Math.min(1, Number(metrics.task_acceptance_rate)))
+    : 1;
 
   // Latency component (seconds per 100 tokens)
   const latencySec = (ttft / 1000) + (100 / decodeRate);
@@ -50,18 +64,31 @@ export function calculateScarceCost(metrics = {}) {
 export function normalizeProbeMetrics(raw = {}) {
   const metrics = {
     schema: TELEMETRY_11_METRICS_SCHEMA,
-    ttft_ms: typeof raw.ttft_ms === 'number' ? raw.ttft_ms : (Number(raw.ttft_ms) || 0),
-    prefill_tok_per_sec: typeof raw.prefill_tok_per_sec === 'number' ? raw.prefill_tok_per_sec : (Number(raw.prefill_tok_per_sec) || 0),
-    decode_tok_per_sec: typeof raw.decode_tok_per_sec === 'number' ? raw.decode_tok_per_sec : (Number(raw.decode_tok_per_sec) || 0),
-    peak_vram_bytes: typeof raw.peak_vram_bytes === 'number' ? raw.peak_vram_bytes : (Number(raw.peak_vram_bytes) || 0),
-    peak_ram_bytes: typeof raw.peak_ram_bytes === 'number' ? raw.peak_ram_bytes : (Number(raw.peak_ram_bytes) || 0),
-    network_transfer_bytes: typeof raw.network_transfer_bytes === 'number' ? raw.network_transfer_bytes : (Number(raw.network_transfer_bytes) || 0),
-    failure_rate: typeof raw.failure_rate === 'number' ? raw.failure_rate : (Number(raw.failure_rate) || 0),
-    task_acceptance_rate: typeof raw.task_acceptance_rate === 'number' ? raw.task_acceptance_rate : (Number(raw.task_acceptance_rate) || 1.0),
-    structured_output_validity: typeof raw.structured_output_validity === 'number' ? raw.structured_output_validity : (Number(raw.structured_output_validity) || 1.0),
-    quality_score: typeof raw.quality_score === 'number' ? raw.quality_score : (Number(raw.quality_score) || 0)
+    ttft_ms: parseFiniteOrNull(raw.ttft_ms),
+    prefill_tok_per_sec: parseFiniteOrNull(raw.prefill_tok_per_sec),
+    decode_tok_per_sec: parseFiniteOrNull(raw.decode_tok_per_sec),
+    peak_vram_bytes: parseFiniteOrNull(raw.peak_vram_bytes),
+    peak_ram_bytes: parseFiniteOrNull(raw.peak_ram_bytes),
+    network_transfer_bytes: parseFiniteOrNull(raw.network_transfer_bytes),
+    failure_rate: parseFiniteOrNull(raw.failure_rate),
+    task_acceptance_rate: parseFiniteOrNull(raw.task_acceptance_rate),
+    structured_output_validity: parseFiniteOrNull(raw.structured_output_validity),
+    quality_score: parseFiniteOrNull(raw.quality_score)
   };
 
+  const baseFields = [
+    metrics.ttft_ms,
+    metrics.prefill_tok_per_sec,
+    metrics.decode_tok_per_sec,
+    metrics.peak_vram_bytes,
+    metrics.peak_ram_bytes,
+    metrics.network_transfer_bytes,
+    metrics.failure_rate,
+    metrics.task_acceptance_rate,
+    metrics.structured_output_validity,
+    metrics.quality_score
+  ];
+  metrics.metrics_coverage = baseFields.every((f) => f !== null) ? 'FULL' : 'PARTIAL';
   metrics.scarce_resource_cost = calculateScarceCost(metrics);
   return metrics;
 }

@@ -14,7 +14,26 @@ export function createEconomicPolicy(input = {}) {
 
 export function normalizeLane(input = {}, policy = createEconomicPolicy(), now = policy.now) {
   const quota = normalizeQuota(input.quota, policy.quota, now);
-  return { lane_id: input.lane_id, provider: input.provider ?? null, model: input.model ?? null, execution_class: input.execution_class ?? 'HUMAN', billing_class: input.billing_class ?? 'UNKNOWN', available: input.available !== false, authority_compatible: input.authority_compatible !== false, trust_domain: input.trust_domain ?? 'UNKNOWN', capabilities: [...(input.capabilities ?? [])], context_window: input.context_window ?? 0, deterministic: input.deterministic === true, local: input.local === true, proven: input.proven ?? null, payg: input.payg === true, marginal_cost: Number.isFinite(input.marginal_cost) ? input.marginal_cost : 0, quota, performance: { accepted_tasks: 0, rejected_tasks: 0, repairs: 0, input_tokens: 0, output_tokens: 0, wall_ms: 0, ...(input.performance ?? {}) } };
+  const marginalCost = Number.isFinite(input.marginal_cost) ? input.marginal_cost : (input.payg || input.billing_class === 'METERED' ? null : 0);
+  return {
+    lane_id: input.lane_id,
+    provider: input.provider ?? null,
+    model: input.model ?? null,
+    execution_class: input.execution_class ?? 'HUMAN',
+    billing_class: input.billing_class ?? 'UNKNOWN',
+    available: input.available !== false,
+    authority_compatible: input.authority_compatible !== false,
+    trust_domain: input.trust_domain ?? 'UNKNOWN',
+    capabilities: [...(input.capabilities ?? [])],
+    context_window: input.context_window ?? 0,
+    deterministic: input.deterministic === true,
+    local: input.local === true,
+    proven: input.proven ?? null,
+    payg: input.payg === true,
+    marginal_cost: marginalCost,
+    quota,
+    performance: { accepted_tasks: 0, rejected_tasks: 0, repairs: 0, input_tokens: 0, output_tokens: 0, wall_ms: 0, ...(input.performance ?? {}) }
+  };
 }
 
 function eligible(lane, requirement, policy) {
@@ -25,7 +44,8 @@ function eligible(lane, requirement, policy) {
   if (requirement.model_scope && lane.quota.scope?.model && lane.quota.scope.model !== requirement.model_scope) return 'QUOTA_SCOPE_MISMATCH';
   if (!lane.authority_compatible) return 'AUTHORITY_INCOMPATIBLE';
   if (lane.payg && (!policy.spend.payg_authorized || !policy.spend.allow_paid_fallback)) return 'PAYG_NOT_AUTHORIZED';
-  if (lane.marginal_cost > policy.spend.max_incremental_cost) return 'INCREMENTAL_COST_EXCEEDS_BUDGET';
+  if (lane.marginal_cost === null && (lane.payg || lane.billing_class === 'METERED')) return 'MARGINAL_COST_UNKNOWN';
+  if (lane.marginal_cost !== null && lane.marginal_cost > policy.spend.max_incremental_cost) return 'INCREMENTAL_COST_EXCEEDS_BUDGET';
   if (lane.quota.status === 'KNOWN' && lane.quota.remaining !== null && lane.quota.remaining <= 0) return 'QUOTA_EXHAUSTED';
   return null;
 }
@@ -36,7 +56,21 @@ export function routeEconomically({ requirement, lanes = [], policy: suppliedPol
   const rejections = [];
   const candidates = [];
   for (const lane of normalized) { const reason = eligible(lane, requirement, policy); if (reason) rejections.push({ lane_id: lane.lane_id, reason }); else candidates.push(lane); }
-  if (!candidates.length) return { status: 'DEGRADED', selected_lane: null, reason_codes: ['NO_ELIGIBLE_LANE'], rejections, candidates: [], observation: { watermark: 'UNKNOWN', quota_unit: null } };
+  if (!candidates.length) {
+    return {
+      status: 'DEGRADED',
+      selected_lane: null,
+      selected_route: null,
+      actual_route: null,
+      provider_identity: null,
+      model_identity: null,
+      fallback_reason: 'NO_ELIGIBLE_LANE',
+      reason_codes: ['NO_ELIGIBLE_LANE'],
+      rejections,
+      candidates: [],
+      observation: { watermark: 'UNKNOWN', quota_unit: null }
+    };
+  }
   const ranked = candidates.map(lane => {
     const expiring = lane.execution_class === 'REMOTE_SUBSCRIPTION' && lane.quota.watermark === WATERMARKS.EXPIRING && queued_work && lane.quota.remaining !== null && lane.quota.capacity !== null && lane.quota.remaining / lane.quota.capacity > policy.quota.green_min_fraction;
     return { lane, rank: expiring ? classRank.get('REMOTE_FREE') - 0.5 : (classRank.get(lane.execution_class) ?? classRank.get('HUMAN')), expiring };
@@ -45,7 +79,29 @@ export function routeEconomically({ requirement, lanes = [], policy: suppliedPol
   const reason_codes = ['ELIGIBLE', `EXECUTION_CLASS_${selected.lane.execution_class}`, `WATERMARK_${selected.lane.quota.watermark}`];
   if (selected.expiring) reason_codes.push('USE_IT_OR_LOSE_IT_QUOTA');
   if (selected.lane.quota.watermark === WATERMARKS.UNKNOWN || selected.lane.quota.watermark === WATERMARKS.STALE) reason_codes.push(`QUOTA_${selected.lane.quota.watermark}`);
-  return { status: 'ROUTED', selected_lane: selected.lane.lane_id, selected_execution_class: selected.lane.execution_class, reason_codes, rejections, candidates: ranked.map(item => item.lane.lane_id), observation: { lane_id: selected.lane.lane_id, watermark: selected.lane.quota.watermark, quota_unit: selected.lane.quota.unit, remaining: selected.lane.quota.remaining, capacity: selected.lane.quota.capacity, confidence: selected.lane.quota.confidence, effective_window_id: selected.lane.quota.effective_window_id ?? null, windows: selected.lane.quota.windows ?? [] } };
+  return {
+    status: 'ROUTED',
+    selected_lane: selected.lane.lane_id,
+    selected_route: selected.lane.lane_id,
+    actual_route: selected.lane.lane_id,
+    provider_identity: selected.lane.provider ?? null,
+    model_identity: selected.lane.model ?? null,
+    selected_execution_class: selected.lane.execution_class,
+    fallback_reason: selected.expiring ? 'EXPIRING_ALLOWANCE_PREFERENCE' : null,
+    reason_codes,
+    rejections,
+    candidates: ranked.map(item => item.lane.lane_id),
+    observation: {
+      lane_id: selected.lane.lane_id,
+      watermark: selected.lane.quota.watermark,
+      quota_unit: selected.lane.quota.unit,
+      remaining: selected.lane.quota.remaining,
+      capacity: selected.lane.quota.capacity,
+      confidence: selected.lane.quota.confidence,
+      effective_window_id: selected.lane.quota.effective_window_id ?? null,
+      windows: selected.lane.quota.windows ?? []
+    }
+  };
 }
 
 export function quotaNotification(previous, next) {

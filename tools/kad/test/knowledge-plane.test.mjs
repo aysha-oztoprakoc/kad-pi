@@ -102,6 +102,84 @@ test('optional adapters remain non-authoritative and preserve proposed inference
   await assert.rejects(() => runOptionalAdapterProbe({ ...adapter, authority: true }, { input: 'blocked', schema: {} }), /non-authoritative/);
 });
 
+test('P07 RED: retrieval pre-authorizes sources before reading and does not read forbidden-domain files', () => {
+  const customAllowlist = [
+    {
+      path: 'PRIME_DIRECTIVE.md',
+      title: 'Prime Directive',
+      kind: 'directive',
+      trust_domain: 'engineering',
+      classification: EPISTEMIC_CLASSES.DOCUMENT_DERIVED,
+      authority_class: 'CANONICAL_SOURCE',
+      acceptance_state: ACCEPTANCE_STATES.ACCEPTED
+    },
+    {
+      path: 'nonexistent-forbidden-secret.md',
+      title: 'Forbidden Secrets',
+      kind: 'secret',
+      trust_domain: 'restricted-vault',
+      classification: EPISTEMIC_CLASSES.DOCUMENT_DERIVED,
+      authority_class: 'RESTRICTED_SOURCE',
+      acceptance_state: ACCEPTANCE_STATES.ACCEPTED
+    }
+  ];
+
+  const plane = createPlane({ source_allowlist: customAllowlist });
+  // When retrieving with trust_domain 'engineering', the forbidden file must NOT be read or throw ENOENT!
+  const result = plane.retrieve('Prime Directive', { trust_domain: 'engineering' });
+  assert.equal(result.status, 'PASS');
+  assert.equal(result.results.length, 1);
+  assert.equal(result.results[0].source_ref, 'PRIME_DIRECTIVE.md');
+});
+
+test('P07 RED: exact retrieval returns byte-faithful spans and preserves whitespace without false joining', () => {
+  const plane = createPlane();
+  const result = plane.retrieve('NOTIFY, DON\'T POLL', { trust_domain: 'engineering' });
+  assert.equal(result.status, 'PASS');
+  assert.ok(result.results.length > 0);
+  const firstResult = result.results[0];
+
+  // Must provide structured exact spans
+  assert.ok(Array.isArray(firstResult.spans));
+  assert.ok(firstResult.spans.length > 0);
+  const span = firstResult.spans[0];
+  assert.ok(span.locator);
+  assert.ok(span.span_hash);
+  assert.equal(typeof span.text, 'string');
+
+  // Verify byte faithfulness against the real file content
+  const rawContent = plane.read({ source_ref: firstResult.source_ref, trust_domain: 'engineering' }).content;
+  const lines = rawContent.split(/\r?\n/);
+  const exactLine = lines[span.line_number - 1];
+  // The span text must match the exact line from the file byte-for-byte (including whitespace)
+  assert.equal(span.text, exactLine);
+});
+
+test('P07 RED: noncontiguous matching lines are returned as distinct spans, not a false range locator', () => {
+  const plane = createPlane();
+  // Query terms matching multiple separated lines in PRIME_DIRECTIVE.md
+  const result = plane.retrieve('PURPOSE CONSTITUTION VOCABULARY', { trust_domain: 'engineering' });
+  assert.equal(result.status, 'PASS');
+  if (result.results.length > 0) {
+    const res = result.results[0];
+    // If multiple noncontiguous spans matched, the locator should not claim a single span over non-matching lines
+    if (res.spans && res.spans.length > 1) {
+      const lines = res.spans.map(s => s.line_number);
+      const isContiguous = lines.every((line, idx) => idx === 0 || line === lines[idx - 1] + 1);
+      if (!isContiguous) {
+        assert.notEqual(res.locator, `${res.source_path}#L${lines[0]}-L${lines[lines.length - 1]}`);
+      }
+    }
+  }
+});
+
+test('P07 RED: unknown query returns explicit NO_MATCH outcome', () => {
+  const plane = createPlane();
+  const result = plane.retrieve('xyzNonexistentTerm99999Query', { trust_domain: 'engineering' });
+  assert.equal(result.status, 'NO_MATCH');
+  assert.equal(result.results.length, 0);
+});
+
 assert.deepEqual(EPISTEMIC_CLASSES, Object.freeze({
   AUTHOR_DECLARED: 'AUTHOR_DECLARED',
   DOCUMENT_DERIVED: 'DOCUMENT_DERIVED',

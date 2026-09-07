@@ -19,6 +19,7 @@ export async function runBenchmarkProbe(tuple, {
   if (!validation.valid) {
     return {
       status: 'INVALID_TUPLE',
+      qualification: 'UNQUALIFIED',
       reason: `Missing dimensions: ${validation.missingDimensions?.join(', ')}`,
       tuple
     };
@@ -29,43 +30,65 @@ export async function runBenchmarkProbe(tuple, {
     mock: mockConfounder
   });
 
-  // Default execution simulator when no live model runner is passed
-  const adapter = executionAdapter || {
-    executeInference: async (t, idx) => ({
-      ttft_ms: 38.5 + (idx * 1.2),
-      prefill_tok_per_sec: 340.0 - (idx * 2.0),
-      decode_tok_per_sec: 44.5 + (idx * 0.5),
-      peak_vram_bytes: (tuple.context || 4096) > 8192 ? 6442450944 : 4294967296,
-      peak_ram_bytes: 8589934592,
-      network_transfer_bytes: 0,
-      failure_rate: 0.0,
-      task_acceptance_rate: 1.0,
-      structured_output_validity: 1.0,
-      quality_score: 0.96
-    })
-  };
+  if (!executionAdapter) {
+    return {
+      status: 'NON_MEASURED',
+      qualification: 'UNQUALIFIED',
+      reason: 'No execution adapter provided; live benchmark requires an explicitly identified real execution adapter',
+      tuple_key: serializeTupleKey(tuple),
+      tuple,
+      environment_baseline: baseline,
+      generated_at: new Date().toISOString()
+    };
+  }
+
+  if (!repetitions || repetitions <= 0) {
+    return {
+      status: 'NON_MEASURED',
+      qualification: 'UNQUALIFIED',
+      reason: 'Zero repetitions specified; measurement requires repetitions > 0',
+      tuple_key: serializeTupleKey(tuple),
+      tuple,
+      environment_baseline: baseline,
+      generated_at: new Date().toISOString()
+    };
+  }
+
+  const isReal = executionAdapter.isRealAdapter === true;
+  const status = isReal ? 'MEASURED' : 'SIMULATED';
+  const qualification = isReal ? 'EMPIRICAL_MEASURED' : 'SIMULATED_NOT_EMPIRICAL';
 
   // 1. Warm-up runs (discarded from metrics to avoid cold-start confounders)
   for (let w = 0; w < warmup; w++) {
-    await adapter.executeInference(tuple, w);
+    await executionAdapter.executeInference(tuple, w);
   }
 
   // 2. Measured repetitions
   const samples = [];
   for (let r = 0; r < repetitions; r++) {
-    const repMetrics = await adapter.executeInference(tuple, r);
+    const repMetrics = await executionAdapter.executeInference(tuple, r);
     samples.push(repMetrics);
   }
 
-  // 3. Compute aggregated means
-  const avg = (key) => samples.reduce((acc, s) => acc + (Number(s[key]) || 0), 0) / samples.length;
+  // 3. Compute aggregated means from valid observed values
+  const avg = (key) => {
+    const validSamples = samples.filter((s) => s && s[key] !== null && s[key] !== undefined && Number.isFinite(Number(s[key])));
+    if (validSamples.length === 0) return null;
+    return validSamples.reduce((acc, s) => acc + Number(s[key]), 0) / validSamples.length;
+  };
+
+  const max = (key) => {
+    const validSamples = samples.filter((s) => s && s[key] !== null && s[key] !== undefined && Number.isFinite(Number(s[key])));
+    if (validSamples.length === 0) return null;
+    return Math.max(...validSamples.map((s) => Number(s[key])));
+  };
 
   const aggregatedMetrics = normalizeProbeMetrics({
     ttft_ms: avg('ttft_ms'),
     prefill_tok_per_sec: avg('prefill_tok_per_sec'),
     decode_tok_per_sec: avg('decode_tok_per_sec'),
-    peak_vram_bytes: Math.max(...samples.map(s => Number(s.peak_vram_bytes) || 0)),
-    peak_ram_bytes: Math.max(...samples.map(s => Number(s.peak_ram_bytes) || 0)),
+    peak_vram_bytes: max('peak_vram_bytes'),
+    peak_ram_bytes: max('peak_ram_bytes'),
     network_transfer_bytes: avg('network_transfer_bytes'),
     failure_rate: avg('failure_rate'),
     task_acceptance_rate: avg('task_acceptance_rate'),
@@ -75,9 +98,11 @@ export async function runBenchmarkProbe(tuple, {
 
   const tupleKey = serializeTupleKey(tuple);
   const result = {
-    status: 'MEASURED',
+    status,
+    qualification,
     tuple_key: tupleKey,
     tuple,
+    adapter_id: executionAdapter.adapter_id || (isReal ? 'real-execution-adapter' : 'simulated-adapter'),
     metrics: aggregatedMetrics,
     repetitions_measured: repetitions,
     warmup_discarded: warmup,
@@ -87,7 +112,7 @@ export async function runBenchmarkProbe(tuple, {
   };
 
   if (evidenceDir) {
-    recordProbeReceipt(result, { evidenceDir });
+     recordProbeReceipt(result, { evidenceDir });
   }
 
   return result;

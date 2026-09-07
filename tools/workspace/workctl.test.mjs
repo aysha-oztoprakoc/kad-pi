@@ -123,3 +123,62 @@ test('mutating commands reject unsafe work item identifiers', () => {
   assert.equal(doctor.code, 1);
   assert.match(doctor.error, /unsafe id/);
 });
+
+test('P10: Rehearse restore procedure to a fresh directory verifying source and evidence integrity', () => {
+  const targetDir = fs.mkdtempSync(path.join(os.tmpdir(), 'kad-restore-rehearsal-'));
+  try {
+    // Copy minimal manifest to fresh targetDir
+    fs.mkdirSync(path.join(targetDir, '.agents', 'workspace'), { recursive: true });
+    fs.mkdirSync(path.join(targetDir, '.agents', 'work'), { recursive: true });
+    fs.mkdirSync(path.join(targetDir, 'tools', 'workspace'), { recursive: true });
+    fs.mkdirSync(path.join(targetDir, 'bin'), { recursive: true });
+
+    fs.copyFileSync(path.join(repoRoot, '.agents', 'workspace', 'projects.json'), path.join(targetDir, '.agents', 'workspace', 'projects.json'));
+    fs.copyFileSync(path.join(repoRoot, 'tools', 'workspace', 'workctl.mjs'), path.join(targetDir, 'tools', 'workspace', 'workctl.mjs'));
+    fs.copyFileSync(path.join(repoRoot, 'tools', 'workspace', 'workflow-bridge.mjs'), path.join(targetDir, 'tools', 'workspace', 'workflow-bridge.mjs'));
+    fs.copyFileSync(path.join(repoRoot, 'tools', 'workspace', 'stc-lease.mjs'), path.join(targetDir, 'tools', 'workspace', 'stc-lease.mjs'));
+    fs.copyFileSync(path.join(repoRoot, 'tools', 'workspace', 'skill-governance.mjs'), path.join(targetDir, 'tools', 'workspace', 'skill-governance.mjs'));
+    fs.copyFileSync(path.join(repoRoot, 'bin', 'workctl'), path.join(targetDir, 'bin', 'workctl'));
+    fs.chmodSync(path.join(targetDir, 'bin', 'workctl'), 0o755);
+
+    const restoredTask = {
+      id: 'WP-RESTORED-001',
+      project: 'kad-pi',
+      title: 'Restored Task',
+      status: 'READY',
+      priority: 10,
+      spec_ref: null,
+      fixed_point: 'fixture-fixed-point',
+      scope: ['src'],
+      non_scope: [],
+      owned_paths: ['src/restored.js'],
+      required_capabilities: ['filesystem_write'],
+      trust_domain: 'engineering',
+      authority_required: 'kad-pi-project',
+      validation: ['node --test'],
+      evidence_target: 'evidence/WP-RESTORED-001/',
+      blocked_by: [],
+      blocks: []
+    };
+    fs.writeFileSync(path.join(targetDir, '.agents', 'work', 'WP-RESTORED-001.json'), JSON.stringify(restoredTask, null, 2));
+
+    // Run workctl commands in the restored fresh directory
+    const cli = path.join(targetDir, 'bin', 'workctl');
+    const status = spawnSync(cli, ['status'], { cwd: targetDir, encoding: 'utf8' });
+    assert.equal(status.status, 0);
+    const statusParsed = JSON.parse(status.stdout);
+    assert.ok(Array.isArray(statusParsed));
+    assert.equal(statusParsed.some(t => t.id === 'WP-RESTORED-001'), true);
+
+    // Acquire a claim in the fresh directory
+    const claim = spawnSync(cli, ['claim', 'WP-RESTORED-001', '--actor', 'restored-harness'], { cwd: targetDir, encoding: 'utf8' });
+    assert.equal(claim.status, 0);
+
+    // Verify handoff generation
+    const handoff = spawnSync(cli, ['handoff', 'WP-RESTORED-001', '--actor', 'restored-harness'], { cwd: targetDir, encoding: 'utf8' });
+    assert.equal(handoff.status, 0);
+    assert.equal(fs.existsSync(path.join(targetDir, '.agents', 'work', 'handoffs', 'WP-RESTORED-001.json')), true);
+  } finally {
+    fs.rmSync(targetDir, { recursive: true, force: true });
+  }
+});

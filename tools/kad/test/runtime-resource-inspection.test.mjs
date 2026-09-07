@@ -66,3 +66,51 @@ test('T10 resource inspection produces zero economic inference usage', () => {
   assert.deepEqual({ remote_tokens: ledger.remote_tokens, local_generation_calls: ledger.local_generation_calls }, { remote_tokens: 0, local_generation_calls: 0 });
   assert.equal(ledger.NO_INFERENCE, 'PROVEN');
 });
+
+test('P09: StcScope records explicit recovery debt when an effect inverse fails', async () => {
+  const { StcScope } = await import('../stc-scope.mjs');
+  const scope = new StcScope('test-recovery-debt');
+
+  scope.registerEffect('safe-effect', () => {});
+  scope.registerEffect('failing-effect', () => {
+    throw new Error('Simulated cleanup failure');
+  });
+
+  const result = await scope.dispose();
+  assert.equal(result.disposed, true);
+  assert.equal(scope.active, false);
+  assert.ok(Array.isArray(scope.recoveryDebt));
+  assert.equal(scope.recoveryDebt.length, 1);
+  assert.equal(scope.recoveryDebt[0].label, 'failing-effect');
+  assert.ok(scope.recoveryDebt[0].error.includes('Simulated cleanup failure'));
+});
+
+test('P09: LocalInferenceCapability tracks actual exit and escalates on unresponsive process', async () => {
+  const { LocalInferenceCapability } = await import('../local-inference-capability.mjs');
+  const { StcScope } = await import('../stc-scope.mjs');
+
+  const scope = new StcScope('test-unresponsive-proc');
+  const mockRegistry = { register: () => {}, setAvailability: () => {} };
+  const mockResource = { id: 'test-resource' };
+
+  const cap = new LocalInferenceCapability({
+    command: 'node',
+    args: ['-e', 'setInterval(() => {}, 1000)'],
+    endpoint: 'http://127.0.0.1:5099',
+    registry: mockRegistry,
+    resource: mockResource,
+    scope,
+    startupTimeoutMs: 100
+  });
+
+  try {
+    await cap.activate();
+  } catch {
+    // Expected failure on health check
+  }
+
+  assert.equal(cap.state, 'DISPOSED');
+  if (cap.process) {
+    assert.equal(cap.process.exitCode !== null || cap.process.signalCode !== null, true);
+  }
+});

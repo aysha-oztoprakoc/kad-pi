@@ -152,7 +152,7 @@ export function createWorkloadContract(workpackage, claim, roleContract, options
 
   // Enforce mutation scope isolation
   for (const p of requestedMutationScope) {
-    const isContained = claimOwnedPaths.some(owned => p.startsWith(owned) || owned.startsWith(p));
+    const isContained = claimOwnedPaths.some(owned => p === owned || p.startsWith(owned.endsWith('/') ? owned : owned + '/'));
     if (!isContained) {
       throw new Error(`Requested mutation scope '${p}' escapes the active claim owned_paths: [${claimOwnedPaths.join(', ')}]`);
     }

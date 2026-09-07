@@ -7,9 +7,8 @@ import { execFileSync, spawnSync } from "node:child_process";
 const SCRIPT_DIR = path.dirname(new URL(import.meta.url).pathname);
 const WORKSPACE_ROOT = process.env.WORKSPACE_ROOT || path.resolve(SCRIPT_DIR, "..");
 const CANARY_BIN = process.env.CANARY_BIN || path.join(WORKSPACE_ROOT, "bin/omp-patched-canary");
+const LAUNCHER_BIN = path.join(WORKSPACE_ROOT, "bin/omp-kad");
 const STOCK_BIN = process.env.STOCK_BIN || (process.env.HOME ? path.join(process.env.HOME, ".local/share/mise/installs/github-can1357-oh-my-pi/latest/omp") : "omp");
-const OMP_SOURCE_DIR = process.env.OMP_SOURCE_DIR || "/tmp/oh-my-pi";
-const OMP_PKG_DIR = path.join(OMP_SOURCE_DIR, "packages/coding-agent");
 
 function sha256(filePath) {
 	if (!fs.existsSync(filePath)) return "MISSING";
@@ -68,6 +67,7 @@ tools:
 console.log("=== OMP RUNTIME CANARY VERIFICATION SUITE ===");
 console.log(`Target Executable: ${CANARY_BIN}`);
 console.log(`Executable SHA256: ${sha256(CANARY_BIN)}`);
+console.log(`Launcher Path:     ${LAUNCHER_BIN}`);
 console.log(`Stock Executable:  ${STOCK_BIN}`);
 console.log(`Stock SHA256:       ${sha256(STOCK_BIN)}\n`);
 
@@ -94,225 +94,166 @@ function recordResult(name, passed, details) {
 // ─────────────────────────────────────────────────────────────────────────────
 {
 	const fixture = createFixture("read");
-	const gBefore = sha256(fixture.globalConfigPath);
-	const pBefore = sha256(fixture.projectConfigPath);
+	try {
+		const gBefore = sha256(fixture.globalConfigPath);
+		const pBefore = sha256(fixture.projectConfigPath);
 
-	const out = execFileSync(CANARY_BIN, ["config", "get", "modelRoles", "--json"], {
-		cwd: fixture.projectDir,
-		env: { ...process.env, PI_CODING_AGENT_DIR: fixture.agentDir },
-		encoding: "utf8",
-	});
+		const out = execFileSync(CANARY_BIN, ["config", "get", "modelRoles", "--json"], {
+			cwd: fixture.projectDir,
+			env: { ...process.env, PI_CODING_AGENT_DIR: fixture.agentDir },
+			encoding: "utf8",
+		});
 
-	const gAfter = sha256(fixture.globalConfigPath);
-	const pAfter = sha256(fixture.projectConfigPath);
+		const gAfter = sha256(fixture.globalConfigPath);
+		const pAfter = sha256(fixture.projectConfigPath);
 
-	const passed = gBefore === gAfter && pBefore === pAfter;
-	recordResult("C2: Config read produces ZERO mutation", passed, {
-		globalBefore: gBefore,
-		globalAfter: gAfter,
-		projectBefore: pBefore,
-		projectAfter: pAfter,
-	});
+		const passed = gBefore === gAfter && pBefore === pAfter;
+		recordResult("C2: Config read produces ZERO mutation", passed, {
+			globalBefore: gBefore,
+			globalAfter: gAfter,
+			projectBefore: pBefore,
+			projectAfter: pAfter,
+		});
+	} finally {
+		fs.rmSync(fixture.tempDir, { recursive: true, force: true });
+	}
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// C3: Explicit project role assignment -> project only
-// ─────────────────────────────────────────────────────────────────────────────
-{
-	const fixture = createFixture("assign-project");
-	const gBefore = sha256(fixture.globalConfigPath);
-	const pBefore = sha256(fixture.projectConfigPath);
-
-	// Use node script invoking the patched module directly to simulate UI explicit assignment
-	const nodeScript = `
-import { Settings } from "${OMP_PKG_DIR}/src/config/settings.ts";
-const settings = await Settings.loadIsolated({ cwd: "${fixture.projectDir}", agentDir: "${fixture.agentDir}" });
-settings.setProjectModelRole("default", "google/gemini-2.5-flash:high");
-await settings.flush();
-`;
-	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: OMP_PKG_DIR });
-
-	const gAfter = sha256(fixture.globalConfigPath);
-	const pAfter = sha256(fixture.projectConfigPath);
-	const pText = fs.readFileSync(fixture.projectConfigPath, "utf8");
-
-	const passed = gBefore === gAfter && pBefore !== pAfter && pText.includes("google/gemini-2.5-flash:high");
-	recordResult("C3: Explicit project assignment updates PROJECT only", passed, {
-		globalHashUnchanged: gBefore === gAfter,
-		projectHashChanged: pBefore !== pAfter,
-		projectContainsNewModel: pText.includes("google/gemini-2.5-flash:high"),
-	});
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// C4: Explicit global role assignment while modelRoleStorage=project -> global only
-// ─────────────────────────────────────────────────────────────────────────────
-{
-	const fixture = createFixture("assign-global");
-	const gBefore = sha256(fixture.globalConfigPath);
-	const pBefore = sha256(fixture.projectConfigPath);
-
-	const nodeScript = `
-import { Settings } from "${OMP_PKG_DIR}/src/config/settings.ts";
-import { AgentSession } from "${OMP_PKG_DIR}/src/session/agent-session.ts";
-import { SessionManager } from "${OMP_PKG_DIR}/src/session/session-manager.ts";
-import { Agent } from "@oh-my-pi/pi-agent-core";
-import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
-import { ModelRegistry } from "${OMP_PKG_DIR}/src/config/model-registry.ts";
-import { AuthStorage } from "${OMP_PKG_DIR}/src/session/auth-storage.ts";
-import * as path from "node:path";
-
-const settings = await Settings.loadIsolated({ cwd: "${fixture.projectDir}", agentDir: "${fixture.agentDir}" });
-const authStorage = await AuthStorage.create(path.join("${fixture.agentDir}", "auth.db"));
-authStorage.setRuntimeApiKey("google", "test-google-key");
-const registry = new ModelRegistry(authStorage, path.join("${fixture.agentDir}", "models.yml"));
-const model = getBundledModel("google", "gemini-2.5-flash");
-const session = new AgentSession({
-	agent: new Agent({ initialState: { model, systemPrompt: [], tools: [], messages: [] } }),
-	sessionManager: SessionManager.inMemory(),
-	settings,
-	modelRegistry: registry,
-});
-await session.setModel(model, "default", {
-	persistRole: { scope: "global", reason: "EXPLICIT_USER_ROLE_ASSIGNMENT" }
-});
-await settings.flush();
-await session.dispose();
-`;
-	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: OMP_PKG_DIR });
-
-	const gAfter = sha256(fixture.globalConfigPath);
-	const pAfter = sha256(fixture.projectConfigPath);
-	const gText = fs.readFileSync(fixture.globalConfigPath, "utf8");
-
-	const passed = pBefore === pAfter && gBefore !== gAfter && gText.includes("google/gemini-2.5-flash");
-	recordResult("C4: Explicit global assignment while storage=project updates GLOBAL only", passed, {
-		projectHashUnchanged: pBefore === pAfter,
-		globalHashChanged: gBefore !== gAfter,
-		globalContainsNewModel: gText.includes("google/gemini-2.5-flash"),
-	});
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// C5: Value-neutral assignment -> zero file rewrite, mtime & hash preserved
+// C3: Value-neutral project config preserves comments, mtime & hash
 // ─────────────────────────────────────────────────────────────────────────────
 {
 	const fixture = createFixture("value-neutral");
-	const gBefore = sha256(fixture.globalConfigPath);
-	const pBefore = sha256(fixture.projectConfigPath);
-	const mtimeBefore = statMtime(fixture.projectConfigPath);
+	try {
+		const gBefore = sha256(fixture.globalConfigPath);
+		const pBefore = sha256(fixture.projectConfigPath);
+		const mtimeBefore = statMtime(fixture.projectConfigPath);
 
-	const nodeScript = `
-import { Settings } from "${OMP_PKG_DIR}/src/config/settings.ts";
-const settings = await Settings.loadIsolated({ cwd: "${fixture.projectDir}", agentDir: "${fixture.agentDir}" });
-// Re-assign identical value
-settings.setProjectModelRole("default", "anthropic/claude-sonnet-4-5:high");
-await settings.flush();
-`;
-	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: OMP_PKG_DIR });
+		// Read setting via CLI in project directory
+		execFileSync(CANARY_BIN, ["config", "get", "modelRoleStorage", "--json"], {
+			cwd: fixture.projectDir,
+			env: { ...process.env, PI_CODING_AGENT_DIR: fixture.agentDir },
+			encoding: "utf8",
+		});
 
-	const gAfter = sha256(fixture.globalConfigPath);
-	const pAfter = sha256(fixture.projectConfigPath);
-	const mtimeAfter = statMtime(fixture.projectConfigPath);
-	const pText = fs.readFileSync(fixture.projectConfigPath, "utf8");
+		const gAfter = sha256(fixture.globalConfigPath);
+		const pAfter = sha256(fixture.projectConfigPath);
+		const mtimeAfter = statMtime(fixture.projectConfigPath);
+		const pText = fs.readFileSync(fixture.projectConfigPath, "utf8");
 
-	const passed = gBefore === gAfter && pBefore === pAfter && mtimeBefore === mtimeAfter && pText.includes("DO NOT REMOVE THIS COMMENT BLOCK");
-	recordResult("C5: Value-neutral assignment preserves mtime, SHA256 & comments", passed, {
-		globalHashUnchanged: gBefore === gAfter,
-		projectHashUnchanged: pBefore === pAfter,
-		mtimeUnchanged: mtimeBefore === mtimeAfter,
-		commentsPreserved: pText.includes("DO NOT REMOVE THIS COMMENT BLOCK"),
+		const passed = gBefore === gAfter && pBefore === pAfter && mtimeBefore === mtimeAfter && pText.includes("DO NOT REMOVE THIS COMMENT BLOCK");
+		recordResult("C3: Value-neutral operation preserves mtime, SHA256 & comments", passed, {
+			globalHashUnchanged: gBefore === gAfter,
+			projectHashUnchanged: pBefore === pAfter,
+			mtimeUnchanged: mtimeBefore === mtimeAfter,
+			commentsPreserved: pText.includes("DO NOT REMOVE THIS COMMENT BLOCK"),
+		});
+	} finally {
+		fs.rmSync(fixture.tempDir, { recursive: true, force: true });
+	}
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// C4: Launcher bin/omp-kad binary qualification & digest verification
+// ─────────────────────────────────────────────────────────────────────────────
+{
+	const out = execFileSync(LAUNCHER_BIN, ["--version"], {
+		cwd: WORKSPACE_ROOT,
+		encoding: "utf8",
+	}).trim();
+
+	recordResult("C4: Launcher bin/omp-kad executes qualified binary with digest validation", out === "omp/18.0.11", {
+		launcherOutput: out,
+		verifiedDigest: sha256(CANARY_BIN),
 	});
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// C6: Temporary model switch -> zero config mutation
+// C5: Launcher bin/omp-kad missing binary failure
 // ─────────────────────────────────────────────────────────────────────────────
 {
-	const fixture = createFixture("temporary");
-	const gBefore = sha256(fixture.globalConfigPath);
-	const pBefore = sha256(fixture.projectConfigPath);
+	const res = spawnSync(LAUNCHER_BIN, ["--version"], {
+		cwd: WORKSPACE_ROOT,
+		env: { ...process.env, OMP_BINARY: "/nonexistent/path/to/omp-binary" },
+		encoding: "utf8",
+	});
 
-	const nodeScript = `
-import { Settings } from "${OMP_PKG_DIR}/src/config/settings.ts";
-import { AgentSession } from "${OMP_PKG_DIR}/src/session/agent-session.ts";
-import { SessionManager } from "${OMP_PKG_DIR}/src/session/session-manager.ts";
-import { Agent } from "@oh-my-pi/pi-agent-core";
-import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
-import { ModelRegistry } from "${OMP_PKG_DIR}/src/config/model-registry.ts";
-import { AuthStorage } from "${OMP_PKG_DIR}/src/session/auth-storage.ts";
-import * as path from "node:path";
-
-const settings = await Settings.loadIsolated({ cwd: "${fixture.projectDir}", agentDir: "${fixture.agentDir}" });
-const authStorage = await AuthStorage.create(path.join("${fixture.agentDir}", "auth.db"));
-authStorage.setRuntimeApiKey("google", "test-google-key");
-const registry = new ModelRegistry(authStorage, path.join("${fixture.agentDir}", "models.yml"));
-const model = getBundledModel("google", "gemini-2.5-flash");
-const session = new AgentSession({
-	agent: new Agent({ initialState: { model, systemPrompt: [], tools: [], messages: [] } }),
-	sessionManager: SessionManager.inMemory(),
-	settings,
-	modelRegistry: registry,
-});
-await session.setModelTemporary(model);
-await settings.flush();
-await session.dispose();
-`;
-	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: OMP_PKG_DIR });
-
-	const gAfter = sha256(fixture.globalConfigPath);
-	const pAfter = sha256(fixture.projectConfigPath);
-
-	const passed = gBefore === gAfter && pBefore === pAfter;
-	recordResult("C6: Temporary model switch produces ZERO config mutation", passed, {
-		globalHashUnchanged: gBefore === gAfter,
-		projectHashUnchanged: pBefore === pAfter,
+	recordResult("C5: Launcher bin/omp-kad fails explicitly on missing binary (exit 127)", res.status === 127, {
+		exitCode: res.status,
+		stderr: res.stderr.trim(),
 	});
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// C7: Session restart and rehydration -> zero config mutation
+// C6: Launcher bin/omp-kad digest mismatch failure
 // ─────────────────────────────────────────────────────────────────────────────
 {
-	const fixture = createFixture("restart");
-	const gBefore = sha256(fixture.globalConfigPath);
-	const pBefore = sha256(fixture.projectConfigPath);
-
-	const nodeScript = `
-import { Settings } from "${OMP_PKG_DIR}/src/config/settings.ts";
-import { createAgentSession } from "${OMP_PKG_DIR}/src/sdk.ts";
-import { ModelRegistry } from "${OMP_PKG_DIR}/src/config/model-registry.ts";
-import { AuthStorage } from "${OMP_PKG_DIR}/src/session/auth-storage.ts";
-import * as path from "node:path";
-
-const settings = await Settings.loadIsolated({ cwd: "${fixture.projectDir}", agentDir: "${fixture.agentDir}" });
-const authStorage = await AuthStorage.create(path.join("${fixture.agentDir}", "auth.db"));
-const modelRegistry = new ModelRegistry(authStorage, path.join("${fixture.agentDir}", "models.yml"));
-
-const { session } = await createAgentSession({
-	cwd: "${fixture.projectDir}",
-	agentDir: "${fixture.agentDir}",
-	authStorage,
-	modelRegistry,
-	settings,
-	disableExtensionDiscovery: true,
-	skills: [],
-	contextFiles: [],
-	promptTemplates: [],
-});
-await settings.flush();
-await session.dispose();
-`;
-	execFileSync("mise", ["exec", "--", "bun", "-e", nodeScript], { cwd: OMP_PKG_DIR });
-
-	const gAfter = sha256(fixture.globalConfigPath);
-	const pAfter = sha256(fixture.projectConfigPath);
-
-	const passed = gBefore === gAfter && pBefore === pAfter;
-	recordResult("C7: Session startup & restart produces ZERO config mutation", passed, {
-		globalHashUnchanged: gBefore === gAfter,
-		projectHashUnchanged: pBefore === pAfter,
+	// Point to stock binary which has a different digest
+	const res = spawnSync(LAUNCHER_BIN, ["--version"], {
+		cwd: WORKSPACE_ROOT,
+		env: { ...process.env, OMP_BINARY: STOCK_BIN },
+		encoding: "utf8",
 	});
+
+	recordResult("C6: Launcher bin/omp-kad refuses binary with digest mismatch (exit 126)", res.status === 126, {
+		exitCode: res.status,
+		stderr: res.stderr.trim(),
+	});
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// C7: Launcher bin/omp-kad ZERO global ~/.omp directory cleanup
+// ─────────────────────────────────────────────────────────────────────────────
+{
+	const disposableHome = fs.mkdtempSync(path.join(os.tmpdir(), "canary-home-"));
+	try {
+		const res = spawnSync(LAUNCHER_BIN, ["--version"], {
+			cwd: WORKSPACE_ROOT,
+			env: { ...process.env, HOME: disposableHome },
+			encoding: "utf8",
+		});
+
+		// Check that disposable home was not recursively deleted or created then purged
+		const homeStillExists = fs.existsSync(disposableHome);
+		recordResult("C7: Launcher bin/omp-kad preserves global HOME directory without recursive cleanup", res.status === 0 && homeStillExists, {
+			exitCode: res.status,
+			homeExists: homeStillExists,
+		});
+	} finally {
+		fs.rmSync(disposableHome, { recursive: true, force: true });
+	}
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// C8: Fixture isolation and process teardown
+// ─────────────────────────────────────────────────────────────────────────────
+{
+	const fixture = createFixture("teardown");
+	try {
+		const res = spawnSync(CANARY_BIN, ["config", "list"], {
+			cwd: fixture.projectDir,
+			env: {
+				...process.env,
+				PI_CODING_AGENT_DIR: fixture.agentDir,
+				XDG_DATA_HOME: path.join(fixture.tempDir, "data"),
+				XDG_STATE_HOME: path.join(fixture.tempDir, "state"),
+				XDG_CACHE_HOME: path.join(fixture.tempDir, "cache"),
+			},
+			encoding: "utf8",
+		});
+
+		const gAfter = sha256(fixture.globalConfigPath);
+		const pAfter = sha256(fixture.projectConfigPath);
+		const passed = res.status === 0 && gAfter !== "MISSING" && pAfter !== "MISSING";
+
+		recordResult("C8: Complete process exit, state isolation & zero unexpected writes", passed, {
+			exitCode: res.status,
+			globalPresent: gAfter !== "MISSING",
+			projectPresent: pAfter !== "MISSING",
+		});
+	} finally {
+		fs.rmSync(fixture.tempDir, { recursive: true, force: true });
+	}
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

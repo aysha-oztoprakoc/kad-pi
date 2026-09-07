@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -129,8 +130,7 @@ test('WP-021: OMP Extension Admission and Deterministic Interception Pipeline (D
 });
 
 test('WP-021: Cryptographically hash-chained evidence ledger for probe receipts', () => {
-  const testDir = path.join(repoRoot, 'evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/test-receipts');
-  fs.mkdirSync(testDir, { recursive: true });
+  const testDir = fs.mkdtempSync(path.join(os.tmpdir(), 'kad-probe-receipts-'));
 
   const receipt1 = {
     run_id: 'probe-run-001',
@@ -156,6 +156,7 @@ test('WP-021: Cryptographically hash-chained evidence ledger for probe receipts'
   const chainValidation = verifyEvidenceChain(testDir);
   assert.equal(chainValidation.valid, true);
   assert.equal(chainValidation.totalReceipts, 2);
+  fs.rmSync(testDir, { recursive: true, force: true });
 });
 
 test('WP-021: Deterministic probe runner executes warm-up, measures repetitions, and compiles receipt', async () => {
@@ -171,7 +172,9 @@ test('WP-021: Deterministic probe runner executes warm-up, measures repetitions,
     network: 'local_memory'
   });
 
-  const mockAdapter = {
+  const fixtureRealAdapter = {
+    isRealAdapter: true,
+    adapter_id: 'fixture-real-adapter',
     executeInference: async (tuple, repIndex) => ({
       ttft_ms: 40 + repIndex,
       prefill_tok_per_sec: 350 - repIndex,
@@ -184,7 +187,7 @@ test('WP-021: Deterministic probe runner executes warm-up, measures repetitions,
   };
 
   const probeResult = await runBenchmarkProbe(tuple, {
-    executionAdapter: mockAdapter,
+    executionAdapter: fixtureRealAdapter,
     repetitions: 3,
     warmup: 1,
     mockConfounder: true
@@ -198,4 +201,91 @@ test('WP-021: Deterministic probe runner executes warm-up, measures repetitions,
   assert.ok(probeResult.metrics.decode_tok_per_sec > 0);
   assert.ok(probeResult.metrics.scarce_resource_cost > 0);
   assert.ok(probeResult.environment_baseline);
+});
+
+test('P01 RED: Probe without real execution adapter refuses to claim MEASURED', async () => {
+  const tuple = createExperimentTuple({
+    model: 'Qwen/Qwen2.5-Coder-7B-Instruct',
+    quant: 'Q4_K_M',
+    runtime: 'rocm-hip',
+    devices: 'amdgpu:0 [Navi 44]',
+    context: 4096,
+    KV: 'fp16',
+    speculation: 'none',
+    threading: 'auto',
+    network: 'local_memory'
+  });
+
+  const result = await runBenchmarkProbe(tuple, {
+    executionAdapter: null,
+    mockConfounder: true
+  });
+
+  assert.notEqual(result.status, 'MEASURED');
+  assert.equal(result.status, 'NON_MEASURED');
+  assert.equal(result.qualification, 'UNQUALIFIED');
+  assert.ok(result.reason && result.reason.includes('adapter'));
+});
+
+test('P01 RED: Missing/failed environment telemetry produces UNAVAILABLE status, not fabricated 45C/20W', () => {
+  const baseline = captureEnvironmentBaseline({ mock: false, gpuDevice: 'amdgpu:nonexistent-device-9999' });
+  assert.equal(baseline.confounder_status, 'UNAVAILABLE');
+  assert.equal(baseline.gpu_temperature_c, null);
+  assert.equal(baseline.gpu_power_watts, null);
+  assert.equal(baseline.rocm_version, null);
+  assert.ok(baseline.unavailability_reason);
+});
+
+test('P01 RED: normalizeProbeMetrics preserves omitted quality/acceptance as null and does not default to 1.0', () => {
+  const raw = {
+    ttft_ms: 50,
+    decode_tok_per_sec: 30
+  };
+  const normalized = normalizeProbeMetrics(raw);
+  assert.equal(normalized.task_acceptance_rate, null);
+  assert.equal(normalized.structured_output_validity, null);
+  assert.equal(normalized.quality_score, null);
+  assert.equal(normalized.metrics_coverage, 'PARTIAL');
+});
+
+test('P01 RED: calculateScarceCost returns null when required inputs are missing', () => {
+  const partial = {
+    ttft_ms: 50
+  };
+  const cost = calculateScarceCost(partial);
+  assert.equal(cost, null);
+});
+
+test('P01 RED: Simulated/mock adapter is labeled SIMULATED and cannot be represented as empirical MEASURED', async () => {
+  const tuple = createExperimentTuple({
+    model: 'Qwen/Qwen2.5-Coder-7B-Instruct',
+    quant: 'Q4_K_M',
+    runtime: 'rocm-hip',
+    devices: 'amdgpu:0 [Navi 44]',
+    context: 4096,
+    KV: 'fp16',
+    speculation: 'none',
+    threading: 'auto',
+    network: 'local_memory'
+  });
+
+  const mockAdapter = {
+    isRealAdapter: false,
+    adapter_id: 'mock-simulator',
+    executeInference: async (t, idx) => ({
+      ttft_ms: 40,
+      decode_tok_per_sec: 45
+    })
+  };
+
+  const result = await runBenchmarkProbe(tuple, {
+    executionAdapter: mockAdapter,
+    repetitions: 2,
+    warmup: 0,
+    mockConfounder: true
+  });
+
+  assert.notEqual(result.status, 'MEASURED');
+  assert.equal(result.status, 'SIMULATED');
+  assert.equal(result.qualification, 'SIMULATED_NOT_EMPIRICAL');
 });

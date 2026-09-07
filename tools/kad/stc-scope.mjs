@@ -11,6 +11,7 @@ export class StcScope {
     this.parent = parent;
     this.children = new Set();
     this.effects = []; // Array<{ label: string, inverse: () => Promise<void>|void, timestamp: number }>
+    this.recoveryDebt = []; // Array<{ label: string, error: string, timestamp: number, scope: string }>
     this.active = true;
 
     if (parent) {
@@ -67,12 +68,16 @@ export class StcScope {
    * Also cascades teardown to child scopes.
    */
   async dispose() {
-    if (!this.active) return;
+    if (!this.active) return { disposed: true, effects_unwound: 0, recovery_debt: this.recoveryDebt };
     this.active = false;
+    let unwound = 0;
 
     // 1. Tear down children first (dependents before dependencies)
     for (const child of Array.from(this.children).reverse()) {
-      await child.dispose();
+      const childResult = await child.dispose();
+      if (childResult && Array.isArray(childResult.recovery_debt)) {
+        this.recoveryDebt.push(...childResult.recovery_debt);
+      }
     }
     this.children.clear();
 
@@ -81,14 +86,27 @@ export class StcScope {
       const effect = this.effects.pop();
       try {
         await effect.inverse();
+        unwound++;
       } catch (err) {
-        console.error(`Error unwinding effect "${effect.label}" in scope "${this.name}":`, err);
+        const errorMsg = err?.message || String(err);
+        this.recoveryDebt.push({
+          label: effect.label,
+          error: errorMsg,
+          timestamp: Date.now(),
+          scope: this.name
+        });
       }
     }
 
     if (this.parent) {
       this.parent.children.delete(this);
     }
+
+    return {
+      disposed: true,
+      effects_unwound: unwound,
+      recovery_debt: this.recoveryDebt
+    };
   }
 
   /**

@@ -16,13 +16,17 @@ export function captureEnvironmentBaseline({ gpuDevice = 'amdgpu:0', mock = fals
       vram_baseline_used_bytes: 524288000,
       rocm_version: '6.2.0-mock',
       driver_version: 'amdgpu-7.1.9',
-      confounder_status: 'NOMINAL'
+      confounder_status: 'NOMINAL',
+      is_simulated: true
     };
   }
 
-  let temp = 45.0;
-  let power = 20.0;
-  let vramUsed = 0;
+  let temp = null;
+  let power = null;
+  let vramUsed = null;
+  let rocmVersion = null;
+  let driverVersion = null;
+  let compositorLoad = null;
 
   try {
     const res = spawnSync('amdgpu_top', ['--json', '-n', '1'], { encoding: 'utf8', timeout: 2000 });
@@ -30,13 +34,30 @@ export function captureEnvironmentBaseline({ gpuDevice = 'amdgpu:0', mock = fals
       const parsed = JSON.parse(res.stdout);
       if (parsed.devices && parsed.devices[0]) {
         const d = parsed.devices[0];
-        temp = Number(d.temp) || temp;
-        power = Number(d.power) || power;
-        vramUsed = Number(d.vram_used_bytes) || vramUsed;
+        temp = Number.isFinite(Number(d.temp)) ? Number(d.temp) : null;
+        power = Number.isFinite(Number(d.power)) ? Number(d.power) : null;
+        vramUsed = Number.isFinite(Number(d.vram_used_bytes)) ? Number(d.vram_used_bytes) : null;
+        rocmVersion = d.rocm_version || null;
+        driverVersion = d.driver_version || 'amdgpu';
       }
     }
   } catch {
-    // Fallback to default readings
+    // amdgpu_top failed or missing
+  }
+
+  if (temp === null && power === null) {
+    return {
+      timestamp: new Date().toISOString(),
+      gpu_device: gpuDevice,
+      gpu_temperature_c: null,
+      gpu_power_watts: null,
+      compositor_load_percent: null,
+      vram_baseline_used_bytes: null,
+      rocm_version: null,
+      driver_version: null,
+      confounder_status: 'UNAVAILABLE',
+      unavailability_reason: 'Hardware telemetry tool (amdgpu_top) failed or unavailable for device'
+    };
   }
 
   return {
@@ -44,11 +65,11 @@ export function captureEnvironmentBaseline({ gpuDevice = 'amdgpu:0', mock = fals
     gpu_device: gpuDevice,
     gpu_temperature_c: temp,
     gpu_power_watts: power,
-    compositor_load_percent: 3.5,
+    compositor_load_percent: compositorLoad,
     vram_baseline_used_bytes: vramUsed,
-    rocm_version: 'ROCm 6.2 / HIP',
-    driver_version: 'amdgpu',
-    confounder_status: temp > 80.0 ? 'ELEVATED_TEMPERATURE' : 'NOMINAL'
+    rocm_version: rocmVersion,
+    driver_version: driverVersion,
+    confounder_status: (temp !== null && temp > 80.0) ? 'ELEVATED_TEMPERATURE' : 'NOMINAL'
   };
 }
 

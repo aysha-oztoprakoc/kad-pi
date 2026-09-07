@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { createHash } from 'node:crypto';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs';
 import { basename, dirname, join, relative, resolve, sep } from 'node:path';
 
 export const EPISTEMIC_CLASSES = Object.freeze({
@@ -45,6 +45,16 @@ function canonicalPath(rootDir, sourcePath) {
   const full = resolve(root, sourcePath);
   const rel = relative(root, full);
   if (!rel || rel.startsWith(`..${sep}`) || rel === '..' || rel.startsWith(sep) || rel !== sourcePath) throw new Error(`source path is outside root: ${sourcePath}`);
+  try {
+    const realRoot = realpathSync(root);
+    const realFull = realpathSync(full);
+    const realRel = relative(realRoot, realFull);
+    if (!realRel || realRel.startsWith(`..${sep}`) || realRel === '..' || realRel.startsWith(sep)) {
+      throw new Error(`source path resolves outside root: ${sourcePath}`);
+    }
+  } catch (err) {
+    if (err.code !== 'ENOENT') throw err;
+  }
   return full;
 }
 
@@ -58,13 +68,26 @@ function recordId(sourcePath) {
 
 const QUERY_STOPWORDS = new Set(['a', 'an', 'and', 'are', 'does', 'for', 'how', 'in', 'is', 'of', 'on', 'or', 'the', 'to', 'what', 'when', 'where', 'which', 'who']);
 
-function lineExcerpt(content, terms, maxLines = 3) {
-  const scored = content.split(/\r?\n/).map((line, index) => ({
-    line,
-    line_number: index + 1,
-    score: terms.reduce((score, term) => score + (line.toLowerCase().includes(term) ? 1 : 0), 0)
-  })).filter(item => item.score > 0);
-  return scored.sort((left, right) => right.score - left.score || left.line_number - right.line_number).slice(0, maxLines).sort((left, right) => left.line_number - right.line_number);
+function lineSpans(content, terms, maxLines = 3) {
+  const lines = content.split(/\r?\n/);
+  const scored = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const lower = line.toLowerCase();
+    const score = terms.reduce((acc, term) => acc + (lower.includes(term) ? 1 : 0), 0);
+    if (score > 0) {
+      scored.push({
+        line_number: i + 1,
+        text: line,
+        score,
+        span_hash: createHash('sha256').update(line, 'utf8').digest('hex')
+      });
+    }
+  }
+  return scored
+    .sort((left, right) => right.score - left.score || left.line_number - right.line_number)
+    .slice(0, maxLines)
+    .sort((left, right) => left.line_number - right.line_number);
 }
 
 function queryTerms(query) {
@@ -196,37 +219,75 @@ export class DeterministicKnowledgePlane {
     if (!trustDomain || trustDomain === 'UNKNOWN') return { status: 'REJECTED', reason: 'trust domain is required', results: [] };
     const terms = queryTerms(query);
     if (terms.length === 0) return { status: 'REJECTED', reason: 'query is required', results: [] };
-    const sources = this.#allowlist.map(source => this.#record(source));
-    const unauthorized = sources.some(record => record.trust_domain !== trustDomain);
-    if (unauthorized && !sources.some(record => record.trust_domain === trustDomain)) return { status: 'REJECTED', reason: `no sources authorized for trust domain: ${trustDomain}`, results: [] };
-    const results = sources
-      .filter(record => record.trust_domain === trustDomain)
+
+    // 1. Pre-authorize: only inspect sources authorized for trustDomain
+    const authorizedSources = this.#allowlist.filter(source => source.trust_domain === trustDomain);
+    if (authorizedSources.length === 0) {
+      return { status: 'REJECTED', reason: `no sources authorized for trust domain: ${trustDomain}`, results: [] };
+    }
+
+    // 2. Read only authorized sources
+    const sources = authorizedSources.map(source => this.#record(source));
+    const scored = sources
       .map(record => ({ record, score: scoreContent(record._content, record.title, terms) }))
       .filter(item => item.score > 0)
       .sort((left, right) => right.score - left.score || left.record.source_ref.localeCompare(right.record.source_ref))
-      .slice(0, limit)
-      .map(({ record, score }) => {
-        const excerpts = lineExcerpt(record._content, terms);
-        const first = excerpts[0] ?? { line: record.title, line_number: 1 };
-        const last = excerpts.at(-1) ?? first;
-        return {
-          id: record.id,
-          title: record.title,
-          answer: excerpts.map(item => item.line.trim()).join(' '),
-          excerpt: excerpts.map(item => item.line.trim()).join('\n'),
-          source_ref: record.source_ref,
-          source_path: record.source_path,
-          source_hash: record.source_hash,
-          locator: `${record.source_path}#L${first.line_number}-L${last.line_number}`,
-          start_line: first.line_number,
-          end_line: last.line_number,
-          epistemic_class: record.epistemic_class,
-          acceptance_state: record.acceptance_state,
-          trust_domain: record.trust_domain,
-          retrieval_mode: 'exact',
-          score
-        };
-      });
+      .slice(0, limit);
+
+    if (scored.length === 0) {
+      return {
+        status: 'NO_MATCH',
+        retrieval_mode: 'exact',
+        degradation_status: semanticAvailable === false ? 'semantic backend unavailable; exact fallback used' : 'NONE',
+        results: []
+      };
+    }
+
+    const results = scored.map(({ record, score }) => {
+      const spans = lineSpans(record._content, terms);
+      const first = spans[0] ?? { line_number: 1, text: record.title, span_hash: createHash('sha256').update(record.title, 'utf8').digest('hex') };
+      const last = spans.at(-1) ?? first;
+
+      // Build precise locator: single line, contiguous range, or discrete line locators
+      let locator;
+      const lineNumbers = spans.map(s => s.line_number);
+      const isContiguous = spans.length > 1 && lineNumbers.every((line, idx) => idx === 0 || line === lineNumbers[idx - 1] + 1);
+      if (spans.length === 0 || spans.length === 1) {
+        locator = `${record.source_path}#L${first.line_number}`;
+      } else if (isContiguous) {
+        locator = `${record.source_path}#L${first.line_number}-L${last.line_number}`;
+      } else {
+        locator = `${record.source_path}#` + lineNumbers.map(n => `L${n}`).join(',');
+      }
+
+      const structuredSpans = spans.map(s => ({
+        line_number: s.line_number,
+        text: s.text,
+        locator: `${record.source_path}#L${s.line_number}`,
+        span_hash: s.span_hash,
+        score: s.score
+      }));
+
+      return {
+        id: record.id,
+        title: record.title,
+        answer: spans.map(item => item.text.trim()).join(' '),
+        excerpt: spans.map(item => item.text).join('\n'),
+        spans: structuredSpans,
+        source_ref: record.source_ref,
+        source_path: record.source_path,
+        source_hash: record.source_hash,
+        locator,
+        start_line: first.line_number,
+        end_line: last.line_number,
+        epistemic_class: record.epistemic_class,
+        acceptance_state: record.acceptance_state,
+        trust_domain: record.trust_domain,
+        retrieval_mode: 'exact',
+        score
+      };
+    });
+
     return {
       status: semanticAvailable === false ? 'DEGRADED' : 'PASS',
       retrieval_mode: 'exact',

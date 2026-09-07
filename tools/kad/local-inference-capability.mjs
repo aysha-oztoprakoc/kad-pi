@@ -42,12 +42,35 @@ export class LocalInferenceCapability {
     this.state = 'ACTIVATING';
     try {
       if (this.command && !this.externallyControlled) {
-        this.process = spawn(this.command, this.args, { stdio: 'ignore' });
+        this.process = spawn(this.command, this.args, { stdio: 'ignore', detached: true });
+        let exited = false;
+        this.process.once('exit', () => { exited = true; });
         this.scope.registerEffect('local-inference.process', async () => {
-          if (!this.process || this.process.killed) return;
-          this.process.kill('SIGTERM');
-          await Promise.race([new Promise(resolve => this.process.once('exit', resolve)), sleep(1000)]);
-          if (!this.process.killed) this.process.kill('SIGKILL');
+          if (!this.process || exited) return;
+          const pid = this.process.pid;
+          try {
+            process.kill(-pid, 'SIGTERM');
+          } catch {
+            try { this.process.kill('SIGTERM'); } catch {}
+          }
+          const graceDeadline = Date.now() + 1000;
+          while (!exited && Date.now() < graceDeadline) {
+            await sleep(50);
+          }
+          if (!exited) {
+            try {
+              process.kill(-pid, 'SIGKILL');
+            } catch {
+              try { this.process.kill('SIGKILL'); } catch {}
+            }
+            const killDeadline = Date.now() + 1000;
+            while (!exited && Date.now() < killDeadline) {
+              await sleep(50);
+            }
+          }
+          if (!exited) {
+            throw new Error(`Process ${pid} failed to exit within cancellation grace period`);
+          }
         });
       }
       const deadline = Date.now() + this.startupTimeoutMs;
@@ -74,9 +97,13 @@ export class LocalInferenceCapability {
 
   async dispose() {
     if (this.state === 'DISPOSED') return;
-    await this.scope.dispose();
+    const scopeResult = await this.scope.dispose();
     this.effectDisposers = [];
     this.state = 'DISPOSED';
-    return { state: this.state, process_owned: !this.externallyControlled };
+    return {
+      state: this.state,
+      process_owned: !this.externallyControlled,
+      recovery_debt: scopeResult?.recovery_debt || []
+    };
   }
 }

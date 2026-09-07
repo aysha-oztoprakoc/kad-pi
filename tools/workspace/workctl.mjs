@@ -247,6 +247,16 @@ function execute(root, parsed) {
     const claimFile = path.join(paths(root).claims, `${item.id}.json`);
     const claim = fs.existsSync(claimFile) ? json(claimFile) : null;
     if (nextState !== 'READY' && (!claim || claim.actor_label !== actor(parsed))) return fail('claim owner required for transition');
+    if (nextState === 'ACCEPTED' && item.evidence_target) {
+      const projectInfo = project(root, item.project);
+      const evidencePath = path.resolve(projectInfo.root, item.evidence_target);
+      if (fs.existsSync(evidencePath)) {
+        const evidenceFiles = fs.readdirSync(evidencePath).filter(f => !f.startsWith('.'));
+        if (evidenceFiles.length === 0) {
+          return fail(`cannot accept task ${item.id}: evidence target directory is empty: ${item.evidence_target}`);
+        }
+      }
+    }
     if (claim && !MUTATING_STATES.has(nextState)) {
       claim.active = false; claim.released_at = new Date().toISOString(); writeJson(claimFile, claim);
     }
