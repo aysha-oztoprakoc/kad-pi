@@ -1,20 +1,26 @@
 modelRoleStorage: project
 modelRoles:
-  default: google-antigravity/gemini-3.8-flash:medium
-  plan: openai-codex/gpt-5.6-luna:high
-  slow: google-antigravity/gemini-3-flash:high
-  advisor: google-antigravity/gemini-3-flash:low
-  task: openai-codex/gpt-5.4-mini:low
-  smol: zai-free/glm-4.7-flash:minimal
+  # Baseline agentic work — economical flash-tier
+  default: opencode-go/deepseek-v4-flash:low
+  task: openai-codex/gpt-5.6-luna:low
+  advisor: google-antigravity/gemini-3.8-flash:low
+  designer: google-antigravity/gemini-3.8-flash:high
+  vision: google-antigravity/gemini-3.8-flash:high
+  # Planning / architecture / scaffolding — deliberate high-thinking (feeds local-model training)
+  plan: opencode-go/deepseek-v4-pro:high
+  slow: openai-codex/gpt-5.6-terra:high
+  verifier: google-antigravity/gemini-3.1-pro:high
+  research: google-antigravity/gemini-3.1-pro:low
+  oracle: openai-codex/gpt-5.6-terra:max
+  # Background + knowledge maintenance — local-first
+  smol: kad-local-qwen/qwen-local:low
   tiny: zai-free/glm-4.7-flash:minimal
   commit: zai-free/glm-4.7-flash:low
-  designer: google-antigravity/gemini-3-flash:high
-  vision: google-antigravity/gemini-3-flash:high
-  oracle: openai-codex/gpt-5.6-luna:max
-  verifier: google-antigravity/gemini-3-flash:high
-  research: google-antigravity/gemini-3-flash:medium
+  # Local inference roles
   world: kad-local-world/kad-local-s13:low
   local_retrieval: kad-local-qwen/qwen-local:low
+  local_general: kad-local-world/kad-local-s13:low
+  rpg: kad-local-world/rp-hero:low
 modelTags:
   oracle:
     name: Oracle (manual premium escalation)
@@ -30,22 +36,33 @@ modelTags:
   local_general:
     name: Local General (unqualified)
     hidden: true
+  rpg:
+    name: RPG (RP-Hero roleplay)
 cycleOrder:
-  - smol
   - default
+  - plan
   - slow
+  - smol
+  - world
+  - local_retrieval
+  - rpg
 enabledModels:
+  - google-antigravity/*
+  - openai-codex/*
+  - opencode-go/*
+  - zai-free/*
   - kad-local-world/*
-  - kad-local-qwen/qwen-local
+  - kad-local-qwen/*
 disabledProviders:
   - openrouter
 advisor:
   enabled: false
 memory:
-  backend: "off"
+  backend: "mnemopi"
 autolearn:
-  enabled: false
+  enabled: true
   autoContinue: false
+extendedContext: true
 contextPromotion:
   enabled: false
 compaction:
@@ -57,6 +74,7 @@ compaction:
   midTurnEnabled: true
   keepRecentTokens: 20000
   autoContinue: true
+skillful: false
 skills:
   enabled: true
   enableAgentsProject: true
@@ -76,7 +94,7 @@ task:
     designer: "@designer"
     reviewer: "@verifier"
     security-reviewer: "@verifier"
-    librarian: "@research"
+    librarian: "@local_retrieval"
   agentAdvisor:
     kad-master: "off"
     kad-builder: "off"
@@ -97,44 +115,24 @@ retry:
   fallbackRevertPolicy: cooldown-expiry
   fallbackChains:
     default:
-      - google-antigravity/gemini-3-flash:medium
-    plan:
-      - google-antigravity/gemini-3-flash:high
-    slow:
-      - openai-codex/gpt-5.6-luna:high
-    advisor:
-      - openai-codex/gpt-5.4-mini:low
+      - google-antigravity/gemini-3.8-flash:low
+      - openai-codex/gpt-5.6-luna:low
     task:
-      - zai-free/glm-4.7-flash:low
+      - opencode-go/deepseek-v4-flash:low
+      - google-antigravity/gemini-3.8-flash:low
+    plan:
+      - openai-codex/gpt-5.6-terra:high
+      - google-antigravity/gemini-3.1-pro:high
+      - google-antigravity/gemini-3.8-flash:low
+    slow:
+      - opencode-go/deepseek-v4-pro:high
+      - google-antigravity/gemini-3.1-pro:high
+      - google-antigravity/gemini-3.8-flash:low
     smol:
-      - openai-codex/gpt-5.4-mini:minimal
-    tiny:
-      - openai-codex/gpt-5.4-mini:minimal
-    commit:
-      - openai-codex/gpt-5.4-mini:low
-    designer:
-      - openai-codex/gpt-5.6-luna:high
-    vision:
-      - openai-codex/gpt-5.6-luna:high
-    verifier:
-      - openai-codex/gpt-5.6-luna:high
-    research:
-      - openai-codex/gpt-5.4-mini:low
-    oracle:
-      []
-    world:
-      []
-    local_retrieval:
-      []
-    local_general:
-      []
-
-# KAD project security posture — WP-043 closure (D5). authority: HUMAN, scope: KAD_PROJECT,
-# global_config_mutation: NONE, risk_posture: LEAST_PRIVILEGE.
-# read/workspace-write automation proceeds under `write`; network/dangerous/privileged/
-# destructive/financial tiers remain approval-gated.
+      - zai-free/glm-4.7-flash:minimal
 tools:
-  approvalMode: write
+  approvalMode: yolo
+  xdevDocs: catalog
 secrets:
   enabled: false
 ttsr:
