@@ -1,20 +1,20 @@
 {
   "schema": "kad.csa/v1",
   "state": "CURRENT",
-  "generated_at": "2026-09-06T21:30:00Z",
-  "evidence_cutoff": "d8363e275e60a1db403874568dddbdc2f3970634",
+  "generated_at": "2026-09-08T21:09:01Z",
+  "evidence_cutoff": "1a738b5d36276f5eb0f011bf83eac39a294a202d",
   "repository": {
-    "head": "d8363e275e60a1db403874568dddbdc2f3970634",
+    "head": "1a738b5d36276f5eb0f011bf83eac39a294a202d",
     "branch": "main",
     "remote": "https://github.com/aysha-oztoprakoc/kad-pi.git",
-    "remote_head": "337a42021f71e7cf51b908be886836ecd4212790",
+    "remote_head": "2f2ae35383a57a955cd9b5626dbe9f62d0bf9f31",
     "dirty": true,
-    "divergence": 0,
+    "divergence": 1,
     "state_class": "VERIFIED_CURRENT",
     "evidence": {
       "source": "git",
       "command": "git rev-parse HEAD; git ls-remote origin refs/heads/main",
-      "hash": "d8363e275e60a1db403874568dddbdc2f3970634"
+      "hash": "1a738b5d36276f5eb0f011bf83eac39a294a202d"
     }
   },
   "hosts": {
@@ -47,18 +47,31 @@
   },
   "harnesses": {
     "omp": {
-      "version": "18.0.11",
+      "version": "18.1.14",
       "origin": "mise (github-can1357-oh-my-pi/latest)",
       "binary": "/home/amdy/.local/bin/omp",
-      "alt_binary": ".tools/oh-my-pi/v18.0.9",
+      "alt_binary": "bin/omp-patched-canary (digest-pinned via bin/omp-kad)",
       "project_config": ".omp/config.yml",
-      "global_config": "~/.omp/agent/config.yml (divergent toggles)",
+      "global_config": "~/.omp/agent/config.yml",
       "settings_schema": "UNKNOWN (binary-only install; source-backed precedence not readable)",
+      "project_settings": {
+        "memory_backend": "mnemopi",
+        "autolearn": true,
+        "extended_context": true,
+        "model_tiers": "baseline: deepseek-v4-flash/gpt-5.6-luna/gemini-3.8-flash; planning: deepseek-v4-pro/gpt-5.6-terra/gemini-3.1-pro",
+        "local_first": "smol -> kad-local-qwen, librarian -> @local_retrieval, rpg -> rp-hero",
+        "fallback_cascade": "retry enabled, modelFallback true, cooldown-expiry revert",
+        "state_class": "VERIFIED_CURRENT",
+        "evidence": {
+          "source": "COMMAND",
+          "command": "omp config get memory.backend autolearn.enabled extendedContext modelRoles retry"
+        }
+      },
       "state_class": "VERIFIED_CURRENT",
       "evidence": {
         "source": "COMMAND",
         "command": "omp --version",
-        "hash": "651308275f4dfdab3178f549303cc5da90037761876d8ca881430d7ba41bf1bf"
+        "hash": "27dd66cb6a2c39fff51e1fe6db40f1f376fee4a3d04457f236edaa5d0290e4d2"
       }
     },
     "pi": {
@@ -80,7 +93,7 @@
     "context": {
       "compiler": "tools/kad/context-compiler.mjs",
       "economy": "tools/kad/context-economy.mjs",
-      "promotion": "disabled",
+      "promotion": "extendedContext enabled; contextPromotion (overflow target) disabled",
       "compaction": "snapcompact@70%"
     },
     "projections": {
@@ -125,6 +138,7 @@
     "note": "14 WP-031 streams mapped; ~80% implemented"
   },
   "plugins": {
+    "marketplace": "claude-plugins-official (anthropics/claude-plugins-official) — catalog added; no plugins installed",
     "extensions": [
       "kad-control-plane.js",
       "kad-context-economy.js (bootstrap shims → tools/kad/telemetry/control-plane-runtime.mjs)"
@@ -156,12 +170,12 @@
     "local_models": {
       "stheno": {
         "endpoint": "127.0.0.1:5001",
-        "state": "UP",
+        "state": "DOWN",
         "model": "L3-8B-Stheno-v3.2-Q4_K_M",
-        "state_class": "VERIFIED_CURRENT",
+        "state_class": "VOLATILE_CURRENT",
         "evidence": {
           "source": "PROBE",
-          "command": "curl /v1/models"
+          "command": "curl /v1/models (unreachable)"
         }
       },
       "qwen": {
@@ -175,9 +189,10 @@
       }
     },
     "remote": [
-      "openai-codex/gpt-5.6-luna (SUBSCRIPTION_BACKED, quota UNKNOWN)",
-      "google-antigravity/gemini-3-flash",
-      "zai-free/glm-4.7-flash (FREE)"
+      "opencode-go/deepseek-v4-flash + deepseek-v4-pro (baseline/planning)",
+      "openai-codex/gpt-5.6-luna + gpt-5.6-terra (SUBSCRIPTION_BACKED, quota UNKNOWN)",
+      "google-antigravity/gemini-3.8-flash + gemini-3.1-pro",
+      "zai-free/glm-4.7-flash (FREE, tiny/commit)"
     ],
     "evidence": {
       "source": "FILE",
@@ -199,15 +214,14 @@
   "unknowns": [
     "TELL reachability / hardware (not probed)",
     "AMDY GPU VRAM + ROCm version",
-    "Qwen :5002 down cause",
-    "OMP settings schema + precedence source (binary-only install)",
-    ".omp/config.yml default-role change owner (1-line: default → null)"
+    "local model servers down cause (5001/5002; bin/kad-serve not running)",
+    "OMP settings schema + precedence source (binary-only install)"
   ],
   "deviations": [
-    "local modelRoles default null vs global divergent toggles",
+    "project .omp/config.yml now aligns with global mnemopi/autolearn toggles (was divergent)",
     "dual skill lockfiles (root vs .agents/workspace)",
     ".dsh-ptc-canary/ = placeholder; real surface is omp-orchestration-preflight.mjs",
-    "two OMP binaries (18.0.11 mise active, 18.0.9 staged)"
+    "two OMP binaries (18.1.14 mise active, 18.0.9 staged)"
   ],
   "hosts.amdy": {
     "cpu": "AMD Ryzen 7 7700 8-Core",
@@ -232,10 +246,10 @@
     }
   },
   "harnesses.omp": {
-    "version": "18.0.11",
+    "version": "18.1.14",
     "origin": "mise (github-can1357-oh-my-pi/latest)",
     "binary": "/home/amdy/.local/bin/omp",
-    "alt_binary": ".tools/oh-my-pi/v18.0.9",
+    "alt_binary": "bin/omp-patched-canary (digest-pinned via bin/omp-kad)",
     "project_config": ".omp/config.yml",
     "global_config": "~/.omp/agent/config.yml (divergent toggles)",
     "settings_schema": "UNKNOWN (binary-only install; source-backed precedence not readable)",
