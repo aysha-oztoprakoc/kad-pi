@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+import { execFileSync } from 'node:child_process';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const here = dirname(fileURLToPath(import.meta.url));
+const compiler = resolve(here, '..', 'tools', 'kad', 'progress-state.mjs');
+
+try {
+  execFileSync(process.execPath, [compiler], { stdio: 'inherit' });
+  process.exitCode = 0;
+} catch (err) {
+  process.stderr.write(`kad-progress: ${err.message}\n`);
+  process.exitCode = 1;
+}

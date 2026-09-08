@@ -47,4 +47,10 @@ jobs:
       - name: Run Multi-Turn PON Integration Tests
         run: node --test tools/kad/test/multi-turn-pon.test.mjs
 
+      - name: Validate Current State Artifact (CSA) schema and provenance
+        run: node --test docs/state/test/state-artifacts.test.mjs
+
+      - name: Compile progress-state projection (dry run)
+        run: node tools/kad/progress-state.mjs
+
 

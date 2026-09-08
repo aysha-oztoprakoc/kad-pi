@@ -1,0 +1,54 @@
+name: Progress Projection
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '17 4 * * *'   # daily, off-peak
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository (full history + all refs)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Compile progress-state projection
+        run: node tools/kad/progress-state.mjs
+
+      - name: Validate current state artifact
+        run: node --test docs/state/test/state-artifacts.test.mjs
+
+      - name: Upload projection artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kad-progress-state
+          path: |
+            docs/generated/progress-state.json
+            docs/generated/progress-state.md
+          retention-days: 90
+
+      # Downstream projection branch (REQ-KAD-GIT-001): never touches main.
+      - name: Publish projection branch
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/generated/progress-state.json docs/generated/progress-state.md
+          if git diff --cached --quiet; then
+            echo "projection unchanged; nothing to publish"
+            exit 0
+          fi
+          git commit -m "chore(projection): refresh progress-state from ${GITHUB_SHA}"
+          git push origin "HEAD:refs/heads/state/projection"
