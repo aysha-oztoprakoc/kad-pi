@@ -1,0 +1,15 @@
+{
+  "task": "WP-TECHNOPAGAN-GATE-REPAIR-001",
+  "project": "technopagan-netrunner",
+  "claim_id": "80d36c1d-5e7b-477c-a023-d258908a38d2",
+  "actor_label": "omp-kad-review-remediation",
+  "started_at": "2026-09-11T21:12:00.798Z",
+  "base_commit": "53fc4d51930171fa21d1f09cab5ab8dba0faec61",
+  "owned_paths": [
+    "package.json",
+    "tests"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-11T21:40:42.383Z"
+}

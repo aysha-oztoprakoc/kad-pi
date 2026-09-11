@@ -2,7 +2,7 @@
   "id": "WP-GAME-STACK-001",
   "project": "kad-pi",
   "title": "Qualify deterministic game development tooling for Linux Windows and browser",
-  "status": "CLAIMED",
+  "status": "READY",
   "priority": 210,
   "spec_ref": "user:/game-stack-tooling",
   "fixed_point": "2f2ae35383a57a955cd9b5626dbe9f62d0bf9f31",

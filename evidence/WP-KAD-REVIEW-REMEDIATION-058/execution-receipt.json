@@ -1,0 +1,131 @@
+{
+  "schema": "kad.execution-receipt/v1",
+  "workpackage": "WP-KAD-REVIEW-REMEDIATION-058",
+  "project": "kad-pi",
+  "actor": "omp-kad-review-remediation",
+  "captured_at": "2026-09-11T21:45:00Z",
+  "base_commit": "3ca6b8627d1f4b1c5d62c89f5cb81661c70efb03",
+  "verdict": "COMPLETE_PENDING_INDEPENDENT_REVIEW",
+  "scope": "Remediation of the independent 2026-09-11 workspace review: declared posture, binding gates, spend policy, memory record, evidence durability, projections, hygiene.",
+  "items": [
+    {
+      "id": "P0",
+      "deliverable": "Declared harness posture reconciled with the enforced configuration",
+      "change": ".omp/RULES.md declares tools.approvalMode=yolo, memory.backend=mnemopi, autolearn.enabled=true, secrets/ttsr/recap=false; tools/kad/posture-check.mjs fails when declaration and config disagree; wired into `make verify`.",
+      "evidence": [
+        "node tools/kad/posture-check.mjs -> POSTURE DECLARED AND ENFORCED: 6/6 keys agree",
+        "control: declaration edited to `write` -> mismatch reported, exit 1",
+        "control: declaration block removed -> 'the posture is undeclared', exit 1",
+        "make verify -> PASS (posture check runs as its second step)"
+      ],
+      "commit": "e075972"
+    },
+    {
+      "id": "P1a",
+      "deliverable": "make test delegates to the full npm test suite",
+      "change": "package.json test script is the single node-suite entry point (kad, workspace, librarian, gaya, state-artifact, ask_user); Makefile `test` runs `npm test` then the C++ kad-lab suite, so delegating cannot drop coverage.",
+      "evidence": [
+        "npm test -> EXIT=0, 880 tests, 880 pass, 0 fail",
+        "make test -> EXIT=0",
+        "before: enrolled gate ran 15 of 84 tools/kad/test/*.test.mjs; npm test was red with 3 failures"
+      ],
+      "commit": "3b53fb0"
+    },
+    {
+      "id": "P2",
+      "deliverable": "local-multi-endpoint asserts local-inference degradation independently of live config",
+      "change": "Both preflight test files now share tools/kad/test/fixtures/omp-preflight-root.mjs (the temp-root fixture the preflight tests already used). T2-T4 inject the posture under test; the single live-posture coupling is T8 of omp-orchestration-preflight.test.mjs, which names each blocking cause.",
+      "evidence": [
+        "node --test omp-orchestration-preflight.test.mjs local-multi-endpoint.test.mjs -> 18 tests, 0 fail",
+        "control: isolated fixture -> DEGRADED; same fixture with autolearn=true -> BLOCKED (the fixture drives the verdict)",
+        "control: T8 against the live checkout reports MEMORY_NOT_OFF, AUTOLEARN_ENABLED, UNAPPROVED_OR_PAYG_MODEL_SURFACE"
+      ],
+      "commit": "3b53fb0"
+    },
+    {
+      "id": "P3",
+      "deliverable": "Model-exposure exclusions are authoritative",
+      "change": "selectExposedModels evaluates exclude_prefixes first and matches free-tier markers against the model segment only, so `auto/best-free` can no longer defeat `exclude_prefixes: [\"auto/\"]` and `veo-free/*` no longer bypasses `unlisted_providers: exclude`. SELECTOR_VERSION is recorded in the catalog and checked by the idempotence guard, so a semantic change cannot leave a stale projection in place.",
+      "evidence": [
+        "recomputation against the committed catalog before the fix: 31/31 identical, i.e. the bypass was live, not drift",
+        "control: selector reverted -> the new fixture row fails (1 fail); fixed -> 11/11 pass",
+        "bin/kad-models sync -> 1611 advertised, 27 exposed (was 31); second run 'unchanged'",
+        "grep for auto/best-free and veo-free/ in .omp/models.yml and ~/.omp/agent/models.yml -> 0 matches in each; openrouter/*:free retained (policy-consistent)"
+      ],
+      "commit": "e2a03ae"
+    },
+    {
+      "id": "P4",
+      "deliverable": "The wiki of record has resolvable history; the versioning claim is falsifiable; mirror drift is measurable",
+      "change": "Backed up the data dir (ai-memory backup, 2.04 MiB) and moved the damaged .git aside. Re-anchored refs/heads/master on 9023f9d1 (newest commit whose whole object graph is readable, verified by rev-list --objects), expired reflogs still referencing the dead object, removed the 13 empty loose objects, rebuilt the corrupt index, committed the current pages. memory.record.versioned now resolves HEAD instead of counting ref files. bin/kad-memory status compares record to mirror (checksum-based, content-only, generated index.md excluded).",
+      "evidence": [
+        "git -C .ai-memory/wiki fsck --no-progress -> 0 error lines (was: invalid sha1 pointer + 13 zero-byte objects + bad object HEAD)",
+        "bin/kad-isa check all -> memory 9/9 PASS; ISA-KAD-MEMORY-005 evidence: 'record resolves HEAD 19468349a0ca with 1 branch ref(s)'",
+        "control: validator against a fixture whose ref points at an absent object -> pass=false; after a real commit -> pass=true (tools/kad/test/isa.test.mjs)",
+        "control: mirror-side content edit -> drift 1; record-side edit -> drift 1; restored -> drift 0",
+        "bin/kad-memory publish -> mirror regenerated; committed vault/90_Derived/Projections/isa-memory.json now ok:true 9/9 (was ok:false 7/9, 'backend none-installed')"
+      ],
+      "commit": "1fff81b"
+    },
+    {
+      "id": "P5",
+      "deliverable": "Evidence durability for the Gaya stream",
+      "change": "Promoted the eight missing G1 frame receipts to the evidence_target paths the ledger declares (03-knowledge <- staging/03-canon, 04-visual <- 04-visual-spatial, 05-evaluation-design <- 05-eval-oracles, others 1:1). Repaired three dangling references in the WP-057...054 receipt. Committed the kad-rpg dataset artifacts (507 files, 72 MB) and their producers.",
+      "evidence": [
+        "all 10 WP-GAYA-DATASET-G1 evidence_target paths now exist and are non-empty (were 8 missing, never present in any revision)",
+        "every evidence path referenced by the 054 receipt resolves",
+        "kad-rpg commit 57cfead: 800 paths staged, working tree clean, 851 tracked files, .git 26M -> 40M (bundle/replay dedupe)",
+        "python -m unittest discover kad-gaya/tests -> Ran 77 tests, OK, exit 0 (re-run after the commit)"
+      ],
+      "commits": ["826e5f8", "57cfead (kad-rpg)"]
+    },
+    {
+      "id": "P6",
+      "deliverable": "The repository front door is measured, not remembered; the CSA is live",
+      "change": "compileReadme derives phase and ledger counts from .agents/work/**, branch/HEAD/divergence from git, the test inventory from the npm test globs and the knowledge authority from the record pointer; an unmeasurable field reads UNKNOWN. repoRoot() resolves the repository that owns the knowledge root, and compileProjections/compileRepoDocs default to it (previously path.resolve(root,'..') pointed inside the record once the record became the vault root). The CSA records refreshed facts and a liveness assertion compares its head with git rev-parse HEAD.",
+      "evidence": [
+        "regenerated README.md status block: Phase WP-KAD-REVIEW-REMEDIATION-058 (CLAIMED), main at 826e5f8, 14 ahead / 0 behind, 94 test files declared, record path + mirror",
+        "control: a bare vault outside any repository yields UNKNOWN for phase, repository and test inventory, and the old claims (WP-011, '555+', '100% GREEN', 'sole human-authored durable knowledge source') are absent",
+        "node --test tools/kad/test/projection-compiler.test.mjs -> 12/12 pass",
+        "node --test docs/state/test/state-artifacts.test.mjs -> 10/10 pass",
+        "control: CSA head set back to 3a0b5b0 -> 'CSA records 3a0b5b0f but HEAD is 46c6f988, 13 commits newer' (fails as intended)"
+      ],
+      "commits": ["13a5c7d", "29369d3"]
+    },
+    {
+      "id": "P7",
+      "deliverable": "Workspace hygiene",
+      "change": "Released the stale WP-GAME-STACK-001 claim (held 3 days by unknown-actor). Fixed gamedev-router's frontmatter name. Documented the two lockfiles' roles in skill-governance and verified the governance lock against disk. Gave technopagan-netrunner its own package.json. Preserved the amdy-platform host inventory as tracked evidence and removed the island. Added .gitleaks.toml. Did NOT retire wiki/: the Librarian serves five of its documents and publication reads wiki/generated.",
+      "evidence": [
+        "bin/workctl release WP-GAME-STACK-001 -> status READY, claim inactive",
+        "bin/workctl doctor -> 'gamedev-router: frontmatter name mismatch' gone",
+        "governance lock: 19/19 execution_sha256 match the files on disk; every governed skill carries a local_delta",
+        "technopagan: bash tests/run_all.sh -> EXIT=0, 11/11 steps (was 3/11, exit 1)",
+        "wiki/ falsification: 5 top-level documents are referenced by the Librarian catalog/index and 18 are referenced by ledger records; deleting it would have broken make verify",
+        "gitleaks git . --no-banner -> no leaks found (9 verified non-secrets allowlisted by shape); control repository with a synthetic key still reports 1 leak"
+      ],
+      "commits": ["46c6f98", "5d1369f (technopagan)"]
+    }
+  ],
+  "known_red_unchanged": [
+    "bin/kad-wiki lint -> 140 errors over 139 paths (138 MISSING_KAD_ID, 1 TRAINING_GATE, 1 INELIGIBLE_AUTHORITY); 14 are live-captured session pages, so the count cannot fall while capture continues. bin/kad-wiki rebuild refuses, as designed.",
+    "OMP orchestration preflight -> BLOCKED (MEMORY_NOT_OFF, AUTOLEARN_ENABLED, LOCAL_PROCESS_OWNERSHIP_UNKNOWN:zai-free, UNAPPROVED_OR_PAYG_MODEL_SURFACE). Not wired into any entrypoint (P1c was not selected).",
+    "mirror drift is non-zero between publishes because the substrate captures continuously; the metric now reports it, and it read 0 immediately after the publish.",
+    "P1b (workctl ACCEPT evidence gate fails open on a missing evidence_target) and P1d (npm run lint outside the gate) were reported but not selected for execution."
+  ],
+  "gates": {
+    "make verify": "PASS",
+    "make test": "EXIT=0 (delegates to npm test + kad-lab C++)",
+    "npm test": "880 tests, 880 pass, 0 fail",
+    "bin/kad doctor": "PASS",
+    "bin/workctl doctor": "healthy, 0 errors, warnings only (LOCAL_DELTA x16, stale claims until the workpackages are transitioned)",
+    "bin/kad-isa check all": "33/33 claims PASS (aesthetic 10/10, compute-fabric 14/14, memory 9/9)",
+    "docs/state/test/state-artifacts.test.mjs": "10/10 pass",
+    "tools/kad/posture-check.mjs": "6/6 keys agree",
+    "data_workspace gate": "EXIT=0",
+    "technopagan-netrunner gate": "EXIT=0, 11/11 steps",
+    "kad-rpg gate": "77 tests OK, EXIT=0",
+    "gitleaks": "no leaks found"
+  },
+  "no_gate_weakened": "Every change either adds a check, makes an existing claim falsifiable, or repairs state. The two known-red gates were left red and are reported above."
+}

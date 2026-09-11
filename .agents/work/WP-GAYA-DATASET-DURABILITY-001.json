@@ -1,0 +1,56 @@
+{
+  "id": "WP-GAYA-DATASET-DURABILITY-001",
+  "project": "kad-rpg",
+  "title": "Make the Gaya dataset artifacts and their producers durable in git",
+  "status": "REVIEW",
+  "priority": 240,
+  "spec_ref": "user:2026-09-11-review-remediation",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "scope": [
+    "kad-gaya/dataset_runs/",
+    "kad-gaya/training/",
+    "kad-gaya/ingestion/",
+    "kad-gaya/pipeline/",
+    "kad-gaya/integration/",
+    "kad-gaya/tests/",
+    "kad-gaya/extract_and_ingest_gaya.py"
+  ],
+  "non_scope": [
+    "kad-gaya/staging_ingestion/ (raw source mirror, gitignored by design)",
+    "kad-gaya/openviking_storage/",
+    "Gaya source corpus and downloaded media",
+    "changes to pipeline behaviour or dataset content"
+  ],
+  "owned_paths": [
+    "kad-gaya/dataset_runs/",
+    "kad-gaya/training/",
+    "kad-gaya/ingestion/",
+    "kad-gaya/pipeline/",
+    "kad-gaya/integration/",
+    "kad-gaya/tests/",
+    "kad-gaya/extract_and_ingest_gaya.py"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-rpg-project",
+  "validation": [
+    "python -m unittest discover kad-gaya/tests",
+    "git status --short"
+  ],
+  "evidence_target": "kad-gaya/dataset_runs/sillytavern-2026-09-09/evidence/",
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "WP-GAYA-SILLYTAVERN-001 evidence target is committed, not only present in the working tree",
+    "the producers of the accepted G1 artifacts (ingestion, pipeline, training, integration, tests) are committed with the artifacts they generate",
+    "the recorded validation command still passes after the commit",
+    "no dataset content is modified"
+  ],
+  "description": "Commit the untracked Gaya dataset artifacts and the modules that generate them so that REVIEW-state evidence and ACCEPTED deliverables survive a clean of the working tree."
+}

@@ -1,0 +1,31 @@
+{
+  "task": "WP-KAD-REVIEW-REMEDIATION-058",
+  "project": "kad-pi",
+  "claim_id": "f9b58d92-ce02-419d-a16d-1ae75c1a95a0",
+  "actor_label": "omp-kad-review-remediation",
+  "started_at": "2026-09-11T21:12:00.644Z",
+  "base_commit": "3ca6b8627d1f4b1c5d62c89f5cb81661c70efb03",
+  "owned_paths": [
+    ".omp",
+    "Makefile",
+    "tools/kad",
+    "tools/workspace",
+    "bin",
+    "config",
+    "docs/state",
+    "evidence/WP-GAYA-DATASET-G1",
+    "evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054",
+    "evidence/WP-KAD-REVIEW-REMEDIATION-058",
+    ".agents/skills/gamedev-router",
+    ".agents/skills/skill-governance",
+    ".agents/workspace",
+    ".agents/work",
+    "README.md",
+    ".gitleaks.toml",
+    "wiki",
+    "amdy-platform"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-11T21:40:42.235Z"
+}

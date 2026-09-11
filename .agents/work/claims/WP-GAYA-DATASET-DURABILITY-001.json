@@ -1,0 +1,20 @@
+{
+  "task": "WP-GAYA-DATASET-DURABILITY-001",
+  "project": "kad-rpg",
+  "claim_id": "8e3f4ead-5bec-4bbc-b265-2dbe70b8ca42",
+  "actor_label": "omp-kad-review-remediation",
+  "started_at": "2026-09-11T21:12:00.725Z",
+  "base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "owned_paths": [
+    "kad-gaya/dataset_runs",
+    "kad-gaya/training",
+    "kad-gaya/ingestion",
+    "kad-gaya/pipeline",
+    "kad-gaya/integration",
+    "kad-gaya/tests",
+    "kad-gaya/extract_and_ingest_gaya.py"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-11T21:40:42.309Z"
+}

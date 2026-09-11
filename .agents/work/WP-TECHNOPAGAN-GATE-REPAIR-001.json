@@ -1,0 +1,41 @@
+{
+  "id": "WP-TECHNOPAGAN-GATE-REPAIR-001",
+  "project": "technopagan-netrunner",
+  "title": "Repair the technopagan-netrunner test gate so all 11 steps execute",
+  "status": "REVIEW",
+  "priority": 200,
+  "spec_ref": "user:2026-09-11-review-remediation",
+  "fixed_point": "53fc4d51930171fa21d1f09cab5ab8dba0faec61",
+  "scope": [
+    "package.json",
+    "tests/"
+  ],
+  "non_scope": [
+    "install.sh behaviour",
+    "plugins/ and themes/ content",
+    "the host Omarchy configuration"
+  ],
+  "owned_paths": [
+    "package.json",
+    "tests/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "git_read",
+    "git_write",
+    "shell_readonly"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "technopagan-netrunner-project",
+  "validation": [
+    "bash tests/run_all.sh"
+  ],
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "the nested project declares its own module system and no longer inherits type=module from the workspace package.json",
+    "bash tests/run_all.sh runs all 11 steps and exits 0"
+  ],
+  "description": "The enrolled validation command aborts at step 3/11 because tests/test_gnosis_state.js is CommonJS while the parent workspace package.json declares type=module. Give the nested project its own package.json so the remaining eight verification steps execute."
+}
