@@ -1,0 +1,36 @@
+{
+  "task_id": "WP-GAYA-DATASET-G1-02",
+  "project": "kad-rpg",
+  "timestamp": "2026-09-09T02:14:01.328055+00:00",
+  "status": "PASS",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "claim_id": "d8c7190b-f446-42e9-9665-cbbad923f459",
+  "owned_paths": [
+    "kad-gaya/ingestion",
+    "kad-gaya/dataset_runs",
+    "kad-gaya/tests",
+    "kad-gaya/pipeline/dataset_cli.py"
+  ],
+  "command_executed": "python -m pipeline.dataset_cli run --config dataset_runs/staging/01-contracts/validated-config.json --output dataset_runs/staging/02-ingestion",
+  "total_files_discovered": 315,
+  "total_bytes": 397062319,
+  "zero_silent_drops_verified": true,
+  "reconciliation": {
+    "processed_success": 143,
+    "pending_ocr": 0,
+    "failed_parser": 0,
+    "media_assets": 151,
+    "structured_data": 3,
+    "documentation": 6,
+    "excluded_code": 11,
+    "excluded_database": 1
+  },
+  "duplicate_families_detected": 17,
+  "manifest_seal_sha256": "28770e52f0471e0225dd5ae4a0cb936e5c005b21534077af7737e6e822cf66c6",
+  "receipt_artifacts": {
+    "manifest.json": "678aec0672857db8c860da3774aaf0ddd8961ba9a45d2e06b8955bd8daa0b2f5",
+    "ingestion_summary.json": "e8c5a637d0f2c521f48e9278fd7f984f1ee23d9db32c9caea49b81c062b9efa9",
+    "sources.jsonl": "a478405b11eacdeaab66e0c7c75e105a3d84f20955c199f9dd290c59cbcb48e6",
+    "extraction_records.jsonl": "6a869d2b77e5c900abc12e110e0539b911776faf1f22faca232cc0f9201e1258"
+  }
+}

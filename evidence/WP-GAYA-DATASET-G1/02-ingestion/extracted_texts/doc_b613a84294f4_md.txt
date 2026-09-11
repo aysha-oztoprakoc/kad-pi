@@ -1,0 +1,22 @@
+---
+slug: terraco_de_combate
+titulo: "Terraço de Combate e Pátio Tático"
+categoria: locations
+aliases: []
+tags: ["gaya", "locations", "refugio_ykt", "scene_design"]
+entidades_relacionadas: ["akuanduba", "aysha_oztoprak", "equipe_ykt", "garra_de_kravut", "niara", "pumma_nix"]
+l0_abstract: "Ampla esplanada de pedra na fundação flutuante, equipada com grade de movimentação e obstáculos para treino militar e sparring."
+---
+
+# Terraço de Combate e Pátio Tático
+
+# [[terraco_de_combate]] e Pátio Tático
+
+O [[terraco_de_combate]] estende-se por um ombro largo da fundação rochosa. O chão de pedra lisa possui marcações geométricas de movimento em grade, barreiras removíveis para treinamento de cobertura e raias de avanço tático. Arcos de raízes abrigam prateleiras de armas de treino e uma galeria de observação superior. Aqui [[niara]] demonstra a firmeza de uma muralha com a [[garra_de_kravut]], [[pumma_nix]] ensina infiltração ágil, [[akuanduba]] supervisiona o tiro com arco e [[aysha_oztoprak]] conduz formações defensivas.
+
+## Entidades Presentes ou Vinculadas
+- [[niara]]
+- [[pumma_nix]]
+- [[akuanduba]]
+- [[aysha_oztoprak]]
+- [[refugio_ykt]]

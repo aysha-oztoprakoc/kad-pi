@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "corpus_path": ".",
+  "staging_root": "dataset_runs/staging",
+  "discovery_policy": {
+    "allowed_extensions": [
+      ".db",
+      ".docx",
+      ".jpeg",
+      ".jpg",
+      ".js",
+      ".json",
+      ".jsonl",
+      ".md",
+      ".mjs",
+      ".odg",
+      ".odt",
+      ".pdf",
+      ".png",
+      ".py",
+      ".sh",
+      ".sqlite",
+      ".svg",
+      ".txt",
+      ".webp"
+    ],
+    "excluded_patterns": [
+      ".git/*",
+      "*/.git/*",
+      "__pycache__/*",
+      "*/__pycache__/*",
+      "*.pyc",
+      "*.egg-info/*",
+      ".pytest_cache/*",
+      "dataset_runs/*",
+      "*/dataset_runs/*"
+    ],
+    "max_file_size_bytes": 104857600
+  },
+  "required_families": [
+    "grounded_lore_qa",
+    "character_identity_and_style",
+    "relationships_and_evidence_paths",
+    "items_and_mechanics",
+    "spatial_containment_and_routes",
+    "visual_entity_references",
+    "bounded_situational_decisions",
+    "memory_and_abstention"
+  ],
+  "split_policy": {
+    "train_ratio": 0.8,
+    "val_ratio": 0.1,
+    "test_ratio": 0.1,
+    "seed": 42,
+    "split_by": "source_family"
+  },
+  "generation_budget": {
+    "max_synthetic_examples": 2000,
+    "max_tokens_per_example": 2048,
+    "remote_api_spend_allowed": false
+  },
+  "rights_and_usage": {
+    "license": "INTERNAL_RPG_CANON",
+    "allow_external_training": false
+  }
+}

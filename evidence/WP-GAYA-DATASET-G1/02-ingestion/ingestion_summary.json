@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "frame_id": "WP-GAYA-DATASET-G1-02",
+  "corpus_dir": "/home/amdy/Work/kad-rpg/kad-gaya",
+  "staging_dir": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/02-ingestion",
+  "total_files_discovered": 315,
+  "total_bytes": 397062319,
+  "reconciliation": {
+    "processed_success": 143,
+    "pending_ocr": 0,
+    "failed_parser": 0,
+    "media_assets": 151,
+    "structured_data": 3,
+    "documentation": 6,
+    "excluded_code": 11,
+    "excluded_database": 1
+  },
+  "duplicate_families_detected": 17,
+  "zero_silent_drops_verified": true,
+  "timestamp": "2026-09-09T02:11:12.313256+00:00"
+}

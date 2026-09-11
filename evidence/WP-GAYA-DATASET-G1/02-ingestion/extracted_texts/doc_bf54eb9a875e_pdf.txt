@@ -1,0 +1,227 @@
+Bardo Eloquencia lvl 7                     Artista                                 Vasconha
+                                                                                    CLASS & LEVEL                              BACKGROUND                               PLAYER NAME
+             Douglas O Violeiro
+                                                                                    HALFLING                                    Yoranos Khansados                       Wayoiubt
+         CHARACTER NAME                                                             RACE                                       ALIGNMENT                                EXPERIENCE POINTS
+
+
+
+
+                    0              INSPIRATION
+ STRENGTH                                                                                                                                    Eu sou o Douglas, Você
+                                                                        16                  +5                     25ft
+    -2             +3          PROFICIENCY BONUS
+                                                                       ARMOR
+                                                                        CLASS              INITIATIVE              SPEED
+                                                                                                                                             talvez não seja o Douglas
+
+     6                                                                                                                                                            PERSONALITY TRAITS
+
+                                                                     Hit Point Maximum 48
+                        -2    Strength
+ DEXTERITY                                                                                                                                   Eu quero viver da minha
+    5
+                   ●    9
+
+                        0
+                              Dexterity
+                              Constitution
+                                                                                             48                                              arte, com meus amigos
+                                                                                     CURRENT HIT POINTS                                                                   IDEALS
+                        2     Intelligence
+    20                  1     Wisdom
+                                                                                                                                             Tudo nosso e absolutamente nada para
+
+CONSTITUTION
+                   ●    8     Charisma
+
+                             SAVING THROWS
+                                                                                               0                                             eles
+
+                                                                                    TEMPORARY HIT POINTS                                                                  BONDS
+    0
+                                                                             6d8
+                        7     Acrobatics (Dex)                       Total                           SUCCESSES
+                                                                                                                                             Bandido
+    11                  2     Animal Handling (Wis)
+                                                                             6d8                        FAILURES
+                        2     Arcana (Int)                                   HIT DICE                      DEATH SAVES                                                    FLAWS
+INTELLIGENCE            -2    Athletics (Str)
+
+    2              ●    10
+
+                        3
+                              Deception (Cha)
+                              History (Int)
+                                                                    NAME                    ATK BONUS DAMAGE/TYPE
+                                                                                                                                           Lucky - tirou 1 pode rolar de novo
+                                                                                                                                           Brave - Vantagem contra amedrontamento
+    14                  2     Insight (Wis)                                                                                                Half Nimbleness - passar lugar pequeno
+                        10    Intimidation (Cha)
+                                                                                                                                           ----------------------------------------------------
+  WISDOM                2     Investigation (Int)                                                                                          Tambor do Polirritimo:
+                        2     Medicine (Wis)                                                                                               item unico raro, foco arcano+2
+    1                   2     Nature (Int)                          Polaridade Neg +6 - 1 dracai                                           este estranho tambor de origem desconhecida
+                        2     Perception (Wis)                      Inspir Bar - 6/6                                                       parece impossivelmente dificil de tocar a aqueles não
+    13                                                                                                                                     acostumados com suas estranhas propriedades, a
+                        8     Performance (Cha)                     Memórias de Mahad                                                      cada batuque uma série de outros instrumentos
+                        10    Persuasion (Cha)                      20 khan                                                                independentes são tocados simultaneamente,
+ CHARISMA
+                                                                                                                                           confundindo aqueles incapazes de acompanhar e
+                        2     Religion (Int)                        20 yorman
+    7                   2     Sleight of Hand (Dex)
+                                                                                                                                           auxiliando os habilidosos ao criar complexos
+                                                                                                                                           complementos ritmicos ao ritimo original. sua forma se
+                                                                                                                                            altera a depender do usuario podendo alternar entre
+                        6     Stealth (Dex)
+    24
+                                                                    4/5 fome                                                                três instrumentos diferentes os mesmos que
+                        2     Survival (Wis)                                                                                               acompanham os sons complexos criados pelo
+                                                                    4/5 sede
+                                                                                                                                           instrumento.
+                                 SKILLS                                             ATTACKS & SPELLCASTING
+                                                                                                                                           Ritmo de festa (passiva):
+                                                                                                                                           Como uma ação livre você pode mudar a forma do
+               PASSIVE WISDOM (PERCEPTION)
+                                                               CP       00          Viola Mágica                                           tambor para qualquer um dos instrumentos pré
+                                                                                                                                           selecionados
+
+                                                                                                                                           Ritmo contagiante (3 ao dia ou ilimitado):
+Comum                                                          SP       80                                                                 Usando uma ação principal e uma carga você pode
+                                                                                                                                           fazer com que qualquer criaturanum raio de 120ft
+Halfling                                                       EP       00                                                                 capaz de te ouvir tocar entre num transe hipnótico ao
+Anão                                                                                                                                       ser envolvido por sua musica, a criatura deve fazer
+                                                                                                                                           um salvaguarda de SAB contra sua CD magica, caso
+                                                              GP      158                                                                  falhe começara a dançar e cantar incontrolavelmente
+                                                                                                                                           e ficara sobre a condição STUNNED.
+-----------------------------------------                                                                                                  Alterneativamente você pode performar por 10min
+------------
+                                                               PP       03                                                                 sem gastar uma carga, qualquer numero de criaturas
+                                                                                                                                           que presencie a perfomance completa estara
+Aprendendo                                                                                                                                 encantada por sua habilidade, ficando sob a condição
+                                                                                                                                           CHARMED e seguindo ordens simples, como descrito
+                                                                                                                                           na magia comando, este efeito dura 24h ou até que a
+    OTHER PROFICIENCIES & LANGUAGES                                                        EQUIPMENT                                       criatura seja atacada por você
+                                                                                                                                                             FEATURES  & ou   um aliado seu.
+                                                                                                                                                                         TRAITS
+Economia    - 30/10
+                                                TM & © 2014 Wizards of the Coast LLC. Permission is granted to photocopy this document for personal
+                                                                                                                                               Ritmouse.
+                                                                                                                                                      inspirador (3 ao dia/passiva):
+                                                                                                                                           como uma ação bonus você pode recuperar um uso
+                                                                    2300                                        0.90                      20 kg
+                                                                   AGE                                         HEIGHT                     WEIGHT
+               Douglas Silva
+                                                                   Catanhos                                     Branco                    Loiro
+      CHARACTER NAME                                               EYES                                        SKIN                       HAIR
+
+
+
+
+                                                    YKT - Vilões                                                                NAME
+                                                    Mahad - Tempo
+                                                    Deus - ?
+                                                    Vaca - Suspeita
+
+
+
+
+                                                                                                                                           SYMBOL
+
+
+
+
+        CHARACTER APPEARANCE                                                                            ALLIES & ORGANIZATIONS
+
+
+
+                                                   Cicatriz de flecha no peito com um tatuagem
+HALFLING de 21 anos de
+idade, que viveu a vida inteira
+em caravanas tocando viola
+por dinheiro,
+batalhando pelo pão do dia.
+Não gosta muito de luxo vive
+com o simples nega toda
+riqueza do mundo por uma
+boa musica acompanhando
+com uma boa cerveja.
+Vive na estrada onde arruma
+seus problemas e soluções.
+Se juntou com seus atuais                                                                            ADDITIONAL FEATURES & TRAITS
+
+aliados por ser salvo por um
+garoto incomum após por um                         Rytms Drums
+chifre no lord errado.
+É perseguido até hoje pelos
+soldados com brasões de
+aranhas.
+Mas com a facilidade de fazer
+ companheiros tão afiada
+quanto a de fazer inimigos sai
+desbravando esse mundo
+gigante de  GaiaBACKSTORY
+         CHARACTER                                                                                                TREASURE
+
+                               TM & © 2014 Wizards of the Coast LLC. Permission is granted to photocopy this document for personal use.
+                                                   Douglas                                                       Carisma                                         18                10
+                                                                                                                   SPELLCASTING                             SPELL SAVE DC       SPELL ATTACK
+                                   SPELLCASTING                                                                       ABILITY                                                      BONUS
+                                   CLASS
+
+
+
+
+                    0                          CANTRIPS                                  3                                                                         6
+                       Zombaria Viciosa                                                    Slow
+
+                       Ilusão Menor                                                        Medo
+
+                       Mãos Mágicas                                                        Dissipar Magia
+
+
+
+
+                SPELL
+                LEVEL
+                          SLOTS TOTAL               SLOTS EXPENDED
+
+
+                    1                                                                                                                                              7
+                EPAR
+               PR   ED                        SPELL NAME
+
+                       Enfeitçar Pessoa
+
+                       Detectar Magia
+                                                                                         4
+                       Onda Tovejante
+
+                       Disfarçar                                                           Polymorph
+
+
+
+
+SPELLS KNOWN
+
+
+
+
+                                                                                                                                                                   8
+
+
+
+                    2
+                       Aprimorar Habilidade
+
+                       Cegueira//Surdez
+
+                       Esquentar Armadura
+                                                                                         5
+
+                                                                                                                                                                   9
+
+
+
+
+                                                                     TM & © 2014 Wizards of the Coast LLC. Permission is granted to photocopy this document for personal use.

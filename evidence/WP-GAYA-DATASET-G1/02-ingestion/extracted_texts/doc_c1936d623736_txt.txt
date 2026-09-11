@@ -1,0 +1,246 @@
+Cavaleiro Dragao 3                                 Eremita                                  LucasJogos
+                         Elyah                                                              CLASSE E NÍVEL
+
+                                                                                            Genasi
+                                                                                                                                              ANTECEDENTE
+
+                                                                                                                                               Lawful neutral
+                                                                                                                                                                                        NOME DO JOGADOR
+
+
+           NOME DO PERSONAGEM                                                               RAÇA                                              TENDÊNCIA                                 PONTOS DE EXPERIÊNCIA
+
+
+
+
+                     0              INSPIRAÇÃO
+   FORÇA
+                                                                             19                      +3                           9                            Muito focada, preza pelo bem de :::
+
+    6               +2         BÔNUS DE PROFICIÊNCIA
+                                                                             CLASSE
+                                                                              ARMD                 INICIATIVA                  DESLOC.
+                                                                                                                                                               constantemente mas nao deixa de
+                                                                                                                                                               ajudar quem realmente precisa.
+
+    22                                                                                                                                                                            TRAÇOS DE PERSONALIDADE
+
+                                                                          PV Totais
+                     ●    8   Força
+                                                                                                                                                               Chegar até onde ela sabe que deve
+                                                                                                      36
+ DESTREZA
+                              Destreza
+                                                                                                                                                               chegar. Ela sabe que foi criada pra isso.
+    3                ●    7   Constituição
+                              Inteligência
+                                                                                           PONTOS DE VIDA ATUAIS                                                                          IDEAIS
+
+
+    16                        Sabedoria
+
+
+CONSTITUIÇÃO
+                              Carisma
+
+                          TESTES DE RESISTÊNCIA
+                                                                                                         0                                                     ::::::::::
+                                                                                        PONTOS DE VIDA TEMPORÁRIOS
+
+    5
+                                                                                                                                                                                         LIGAÇÕES
+
+
+                     ●   5    Acrobacia (Des)                             Total                                  SUCESSOS
+
+    20                        Arcanismo (Int)                                                                   FRACASSOS
+                     ●   8    Atletismo (For)                                     DADOS DE VIDA                 TESTES CONTRA A MORTE                                                    DEFEITOS
+INTELIGÊNCIA                  Atuação (Car)
+
+    2                         Blefar (Car)
+                              Furtividade (Des)
+                                                                        NOME                            BÔNUS               DANO / TIPO
+
+                                                                        Glaive                                        1d10                                  Caminhada Terrestre. Você
+    14                        História (Int)
+                                                                                                                                                            pode se mover através de
+                              Intimidação (Car)                         E.Longa                                       1d8/1d10
+ SABEDORIA                    Intuição (Sab)
+                                                                                                                                                            terreno difícil feito de terra ou
+                                                                        Arco Long                                     1d8                                   pedra sem gastar movimento
+    2
+                              Investigação (Int)
+                              Lidar com Animais (Sab)                                                                                                       extra.
+                                                                        Escudo(+2 CA)
+                         4    Medicina (Sab)                                                                                                                ------------------------
+    15
+                     ●
+
+
+                              Natureza (Int)                                                                                                                Mesclar-se às Rochas. Você
+  CARISMA
+                     ●   4    Percepção (Sab)                                                                                                               pode conjurar a magia passos
+                              Persuasão (Car)
+                                                                                                                                                            sem pegadas uma vez com
+    3                         Prestidigitação (Des)
+                                                                                                                                                            esse traço, sem necessidade
+                         4    Religião (Int)
+                                                                                                                                                            de componentes materiais, e
+                     ●
+
+    16                        Sobrevivência (Sab)
+                                                                                                                                                            você recupera a habilidade de
+                                PERÍCIAS                                                     ATAQUES E MAGIAS
+                                                                                                                                                            conjurar dessa forma quando
+                SABEDORIA PASSIVA (PERCEPÇÃO)
+                                                                                                                                                            você termina um descanso
+                                                                  PC                        Cobertor                                                        longo. Sua habilidade de
+                                                                                            Kit de herbalismo                                               conjuração para essa magia é
+Comum
+                                                                   PP
+                                                                                            Cota de talas                                                   Constituição.
+Primordial                                                                                  pacote de                                                       ------------------------
+                                                                   PE
+                                                                                            aventureiro
+POLARIDADE +2(14)                                                 PO         90
+
+                                                                   PL
+
+
+
+
+         IDIOMAS E OUTRAS PROFICIÊNCIAS                                                           EQUIPAMENTO                                                                 CARACTERÍSTICAS E HABILIDADES
+
+                                             TM & © 2014 Wizards of the Coast LLC. Cópia permitida apenas para uso pessoal. Tradução: Johny Robert | johnyrobert@icloud.com
+                                                                               23 anos                                            1.72m                            84 kg
+
+                      Eliyah                                                  IDADE
+
+                                                                               vermelhos
+                                                                                                                                 ALTURA
+
+                                                                                                                                  pedra
+                                                                                                                                                                   PESO
+
+                                                                                                                                                                   fogo
+       NOME DO PERSONAGEM                                                     OLHOS                                              PELE                              CABELOS
+
+
+
+
+                                                             Liurey(A'ra Yeruil Nivak) é um dragao de
+                                                                                                                                                    NOME
+                                                             platina que se encontra com Elyah desde
+                                                             seu nascimento. Liurey ve Elyah como uma                                                                Liu
+                                                             mae enquanto Elyah o ve como carga.
+
+                                                             FOR 10(0)
+                                                             DES 10(0)
+                                                             CON 12(1)
+                                                             INT 12(1)
+                                                             SAB 8 (-1)
+                                                             CAR 13 (1)
+
+                                                             MOV: 9m
+                                                             HP: 21
+                                                             CA: 16
+                                                                                                                                                                    SÍMBOLO
+                                                             Maior: Mudar de Forma
+                                                             Conjurador: (Curar ferimentos - 1d8+CAR)
+                                                             Menor: Voar(18m), Pericia(Percepção)
+                                                             Sopro: 4d6(7-8) dano radiante
+
+        APARÊNCIA DO PERSONAGEM                                                                                          ALIADOS E ORGANIZAÇÕES
+
+
+
+                                                            Talento:
+                                                            No seu turno, quando você atingir um acerto crítico
+Elyah nasceu a partir do nada em                            com uma arma corpo-a-corpo ou reduzir os pontos de
+sua concepção. Ela não sabe de onde                         vida de uma criatura a 0, você pode realizar um
+veio e porque existe, porém, sente                          ataque corpo-a-corpo com arma, com uma ação bônus.
+                                                            Antes de você realizar um ataque corpo-a-corpo com
+claramente uma necessidade de                               uma arma pesada na qual você seja proficiente, você
+cumprir um objetivo que sempre                              pode escolher sofrer –5 de penalidade em sua jogada
+esteve com ela: proteger Liurey e                           de ataque. Se o ataque atingir, você adiciona +10 ao
+                                                            dano do ataque.
+levá-lo até o Ponto Final.                                  ------------------------
+                                                            Carregador:
+                                                            Quando você usa sua Disparada (Dash) e ataca no mesmo turno ou
+Ela possui uma relação complicada                           quando você faz um ataque depois de mover pelo menos
+com Liurey na qual ela tenta                                metade de seu deslocamento máximo, você ganha vantagem
+mantê-lo seguro e a salvo ao                                em seu ataque.
+                                                            -----------------------
+máximo porem devido ao fato de                              Dança do Esmagamento (Espadas / Martelos): Quando
+Liurey estar sendo criado como um                           você ataca em sua ação e seu ataque se conecta, você pode
+humano, ela não pode evitar que ele                         fazer um ataque secundário contra o mesmo alvo com a
+                                                            mesma arma. Você não adiciona seu modificador ao dano
+queira experienciar certas coisas
+como humanos fazem.
+                                                                                                              OUTRAS CARACTERÍSTICAS E HABILIDADES
+
+Liurey é um garoto curioso e gentil,
+que ve sempre o lado bom das                                O maior tesouro de Elyah é Liurey. Ela faria absolutamente
+coisas. Elyah é uma mulher forte e                          qualquer coisa por ele, principalmente matar e morrer.
+séria, de não muitas palavras.
+                                                            Ela tem para si que, apos sua missão de vida ser concluída, ela já
+Liurey tem a mentalidade                                    poderá morrer pois não tem mais nenhum proposito.
+correspondente a uma criança
+humana de 12 anos mas as vezes seu
+lado draconiano se torna muito
+claro(como se tornar um pouco
+agressivo ou ser um pouco
+egocêntrico as vezes)
+
+        HISTÓRIA DO PERSONAGEM                                                                                                       TESOURO
+
+                                  TM & © 2014 Wizards of the Coast LLC. Cópia permitida apenas para uso pessoal. Tradução: Johny Robert | johnyrobert@icloud.com
+                                                                                                                      HABILIDADE CHAVE                                    CD DO TR               BÔNUS DE ATAQUE
+                                    CLASSE DE CONJURADOR
+
+
+
+
+                         0                       TRUQUES                                   3                                                                                  6
+
+
+
+
+                     NÍVEL
+                     MAGIA
+                              ESPAÇOS TOTAL          ESPAÇOS USADOS
+
+
+                         1                                                                                                                                                    7
+                     EPAR
+                    PR   AD                   NOME DA MAGIA
+
+
+
+
+                                                                                           4
+
+
+
+
+MAGIAS CONHECIDAS
+
+
+
+
+                                                                                                                                                                              8
+
+
+
+                         2
+
+
+
+                                                                                           5
+
+                                                                                                                                                                              9
+
+
+
+
+                                                                TM & © 2014 Wizards of the Coast LLC. Cópia permitida apenas para uso pessoal. Tradução: Johny Robert | johnyrobert@icloud.com

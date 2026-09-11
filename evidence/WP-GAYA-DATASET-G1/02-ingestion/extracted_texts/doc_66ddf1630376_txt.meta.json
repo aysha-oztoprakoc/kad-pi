@@ -1,0 +1,8 @@
+{
+  "doc_id": "doc_66ddf1630376",
+  "source_ref": "staging_ingestion/YKT _ Begônio, o Mestre Arcanista_pdf.txt",
+  "sha256": "66ddf16303769f9d5c662b957a96802b7fbb370e99fe439c55233549af7cfce1",
+  "parser": "utf8_text_parser",
+  "status": "SUCCESS",
+  "length": 9955
+}

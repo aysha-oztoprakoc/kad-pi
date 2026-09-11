@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "total_entities": 53,
+  "total_relationships": 8,
+  "missing_relation_entities": 0,
+  "total_assets": 151,
+  "unresolved_assets": 0,
+  "historical_assets_count": 151,
+  "unknown_geography_verified": true,
+  "rules_verified": {
+    "synthesis_prohibition": true,
+    "combat_damage_reduction": true,
+    "economy_currency": true
+  },
+  "canaries_found": 0,
+  "revocations_found": 0
+}

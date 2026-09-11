@@ -1,0 +1,8 @@
+{
+  "doc_id": "doc_a66acb64af50",
+  "source_ref": "staging_ingestion/YKT _ Proisb , o Carniçal_pdf.txt",
+  "sha256": "a66acb64af5047116babe41e2aa9ce2b36dae1f6cb75b13bbdb63a518c5836a2",
+  "parser": "utf8_text_parser",
+  "status": "SUCCESS",
+  "length": 16557
+}

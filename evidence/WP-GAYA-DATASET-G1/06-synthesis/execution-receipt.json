@@ -1,0 +1,46 @@
+{
+  "task_id": "WP-GAYA-DATASET-G1-06",
+  "project": "kad-rpg",
+  "timestamp": "2026-09-09T03:08:31.621705+00:00",
+  "status": "PASS",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "claim_id": "3d749d87-2a90-4d3d-9322-301f5de45f72",
+  "owned_paths": [
+    "kad-gaya/training/synthetic_builder.py",
+    "kad-gaya/pipeline/dataset_cli.py",
+    "kad-gaya/dataset_runs",
+    "kad-gaya/tests"
+  ],
+  "command_executed": "python -m pipeline.dataset_cli run --config dataset_runs/staging/01-contracts/validated-config.json --output dataset_runs/staging/06-synthesis --stage synthesis",
+  "total_examples_compiled": 37,
+  "accepted_examples": 37,
+  "train_eligible_examples": 30,
+  "rejections_recorded": 2,
+  "total_tapes_recorded": 39,
+  "family_breakdown": {
+    "memory_and_abstention": 5,
+    "character_identity_and_style": 2,
+    "bounded_situational_decisions": 2,
+    "items_and_mechanics": 5,
+    "grounded_lore_qa": 6,
+    "relationships_and_evidence_paths": 5,
+    "spatial_containment_and_routes": 2,
+    "visual_entity_references": 10
+  },
+  "split_breakdown": {
+    "train": 24,
+    "validation": 2,
+    "test": 11
+  },
+  "required_families_covered": true,
+  "deterministic_replay_ready": true,
+  "manifest_seal_sha256": "7e7ecd4ddf2ffddbc1187290287631808e70e5deca6d56e9a76ef281dcff9eb7",
+  "receipt_artifacts": {
+    "manifest.json": "24101391ccce6f2737c78a253f225f86aeefcdac3e4891b13eff479857ab1906",
+    "synthesis_summary.json": "4f20150377f95fde548de5d52e766af7a5a4c12e67ddbe64cc617020fb778359",
+    "examples.jsonl": "3e1cf9b35085044d28dac6159af3aa30c076cc231b2cc96b476c7dea53c43217",
+    "accepted_examples.jsonl": "3e1cf9b35085044d28dac6159af3aa30c076cc231b2cc96b476c7dea53c43217",
+    "generation_tapes.jsonl": "1a3b5d8dd526d9fee868c173fd4b59fbddc774f6b7dd429c97d9b644f26dc8b3",
+    "rejections.jsonl": "d22513647912ad4f12b46e45cb0b8d902b181e5410284e5d3c9718c09c978423"
+  }
+}

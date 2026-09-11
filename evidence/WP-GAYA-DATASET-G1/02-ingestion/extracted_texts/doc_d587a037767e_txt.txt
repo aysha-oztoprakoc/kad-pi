@@ -1,0 +1,278 @@
+druid 2 cleric 1                         art.guil.(cozinheiro) Nanda
+                Lualho nham                                                          CLASSE E NÍVEL
+
+                                                                                     fada mordekainen
+                                                                                                                               ANTECEDENTE
+
+                                                                                                                               cáotico bom
+                                                                                                                                                                 NOME DO JOGADOR
+
+                                                                                                                                                                  waypoint
+           NOME DO PERSONAGEM                                                        RAÇA                                      TENDÊNCIA                         PONTOS DE EXPERIÊNCIA
+
+
+
+
+                        0               INSPIRAÇÃO
+                                                                                                                                            sou muito extrovertida
+   FORÇA
+                                                                         11                    0                   9m
+    -5                 +2          BÔNUS DE PROFICIÊNCIA
+                                                                         CLASSE
+                                                                          ARMD              INICIATIVA             DESLOC.
+
+      1                                                                                                                                                    TRAÇOS DE PERSONALIDADE
+
+                                                                      PV Totais              15
+                             -5 Força
+                                                                                                                                            jesus é o jardineiro e as
+                                                                                              15
+ DESTREZA
+                             0    Destreza
+
+     0                       -1 Constituição
+                                                                                     PONTOS DE VIDA ATUAIS
+                                                                                                                                            arveres somos nozes
+                                                                                                                                                                    IDEAIS
+                        ●   +4 Inteligência
+     11                 ●   +7 Sabedoria
+
+                                                                                                0
+                                                                                                                                            devo voltar a grande arvore e me provar
+                            +1 Carisma
+                                                                                                                                            uma druida completa
+CONSTITUIÇÃO                 TESTES DE RESISTÊNCIA
+                                                                                  PONTOS DE VIDA TEMPORÁRIOS
+    -1
+                                                                                                                                                                   LIGAÇÕES
+
+
+                             0                                        Total 3d8
+                                  Acrobacia (Des)                                                      SUCESSOS
+                                                                                                                                            sou meio esquentadinha
+      9                 ●   +4 Arcanismo (Int)
+                                                                                3d8                    FRACASSOS
+                            -5    Atletismo (For)                           DADOS DE VIDA              TESTES CONTRA A MORTE                                       DEFEITOS
+INTELIGÊNCIA                +1 Atuação (Car)
+
+   +2                       +1 Blefar (Car)
+                             0    Furtividade (Des)
+                                                                     NOME                      BÔNUS           DANO / TIPO
+                                                                                                                                         Starting at 3rd level, you can cast the faerie fire
+                                                                     scimitar                 +2           1d6 slashing                  spell with this trait. Starting at 5th level, you can
+     14                     +2 História (Int)
+                                                                                                                                         also cast the enlarge/reeducar spell with this trait.
+                            +1 Intimidação (Car)                     estilingue               +2           1d6 perfurante                Once you cast faerie fire or enlarge/reduce with
+ SABEDORIA                  +5 Intuição (Sab)                                                                                            this trait, you can't cast that spell with it again
+                                                                                                                                         until you finish a long rest. You can also cast either
+   +5
+                            +2 Investigação (Int)
+                                                                                                                                          of those spells using any spell slots you have of
+                            +5 Lidar com Animais (Sab)               armadura de couro                                                   the appropriate level.
+                            +5 Medicina (Sab)                                                                                            Because of your wings, you have a flying speed
+     20                                                              foco druidico (colher de pau)                                       equal to your walking speed. You can't use this
+                        ●   +4 Natureza (Int)                                                                                            flying speed if you're wearing medium or heavy
+                            +5 Percepção (Sab)                                                                                           armor.
+  CARISMA
+                            +1 Persuasão (Car)                                                                                           Languages.
+
+   +1                        0    Prestidigitação (Des)
+                            +2 Religião (Int)                                                                                            Divinely Favored
+     12                     +5 Sobrevivência (Sab)
+                                                                                                                                         A god has chosen you to carry a spark of their
+                                                                                                                                         divine power.
+                                    PERÍCIAS                                          ATAQUES E MAGIAS                                   You learn the thaumaturgy cantrip and one
+                                                                                                                                         1st-level spell based on the alignment of your
+                                                                                                                                         character, as specified in the Alignment Spells
+15                 SABEDORIA PASSIVA (PERCEPÇÃO)                                1x ferramentas de                                        table.
+                                                                PC          0                                                            You can cast the chosen 1st-level spell without a
+                                                                                cozinheiro
+                                                                                                                                         spell slot, and you must finish a long rest before
+                                                                                 1x um brasão da grande                                  you can cast it in this way again. You can also cast
+linguas: druida, silvano, comum,                      PP           0
+                                                                                arvore                                                   the spell using any spell slots you have.
+infernal, élfico                                                                                                                         Your spellcasting ability for this feat's spells is
+                                                                                 1x Set of traveler's
+                                                      PE           0                                                                     Wisdom
+Armor: light armor, medium armor,                                               clothes
+                                                      PO         75              1x backpack
+                                                                                                                                                  Chef
+shields (druids will not wear armor or                                           1x bedroll                                                       Increase your Constitution or Wisdom by 1
+use                                                   PL           0             1x mess kit                                                      You gain proficiency with cook's utensils if you
+shields made of metal)                                                           1x tinderbox                                                     don't already have it.
+                                                                                                                                                  As part of a short rest, you can cook special food,
+                                                                                 1x 10 torches                                                    provided you have ingredients and cook's utensils
+Weapons: clubs, daggers, darts,                                                  1x 10 days of rations                                            on hand. You can prepare enough of this food for
+javelins, maces,
+       IDIOMAS     quarterstaffs,
+               E OUTRAS PROFICIÊNCIAS                                            1x EQUIPAMENTO
+                                                                                       waterskin                                                  a number of creatures    equal
+                                                                                                                                                                CARACTERÍSTICAS E to 4 + your
+                                                                                                                                                                                  HABILIDADES
+                                                                                                                                                  proficiency bonus. At the end of the short rest, any
+scimitars, sickles, slings, spearsTM & © 2014 Wizards of the Coast LLC. Cópia permitida
+                                                                                 1x 50      feet
+                                                                                        apenas para usof  hempen
+                                                                                                       pessoal. Tradução: Johny Robert | johnyrobert@icloud.com
+                                                                                                                                                   creature who eats the food and spends one or
+Tools: Herbalism kit, cook kit                                                  rope
+                                                                       11                                                 60cm                                5kg
+       Lualho Nham                                                    IDADE
+
+                                                                       -
+                                                                                                                         ALTURA
+
+                                                                                                                          -
+                                                                                                                                                             PESO
+
+                                                                                                                                                              -
+NOME DO PERSONAGEM                                                    OLHOS                                              PELE                                CABELOS
+
+
+
+
+                                                     Ligada ao Eremitério da grande arvore, filha
+                                                     de Ilan, o verde e Noita, a eterna primavera                                           NOME
+
+
+
+                                                     Guild Membership[–]
+
+                                                     As an established and respected member of a
+                                                     guild, you can rely on certain benefits that
+                                                     membership provides. Your fellow guild
+                                                     members will provide you with lodging and
+                                                     food if necessary, and pay for your funeral if
+                                                     needed. In some cities and towns, a guildhall
+                                                     offers a central place to meet other members
+                                                     of your profession, which can be a good place
+                                                     to meet potential patrons, allies, or hirelings.
+                                                                                                                                                               SÍMBOLO
+                                                    Guilds often wield tremendous political
+                                                    power. If you are accused of a crime, your guild
+                                                     will support you if a good case can be made
+                                                    for your innocence or the crime is justifiable.
+APARÊNCIA DO PERSONAGEM                             You can also gain access to powerfulALIADOS                politicalE ORGANIZAÇÕES
+                                                    figures through the guild, if you are a member
+                                                    Spiritgood
+                                                     in           standing.
+                                                           Totem XGE   p23[–]    Such connections might
+                                                    require the donation of money or magic items
+                                                    Starting at 2nd level, you can call forth nature spirits to influence the world around you. As a bonus action, you can magically summon an
+                                                    to the guild's
+                                                    incorporeal  spirit tocoffers.
+                                                                          a point you can see within 60 feet of you. The spirit creates an aura in a 30-foot radius around that point. It counts as
+                                                     neither a creature nor an object, though it has the spectral appearance of the creature it represents.
+
+                                                    As a bonus action, you can move the spirit up to 60 feet to a point you can see.
+
+                                                    The spirit persists for 1 minute or until you're incapacitated. Once you use this feature, you can't use it again until you finish a short or
+                                                    long rest.
+                                                     Spirit Totem
+
+                                                    Starting at 2nd level, you can call forth nature spirits to influence the world around you. As a bonus action, you can magically summon an
+                                                     incorporeal spirit to a point you can see within 60 feet of you. The spirit creates an aura in a 30-foot radius around that point. It counts as
+                                                     neither a creature nor an object, though it has the spectral appearance of the creature it represents.
+                                                    As a bonus action, you can move the spirit up to 60 feet to a point you can see.
+                                                    The spirit persists for 1 minute or until you're incapacitated. Once you use this feature, you can't use it again until you finish a short or
+                                                    long rest.
+
+                                                    Bear Spirit.
+
+                                                    The bear spirit grants you and your allies its might and endurance. Each creature of your choice in the aura when the spirit appears gains
+                                                    temporary hit points equal to 5 + your druid level. In addition, you and your allies gain advantage on Strength checks and Strength saving
+                                                     throws while in the aura.
+                                                    Hawk Spirit.
+
+                                                    The hawk spirit is a consummate hunter, aiding you and your allies with its keen sight. When a creature makes an attack roll against a
+                                                                                                   OUTRAS CARACTERÍSTICAS E HABILIDADES
+                                                    target in the spirit's aura, you can use your reaction to grant advantage to that attack roll. In addition, you and your allies have advantage
+                                                     on Wisdom (Perception) checks while in the aura.
+                                                    Unicorn Spirit.
+                                                    Disciple of Life
+                                                    The unicorn spirit lends its protection to those nearby. You and your allies gain advantage on all ability checks made to detect creatures
+                                                    in the spirit's aura. In addition, if you cast a spell using a spell slot that restores hit points to any creature inside or outside the aura, each
+                                                    creature of your choice in the aura also regains hit points equal to your druid level.
+                                                    Also starting at 1st level, your healing spells are more effective.
+                                                    Whenever you use a spell of 1st level or higher to restore hit
+                                                    points to a creature, the creature regains additional hit points
+                                                    equal to 2 + the spell's level.
+
+
+
+
+ HISTÓRIA DO PERSONAGEM                                                                                                       TESOURO
+
+                          TM & © 2014 Wizards of the Coast LLC. Cópia permitida apenas para uso pessoal. Tradução: Johny Robert | johnyrobert@icloud.com
+                                                        druida                                                                  wis                                            15                       +7
+                                                                                                                         HABILIDADE CHAVE                                    CD DO TR               BÔNUS DE ATAQUE
+                                        CLASSE DE CONJURADOR
+
+
+
+
+                         0                          TRUQUES                                   3                                                                                  6
+                            druidcraft
+                            thaumathurgy
+                            magic stone
+                            thorn whip
+                            light
+                            toll the dead
+
+
+
+
+                     NÍVEL
+                     MAGIA
+                               ESPAÇOS TOTAL           ESPAÇOS USADOS
+
+
+                         1             4                       4                                                                                                                 7
+                     EPAR
+                    PR   AD                     NOME DA MAGIA
+
+                            find familiar
+
+                            bless
+                                                                                              4
+                            cure wounds
+
+                            goodbery
+
+
+
+
+MAGIAS CONHECIDAS
+                            Charm Person
+
+                            Purify Food and Drink
+
+                            Snare
+
+                            bane
+
+                            sanctury
+
+                            cerymony
+                                                                                                                                                                                 8
+                            inflict wound
+
+
+
+
+                         2             2                       2
+                            spike growth
+
+                            Summon Beast
+
+                            Moonbeam
+                                                                                              5
+                            healing spirit
+
+                            blindness
+                                                                                                                                                                                 9
+
+
+
+
+                                                                   TM & © 2014 Wizards of the Coast LLC. Cópia permitida apenas para uso pessoal. Tradução: Johny Robert | johnyrobert@icloud.com

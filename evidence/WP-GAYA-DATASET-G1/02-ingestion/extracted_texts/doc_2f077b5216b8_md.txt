@@ -1,0 +1,19 @@
+---
+slug: ramo_de_douglas
+titulo: "Ramo de Douglas — Salão de Cortesia e Música"
+categoria: locations
+aliases: []
+tags: ["gaya", "locations", "refugio_ykt", "scene_design"]
+entidades_relacionadas: ["amethysta", "douglas", "equipe_ykt", "tambor_do_polirritmo"]
+l0_abstract: "Ala cultural e de acolhimento do refúgio, abrigando o salão de recepção, a sala de música acústica e cabines de ensaio de Douglas."
+---
+
+# [[ramo_de_douglas]] — [[ramo_de_douglas]] e Música
+
+Atravessando o tronco em direção a um ramo voltado para o poente, encontram-se os aposentos de [[douglas]]. O salão de recepção possui poltronas macias e mesa apropriada para conversas delicadas, negociações com emissários e hospitalidade. Ao lado, a [[ramo_de_douglas]] ostenta nervuras de madeira curva projetadas para ressonância acústica perfeita, abrigando o lendário [[tambor_do_polirritmo]] e violas. Cabines acústicas permitem que [[amethysta]] pratique escalas musicais sem perturbar o sono da equipe.
+
+## Entidades Presentes ou Vinculadas
+- [[douglas]]
+- [[amethysta]]
+- [[refugio_ykt]]
+- [[tambor_do_polirritmo]]

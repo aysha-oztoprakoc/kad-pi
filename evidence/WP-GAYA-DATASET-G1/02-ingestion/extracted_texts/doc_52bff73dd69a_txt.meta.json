@@ -1,0 +1,8 @@
+{
+  "doc_id": "doc_52bff73dd69a",
+  "source_ref": "staging_ingestion/relatorio_requisitos_pipeline_gaya_pdf.txt",
+  "sha256": "52bff73dd69ad33f6299d097a11843d19aae4f80ae05b4a1eb25ede1b9240e97",
+  "parser": "doc_indexer",
+  "status": "SUCCESS",
+  "length": 14052
+}

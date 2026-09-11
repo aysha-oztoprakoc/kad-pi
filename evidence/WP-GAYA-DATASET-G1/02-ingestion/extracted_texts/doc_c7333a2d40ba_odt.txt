@@ -1,0 +1,70 @@
+Armadura leve +2 (couro batido), rara (requer
+sintonia por Amethysta)
+Custom-made Dragonling Light
+40
+20 kg.
+Bonus de AC: 4 (base) + 2 (raridade)
+Para Amethysta no nível 7, a CA é 13 + bônus de nível 
+1
+ + bônus da armadura 
+6
+, totalizando CA 20.
+Elo de Kravarius
+Usando os conhecimentos lhe passados por Begônio, Douglas, Proísb, Pumma e Niara sobre as duas concepções de mundo formadas por khan e yorman, Aysha sintetizou o conhecimento de como o yaark dela funcionava em uma unica instrução, com o objetivo de replicar as propriedades presentes em sua armadura, para criar um objeto que representava a sua conexão com Amethysta. Esse objeto representa todas as emoções que uma mãe sente ao ser obrigada a levar a filha para o campo de batalha. O Manto usa a Crosta de Kravarius como matriz simbólica, o ouro de
+Khan, que representa a esperança de que o próximo dia sempre virá, como acabamento solar e o azul profundo de Yorman, que representa a certeza da noite como núcleo lunar. Ele não concede automaticamente as resistências, imunidades ou cargas da Crosta de Kravarius; seus poderes são próprios e dependem do vínculo entre Ayşa e Amethysta. Ayşa imbuiu nele todo o seu conhecimento de sínteses anteriores, assim como uma reflexão mais profunda em se tornar a melhor mão possível dadas suas condições, inspirada na união da YKT em ensinar a Amethysta aquilo que a própria Ayşa nunca 
+pôde experienciar na vida. Decidiu então imbuir nesse presente aquilo que poderia ajudar, usando tudo aquilo pela qual é conhecida como Ayşa Öztoprak, o Trovão Lampejante, o Fulgor Negro, Ex-Tenente do Exército de Drakovia, mãe e cavaleira de Amethysta Öztoprak, integrante dos Yormanos Khansados de Thor’hunna’bad. 
+Os poderes do Manto funcionam enquanto Amethysta estiver a até 
+40
+Ayşa
+Os efeitos que exigem uma salvaguarda usam CD 
+18
+24
+Percepção Aguçada (Aysha + Amethysta)
+A conexão de mãe e filha se une com a conexão de dragão e cavaleiro, conferindo às duas uma capacidade de comunicação e percepção dos arredores aguçadas, focada uma na outra. Isso permite mãe e filha, assim como professora e aluna a moverem-se como uma unidade em batalha.
+Quando 
+Amethysta
+Ayşa
+Ayşa
+½ do seu deslocamento
+que causou o dano, desde que consiga vê-la.
+I
+mbuir com Khan: A 
+Esperança
+ d
+e
+Khan
+Quando 
+Amethysta
+Ayşa
+parte da mesma reação de 
+Percepção Aguçada
+Se 
+Ayşa
+ conseguir 
+estourar
+ a marca da Amethysta
+com
+o parte de
+ um ataque ou 
+spell attack
+,
+redirecione
+proximo 
+por A
+methysta
+para 
+Ayşa
+Marca do Manto
+Uma criatura marcada subtrai 1d4 da próxima salvaguarda que
+fizer contra uma magia, sopro ou traço de Amethysta 
+ou 
+Ayşa
+do próximo turno dela. Uma criatura só pode receber uma marca do
+Manto por rodada.
+Imbuir com Yorman: 
+A Certeza de 
+Yorman
+Quando a criatura marcada falhar na salvaguarda contra
+Amethysta, você pode gastar 1 Yorman. A criatura terá
+desvantagem no próximo ataque 
+contra Amethysta

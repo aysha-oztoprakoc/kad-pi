@@ -1,0 +1,866 @@
+Current Standard CS v1.4
+                                                                                              Dragoon 7 / Cav. Dragão                          Eremita (legado)          Thiago Akkill
+              Ayşa Öztoprak, o Trovão Lampejante, o Fulgor Negro
+                                                                                              CLASSE
+                                                                                              CLASS E&NÍVEL
+                                                                                                      LEVEL                                  ANTECEDENTE
+                                                                                                                                             BACKGROUND                   JOGADOR
+                                                                                                                                                                         PLAYER NAME
+
+                                                                                              Draconata Ametista                               Caótica Neutra            N7
+                  CHARACTER
+                  NOME          NAME
+                       DA PERSONAGEM                                                          RACE
+                                                                                              ESPÉCIE                                        TENDÊNCIA
+                                                                                                                                             ALIGNMENT                     EXPERIÊNCIA
+                                                                                                                                                                         EXPERIENCE POINTS
+
+
+
+                                                                                                                        RD: -2
+              7                 +1 SALVAGUARDA
+                                    SAVING THROW
+                                -2 ATLETISMO
+                                    ATHLETICS
+                                                                           Sem registro                  24
+                                                                                                        ARMOR
+                                                                                                                        Títulos: p. 5                                          INSPIRATION
+                                                                                                                                                                               INSPIRAÇÃO HEROICA
+
+
+
+
+           -2
+                                                                                                         CLASS
+                                                                                CONDIÇÕES
+                                                                                CONDITIONS                                     DÁDIVAS
+                                                                                                                                BOONS                  Utilitarista, orgulhosa e confiante em
+                                                                                                                               40 ft                   combate. Dura e áspera: o exército de
+
+                                                                            +8                             0
+         FORÇA
+        STRENGTH                                                                                                                                       Drakovia me ensinou a sobreviver, mas não
+                                                                                                                               voo 80*
+                                                                                                         PV TEMP.
+                                                                                                         TEMP  HP                                      decide mais por quem eu luto.
+                                                                                                                                                                      PERSONALIDADE
+                                                                                                                                                                     PERSONALITY TRAITS
+                                +8 SAVING                                  INICIATIVA
+              26                                                           INITIATIVE                                             SPEED
+                                                                                                                                DESLOCAMENTO
+                                   SALVAGUARDA
+                                          THROW
+                                +8 ACROBACIA
+                                    ACROBATICS                           ATUAIS
+                                                                         Current    7
+                                                                                                 69 69                           SUCCESSES            Proteger Amethysta. Fugir do alcance de
+
+              8
+                                +8 SLEIGHT                                                                                                            Drakovia e enfrentar o império que me
+                                                                           7d8
+                                    PRESTIDIGITAÇÃO
+                                            OF HAND
+                                +8FURTIVIDADE
+                                    STEALTH
+                                                                                                                                  FAILURES
+                                                                                                                                                      criou. Minha força agora serve às minhas
+        DESTREZA
+        DEXTERITY                                                           HIT DICE
+                                                                           DADOS DE VIDA
+                                                                                                    ATUAIS
+                                                                                                   CURRENT
+                                                                                                  HIT POINTS
+                                                                                                               MAXIMUM
+                                                                                                               HIT POINTS      DEATH
+                                                                                                                               TESTES   SAVES
+                                                                                                                                      DE MORTE        escolhas.
+                                                                                                                                                                           IDEAIS
+                                                                                                                                                                           IDEALS
+
+                                                                         NOME
+                                                                         NAME                           ATK BONUS DANO / TIPO
+                                                                                                                  DAMAGE/TYPE                          Amethysta é meu vínculo mais profundo
+                                +9 SAVING
+              22                   SALVAGUARDA
+                                          THROW                                                                                                        e dá sentido à minha vida. YKT
+                                                                          Síntese: lâmina I               +12               1d6+9 perf.
+                                                                                                                                                       permanece entre meus vínculos
+
+              6
+     CONSTITUIÇÃO
+     CONSTITUTION
+                                                                          Síntese: lâmina II              +12               1d6+9 perf.
+                                                                                                                                                       registrados.
+                                                                                                                                                                           BONDS
+                                                                                                                                                                           VÍNCULOS
+
+
+
+                                                                           Sopro elétrico               DES 17              2d10 elétr.                Orgulhosa, rude e superprotetora. Posso
+                                                                                                                                                       ser dura demais com Amethysta por
+                                +0 SAVING                                 Dança: secund.                  +12               1d6+9 perf.                medo de perdê-la. Carrego os hábitos do
+              11                     SALVAGUARDA
+                                             THROW
+                                                                                                                                                       exército.
+                                +0 ARCANISMO
+                                     ARCANA
+
+
+              0
+                                +3 HISTÓRIA
+                                     HISTORY                                K/Y imbuido                                 +1 d6 no dano
+                                                                                                                                                                           FLAWS
+                                                                                                                                                                           DEFEITOS
+
+
+                                +3 INVESTIGAÇÃO
+                                     INVESTIGATION
+                                +0 NATUREZA
+                                     NATURE
+                                                                         Duas shortswords +1; Acuidade, Leve; Vex em
+      INTELIGÊNCIA
+      INTELLIGENCE
+                                +3 RELIGIÃO                              ambas. Alcance 5 ft (1,5 m).                                                Armas    simples e marciais; todas as
+                                                                                                                                                     INVESTIGAÇÃO
+                                     RELIGION
+                                                                         AÇÃO ATACAR: 2 ataques. AÇÃO BÔNUS:                                         armaduras e escudos. Kit de herbalismo
+                                                                                                                                                     LIDAR COM ANIMAIS
+
+                                                                         Comandar Amethysta.                                                         (antecedente).
+                                                                                                                                                     MEDICINA
+                                -1 SAVING                                VEX: ao acertar e causar dano, vantagem no
+              8
+                                                                                                                                                     RELIGIÃO
+                                     SALVAGUARDA
+                                               THROW                                                                                                 Perícias   marcadas: História, Investigação,
+                                +2 LIDAR
+                                     ANIMAL COM  ANIMAIS
+                                               HANDLING                  próximo ataque contra o mesmo alvo antes do fim                             Religião, Lidar com Animais, Medicina,
+
+           -1
+                                -1 INTUIÇÃO                              do próximo turno.                                                           Intimidação e Percepção.
+                                     INSIGHT
+                                                                         DANÇA: após um acerto elegível, ataque
+                                +2 MEDICINA
+                                     MEDICINE                                                                                                        Idiomas: Comum, Drakoviano, Anão, Élfico e
+                                                                         secundário no mesmo alvo.
+         WISDOM
+         SABEDORIA
+                                +2 PERCEPÇÃO
+                                     PERCEPTION                          GOLPE CRUZADO: outro alvo ao alcance, CA                                    Orc.
+                                -1 SOBREVIVÊNCIA
+                                     SURVIVAL                            dele +2. Uma técnica por ataque; sem                                        Percepção +2 com vantagem; passiva 17.
+                                                                         recursão.                                                                   Contra dragões visíveis: +5; passiva 20.
+                                +1 SAVING                                IMBUIR +1 KHAN/YORMAN: +1d6 no dano.                                                   PROFICIÊNCIAS &
+                                                                                                                                                                PROFICIENCIES E IDIOMAS
+                                                                                                                                                                                LANGUAGES
+              13                    SALVAGUARDA
+                                           THROW
+                                                                         THUNDER GOD e queima do título: p. 5. Bônus
+                                +1 ENGANAÇÃO
+                                    DECEPTION                            de Khan/Yorman são separados do dano básico.                                CAVALEIRO DO DRAGÃO / DRAGOON 7
+          +1
+                                +4 INTIMIDAÇÃO
+                                    INTIMIDATION
+                                                                                                                                                     N1: Obter o Dragão; estilo VELOZ: +2 CA com duas
+                                +1    ATUAÇÃO
+                                    PERFORMANCE                                              ATAQUES
+                                                                                              ATTACKSE &
+                                                                                                       CONJURAÇÃO
+                                                                                                         SPELLCASTING                                armas corpo a corpo. Concede Ambidestro, atualizado
+                                +1 PERSUASÃO
+                                    PERSUASION                                                                                                       para 2024.
+        CARISMA
+        CHARISMA
+                                                                           Sopro: 3/3                                                                N2: Direção do Senhor; ação bônus para comandar
+                                                                                                                                                     um ataque. Amethysta INT 10 pode atacar sem esse
+                                                                                                                                                     comando, nos limites da economia do vínculo.
+                                                                         Sup. 2/2: 1d6*
+           +3                 PROFICIENCY
+                              BÔNUS          BONUS
+                                    DE PROFICIÊNCIA                                                                                                  N3: Sopro do dragão; vínculo divide o dano entre
+                                                                                                                                                     ambas. Arte da Guerra: Dança do Esmagamento e
+                                                                            Voo: 1/DL                                                                Golpe Cruzado; concede Adepto Marcial.
+                                                                                                                                                     N4: incremento já incorporado à ficha-base.
+          17             SABEDORIAWISDOM
+                         PASSIVE   PASSIVA (PERCEPÇÃO)
+                                            (PERCEPTION)              ThunderGod: 1/DC                                                               N5: Ataque Extra (2 por ação). Coração do Dragão:
+                                                                                                                                                     imunidade elétrica, pois a resistência elétrica da
+                                                                           Yorman: 28                                                                campanha já existe.
+                                                                                                                                                     N6: Sentidos de Dragão; vantagem em Percepção e
+      PESO ATUAL
+     CURRENT WEIGHT
+                                    105         CARGA MÁXIMA
+                                                 MAX WEIGHT
+                                                                            Khan: 27
+                                                                                                                                                     proficiência dobrada contra criaturas dracônicas
+                                                                                                                                                     visíveis.
+                                                                                     RECURSOS,
+                                                                                    CLASS      MUNIÇÃO E
+                                                                                          RESOURCES,     CARGAS
+                                                                                                     AMMO & CHARGES                                  N7: MAGIA DO DRAGÃO - THUNDER GOD; 1 uso por
+                                                                                                                                                     descanso curto/longo. Regras de chamar/queimar na
+                                                                                                                                                     p. 5.
+                      Equipadas: 2 espadas curtas +1                    CROSTA DE KRAVARIUS: couro batido +;
+                                                                                                                                                     TALENTOS: Ambidestro 2024; Speedy 2024; Adepto
+CP                    (); Crosta de Kravarius +1.                       CA 24 (14 + DES 8 + magia 1 + Veloz 2).                                      Marcial (legado, manobras atualizadas); Combate com
+                      POLARIDADE +5                                     Resistência a esmagador e perfurante;                                        Duas Armas 2024 (conversão de Fighting Initiate).
+                                                                        imunidade a cortante e elétrico. Cargas zeram                                SOPRO PESSOAL: substitui 1 ataque; 3
+SP                                                                      no descanso longo; Breath Weapon = 5                                         usos/descanso longo; DES CD 17, 2d10 elétrico,
+                                                                        cargas. Cada 5 de dano prevenido gera 1                                      metade no sucesso; cone de 15 ft.
+                                                                                                                                                     MENTE PSIÔNICA: mensagens a criatura visível em
+                                                                        carga dracônica; cada 10 gera 1 Khan. Pele                                   30 ft que compreenda uma língua.
+EP                                                                      Dracônica (20): resistência a todo dano por 5                                VOO DE GEMAS: ação bônus, 1 minuto, 1/descanso
+                                                                        turnos. Agilidade Dracônica (4): +30 ft por 3                                longo; pairar. Voo 80 ft enquanto houver asas,
+                                                                        turnos. Texto integral: p. 7. Khan 27; Yorman                                aplicando o traço Voar do vínculo.
+GP        5                                                             28; polaridade +5. Dano verdadeiro da queima                                 PROGRESSÃO DA MESA: +1 CAR no N7: 12 para 13.
+                                                                                                                                                     Não há novo incremento da tabela da classe no N7.
+                                                                        não é reduzido.
+PP
+
+                         EQUIPAMENTO
+                           EQUIPMENT                                                             EQUIPMENT(CONT.)
+                                                                                                 EQUIPAMENTO CONT.                                                   CARACTERÍSTICAS&
+                                                                                                                                                                     FEATURES         TRAITS
+                                                                                                                                                                                    E TRAÇOS
+
+
+                                                                                                                                                                               Gaya | D&D 5.5 | nível 7 | 1/8
+                                                     TM & © 2014 Wizards of the Coast LLC. Permission is granted to photocopy this document for personal use.
+                                                                             26                                           2,07 m                         80 kg
+                  Ayşa Öztoprak                                              AGE                                          ALTURA
+                                                                                                                          HEIGHT                         PESO
+                                                                                                                                                        WEIGHT
+                                                                             IDADE
+
+
+                                                                             Pretos                                       Escamas roxas                  Sem cabelos
+          CHARACTER
+          NOME DA       NAME
+                  PERSONAGEM                                                 EYES
+                                                                             OLHOS                                       PELE
+                                                                                                                         SKIN                           HAIR
+                                                                                                                                                        CABELOS
+
+
+
+
+                                                              AMETHYSTA
+                                                              Minha companheira dracônica. Aparência de                                      NOME
+                                                                                                                                             NAME
+                                                              ametista, mecânica de dragão azul e poderes
+                                                              elétricos. O vínculo começou quando encontrei                                            Amethysta
+                                                              seu ovo na Savana Negra. Pode assumir forma
+                                                              de halfling.
+
+                                                              YKT
+                                                              Vínculo citado nas fichas. Nome completo e
+                                                              natureza da relação não foram registrados.
+
+                                                              BRIGADA ADAMANTINA
+                                                              Minha antiga unidade e parte do exército do
+                                                              qual desertei. Sua perseguição motivou a fuga
+                                                              pela Savana Negra.
+
+                                                              KRAM'TOR RUBRALMA
+                                                              Imperador de Drakovia, sob cujo comando fui
+                                                                                                                                                          IMAGEM
+                                                                                                                                                          SYMBOL
+                                                              criada como soldado.
+
+                                                              GALFENHARD
+                                                              O território orc onde a repressão de uma
+                                                              rebelião rompeu minha lealdade ao império.
+             CHARACTER
+             APARÊNCIA     APPEARANCE
+                       DA PERSONAGEM                                                                               ALIADOS &
+                                                                                                                   ALLIES  E ORGANIZAÇÕES
+                                                                                                                             ORGANIZATIONS
+
+
+                                                             THUNDER GOD - MAGIA DO DRAGÃO (NÍVEL 7)
+Fui criada desde a infância no exército de                   Chamar: ação Mágica, 1 uso por descanso curto/longo. Seis ataques corpo a corpo,
+Drakovia, sob o comando de Kram'Tor                          deslocamento dobrado e movimento sem ataques de oportunidade; cada acerto recebe
+Rubralma, o Imperador. Sempre fui utilitarista: já           +1d6+1 elétrico. Não são seis ações Atacar.
+que era isso que o destino tinha me dado, eu                 Queimar o título: nesse turno, cada um dos seis ataques principais que acertar pode ativar
+faria o melhor que pudesse. Com essa                         Dança do Esmagamento. Até seis ataques secundários, sem recursão. Para cada ataque
+mentalidade, subi pelas patentes do exército
+drakoviano, mesmo discordando de algumas
+                                                             principal realizado, sofro 1d6-1 de dano verdadeiro, que não pode ser reduzido. Se realizar os
+ordens.                                                      seis: 6d6-6 no total (0 a 30). Os secundários não geram novos custos. Ver p. 5 para as
+                                                             interações e o controle.
+Isso mudou quando entrei para a Brigada
+Adamantina. Foi ali que comecei a presenciar                 ARTE DA GUERRA / ADEPTO MARCIAL
+atos que não conseguia mais justificar,                      Dança do Esmagamento e Golpe Cruzado usam as espadas. Golpe Cruzado aumenta a CA
+principalmente em Galfenhard. Numa missão                    do alvo secundário em 2 só para o ataque da técnica; não aumenta minha CA.
+para conter uma rebelião de orcs, vi as
+consequências reais de tudo aquilo de que tinha              Empurrar: 1 dado de superioridade no dano; alvo Grande ou menor faz FOR CD 19 ou é
+participado. Não dava mais para tratar aquilo                empurrado até 15 ft. Passos Evasivos (2024): ação bônus e 1 dado; Desengajar e somar o
+como só mais uma ordem.                                      dado à CA até o início do meu próximo turno.
+
+Desertei. Entrei na Savana Negra para dificultar             SÍNTESE E TÍTULOS
+que a Brigada Adamantina me encontrasse.                     Aparência e nomes não mudam por si os tipos de dano. Os números de combate distinguem
+Durante a fuga, encontrei numa caverna um ovo                perfurante, elétrico, trovejante e energia. Poderes de Fulgor Negro não receberam números
+de drakkai prestes a rachar. Foi assim que
+Amethysta entrou na minha vida.                              novos nesta ficha.
+                                                                                                               ADDITIONAL    FEATURES
+                                                                                                               OUTRAS CARACTERÍSTICAS       & TRAITS
+                                                                                                                                      E HABILIDADES
+Nossa conexão é algo que ainda não consigo
+explicar. Ela preenche minha vida de sentido e
+direção. Proteger Amethysta passou a ser                                                           Nyr: Yorman
+minha prioridade, enquanto tento escapar do                                                        Zhar: Khan
+império que me criou.
+
+Hoje minha fuga também é revolta contra o
+                                                                                                   Duas espadas curtas +1; Vex nas duas.
+exército drakoviano. Sou Aysha Öztoprak, o                                                         GAYA / DRAKOVIA
+Trovão Lampejante; Fulgor Negro é outro título                                                     Drakovia se tornou independente de Dulhast durante a Guerra da
+ligado à minha manifestação. Raio e                                                                Platina, com apoio financeiro élfico, e reivindica a herança de
+eletricidade atravessam meus poderes e os de                                                       Khan. Galfenhard nasceu da revolta dos orcs contra sua servidão.
+Amethysta. O fulgor escuro e a aura negra e                                                        No Códice, Khan representa matéria/existência e Yorman
+vermelha fazem parte dessa expressão.                                                              possibilidade/consciência; seu encontro produz a existência. A
+                                                                                                   síntese das duas forças é uma leitura temática do vínculo, não um
+Síntese é o conceito do meu Yaark e do par de
+lâminas.                                                                                           poder adicional.
+
+                                                                                                   Contexto histórico do Códice; não presume que Aysha saiba todos
+                                                                                                   os segredos da cosmogonia.
+
+              HISTÓRIA
+              CHARACTERDA PERSONAGEM
+                            BACKSTORY                                                                                            OTHER
+                                                                                                                          OUTROS REGISTROS
+
+
+
+                                           TM & © 2014 Wizards of the Coast LLC. Permission is granted to photocopy this document for personal use.               Gaya | D&D 5.5 | nível 7 | 2/8
+                                                            CARISMA                                                           0                                     12                        +4
+                                                                                                                        Prepared Spells                         Spell
+                                                                                                                                                                CD DASSave DC
+                                                                                                                                                                       MAGIAS              Spell Attack
+                                      CONJURAÇÃO
+                                      SPELLCASTING                                                                          Total                                                            Bonus
+                                      CLASS/ABILITY
+                                      CLASSE / ATRIBUTO
+
+
+                              Magias de Amethysta e de itens; a Dragoon não concede espaços de magia.
+
+
+
+                           0                       TRUQUES
+                                                   CANTRIPS                                  3           0                                                             6             0
+                              Amethysta: Spare the Dying
+                              Amethysta: Toll the Dead
+
+
+
+
+                              Amethysta: CAR +7 / CD 18 / ataque +10.
+                              Magia do Dragão não usa espaços.
+
+                       SPELL
+                       LEVEL
+                                SLOTS TOTAIS
+                                ESPAÇOS TOTAL             SLOTS  REMAINING
+                                                          ESPAÇOS RESTANTES
+
+
+
+                           1         0                                                                                                                                 7             0
+                       EPAR
+                      PR   ED                    SPELL
+                                                 NOME    NAME
+                                                      DA MAGIA
+
+
+                              Amethysta: Bane
+                              Amethysta: Silvery Barbs
+                                                                                             4           0
+                              Descrições das quatro magias: p. 6.
+
+
+
+
+       SPELLS KNOWN
+MAGIAS CONHECIDAS
+
+
+
+
+                                                                                                                                                                       8             0
+
+
+
+
+                           2         0
+
+
+
+
+                                                                                             5           0
+
+                                                                                                                                                                       9             0
+
+
+
+
+                                                                                               Itens / registros: descrições na p. 8.
+
+
+
+
+                                                                          TM & © 2014 Wizards of the Coast LLC. Permission is granted to photocopy this document for personal use.       Gaya | D&D 5.5 | nível 7 | 3/8
+                                           COMPANHEIROS, FAMILIARES
+                                           COMPANIONS,  FAMILIARS,
+                                           E ALIADOS.
+                                           AND  PETS.
+                                                                                              Nível 7 (Pequena)                   Vínculo: Aysha                   Companheira
+                                    Amethysta                                                 CLASSE
+                                                                                              CLASS E&NÍVEL
+                                                                                                      LEVEL                        VÍNCULO
+                                                                                                                                 RELATIONSHIP                      ROLE
+                                                                                                                                                                   FUNÇÃO
+
+
+                                                                                              Dragão azul*                        Leal e Má*                       Não separado
+                             NOME
+                             NAME                                                             RACE
+                                                                                              ESPÉCIE                             TENDÊNCIA
+                                                                                                                                  ALIGNMENT                          EXPERIÊNCIA
+                                                                                                                                                                   EXPERIENCE POINTS
+
+
+
+
+                                                                                                                                                                                  17
+                                                                    NOME
+                                                                    NAME                      ATK BONUS DANO / TIPO
+                                                                                                        DAMAGE/TYPE
+                 8               12                                                                                                                Prof: +3                                            Imune: elétrico
+                                                                                                                                                                                 ARMOR
+                                                                                                                                                                                  CLASS
+                                                                                                                                                        CONDIÇÕES                                           DÁDIVAS
+                                                                                                                                                                                                             BOONS
+                                 +1
+                                                                                                                                                        CONDITIONS
+                 -1
+                                                                                                                                                                                                            30 ft
+            FORÇA
+           STRENGTH            DESTREZA
+                               DEXTERITY                                                                                                             +8                            PV
+                                                                                                                                                                                      0
+                                                                                                                                                                                      TEMP.
+                                                                                                                                                                                   TEMP  HP
+                                                                                                                                                                                                            voo 60
+
+                                                                    Mordida 10 ft, +2, 1d6-1 perfurante                                            INICIATIVA
+                                                                                                                                                   INITIATIVE                                                   SPEED
+                                                                                                                                                                                                             DESLOCAMENTO
+
+                 11              10
+                                                                                                                                                                            45 45
+                                                                    SPL AT: +10
+                                                                                                                                                  ATUAIS
+                                                                                                                                                  Current    7                                                SUCCESSES
+
+
+
+                 +0              +0                                 Sopro: linha 20 ft, 4d6 elétrico, DES CD 18,                                   7d8                        ATUAIS
+                                                                                                                                                                                                               FAILURES
+
+
+                                                                    recarga 7-8.
+                                                                                                                                                                             CURRENT      MAXIMUM
+                                                                                                                                                    HIT DICE
+                                                                                                                                                   DADOS DE VIDA            HIT POINTS    HIT POINTS        DEATH
+                                                                                                                                                                                                            TESTES   SAVES
+                                                                                                                                                                                                                   DE MORTE
+
+        CONSTITUIÇÃO
+        CONSTITUTION         INTELIGÊNCIA
+                             INTELLIGENCE
+                                                                                     ATTACKSE&CONJURAÇÃO
+                                                                                     ATAQUES   SPELLCASTING
+                                                                                                                                                                      PROFICIÊNCIA +3
+                 10              24                                  Sopro / rec.                                                                                     Salvaguarda: Constituição +3.
+                                                                                                                                             CP                       Outras: FOR -1, DES +1, INT +0,
+                                                                     Magias: p.6                                                                                      SAB +0, CAR +7.
+                                                                                                                                                                      CA = 13 + DES 1 + bônus de nível 1
+                 +0              +7                                           CLASSRSOS, MUNIÇÃO E
+                                                                                   RESOURCES,      CARGAS
+                                                                                               AMMO & CHARGES
+                                                                                                                                                                      = 15.
+                                                                                                                                             SP
+                                                                    MAIORES: Mudar de Forma                                                                           Nado e escavação: 30 ft. Voar: dobro
+           WISDOM
+           SABEDORIA           CARISMA
+                               CHARISMA                             Conjurer + Mage Adept (Cleric): CHA ND 18                                                         da caminhada.
+                                                                    (N7: Sopro Especial – Paralisante                                                                 PV N7: 40 + 5 = 45
+                                                                                                                                             EP
+
+                       PASSIVE WISDOM                               MENORES: Voar, Anfíbio, Nadador, Escavar.
+            10*         (PERCEPTION)                                                                                                                                  Iniciativa compartilhada com Aysha
+                                                                                                                                             GP
+                                                                                                                                                                      (+8).
+                                                                                                                                                                      Sopro Paralisante, vínculo, forma
+                                                                    Perícias do dragão não identificadas: escolher 2.                                                 alternativa e recomendações: p. 6.
+                             120
+                                                                                                                                             PP
+ PESO ATUAL
+CURRENT WEIGHT                          CARGA MÁXIMA
+                                         MAX WEIGHT                 Passiva 10 sem proficiência confirmada.
+                                                                                   PROFICIÊNCIAS&E IDIOMAS
+                                                                                   PROFICIENCIES       LANGUAGES
+                                                                                      CARACTERÍSTICAS&
+                                                                                      FEATURES         TRAITS
+                                                                                                     E TRAÇOS                                                                    EQUIPMENT
+                                                                                                                                                                                 EQUIPAMENTO
+
+
+
+
+                                                                                              CLASSE
+                                                                                              CLASS E&NÍVEL
+                                                                                                      LEVEL                        VÍNCULO
+                                                                                                                                 RELATIONSHIP                      ROLE
+                                                                                                                                                                   FUNÇÃO
+
+
+
+
+                             NOME
+                             NAME                                                             RACE
+                                                                                              ESPÉCIE                            TENDÊNCIA
+                                                                                                                                 ALIGNMENT                           EXPERIÊNCIA
+                                                                                                                                                                   EXPERIENCE POINTS
+
+
+                                                                    NOME
+                                                                    NAME                      ATK BONUS DANO / TIPO
+                                                                                                        DAMAGE/TYPE
+
+                                                                                                                                                                                 ARMOR
+                                                                                                                                                                                  CLASS
+                                                                                                                                                        CONDIÇÕES
+                                                                                                                                                        CONDITIONS                                          DÁDIVAS
+                                                                                                                                                                                                             BOONS
+
+
+
+
+           FORÇA
+          STRENGTH            DESTREZA
+                              DEXTERITY                                                                                                                                            PV TEMP.
+                                                                                                                                                                                   TEMP  HP
+
+
+
+
+                                                                                                                                                   INICIATIVA
+                                                                                                                                                   INITIATIVE                                                  SPEED
+                                                                                                                                                                                                             DESLOCAMENTO
+
+
+                                                                                                                                                  ATUAIS
+                                                                                                                                                  Current                                                     SUCCESSES
+
+
+                                                                                                                                                                                                               FAILURES
+
+                                                                                                                                                                              ATUAIS
+                                                                                                                                                                             CURRENT      MAXIMUM
+                                                                                                                                                    HIT DICE
+                                                                                                                                                   DADOS DE VIDA            HIT POINTS    HIT POINTS        DEATH
+                                                                                                                                                                                                            TESTES   SAVES
+                                                                                                                                                                                                                   DE MORTE
+
+       CONSTITUIÇÃO
+       CONSTITUTION          INTELIGÊNCIA
+                             INTELLIGENCE
+                                                                                     ATTACKSE&CONJURAÇÃO
+                                                                                     ATAQUES   SPELLCASTING
+
+
+
+                                                                                                                                             CP
+
+                                                                               RECURSOS,
+                                                                              CLASS      MUNIÇÃO E
+                                                                                    RESOURCES,     CARGAS
+                                                                                               AMMO & CHARGES
+                                                                                                                                             SP
+           WISDOM
+           SABEDORIA          CARISMA
+                              CHARISMA
+
+                                                                                                                                             EP
+
+                       PASSIVE WISDOM
+                        (PERCEPTION)
+                                                                                                                                             GP
+
+
+
+ PESO ATUAL
+CURRENT WEIGHT                          CARGA MÁXIMA
+                                         MAX WEIGHT
+                                                                                                                                             PP
+
+                                                                                   PROFICIÊNCIAS&E IDIOMAS
+                                                                                   PROFICIENCIES        LANGUAGES
+                                                                                      CARACTERÍSTICAS&
+                                                                                      FEATURES         TRAITS
+                                                                                                     E TRAÇOS                                                                    EQUIPMENT
+                                                                                                                                                                                 EQUIPAMENTO
+                                                                                                                                                                                     Gaya | D&D 5.5 | nível 7 | 4/8
+                                                       TM & © 2014 Wizards of the Coast LLC. Permission is granted to photocopy this document for personal use.
+Síntese: talentos e combate
+Texto de jogo em português. DC = descanso curto; DL = descanso longo.
+
+
+
+  Talentos concedidos pela classe                                  Escolhas e conversões
+   VELOZ (N1): mantém +2 CA com uma arma corpo a corpo              FIGHTING INITIATE: convertido no talento de estilo
+   em cada mão e concede AMBIDESTRO 2024. O talento                 COMBATE COM DUAS ARMAS 2024; mantém a função e
+   atualizado não soma +1 CA.                                       a aquisição registrada, sem cobrar outro talento.
+   ARTE DA GUERRA (N3): concede ADEPTO MARCIAL.                     SPEEDY 2024: +10 ft; Disparada ignora o custo extra de
+   Não há reedição desse talento no PHB 2024: mantenho a            terreno difícil no turno; ataques de oportunidade contra
+   concessão homebrew e atualizo suas duas manobras. O              mim têm desvantagem. Não é a imunidade do antigo
+   talento dá 1d6 por DC/DL; o segundo d6 da ficha                  Mobile.
+   manuscrita precisa de uma concessão adicional.                   Os bônus de atributo dos talentos não são reaplicados aos
+                                                                    atributos canônicos.
+
+
+
+
+  Duas espadas curtas +1, ambas com Vex
+   Atacar: 2 ataques, cada um +12 para acertar e 1d6+9 perfurante. A ação bônus permite 1 ataque da outra espada pela
+   propriedade Leve; Combate com Duas Armas adiciona DES +8 ao dano. Esse ataque é um único ataque, não uma nova ação
+   Atacar.
+   Vex dá vantagem no próximo ataque contra a criatura acertada e ferida, dentro de sua duração. Não gera ataques e não
+   transfere a segunda arma para a ação. Sem Nick, Leve e Ambidestro concorrem pela mesma ação bônus; não viram dois
+   ataques bônus. As especializações da Dragoon são contadas separadamente. [W2, W3]
+
+
+
+
+  Arte da Guerra e manobras                                        Thunder God: chamar ou queimar
+   DANÇA DO ESMAGAMENTO: ao acertar um ataque                       CHAMAR O TÍTULO: ação Mágica; 1/DC ou DL. Faço seis
+   elegível na ação, posso atacar o mesmo alvo novamente            ataques corpo a corpo, dobro o deslocamento e me movo
+   com a mesma espada. Secundário: +12; 1d6+1 perfurante,           sem provocar ataques de oportunidade. Cada acerto soma
+   sem DES. Um acerto principal e seu secundário somam              1d6+1 elétrico ao dano da arma. Com as espadas: 1d6+9
+   2d6+10 antes de efeitos adicionais.                              perfurante + 1d6+1 elétrico por acerto principal.
+   GOLPE CRUZADO: após o acerto, outro alvo ao alcance              QUEIMAR O TÍTULO (regra da mesa): cada um dos seis
+   recebe um ataque secundário contra CA +2. Não somo               ataques principais pode ativar Dança se acertar. Máximo: 6
+   DES ao dano. Escolho uma especialização por ataque; os           principais + 6 secundários, sem recursão.
+   secundários não se repetem indefinidamente.                      CUSTO: sofro 1d6-1 de dano verdadeiro por ataque
+   EMPURRAR (Pushing Attack): gasto 1d6 após um acerto,             principal que efetivamente realizar, acertando ou errando.
+   somo ao dano e forço alvo Grande ou menor a FOR CD 19;           Se fizer seis, pago 6d6-6 (0 a 30; média 15). Não há um
+   falha: empurrado até 15 ft.                                      segundo custo pelos ataques da Dança.
+   PASSOS EVASIVOS (Evasive Footwork 2024): ação                    Esse dano não é reduzido por imunidade, resistência,
+   bônus, gasto e rolo 1d6; Desengajo e somo o resultado à          Crosta ou Pele Dracônica e não gera cargas nem Khan por
+   CA até o começo do próximo turno. Compete com o ataque           prevenção.
+   bônus e com comandos ao dragão.                                  A duração de uma eventual perda do título e o bônus
+   Não recebo os dados d8, as manobras extras nem as                elétrico nos secundários não foram especificados; não
+   características de um Guerreiro Mestre de Batalha. [H p. 8;      acrescento esses efeitos automaticamente. [H p. 8; jogador]
+   W6]
+
+
+
+
+  Progressão e controle do turno
+   Nível 6 para 7: CAR 12 -> 13; modificador permanece +1. CD de Magia do Dragão 12; ataque mágico +4. Não gasto dois
+   níveis em talento nesta subida. A regra da campanha permite +1 atributo por nível OU renunciar a esse aumento por dois
+   níveis para obter um talento; mantenho o histórico anterior sem recriá-lo.
+   PV máximo de Aysha: 69, confirmado pelo jogador. A ficha escolhida registra 20 PV atuais, preservados; não simulei
+   descanso. Khan 27; Yorman 28. Atualize os contadores após cada uso.
+   Em Thunder God uso seis ataques, não acumulo Ataque Extra nem o ataque bônus de Leve sem cumprir seus gatilhos. Ordem
+   de custo da queima, PV temporários e divisão de dano pelo vínculo precisam da resolução da mesa; o custo verdadeiro de
+   Aysha não recebe mitigação.
+
+
+
+Aysha Öztoprak | Dragoon 7 | Gaya | D&D 5.5 + regras da campanha                                                                  5
+Amethysta: raio, vínculo e magia
+Dragão azul nas regras; ametista na aparência. As recomendações não alteram escolhas sem indicação.
+
+
+
+  Ficha do vínculo no nível 7
+   FOR 8 (-1), DES 12 (+1), CON 11 (+0), INT 10 (+0), SAB 10 (+0), CAR 18 (+4). Proficiência +3; CA 15; CD 15; ataques
+   mágicos +7. PV máximos 45 pelo incremento fixo adotado; PV atuais 29 preservados. Iniciativa de Aysha (+8). Pequena
+   pela tabela do homebrew. [H pp. 9-11]
+
+
+
+
+  Sopros, movimento e forma                                                 Truques de Amethysta (2024)
+   SOPRO ELÉTRICO: linha de 20 ft; 4d6 elétrico; DES CD 15.                  SPARE THE DYING | Necromancia
+   Recarga 7-8 em 1d8 no começo do turno. Metade no
+                                                                             1 ação; 30 ft no N7; V, S; instantânea.
+   sucesso é a interpretação adotada para o sopro de dano,
+   que o PDF não detalha.                                                    Estabiliza uma criatura a 0 PV que ainda não morreu. Não
+   SOPRO PARALISANTE: escolhido como traço maior de N7                       recupera PV nem ressuscita. Sem ataque, salvaguarda ou
+   para formalizar o efeito antigo. CON CD 15; falha:                        concentração. O alcance base é 15 ft e dobra nos níveis 5,
+   Paralisado. Novo teste no fim de cada turno. Não soma 4d6                 11 e 17. [M2]
+   de dano e compartilha a recarga. Confirmar formato da área                TOLL THE DEAD | Necromancia
+   especial.
+                                                                             1 ação; 60 ft; V, S; instantânea.
+   VOAR / ANFÍBIO / NADADOR / ESCAVAR: caminhada 30
+   ft; voo 60 ft; nado e escavação 30 ft. Anfíbio beneficia as               Uma criatura visível faz SAB CD 18. Falha: 2d8 necrótico
+   duas; Nadador e Escavar só o dragão.                                      no N7, ou 2d12 se estiver abaixo dos PV máximos;
+   MUDAR DE FORMA: humanoide ou besta de ND até 2 no                         sucesso: nenhum dano. É salvaguarda, não ataque. Sem
+   N7; mantém PV e atributos mentais. Halfling é a aparência                 concentração. [M3]
+   registrada; bloco da forma ainda não definido.
+
+
+
+  Magias de 1º círculo de Amethysta
+
+   BANE (2024) | Encantamento | 1 ação | 30 ft | V, S, M (uma gota de sangue) | Concentração, até 1 minuto.
+   Escolha até 3 criaturas visíveis no alcance. Cada uma faz CAR CD 18. Quem falhar subtrai 1d4 de cada jogada de ataque e
+   salvaguarda enquanto a magia durar. Não reduz testes de atributo. Ao usar um espaço acima do 1º círculo, afeta mais uma
+   criatura por círculo adicional; isso não concede espaços à ficha. [M1]
+
+   SILVERY BARBS (Strixhaven) | Encantamento | 1 reação | 60 ft | V | Instantânea; sem concentração.
+   Gatilho: uma criatura visível a até 60 ft tem sucesso em uma jogada de ataque, teste de atributo ou salvaguarda. Ela rerrola
+   o d20 e usa o menor resultado. Depois, escolha outra criatura visível no alcance, podendo ser a própria Amethysta: ela
+   recebe vantagem na próxima jogada de ataque, teste de atributo ou salvaguarda que fizer em até 1 minuto. Uma criatura só
+   pode manter um benefício desta magia por vez. Não garante falha do inimigo. [M4]
+   Repertório atual: somente estas quatro magias. Usos e recuperação seguem os traços já registrados; esta atualização não acrescenta
+   espaços ou usos. Descrições dos itens e fontes: p. 8.
+
+
+
+
+  Economia de ações e pontos ainda abertos
+   Aysha e Amethysta compartilham iniciativa e se movem separadamente. O PDF permite distribuir os dois ataques de Ataque Extra
+   entre elas. INT 10 dispensa o comando do ataque simples; soprar sem comando exige INT 12 ou um ano de vínculo, ainda não
+   datado. Isso não concede ataques ou magias ilimitados. Uma conjuração inteira não substitui automaticamente apenas uma
+   mordida.
+   O vínculo divide dano recebido pela metade. Não aplique imunidade ou redução em cascata para multiplicar prevenção/cargas;
+   arredondamento, ataques em área que atinjam ambas e ordem de divisão precisam de regra da mesa.
+   No N7 Amethysta é Pequena. Para montar Aysha (Média) pelas regras comuns seria necessário tamanho Grande; a tabela chega
+   nele no N13. O título de cavaleira permanece; uma montaria já permitida é exceção da campanha.
+   Faltam duas perícias confirmadas de Amethysta. Recomendo Percepção e Persuasão; se aceitas, serão +3 e +7, com Percepção
+   passiva 13. [H pp. 9-11; W5]
+
+
+
+
+Aysha Öztoprak | Dragoon 7 | Gaya | D&D 5.5 + regras da campanha                                                                          6
+Crosta de Kravarius e registros
+A descrição mais recente do jogador prevalece sobre todas as versões anteriores.
+
+
+
+  Crosta: texto fornecido pelo jogador                                         Armas e equipamento recuperados
+   Crosta de Kravarius : Couro Batido +1                                        SWORD OF RIPPLES: shortsword +1; andar sobre água
+   Cargas resetem no descanso longo = 0                                         enquanto a seguro. Ripple Strike 1/DC: ação bônus; o
+   1 Breath weapon = 5 cargas                                                   próximo acerto corpo a corpo pode atingir criaturas
+                                                                                escolhidas em 10 ft; CON CD 14 ou metade do dano do
+   - Resistencia a Dano Esmagador e Perfurante                                  ataque inicial.
+                                                                                RAPIER OF THE BLACK ROSE: pode causar necrótico ao
+   Imunidade a Cortante e Elétrico, ao ao previnir danos                        acertar. Desire of the Black Rose: Locate Object OU Locate
+   desses tipos anote a quantidade de dano previnido em                         Creature, 1/DL compartilhado.
+   sua ficha, a cada 5 pontos de dano evitados adicione                         SONGBLADE: shortsword +1; crítico soma 2d6 trovejante,
+   uma carga draconica. Adicionalmente a cada 10 pontos                         com salvaguarda de FOR para evitar empurrão de 10 ft (CD
+   de dano previnido adicione um ponto de Khan a sua                            não registrada). Shatter 1/DL, 60 ft, CON CD 15; 3d8
+   Reserva.                                                                     trovejante, metade no sucesso.
+                                                                                TELESCOPIC STABBER: rapier +1; ação bônus para +5 ft
+   - Pele Draconica (20 cargas):                                                de alcance ou virar adaga +1; penalidade registrada de -3
+   Você usa a energia draconica acumulada para aumentar                         para atacar a 5 ft. Confirmar em qual forma se aplica.
+   a resistencia da armadura, pelos proximos 5 turnos você                      RED-HOT WHETSTONE: registro de +1d4 fogo por ataque
+   é resistente a todo tipo de dano.                                            quando usada antes do combate; duração/cargas não
+                                                                                definidas.
+   - Agilidade Draconica (4 cargas):                                            PACOTE: mochila, pé de cabra, martelo, 10 pitons, 10
+   Usando a energia draconica você aumenta sua                                  tochas, caixa de fogo, rações para 10 dias, odre e 50 ft de
+   velocidade de forma sobrenatural, pelos próximor 3                           corda de cânhamo. Arco longo e 20 flechas, kit de
+   turnos aumente seu deslocamento em 30ft.                                     herbalismo, documento falso e agulha de costura
+                                                                                dracônica.
+                                                                                Posse atual dos itens de reserva não foi reafirmada;
+                                                                                nenhum bônus deles foi somado às duas espadas +1
+                                                                                atuais.
+
+
+
+
+  Controle de regras e valores                                                 Memória de versões anteriores
+   CA 23 = couro batido 12 + DES 8 + magia 1 + Veloz 2. A                       A ficha de N4 tinha uma marca queimada na mão (Aberrant
+   versão +2 e a redução fixa de 2 danos foram substituídas pelo                Dragonmark), Booming Blade e Comprehend Languages. Esses
+   novo texto integral do item. Imunidade a fogo e os antigos                   poderes desapareceram das fichas posteriores; ficam como
+   gastos de 1 carga para +5 CA/+40 ft não aparecem nessa                       histórico, sem serem reativados.
+   versão.                                                                      As primeiras versões indicavam resistência de ametista/energia;
+   Cargas atuais da Crosta: não informadas. Registrar dano                      a regra atual das duas é elétrica, conforme o jogador. Perfurante
+   prevenido e restos de contagem sem arredondar cada ataque a                  das espadas e tipos das magias são tratados separadamente.
+   favor. A fonte não define se os limiares acumulam entre                      Fome 5/5 e sede 5/5 são registros antigos, não novos estados.
+   ocorrências.                                                                 YKT não recebeu identidade inventada.
+   Khan 27; Yorman 28. A ficha-base dizia 1 ponto = +1d4 no                     O Códice diferencia Gaia, a primeira druida, do planeta Gaya.
+   dano da arma; a manuscrita dizia 2 pontos = +2d6 por arma.                   Sua manipulação conjunta de Khan e Yorman inspira a leitura de
+   Como conflitam, não somei nenhum dos dois automaticamente.                   síntese; não acrescentei ligação druidica à biografia de Aysha.
+
+
+
+
+  Fontes e critérios da atualização
+   [F] Ficha-base: Aysha Oztoprak [1-1].pdf, pp. 1-4. Complementos: Aysha Oztoprak [1], [2], [3], Aysa_Oztoprak e a ficha manuscrita
+   Trovão Lampejante. Dados novos e a escolha de CAR vêm das mensagens do jogador.
+   [H] Cavaleiro do Dragão / Dragon Knight, Biblioteca Élfica: pp. 3-5 (classe), p. 8 (Dragoon), pp. 9-11 (dragão). O Códice de Gaya
+   fornece somente contexto de história/cosmogonia.
+   [W1] D&D Beyond: Creating a Character 2024. [W2] Equipment 2024. [W3] Feats 2024. [W4] Warlock / Eldritch Invocations 2024.
+   [W5] Playing the Game e Rules Glossary 2024. [W6] PHB 2024, manobras e talentos, consultados na transcrição AideDD. [W7]
+   Regras das magias e registros fornecidos.
+   Os campos de texto e controle permanecem editáveis; as imagens usam os espaços da ficha. Recomendações e lacunas estão
+   rotuladas, sem alterar silenciosamente a campanha.
+
+
+
+
+Criação 2024   Equipamento    Talentos    Glossário   Manobras     Speedy    Ambidestro
+Aysha Öztoprak | Dragoon 7 | Gaya | D&D 5.5 + regras da campanha                                                                                    7
+Magias de itens e registros
+Descrições de referência para as magias já citadas na ficha.
+
+
+
+  Locate Object | Localizar Objeto | 2º círculo
+  Rapier of the Black Rose: compartilha 1 uso por descanso longo com Locate Creature. Ação; pessoal; V, S, M (galho
+  bifurcado); concentração, até 10 minutos. Indica a direção de um objeto familiar a até 1.000 ft e a direção de seu
+  movimento. Para um objeto específico, é preciso tê-lo visto a até 30 ft; também permite buscar o exemplar mais próximo
+  de um tipo de objeto. Chumbo de qualquer espessura no caminho direto bloqueia a detecção. [M5]
+
+  Locate Creature | Localizar Criatura | 4º círculo
+  Rapier of the Black Rose: compartilha o mesmo uso diário de Locate Object. Ação; pessoal; V, S, M (pelo de cão farejador);
+  concentração, até 1 hora. Indica a direção de uma criatura familiar a até 1.000 ft e para onde ela se move. Pode buscar um
+  indivíduo conhecido ou o exemplar mais próximo de um tipo já visto a até 30 ft. Uma forma diferente da descrita impede
+  localizá-la. Na versão de 2024, chumbo no caminho direto bloqueia a detecção. [M6]
+
+  Shatter | Despedaçar | 2º círculo
+  Songblade: 1 uso por descanso longo, CON CD 15, como já registrado. Ação; 60 ft; V, S, M (lasca de mica); instantânea.
+  Uma explosão sonora ocupa uma esfera de 10 ft de raio. Criaturas na área sofrem 3d8 trovejante na falha, ou metade no
+  sucesso. Construtos têm desvantagem nessa salvaguarda. Objetos não mágicos que não estejam vestidos ou sendo
+  carregados também sofrem o dano. [M7]
+
+  Registros históricos de Aysha | Não são magias de Amethysta
+  Booming Blade: truque que inclui um ataque com arma corpo a corpo e deixa energia trovejante no alvo acertado; o
+  movimento voluntário pode disparar dano adicional. Comprehend Languages: magia de compreensão literal de idiomas,
+  inclusive escrita por contato, sem decifrar códigos. As duas continuam apenas no histórico indicado na p. 7; esta descrição
+  não as reativa. [M8-M9]
+
+  Fontes das descrições
+  M1 Bane (PHB 2024)
+  M2 Spare the Dying (PHB 2024)
+  M3 Toll the Dead (PHB 2024; edição selecionada no JSON)
+  M4 Silvery Barbs (Strixhaven; explicação D&D Beyond)
+  M5 Locate Object (2024)
+  M6 Locate Creature (2024)
+  M7 Shatter (2024)
+  M8 Booming Blade (referência histórica)
+  M9 Comprehend Languages (2024)
+
+
+
+
+Aysha Öztoprak | Dragoon 7 | Gaya | Descrições de magia                                                                         8

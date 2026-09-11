@@ -1,0 +1,8 @@
+{
+  "doc_id": "doc_55103d05af3a",
+  "source_ref": "staging_ingestion/YKT _ Jetsum_pdf.txt",
+  "sha256": "55103d05af3a6716feac5a3efc1878f294018350e4908b0ca146ef9dec7f17dc",
+  "parser": "utf8_text_parser",
+  "status": "SUCCESS",
+  "length": 3307
+}

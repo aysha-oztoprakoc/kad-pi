@@ -10,13 +10,13 @@
     "S1_honest_empirical_evidence": {
       "status": "PASS",
       "owning_task": "WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044",
-      "evidence": "evidence/WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044/01-honest-probe-semantics-receipt.json",
+      "evidence": "evidence/WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044/01-honest-probe-verification-receipt.json",
       "findings": "Missing execution adapters yield NON_MEASURED_ADAPTER_UNAVAILABLE; simulation fallback eliminated from MEASURED status"
     },
     "S2_qualified_project_runtime": {
       "status": "PASS",
       "owning_task": "WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046",
-      "evidence": "evidence/WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046/01-omp-launch-path-receipt.json",
+      "evidence": "evidence/WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046/01-omp-launch-path-qualification-receipt.json",
       "findings": "bin/omp-kad no longer wipes user-level ~/.omp directory; project isolation preserved"
     },
     "S3_bounded_mutation_and_independent_acceptance": {
@@ -28,7 +28,7 @@
     "S4_exact_authorized_retrieval": {
       "status": "PASS",
       "owning_task": "WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050",
-      "evidence": "evidence/WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050/01-exact-retrieval-citation-receipt.json",
+      "evidence": "evidence/WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050/01-exact-retrieval-verification-receipt.json",
       "findings": "Exact contiguous spans returned verbatim without lossy trimming; domain and visibility filters enforced"
     },
     "S5_rebuildable_projections": {

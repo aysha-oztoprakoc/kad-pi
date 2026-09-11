@@ -1,0 +1,277 @@
+Monge Ninjutsu 7                                   Espião                                   KaizinhoGameplays
+
+      Eloise(Pumma Nix)                                                                   CLASSE E NÍVEL
+
+                                                                                          Replicante
+                                                                                                                                            ANTECEDENTE
+
+                                                                                                                                             Chaotic Neutral
+                                                                                                                                                                                      NOME DO JOGADOR
+
+                                                                                                                                                                                      -
+           NOME DO PERSONAGEM                                                             RAÇA                                              TENDÊNCIA                                 PONTOS DE EXPERIÊNCIA
+
+
+
+
+                                    INSPIRAÇÃO
+   FORÇA
+                                                                           19                      +5                       13m                              Arisca com estranhos e
+   +4               +3         BÔNUS DE PROFICIÊNCIA
+                                                                           CLASSE
+                                                                            ARMD                 INICIATIVA                  DESLOC.
+                                                                                                                                                             extremamente protetiva com
+                                                                                                                                                             aqueles que ama.
+    18                                                                                                                                                                          TRAÇOS DE PERSONALIDADE
+
+                                                                        PV Totais                   56
+                     ●    7   Força
+                                                                                                                                                             Viver para ser feliz com a YKT
+                                                                                                    56
+ DESTREZA            ●    8   Destreza
+
+   +5                         Constituição
+                              Inteligência
+                                                                                         PONTOS DE VIDA ATUAIS                                                                            IDEAIS
+
+
+    20                        Sabedoria
+
+
+CONSTITUIÇÃO
+                              Carisma
+
+                          TESTES DE RESISTÊNCIA
+                                                                                             FP 7/7                                                          A YKT e meu irmão
+                                                                                      PONTOS DE VIDA TEMPORÁRIOS
+
+   +1
+                                                                                                                                                                                       LIGAÇÕES
+
+
+
+                         8    Acrobacia (Des)                           Total 6                                SUCESSOS
+                                                                                                                                                             Não muito amigável com
+                     ●
+
+
+    13
+                     ●   7
+                              Arcanismo (Int)
+                              Atletismo (For)
+                                                                                 1d8                          FRACASSOS
+                                                                                                                                                             estranhos.
+                                                                              DADOS DE VIDA                   TESTES CONTRA A MORTE                                                    DEFEITOS
+INTELIGÊNCIA         ●   8    Atuação (Car)
+
+   -1                ●
+
+
+                     ●
+                         10 Blefar (Car)
+                         10 Furtividade (Des)
+                                                                      NOME                            BÔNUS               DANO / TIPO
+                                                                                                                                                          1) Ator:
+                                                                      katana                        +8              1d8                                   Vantagem: Atuação, Enganação
+     8                        História (Int)
+                              Intimidação (Car)                       kotachi                       +8              1d6                                   Você pode imitar a articulação de outra pessoa ou
+                                                                                                                                                          os sons feitos por outras criaturas.
+ SABEDORIA                    Intuição (Sab)
+                                                                      naginata                      +8              1d10                                  Você deve ter ouvido a pessoa falando ou ouvido a
+   +3
+                              Investigação (Int)
+                                                                                                                                                          criatura fazendo o som por, pelo menos, 1 minuto.
+                              Lidar com Animais (Sab)                 1d4+5 fukiya(x50 dano x)                                                            Um sucesso num teste de Sabedoria (Intuição)
+                                                                      Chicote 1d4+5
+                              Medicina (Sab)                                                                                                              resistido pelo seu teste de Carisma (Enganação)
+    16                                                                +2d8 (caso estiver escondida)
+                                                                                                                                                          permite que um ouvinte determine que o efeito é
+                              Natureza (Int)                          Satisfeita                                                                          falso.
+                                                                      Polaridade: +5 (rolagem +8)                                                         ----
+                              Percepção (Sab)
+  CARISMA                                                                                                                                                 2) Sorrateiro:
+                              Persuasão (Car)                         Exaustão: 0                                                                         Você pode tentar se esconder quando estiver
+
+   +5                ●   8    Prestidigitação (Des)                   0 kan
+                                                                      1 yorman
+                                                                                                                                                          levemente obscurecido para a criatura de quem
+                                                                                                                                                          você está tentando se esconder.
+                              Religião (Int)                                                                                                              Quando você estiver escondido de uma criatura e
+    20                        Sobrevivência (Sab)
+                                                                      Fome: 5/5                                                                           errar um
+                                                                                                                                                          ataque à distância contra ela, realizar esse ataque
+                                                                      Sede: 1/5
+                                                                                                                                                          não revelará sua posição.
+                                PERÍCIAS                                                   ATAQUES E MAGIAS                                               Penumbra não impõem desvantagem nos seus
+                                                                                                                                                          testes de Sabedoria (Percepção) relacionados a
+                                                                                                                                                          visão.
+16              SABEDORIA PASSIVA (PERCEPÇÃO)
+                                                                PC                        um grappling hook
+                                                                                                                                                          ----
+                                                                                                                                                          3) Fey Touched:
+                                                                                          um martelo X                                                       You can increase either your Wisdom, Charisma, or
+                                                                                                                                                          Intelligence by one (it’s still capped at 20, however).
+                                                                 PP                       10 pítons X                                                        You can cast misty step and any 1st-level spell
+Comum, Anão, Elfico,                                                                                                                                      from the Divination or Enchantment schools. You
+                                                                                          10 tochas
+Draconico                                                        PE
+                                                                                          uma caixa de fogo
+                                                                                                                                                          get to cast each of these without spending a spell
+                                                                                                                                                          slot, but only once per long rest.
+                                                                                                                                                           If you have the required level to do so, you may use
+                                                                                          10 dias de rações                                               a spell slot instead to cast these spells.
+                                                                PO           1            um cantil                                                       The spell you gain from this feat will have the same
+                                                                                                                                                          spellcasting ability as the ability you chose to
+                                                                                          frasco de veneno                                                increase.
+                                                                 PL
+                                                                                          3x veneno caro X
+                                                                                                                                                          Pericias Treinadas:
+                                                                                          POL: -3                                                         Culinária: 1/50 // Equilibrar em corda bamba: 10/50
+
+         IDIOMAS E OUTRAS PROFICIÊNCIAS                                                         EQUIPAMENTO                                                                 CARACTERÍSTICAS E HABILIDADES
+
+                                           TM & © 2014 Wizards of the Coast LLC. Cópia permitida apenas para uso pessoal. Tradução: Johny Robert | johnyrobert@icloud.com
+                                                                              x(18 anos)                                              x                                              x
+
+                  (Pumma)                                                    IDADE
+
+                                                                              x
+                                                                                                                                    ALTURA
+
+                                                                                                                                     x
+                                                                                                                                                                                    PESO
+
+                                                                                                                                                                                     x
+      NOME DO PERSONAGEM                                                     OLHOS                                                  PELE                                            CABELOS
+
+
+
+
+                                                           Jaq'en Harn:                                                                                   NOME
+
+
+
+                                                           Ordem de monges letais criada
+                                                           para eliminar toda e qualquer tipo
+                                                           de forma de poder composta
+                                                           somente de Replicantes, mestres
+                                                           do disfarce naturais.
+
+                                                           Lembrança: "diego"
+
+                                                           Conhecimento misterioso: "Yaark
+                                                           Nustrad"                                                                                                                   SÍMBOLO
+                                                           NEGATIVA.
+
+                                                           998/999
+      APARÊNCIA DO PERSONAGEM                                                                                               ALIADOS E ORGANIZAÇÕES
+
+
+                                                          Flurry of Blows. You can expend 1 Focus Point to make two Unarmed Strikes as a Bonus Action.
+
+
+Eloise Nihilo(Ou Pumma Nix),
+                                                          Patient Defense. You can take the Disengage action as a Bonus Action. Alternatively, you can expend 1 Focus Point to take both the Disengage and the Dodge
+                                                          actions as a Bonus Action.
+
+
+é uma replicante que fora                                 Step of the Wind. You can take the Dash action as a Bonus Action. Alternatively, you can expend 1 Focus Point to take both the Disengage and Dash actions as a
+                                                          Bonus Action, and your jump distance is doubled for the turn.
+
+achada pela Jaq'en Harn e                                 Defletir 1d10+11
+
+
+tirada de seus pais ainda                                 Queda Lenta reduz 5 * monk level de dano de queda (reação)
+
+                                                          Ataque Atordoante 1 Focus Point para stunnar / CON SAVING THROW, falha: stunnado até o começo do meu proximo turno. sucesso: diminui a velocidade do alvo
+muito jovem, tendo seus pais                              pela metade e vantagem no proximo ataque.
+
+
+assassinados. Pumma Nix,                                  Uncanny Metabolism Quando rolar iniciativa, reganhe todos os seus focus points. Rode o dado de martial arts e recupere hp igual o numero rolado + nivel de monge
+
+                                                          Empowered strikes: escolher entre dar dano de força ou normal num golpe
+assim como Jaq'en Harn a                                  Evasion
+
+chamava, fora treinada e                                  At 7th level, your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon’s lightning breath or a fireball spell. When you are
+                                                          subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw,
+                                                          and only half damage if you fail.
+adestrada para ser uma                                    Stillness of Mind
+
+assassina leal e perfeita a                               Starting at 7th level, you can use your action to end one effect on yourself that is causing you to be charmed or frightened.
+                                                          ----------------------------------------------------------------------------------------------------
+                                                          Jutsu do estilo da aranha: 1 FP - Escalada = deslocamento
+causa. Com 16 anos e seu                                  Jutsu de invisibilidade: 2 FP (ação bônus)
+                                                          Jutsu da visão felina: 3 FP = percepção as cegas 3m por 1 minuto
+
+treinamento completo, saiu
+ao mundo para cumprir sua
+                                                                                                                OUTRAS CARACTERÍSTICAS E HABILIDADES
+função junto de seus irmãos.
+                                                          Giz, Jarra, Frasco, Saco 2x, 2x Saco de Sal X
+OBJETIVO DE ELOISE                                        -------------------------------------------------------------------
+                                                          Yamato:
+- Garantir que as pessoas que                             Ignora resistência ou imunidade a dano cortante.
+                                                          Voce pode castar Misty Step 2 vezes por dia recarrega at dawn. Ao invés de seu ataque normal, você consegue
+eu amo possam ser felizes.                                atacar uma criatura a 30ft de distancia dando 2d10 de force damage nos hits. Uma vez por descanso curto,
+                                                          conjura quatro espadas espectrais(4d8 slashing dmg)
+
+                                                          Adaga roxa: 1d4+2
+                                                          bônus action: teleporta pro dono a até 200ft de distancia. 1d4 dano na criatura caso esteja cravada.
+PLOT ATUAL:
+Fazendo felicidade, liberaram                             +1d4 fire dmg
+                                                          ------------------------------
+"Sombra-luz", um Yaark                                    Shadow Robes:
+                                                          3 cargas de teleporte por dia / +5 de escalada / double vantagem com escolha pra Furtividade durante a noite
+selvagem.
+       HISTÓRIA DO PERSONAGEM                                                                                                             TESOURO
+
+                                TM & © 2014 Wizards of the Coast LLC. Cópia permitida apenas para uso pessoal. Tradução: Johny Robert | johnyrobert@icloud.com
+                                                                                                                            HABILIDADE CHAVE                                    CD DO TR               BÔNUS DE ATAQUE
+                                           CLASSE DE CONJURADOR
+
+
+
+
+                             0                        TRUQUES                                    3                                                                                  6
+
+
+
+
+                     NÍVEL
+                     MAGIA
+                                  ESPAÇOS TOTAL           ESPAÇOS USADOS
+
+
+                             1             /                      /                                                                                                                 7
+                     EPAR
+                    PR       AD                   NOME DA MAGIA
+
+                         ●    Misty Step
+
+                         ●    Hunter's Mark
+                                                                                                 4
+
+
+
+
+MAGIAS CONHECIDAS
+
+
+
+
+                                                                                                                                                                                    8
+
+
+
+                             2
+
+
+
+                                                                                                 5
+
+                                                                                                                                                                                    9
+
+
+
+
+                                                                      TM & © 2014 Wizards of the Coast LLC. Cópia permitida apenas para uso pessoal. Tradução: Johny Robert | johnyrobert@icloud.com

@@ -1,0 +1,1013 @@
+[
+  {
+    "type": "character",
+    "slug": "aysha_oztoprak",
+    "title": "Ayşa Öztoprak, o Trovão Lampejante",
+    "categoria": "characters",
+    "l0": "Ayşa Öztoprak, o Trovão Lampejante: Dragoon 7 / Cavaleiro do Dragão (D&D 5.5 + Homebrew), Nível 7, HP 69, CA 24. Líder e construtora do Refúgio YKT via Síntese; protetora incondicional de Amethysta....",
+    "l1": "# [[aysha_oztoprak]], o [[aysha_oztoprak]]\n\n**Classe e Nível:** Dragoon 7 / Cavaleiro do Dragão (D&D 5.5 + Homebrew)\n**Raça:** Draconata Ametista | **Tendência:** Caótica Neutra\n**Nível:** 7 | **Pontos de Vida:** 69 | **Classe de Armadura:** 24\n**Deslocamento:** 40ft (voo 80ft com asas ametista) | **Iniciativa:** +8",
+    "data": {
+      "slug": "aysha_oztoprak",
+      "title": "Ayşa Öztoprak, o Trovão Lampejante",
+      "classe": "Dragoon 7 / Cavaleiro do Dragão (D&D 5.5 + Homebrew)",
+      "raca": "Draconata Ametista",
+      "tendencia": "Caótica Neutra",
+      "nivel": 7,
+      "hp": 69,
+      "ca": 24,
+      "deslocamento": "40ft (voo 80ft com asas ametista)",
+      "iniciativa": "+8",
+      "atributos": {
+        "FOR": 7,
+        "DES": 26,
+        "CON": 22,
+        "INT": 11,
+        "SAB": 8,
+        "CAR": 14
+      },
+      "ataques": [
+        "Lâmina de Síntese I (+12 atk, 1d6+9 perfurante)",
+        "Lâmina de Síntese II (+12 atk, 1d6+9 perfurante)",
+        "Sopro Elétrico (DES CD 17, 2d10 elétrico)"
+      ],
+      "reliquias": [
+        "Nyr (Yorman)",
+        "Zhar (Khan)",
+        "Crosta de Kravarius (RD -2)"
+      ],
+      "poderes": [
+        "Síntese (Yaark Nuustrad)",
+        "Trovão Lampejante",
+        "Fulgor Negro",
+        "Vínculo Dracônico com Amethysta"
+      ],
+      "papel_refugio": "Líder e construtora do Refúgio YKT via Síntese; protetora incondicional de Amethysta.",
+      "personalidade": "Utilitarista, orgulhosa, disciplinada com hábitos militares de Drakovia, superprotetora com Amethysta.",
+      "ideais": "Proteger Amethysta a todo custo; enfrentar o império drakoviano que a formou; sua força serve apenas às suas próprias escolhas.",
+      "vinculos": "Amethysta (vínculo supremo que dá sentido à sua existência) e a equipe YKT.",
+      "defeitos": "Orgulhosa, rude, pode ser dura demais com Amethysta por pavor de perdê-la.",
+      "epistemic_class": "SOURCE_DERIVED",
+      "source_ref": "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+      "descricao_completa": "Ayşa Öztoprak é uma draconata de ametista adulta (26 anos, 2.07m, 80kg) de porte imponente, escamas violetas cintilantes e olhos negros profundos. Antiga tenente do exército imperial de Drakovia, desertou após encontrar o ovo de Amethysta na Savana Negra. É a operadora de Síntese, seu Yaark, com o qual enxerga o mundo em feixes e novelos conceituais e materiais, podendo manipular as linhas de matéria inanimada ou seres que ela mesma matou. No Refúgio YKT, Ayşa canaliza o Khan e o Yorman colossais de uma cidade inteira para tecer as raízes, o tronco e os salões da Grande Árvore sob o Templo Suspenso. Empunha as espadas gêmeas Nyr (sintonizada com a possibilidade/consciência de Yorman) e Zhar (sintonizada com a matéria de Khan), e veste a temível Crosta de Kravarius."
+    },
+    "facts": []
+  },
+  {
+    "type": "character",
+    "slug": "amethysta",
+    "title": "Amethysta Öztoprak",
+    "categoria": "characters",
+    "l0": "Amethysta Öztoprak: Companheira Dracônica Nível 7 (Pequena), Nível 7, HP 48, CA 19. Aprendiz na Escola de Mana de Begônio, aluna de música e cortesia com Douglas, coração afetivo do Refúgio....",
+    "l1": "# [[amethysta]]\n\n**Classe e Nível:** Companheira Dracônica Nível 7 (Pequena)\n**Raça:** Dragão Ametista (Mecânica de Dragão Azul Jovem / Forma Halfling) | **Tendência:** Caótica Boa\n**Nível:** 7 | **Pontos de Vida:** 48 | **Classe de Armadura:** 19\n**Deslocamento:** 30ft (voo 60ft) | **Iniciativa:** +4",
+    "data": {
+      "slug": "amethysta",
+      "title": "Amethysta Öztoprak",
+      "classe": "Companheira Dracônica Nível 7 (Pequena)",
+      "raca": "Dragão Ametista (Mecânica de Dragão Azul Jovem / Forma Halfling)",
+      "tendencia": "Caótica Boa",
+      "nivel": 7,
+      "hp": 48,
+      "ca": 19,
+      "deslocamento": "30ft (voo 60ft)",
+      "iniciativa": "+4",
+      "atributos": {
+        "FOR": 10,
+        "DES": 16,
+        "CON": 14,
+        "INT": 10,
+        "SAB": 12,
+        "CAR": 18
+      },
+      "ataques": [
+        "Sopro Elétrico (linha 20ft, 4d6 elétrico, DES CD 15, recarga 7-8 em 1d8)",
+        "Toll the Dead (necromancia, SAB CD 18, 2d8/2d12 necrótico)"
+      ],
+      "reliquias": [
+        "Manto de Kravarius (armadura leve de couro batido +2 personalizada)"
+      ],
+      "poderes": [
+        "Spare the Dying (30ft)",
+        "Bane (CAR CD 18, 3 alvos)",
+        "Silvery Barbs (reação, 60ft)",
+        "Vínculo com Ayşa"
+      ],
+      "papel_refugio": "Aprendiz na Escola de Mana de Begônio, aluna de música e cortesia com Douglas, coração afetivo do Refúgio.",
+      "personalidade": "Alegre, curiosa, meiga, brincalhona, inocente porém perceptiva. Possui apresentação física de uma garota halfling de ~12 anos com cabelos roxos, pequenos chifres ametista, asas e cauda.",
+      "ideais": "Aprender magia, comer bem (adora carne assada), tocar instrumentos e estar segura junto de Ayşa e da equipe YKT.",
+      "vinculos": "Ayşa Öztoprak (sua guardiã e figura materna) e todos os membros da YKT.",
+      "defeitos": "Ingênua diante do perigo do império; não possui proficiência e não pode empunhar armas.",
+      "epistemic_class": "SOURCE_DERIVED",
+      "source_ref": "YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+      "descricao_completa": "Amethysta é a companheira dracônica de Ayşa Öztoprak, resgatada ainda em seu ovo de drakkai na Savana Negra. Apresenta-se sob a forma de uma jovem halfling de aproximadamente 12 anos, com chifres retos de ametista cintilante, asas membranosas roxas, cauda e eletricidade suave que estala nas pontas dos dedos. No Refúgio YKT, possui um quarto adaptado em ramo baixo com janela voltada para um jardim interno protegido. Suas refeições no Heartwood contam com uma cadeira menor feita sob medida. Ela não usa armas marciais; sua defesa consiste em sua agilidade, no Manto de Kravarius feito sob medida e em magias inatas que estuda na Escola de Mana de Begônio e no Ramo de Douglas."
+    },
+    "facts": []
+  },
+  {
+    "type": "character",
+    "slug": "lylia_centelha_de_sofia",
+    "title": "Lylia, a Centelha de Sofia",
+    "categoria": "characters",
+    "l0": "Lylia, a Centelha de Sofia: Druida do Pastor 3 / Feiticeira Alma Divina 4 (Nível 7), Nível 7, HP 55, CA 15. Curandeira-chefe, colaboradora de Ayşa na Câmara de Síntese para concepção e exame de itens, guardiã dos jardins....",
+    "l1": "# [[lylia_centelha_de_sofia]]\n\n**Classe e Nível:** Druida do Pastor 3 / Feiticeira Alma Divina 4 (Nível 7)\n**Raça:** Beasthide Shifter | **Tendência:** Caótica Neutra\n**Nível:** 7 | **Pontos de Vida:** 55 | **Classe de Armadura:** 15\n**Deslocamento:** 30ft / 9m | **Iniciativa:** +5",
+    "data": {
+      "slug": "lylia_centelha_de_sofia",
+      "title": "Lylia, a Centelha de Sofia",
+      "classe": "Druida do Pastor 3 / Feiticeira Alma Divina 4 (Nível 7)",
+      "raca": "Beasthide Shifter",
+      "tendencia": "Caótica Neutra",
+      "nivel": 7,
+      "hp": 55,
+      "ca": 15,
+      "deslocamento": "30ft / 9m",
+      "iniciativa": "+5",
+      "atributos": {
+        "FOR": 5,
+        "DES": 14,
+        "CON": 16,
+        "INT": 8,
+        "SAB": 20,
+        "CAR": 13
+      },
+      "ataques": [
+        "Moon Sickle +1 (+9 atk, 1d4+3 cortante + cura extra)",
+        "Thorn Whip (+9 atk, 2d6 perfurante e puxão 3m)"
+      ],
+      "reliquias": [
+        "Moon Sickle +1",
+        "Cajado Druídico"
+      ],
+      "poderes": [
+        "Espírito Totêmico (Unicórnio, Urso, Falcão)",
+        "Centelha de Sofia",
+        "Innate Sorcery",
+        "Wild Shape (2/descanso)"
+      ],
+      "papel_refugio": "Curandeira-chefe, colaboradora de Ayşa na Câmara de Síntese para concepção e exame de itens, guardiã dos jardins.",
+      "personalidade": "Conectada aos ciclos vitais, intuitiva, focada no bem-estar do grupo, reservada sobre as origens de Sofia.",
+      "ideais": "Preservar a vida natural, decifrar os mistérios de Gaya e apoiar Ayşa na sobrevivência da YKT.",
+      "vinculos": "Sofia (origem de sua centelha divina), Ayşa Öztoprak e a equipe YKT.",
+      "defeitos": "Fisicamente frágil em combate direto desarmado; sobrecarregada pelo peso do legado de Sofia.",
+      "epistemic_class": "SOURCE_DERIVED",
+      "source_ref": "YKT _ Lylia_Nivel_7_pdf.txt",
+      "descricao_completa": "Lylia é uma Beasthide Shifter devota dos caminhos druídicos e portadora da sagrada Centelha de Sofia. Sua sabedoria divina (SAB 20) sustenta as curas vitais da equipe YKT através do Totem do Unicórnio e da Moon Sickle +1. Na Câmara de Síntese, trabalha lado a lado com Ayşa Öztoprak, auxiliando no planejamento conceitual, medição e preparação de materiais raros antes que a operadora de Síntese teça as linhas de Khan e Yorman. Cuida também da enfermaria e do jardim medicinal anexo ao Heartwood."
+    },
+    "facts": []
+  },
+  {
+    "type": "character",
+    "slug": "begonio_nackle",
+    "title": "Begônio Nackle, o Mestre Arcanista",
+    "categoria": "characters",
+    "l0": "Begônio Nackle, o Mestre Arcanista: Mago Abjurador 7, Nível 7, HP 58, CA 14. Mestre da Escola de Mana; ensina teoria e contenção de Khan (19) e Yorman (42) a Amethysta e aprendizes....",
+    "l1": "# [[begonio_nackle]], o [[begonio_nackle]]\n\n**Classe e Nível:** Mago Abjurador 7\n**Raça:** Gnomo da Marca da Escrita (Mark of Scribing) | **Tendência:** Caótico e Bom\n**Nível:** 7 | **Pontos de Vida:** 58 | **Classe de Armadura:** 14\n**Deslocamento:** 30ft | **Iniciativa:** +4",
+    "data": {
+      "slug": "begonio_nackle",
+      "title": "Begônio Nackle, o Mestre Arcanista",
+      "classe": "Mago Abjurador 7",
+      "raca": "Gnomo da Marca da Escrita (Mark of Scribing)",
+      "tendencia": "Caótico e Bom",
+      "nivel": 7,
+      "hp": 58,
+      "ca": 14,
+      "deslocamento": "30ft",
+      "iniciativa": "+4",
+      "atributos": {
+        "FOR": 12,
+        "DES": 18,
+        "CON": 18,
+        "INT": 20,
+        "SAB": 16,
+        "CAR": 12
+      },
+      "ataques": [
+        "Adaga (+7 atk, 1d4+4)",
+        "Magias Arcanas de Evocação e Abjuração (INT CD 16 / +8)"
+      ],
+      "reliquias": [
+        "Diário de Campo de Sigmund",
+        "Registros do Acampamento Militar",
+        "Bíblias 1 a 4"
+      ],
+      "poderes": [
+        "Yaark Nuustrad: A Questão (Espectro Voodoo)",
+        "Amuleto Arcano",
+        "Amuleto Projetado (reação 30ft)",
+        "Mark of Scribing"
+      ],
+      "papel_refugio": "Mestre da Escola de Mana; ensina teoria e contenção de Khan (19) e Yorman (42) a Amethysta e aprendizes.",
+      "personalidade": "Extremamente soberbo, convicto de sua superioridade intelectual, mas profundamente curioso e dedicado ao ensino.",
+      "ideais": "O conhecimento é a base de tudo, a fonte de todas as respostas e de todo o poder cósmico.",
+      "vinculos": "A busca perpétua pela resposta à sua Questão primordial e a segurança de seus pupilos na YKT.",
+      "defeitos": "Distrai-se facilmente com enigmas arcanos e é arrogante com quem não compreende a matemática primordial.",
+      "epistemic_class": "SOURCE_DERIVED",
+      "source_ref": "YKT _ Begônio, o Mestre Arcanista_pdf.txt",
+      "descricao_completa": "Begônio Nackle é um gnomo abjurador de 26 anos (0.60m, 7kg), de olhos amarelos e cabelos pretos, portador da Marca da Escrita. Detém 20 de Inteligência e atua como a maior autoridade teórica sobre a mecânica das energias Khan e Yorman no Refúgio. Seu Yaark, 'A Questão', permite criar réplicas temporais (Espectro Voodoo) quando há discordância sobre a posição de um objeto no espaço-tempo. Na Escola de Mana, no andar superior voltado para a luz da manhã, Begônio supervisiona bancadas experimentais, ensinando Amethysta a canalizar mana de maneira metódica e sem riscos de sobrecarga."
+    },
+    "facts": []
+  },
+  {
+    "type": "character",
+    "slug": "proisb",
+    "title": "Proisb, o Carniçal",
+    "categoria": "characters",
+    "l0": "Proisb, o Carniçal: Bruxo Hexblade 6 / Paladino 1 (Nível 7), Nível 7, HP 62, CA 19. Sacerdote e mestre das Raízes Sagradas; cuida da Capela de Roukash Tashtael e ensina filosofia do abismo....",
+    "l1": "# [[proisb]]\n\n**Classe e Nível:** Bruxo Hexblade 6 / Paladino 1 (Nível 7)\n**Raça:** Goblin | **Tendência:** Caótico e Bom\n**Nível:** 7 | **Pontos de Vida:** 62 | **Classe de Armadura:** 19\n**Deslocamento:** 30ft / 9m | **Iniciativa:** +4",
+    "data": {
+      "slug": "proisb",
+      "title": "Proisb, o Carniçal",
+      "classe": "Bruxo Hexblade 6 / Paladino 1 (Nível 7)",
+      "raca": "Goblin",
+      "tendencia": "Caótico e Bom",
+      "nivel": 7,
+      "hp": 62,
+      "ca": 19,
+      "deslocamento": "30ft / 9m",
+      "iniciativa": "+4",
+      "atributos": {
+        "FOR": 6,
+        "DES": 18,
+        "CON": 16,
+        "INT": 12,
+        "SAB": 8,
+        "CAR": 26
+      },
+      "ataques": [
+        "Arma de Pacto Aprimorada (+12 atk, 1d8+9 dano, crítico 19-20)",
+        "Rajada Mística (1d10 + Carisma)",
+        "Repreensão Infernal (2d10)"
+      ],
+      "reliquias": [
+        "Máscara de Madeira",
+        "Medalhão Antigo",
+        "Gaita",
+        "Carniça (5 cargas)"
+      ],
+      "poderes": [
+        "Pacto da Lâmina",
+        "Maldição da Lâmina Maldita",
+        "One with Shadows (invisibilidade em penumbra)",
+        "Lay on Hands (5 PV)",
+        "Fúria do Nanico"
+      ],
+      "papel_refugio": "Sacerdote e mestre das Raízes Sagradas; cuida da Capela de Roukash Tashtael e ensina filosofia do abismo.",
+      "personalidade": "Inocente, infantil, amigável e caloroso, apesar de empunhar poderes aterrorizantes do titã do abismo.",
+      "ideais": "Viver o máximo possível, e tentar viver de verdade e não apenas sobreviver.",
+      "vinculos": "Roukash Tashtael (seu patrono e titan primordial) e a acolhida fraterna que recebeu na YKT.",
+      "defeitos": "Ingênuo e com traços bizarros ('demônio kkk' conforme anotação de ficha); impulsivo com suas cargas de carniça.",
+      "epistemic_class": "SOURCE_DERIVED",
+      "source_ref": "YKT _ Proisb , o Carniçal_pdf.txt",
+      "descricao_completa": "Proisb é um goblin andarilho carismático (CAR 26) que encontrou seu chamado ao se tornar o devoto de Roukash Tashtael, o Terceiro Titã Primordial de Energia, senhor do abismo e do nada. No Refúgio YKT, preside a Capela nas Raízes Sagradas, onde acolhe Amethysta e os companheiros em uma alcova de meditação diante da imponente efígie cinzenta de múltiplos braços. Em combate, sua lâmina de pacto maldita corta com precisão letal, enquanto ele mesmo mantém um sorriso gentil e toca sua gaita ao entardecer no salão central."
+    },
+    "facts": []
+  },
+  {
+    "type": "character",
+    "slug": "douglas",
+    "title": "Douglas, o Violeiro",
+    "categoria": "characters",
+    "l0": "Douglas, o Violeiro: Bardo da Eloquência 7, Nível 7, HP 48, CA 16. Mestre do Ramo de Douglas; professor de música, instrumentos, etiqueta social, diplomacia e acolhimento....",
+    "l1": "# [[douglas]]\n\n**Classe e Nível:** Bardo da Eloquência 7\n**Raça:** Halfling | **Tendência:** Caótico e Bom (Yoranos Khansados)\n**Nível:** 7 | **Pontos de Vida:** 48 | **Classe de Armadura:** 16\n**Deslocamento:** 25ft | **Iniciativa:** +5",
+    "data": {
+      "slug": "douglas",
+      "title": "Douglas, o Violeiro",
+      "classe": "Bardo da Eloquência 7",
+      "raca": "Halfling",
+      "tendencia": "Caótico e Bom (Yoranos Khansados)",
+      "nivel": 7,
+      "hp": 48,
+      "ca": 16,
+      "deslocamento": "25ft",
+      "iniciativa": "+5",
+      "atributos": {
+        "FOR": 6,
+        "DES": 20,
+        "CON": 11,
+        "INT": 14,
+        "SAB": 13,
+        "CAR": 24
+      },
+      "ataques": [
+        "Viola Mágica / Ritmo de Festa",
+        "Tambor do Polirritmo (+2 foco arcano, hipnose até 120ft)"
+      ],
+      "reliquias": [
+        "Tambor do Polirritmo (item único raro)",
+        "Viola Mágica",
+        "Memórias de Mahad"
+      ],
+      "poderes": [
+        "Eloquência Prateada (mínimo 10 em Persuasão/Enganação)",
+        "Palavras Desconcertantes",
+        "Ritmo Contagiante",
+        "Inspiração Bárdica (6/6 d8)"
+      ],
+      "papel_refugio": "Mestre do Ramo de Douglas; professor de música, instrumentos, etiqueta social, diplomacia e acolhimento.",
+      "personalidade": "Extrovertido, hospitaleiro, irreverente ('Eu sou o Douglas, você talvez não seja o Douglas'), leal aos amigos.",
+      "ideais": "Viver de sua arte ao lado de seus amigos; harmonia entre ritmo, voz e liberdade.",
+      "vinculos": "A equipe YKT: 'Tudo nosso e absolutamente nada para eles'.",
+      "defeitos": "Espírito malandro e provocador; adora desafiar nobres e convenções formais.",
+      "epistemic_class": "SOURCE_DERIVED",
+      "source_ref": "YKT _ Douglas, o Violeiro_pdf.txt",
+      "descricao_completa": "Douglas, o Violeiro, é um bardo halfling de carisma transbordante (CAR 24) que lidera a ala social e cultural do Refúgio. Seu ramo abriga um confortável salão de recepção e uma sala de música acusticamente isolada com cabines de treino. Com seu lendário Tambor do Polirritmo, capaz de manifestar múltiplos instrumentos simultaneamente e hipnotizar multidões inteiras em um raio de 120 pés, Douglas ensina Amethysta a encontrar sua voz, aprender boas maneiras e se defender politicamente sem precisar recorrer à força bruta."
+    },
+    "facts": []
+  },
+  {
+    "type": "character",
+    "slug": "pumma_nix",
+    "title": "Pumma Nix, A Leal (Eloise Nihilo)",
+    "categoria": "characters",
+    "l0": "Pumma Nix, A Leal (Eloise Nihilo): Monge Ninjutsu 7, Nível 7, HP 56, CA 20. Instrutora de combate tático, movimentação, infiltração e reconhecimento no Terraço de Combate....",
+    "l1": "# [[pumma_nix]] ([[eloise_nihilo]])\n\n**Classe e Nível:** Monge Ninjutsu 7\n**Raça:** Replicante | **Tendência:** Caótica e Leal (HER)\n**Nível:** 7 | **Pontos de Vida:** 56 | **Classe de Armadura:** 20\n**Deslocamento:** 13m / 42ft | **Iniciativa:** +7",
+    "data": {
+      "slug": "pumma_nix",
+      "title": "Pumma Nix, A Leal (Eloise Nihilo)",
+      "classe": "Monge Ninjutsu 7",
+      "raca": "Replicante",
+      "tendencia": "Caótica e Leal (HER)",
+      "nivel": 7,
+      "hp": 56,
+      "ca": 20,
+      "deslocamento": "13m / 42ft",
+      "iniciativa": "+7",
+      "atributos": {
+        "FOR": 18,
+        "DES": 24,
+        "CON": 13,
+        "INT": 8,
+        "SAB": 16,
+        "CAR": 20
+      },
+      "ataques": [
+        "Katana (+10 atk, 1d8 cortante)",
+        "Kotachi (+10 atk, 1d6 cortante)",
+        "Naginata (+10 atk, 1d10 cortante)",
+        "Fukiya (1d4+5) e Chicote (+2d8 dano oculto)"
+      ],
+      "reliquias": [
+        "Grappling Hook",
+        "Arsenal de Infiltração Ninja"
+      ],
+      "poderes": [
+        "Ator (imitação exata de vozes)",
+        "Sorrateiro",
+        "Artes Marciais Ninjutsu",
+        "Pontos de Foco (7/7)"
+      ],
+      "papel_refugio": "Instrutora de combate tático, movimentação, infiltração e reconhecimento no Terraço de Combate.",
+      "personalidade": "Arisca com estranhos, silenciosa, ferozmente protetora daqueles que ama, absolutamente leal à YKT.",
+      "ideais": "Viver para ser feliz e livre ao lado da YKT.",
+      "vinculos": "A equipe YKT e seu irmão.",
+      "defeitos": "Desconfiada em extremo, dificuldade em se abrir para quem não provou lealdade absoluta.",
+      "epistemic_class": "SOURCE_DERIVED",
+      "source_ref": "YKT _ Pumma Nix, A Leal_pdf.txt",
+      "descricao_completa": "Pumma Nix (também registrada sob o codinome Eloise Nihilo) é uma monge ninjutsu replicante de reflexos fulminantes (DES 24). Especialista em movimentação tridimensional e ataques em emboscada, Pumma patrulha as raízes exteriores e os acessos suspensos da grande árvore. No Terraço de Combate, atua como instrutora de esquiva, uso de coberturas e deslocamento rápido, ensinando o grupo a se posicionar taticamente sob fogo cerrado."
+    },
+    "facts": []
+  },
+  {
+    "type": "character",
+    "slug": "niara",
+    "title": "Niara, a Cavaleira do Eco",
+    "categoria": "characters",
+    "l0": "Niara, a Cavaleira do Eco: Guerreira Echo Knight 7, Nível 7, HP 116, CA 22. Instrutora de combate pesado, defesa em muralha e sparring no Terraço de Combate....",
+    "l1": "# [[niara]], a Cavaleira do Eco\n\n**Classe e Nível:** Guerreira Echo Knight 7\n**Raça:** Feral, Beasthide (Tamanho Grande: 3,32m a 6,57m) | **Tendência:** Leal e Neutra\n**Nível:** 7 | **Pontos de Vida:** 116 | **Classe de Armadura:** 22\n**Deslocamento:** 20ft (escalada 10ft) | **Iniciativa:** -3",
+    "data": {
+      "slug": "niara",
+      "title": "Niara, a Cavaleira do Eco",
+      "classe": "Guerreira Echo Knight 7",
+      "raca": "Feral, Beasthide (Tamanho Grande: 3,32m a 6,57m)",
+      "tendencia": "Leal e Neutra",
+      "nivel": 7,
+      "hp": 116,
+      "ca": 22,
+      "deslocamento": "20ft (escalada 10ft)",
+      "iniciativa": "-3",
+      "atributos": {
+        "FOR": 19,
+        "DES": 5,
+        "CON": 26,
+        "INT": 5,
+        "SAB": 7,
+        "CAR": 10
+      },
+      "ataques": [
+        "Garra de Kravut (+9 atk, 1d8/1d10+8 cortante, derrubar)",
+        "Garra de Kravut (Desabrochar F) (+10 atk, dano aprimorado)"
+      ],
+      "reliquias": [
+        "Garra de Kravut",
+        "Armadura Pesada Integrada"
+      ],
+      "poderes": [
+        "Manifestar o Eco",
+        "Teleporte de Eco (4.5m)",
+        "Libertar Encarnação (8/8 usos)",
+        "Surto de Ação",
+        "Retomar o Fôlego",
+        "Sentinela",
+        "Imunidade a Fogo",
+        "RD 4"
+      ],
+      "papel_refugio": "Instrutora de combate pesado, defesa em muralha e sparring no Terraço de Combate.",
+      "personalidade": "Calma como uma montanha, paciente nos treinos, implacável e inabalável quando entra em combate.",
+      "ideais": "A defesa inexpugnável dos mais fracos e a disciplina de formação em batalha.",
+      "vinculos": "A proteção física do Refúgio YKT e seus companheiros de armas.",
+      "defeitos": "Movimentação lenta e baixa percepção para sutilezas sociais.",
+      "epistemic_class": "SOURCE_DERIVED",
+      "source_ref": "YKT _ Niara.xlsx_pdf.txt",
+      "descricao_completa": "Niara é uma colossal guerreira Feral Beasthide de porte descomunal (mais de 3.3 metros de altura e CON 26), dotada de 116 pontos de vida e CA 22. Empunhando a temível Garra de Kravut e invocando ecos espectrais de si mesma através do espaço de batalha, Niara lidera os exercícios de resistência e contenção de avanço inimigo no pátio de combate da árvore. Sua presença transmite segurança inabalável a todo o refúgio."
+    },
+    "facts": []
+  },
+  {
+    "type": "character",
+    "slug": "akuanduba",
+    "title": "Akuanduba, a Ave Phoenix",
+    "categoria": "characters",
+    "l0": "Akuanduba, a Ave Phoenix: Patrulheiro Arqueiro 7 (Ranger), Nível 7, HP 58, CA 16. Instrutor de arquearia, rastreamento selvagem e vigilância de longo alcance no topo da copa....",
+    "l1": "# [[akuanduba]], a [[akuanduba]]\n\n**Classe e Nível:** Patrulheiro Arqueiro 7 (Ranger)\n**Raça:** Humanoide / Abençoado pelo Fogo | **Tendência:** Neutro e Bom\n**Nível:** 7 | **Pontos de Vida:** 58 | **Classe de Armadura:** 16\n**Deslocamento:** 30ft | **Iniciativa:** +4 (com vantagem)",
+    "data": {
+      "slug": "akuanduba",
+      "title": "Akuanduba, a Ave Phoenix",
+      "classe": "Patrulheiro Arqueiro 7 (Ranger)",
+      "raca": "Humanoide / Abençoado pelo Fogo",
+      "tendencia": "Neutro e Bom",
+      "nivel": 7,
+      "hp": 58,
+      "ca": 16,
+      "deslocamento": "30ft",
+      "iniciativa": "+4 (com vantagem)",
+      "atributos": {
+        "FOR": 12,
+        "DES": 18,
+        "CON": 14,
+        "INT": 10,
+        "SAB": 16,
+        "CAR": 10
+      },
+      "ataques": [
+        "Arco Longo de Precisão (+9 atk, 1d8+4 perfurante, +2 vs inimigos favoritos)"
+      ],
+      "reliquias": [
+        "Arco da Fênix",
+        "Aljava dos Ventos"
+      ],
+      "poderes": [
+        "Inimigo Favorito",
+        "Explorador Natural (ignora terreno difícil, forragem em dobro)",
+        "Consciência Primitiva (8km)"
+      ],
+      "papel_refugio": "Instrutor de arquearia, rastreamento selvagem e vigilância de longo alcance no topo da copa.",
+      "personalidade": "Atento, sereno, conectado à natureza e perspicaz em identificar aproximações hostis.",
+      "ideais": "Nenhum predador ou tropa invasora deve se aproximar sem ser detectada a léguas de distância.",
+      "vinculos": "A guarda do Refúgio e o respeito à terra de Gaya.",
+      "defeitos": "Pouco paciente com formalidades urbanas e disputas de gabinete.",
+      "epistemic_class": "SOURCE_DERIVED",
+      "source_ref": "YKT _ Akuanduba, a Ave Phoenix, a Cólera do Dragão_pdf.txt",
+      "descricao_completa": "Akuanduba é o arqueiro e batedor supremo da YKT, conhecido como a Ave Phoenix ou a Cólera do Dragão. Do observatório na copa da árvore, seus olhos alcançam os confins do vale abaixo, orientando patrulhas e vigiando os céus contra aeronaves ou batedores de Drakovia. No Terraço de Combate, ensina arquearia de precisão e leitura do terreno natural para Amethysta e os demais."
+    },
+    "facts": []
+  },
+  {
+    "type": "location",
+    "slug": "refugio_ykt",
+    "title": "Refúgio YKT — A Árvore sob o Templo",
+    "categoria": "locations",
+    "l0": "Assentamento permanente da equipe YKT, uma gigantesca árvore-mundo construída por Ayşa via Síntese abraçando as fundações do Templo Suspenso.",
+    "l1": "O Refúgio YKT une a majestade pétrea do templo flutuante ao calor acolhedor de galerias vivas de madeira escura, ametista e pedra esculpida.",
+    "data": {
+      "slug": "refugio_ykt",
+      "title": "Refúgio YKT — A Árvore sob o Templo",
+      "categoria": "locations",
+      "l0_abstract": "Assentamento permanente da equipe YKT, uma gigantesca árvore-mundo construída por Ayşa via Síntese abraçando as fundações do Templo Suspenso.",
+      "l1_overview": "O Refúgio YKT une a majestade pétrea do templo flutuante ao calor acolhedor de galerias vivas de madeira escura, ametista e pedra esculpida.",
+      "descricao_completa": "Visto do chão do vale, o Refúgio da YKT surge como uma impressionante costura escura de galhos e raízes ciclópicas sob o peso colossal do Templo Suspenso. A árvore é a obra monumental de Síntese de Ayşa Öztoprak, forjada a partir da colheita de Khan e Yorman de uma cidade inteira. Suas raízes mais grossas que torres abraçam a rocha flutuante, curvam-se sob ela e retornam para cima em arcos que sustentam dezenas de aposentos habitáveis. A casca é escura como carvão, sulcada como juntas antigas; folhas em verde profundo e ametista suave enfeitam as galerias; vidros carmesim identificam os santuários sagrados, lanternas violetas marcam as oficinas e luz âmbar acolhedora brilha nas janelas dos quartos e da cozinha.",
+      "entidades_relacionadas": [
+        "aysha_oztoprak",
+        "amethysta",
+        "lylia_centelha_de_sofia",
+        "templo_suspenso",
+        "heartwood",
+        "sintese",
+        "khan",
+        "yorman"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "location",
+    "slug": "templo_suspenso",
+    "title": "O Templo Suspenso e o Colosso Ancestral",
+    "categoria": "locations",
+    "l0": "Monumento monumental flutuante sobre o vale, apresentando um colosso de pedra sentado de braços erguidos e fundações envoltas pelas raízes da YKT.",
+    "l1": "O templo paira impassível nas alturas, servindo como âncora sagrada e teto protetor sobre a copa e os galhos superiores do refúgio.",
+    "data": {
+      "slug": "templo_suspenso",
+      "title": "O Templo Suspenso e o Colosso Ancestral",
+      "categoria": "locations",
+      "l0_abstract": "Monumento monumental flutuante sobre o vale, apresentando um colosso de pedra sentado de braços erguidos e fundações envoltas pelas raízes da YKT.",
+      "l1_overview": "O templo paira impassível nas alturas, servindo como âncora sagrada e teto protetor sobre a copa e os galhos superiores do refúgio.",
+      "descricao_completa": "Acima dos campos e dos tetos distantes paira o Templo: um colosso milenar esculpido em pedra pálida sentado no céu, com múltiplos braços estendidos ao redor de uma face quase perdida pelo tempo e pela distância. Suas pernas dobradas encerram os terraços antigos, abaixo dos quais a fundação afunila em uma massa de rocha suspensa no ar. As raízes da árvore de Ayşa entrelaçam essa massa rochosa como longos dedos, mantendo o refúgio integrado ao santuário suspenso.",
+      "entidades_relacionadas": [
+        "refugio_ykt",
+        "roukash_tashtael",
+        "proisb",
+        "copa_e_biblioteca"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "location",
+    "slug": "heartwood",
+    "title": "Heartwood — Salão Central e Cozinha",
+    "categoria": "locations",
+    "l0": "O coração doméstico e ponto de encontro do Refúgio YKT, composto pela grande mesa comunal, lareira e cozinha do Heartwood.",
+    "l1": "Sob arcos de madeira viva, o Heartwood acolhe as refeições partilhadas, o planejamento de aventuras e as noites de descanso da família YKT.",
+    "data": {
+      "slug": "heartwood",
+      "title": "Heartwood — Salão Central e Cozinha",
+      "categoria": "locations",
+      "l0_abstract": "O coração doméstico e ponto de encontro do Refúgio YKT, composto pela grande mesa comunal, lareira e cozinha do Heartwood.",
+      "l1_overview": "Sob arcos de madeira viva, o Heartwood acolhe as refeições partilhadas, o planejamento de aventuras e as noites de descanso da família YKT.",
+      "descricao_completa": "O Heartwood é o centro acolhedor da vida cotidiana no refúgio. O teto segue a curvatura de um grande arco de madeira escura iluminado por lâmpadas suspensas. Uma mesa maciça de madeira estende-se pelo centro, marcada pelo uso, com mapas abertos, tigelas e uma banqueta especial mais baixa feita sob medida para Amethysta. Em um recesso de pedra na parede exterior opera a cozinha do refúgio, dotada de chaminé própria para escoamento de fumaça. O cheiro reconfortante de pão quente, caldo de ervas e carne assada amacia a aspereza mineral da rocha do templo.",
+      "entidades_relacionadas": [
+        "refugio_ykt",
+        "amethysta",
+        "aysha_oztoprak",
+        "douglas"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "location",
+    "slug": "escola_de_mana",
+    "title": "Escola de Mana — Sala de Instrução de Begônio",
+    "categoria": "locations",
+    "l0": "Complexo acadêmico do refúgio dedicado ao ensino prático e teórico de Khan e Yorman, sob a supervisão do Mago Begônio Nackle.",
+    "l1": "Contém lousas de ardósia com diagramas arcanos, bancadas de contenção mágica e terraço de testes com alvos calibrados.",
+    "data": {
+      "slug": "escola_de_mana",
+      "title": "Escola de Mana — Sala de Instrução de Begônio",
+      "categoria": "locations",
+      "l0_abstract": "Complexo acadêmico do refúgio dedicado ao ensino prático e teórico de Khan e Yorman, sob a supervisão do Mago Begônio Nackle.",
+      "l1_overview": "Contém lousas de ardósia com diagramas arcanos, bancadas de contenção mágica e terraço de testes com alvos calibrados.",
+      "descricao_completa": "Localizada em uma galeria superior banhada pela luz matinal, a Escola de Mana é o domínio pedagógico de Begônio Nackle. Possui bancadas de trabalho pareadas para o estudo experimental de Khan (matéria) e Yorman (abstração), instrumentos de cronometragem e painéis de contenção. Um terraço anexo revestido de pedra entre dois grandes galhos serve como câmara de prática para Amethysta e os aprendizes, onde cada exercício é registrado em ardósia para aprendizado rigoroso a partir de erros e acertos.",
+      "entidades_relacionadas": [
+        "begonio_nackle",
+        "amethysta",
+        "khan",
+        "yorman",
+        "refugio_ykt"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "location",
+    "slug": "terraco_de_combate",
+    "title": "Terraço de Combate e Pátio Tático",
+    "categoria": "locations",
+    "l0": "Ampla esplanada de pedra na fundação flutuante, equipada com grade de movimentação e obstáculos para treino militar e sparring.",
+    "l1": "Espaço compartilhado por Niara, Pumma Nix, Akuanduba e Ayşa para exercícios de defesa, tiro com arco e combate tático.",
+    "data": {
+      "slug": "terraco_de_combate",
+      "title": "Terraço de Combate e Pátio Tático",
+      "categoria": "locations",
+      "l0_abstract": "Ampla esplanada de pedra na fundação flutuante, equipada com grade de movimentação e obstáculos para treino militar e sparring.",
+      "l1_overview": "Espaço compartilhado por Niara, Pumma Nix, Akuanduba e Ayşa para exercícios de defesa, tiro com arco e combate tático.",
+      "descricao_completa": "O Terraço de Combate estende-se por um ombro largo da fundação rochosa. O chão de pedra lisa possui marcações geométricas de movimento em grade, barreiras removíveis para treinamento de cobertura e raias de avanço tático. Arcos de raízes abrigam prateleiras de armas de treino e uma galeria de observação superior. Aqui Niara demonstra a firmeza de uma muralha com a Garra de Kravut, Pumma ensina infiltração ágil, Akuanduba supervisiona o tiro com arco e Ayşa conduz formações defensivas.",
+      "entidades_relacionadas": [
+        "niara",
+        "pumma_nix",
+        "akuanduba",
+        "aysha_oztoprak",
+        "refugio_ykt"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "location",
+    "slug": "ramo_de_douglas",
+    "title": "Ramo de Douglas — Salão de Cortesia e Música",
+    "categoria": "locations",
+    "l0": "Ala cultural e de acolhimento do refúgio, abrigando o salão de recepção, a sala de música acústica e cabines de ensaio de Douglas.",
+    "l1": "Ambiente confortável com poltronas e instrumentos variados, onde Amethysta estuda diplomacia, ritmo e etiqueta social.",
+    "data": {
+      "slug": "ramo_de_douglas",
+      "title": "Ramo de Douglas — Salão de Cortesia e Música",
+      "categoria": "locations",
+      "l0_abstract": "Ala cultural e de acolhimento do refúgio, abrigando o salão de recepção, a sala de música acústica e cabines de ensaio de Douglas.",
+      "l1_overview": "Ambiente confortável com poltronas e instrumentos variados, onde Amethysta estuda diplomacia, ritmo e etiqueta social.",
+      "descricao_completa": "Atravessando o tronco em direção a um ramo voltado para o poente, encontram-se os aposentos de Douglas, o Violeiro. O salão de recepção possui poltronas macias e mesa apropriada para conversas delicadas, negociações com emissários e hospitalidade. Ao lado, a sala de música ostenta nervuras de madeira curva projetadas para ressonância acústica perfeita, abrigando o lendário Tambor do Polirritmo e violas. Cabines acústicas permitem que Amethysta pratique escalas musicais sem perturbar o sono da equipe.",
+      "entidades_relacionadas": [
+        "douglas",
+        "amethysta",
+        "refugio_ykt",
+        "tambor_do_polirritmo"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "location",
+    "slug": "raizes_sagradas",
+    "title": "Raízes Sagradas — Capela de Roukash Tashtael",
+    "categoria": "locations",
+    "l0": "Santuário subterrâneo nas raízes mais profundas da árvore, dedicado à contemplação do Terceiro Primordial sob a guia de Proisb.",
+    "l1": "Espaço austero iluminado por vidros carmesim e uma efígie cinzenta de múltiplos braços diante de um disco vermelho suspenso.",
+    "data": {
+      "slug": "raizes_sagradas",
+      "title": "Raízes Sagradas — Capela de Roukash Tashtael",
+      "categoria": "locations",
+      "l0_abstract": "Santuário subterrâneo nas raízes mais profundas da árvore, dedicado à contemplação do Terceiro Primordial sob a guia de Proisb.",
+      "l1_overview": "Espaço austero iluminado por vidros carmesim e uma efígie cinzenta de múltiplos braços diante de um disco vermelho suspenso.",
+      "descricao_completa": "O caminho para as Raízes Sagradas desce pela espinha interior da rocha. As lâmpadas âmbar dão lugar a frestas estreitas de vidro vermelho escuro e as raízes adquirem a silhueta austera do trono de espinhos. O santuário culmina diante de uma efígie monumental inspirada na visão canônica: uma figura esguia de braços múltiplos com face esquelética, textura sinuosa cinzenta e um vazio ao centro de seu peito, sobre a qual flutua um disco carmesim ligado por duas linhas finas. Um degrau raso delimita o espaço vazio que simboliza o nada primordial. Ali Proisb ensina sobre Roukash Tashtael e acolhe aqueles que buscam silêncio e reflexão.",
+      "entidades_relacionadas": [
+        "proisb",
+        "roukash_tashtael",
+        "refugio_ykt"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "location",
+    "slug": "camara_de_sintese",
+    "title": "Câmara de Síntese — Ateliê de Ayşa e Lylia",
+    "categoria": "locations",
+    "l0": "Oficina central de manipulação conceitual e forja de relíquias onde Ayşa canaliza o Yaark Síntese em colaboração com Lylia.",
+    "l1": "Mesa de trabalho sob raízes entrelaçadas onde matéria e conceitos de Khan e Yorman são tecidos e inspecionados com precisão.",
+    "data": {
+      "slug": "camara_de_sintese",
+      "title": "Câmara de Síntese — Ateliê de Ayşa e Lylia",
+      "categoria": "locations",
+      "l0_abstract": "Oficina central de manipulação conceitual e forja de relíquias onde Ayşa canaliza o Yaark Síntese em colaboração com Lylia.",
+      "l1_overview": "Mesa de trabalho sob raízes entrelaçadas onde matéria e conceitos de Khan e Yorman são tecidos e inspecionados com precisão.",
+      "descricao_completa": "Separada das forjas de metal por pesadas portas de vedação, a Câmara de Síntese repousa sob uma cúpula de raízes densas. No centro ergue-se uma mesa de madeira maciça iluminada por luz branca constante. Para olhos comuns, repousam na mesa lâminas, lingotes e fragmentos de couros raros. Para a percepção de Ayşa, o ambiente revela os feixes e novelos cintilantes de cada substância inanimada ou despojos de criaturas abatidas. Lylia atua como co-projetista e examinadora de fluxos vitais, documentando em pergaminhos os custos de Khan e Yorman antes de qualquer ato de criação.",
+      "entidades_relacionadas": [
+        "aysha_oztoprak",
+        "lylia_centelha_de_sofia",
+        "sintese",
+        "khan",
+        "yorman",
+        "crosta_de_kravarius",
+        "manto_de_kravarius"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "location",
+    "slug": "ramos_residenciais",
+    "title": "Ramos Residenciais — Aposentos Privados da YKT",
+    "categoria": "locations",
+    "l0": "Alojamentos da família YKT nos galhos inferiores protegidos do vento, incluindo o quarto conjugado de Ayşa e Amethysta.",
+    "l1": "Quartos acolhedores com camas baixas, janelas voltadas para o jardim interno e espaços para os pertences pessoais de cada membro.",
+    "data": {
+      "slug": "ramos_residenciais",
+      "title": "Ramos Residenciais — Aposentos Privados da YKT",
+      "categoria": "locations",
+      "l0_abstract": "Alojamentos da família YKT nos galhos inferiores protegidos do vento, incluindo o quarto conjugado de Ayşa e Amethysta.",
+      "l1_overview": "Quartos acolhedores com camas baixas, janelas voltadas para o jardim interno e espaços para os pertences pessoais de cada membro.",
+      "descricao_completa": "Os dormitórios ocupam os galhos inferiores da árvore, onde a massa do tronco bloqueia as rajadas frias do vale. O quarto de Ayşa comunica-se diretamente com o de Amethysta, cuja janela redonda mira um pátio vegetal interno em vez do abismo aberto. Dentro do quarto da menina há estantes baixas acessíveis, uma escrivaninha de madeira clara e pequenas lembranças afetivas sem valor militar. Outras portas levam aos quartos de Begônio, Proisb, Douglas, Niara, Pumma, Alexei e hóspedes.",
+      "entidades_relacionadas": [
+        "aysha_oztoprak",
+        "amethysta",
+        "refugio_ykt"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "location",
+    "slug": "copa_e_biblioteca",
+    "title": "Copa da Árvore, Biblioteca e Observatório",
+    "categoria": "locations",
+    "l0": "Topo elevado do refúgio abraçando as laterais do colosso, contendo a biblioteca de mapas, registros de crônicas e terraços floridos.",
+    "l1": "Ponto culminante da árvore que oferece visão panorâmica de todo o vale e acesso contemplativo às dobras do templo ancestral.",
+    "data": {
+      "slug": "copa_e_biblioteca",
+      "title": "Copa da Árvore, Biblioteca e Observatório",
+      "categoria": "locations",
+      "l0_abstract": "Topo elevado do refúgio abraçando as laterais do colosso, contendo a biblioteca de mapas, registros de crônicas e terraços floridos.",
+      "l1_overview": "Ponto culminante da árvore que oferece visão panorâmica de todo o vale e acesso contemplativo às dobras do templo ancestral.",
+      "descricao_completa": "Seguindo o tronco em direção à luz do céu, a copa da árvore abre-se em terraços suspensos repletos de vegetação aclimatada. A biblioteca guarda as crônicas da campanha, mapas de Gaya, tratados genealógicos e os diários de viagem da equipe YKT. No observatório mais alto, lunetas permitem a Akuanduba inspecionar movimentações distantes de tropas e caravanas nas planícies abaixo.",
+      "entidades_relacionadas": [
+        "akuanduba",
+        "refugio_ykt",
+        "templo_suspenso"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "location",
+    "slug": "terraco_de_chegada",
+    "title": "Terraço de Chegada e Plataforma de Içamento",
+    "categoria": "locations",
+    "l0": "Ponto principal de entrada ao refúgio a partir do vale, com plataforma de pouso para montarias aladas e guindaste de carga.",
+    "l1": "Portal exterior protegido por raízes espessas com maçanetas duplas para adultos e para o alcance de Amethysta.",
+    "data": {
+      "slug": "terraco_de_chegada",
+      "title": "Terraço de Chegada e Plataforma de Içamento",
+      "categoria": "locations",
+      "l0_abstract": "Ponto principal de entrada ao refúgio a partir do vale, com plataforma de pouso para montarias aladas e guindaste de carga.",
+      "l1_overview": "Portal exterior protegido por raízes espessas com maçanetas duplas para adultos e para o alcance de Amethysta.",
+      "descricao_completa": "Localizado na borda externa da fundação de pedra, o Terraço de Chegada fornece os dois únicos pontos de acesso físico sem magia: um deque de aterrissagem para criaturas aladas e um robusto guindaste de cabos para içar caixotes de provisões e passageiros do vale. O portal de acesso ao Heartwood conta com maçanetas duplas em alturas diferentes para facilitar a passagem de Amethysta.",
+      "entidades_relacionadas": [
+        "refugio_ykt",
+        "heartwood",
+        "amethysta"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "lore",
+    "slug": "khan",
+    "title": "Khan (Knaerethum) — A Matéria Primordial",
+    "categoria": "cosmology",
+    "l0": "Essência primordial de tudo o que existe fisicamente, representando a matéria pura e o corpo tangível do cosmos em Gaya.",
+    "l1": "Em eterna oposição criativa a Yorman, Khan fundamenta as rochas, os ossos, os metais e os dragões primordiais.",
+    "data": {
+      "slug": "khan",
+      "title": "Khan (Knaerethum) — A Matéria Primordial",
+      "categoria": "cosmology",
+      "l0_abstract": "Essência primordial de tudo o que existe fisicamente, representando a matéria pura e o corpo tangível do cosmos em Gaya.",
+      "l1_overview": "Em eterna oposição criativa a Yorman, Khan fundamenta as rochas, os ossos, os metais e os dragões primordiais.",
+      "descricao_completa": "Khan (Knaerethum) é uma das duas grandes forças no vazio primordial. É a matéria, a substância, a densidade e o peso da realidade física. Ao encontrar-se e entrelaçar-se com Yorman, dá origem a todas as formas e criaturas de Gaya. Na construção do Refúgio YKT, Ayşa utiliza reservas imensas de Khan colhidas de uma cidade inteira para gerar a madeira densa, as pedras e as raízes da árvore.",
+      "entidades_relacionadas": [
+        "yorman",
+        "gaya",
+        "sintese",
+        "refugio_ykt",
+        "aysha_oztoprak"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "lore",
+    "slug": "yorman",
+    "title": "Yorman (Eorarmethum) — A Abstração Primordial",
+    "categoria": "cosmology",
+    "l0": "Essência primordial de tudo o que pode existir conceitualmente: a abstração, a imaginação, o tempo e a consciência pura.",
+    "l1": "Força cósmica que confere propósito, forma inteligível e transcendência à matéria bruta de Khan.",
+    "data": {
+      "slug": "yorman",
+      "title": "Yorman (Eorarmethum) — A Abstração Primordial",
+      "categoria": "cosmology",
+      "l0_abstract": "Essência primordial de tudo o que pode existir conceitualmente: a abstração, a imaginação, o tempo e a consciência pura.",
+      "l1_overview": "Força cósmica que confere propósito, forma inteligível e transcendência à matéria bruta de Khan.",
+      "descricao_completa": "Yorman (Eorarmethum) representa o potencial, a mente, a ideia e a consciência no vazio cósmico. É a energia manipulada pelos conjuradores para dar forma a feitiços e moldar a realidade. Na criação do Refúgio YKT, Yorman atua como o vetor arquitetônico e conceitual que permite que a madeira viva responda aos desejos e necessidades dos moradores.",
+      "entidades_relacionadas": [
+        "khan",
+        "gaya",
+        "sintese",
+        "refugio_ykt",
+        "begonio_nackle"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "lore",
+    "slug": "roukash_tashtael",
+    "title": "Roukash Tashtael — Terceiro Titã Primordial de Energia",
+    "categoria": "cosmology",
+    "l0": "Titã primordial do abismo e do nada, entidade cósmica de profunda gravidade e patrono divino do goblin Proisb.",
+    "l1": "Venerado nas Raízes Sagradas através de uma efígie austera de múltiplos braços com um disco vermelho suspenso sobre o peito oco.",
+    "data": {
+      "slug": "roukash_tashtael",
+      "title": "Roukash Tashtael — Terceiro Titã Primordial de Energia",
+      "categoria": "cosmology",
+      "l0_abstract": "Titã primordial do abismo e do nada, entidade cósmica de profunda gravidade e patrono divino do goblin Proisb.",
+      "l1_overview": "Venerado nas Raízes Sagradas através de uma efígie austera de múltiplos braços com um disco vermelho suspenso sobre o peito oco.",
+      "descricao_completa": "Roukash Tashtael é o Terceiro Titã Primordial de Energia em Gaya, senhor absoluto do abismo e da ausência que precede a criação. Não exige templos suntuosos nem ritos de sangue, mas sim a compreensão honesta dos próprios limites e o respeito ao silêncio. Proisb é seu dedicado servo e sacerdote no Refúgio YKT, mantendo a chama de sua contemplação acesa sem impor dogmas à equipe.",
+      "entidades_relacionadas": [
+        "proisb",
+        "raizes_sagradas",
+        "refugio_ykt"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "lore",
+    "slug": "sintese",
+    "title": "Síntese (Yaark de Ayşa Öztoprak)",
+    "categoria": "mechanics",
+    "l0": "Habilidade singular (Yaark) de Ayşa que permite enxergar e transmutar feixes e novelos conceituais e materiais.",
+    "l1": "Opera exclusivamente sobre matéria inanimada ou despojos de seres mortos pela própria operadora, unindo Khan e Yorman.",
+    "data": {
+      "slug": "sintese",
+      "title": "Síntese (Yaark de Ayşa Öztoprak)",
+      "categoria": "mechanics",
+      "l0_abstract": "Habilidade singular (Yaark) de Ayşa que permite enxergar e transmutar feixes e novelos conceituais e materiais.",
+      "l1_overview": "Opera exclusivamente sobre matéria inanimada ou despojos de seres mortos pela própria operadora, unindo Khan e Yorman.",
+      "descricao_completa": "Síntese é a manifestação do Yaark Nuustrad pertencente a Ayşa Öztoprak. Permite à draconata enxergar a estrutura molecular e conceitual do universo como fios e novelos entrelaçados. Com essa visão, Ayşa pode desatar e retorcer os fios de objetos inanimados ou de criaturas que ela pessoalmente abateu, forjando armas como Nyr e Zhar e erguendo a monumental árvore-mundo do Refúgio YKT.",
+      "entidades_relacionadas": [
+        "aysha_oztoprak",
+        "lylia_centelha_de_sofia",
+        "refugio_ykt",
+        "khan",
+        "yorman"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "lore",
+    "slug": "crosta_de_kravarius",
+    "title": "Crosta de Kravarius",
+    "categoria": "mechanics",
+    "l0": "Relíquia viva e armadura pessoal de Ayşa Öztoprak, forjada a partir da carapaça de Kravarius com redução de dano (RD -2).",
+    "l1": "Placas púrpuras endurecidas com veios avermelhados pulsantes que protegem a draconata com CA 24.",
+    "data": {
+      "slug": "crosta_de_kravarius",
+      "title": "Crosta de Kravarius",
+      "categoria": "mechanics",
+      "l0_abstract": "Relíquia viva e armadura pessoal de Ayşa Öztoprak, forjada a partir da carapaça de Kravarius com redução de dano (RD -2).",
+      "l1_overview": "Placas púrpuras endurecidas com veios avermelhados pulsantes que protegem a draconata com CA 24.",
+      "descricao_completa": "A Crosta de Kravarius é uma das quatro grandes relíquias de Kravarius integradas ao combate de Ayşa. Concede Classe de Armadura 24 e Redução de Dano constante de -2 contra todos os tipos de ataque físicos, reagindo instintivamente aos reflexos de trovão da guerreira.",
+      "entidades_relacionadas": [
+        "aysha_oztoprak",
+        "manto_de_kravarius"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "lore",
+    "slug": "manto_de_kravarius",
+    "title": "Manto de Kravarius",
+    "categoria": "mechanics",
+    "l0": "Armadura leve rara personalizada (+2 em couro batido) forjada sob medida para a pequena Amethysta.",
+    "l1": "Garante Classe de Armadura 19 a Amethysta no Nível 7, sintonizada com seus poderes elétricos sem restringir voo.",
+    "data": {
+      "slug": "manto_de_kravarius",
+      "title": "Manto de Kravarius",
+      "categoria": "mechanics",
+      "l0_abstract": "Armadura leve rara personalizada (+2 em couro batido) forjada sob medida para a pequena Amethysta.",
+      "l1_overview": "Garante Classe de Armadura 19 a Amethysta no Nível 7, sintonizada com seus poderes elétricos sem restringir voo.",
+      "descricao_completa": "O Manto de Kravarius foi meticulosamente confeccionado para vestir a silhueta halfling de Amethysta. Baseado em couro batido de alta qualidade tratado nas oficinas do refúgio com fragmentos da carapaça de Kravarius, concede bônus de CA 4 (base) + 2 (raridade) + bônus de destreza/nível, alcançando CA 19 sem atrapalhar a abertura de suas asas dracônicas.",
+      "entidades_relacionadas": [
+        "amethysta",
+        "aysha_oztoprak",
+        "crosta_de_kravarius"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "lore",
+    "slug": "nyr_e_zhar",
+    "title": "Nyr e Zhar — As Lâminas Gêmeas de Síntese",
+    "categoria": "mechanics",
+    "l0": "Par de espadas curtas de combate forjadas por Ayşa, com Nyr sintonizada com Yorman e Zhar sintonizada com Khan.",
+    "l1": "Empunhadas com maestria fulminante (+12 atk, 1d6+9 perfurante) canalizando trovão e fulgor negro.",
+    "data": {
+      "slug": "nyr_e_zhar",
+      "title": "Nyr e Zhar — As Lâminas Gêmeas de Síntese",
+      "categoria": "mechanics",
+      "l0_abstract": "Par de espadas curtas de combate forjadas por Ayşa, com Nyr sintonizada com Yorman e Zhar sintonizada com Khan.",
+      "l1_overview": "Empunhadas com maestria fulminante (+12 atk, 1d6+9 perfurante) canalizando trovão e fulgor negro.",
+      "descricao_completa": "Nyr e Zhar são a expressão marcial máxima de Ayşa. Nyr ressoa com a vibração sutil e rápida de Yorman (abstração e tempo), enquanto Zhar pulsa com a densidade sólida e pesada de Khan (matéria pura). Em combate, as duas espadas movem-se como um relâmpago duplo, causando dano devastador potencializado pela destreza 26 da cavaleira.",
+      "entidades_relacionadas": [
+        "aysha_oztoprak",
+        "khan",
+        "yorman",
+        "sintese"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "lore",
+    "slug": "tambor_do_polirritmo",
+    "title": "Tambor do Polirritmo",
+    "categoria": "mechanics",
+    "l0": "Item único raro e foco arcano (+2) de Douglas, o Violeiro, capaz de tocar múltiplos ritmos simultaneamente e hipnotizar multidões.",
+    "l1": "Pode alternar livremente entre três instrumentos e disparar o 'Ritmo Contagiante' em raio de 120ft.",
+    "data": {
+      "slug": "tambor_do_polirritmo",
+      "title": "Tambor do Polirritmo",
+      "categoria": "mechanics",
+      "l0_abstract": "Item único raro e foco arcano (+2) de Douglas, o Violeiro, capaz de tocar múltiplos ritmos simultaneamente e hipnotizar multidões.",
+      "l1_overview": "Pode alternar livremente entre três instrumentos e disparar o 'Ritmo Contagiante' em raio de 120ft.",
+      "descricao_completa": "O Tambor do Polirritmo parece impossivelmente complexo de tocar para ouvidos destreinados. A cada batida de Douglas, uma teia de outros instrumentos ecoa em sincronicidade perfeita. Permite prender alvos hostis em transe de dança incontrolável (condição Stunned) ou encantar plateias por 24 horas após performances de 10 minutos.",
+      "entidades_relacionadas": [
+        "douglas",
+        "ramo_de_douglas"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "lore",
+    "slug": "garra_de_kravut",
+    "title": "Garra de Kravut",
+    "categoria": "mechanics",
+    "l0": "Arma colossal de batalha empunhada por Niara (+9 atk, 1d8/1d10+8 cortante com propriedade Derrubar).",
+    "l1": "Forjada a partir de presas antigas de monstros das profundezas, desabrocha em poder de fogo e dano pesado.",
+    "data": {
+      "slug": "garra_de_kravut",
+      "title": "Garra de Kravut",
+      "categoria": "mechanics",
+      "l0_abstract": "Arma colossal de batalha empunhada por Niara (+9 atk, 1d8/1d10+8 cortante com propriedade Derrubar).",
+      "l1_overview": "Forjada a partir de presas antigas de monstros das profundezas, desabrocha em poder de fogo e dano pesado.",
+      "descricao_completa": "A Garra de Kravut é adaptada para o porte gigantesco de Niara. Capaz de desferir golpes que derrubam oponentes imediatamente no chão e de potencializar o alcance de seu Eco esmeralda em combate tático.",
+      "entidades_relacionadas": [
+        "niara",
+        "terraco_de_combate"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "lore",
+    "slug": "equipe_ykt",
+    "title": "Equipe YKT (Família e Aliança do Refúgio)",
+    "categoria": "factions",
+    "l0": "Companhia fraterna de aventureiros, desertores de impérios e mestres de ofício reunidos sob a liderança prática de Ayşa Öztoprak.",
+    "l1": "Composta por Ayşa, Amethysta, Lylia, Begônio, Proisb, Douglas, Niara, Pumma e Akuanduba.",
+    "data": {
+      "slug": "equipe_ykt",
+      "title": "Equipe YKT (Família e Aliança do Refúgio)",
+      "categoria": "factions",
+      "l0_abstract": "Companhia fraterna de aventureiros, desertores de impérios e mestres de ofício reunidos sob a liderança prática de Ayşa Öztoprak.",
+      "l1_overview": "Composta por Ayşa, Amethysta, Lylia, Begônio, Proisb, Douglas, Niara, Pumma e Akuanduba.",
+      "descricao_completa": "A equipe YKT transcendeu o conceito de um mero grupo mercenário para se tornar uma verdadeira comunidade autônoma. Fugindo do alcance opressor do Império de Drakovia e de outros poderes despóticos de Gaya, a YKT construiu seu próprio lar na Árvore sob o Templo Suspenso, onde cada integrante contribui com suas artes marciais, arcanas, culinárias e espirituais para a segurança mútua.",
+      "entidades_relacionadas": [
+        "refugio_ykt",
+        "aysha_oztoprak",
+        "amethysta",
+        "lylia_centelha_de_sofia",
+        "begonio_nackle",
+        "proisb",
+        "douglas",
+        "niara",
+        "pumma_nix",
+        "akuanduba"
+      ]
+    },
+    "facts": []
+  },
+  {
+    "type": "cosmology",
+    "slug": "gaya_codice_canonico_consolidado",
+    "title": "Gaya — Códice Canônico Consolidado",
+    "categoria": "cosmology",
+    "l0": "# GAYA — Códice canônico consolidado",
+    "l1": "# [[gaya]] — Códice canônico consolidado\n\n**[[aysha_oztoprak]], [[amethysta]], [[sintese]], [[equipe_ykt]], [[lylia_centelha_de_sofia]] e o mundo de [[gaya]]**  \n**Edição de consolidação: 8 de setembro de 2026**  \n**Atualização central: visão dos novelos, limites da [[sintese]] e identidade narrativa do domínio.**",
+    "data": {
+      "slug": "gaya_codice_canonico_consolidado",
+      "title": "Gaya — Códice Canônico Consolidado",
+      "categoria": "cosmology",
+      "l0_abstract": "# GAYA — Códice canônico consolidado",
+      "l1_overview": "# [[gaya]] — Códice canônico consolidado\n\n**[[aysha_oztoprak]], [[amethysta]], [[sintese]], [[equipe_ykt]], [[lylia_centelha_de_sofia]] e o mundo de [[gaya]]**  \n**Edição de consolidação: 8 de setembro de 2026**  \n**Atualização central: visão dos novelos, limites da [[sintese]] e identidade narrativa do domínio.**",
+      "descricao_completa": "# GAYA — Códice canônico consolidado\n\n**Ayşa Öztoprak, Amethysta Öztoprak, Síntese, YKT, Lylia e o mundo de Gaya**  \n**Edição de consolidação: 8 de setembro de 2026**  \n**Atualização central: visão dos novelos, limites da Síntese e identidade narrativa do domínio.**\n\n## 1. Autoridade e alcance deste documento\n\nGaya é o RPG que o jogador joga. Ayşa Öztoprak e Lylia são suas personagens. Este documento reúne a lore recuperada das conversas disponíveis, dos códices anteriores, da ficha final, do calendário de sessões e de outros registros fornecidos. Não é uma transcrição integral de todas as conversas da conta: quando uma sessão, imagem ou informação não foi recuperada, sua ausência é indicada sem inventar uma resposta.\n\nO texto consolida o mundo e as personagens; não mistura Gaya com KAD ou KAD-PI. A data desta edição é uma data real de organização do material, não uma data dentro da campanha.\n\n### 1.1 Hierarquia de leitura\n\n1. **Declarações e correções explícitas mais recentes do jogador**, sobretudo a definição da Síntese nesta conversa.\n2. **Páginas 1–4 da ficha final de Ayşa e Amethysta**, declaradas autoridade dos atributos e da lore; as descrições posteriores explicam essas páginas sem substituí-las.\n3. **Registros primários do mundo e das sessões**, respeitando o ponto de vista de cada fonte.\n4. **Códices consolidados anteriores**, aproveitados onde não foram superados.\n5. **Flavour e propostas homebrew**, preservados como elaboração narrativa ou projeto, sem transformar números sugeridos pelo assistente em regras aprovadas pelo mestre.\n\n### 1.2 Estados usados\n\n| Estado | Significado |\n| --- | --- |\n| Cânone declarado | Informação explicitamente fornecida ou corrigida pelo jogador. |\n| História ensinada | Cosmologia e história conforme o Códice de Gaya se apresenta: a versão ensinada no mundo atual. |\n| Registro de sessão | Acontecimento presente no calendário. Mantém dúvidas e linguagem de incerteza da fonte. |\n| Testemunho | Informação presente na defesa de "
+    },
+    "facts": [
+      {
+        "sujeito_slug": "amethysta",
+        "predicado": "filho_de",
+        "objeto_slug": "aysha_oztoprak",
+        "categoria": "characters",
+        "negado": false,
+        "temporalidade": null,
+        "proveniencia": {
+          "source_ref": "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+          "source_sha256": "c36bcb22e47dc9de485ec8a706e82078856db624c79a75d2d4f624f3900e0bbc",
+          "char_offset_start": 15981,
+          "char_offset_end": 16050,
+          "verbatim_quote": "Öztoprak\n\nAmethysta é a filha, dragão e companheira vinculada de Ayşa",
+          "extractor_version": "2.0.0-deterministic",
+          "epistemic_class": "SOURCE_DERIVED"
+        }
+      },
+      {
+        "sujeito_slug": "nyr_e_zhar",
+        "predicado": "criado_por",
+        "objeto_slug": "sintese",
+        "categoria": "characters",
+        "negado": false,
+        "temporalidade": null,
+        "proveniencia": {
+          "source_ref": "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+          "source_sha256": "c36bcb22e47dc9de485ec8a706e82078856db624c79a75d2d4f624f3900e0bbc",
+          "char_offset_start": 21350,
+          "char_offset_end": 21391,
+          "verbatim_quote": "**Nyr e Zhar** foram criadas pela Síntese",
+          "extractor_version": "2.0.0-deterministic",
+          "epistemic_class": "SOURCE_DERIVED"
+        }
+      }
+    ]
+  }
+]

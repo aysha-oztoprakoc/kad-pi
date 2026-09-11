@@ -1,0 +1,262 @@
+Relatório de Engenharia & Requisitos Técnicos
+     Pipeline Determinística de Ingestão Multimodal, Wiki Híbrida, OpenViking DB e QLoRA
+
+     Sistema Alvo: As Crônicas de Volume: ~206 Arquivos     Filosofia: Open-Source &     Integração: SillyTavern +
+     Gaya (TTRPG)                 Heterogêneos              Determinismo Estrito         Modelos Locais
+
+
+
+
+1. ESCOPO, OBJETIVOS & FILOSOFIA DETERMINÍSTICA
+
+O objetivo deste projeto consiste em converter um corpus heterogêneo de ~206 arquivos (PDFs com diagramação
+complexa, documentos ODT, logs de sessão TXT e imagens/mapas PNG/JPG) pertencentes ao cenário de RPG As
+Crônicas de Gaya em uma base de conhecimento estruturada, auditável e livre de alucinações.
+
+Para assegurar a máxima fidelidade conceitual e mecânica, adota-se o Princípio da Separação em Três Níveis de
+Certeza:
+
+  • Nível 1 — Extração de Dados 100% Determinística (Sem LLM): O parsing de layout, conversão de tabelas e leitura
+    de caracteres operam estritamente via analisadores sintáticos determinísticos (AST), modelos de visão computacional
+    treinados em layout (DocLayNet) e algoritmos de correspondência geométrica exata. Nenhum token factual é
+    sintetizado probabilisticamente nessa fase.
+  • Nível 2 — Classificação Semântica Guiada por Gramática (Constrained Decoding): A categorização taxonômica e
+    a extração de esquemas operam com Logit Masking rígido (DFA/FSM via Outlines ou XGrammar). A probabilidade de
+    tokens inválidos ou categorias inventadas é matematicamente reduzida a zero.
+  • Nível 3 — Síntese Narrativa & Adaptação de Estilo: Apenas a geração de sinopses executivas (L0/L1) e os pares de
+    conversação para ajuste fino (QLoRA) utilizam amostragem generativa com temperatura controlada.
+
+
+   Destino Duplo dos Dados Processados
+   1. Consumo Humano (Wiki Obsidian): Arquivos Markdown com YAML Frontmatter estrito, renderização visual
+   imediata, links bidirecionais automáticos ( [[entidade]] ) e compatibilidade com o plugin Dataview para tabelas
+   dinâmicas de regras.
+   2. Consumo de IA (OpenViking + SillyTavern + QLoRA): Árvore de contexto hierarquizada em viking:// (tiers
+   L0/L1/L2), injeção contextual em SillyTavern via MCP/World Info e exportação do dataset ShareGPT para fine-tuning.
+
+
+
+2. MATRIZ COMPARATIVA DE FERRAMENTAS OPEN-SOURCE
+
+A seleção prioriza ferramentas com licença permissiva ou GPL, execução 100% offline no hardware local e garantias
+determinísticas de preservação de dados:
+
+
+
+
+As Crônicas de Gaya • Pipeline Determinística de Extração                                                     Página 1 de 5
+  Camada                   Ferramenta Selecionada           Licença / Tipo         Garantia de Determinismo & Benefício
+
+  PDF & Tabelas            IBM Docling                      MIT / Open-Source      Reconstrói tabelas multi-linhas e layouts de
+                           (ou PyMuPDF4LLM)                  DETERMINÍSTICO        colunas duplas sem usar LLMs para reescrever
+                                                                                   texto. Exporta Markdown e JSON estruturado
+                                                                                   preservando coordenadas exatas.
+
+  ODT & TXT                Pandoc                           GPLv2+ / CLI Nativo    Conversão estrita baseada em Árvore Sintática
+                           (com wrapper odfpy)               DETERMINÍSTICO        Abstrata (AST). Converte hierarquia de títulos,
+                                                                                   listas e ênfases sem mutação de conteúdo.
+
+  OCR (Mapas/              Surya OCR                        GPL-3.0 / Apache-2.0   Reconhecimento geométrico de texto linha a linha
+  Imagens)                 (ou PaddleOCR)                    DETERMINÍSTICO        e bboxing. Evita a alucinação de inventar lore
+                                                                                   presente em modelos de linguagem puramente
+                                                                                   multimodais.
+
+  Classificação            Outlines                         Apache-2.0             Força o LLM local a decodificar exatamente nos
+                           (com vLLM / llama.cpp)            FSM CONSTRAINT        tipos do Pydantic/JSON Schema via autômatos
+                                                                                   finitos determinísticos. Garante conformidade de
+                                                                                   100%.
+
+  Entidades & Links        FlashText                        MIT                    Varredura em complexidade de tempo linear O(N)
+                           (Aho-Corasick)                    DETERMINÍSTICO        para substituição de menções de facções, cidades
+                                                                                   e NPCs por Wikilinks canônicos ( [[slug]] ).
+
+  Armazenamento            OpenViking DB                    Open-Source            Sistema de arquivos virtual viking://
+  RAG                                                        HIERÁRQUICO           particionado em camadas (.abstract, .overview,
+                                                                                   content.md) para redução drástica de consumo de
+                                                                                   contexto no agente.
+
+
+
+3. ARQUITETURA DA WIKI HÍBRIDA (HUMANO + AGENTE)
+
+Cada documento extraído é convertido em um arquivo Markdown unificado no padrão do Obsidian. Essa abordagem
+permite que você visualize mapas mentais e navegue entre conexões pelo Obsidian enquanto o mesmo diretório é
+montado como backend para os modelos locais:
+
+
+
+
+As Crônicas de Gaya • Pipeline Determinística de Extração                                                                 Página 2 de 5
+  Estrutura do Arquivo na Wiki                                 Benefícios Práticos da Padronização
+  Exemplo: vault/factions/ordem_da_aurora.md                    • Obsidian Graph View: As referências geradas pelo
+                                                                  FlashText em formato [[wiki_links]] geram
+    ---                                                           instantaneamente a teia de relações políticas e geográficas
+    slug: ordem_da_aurora                                         no grafo visual do Obsidian.
+    categoria: factions
+    titulo: "Ordem da Aurora"
+                                                                • Consultas Dataview Dinâmicas: Você pode criar páginas
+    aliases: ["Guardiões Solares", "Filhos do                     de consulta no Obsidian como:
+    Sol"]
+    regiao_sede: "[[reino_de_valen]]"                               ```dataview
+    lider: "[[grao_mestre_elias]]"                                  TABLE regiao_sede, status_faccao,
+    status_faccao: "ativa"                                          nivel_perigo
+    nivel_perigo: 3                                                 FROM #faccao
+    tags: [faccao, paladinos, valen,                                SORT nivel_perigo DESC
+    ordem_militar]                                                  ```
+    l0_abstract: "Ordem militar de paladinos
+    leais a Valen..."                                           • Espelhamento OpenViking Direto: Um script de
+    ---
+                                                                  sincronização extrai o Frontmatter YAML para compor os
+                                                                  arquivos .abstract (L0) e .overview (L1), mantendo
+    # Ordem da Aurora
+                                                                  o corpo integral como content.md (L2).
+    ## Visão Geral e Relações (L1)
+    A **Ordem da Aurora** é uma organização
+    militar que opera...
+
+    * **Inimigos:** [[culto_abissal]],
+    [[renegados_de_kael]]
+    * **Aliados:** [[reino_de_valen]],
+    [[igreja_da_chama]]
+
+    ## Mecânicas e Regras Oficiais (L2)
+    | Posto | Bônus de Atributo | Habilidade
+    Exclusiva |
+    |---|---|---|
+    | Recruta | +1 Defesa | Imposição Solar |
+    | Templário | +2 Vontade | Julgamento Abissal
+    |
+
+
+
+
+4. PIPELINE DE PROCESSAMENTO DETERMINÍSTICO: ETAPA POR ETAPA
+
+   Etapa 1: Ingestão de Documentos (Zero Probabilística)
+   Todos os arquivos no diretório de entrada são roteados pelo tipo de extensão:
+
+     • PDFs: Processados via Docling DocumentConverter com extração de tabelas ativada. PDFs escaneados ou
+       páginas puramente gráficas são despachadas automaticamente para o motor de OCR Surya.
+     • ODTs: Convertidos diretamente para CommonMark/GFM via pandoc -f odt -t gfm , garantindo preservação
+       de formatação original.
+     • TXTs: Lidos com decodificação resiliente UTF-8 e normalização Unicode NFC.
+     • Imagens (PNG/JPG): O Surya OCR extrai todas as caixas de texto com coordenadas espaciais. Se a imagem
+       for um mapa ou handout, uma chamada secundária ao VLM local ( Qwen2.5-VL ) gera a descrição semântica dos
+       elementos visuais.
+
+
+
+
+As Crônicas de Gaya • Pipeline Determinística de Extração                                                         Página 3 de 5
+   Etapa 2: Classificação e Tipagem Rígida com Outlines
+   O texto extraído é submetido ao modelo local através de decodificação guiada por gramática. O modelo é obrigado a
+   responder estritamente dentro do modelo Pydantic:
+
+     from pydantic import BaseModel, Field
+     from enum import Enum
+     from typing import List
+
+     class CategoriaDocumento(str, Enum):
+         factions = "factions"
+         locations = "locations"
+         characters = "characters"
+         mechanics = "mechanics"
+         cosmology = "cosmology"
+         session_logs = "session_logs"
+
+     class MetadadosGaya(BaseModel):
+         slug: str = Field(..., description="Identificador único minúsculo com underscores")
+         titulo: str = Field(..., description="Nome canônico do arquivo ou entidade")
+         categoria: CategoriaDocumento
+         aliases: List[str]
+         entidades_relacionadas: List[str]
+         l0_abstract: str = Field(..., max_length=250)
+         l1_overview: str
+         instrucao_qlora: str
+         resposta_qlora: str
+
+
+
+
+   Etapa 3: Resolução de Entidades com FlashText (Geração de Wikilinks)
+   Um índice de todos os slugs e aliases é alimentado em um processador KeywordProcessor do FlashText. O
+   corpo do documento passa por uma substituição determinística: qualquer menção textual a termos conhecidos é
+   encapsulada em [[termo_slug]] , consolidando o grafo de navegação sem depender de raciocínio estocástico da
+   IA.
+
+
+
+5. INTEGRAÇÃO COM O AMBIENTE LOCAL EXISTENTE
+
+   Gerenciamento Crítico de VRAM no Hardware Local
+   Como a sua máquina já possui modelos locais instalados e o SillyTavern em execução, a execução simultânea de
+   pipeline pesado pode ocasionar erro de CUDA Out of Memory (OOM). Siga a separação de estágios:
+
+     • Fase A (Extração de Layout & OCR): Executar Docling, Pandoc e Surya OCR. Podem rodar em CPU ou
+       consumindo menos de 4 GB de VRAM.
+     • Fase B (Classificação com Outlines): Apontar o Outlines para a sua instância local já carregada (vLLM ou
+       servidor Ollama/llama.cpp com suporte a structured outputs).
+     • Fase C (Treinamento QLoRA Posterior): Fechar temporariamente os serviços de inferência do SillyTavern e
+       vLLM para liberar 100% da VRAM ao Unsloth / Hugging Face TRL.
+
+
+
+Interconexão com o SillyTavern
+Para conectar a base organizada ao SillyTavern, duas opções estão disponíveis:
+
+1. Plugin MCP / Tool Calling (Recomendado): O servidor local do OpenViking expõe endpoints para consulta por
+   função ( viking_search e viking_read_content ). Nas configurações do SillyTavern, habilite Function Calling para
+   que a IA busque nos arquivos viking:// apenas quando necessário.
+
+
+
+
+As Crônicas de Gaya • Pipeline Determinística de Extração                                                  Página 4 de 5
+2. World Info (Lorebook Nativo): O script de exportação compila todos os .overview e aliases em um único
+   arquivo gaya_world_info.json que é importado diretamente na aba World Info do SillyTavern, associando as
+   chaves de ativação aos nomes das entidades.
+
+
+6. CHECKLIST DE IMPLEMENTAÇÃO E COMANDOS DE INSTALAÇÃO
+
+Dependências de Sistema (Linux / Ubuntu / WSL2)
+
+  sudo apt update && sudo apt install -y pandoc poppler-utils tesseract-ocr
+
+
+Dependências Python do Ambiente Dedicado
+
+  pip install --upgrade             docling         pymupdf4llm   pandoc    odfpy      surya-ocr       outlines
+  flashtext     pydantic             openai         openviking
+
+
+Estrutura de Diretórios Recomendada
+
+  cronicas_de_gaya_pipeline/
+  ├── raw_corpus/                        # Seus 206 arquivos originais (PDF, ODT, TXT, PNG, etc)
+  ├── obsidian_vault/                    # Wiki gerada (com frontmatter YAML e [[wikilinks]])
+  │   ├── factions/
+  │   ├── locations/
+  │   ├── characters/
+  │   ├── mechanics/
+  │   ├── cosmology/
+  │   └── session_logs/
+  ├── openviking_storage/                # Diretório espelhado para viking:// (L0, L1, L2)
+  ├── qlora_dataset/
+  │   └── gaya_sharegpt.jsonl            # Pares instrução-resposta prontos para fine-tuning
+  ├── entity_registry.json               # Dicionário de slugs e aliases canônicos
+  └── pipeline_orchestrator.py           # Script executável determinístico
+
+
+
+7. CONCLUSÃO E PRÓXIMOS PASSOS OPERACIONAIS
+
+A arquitetura especificada garante que a riqueza do universo de As Crônicas de Gaya seja preservada com fidelidade
+matemática absoluta nas camadas de regras e dados, ao mesmo tempo em que fornece aos modelos locais de IA a
+flexibilidade estilística necessária para roleplay imersivo no SillyTavern. O próximo passo prático consiste em disparar a
+extração determinística sobre a pasta raw_corpus e validar o grafo gerado na interface do Obsidian.
+
+
+
+
+As Crônicas de Gaya • Pipeline Determinística de Extração                                                     Página 5 de 5

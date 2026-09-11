@@ -1,0 +1,303 @@
+20      40 10            45         45 10            45          45 10           45       45 10             45         45 10                  45          45 10       45           45 1045 745
+
+
+                Nome :   Firian              Raça:   Meio-Elfa         Classe:   Bruxa             Nível:   3 - Hexblade            Altura:   Alta            Peso:   Esguia
+
+
+     Saves
+                ⚬ +0                         ⚬ +2                      ⚬ +3                        ⚬ +1                             ● +5                      ● +7
+
+                         +0                          +2                          +3                         +1                                +3                      +5
+                         FOR                          DES                        CON                         INT                              SAB                      CAR
+
+                          10                           15                         16                          13                               16                        20
+             Perícias
+
+             ⚬ Atletismo            +0     ⚬ Acrobacia       +2           Dados de Vida          ● Arcana                  ⚬ Lidar com Animais+3 ⚬ Enganação
+                                                                                                                           +3                                                          +5
+
+                                           ⚬ Prestidigitação +2                                  ● História            +3 ⚬ Intuição          +3 ● Inimidação                          +7
+                                                                            1d8+3
+                                           ⚬ Furtividade +2                                      ⚬ Investigação        +1 ⚬ Medicina          +3 ● Performance                         +7
+
+                                                                                                 ⚬ Natureza             +1 ● Percepção        +5 ● Persuasão                           +7
+
+                                                                                                 ⚬ Religião                +1   ⚬   Sobrevivência +3
+
+
+
+             Bônus de         Bônus de       Velocidade                                                          CA                 CD de Feitiços            Resistências
+             Proficiência     Iniciativa
+                                                9m        Caminhada
+                                                                       35                35            0            16                15
+                +2                +1           4,5m       Escalada                                                                  Polaridade:
+
+                                               4,5m       Nado/Voo        Max            HP         Temp                              3 (+4)
+                                                                       Morte          Falhas       ⚬⚬⚬
+             Ataques                                                                  Sucessos     ⚬⚬⚬
+                Tipo                         Acerto       Dano                        Tipo                       Propriedades
+                Eldritch Blast                  +7        1d10                        Force damage
+                Volkshänder                     +8        (1d6/2d6/3d6) +5            Cortante                   Espada de Duas Mãos.
+                Lâmina Verde                    +8        (1d6/2d6/3d6) +7            Cortante, Fogo.            Espada de Duas Mãos, Outro leva 8 de dano.
+
+
+
+
+             Ações Bônus                                                                         Habilidades
+
+                - Maldição da Hexblade (1/1)                                                       - Spell Slots (2/2)
+                                                                                                   - [0] khan e [4] yorman
+
+
+
+
+                                                                                                   - Vantagem em testes de força.
+             Missões
+
+                Política: (13/20)
+
+                Economia: (6/10)
+
+
+             Proficiências com Ferramentas, Equipamentos e Línguas
+                Armas: Armas Simples e Marciais.                                                   Línguas: Comum, Élfico, Infernal e Dracônico.
+
+                Armaduras: Armaduras Leves, Médias e Escudos.                                      Veículos:
+                Ferramentas e Outros: Xadrez.
+
+                                                                       Passivas
+
+
+                3m/           90cm/
+                                             150kg          18m             15           13           11           10 dias               0            0           13           0
+                1,5m          45cm
+
+              Salto à Dist Salto em Alt Erguer/Puxar        Visão no   Percepção      Intuição   Investigação      Rações              Cobre         Prata        Ouro       Platina
+                                                             Escuro
+20     40 10         45      45 10        45       45 10        45     45 1    45       45 10      45        45 10     45       45         10 45   15                                  300 10 1 10                                          300 15 680
+
+
+               Habilidades de Classe                                                Talentos Raciais                                                    Talentos de Classe                           Itens Mágicos
+
+
+       Guerreira Hex.                                                         Visão no Escuro                                                           Nobre: Posição de Privilégio
+
+       Maldição da Hexblade.                                                  Ancestralidade Feérica                                                    Arma de Pacto Melhorada
+        Eu posso usar esse habilidade uma vez por descanso curto              Possuo vantagem em testes para resistir ser enfeitiçada, e
+
+       ou longo.                                                              mágica não pode me fazer dormir.                                          Fala das Bestas
+        Como uma ação bônus, escolho uma criatura que posso ver
+
+       em 9 metros. O alvo é almadiçoado por 1 minuto. A maldição             Precisão Élfica
+       acaba quando o alvo morreu, quando eu morro, ou quando                 Sempre que tenho vantagem em uma rolagem de ataque
+
+       eu sou incapacitada. Enquanto ativa, a maldição me concede:            usando destreza, inteligência, sabedoria ou carisma, eu
+
+      - Bônus nas minhas rolagens de dano contra o alvo                       rerolo um dos dados uma vez.
+
+     amaldiçoado. (Proficiência).
+
+      - Qualquer rolagem de ataque que faço contra o alvo                     1 Pontos de atributo guardados.
+     almadiçoado é um crítico em 19 ou 20.
+
+      - Se o alvo amaldiçoado morrer, eu recupero pontos de vida
+
+     igual ao meu nível de Bruxa + Modificador de Carisma (3+4 = 7).
+
+
+
+       Pacto da Lâmina.
+        Eu sou proficiente com a minha arma de pacto. Esta arma
+
+       conta como mágica para passar das resistências.
+
+        A arma de pacto desaparece se está a mais de 1,5m de mim
+
+       por 1 minuto ou mais. Ela também desaparece se eu usar
+
+       essa habilidade novamente, se eu desfazer a arma ou se eu
+
+       morrer.
+
+        Eu posso transformar uma arma mágica em arma de pacto
+
+       com um ritual de 1 hora enquanto seguro a arma, podendo
+
+       ser feito em um descanso curto. Eu posso enviar a arma para
+
+       um espaço extradimensional e ela reaparece sempre que eu
+
+       criar uma arma de pacto.Eu não posso afetar um artefato ou
+
+       arma sentiente dessa maneira. A arma deixa de ser a minha
+
+       arma de pacto se eu morrer, se eu realizar um ritual de
+
+       1 hora em uma arma diferente ou se eu realizar um ritual de
+
+       1 hora para quebrar o meu vínculo com ela. A arma sai de seu
+
+       espaço extradimensional e aparece aos meus pés se o vínculo
+
+       se quebrar.
+
+
+
+
+                                                                                                                                                                                                                                                  Tradução por TenisonJr
+
+
+
+
+                                                                                                                                                                                                              Design por Cardboard Cleric
+              - Armadura de Besouro Hércules (Armadura de Escamas)   - Roupas de Nobre
+                 (Vantagem em testes de força).                      - Anel de Sinete
+              - Volkshänder                                          - Pergaminho provando a minha origem nobre
+                                                                     - Bolsa de moedas
+                                                                     - Um pequeno bloco de pedra que não pesa
+                                                                     - Pacote do Aventureiro (12po):
+                                                                        1x Mochila
+                                                                        1x Pé de Cabra
+                                                                        1x Martelo
+                                                                        10x Pítons
+                                                                        1x Caixa de Fogo
+                                                                        1x Cantil
+                                                                        1x Corda de cânhamo (15m)
+
+
+
+
+Volkshänder
+Feitiços Preparados #   N/A   SpllAtkMod: +7   Nível 4   V   S   M   Componentes de Feitiço   Pergaminhos de Feitiço
+                                               ⚬
+                              V   S    M       ⚬
+● Truques                                      ⚬
+- Green-Flame Blade.                           ⚬
+- Eldritch Blast.                              ⚬
+- Chill Touch.                                 ⚬
+                                               ⚬
+                                               ⚬
+                                               ⚬
+                                               Nível 5
+Nível 1                                        ⚬
+⚬ Shield.                                      ⚬
+⚬ Comprehend Languages.                        ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              Nível 6
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+Nível 2    (2/2)                               ⚬
+⚬                                              ⚬
+⚬ Hold Person.                                 ⚬
+⚬ Misty Step.                                  ⚬
+⚬ Invisibility.                                Nível 7
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              Nível 8
+Nível 3                                        ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              Nível 9
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+⚬                                              ⚬
+Personagens
+
+           Viridia (eu)                    Idade: 180 anos            Antecedente: Nobre
+
+
+
+                                           Viridia é uma jovem meio-elfa de 180 anos de idade, ela nunca conheceu a sua
+
+                                        mãe e passou todos esses anos sem nunca conhecer o mundo fora do palácio real
+
+                                        para que trabalhasse e treinasse o suficiente para superar a sua falha de ter nascido
+
+                                        uma meio-elfa.
+
+                                           Ela sempre foi bem solitária, com as pessoas que ela teve mais contato social
+
+                                        sendo os servos e escravos do local, apesar de sempre se manterem bem afastados
+
+                                        dela. Eventualmente no que seria considerado sua infância para os humanos, ela
+
+                                        conheceu uma ou outra criança que conseguiu se aproximar mais, fazendo suas
+
+                                        primeiras amizades, mas isso se perdeu após presenciar gerações inteiras de
+
+pessoas que ela conhecia simplesmente envelhecendo até a morte diante de seus próprios olhos.
+
+    Ela se sentia uma aberração.
+
+    Um dia ao anoitecer, o seu pai apareceu em seu castelo, uma das poucas vezes em décadas que ela o via. Ele ordenou
+
+que a trouxessem para fora e lhe colocaram em uma carruagem, essa foi a primeira vez que Viridia saiu de seu castelo e
+
+apesar da estranhesa da situação, ela estava muito feliz.
+
+    Viridia foi enviada para uma velha catedral, seu iterior estava escuro devido ao horário da noite, mas o leve brilho da
+
+lua e das velas que a decoravam refletiam o brilho dourado dos milhões de ornamentos que a enfeitavam. Todos cobertos
+
+de sangue, com novas decorações de pele, carne e ossos extendidas e armadas com o fim de dessacrar todo o seu
+
+esplendor. A jovem elfa estava em um vago estado de estranhesa e confusão, que logo se consolidou em terror conforme
+
+era levada a força para o centro da estrutura, seu pai veio logo em seguida. Carregando consigo a espada da família.
+
+Volkshänder.
+
+    Com o som da arma lendária sendo desenbanhada, Viridia já sabia o que estava por vir, nesse momento, algo
+
+despertou na garota.
+
+     Talvez sorte, intervenção divina ou simplesmente o seu instinto de sobrevivênca, algo na garota a permitiu escapar
+
+dos que a seguravam, suas mãos voaram mecânicamente para o cabo da espada e em uma única ação cega, Viridia
+
+perfurou o peito de seu pai.
+
+    A morte foi instantânia, com o sangue seguindo logo após.
+
+Com o retirar da lâmina de dentro do coração de pedra de seu pai, o olho de prata se abriu, dentro de si, um buraco negro,
+
+dentro do buraco negro uma palavra, NIHIL. As veias de Viridia imediatamente arderam de agonia conforme a dor de mil
+
+agulhas frenéticamente rasgavam por sua extensão, todos os seus outros sentidos imediatamente se tornaram nulos,
+
+ao mesmo tempo em que sua mente era inundada com as lembraças das dores, sofrimentos e desesperos de cada vítima
+
+morta, ferida ou prejudicada pela lâmina da espada ou de sua influência, milhares de anos de miséria e sofrimento
+
+sentidos em sua própria pele ao decorrer de um segundo que mais parecia uma eternidade, até o momento em que sentiu
+
+a morte de seu pai, a mais recente. Empunhando firmemente a espada em mãos, toda essa dor parou.
+
+    Volkshänder encontrou sua nova imperadora.
+
+
+
+- Personalidade: Garota nobre sem tato social nenhum fora desse ambiante, ela quer muito fazer amigos e tenta dar o
+
+seu melhor.
+
+- Ideais: Deseja conhecer mais do mundo e como as pessoas funcionam, viver tudo aquilo que não viveu enquanto presa.
+
+- Ligações: Família Silverblood, Aristocracia, carroça de alimentos da Dona Martha.
+
+- Falhas: Não conhece muito do mundo de verdade, tendo uma criação exclusivamente nobre-élfica, carregando
+
+consigo vários dos preconceitos que vem com isso.

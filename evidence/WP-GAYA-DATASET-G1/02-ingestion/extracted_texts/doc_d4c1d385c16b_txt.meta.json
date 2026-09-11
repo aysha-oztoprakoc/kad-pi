@@ -1,0 +1,8 @@
+{
+  "doc_id": "doc_d4c1d385c16b",
+  "source_ref": "staging_ingestion/YKT _ Lylia_pdf.txt",
+  "sha256": "d4c1d385c16b453424120d1e29e195136e692f5c5bbc80765d345b3af39bb9cc",
+  "parser": "utf8_text_parser",
+  "status": "SUCCESS",
+  "length": 14916
+}

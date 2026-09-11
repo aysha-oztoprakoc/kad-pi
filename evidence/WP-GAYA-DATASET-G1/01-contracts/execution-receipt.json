@@ -1,0 +1,112 @@
+{
+  "frame_id": "WP-GAYA-DATASET-G1-01",
+  "title": "Extend shared contracts and safe entrypoint",
+  "project": "kad-rpg",
+  "recorded_at": "2026-09-09T02:04:22.834842+00:00",
+  "claim_id": "3dd4bb4a-e436-4db2-ab41-15c1e3a459f5",
+  "base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "python_version": "3.12.14",
+  "status": "PASS",
+  "contracts": {
+    "terminal_disposition_codes": [
+      "POSITIVE_LORE_CANDIDATE",
+      "MEDIA_ASSET",
+      "STRUCTURED_DATA",
+      "DOCUMENTATION",
+      "EXCLUDED_CODE",
+      "EXCLUDED_DATABASE"
+    ],
+    "locator_kinds": [
+      "CHAR_OFFSET",
+      "BYTE_OFFSET",
+      "PDF_PAGE_LAYOUT",
+      "DOCX_PARAGRAPH",
+      "ODF_ELEMENT",
+      "JSON_PATH",
+      "MEDIA_REGION"
+    ],
+    "review_states": [
+      "SOURCE",
+      "EXTRACTION",
+      "CANDIDATE",
+      "APPROVED",
+      "CONTESTED",
+      "REJECTED",
+      "SUPERSEDED"
+    ],
+    "context_scopes": [
+      "CANON_PUBLIC",
+      "NARRATOR_SECRET",
+      "CHARACTER_PERSPECTIVE",
+      "BRANCH_SCENARIO",
+      "TRAINING_ELIGIBLE",
+      "TRAINING_INELIGIBLE"
+    ]
+  },
+  "inspection_summary": {
+    "total_files_discovered": 315,
+    "total_bytes": 397046643,
+    "disposition_summary": {
+      "POSITIVE_LORE_CANDIDATE": 143,
+      "MEDIA_ASSET": 151,
+      "STRUCTURED_DATA": 3,
+      "DOCUMENTATION": 6,
+      "EXCLUDED_CODE": 11,
+      "EXCLUDED_DATABASE": 1
+    },
+    "format_summary": {
+      ".jsonl": 2,
+      ".webp": 8,
+      ".jpg": 3,
+      ".pdf": 31,
+      ".md": 69,
+      ".odt": 1,
+      ".docx": 1,
+      ".png": 140,
+      ".odg": 2,
+      ".py": 11,
+      ".json": 2,
+      ".sqlite": 1,
+      ".txt": 44
+    },
+    "zero_writes_verified": true
+  },
+  "subcommands_verification": {
+    "inspect": {
+      "exit_code": 0,
+      "status": "PASS",
+      "behavior": "Real corpus read-only discovery, zero writes, deterministic report"
+    },
+    "run": {
+      "exit_code": 1,
+      "status": "BLOCKED_FAIL_CLOSED",
+      "message": "[DISPATCH BLOCKED] O estágio de execução 'run' não está disponível no Frame 01.\nA execução do pipeline de ingestão e extração de corpus pertence ao Frame 02 (WP-GAYA-DATASET-G1-02).",
+      "target_frame": "WP-GAYA-DATASET-G1-02"
+    },
+    "verify": {
+      "exit_code": 1,
+      "status": "BLOCKED_FAIL_CLOSED",
+      "message": "[DISPATCH BLOCKED] O estágio de qualificação 'verify' não está disponível no Frame 01.\nA qualificação semântica e estrutural de release pertence ao Frame 08 (WP-GAYA-DATASET-G1-08).",
+      "target_frame": "WP-GAYA-DATASET-G1-08"
+    },
+    "replay": {
+      "exit_code": 1,
+      "status": "BLOCKED_FAIL_CLOSED",
+      "message": "[DISPATCH BLOCKED] O estágio de verificação 'replay' não está disponível no Frame 01.\nA reprodução determinística por fita de respostas pertence ao Frame 06 (WP-GAYA-DATASET-G1-06).",
+      "target_frame": "WP-GAYA-DATASET-G1-06"
+    }
+  },
+  "test_suite": {
+    "tests_run": 22,
+    "failures": 0,
+    "errors": 0,
+    "status": "OK"
+  },
+  "staging_artifacts": [
+    "dataset_runs/staging/01-contracts/validated-config.json",
+    "dataset_runs/staging/01-contracts/inspect-report.json",
+    "dataset_runs/staging/01-contracts/execution-receipt.json",
+    "dataset_runs/staging/01-contracts/execution-receipt.md",
+    "dataset_runs/staging/01-contracts/manifest.json"
+  ]
+}

@@ -1,0 +1,507 @@
+20    40 10             45        45 1                45           45 1               45          45 10            45         45 10              10           45 1            45            45 1 45 710
+                                                                                                                                                        Grande
+
+               Nome :   Niara                Raça:    Feral, Beasthide      Classe:   Guerreira          Nível:    7 - Echo Knight     Altura:   3,32m / 6,57m       Peso:   Físico Atlético
+
+
+     Saves
+               ● +7          Vantagem        ⚬ -3                           ● +11                        ⚬ -3                          ⚬ -2                          ⚬ +0
+
+                        +4                             -3                             +8                            -3                            -2                         +0
+                        FOR                             DES                           CON                            INT                          SAB                          CAR
+
+                 (16+3): 19                               5                  (23+3): 26                               5                             7                            10
+
+             Perícias|| [ 9 / -1 ]                   [ 2 / -4 ]                  [ 13 / +1 ]                      [ 2 / -4 ]                [ 3 / -4 ]
+             ● Atletismo          +7       ⚬ Acrobacia       -3
+                                                                                Dados de Vida          ⚬ Arcana                -3  ● Lidar com Animais +1 ⚬ Enganação                           +0
+
+                                           ⚬ Prestidigitação -3                                        ⚬ História                  ⚬ Intuição          -2 ● Inimidação
+                                                                           6 1d10+8                                            -3                                                               +3
+
+                                           ⚬ Furtividade -3                                            ⚬ Investigação          -3 ⚬ Medicina           -2 ⚬ Performance                         +0
+
+                                                                                                                                                     +1 ⚬ Persuasão
+                                                     Desvantagem
+                                                                                                       ● Natureza              +0 ● Percepção
+                                                                           2d6+7+8                                                                                                              +0
+
+                                                                                                       ⚬ Religião               -3 ⚬ Sobrevivência -2
+
+
+              Bônus de        Bônus de
+             Proﬁciência      Iniciativa
+                                             Velocidade                     [ 58 ]          [ 58 ]                           CA             CD de Feitiços                   Resistências
+
+                                               20ft         Caminhada                                                                              N/A           Rage: Contund, Cort e Perfur. .
+
+               +3               -3              10ft          Escalada
+                                                                           116 116                            0            22                    Polaridade                  Contundente
+
+                                                10ft          Nado/Voo
+                                                                                Max             HP            Temp                           1 / (+5+3)                Imunidade a Fogo.
+
+                             Vantagem                                       Morte           Falhas           OOO        [STN: +5 CA]      [ Vantagem ]            RD 4 (+3 vs Contundente,
+                                                                                                                                                                   Cortante e Perfurante)
+                                                                          [ Vantagem ]     Sucessos          OOO
+             Ataques
+                         Tipo                 Acerto                     Dano                         Tipo                                            Propriedades
+
+                 Garra de Kravut               +7+2             1d8+4+2+2(+2)                     Cortante                     Versátil (1d10+4+2(+2)), Derrubar (Ma)
+              GdK (Desabrochar F)              +8+2            1d8+5+4+2(+2)                      Cortante                     Versátil (1d10+5+4(+2)), Derrubar (Ma)
+                  GdK (Redigida)              +7+2+2          1d8+4+2+2+2(+2)                     Cortante                    Versátil (1d10+4+2+2(+2)), Derrubar (Ma)
+               GdK (DSBF + RDG)               +8+2+2          1d8+5+4+2+2(+2)                     Cortante                    Versátil (1d10+5+4+2(+2)), Derrubar (Ma)
+
+
+
+
+             Ações Bônus                                                                                Habilidades
+
+              - Manifestar o Eco.                                                                       - [ 1 / 1 ] Surto de Ação | 1x p/ turno.
+              - Teleportar com o Eco (custa 4,5m).                                                      - [ 8 / 8 ] Libertar Encarnação (Ação de Ataque).
+              - [ 2 / 3 ] Retomar o Fôlego: 1d10+7 / ou +1d10 testes - Modo Sentinela ( deslocamento = 0 ).
+                / caso curar, ando 10ft sem Atk Oportunidade.
+              - [ 1 / 1 ] Transformação Feral. (+1 CA)                                                  - Ataque Extra.
+              - [ 3 / 3 ] Romper Crosta / Arremesso Sísmico.                                            - Derrubar | Em acertar Atk, DC 15, prone.
+             Notas Rápidas
+
+                - Pontos de atributo guardados: [ 0 ]                                                        - Sinápse: sabedoria em um teste de Int.
+                - Exaustão: [ 0 / 5 ] | Fome: [ 5 / 5 ] | Sede: [ 5 / 5 ]                                    - Khan: [ 10 ] | Yorman: [ 6 ] | Drakai: [ 0 ]
+                - Duelos: [ 1 / 5 ]
+
+             Proﬁciências com Ferramentas, Equipamentos e Línguas
+
+               Armas: Armas Simples e Armas Marciais.                                                        Línguas: Comum, Silvestre, Élﬁco, Anão e Dracônico.
+               Armaduras: Escudos e Todas as Armaduras.                                                      Veículos: Nenhum.
+               Ferramentas: Ferramentas de Carpinteira.
+
+                                                                            Passivas
+
+                 9ft/         3,5ft/         245kg/
+                                                               60ft              11          11               7           0 dias             0            0             0               0
+                 18ft          7ft           490kg
+              Salto à Dist Salto em Alt Erguer/Puxar          Visão no      Percepção      Intuição    Investigação       Rações          Cobre          Prata        Ouro            Platina
+                                                               Escuro
+20   40 10       45    45 10    45     45 1      45   45 1    45      45 1     45       45 1   45    45      10 45   15                                                 300 10 1 10                                               300 15 680
+
+
+           Habilidades de Classe                                   Talentos Raciais                                       Talentos de Classe                                      Itens Mágicos e Maestrias com Armas
+
+
+     Duelismo                                                Visão no Escuro                                              Mestre em Armadura Pesada                               Garra de Kravut, Nível 2 (pt.1)
+      Quando tenho uma arma Corpo-a-Corpo em                                                                               Quando sou acertada por um ataque enquanto                 ( Item único Raro, Machado de Batalha +2 )
+     uma mão e nenhuma outra arma, eu ganho +2               Transformação                                            estou vestindo Armadura Pesada, qualquer                        [ CD = 8 + ModFOR + ModCON = [ 20 ] ]
+     no meu dano de arma.                                     Como uma ação bônus eu assumo uma                       dano Contundente, Perfurante ou Cortante                        - Vigor de Batalha (passiva):
+                                                             aparência mais feral. Esta transformação dura            causado a mim por esse ataque é reduzido por                    Sempre que eu tirar 18 ou mais em um ataque
+     Retomar o Fôlego                                        por 1 minuto ou até que eu morra ou a desfaça            um valor igual ao meu Bônus de Proﬁciência.                 com esta arma, adiciono 1 ponto de Khan em
+       [3 usos]                                              com uma ação bônus.                                                                                                  minha reserva.
+      Como uma Ação Bônus eu posso recuperar                  Quando me transformo eu ganho Pontos de                     Tough
+     Pontos de Vida igual a 1d10 + Nível de Guerreira        Vida Temporários igual a 1d6 + Nível + Mod.                   Meus pontos de vida máximos aumentam em                    - Garra Feroz (ação bônus):
+     [1d10+7].                                               Constituição (1d6+7+8) e recebo um bônus de              2 para cada nível meu.                                          Como uma ação bonus eu posso absorver o
+       Eu recupero 1 uso por descanso Curto e todos          +1 em minha CA.                                                                                                      machado em meu braço, transformando meu
+     os usos por descanso Longo.                              Posso me transformar apenas uma vez por                     Aberrant Dragonmark                                     corpo numa arma mortal. Meus ataques
+                                                             descanso curto ou longo.                                      - Truque ( Druidismo ).                                desarmados se tornam armas naturais que
+     Surto de Ação                                                                                                         - Magia Nível 1 ( Absorb Elements), 1 uso,             causam 1d8 de dano cortante, além da alteração
+       [1 uso], 1x por turno.                                Pacto de Kravut                                          recupera em descansos curtos ou longos.                     de algumas propriedades da arma.
+      Eu recebo uma ação adicional, usos                     +1d6 de Vida Temporária ao me Transformar.                    Eu utilizo meu modiﬁcador de Constituição
+     recuperam por descansos curtos.                                                                                  para conjurar essas magias.                                     Opressão Feral / Bote Sísmico (passivas):
+                                                                                                                           Quando conjuro a magia de Nível 1, eu posso                - Bote sísmico:
+     Mente Tática                                                                                                     gastar e rolar [ 1 Hit Dice ].                                  Ao performar um ataque critico com o machado
+      Quando eu falho um teste de habilidade, eu                                                                           Se eu rolar um número PAR: eu ganho vida               contra qualquer criatura, minha força arrasadora
+     posso gastar um uso de Retomar o Fôlego para                                                                     temporária igual ao número rolado.                          a obriga a fazer um salvaguarda de CON ou DES,
+     rolar 1d10 e adicionar o número ao teste de                                                                           Se eu rolar um número ÍMPAR: uma criatura              numa falha a criatura é arremessada a até 30ft
+     habilidade. Se o teste falhar, eu não gasto o meu                                                                aleatória em até 30 pés de mim (não me                      numa direção de minha escolha, recebendo [ 5d6 ]
+     Retomar o Fôlego.                                                                                                incluindo) recebe dano de força igual ao número             dano de Desmoronamento e criando uma cratera
+                                                                                                                      rolado, se nenhuma outra criatura está no                   de 30ft no ponto de queda, a cratera é
+     Reposicionamento Tático                                                                                          alcance, eu recebo o dano.                                  considerada terreno difícil para todos exceto a
+      Sempre que utilizar meu Retomar o Fôlego                                                                                                                                    mim.
+     com uma Ação Bônus, eu posso mover até                                                                                                                                           - Opressão Feral:
+     metade do meu deslocamento sem provocar                                                                                                                                          Ao performar um ataque critico com o machado
+     Ataques de Oportunidade.                                                                                                                                                     em forma de arma natural contra qualquer
+                                                                                                                                                                                  criatura, uma area de 30ft ao redor da criatura é
+     Libertar Incarnação                                                                                                                                                          esmagada pela força arrasadora de meu ataque.
+      Eu posso intensiﬁcar a fúria de meu eco.                                                                                                                                        Esta área se torna terreno difícil para todos
+     Sempre que usar a ação de Ataque, eu posso                                                                                                                                   (exceto a mim) e caso a criatura seja de [ 1 CAT ]
+     fazer um ataque corpo-a-corpo adicional da                                                                                                                                   de tamanho menor que a minha, ela deve fazer
+     posição do eco.                                                                                                                                                              uma salvaguarda de CON ou DES, ﬁcando
+      Eu posso usar essa característica um número                                                                                                                                 enraizada até seu próximo turno no caso de uma
+
+
+
+
+                                                                                                                                                                                                                                        Tradução por TenisonJr
+     de vezes igual ao meu Modiﬁcador de                                                                                                                                          falha. A criatura enraizada tem sua velocidade
+     Constituição (8). Eu recupero todos os usos                                                                                                                                  reduzida a 0, não pode realizar magias que exijam
+     quando termino um descanso curto ou longo.                                                                                                                                   componentes somáticos e ataques feitos contra a
+                                                                                                                                                                                  criatura tem vantagem, a criatura pode refazer a
+     Ataque Extra                                                                                                                                                                 salvaguarda com vantagem sempre que receber
+      Ataque Extra.                                                                                                                                                               um ataque de tipo cortante, perfurante,
+                                                                                                                                                                                  contundente, fogo, necrótico, frio ou radiante.
+
+
+                                                                                                                                                                                              Design por Cardboard Cleric
+20   40 10   45    45 10    45   45 1   45   45 1     45      45 1       45     45 1   45        45   10 45   15                                          300 10 1 10                                            300 15 680
+
+
+         Habilidades de Classe                             Itens Mágicos e Maestrias com Armas                     Itens Mágicos e Maestrias com Armas              Itens Mágicos e Maestrias com Armas
+
+
+                                                    Garra de Kravut, Nível 2 (pt.2)                                Garra de Kravut, Nível 2 (pt.3)                  Machado de Guerra: Derrubar
+                                                                                                                                                                        Quando acerto uma criatura com essa arma eu
+                                                      Romper Crosta / Arremesso Sísmico                             - Desabrochar Furioso (pt.2):                   posso a forçar a fazer uma Salvaguarda de CON
+                                                    (3 cargas ao dia):                                              Rage:                                           (DC 8 + ModHab + Proﬁciência = [15]). Caso falhe
+                                                      - Romper Crosta (ação bônus):                                   > Resistência a dano Contundente,             a Salvaguarda a criatura recebe a condição Prone.
+                                                      Gastando 1 carga em uma ação bonus com o                      Perfurante e Cortante.
+                                                    machado em mãos eu posso causar um abalo                          > Bônus de +2 de dano por ataque.             Martelo de Guerra: Empurrar
+                                                    sísmico numa area de 30ft ao meu redor, o                         > Vantagem em testes e salvaguardas de            Quando eu acerto essa criatura com essa arma,
+                                                    abalo gera uma cratera de mesmo tamanho e                       Força.                                          eu posso a empurrar até 10 pés para trás se for do
+                                                    qualquer outra criatura nessa area recebe [ 5d6 ]                                                               tamanho grande ou menor.
+                                                    de dano de desmoronamento e deve fazer um
+                                                    salvaguarda de CON ou DES, recebendo metade                                                                     Besta de Mão: Vex
+                                                    do dano em um sucesso ou o dano completo em                                                                         Caso eu acertar a criatura com um ataque dessa
+                                                    uma falha, a cratera é considerada terreno                                                                      arma e causar dano, eu tenho Vantagem no meu
+                                                    difícil para todos menos a mim.                                                                                 próximo teste de ataque contra essa criatura
+                                                      - Arremesso Sísmico:                                                                                          antes do ﬁm do meu próximo turno.
+                                                      Gastando 1 carga numa ação bonus com o
+                                                    machado imbuído na forma de Arma Natural,                                                                       Picareta de Guerra: Sap
+                                                    eu posso agarrar o solo abaixo de mim e o                                                                           Quando eu acertar uma criatura com essa arma,
+                                                    arremessar como um projétil de [ 10ft X 10ft ]                                                                  essa criatura tem Desvantagem em sua próxima
+                                                    contra qualquer ponto num raio de 60ft, se uma                                                                  rolagem de ataque antes do começo de meu
+                                                    criatura estiver na area de queda ela deve                                                                      próximo turno.
+                                                    receber [ 5d6 ] de dano de desmoronamento e
+                                                    deve fazer um salvaguarda de CON ou DES,
+                                                    recebendo metade do dano em um sucesso ou o
+                                                    dano completo em uma falha.
+
+
+                                                      - Desabrochar Furioso (1 carga, ação de
+                                                    yaark) (pt.1):
+                                                      Em uma ação de Yaark, gastando 1 carga eu
+                                                    permito que a Garra de Kravut desabroche numa
+                                                    primavera de ira, eu recebo os benefícios de
+                                                    rage, aumento em [ 1 CAT ] o meu tamanho,
+                                                    recebo [ 2d4+3 ] pontos de vida e aumento o
+                                                    meu valor de força em 2 [ = 21 ]. A vida excedente
+                                                    recebida por esse efeito permanece como vida
+                                                    temporária, o efeito dura 1 minuto e ao acabar
+
+
+
+
+                                                                                                                                                                                                                         Tradução por TenisonJr
+                                                    eu me torno INCAPACITADA por 1d4 turnos e
+                                                    retorno a meu tamanho normal, eu não posso
+                                                    fazer testes para sair desta condição. Eu
+                                                    recupero cargas de Desabrochar Furioso num
+                                                    descanso longo ou ao retornar de uma sequencia
+                                                    de testes contra a morte.
+
+
+
+                                                                                                                                                                                Design por Cardboard Cleric
+Feitiços Preparados #   N/A    SpllAtkMod: +11   Nível 4    V S    M      Componentes de Feitiço   Pergaminhos de Feitiço
+                                                 ⚬         ALSE
+                                                             FALSEALSE
+
+                               V S      M        ⚬         ALSE
+                                                             FALSEALSE
+
+● Truques                     ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+- Druidismo.                  TRUE
+                                 TRUEALSE        ⚬         ALSE
+                                                             FALSEALSE
+                              ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+                              ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+                              ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+                              ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+                              ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+                              ALSE
+                                FALSEALSE        Nível 5
+Nível 1        (1/1)                             ⚬         ALSE
+                                                             FALSEALSE
+
+⚬ Absorb Elements.            ALSE
+                                 TRUEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        Nível 6
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+Nível 2   (                                      ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        Nível 7
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        Nível 8
+Nível 3                                          ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        Nível 9   FALSE
+                                                              FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+
+⚬                             ALSE
+                                FALSEALSE        ⚬         ALSE
+                                                             FALSEALSE
+- Garra de Kravut, 1d8 / 1d10
+( Item Único Raro, Machado de Batalha +2 )                - Trouxa de Panos.
+ Um machado de batalha nascido do ódio encarnado do       - Manto de Panos e Top por baixo.
+mítico druida Kravut, um Urso colossal em tamanho e        - Materiais e restos de pano.
+força. Plantado como uma muda de ódio a partir de sua
+garra no campo de sua ultima batalha o machado de         - Granada de maldição em uma esfera:
+Kravut perdura até os dias de hoje buscando portadores     Petrificação de Troll.
+dignos de seu poder e missão, findar a opressão élfica
+sobre os druidas, animais e plantas destruindo todos
+que entrarem em seu caminho.
+ O machado tem a aparência de um bloco de pedra
+bruta com uma afiada lamina lascada, seu cabo envolve
+a lamina como um tronco que cresce ao redor de um
+rochedo, adornado por folhas, galhos e vários expoentes
+da essência natural que o rodeia.
+
+
+- EscudoSentinela
+Eu recebo Vantagem na Iniciativa quando
+estou com o escudo.
+
+
+
+
+            Armadura Antedeluviana
+           Item Único Incomum ( Wondrous )
+[+] Armadura de Placas (18) +2 CA = 20 CA
+[+] Resistência a dano Contundente
+[+] Imunidade a dano de Fogo
+[+] +4 Redução de Dano (universal)
+[+] +3 Força
+[+] +3 Constituição
+[+] +1 Categoria de Tamanho
+[+] Habilidade "Modo Sentinela":
+  -> +5 CA
+  -> Deslocamento = 0
+  -> Não posso conjurar
+  -> Considero como 3/4 cobertura
+[+] Pantherotropia se eu sair no sol
+[+] Funciona como um Core pra mechanoide
+
+
+[-] -10 pés de deslocamento
+[-] Não posso tirar a armadura, apenas com
+remove curse
+Personagens
+
+            Niara (eu)                   Idade: 26 anos.            Antecedente: Fazendeira.
+
+
+                                         Niara veio de Ygdra'eth, uma antiga trabalhadora rural que tomou para si o
+                                      seu treinamento em suas técnicas especiais de combate com espíritos.
+                                         Ela sempre foi bastante curiosa apesar de ser bem quieta, e assim que ouviu
+                                      contos de uma terra distante, Niara decidiu testar a sua sorte para explorar esses
+                                      novos horizontes para poder conhecer um mundo que nunca antes viu.
+                                         A viagem foi longa e perigosa, mas ﬁnalmente após muitos anos, Niara chegou
+                                      ao seu destino. Ela tem bem pouco conhecimento sobre o passado dos Ferais e está
+                                      em busca de encontrar o seu lugar no mundo.
+
+
+ Personalidade: Niara é bem quieta e séria, mas também bastante curiosa e gentil (apesar de ter diﬁculdade de
+expressar isso).
+
+
+ Ideais: Conhecer mais sobre o mundo e sobre o si, ﬁrmar laços e fazer o bem para aqueles ao seu redor.
+
+
+ Ligações: Seu povo em sua terra natal e aqueles que lhe trouxeram para este novo continente.
+
+
+ Falhas: As vezes é quieta e séria demais, é bastante oblivia e inocente sobre a realidade do mundo em que vive e tem
+diﬁculdade para se expressar e se abrir com outras pessoas.
+Calendário            Minha Jornada
+
+
+
+
+Missões
+- Contrato de Duelo
+  Manifestar Eco:               Eu posso usar uma ação bônus para magicamente                                             - Jotunheim.
+manifestar um eco de mim mesma em um local não ocupado que posso ver e esteja em
+torno de 15 pés de mim. Esse eco é uma imagem, translúcida e mágica de mim, que
+persiste até que seja destruída, até que eu a desfaça como uma ação bônus, até que eu
+manifeste outro eco, ou até que eu seja incapacitada.
+  O eco tem CA 14 + meu bônus de proﬁciência (CA 17), 1 HP e imunidade a todas as
+condições, ela possui e ocupa o mesmo tamanho que o meu e se tiver que fazer algum
+teste, ela utiliza o meu bônus para a rolagem. No meu turno, eu posso mentalmente comandar o meu eco para que se mova
+até 30 pés em qualquer direção (sem precisar de uma ação). Se o meu eco estiver a mais de 30 pés de mim ao ﬁm do
+meu turno, ela é destruída.
+
+
+     Eu posso usar o Eco das seguintes maneiras:
+     ● Com uma ação bônus, eu posso me teleportar, magicamente trocando de lugar com o meu eco a um custo
+     de 4,5 metros do meu movimento, independente da distância entre ambos.
+
+     ● Quando faço a ação de Ataque em meu turno, qualquer ataque que faço com aquela ação pode originar do
+     meu espaço ou do de meu eco. Eu posso fazes essa escolha para cada ataque.
+
+     ● Quando uma criatura em até 1,5 metros de meu eco, que eu possa ver, se move em ao menos 1,5 metros para
+     longe dele, eu posso usar a minha reação para fazer um ataque de oportunidade contra a criatura como se eu
+     estivesse no espaço do eco.
+
+
+
+Avatar Eco: Eu posso temporariamente transferir a minha consciência ao meu Eco. Com uma ação, eu posso ver pelos
+olhos de meu Eco e ouvir por suas orelhas. Durante esse período eu ﬁco cega e surda. Eu posso sustentar esse efeito por
+até 10 minutos e posso o encerrar a qualquer momento com uma ação. Quando meu Eco é utilizado dessa meneira ele pode
+estar a até 1000 pés (304,8m) de distância de mim sem que seja destruído.
+
+
+
+
+ Nome Umbrático:                - Niara, o Rugido da Vingaça, a Força Imparável.
+
+
+        Títulos:
+ - O Rugido da Vingança.                                                                                                  - Erguer (sem bônus de armadura ou tamanho): 108,8 kg // Puxar, arrastar e empurrar: 217,7 kg
+ - A Força Imparável.                                                                                                     - Erguer (+ armadura de troll): 244,9 kg // Puxar, arrastar e empurrar: 489,9 kg
+                                                                                                                          - Erguer (+ armadura de troll + desabrochar furioso): 544,3 kg // Puxar, arrastar e empurrar: 1088,6 kg
+
+
+                                                                                                                          - Salto em altura (sem bônus de armadura ou tamanho): 3 ft / 6 ft // Salto em distância: 8 ft / 16 ft // 0,9m / 1,8m | 2,4m / 4,8m
+- Forma Redigida: +2 em acertos, dano mágico extra igual a proﬁciência (+3), outros ferais num raio de 30ft de mim        - Salto em altura (+ armadura de troll): 3,5 ft / 7 ft // Salto em distância: 9ft / 18 ft // 1m / 2,1m | 2,7m / 5,4m
+recebem +2 em seus acertos.                                                                                               - Salto em altura (+ armadura de troll + desabrochar furioso): 4 ft / 8 ft // Salto em distância: 10 ft / 20 ft // 1,2m / 2,4m
+                                                                                                                                                                                                                                                       | 3m / 6m
+ - "Nustrad" = Contradição e Unidade. Yaark Nustrad = Yaark de Nustrad, o pai dos Yaarks                                     - Colar / cubos / etc = Capaz de prender o conceito pleno de um Yaark, tanto si como tod
+ - Yaark = Ser tecnicamente biológico próximo a divindade como um efeito colateral de sua existência continuada encarnada    suas capacidades por exemplo, podendo utilizar mesmo que não haja um Yaark sem a ligaç
+em uma "coisa". No mínimo parcialmente conscientes, com uma própria proto-sociedade primitiva mais como uma biosfera.        múltiplos Yaarks tal qual um deus.
+ - Evento Gaha = Essas criaturas em sua forma primitiva iniciando sua ascenção na época primitiva pré pré Gaya em Das
+Beaten, continuam até Gaya contemporânea mas em sua forma mais reﬁnada.
+ Criaturas de Gaya primitiva inafetadas por Khan ou Yorman, capazes de manipular matéria e seu movimento com protomagia
+da própria vontade utilizando tanto Khan quanto Yorman. Em sua reprodução, somavam e acumulavam suas energias de modo
+cada vez mais especíﬁco e complexo ao ponto de ser quase indistinguível diferenciar a criatura da ação, ideias, conceitos
+abstratos, e coisas em geral que representavam.
+ Paladinos e Elfos foram impedidos de usar os Yaarks como animais de cargas. Nessa época surgiram as rédeas feitas da
+carcaça de paladinos e imbuidos da alma de esóters, capaz de prender dentro algo próximo da "alma" de um Yaarks para que
+siga sua própria vontade. Traduzir minha essência diretamente pra essência pura interconectada com o Yaarks, na prática se
+tornando a "mesma" coisa.
+
+
+ - Eclipse de Sangue: Um círculo vermelhor e permanente que irá afogar todos em sangue, vivos e mortos. A volta de Rokash,
+o titã esquecido. Acabar com tudo para reinar absoluto no vazio.
+ Outros voltarão para combater a ameaça ﬁnal, e só então a verdadeira paz será alcançada. Um respiro para um verdadeiro
+ﬁnal que devemos nos preparar. Uma guerra para a todas governar, o ﬁnal da Grande Guerra.
+ Precisamos unir as pessoas capaz de alcançar mais que o inﬁnito, de conseguir o mundo para si e no processo libertá-lo.
+ Capazes de destruir tudo ou criar algo novo.

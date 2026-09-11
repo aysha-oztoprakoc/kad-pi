@@ -1,0 +1,53 @@
+{
+  "stage_id": "WP-GAYA-DATASET-G1-08",
+  "created_at": "2026-09-09T03:45:33.223210+00:00",
+  "config_sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd",
+  "inputs": [
+    {
+      "path": "kad-gaya/dataset_runs/staging/01-contracts/validated-config.json",
+      "sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd"
+    },
+    {
+      "path": "kad-gaya/training/qualification.py",
+      "sha256": "3e8a6128d87f41191f4b2668dc976404b4a1c5a11fd3fde7e5ee0fc7d2a0057e"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/07-consumers/consumer_manifest.json",
+      "sha256": "285935e4b34830501db469390a80258403baaeaca41d5b94b56038426ec7f7fb"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "qualification_summary.json",
+      "sha256": "26781ced51f00a7cb51acb187f4047b4a5d3a2a4bd8c86ac3a2b544b8e7a2308"
+    },
+    {
+      "path": "fault_injection_report.json",
+      "sha256": "18e09711130094e03eed343ab46bf21653defc718d2f440f7012ee0df752c05b"
+    },
+    {
+      "path": "canary_verification.json",
+      "sha256": "ce1a5decd569cbe1ed89b94a32774a48cc85596fa1d9f91d27acec7f7efe7b4b"
+    },
+    {
+      "path": "semantic_review.json",
+      "sha256": "6a0f263c4838757381449dfd9a42a8beba8ce6ad40def5f92cb8312a6eaa9110"
+    },
+    {
+      "path": "isa_gates_matrix.json",
+      "sha256": "3465ad5118c1ae2d536a0af07e195b2f75d0448e33ee1f14d740d799f0640aa2"
+    }
+  ],
+  "metrics": {
+    "overall_qualification_status": "PASS",
+    "fault_recovery_status": "PASS",
+    "isa_gates_passed": 9,
+    "total_isa_gates": 9,
+    "zero_canary_escapes": true,
+    "zero_revoked_claims": true,
+    "zero_metamorphic_escapes": true,
+    "zero_false_complete_verified": true
+  },
+  "sealed": true,
+  "sealed_sha256": "b37e63bfdb6b24436464002fd0bef4fc5db355d8033ac072a7f6ec2970959e0f"
+}

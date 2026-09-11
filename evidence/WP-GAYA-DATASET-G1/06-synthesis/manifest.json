@@ -1,0 +1,72 @@
+{
+  "stage_id": "WP-GAYA-DATASET-G1-06",
+  "created_at": "2026-09-09T02:59:51.537724+00:00",
+  "config_sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd",
+  "inputs": [
+    {
+      "path": "dataset_runs/staging/01-contracts/validated-config.json",
+      "sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd"
+    },
+    {
+      "path": "kad-gaya/training/synthetic_builder.py",
+      "sha256": "bd36b6631737efe45126c718f455c7e4d5a7dc038e9ebcf18646e6ce59ccf333"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/03-canon/manifest.json",
+      "sha256": "288d0c79551898bf4c41f41c9e6aa5234cbf18e8978a03af7b36818c2c61ef46"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/04-visual-spatial/manifest.json",
+      "sha256": "94e33cb129c60b32040f1a68abf9d0ad619b2d63ace1e331f243be5557e85410"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/05-eval-oracles/manifest.json",
+      "sha256": "7c1d79f097e242b035deaef3eb06c6291277edc87ef8b0c806477f33e67e9fe2"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "examples.jsonl",
+      "sha256": "3e1cf9b35085044d28dac6159af3aa30c076cc231b2cc96b476c7dea53c43217"
+    },
+    {
+      "path": "accepted_examples.jsonl",
+      "sha256": "3e1cf9b35085044d28dac6159af3aa30c076cc231b2cc96b476c7dea53c43217"
+    },
+    {
+      "path": "generation_tapes.jsonl",
+      "sha256": "1a3b5d8dd526d9fee868c173fd4b59fbddc774f6b7dd429c97d9b644f26dc8b3"
+    },
+    {
+      "path": "rejections.jsonl",
+      "sha256": "d22513647912ad4f12b46e45cb0b8d902b181e5410284e5d3c9718c09c978423"
+    },
+    {
+      "path": "synthesis_summary.json",
+      "sha256": "4f20150377f95fde548de5d52e766af7a5a4c12e67ddbe64cc617020fb778359"
+    }
+  ],
+  "metrics": {
+    "total_examples_compiled": 37,
+    "accepted_examples": 37,
+    "train_eligible_examples": 30,
+    "total_tapes_recorded": 39,
+    "family_breakdown": {
+      "memory_and_abstention": 5,
+      "character_identity_and_style": 2,
+      "bounded_situational_decisions": 2,
+      "items_and_mechanics": 5,
+      "grounded_lore_qa": 6,
+      "relationships_and_evidence_paths": 5,
+      "spatial_containment_and_routes": 2,
+      "visual_entity_references": 10
+    },
+    "split_breakdown": {
+      "train": 24,
+      "validation": 2,
+      "test": 11
+    }
+  },
+  "sealed": true,
+  "sealed_sha256": "7e7ecd4ddf2ffddbc1187290287631808e70e5deca6d56e9a76ef281dcff9eb7"
+}

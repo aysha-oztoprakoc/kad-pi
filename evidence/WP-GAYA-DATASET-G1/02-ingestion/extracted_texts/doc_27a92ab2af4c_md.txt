@@ -1,0 +1,17 @@
+---
+slug: garra_de_kravut
+titulo: "Garra de Kravut"
+categoria: mechanics
+aliases: []
+tags: ["gaya", "mechanics"]
+entidades_relacionadas: ["niara"]
+l0_abstract: "Arma colossal de batalha empunhada por Niara (+9 atk, 1d8/1d10+8 cortante com propriedade Derrubar)."
+---
+
+# [[garra_de_kravut]]
+
+A [[garra_de_kravut]] é adaptada para o porte gigantesco de [[niara]]. Capaz de desferir golpes que derrubam oponentes imediatamente no chão e de potencializar o alcance de seu Eco esmeralda em combate tático.
+
+## Relações Canônicas
+- [[niara]]
+- [[terraco_de_combate]]

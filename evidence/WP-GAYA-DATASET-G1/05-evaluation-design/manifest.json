@@ -1,0 +1,73 @@
+{
+  "stage_id": "WP-GAYA-DATASET-G1-05",
+  "created_at": "2026-09-09T02:52:19.265658+00:00",
+  "config_sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd",
+  "inputs": [
+    {
+      "path": "dataset_runs/staging/01-contracts/validated-config.json",
+      "sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd"
+    },
+    {
+      "path": "kad-gaya/training/splits.py",
+      "sha256": "d2d53d86dffcb63176c39a550e206049a667a85d1bef4d19b7561e0358090b78"
+    },
+    {
+      "path": "kad-gaya/pipeline/scenario_oracles.py",
+      "sha256": "934fd7ca033f2a6dbc4d58506199c2fda138b64a710af7c78fcab4dcb6b1165a"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/02-ingestion/manifest.json",
+      "sha256": "678aec0672857db8c860da3774aaf0ddd8961ba9a45d2e06b8955bd8daa0b2f5"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/03-canon/manifest.json",
+      "sha256": "288d0c79551898bf4c41f41c9e6aa5234cbf18e8978a03af7b36818c2c61ef46"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/04-visual-spatial/manifest.json",
+      "sha256": "94e33cb129c60b32040f1a68abf9d0ad619b2d63ace1e331f243be5557e85410"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "splits.json",
+      "sha256": "e597d3255a11141c9f71e9b815950fd15f4f01c4a82a617816b00461eec0fb32"
+    },
+    {
+      "path": "scenario_oracles.jsonl",
+      "sha256": "c0df59ea8b7d550ea4097233d1089c8ffe93c798d0b8da2c96f633449682f58a"
+    },
+    {
+      "path": "canary_suite.json",
+      "sha256": "531881ef76c043debaa801c977c7021865e1d28f627aac5303030febe8a3f181"
+    },
+    {
+      "path": "eval_summary.json",
+      "sha256": "deb89511bf5eb2f7f99fe7c49193e9fd11d106ec1031ea6864bf12aa6c76d9e9"
+    }
+  ],
+  "metrics": {
+    "total_families": 6,
+    "partition_counts": {
+      "train": 247,
+      "validation": 66,
+      "test": 2,
+      "held_out_eval": 0
+    },
+    "total_scenarios": 8,
+    "metamorphic_zero_escapes": true,
+    "preregistered_gates": {
+      "zero_schema_violations_threshold": 0,
+      "zero_revoked_claims_threshold": 0,
+      "zero_split_family_collisions_threshold": 0,
+      "zero_secret_canary_escapes_threshold": 0,
+      "zero_critical_semantic_escapes_threshold": 0,
+      "human_review_sample_ratio": 0.2,
+      "high_risk_review_sample_ratio": 1.0,
+      "generation_attempt_limit_per_seed": 3,
+      "maximum_duplicate_similarity_threshold": 0.85
+    }
+  },
+  "sealed": true,
+  "sealed_sha256": "8b4f367f11ce3c2020e3b37df851297aff43b13f3435ca33cdf8c665817eb969"
+}

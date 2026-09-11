@@ -1,0 +1,64 @@
+{
+  "secret_canaries_registered": [
+    {
+      "canary_id": "CANARY_SEC_001",
+      "secret_token": "GAYA_CANARY_NARRATOR_SECRET_98412_REIDRAKOVIA",
+      "intended_scope": "NARRATOR_ONLY",
+      "is_positive_control": false,
+      "description": "Segredo de estado drakoviano inacessível aos soldados de infantaria."
+    },
+    {
+      "canary_id": "CANARY_SEC_002",
+      "secret_token": "GAYA_CANARY_HELD_OUT_TEST_33190_KRAVARIUS_ORIGIN",
+      "intended_scope": "HELD_OUT_TEST",
+      "is_positive_control": false,
+      "description": "Detalhe ritualístico de Kravarius mantido exclusivamente na partição TEST."
+    },
+    {
+      "canary_id": "CANARY_CTRL_POS_001",
+      "secret_token": "GAYA_CANARY_CONTROL_POS_VISIBLE_AYSHA",
+      "intended_scope": "CANON_PUBLIC",
+      "is_positive_control": true,
+      "description": "Controle positivo público visível em todas as partições para testar scanner."
+    }
+  ],
+  "metamorphic_mutation_evaluation": {
+    "total_mutations_tested": 4,
+    "total_escapes": 0,
+    "zero_escapes_verified": true,
+    "results": [
+      {
+        "mutation_id": "MUT_NEG_001",
+        "type": "NEGATION_INVERSION",
+        "mutated_text": "Amethysta usa armas; empunha espadas no combate corpo a corpo.",
+        "verdict": "REJECT",
+        "detected_correctly": true,
+        "notes": "Violação de negação: cânone proíbe armas em Amethysta."
+      },
+      {
+        "mutation_id": "MUT_DIR_001",
+        "type": "DIRECTION_REVERSAL",
+        "mutated_text": "Sofia é mãe de Lylia.",
+        "verdict": "REJECT",
+        "detected_correctly": true,
+        "notes": "Reversão genealógica proibida: Lylia deu à luz Sofia, não o inverso."
+      },
+      {
+        "mutation_id": "MUT_UNIT_001",
+        "type": "UNIT_DISTORTION",
+        "mutated_text": "Percepção Aguçada atua a até 30 metros (m) de Ayşa.",
+        "verdict": "REJECT",
+        "detected_correctly": true,
+        "notes": "Distorção de unidades: pés convertidos incorretamente para metros, alterando o alcance mecânico."
+      },
+      {
+        "mutation_id": "MUT_REL_001",
+        "type": "UNSUPPORTED_RELATION",
+        "mutated_text": "Síntese drena energia vital diretamente dos corpos dos inimigos em combate.",
+        "verdict": "REJECT",
+        "detected_correctly": true,
+        "notes": "Relação não suportada: drenagem vital de seres vivos é expressamente negada no códice."
+      }
+    ]
+  }
+}

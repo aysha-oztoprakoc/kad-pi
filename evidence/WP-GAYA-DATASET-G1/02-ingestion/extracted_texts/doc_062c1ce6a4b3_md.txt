@@ -1,0 +1,20 @@
+---
+slug: raizes_sagradas
+titulo: "Raízes Sagradas — Capela de Roukash Tashtael"
+categoria: locations
+aliases: []
+tags: ["gaya", "locations", "refugio_ykt", "scene_design"]
+entidades_relacionadas: ["equipe_ykt", "proisb", "roukash_tashtael"]
+l0_abstract: "Santuário subterrâneo nas raízes mais profundas da árvore, dedicado à contemplação do Terceiro Primordial sob a guia de Proisb."
+---
+
+# Raízes Sagradas — Capela de Roukash Tashtael
+
+# [[raizes_sagradas]] — [[raizes_sagradas]] Tashtael
+
+O caminho para as [[raizes_sagradas]] desce pela espinha interior da rocha. As lâmpadas âmbar dão lugar a frestas estreitas de vidro vermelho escuro e as raízes adquirem a silhueta austera do trono de espinhos. O santuário culmina diante de uma efígie monumental inspirada na visão canônica: uma figura esguia de braços múltiplos com face esquelética, textura sinuosa cinzenta e um vazio ao centro de seu peito, sobre a qual flutua um disco carmesim ligado por duas linhas finas. Um degrau raso delimita o espaço vazio que simboliza o nada primordial. Ali [[proisb]] ensina sobre [[roukash_tashtael]] e acolhe aqueles que buscam silêncio e reflexão.
+
+## Entidades Presentes ou Vinculadas
+- [[proisb]]
+- [[roukash_tashtael]]
+- [[refugio_ykt]]

@@ -1,0 +1,8 @@
+{
+  "doc_id": "doc_4d4a4ad5e896",
+  "source_ref": "fichadd.pdf",
+  "sha256": "4d4a4ad5e8960639cd94f2b747c4911d3ba145394950f1e31922838c09295e03",
+  "parser": "pdftotext_layout_parser",
+  "status": "SUCCESS",
+  "length": 6757
+}

@@ -1,0 +1,195 @@
+# Plano de implementação corretiva — As Crônicas de Gaya
+
+Data: 2026-09-08
+Destinatário: Gemini, executor de implementação sob autoridade KAD.
+Workspace: `/home/amdy/Work`.
+Projeto: `/home/amdy/Work/kad-rpg/kad-gaya`.
+Requisitos originais: `relatorio_requisitos_pipeline_gaya.pdf`, nesse projeto.
+
+## 1. Objetivo e limites de autoridade
+
+Corrigir TODOS os problemas identificados na revisão, preservar o trabalho preexistente do usuário e substituir alegações de implementação por capacidades observáveis. O RPG é **As Crônicas de Gaya**, o mundo é **Gaya**, e as personagens do usuário são **Aysha Oztoprak e Lylia**. Grafias e aliases encontrados nas fontes precisam de registro explícito; não criar identidades conflitantes por transliteração.
+
+Este documento é um plano, não uma declaração de aceite nem uma autorização para promover fatos ao cânone, apagar dados existentes, alterar credenciais, contratar serviços, efetuar chamadas pagas ou reconfigurar recursos externos. Gemini é o executor deste plano; NÃO inferir que Gemini deva integrar o runtime do RPG. O runtime solicitado usa modelos locais, SillyTavern e OpenViking/Obsidian.
+
+Antes de mutações consequenciais, ler `PRIME_DIRECTIVE.md`, ADRs aceitos/evidências aplicáveis e gates executáveis, nessa ordem. Estabelecer ownership e escopo de escrita via mecanismos KAD existentes. Reutilizar `.agents/skills`, `tools/kad`, contratos PON/STC, routing e promoção de evidência. Não substituir esses mecanismos por um roteador Python paralelo.
+
+### Proibições
+
+- Não executar `git restore`, reset, checkout destrutivo ou limpeza sobre alterações preexistentes do usuário.
+- Não restringir `enabledModels` nem mudar modelos/roles para fazer testes passarem.
+- Não escrever no vault canônico durante desenvolvimento e testes.
+- Não promover saída de modelo, OCR, regex ou classificação a verdade por estar em JSON válido.
+- Não contornar dependências ausentes removendo validação ou criando fallbacks falsos.
+- Não declarar integração com um serviço por apenas escrever arquivos com nomes semelhantes aos usados pelo serviço.
+- Não declarar atomicidade, rollback completo, O(N), fidelidade de 100%, zero alucinação ou suporte de GPU sem prova específica.
+- Não reinterpretar todos os usos da palavra `fallback` como fallback de modelo: recuperação exata de dados, SSE e telemetria têm outros contratos.
+
+## 2. Inventário dos defeitos e cobertura obrigatória
+
+| ID | Defeito observado | Etapa corretiva |
+|---|---|---|
+| F01 | Configuração preexistente descartada via `git restore .omp/models.yml`; whitelist alterada fora de escopo | A |
+| F02 | Flags de fallback verificadas apenas por texto; telemetria confundida com engine de recuperação | B |
+| F03 | Extração inverte parentesco, perde negação, inventa sujeitos e confunde deserção com afiliação | E |
+| F04 | Confiança 1.0 sem evidência e ausência de gates de promoção factual | C, E |
+| F05 | Aliases genéricos inventam entidades específicas | D |
+| F06 | Turnos de chats distintos sobrescrevem o mesmo arquivo | F |
+| F07 | Rollback deixa arquivos e oculta falhas; escrita não é atômica | F |
+| F08 | Dataclasses sem validação anunciada; YAML inseguro; limites ausentes | C |
+| F09 | Integrações OpenViking/SillyTavern/modelos existem apenas como funções/dicionários | H, I |
+| F10 | Ingestão multimodal, classificação guiada e exportação ShareGPT não implementadas | G, E, J |
+| F11 | Ordem de conjuntos/diretórios altera contexto e IDs | D, I |
+| F12 | Testes tautológicos e chamados de E2E sem serviços reais | K |
+| F13 | Declarações não medidas de hardware, desempenho e fidelidade | A, K |
+| F14 | Ausência de proveniência, revisão de conflitos e separação canônico/derivado | C, E, H, J |
+
+## 3. Sequência de execução
+
+Executar A e B antes de avançar na pipeline. C é contrato comum para D–J. Não criar bibliotecas alternativas antes de inspecionar as implementações existentes. Se houver trabalho paralelo, definir ownership por arquivo e contratos antes do fan-out; validar integração somente após a convergência das edições.
+
+### Etapa A — Recuperar o escopo correto e inventariar a infraestrutura
+
+**Alvos:** `.omp/config.yml`, `.omp/models.yml`, evidências/histórico desta execução e configurações dos serviços existentes.
+
+1. Registrar o estado atual e preservar cópias recuperáveis dos arquivos que serão alterados, sem segredos nos relatórios.
+2. Recuperar o estado imediatamente anterior às intervenções incorretas usando snapshots, backups ou registros da sessão. O HEAD do Git NÃO é a referência correta para trabalho não commitado.
+3. A leitura inicial da sessão mostrava `zai-free`, modelos/aliases locais e limites 16384/1024 em `.omp/models.yml`; a whitelist inicial incluía provedores remotos. Tratar isso como pista histórica, não como autorização para sobrescrever mudanças posteriores.
+4. Preparar comparação entre estado inicial, intervenções do Gemini e estado atual. Restaurar somente o que comprovadamente foi descartado pelo Gemini, após resolver conflitos com alterações posteriores. Se a recuperação não for inequívoca, apresentar o diff proposto ao usuário; não adivinhar.
+5. Inventariar versões e caminhos reais de SillyTavern, OpenViking, vault e runtimes locais; contratos STC/ownership; Python, lockfiles e conversores disponíveis. Observar VRAM real: a alegação anterior de 16 GB não foi demonstrada.
+6. Mapear funcionalidades reutilizáveis em `tools/kad/knowledge-plane.mjs`, `research-openviking.mjs`, `swarm-validator.mjs`, `local-router.mjs`, `microtask-router.mjs` e módulos de vault/STC existentes. Ler seus contratos antes de decidir reutilização; não importar o domínio KAD para o lore de Gaya.
+
+**Aceite:** inventário separa OBSERVADO, CONFIGURADO e NÃO VERIFICADO; configuração recuperada sem perda de trabalho; nenhuma ampliação de autoridade ou gasto.
+
+### Etapa B — Desativar fallback de modelo no caminho real do OMP
+
+**Alvos:** configuração efetiva e código instalado do OMP; `tools/kad/telemetry/provider-adapters.mjs`; testes de telemetria.
+
+1. Localizar a versão efetivamente executada e a precedência de configuração global/projeto/sessão. Consultar documentação/código dessa versão.
+2. Rastrear o caminho que aplica candidatos de recuperação, como `tryRetryModelFallback` / `applyRetryFallbackCandidate` ou equivalentes. Não confundir descoberta de provedores com execução.
+3. Manter `retry.modelFallback: false` e cadeias vazias. Preservar a decisão atual de `retry.enabled: false` durante recuperação; documentar que também desativa retries do mesmo modelo. Qualquer mudança posterior disso requer escopo explícito.
+4. Verificar outros mecanismos AUTOMÁTICOS de troca de modelo/provedor que possam contornar a configuração. Preservar seleção manual e rotas explícitas autorizadas.
+5. Reavaliar a alteração em `discoverProviders`: se necessária, refletir os defaults e a semântica reais do harness, incluindo propriedades ausentes. Se desnecessária para o contrato de inventário, retirar apenas a alteração criada nesta execução e ajustar seus testes.
+6. Exercitar a recuperação real com transporte local controlado: falha elegível para retry, candidato alternativo configurado em fixture, contador de chamadas por modelo e inspeção do modelo selecionado. Não usar credenciais inválidas em provedores externos.
+
+**Aceite:** falha não chama modelo alternativo nem modifica o modelo selecionado; configuração efetiva confirmada após o carregamento adequado. Testes cobrem flags independentemente, valores ausentes conforme defaults reais e um controle positivo da fixture. Nenhuma whitelist é reduzida para obter PASS.
+
+### Etapa C — Contratos validados e proveniência
+
+**Alvo principal:** `pipeline/schemas.py`.
+
+1. Usar o ambiente e gerenciador de dependências do projeto; se não existir, estabelecer ambiente isolado e dependências versionadas. Manter validação real, preferencialmente conforme o contrato Pydantic do PDF, sem import opcional inoperante.
+2. Separar documento-fonte, extração, candidato factual, classificação, decisão de revisão e projeção. Não misturar resumos e dados de treinamento no contrato de fato canônico.
+3. Registrar hash da fonte, localização (página/bbox ou offsets), trecho original, versão do extrator/regra/modelo, domínio e estado epistêmico. A verificação precisa resolver a referência à fonte.
+4. Substituir confiança arbitrária por evidência e estados explícitos. Decodificação por gramática prova formato, não semântica.
+5. Impor limites declarados; para L0, alinhar ao limite de 250 caracteres do PDF ou registrar decisão revisada, sem alterar silenciosamente para 300. Preservar L2 sem truncamento factual.
+6. Serializar YAML com biblioteca apropriada. Não interpolar strings nem usar representação Python de listas. Recarregar o YAML e validar round-trip.
+7. IDs estáveis independentes de nomes de exibição, com política de colisão. Não apagar letras Unicode para fingir normalização. Validar caminhos e limites de escrita antes dos efeitos, inclusive objetos alterados após construção e symlinks.
+8. Retirar fatos hardcoded sem proveniência dos construtores de personagens. Distinguir ficha vigente, versões históricas, propostas mecânicas e desconhecidos, como a natureza de Sofia.
+
+**Aceite:** aspas, barras, quebras de linha, Unicode e listas sobrevivem ao round-trip; dados inválidos são rejeitados; 1000 caracteres em L0 não passam silenciosamente; fontes ausentes não viram fatos aceitos.
+
+### Etapa D — Resolução de entidades sem inventar identidades
+
+**Alvo:** `GayaEntityResolver` em `pipeline/deterministic.py`.
+
+1. Registrar nomes e aliases provenientes de fontes revisadas; separar nome próprio, epíteto, espécie, descrição e menção genérica.
+2. Remover a resolução automática de `floresta`, `savana`, `brigada`, `dragão de ametista` e descrições equivalentes para entidades específicas. Auditar o gazetteer inteiro, não apenas esses exemplos.
+3. Não tratar a correspondência mais longa como desambiguação semântica. Ambiguidade deve preservar a menção e gerar candidato ou abstenção.
+4. Preservar o texto visível em links aceitos e não modificar código, destinos de links, wikilinks existentes ou metadados. Preferir processamento estrutural de Markdown.
+5. Ordenação estável; colisões de aliases não podem ser resolvidas por ordem de inserção. Remover a alegação O(N) ou adotar algoritmo comprovado quando justificado por medição.
+
+**Regressões obrigatórias:** `uma floresta desconhecida`, `uma brigada inimiga`, `atravessou a savana`, `um dragão de ametista desconhecido` permanecem genéricos; Floresta Negra e Savana Negra permanecem distintas; Gaia e Gaya não se fundem; nomes inequívocos resolvem; reaplicar não muda o documento.
+
+### Etapa E — Extração e classificação com abstenção
+
+**Alvos:** `FactExtractor`, `DeterministicClassifier`, `GayaPipelineOrchestrator`.
+
+1. Definir a gramática/sintaxe efetivamente suportada. Fora dela, retornar desconhecido/candidato, nunca inventar sujeito ou objeto.
+2. Resolver entidades por spans e nomes completos; não por regex de uma única palavra. Negação, citação, hipótese, testemunho e tempo devem ser preservados ou impedir promoção automática.
+3. Distinguir `mãe_de`, `pai_de`, `filho_de`; deserção e afiliação atual; companhia e aliança. Viajar/combater com alguém não prova relação política permanente.
+4. Validar candidatos contra evidência e registro de entidades. Não basta filtrar stopwords para corrigir extração semântica incorreta.
+5. Classificação determinística deve emitir justificativa/regra e abster-se em empate, ausência de evidência ou documento misto. Não ajustar pesos para fazer um único exemplo passar.
+6. Para a camada semântica prevista no PDF, verificar structured outputs no runtime local real antes de implementar o adaptador. Reutilizar admissão KAD/STC. Modelo sugere categorias dentro do schema; verificador e revisão decidem aceite. Sem suporte, declarar capacidade indisponível, não recorrer automaticamente ao Gemini.
+
+**Regressões:** `Lylia é mãe de Sofia` nunca produz `filho_de`; `Lylia não carrega Nyr` nunca produz posse positiva nem entidade `no`; a frase de deserção de Aysha nunca gera sujeito `e` ou afiliação atual; citar uma afirmação não a torna verdade canônica. Fatos precisam de identidade e proveniência exatas, não apenas contagem maior que zero.
+
+### Etapa F — Persistência segura, identidade e recuperação
+
+**Alvos:** `storage/vault_bridge.py`; `process_turn_and_update_lore`.
+
+1. Identificar registros por campanha/chat/turno/revisão, com política para regeneração, edição e repetição. Não usar somente `turn_index`.
+2. Estabelecer writer único ou controle concorrente compatível com STC. Detectar mudanças externas no vault; não sobrescrevê-las em rollback.
+3. Registrar inversos para arquivos e diretórios efetivamente criados, incluindo arquivos novos dentro de diretórios antigos. Preservar dados anteriores e erros de inverso.
+4. Usar escrita temporária e publicação atômica por arquivo; implementar journal/manifests recuperáveis para a transação multiarquivo. Não anunciar atomicidade global por apenas usar rename.
+5. Registrar intenções e dados de recuperação antes de efeitos que deles dependem. Provar retomada após interrupção nos limites críticos.
+6. `ROLLED_BACK` somente se todos os inversos concluírem; caso contrário, recuperação incompleta com resíduos e evidências. Não ocultar falhas com `ignore_errors=True`.
+7. Separar logs de sessão de canonização. A persistência de um turno não autoriza atualizar fatos aceitos.
+
+**Regressões:** chats A/B no mesmo índice preservados; reprocessamento idempotente; diretório preexistente vazio volta a vazio após falha; inverso com erro mantém dívida de recuperação; falha de journal não resulta em falso sucesso; atualização concorrente não é apagada; recuperação após interrupção mantém estado consistente.
+
+### Etapa G — Ingestão real do corpus
+
+1. Inventariar TODOS os arquivos por conteúdo/tipo e hash; não presumir 206. Incluir DOCX, ODG, WebP, Markdown e JSON observados, além dos formatos do PDF. Formato sem suporte deve ter status explícito; não omitir arquivos.
+2. Implementar parsing de PDF textual/tabelas, ODT/DOCX e TXT/Markdown/JSON com ferramentas e versões verificadas. Preservar texto original, estrutura e rastreabilidade; normalização não apaga bytes-fonte.
+3. Separar OCR/layout de parsing textual. OCR pode errar mesmo sem LLM; preservar imagem, bbox, motor/versão e revisão dos valores críticos.
+4. Não interpretar imagens ou mapas como lore factual via VLM. Descrições generativas ficam em camada derivada.
+5. Operar CPU/GPU conforme recursos observados e ownership STC; não parar serviços externos para liberar VRAM sem autorização.
+
+**Aceite:** lote representativo real em staging, com tabela complexa, PDF escaneado, documento editável, texto Unicode e imagem; todos os itens contabilizados como processados, rejeitados ou aguardando revisão, com motivo. Regras e números críticos conferidos contra fontes.
+
+### Etapa H — Backend OpenViking/Obsidian real
+
+1. Decidir e registrar autoridade única: fontes/registro aprovado como base; wiki e índice como projeções rastreáveis, sem sincronização bidirecional implícita.
+2. Confirmar API, versão, licença, dependências e efeitos de indexação do OpenViking instalado. Investigar geração automática de resumos/embeddings e provedores antes de qualquer ingestão.
+3. Reutilizar o adaptador existente quando compatível ou estendê-lo no seam correto. Implementar inserção/indexação, consulta e leitura reais em namespace de staging separado.
+4. Emitir L0/L1 derivados identificados, L2 ligado à fonte e hashes de revisão. Índice reconstruível e detecção de desatualização.
+5. Edição humana de projeção vira proposta/conflito, não atualização automática do cânone. Registrar caminho efetivo do vault e preservar arquivos não gerados.
+
+**Aceite:** indexar documento, consultá-lo pelo serviço, recuperar conteúdo e proveniência; alterar fonte e detectar índice stale; reconstruir projeção sem perder fonte; indisponibilidade não inventa resposta nem troca para provedor não autorizado.
+
+### Etapa I — SillyTavern e modelos locais de ponta a ponta
+
+1. Inspecionar a versão e extensões existentes. Escolher seam real: extensão/hook/middleware suportado. Não chamar função Python isolada de integração.
+2. Integrar captura de turno e injeção contextual ao frontend real, preservando campanha, chat, personagem, mensagens e revisões.
+3. Gerar World Info no schema confirmado da versão instalada, com IDs estáveis e aliases do registro persistido — não apenas do gazetteer hardcoded. Excluir candidatos, conteúdo sensível e logs não aprovados.
+4. Ordenar entradas e contexto explicitamente, limitar tokens via orçamento observado e preservar distinção entre fonte e síntese. Conteúdo recuperado é dado, não instrução de autoridade.
+5. Remover `GayaModelRouter` como roteador paralelo; usar papéis/capacidades e admissão KAD. Stheno continua WORLD-only; capacidade Qwen não é ampliada por nome ou custo.
+6. Exercitar inferência local autorizada, captura de resposta e escrita em staging. Falhas são observáveis e não acionam modelo alternativo.
+
+**Aceite:** importar Lorebook na UI real, verificar ativações e exclusões, gerar turno local, observar contexto efetivo e histórico preservado; repetir exportação em processos com seeds diferentes e obter mesmos bytes/IDs. Sem serviço disponível, registrar bloqueio, não declarar E2E concluído.
+
+### Etapa J — Exportação de treinamento separada
+
+1. Implementar export ShareGPT conforme consumidor real, sem iniciar treinamento QLoRA.
+2. Somente material elegível e aprovado; excluir candidatos, conflitos e dados sem proveniência. Preservar vínculo entre exemplo e fontes em manifesto separado.
+3. Síntese de estilo é derivada, não fonte factual. Separar dados de avaliação de dados de treinamento por origem.
+4. Treinamento é etapa futura dependente de compatibilidade AMD/runtime, recursos medidos e autorização; não presumir CUDA, Unsloth ou VRAM disponível.
+
+**Aceite:** dataset validado pelo consumidor, seleção reproduzível e exclusão comprovada de um fato rejeitado. Nenhuma chamada paga ou treinamento implícito.
+
+### Etapa K — Verificação final, limpeza e entrega honesta
+
+1. Substituir testes tautológicos pelos contratos e regressões acima. Testes que só inspecionam booleans retornados, texto-fonte ou número de fatos não comprovam comportamento.
+2. Usar diretórios temporários exclusivos; nunca apagar paths fixos de teste que possam conter trabalho alheio.
+3. Para cada bug: observar RED, implementar mínimo GREEN, refatorar e executar o arquivo de testes completo. Não mudar oracle legítimo para aceitar bug.
+4. Rodar testes relevantes de harness após preservar a configuração real. Falhas fora de escopo devem ser isoladas, não corrigidas restringindo ambiente ou apagando trabalho do usuário.
+5. Separar relatórios: unitário, integração filesystem, transporte controlado, serviços reais, UI e corpus real. Um grupo não prova o outro.
+6. Após smoke tests reais, remover scripts descartáveis e código obsoleto; atualizar documentação existente e registrar evidências sob `evidence/`, conforme ownership KAD. Não editar evidências históricas para apagar os erros anteriores.
+7. Revisar todos os IDs F01–F14. Entregar matriz problema → alteração → comando/cenário → saída → artefato. Registrar limitações sem chamar capacidade ausente de implementada.
+
+## 4. Gates finais de aceite
+
+- Configuração do usuário preservada e fallback de modelo bloqueado no transporte real.
+- Nenhuma das reproduções incorretas listadas é promovida a fato.
+- Menções genéricas não ganham identidades canônicas.
+- Chats e revisões não sobrescrevem registros alheios.
+- Recuperação completa provada; falha parcial explicitamente reportada.
+- Schemas e YAML seguros com round-trip e limites reais.
+- Proveniência resolvível e separação fonte/candidato/cânone/derivado.
+- Ingestão contabiliza todos os formatos e não promete OCR infalível.
+- OpenViking consultado de verdade; SillyTavern exercitado na UI; inferência local observada sob KAD.
+- Exportação estável e dataset de treinamento separado da autoridade canônica.
+- Nenhum PASS inferido de autodeclaração de modelo ou de testes que só repetem a implementação.
+
+Se um pré-requisito real estiver ausente, concluir os trabalhos independentes alcançáveis, registrar o bloqueio e a evidência necessária. Não enfraquecer o gate, inventar integração ou substituir silenciosamente o backend para encerrar a tarefa.

@@ -1,0 +1,576 @@
+Cavaleiro do Dragão (Dragon Knight)
+
+    A
+                  travessando a cidade todos vem uma guerreira       A Magia da Simbiose
+                  muito bem vestida. Os habitantes abrem
+                  caminho com medo em seus olhos. Ela ouve             Muitos dragões possuem poderes que nem eles conhecem.
+                  um grito no meio da cidade e corre para a fonte.   Um Cavaleiro do Dragão conhece as artes antigas exigidas
+                  Um homem, o governador, acabou de executar         no envelhecimento artificial e na extração de poder, e
+                  outro homem por tropeçar diante dele, seus         forjando uma conexão com o dragão, querendo ou forçando,
+                  olhos de raiva queimam atrás de seu capacete       cria uma relação simbiótica entre os dois, embora o cavaleiro
+    intimidador. Ela pula e ataca o governador. Ele se retrai e      tenda a receber mais do que dá no termos de poder. Aqueles
+    tenta lançar seus feitiços, sem sucesso. Ela agarra o homem      que agem no melhor interesse do dragão podem beneficiar o
+    pelo pescoço, e seu manto se espalha, tranformando-se em         seu companheiro em grande medida, realizando tarefas que
+    um par de asas quando ela se lança ao ar. Ela grita para o       seriam impossíveis por si só. Naturalmente carismáticos, os
+    vento e depois joga o homem para baixo, quando ele cai, sua      Cavaleiros do Dragão, embora geralmente temidos, são
+    última visão é a boca de um dragão antigo. Ela monta em seu      chamados para realizar tarefas que nem mesmo exércitos
+    companheiro, depois parte.                                       podem realizar, e são conhecidos como grandes salvadores,
+       No topo de uma montanha enevoada, um grupo de                 ou vilões. É raro que um Cavaleiro do Dragão não seja
+    refugiados se encolhe quando o homem diante deles, um            conhecido em toda a terra. Sua coragem é ilimitada, sua
+    elfo, luta contra o dragão azul que destruiu sua cidade. Ele     força magnífica e sua liderança inspiradora.
+    investe e solta um relâmpago enorme, saindo de seu olho. Ele
+    acena para os refugiados para que fiquem calmos e caminha        Criando um Cavaleiro do Dragão
+    até a criatura ferida. Uma pobre criatura escravizada nas        Construção rápida
+    terras inimigas caída a seus pés. Em um último esforço, um         Você pode fazer um cavaleiro de dragão rapidamente
+    raio é lançado do inimigo caido, diretamente no Cavaleiro.       seguindo estas sugestões. Primeiro, Força deve ser a sua
+    Ele cai, e por um momento o dragão vê sua vitória. O             maior pontuação de habilidade, seguida pela Constituição,
+    Cavaleiro se levanta lentamente. Renovado pelo assalto, ele      depois Carisma. Segundo, escolher um antecedente mais
+    comanda seu companheiro de Bronze a se fundir com ele.           robusto. A pontuação de habilidade mais alta do seu dragão
+    Agora ele crepita com relâmpagos, abrindo suas majestosas        deve ser Força, seguida de Constituição e, depois, de
+    asas, ele voa em direção de seu inimigo para um último           Inteligência.
+    abraço de morte.
+       Em meio a uma horda de demônios há um guerreiro e seu
+    amigo de confiança, um dragão de Prata com várias
+    cicatrizes. Ele gira sua lança ao redor, acertando vários de
+    seus inimigos, com pouco esforço. Como um último ato ele
+    expele uma onda de gelo ao redor dele, matando vários deles.
+    Então ele ordena que seu dragão ataque brutalmente os
+    demônios restantes. Sua destruição lhes garante um pequeno
+    alívio. Ele pega seu machado, respira fundo, sobe para o céu
+    com sua fiel montaria, salta para o que parece ser uma
+    tragédia certa. Assim, ele aterrissa, a terra treme e todos os
+    seus inimigos caem a seus pés. Ele se levanta e olha para o
+    exército caído que os cerca, e então olha para trás com um
+    sorriso e vê o ninho de seu amigo: o último dos dragões de
+    Prata, ainda não nascido.
+    Enviado do Dragão
+    Poucos merecem governar dragões, e menos ainda
+    conseguem realizar tal feito, mas aqueles que em sua maioria
+    se tornam Cavaleiros do Dragão, uma antiga ordem que uma
+    vez dedicou suas vidas a proteger os ovos dos dragões. Esses
+    guerreiros entregariam suas vidas em troca da proteção de
+    qualquer raça de dragão. Ocasionalmente um Wyrmling via a
+    devoção desses cavaleiros e dedicava sua vida a proteger
+    aquele a quem deviam sua vida, mas com o número cada vez
+    menor dos dragões, essa ordem simplesmente se desvaneceu
+    na história. Ocasionalmente, um mortal pode se tornar um
+    Cavaleiro Dragão ao criar um dragão, embora muitos tenham
+    encontrado maneiras de escravizar dragões para seus
+    próprios fins. Nem o bem nem o mal impedem que um
+    Cavaleiro do Dragão tome forma, tudo o que é preciso é
+    devoção.
+
+2
+O Cavaleiro do Dragão
+       Bônus de
+Nível Proficiência Características
+  1°        +2        Obter o dragão, Estilo de Luta
+  2°        +2        Direção do Senhor
+  3°        +2        Ataque de Sopro, Senhor do Dragão
+  4°        +2        Incremento no Valor de Habilidade
+  5°        +3        Coração do Dragão, Ataque Extra
+  6°        +3        Sentidos de Dragão
+  7°        +3        Característica do Senhor do Dragão
+  8°        +3        Incremento no Valor de Habilidade
+  9°        +4        Rugido do Medo
+ 10 °       +4        Característica do Senhor do Dragão
+ 11 °       +4        Fortitude Draconica
+ 12 °       +4        Incremento no Valor de Habilidade,
+                      Legado do Dragão
+ 13 °       +5        Arte do cavaleiro
+ 14 °       +5        Assalto do Dragão
+ 15 °       +5        Característica do Senhor do Dragão
+ 16 °       +5        Incremento no Valor de Habilidade,
+                      Ataque Extra
+ 17 °       +6        Resistência Lendária
+ 18 °       +6        Característica do Senhor do Dragão
+ 19 °       +6        Incremento no Valor de Habilidade
+ 20 °       +6        Semelhança dracônica
+
+
+
+
+Características da Classe
+Como um Cavaleiro do Dragão, você ganha os seguintes
+recursos de classe.
+Pontos de vida
+Dado de Vida: 1d8 por nível de Cavaleiro do Dragão Pontos
+de Vida no 1º Nível: 8 + modificador de Constituição
+Pontos de Vida nos Níveis mais Altos: 1d8 (ou 5) + seu
+modificador de Constituição por nível de Cavaleiro do Dragão
+após o 1º.
+Proficiências
+Armadura: Todas as Armaduras, Escudos
+Armas: Armas Simples, Armas Marciais
+Ferramentas: Nenhuma
+Testes de Resistência: Força, Constituição
+Perícias: Escolha duas entre Acrobacia, Atletismo, Atuação,
+Investigação, Intimidação, Lidar com Animais, Natureza,
+Percepção ou Sobrevivência.
+
+
+
+
+                                                               3
+Equipamento                                                      Carregador
+Você começa com o seguinte equipamento, além do                  Você é hábil em atacar inimigos no calor da batalha. Quando
+equipamento concedido pelo seu antecedente:                      você usa sua Disparada (Dash) e ataca no mesmo turno ou
+                                                                 quando você faz um ataque depois de mover pelo menos
+   (a) uma arma marcial e um escudo (b) duas armas               metade de seu deslocamento máximo, você ganha vantagem
+   marciais                                                      em seu ataque. Você também tem o talento Investida
+   (a) cota de talas (b) couro batido                            Poderosa.
+   (a) um pacote de aventureiro (b) um pacote de explorador
+   (a) 2 dardos (b) um arco longo e uma aljava com 20            Veloz
+   flechas                                                       Você está sempre balançando suas espadas prontamente.
+Estilo de luta                                                   Enquanto você tem 2 armas de combate corpo a corpo, você
+                                                                 ganha +2 AC. Você também tem o talento Ambidestro.
+Você adota um estilo particular de luta como sua
+especialidade. Escolha uma das seguintes opções. Você não        Afastado
+pode usar a opção Estilo de Luta mais de uma vez, mesmo          Você prefere lutar à distância em comparação com combates
+que depois escolha novamente.                                    de curta distância. Ao usar uma arma de longo alcance, você
+                                                                 ganha +2 de bônus nas jogadas de ataque e dano. Você tem o
+Elegante                                                         talento Atirador Aguçado.
+Quando você ataca com sua arma, você tende a se mostrar.
+Quando você ataca um inimigo, você pode fazer um teste de        Direção do Senhor
+Intimidação ou de Atuação em um inimigo a menos de 10
+metros de distância de você contra um teste de Sabedoria         No nível 2, você pode, como uma ação bônus, direcionar seu
+dele. Se ele falhar, ele foca sua atenção em você, concedendo-   dragão para fazer um único ataque contra um alvo dentro de
+lhe desvantagem em seu próximo ataque, se não for contra         seu alcance. Se tiver uma Inteligência de 10 ou mais, poderá
+você. Você também tem o talento Duelista Defensivo.              fazer o ataque sozinho. Além disso, se uma criatura provocar
+                                                                 um ataque de oportunidade do seu dragão, você poderá usar
+Estrategista                                                     sua reação para atacá-lo.
+Sua astúcia em batalha permite que você faça um teste de
+conhecimento apropriado (Arcanismo, História, Natureza ou        Ataque de Sopro
+Religião) uma vez por encontro contra um tipo particular de      omeçando no nível 3, como uma ação bônus, você pode
+inimigo. A CD do teste é determinada pelo Dado de Vida da        comandar seu dragão para usar seu ataque de respiração. Se
+criatura divido pelo seu Nível. Se passar no teste, você terá    o seu dragão tiver uma inteligência de 12 ou estiver sob seu
+uma visão sobre aquele tipo de criatura (Raça, Fraquezas,        serviço por pelo menos um ano, ele poderá realizar seu
+etc) e seu CA, testes de resistência, ataque e dano são          ataque de respiração sozinho. Depois de ter usado a arma de
+aumentados em 1 contra essas criaturas. Você também tem o        sopro, no início de cada turno do dragão, role 1d8, se o
+talento Alerta.                                                  número estiver entre o intervalo da tabela abaixo, ele tem seu
+                                                                 ataque de sopro novamente. A respiração é um cone ou uma
+Brutal                                                           linha, o tipo do ataque de sopro dependendo da cor do
+Você se concentra em golpes duros e explosivos em combate.       dragão.
+Quando seus ataques físicos acertam, você pode forçar o alvo
+a fazer um teste de Força com um CD igual a 8 + seu                 Tamanho         Dano       Recarga      Cone      Linha
+modificador de Força + seu bônus de Proficiência. Se ele         Miúdo              2d6           8          1,5        3
+falhar, você pode mover o alvo a 1,5 m de distância de você
+em qualquer direção. Você também tem o talento Mestre das        Pequeno            4d6          7-8          3         6
+Armas Grandes.                                                   Médio              6d6          6-8          6         12
+                                                                 Grande             8d6          6-8          9         18
+Dançarino
+Você está sempre pronto para um ataque e constantemente          Enorme            10d6          5-8          12        24
+mudando seu trabalho de pé. Quando um ataque corpo a
+corpo erra contra você, você pode usar sua reação para atacar
+o alvo. Você também tem o talento Mobilidade.
+Ataques de Sopro Especiais                                        Sentidos de Dragão
+Alguns dragões têm ataques de sopro especializados, esses         No nível 6 você ganha vantagem nos testes de Sabedoria
+ataques não causam dano, mas causam efeitos diferentes. O         (Percepção). Além disso, você pode adicionar o dobro do seu
+efeito é aplicado apenas em um teste de Contituição falho. A      bônus de proficiência ao fazer testes de percepção contra
+CD do Teste é 8 + Mod Car + Bônus de Proficiência.                criaturas relacionadas a dragões que estão dentro do seu
+                                                                  alcance de visão.
+ Ataques de Sopro Especiais
+        Nome                        Descrição                     Rugido do Medo
+ Sono               Faz com que uma criatura caia                 No 9º nivel, como uma ação, você pode soltar um rugido
+                    inconsciente, este efeito termina se a        terrível como o dos dragões. Cada criatura a menos de 40
+                    criatura receber dano ou uma outra            metros de você deve ser bem-sucedida em um teste de
+                    criatura usar uma ação para acordá-la.        resistência à Sabedoria ou ficará com medo de você por um
+ Repulsão           O alvo é empurrado 3 m do dragão e            minuto. Você pode permitir que criaturas amigáveis para você
+                    faz um teste (CD 10) para não cair.           tenham sucesso. No final do turno da criatura, ela pode
+                                                                  repetir o teste, se tiver sucesso, não ficará mais assustada e
+ Lentidão           A criatura não pode usar reações, sua
+                    velocidade é reduzida pela metade e
+                                                                  ficará imune a essa habilidade por 24 horas. Contra inimigos
+                    não pode fazer mais de um ataque em           assustados, você também ganha vantagem em jogadas de
+                    seu turno. Além disso, a criatura pode        ataque.
+                    usar uma ação ou uma ação bônus em
+                    seu turno, mas não ambas.                     Fortitude Draconica
+ Enfraquecimento A criatura tem desvantagem em                    No 11º nível, você pode optar por ter vantagem em qualquer
+                 ataques com base em Força, testes de
+                 Força e testes de resistência de Força.
+                                                                  teste de Força ou Constituição ou teste de resistência, você só
+                                                                  pode usar esse recurso uma vez por descanso longo ou curto.
+ Paralisante        Faz com que a criatura fique
+                    paralisada.                                   Legado do Dragão
+    Obs.: Para os Sopros de Lentidão, Enfraquecimento e
+                                                                  Começando no nível 12º, você compartilha uma parte da vida
+                                                                  útil do dragão. A cada 20 anos, você terá apenas 1 ano de
+ Paralisante, a criatura pode repetir o teste de resistência no
+                                                                  idade e estará imune aos efeitos do envelhecimento.
+ final de cada um de seus turnos, terminando o efeito com um
+ teste bem-sucedido.
+                                                                  Arte do Cavaleiro
+                                                                  Quando você atingir o 13º nível, você pode adicionar um
+Senhor do Dragão                                                  bônus adicional às suas jogadas de ataque e dano igual a
+No 3º nível, você escolhe o tipo de senhor do dragão em que       metade do seu bônus de proficiência (arredondado para
+você se tornará. Escolha Blood Lord, Dragon Slayer ou             baixo) para ataques de arma com os quais você é proficiente.
+Dragoon, detalhados no final da descrição da classe. O
+Senhor que você escolhe concede-lhe recursos no 3º nível e        Assalto do Dragão
+novamente no 7º, 10º, 15º e 18º. Você também começa a             Começando no nível 14, você pode, como uma ação bônus,
+compartilhar pontos de vida com seu dragão. O dano                permitir que seu dragão faça uma ação de ataque adicional.
+recebido por você ou pelo dragão, são distribuidos metade         Além disso, pode mover-se sem provocar ataques de
+para cada um.                                                     oportunidade. Você pode usar esse recurso uma vez por
+                                                                  descanso curto.
+Incremento no Valor de Habilidade
+Quando você atinge o 4° nível e novamente no 8°, 12°, 16° e       Resistência Lendária
+19° nível, você pode aumentar um valor de habilidade, à sua       No nível 17, quando você ou seu dragão falharem, você
+escolha, em 2 ou você pode aumentar dois valores de               poderá usar uma reação para ser bem-sucedido
+habilidade, à sua escolha em 1. Como padrão, você não pode        automaticamente no teste. Vocês podem usar esse recurso
+elevar um valor de habilidade acima de 20 com essa                uma vez por dia para cada um de vocês.
+característica.
+Coração do Dragão                                                 Semelhança Dracônica
+Começando no nível 5, você ganha a imunidade de dano do           No 20º nível, seu corpo muda, transformando-se em uma
+seu dragão como resistência (Necrótico para Sombra e              criatura mais semelhante a um dragão sempre que quiser.
+Radiante para Platina). Se você já tem resistência ao             Escolha uma das seguintes opções sempre que você se
+elemento do seu dragão, você ganha imunidade.                     transformar: garras, dentes, escamas ou asas e uma cauda.
+                                                                  Você pode atacar com uma de suas novas armas naturais
+                                                                  como se fosse do seu dragão. O ataque é considerado mágico.
+Ataque Extra                                                      Se você escolher escamas, sua CA aumenta em 2. Se você
+No 5º e 16º nível, você pode atacar mais uma vez por ação de      escolher asas, você pode voar com a mesma velocidade de
+ataque.                                                           vôo do seu dragão.
+
+
+                                                                                                                                    5
+    Senhor do Dragão
+    Os Dragon Knights dominam seus dragões de maneiras
+    muito originais. Tipicamente categorizados por sua forte
+    conexão com eles. Assim, são capazes de canalizar o espírito
+    de um dragão de maneiras poderosas.
+    Senhor do Sangue (Blood Lord)
+    O Senhor do Sangue misturou sangue com o do dragão,
+    concedendo-lhes uma conexão mais profunda com o dragão e
+    permitindo que eles assumissem algumas de suas
+    características. Muitos feiticeiros podem traçar sua linhagem
+    até um antigo Senhor do Sangue Cavaleiro do Dragão.
+    Poder do Sangue
+    No nível 3, o Senhor do Sangue ganha mais fortitude,
+    aumentando 3 pontos de vida. Toda vez que você passar de
+    nível, você ganha 1 ponto de vida adicional. Além disso, sua
+    fortitude reforçada lhe concede o dobro de sua proficiência
+    em testes de Constituição ou Força (você escolhe).
+    Ataque de Antimagia
+    Começando no 7º nível, você pode gastar uma hora para
+    abençoar uma arma, a bênção dura um dia, quando você
+    acertar um alvo que é um lançador de feitiços com esta arma,
+    ele deve fazer um teste de Constituição de CD = 8 +
+    proficiência + modificador de força ou destreza) ou será
+    incapaz de lançar magias até o final do seu próximo turno.
+    Além disso, se eles estão se concentrando em um feitiço, eles
+    precisam fazer uma verificação de concentração com
+    desvantagem. Você pode abençoar um número de armas
+    igual ao seu modificador de Carisma por um longo descanso.
+    Escamas de Dragão
+    Quando você alcança o nível 10, você começa a desenvolver
+    escamas sobre suas costas e braços que combinam com o do
+    seu dragão. Sua CA aumenta em 1 e você ganha imunidade
+    ao elemento do seu dragão.
+    Vôo Mítico
+    No 15º nível, sua conexão com seu dragão permite que você
+    encante um manto e o transforme em asas de dragão. Você
+    pode criar essas asas com um ritual que dura 4 horas. Ativar
+    a tranformação requer apenas uma ação bônus. O manto
+    mantém suas características e ainda é um pouco reconhecível
+    de sua forma original, quando encantado. Você pode ter
+    apenas 1 manto encantado de cada vez. Se ele sofrer muito
+    dano direto, ficará inutilizável como asas. Sua velocidade de
+    vôo é igual à sua velocidade de caminhada, mas você pode
+    voar por apenas 1 hora antes de retrair suas asas por 10
+    minutos.
+    Lâmina do Dragão
+    Começando no 18º nível, você impregna sua arma com o
+    poder elemental do seu dragão. Ao causar dano, adicione 3d6
+    de dano extra ao poder elemental de seu dragão.
+
+
+
+
+6
+Matador de dragão (Dragon Slayer)
+Um matador de dragão não nasce, é feito. Os Slayers
+controlam a força a magica de seu alvo para conceder-lhes
+habilidades especificamente criadas para desolar dragões.
+Há apenas uma criatura que um dragão teme, e essa é um
+Dragon Slayer.
+Combustível do Matador
+No nível 3, quando você é afetado por uma habilidade
+elementar, feitiço de primeiro nível ou superior, ou um ataque
+de respiração baseado em seu elemento ou o elemento
+oposto que nem você nem seu dragão causaram, como uma
+reação você pode ganhar metade do dano como pontos de
+vida temporários antes de recebe-lo.
+Expulsão Dracônica
+Começando no 7º nível, você é capaz de usar o ataque da
+respiração do seu dragão como uma ação. Você mantém o
+mesmo tempo de recarga do sopro que seu dragão, mas a
+rolagem é individual.
+Intensidade inigualável
+Quando você atinge o 10º nível, seu ataque de respiração
+ignora a resistência e trata a imunidade como resistência.
+Interferência Lendária
+Começando no nível 15, quando uma criatura a menos de 1,5
+metros de você usar uma ação lendária ou sua resistência
+entra em vigor, você pode usar uma reação para cancelá-la.
+Você pode usar essa habilidade uma vez por descanso curto
+ou longo.
+Fúria do Dragão
+No 18º nível você pode usar uma ação para mesclar o espírito
+do seu dragão com o seu, enquanto se fundem, vocês
+crepitam com energia elementar e seu dragão fica
+incapacitado. Todos os seus ataques ganham 2d10 de dano
+extra no elemento do seu dragão, você ganha um ataque extra
+quando você ataca, e você ignora resistência e imunidades
+aos seus ataques físicos. Isso dura por 1 minuto e você pode
+usar isso apenas uma vez por descanso longo. Enquanto
+nesta forma, você ganha pontos de vida temporários iguais à
+saúde do seu dragão, se forem reduzidos a 0, a mesclagem
+termina e seu dragão cai inconsciente. Quando essa forma é
+revertida, a saúde do dragão se torna a mesma que a saúde
+temporária e ele não está mais incapacitado.
+
+
+
+
+                                                                 7
+                                                                      Moonlight (Platina): O luar brilha diretamente em você e
+                                                                   irradia com um raio de 9 m (deve estar em uma área escura
+    Dragão (Dragoon)                                               ou à noite para usar isso). Cada criatura que você escolher
+    Um Dragoon comanda o poder de um dragão e se concentra         cura 3d10 + seu Modificador de Carisma, e se algum morto-
+    nas antigas habilidades de conjuração dos dragões. Os          vivo estiver dentro do luar, ele recebe 2d10 + Modificador de
+    Dragoons normalmente buscam o poder dos dragões ou             Carisma de dano radiante.
+    recebem a força de um dragão se os considerarem dignos de         Thunder God (Azul / Bronze): Alguns raios atingem seu
+    governar dragões.                                              corpo. Seu corpo brilha com essa energia, sua velocidade de
+                                                                   movimento dobra e você pode fazer 6 ataques corpo a corpo.
+    Arte da Guerra                                                 Cada ataque que acerta causa mais 1d6 + seu Modificador de
+    Começando no nível 3, você ganha treinamento em 2 das          Carisma de dano Elétrico, e você pode se mover sem
+    armas da tabela abaixo, e você pode utilizar uma única         provocar ataques de oportunidade.
+    especialização de combate quando fizer um ataque, com base        Diamond Dust (Branco / Prata): O ar da área se torna
+    em sua arma atual. Além disso, você ganha o talento Adepto     gelado e todas as chamas são apagadas. Gelo se acumula ao
+    Marcial.                                                       seu redor e você lança uma onda de frio: cada criatura dentro
+       Dança do Esmagamento (Espadas / Martelos): Quando           de um raio de 9 m de você faz teste de Constituição. Se eles
+    você ataca em sua ação e seu ataque se conecta, você pode      falharem, eles tomam 4d6 + seu Modificador de Carisma de
+    fazer um ataque secundário contra o mesmo alvo com a           dano de Frio e são desacelerados até o início do seu próximo
+    mesma arma. Você não adiciona seu modificador ao dano.         turno, se tiverem sucesso, eles recebem metade do dano e
+       Golpe Cruzado (Espadas / Machados): Quando você ataca       não são desacelerados.
+    em sua ação, se seu ataque conecta e há outro alvo ao seu         Rainbow Breath (Preto / Verde / Cobre): Inspira
+    alcance, você pode adicionar 2 à CA do alvo secundário e       profundamente, depois expira em um cone de 18 m: cada
+    ataca-lo. Você não adiciona seu modificador ao dano.           criatura dentro do cone deve fazer um teste de Destreza ou
+       Bastão Giratório (Bordões): Você pode fazer dois ataques    tomar 4d6 + seu Modificador de Carisma de dano Acido. Eles
+    adicionais ao usar a ação de ataque. Você não adiciona seu     recebem metade do dano em um teste bem-sucedido. Eles
+    modificador ao dano e você deve se mover pelo menos 1,5        devem fazer um teste de Constituição, se falharem recebem
+    metros entre cada ataque.                                      2d4 de dano venenoso e ficam envenenados por 1 minuto. Se
+       Tiro de Alfinete (Combate à Distância): Quando você         tiverem sucesso, eles recebem metade do dano e não são
+    executa a ação de ataque, você pode aplicar uma penalidade     envenenados.
+    na sua jogada de ataque de 2. Se o ataque se conecta, eles
+    fazem um teste de Destreza contra o seu ataque. Se eles        Armadura de Outrora
+    falharem, você imobiliza o alvo (se possível) no chão,         No nível 10, você pode passar 8 horas infundindo sua
+    forçando-os a executar uma ação de bônus e metade de seu       armadura com a antiga magia de dragão. Enquanto você
+    movimento para remover o projétil com segurança.               veste esta armadura, você se torna imune a efeitos de veneno
+       Agitação de Estige (Desarmado): Quando você faz um          e medo, e não pode ser atordoado. Você pode ter apenas 1
+    ataque desarmado, você pode fazer 2 ataques. Se ambos os       conjunto dessa armadura. Se você encantar outra, a original
+    ataques se conectarem, você pode empurrar o alvo do            perde essa propriedade. Outras personagens que usam a
+    segundo ataque a 1,5 m de você.                                armadura não são afetados.
+       Triturador de Ossos (Duas Mãos): Quando você ataca em
+    sua ação, você coloca uma grande quantidade de força com       Canalizar o Poder do Dragão
+    seu ataque, adicionando 1d6 ao dano da arma, e se você rolar   Começando no 15º nível, como uma ação, você pode canalizar
+    um 6 no dado extra o alvo é derrubado.                         a força do seu dragão através do seu corpo: para o próximo
+                                                                   minuto, você pode adicionar o modificador de Carisma do
+    Magia do Dragão                                                seu dragão ao dano de todos os seus ataques (mesmo que ele
+    Quando você alcança o 7º nível, você pode acessar a magia de   já tenha sido adicionado). Você pode fazer isso várias vezes
+    dragão ancestral com base no seu tipo de dragão. Você pode     por descanso longo igual ao seu modificador de Carisma.
+    usar uma ação para lançar seu feitiço uma vez após um
+    descanso curto ou longo. CD = 8 + Bônus de Proficiência +      Vocação do Dragão
+    Modificador de Carisma.                                        Quando você alcança o nível 18, você pode usar os feitiços
+      Flameshot (Vermelho/Latão/Ouro): Você lança fogo em          mágicos e os traços maiores e menores do seu dragão
+    uma bola concentrada e arremessa em uma linha de 1,5           (aqueles que pertencem apenas ao dragão) um número de
+    metro de largura, causando 4d6 + dano de fogo ao               vezes igual ao seu modificador de Carisma depois de um
+    modificador de Carisma em todas as criaturas da linha e um     curto ou longo descanso.
+    dano de 2d6 adicional para o primeiro alvo. Teste de
+    Destreza para levar metade do dano.
+      Astral Drain (Sombra): Sombras cercam sua arma. Você
+    então faz um ataque a distância (você pode usar uma arma
+    sem a propriedade arremesso em um intervalo de 6/18
+    metros), se seu ataque acerta, o alvo recebe 3d6 de dano
+    necrótico, e você cura um número de pontos de vida igual ao
+    dano necrótico.
+
+
+
+8
+Multiclasse                                                        Combate
+Pré-Requisistos: Para se qualificar para multiclasse na            Durante um combate ambos compartilham da mesma
+classe de Cavaleiro do Dragão, você deve atender a estes pré-      iniciativa. No seu turno, o dragão se move separadamente (a
+requisitos: Força ou Destreza 13 e Carisma 15.                     menos que você esteja pilotando). Durante sua ação você
+  Proficiências: Quando você se qualifica para multiclasse         pode comandar verbalmente / telepaticamente a ação do seu
+na classe de cavaleiro do dragão, você ganha as seguintes          dragão. Além disso, quando você tiver o recurso Ataque Extra,
+proficiências: todas as armaduras e escudos.                       você e seu dragão podem atacar juntos em qualquer
+                                                                   combinação até o máximo de ataques que você tiver. Se você
+                                                                   estiver incapacitado, ausente ou incapaz de dar ordens, o
+Criando seu dragão                                                 dragão age por conta própria. Ele não requer seu comando
+Seu nível de Cavaleiro do Dragão determina o nível do seu          para usar suas próprias reações, como em um ataque de
+dragão, como se fosse uma classe. O dragão começa com as           oportunidade. O estilo de jogo mostra a ligação entre o
+seguintes pontuações de habilidade (ordenadas da maneira           dragão e seu cavaleiro.
+que você quiser) 12, 12, 11, 10, 10, 8. Seu dragão é proficiente
+em 2 perícias de sua escolha e é proficiente em um teste de        Traços Menores
+resistência entre Destreza, Constituição e Sabedoria. O
+dragão tem as seguintes restrições de pontuação de                 Ecoando a Voz
+habilidade: Médio e Pequeno: Máximo de 24, Grande: 26 e            A voz do dragão pode ser ouvida em até 1,5 km. Ele deve ser
+Enorme: 28.                                                        pelo menos de tamanho grande.
+  Seu dragão não pode empunhar armas, é considerado
+proficiente com seus próprios ataques. Ele usa 8 + seu bônus       Proficiente
+de proficiência + seu modificador de Carisma para seus CDs.        Você e seu dragão podem escolher 1 habilidade (não Perícia)
+Sua CA = 13 + Modificador de Destreza + Bônus de Nível, a          de sua escolha para ganhar proficiência, você pode selecionar
+menos que esteja usando uma armadura especificamente               esta característica várias vezes.
+adaptada ao tamanho e forma do dragão, que, devido à sua
+natureza especializada, custará 4 vezes mais do que a              Língua
+armadura base, sua CA nesse caso é 13 + Bônus de nível +           Você e seu dragão aprenderem um novo idioma, você pode
+Bônus da armadura. Se o seu dragão morrer (valem as                selecionar este traço várias vezes.
+mesmas regras que a morte de um jogador) você não                  Visão
+conseguirá recuperar um dragão diferente, mas deverá
+ressuscitar ou reencarnar seu dragão original, seja por            A primeira vez que o seu dragão escolhe isto, vocês ganham
+mágica ou uma missão dada pelo Mestre.                             visão no escuro em 18 m, na segunda vez vocês obtêm visão
+                                                                   cega em 3 m.
+Tipos de dragões                                                   Anfíbio
+                            Arma de            Teste de            Você e seu dragão podem respirar em baixo da água./
+   Tipo     Tendência        Sopro            Resistência
+   Azul      Leal Mal        Elétrico          Destreza            Caminhada no Gelo
+                                                                   O dragão pode se mover e subir em superfícies geladas sem
+ Branco Caótico Mal            Frio          Constituição          precisar fazer uma verificação de habilidade. Terreno difícil,
+  Preto    Caótico Mal        Ácido            Destreza            composto de gelo ou neve, não custa movimento extra.
+ Sombra      Leal Mal       Necrótico          Destreza            Rápido
+  Verde      Leal Mal        Elétrico        Constituição          A velocidade de caminhada do seu dragão aumenta em 10
+Vermelho Caótico Mal          Fogo             Destreza
+                                                                   pés, você pode selecionar este traço várias vezes.
+ Bronze      Leal Bom        Elétrico          Destreza            Nadador
+  Cobre       Caótico         Ácido          Constituição          Seu dragão ganha uma velocidade de nado igual a velocidade
+               Bom                                                 de caminhada.
+  Latão       Caótico         Fogo             Destreza            Voar
+               Bom                                                 Você (se tiver asas) e seu dragão ganham a habilidade de voar
+  Ouro       Leal Bom         Fogo             Destreza            a uma velocidade igual a duas vezes sua velocidade de
+ Platina      Caótico       Radiante           Destreza
+                                                                   caminhada.
+               Bom                                                 Escavar
+  Prata      Leal Bom          Frio          Constituição          Seu dragão ganha uma velocidade de escavar igual a sua
+                                                                   velocidade de caminhada.
+                                                                   Imunidade
+                                                                   Escolha encantado, exaustado, assustado ou paralisado, seu
+                                                                   dragão ganha imunidade à condição escolhida. Você pode
+                                                                   selecionar esse traço várias vezes.
+
+                                                                                                                                    9
+     Traços Maiores
+     Quando o seu dragão ganha acesso a um traço maior, ele
+     pode escolher um dos seguintes.
+     Talento
+     Seu dragão ganha um Talento a qual ele se qualifica. Você
+     pode selecionar este traço várias vezes selecionando um
+     Talento diferente cada vez que ele faz.
+     Resistência
+     Seu dragão ganha proficiência em um dos seguintes testes,
+     Inteligência ou Carisma.
+     Conjurador
+     Você e seu dragão aprendem um feitiço da lista de feitiços de
+     feiticeiros. Essas magias são recarregadas após um descanso
+     cruto ou longo. Seu dragão deve ser pequeno ou maior para
+     selecionar esse traço. Cada categoria de tamanho aumenta o
+     acesso ao próximo nível de magia. Miúdo nível 0, Pequeno 1º
+     nível, etc. Você e seu dragão usam o carisma como
+     modificador de lançamento de feitiços. Se algum de vocês
+     usar o feitiço, o outro não poderá usá-lo até um descanso
+     curto ou longo. Você pode selecionar esse traço várias vezes.
+     Mudar de Forma
+     O dragão magicamente polimorfa em um humanóide ou
+     besta que tem um Nível de Dificuldade não superior a 1/4
+     (arredondando para cima) do seu nível de Cavaleiro. Ele volta
+     para a sua verdadeira forma se morrer. Qualquer
+     equipamento que esteja usando ou carregando é absorvido
+     ou suportado pela nova forma (a escolha do dragão). Em uma
+     nova forma, o dragão mantém seu alinhamento, Pontos de
+     Vida, Dados de Vida, capacidade de falar, perícias,
+     resistências e valores de Inteligência, Sabedoria e Carisma.
+     Suas estatísticas, capacidades e ataques são substituídos
+     pelos da nova forma, exceto quaisquer características de
+     classe, ataques múltiplos e ações lendárias dessa forma.
+     Discurso Hipnótico
+     Seu dragão pode falar com criaturas não hostis, eles faz um
+     teste de resistência contra (8 + proficiência + mofificador de
+     Carisma do seu dragão). Se falharem, ficarão encantados pelo
+     seu dragão por um dia, e então ficarão imunes a esse efeito
+     por 24 horas depois que ele terminar. Se uma criatura tiver
+     sucesso em seu teste de resistência, ela não ficará encantada
+     e ficará imune por 24 horas. Seu dragão deve ter pelo menos
+     um tamanho pequeno para selecionar esse traço. Use uma
+     vez por descanso longo.
+     Sopro Especial
+     Você pode escolher um dos sopros da tabela de Sopros
+     Especiais para seu dragão. Agora você pode comandá-lo a
+     usar qualquer um de seus sopros, porém apenas um por
+     tempo de recarga. Você pode selecionar esse traço apenas
+     uma vez.
+
+
+
+
+10
+Dragão
+Dragão, tendencia baseada no tipo
+
+Classe de Armadura: 13 + Mod Des + Bônus +               Mordida. Perfurante, alcance 1,5m. O alcance aumenta
+   Armadura                                              para 3m no nível 7 e para 4,5m no nível 20.
+Pontos de Vida: 8 + Mod Con + Nível(1d8 + Mod Con)       Garra. Cortante, alcance 1,5m. O alcance aumenta para
+Velocidade Base: 9 m.                                    3m no nível 20. Acuidade.
+Stat Spread:: 12, 12, 11, 10, 10, 8                      Cauda. Concussão, raio de 4,5m. O raio aumenta para
+                                                         6m no nível 20. CD de Destreza para esquivar.
+
+
+
+ Nível Tamanho Proficiência Mordida Garras Cauda CA Bônus Caractéristicas
+   1    Miúdo        +2             -    -     -     0     Traço Maior, Traço Menor
+   2    Miúdo        +2        1d4       -     -     0     Incremento no Valor de Habilidade, Traço Menor
+   3   Pequeno       +2        1d4       -     -     1     Traço Maior
+   4   Pequeno       +2        1d4       -     -     1     Incremento no Valor de Habilidade, Traço Menor
+   5   Pequeno       +3        1d4       -     -     1     Traço Maior
+   6   Pequeno       +3        1d6       -     -     1     Incremento no Valor de Habilidade, Traço Menor
+   7   Pequeno       +3        1d6       -     -     1     Traço Maior
+   8    Médio        +3        1d6       -     -     2     Incremento no Valor de Habilidade, Traço Menor
+   9    Médio        +4        1d6       -     -     2     Traço Maior
+  10    Médio        +4        1d8      1d4    -     2     Incremento no Valor de Habilidade, Traço Menor
+  11    Médio        +4        1d8      1d4    -     2     Traço Maior
+  12    Médio        +4        1d8      1d4    -     2     Incremento no Valor de Habilidade, Traço Menor
+  13    Grande       +5        1d8      1d4    -     3     Traço Maior
+  14    Grande       +5       1d10      1d6   1d4    3     Incremento no Valor de Habilidade, Traço Menor
+  15    Grande       +5       1d10      1d6   1d4    3     Traço Maior
+  16    Grande       +5       1d10      1d6   1d4    3     Incremento no Valor de Habilidade, Traço Menor
+  17    Grande       +6       1d10      1d6   1d4    3     Traço Maior
+  18    Enorme       +6       1d12      1d8   1d6    4     Incremento no Valor de Habilidade, Traço Menor
+  19    Enorme       +6       1d12      1d8   1d6    4     Traço Maior
+  20    Enorme       +6       1d12      1d8   1d6    5     Incremento no Valor de Habilidade, Traço Menor
+
+
+
+
+                                                                                                                 11
+Créditos
+Dados
+  https://www.dandwiki.com/wiki/Dragon_Knight_(5e_Class)
+  http://homebrewery.naturalcrit.com/share/r1rVw5Bt8W
+Imagens
+  https://www.dandwiki.com/
+  http://jeremyvarner.com/
+  https://www.pinterest.com/
+  http://loot-the-body.blogspot.com/
+  http://weknowyourdreams.com/dragon.html
+Criação
+  http://homebrewery.naturalcrit.com/share/B1Hju_QaTx
+  https://homebrewery.naturalcrit.com/share/HJWLQsTwUZ
+
+
+Perfil do NaturalCrit
+http://homebrewery.naturalcrit.com/user/AuqueMiah
+
+
+
+   Contato
+   Tradução
+   Mateus Marochi Olenik
+   Email
+   mateusmarochi@hotmail.com

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "frame_id": "WP-GAYA-DATASET-G1-03",
+  "total_canonical_entities": 53,
+  "total_grounded_relations": 8,
+  "total_claims": 8,
+  "total_reviewed_seeds": 12,
+  "families_coverage": {
+    "grounded_lore_qa": 2,
+    "character_identity_and_style": 1,
+    "relationships_and_evidence_paths": 2,
+    "items_and_mechanics": 2,
+    "spatial_containment_and_routes": 1,
+    "visual_entity_references": 1,
+    "bounded_situational_decisions": 1,
+    "memory_and_abstention": 2
+  },
+  "blocked_families": [
+    {
+      "family": "visual_entity_references",
+      "reason": "Bloqueado até o Frame 04 (WP-GAYA-DATASET-G1-04) para ancoragem de imagens reais",
+      "status": "BLOCKED"
+    }
+  ],
+  "critical_invariants_verified": {
+    "lylia_mae_de_sofia_direction_preserved": true,
+    "lylia_nao_carrega_nyr_negation_preserved": true,
+    "desertion_not_current_affiliation": true,
+    "gaia_gaya_distinction_preserved": true,
+    "generic_mentions_unlinked": true
+  },
+  "timestamp": "2026-09-09T02:23:21.573287+00:00"
+}

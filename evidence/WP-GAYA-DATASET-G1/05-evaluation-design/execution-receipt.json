@@ -1,0 +1,55 @@
+{
+  "task_id": "WP-GAYA-DATASET-G1-05",
+  "project": "kad-rpg",
+  "timestamp": "2026-09-09T02:54:34.710515+00:00",
+  "status": "PASS",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "claim_id": "cb137a31-5c1c-4641-80ce-598f02b15888",
+  "owned_paths": [
+    "kad-gaya/training/splits.py",
+    "kad-gaya/pipeline/scenario_oracles.py",
+    "kad-gaya/dataset_runs",
+    "kad-gaya/tests",
+    "kad-gaya/pipeline/dataset_cli.py"
+  ],
+  "command_executed": "python -m pipeline.dataset_cli run --config dataset_runs/staging/01-contracts/validated-config.json --output dataset_runs/staging/05-eval-oracles --stage eval-oracles",
+  "splits_summary": {
+    "total_families": 6,
+    "partition_counts": {
+      "train": 247,
+      "validation": 66,
+      "test": 2,
+      "held_out_eval": 0
+    },
+    "total_documents_assigned": 315
+  },
+  "scenarios_evaluated": {
+    "total_scenarios": 8,
+    "passed_scenarios": 8,
+    "conservation_violations": 0
+  },
+  "metamorphic_suite": {
+    "total_mutations_tested": 4,
+    "total_escapes": 0,
+    "zero_escapes_verified": true
+  },
+  "preregistered_gates": {
+    "zero_schema_violations_threshold": 0,
+    "zero_revoked_claims_threshold": 0,
+    "zero_split_family_collisions_threshold": 0,
+    "zero_secret_canary_escapes_threshold": 0,
+    "zero_critical_semantic_escapes_threshold": 0,
+    "human_review_sample_ratio": 0.2,
+    "high_risk_review_sample_ratio": 1.0,
+    "generation_attempt_limit_per_seed": 3,
+    "maximum_duplicate_similarity_threshold": 0.85
+  },
+  "manifest_seal_sha256": "8b4f367f11ce3c2020e3b37df851297aff43b13f3435ca33cdf8c665817eb969",
+  "receipt_artifacts": {
+    "manifest.json": "7c1d79f097e242b035deaef3eb06c6291277edc87ef8b0c806477f33e67e9fe2",
+    "eval_summary.json": "deb89511bf5eb2f7f99fe7c49193e9fd11d106ec1031ea6864bf12aa6c76d9e9",
+    "splits.json": "e597d3255a11141c9f71e9b815950fd15f4f01c4a82a617816b00461eec0fb32",
+    "scenario_oracles.jsonl": "c0df59ea8b7d550ea4097233d1089c8ffe93c798d0b8da2c96f633449682f58a",
+    "canary_suite.json": "531881ef76c043debaa801c977c7021865e1d28f627aac5303030febe8a3f181"
+  }
+}

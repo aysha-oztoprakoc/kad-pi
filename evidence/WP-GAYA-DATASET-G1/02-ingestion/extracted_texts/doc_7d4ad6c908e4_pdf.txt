@@ -1,0 +1,481 @@
+LYLIA
+ A CENTELHA DE SOFIA
+ NÍVEL 6 | DRUIDA DO PASTOR 3 / ALMA DIVINA 3
+
+ Beasthide Shifter • Ermitã legada adaptada • Caótica Neutra • Jogador: Akkill
+
+
+   FOR                     DES                       CON               INT                      SAB                      CAR
+
+   5                       14                        15                8                        20                       13
+
+   -3                      +2                        +2                -1                       +5                       +1
+
+
+
+   PV máximos                   CA / alternativas                                      Iniciativa                   Proficiência
+
+   42                           13 couro                                               +5 com Alert                 +3
+                                15 Mage Armor¹
+
+ ¹ Mage Armor exige tirar o couro. Shield: +5 CA como reação. Escudo físico: +2 CA somente após aquisição; não incluído. Shifting: +1
+ CA enquanto ativo.
+
+
+ Conjuração e recursos
+   Recurso                            Valor                            Recurso                            Valor
+
+   CD / ataque druídicos              17 / +9²                         CD / ataque feiticeira             12 / +4
+
+   Innate Sorcery                     CD feit. 13; vantagem em         Concentração                       +2; vantagem
+                                      ataques
+
+   Espaços 1º / 2º / 3º / 4º          4/3/3/0                          Dados de Vida                      3d8 + 3d6
+
+   Pontos de feitiçaria               3                                Wild Shape                         2 usos; ND 1/4
+
+   Totem / Favored / Shifting         1 cada por DC ou DL              Innate Sorcery                     2 / DL
+
+ ² Com Moon Sickle +1 sintonizada e empunhada. Sem ela: CD 16 / +8. DC = descanso curto; DL = descanso longo. Os espaços
+ superiores não liberam magias aprendidas acima do 2º círculo.
+
+
+ Resistências, perícias e sentidos
+   Resistências                              Perícias com proficiência                        Passivas / movimento
+
+   FOR -3; DES +2; CON +2                    Atletismo +0; Intuição +8; Medicina +8;          Percepção 18; Intuição 18; Investigação
+   INT +2; SAB +8; CAR +1                    Percepção +8; Religião +2.                       9.
+                                                                                              9 m; visão no escuro 18 m.
+
+ Outras perícias: DES +2, INT -1, SAB +5, CAR +1 ou FOR -3, conforme o atributo. Não há proficiência extra de multiclasse. Natureza
+ não recebe o bônus de Magician: a ordem escolhida é Warden.
+
+
+ Controle durante a sessão
+   PV atuais                    PV temporários             Concentração ativa                        Espaços gastos
+
+   ________                     ________                   ________________                          1º ___ 2º ___ 3º ___ 4º ___
+
+
+
+
+GAYA | Lylia, a Centelha de Sofia | adaptação 2024                                                                                      1
+ Magias druídicas: seis preparadas + extras
+ Sabedoria 20 sustenta cura e controle. Troque as seis magias regulares no descanso longo. Os dois truques,
+ Speak with Animals e Wild Companion têm origens separadas.
+
+   Magia / aquisição                                 Uso, componentes e alcance
+
+   Guidance / Orientação                             Ação • Toque • C, 1 min • V,S
+   0º círculo | Truque                               +1d4 em testes da perícia escolhida enquanto durar; apoio fora de combate.
+
+   Thorn Whip / Chicote de Espinhos                  Ação • 9 m • Instantânea • V,S,M
+   0º círculo | Truque                               Ataque +9 com foice; 2d6 perfurante e puxão de até 3 m em alvo Grande ou
+                                                     menor.
+
+   Healing Word / Palavra Curativa                   Bônus • 18 m • Instantânea • V
+   1º círculo | Preparada                            2d4+5 PV; +2d4/círculo acima do 1º e +1d4 segurando Moon Sickle. Com
+                                                     espaço, ativa Unicórnio.
+
+   Goodberry / Bom Fruto                             Ação • Pessoal • 24 h • V,S,M
+   1º círculo | Preparada                            Reserva de alimentação e recuperação; comer exige ação bônus em 2024. Não
+                                                     aplicar Unicórnio ou +1d4 a cada fruto.
+
+   Entangle / Constrição                             Ação • 27 m • C, 1 min • V,S
+   1º círculo | Preparada                            Quadrado de 6 m; terreno difícil, resistência de FOR ou Restrained. CD 17 com
+                                                     foice; escapar exige a ação/teste do texto.
+
+   Spike Growth / Crescer Espinhos                   Ação • 45 m • C, 10 min • V,S,M
+   2º círculo | Preparada                            Área de raio 6 m, terreno difícil; 2d4 perfurante por 1,5 m percorrido dentro.
+                                                     Combinar com puxão do Thorn Whip.
+
+   Pass without Trace / Passos sem                   Ação • Pessoal • C, 1 h • V,S,M
+   Pegadas                                           Aura de 9 m; +10 em Furtividade e oculta rastros conforme texto. Disputa
+   2º círculo | Preparada                            concentração com controle/invocação.
+
+   Moonbeam / Raio Lunar                             Ação • 36 m • C, 1 min • V,S,M
+   2º círculo | Preparada                            Raio de 1,5 m; CON CD 17 com foice, 2d10 radiante no 2º círculo (+1d10/círculo
+                                                     acima), metade no sucesso. Mover com ação; respeitar gatilhos 2024.
+
+   Speak with Animals / Falar com Animais            Ação/ritual • Pessoal • 10 min • V,S
+   1º círculo | Extra: Druídico                      Sempre preparada, fora das seis. Parcialmente redundante com Speech of the
+                                                     Woods.
+
+   Find Familiar / Encontrar Familiar                Ação especial • 3 m • Especial • Especial
+   1º círculo | Wild Companion                       Gastar 1 uso de Forma Selvagem ou espaço; sem componentes materiais pela
+                                                     característica; familiar feérico até descanso longo.
+
+
+ Summon Beast é a primeira troca recomendada por Moonbeam quando o componente de 200 PO estiver disponível. Não considerar
+ esse componente adquirido sem registro. Fontes: R1, R6, R8 e P1.
+
+
+
+
+GAYA | Lylia, a Centelha de Sofia | adaptação 2024                                                                                    2
+ Magias da Alma Divina
+ 6 magias regulares + Bless de afinidade. 4 truques. Carisma 13 cumpre o requisito da multiclasse; a seleção
+ favorece efeitos que não dependem de CD alta.
+
+   Magia / aquisição                                 Uso, componentes e alcance
+
+   Mage Hand / Mãos Mágicas                          Ação • 9 m • 1 min • V,S
+   0º círculo | Truque                               Interação à distância; não ataca.
+
+   Minor Illusion / Ilusão Menor                     Ação • 9 m • 1 min • S,M
+   0º círculo | Truque                               Distração e cobertura ilusória; investigação usa CD de feiticeira.
+
+   Prestidigitation / Prestidigitação                Ação • 3 m • Até 1 h • V,S
+   0º círculo | Truque                               Utilidade cotidiana e expressão da centelha; nenhuma vantagem mecânica
+                                                     inventada.
+
+   Mind Sliver / Lasca Mental                        Ação • 18 m • 1 rodada • V
+   0º círculo | Truque                               INT CD 12 (13 Innate); falha: 2d6 psíquico e -1d4 na próxima resistência antes do
+                                                     fim do seu próximo turno.
+
+   Shield / Escudo                                   Reação • Pessoal • 1 rodada • V,S
+   1º círculo | Preparada                            Defesa imediata: +5 CA até o início do próximo turno. Compete com outras
+                                                     reações.
+
+   Absorb Elements / Absorver Elementos              Reação • Pessoal • 1 rodada • S
+   1º círculo | Preparada                            Resistência ao tipo elemental desencadeador; protege PV e concentração. Não
+                                                     depende de Carisma.
+
+   Mage Armor / Armadura Arcana                      Ação • Toque • 8 h • V,S,M
+   1º círculo | Preparada                            CA 13+DES sem armadura: 15 nesta ficha. Tirar o couro; não somar as duas
+                                                     fórmulas.
+
+   Aid / Ajuda                                       Ação • 9 m • 8 h • V,S,M
+   2º círculo | Preparada                            Aumenta PV atuais e máximos de 3 criaturas: +5 no 2º, +10 no 3º, +15 no 4º
+                                                     círculo. Não são PV temporários.
+
+   Silvery Barbs / Farpas Prateadas                  Reação • 18 m • Instantânea • V
+   1º círculo | Preparada                            Refazer um sucesso inimigo e favorecer outra criatura; excelente sem Carisma
+                                                     alto. Usar Strixhaven se incorporado à mesa.
+
+   Magic Missile / Mísseis Mágicos                   Ação • 36 m • Instantânea • V,S
+   1º círculo | Preparada                            3 dardos, cada um 1d4+1 energético; +1 dardo/círculo acima do 1º. Sem
+                                                     ataque/CD. Shield pode bloquear.
+
+   Bless / Bênção                                    Ação • 9 m • C, 1 min • V,S,M
+   1º círculo | Extra: afinidade                     3 criaturas: +1d4 em ataques e resistências; +1 alvo/círculo acima do 1º.
+                                                     Afinidade Lei; não altera alinhamento nem define Sofia.
+
+ Afinidade Lei é uma escolha mecânica para Bless, compatível com o alinhamento pessoal Caótico Neutro. Não define Sofia. Se
+ Strixhaven estiver fora da mesa, substituir Silvery Barbs por Sanctuary, sem ganhar ambas. Fontes: R2, R6, R9, R10.
+
+
+
+
+GAYA | Lylia, a Centelha de Sofia | adaptação 2024                                                                                   3
+ Características e plano de combate
+
+ Spirit Totem / Totem Espiritual
+ Bônus; ponto visível até 18 m; aura de 9 m por 1 minuto, sem concentração. 1 uso por descanso curto/longo.
+ Mover até 18 m como ação bônus. Escolher um espírito por uso.
+
+
+ Urso
+ Ao surgir, concede 8 PV temporários a criaturas escolhidas na aura. Aliados na aura têm vantagem em testes e
+ resistências de FOR. Esses PV não somam com Shifting ou Wild Shape.
+
+
+ Unicórnio
+ Ajuda a detectar criaturas na aura. Quando uma magia conjurada com espaço restaura PV a alguém, criaturas
+ escolhidas na aura recuperam mais 3 PV. O alvo da magia pode estar fora da aura. Goodberry consumido
+ depois não ativa nova cura.
+
+
+ Falcão
+ Percepção com vantagem para aliados na aura; gastar sua reação para favorecer um ataque contra alvo na
+ aura. Disputa reação com Shield, Absorb Elements, Silvery Barbs e War Caster.
+
+
+ Speech of the Woods
+ Comunicação com bestas e idioma Silvestre. Sobrepõe parte do uso de Speak with Animals; não concede uma
+ magia extra de substituição automaticamente.
+
+
+ Favored by the Gods
+ Uma vez por descanso curto/longo, somar 2d4 depois de falhar uma resistência ou errar um ataque. Recurso
+ útil para salvar concentração.
+
+
+ Metamagia escolhida
+ Extended Spell: 1 ponto para estender duração elegível; também dá vantagem à concentração daquela magia
+ em 2024, redundante com War Caster. Usar em Aid/Mage Armor. Subtle Spell: 1 ponto; discrição e liberdade de
+ componentes conforme texto, sem eliminar materiais caros/consumidos.
+
+
+ Fonte de magia
+ Máximo de pontos igual ao nível de feiticeira. Converter espaço em pontos respeita esse teto; criar espaços de
+ 1º custa 2 e de 2º custa 3. Não cria espaços de 3º/4º neste nível de classe.
+
+
+ Características ainda não obtidas
+ Sem Mighty Summoner, Guardian Spirit, Empowered Healing ou Sorcerous Restoration. Contam níveis na classe
+ correspondente, não o nível total.
+
+
+ Sequência prática
+ Antes do combate: Mage Armor sem couro; Aid se houver recursos. Abertura: Spike Growth/Entangle e Totem
+ no mesmo turno (ação + bônus). Depois: Thorn Whip para controlar posição; Healing Word para levantar
+ aliados. Use Unicórnio quando a cura em grupo trouxer mais valor. Transforme-se para exploração ou abrigo,
+ lembrando que perde a conjuração até reverter.
+ Só uma concentração ativa. Um espaço gasto para conjurar por turno. Reação no turno de outra criatura pode gastar outro espaço;
+ não confundir turno com rodada. Fontes: R1-R3, R6.
+
+
+
+
+GAYA | Lylia, a Centelha de Sofia | adaptação 2024                                                                                 4
+ Formas Selvagens recomendadas
+ Pastor 3: quatro formas conhecidas; ND máximo 1/4; sem voo. A base 2024 permite formas aquáticas. Troque
+ uma forma ao terminar descanso longo. A transformação usa ação bônus e dura 1 hora.
+
+   Forma                                   CA / FOR-DES-CON          Movimento e função
+
+   Giant Wolf Spider / Aranha-lobo         13 | 12-16-13             12 m; escalar 12 m
+   gigante                                                           Furtividade +7; paredes/tetos; infiltração e fuga.
+
+   Giant Badger / Texugo gigante           13 | 13-10-17             9 m; escavar 3 m
+                                                                     Escavação; Constituição +3; abrigo com concentração já
+                                                                     ativa.
+
+   Rat / Rato                              10 | 2-11-9               6 m; escalar 6 m
+                                                                     Pequeno reconhecimento e acesso discreto; corpo
+                                                                     vulnerável.
+
+   Wolf / Lobo                             12 | 14-15-12             12 m
+                                                                     Rastreamento e combate apenas oportunista junto dos
+                                                                     aliados.
+
+
+
+ O que muda na ficha
+ Você mantém 42 PV máximos próprios (mais Aid, se ativo), ganha 3 PV temporários e usa FOR/DES/CON da
+ besta. Mantém INT 8, SAB 20 e CAR 13; War Caster permanece. Não substitua seus PV pelos PV impressos do
+ animal.
+
+   Forma                                                   Resistência CON da Lylia           Concentração
+
+   Aranha-lobo gigante                                     +1                                 Vantagem por War Caster
+
+   Texugo gigante                                          +3                                 Vantagem por War Caster
+
+   Rato                                                    -1                                 Vantagem por War Caster
+
+   Lobo                                                    +1                                 Vantagem por War Caster
+
+
+
+ Limites e interações
+ Não conjura em Forma Selvagem, nem com Subtle Spell. Uma concentração anterior continua. Moon Sickle
+ fundida não está empunhada. Equipamento vestido precisa caber na anatomia. Não dar CA 13+SAB nem
+ formas ND 1 ou 2: esses números pertencem a outras versões/classes.
+
+ Shifting em forma normal: 8+1d6 PV temporários, +1 CA por 1 minuto, uma vez por descanso curto/longo. É um
+ traço separado da Forma Selvagem. PV temporários não acumulam: compare com os 8 do Urso e os 3 da
+ transformação.
+
+
+ Familiar e formas de reserva
+ Wild Companion pode usar uma forma de familiar voadora permitida pelo feitiço, como coruja comum, sem dar
+ voo à Lylia. Use o familiar para reconhecimento e ajuda; não é uma quinta Forma Selvagem. Spider comum e
+ Riding Horse são alternativas para trocar após descanso. Blocos completos e ações: R5; limites: R4. Rat atual
+ possui Agile e não provoca ataques de oportunidade ao sair do alcance.
+
+
+
+
+GAYA | Lylia, a Centelha de Sofia | adaptação 2024                                                                            5
+ Evolução adaptada a Gaya
+ Otimização para controle, cura e preservação da concentração, mantendo a classe inicial druídica e a força
+ física baixa da personagem. O histórico anterior não permite provar um ótimo universal de combate.
+
+   Marco                       Mudança                                        Atributos / PV
+
+   PDF N3                      Lua 3 histórica; soma de atributos 74          5 / 12 / 15 / 12 / 20 / 10; PV 24
+
+   N3 refeito                  Pastor 3; redistribuição autorizada, soma 74   5 / 14 / 15 / 8 / 19 / 13; PV 24
+
+   N4                          Feiticeira 1; reservar avanço                  PV 30
+
+   N5                          Feiticeira 2; gastar N4+N5 em War Caster (+1   SAB 20; PV 36
+                               SAB)
+
+   N6                          Alma Divina 3; reservar avanço                 5 / 14 / 15 / 8 / 20 / 13; PV 42
+
+   N7                          Alma Divina 4; gastar N6+N7 em Resilient (+1   5 / 14 / 16 / 8 / 20 / 13; PV 55
+                               CON)
+
+
+
+ Talentos equipados
+ Alert 2024 é o único talento de origem: proficiência na iniciativa e possibilidade de troca conforme o talento.
+ War Caster 2024 chega no nível 5: +1 SAB, vantagem de concentração, componentes somáticos com mãos
+ ocupadas e conjuração reativa elegível. Resilient (CON) 2024 chega no nível 7: +1 CON e proficiência em
+ resistências de CON.
+
+
+ Contabilidade e prioridades
+ Dois avanços pagam cada talento; seus aumentos impressos são mantidos. Não conceder outro ASI em
+ Feiticeira 4. Os avanços até o nível 3 já estão incorporados na âncora; bônus raciais/antecedente não são
+ somados de novo. Sentinel antigo foi retirado na reconstrução; War Caster antigo não permanece como cópia
+ adicional.
+
+ CON 15 no N6 é intencional: fica par ao concluir Resilient no N7. Carisma 13 basta para multiclasse e para a
+ seleção de apoio. Sabedoria 20 + Moon Sickle mantém CD 17. Melhorar Carisma antes custaria controle
+ druídico ou estabilidade de concentração.
+
+
+ PV e concentração
+ PV = 24 + 4 × níveis de feiticeira + nível total × modificador atual de CON - 3 × 2. O N7 adiciona 6 PV
+ retroativos e 7 PV do novo nível. Com War Caster, chance de manter uma concentração CD 10, sem outros
+ bônus: N6 +2 = 87,75%; N7 +6 = 97,75%. Dano maior aumenta a CD.
+
+
+ Próximo marco
+ Seguindo Feiticeira 5 no nível total 8, magias de 3º círculo tornam-se acessíveis pela classe, inclusive opções de
+ clérigo via Alma Divina. Esse avanço não está aplicado nestas fichas. Fontes: P1, H1, R1, R2, R7.
+
+
+
+
+GAYA | Lylia, a Centelha de Sofia | adaptação 2024                                                                    6
+ Alternativas: magias e talentos
+ Opções avaliadas para troca, preparação diária ou evolução futura. Não são concessões adicionais.
+
+   Opção                                   Decisão
+
+   Summon Beast                            Trocar Moonbeam após obter o componente de 200 PO. Usar versão 2024; a origem da
+   Prioridade de aquisição                 opção é Tasha. No nível 7, espaço de 4º fortalece a invocação. Não concede Mighty
+                                           Summoner. [R8/R10]
+
+   Cure Wounds                             Trocar Entangle se precisar de cura por toque; Wisdom 20 e Moon Sickle favorecem a
+   Dia de cura                             versão druídica. [PHB24]
+
+   Healing Spirit                          Versão corrigida de Xanathar: número limitado de curas (1+SAB). Custa concentração e
+   Alternativa de expansão                 ação bônus; não usar a versão antiga ilimitada. [XGtE]
+
+   Lesser Restoration / Protection         Trocar Moonbeam ou Goodberry em jornadas com condições ou venenos previsíveis.
+   from Poison                             [PHB24]
+   Preparar conforme missão
+
+   Detect Magic / Enhance Ability          Trocar uma magia druídica no descanso longo; úteis à missão de conhecimento. [PHB24]
+   Investigação
+
+   Web / Hold Person                       Legais pela feiticeira, mas usam CAR 13; controle druídico CD 17 é mais confiável. Hold
+   Menor prioridade aqui                   Person druídico é alternativa contra humanoides. [PHB24]
+
+   Sanctuary                               Magia de clérigo acessível pela Alma Divina; substituição proposta se Strixhaven não fizer
+   Alternativa a Silvery Barbs             parte de Gaya. CD depende de Carisma. [PHB24 / XGtE]
+
+   Spirit Guardians / Revivify /           Exigem acesso de classe a magias de 3º círculo. Espaços multiclasses não bastam;
+   Counterspell                            Feiticeira 5 é o próximo marco dessa progressão. [PHB24]
+   Ainda indisponíveis
+
+   Conjure Animals / Summon Fey            Exigem Druida 5 nesta construção. Conjure Animals 2024 é diferente da antiga invocação
+   Ainda indisponíveis                     de múltiplas bestas. [PHB24]
+
+   Fey Touched / Shadow Touched            Ótima utilidade e magias extras; perdem para proteção de concentração neste plano. Não
+   Talentos alternativos                   adicionar além dos avanços disponíveis. [TCoE / PHB24]
+
+   Telekinetic / Telepathic                Telekinetic disputa ação bônus com cura/totem; Telepathic favorece exploração. Usar
+   Alternativos                            versão atual quando republicada. [TCoE / PHB24]
+
+   Metamagic Adept                         Mais flexibilidade, mas não concede níveis de feiticeiro nem libera espaços superiores;
+   Alternativo de expansão                 concorre com Resilient. [TCoE]
+
+   Lucky / Tough / Healer /                Alert foi escolhido para agir cedo e colocar controle/totem. Tough aumenta PV;
+   Musician                                Healer/Musician combinam com a curandeira e a ocarina. [PHB24]
+   Alternativas de origem
+
+   Sentinel / feats de armas               Sentinel estava no PDF antigo, mas força baixa, formas frágeis e reações defensivas
+   Retirado na reconstrução                favorecem talentos de conjuração. [P1 / PHB24]
+
+   Dragon Gifts / chef /                   Talentos de Fizban/Tasha e perícias podem ter valor narrativo; não superam a
+   especializações                         concentração para este papel. Sem benefícios gratuitos de cenário. [FToD/TCoE]
+   Situacionais
+
+   Talentos raciais, de cenário e          Sem falsa ascendência élfica/dracônica, vínculo de organização ou nível épico. Material
+   dádivas épicas                          não publicado/UA e terceiros não entra automaticamente. [R7/H2]
+   Filtrados por requisito
+
+
+
+
+GAYA | Lylia, a Centelha de Sofia | adaptação 2024                                                                                   7
+ Identidade, equipamento e adaptação
+ Lylia tem 20 anos, 1,89 m e 95 kg no registro antigo; pele negra, olhos roxos e cabelos castanhos. Sua
+ curiosidade e inocência a conduzem ao perigo. Era de uma tribo de shifters da Floresta Negra, nas ruínas da
+ Grande Guerra. Um Urso Primal massacrou a tribo; ela sobreviveu, foi acolhida pelos druidas da Grande Árvore
+ e saiu em busca de conhecimentos para essa nova comunidade.
+
+
+ Sofia e os limites do registro
+ O título “Lylia, a Centelha de Sofia” está documentado nas planilhas. Não foi recuperada uma biografia de Sofia
+ ou explicação da centelha. Não se afirma que Sofia seja deusa, mãe, patrona ou outra identidade da Lylia. A
+ relação com a Alma Divina permanece uma possibilidade temática, não um fato confirmado.
+
+
+ Equipamento
+ Documentado: Moon Sickle +1, couro, ocarina, colar de dente de urso, armadilha de caça e equipamento de
+ viagem. Rações: 20 dias na planilha. 10 PO é o valor do PDF antigo, não saldo atual confirmado. Preservados
+ Polaridade +5 e o registro “+2 Khan”; não há sistema completo recuperado para extrapolar seus efeitos.
+
+ Aquisições sugeridas: escudo físico, bolsa de componentes e símbolo/material apropriado para Bless;
+ componente de 200 PO para Summon Beast; armadura média compatível com Warden. Cota de escamas + DES
+ 2 + escudo resulta em CA 18, mas nenhum desses itens novos foi contabilizado como posse. Mage Armor não
+ acumula com armadura vestida.
+
+
+ Contrato desta versão
+ Regras-base: classes 2024; subclasses legadas de Xanathar recebidas no nível 3; espécie Beasthide da versão
+ escrita no PDF. Sem importar pacote de PV/uses de outra publicação da espécie. Limite usual 20 aplicado na
+ reconstrução: SAB 24 da planilha YKT fica registrada como versão histórica não aplicada.
+
+ As novas escolhas são uma proposta jogável autorizada de reconstrução; não foram inferidas como
+ acontecimentos já vividos. O XLSX guarda fórmulas, fontes, hipóteses e opções. O PDF do códice recebe um
+ adendo, preservando as páginas anteriores.
+
+
+ Fontes e rastreabilidade
+ P1 • Lylia_2.pdf, nível 3, campos e aparência do formulário: Arquivo histórico: atributos, 24 PV, biografia, Moon Sickle; classe Lua
+ superada pelo usuário.
+
+ P2 • Lylia (3)(2).xlsx; YKT _ Lylia, a Centelha de Sofia.xlsx: Registros posteriores conflitantes; título preservado, números não somados
+ à base antiga.
+
+ R1 • Classes 2024: https://www.dndbeyond.com/sources/dnd/br-2024/character-classes
+
+ R2 • Feiticeiro 2024: https://www.dndbeyond.com/classes/2190884-sorcerer
+
+ R3 • Pastor / Xanathar: https://www.dndbeyond.com/posts/1492-circle-of-the-shepherd-druid-guide-features-how-to
+
+ R4 • Forma Selvagem 2024: https://www.dndbeyond.com/posts/1936-druid-101-wild-shape-guide
+
+ R5 • Bestas: blocos atuais: https://www.dndbeyond.com/sources/dnd/br-2024/creature-stat-blocks
+
+ R6 • Magias: conjuração 2024: https://www.dndbeyond.com/sources/dnd/br-2024/spells
+
+ R7 • Talentos 2024 e legados: https://www.dndbeyond.com/feats
+
+ R8 • Invocações de Tasha: https://www.dndbeyond.com/posts/924-spell-spotlight-new-summoning-spells-from-tashas
+
+ R9 • Silvery Barbs / Strixhaven: https://www.dndbeyond.com/posts/1371-silvery-barbs-snatch-a-victory-from-the-jaws-of
+
+ R10 • Livros usados para nomes/seleção: Player's Handbook 2024; Xanathar's Guide to Everything; Tasha's Cauldron of Everything;
+ Eberron: Rising from the Last War; Strixhaven: A Curriculum of Chaos. Regras de raça e Moon Sickle transcritas pelo próprio PDF
+ antigo.
+
+ H1 • Regra de Gaya confirmada pelo usuário: +1 atributo por avanço OU guardar dois avanços para um talento. Substitui ASI/talento
+ de classe. Reconstrução e redistribuição autorizadas.
+
+ H2 • Escopo de pesquisa: Seleção prática de opções pertinentes, incluindo expansões; não constitui catálogo exaustivo de todas as
+ publicações até 2026. Opções não verificadas não recebem benefícios inventados.
+
+
+
+
+GAYA | Lylia, a Centelha de Sofia | adaptação 2024                                                                                           8

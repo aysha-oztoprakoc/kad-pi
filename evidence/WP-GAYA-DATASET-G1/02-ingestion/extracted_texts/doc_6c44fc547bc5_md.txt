@@ -1,0 +1,22 @@
+---
+slug: camara_de_sintese
+titulo: "Câmara de Síntese — Ateliê de Ayşa e Lylia"
+categoria: locations
+aliases: []
+tags: ["gaya", "locations", "refugio_ykt", "scene_design"]
+entidades_relacionadas: ["aysha_oztoprak", "khan", "lylia_centelha_de_sofia", "sintese", "sofia", "yorman"]
+l0_abstract: "Oficina central de manipulação conceitual e forja de relíquias onde Ayşa canaliza o Yaark Síntese em colaboração com Lylia."
+---
+
+# [[camara_de_sintese]] — Ateliê de [[aysha_oztoprak]] e [[lylia_centelha_de_sofia]]
+
+Separada das forjas de metal por pesadas portas de vedação, a [[camara_de_sintese]] repousa sob uma cúpula de raízes densas. No centro ergue-se uma mesa de madeira maciça iluminada por luz branca constante. Para olhos comuns, repousam na mesa lâminas, lingotes e fragmentos de couros raros. Para a percepção de [[aysha_oztoprak]], o ambiente revela os feixes e novelos cintilantes de cada substância inanimada ou despojos de criaturas abatidas. [[lylia_centelha_de_sofia]] atua como co-projetista e examinadora de fluxos vitais, documentando em pergaminhos os custos de [[khan]] e [[yorman]] antes de qualquer ato de criação.
+
+## Entidades Presentes ou Vinculadas
+- [[aysha_oztoprak]]
+- [[lylia_centelha_de_sofia]]
+- [[sintese]]
+- [[khan]]
+- [[yorman]]
+- [[crosta_de_kravarius]]
+- [[manto_de_kravarius]]

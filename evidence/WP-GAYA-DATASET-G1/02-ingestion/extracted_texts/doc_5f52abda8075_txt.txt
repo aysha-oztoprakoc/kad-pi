@@ -1,0 +1,30 @@
+INIMIGO FAVORITO - A partir do 1° nível, você tem experiência significativa estudando, rastreando, caçando e, até mesmo, falando com certos tipos de inimigos. Escolha um tipo de inimigo
+favorito: bestas, fadas, humanoide, monstruosidades ou mortos-vivos. Você recebe um bônus de +2 nas jogadas de dano com ataques com arma contra criaturas do tipo escolhido. Além disso,
+você tem vantagem em testes de Sabedoria (Sobrevivência) para rastrear seus inimigos favoritos, assim como em testes de Inteligência para lembrar informações sobre eles. Quando você
+adquire essa característica, você também aprende um idioma, à sua escolha, que seja falado pelos seus inimigos favoritos, se eles falarem algum.
+
+EXPLORADOR NATURAL - Você é um mestre na navegação pelo mundo natural e você reage de forma rápida e decisiva quando é atacado. Isso fornece a você os seguintes benefícios: Você
+ignora terreno difícil. Você tem vantagem em rolagens de iniciativa. No seu primeiro turno de combate, você tem vantagem nas jogadas de ataque contra criaturas que ainda não tenham agido.
+Além disso, você é perito em navegar pelo ambiente selvagem. Você ganha os seguintes benefícios quando estiver viajando por uma hora ou mais: Terreno difícil não atrasa a viagem do seu
+grupo. Seu grupo não pode se perder, exceto por meios mágicos. Mesmo quando você está engajado em outra atividade além de viajar (como forragear, navegar ou rastrear), você permanece
+alerta ao perigo. Se você estiver viajando sozinho, você pode se mover furtivamente com um ritmo de viagem normal. Quando você forrageia, você encontra o dobro de comida que normalmente
+encontraria. Enquanto estiver rastreando outras criaturas, você também descobre o número exato delas, seus tamanhos e há quanto tempo elas passaram pela área.
+
+ESTILO DE LUTA - No 2° nível, você adota um estilo de combate particular que será sua especialidade. Escolha uma das opções a seguir. Você não pode escolher o mesmo Estilo de Combate
+mais de uma vez, mesmo se puder escolher de novo.
+- ARQUEARIA - Você ganha +2 de bônus nas jogadas de ataque realizadas com uma arma de ataque à distância.
+
+HABILIDADE DE CONJURAÇÃO - Sabedoria é a sua habilidade para conjurar suas magias de patrulheiro, já que sua magia vem da sua sintonia com a natureza. Você usa sua Sabedoria
+sempre que alguma magia se referir a sua habilidade de conjurar magias. Além disso, você usa o seu modificador de Sabedoria para definir a CD dos testes de resistência para as magias de
+patrulheiro que você conjura e quando você realiza uma jogada de ataque com uma magia.
+- CD para suas magias = 8 + bônus de proficiência + seu modificador de Sabedoria
+- Modificador de ataque de magia = seu bônus de proficiência + seu modificador de Sabedoria
+
+CONSCIÊNCIA PRIMITIVA - A partir do 3° nível, sua maestria do conhecimento de patrulheiro permite que você estabeleça um poderoso elo com bestas e com a terra ao seu redor. Você possui
+uma habilidade inata de se comunicar com bestas e elas consideram você como um espírito semelhante. Através de sons e gestos, você pode comunicar ideias simples a bestas como uma ação
+e pode compreender seu ânimo e intenção básicos. Você aprende o estado emocional dela, suas necessidades imediatas (como comida e abrigo) e ações que você pode tomar (se aplicável)
+para persuadi-la a não atacar. Você não pode usar essa habilidade contra uma criatura que você tenha atacado nos últimos 10 minutos. Além disso, você pode sintonizar seus sentidos para
+determinar se algum dos seus inimigos favoritos está espreitando nas redondezas. Ao passar 1 minuto ininterrupto em concentração (como se estivesse se concentrando em uma magia), você
+pode sentir se algum dos seus inimigos favoritos está presente a até 8 quilometros de você. Essa característica revela qual dos seus inimigos favoritos está presente, a quantidade deles e a
+direção e distância aproximadas dessas criaturas (em quilometros) de você. Se houverem múltiplos grupos de seus inimigos favoritos no alcance, você descobre essas informações de cada
+grupo.

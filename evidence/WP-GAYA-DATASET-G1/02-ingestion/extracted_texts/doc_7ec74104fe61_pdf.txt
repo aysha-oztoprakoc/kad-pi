@@ -1,0 +1,291 @@
+###
+### 40               45     ###
+                             45            45         ###
+                                                       45                 45       45
+                                                                                  ###              45     ###
+                                                                                                           45                    45      ###
+                                                                                                                                          45                 45      ### 45
+                                                                                                                                                                      45 ###
+
+            Nome :   Lylia, a Centelha
+                                  Shifter
+                                       de Sofia
+                                          (Beasthi              Classe:   s   Shepherd Druid              Nível:   6   Altura:    1,89               Peso:   95 Kg
+
+
+
+   Saves    ⚬-                    8 ⚬-                 14 ●20 Adv+P●10                                                 ● 20                          ⚬10
+
+
+                      -1                       2                              5                       1                             5                          0
+                     STR                    DEX                           CON                      INT                            WIS                        CHA
+
+           Perícias
+
+        ●Atletismo                ⚬Acrobacia
+                                  0                         1         ⚬Arcana
+                                                                Dados de Vida                                      6⚬Lidar com                   6⚬Enganação ###
+                                  ⚬Prestidig                1         ⚬História                                    1●Intuição                    9⚬Inimidação ###
+
+                                  ⚬Furtividad                         ⚬Investigaç                                  1●Medicina                    9⚬Performance###
+                                                              3d8/3d6 ●
+                                                            1
+
+                                                                       Natureza                                    9⚬Percepção                   6⚬Persuasão ###
+
+                                                                      ●Religião                                    4⚬Sobrevivê                   6
+
+
+                      Bônus de
+    Bônus de Proficiência        Velocidade                                                                 CA            CD de Feitiços                 Resistências
+                      Iniciativa
+                                        9m/30ft    Caminhada
+                                                                56 56 69                                                            16
+
+            +3              2          4,5m/15ft Escalada
+                                                                                                          16                     Polaridade                  Exaustão
+
+                                       4,5m/15ft   Nado/Voo       Max             HP           Temp                                  5                       Nível 0
+                                                                Morte          Falhas   ⚬⚬⚬
+           Ataques                                                             Sucessos ⚬⚬⚬
+                     Tipo               Acerto              Dano                        Tipo                                        Propriedades
+
+
+
+
+           Ações Bônus                                                                   Habilidades
+
+           Shifting (10 + 1d6 Temp HP, +1CA)                                             Wild Shape (+18 Temp HP, CR 2, 13+WIS CA)
+
+
+
+
+            Level ups: 5, feat every 2 lvls, start with 1
+
+
+
+
+           Proficiências com Ferramentas, Equipamentos e Línguas
+                                                                                                  Kit de herbalismo
+            Armas: Simples                                                                 Ferramen
+                                                                                                  DruidicoSilvestre Comum
+            ArmadurLeves              Escudo                                                Línguas
+                                                                                               Veículos: ---
+
+                                                                Passivas
+
+               ft/          ft/
+                                       kg/kg         60ft           16            9            1        20 dias              0            0                             0
+               ft           ft
+                                              Visão no Escuro Percepção Intuição Investigação Rações
+           Salto à DistSalto em AltErguer/Puxar                                                                           Cobre          Prata        Ouro           Platina
+   45   ###
+         45     45      ###
+                         45   45 45
+                                ###   45    ###
+                                             45       45   ###
+                                                            45   45   45   10 45 ###                        300
+                                                                                                             ###
+                                                                                                              ###
+                                                                                                                ###                                 300
+                                                                                                                                                     ######
+
+Habilidades de Classe                      Talentos                                    Talentos de Classe
+
+
+
+
+                                                                                                                                                         Tradução por TenisonJr
+
+
+
+                                                                                                                      Design por Cardboard Cleric
+                                                w
+                                                D
+                                                C
+                                                s
+                                                of
+                                                yo
+                                                ur
+                                                dr
+                                                ui
+                                                d
+                                                an
+                                                d
+                                                ra
+                                                ng
+                                                er
+                                                sp
+                                                ell
+                                                s.
+                                                Th
+                                                e
+                                                bo
+                                                nu
+                                                s
+                                                is
+                                                de
+                                                ter
+                                                mi
+                                                ne
+                                                d
+                                                by
+                                                th
+                                                e
+                                                w
+
+
+
+
+Mochila
+Pé de cabra
+Martelo
+10 Pitons ( Coisa pra pregar na parede de escalada)
+20 tochas
+2 Caixa de fogo
+30 metros de corda
+20 dias de racao
+Armadura de couro
+Colar de dente de urso
+Armadilha de caça
+Saco de dormir
+2 frascos de oleo
+Armadura de couro
+Feitiços Preparad 10   SpllAtkMod:   9   Nível 4   V S M      Componentes de Feitiço   Pergaminhos de Feitiço
+                                         ⚬          0   0
+                                                        ###
+
+                       V S M             ⚬          0   0
+                                                        ###
+
+● Truques                0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         Nível 5
+                                         ⚬          0   0
+                                                        ###
+
+  Speak with Animals     0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         Nível 6
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+
+                                         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         Nível 7
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         Nível 8
+                                         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         Nível 9    0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+                         0   0
+                             ###         ⚬          0   0
+                                                        ###
+Minha Jornada
+( eu )   Idade:   Antecedente:
+
+
+
+
+ (X )

@@ -1,0 +1,64 @@
+{
+  "stage_id": "WP-GAYA-DATASET-G1-04",
+  "created_at": "2026-09-09T02:37:17.895276+00:00",
+  "config_sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd",
+  "inputs": [
+    {
+      "path": "dataset_runs/staging/01-contracts/validated-config.json",
+      "sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd"
+    },
+    {
+      "path": "kad-gaya/ingestion/media_references.py",
+      "sha256": "45679991bf5cbb115a634e44fb7a84580e0321a44abb39fb7acdf834534f2730"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/02-ingestion/manifest.json",
+      "sha256": "678aec0672857db8c860da3774aaf0ddd8961ba9a45d2e06b8955bd8daa0b2f5"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/03-canon/manifest.json",
+      "sha256": "288d0c79551898bf4c41f41c9e6aa5234cbf18e8978a03af7b36818c2c61ef46"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "media_associations.jsonl",
+      "sha256": "6f08023aaa9257d4daff683bad5d4ebb21a70c968f012e68ca4b1a430afab776"
+    },
+    {
+      "path": "spatial_graph.json",
+      "sha256": "96e5299c3cc6f3405cc436e26f3767155628918111555e4d77fdae096db6f4cf"
+    },
+    {
+      "path": "visual_seeds.jsonl",
+      "sha256": "40d928a7299ba29ea19cacbf6dc59f1230a06b50fb3eda581f8a0c77a6e780d1"
+    },
+    {
+      "path": "visual_spatial_summary.json",
+      "sha256": "0ced1cab6710816c4b7d776a56ebd4cc9ab2314ab7e29f8f5c2ac4845fd05116"
+    }
+  ],
+  "metrics": {
+    "total_media_assets_processed": 151,
+    "media_category_breakdown": {
+      "PORTRAIT": 1,
+      "CHARACTER_MOMENT": 1,
+      "HISTORICAL_REFERENCE": 1,
+      "FACTION_TROOP": 3,
+      "ITEM_ILLUSTRATION": 0,
+      "BATTLE_TOKEN": 1,
+      "SESSION_UI_SCREENSHOT": 83,
+      "UNLABELED_CANDIDATE": 61
+    },
+    "approved_associated_assets": 6,
+    "quarantined_unlabeled_assets": 144,
+    "spatial_graph": {
+      "total_locations": 16,
+      "total_spatial_relations": 13
+    },
+    "visual_seeds_generated": 4,
+    "zero_hallucination_verified": true
+  },
+  "sealed": true,
+  "sealed_sha256": "e47eb86971893b92e5e1bd46eb989b4270a1f31261a4a42a72e9bb5d1f5c2de4"
+}

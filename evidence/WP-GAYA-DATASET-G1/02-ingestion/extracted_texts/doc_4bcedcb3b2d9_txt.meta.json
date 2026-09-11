@@ -1,0 +1,8 @@
+{
+  "doc_id": "doc_4bcedcb3b2d9",
+  "source_ref": "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+  "sha256": "4bcedcb3b2d99139d2f2b7625a6c03e77bff4fd99f6294947039fb142ccd6fb5",
+  "parser": "utf8_text_parser",
+  "status": "SUCCESS",
+  "length": 8862
+}

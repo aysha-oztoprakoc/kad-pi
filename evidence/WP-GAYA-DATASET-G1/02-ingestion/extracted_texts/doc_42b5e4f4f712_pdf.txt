@@ -1,0 +1,179 @@
+Mago-Abjurador 7        Scribe                             Gabs
+
+           Begônio Nackle           Gnome (Mark of scribing) Chaotic Good                      ------------------------
+
+
+
+
+             0
+                                                                        Soberbo, acredita constantemente ser
+
+  +1        +3
+                              14         +4 30ft                        mais inteligente e melhor do que os outros,
+                                                                        mas é curioso e adora aprender coisas
+                                                                        novas.
+     12
+                                                   58
+                 +1
+                                                                       O conhecimento é a base de tudo, é a
+
+
+ +4
+                 4
+                 4                       58                            fonte de todas as respostas e de todo o
+                                                                       poder.
+                 12
+
+     18          8
+                                                                        Eu venho procurando a minha vida
+                 3
+                                          0                             inteira pela resposta de certa questão
+
+
+  +4             4                 5/5                                  Eu sou extremamente soberbo e me
+     18                                                                 distraio facilmente
+                 15
+                 1
+                               d6
+                 3
+
+
+  +9             3
+
+                 4                                                   Yaark Nuustrad: A Questão
+                                                                     Khan: 19
+     28          12
+                                                                     Yormann: 42
+                 3                                                   Drakai: 1
+                                                                     Polaridade (3): + |-4|
+                 5
+                                                                     ============================
+                 12                                                  Darkvision 60ft
+  +5             5
+                                                                     Vantagem em salvaguardas de: INT, WIS e CAR
+                 5
+     20                                                              Escriba talentoso: Sempre que eu fizer um teste de
+                 9                                                   história(int) ou um ability check com itens de caligrafia,
+                 11                                                  posso rodar 1d4 e somar o resultado
+
+                 3                                                   Compreend Languages (1/LR)
+
+  +3             4
+                 12
+                                                                     Magic mouth (1/LR)
+                                                                     ============================
+                                                                     Skilled (feat): Religião, Investigação e Percepção
+     16          5
+                                                                     Linguista +1 INT(feat): Paladino Ancestral, Élfico Ancestral,
+                                                                     Humano. Sei escrever cifras, para descobri-las é necessario
+                                                                     magica ou um check de inteligência (CD 18)
+
+                                                                     Observador +1 INT(feat): Expertise em Percepção, posso
+21                                 Livro em lingua                   usar Search como ação bônus
+                                   desconhecida 1                     ============================
+                                                                     Recuperação Arcana(1/LR): Posso em um descanço curto
+                                   Livro em lingua                   recuperar slots com nivel total igual ao meu nivel de mago
+Armas: Simples                     desconhecida 2                    arredondado pra cima
+
+Ferramentas: Caligrafia            Biblia 1,2,3 e 4                  Academico: Expertise em arcanismo
+Linguas: Comum, Gnomo,                                               Sabio Abjurador:Ganho 1 magia de abjuração adicional
+Élfico, Paladino Ancestral,        Adaga                             sempre q ganhar um novo nivel de slot
+
+
+Élfico Ancestral, Humano           Diário de campo de                Amuleto arcano: Ao castar uma magia de abjuração, com
+                                   Sigmund                           um slot, posso simultaneamente criar um amuleto com vida
+                                                                     igual a 2xWLvl+INT, enquanto ela tiver vida toma dano no
+                                   Registros do                      meu lugar. Sempre q eu castar uma magia de abjuração, ele
+Arranha anão, arranha              acampamento militar               recupera vida igual ao dobro do nivel do slot gasto. Dura até
+                                                                      um LR, posso castar 1/LR
+português                          Kit de aventureiro
+                                                                     Amuleto projetado: Quando uma criatura em até 30ft de
+                                   Corneta                           mim toma dano, posso usar uma reação para o amuleto
+                                   Diário dos túneis: 1              tomar dano no lugar
+                                               26                                         0,60m                               7kg
+
+               Begônio                         Amarelos                                   Verde                               Preto
+
+
+
+
+                               Espectro Voodoo: Aplicação da questão, que me permite, a
+ANOTAÇÕES:                     partir de uma discordância sobre a posição de algo no
+Criança dizendo "Mãe ela ta    espaço-tempo, criar uma cópia daquele algo na posição que eu
+chegando"
+                                tenho como verdadeira. A cópia tem a aparência de um
+Vazio: Morte druidica e nome
+                               espectro, é possível interagir com o espectro, e ele funciona de
+de um demônio, achada na
+                               forma similar a um boneco voodoo
+cidade fantasma
+
+                               Visão da questão com "Gyo"
+o segredo está por trás de
+todas elas
+                               Bracelete de Yormann:
+
+                               To Wendigado
+
+                               Alto grimório dos segredos de Nomio, O Baixo:
+                               Item unico Raro, foco arcano +2 (requer attunement)
+
+                               Um Grimório grosso e recheado de anotações cripticas para qualquer um que o leia (possivelmente até mesmo para nomio), deixado
+                               como ultima lembrança do promissor estudante de arcanologia arcaica e estrutura pré élfica de organização da magia, Nomio
+                               Belfelenhast, um (pouco) conhecido academico na real academia de Ara'kut, pouco antes de sser brutalmente assassinado por um grupo
+                                de magos desconhecidos após se envolver na estranha trama de corrupção do alto escalão da sapiocracia gnomica. se prestar
+                               atenção as vezes é possivel ouvir sussuros dissonantes vindo do grimório, as vezes paginas mudam de lugar e anotações que nunca
+                               foram feitas aparecem ao lado da escrita original, ao final do grimório esta a carta onde Nomio pede que você procure respostas sobre o
+                                acontecido e fuja pelo seu próprio bem.
+
+                               Pequeno grande esforço (3 ao dia):
+                               Ao falhar um teste de concentração você pode optar por refazer o teste, caso falhe mesmo assim o uso da habilidade é recuperado
+
+                               Passar a limpo (passiva):
+                               Ao utilizar sua recarga arcana você recupera um slot adicional do slot mais baixo ao qual não esteja completamente recuperado
+
+                               Anotações de mestrado (passiva):
+                               Você tem vantagens em testes de INT(arc.) e POL(Ocult.) relacionados ao conhecimento sobre magia e arcanologia no geral,
+                               adicionalmente, sempre que for bem sucedido num teste deste tipo adicione um ponto de Khan a sua reserva.
+
+                               Ao Castar uma magia de segundo nivel ou maior, adicionar um Yorman (Necessário gastar um slot)
+                     Mago Abjurador                   Inteligência     22   +14
+
+
+
+                                             3                     0
+Ray of frost                          Glyph of warding
+MãosMágicas(1A-V,S-9m-1m)             Counterspell
+Prestidigitação(1A-V,S-3m-1h)         Create food and water
+Mind sliver                           Fly
+Mending                               Animate dead
+                                      Dispell Magic
+
+
+
+
+           4                    0
+
+
+  Silvery Barbs
+  Tasha hideous Laughter
+  JimMísseiMágico(1A-V,S-36m,Inst)
+                                             1                     0
+  False life                          Banishment
+  Mage Armor                          Conjure minor elementals
+  Shield                              Otiluke's Resilient Sphere
+  Find Familiar
+  Ray of sickness
+
+
+
+
+           3                    0
+  Scorching Ray
+  Cegueira/Surdez(1A-V-9m-1m)
+  Alter'self
+  Arcane Vigor
+  Arcane Lock                         Danse Macabre
+  Hold Person
+  Mirror image
+  Cloud of daggers

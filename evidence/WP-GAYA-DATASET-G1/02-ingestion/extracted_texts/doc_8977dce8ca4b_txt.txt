@@ -1,0 +1,909 @@
+# GAYA
+## Lore Codex: Aysha Öztoprak, Amethysta & Síntese
+
+**Collected lore edition 1.0 | 7 September 2026**
+
+An English reference codex preserving the original names and terminology of the campaign.
+
+Gaya's recorded creation begins with two essences whose encounter should have destroyed them. Instead, matter and possibility became existence. Their struggle shaped the world, its peoples, its empires, and the languages through which those empires justify themselves.
+
+Within that inheritance stands Aysha Öztoprak: an amethyst dragonborn, a former lieutenant of Drakovia, and a deserter from the Brigada Adamantina. Her flight through the Savana Negra brought her to an egg about to hatch. Amethysta became her dragon, her daughter, and the center of the life she chose after leaving the army. Beside them is Síntese, Aysha's Yaark Nustraad and the creator of her paired swords, Nyr and Zhar. [C1, U1, U2, U3]
+
+### Scope and reading conventions
+
+This edition collects all substantive Gaya and character lore recovered from the supplied world history, character records, item expansion, earlier conversation context, and illustration directions. It is comprehensive within that recovered material; it does not invent missing campaign sessions, locations, relationships, or powers. The world source describes itself as history taught in the present day, so its account is preserved as the setting's received history rather than a guarantee that every secret has been revealed. [G1]
+
+| Label | Meaning in this codex |
+| --- | --- |
+| Established | Explicit character facts or instructions supplied by the player, including the sheet explicitly designated official canon. |
+| Received history | The account in O Códice de Gaya: História e Cosmogonia, including its own uncertainties. |
+| Supplement | Material documented in the Kravarius expansion or the Dragon Knight class source; acceptance as a particular campaign fact is stated separately. |
+| Interpretation | A thematic reading of established material, never a new event or ability. |
+| Unresolved | A gap, contradiction, or choice that the recovered record does not settle. |
+
+The edited compressed level-7 sheet is the explicit character authority. The later Aysha.pdf is useful corroboration and contains further edits, but its upload date alone does not establish blanket supersession. Even the official sheet contains conflicting fields and explanatory notes. Those conflicts are preserved in Chapter 17. Short source codes refer to the bibliography in Chapter 19.
+
+### Contents
+
+1. The origins of existence
+2. The remaking of life
+3. Gaia and the surviving druids
+4. The seven eras
+5. Atlas of nations and contested lands
+6. The Mandarim, divine authority, and languages
+7. Aysha Öztoprak
+8. Amethysta
+9. Síntese, the Yaark Nustraad
+10. The bond between mother, daughter, and Yaark
+11. The relics of Kravarius
+12. Nyr and Zhar
+13. Earlier equipment and personal traces
+14. Titles, lightning, and the art of combat
+15. Visual and portrayal codex
+16. Character chronology and open story threads
+17. Campaign mechanics and reconciliation ledger
+18. Glossary and name index
+19. Sources and editorial boundaries
+
+## 1. The origins of existence
+
+### Khan and Yorman
+
+Before the world, two primordial essences existed in the void: **Knaerethum**, usually called **Khan**, and **Eorarmethum**, usually called **Yorman**. Khan is everything that exists: matter and physical existence. Yorman is everything that may exist: abstraction, possibility, and consciousness. The account does not reduce them to ordinary elements or opposing moral alignments. [G1: A Origem]
+
+Their pure essences were destined to annihilate one another. Yet when they connected, they produced clusters of existence instead of immediate mutual destruction. Khan supplied physical form; Yorman supplied abstract forms and consciousness. As these products moved away from the purity of their sources, the two essences could mix. From that mixture arose the **Titãs**, beings embodying pure concepts. [G1: A Origem]
+
+The Titans learned that they could shape the energies without destroying themselves. They divided into clans associated with Khan and Yorman and went to war. To resolve their conflicts and permit existence to continue, they formed a council: **O Panteão**. Its supreme figures represent Space and Time, associated in the source with Khan and Yorman. A complete individual roster, and an explicit one-to-one assignment of each supreme concept, are not supplied. [G1: A Origem]
+
+### Yggdrasil and the nine Gards
+
+The truce produced the **Gards**, nine branches of existence within **Yggdrasil**. Their middle branch is **Midgard**, also called **Midgraciil**, where Khan and Yorman exist in cosmic balance. Only this Gard is named individually in the recovered world text; names for the other eight remain unrecorded. [G1: A Origem]
+
+The Pantheon subsequently continued its contest through representatives, placing a representative of each concept in each realm. Creation therefore did not end divine rivalry. The compromise that allowed existence also became the structure within which the conflict continued. [G1: A Criação]
+
+### The place of Gaya
+
+At the center of Midgard, the balance of the two energies produced a symmetrical celestial grouping containing **one star and nine planets**. The source calls **Gaya the central planet**. It gives no orbital diagram or explanation of that centrality, so this codex preserves the wording without inventing an astronomical model. [G1: A Criação]
+
+Gaya initially developed through a sequence resembling terrestrial biological evolution: proteins, protozoa, multicellular organisms, and eventually a humanoid simian. At the very moment that creature would have discovered fire, a meteor composed of pure Khan and Yorman struck the planet. Attracted by the complexity of life, this meteor is described as being the size of Texas. The impact caused a mass extinction, leaving carcasses from which the next age of life would be made. [G1: A Criação]
+
+The later geographical account describes Gaya as **ten times larger than Earth**. It does not specify diameter, surface area, volume, or mass. No exact planetary measurements can be derived from that statement. [G1: Cronologia, Terra Morta]
+
+### What this means for the characters
+
+Khan and Yorman belong to the setting's foundational account of existence. Their appearance in Aysha's resources and sword symbolism places her story in that conceptual vocabulary. It does not establish that she knows the entire creation story, possesses the full power of either essence, or has a secret divine genealogy. The character sheet explicitly distinguishes thematic synthesis from an additional power. [C1, p. 2]
+
+## 2. The remaking of life
+
+### A world rebuilt for war
+
+After the impact, Khan and Yorman used the matter of the dead world to continue their conflict. Khan was interested in its minerals and hydrocarbons; Yorman was interested in biological complexity. Natural chemistry mixed with extradimensional energies, producing life increasingly adapted for combat. The repeated recycling of materials and souls drove further specialization. [G1: O Renascimento]
+
+| Foundational term | Received origin or function | Descendants or associated peoples |
+| --- | --- | --- |
+| Ph'Hal-Al'ladjinn | Beings created by Khan from wood, stone, and mountains; rendered as Paladinos. | The Duergar grouping: dwarves, ogres, and giants. |
+| Hex'Óte'ryas | Beings created by concepts associated with Yorman; also called Exoterias or Hex. | Elves, called Hex, and tieflings, called Exoter. |
+| Drakai | A title given to warriors. | Includes humans, dragonborn, and others; it is not defined as one biological species. |
+| Dragões Verdadeiros | True Dragons acting as generals. | Part of the military organization of the primordial conflict. |
+
+These terms have campaign-specific meanings. Duergar is used as a broad ancestral grouping in the Códice. Paladinos has both a primordial origin meaning and a later political or religious function. Familiar fantasy labels therefore need to be read through Gaya's own account. [G1]
+
+### Dragons and Khan's divided body
+
+Khan separated **less than half of his body** to shape the types of dragons: **Jewels, Elements, and Metals**. The source gives these three categories without a complete taxonomy of their members. True Dragons occupied the role of generals, while Drakai designated warriors more broadly. [G1: O Renascimento]
+
+Aysha's amethyst identity is consistent with the campaign's use of jewel imagery. Amethysta's appearance is also amethyst, while her current rules use a blue dragon's electrical framework. Appearance, cosmic ancestry categories, and a selected game stat block should not be collapsed into a single biological assertion. [C1, pp. 2, 4, 6]
+
+### Humans and dragonborn after the ancient war
+
+Humans were classified among the **raças recentes**, peoples that had not specialized in the Great War. In the postwar partition, they received no territory and lived enslaved, especially in Niligard and Galahad. Nifhan had not yet been founded. [G1: Terra Morta]
+
+Dragonborn likewise had no independent state. Drakovia did not yet exist, and dragonborn formed an integral part of Dulhast's army. Their later independence and claim to Khan's inheritance belong to the Guerra da Platina, much later in the historical sequence. [G1: Terra Morta; Guerra da Platina]
+
+### The later creation of the orcs
+
+Orcs have a different recorded origin from the primordial peoples. During the Levante dos Povos, the dwarves of Dulhast used the **Anel do Imperador** to create beings stronger and faster, with mental restraints designed to enforce servitude. Those beings were the orcs. [G1: Levante dos Povos]
+
+During the Guerra da Platina, the elves of Galahad cursed the orcs and broke the dwarven mental restraint. The orcs then fought against both Dulhast and Galahad. Galfenhard emerged from that revolt. Their liberation therefore cannot be reduced to permanent loyalty to the elves who broke the restraint. [G1: Guerra da Platina]
+
+## 3. Gaia and the surviving druids
+
+### The first druid
+
+**Gaia**, a Duergar dwarf, discovered through the study of life that Khan and Yorman could be manipulated intrinsically within matter, without dependence on divine sources. She rejected the war and gathered followers whose number eventually reached **ten million**. [G1: A Lenda da Primeira Druida]
+
+These followers were the **Druidar**. The term originally meant *fool* and now means *shepherd*. They were accomplished alchemists and warriors, capable of changing matter and concept, yet committed to pacifism. Their withdrawal from divine warfare was therefore a choice made by capable practitioners. [G1]
+
+### The refuge and the courts
+
+Forced to fight, the Druidar retreated into the depths of the world. Behind magical barriers they founded the **Conselho dos Druidas**. The source describes its organization precisely: Gaia with a court of **five assistants**, plus **five other courts**, each with a representative and that representative's **five children**. [G1]
+
+The children in this institutional account should not automatically be read as genealogical parents of every modern druid. The same narrative also calls surviving leaders Gaia's children in the context of her sacrifice. Its familial language has both institutional and emotional significance, but the full lineages are absent. [G1]
+
+### O Crepúsculo dos Druidas
+
+The **Exoter**, or tieflings, discovered the refuge and attacked with massive magic. The account is deliberately uncertain about the duration: **fifteen minutes or fifteen years**. The destruction was almost total. Of the ten million Druidar, essentially the courts and their closest circles remained. [G1]
+
+To save the survivors, Gaia sacrificed her **memories, essence, and body** in a spell of the **16th Circle**, written as **16 Yor**. Her body became a seed of Yggdrasil. The recovered source does not provide a general numerical spell system explaining how every Circle or Yor operates. [G1]
+
+### The Great Tree
+
+The seed grew into a colossal tree stretching from the bottom of the cavern to the highest peak of the world. It is impenetrable to non-druids and possesses a collective consciousness connecting the survivors. The Códice associates it with Yggdrasil through the seed; it does not fully explain the relation between this terrestrial tree and the cosmic structure containing the nine Gards. [G1]
+
+Approximately **500 druids** remain in the source's present day, descended from the surviving courts. They are hunted like animals. Many hunters believe modern druids can read **Druídico Antigo**, but the source explicitly identifies that belief as false. Knowledge of the old language has been lost. Modern druids instead use a **new secret language of their own**. [G1]
+
+The elves claim the Floresta Negra, where the Great Tree is suspected to stand. Suspicion is the strongest location claim in the record; the tree has no verified map coordinates. [G1: Terra Morta]
+
+### Gaia and Gaya
+
+**Gaia is the first druid; Gaya is the planet.** Their near-identical names must remain distinct. The world text calls Gaia the planet's namesake, but gives no fuller naming history. Nothing recovered makes Aysha a druid, Gaia's descendant, or a member of the surviving courts. The resemblance between Gaia's combined manipulation of Khan and Yorman and the word Síntese is a thematic comparison already recognized in the character records. [G1; C1, p. 7]
+
+## 4. The seven eras
+
+The chronology is attributed to the **Convenção da Paz Élfica de 207.500**. Its period names and dates are retained exactly in substance. The world text calls **207.830** the present; the date of this compilation does not advance the campaign calendar. [G1: Cronologia das Eras]
+
+| Era | Years in the Códice | Abbreviation | Defining material in the record |
+| --- | --- | --- | --- |
+| Pré-Guerra | 1-5,000 | PG | Named period; no separate detailed chronology. |
+| Grande Guerra | 5,001-155,000 | GG | The great conflict underlying the later partition. |
+| Terra Morta | 155,001-200,000 | TM | Begins with the Alvorada Druida and the end of war; elven victory and division of the world. |
+| Nova Gaya | 200,001-206,000 | NG | The Mandarim distributes pact-making artifacts. |
+| Levante dos Povos | 206,001-207,000 | LP | Revolution, the fall of tiefling rule, new human states, and the creation of orcs. |
+| Guerra da Platina | 207,001-207,500 | GP | Orc revolt, Galfenhard, Drakovian independence, and the Acordo da Platina. |
+| Novo Império | 207,501-207,830 | NI | The contemporary political order. |
+
+### The partition after the Great War
+
+The elves emerged victorious. The last **Imperador Hex** divided the world among broad political and ancestral groupings. Elves claimed Galahad and the Floresta Negra; dwarves were isolated in Dulhast; Niligard was assigned to recent peoples and was then tiefling territory. Kahn'hast, also called Alabasta, appears as a mysterious and poorly understood part of the partition. [G1: Terra Morta]
+
+The elves dissolved the **Conselho dos Povos**. In Dulhast, forming Paladinos as a title or function became punishable by execution. Common became a simplified form of Elvish. These measures show the postwar settlement reaching beyond borders into institutions, religion, and language. [G1]
+
+The Códice says Terra Morta begins with the Alvorada Druida and the end of the war. It does not explicitly date the primordial meteor strike to this era. The era name alone should not be used to force that identification. [G1]
+
+### Nova Gaya and the Mandarim
+
+The **Mandarim**, dressed in black and gold, appeared and gave leaders artifacts that sealed pacts of power. Dwarven oligarchs received rings; human resistance representatives received a sword and shield; dragonborn authorities received a necklace and bracelets; and Galahad's elves received three rings. The artifacts' identities and powers are detailed in Chapter 6. [G1: Nova Gaya]
+
+### Revolution and division
+
+Global dissatisfaction became revolt. **Nunberg**, a red tiefling, and his wife led a revolution through the **Enciclopédia de Nunberg**. Her name is not supplied. During the **Guerra do Punho Dourado**, the tiefling government in Niligard fell; tieflings were nearly exterminated or exiled. [G1: Levante dos Povos]
+
+Humans took **Faemathar**, described as a continent forming part of Niligard. The period produced **Niligard/Niligardia**, a socialist republic identified as the land of everyone, and **Nifhan**, a religious human empire identified as the land of humans. They were ideologically distinct. The name Niligard is used for both an earlier geographical territory and the later republic; the text does not fully resolve their cartographic relationship. [G1]
+
+### The Guerra da Platina
+
+The elves broke the orcs' imposed mental restraint. Orc forces revolted, took northern Galahad and disputed regions, and fought both the elven and dwarven powers. At the war's end, the elves ceded territory to avoid total invasion. This became **Galfenhard**. [G1: Guerra da Platina]
+
+Dragonborn, supported financially by elves seeking to weaken Dulhast, consolidated territory and power into **Drakovia**. They declared themselves the true heirs of Khan. Their state was born through independence from dwarven control, even though Aysha's later biography describes a brutal Drakovian army imposing its own violence. [G1; C1, p. 2]
+
+The **Acordo da Platina** is associated with the bourgeoisie of Niligard betraying the revolution and enriching itself by selling to every side. No treaty clauses or signatory roster are supplied. [G1]
+
+## 5. Atlas of nations and contested lands
+
+### Galahad
+
+Galahad is the elven domain, beneficiary of the ancient victory and a continuing global power. In the contemporary era, elves maintain military bases around the world even without the tiefling army. Galahad's wealth strongly influences Niligard's government. **Imperatriz Ishtar** rules in practice, while the emperor remains secluded. The source does not name that emperor or explain his seclusion. [G1: Nova Gaya; Novo Império]
+
+The **Floresta Negra** has non-Euclidean geography: a path does not necessarily lead back to the same place when retraced. This is an explicit property of the forest. It also contains the suspected location of the Great Tree. The difficulty of navigating it is therefore greater than a matter of vegetation or distance. [G1: Terra Morta]
+
+### Dulhast
+
+Dulhast is the dwarven bastion and a continuation of the **Corte de Khan**, also described as the **Império Paladino**. Its historical ideology is supremacist and totalitarian. Its rulers once incorporated dragonborn into their army and later created orcs for enforced service. [G1]
+
+The postwar ban on Paladinos was eventually reversed: in the Novo Império, Dulhast has obtained the restoration of the Paladin religion and temples throughout the world. That restoration is recorded, but the negotiations and institutional structure are not. [G1: Novo Império]
+
+### Drakovia
+
+Drakovia is an independent, militarized dragonborn nation that claims Khan's true inheritance. It emerged during the Guerra da Platina through separation from Dulhast, supported by elven financing. [G1]
+
+In Aysha's biography it is an empire ruled by **Kram'Tor Rubralma**. Its army raised her from childhood, promoted her, and eventually became the institution she deserted. The **Brigada Adamantina** was her former unit and the force she sought to evade in the Savana Negra. [C1, p. 2]
+
+Player-established visual direction gives the Drakovian army a combat style inspired by **phalanxes**. Its battlefield banners are black, bearing a red **eight-headed dragon arranged as a sun**. The correction that no banner should exceed eight heads is part of the visual record. This heraldry is not automatically the same as every personal dragon emblem worn by Aysha or Amethysta. [U2]
+
+### Galfenhard
+
+Galfenhard is the orc nation created by revolt against imposed servitude. Its foundation belongs to the Guerra da Platina. In the present it is independent and militarized. [G1]
+
+For Aysha, it is the place where a mission to suppress an orc rebellion revealed the consequences of the army's actions and broke her remaining loyalty. Her personal operation is not dated to the nation-founding war. The two events must remain distinct unless later campaign material connects them. [C1, p. 2]
+
+### Niligard, Niligardia, and Faemathar
+
+The old Niligard was a territory for recent peoples and, at that time, tiefling territory. The later **Niligardia** was founded as a socialist republic with ideals of freedom. By the Novo Império, its government is dominated by **gnomes** and strongly influenced by Galahad's gold. [G1]
+
+**Faemathar** was taken by humans during the division of Niligard. Its current borders, administrative relationship to the republic, and relationship to Nifhan are not mapped in the recovered text. The names remain separate entries rather than being silently treated as synonyms. [G1]
+
+### Nifhan
+
+Nifhan is the religious human empire, the land of humans, ideologically separated from Niligard. It remains a human religious power in the present era. Its faith, emperor, capital, internal factions, and exact borders are unrecorded. [G1]
+
+### Kahn'hast / Alabasta
+
+This territory is described as mysterious and poorly understood in the original partition. **Kahn'hast** and **Alabasta** are presented together as names for it. There is no reliable description of its government, people, environment, or contemporary role. [G1]
+
+### Savana Negra
+
+The Savana Negra is where Aysha fled to hinder pursuit by the Brigada Adamantina. In a cave there, she found the drakkai egg that became Amethysta. Its hazards and difficulty are present in the escape narrative, but no named cave, settlement, route, or precise regional map is given. [C1, p. 2; L1]
+
+The Savana Negra and Galahad's Floresta Negra are distinct names in distinct accounts. No recovered source identifies them as the same place.
+
+### Political relationships at a glance
+
+| Parties | Recorded relationship | Period |
+| --- | --- | --- |
+| Galahad and Dulhast | Elven victory and restrictions on the dwarven order. | Post-Great War settlement. |
+| Dulhast and dragonborn | Dragonborn serve in the dwarven army before independence. | Before Drakovia. |
+| Galahad and Drakovia | Elven financing supports dragonborn separation to weaken Dulhast. | Guerra da Platina. |
+| Dulhast and orcs | Orcs created with mental restraints for servitude. | Levante dos Povos. |
+| Orcs against Dulhast and Galahad | War against both powers after the restraints break. | Guerra da Platina. |
+| Galahad and Niligard | Strong influence through elven wealth. | Novo Império. |
+| Drakovian army and Aysha | Former service followed by desertion, pursuit, and rebellion. | Aysha's undated personal history. |
+
+The world's enormous scale, giant monsters, and extreme distances make cartography a logistical nightmare. A precise map would require information beyond the surviving atlas text. [G1]
+
+## 6. The Mandarim, divine authority, and languages
+
+### The pact-giver
+
+The Mandarim appears in black and gold during Nova Gaya. The Códice records his gifts and their recipients, but provides no established identity, species, origin, motive, or later fate. It does not identify him with a Titan or with Kravarius. [G1]
+
+| Recipients | Artifact | Recorded power or significance |
+| --- | --- | --- |
+| Seven oligarchs of Dulhast | Seven rings | Together form the Anel do Imperador, which can manipulate life. |
+| Representatives of the human resistance | Sword | Cuts any matter. |
+| Representatives of the human resistance | Shield | Generates an impenetrable dome. |
+| The priesthood of Tiamat | Necklace | Grants unlimited breath. |
+| The dragonborn representative within Dulhast, later a dragonborn emperor | Bracelets | Grant impenetrable scales, wings, and a dragon's strength. |
+| The elves of Galahad | Inamael, Olho do Divino | Visual omnividence. |
+| The elves of Galahad | Ressuma, Boca do Sagrado | Omnilingualism and vocal spellcasting. |
+| The elves of Galahad | Yormael, Mãos do Absoluto | Shaping concepts and magical hands. |
+
+The singular names of the human sword, shield, dragonborn necklace, and bracelets are not given. The future emperor who received the bracelets is not explicitly identified as Kram'Tor Rubralma. No source makes Nyr or Zhar either of the Mandarim's human artifacts. [G1; C1]
+
+### Religion and competing inheritance
+
+Khan and Yorman are primordial essences in the received cosmogony. The Pantheon is the council formed by conceptual Titans. Dulhast represents a historical continuation of Khan's court, while Drakovia declares itself Khan's true heir. The priesthood of **Tiamat** appears as the recipient of the Mandarim's necklace. [G1]
+
+These entries establish competing claims and institutions, but they do not provide a complete theology. Aysha's individual worship, if any, is not recorded. Neither her dragonborn ancestry nor the solar emblem is sufficient to assign her a deity or formal religious allegiance. [C1; G1]
+
+### Languages and the politics of knowledge
+
+The Códice describes **Common as a simplification of Elvish** imposed in the postwar order. Aysha's current sheet lists **Common, Drakovian, Dwarvish, Elvish, and Orc**. Her older Hermit background also records a herbalism kit. [G1; C1, p. 1]
+
+Drakovian is the named linguistic context for the short sword names Nyr and Zhar. Their adopted meanings are fixed by the player's choices: Nyr is lunar and associated with Yorman; Zhar is solar and associated with Khan. No full dictionary, pronunciation system, grammar, or root derivation has been established. [U2; C1, p. 2]
+
+Ancient Druidic is lost to modern druids, who use a newer secret language. This loss is part of the setting's history of destroyed knowledge and persecution. It does not authorize treating Aysha's five languages as knowledge of either druidic language. [G1; C1]
+
+## 7. Aysha Öztoprak
+
+### Identity dossier
+
+| Field | Established record |
+| --- | --- |
+| Name | Aysha Öztoprak; the sheets also use Ayşa Öztoprak. |
+| Species | Amethyst dragonborn; purple gemstone and draconic appearance. |
+| Gender and address | Female; referred to as she and as Amethysta's mother. |
+| Age | 26 years. |
+| Height | 2.07 m. |
+| Weight | 80 kg. |
+| Eyes, scales, hair | Black eyes, purple scales, no hair. |
+| Class and specialization | Cavaleiro do Dragão, Dragoon; level 7 in the official sheet. |
+| Former military position | Lieutenant in the Drakovian army; member of the Brigada Adamantina. |
+| Current position | Deserter, fugitive, and rebel against that army. |
+| Alignment field | Chaotic Neutral. |
+| Background field | Hermit, retained as a legacy character-sheet entry. |
+| Principal bond | Amethysta, her dragon and daughter. |
+| Other recorded bond | YKT; identity and relationship undefined. |
+| Yaark | Síntese, identified by the player as a Yaark Nustraad. |
+| Signature equipment | Crosta de Kravarius; Nyr and Zhar. |
+| Established titles | Trovão Lampejante and Fulgor Negro; Lampejo Trovejante also appears in earlier player descriptions. |
+
+Sources: C1, pp. 1-2; U1-U3. The spelling Aysha is used for readability throughout this edition; Ayşa and filenames using Aysa remain searchable variants of the same character.
+
+### A childhood in the imperial army
+
+Aysha was raised from childhood within Drakovia's army, under the rule of **Kram'Tor Rubralma**. Her biography begins with that institution rather than a named family or village. Her parents, birthplace, and the circumstances of her entry into military life have not been recorded. [C1, p. 2; L1]
+
+She responded to the life given to her with a utilitarian conviction: if this was what fate had offered, she would make the best of it. She rose through the army's ranks despite disagreeing with some of its actions. Later player descriptions identify her specifically as a former lieutenant. The record does not name each promotion or give the dates of her service. [C1; U3]
+
+### The Brigada Adamantina and the rupture at Galfenhard
+
+Joining the **Brigada Adamantina** exposed Aysha to acts she regarded as truly cruel, especially in Galfenhard. During a particular mission to suppress an orc rebellion, she confronted the real consequences of what she had participated in. The account presents this recognition as the decisive break in her loyalty. [C1, p. 2; L1]
+
+No specific victim, officer, battle name, atrocity count, or order has been recovered. The moral rupture is established; its missing details should not be supplied through invented scenes. Her biography acknowledges participation and complicity before desertion, rather than presenting her as someone who never served the empire's violence. [C1; L1]
+
+### Desertion and the Savana Negra
+
+Aysha fled Drakovia and entered the **Savana Negra**, hoping its conditions would make it difficult for the Brigada Adamantina to find her. During the difficult journey, she discovered an egg in a cave, already close to cracking. Her history calls it an **ovo de drakkai**. From that encounter came Amethysta. [C1, p. 2; L1]
+
+The record does not identify who laid the egg, why it was in the cave, whether another guardian had protected it, or whether anyone else was searching for it. Those are open questions, not established conspiracies.
+
+### Motherhood and a chosen purpose
+
+Aysha describes her connection with Amethysta as inexplicable. Amethysta gives her life meaning and direction, and protecting her becomes Aysha's primary goal. The player explicitly identifies Amethysta as her daughter as well as her dragon. This is an established maternal relationship; the story does not claim Aysha laid the egg or provide a biological genealogy. [C1; U1]
+
+Aysha's protection is inseparable from her flaws. She is proud, rude, and rough, with habits formed by military life. The current biography recognizes that fear of losing Amethysta can make her too harsh and overprotective. Her emotional development therefore remains active: leaving the army did not automatically remove its influence from how she treats the person she loves most. [C1, p. 1]
+
+### Fugitive and rebel
+
+The latest accepted biography adds that Aysha's flight has also become revolt against the Drakovian army. Player-directed battlefield scenes depict her leaving destruction behind while manifesting her black-and-red aura and her titles. The broad rebellion is established, but the artwork is not a dated campaign log or a reliable body count. [C1, p. 2; U2]
+
+### Personality and portrayal
+
+Aysha is utilitarian, confident in combat, and proud of her skills. Her directness and severity are rooted in her upbringing. She is capable of rejecting an institution that shaped her, yet remains emotionally and behaviorally marked by it. Her clearest value is protecting Amethysta; her clearest personal tension is how to protect without letting fear govern their relationship. [C1]
+
+**Interpretation:** her arc concerns chosen loyalty and responsibility after complicity. The former officer turns an imperial training into the means of resisting the empire, while motherhood gives that resistance a personal center. This reading is supported by her biography; it does not establish a political manifesto, universal pacifism, or a completed redemption.
+
+## 8. Amethysta
+
+### Identity and origin
+
+**Amethysta is Aysha's dragon, daughter, and bonded companion.** Aysha found her egg in a cave within the Savana Negra during her escape from Drakovia. Their bond gives Aysha meaning and direction, and they fight together. [C1; U1]
+
+Amethysta has an **amethyst appearance** and uses **blue-dragon mechanics**, with electricity as the defining combat theme. She can assume the form of a **small halfling with draconic characteristics**. These statements are compatible: the halfling is her alternate form, and the blue-dragon designation is the rules framework recorded for her. [C1, pp. 2, 4, 6]
+
+### Her halfling form
+
+The player's most recent directions portray her as a young girl of approximately **twelve**, with a cute, chibi-influenced presentation and a height below Aysha's waist. The record does not date her hatching twelve years before the current scene; chronological dragon age and the apparent age of her humanoid form remain distinct questions. [U2]
+
+Referenced artwork depicts purple curls, horns, pointed ears, wings, and a tail. These are useful visual features, while a complete transformation sheet has not been defined. Her proportions, clothing, and demeanor should preserve the player's explicit request for a childlike, nonsexualized portrayal. [V1; U2]
+
+### Magic and combat identity
+
+The latest instruction is explicit: **Amethysta does not use weapons; she fights through lightning-themed magic.** Her battle pose uses fists or hands surrounded by violet electrical energy. That direction does not turn her into a weapon fighter or establish a new unarmed-strike damage rule. [U2]
+
+Her current records include **Eldritch Blast**, **Lightning Lure**, an electrical breath, and a paralyzing breath. **Hex** remains recorded as a legacy or table-granted spell. The sheet distinguishes the visual theme from numerical damage types: Eldritch Blast is listed as force/energia and Hex as necrotic unless the table expressly converts them. [C1, pp. 3-4, 6]
+
+The inherited dragon stat block also contains a bite. That recorded natural attack remains part of the rules archive, but the latest requested depiction is a young lightning caster without a melee weapon. Her electrical immunity and movement traits belong to the campaign's dragon rules. [C1; U2]
+
+### Intelligence, agency, and temperament
+
+Amethysta has Intelligence 10 and Charisma 18 in the level-7 sheet. The bond rules allow a degree of independent action; she is not merely a piece of equipment controlled by Aysha. Her specific beliefs, ambitions, fears, speech habits, and memories have not yet been recovered. [C1, pp. 4, 6]
+
+An alignment field preserves **Leal e Má**, the blue-dragon baseline, while accompanying notes warn that versions diverge. That field does not provide a developed moral characterization. Likewise, cheerful art directions do not settle her alignment. The codex preserves the recorded field without inventing malice or a personality from it. [C1, p. 4]
+
+### Quiet moments
+
+A separate player request shows Amethysta sitting on a little stool, happily eating a pork leg, rendered in the cute style of an Eloise reference. This establishes an approved casual illustration concept and a desired joyful register for her portrayal. It does not establish a named tavern, a canonical meal date, or pork as her favorite food. [U2]
+
+Her identity can therefore accommodate both violet lightning in battle and visibly childlike happiness in quiet scenes. The emotional range should remain available without reducing her to either a combat effect or a mascot.
+
+### The Manto de Kravarius
+
+Amethysta's armor is the **Manto de Kravarius**: a purple, gold, and draconic ensemble related visually to Aysha's Crosta. Its current appearance is established by direct instructions; its expanded numerical effects are separately documented in the Kravarius supplement. Chapter 11 distinguishes those two levels of authority. [U2; E1, p. 4]
+
+## 9. Síntese, the Yaark Nustraad
+
+### Established identity
+
+**Síntese is Aysha's Yaark**, specifically identified by the player as a **Yaark Nustraad** belonging to her. It is presented as a creature or manifestation attached to her, with visual comparisons to a Stand from JoJo. It emerges from her back, with an earlier description specifying the end of her spine. [U1-U3]
+
+The word **Síntese** also names the concept of the paired blades. Later adopted names distinguish them individually as **Nyr** and **Zhar**. The player states that the swords are weapons created by Síntese. Thus the same conceptual name connects the entity and its paired creation without making the two swords identical to the entire Yaark. [C1, p. 2; U2]
+
+### Knitting, thread, and the head
+
+Recovered earlier player context describes Síntese as **always knitting a ball of yarn**, with the knitting taking place in the **white hole in its head**. Later art direction identifies a black-and-white creature as the Yaark reference. These are the strongest recovered verbal features of its design. [U1; U3]
+
+Artwork has varied across iterations, including purple spectral interpretations and skeletal forms. An older illustration showing dark voids cannot silently replace the explicit white-hole description. The newest reference image is the appropriate visual guide where a depiction exists; unsupported anatomical details should remain flexible. [U1; V2-V3]
+
+### What it is known to create
+
+Nyr and Zhar are explicitly attributed to Síntese by the player. The **Manto de Kravarius** is described in the item expansion as another creation made by Síntese, using the Crosta as a symbolic matrix. That mantle origin is preserved as supplement lore because a separate acceptance of every expansion detail was not recovered. [U2; E1, pp. 3-4]
+
+The record does not define a general crafting catalogue, material economy, time requirement, manifestation range, intelligence, voice, independent agenda, or combat stat block for Síntese. Its ability to create these swords is established; unrestricted creation of arbitrary matter is not.
+
+### Synthesis as a theme
+
+**Interpretation:** the act of knitting offers a visual language for combination: two blades, two primordial associations, mother and daughter, and the conversion of a divided life into a chosen bond. It is an especially fitting motif for the name Síntese. None of those readings establishes literal control over fate, time, souls, or the fabric of the universe. [C1; U1]
+
+No origin episode for the Yaark has been recovered. Its awakening cannot yet be placed before military service, at Galfenhard, in the egg cave, or after Amethysta's hatching.
+
+## 10. The bond between mother, daughter, and Yaark
+
+### The established relationships
+
+| Relationship | What is known | What remains unrecorded |
+| --- | --- | --- |
+| Aysha and Amethysta | Mother and daughter; dragon knight and bonded dragon; shared combat and a damage-sharing bond. | Biological lineage, precise bond date, full private history. |
+| Aysha and Síntese | Aysha's Yaark Nustraad; a manifestation from her back. | Acquisition, awakening, agency, full powers and limits. |
+| Síntese and the swords | Creator of Nyr and Zhar; the pair expresses the Síntese concept. | Creation scene, process, costs, and whether the blades can be permanently destroyed. |
+| Síntese and Amethysta | Present alongside her and Aysha; the supplement credits it with making her mantle. | An independent pact or separate direct bond. |
+| Aysha and YKT | YKT is written in her bonds. | Name, identity, pronouns, role, and relationship. |
+
+Sources: C1; E1; U1-U3.
+
+### The physical bond
+
+The level-7 character record describes Aysha and Amethysta as sharing initiative while moving separately. The dragon-knight bond divides received damage between them. These are concrete campaign mechanics expressing a relationship that is already established in the biography. They do not imply that every visual effect, spell, or inventory item is automatically shared. [C1, pp. 4, 6; H1, pp. 5, 9]
+
+### The tradition of dragon knights
+
+The **Dragon Knight class supplement** describes an ancient order devoted to protecting dragon eggs. As dragons became rarer, the order faded into history. It also describes a symbiotic connection that can arise through raising a dragon, devotion, or coercion, and it allows both heroic and villainous dragon knights. [H1, p. 2]
+
+This is class-source background, not a confirmed institutional membership for Aysha. Her discovery and protection of Amethysta's egg resonates with it, but no evidence establishes that she joined the ancient order, underwent its rites, or received a commission from it. Her known formal military organization is the Brigada Adamantina. [C1; H1]
+
+### A shared story without erased identities
+
+**Interpretation:** Aysha provides the biography of imperial service and rebellion; Amethysta provides the chosen familial bond and a younger magical presence; Síntese provides the knitting and paired-creation imagery. Their association gives the chronicle a coherent center while leaving each figure's unanswered questions intact.
+
+## 11. The relics of Kravarius
+
+### Kravarius: the known name and the unknown being
+
+Kravarius is the name shared by Aysha's **Crosta** and Amethysta's **Manto**. The equipment is linked by draconic symbolism, and the expansion calls the red dragon in Aysha's chest armor preserved Kravarius energy. [U2; E1, p. 2]
+
+No recovered biography establishes who or what Kravarius was, whether Kravarius is alive, or how the armor was first obtained. The codex does not invent a slain dragon, a patron, a deity, or a hereditary ancestor to explain the name.
+
+### Crosta de Kravarius: Aysha's armor
+
+The Crosta is Aysha's signature **light armor**, black with red details and a red dragon on the chest. Its visual language includes hardened scales, dark overlapping surfaces, and red energy fissures. Its name can be glossed as the **Crust of Kravarius**, but the original title is retained. [U1-U3; E1, p. 2]
+
+The player's supplied item text calls it **Couro Batido +1**. It grants resistance to bludgeoning and piercing damage, immunity to slashing and electricity, and a resource cycle in which prevented damage produces draconic charges and Khan. Those charges can support temporary resilience or speed. [C1, p. 7]
+
+| Recorded feature | Player-supplied item text |
+| --- | --- |
+| Rest reset | Charges return to zero after a long rest. |
+| Breath Weapon entry | Recorded as “1 Breath weapon = 5 cargas”; the precise operational meaning is not elaborated. |
+| Damage prevention | Every 5 points prevented produce 1 draconic charge. |
+| Khan generation | Every 10 points prevented produce 1 Khan. |
+| Pele Dracônica | Spend 20 charges for resistance to all damage for 5 turns. |
+| Agilidade Dracônica | Spend 4 charges for +30 ft of movement for 3 turns. |
+
+The official sheet's summary fields and the later expansion also contain different armor bonuses, AC values, and fixed reduction. They are recorded in Chapter 17 without rewriting the original item text.
+
+### Dormant and charged states
+
+The Crosta has requested **dormant** and **charge-imbued** visual depictions. The same armor remains identifiable in both; red fissures and energy emphasize the charged presentation. The exact physical threshold at which every glow appears is not a defined rule. [E1, p. 2; U4]
+
+**Interpretation:** the Crosta's most distinctive motif is survival converted into further action. The protective skin accumulates the consequences of attacks and turns them into resilience or movement. This is a reading of its recorded mechanics, not a claim that every injury, grief, or spell becomes fuel.
+
+### Manto de Kravarius: Amethysta's armor
+
+The Manto is a purple, gold, and draconic ensemble sized for Amethysta's young halfling form. The player's detailed description distinguishes the outer cloak and mantle from the armor worn beneath it. [U2]
+
+| Part | Established visual direction |
+| --- | --- |
+| Outer cloak | Purple, scaly material resembling dragon or lizard skin. |
+| Mantle or shoulder layer | Gold-engraved sun-and-moon image, one within the other, surrounded by a purple dragon. |
+| Inner armor | Purple-and-gold studded leather. |
+| Chest emblem | Central red dragon, with sun and moon; side-by-side arrangement appears in the front-emblem direction. |
+| Connection to Aysha | The red chest dragon echoes the design of the Crosta de Kravarius. |
+| Battle presentation | No weapon in Amethysta's hands; violet lightning magic surrounds her fists or hands. |
+
+The nested celestial symbol on the mantle and the side-by-side sun and moon on the front are recorded as different placements. A single generic emblem would lose that distinction. [U2]
+
+The visual expansion includes **dormant**, **Khan-imbued**, and **Yorman-imbued** states. Its prose describes the cloak as an embrace between mother, daughter, sun, and moon, and credits its making to Síntese. [E1, p. 4; U4]
+
+### Supplement powers of the Manto
+
+The following powers exist in the expansion but are not treated as a separately confirmed replacement for Amethysta's official sheet. [E1, p. 4]
+
+| Supplement feature | Recorded effect |
+| --- | --- |
+| Item designation | Rare +2 studded-leather light armor requiring attunement by Amethysta. |
+| Elo de Kravarius | Powers operate while Amethysta is within 30 ft of Aysha; relevant saves use DC 15. |
+| Reflexo Materno | When Aysha takes damage nearby, Amethysta uses a reaction to move up to 15 ft without opportunity attacks and mark the visible source of the damage. |
+| Marca do Manto | The marked creature subtracts 1d4 from its next save against Amethysta's spell, breath, or trait before the end of her next turn; one mark per creature per round. |
+| Pulso de Existência, Khan | Spend 1 Khan within the same reaction; after bond damage division, reduce Aysha's damage by 1d6+4. This prevention does not generate Crosta charges. |
+| Reversão Lunar, Yorman | When the marked creature fails its save against Amethysta, spend 1 Yorman to impose disadvantage on its next attack before the end of the next turn. |
+
+The supplement explicitly says the Manto does **not automatically inherit the Crosta's resistances, immunities, or charge system**. Its stated AC 20 uses assumptions that conflict with the level-7 sheet, and the resource owner for its Khan/Yorman spending is not fully explicit. Both matters remain in the reconciliation ledger.
+
+## 12. Nyr and Zhar
+
+### The adopted names
+
+| Sword | Celestial identity | Primordial association | Established equipment |
+| --- | --- | --- | --- |
+| **Nyr** | Lunar | Yorman | Shortsword +1, Finesse/Acuidade, Light/Leve, Vex. |
+| **Zhar** | Solar | Khan | Shortsword +1, Finesse/Acuidade, Light/Leve, Vex. |
+
+The player adopted these short names after asking for names in a fictional Drakovian draconic language. The assignment is explicit and fixed. **Nyr is the moon; Zhar is the sun.** Both are weapons made by Síntese. [U2; C1, pp. 1-2]
+
+An earlier direct description calls Aysha's paired short swords **vanadium steel**, with a sun symbol on one hilt and a moon symbol on the other. The later equipment art adds differentiated lunar and solar finishes. The source does not explain whether the material changed during their creation or whether the later colors describe magical appearance over the earlier steel. [U3; E1, p. 3]
+
+### Nyr: the lunar blade
+
+The expansion describes Nyr as narrow, cold, and silver, with a deep-blue crystal in the hilt. Its imagery is moonlight, shadow, and Yorman's negative energy. These are equipment-supplement descriptions rather than a separate account of Yorman's universal moral nature. [E1, p. 3]
+
+The supplement's **Lua de Yorman** spends the corresponding polarity for an additional 1d4 of polarity damage, described as a necrotic manifestation. The target cannot make opportunity attacks until the start of the wielder's next turn. This specific effect is preserved as expansion content; it does not replace the official sheet's different imbuement entry without a ruling. [E1; C1, p. 1]
+
+### Zhar: the solar blade
+
+The expansion describes Zhar as golden, almost white at the edge, with orange lines around the grip resembling contained flames. It associates the blade with sun, heat, and Khan's positive energy. [E1, p. 3]
+
+The supplement's **Clarão de Khan** adds 1d4 of polarity damage with a radiant manifestation. It also allows an ally within 30 ft of the target to move 10 ft without provoking opportunity attacks. Its precise recipient and timing follow the supplement, not an assumed general solar-power system. [E1]
+
+### One fighting pair
+
+The expansion says the swords can be wielded separately but were made to fight as a single unit. Aysha's current imagery carries both at her waist in sheaths fixed to her armor by a belt. The asymmetry of sun and moon gives each blade an identity while retaining the shared concept Síntese. [E1; U2]
+
+The player requested **blacker active energy for Zhar** in a particular battle image. This concerns that scene's effect; the names and underlying damage types remain as recorded. Dormant metallic finishes and activated aura colors can differ. [U2]
+
+## 13. Earlier equipment and personal traces
+
+The character records preserve earlier weapons and utility items. Their continued possession is not reaffirmed, and their benefits should not be added to Nyr and Zhar merely because they appear in the archive. They remain useful historical details for the codex. [C1, p. 7; L1-L4]
+
+| Item | Recorded character or function |
+| --- | --- |
+| Sword of Ripples | A +1 shortsword permitting water-walking while held; Ripple Strike can spread an attack's effect to selected nearby creatures. |
+| Rapier of the Black Rose | A rapier associated with necrotic damage; Desire of the Black Rose permits Locate Object or Locate Creature through a shared daily use. |
+| Songblade | A +1 shortsword with additional thunder on a critical hit, a recorded push effect, and Shatter. |
+| Telescopic Stabber | A +1 rapier that can extend its reach or become a +1 dagger; a recorded close-range penalty lacks a fully clarified form condition. |
+| Red-Hot Whetstone | A whetstone recorded as adding 1d4 fire damage to attacks after preparation; duration and charges are unrecorded. |
+| Draconic sewing needle | A recorded utility object; no established link to Síntese's knitting or a defined magical effect. |
+| False document | A recorded possession; its alias, issuer, purpose, and current validity are unknown. |
+| Herbalism kit | Associated with the legacy Hermit background. |
+| Longbow and arrows | A longbow with 20 arrows appears in earlier equipment. |
+
+The archived travel kit contains a backpack, crowbar, hammer, ten pitons, ten torches, tinderbox, ten days of rations, waterskin, and fifty feet of hemp rope. These are inventory records, not proof of current supplies after unrecorded travel. [C1, p. 7]
+
+An early level-4 sheet records a **burned mark on Aysha's hand**, associated with **Aberrant Dragonmark**, **Booming Blade**, and **Comprehend Languages**. Later sheets archive these features rather than keeping them active. The historical mark is therefore known, while its current visibility, cause, and continuing magical significance remain unconfirmed. [L1; C1, p. 7]
+
+## 14. Titles, lightning, and the art of combat
+
+### The titles
+
+| Name | Place in the record |
+| --- | --- |
+| Trovão Lampejante | Principal title in the current sheet; approximately “Flashing Thunder.” |
+| Fulgor Negro | Another established title, approximately “Black Radiance”; associated with dark manifestation and a black-and-red aura. |
+| Lampejo Trovejante | Earlier player-used title or wording, approximately “Thundering Flash”; its independent mechanical identity is unrecorded. |
+| Thunder God | The level-7 Dragon Magic feature, connected to the recorded calling/burning procedure. |
+
+The translations are reading aids. The Portuguese titles retain authority, and the two similar lightning titles are not silently converted into two separate ability sets. [C1; U1-U3]
+
+### Aysha's established combat language
+
+Aysha uses two short swords and emphasizes speed, consecutive strikes, and draconic electricity. Her recorded techniques are **Dança do Esmagamento** and **Golpe Cruzado**, with **Veloz** as the fighting style. Her martial upbringing remains relevant to stance and confidence, although the player rejected one particular phalanx-inspired pose and returned to an earlier composition. The army's inspiration does not require every image of Aysha to show a phalanx stance. [C1; U2]
+
+Her black electrical imbuement was compared in earlier visual direction to Black Flash. This is an aesthetic reference, not adoption of another setting's combat rules or cosmology. Likewise, JoJo-style poses describe how Síntese appears behind her rather than granting a complete Stand rules system. [U1-U3]
+
+### Calling Thunder God
+
+At level 7, the recorded feature lets Aysha call on ancestral dragon magic once per short or long rest. She makes **six melee attacks**, doubles movement, and moves without provoking opportunity attacks. Each main hit adds **1d6+1 electrical damage** at her recorded Charisma modifier. These are six attacks, not six Attack actions. [C1, pp. 2, 5; H1, p. 8]
+
+### Burning the title
+
+The table's burning rule allows each successful main attack among the six to activate Dança do Esmagamento, for up to six additional secondary attacks, without recursion. Each main attack actually performed costs Aysha **1d6-1 true damage**, hit or miss. Six main attacks therefore cost **6d6-6**, from 0 to 30 damage. [C1, pp. 2, 5]
+
+The text states that this cost is not reduced by immunity, resistance, the Crosta, or Pele Dracônica, and does not produce prevention-based charges or Khan. The duration of any resulting loss of title is not specified. Neither is the electrical bonus on secondary attacks. Fulgor Negro has no separately completed numerical ability block in the recovered sheet. [C1, p. 5]
+
+## 15. Visual and portrayal codex
+
+### The visual identities
+
+| Subject | Core visual features | Scene-dependent presentation |
+| --- | --- | --- |
+| Aysha | Tall, purple-scaled amethyst dragonborn; black eyes; no hair; black-and-red Crosta; two distinct waist-sheathed swords. | Black-and-red aura, dark electrical blade energy, combat or relaxed posture. |
+| Amethysta | Much smaller; young halfling form with amethyst draconic traits; purple and gold armor; childlike proportions. | Violet lightning around hands in battle; cheerful chibi styling in casual scenes. |
+| Síntese | Aysha's back-emerging Yaark; black-and-white reference, knitting motif, white-hole head description. | Spectral presence, skeletal or abstract detailing according to the chosen reference. |
+| Nyr | Moon/Yorman identity; silver and deep-blue details in the expansion. | Dormant or polarity-imbued state. |
+| Zhar | Sun/Khan identity; golden and solar details in the expansion. | Dormant or polarity-imbued state; darker active energy in the revised battle direction. |
+| Drakovian banners | Black field with red eight-headed dragon arranged as a sun. | Battlefield wear and placement. |
+
+Sources: C1; E1; U1-U4; V1-V3.
+
+### Character anatomy and scale
+
+Aysha's silhouette is draconic, with purple scales, horns or head spines in the references, a tail, and clawed extremities. Her lack of hair is explicit in the sheet. Glowing purple eyes in a painted scene should not replace the recorded base eye color of black. [C1; V1]
+
+Amethysta's smallness is an explicit relationship of scale: in the current halfling presentation, she is below Aysha's waist. Illustrations should preserve that contrast and her young appearance. Her wings, horns, curls, and tail are recurring visual references, not evidence that she has already reached the rules size of an adult dragon. [U2; V1]
+
+### Armor and heraldry placements
+
+The Crosta carries the red draconic chest motif. The Manto echoes it through purple-and-gold leather, a central red dragon, celestial motifs on the chest, and the separate nested sun/moon image on the mantle surrounded by a purple dragon. Front-and-back views were explicitly requested to show the back of the armor. [U2]
+
+The **eight-head limit** applies to the requested Drakovian banner design. The record does not require every dragon on clothing or every dragon represented in the setting to have eight heads. [U2]
+
+### Mood and lighting
+
+The established art direction combines D&D fantasy illustration with a darker, gothic atmosphere inspired by Souls-like games. In later casual portraits, the desired background is dark black and purple, while the characters remain illuminated from the upper right. An Eloise image was supplied as a stylistic reference for softer, cuter work. No recovered statement establishes Eloise as a Gaya character or acquaintance. [U2-U3]
+
+### Battle and casual scenes
+
+Battle scenes can show Aysha's rebellion, dark aura, lightning, and Síntese emerging behind her, with Amethysta casting beside her. A later battlefield correction removes dragonborn from the pile of bodies. That is a composition constraint; it does not establish that Aysha can never injure a dragonborn opponent. [U2]
+
+Casual portraits were requested without energy auras, with Aysha's two swords sheathed at her waist and Amethysta beside her. Some portraits explicitly omit Síntese. Its absence from those images is not a story event or proof that the Yaark has been lost. [U2]
+
+### Portrayal checks
+
+1. Keep Nyr lunar/Yorman and Zhar solar/Khan.
+2. Give Aysha both swords; retain their distinct hilts and waist placement when sheathed.
+3. Depict Amethysta as a young, small, nonsexualized halfling-form dragon.
+4. Keep Amethysta's battle hands free of weapons and express her magic through violet electricity.
+5. Preserve the distinct chest and mantle emblems rather than reducing them to one generic symbol.
+6. Use the stated aura only when the scene calls for an activated manifestation.
+7. Treat visual references as guidance for appearance, not automatic new lore or mechanics.
+
+## 16. Character chronology and open story threads
+
+### The established sequence
+
+| Order | Event | Dating limit |
+| --- | --- | --- |
+| 1 | Aysha is raised from childhood in Drakovia's army under Kram'Tor Rubralma. | No birth date or recruitment year. |
+| 2 | She advances through the ranks; the player later identifies her as a former lieutenant. | Promotion sequence unknown. |
+| 3 | She joins the Brigada Adamantina and witnesses acts she considers cruel. | Duration in the unit unknown. |
+| 4 | A mission suppressing an orc rebellion in Galfenhard breaks her loyalty. | No battle name or year. |
+| 5 | She deserts and enters the Savana Negra to hinder pursuit. | Route and elapsed time unknown. |
+| 6 | She finds a drakkai egg about to hatch in a cave; Amethysta enters her life. | Hatching date and egg ancestry unknown. |
+| 7 | Protecting Amethysta becomes her principal purpose. | Exact duration of their bond unknown. |
+| 8 | Her flight is also described as revolt against the Drakovian army. | No complete rebellion campaign log. |
+| Undated | Síntese belongs to Aysha and creates her paired swords. | Cannot yet be inserted at a specific earlier step. |
+| Current record | Aysha and Amethysta are documented at level 7; Nyr and Zhar have their adopted names. | Record state, not a calendar event. |
+
+Sources: C1; L1-L4; U1-U3.
+
+### Open story threads already present in the lore
+
+These are unanswered questions inherent in the recovered material, not proposed canonical answers or newly assigned quests.
+
+| Thread | Established anchor | Missing answer |
+| --- | --- | --- |
+| The egg in the cave | Aysha found Amethysta in the Savana Negra. | Who laid or placed the egg, and why there? |
+| The inexplicable bond | Aysha explicitly cannot explain its depth. | How did it form, and is there an in-world explanation? |
+| Síntese's awakening | The Yaark belongs to Aysha. | When and how did it appear? |
+| The knitting | The player describes continual knitting in a white-hole head. | What is being knitted, and does it have a defined function? |
+| Kravarius | The name binds both armors. | Who or what is Kravarius, and how was the Crosta acquired? |
+| YKT | Listed as a bond. | Who is YKT and why do they matter to Aysha? |
+| The Brigada Adamantina | Former unit and source of pursuit. | Who commands the pursuit and what happened after desertion? |
+| Amethysta's future | She is a daughter and an agent within the bond. | What does she want independently of Aysha's protection? |
+| The price of titles | Burning Thunder God inflicts true damage. | Is a title lost, for how long, and what is Fulgor Negro's full rule? |
+| The hidden history of Gaya | The Códice is received history. | Which events might later testimony revise? |
+
+## 17. Campaign mechanics and reconciliation ledger
+
+### Status of this appendix
+
+This appendix records the character's campaign state and the material disagreements in the sources. It is a transcription and comparison, not a new rules conversion or independent audit of official D&D. The campaign combines D&D 5.5 terminology, the Dragon Knight homebrew, player modifications, and a separate item expansion. [C1; H1; E1]
+
+### Level-7 snapshot
+
+| Attribute or resource | Aysha | Amethysta |
+| --- | --- | --- |
+| Level | Dragoon 7 | Dragon companion 7 |
+| Strength | 7 (-2) | 8 (-1) |
+| Dexterity | 26 (+8) | 12 (+1) |
+| Constitution | 22 (+6) | 11 (+0) |
+| Intelligence | 11 (+0) | 10 (+0) |
+| Wisdom | 8 (-1) | 10 (+0) |
+| Charisma | 13 (+1) | 18 (+4) |
+| Proficiency | +3 | +3 |
+| HP in edited current/max fields | 69/69 | 45/45 |
+| AC in edited main field | 24; supporting notes conflict. | 15; expansion separately proposes 20. |
+| Initiative | +8 | Shared with Aysha, +8. |
+| Walking speed | 40 ft | 30 ft |
+| Flight entry | 80 ft while the necessary wings are available. | 60 ft |
+| Other movement | Shared amphibious benefit. | Swim 30 ft; burrow 30 ft. |
+| Size | Medium in the bond discussion. | Small at level 7. |
+| Khan / Yorman | 27 / 28 | No separately established reserve. |
+| Other recorded value | Polaridade +5; meaning not fully defined. | No separate inventory confirmed in the sheet. |
+| Electrical defense | Immunity recorded. | Immunity recorded. |
+
+Source: C1, main fields on pp. 1 and 4. Later prose still mentions 20 current HP for Aysha and 29 for Amethysta; those earlier values are not substituted for the edited 69/69 and 45/45 fields. These remain recorded snapshots, not a claim about unreported later sessions.
+
+### Core attacks and movement
+
+Aysha's main sword attacks are listed at **+12**, dealing **1d6+9 piercing** before additional effects. Both swords have Vex. Her personal breath is recorded as a 15-ft cone, Dexterity DC 17, 2d10 electrical damage, half on a successful save, three uses per long rest, replacing one attack. Psionic Mind sends messages to a visible creature within 30 ft that understands a language. Gem Flight requires activation, lasts one minute, and is recorded once per long rest. [C1, p. 1]
+
+Amethysta's Eldritch Blast uses two separate attacks at +7, each for 1d10 force/energia at 120 ft. Lightning Lure uses Strength DC 15, can pull 10 ft, and deals its recorded 2d8 electricity only if the target ends within 5 ft. Her electrical breath is a 20-ft line for 4d6 electricity, Dexterity DC 15, with recharge on 7-8 of 1d8. The sheet's paralyzing breath instead uses Constitution DC 15 and shares that recharge. [C1, pp. 4, 6]
+
+The bite entry is +2, 1d6-1 piercing, with 10-ft reach at this level. It is an inherited stat-block entry, not a replacement for the player's current instruction that Amethysta fight through magic. [C1; U2]
+
+### Bond rules and their limits
+
+The records describe shared initiative, independent movement, distribution of the knight's available Extra Attack attacks between the two, and a bond dividing damage received. Amethysta's Intelligence 10 permits the simple attack without the usual command; independent breath requires Intelligence 12 or a year of service under the class text. The elapsed year has not been established. [C1, p. 6; H1, pp. 4, 9]
+
+These statements do not grant unlimited dragon actions or allow a full spell automatically to replace one bite. The order of shared damage, resistances, immunities, and armor prevention remains unresolved. No loop of repeatedly splitting and preventing the same damage has been authorized. [C1, p. 6]
+
+The class source says a dragon that dies is not simply replaced by another: the original must be resurrected or reincarnated through magic or a quest. This is relevant supplementary bond lore, not an established death or resurrection in Amethysta's history. [H1, p. 9]
+
+### Specific disagreements to preserve
+
+| Topic | Evidence in the record | Treatment in this edition |
+| --- | --- | --- |
+| Aysha's AC | Official main field: 24. Page 7 explanation: 23. Main equipment text gives “14 + DES 8 + magia 1 + Veloz 2,” which sums to 25. | Preserve AC 24 as the edited field; flag the calculation and armor basis. |
+| Crosta bonus | Player item text: Couro Batido +1. Expansion: light armor +2. | Keep the original text and the expansion designation separately. |
+| Fixed damage reduction | Main field: RD -2. Page 7 says the former reduction of 2 was replaced. Expansion grants reduction 2. | Recorded conflict; do not silently remove or combine it. |
+| Dança secondary damage | Edited attack row: 1d6+9. Page 5 and class text: 1d6+1, without Dexterity. | Both are recorded; the campaign ruling is unresolved. |
+| Khan/Yorman imbuement | Official main field: +1d6 for 1 Khan/Yorman. Later Aysha.pdf includes a +1d4 polarity row while retaining +1d6 prose. Expansion: 1 point for +1d4. | Preserve the official +1d6 entry as its snapshot and label the alternatives. |
+| Older imbuement records | Page 7 recalls a +1d4-per-point version and a 2-points-for-2d6-per-weapon version. | Historical variants; no stacking. |
+| Current HP | Edited fields: 69/69 and 45/45. Explanatory prose retains 20 and 29. | Use edited fields for this snapshot; retain the discrepancy here. |
+| Amethysta's Manto AC | Official sheet: AC 15, Dexterity +1, size-level bonus +1. Expansion: AC 20 using Dexterity +2 and level bonus +3. | Expansion assumptions conflict with the level-7 sheet and class table. |
+| Manto resource spending | The expansion spends Khan/Yorman without fully specifying whose reserve is charged. | Do not invent a second reserve or automatic transfer. |
+| Amethysta's alignment | Leal e Má is preserved with a warning about divergent versions. | Keep the field as a qualified record, not a complete personality. |
+| Two superiority dice | Sheet tracks 2d6; its notes say the second die needs an additional grant. | Preserve the tracker and the unresolved grant. |
+| Spell conversion proposals | Suggestions include changing Magic Initiate, invocation access, and replacing spells. | Remain suggestions; Eldritch Blast/Hex are not removed here. |
+| Bountiful Luck | Appears in earlier records; the sheet questions its qualification through a halfling form. | No new acceptance or removal inferred. |
+| Amethysta's two skills | Not confirmed; Perception and Persuasion were suggested. | Not treated as selected. |
+| Crosta charge accounting | Threshold accumulation, leftovers, and the exact Breath Weapon entry lack complete wording. | Preserve the text; no invented timing or recharge rule. |
+| Burning a title | True-damage cost specified; title-loss duration and secondary electrical bonus unspecified. | Keep known cost and mark remaining effects open. |
+
+Sources: C1, pp. 1, 4-7; C2, pp. 1, 4-7; E1, pp. 2-4; H1, pp. 8-11.
+
+### Future class features are not current achievements
+
+The class source contains later abilities such as Rugido do Medo, Armadura de Outrora, Legado do Dragão, and higher-level dragon forms. Some older sheets copied long portions of this progression into their notes. Their presence there does not mean level-7 Aysha already possesses every listed feature. [L1; H1]
+
+The companion table makes Amethysta Medium at level 8, Large at level 13, and Huge at level 18. At the present level she is Small. No recorded transformation into an adult-sized mount is inferred from Aysha's title of dragon knight. [C1, p. 6; H1, p. 11]
+
+## 18. Glossary and name index
+
+| Term | Reference meaning |
+| --- | --- |
+| Acordo da Platina | Settlement associated with Niligard's bourgeois enrichment through the war; Chapter 4. |
+| Alabasta | Alternate name paired with Kahn'hast; Chapter 5. |
+| Alvorada Druida | Druid dawn named at the start of Terra Morta; Chapters 3-4. |
+| Amethysta | Aysha's daughter and bonded dragon, with a young halfling form; Chapter 8. |
+| Anel do Imperador | Combined dwarven rings able to manipulate life; Chapter 6. |
+| Aysha / Ayşa / Aysa | Spellings appearing in records of Aysha Öztoprak; Chapter 7. |
+| Brigada Adamantina | Aysha's former Drakovian military unit; Chapter 7. |
+| Conselho dos Druidas | Gaia's court and the five other courts; Chapter 3. |
+| Conselho dos Povos | Council dissolved by the elves in the postwar settlement; Chapter 4. |
+| Corte de Khan / Império Paladino | Historical order continued through Dulhast; Chapter 5. |
+| Crosta de Kravarius | Aysha's black-and-red armor; Chapter 11. |
+| Dança do Esmagamento | Follow-up strike technique; Chapters 14 and 17. |
+| Drakai / drakkai | Drakai is a warrior title in the world text; drakkai appears in the egg biography. Equivalence is not fully explained. |
+| Drakovia | Dragonborn state and Aysha's former empire; Chapter 5. |
+| Dragoon | Aysha's Dragon Knight specialization; Chapters 7 and 14. |
+| Druidar | Gaia's followers; a term shifting from fool to shepherd; Chapter 3. |
+| Druídico Antigo | Lost ancient druidic language; Chapters 3 and 6. |
+| Duergar | Gaya's broad Khan-derived grouping including dwarves, ogres, and giants; Chapter 2. |
+| Dulhast | Dwarven bastion and former controller of dragonborn and orcs; Chapter 5. |
+| Enciclopédia de Nunberg | Work through which Nunberg and his wife led revolution; Chapter 4. |
+| Eorarmethum | Full primordial name of Yorman; Chapter 1. |
+| Exoter | Tieflings in the Códice's ancestral terminology; Chapter 2. |
+| Faemathar | Continent taken by humans during Niligard's division; Chapter 5. |
+| Floresta Negra | Galahad's non-Euclidean forest and suspected Great Tree location; Chapter 5. |
+| Fulgor Negro | Aysha's Black Radiance title; Chapter 14. |
+| Gaia | First druid, a Duergar dwarf; Chapter 3. |
+| Gaya | Planet in Midgard and the campaign world; Chapter 1. |
+| Galahad | Elven domain and contemporary global power; Chapter 5. |
+| Galfenhard | Orc nation born from revolt; site of Aysha's moral rupture; Chapters 5 and 7. |
+| Gards | Nine branches of existence in Yggdrasil; Chapter 1. |
+| Golpe Cruzado | Secondary-target martial technique; Chapters 14 and 17. |
+| Guerra do Punho Dourado | Conflict ending tiefling rule in Niligard; Chapter 4. |
+| Hex / Hex'Óte'ryas | Elven and broader Yorman-derived terminology; Chapter 2. |
+| Inamael | Elven ring, Olho do Divino; Chapter 6. |
+| Ishtar | Empress governing Galahad in practice; Chapter 5. |
+| Kahn'hast | Mysterious territory also called Alabasta; Chapter 5. |
+| Khan / Knaerethum | Matter and existence; associated with Zhar's solar identity; Chapters 1 and 12. |
+| Kram'Tor Rubralma | Emperor of Drakovia in Aysha's biography; Chapter 7. |
+| Kravarius | Name shared by the armor relics; identity unrecorded; Chapter 11. |
+| Lampejo Trovejante | Earlier player-used title or wording for Aysha; Chapter 14. |
+| Mandarim | Black-and-gold pact-giver of Nova Gaya; Chapter 6. |
+| Manto de Kravarius | Amethysta's purple-and-gold mantle and armor; Chapter 11. |
+| Midgard / Midgraciil | Middle Gard, balancing the two primordial energies; Chapter 1. |
+| Nifhan | Religious human empire; Chapter 5. |
+| Niligard / Niligardia | Historical territory and later republic; Chapters 4-5. |
+| Nunberg | Red tiefling revolutionary, acting with his unnamed wife; Chapter 4. |
+| Nyr | Lunar sword of Yorman created by Síntese; Chapter 12. |
+| O Panteão | Council of conceptual Titans; Chapter 1. |
+| Ph'Hal-Al'ladjinn | Primordial Paladinos created by Khan; Chapter 2. |
+| Ressuma | Elven ring, Boca do Sagrado; Chapter 6. |
+| Savana Negra | Aysha's refuge and site of Amethysta's egg; Chapters 5 and 7. |
+| Síntese | Aysha's Yaark Nustraad and the conceptual name of its blade pair; Chapter 9. |
+| Thunder God | Level-7 ancestral dragon magic and associated title procedure; Chapter 14. |
+| Tiamat | Named priesthood receiving the Mandarim's necklace; Chapter 6. |
+| Titãs | Pure concepts arising from mixed primordial energies; Chapter 1. |
+| Trovão Lampejante | Aysha's principal lightning title; Chapter 14. |
+| Yaark Nustraad | Player's classification for Síntese; no complete system definition recovered; Chapter 9. |
+| Yggdrasil | Cosmic structure containing the Gards; also invoked through Gaia's seed; Chapters 1 and 3. |
+| YKT | Undefined bond in Aysha's records; Chapters 7 and 10. |
+| Yor | Term in Gaia's 16th-Circle sacrifice, written as 16 Yor; Chapter 3. |
+| Yormael | Elven ring, Mãos do Absoluto; Chapter 6. |
+| Yorman | Possibility, abstraction, and consciousness; associated with Nyr; Chapters 1 and 12. |
+| Zhar | Solar sword of Khan created by Síntese; Chapter 12. |
+
+## 19. Sources and editorial boundaries
+
+### Primary world and character records
+
+**G1 - O Códice de Gaya: História e Cosmogonia.** Supplied text file named `O Códice de Gaya História e Cosmogo.txt`. Read in full. Its subtitle describes the content as history taught in the present day. It supplies the cosmology, peoples, druid history, all seven eras, political atlas, and Mandarim artifacts.
+
+**C1 - Official edited level-7 sheet.** `Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf`, seven pages, uploaded 6 September 2026. The player explicitly called this the new official canon sheet. Its page text and editable field values were inspected. It remains the principal character authority, including the unresolved internal contradictions listed in Chapter 17.
+
+**C2 - Later character-sheet record.** `Aysha.pdf`, seven pages, uploaded 7 September 2026 UTC. Read in full. It largely repeats C1, visibly names Nyr and Zhar in the attack rows, and introduces or retains some different attack entries. No blanket canonical supersession declaration was recovered for this file.
+
+### Historical sheets and supplementary material
+
+**L1 - Aysa_Oztoprak.pdf.** Four-page early level-4 record. Inspected for biography, identity, the burned hand mark, earlier magic, equipment, and copied class progression.
+
+**L2 - Ayşa Öztoprak(1).pdf.** Earlier character sheet. Inspected for the original biography, personality, bonds, and companion records.
+
+**L3 - Ayşa Öztoprak (1).pdf.** Earlier character sheet. Inspected for biography and the additional YKT bond.
+
+**L4 - Ayşa Öztoprak (3).pdf.** Earlier character sheet. Inspected for continuity of the biography and bonds.
+
+**H1 - Cavaleiro do Dragão / Dragon Knight, Biblioteca Élfica.** `dd-5e-homebrew-cavaleiro-do-dragao-dragon-knight-biblioteca-elfica-1.pdf`, twelve pages. Relevant sections: class lore on p. 2; class progression and bond on pp. 3-6; Dragoon on p. 8; companion rules and traits on pp. 9-11. This supplies class-source context, not automatic personal events for Aysha.
+
+**E1 - Relíquias de Kravarius.** `expansao_itens_kravarius_cavaleiro_do_dragao.pdf`, four pages. Read in full. It supplies the four-relic presentation, dormant/imbued states, differentiated sword descriptions, and proposed expanded armor and sword rules. The recovered record does not establish separate acceptance of every rule or origin claim in the expansion.
+
+### Player statements and visual direction
+
+**U1 - Earlier character-description context, 10 August 2026.** Recovered conversation context describing Aysha as a purple gem dragonborn and dragon knight; Amethysta as her dragon and daughter in a small halfling form; Síntese knitting in the white hole of its head and manifesting at the end of the spine; electrical and dark-energy references. This is recovered context rather than a complete transcript of every exchange.
+
+**U2 - Player's 6 September 2026 character and illustration instructions.** Available conversation excerpts establish the official sheet declaration, HP 69, Khan 27, Yorman 28, Nyr and Zhar's names and creation by Síntese, the Yaark Nustraad label, the rebellion, banner design, revised solar energy, casual sheath placement, Amethysta's youthful scale and magic-only portrayal, and the detailed Manto emblems. They also record the Eloise style reference, pork-leg chibi scene, front/back views, and removal of dragonborn bodies from a specific composition.
+
+**U3 - User prompt associated with Amethyst Thunder and Bone Shadow.png.** Recovered text identifies Aysha as a former lieutenant, specifies vanadium-steel short swords with sun/moon hilts, names the title variants, and identifies the black-and-white creature as Síntese. The associated prompt was available through retrieval; direct image-mode reading did not supply additional textual content.
+
+**U4 - User prompt associated with the Kravarius state illustrations.** Recovered text asks to preserve the submitted Crosta and sword designs, show dormant and imbued swords and Crosta, and show the Manto dormant, Khan-imbued, and Yorman-imbued. This confirms the requested visual states without automatically approving every numerical effect in E1.
+
+**V1 - aysha e amethysta.png.** Supplied portrait inspected visually. Supports appearance, relative scale, dark palette, and the waist-sheathed sword presentation. It predates or differs from some detailed Manto directions and is not used to erase them.
+
+**V2 - Aysa_Amethysta_e_Sintese.webp.** Earlier trio illustration inspected visually. Preserves a historical purple spectral interpretation. Its void-like features and earlier equipment are not promoted over later verbal corrections.
+
+**V3 - Dragonborn and the Skeletal Yaark.png.** Later illustration used as a visual reference for the back-emerging skeletal Yaark presentation. The illustrated edition reproduces reference artwork with captions identifying it as visual material.
+
+**V4 - Amethysta’s Active Dragon Mantle.png.** Inspected visual reference for the young halfling-form dragon in the purple-and-gold Manto, casting violet magic without weapons. Reproduced as a plate in the illustrated edition.
+
+**V5 - Nyr and Zhar: Moonlight and Sunfire.png.** Inspected visual reference showing the lunar sword on the left and the solar sword on the right, with dormant versions above and imbued versions below. Reproduced as a plate; its bright solar state does not supersede the darker energy requested for a particular battle image.
+
+### Boundaries for future editions
+
+The world history and Aysha's personal chronology use different levels of dating. The year 207.830 belongs to the world source's present; the dates in this bibliography belong to the real-world records. Neither creates an unrecorded session date.
+
+The codex does not assume every statement in the world's received history is known to Aysha. It also does not turn every rule in a class supplement into an acquired ability, or every image into an event that happened during play.
+
+Future updates should retain explicit player corrections, distinguish an accepted change from a proposed one, and state when a new source resolves an existing conflict. Unanswered identities, origins, and relationships remain open until the campaign supplies them.
+
+**Edition record:** compiled 7 September 2026 from the material above. No new campaign event, NPC identity, divine relationship, artifact origin, or numerical power is canonized by this compilation.
+
+
+---
+
+## 20. Lylia, a Centelha de Sofia — adendo de 7 de setembro de 2026
+
+### Autoridade e alcance
+
+Este adendo incorpora Lylia e a referência a Sofia ao códice existente. Preserva integralmente o corpo anterior, dedicado a Aysha, Amethysta e Síntese. A instrução mais recente do jogador fixa a Lylia canônica como Druida do Pastor 3 / Feiticeira da Alma Divina 3 no nível 6. “Moon Druid” e “Guardian Druid” pertencem a versões anteriores. A ficha PDF de nível 3 é a âncora histórica para a reconstrução, não a autoridade sobre a subclasse atual.
+
+### Lylia: fatos documentados
+
+- Nome: Lylia; epíteto documentado nas planilhas: **a Centelha de Sofia**.
+- Espécie: Shifter Beasthide. Antecedente antigo: Hermit / Ermitã. Alinhamento antigo: Caótica Neutra. Jogador registrado: Akkill.
+- No PDF antigo: 20 anos, 1,89 m, 95 kg, pele negra, olhos roxos e cabelos castanhos. A passagem de tempo desde esse registro não foi estabelecida.
+- Sua tribo de shifters vivia na Floresta Negra, nas ruínas da Grande Guerra. Um Urso Primal atacou a tribo; Lylia foi a única sobrevivente do massacre descrito.
+- Viveu sozinha na floresta até ser encontrada pelos druidas da Grande Árvore. Foi educada por essa comunidade e enviada para conhecer o mundo, buscando conhecimento novo para sua nova tribo.
+- Sua curiosidade quase mortal, inocência diante da crueldade e vínculo com a Grande Árvore estão documentados. A curiosidade também é sua vulnerabilidade recorrente.
+- Moon Sickle +1, couro, ocarina, colar de dente de urso e material de viagem aparecem no histórico. Polaridade +5 e “+2 Khan” são registros antigos, sem novo efeito inventado neste adendo.
+
+### Sofia: entrada nominal e fronteira do cânone
+
+**Sofia é o nome presente no título “Lylia, a Centelha de Sofia”.** Os materiais lidos não explicam quem ou o que Sofia é, nem o significado literal da centelha. Não há base documental suficiente para classificá-la como deusa, mãe, patrona, ancestral, Yaark ou alter ego. Sofia e Lylia não são fundidas em uma única identidade.
+
+A existência da subclasse Alma Divina permite interpretar uma fonte sobrenatural de magia, mas não identifica automaticamente essa fonte com Sofia. A afinidade mecânica Lei, usada na proposta para selecionar Bless, não estabelece alinhamento ou religião de Sofia. Permanecem abertos: sua natureza, origem, relação exata com Lylia e o evento que motivou o epíteto.
+
+### Reconstrução mecânica proposta
+
+O jogador autorizou otimizar os atributos a partir do PDF mais antigo e confirmou que a regra de +1 por avanço ou um talento por dois avanços **substitui** o aumento/talento normal de classe. A implementação abaixo é uma proposta de reconstrução, não uma rolagem histórica recuperada.
+
+| Marco | Classes | FOR / DES / CON / INT / SAB / CAR | PV máximos |
+|---|---|---|---:|
+| PDF antigo, nível 3 | Moon Druid 3 histórico | 5 / 12 / 15 / 12 / 20 / 10 | 24 |
+| Base refeita, nível 3 | Pastor 3 | 5 / 14 / 15 / 8 / 19 / 13 | 24 |
+| Nível 6 | Pastor 3 / Alma Divina 3 | 5 / 14 / 15 / 8 / 20 / 13 | 42 |
+| Nível 7 | Pastor 3 / Alma Divina 4 | 5 / 14 / 16 / 8 / 20 / 13 | 55 |
+
+A redistribuição de nível 3 mantém a soma 74 do PDF. Alert é o único talento inicial proposto. Os avanços 4-5 compram War Caster 2024 (+1 SAB); o avanço 6 é reservado e, junto do 7, compra Resilient (CON, +1 CON). Sentinel antigo é substituído; War Caster não é duplicado. Os avanços anteriores já estão absorvidos na âncora. Não se reaplicam bônus de criação.
+
+A classe inicial continua druídica, com proficiência em resistências de INT/SAB; Resilient acrescenta CON no nível 7. PV partem de 24 no nível 3, usando 4+CON nos níveis de feiticeira e ajuste retroativo de CON. Não se somam os totais conflitantes 56/69 ou SAB 24 das versões posteriores. CAR 13 atende ao requisito da multiclasse.
+
+### Magia, formas e papel no grupo
+
+O papel proposto é controle de terreno, cura, exploração e proteção da concentração. As magias ofensivas druídicas usam Sabedoria; o repertório divino privilegia defesas e apoio que exigem pouco Carisma. Magias até 2º círculo; os espaços de 3º e, no nível 7, 4º servem para ampliação. Não há Mighty Summoner, Empowered Healing ou características de Druida/Feiticeiro 6.
+
+As quatro Formas Selvagens propostas são aranha-lobo gigante, texugo gigante, rato e lobo. Pastor 3 usa ND máximo 1/4 e recebe 3 PV temporários ao transformar, não os benefícios da Lua. Totem do Urso concede 8 PV temporários; Unicórnio usa cura adicional 3. PV temporários de fontes diferentes não se somam.
+
+Equipamentos novos, formas recomendadas, afinidade divina e magias selecionadas não são acontecimentos narrativos confirmados. Os detalhes completos estão em **Lylia_Nivel_6.xlsx/.pdf** e **Lylia_Nivel_7.xlsx/.pdf**.
+
+### Conexões permitidas e distinções
+
+A Grande Árvore fornece um ponto de conexão documentado entre a biografia da Lylia e o panorama druídico de Gaya. Isso não prova encontros com Aysha, Amethysta ou Síntese. “Floresta Negra”, da história da Lylia, não é automaticamente a “Savana Negra” da história de Aysha. O Urso Primal não recebe nome, motivação ou relação com entidades anteriores sem nova fonte.
+
+### Fontes deste adendo
+
+1. Lylia_2.pdf: formulário histórico de nível 3, incluindo valores dos campos e aparência visual.
+2. Lylia (3)(2).xlsx e YKT _ Lylia, a Centelha de Sofia.xlsx: epíteto, inventário e variantes mecânicas preservadas como histórico.
+3. Instruções do jogador nesta conversa: Pastor 3 / Alma Divina 3; fichas de níveis 6 e 7; otimização; prioridade histórica do PDF; regra de progressão substitutiva.
+4. As regras e recomendações de D&D constam nas referências R1-R10 das novas fichas. Elas não são fontes do lore de Gaya.

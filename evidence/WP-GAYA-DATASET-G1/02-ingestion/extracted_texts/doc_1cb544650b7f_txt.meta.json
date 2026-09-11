@@ -1,0 +1,8 @@
+{
+  "doc_id": "doc_1cb544650b7f",
+  "source_ref": "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+  "sha256": "1cb544650b7fa164d5858fac76c5451463857b131b8f5c89bc19e0395980a1bb",
+  "parser": "utf8_text_parser",
+  "status": "SUCCESS",
+  "length": 33794
+}

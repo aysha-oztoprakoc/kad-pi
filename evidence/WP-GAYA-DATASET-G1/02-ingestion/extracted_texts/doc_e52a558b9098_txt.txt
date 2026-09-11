@@ -1,0 +1,166 @@
+Guerreiro 3.              Forasteiro.                Pedro (Kaito).
+
+                             Irina.                    Aasimar Caído.            Neutro Verdadeiro. 0XP.
+
+
+
+
+                  0.
+                                                                                         Estou sempre pegando coisas,
+
+   2.            +2.
+                                              17.
+                                                          +6. 9M.                        distraidamente brincando com elas
+                                                                                         e, às vezes, quebrando-as.
+    -3.
+                                                                       22.
+                       -1,
+                       +6.                                                               O mundo natural é mais importante que
+
+
+ 22.
+                       +2.
+                       -2.
+                                                       22/22.                            todas as construções da civilização.
+
+
+                       +4.
+    +6.
+                                                                                         Uma ofensa a natureza intocada
+                       -2.
+                                                            0.                           do meu lar é uma ofensa a mim.
+
+  11.                  +8.                           3.
+                                                                                         Eu tenho dificuldade em confiar em membros
+     0.                -2.                                                               de outras raças, tribos ou sociedades.
+                       -1.                    1d10.
+                       +4.
+                       +4.
+   6.                  +6.
+                                                                                       Estilo de Luta.
+                       -2.
+                                           Rapieira.         +10.     1d6+6 Perfu.
+    -2.                                                                                -Duelo: Ao empunhar arma corpo-a-corpo só em
+                       +4.                                                             uma mão ganha +2 na rolagem de ataque.
+                                           Cimitarra.        +10.     1d6+6 Cort.
+                       +4.                                                             Retomar Fôlego.
+                       -2.                 A fome.           +10.     1d6+6 Cort.      -Reserva de estâmina. Ação bônus para recuperar
+
+  18.                  +4.
+                                           Dano se adiciona-se somente o
+                                                                                       PV igual 1d10+Nível de Guerreiro (1d10+3).
+                                                                                       Descanso curto ou longo para recuperar.
+                       +4.
+    +4.                -2.
+                                           atributo, não proficiência.                 Surto de Ação. (N17+)
+                                                                                       -No seu turno, você pode realizar uma ação
+                       +6.                                                             adicional+bônus. Descanso curto ou longo para
+                       +4.                                                             recuperar.
+
+
+   6.                  +6.
+                       -2.
+                                                                                       Arquétipo Marcial.
+                                                                                       -Cavaleiro Eco.
+                                           Bônus de Ataque: +8 (Porém
+    -2.                +6.
+                                           com estilo de luta fica +10).               Manifestar Eco.
+                                                                                       -Ação bônus para manifestar um eco em até 4,5
+                                                                                       metros. Tem 1 de vida e CA igual 14+Proficiência
+                                                                                       (16). Imune a todas as condições. Pode mover-se 9
+                                                                                       metros livremente em seu turno. Some ao dispersas,
+16.                                           0.
+                                                     Armadura:
+                                                                                       morrer ou manifestar outro eco.
+                                                     -Armadura de Couro.
+                                                                                       ➢Ao atacar, você pode atacar com seu corpo ou o
+Armadura:                                     0.     Armas:                            eco.
+-Armadura leve, Armadura média, Armadura             -Rapieira.                        ➢Com uma ação bônus pode trocar de lugar com o
+pesada, Escudos.                                     -Cimitarra.                       eco por 4,5 metros de locomoção.
+                                              0.     -Dois machados de arremesso.
+                                                                                       ➢Inimigo mover-se para longe do eco gera ataque
+Armas:                                                                                 de oportunidade caso usar uma reação. (Tem que
+                                                     -Pacote de Explorador             mover até 1,5 metros).
+-Armas simples, Armas marciais.               0.     (Mochila, saco de dormir, kit
+                                                     de refeição, caixa de fogo, 10    Liberte a Encarnação.
+Línguas:
+-Comum e Celestial.                           0.     tochas, 10 dias de ração, um      -Ao atacar, o eco pode dar um ataque adicional da
+                                                                                       posição dele. Pode usar a quantidade de vezes do
+                                                     cantil e 15 metros de corda).
+                                                                                       modificador de carisma(). Descanso longo recupera.
+POLARIDADE:                                          -Arco Longo (20 flechas).
+-3 Neutro.
+                                                                              20 anos.                               1,74.                            60Kg.
+
+                                    Irina.                                    Amarelos.                              Pálida.                          Vermelhos.
+
+
+
+
+                                                               Não sabe de onde veio ou o
+                                                               que ela é. Sabe somente seu                                              "Insignia" que ela possui.
+
+                                                               nome e conhecimentos
+                                                               básicos.
+
+
+
+
+                                                               Resistência Celestial.
+                                                               -Resistência a dano necrótico e dano radiante.
+Irina nasceu como um ser celestial conhecido como
+Aasimar, resultado de um ritual realizado por seus fanáticos
+pais em honra a um poderoso Titã. No entanto, devido a         Visão no escuro.
+circunstâncias desconhecidas, ela nasceu doente. Seu corpo     -Enxerga penumbra 18 metros. Escuridão como se fosse penumbra. Apenas tons de cinza.
+foi afetado por uma praga semelhante a plantas, uma
+podridão que se espalhava, acabando por tirar-lhe o braço.     Mãos Curadoras.
+Desde o nascimento, Irina permanecia em um sono                -Uma ação, tocar uma criatura recuperar vida igual nível. Somente descanso longo para usar de novo.
+profundo, incapaz de acordar.
+                                                               Portador de Luz.
+Seus pais, dedicados, fizeram tudo o que podiam para cuidar    -Truque da luz. Usa Carisma (CD 8).
+dela. No entanto, com o passar dos anos, os gastos
+tornaram-se insustentáveis. Sentindo-se impotentes diante      Mortalha Necrótica.
+da situação, eles tomaram uma decisão desesperada e            -Olhos ficam escuros e duas asas necróticas que não voam aparecem. Ao transformar criaturas a até 3 metros que possam
+abandonaram a garota na floresta, esperando que alguém         ver você fazem um teste de Carisma (CD 8 + proficiência + carisma = CD 8). Se falharem, ficam com medo até o final do seu
+pudesse ajudá-la.                                              próximo turno. Dura 1 minuto ou acabar com ação bônus. Uma vez em cada um de seus turnos, você pode causar dano
+                                                               necrótico extra a um alvo ao infligir dano a ele com um ataque ou feitiço. O dano necrótico extra é igual ao seu nível. Só
+Assim que seus pais se foram, Irina despertou
+                                                               pode usar de novo após um descanso longo.
+abruptamente, sentindo-se assustada e confusa. Ao abrir os
+olhos, ela percebeu que estava sem um braço e seu corpo
+                                                               Sentinela.
+estava completamente debilitado, incapaz de realizar as
+                                                               -Acertar uma criatura com ataque de oportunidade, torna a movimentação dela em 0. Mesmo com desengajar, criaturas
+atividades mais simples. Apenas podia implorar por ajuda.
+                                                               geram ataque de oportunidade. Quando uma criatura atacar alguém até 1,5 metros pode-se usar uma reação para dar um
+                                                               golpe corpo a corpo contra a criatura.
+Apesar de suas limitações físicas, Irina notou que certas
+memórias permaneciam intactas em sua mente. Ela era
+capaz de falar tanto a língua comum quanto a língua
+celestial, além de lembrar seu próprio nome.
+
+Ao acordar, Irina encontrou outra pessoa que também havia
+despertado em algum lugar desconhecido e não sabia qual
+rumo tomar. Juntos, eles decidiram embarcar em uma
+                                                               A Fome: Item incomum, sintonizado, maravilhoso.
+jornada de descoberta, aprendendo com o mundo ao seu
+redor.
+                                                               -Uma lâmina negra feita de aparente osso e carne. Em um
+Enquanto exploravam e interagiam com a natureza, Irina
+                                                               acerto crítico, recupera 1d4 + modificador de Constituição
+sentia uma conexão especial com o ambiente ao seu redor,
+embora não compreendesse completamente o motivo. Aos           em pontos de vida. Uma vez por descanso longo, pode
+poucos, ela começou a desenvolver uma afinidade com a
+flora e a fauna, adquirindo conhecimentos e habilidades        refazer uma jogada de ataque.
+únicas.
+
+Através de suas experiências, Irina aprendeu a superar suas
+limitações físicas e a encontrar força dentro de si mesma.
+Ela descobriu que, mesmo sem um braço, podia encontrar
+maneiras criativas de ajudar os outros e deixar uma marca
+positiva no mundo.
+       Nenhuma... Ainda.   -   -   -
+
+
+
+Luz.

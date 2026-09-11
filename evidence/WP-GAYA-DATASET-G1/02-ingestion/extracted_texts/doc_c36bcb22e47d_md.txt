@@ -1,0 +1,733 @@
+# GAYA — Códice canônico consolidado
+
+**Ayşa Öztoprak, Amethysta Öztoprak, Síntese, YKT, Lylia e o mundo de Gaya**  
+**Edição de consolidação: 8 de setembro de 2026**  
+**Atualização central: visão dos novelos, limites da Síntese e identidade narrativa do domínio.**
+
+## 1. Autoridade e alcance deste documento
+
+Gaya é o RPG que o jogador joga. Ayşa Öztoprak e Lylia são suas personagens. Este documento reúne a lore recuperada das conversas disponíveis, dos códices anteriores, da ficha final, do calendário de sessões e de outros registros fornecidos. Não é uma transcrição integral de todas as conversas da conta: quando uma sessão, imagem ou informação não foi recuperada, sua ausência é indicada sem inventar uma resposta.
+
+O texto consolida o mundo e as personagens; não mistura Gaya com KAD ou KAD-PI. A data desta edição é uma data real de organização do material, não uma data dentro da campanha.
+
+### 1.1 Hierarquia de leitura
+
+1. **Declarações e correções explícitas mais recentes do jogador**, sobretudo a definição da Síntese nesta conversa.
+2. **Páginas 1–4 da ficha final de Ayşa e Amethysta**, declaradas autoridade dos atributos e da lore; as descrições posteriores explicam essas páginas sem substituí-las.
+3. **Registros primários do mundo e das sessões**, respeitando o ponto de vista de cada fonte.
+4. **Códices consolidados anteriores**, aproveitados onde não foram superados.
+5. **Flavour e propostas homebrew**, preservados como elaboração narrativa ou projeto, sem transformar números sugeridos pelo assistente em regras aprovadas pelo mestre.
+
+### 1.2 Estados usados
+
+| Estado | Significado |
+| --- | --- |
+| Cânone declarado | Informação explicitamente fornecida ou corrigida pelo jogador. |
+| História ensinada | Cosmologia e história conforme o Códice de Gaya se apresenta: a versão ensinada no mundo atual. |
+| Registro de sessão | Acontecimento presente no calendário. Mantém dúvidas e linguagem de incerteza da fonte. |
+| Testemunho | Informação presente na defesa de Ayşa; sua avaliação moral não equivale a veredito. |
+| Formulação narrativa | Flavour desenvolvido nesta conversa para representar capacidades e intenções. Não concede sozinho uma nova regra. |
+| Projeto | Item, domínio ou regra ainda em desenvolvimento ou aguardando revisão. |
+| Histórico | Versão anterior preservada para continuidade, sem aplicação automática à ficha atual. |
+
+As seções de mundo, personagens e sessões formam o corpo de referência. As seções de domínio e Physic preservam a direção narrativa mais recente e identificam seus limites mecânicos.
+
+## 2. A origem: Khan, Yorman e a existência
+
+**Fonte: história ensinada em O Códice de Gaya: História e Cosmogonia.**
+
+No princípio, duas essências permaneceram no vazio: **Knaerethum, Khan**, tudo que existe, matéria e existência física; e **Eorarmethum, Yorman**, tudo que pode existir, abstração e consciência.
+
+Embora destinadas a se aniquilarem, suas essências se conectaram e produziram aglomerados de existência. Khan forneceu forma física; Yorman, formas abstratas e consciência. À medida que se afastavam da pureza de suas fontes, as energias puderam misturar-se e dar origem aos **Titãs**, conceitos puros.
+
+Os Titãs aprenderam a moldar essas forças, dividiram-se em clãs de Khan e Yorman e entraram em guerra. O conselho chamado **O Panteão** surgiu para administrar o conflito e permitir a existência. Suas figuras superiores representam Espaço/Tempo, associados na fonte às duas essências; não há atribuição individual suficientemente explícita para estabelecer uma correspondência exclusiva entre cada essência e cada conceito.
+
+A trégua originou os **Gards**, nove ramos da existência na **Yggdrasil**. O ramo central é **Midgard**, também chamado **Midgraciil**, onde Khan e Yorman se equilibram. Os nomes dos outros oito ramos não foram recuperados.
+
+O Panteão continuou a disputa através de representantes dos conceitos em cada reino. No centro de Midgard, o equilíbrio produziu um aglomerado com uma estrela e nove planetas. **Gaya é descrito como o planeta central.** A fonte não fornece um modelo orbital para interpretar essa centralidade.
+
+Khan e Yorman não são definidos universalmente como bem e mal. O sol, a lua, a esperança e a certeza são associações presentes nas armas e na expressão afetiva de Ayşa, não substituições da cosmogonia.
+
+### 2.1 O impacto e a reconstrução do mundo
+
+Gaya desenvolveu vida por um processo semelhante ao terrestre, passando por proteínas, organismos unicelulares e multicelulares até um símio humanoide. No instante em que ele descobriria o fogo, um meteoro de pura energia Khan e Yorman, descrito como do tamanho do Texas e atraído pela complexidade da vida, atingiu o planeta. A extinção deixou carcaças e matéria disponível.
+
+Khan voltou-se aos minérios e hidrocarbonetos; Yorman, à complexidade biológica. A mistura da química do mundo com as energias extradimensionais refez a vida para a guerra. A reciclagem de materiais e almas aumentou a especialização dos povos.
+
+| Designação | Origem e função na história ensinada |
+| --- | --- |
+| Ph'Hal-Al'ladjinn, Paladinos | Criados por Khan a partir de madeira, pedras e montanhas; originam o agrupamento Duergar. |
+| Duergar | Designação abrangente que inclui anões, ogros e gigantes nesta cosmogonia. |
+| Hex'Óte'ryas, Exoterias ou Hex | Criados pelos conceitos de Yorman; associados aos elfos/Hex e tieflings/Exoter. |
+| Drakai | Título de guerreiros, incluindo humanos, draconatos e outros; não uma espécie única por definição. |
+| Dragões Verdadeiros | Atuavam como generais; Khan separou menos da metade do próprio corpo para moldar dragões de Joias, Elementos e Metais. |
+
+**Drakai**, **drakkai** na narrativa do ovo e **Drak'hai**, o recurso raro citado nesta conversa, são mantidos como termos distintos enquanto a campanha não explicar suas relações.
+
+## 3. Gaia, os Druidar e a Grande Árvore
+
+**Gaia**, uma anã Duergar, descobriu pelo estudo da vida como manipular Khan e Yorman presentes na matéria sem depender diretamente das fontes divinas. Rejeitou a guerra e reuniu os **Druidar**, termo antes relacionado a “tolo” e posteriormente a “pastor”. Seus seguidores, que chegaram a cerca de dez milhões, eram alquimistas e guerreiros capazes de alterar matéria e conceito, embora pacifistas.
+
+Forçados ao combate, refugiaram-se nas profundezas do mundo, protegidos por barreiras. Formaram o **Conselho dos Druidas**: Gaia e sua corte de cinco assistentes, além de cinco outras cortes, cada uma com um representante e seus cinco filhos.
+
+Os Exoter encontraram o refúgio e realizaram um massacre com magia massiva. A fonte preserva a incerteza entre quinze minutos e quinze anos de duração. Restaram sobretudo as cortes e seus círculos próximos.
+
+Para salvar seus “filhos”, Gaia sacrificou memória, essência e corpo numa magia de **16º Círculo, 16 Yor**. Seu corpo tornou-se uma semente da Yggdrasil. Dela nasceu uma árvore colossal, do fundo da caverna ao pico mais alto do mundo, impenetrável para não-druidas e dotada de uma consciência coletiva que une os sobreviventes.
+
+Na história atual, restam cerca de **500 druidas**, descendentes das cortes sobreviventes, perseguidos e caçados. A crença de que sabem ler o **Druídico Antigo** está errada: esse conhecimento se perdeu. Os druidas modernos utilizam uma nova língua secreta.
+
+A descoberta de Gaia estabelece um precedente histórico para a manipulação intrínseca de Khan e Yorman. Não estabelece que Ayşa seja druida, descendente de Gaia ou conheça tudo que ela conhecia.
+
+## 4. Eras e organização política
+
+**Cronologia conforme a Convenção da Paz Élfica de 207.500.**
+
+| Era | Anos | Conteúdo registrado |
+| --- | --- | --- |
+| Pré-Guerra — PG | 1–5.000 | Período remoto anterior à Grande Guerra; poucos detalhes individuais. |
+| Grande Guerra — GG | 5.001–155.000 | Longa guerra ligada à especialização dos povos e às forças primordiais. |
+| Terra Morta — TM | 155.001–200.000 | A fonte associa seu início à Alvorada Druida e ao fim da guerra. Vitória élfica e divisão do mundo. |
+| Nova Gaya — NG | 200.001–206.000 | Aparição do Mandarim e distribuição de artefatos de pacto. |
+| Levante dos Povos — LP | 206.001–207.000 | Revoluções ligadas a Nunberg, queda do domínio tiefling e reorganização humana. |
+| Guerra da Platina — GP | 207.001–207.500 | Revolta orc, Galfenhard, independência de Drakovia e novos acordos. |
+| Novo Império — NI | 207.501–207.830 | Configuração contemporânea da história ensinada. |
+
+O calendário de sessões escreve **207830, 330 Novo Império**. Essa grafia é preservada; não se recalcula uma data atual após a prisão com base apenas no relato de quinze anos.
+
+### 4.1 Terra Morta e a divisão do mundo
+
+O último Imperador Hex dividiu o mundo após a vitória élfica. O Conselho dos Povos foi dissolvido. O Comum tornou-se uma simplificação do élfico. Em Dulhast, a formação de Paladinos foi proibida sob pena de execução.
+
+Humanos, considerados uma raça recente, não tinham território próprio e viviam escravizados sobretudo em Niligard e Galahad. Os draconatos ainda integravam o exército de Dulhast; Drakovia não existia.
+
+Gaya é descrito como dez vezes maior que a Terra, sem esclarecer se a medida é diâmetro, área, massa ou volume. A cartografia sofre com distâncias enormes e monstros gigantes.
+
+### 4.2 Atlas de referência
+
+| Local | Informação consolidada |
+| --- | --- |
+| Galahad | Domínio élfico; reclama a Floresta Negra e mantém influência e bases militares globais. Ishtar governa de fato enquanto o imperador permanece recluso. |
+| Floresta Negra | Floresta de geografia não euclidiana: a volta por um caminho não necessariamente retorna ao mesmo lugar. Suspeita-se que abrigue a Grande Árvore. Está ligada à origem de Lylia. |
+| Dulhast | Bastião anão, continuador da Corte de Khan/Império Paladino, com ideologias supremacistas e totalitárias. Na configuração atual, recuperou a liberdade da religião Paladina e seus templos. |
+| Niligard/Niligardia | Nome de território histórico e da república posterior. A revolução propôs uma “terra de todos”; sua burguesia enriqueceu negociando na guerra. O governo atual é dominado por gnomos sob forte influência do ouro de Galahad. |
+| Faemathar | Continente tomado pelos humanos na cisão de Niligard, segundo a história geral. |
+| Nifhan | Império humano religioso, distinto ideologicamente da república de Niligard. |
+| Galfenhard | Território orc surgido da revolta contra a servidão; também cenário da ruptura moral de Ayşa. |
+| Drakovia | Estado draconato independente, militarizado e autodeclarado herdeiro de Khan. Antigo império de serviço de Ayşa. |
+| Savana Negra | Região hostil usada por Ayşa para dificultar a perseguição; local da caverna onde encontrou o ovo de Amethysta. Não é automaticamente a Floresta Negra. |
+| Kahn'hast/Alabasta | Território misterioso e pouco compreendido na partilha original. |
+| Ara'Mankur | Cidade ou localidade visitada no calendário; palco do Chifre D'Ouro e do Hala'Ahly. |
+| Fae'Maetha | Nome recorrente no calendário para o destino do resgate, cofre, sacrário, perseguição e sentença. A defesa usa Fae’Matha. A equivalência exata com Faemathar não é imposta. |
+| Fae'Nifhan | Destino intermediário da viagem por transporte oculto em caixas. |
+
+### 4.3 Revoluções e Guerra da Platina
+
+**Nunberg**, tiefling vermelho, e sua esposa lideraram a revolução através da **Enciclopédia de Nunberg**. A Guerra do Punho Dourado derrubou o governo tiefling em Niligard; os tieflings foram quase exterminados ou exilados. A cisão produziu caminhos políticos diferentes para Niligard e Nifhan.
+
+Os anões de Dulhast criaram os orcs com o Anel do Imperador, impondo travas mentais de servidão. Durante a Guerra da Platina, os elfos amaldiçoaram os orcs e romperam essas travas. Os orcs revoltaram-se, enfrentaram Dulhast e Galahad e consolidaram Galfenhard.
+
+Draconatos apoiados financeiramente pelos elfos, interessados em enfraquecer Dulhast, formaram Drakovia. A independência passou a ser legitimada pela reivindicação da herança de Khan.
+
+## 5. O Mandarim e seus artefatos
+
+Na Nova Gaya, o **Mandarim**, vestido de preto e dourado, entregou objetos que selavam pactos de poder com lideranças dos povos.
+
+| Destinatários | Artefato | Poder descrito |
+| --- | --- | --- |
+| Sete oligarcas anões | Sete anéis | Reunidos, formam o Anel do Imperador, capaz de manipular a vida. |
+| Resistência humana | Espada | Corta qualquer matéria, conforme a história ensinada. |
+| Resistência humana | Escudo | Produz uma cúpula impenetrável, conforme a mesma fonte. |
+| Sacerdócio de Tiamat | Colar | Sopro ilimitado. |
+| Representante draconato em Dulhast, futuro imperador | Braceletes | Escamas impenetráveis, asas e força de dragão. |
+| Elfos | Inamael, Olho do Divino | Onividência visual. |
+| Elfos | Ressuma, Boca do Sagrado | Onilinguismo e conjuração vocal. |
+| Elfos | Yormael, Mãos do Absoluto | Moldar conceitos e mãos mágicas. |
+
+Não foi estabelecido que os artefatos de Kravarius sejam presentes do Mandarim nem que a Síntese derive de Yormael.
+
+## 6. Ayşa Öztoprak
+
+### 6.1 Identidade
+
+**Ayşa Öztoprak, o Trovão Lampejante, o Fulgor Negro.**
+
+| Campo | Registro |
+| --- | --- |
+| Espécie | Draconata ametista, escamas roxas. |
+| Classe | Cavaleiro do Dragão/Dragoon, homebrew, nível 7. |
+| Posição anterior | Tenente do exército de Drakovia; integrante da Brigada Adamantina. |
+| Posição atual na biografia | Desertora, perseguida e rebelde contra o exército drakoviano. |
+| Relação central | Mãe e cavaleira de Amethysta Öztoprak. |
+| Yaark | Síntese, chamada de Yaark Nustrad/Nustraad em registros diferentes. A grafia Nustrad é usada nesta edição para acompanhar a conversa atual. |
+| Grupo | YKT. |
+| Tendência da ficha | Caótica Neutra. |
+| Antecedente da ficha | Eremita. |
+| Aparência registrada | 26 anos, 2,07 m, 80 kg; olhos pretos, sem cabelos. Valores de ficha, sem acrescentar quinze anos automaticamente. |
+| Idiomas | Comum, Drakoviano, Anão, Élfico e Orc. |
+
+“Aysha”, “Ayşa” e “Aysa” são grafias encontradas para a mesma personagem. “Lampejo Trovejante” aparece em falas anteriores; os títulos enfatizados na última instrução são **Trovão Lampejante** e **Fulgor Negro**. A variante antiga não cria um terceiro conjunto obrigatório de poderes.
+
+### 6.2 Da infância militar à deserção
+
+Ayşa foi criada desde a infância no exército de Drakovia, sob **Kram'Tor Rubralma**. Encarou a vida recebida com uma postura utilitarista: faria o melhor possível dentro dela. Subiu pelas patentes mesmo discordando de ordens e práticas.
+
+Na Brigada Adamantina, passou a testemunhar uma escala de crueldade que já não conseguia justificar. A repressão a uma rebelião orc em **Galfenhard** rompeu sua lealdade. Sua história reconhece que esteve envolvida na máquina de violência antes de abandoná-la; a deserção não apaga essa participação.
+
+Para escapar, entrou na **Savana Negra**, esperando que a hostilidade do lugar dificultasse a perseguição. Numa caverna encontrou um ovo de drakkai prestes a rachar. Dele veio Amethysta.
+
+Não foram estabelecidos o local de nascimento de Ayşa, sua genealogia, cada promoção militar, os nomes de vítimas daquela missão ou a identidade de quem deixou o ovo na caverna.
+
+### 6.3 Maternidade e lealdade escolhida
+
+Amethysta deu sentido e direção à vida de Ayşa. O vínculo é explicitamente materno, sem uma afirmação de maternidade biológica. Ayşa é orgulhosa, áspera, confiante no combate e superprotetora. Seu medo de perder a filha pode fazê-la repetir hábitos de controle aprendidos no exército.
+
+A fuga tornou-se também revolta. Sua força serve a escolhas próprias, à proteção da filha e aos vínculos que construiu. A defesa de Douglas afirma que ele e a YKT as acolheram; esse acolhimento é parte da gratidão de Ayşa.
+
+Na leitura narrativa consolidada, lutar como unidade exige que Ayşa confie na iniciativa de Amethysta. Amethysta pode abrir uma sequência, e a mãe acompanhá-la. Isso orienta o domínio sem apagar a individualidade de nenhuma das duas.
+
+## 7. Amethysta Öztoprak
+
+Amethysta é a filha, dragão e companheira vinculada de Ayşa. Sua aparência é ametista; suas regras usam a base de dragão azul. Eletricidade e relâmpagos violetas definem sua expressão de combate.
+
+Pode assumir forma de halfling pequena, de aparência aproximada de doze anos, com proporções infantis e inspiração chibi. Nessa representação, sua altura fica abaixo da cintura de Ayşa. A idade aparente não data seu nascimento e não resolve os efeitos dos quinze anos de prisão narrados na defesa.
+
+**Amethysta não usa armas.** Nas representações atuais, combate com magia, mãos e punhos envolvidos em eletricidade roxa. Isso não cria automaticamente uma nova regra de ataque desarmado. A mordida existente no bloco dracônico permanece um registro mecânico separado.
+
+Seu papel desejado combina suporte à distância, controle, debuffs, proteção e cuidados, respeitando o alcance e a economia do vínculo. A autonomia permitida por sua inteligência não equivale a ações ilimitadas.
+
+As cenas casuais também integram sua direção de representação: alegria, delicadeza e aparência infantil, inclusive a ilustração solicitada de Amethysta num banquinho comendo um pernil. Essa imagem não determina alimento favorito, local ou data de sessão.
+
+### 7.1 Relação e movimento
+
+Ayşa e Amethysta compartilham iniciativa, mas possuem deslocamentos próprios. O vínculo divide dano recebido. A ordem exata entre divisão, resistência, imunidade e redução de dano ainda requer uma formulação de mesa; o mesmo dano não deve ser dividido e convertido repetidamente como se fossem ocorrências independentes.
+
+O registro permite distribuir os dois ataques de Ataque Extra entre cavaleira e dragão nos termos do vínculo. Isso não concede dois ataques adicionais à companheira e não transforma uma magia de uma ação em substituição gratuita de uma única mordida.
+
+Amethysta não é equipamento de Ayşa. Seu novelo vivo também está protegido pela restrição da Síntese, mesmo quando ela consente em receber ajuda.
+
+## 8. Síntese — definição canônica atual
+
+### 8.1 Declaração central do jogador
+
+> “Posso ativá-la a qualquer momento, e enxergar o mundo como um grande emaranhado de lã, com coisas vivas e conceitos possuindo um novelo de lã. Eu só posso manipular os novelos de coisas que matei ou coisas inanimadas e esses novelos me dão pontos de Khan e Yorman que uso para então reconstruir e sintetizar coisas e conceitos.”
+
+Esta declaração substitui interpretações anteriores que concediam manipulação livre de novelos vivos.
+
+### 8.2 Manifestação
+
+A Síntese pertence a Ayşa e emerge de suas costas. Registros anteriores especificam a região final da coluna e o ato de tricotar junto de uma abertura branca na cabeça. A referência atual mostra uma criatura de aparência esquelética, rosto descarnado, chifres curvos envolvidos por fios, vestes escuras e uma abertura branca frontal.
+
+O branco dessa abertura não comprova um objeto astrofísico literal nem poderes de buraco branco. O nome Síntese identifica o Yaark e seu conceito, além de aparecer ligado à criação do par de espadas Nyr e Zhar.
+
+### 8.3 Visão, acesso e criação são etapas diferentes
+
+| Etapa | Capacidade confirmada | Limite |
+| --- | --- | --- |
+| Ativar a visão | Ayşa pode fazê-lo a qualquer momento. | Não foi definido custo, ação, concentração ou dependência de domínio. Não criar essa dependência. |
+| Perceber | Enxergar o mundo como emaranhado de lã e novelos de seres vivos e conceitos. | Ver não é compreender tudo, ler pensamentos ou identificar automaticamente toda magia. |
+| Tornar-se elegível | Coisas inanimadas e aquilo que Ayşa matou podem ter seus novelos manipulados. | Ferir, paralisar, curar ou obter consentimento de um vivo não substitui a condição. |
+| Manipular/coletar | Os novelos elegíveis fornecem Khan e Yorman. | Quantidades, alcance, tempo e forma de distribuição não foram quantificados pelo jogador nesta conversa. |
+| Reconstruir/sintetizar | Empregar os recursos obtidos para reconstruir e sintetizar coisas e conceitos. | O poder não foi definido como criação gratuita, catálogo ilimitado ou reprodução instantânea de qualquer relíquia. |
+
+**Enxergar um novelo vivo não autoriza puxá-lo. Abrir um domínio também não o torna disponível.**
+
+O consentimento de Amethysta ou de um aliado não foi declarado exceção. Auxiliá-los pode envolver construções externas ou efeitos sintetizados aprovados, mas não a manipulação direta de seus novelos vivos.
+
+### 8.4 Casos ainda não definidos
+
+- Atribuição de uma morte com vários participantes, dano contínuo ou golpe final de Amethysta.
+- Tratamento de um cadáver de alguém morto por outra pessoa. Não presumir que a palavra “inanimado” contorna automaticamente a exigência “que matei”.
+- Status de mortos-vivos, construtos conscientes, seres conceituais e entidades sem biologia comum.
+- Elegibilidade de um conceito percebido: perceber conceitos não torna todo conceito manipulável.
+- Manipulação de equipamento vestido ou carregado por um vivo; natureza inanimada não fixa ação, resistência, alcance ou desarme automático.
+- Conversão de recursos, sobras, armazenamento de padrões, perdas e reciclagem de criações próprias.
+- Conhecimento necessário para reproduzir objetos complexos e duração de cada criação.
+
+Essas perguntas delimitam lacunas; não removem a capacidade de síntese que o jogador confirmou.
+
+### 8.5 Criações comprovadas
+
+**Nyr e Zhar** foram criadas pela Síntese. O calendário também registra que o grupo **fez identidades falsas niligardianas com a Síntese** durante a viagem de barco. Isso confirma uma aplicação documental da criação sem conceder controle de memória ou validade universal aos documentos.
+
+O **Manto de Kravarius** permanece um projeto de craft. O conceito afetivo e a instrução de síntese foram desenvolvidos, mas o item não deve ser registrado como concluído.
+
+## 9. Títulos e flavour de combate
+
+### 9.1 O Trovão Lampejante
+
+**Título confirmado; descrição a seguir é a formulação narrativa atual.**
+
+A Síntese tece fios e condutores com os recursos disponíveis. Quando Ayşa os tensiona em combate, a eletricidade percorre a trama: a lã escura parece tornar-se luz, e o movimento deixa um arco breve no ar. O estalo da costura acompanha o trovão do golpe.
+
+Sua técnica marcial continua sendo executada por ela. A Síntese torna visível uma linguagem comum entre velocidade, armas, energia e construção; não move os corpos inimigos como marionetes.
+
+### 9.2 O Fulgor Negro
+
+**Título confirmado; Black Flash é a inspiração solicitada para seu desenvolvimento.**
+
+O flavour mais recente situa o Fulgor Negro na coincidência entre impacto e descarga sobre um padrão sintetizado. A Síntese trabalha a arma, os fios preparados e a energia investida. No momento da convergência, o desenho se comprime num ponto negro com contorno vermelho e violeta. O clarão antecede o trovão.
+
+O alvo é ferido pela construção e pela energia que o atingem. Seu novelo vivo não é extraído para produzir o golpe.
+
+Não estão aprovados multiplicador, chance, dano adicional, recuperação, frequência ou acerto automático de Black Flash. Os valores de 3d6, 3d8 e outras tentativas anteriores eram propostas de design, não números canônicos.
+
+### 9.3 Correspondência com capacidades existentes
+
+| Capacidade | Flavour consolidado |
+| --- | --- |
+| Nyr e Zhar | Dois padrões complementares tecidos pela Síntese, com identidades lunar e solar. |
+| Imbuir | Nova camada de energia adicionada à trama da arma, liberada conforme a regra de imbuimento. |
+| Dança do Esmagamento | O segundo golpe completa visualmente o arco do primeiro como uma agulha fechando um ponto. |
+| Golpe Cruzado | Duas trajetórias entrelaçadas conectam a composição marcial, sem controlar os alvos. |
+| Crosta de Kravarius | Fibras e luz recolhidas na superfície representam a geração de cargas e Khan já prevista no item. |
+| Thunder God | Condutores preparados pela Síntese acompanham a série de avanços e golpes elétricos. |
+| Queima do título | O esforço excede o padrão sustentado; as linhas racham e expressam o dano verdadeiro pago por Ayşa. |
+
+As imagens não acrescentam teleporte, previsão perfeita, ações extras, novos tipos de dano ou manipulação de tempo.
+
+## 10. Ayşa e Amethysta como unidade
+
+Ayşa fornece suas armas, disciplina marcial e intervenção física. Amethysta oferece magia e iniciativa própria. A Síntese prepara uma construção externa que pode responder às ações de ambas.
+
+Na formulação narrativa do domínio, uma cria a abertura e a outra a completa. Ayşa pode conduzir um inimigo a um ponto preparado; Amethysta pode criar a oportunidade para a aproximação de Nyr ou Zhar. A convergência representa uma intenção coordenada sem fundir seus novelos ou suas identidades.
+
+O vínculo materno aparece nas escolhas de construção: passagem, abrigo, proteção e condições para a filha agir. Os conhecimentos da YKT ajudam Ayşa a pensar o que oferecer a Amethysta além da educação militar que recebeu.
+
+Não há autorização automática para redirecionar qualquer magia por fios, ignorar alcance, transferir imunidades ou tratar qualquer morte causada pela dupla como uma morte de Ayşa para coleta.
+
+## 11. Drak'hai e o projeto de domínio
+
+### 11.1 O que foi declarado
+
+Ayşa dispõe de **um Drak'hai**, recurso extremamente raro, o único obtido pelo jogador no RPG até este registro. O jogador declarou que gastará um Drak'hai para liberar o domínio.
+
+O gasto é uma intenção de desbloqueio; não há registro de que já ocorreu em sessão. Não se reduz o inventário nesta consolidação.
+
+A interpretação desenvolvida pelo assistente é a de um desbloqueio permanente com consumo único, seguido de ativações custeadas por Khan e Yorman. É uma proposta coerente com o pedido, mas origem do recurso, ritual, permanência e custo de cada uso não receberam uma regra final do mestre.
+
+O “Novelo Primordial”, criado ao trabalhar o Drak'hai na abertura branca da cabeça da Síntese, é uma imagem proposta para o ritual. Não é a origem confirmada do recurso nem um novo item já adquirido.
+
+### 11.2 Nomes e identidade da versão mais recente
+
+| Elemento | Nome narrativo em trabalho |
+| --- | --- |
+| Família do poder | Domínio da Síntese: O Avesso do Fulgor. |
+| Domínio simples | Manto do Trovão Lampejante. |
+| Domínio totalmente expandido | Firmamento do Fulgor Negro. |
+| Ideia central | Ampliar o espaço de trabalho da Síntese, preservando a elegibilidade dos materiais. |
+| Frase temática | “Do que terminou, eu teço o que ainda pode existir.” |
+| Expressão da dupla | “Dois pulsos. Um único instante.” |
+
+Os nomes preservam a proposta narrativa mais recente desta conversa; não comprovam que a habilidade já foi desbloqueada ou utilizada.
+
+### 11.3 Domínio simples
+
+O Manto do Trovão Lampejante é um campo de trabalho ao redor de Ayşa. O ambiente continua visível, atravessado por fios preparados. A Síntese mantém materiais e construções acessíveis para aplicações de combate e suporte.
+
+Suturas podem ser preparadas, proteções erguidas, filamentos ofensivos acompanharem as armas e objetos elegíveis fornecerem material nos limites aprovados. Ayşa e Amethysta coordenam-se através da mesma construção externa.
+
+A visão já existe fora desse campo. O domínio não é sua fonte nem requisito. “Domínio simples” aqui é a designação homebrew de um estágio incompleto: não importa automaticamente todas as regras de Jujutsu Kaisen.
+
+### 11.4 Domínio totalmente expandido
+
+A barreira inteira é uma construção da Síntese, formada com os recursos investidos. Seu interior apresenta uma savana noturna de fios, constelações de nós, arcos lunar e solar e a silhueta simbólica da caverna de Amethysta.
+
+Tudo que a Síntese construiu nesse espaço está ligado ao seu trabalho. Isso amplia a distribuição e o uso dos materiais preparados. **Não transforma ocupantes vivos em material livre.**
+
+A diferença central entre os estágios é a escala e a organização das construções, não uma suspensão das limitações do Yaark. Cura e auxílio precisam atuar por efeitos ou materiais sintetizados; ataques ferem por contato, descarga ou outras formas aprovadas; coleta de um inimigo só acontece quando sua elegibilidade for satisfeita.
+
+Ataques partindo de outros pontos da trama, transporte de materiais, barreiras, passagens e suporte em várias posições são direções de design. Alcance, cobertura, salvaguardas, resistência, duração e economia de ações precisam de versão final.
+
+### 11.5 O que permanece pendente
+
+Não adotar como ficha final os raios de 15, 30 ou 60 pés, CD 17/18, custos de abertura, limites de três Fulgores, cura numérica, dados de dano, núcleos com CA/PV ou recuperação por descanso sugeridos nas versões anteriores. Houve várias iterações, inclusive anteriores à correção sobre novelos vivos.
+
+O requisito canônico é que a expansão seja própria de Ayşa e Síntese, incorpore seus títulos, a cooperação com Amethysta e as aplicações inspiradas em Physic, custando o Drak'hai para ser liberada. Os números precisam ser redigidos novamente sobre essa base.
+
+## 12. Physic: seis aplicações e uma consequência
+
+A referência enviada chama-se **Physic**, de CAIN. “Psych” foi usado na conversa como referência a essa página. Ela contém **Bloodhound, Cure, Wound, Triage, Remove e Mend**, além de **Necrosis**, consequência de determinadas intervenções.
+
+**Remove não é Remold/Remodelagem.** Sua inspiração é a supressão de dor e trauma. A primeira leitura errada do assistente está superada.
+
+Esta seção registra formas de adaptação, sem conceder automaticamente todas elas à ficha atual.
+
+| Referência | Aplicação compatível com o poder confirmado | Domínio simples | Domínio expandido |
+| --- | --- | --- | --- |
+| Bloodhound | A visão da Síntese fornece a linguagem dos novelos. Rastreamento, diagnóstico e reconhecimento preciso seriam desenvolvimentos adicionais. | Observação da trama próxima e dos materiais preparados, dentro da percepção realmente concedida. | Organização dos padrões observados no espaço construído; sem leitura mental ou onisciência. |
+| Cure | Sintetizar materiais ou um efeito restaurador que trate a pessoa externamente à manipulação do seu novelo. | Preparar suturas, suportes e um tratamento localizado. | Distribuir tratamentos pela rede e organizar assistência em vários pontos, conforme regras futuras. |
+| Wound | Sintetizar filamentos, agulhas, lâminas ou uma descarga que cause ferimentos. | Ataques por instrumentos e energia preparados perto de Ayşa. | Utilizar trechos da construção como origem de ataques, se aprovado; nunca desfiar diretamente um vivo. |
+| Triage | Produzir suportes, compressas, talas, coberturas e rotas de resgate. | Assistência imediata e proteção localizada. | O cenário construído ajuda a alcançar e preservar feridos; transporte extraordinário ainda é proposta. |
+| Remove | Sintetizar um efeito de alívio da dor ou atenuação temporária da influência de um trauma, se essa receita existir. | Aplicação localizada, preferencialmente voluntária. | Sustentar um véu de alívio por uma construção distribuída. Não extrair memórias ou desligar poderes vivos por manipulação direta. |
+| Mend | Desfazer, reconstruir ou reorganizar objetos inanimados elegíveis usando recursos e padrões disponíveis. | Reparos e pequenas construções conforme capacidade estabelecida. | Reorganização de materiais em maior escala dentro da barreira, com custo e limites a definir. |
+| Necrosis | Possível custo homebrew de esforço ou instabilidade das construções. | Suturas e suportes podem apresentar falhas narrativas; consequência mecânica pendente. | Sobrecarga maior pode cobrar um preço, sem consumir automaticamente o novelo vivo de Ayşa ou desfazer retroativamente toda cura. |
+
+Os pontos de Necrose e os danos verdadeiros sugeridos para eles não são recursos ou penalidades aprovados. A queima de Thunder God, que já possui dano verdadeiro na ficha, é uma regra distinta.
+
+## 13. Relíquias de Kravarius
+
+### 13.1 Estado de posse
+
+| Item | Situação |
+| --- | --- |
+| Crosta de Kravarius | Existe, pertence a Ayşa e está equipada. |
+| Nyr | Existe, pertence a Ayşa, criada pela Síntese e equipada. |
+| Zhar | Existe, pertence a Ayşa, criada pela Síntese e equipada. |
+| Manto de Kravarius | Craft futuro, pendente de revisão do mestre; não equipado e sem efeitos ativos. |
+
+Não se conhece com segurança quem ou o que foi Kravarius, sua situação atual ou a cena de aquisição da Crosta. O nome não estabelece uma divindade, ancestral ou dragão morto por Ayşa.
+
+### 13.2 Crosta de Kravarius
+
+Armadura leve de couro batido **+2**, com **redução de dano 2**, registrada como “RD: −2”. Sua composição atual sustenta **CA 24 = 12 + 2 de magia + 8 de DES + 2 de Veloz**. Os bônus não são somados de novo.
+
+Possui resistência a esmagador e perfurante e imunidade a cortante e elétrico. Seu visual é negro e vermelho, com motivos dracônicos no peito, superfície de couro/escamas e fissuras energéticas.
+
+Cada 5 pontos de dano elegível prevenido geram uma carga dracônica; cada 10 geram também 1 Khan. As cargas voltam a zero no descanso longo. O registro “Breath Weapon = 5 cargas” não resolve sozinho se são geradas ou consumidas.
+
+**Pele Dracônica:** 20 cargas para resistência a todo dano por cinco turnos. **Agilidade Dracônica:** 4 cargas para +30 pés de deslocamento por três turnos. Ações de ativação, sobras e ordem das camadas de prevenção ainda carecem de redação completa.
+
+Imunidade elétrica não é imunidade a trovejante, fogo ou dano verdadeiro. A queima do título não é reduzida nem alimenta as cargas.
+
+### 13.3 Nyr e Zhar
+
+| Espada | Identidade | Visual |
+| --- | --- | --- |
+| Nyr | Lunar, Yorman. | Prata, azul profundo, símbolos lunares e energia fria. |
+| Zhar | Solar, Khan. | Ouro e símbolos solares; energia mais negra na manifestação de batalha solicitada. |
+
+Ambas são espadas curtas +1, com Acuidade, Leve e Vex. Seus nomes curtos foram escolhidos para uma língua draconata fictícia de Drakovia. Um registro anterior descreve aço de vanádio; os acabamentos posteriores não comprovam mudança de material.
+
+As espadas ficam embainhadas à altura da cintura em cenas casuais. A unidade do par é conceitual e marcial: cada uma conserva identidade própria.
+
+O jogador corrigiu o adicional de polaridade da expansão para **1d4**. A ficha final ainda registra a operação **Imbuir por 1 Khan ou Yorman como +1d6**, e seu apêndice reconhece a divergência. O 1d4 não deve ser apagado, nem somado ao 1d6 automaticamente: permanece pendente se substitui ou representa um efeito separado.
+
+Na expansão de itens, Nyr retira ataques de oportunidade do alvo e Zhar favorece o deslocamento de um aliado; esses efeitos ficam identificados como texto de expansão até a mesa resolver a integração com a ficha-base.
+
+### 13.4 Manto: o presente em preparação
+
+Ayşa desenvolveu a ideia do Manto a partir do conhecimento transmitido por **Begônio, Douglas, Proísb, Pumma e Niara** sobre Khan e Yorman. A Crosta serve de matriz simbólica. O ouro de Khan representa a esperança do próximo dia; o azul de Yorman, a certeza da noite. A síntese expressa a tentativa de ser uma mãe melhor e de oferecer a Amethysta experiências que a própria Ayşa não teve.
+
+Textos anteriores escreveram o presente como concluído. A correção posterior do jogador prevalece: **trata-se de intenção, instrução e projeto de craft, não de armadura pronta**.
+
+O projeto é uma armadura leve rara, com sintonia de Amethysta. A aparência inclui couro escamoso roxo e ouro; dragão vermelho no peito, sol e lua laterais; manto com composição solar/lunar envolvida por um dragão roxo. Imagens de frente e costas apresentam variações de arranjo, sem apagar a especificação verbal. Foram pedidos estados dormente, Khan, Yorman e aura violeta.
+
+A ficha final registra no projeto CA 20, CD 18 com CAR 24, elo geral de 40 pés e gatilho específico a 30 pés. Esses números não alteram a CA atual 15 de Amethysta. A redação da fórmula de CA do projeto ainda é própria do homebrew e requer revisão.
+
+Na proposta atual do Manto, Ayşa reage quando Amethysta sofre dano, move até metade do deslocamento sem ataques de oportunidade e marca a fonte visível. A marca afetaria a próxima salvaguarda contra magia, sopro ou traço da dupla. O jogador fixou que a marca estoura **quando Ayşa ataca**, inclusive como parte de magia, sem exigir acerto como condição adicional, e que **Ayşa paga Khan e Yorman**.
+
+“A Esperança de Khan” propõe redirecionar o próximo dano de Amethysta para Ayşa após estourar a marca; “A Certeza de Yorman” propõe desvantagem no próximo ataque contra Amethysta após falha contra ela. Permanecem pendentes de craft e aprovação, incluindo prazos e ordem com o vínculo.
+
+## 14. Estado mecânico de referência
+
+**Fonte principal: Aysha_Amethysta_Ficha_Final.pdf.** Esta seção transcreve a campanha; não é uma nova auditoria das regras publicadas de D&D.
+
+### 14.1 Atributos e recursos
+
+| Campo | Ayşa | Amethysta |
+| --- | --- | --- |
+| Nível | Dragoon 7 | Companheira no nível 7 |
+| FOR | 7 (−2) | 8 (−1) |
+| DES | 26 (+8) | 12 (+1) |
+| CON | 22 (+6) | 11 (+0) |
+| INT | 11 (+0) | 10 (+0) |
+| SAB | 8 (−1) | 10 (+0) |
+| CAR | 13 (+1) | 24 (+7) |
+| Proficiência | +3 | +3 |
+| PV da ficha | 69/69 | 45/45 |
+| CA | 24 | 15, sem Manto |
+| Iniciativa | +8 | Compartilhada, +8 |
+| Caminhada | 40 pés | 30 pés |
+| Voo | 80 pés quando as asas pertinentes estão ativas | 60 pés |
+| Nado/escavação | Benefício anfíbio conforme vínculo; não atribuir automaticamente todos os modos | 30 pés de nado e escavação |
+| Khan | 27 | Sem reserva independente confirmada |
+| Yorman | 28 | Sem reserva independente confirmada |
+| Polaridade | +5, significado completo pendente | Sem contador separado confirmado |
+| Drak'hai | 1 declarado nesta conversa, destinado ao futuro desbloqueio | Não registrado |
+
+Esses PV e reservas são o último retrato documental, não contadores atualizados após sessões não informadas. CAR 18 e DES 14 de Amethysta pertencem a referências anteriores; a ficha final traz CAR 24 e DES 12.
+
+### 14.2 Ayşa em combate
+
+- Nyr e Zhar: ataque +12, alcance 5 pés, dano básico 1d6+9 perfurante.
+- Ataque Extra: dois ataques na ação Atacar.
+- Vex: acerto com dano concede vantagem no próximo ataque contra o mesmo alvo antes do fim do turno seguinte, conforme a ficha.
+- Dança do Esmagamento: ataque secundário no mesmo alvo após acerto elegível; a ficha final usa +12 e 1d6+9. Não usar o antigo 1d6+1 como substituição silenciosa.
+- Golpe Cruzado: outro alvo ao alcance, considerando CA dele +2 só para esse ataque. Uma técnica por ataque; secundários não geram recursão.
+- Veloz: +2 CA com uma arma corpo a corpo em cada mão, já incorporado.
+- Ambidestro 2024 e Combate com Duas Armas: descritos na ficha; não concedem duas ações bônus.
+- Speedy: +10 pés já incorporados ao deslocamento 40; a ficha descreve seus demais efeitos.
+- Adepto Marcial: dois dados d6 no registro final, recuperados em descanso curto/longo. Empurrar usa FOR CD 19; Passos Evasivos usa ação bônus e soma o d6 à CA pelo prazo registrado.
+- Mente Psiônica: comunicação dirigida, não leitura mental.
+- Sopro pessoal: substitui um ataque; cone 15 pés, DES CD 17, 2d10 elétrico, metade no sucesso, três usos por descanso longo.
+- Voo de Gemas: ação bônus, uma vez por descanso longo, um minuto; não é voo permanente.
+
+### 14.3 Thunder God e queima
+
+Thunder God é ativado por ação Mágica, uma vez por descanso curto/longo. Permite seis ataques corpo a corpo, deslocamento dobrado e movimento sem ataques de oportunidade. Cada acerto principal acrescenta 1d6+1 elétrico.
+
+Queimar o título permite Dança nos principais que acertarem, até seis principais e seis secundários. Não são seis ações Atacar e não há encadeamento recursivo.
+
+Cada principal realizado cobra 1d6−1 de dano verdadeiro, mesmo errando. Seis principais cobram 6d6−6, de zero a trinta. Os secundários não cobram novamente. A duração de eventual perda do título e o adicional elétrico dos secundários não foram definidos.
+
+### 14.4 Amethysta: poderes e repertório atual
+
+Mudar de Forma, Voar, Anfíbio, Nadador, Escavar, Conjurer e Mage Adept (Cleric) constam dos registros. A mordida herdada é +2, 1d6−1 perfurante, alcance 10 pés; não muda a direção visual de combate por magia.
+
+O sopro elétrico é uma linha de 20 pés, 4d6 elétrico, DES CD 18. A recarga 7–8 significa resultado 7 ou 8 em 1d8 no início do turno quando gasto. A explicação anterior usa metade no sucesso, mas as páginas principais não explicitam essa parcela.
+
+O sopro paralisante compartilha a recarga e não soma o dano elétrico. A explicação da ficha usa CON CD 18 e repetição ao fim de cada turno. Área e duração máxima precisam de confirmação.
+
+| Magia atual | Resumo conforme a ficha final |
+| --- | --- |
+| Spare the Dying | Estabiliza uma criatura a 0 PV que ainda não morreu; 30 pés no N7; não cura nem ressuscita. |
+| Toll the Dead | SAB CD 18; 2d8 necrótico, ou 2d12 se abaixo dos PV máximos; 60 pés. |
+| Bane | Até três alvos, CAR CD 18; −1d4 em ataques e salvaguardas, concentração até um minuto; 30 pés. |
+| Silvery Barbs | Reação a sucesso elegível a 60 pés, rerrolagem com menor resultado e vantagem para outra criatura segundo a ficha. |
+
+CAR 24 produz CD 18 e ataque mágico +10 na ficha. As quatro magias atuais não usam jogada de ataque mágico. Não reativar Eldritch Blast, Lightning Lure, Hex, Booming Blade ou Comprehend Languages apenas porque aparecem em códices antigos.
+
+A ficha registra zero espaços de magia e não individualiza todos os usos/recuperações dos traços que concedem magias. Conhecer Bane e Silvery Barbs não os torna ilimitados.
+
+## 15. A YKT e as relações recuperadas
+
+A YKT é identificada como **Yormanos Khansados de Thor’hunna’bad** no texto do Manto. O calendário registra **Yormanos Khansados de Tor'hunabad**. As duas grafias são preservadas como variantes do nome do grupo.
+
+O calendário narra um novo pacto após a fuga do cofre e a revelação de Eloise sob a chuva. Esse ato conforma a YKT. A defesa de Ayşa usa o nome do grupo também ao recordar o acolhimento após a deserção; pode ser uso retrospectivo do nome, e não exige inventar uma segunda fundação.
+
+| Pessoa ou entidade | Relação/documentação |
+| --- | --- |
+| Douglas | Amigo de Ayşa, acolhedor segundo a defesa, vencedor do Hala'Ahly e reivindicante do título de Violeiro. Participa da aprendizagem de Khan/Yorman. |
+| Pumma Nyx/Eloise | A defesa identifica os dois nomes como a mesma pessoa; Adam é seu irmão. Motivação central da incursão em Fae'Maetha. |
+| Begônio/Begonio | Integrante da história do grupo; usa o selo dos cultistas na fuga do cofre e participa do aprendizado de Ayşa. |
+| Proísb/Proisb | Investiga o grupo, alia-se por vingança contra o Violeiro e ajuda no Hala'Ahly; também transmite conhecimentos. |
+| Virydia/Viridia | Seu título de nobreza ajuda o grupo a embarcar sem registro. |
+| Niara | Citada na defesa e entre os transmissores de conhecimento a Ayşa. |
+| Deus, a Vaca | Nome ou designação citado na defesa; natureza e identidade não esclarecidas. |
+| Carapachina e suas pulgas | Referência coletiva na defesa, sem classificação ou biografia recuperada. |
+| Charlotte/Charllote | Personagem do calendário com livro profano; desaparece ao dizer sete palavras na área protegida. |
+| Akuanduba | Reaparece em Niligardia, depois se separa do grupo e é preso nos esgotos de Fae'Maetha. |
+| Faruzan | Apresentada por um contrabandista na etapa de transporte clandestino. |
+| Zara | Encontrada caída do céu; auxilia na entrada numa cena de homicídio, depois é rejeitada e ameaça denunciar o grupo. |
+| Shizuo | Aborda o grupo no primeiro marco recuperado do calendário. |
+| Iliada | Recebe encomenda de moeda e auxilia o acesso aos bastidores do Hala'Ahly. |
+| Eladrin | Nome ou designação de alguém conhecido no Chifre D'Ouro; Douglas se separa para ajudar. Não fixar espécie apenas pela palavra. |
+| Miasma | Contatada por Eloise e fornece orientação para encontrar um contrabandista do bando. |
+| Orquestra | Revela estar num dos cofres e agradece à distância durante a fuga. |
+
+Essa tabela não constitui uma lista definitiva de membros da YKT em cada período.
+
+## 16. Calendário de sessões recuperado
+
+**Fonte: calendario.md.** Nomes e datas ficcionais seguem o registro, com pontuação normalizada. Os marcos reais de publicação em 2024 não são convertidos em datas de Gaya.
+
+| Data no registro | Acontecimentos |
+| --- | --- |
+| Drakilis, 40 Ecvaneman, Nifir; 207830, 330 NI | O grupo é abordado por Shizuo. |
+| Drakilis, 9 Klahecta'an, Nifir | Emboscada por uma criatura estranha. |
+| Humilis, 10 Klahecta'an | Chegada a Ara'Mankur; enganam o dono da taberna pobre e conseguem um show no Chifre D'Ouro. |
+| Tiferis, 11 Klahecta'an | Pesquisam uma elfa de cabelo vermelho. Dividem-se entre buscas ligadas a uma elfa criminosa e uma militar; um grupo rouba a cidadela e outro usa “Redação” para roubar uma loja de itens mágicos. Reúnem-se, fazem o show e conhecem Eladrin. |
+| Nayudilis, 12 Klahecta'an | Douglas se separa para ajudar Eladrin. Os outros procuram um artífice para presenteá-lo, encomendam uma moeda a Iliada, adquirem montarias e buscam um piano. Recebem um pacote para o Violeiro e procuram Douglas nos esgotos. |
+| Madaris, 13 Klahecta'an | Douglas entra no Hala'Ahly e vence o primeiro round. O grupo encontra seu rastro e fala com Iliada para acessar os bastidores. |
+| Ygdrel, 14 Klahecta'an | Douglas vence o segundo round; o grupo entra em sua banda. O pacote seria a rédea do Violeiro. Proisb alia-se ao grupo por vingança. Vencem o terceiro round, matam uma tenente élfica e vencem o Hala'Ahly. Douglas reivindica o título de Violeiro. |
+| Gayilis, 15 Klahecta'an | Recebem recompensa e presenciam o assassinato do antigo Violeiro; a fonte não atribui o assassinato ao grupo. Encontram Zara caída do céu, investigam o homicídio na loja do piano, recuperam o instrumento. Rejeitam Zara, que ameaça denunciá-los; fogem acreditando ser procurados pelos elfos. |
+| Duhalis, 16 Klahecta'an | Eloise conta parte da verdade sobre o irmão a Douglas; os dois selam um pacto. |
+| Duhalis, 31 Niliuman, Druian | Embarcam num porto de carga usando a nobreza de Viridia, sem registro. Fazem identidades falsas niligardianas com a Síntese. |
+| Drakilis, 25 Nilygdran, Druian | Chegam ilegalmente a Niligardia, misturam-se aos turistas na doca Hex. Douglas, Aysa e Charllote ajudam um aluno a chegar ao Real Museu Gnômico de Niligardia. Exploram seguindo o livro profano; o grupo se reúne, chega à área protegida pelos sete impérios, e Charllote desaparece ao dizer sete palavras. Akuanduba reaparece. Eloise vê o irmão chegando à cidade e impõe urgência de menos de um dia. Miasma encaminha o grupo a um contrabandista, que apresenta Faruzan e os oculta em caixas ilusórias para o teleporto. |
+| Humilis, 26 Nilygdran, Druian | Viagem por Fae'Nifhan e Fae'Maetha; fuga do cofre, invasão demoníaca, pacto da YKT, incursão no sacrário, perseguição, incêndio e sentença. Detalhes abaixo. |
+| Data desconhecida | Todos acordam nus e sem itens em celas em Fae'Maetha. |
+
+### 16.1 O dia da incursão em Fae'Maetha
+
+O grupo é enviado a Fae'Nifhan, sai das caixas antes da hora e encontra uma forma de voltar. Em seguida chega a Fae'Maetha e começa a escapar do que o registro chama de cofre mais protegido do mundo, **sem roubar uma única moeda**.
+
+Derrubam os portões por dentro. Durante a fuga, Begonio usa o selo dos cultistas para tentar incriminá-los e inicia uma invasão demoníaca. Orquestra revela estar em um dos cofres e agradece à distância. A guarda real fica ocupada com os demônios; o grupo escapa pelas sombras com ajuda dos cultistas agradecidos.
+
+Akuanduba se separa após um conflito e é preso nos esgotos. Sob chuva e lágrimas, Eloise revela o verdadeiro motivo da ida. Os demais decidem ajudá-la e selam o novo pacto da YKT. A defesa posterior identifica o objetivo como buscar **Adam, irmão de Pumma Nyx/Eloise**.
+
+Escondem-se numa taberna e planejam a incursão ao **11º Santíssimo Sacrário do Sol**. Invadem e derrotam um pelotão especial paladino, três Maestros de Guerra e um subtenente da **Ordem do Sol do Oeste**.
+
+O subtenente sacrifica a alma para proteger a terra sagrada de Khan e imbui uma relíquia que estava com ele por motivo desconhecido. Dá lugar a **Ahmek, O Chifre de Marfim**, lendário Pha'HlaDjinn do Pré-Guerra.
+
+A YKT sela Ahmek dentro de seu próprio Yaark e este dentro de uma garganta de Melkor, banindo-o novamente. Isso não é atribuído à Síntese nem prova que Ayşa possa repetir sozinha esse procedimento.
+
+Cercados pelo **77º Regimento Paladino do Sol Verdadeiro**, comandado pelo **Tenente Abrahim Nostradus CCCL, O Mangual da Ira Divina**, que empunha o **Mangual Solar de Nostradus III**, saltam para o canal em retirada.
+
+Um barco surge de uma ruptura da realidade e os recolhe no ar. É tripulado por **Asthorias, O Punho de Ferro**, pirata do Mar Negro. Segue-se uma perseguição pelo canal.
+
+Douglas conjura uma variação de **Esquentar Metal** com seu piano de prata para subjugar as forças paladinas. Segundo o calendário, a ação **incendeia 15% da região da terceira muralha**, tirando incontáveis vidas de soldados e **potencialmente inocentes**. Não há número fechado de vítimas nem confirmação de que todas eram combatentes.
+
+Após a explosão, a YKT atravessa os Portões do Abismo e chega ao Salão da Sentença. É recebida por **Kahnamed Nostradus C, 1573º Czar**, que os condena de forma peculiar à sentença a Fae'Maetha. A entrada seguinte registra o despertar nas celas, sem itens e sem data conhecida.
+
+### 16.2 Titulatura do Czar no registro
+
+O calendário associa a Kahnamed Nostradus C os títulos: O Sol do Oeste; O Sol do Leste; O Sol do Sempre Norte; O Sol do Nunca Sul; A Areia do Tempo dos Homens; A Fé Encarnada; O Fogo Branco de Anduin; O Fogo Branco que Queima o Pecador; O que Abomina o Pecado; O Insolúvel; O Inalcançável; Filho de Jó; Pai de Abrahim; O Abismo da Eterna Luz; A Ordem; O Filho do Homem; O Filho do Cristo Encarnado; Pai de Todos; Irmão dos Homens.
+
+São títulos e relações assim enunciadas na fonte. Não autorizam importar toda uma cosmologia externa para o personagem.
+
+## 17. Prisão, julgamento e defesa de Douglas
+
+### 17.1 O testemunho de Ayşa
+
+Na defesa original, Ayşa dirige-se a **Minos, rei do Submundo, Yaark Selvagem Absoluto do Verbo Julgamento**. Apresenta Douglas como amigo e campeão da justiça por tê-la acolhido junto de Amethysta e da YKT.
+
+Relaciona sua entrada na Brigada, a percepção dos horrores da guerra, a deserção e a descoberta do ovo à vida que encontrou com a filha. Afirma que entraram em Fae’Matha para buscar Adam, irmão de Pumma Nyx, também conhecida como Eloise.
+
+Nomeia Begonio, Proísb, Virydia, Niara, Deus, a Vaca e as pulgas da Carapachina. Afirma que todos se acolheram e perseveraram durante **quinze anos naquela prisão**. Conclui que Douglas declarou ser aquele o caminho mais justo diante das circunstâncias.
+
+O tempo de quinze anos é preservado como testemunho explícito. A passagem objetiva no mundo externo, o envelhecimento e a compatibilidade com os valores de idade da ficha não foram esclarecidos. Não resolver por suposição de imortalidade, reinício temporal ou calendário paralelo.
+
+### 17.2 Contexto atual de julgamento
+
+Nas conversas anteriores, o jogador pediu a representação de um julgamento em escala cósmica, com réus, acusadores e julgadores, e declarou que **estão sendo julgados juntos como YKT**. A disposição completa dos tokens, todas as identidades e a transcrição das imagens daquele julgamento não foram recuperadas nesta consolidação.
+
+Minos está identificado pela defesa. O Czar está identificado no calendário. Não são fundidos numa única entidade nem se conclui que as duas cenas correspondam ao mesmo momento processual.
+
+### 17.3 Argumento de defesa versus fato ocorrido
+
+Foi solicitado desenvolver uma defesa que considere desespero, risco de morte, circunstâncias e ramificações das ações de Douglas. Essa é uma linha argumentativa de Ayşa, não um veredito de inocência nem prova de que o incêndio não matou inocentes.
+
+O fato de Douglas ter ajudado o grupo e o fato de sua magia ter consequências destrutivas podem coexistir. A lore não deve transformar o elogio de Ayşa em narração onisciente, nem inventar intenção de genocídio, premeditação ou absolvição sem fonte.
+
+### 17.4 Referências de “sobre a aventura.md”
+
+O arquivo contém passagens de Apocalipse sobre selos, cavaleiros, trombetas e julgamento; imagens de Ezequiel com rodas, olhos, firmamento, fogo e trono; e uma passagem inicial do Inferno de Dante em forma fonética e tradução.
+
+Há também a nota isolada **“john mckayne, 27 anos, 23 de agosto de 1922 — Tiro na cabeça”** e identificações de interlocutores como **Khan'ahmaethun** e **YKT | Kilo, O Contador**. Sem contexto suficiente, não se atribuem essas identidades a personagens já conhecidos nem se converte a data de 1922 para o calendário de Gaya.
+
+Esses materiais estabelecem referências e pistas presentes no arquivo, não a ocorrência literal de todos os episódios bíblicos e literários no mundo de Gaya.
+
+## 18. Lylia, a Centelha de Sofia
+
+Lylia é outra personagem do jogador. Sua classe canônica foi corrigida para **Druida do Pastor 3 / Feiticeira da Alma Divina 3**, nível total 6. Moon Druid/Druida da Lua e Guardian Druid pertencem ao histórico, não à subclasse atual.
+
+É uma **Shifter Beasthide**. O PDF antigo a registra como ermitã, Caótica Neutra, vinte anos, 1,89 m, 95 kg, pele negra, olhos roxos e cabelos castanhos. Não há passagem de tempo estabelecida para atualizar esses dados.
+
+Sua tribo vivia na **Floresta Negra**, entre ruínas da Grande Guerra. Um **Urso Primal** a atacou; Lylia foi a única sobrevivente do massacre descrito. Viveu sozinha até ser encontrada pelos druidas da Grande Árvore. Foi educada por eles e enviada para conhecer o mundo e trazer conhecimentos à nova comunidade.
+
+A curiosidade intensa, a inocência diante da crueldade e o vínculo com a Grande Árvore integram sua história. Sua curiosidade é também uma vulnerabilidade.
+
+O inventário histórico menciona Moon Sickle +1, couro, ocarina, colar de dente de urso e equipamento de viagem. “Polaridade +5” e “+2 Khan” são registros antigos, não um novo sistema de recursos definido nesta edição.
+
+### 18.1 Sofia
+
+**Sofia aparece no epíteto “a Centelha de Sofia”.** Não foi recuperada uma definição de sua natureza. Não se sabe se é pessoa, entidade, deusa, ancestral, patrona, Yaark ou outra coisa. Lylia e Sofia não são fundidas. A subclasse Alma Divina não prova que Sofia seja a fonte dessa magia.
+
+### 18.2 Reconstruções de ficha ainda distinguidas da história
+
+Foram solicitadas fichas de níveis 6 e 7, em PDF e XLSX, baseadas no PDF mais antigo e na planilha automatizada de D&D, com otimização e adaptação a 5.5e.
+
+| Marco | Registro/proposta | Atributos FOR/DES/CON/INT/SAB/CAR | PV |
+| --- | --- | --- | --- |
+| PDF antigo N3 | Moon Druid 3 histórico | 5/12/15/12/20/10 | 24 |
+| Base N3 reconstruída | Pastor 3, proposta | 5/14/15/8/19/13 | 24 |
+| N6 reconstruído | Pastor 3/Alma Divina 3; classes confirmadas, otimização proposta | 5/14/15/8/20/13 | 42 |
+| N7 proposto | Pastor 3/Alma Divina 4 | 5/14/16/8/20/13 | 55 |
+
+O adendo propõe Alert, War Caster e Resilient (CON), além de aranha-lobo gigante, texugo gigante, rato e lobo como formas. Esses detalhes são recomendações reconstruídas, não prova de escolhas efetuadas em sessão. O sétimo nível ainda não é confirmado como avanço ocorrido apenas por existir uma ficha proposta.
+
+A regra da mesa é **+1 de atributo por avanço ou trocar dois avanços por um talento**. O adendo recuperado a trata como substituição do aumento/talento normal da classe; não duplicar o benefício.
+
+A Grande Árvore conecta Lylia à história druídica do mundo. Não comprova encontro entre Lylia e Ayşa, nem identidade entre a Floresta Negra e a Savana Negra.
+
+## 19. Direção visual e representação
+
+- Ayşa: draconata ametista alta, escamas roxas, olhos pretos e sem cabelos; Crosta negra/vermelha; Nyr e Zhar distintas na cintura ou empunhadas conforme a cena.
+- Amethysta: pequena, infantil, de aparência aproximada de doze anos na forma de halfling; mãos livres de armas, magia violeta; sem sexualização.
+- Síntese: criatura emergindo das costas, aparência esquelética e fios, chifres envolvidos por lã e abertura branca na cabeça; referências JoJo descrevem composição e presença, não regras importadas.
+- Combate: dark fantasy, gótico e atmosfera de soulslikes, com negro, roxo, vermelho e eletricidade; a aura negra/vermelha pertence às manifestações pedidas dos títulos.
+- Banners drakovianos: fundo negro e dragão vermelho de oito cabeças formando um sol; a instrução visual limita a oito cabeças. Não confundir com o dragão de cada peça de armadura.
+- Cenas casuais: duas espadas embainhadas, poses tranquilas, sem auras quando solicitado, fundo preto/roxo e luz superior direita.
+- Eloise é uma pessoa da campanha, identificada como Pumma Nyx; imagens chamadas de referência de Eloise também foram usadas como referência de traço. A função estética de uma imagem não deve apagar sua identidade recuperada na defesa.
+- Foram pedidos frente e costas do conjunto, Amethysta chibi com pernil, rebelião em campo de batalha e julgamento cósmico com múltiplos enquadramentos.
+- A retirada de draconatos de uma pilha de corpos foi correção de uma composição; não estabelece uma proibição canônica de Ayşa ferir draconatos.
+- Imagens usando o Manto ilustram o projeto futuro e não comprovam que o craft aconteceu.
+
+## 20. Histórico de equipamentos e traços
+
+Registros anteriores preservam Sword of Ripples, Rapier of the Black Rose, Songblade, Telescopic Stabber, Red-Hot Whetstone, agulha de costura dracônica, documento falso, kit de herbalismo, arco longo e flechas, mochila e equipamento de viagem.
+
+Sword of Ripples está ligada a andar sobre água e Ripple Strike; Rapier of the Black Rose a dano necrótico e localizar objeto/criatura; Songblade a trovejante, empurrão e Shatter; Telescopic Stabber à mudança de forma e alcance; a pedra de afiar a um adicional de fogo. Posse atual, cargas e benefícios não são incorporados a Nyr e Zhar por continuidade automática.
+
+Uma ficha antiga de nível 4 menciona marca queimada na mão, Aberrant Dragonmark, Booming Blade e Comprehend Languages. A causa, visibilidade atual e persistência mágica da marca não foram resolvidas; os feitiços não integram o repertório atual por simples menção histórica.
+
+A presença de habilidades futuras da classe em documentos antigos não significa aquisição atual: Rugido do Medo, Armadura de Outrora, Legado do Dragão e formas maiores dependem da progressão pertinente.
+
+## 21. Correções que esta edição fixa
+
+| Registro antigo ou interpretação | Tratamento atual |
+| --- | --- |
+| Síntese podia puxar novelos de qualquer vivo dentro da barreira. | Superado: só manipula coisas inanimadas e aquilo que Ayşa matou, conforme a definição atual. |
+| A visão surgia ao abrir o domínio. | Superado: Ayşa pode ativá-la a qualquer momento; o domínio não é requisito. |
+| Curar ou obter consentimento tornava o novelo vivo acessível. | Não foi autorizado; auxílio deve respeitar a restrição. |
+| Black Flash retirava energia do novelo ainda vivo do alvo. | Flavour corrigido: trabalha a arma, a energia e a construção própria; coleta depende de elegibilidade posterior. |
+| Physic tinha Remold/Remodelagem. | Leitura corrigida: Remove, ligada a dor e trauma. |
+| Necrosis era ataque independente ou penalidade já aprovada em Gaya. | É consequência da referência; sua adaptação numérica permanece projeto. |
+| Drak'hai era qualquer forma de Drakai/ovo de drakkai. | Não há equivalência estabelecida. |
+| O único Drak'hai já foi gasto. | O jogador declarou intenção futura; consumo não confirmado. |
+| Crosta +1, CA 23/25 ou ausência de RD. | A correção e a ficha final fixam leve +2, RD 2, CA 24. |
+| Dança secundária 1d6+1 ou dado de superioridade adicional indefinido. | A ficha final registra Dança 1d6+9 e reserva 2d6; não perpetuar a dúvida antiga como se não houvesse nova fonte. |
+| Adicional de polaridade 1d6 apenas. | A correção do jogador fixa 1d4 para a expansão; a coexistência com Imbuir +1d6 da ficha permanece sem resolução. |
+| Amethysta CAR 18/CD 15. | Ficha final: CAR 24, CD 18, ataque mágico +10. |
+| Manto equipado, elevando a CA de Amethysta. | Craft futuro; CA atual 15. |
+| Pagador ou gatilho da marca indefinido. | No projeto, Ayşa paga; atacar o marcado estoura a marca, inclusive através de magia, sem requisito adicional de acerto. |
+| YKT sem nome ou história. | Nome recuperado no Manto; formação por pacto recuperada no calendário. |
+| Eloise sem identificação pessoal. | Defesa identifica Pumma Nyx/Eloise e o irmão Adam. |
+| Incêndio sem possíveis vítimas inocentes. | Calendário registra soldados e potencialmente inocentes; quantidade não determinada. |
+| Lylia Druida da Lua atual. | Corrigido para Pastor 3/Alma Divina 3 no N6. |
+| Sofia necessariamente deusa, mãe ou alter ego. | Natureza não recuperada. |
+
+## 22. Questões abertas para futuras sessões
+
+1. Quando e como a Síntese despertou? A presença atual e suas criações não datam seu surgimento.
+2. Qual a origem do ovo de Amethysta? O encontro é conhecido; sua genealogia não.
+3. Quem ou o que é Kravarius, e como a Crosta foi obtida?
+4. Qual a relação entre os termos Drakai, drakkai e Drak'hai?
+5. O que determina quantidade, polaridade e custo de coleta de cada novelo?
+6. Como funcionam mortes compartilhadas, criaturas já mortas por terceiros e conceitos autônomos?
+7. Quais receitas de síntese já são conhecidas além das criações comprovadas?
+8. Quando o Drak'hai será consumido e qual versão do domínio será aprovada?
+9. Quais são as regras finais de Fulgor Negro e seus limites durante Thunder God?
+10. Como os quinze anos de prisão se relacionam com o tempo externo, as idades e a ficha N7?
+11. Como se conecta a sentença do Czar ao julgamento de Minos, e qual o resultado atual?
+12. Quem integra a YKT em cada etapa, e qual a grafia final de seu nome completo?
+13. Quem é Sofia e qual sua relação efetiva com Lylia?
+14. Como será reconciliado o adicional 1d4 da expansão com o Imbuir +1d6 da ficha?
+15. Quando o Manto será craftado e quais regras serão aprovadas?
+16. Quais conclusões surgiram da tentativa de tradução do alfabeto arcano? A solicitação e as imagens foram mencionadas no histórico, mas uma tradução canônica verificável não foi recuperada.
+
+## 23. Fontes e proveniência
+
+| Código | Fonte | Uso nesta edição |
+| --- | --- | --- |
+| U-ATUAL | Mensagens desta conversa, até 8 de setembro de 2026. | Definição literal da Síntese, restrição a novelos elegíveis, títulos priorizados, cooperação com Amethysta, referência a Physic e intenção de gastar um Drak'hai. |
+| F-FINAL | Aysha_Amethysta_Ficha_Final.pdf, anexo desta conversa, 13 páginas. | Atributos, repertório, regras e status dos itens; páginas 1–4 como autoridade; descrições e expansão com seus limites. |
+| G-ORIGEM | O Códice de Gaya História e Cosmogo(1).txt. | Cosmogonia, eras, povos, artefatos e geopolítica; lido nesta conversa. |
+| C-PDF | Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado(2).pdf, 38 páginas. | Histórico consolidado e adendo de Lylia/Sofia; partes relevantes e continuação lidas ao longo desta conversa. |
+| C-MD | Gaya_Lore_Codex_Atualizado.md, edição 1.2. | Códice anterior, origem afetiva do projeto do Manto, conhecimentos transmitidos e identificação da YKT; lido até o fim nesta consolidação. |
+| S-CAL | calendario.md. | Sequência de sessões, formação da YKT, nomes, datas, perseguição, incêndio e sentença; lido integralmente. |
+| S-DEF | Defesa de Douglas(1).md. | Testemunho de Ayşa, identificação de Minos, Eloise/Adam e quinze anos de prisão; lido integralmente. |
+| S-AV | sobre a aventura.md. | Referências bíblicas e literárias, nomes e nota isolada de John McKayne; lido integralmente. |
+| V-PHYSIC | 1000087160.png, página de Physic de CAIN. | Identificação de seis habilidades e Necrosis; imagem inspecionada nesta conversa. Fonte de inspiração, não regra nativa de Gaya. |
+| V-SINTESE | akkill_yaark.webp. | Referência visual atual da Síntese fornecida na conversa. |
+| HIST | Contexto visível e recuperação de contexto pessoal. | Correções e pedidos anteriores de arte, fichas, julgamento e continuidade; recuperação não equivale a acesso integral a todas as transcrições. |
+
+As fichas antigas, planilhas de Lylia, fonte de classe da Biblioteca Élfica e ODT do Manto são parte da proveniência dos códices lidos. Seus conteúdos são usados aqui conforme a consolidação documentada; não se declara que todos esses originais foram reabertos nesta edição.
+
+Os números de D&D são preservados como registro da mesa, sem nova conversão para regras oficiais. As referências externas de Jujutsu Kaisen e CAIN descrevem inspirações; não importam suas cosmologias, nomes de recursos ou sistemas de dano para Gaya.
+
+## 24. Registro portátil para continuidade
+
+Gaya é o RPG do jogador. Ayşa Öztoprak é uma draconata ametista, Dragoon N7, ex-tenente da Brigada Adamantina de Drakovia. Rompeu com a violência em Galfenhard, desertou pela Savana Negra e encontrou o ovo de Amethysta, sua filha e companheira. Integra a YKT. Seus títulos prioritários são Trovão Lampejante e Fulgor Negro. Usa Crosta de Kravarius leve +2/RD2/CA24 e duas espadas curtas +1 criadas pela Síntese: Nyr lunar/Yorman e Zhar solar/Khan. Manto de Kravarius ainda não está craftado.
+
+Síntese é seu Yaark Nustrad, manifesta-se das costas e trabalha com fios e novelos. Ayşa pode ativar sua visão a qualquer momento e enxergar o mundo como emaranhado de lã, com seres vivos e conceitos possuindo novelos. **Só pode manipular novelos de coisas inanimadas e daquilo que matou.** Deles obtém Khan e Yorman para reconstruir e sintetizar coisas e conceitos. Ver não equivale a manipular. Domínio, cura ou consentimento não anulam essa restrição.
+
+A direção narrativa do domínio é ampliar o espaço de construção da Síntese: Manto do Trovão Lampejante no estágio simples e Firmamento do Fulgor Negro no expandido. As aplicações de Physic devem atuar por materiais e efeitos sintetizados, sem reescrever novelos vivos. Black Flash inspira a convergência entre impacto e energia preparada, sobretudo em cooperação com Amethysta. Ayşa pretende gastar seu único Drak'hai para liberar o domínio; não há consumo ou bloco numérico final confirmado.
+
+Amethysta é um dragão ametista na aparência e azul nas regras, com forma infantil de halfling. Não usa armas; manifesta magia violeta. Na ficha final: CAR24, CD18, CA15, PV45; repertório Spare the Dying, Toll the Dead, Bane e Silvery Barbs, além dos sopros registrados. Ayşa: PV69, Khan27/Yorman28 no retrato documental. A expansão registra polaridade adicional 1d4; não empilhar automaticamente com Imbuir +1d6 da ficha.
+
+A YKT é Yormanos Khansados de Thor’hunna’bad/Tor'hunabad. O calendário registra sua formação por pacto na incursão de Fae'Maetha; Eloise é Pumma Nyx e Adam é seu irmão segundo a defesa. O incêndio de Douglas atingiu 15% da região da terceira muralha, com soldados mortos e potencialmente inocentes. A defesa dirigida a Minos, rei do Submundo e Yaark Selvagem Absoluto do Verbo Julgamento, relata quinze anos de prisão. O julgamento é coletivo da YKT, sem veredito recuperado.
+
+Lylia, a Centelha de Sofia, é Shifter Beasthide, Pastor3/AlmaDivina3 no N6. Sobreviveu ao Urso Primal que destruiu sua tribo na Floresta Negra e foi criada pelos druidas da Grande Árvore. Sofia permanece de natureza indefinida. A otimização para N7 é proposta, não avanço narrativo comprovado.
+
+**Regra de continuidade:** aplicar a última correção explícita, preservar fatos e testemunhos com sua origem, não reativar itens ou magias históricos, não converter flavour em benefício numérico e não preencher lacunas com cosmologia importada.

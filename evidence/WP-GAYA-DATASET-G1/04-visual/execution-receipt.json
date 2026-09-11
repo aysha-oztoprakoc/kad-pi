@@ -1,0 +1,43 @@
+{
+  "task_id": "WP-GAYA-DATASET-G1-04",
+  "project": "kad-rpg",
+  "timestamp": "2026-09-09T02:39:56.094009+00:00",
+  "status": "PASS",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "claim_id": "049e89b1-bb26-47a9-8a7f-4b90d66ed197",
+  "owned_paths": [
+    "kad-gaya/ingestion/media_references.py",
+    "kad-gaya/dataset_runs",
+    "kad-gaya/tests",
+    "kad-gaya/pipeline/dataset_cli.py"
+  ],
+  "command_executed": "python -m pipeline.dataset_cli run --config dataset_runs/staging/01-contracts/validated-config.json --output dataset_runs/staging/04-visual-spatial --stage visual",
+  "total_media_assets_processed": 151,
+  "media_category_breakdown": {
+    "PORTRAIT": 1,
+    "CHARACTER_MOMENT": 1,
+    "HISTORICAL_REFERENCE": 1,
+    "FACTION_TROOP": 3,
+    "ITEM_ILLUSTRATION": 0,
+    "BATTLE_TOKEN": 1,
+    "SESSION_UI_SCREENSHOT": 83,
+    "UNLABELED_CANDIDATE": 61
+  },
+  "approved_associated_assets": 6,
+  "quarantined_unlabeled_assets": 144,
+  "spatial_graph": {
+    "total_locations": 16,
+    "total_spatial_relations": 13
+  },
+  "unblocked_dataset_family": "visual_entity_references",
+  "visual_seeds_generated": 4,
+  "zero_hallucination_verified": true,
+  "manifest_seal_sha256": "e47eb86971893b92e5e1bd46eb989b4270a1f31261a4a42a72e9bb5d1f5c2de4",
+  "receipt_artifacts": {
+    "manifest.json": "94e33cb129c60b32040f1a68abf9d0ad619b2d63ace1e331f243be5557e85410",
+    "visual_spatial_summary.json": "0ced1cab6710816c4b7d776a56ebd4cc9ab2314ab7e29f8f5c2ac4845fd05116",
+    "media_associations.jsonl": "6f08023aaa9257d4daff683bad5d4ebb21a70c968f012e68ca4b1a430afab776",
+    "spatial_graph.json": "96e5299c3cc6f3405cc436e26f3767155628918111555e4d77fdae096db6f4cf",
+    "visual_seeds.jsonl": "40d928a7299ba29ea19cacbf6dc59f1230a06b50fb3eda581f8a0c77a6e780d1"
+  }
+}

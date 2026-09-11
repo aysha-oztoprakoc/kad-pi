@@ -1,0 +1,8 @@
+{
+  "doc_id": "doc_4583aeb7977a",
+  "source_ref": "gaya_knowledge_db.json",
+  "sha256": "4583aeb7977ad0075f4e28db9613e0efae4b87c01a4322f961b6b1aa7b0e0304",
+  "parser": "json_structured_parser",
+  "status": "SUCCESS",
+  "length": 60553
+}

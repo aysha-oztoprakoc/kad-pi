@@ -1,0 +1,42 @@
+---
+slug: akuanduba
+titulo: "Akuanduba, a Ave Phoenix"
+categoria: characters
+aliases: []
+tags: ["characters", "gaya", "nivel_7", "ykt"]
+entidades_relacionadas: ["amethysta", "copa_e_biblioteca", "drakovia", "equipe_ykt", "gaya", "refugio_ykt", "terraco_de_combate"]
+l0_abstract: "Akuanduba, a Ave Phoenix: Patrulheiro Arqueiro 7 (Ranger), Nível 7, HP 58, CA 16. Instrutor de arquearia, rastreamento selvagem e vigilância de longo alcance no topo da copa...."
+---
+
+# Akuanduba, a Ave Phoenix
+
+# [[akuanduba]], a [[akuanduba]]
+
+**Classe e Nível:** Patrulheiro Arqueiro 7 (Ranger)
+**Raça:** Humanoide / Abençoado pelo Fogo | **Tendência:** Neutro e Bom
+**Nível:** 7 | **Pontos de Vida:** 58 | **Classe de Armadura:** 16
+**Deslocamento:** 30ft | **Iniciativa:** +4 (com vantagem)
+
+## Atributos
+| FOR | DES | CON | INT | SAB | CAR |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 12 | 18 | 14 | 10 | 16 | 10 |
+
+## Ataques e Habilidades
+- Arco Longo de Precisão (+9 atk, 1d8+4 perfurante, +2 vs inimigos favoritos)
+
+## Relíquias e Equipamentos
+- Arco da Fênix
+- Aljava dos Ventos
+
+## Papel no [[refugio_ykt]]
+Instrutor de arquearia, rastreamento selvagem e vigilância de longo alcance no topo da copa.
+
+## Traços de Interpretação
+- **Personalidade:** Atento, sereno, conectado à natureza e perspicaz em identificar aproximações hostis.
+- **Ideais:** Nenhum predador ou tropa invasora deve se aproximar sem ser detectada a léguas de distância.
+- **Vínculos:** A guarda do Refúgio e o respeito à terra de [[gaya]].
+- **Defeitos:** Pouco paciente com formalidades urbanas e disputas de gabinete.
+
+## Biografia Canônica e Descrição
+[[akuanduba]] é o arqueiro e batedor supremo da [[equipe_ykt]], conhecido como a [[akuanduba]] ou a [[akuanduba]]. Do observatório na [[copa_e_biblioteca]], seus olhos alcançam os confins do vale abaixo, orientando patrulhas e vigiando os céus contra aeronaves ou batedores de [[drakovia]]. No [[terraco_de_combate]], ensina arquearia de precisão e leitura do terreno natural para [[amethysta]] e os demais.

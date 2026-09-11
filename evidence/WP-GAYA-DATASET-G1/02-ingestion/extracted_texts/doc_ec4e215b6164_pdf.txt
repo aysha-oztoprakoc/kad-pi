@@ -1,0 +1,223 @@
+CAVALEIRO DO DRAGÃO | SÍNTESE
+
+
+
+
+RELÍQUIAS DE
+KRAVARIUS
+Crosta • Nyr • Zhar • Manto
+
+
+
+
+Uma expansão visual para as crônicas de Gaya.
+Quatro relíquias ligadas por uma mesma
+linguagem: a velocidade do trovão, o abraço entre
+mãe e filha e o equilíbrio entre a energia positiva
+de Khan e a energia negativa de Yorman.
+
+
+
+
+As imagens de estado mostram cada item dormente e
+imbuído. A arte separada de Amethysta representa o
+Manto em combate: sem armas, apenas magia elétrica
+violeta.
+
+
+
+
+AYSHA ÖZTOPRAK   |   AMETHYSTA   |   KHAN   |   YORMAN
+
+Uma unidade em combate.
+ITEM MÁGICO | ARMADURA
+
+
+
+Crosta de Kravarius
+A armadura de Aysha | A matriz negra, vermelha e dracônica
+
+
+
+
+Armadura leve +2, rara (requer sintonia)
+
+A Crosta de Kravarius parece uma pele de escamas negras
+endurecidas, cortada por veios vermelhos. O dragão no peito
+não é pintura: é a energia de Kravarius preservada na
+armadura de Aysha.
+Classe de Armadura
+CA 24 (14 + DES 8 + Veloz 2). A armadura é leve e concede bônus
+de armadura +2.
+Proteção e redução
+Você tem resistência a dano esmagador e perfurante, imunidade a
+dano cortante e elétrico e redução fixa de dano 2: sempre que
+sofrer dano, reduza-o em 2.
+Cargas da Crosta
+As cargas zeram ao terminar um descanso longo. Breath Weapon
+tem 5 cargas. Cada 5 pontos de dano prevenido geram 1 carga
+dracônica; cada 10 pontos geram 1 Khan.
+Pele Dracônica (20)
+Gaste 20 cargas dracônicas para obter resistência a todo dano
+durante 5 turnos.
+Agilidade Dracônica (4)
+Gaste 4 cargas dracônicas para aumentar seu deslocamento em 30
+pés durante 3 turnos.
+
+
+
+
+                                                                           ESQUERDA: DORMENTE   |   DIREITA: IMBUÍDA DE CARGAS
+
+
+
+
+    A pele que transforma dano em movimento
+
+    A imagem de referência da Crosta permanece a matriz visual de Aysha:
+    armadura leve negra, dragão vermelho no peito e fissuras de energia. O
+    painel acima mostra a mesma peça em dois momentos de uso.
+
+
+
+    Registro rápido. A prevenção de dano alimenta a mobilidade e a defesa. Os
+    efeitos de Pele Dracônica e Agilidade Dracônica consomem cargas; o
+    descanso longo limpa o registro.
+
+
+
+
+             24                       −2                          5
+              CA                     REDUÇÃO               BREATH WEAPON
+
+
+
+
+                                                                                                     MATRIZ VISUAL DE AYSHA
+
+
+
+
+CAVALEIRO DO DRAGÃO | EXPANSÃO DE ITENS HOMEBREW                                                                                 2/4
+ITENS MÁGICOS | ARSENAL DA SÍNTESE
+
+
+
+Nyr e Zhar
+A lâmina lunar de Yorman e a lâmina solar de Khan
+
+
+
+
+Armas (espadas curtas +1), raras (requer sintonia)
+
+Nyr e Zhar são duas expressões da mesma criação. Yorman
+se manifesta como lua, sombra e energia negativa; Khan se
+manifesta como sol, calor e energia positiva.
+Propriedades compartilhadas
+Cada espada é +1 e tem Acuidade, Leve e Vex. Quando você acerta
+uma criatura com uma espada, Vex concede vantagem no próximo
+ataque contra o mesmo alvo antes do fim do seu próximo turno.
+Imbuir polaridade
+Ao acertar, gaste 1 ponto da polaridade correspondente para
+causar 1d4 de dano adicional de polaridade. Esse dano é separado
+do dano básico da arma.
+
+
+
+
+                                                                                DORMENTES ACIMA   |   IMBUÍDAS ABAIXO
+
+
+
+
+    Nyr                                                                Zhar
+    LÂMINA DE YORMAN | LUA                                             LÂMINA DE KHAN | SOL
+
+
+
+    A lâmina lunar é prateada, fria e estreita; um cristal azul        A lâmina solar é dourada e quase branca no fio; linhas
+    profundo repousa no punho.                                         alaranjadas se enrolam no cabo como chamas contidas.
+    Lua de Yorman                                                      Clarão de Khan
+    Quando imbuída, o dano adicional é 1d4 de dano de                  Quando imbuída, o dano adicional é 1d4 de dano de
+    polaridade com manifestação necrótica. Até o início do             polaridade com manifestação radiante. Um aliado a até
+    seu próximo turno, o alvo atingido não pode realizar               30 pés do alvo pode se deslocar 10 pés sem provocar
+    ataques de oportunidade.                                           ataques de oportunidade.
+    Dano                                                               Dano
+    1d6 perfurante + 1d4 de polaridade quando imbuída.                 1d6 perfurante + 1d4 de polaridade quando imbuída.
+
+
+
+
+              Nyr e Zhar podem ser empunhadas separadamente, mas foram forjadas para lutar como uma única unidade.
+
+
+
+CAVALEIRO DO DRAGÃO | EXPANSÃO DE ITENS HOMEBREW                                                                                3/4
+ITEM MÁGICO | CRIAÇÃO PELA SÍNTESE
+
+
+
+Manto de Kravarius
+A armadura de Amethysta | O abraço entre mãe, filha, sol e lua
+
+
+
+
+Armadura leve +2 (couro batido), rara (requer
+sintonia por Amethysta)
+Forjado pela Síntese para uma halfling adolescente, o Manto
+traduz a Crosta sem copiá-la: couro roxo escuro cravejado,
+escamas negras e violetas, detalhes dourados e um símbolo
+de dragão, sol e lua. O dragão vermelho no centro do peito
+ecoa a armadura de Aysha.
+Classe de Armadura
+Para Amethysta no nível 7, a CA é 13 + bônus de nível 3 + bônus
+da armadura 2 + DES 2, totalizando CA 20.
+Elo de Kravarius
+Os poderes do Manto funcionam enquanto Amethysta estiver a até
+30 pés de Aysha. Os efeitos que exigem uma salvaguarda usam CD
+15, calculada com o Carisma 18 de Amethysta.
+Reflexo Materno
+Quando Aysha sofre dano enquanto está a até 30 pés de
+Amethysta, Amethysta pode usar sua reação para se deslocar até
+15 pés sem provocar ataques de oportunidade e marcar a criatura
+que causou o dano, desde que consiga vê-la.
+Marca do Manto
+Uma criatura marcada subtrai 1d4 da próxima salvaguarda que
+fizer contra uma magia, sopro ou traço de Amethysta antes do fim
+do próximo turno dela. Uma criatura só pode receber uma marca do
+Manto por rodada.
+
+
+
+
+                                                                       ESQUERDA: DORMENTE       |    CENTRO: KHAN       |   DIREITA: YORMAN
+
+
+
+
+    O abraço de duas energias
+
+    Imbuir com Khan: Pulso de Existência                           Fabricação pela Síntese
+    Quando Aysha sofrer dano, você pode gastar 1 Khan como         O Manto usa a Crosta como matriz simbólica, o ouro de
+    parte da mesma reação de Reflexo Materno. Depois da            Khan como acabamento solar e o azul profundo de Yorman
+    divisão de dano causada pelo vínculo, reduza o dano sofrido    como núcleo lunar. Ele não concede automaticamente as
+    por Aysha em 1d6 + 4. Essa redução não gera cargas para a      resistências, imunidades ou cargas da Crosta de Kravarius;
+    Crosta de Kravarius.                                           seus poderes são próprios e dependem do vínculo entre
+    Imbuir com Yorman: Reversão Lunar                              Aysha e Amethysta.
+    Quando a criatura marcada falhar na salvaguarda contra
+    Amethysta, você pode gastar 1 Yorman. A criatura terá
+    desvantagem no próximo ataque que realizar antes do fim
+    do próximo turno.
+
+
+
+
+                                                                                  DRAGÃO    |       KHAN   |   YORMAN
+                                                                                    uma unidade em combate
+
+
+
+
+CAVALEIRO DO DRAGÃO | EXPANSÃO DE ITENS HOMEBREW                                                                                         4/4

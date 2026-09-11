@@ -1,0 +1,223 @@
+bruxo Hexblade 6 paladino1                        Andarilho                                Carlol
+
+                          Proisb                                                            CLASSE E NÍVEL
+
+                                                                                            Goblin
+                                                                                                                                              ANTECEDENTE
+
+                                                                                                                                               Bom Caótico
+                                                                                                                                                                                        NOME DO JOGADOR
+
+
+             NOME DO PERSONAGEM                                                             RAÇA                                              TENDÊNCIA                                 PONTOS DE EXPERIÊNCIA
+
+
+
+
+                                      INSPIRAÇÃO
+     FORÇA
+                                                                            19                       +4                      9m/30ft                           Inocente e Amigável
+     -2              +3         BÔNUS DE PROFICIÊNCIA
+                                                                             CLASSE
+                                                                              ARMD                 INICIATIVA                  DESLOC.
+
+      6                                                                                                                                                                           TRAÇOS DE PERSONALIDADE
+
+                                                                          PV Totais                   62
+                                Força
+
+                                                                                                      62                                                       Viver o máximo possível, e tentar
+ DESTREZA
+                                Destreza
+                                                                                                                                                               viver e não sobreviver
+     +4                         Constituição
+                                                                                           PONTOS DE VIDA ATUAIS                                                                          IDEAIS
+                                Inteligência
+
+     18               ●   +1 Sabedoria
+                      ●   +7 Carisma                                                                                                                           ...
+CONSTITUIÇÃO               TESTES DE RESISTÊNCIA
+                                                                                        PONTOS DE VIDA TEMPORÁRIOS
+     +3
+                                                                                                                                                                                         LIGAÇÕES
+
+
+                      ●   +7 Acrobacia (Des)                              Total 7                                SUCESSOS
+     16                                                                                                                                                        Inocente e Amigável/
+                      ●   +4 Arcanismo (Int)
+                                Atletismo (For)
+                                                                                    d8                          FRACASSOS
+                                                                                                                                                               demônio kkk
+                                                                                DADOS DE VIDA                   TESTES CONTRA A MORTE                                                    DEFEITOS
+INTELIGÊNCIA                    Atuação (Car)
+
+     +1               ●
+
+
+                      ●
+                          +11 Blefar (Car)
+                          +7 Furtividade (Des)
+                                                                        NOME                            BÔNUS               DANO / TIPO
+                                                                                                                                                            Escapada ágil: Disparar, esconder-se e
+                                                                                                                                                            desengajar com uma ação bônus.
+     12                         História (Int)
+                      ●   +11 Intimidação (Car)
+                                                                                                                                                            Lay on hands:
+ SABEDORIA                      Intuição (Sab)                                                                                                              cura 5xnivel de paladino de vida ao toque
+
+     -1                         Investigação (Int)
+                                Lidar com Animais (Sab)                 Repreensão infernal -> 2d10                                                         Fúria do Nanico: adicionar o nível no dano
+                                Medicina (Sab)
+                                                                                                                                                            em uma criatura maior que você uma vez por
+      8                                                                 Rajada Mística-> 1d10                                                               descanso longo
+                                Natureza (Int)
+                                                                        cargas da carniça: 5
+                                Percepção (Sab)                                                                                                             Maldição da Lâmina maldita: amaldiçoa um
+  CARISMA
+                          +11 Persuasão (Car)                                                                                                               inimigo com uma ação bônus que dura 1
+     +8
+                      ●
+
+
+                      ●   +7 Prestidigitação (Des)                                                                                                          min.
+                                                                                                                                                            Adiciona Proficiência ao dano
+                                Religião (Int)
+     26                         Sobrevivência (Sab)
+                                                                                                                                                            19 e 20 crítico
+                                                                                                                                                            Cura level mais Carisma ao matar o
+                                  PERÍCIAS                                                   ATAQUES E MAGIAS                                               amaldiçoado uma vez por descanso curto
+
+                                                                                                                                                            Pacto da Lâmina
+ 9               SABEDORIA PASSIVA (PERCEPÇÃO)
+                                                                  PC                        Gaita
+                                                                                            Armadura de couro                                               One with Shadows
+
+Polaridade: 15                                                     PP        90             Bolsa de componentes                                            While you're in an area of Dim Light or
+                                                                                            Medalhão antigo                                                 Darkness, you can cast Invisibility on yourself
+Comum                                                              PE                       Máscara de madeira                                              without expending a spell slot.
+Goblin                                                                                      Luneta
+Draconico                                                         PO         10             Carniça                                                         Arma de pacto aprimorada: mais 1 no dano
+                                                                                                                                                            e no ataque ao utilizar a arma do pacto da
+Yorman: 16                                                                                                                                                  Lâmina
+Kahn: 21                                                           PL
+
+                                                                                                                                                            Talento Estilo de Luta: Duelismo +2 jogadas
+                                                                                                                                                            de dano em todo ataque com uma arma de
+                                                                                                                                                            uma mão
+          IDIOMAS E OUTRAS PROFICIÊNCIAS                                                          EQUIPAMENTO                                                                 CARACTERÍSTICAS E HABILIDADES
+                                                                                                                                                            Lâmina Sedenta: 2 Ataques por turno
+                                             TM & © 2014 Wizards of the Coast LLC. Cópia permitida apenas para uso pessoal. Tradução: Johny Robert | johnyrobert@icloud.com
+                                                                       17                                                 1.10                             23kg
+                                                                      IDADE                                              ALTURA                            PESO
+
+                                                                       Roxos                                              Cinza
+NOME DO PERSONAGEM                                                    OLHOS                                              PELE                              CABELOS
+
+
+
+
+                                                     Maglubiyet                                                                             NOME
+
+
+
+
+                                                                                                                                                            SÍMBOLO
+
+
+
+
+APARÊNCIA DO PERSONAGEM                                                                                          ALIADOS E ORGANIZAÇÕES
+
+
+
+                                                    Carniçal
+                                                    item incomum maravilhoso, requer attunement (+1)
+                                                    espada longa
+
+                                                    Uma espada quebrada completa por partes de cadaveres, sua lamina é coberta por
+                                                    olhos e bocas, ela fala constantemente na mente de quem a empunhar.
+                                                    Sempre que um inimigo morrer pode gastar uma ação para consumir o corpo e
+                                                    ganhar uma carga de sangue
+                                                    Carne Viva:
+
+                                                    Verme da alma:
+                                                    gasta uma carga de sangue e causa 1d6 de dano psiquico a uma criatura que possa
+                                                    ver num raio de 30ft, o alvo ouvo o som incessante da morte de todas as vitimas da
+                                                    espada
+                                                    olhos do vazio:
+                                                    gasta 3 cargas de sangue para acordar os olhos de roukash'tas Tael, toda criatura
+                                                    que possa ver a espada num    raio CARACTERÍSTICAS
+                                                                                OUTRAS de 60ft deve fazer     um teste de resistetência de
+                                                                                                       E HABILIDADES
+                                                    sabedoria CD 10+seu nivel de bruxo ou ficara amedrontada, uma criatura
+                                                    amedrontada por este efeito pode repetir o teste no final do seu turno. atques contra
+                                                    criaturas amedrontadas por esse efeito tem acerto critico num 19 e adicionam sua
+                                                    proficiencia ao dano
+
+
+
+
+ HISTÓRIA DO PERSONAGEM                                                                                                      TESOURO
+
+                          TM & © 2014 Wizards of the Coast LLC. Cópia permitida apenas para uso pessoal. Tradução: Johny Robert | johnyrobert@icloud.com
+                                                           Bruxo                                                                CAR                                            17                        +9
+                                                                                                                          HABILIDADE CHAVE                                    CD DO TR               BÔNUS DE ATAQUE
+                                         CLASSE DE CONJURADOR
+
+
+
+
+                             0                       TRUQUES                                     3          3                                                                     6
+                              Lâmina da Chama Esverdeada                                     ●   Toque Vampirico
+
+                             Booming Blade                                                   ●   Thunder Step
+                              Ilusão Menor                                                   ●   Remover Maldição
+
+                                                                                             ●    Elemental Weepon
+
+                                                                                             ●    Blink
+
+
+
+
+                     NÍVEL
+                     MAGIA
+                                  ESPAÇOS TOTAL          ESPAÇOS USADOS
+
+
+                             1           2                                                                                                                                        7
+                     EPAR
+                    PR       AD                   NOME DA MAGIA
+
+                              Divine smite
+
+                         ●    Bruxaria
+                                                                                                 4
+                              curar ferimentos
+
+
+
+
+MAGIAS CONHECIDAS
+
+
+
+
+                                                                                                                                                                                  8
+
+
+
+                             2
+
+
+                              lnvisibilidade
+
+
+                                                                                                 5
+
+                                                                                                                                                                                  9
+
+
+
+
+                                                                    TM & © 2014 Wizards of the Coast LLC. Cópia permitida apenas para uso pessoal. Tradução: Johny Robert | johnyrobert@icloud.com

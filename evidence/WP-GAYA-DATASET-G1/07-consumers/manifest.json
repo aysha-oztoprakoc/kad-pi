@@ -1,0 +1,86 @@
+{
+  "stage_id": "WP-GAYA-DATASET-G1-07",
+  "created_at": "2026-09-09T03:24:56.940212+00:00",
+  "config_sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd",
+  "inputs": [
+    {
+      "path": "kad-gaya/dataset_runs/staging/01-contracts/validated-config.json",
+      "sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd"
+    },
+    {
+      "path": "kad-gaya/training/release_exporter.py",
+      "sha256": "6d383426415857b6d62a84b0ca805f2083719ea610e393d69d334c01be62b5f5"
+    },
+    {
+      "path": "kad-gaya/training/sharegpt_exporter.py",
+      "sha256": "95b5c6762ca077db2165ec02bbf9f195a2d8f7bead3bdca10adede3896f8d148"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/02-ingestion/manifest.json",
+      "sha256": "678aec0672857db8c860da3774aaf0ddd8961ba9a45d2e06b8955bd8daa0b2f5"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/03-canon/manifest.json",
+      "sha256": "288d0c79551898bf4c41f41c9e6aa5234cbf18e8978a03af7b36818c2c61ef46"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/04-visual-spatial/manifest.json",
+      "sha256": "94e33cb129c60b32040f1a68abf9d0ad619b2d63ace1e331f243be5557e85410"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/06-synthesis/manifest.json",
+      "sha256": "24101391ccce6f2737c78a253f225f86aeefcdac3e4891b13eff479857ab1906"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "training/provenance.jsonl",
+      "sha256": "bb4970d9cb7aa3efcd1364a0b7f71642ab74eeed4283cb8629c243c778055636"
+    },
+    {
+      "path": "game/world.json",
+      "sha256": "f25435aa5198a4c96d05636a0edb512a796ffabd30ede3390a0769b50feb825b"
+    },
+    {
+      "path": "game/assets.jsonl",
+      "sha256": "6a25b0e9998a10411ccd9f73a13296347125fb5fdff54980040a303565462c3a"
+    },
+    {
+      "path": "rag/records.jsonl",
+      "sha256": "29aab452df71821d88c2d54aad24c8a29ea1d455b2907285513ab6e860107a9d"
+    },
+    {
+      "path": "training_parser_smoke.json",
+      "sha256": "2d734f30c676635fc8563c5a447918a55a5ecfcebecd91c8087c14449761c14e"
+    },
+    {
+      "path": "game_loader_smoke.json",
+      "sha256": "7e3011d16d35b10d822fd1f8b0969b0835927bb0f4825d74ba84daebd8496fb1"
+    },
+    {
+      "path": "scoped_retrieval_smoke.json",
+      "sha256": "bae1a20fce6d4fbb80e8a10344cdabe14a43db274ffd24870c7e812a7fe4c82a"
+    },
+    {
+      "path": "consumers_summary.json",
+      "sha256": "30d5bc06ff9870da8d4562a479a332c8ca0645222b7c8991a64f268c9fd7901b"
+    },
+    {
+      "path": "consumer_manifest.json",
+      "sha256": "285935e4b34830501db469390a80258403baaeaca41d5b94b56038426ec7f7fb"
+    }
+  ],
+  "metrics": {
+    "training_examples": 37,
+    "lineage_resolution_rate": 1.0,
+    "game_entities": 53,
+    "game_assets": 151,
+    "rag_records": 304,
+    "separate_consumer_smokes": true,
+    "all_game_references_resolve": true,
+    "unknown_geography_unknown_proposed": true,
+    "revoked_facts_and_canaries_absent": true
+  },
+  "sealed": true,
+  "sealed_sha256": "2ded0edd5db7c6676ee52c910ce60bd23bc20ba50d8d74ad7c24a32220705e93"
+}

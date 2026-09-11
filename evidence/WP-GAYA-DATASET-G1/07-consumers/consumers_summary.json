@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "frame_id": "WP-GAYA-DATASET-G1-07",
+  "timestamp": "2026-09-09T03:24:56.940144+00:00",
+  "training_parser_consumer": {
+    "status": "PASS",
+    "total_sharegpt_files": 7,
+    "total_internal_files": 7,
+    "total_sharegpt_examples": 37,
+    "provenance_sidecar_count": 37,
+    "lineage_resolution_rate": 1.0,
+    "token_statistics": {
+      "total_estimated_tokens": 3072,
+      "average_tokens_per_turn": 41,
+      "max_tokens_turn": 90
+    },
+    "multimodal_verified_images": 10,
+    "canary_violations": 0
+  },
+  "game_content_loader_consumer": {
+    "status": "PASS",
+    "total_entities": 53,
+    "total_relationships": 8,
+    "missing_relation_entities": 0,
+    "total_assets": 151,
+    "unresolved_assets": 0,
+    "historical_assets_count": 151,
+    "unknown_geography_verified": true,
+    "rules_verified": {
+      "synthesis_prohibition": true,
+      "combat_damage_reduction": true,
+      "economy_currency": true
+    },
+    "canaries_found": 0,
+    "revocations_found": 0
+  },
+  "scoped_retriever_consumer": {
+    "status": "PASS",
+    "total_records_indexed": 304,
+    "invalid_citations_count": 0,
+    "scope_isolation_proven": true,
+    "sample_query_matches": 19,
+    "canary_matches": 0,
+    "revoked_matches": 0
+  },
+  "release_counts": {
+    "training_examples": 37,
+    "game_entities": 53,
+    "game_relations": 8,
+    "game_assets": 151,
+    "rag_records": 304
+  },
+  "acceptance_criteria_verified": {
+    "separate_consumer_smokes_recorded": true,
+    "all_game_references_and_media_resolve": true,
+    "unknown_geography_remains_unknown_proposed": true,
+    "revoked_facts_and_canaries_absent_across_all_consumers": true
+  }
+}

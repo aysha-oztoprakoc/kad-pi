@@ -1,0 +1,52 @@
+{
+  "task_id": "WP-GAYA-DATASET-G1-03",
+  "project": "kad-rpg",
+  "timestamp": "2026-09-09T02:26:36.360942+00:00",
+  "status": "PASS",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "claim_id": "5896c2ed-5120-4a4c-9f22-b7604f43733e",
+  "owned_paths": [
+    "kad-gaya/pipeline/deterministic.py",
+    "kad-gaya/dataset_runs",
+    "kad-gaya/tests",
+    "kad-gaya/pipeline/dataset_cli.py"
+  ],
+  "command_executed": "python -m pipeline.dataset_cli run --config dataset_runs/staging/01-contracts/validated-config.json --output dataset_runs/staging/03-canon --stage canon",
+  "total_canonical_entities": 53,
+  "total_grounded_relations": 8,
+  "total_claims": 8,
+  "total_reviewed_seeds": 12,
+  "families_coverage": {
+    "grounded_lore_qa": 2,
+    "character_identity_and_style": 1,
+    "relationships_and_evidence_paths": 2,
+    "items_and_mechanics": 2,
+    "spatial_containment_and_routes": 1,
+    "visual_entity_references": 1,
+    "bounded_situational_decisions": 1,
+    "memory_and_abstention": 2
+  },
+  "blocked_families": [
+    {
+      "family": "visual_entity_references",
+      "reason": "Bloqueado até o Frame 04 (WP-GAYA-DATASET-G1-04) para ancoragem de imagens reais",
+      "status": "BLOCKED"
+    }
+  ],
+  "critical_invariants_verified": {
+    "lylia_mae_de_sofia_direction_preserved": true,
+    "lylia_nao_carrega_nyr_negation_preserved": true,
+    "desertion_not_current_affiliation": true,
+    "gaia_gaya_distinction_preserved": true,
+    "generic_mentions_unlinked": true
+  },
+  "manifest_seal_sha256": "b4f2bfac4b9a16ecc7dee38bc64e1b554ec216ae646ebf257fe10295f15671b0",
+  "receipt_artifacts": {
+    "manifest.json": "288d0c79551898bf4c41f41c9e6aa5234cbf18e8978a03af7b36818c2c61ef46",
+    "knowledge_summary.json": "761aa18739718c5b3c079c50af1284177e3a9484ea87f3ee1bd36870a4f2c31b",
+    "canonical_entities.jsonl": "a36a68b275500553088b5a4d7fc0a55a57330bac292d9f67ca46e1899c67a6db",
+    "canonical_facts.jsonl": "a92874f89a4a39d61eaba18cc58e196ca1d37817f6ecdd342909b6b568580183",
+    "relationship_graph.json": "234ef188048ab3669577ba5c926f74990fd65e091816f78fb8622debfc886799",
+    "reviewed_seeds.jsonl": "36ef7b4a7630710fdd5a8ecc6c015e4cf21ec81be62c33b46494065299b4f688"
+  }
+}

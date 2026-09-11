@@ -1,0 +1,43 @@
+---
+slug: lylia_centelha_de_sofia
+titulo: "Lylia, a Centelha de Sofia"
+categoria: characters
+aliases: []
+tags: ["characters", "gaya", "nivel_7", "ykt"]
+entidades_relacionadas: ["aysha_oztoprak", "camara_de_sintese", "equipe_ykt", "gaya", "heartwood", "khan", "refugio_ykt", "sintese", "sofia", "yorman"]
+l0_abstract: "Lylia, a Centelha de Sofia: Druida do Pastor 3 / Feiticeira Alma Divina 4 (Nível 7), Nível 7, HP 55, CA 15. Curandeira-chefe, colaboradora de Ayşa na Câmara de Síntese para concepção e exame de itens, guardiã dos jardins...."
+---
+
+# Lylia, a Centelha de Sofia
+
+# [[lylia_centelha_de_sofia]]
+
+**Classe e Nível:** Druida do Pastor 3 / Feiticeira Alma Divina 4 (Nível 7)
+**Raça:** Beasthide Shifter | **Tendência:** Caótica Neutra
+**Nível:** 7 | **Pontos de Vida:** 55 | **Classe de Armadura:** 15
+**Deslocamento:** 30ft / 9m | **Iniciativa:** +5
+
+## Atributos
+| FOR | DES | CON | INT | SAB | CAR |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 5 | 14 | 16 | 8 | 20 | 13 |
+
+## Ataques e Habilidades
+- Moon Sickle +1 (+9 atk, 1d4+3 cortante + cura extra)
+- Thorn Whip (+9 atk, 2d6 perfurante e puxão 3m)
+
+## Relíquias e Equipamentos
+- Moon Sickle +1
+- Cajado Druídico
+
+## Papel no [[refugio_ykt]]
+Curandeira-chefe, colaboradora de [[aysha_oztoprak]] na [[camara_de_sintese]] para concepção e exame de itens, guardiã dos jardins.
+
+## Traços de Interpretação
+- **Personalidade:** Conectada aos ciclos vitais, intuitiva, focada no bem-estar do grupo, reservada sobre as origens de [[sofia]].
+- **Ideais:** Preservar a vida natural, decifrar os mistérios de [[gaya]] e apoiar [[aysha_oztoprak]] na sobrevivência da [[equipe_ykt]].
+- **Vínculos:** [[sofia]] (origem de sua centelha divina), [[aysha_oztoprak]] e a [[equipe_ykt]].
+- **Defeitos:** Fisicamente frágil em combate direto desarmado; sobrecarregada pelo peso do legado de [[sofia]].
+
+## Biografia Canônica e Descrição
+[[lylia_centelha_de_sofia]] é uma Beasthide Shifter devota dos caminhos druídicos e portadora da sagrada [[lylia_centelha_de_sofia]]. Sua sabedoria divina (SAB 20) sustenta as curas vitais da [[equipe_ykt]] através do Totem do Unicórnio e da Moon Sickle +1. Na [[camara_de_sintese]], trabalha lado a lado com [[aysha_oztoprak]], auxiliando no planejamento conceitual, medição e preparação de materiais raros antes que a operadora de [[sintese]] teça as linhas de [[khan]] e [[yorman]]. Cuida também da enfermaria e do jardim medicinal anexo ao [[heartwood]].

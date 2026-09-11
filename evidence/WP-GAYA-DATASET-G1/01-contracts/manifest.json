@@ -1,0 +1,36 @@
+{
+  "stage_id": "WP-GAYA-DATASET-G1-01",
+  "created_at": "2026-09-09T02:04:22.834842+00:00",
+  "config_sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd",
+  "inputs": [
+    {
+      "path": "kad-gaya/pipeline/schemas.py",
+      "sha256": "db286076979438523efa6a758a3dbf9caf4e074924c1cd999c84425b2dc83456"
+    },
+    {
+      "path": "kad-gaya/pipeline/dataset_cli.py",
+      "sha256": "82bff9225072d45a2caf2db434e317feecc21ba383fe62a75314069309707616"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "dataset_runs/staging/01-contracts/validated-config.json",
+      "sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd"
+    },
+    {
+      "path": "dataset_runs/staging/01-contracts/inspect-report.json",
+      "sha256": "518b091d692ec747f64166a6a8eeaab05578901ab6efdc9d7061670d65f3b4a8"
+    },
+    {
+      "path": "dataset_runs/staging/01-contracts/execution-receipt.json",
+      "sha256": "da101b46f5a7befe1c126831e7fb9c479b057ef887bd543efa2305abb99aba14"
+    }
+  ],
+  "metrics": {
+    "total_files_discovered": 315,
+    "total_bytes": 397046643,
+    "unit_tests_passed": 22
+  },
+  "sealed": true,
+  "sealed_sha256": "59ef0bf76d59a3a601ede4976987c9b3cc877182ea6b894564e028a35370ccad"
+}

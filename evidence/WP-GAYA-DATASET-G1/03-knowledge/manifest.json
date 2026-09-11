@@ -1,0 +1,66 @@
+{
+  "stage_id": "WP-GAYA-DATASET-G1-03",
+  "created_at": "2026-09-09T02:23:21.573418+00:00",
+  "config_sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd",
+  "inputs": [
+    {
+      "path": "dataset_runs/staging/01-contracts/validated-config.json",
+      "sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd"
+    },
+    {
+      "path": "kad-gaya/pipeline/deterministic.py",
+      "sha256": "09b20ed5de38b135ea22c705b1831b19b74bb2590e0e2b281566923c825f1ea4"
+    },
+    {
+      "path": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/02-ingestion/manifest.json",
+      "sha256": "678aec0672857db8c860da3774aaf0ddd8961ba9a45d2e06b8955bd8daa0b2f5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "canonical_entities.jsonl",
+      "sha256": "a36a68b275500553088b5a4d7fc0a55a57330bac292d9f67ca46e1899c67a6db"
+    },
+    {
+      "path": "canonical_facts.jsonl",
+      "sha256": "a92874f89a4a39d61eaba18cc58e196ca1d37817f6ecdd342909b6b568580183"
+    },
+    {
+      "path": "relationship_graph.json",
+      "sha256": "234ef188048ab3669577ba5c926f74990fd65e091816f78fb8622debfc886799"
+    },
+    {
+      "path": "reviewed_seeds.jsonl",
+      "sha256": "36ef7b4a7630710fdd5a8ecc6c015e4cf21ec81be62c33b46494065299b4f688"
+    },
+    {
+      "path": "knowledge_summary.json",
+      "sha256": "761aa18739718c5b3c079c50af1284177e3a9484ea87f3ee1bd36870a4f2c31b"
+    }
+  ],
+  "metrics": {
+    "total_canonical_entities": 53,
+    "total_grounded_relations": 8,
+    "total_claims": 8,
+    "total_reviewed_seeds": 12,
+    "families_coverage": {
+      "grounded_lore_qa": 2,
+      "character_identity_and_style": 1,
+      "relationships_and_evidence_paths": 2,
+      "items_and_mechanics": 2,
+      "spatial_containment_and_routes": 1,
+      "visual_entity_references": 1,
+      "bounded_situational_decisions": 1,
+      "memory_and_abstention": 2
+    },
+    "critical_invariants_verified": {
+      "lylia_mae_de_sofia_direction_preserved": true,
+      "lylia_nao_carrega_nyr_negation_preserved": true,
+      "desertion_not_current_affiliation": true,
+      "gaia_gaya_distinction_preserved": true,
+      "generic_mentions_unlinked": true
+    }
+  },
+  "sealed": true,
+  "sealed_sha256": "b4f2bfac4b9a16ecc7dee38bc64e1b554ec216ae646ebf257fe10295f15671b0"
+}

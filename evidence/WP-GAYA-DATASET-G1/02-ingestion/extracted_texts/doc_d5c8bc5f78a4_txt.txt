@@ -1,0 +1,558 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    size: A4;
+    margin: 16mm 14mm 16mm 14mm;
+    background-color: #f8fafc;
+    @bottom-right {
+      content: "Página " counter(page) " de " counter(pages);
+      font-size: 8pt;
+      color: #64748b;
+      font-family: 'Liberation Sans', sans-serif;
+    }
+    @bottom-left {
+      content: "As Crônicas de Gaya • Pipeline Determinística de Extração";
+      font-size: 8pt;
+      color: #64748b;
+      font-family: 'Liberation Sans', sans-serif;
+    }
+  }
+
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Liberation Sans', 'DejaVu Sans', sans-serif;
+    color: #1e293b;
+    font-size: 9.5pt;
+    line-height: 1.45;
+    background-color: #f8fafc;
+  }
+
+
+  /* Header Banner */
+  .header-box {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 18px 20px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    border-left: 6px solid #0284c7;
+  }
+
+
+  .header-title {
+    font-size: 17pt;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+    color: #f8fafc;
+    letter-spacing: -0.3px;
+  }
+
+
+  .header-subtitle {
+    font-size: 10pt;
+    color: #94a3b8;
+    margin: 0 0 10px 0;
+  }
+
+
+  .meta-grid {
+    display: table;
+    width: 100%;
+    margin-top: 10px;
+    border-top: 1px solid #334155;
+    padding-top: 8px;
+  }
+
+
+  .meta-col {
+    display: table-cell;
+    font-size: 8.5pt;
+    color: #cbd5e1;
+  }
+
+
+  .meta-col strong {
+    color: #38bdf8;
+  }
+
+
+  /* Headings */
+  h1 {
+    font-size: 13pt;
+    color: #0f172a;
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 4px;
+    margin: 18px 0 10px 0;
+    page-break-after: avoid;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+
+  h2 {
+    font-size: 11pt;
+    color: #0369a1;
+    margin: 14px 0 6px 0;
+    page-break-after: avoid;
+    border-left: 3px solid #0284c7;
+    padding-left: 6px;
+  }
+
+
+  h3 {
+    font-size: 10pt;
+    color: #334155;
+    margin: 10px 0 4px 0;
+    page-break-after: avoid;
+    font-weight: bold;
+  }
+
+
+  p {
+    margin: 0 0 8px 0;
+    text-align: justify;
+  }
+
+
+  /* Callouts and Cards */
+  .callout {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #0284c7;
+    padding: 10px 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+  }
+
+
+  .callout-warning {
+    background-color: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-left: 4px solid #d97706;
+    padding: 10px 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+  }
+
+
+  .callout-title {
+    font-weight: bold;
+    font-size: 9.5pt;
+    margin-bottom: 4px;
+    color: #0f172a;
+  }
+
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 14px 0;
+    font-size: 8.5pt;
+    page-break-inside: avoid;
+    background-color: #ffffff;
+  }
+
+
+  th {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 7px 9px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #0f172a;
+  }
+
+
+  td {
+    padding: 6px 9px;
+    border: 1px solid #cbd5e1;
+    vertical-align: top;
+  }
+
+
+  tr:nth-child(even) td {
+    background-color: #f1f5f9;
+  }
+
+
+  /* Code Blocks */
+  pre {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    padding: 9px 12px;
+    border-radius: 4px;
+    font-family: 'DejaVu Sans Mono', 'Liberation Mono', monospace;
+    font-size: 8pt;
+    line-height: 1.35;
+    margin: 6px 0 10px 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    page-break-inside: avoid;
+  }
+
+
+  code {
+    font-family: 'DejaVu Sans Mono', 'Liberation Mono', monospace;
+    font-size: 8.5pt;
+    background-color: #e2e8f0;
+    padding: 1px 4px;
+    border-radius: 3px;
+    color: #0f172a;
+  }
+
+
+  /* Grid Layout via Table */
+  .layout-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    background: transparent;
+    margin: 0 0 10px 0;
+    page-break-inside: avoid;
+  }
+
+
+  .layout-table td {
+    border: none;
+    padding: 0 6px 0 0;
+    background: transparent !important;
+    vertical-align: top;
+  }
+
+
+  .layout-table td:last-child {
+    padding-right: 0;
+    padding-left: 6px;
+  }
+
+
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 10px;
+    height: 100%;
+  }
+
+
+  ul, ol {
+    margin: 0 0 10px 0;
+    padding-left: 18px;
+  }
+
+
+  li {
+    margin-bottom: 4px;
+  }
+
+
+  .badge {
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 7.5pt;
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: #0284c7;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+
+  .badge-green {
+    background-color: #059669;
+  }
+
+
+  .badge-amber {
+    background-color: #d97706;
+  }
+</style>
+</head>
+<body>
+
+
+<div class="header-box">
+  <div class="header-title">Relatório de Engenharia & Requisitos Técnicos</div>
+  <div class="header-subtitle">Pipeline Determinística de Ingestão Multimodal, Wiki Híbrida, OpenViking DB e QLoRA</div>
+  <div class="meta-grid">
+    <div class="meta-col"><strong>Sistema Alvo:</strong> As Crônicas de Gaya (TTRPG)</div>
+    <div class="meta-col"><strong>Volume:</strong> ~206 Arquivos Heterogêneos</div>
+    <div class="meta-col"><strong>Filosofia:</strong> Open-Source & Determinismo Estrito</div>
+    <div class="meta-col"><strong>Integração:</strong> SillyTavern + Modelos Locais</div>
+  </div>
+</div>
+
+
+<h1>1. Escopo, Objetivos & Filosofia Determinística</h1>
+<p>
+O objetivo deste projeto consiste em converter um corpus heterogêneo de ~206 arquivos (PDFs com diagramação complexa, documentos ODT, logs de sessão TXT e imagens/mapas PNG/JPG) pertencentes ao cenário de RPG <em>As Crônicas de Gaya</em> em uma base de conhecimento estruturada, auditável e livre de alucinações.
+</p>
+<p>
+Para assegurar a máxima fidelidade conceitual e mecânica, adota-se o <strong>Princípio da Separação em Três Níveis de Certeza</strong>:
+</p>
+<ul>
+  <li><strong>Nível 1 — Extração de Dados 100% Determinística (Sem LLM):</strong> O parsing de layout, conversão de tabelas e leitura de caracteres operam estritamente via analisadores sintáticos determinísticos (AST), modelos de visão computacional treinados em layout (DocLayNet) e algoritmos de correspondência geométrica exata. Nenhum token factual é sintetizado probabilisticamente nessa fase.</li>
+  <li><strong>Nível 2 — Classificação Semântica Guiada por Gramática (Constrained Decoding):</strong> A categorização taxonômica e a extração de esquemas operam com <em>Logit Masking</em> rígido (DFA/FSM via Outlines ou XGrammar). A probabilidade de tokens inválidos ou categorias inventadas é matematicamente reduzida a zero.</li>
+  <li><strong>Nível 3 — Síntese Narrativa & Adaptação de Estilo:</strong> Apenas a geração de sinopses executivas (L0/L1) e os pares de conversação para ajuste fino (QLoRA) utilizam amostragem generativa com temperatura controlada.</li>
+</ul>
+
+
+<div class="callout">
+  <div class="callout-title">Destino Duplo dos Dados Processados</div>
+  <p><strong>1. Consumo Humano (Wiki Obsidian):</strong> Arquivos Markdown com YAML Frontmatter estrito, renderização visual imediata, links bidirecionais automáticos (<code>[[entidade]]</code>) e compatibilidade com o plugin Dataview para tabelas dinâmicas de regras.<br>
+  <strong>2. Consumo de IA (OpenViking + SillyTavern + QLoRA):</strong> Árvore de contexto hierarquizada em <code>viking://</code> (tiers L0/L1/L2), injeção contextual em SillyTavern via MCP/World Info e exportação do dataset ShareGPT para fine-tuning.</p>
+</div>
+
+
+<h1>2. Matriz Comparativa de Ferramentas Open-Source</h1>
+<p>
+A seleção prioriza ferramentas com licença permissiva ou GPL, execução 100% offline no hardware local e garantias determinísticas de preservação de dados:
+</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 18%;">Camada</th>
+      <th style="width: 22%;">Ferramenta Selecionada</th>
+      <th style="width: 20%;">Licença / Tipo</th>
+      <th style="width: 40%;">Garantia de Determinismo & Benefício</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PDF & Tabelas</strong></td>
+      <td><strong>IBM Docling</strong><br><em>(ou PyMuPDF4LLM)</em></td>
+      <td>MIT / Open-Source<br><span class="badge badge-green">Determinístico</span></td>
+      <td>Reconstrói tabelas multi-linhas e layouts de colunas duplas sem usar LLMs para reescrever texto. Exporta Markdown e JSON estruturado preservando coordenadas exatas.</td>
+    </tr>
+    <tr>
+      <td><strong>ODT & TXT</strong></td>
+      <td><strong>Pandoc</strong><br><em>(com wrapper odfpy)</em></td>
+      <td>GPLv2+ / CLI Nativo<br><span class="badge badge-green">Determinístico</span></td>
+      <td>Conversão estrita baseada em Árvore Sintática Abstrata (AST). Converte hierarquia de títulos, listas e ênfases sem mutação de conteúdo.</td>
+    </tr>
+    <tr>
+      <td><strong>OCR (Mapas/Imagens)</strong></td>
+      <td><strong>Surya OCR</strong><br><em>(ou PaddleOCR)</em></td>
+      <td>GPL-3.0 / Apache-2.0<br><span class="badge badge-green">Determinístico</span></td>
+      <td>Reconhecimento geométrico de texto linha a linha e bboxing. Evita a alucinação de inventar lore presente em modelos de linguagem puramente multimodais.</td>
+    </tr>
+    <tr>
+      <td><strong>Classificação</strong></td>
+      <td><strong>Outlines</strong><br><em>(com vLLM / llama.cpp)</em></td>
+      <td>Apache-2.0<br><span class="badge badge-green">FSM Constraint</span></td>
+      <td>Força o LLM local a decodificar exatamente nos tipos do Pydantic/JSON Schema via autômatos finitos determinísticos. Garante conformidade de 100%.</td>
+    </tr>
+    <tr>
+      <td><strong>Entidades & Links</strong></td>
+      <td><strong>FlashText</strong><br><em>(Aho-Corasick)</em></td>
+      <td>MIT<br><span class="badge badge-green">Determinístico</span></td>
+      <td>Varredura em complexidade de tempo linear O(N) para substituição de menções de facções, cidades e NPCs por Wikilinks canônicos (<code>[[slug]]</code>).</td>
+    </tr>
+    <tr>
+      <td><strong>Armazenamento RAG</strong></td>
+      <td><strong>OpenViking DB</strong></td>
+      <td>Open-Source<br><span class="badge badge-green">Hierárquico</span></td>
+      <td>Sistema de arquivos virtual <code>viking://</code> particionado em camadas (.abstract, .overview, content.md) para redução drástica de consumo de contexto no agente.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h1>3. Arquitetura da Wiki Híbrida (Humano + Agente)</h1>
+<p>
+Cada documento extraído é convertido em um arquivo Markdown unificado no padrão do <strong>Obsidian</strong>. Essa abordagem permite que você visualize mapas mentais e navegue entre conexões pelo Obsidian enquanto o mesmo diretório é montado como backend para os modelos locais:
+</p>
+
+
+<table class="layout-table">
+  <tr>
+    <td style="width: 50%;">
+      <div class="card">
+        <div class="callout-title" style="color: #0369a1;">Estrutura do Arquivo na Wiki</div>
+        <p style="font-size: 8pt; color: #64748b;">Exemplo: <code>vault/factions/ordem_da_aurora.md</code></p>
+<pre>---
+slug: ordem_da_aurora
+categoria: factions
+titulo: "Ordem da Aurora"
+aliases: ["Guardiões Solares", "Filhos do Sol"]
+regiao_sede: "[[reino_de_valen]]"
+lider: "[[grao_mestre_elias]]"
+status_faccao: "ativa"
+nivel_perigo: 3
+tags: [faccao, paladinos, valen, ordem_militar]
+l0_abstract: "Ordem militar de paladinos leais a Valen..."
+---
+
+
+# Ordem da Aurora
+
+
+## Visão Geral e Relações (L1)
+A **Ordem da Aurora** é uma organização militar que opera...
+
+
+* **Inimigos:** [[culto_abissal]], [[renegados_de_kael]]
+* **Aliados:** [[reino_de_valen]], [[igreja_da_chama]]
+
+
+## Mecânicas e Regras Oficiais (L2)
+| Posto | Bônus de Atributo | Habilidade Exclusiva |
+|---|---|---|
+| Recruta | +1 Defesa | Imposição Solar |
+| Templário | +2 Vontade | Julgamento Abissal |</pre>
+      </div>
+    </td>
+    <td style="width: 50%;">
+      <div class="card">
+        <div class="callout-title" style="color: #059669;">Benefícios Práticos da Padronização</div>
+        <ul style="font-size: 8.5pt; padding-left: 14px;">
+          <li><strong>Obsidian Graph View:</strong> As referências geradas pelo <em>FlashText</em> em formato <code>[[wiki_links]]</code> geram instantaneamente a teia de relações políticas e geográficas no grafo visual do Obsidian.</li>
+          <li><strong>Consultas Dataview Dinâmicas:</strong> Você pode criar páginas de consulta no Obsidian como:
+            <pre>```dataview
+TABLE regiao_sede, status_faccao, nivel_perigo
+FROM #faccao
+SORT nivel_perigo DESC
+```</pre>
+          </li>
+          <li><strong>Espelhamento OpenViking Direto:</strong>
+            Um script de sincronização extrai o Frontmatter YAML para compor os arquivos <code>.abstract</code> (L0) e <code>.overview</code> (L1), mantendo o corpo integral como <code>content.md</code> (L2).
+          </li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+<h1>4. Pipeline de Processamento Determinístico: Etapa por Etapa</h1>
+
+
+<div class="callout">
+  <div class="callout-title">Etapa 1: Ingestão de Documentos (Zero Probabilística)</div>
+  <p>
+  Todos os arquivos no diretório de entrada são roteados pelo tipo de extensão:
+  </p>
+  <ul>
+    <li><strong>PDFs:</strong> Processados via <code>Docling DocumentConverter</code> com extração de tabelas ativada. PDFs escaneados ou páginas puramente gráficas são despachadas automaticamente para o motor de OCR Surya.</li>
+    <li><strong>ODTs:</strong> Convertidos diretamente para CommonMark/GFM via <code>pandoc -f odt -t gfm</code>, garantindo preservação de formatação original.</li>
+    <li><strong>TXTs:</strong> Lidos com decodificação resiliente UTF-8 e normalização Unicode NFC.</li>
+    <li><strong>Imagens (PNG/JPG):</strong> O <code>Surya OCR</code> extrai todas as caixas de texto com coordenadas espaciais. Se a imagem for um mapa ou handout, uma chamada secundária ao VLM local (<code>Qwen2.5-VL</code>) gera a descrição semântica dos elementos visuais.</li>
+  </ul>
+</div>
+
+
+<div class="callout">
+  <div class="callout-title">Etapa 2: Classificação e Tipagem Rígida com Outlines</div>
+  <p>
+  O texto extraído é submetido ao modelo local através de decodificação guiada por gramática. O modelo é obrigado a responder estritamente dentro do modelo Pydantic:
+  </p>
+<pre>from pydantic import BaseModel, Field
+from enum import Enum
+from typing import List
+
+
+class CategoriaDocumento(str, Enum):
+    factions = "factions"
+    locations = "locations"
+    characters = "characters"
+    mechanics = "mechanics"
+    cosmology = "cosmology"
+    session_logs = "session_logs"
+
+
+class MetadadosGaya(BaseModel):
+    slug: str = Field(..., description="Identificador único minúsculo com underscores")
+    titulo: str = Field(..., description="Nome canônico do arquivo ou entidade")
+    categoria: CategoriaDocumento
+    aliases: List[str]
+    entidades_relacionadas: List[str]
+    l0_abstract: str = Field(..., max_length=250)
+    l1_overview: str
+    instrucao_qlora: str
+    resposta_qlora: str</pre>
+</div>
+
+
+<div class="callout">
+  <div class="callout-title">Etapa 3: Resolução de Entidades com FlashText (Geração de Wikilinks)</div>
+  <p>
+  Um índice de todos os <code>slugs</code> e <code>aliases</code> é alimentado em um processador <code>KeywordProcessor</code> do FlashText. O corpo do documento passa por uma substituição determinística: qualquer menção textual a termos conhecidos é encapsulada em <code>[[termo_slug]]</code>, consolidando o grafo de navegação sem depender de raciocínio estocástico da IA.
+  </p>
+</div>
+
+
+<h1>5. Integração com o Ambiente Local Existente</h1>
+
+
+<div class="callout-warning">
+  <div class="callout-title">Gerenciamento Crítico de VRAM no Hardware Local</div>
+  <p>
+  Como a sua máquina já possui modelos locais instalados e o SillyTavern em execução, a execução simultânea de pipeline pesado pode ocasionar erro de <em>CUDA Out of Memory (OOM)</em>. Siga a separação de estágios:
+  </p>
+  <ul>
+    <li><strong>Fase A (Extração de Layout & OCR):</strong> Executar Docling, Pandoc e Surya OCR. Podem rodar em CPU ou consumindo menos de 4 GB de VRAM.</li>
+    <li><strong>Fase B (Classificação com Outlines):</strong> Apontar o Outlines para a sua instância local já carregada (vLLM ou servidor Ollama/llama.cpp com suporte a <em>structured outputs</em>).</li>
+    <li><strong>Fase C (Treinamento QLoRA Posterior):</strong> Fechar temporariamente os serviços de inferência do SillyTavern e vLLM para liberar 100% da VRAM ao Unsloth / Hugging Face TRL.</li>
+  </ul>
+</div>
+
+
+<h3>Interconexão com o SillyTavern</h3>
+<p>Para conectar a base organizada ao SillyTavern, duas opções estão disponíveis:</p>
+<ol>
+  <li><strong>Plugin MCP / Tool Calling (Recomendado):</strong> O servidor local do OpenViking expõe endpoints para consulta por função (<code>viking_search</code> e <code>viking_read_content</code>). Nas configurações do SillyTavern, habilite Function Calling para que a IA busque nos arquivos <code>viking://</code> apenas quando necessário.</li>
+  <li><strong>World Info (Lorebook Nativo):</strong> O script de exportação compila todos os <code>.overview</code> e <code>aliases</code> em um único arquivo <code>gaya_world_info.json</code> que é importado diretamente na aba World Info do SillyTavern, associando as chaves de ativação aos nomes das entidades.</li>
+</ol>
+
+
+<h1>6. Checklist de Implementação e Comandos de Instalação</h1>
+
+
+<h3>Dependências de Sistema (Linux / Ubuntu / WSL2)</h3>
+<pre>sudo apt update && sudo apt install -y pandoc poppler-utils tesseract-ocr</pre>
+
+
+<h3>Dependências Python do Ambiente Dedicado</h3>
+<pre>pip install --upgrade     docling     pymupdf4llm     pandoc     odfpy     surya-ocr     outlines     flashtext     pydantic     openai     openviking</pre>
+
+
+<h3>Estrutura de Diretórios Recomendada</h3>
+<pre>cronicas_de_gaya_pipeline/
+├── raw_corpus/               # Seus 206 arquivos originais (PDF, ODT, TXT, PNG, etc)
+├── obsidian_vault/           # Wiki gerada (com frontmatter YAML e [[wikilinks]])
+│   ├── factions/
+│   ├── locations/
+│   ├── characters/
+│   ├── mechanics/
+│   ├── cosmology/
+│   └── session_logs/
+├── openviking_storage/       # Diretório espelhado para viking:// (L0, L1, L2)
+├── qlora_dataset/
+│   └── gaya_sharegpt.jsonl   # Pares instrução-resposta prontos para fine-tuning
+├── entity_registry.json      # Dicionário de slugs e aliases canônicos
+└── pipeline_orchestrator.py  # Script executável determinístico</pre>
+
+
+<h1>7. Conclusão e Próximos Passos Operacionais</h1>
+<p>
+A arquitetura especificada garante que a riqueza do universo de <em>As Crônicas de Gaya</em> seja preservada com fidelidade matemática absoluta nas camadas de regras e dados, ao mesmo tempo em que fornece aos modelos locais de IA a flexibilidade estilística necessária para roleplay imersivo no SillyTavern. O próximo passo prático consiste em disparar a extração determinística sobre a pasta <code>raw_corpus</code> e validar o grafo gerado na interface do Obsidian.
+</p>
+
+
+</body>
+</html>

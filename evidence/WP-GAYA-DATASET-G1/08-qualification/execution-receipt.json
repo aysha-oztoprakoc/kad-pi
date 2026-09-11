@@ -1,0 +1,102 @@
+{
+  "task_id": "WP-GAYA-DATASET-G1-08",
+  "project": "kad-rpg",
+  "timestamp": "2026-09-09T03:46:02.609186+00:00",
+  "status": "PASS",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "claim_id": "22f829e6-774a-4fd8-bf29-7503896d0c6f",
+  "owned_paths": [
+    "kad-gaya/training/qualification.py",
+    "kad-gaya/pipeline/dataset_cli.py",
+    "kad-gaya/tests",
+    "kad-gaya/dataset_runs"
+  ],
+  "command_executed": "python -m pipeline.dataset_cli run --config kad-gaya/dataset_runs/staging/01-contracts/validated-config.json --output kad-gaya/dataset_runs/staging/08-qualification --stage qualify",
+  "isa_gates_passed": 9,
+  "total_isa_gates": 9,
+  "isa_gates_matrix": {
+    "GAYA-G1-02": {
+      "statement": "Corpus ingestion and census qualification",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    },
+    "GAYA-G1-03": {
+      "statement": "Canonical entities and grounded relations",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    },
+    "GAYA-G1-04": {
+      "statement": "Negation, direction, unicode aliases, and relationship checks",
+      "status": "PASS",
+      "class": "HYBRID"
+    },
+    "GAYA-G1-05": {
+      "statement": "Visual references link source assets without inventing canon",
+      "status": "PASS",
+      "class": "HYBRID"
+    },
+    "GAYA-G1-06": {
+      "statement": "Frozen split hashes, family separation, zero cross-partition leakage",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    },
+    "GAYA-G1-07": {
+      "statement": "Deterministic synthesis, family coverage, replayable",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    },
+    "GAYA-G1-08": {
+      "statement": "Consumers load successfully and retain lineage",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    },
+    "GAYA-G1-09": {
+      "statement": "Adversarial semantic cases and frozen independent review satisfy criteria",
+      "status": "PASS",
+      "class": "HYBRID"
+    },
+    "GAYA-G1-10": {
+      "statement": "Independent-process replay produces identical release bytes; interrupted writes preserve integrity",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    }
+  },
+  "fault_recovery_summary": {
+    "status": "PASS",
+    "zero_false_complete_verified": true,
+    "fault_tests": {
+      "interrupted_write_detected": true,
+      "revocation_leakage_detected": true,
+      "secret_canary_escape_detected": true,
+      "missing_media_asset_detected": true,
+      "pristine_release_unharmed": true
+    }
+  },
+  "semantic_review_metrics": {
+    "total_dataset_examples": 37,
+    "reviewed_sample_size": 28,
+    "sample_coverage_ratio": 0.76,
+    "preregistered_minimum_ratio": 0.2,
+    "high_risk_seeds_evaluated": 10,
+    "high_risk_coverage_rate": 1.0,
+    "approved_examples": 28,
+    "rejected_examples": 0
+  },
+  "canary_and_leakage_metrics": {
+    "canary_escapes": 0,
+    "positive_control_sensor_operational": true,
+    "exact_duplicates": 0,
+    "near_duplicates_exceeding_threshold": 0,
+    "cross_split_source_leakage": [],
+    "revoked_claims_found": 0
+  },
+  "manifest_seal_sha256": "b37e63bfdb6b24436464002fd0bef4fc5db355d8033ac072a7f6ec2970959e0f",
+  "receipt_artifacts": {
+    "manifest.json": "332f13137430d83ce3eef4dddd32f679c3503fac22e98aacd5598662c66f0f7d",
+    "qualification_summary.json": "26781ced51f00a7cb51acb187f4047b4a5d3a2a4bd8c86ac3a2b544b8e7a2308",
+    "fault_injection_report.json": "18e09711130094e03eed343ab46bf21653defc718d2f440f7012ee0df752c05b",
+    "canary_verification.json": "ce1a5decd569cbe1ed89b94a32774a48cc85596fa1d9f91d27acec7f7efe7b4b",
+    "semantic_review.json": "6a0f263c4838757381449dfd9a42a8beba8ce6ad40def5f92cb8312a6eaa9110",
+    "isa_gates_matrix.json": "3465ad5118c1ae2d536a0af07e195b2f75d0448e33ee1f14d740d799f0640aa2"
+  }
+}

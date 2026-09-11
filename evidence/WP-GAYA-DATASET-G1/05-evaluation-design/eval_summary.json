@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "frame_id": "WP-GAYA-DATASET-G1-05",
+  "splits": {
+    "total_families": 6,
+    "partition_counts": {
+      "train": 247,
+      "validation": 66,
+      "test": 2,
+      "held_out_eval": 0
+    },
+    "total_documents_assigned": 315
+  },
+  "scenarios_evaluated": {
+    "total_scenarios": 8,
+    "passed_scenarios": 8,
+    "conservation_violations": 0
+  },
+  "metamorphic_suite": {
+    "total_mutations_tested": 4,
+    "total_escapes": 0,
+    "zero_escapes_verified": true
+  },
+  "preregistered_gates": {
+    "zero_schema_violations_threshold": 0,
+    "zero_revoked_claims_threshold": 0,
+    "zero_split_family_collisions_threshold": 0,
+    "zero_secret_canary_escapes_threshold": 0,
+    "zero_critical_semantic_escapes_threshold": 0,
+    "human_review_sample_ratio": 0.2,
+    "high_risk_review_sample_ratio": 1.0,
+    "generation_attempt_limit_per_seed": 3,
+    "maximum_duplicate_similarity_threshold": 0.85
+  },
+  "timestamp": "2026-09-09T02:52:19.265597+00:00"
+}

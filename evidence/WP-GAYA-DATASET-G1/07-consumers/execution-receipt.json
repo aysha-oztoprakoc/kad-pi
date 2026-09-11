@@ -1,0 +1,84 @@
+{
+  "task_id": "WP-GAYA-DATASET-G1-07",
+  "project": "kad-rpg",
+  "timestamp": "2026-09-09T03:29:19.413530+00:00",
+  "status": "PASS",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "claim_id": "54b77de2-4038-46ae-8b59-088f05d483de",
+  "owned_paths": [
+    "kad-gaya/training/sharegpt_exporter.py",
+    "kad-gaya/training/release_exporter.py",
+    "kad-gaya/pipeline/dataset_cli.py",
+    "kad-gaya/dataset_runs",
+    "kad-gaya/tests"
+  ],
+  "command_executed": "python -m pipeline.dataset_cli run --config kad-gaya/dataset_runs/staging/01-contracts/validated-config.json --output kad-gaya/dataset_runs/staging/07-consumers --stage consumers",
+  "release_counts": {
+    "training_examples": 37,
+    "game_entities": 53,
+    "game_relations": 8,
+    "game_assets": 151,
+    "rag_records": 304
+  },
+  "acceptance_criteria_verified": {
+    "separate_consumer_smokes_recorded": true,
+    "all_game_references_and_media_resolve": true,
+    "unknown_geography_remains_unknown_proposed": true,
+    "revoked_facts_and_canaries_absent_across_all_consumers": true
+  },
+  "training_parser_consumer": {
+    "status": "PASS",
+    "total_sharegpt_files": 7,
+    "total_internal_files": 7,
+    "total_sharegpt_examples": 37,
+    "provenance_sidecar_count": 37,
+    "lineage_resolution_rate": 1.0,
+    "token_statistics": {
+      "total_estimated_tokens": 3072,
+      "average_tokens_per_turn": 41,
+      "max_tokens_turn": 90
+    },
+    "multimodal_verified_images": 10,
+    "canary_violations": 0
+  },
+  "game_content_loader_consumer": {
+    "status": "PASS",
+    "total_entities": 53,
+    "total_relationships": 8,
+    "missing_relation_entities": 0,
+    "total_assets": 151,
+    "unresolved_assets": 0,
+    "historical_assets_count": 151,
+    "unknown_geography_verified": true,
+    "rules_verified": {
+      "synthesis_prohibition": true,
+      "combat_damage_reduction": true,
+      "economy_currency": true
+    },
+    "canaries_found": 0,
+    "revocations_found": 0
+  },
+  "scoped_retriever_consumer": {
+    "status": "PASS",
+    "total_records_indexed": 304,
+    "invalid_citations_count": 0,
+    "scope_isolation_proven": true,
+    "sample_query_matches": 19,
+    "canary_matches": 0,
+    "revoked_matches": 0
+  },
+  "manifest_seal_sha256": "2ded0edd5db7c6676ee52c910ce60bd23bc20ba50d8d74ad7c24a32220705e93",
+  "consumer_manifest_sha256": "04fea0862991d06b4b2e0398cce4f037092f1d72a6b0985b1b8cf2c321bf8b9a",
+  "receipt_artifacts": {
+    "manifest.json": "1369a76e1cf20438ee5c7befc0b4c186b776aa28ff6dddf09c44b02c84fd82ef",
+    "consumer_manifest.json": "285935e4b34830501db469390a80258403baaeaca41d5b94b56038426ec7f7fb",
+    "consumers_summary.json": "30d5bc06ff9870da8d4562a479a332c8ca0645222b7c8991a64f268c9fd7901b",
+    "training_parser_smoke.json": "2d734f30c676635fc8563c5a447918a55a5ecfcebecd91c8087c14449761c14e",
+    "game_loader_smoke.json": "7e3011d16d35b10d822fd1f8b0969b0835927bb0f4825d74ba84daebd8496fb1",
+    "scoped_retrieval_smoke.json": "bae1a20fce6d4fbb80e8a10344cdabe14a43db274ffd24870c7e812a7fe4c82a",
+    "training/provenance.jsonl": "bb4970d9cb7aa3efcd1364a0b7f71642ab74eeed4283cb8629c243c778055636",
+    "game/world.json": "f25435aa5198a4c96d05636a0edb512a796ffabd30ede3390a0769b50feb825b",
+    "game/assets.jsonl": "6a25b0e9998a10411ccd9f73a13296347125fb5fdff54980040a303565462c3a",
+    "rag/records.jsonl": "29aab452df71821d88c2d54aad24c8a29ea1d455b2907285513ab6e860107a9d"
+  }
+}

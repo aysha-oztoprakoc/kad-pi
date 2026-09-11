@@ -1,0 +1,46 @@
+{
+  "stage_id": "WP-GAYA-DATASET-G1-02",
+  "created_at": "2026-09-09T02:11:12.313493+00:00",
+  "config_sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd",
+  "inputs": [
+    {
+      "path": "dataset_runs/staging/01-contracts/validated-config.json",
+      "sha256": "2ae858513ee7d0519c6abd220cdda0b185e4768aa960b025a0f02826ebb4b8dd"
+    },
+    {
+      "path": "kad-gaya/ingestion/corpus_ingestor.py",
+      "sha256": "07103dc46d909393d6676b562f111c59f5b6c4b68387c524655b20662dbc703f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "sources.jsonl",
+      "sha256": "a478405b11eacdeaab66e0c7c75e105a3d84f20955c199f9dd290c59cbcb48e6"
+    },
+    {
+      "path": "extraction_records.jsonl",
+      "sha256": "6a869d2b77e5c900abc12e110e0539b911776faf1f22faca232cc0f9201e1258"
+    },
+    {
+      "path": "ingestion_summary.json",
+      "sha256": "e8c5a637d0f2c521f48e9278fd7f984f1ee23d9db32c9caea49b81c062b9efa9"
+    }
+  ],
+  "metrics": {
+    "total_files_discovered": 315,
+    "total_bytes": 397062319,
+    "zero_silent_drops_verified": true,
+    "reconciliation": {
+      "processed_success": 143,
+      "pending_ocr": 0,
+      "failed_parser": 0,
+      "media_assets": 151,
+      "structured_data": 3,
+      "documentation": 6,
+      "excluded_code": 11,
+      "excluded_database": 1
+    }
+  },
+  "sealed": true,
+  "sealed_sha256": "28770e52f0471e0225dd5ae4a0cb936e5c005b21534077af7737e6e822cf66c6"
+}

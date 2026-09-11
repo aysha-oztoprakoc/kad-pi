@@ -1,0 +1,42 @@
+---
+slug: begonio_nackle
+titulo: "Begônio Nackle, o Mestre Arcanista"
+categoria: characters
+aliases: []
+tags: ["characters", "gaya", "nivel_7", "ykt"]
+entidades_relacionadas: ["amethysta", "equipe_ykt", "escola_de_mana", "khan", "refugio_ykt", "yaark_nuustrad", "yorman"]
+l0_abstract: "Begônio Nackle, o Mestre Arcanista: Mago Abjurador 7, Nível 7, HP 58, CA 14. Mestre da Escola de Mana; ensina teoria e contenção de Khan (19) e Yorman (42) a Amethysta e aprendizes...."
+---
+
+# [[begonio_nackle]], o [[begonio_nackle]]
+
+**Classe e Nível:** Mago Abjurador 7
+**Raça:** Gnomo da Marca da Escrita (Mark of Scribing) | **Tendência:** Caótico e Bom
+**Nível:** 7 | **Pontos de Vida:** 58 | **Classe de Armadura:** 14
+**Deslocamento:** 30ft | **Iniciativa:** +4
+
+## Atributos
+| FOR | DES | CON | INT | SAB | CAR |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 12 | 18 | 18 | 20 | 16 | 12 |
+
+## Ataques e Habilidades
+- Adaga (+7 atk, 1d4+4)
+- Magias Arcanas de Evocação e Abjuração (INT CD 16 / +8)
+
+## Relíquias e Equipamentos
+- Diário de Campo de Sigmund
+- Registros do Acampamento Militar
+- Bíblias 1 a 4
+
+## Papel no [[refugio_ykt]]
+Mestre da [[escola_de_mana]]; ensina teoria e contenção de [[khan]] (19) e [[yorman]] (42) a [[amethysta]] e aprendizes.
+
+## Traços de Interpretação
+- **Personalidade:** Extremamente soberbo, convicto de sua superioridade intelectual, mas profundamente curioso e dedicado ao ensino.
+- **Ideais:** O conhecimento é a base de tudo, a fonte de todas as respostas e de todo o poder cósmico.
+- **Vínculos:** A busca perpétua pela resposta à sua Questão primordial e a segurança de seus pupilos na [[equipe_ykt]].
+- **Defeitos:** Distrai-se facilmente com enigmas arcanos e é arrogante com quem não compreende a matemática primordial.
+
+## Biografia Canônica e Descrição
+[[begonio_nackle]] é um gnomo abjurador de 26 anos (0.60m, 7kg), de olhos amarelos e cabelos pretos, portador da Marca da Escrita. Detém 20 de Inteligência e atua como a maior autoridade teórica sobre a mecânica das energias [[khan]] e [[yorman]] no Refúgio. Seu Yaark, '[[yaark_nuustrad]]', permite criar réplicas temporais (Espectro Voodoo) quando há discordância sobre a posição de um objeto no espaço-tempo. Na [[escola_de_mana]], no andar superior voltado para a luz da manhã, [[begonio_nackle]] supervisiona bancadas experimentais, ensinando [[amethysta]] a canalizar mana de maneira metódica e sem riscos de sobrecarga.

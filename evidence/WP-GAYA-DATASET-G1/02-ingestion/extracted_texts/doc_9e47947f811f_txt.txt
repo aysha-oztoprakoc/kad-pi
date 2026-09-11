@@ -1,0 +1,24 @@
+{
+	"fileType": "spells-sublist",
+	"siteVersion": "2.35.0",
+	"name": "amethysta",
+	"saveId": "ca50a07a-4ba3-4cff-a4d9-6c9a8551d630",
+	"items": [
+		{
+			"h": "silvery%20barbs_scc"
+		},
+		{
+			"h": "bane_xphb"
+		},
+		{
+			"h": "toll%20the%20dead_xphb"
+		},
+		{
+			"h": "spare%20the%20dying_xphb"
+		}
+	],
+	"sources": [
+		"SCC",
+		"XPHB"
+	]
+}
