@@ -1,6 +1,6 @@
 ---
 kad_id: kad-a45bbfa737f956c25a814bd2
-title: Review: DEEPHAR_DREAM_OS_SAFE_PLUGIN_LAB_HANDOFF.md
+title: "Review: DEEPHAR_DREAM_OS_SAFE_PLUGIN_LAB_HANDOFF.md"
 type: review_record
 authority: PROPOSAL_UNREVIEWED
 epistemic_class: UNKNOWN

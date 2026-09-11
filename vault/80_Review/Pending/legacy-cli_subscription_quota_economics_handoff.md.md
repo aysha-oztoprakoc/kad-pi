@@ -1,6 +1,6 @@
 ---
 kad_id: kad-28d0116a43002f3dd82d3d1a
-title: Review: CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md
+title: "Review: CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md"
 type: review_record
 authority: PROPOSAL_UNREVIEWED
 epistemic_class: UNKNOWN

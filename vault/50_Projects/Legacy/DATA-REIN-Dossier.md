@@ -1,6 +1,6 @@
 ---
 kad_id: kad-dossier-data-rein
-title: Historical Dossier: DATA_REIN Predecessor
+title: "Historical Dossier: DATA_REIN Predecessor"
 type: dossier
 authority: CANONICAL_KNOWLEDGE
 epistemic_class: PROJECT_INFERENCE

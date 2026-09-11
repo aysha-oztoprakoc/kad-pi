@@ -15,6 +15,7 @@ retrieval_keywords:
   - Evidence
   - Scientific Reconstructability
   - STOP Conditions
+type: Archived Note
 ---
 
 # Epistemology: Prime Directive & Evidence Ledgers

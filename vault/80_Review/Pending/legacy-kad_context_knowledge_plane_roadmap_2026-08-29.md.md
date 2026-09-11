@@ -1,6 +1,6 @@
 ---
 kad_id: kad-590e74208a8ab509fbf83667
-title: Review: KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md
+title: "Review: KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md"
 type: review_record
 authority: PROPOSAL_UNREVIEWED
 epistemic_class: UNKNOWN

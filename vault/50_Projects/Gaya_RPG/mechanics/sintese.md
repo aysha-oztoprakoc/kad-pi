@@ -1,0 +1,23 @@
+---
+slug: sintese
+titulo: "Síntese (Yaark de Ayşa Öztoprak)"
+categoria: mechanics
+aliases: []
+tags: ["gaya", "mechanics"]
+entidades_relacionadas: ["aysha_oztoprak", "equipe_ykt", "khan", "lylia_centelha_de_sofia", "nyr_e_zhar", "refugio_ykt", "sofia", "yaark_nuustrad", "yorman"]
+l0_abstract: "Habilidade singular (Yaark) de Ayşa que permite enxergar e transmutar feixes e novelos conceituais e materiais."
+type: State
+---
+
+# Síntese (Yaark de Ayşa Öztoprak)
+
+# [[sintese]] (Yaark de [[aysha_oztoprak]])
+
+[[sintese]] é a manifestação do [[yaark_nuustrad]] pertencente a [[aysha_oztoprak]]. Permite à draconata enxergar a estrutura molecular e conceitual do universo como fios e novelos entrelaçados. Com essa visão, [[aysha_oztoprak]] pode desatar e retorcer os fios de objetos inanimados ou de criaturas que ela pessoalmente abateu, forjando armas como [[nyr_e_zhar]] e erguendo a monumental árvore-mundo do [[refugio_ykt]].
+
+## Relações Canônicas
+- [[aysha_oztoprak]]
+- [[lylia_centelha_de_sofia]]
+- [[refugio_ykt]]
+- [[khan]]
+- [[yorman]]

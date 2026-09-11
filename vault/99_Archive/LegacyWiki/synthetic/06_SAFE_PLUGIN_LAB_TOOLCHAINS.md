@@ -16,6 +16,7 @@ retrieval_keywords:
   - Hyprland
   - Plugin Sandbox
   - Safe Lab
+type: Archived Note
 ---
 
 # Lab & Toolchains: DeepHar, Safe Plugins & Omarchy Customization

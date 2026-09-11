@@ -1,6 +1,6 @@
 ---
 kad_id: kad-f40a860727ffb7eba609436b
-title: Review: KAD_Implementation_Plan.md
+title: "Review: KAD_Implementation_Plan.md"
 type: review_record
 authority: PROPOSAL_UNREVIEWED
 epistemic_class: UNKNOWN

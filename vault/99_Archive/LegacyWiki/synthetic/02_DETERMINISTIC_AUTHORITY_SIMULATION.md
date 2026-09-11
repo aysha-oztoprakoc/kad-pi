@@ -16,8 +16,9 @@ retrieval_keywords:
   - StateDiff
   - GameState
   - RPG
-  - KHAYN // ABHEL : DYSKORDIA
+  - "KHAYN // ABHEL : DYSKORDIA"
   - EXPERIMENT-001
+type: Archived Note
 ---
 
 # Simulation & Core: Deterministic Authority Boundary

@@ -1,6 +1,6 @@
 ---
 kad_id: kad-ref-deepseek-harness
-title: Reference Dossier: DeepSeek Harness Lab
+title: "Reference Dossier: DeepSeek Harness Lab"
 type: reference
 authority: CANONICAL_KNOWLEDGE
 epistemic_class: PROJECT_INFERENCE

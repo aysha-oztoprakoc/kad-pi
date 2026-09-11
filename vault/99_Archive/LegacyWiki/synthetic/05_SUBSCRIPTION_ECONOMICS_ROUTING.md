@@ -14,6 +14,7 @@ retrieval_keywords:
   - Token Efficiency
   - Routing Matrix
   - Cost per Accepted Step
+type: Archived Note
 ---
 
 # Economics: Subscription Quota Economics & Dynamic Routing

@@ -1,6 +1,6 @@
 ---
 kad_id: kad-878a0c3a2facdd17496195ff
-title: Review: CATALOG.json
+title: "Review: CATALOG.json"
 type: review_record
 authority: PROPOSAL_UNREVIEWED
 epistemic_class: UNKNOWN

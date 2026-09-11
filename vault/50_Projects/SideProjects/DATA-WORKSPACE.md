@@ -1,6 +1,6 @@
 ---
 kad_id: kad-dossier-data-workspace
-title: Project Dossier: DATA_WORKSPACE
+title: "Project Dossier: DATA_WORKSPACE"
 type: dossier
 authority: CANONICAL_KNOWLEDGE
 epistemic_class: PROJECT_INFERENCE

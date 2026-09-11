@@ -1,6 +1,6 @@
 ---
 kad_id: kad-fcbe5aba0b1b5fc7b4579598
-title: Review: OPENCODE_GO_ECONOMIC_MODEL_MATRIX_HANDOFF.md
+title: "Review: OPENCODE_GO_ECONOMIC_MODEL_MATRIX_HANDOFF.md"
 type: review_record
 authority: PROPOSAL_UNREVIEWED
 epistemic_class: UNKNOWN

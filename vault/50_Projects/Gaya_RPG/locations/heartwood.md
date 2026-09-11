@@ -1,0 +1,22 @@
+---
+slug: heartwood
+titulo: "Heartwood — Salão Central e Cozinha"
+categoria: locations
+aliases: []
+tags: ["gaya", "locations", "refugio_ykt", "scene_design"]
+entidades_relacionadas: ["amethysta", "aysha_oztoprak", "douglas", "equipe_ykt"]
+l0_abstract: "O coração doméstico e ponto de encontro do Refúgio YKT, composto pela grande mesa comunal, lareira e cozinha do Heartwood."
+type: State
+---
+
+# Heartwood — Salão Central e Cozinha
+
+# [[heartwood]] — [[heartwood]] e Cozinha
+
+O [[heartwood]] é o centro acolhedor da vida cotidiana no refúgio. O teto segue a curvatura de um grande arco de madeira escura iluminado por lâmpadas suspensas. Uma mesa maciça de madeira estende-se pelo centro, marcada pelo uso, com mapas abertos, tigelas e uma banqueta especial mais baixa feita sob medida para [[amethysta]]. Em um recesso de pedra na parede exterior opera a cozinha do refúgio, dotada de chaminé própria para escoamento de fumaça. O cheiro reconfortante de pão quente, caldo de ervas e carne assada amacia a aspereza mineral da rocha do templo.
+
+## Entidades Presentes ou Vinculadas
+- [[refugio_ykt]]
+- [[amethysta]]
+- [[aysha_oztoprak]]
+- [[douglas]]

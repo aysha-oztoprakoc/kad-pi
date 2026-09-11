@@ -1,0 +1,182 @@
+{
+  "projection_type": "KAD_MEMORY_ISA_PROJECTION",
+  "version": "1.0.0",
+  "domain": "memory",
+  "generated_at": "2026-09-11T15:45:33.410Z",
+  "source_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/00_Governance/ISA-KAD-MEMORY-001.md",
+  "isa": {
+    "id": "ISA-KAD-MEMORY-001",
+    "title": "KAD Memory & Knowledge Substrate Ideal State Artifact (ISA)",
+    "version": "1.0.0",
+    "status": "ACCEPTED",
+    "authority": "CANONICAL_KNOWLEDGE",
+    "epistemic_class": "PROJECT_INFERENCE",
+    "owner": "Human Project Lead & KAD Architecture",
+    "affected_surfaces": [],
+    "affected_hosts": []
+  },
+  "validation_summary": {
+    "ok": false,
+    "total_claims": 9,
+    "passed_claims": 7,
+    "failed_claims": 2
+  },
+  "claims": [
+    {
+      "id": "ISA-KAD-MEMORY-001",
+      "statement": "The current state artifact declares the memory substrate together with provenance, so the substrate's existence and identity are auditable rather than assumed.",
+      "class": "DETERMINISTIC",
+      "target_state": "CURRENT_CONFIRMED",
+      "validator": "memory.substrate.declared",
+      "pass": true,
+      "severity": "BLOCKER",
+      "evidence": "CSA declares memory substrate backend \"none-installed\" with provenance (COMMAND)",
+      "checked_count": 2
+    },
+    {
+      "id": "ISA-KAD-MEMORY-002",
+      "statement": "There is exactly one wiki of record: a live ai-memory project whose location is published by a pointer the current state artifact agrees with.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "memory.substrate.vault_of_record",
+      "pass": false,
+      "severity": "BLOCKER",
+      "evidence": "CSA does not declare the resolved record as the vault of record (declared=null, vault_of_record=false)",
+      "checked_count": 4
+    },
+    {
+      "id": "ISA-KAD-MEMORY-003",
+      "statement": "Capture scope is declared for a workspace and project, and self-referential paths (the substrate and its mirror) are excluded from capture.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "memory.capture.exclusions",
+      "pass": true,
+      "severity": "BLOCKER",
+      "evidence": "capture scope declared for workspace=yes project=yes; self-referential paths excluded (.ai-memory/**, vault/**)",
+      "checked_count": 4
+    },
+    {
+      "id": "ISA-KAD-MEMORY-004",
+      "statement": "The committed vault mirror is an OKF v0.2 bundle: the bundle root declares okf_version and every non-reserved page carries a non-empty type.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "memory.mirror.okf_conformant",
+      "pass": true,
+      "severity": "BLOCKER",
+      "evidence": "mirror is OKF v0.2 conformant: index declares okf_version, 186 pages all carry a non-empty type",
+      "checked_count": 187
+    },
+    {
+      "id": "ISA-KAD-MEMORY-005",
+      "statement": "The record carries its own git history, so knowledge versions independently of the repository that publishes its mirror.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "memory.record.versioned",
+      "pass": true,
+      "severity": "HIGH",
+      "evidence": "record has 1 branch ref(s) under its own git history (HEAD: ref: refs/heads/master)",
+      "checked_count": 3
+    },
+    {
+      "id": "ISA-KAD-MEMORY-006",
+      "statement": "Obsidian is bound to the wiki of record, not to the derived mirror, so human editing lands on the canonical surface.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "memory.obsidian.vault_bound",
+      "pass": true,
+      "severity": "HIGH",
+      "evidence": "Obsidian is bound to the record (5 config files); the derived mirror carries none",
+      "checked_count": 6
+    },
+    {
+      "id": "ISA-KAD-MEMORY-007",
+      "statement": "Every page in the record satisfies the OKF type requirement, so no page can be silently unclassified.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "memory.record.frontmatter_complete",
+      "pass": false,
+      "severity": "BLOCKER",
+      "evidence": "1/187 record pages lack OKF type frontmatter (first: .ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/log-2026-09.md)",
+      "checked_count": 187
+    },
+    {
+      "id": "ISA-KAD-MEMORY-008",
+      "statement": "Every remote model available to KAD-PI is reachable through one OpenAI-compatible gateway endpoint registered as TRANSPORT_ONLY; local KAD inference is proxied, never delegated.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "compute.gateway.single_endpoint",
+      "pass": true,
+      "severity": "HIGH",
+      "evidence": "gateway registered as TRANSPORT_ONLY at http://127.0.0.1:20128/v1; local inference endpoints are proxied, not delegated",
+      "checked_count": 17
+    },
+    {
+      "id": "ISA-KAD-MEMORY-009",
+      "statement": "The model catalog is refreshed deterministically from the gateway and hash-verified, so a stale or tampered catalog cannot pass as current.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "compute.gateway.catalog_sync",
+      "pass": true,
+      "severity": "MEDIUM",
+      "evidence": "catalog hash verified over 1610 model ids (bcca6034e552…)",
+      "checked_count": 1610
+    }
+  ],
+  "memory_contracts": {
+    "authority_order": [
+      "SOURCE",
+      "EVIDENCE",
+      "DERIVATION"
+    ],
+    "accepted_producers": [
+      "human",
+      "accepted-adr",
+      "deterministic-import"
+    ],
+    "non_authoritative_producers": [
+      "session-capture",
+      "llm-consolidation",
+      "semantic-retrieval"
+    ],
+    "required_frontmatter": [
+      "type",
+      "kad_id",
+      "authority",
+      "epistemic_class",
+      "review_status"
+    ],
+    "layers": {
+      "canonical": [
+        "PRIME_DIRECTIVE.md",
+        "CONTEXT.md",
+        "docs/adr/**",
+        "docs/state/**",
+        "vault/**",
+        "evidence/**"
+      ],
+      "substrate": [
+        "<data_dir>/wiki/<workspace_id>/<project_id>/**"
+      ],
+      "derived": [
+        "wiki/generated/**",
+        "vault/90_Derived/**",
+        "embeddings",
+        "context packs"
+      ]
+    },
+    "promotion_pipeline": [
+      "conversation",
+      "candidate",
+      "PROPOSED/INFERRED",
+      "provenance",
+      "validation",
+      "ACCEPTED|REJECTED"
+    ],
+    "prohibited": [
+      "silent-promotion-to-CANONICAL",
+      "unprovenanced-page",
+      "derived-state-as-source",
+      "harness-local-durable-facts"
+    ]
+  }
+}

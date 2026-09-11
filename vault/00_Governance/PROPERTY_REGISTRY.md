@@ -1,3 +1,10 @@
+---
+type: Rule
+generated:
+  by: process:kad-memory-import
+  at: 2026-09-11T14:49:55.638Z
+---
+
 # Canonical property registry
 
 Flat YAML properties only. Nested objects are invalid.

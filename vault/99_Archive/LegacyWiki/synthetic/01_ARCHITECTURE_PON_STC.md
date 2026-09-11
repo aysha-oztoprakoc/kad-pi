@@ -18,6 +18,7 @@ retrieval_keywords:
   - Causal Rule
   - Managed Effect
   - Coeffect
+type: Archived Note
 ---
 
 # Architecture: PON & Spatiotemporal Composability (STC)

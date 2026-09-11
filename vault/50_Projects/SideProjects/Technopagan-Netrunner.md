@@ -1,6 +1,6 @@
 ---
 kad_id: kad-dossier-technopagan
-title: Project Dossier: Technopagan Netrunner Cyberdeck
+title: "Project Dossier: Technopagan Netrunner Cyberdeck"
 type: dossier
 authority: CANONICAL_KNOWLEDGE
 epistemic_class: PROJECT_INFERENCE

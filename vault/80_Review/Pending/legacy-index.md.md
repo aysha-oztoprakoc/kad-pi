@@ -1,6 +1,6 @@
 ---
 kad_id: kad-76aff88bc5fb4084b8f4fb20
-title: Review: index.md
+title: "Review: index.md"
 type: review_record
 authority: PROPOSAL_UNREVIEWED
 epistemic_class: UNKNOWN

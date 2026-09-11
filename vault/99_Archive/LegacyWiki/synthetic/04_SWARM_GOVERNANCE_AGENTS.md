@@ -19,6 +19,7 @@ retrieval_keywords:
   - Flash explores and proves
   - Pro decides
   - WorkPackage
+type: Archived Note
 ---
 
 # Governance: Agent Swarm Architecture & AGY Workflows

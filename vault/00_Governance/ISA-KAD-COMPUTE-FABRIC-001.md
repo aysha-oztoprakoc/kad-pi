@@ -126,6 +126,30 @@ The KAD compute fabric operates as a self-measuring, spatiotemporally composable
 - Scarce resources include: remote provider quota, money, latency, VRAM, RAM, compute cycles, network bandwidth, energy, context tokens, and human attention.
 - Optimization for raw token production or unbounded chat cycles is strictly prohibited (**No SLOPMAXXING**).
 
+### 4.7 Gateway Transport (OmniRoute)
+
+Remote provider access converges on **one** OpenAI-compatible gateway endpoint (`OmniRoute`), so that
+"which models are available to KAD-PI" is a property of the fabric rather than of each harness's private
+configuration.
+
+- **Transport-only authority.** The gateway entry is registered as `TRANSPORT_ONLY`. Registering a
+  connection grants reachability, never qualification: `config/local-models.registry.json` remains the
+  registry of what KAD-PI may use, and only empirical evidence promotes a route.
+- **Local inference stays KAD-owned.** Local GGUF endpoints are *proxied* by the gateway so every harness
+  can reach them; admission, lifecycle, and eviction remain with `bin/kad-serve` and the KAD control
+  plane. A foreign router never holds local-inference authority.
+- **Deterministic catalog.** The model catalog is refreshed into a hash-verified snapshot
+  (`config/omniroute-catalog.json`). Sync is idempotent; an unchanged catalog writes nothing.
+- **No fabricated economics.** The gateway does not publish per-model prices in `/v1/models`, so its
+  entries are declared at zero cost and KAD's economic router remains the only costing authority. Quota
+  that was not observed is `UNKNOWN`.
+- **Provider scope.** Only providers the operator has authorized are registered. Free-tier pools are not
+  added opportunistically: an unrequested provider is both an unapproved spend surface and an authority
+  widening.
+- **Boundary.** Provider credentials remain operator-scoped outside the repository. The gateway binds to
+  loopback (it aggregates credentials for this host); the shared memory substrate is the surface exposed
+  to the LAN.
+
 ---
 
 ## 5. Heterogeneous Host Model
@@ -314,6 +338,26 @@ claims:
     severity: BLOCKER
     status: PASS
     evidence: "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020 Acceptance"
+
+  - id: ISA-KAD-COMPUTE-013
+    statement: "Every remote model available to KAD-PI is reachable through one OpenAI-compatible gateway endpoint registered as TRANSPORT_ONLY; local KAD GGUF endpoints are proxied by that gateway and never delegate admission or lifecycle authority to it."
+    class: DETERMINISTIC
+    target_state: CANONICAL_TARGET
+    validator: compute.gateway.single_endpoint
+    components: [component.kad.economic_router, component.kad.resource_contract]
+    severity: HIGH
+    status: PASS
+    evidence: "config/external-providers.json → omniroute-gateway; ISA-KAD-COMPUTE-FABRIC-001 §4.7"
+
+  - id: ISA-KAD-COMPUTE-014
+    statement: "The model catalog is refreshed deterministically from the gateway into a hash-verified snapshot; an unreachable gateway retains the last snapshot and never erases qualification state."
+    class: DETERMINISTIC
+    target_state: CANONICAL_TARGET
+    validator: compute.gateway.catalog_sync
+    components: [component.kad.telemetry_observatory]
+    severity: MEDIUM
+    status: PASS
+    evidence: "config/omniroute-catalog.json; tools/kad/omniroute-catalog.mjs"
 ```
 
 ---

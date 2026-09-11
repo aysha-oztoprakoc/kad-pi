@@ -14,6 +14,7 @@ retrieval_keywords:
   - Query Routing
   - Epistemic Authority
   - Multi-Hop Search
+type: Archived Note
 ---
 
 # Librarian Agent Protocol & Operating Manual

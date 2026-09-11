@@ -1,16 +1,16 @@
 {
   "registry_type": "KAD_ISA_REGISTRY",
   "version": "1.0.0",
-  "generated_at": "2026-09-07T01:20:56.490Z",
-  "artifacts_count": 2,
+  "generated_at": "2026-09-11T15:45:33.410Z",
+  "artifacts_count": 3,
   "artifacts": [
     {
       "id": "ISA-KAD-AESTHETIC-001",
       "title": "KAD Aesthetic Ideal State Artifact (ISA)",
       "domain": "aesthetic",
       "version": "1.0.0",
-      "source_file": "/home/amdy/Work/vault/00_Governance/ISA-KAD-AESTHETIC-001.md",
-      "projection_file": "/home/amdy/Work/vault/90_Derived/Projections/isa-aesthetic.json",
+      "source_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/00_Governance/ISA-KAD-AESTHETIC-001.md",
+      "projection_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/90_Derived/Projections/isa-aesthetic.json",
       "claims_count": 10,
       "ok": true
     },
@@ -19,10 +19,20 @@
       "title": "KAD Compute Fabric Ideal State Artifact (ISA)",
       "domain": "compute-fabric",
       "version": "1.0.0",
-      "source_file": "/home/amdy/Work/vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
-      "projection_file": "/home/amdy/Work/vault/90_Derived/Projections/isa-compute-fabric.json",
-      "claims_count": 12,
+      "source_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+      "projection_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/90_Derived/Projections/isa-compute-fabric.json",
+      "claims_count": 14,
       "ok": true
+    },
+    {
+      "id": "ISA-KAD-MEMORY-001",
+      "title": "KAD Memory & Knowledge Substrate Ideal State Artifact (ISA)",
+      "domain": "memory",
+      "version": "1.0.0",
+      "source_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/00_Governance/ISA-KAD-MEMORY-001.md",
+      "projection_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/90_Derived/Projections/isa-memory.json",
+      "claims_count": 9,
+      "ok": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+---
+slug: roukash_tashtael
+titulo: "Roukash Tashtael — Terceiro Titã Primordial de Energia"
+categoria: cosmology
+aliases: []
+tags: ["cosmology", "gaya"]
+entidades_relacionadas: ["equipe_ykt", "gaya", "proisb", "refugio_ykt"]
+l0_abstract: "Titã primordial do abismo e do nada, entidade cósmica de profunda gravidade e patrono divino do goblin Proisb."
+type: State
+---
+
+# Roukash Tashtael — Terceiro Titã Primordial de Energia
+
+# [[roukash_tashtael]] — Terceiro Titã Primordial de Energia
+
+[[roukash_tashtael]] é o Terceiro Titã Primordial de Energia em [[gaya]], senhor absoluto do abismo e da ausência que precede a criação. Não exige templos suntuosos nem ritos de sangue, mas sim a compreensão honesta dos próprios limites e o respeito ao silêncio. [[proisb]] é seu dedicado servo e sacerdote no [[refugio_ykt]], mantendo a chama de sua contemplação acesa sem impor dogmas à equipe.
+
+## Relações Canônicas
+- [[proisb]]
+- [[raizes_sagradas]]
+- [[refugio_ykt]]

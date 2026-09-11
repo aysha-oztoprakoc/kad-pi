@@ -1,3 +1,10 @@
+---
+type: Rule
+generated:
+  by: process:kad-memory-import
+  at: 2026-09-11T14:49:55.638Z
+---
+
 # Canonical vault schema
 
 Markdown with optional YAML frontmatter. Required fields are conditional: knowledge and decisions require `kad_id`, `authority`, `epistemic_class`, `review_status`, `context_eligible`; `SOURCE_FACT` additionally requires `sources` and `source_hashes`. Raw evidence requires `source_id` and `source_hash`.

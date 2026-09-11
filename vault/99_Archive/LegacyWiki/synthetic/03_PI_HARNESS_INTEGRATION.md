@@ -10,7 +10,7 @@ source_documents:
   - evidence/WP-KAD-001/sdk-package-provenance.json
 retrieval_keywords:
   - Pi Coding Agent
-  - @earendil-works/pi-coding-agent
+  - "@earendil-works/pi-coding-agent"
   - createAgentSession
   - session.subscribe
   - session.steer
@@ -18,6 +18,7 @@ retrieval_keywords:
   - WP-KAD-001
   - Cordis mount
   - Teardown
+type: Archived Note
 ---
 
 # Integration: Pi Coding Agent SDK & Lifecycle Seams

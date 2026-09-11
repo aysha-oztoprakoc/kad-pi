@@ -1,6 +1,6 @@
 ---
 kad_id: kad-9777dc52926670913bb329fc
-title: Review: DSH_PON_CORDIS_HANDOFF_2026-08-25.md
+title: "Review: DSH_PON_CORDIS_HANDOFF_2026-08-25.md"
 type: review_record
 authority: PROPOSAL_UNREVIEWED
 epistemic_class: UNKNOWN

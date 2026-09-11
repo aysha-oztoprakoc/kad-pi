@@ -1,0 +1,20 @@
+---
+slug: crosta_de_kravarius
+titulo: "Crosta de Kravarius"
+categoria: mechanics
+aliases: []
+tags: ["gaya", "mechanics"]
+entidades_relacionadas: ["aysha_oztoprak"]
+l0_abstract: "Relíquia viva e armadura pessoal de Ayşa Öztoprak, forjada a partir da carapaça de Kravarius com redução de dano (RD -2)."
+type: State
+---
+
+# Crosta de Kravarius
+
+# [[crosta_de_kravarius]]
+
+A [[crosta_de_kravarius]] é uma das quatro grandes relíquias de Kravarius integradas ao combate de [[aysha_oztoprak]]. Concede Classe de Armadura 24 e Redução de Dano constante de -2 contra todos os tipos de ataque físicos, reagindo instintivamente aos reflexos de trovão da guerreira.
+
+## Relações Canônicas
+- [[aysha_oztoprak]]
+- [[manto_de_kravarius]]

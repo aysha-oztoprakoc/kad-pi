@@ -1,0 +1,47 @@
+---
+slug: proisb
+titulo: "Proisb, o Carniçal"
+categoria: characters
+aliases: []
+tags: ["characters", "gaya", "nivel_7", "ykt"]
+entidades_relacionadas: ["amethysta", "equipe_ykt", "heartwood", "raizes_sagradas", "refugio_ykt", "roukash_tashtael"]
+l0_abstract: "Proisb, o Carniçal: Bruxo Hexblade 6 / Paladino 1 (Nível 7), Nível 7, HP 62, CA 19. Sacerdote e mestre das Raízes Sagradas; cuida da Capela de Roukash Tashtael e ensina filosofia do abismo...."
+type: State
+---
+
+# Proisb, o Carniçal
+
+# [[proisb]]
+
+**Classe e Nível:** Bruxo Hexblade 6 / Paladino 1 (Nível 7)
+**Raça:** Goblin | **Tendência:** Caótico e Bom
+**Nível:** 7 | **Pontos de Vida:** 62 | **Classe de Armadura:** 19
+**Deslocamento:** 30ft / 9m | **Iniciativa:** +4
+
+## Atributos
+| FOR | DES | CON | INT | SAB | CAR |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 6 | 18 | 16 | 12 | 8 | 26 |
+
+## Ataques e Habilidades
+- Arma de Pacto Aprimorada (+12 atk, 1d8+9 dano, crítico 19-20)
+- Rajada Mística (1d10 + Carisma)
+- Repreensão Infernal (2d10)
+
+## Relíquias e Equipamentos
+- Máscara de Madeira
+- Medalhão Antigo
+- Gaita
+- Carniça (5 cargas)
+
+## Papel no [[refugio_ykt]]
+Sacerdote e mestre das [[raizes_sagradas]]; cuida da [[raizes_sagradas]] Tashtael e ensina filosofia do abismo.
+
+## Traços de Interpretação
+- **Personalidade:** Inocente, infantil, amigável e caloroso, apesar de empunhar poderes aterrorizantes do [[roukash_tashtael]].
+- **Ideais:** Viver o máximo possível, e tentar viver de verdade e não apenas sobreviver.
+- **Vínculos:** [[roukash_tashtael]] (seu patrono e titan primordial) e a acolhida fraterna que recebeu na [[equipe_ykt]].
+- **Defeitos:** Ingênuo e com traços bizarros ('demônio kkk' conforme anotação de ficha); impulsivo com suas cargas de carniça.
+
+## Biografia Canônica e Descrição
+[[proisb]] é um goblin andarilho carismático (CAR 26) que encontrou seu chamado ao se tornar o devoto de [[roukash_tashtael]], o Terceiro Titã Primordial de Energia, senhor do abismo e do nada. No [[refugio_ykt]], preside a Capela nas [[raizes_sagradas]], onde acolhe [[amethysta]] e os companheiros em uma alcova de meditação diante da imponente efígie cinzenta de múltiplos braços. Em combate, sua lâmina de pacto maldita corta com precisão letal, enquanto ele mesmo mantém um sorriso gentil e toca sua gaita ao entardecer no [[heartwood]].

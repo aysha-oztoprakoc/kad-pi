@@ -1,6 +1,6 @@
 ---
 kad_id: kad-604a843770c3906ce08e219b
-title: Review: KAD_PI_AGY_HANDOFF_2026-08-28.md
+title: "Review: KAD_PI_AGY_HANDOFF_2026-08-28.md"
 type: review_record
 authority: PROPOSAL_UNREVIEWED
 epistemic_class: UNKNOWN

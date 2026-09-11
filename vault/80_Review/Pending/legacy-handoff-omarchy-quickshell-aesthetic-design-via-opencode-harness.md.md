@@ -1,6 +1,6 @@
 ---
 kad_id: kad-3480e7a93a9d33f2a534e819
-title: Review: HANDOFF — Omarchy QuickShell Aesthetic Design via OpenCode Harness.md
+title: "Review: HANDOFF — Omarchy QuickShell Aesthetic Design via OpenCode Harness.md"
 type: review_record
 authority: PROPOSAL_UNREVIEWED
 epistemic_class: UNKNOWN

@@ -2,8 +2,8 @@
   "projection_type": "KAD_COMPUTE_FABRIC_ISA_PROJECTION",
   "version": "1.0.0",
   "domain": "compute-fabric",
-  "generated_at": "2026-09-07T01:20:56.489Z",
-  "source_file": "/home/amdy/Work/vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
+  "generated_at": "2026-09-11T15:45:33.403Z",
+  "source_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
   "isa": {
     "id": "ISA-KAD-COMPUTE-FABRIC-001",
     "title": "KAD Compute Fabric Ideal State Artifact (ISA)",
@@ -17,8 +17,8 @@
   },
   "validation_summary": {
     "ok": true,
-    "total_claims": 12,
-    "passed_claims": 12,
+    "total_claims": 14,
+    "passed_claims": 14,
     "failed_claims": 0
   },
   "claims": [
@@ -153,6 +153,28 @@
       "severity": "BLOCKER",
       "evidence": "Verified human governance target in WP-020 FINAL_REPORT.md and ADR 0014",
       "checked_count": 1
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-013",
+      "statement": "Every remote model available to KAD-PI is reachable through one OpenAI-compatible gateway endpoint registered as TRANSPORT_ONLY; local KAD GGUF endpoints are proxied by that gateway and never delegate admission or lifecycle authority to it.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "compute.gateway.single_endpoint",
+      "pass": true,
+      "severity": "HIGH",
+      "evidence": "gateway registered as TRANSPORT_ONLY at http://127.0.0.1:20128/v1; local inference endpoints are proxied, not delegated",
+      "checked_count": 17
+    },
+    {
+      "id": "ISA-KAD-COMPUTE-014",
+      "statement": "The model catalog is refreshed deterministically from the gateway into a hash-verified snapshot; an unreachable gateway retains the last snapshot and never erases qualification state.",
+      "class": "DETERMINISTIC",
+      "target_state": "CANONICAL_TARGET",
+      "validator": "compute.gateway.catalog_sync",
+      "pass": true,
+      "severity": "MEDIUM",
+      "evidence": "catalog hash verified over 1610 model ids (bcca6034e552…)",
+      "checked_count": 1610
     }
   ],
   "host_profiles": {
@@ -239,5 +261,18 @@
     "energy",
     "context_tokens",
     "human_attention"
-  ]
+  ],
+  "gateway_contracts": {
+    "transport": "single OpenAI-compatible gateway endpoint (OmniRoute)",
+    "scope": "remote providers and proxied local KAD endpoints",
+    "authority": "TRANSPORT_ONLY",
+    "local_inference_ownership": "KAD STC-owned; the gateway proxies, it does not own or admit",
+    "catalog_sync": "deterministic snapshot at config/omniroute-catalog.json, hash-verified",
+    "degradation": "unreachable gateway keeps the last snapshot and never erases qualification state",
+    "prohibited": [
+      "gateway-registration-granting-model-qualification",
+      "fabricated-quota-or-cost-figures",
+      "delegating-local-inference-admission-to-a-foreign-router"
+    ]
+  }
 }
