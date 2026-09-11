@@ -17,7 +17,10 @@ build/
 # Work-local OMP binary and runtime/auth state
 .tools/oh-my-pi/
 .tools/kad/pi-sdk/
-.state/omp-kad/
+# KAD runtime scratch: agent state, retrieval scratch, and pre-change backups.
+# Regenerable, 3.2G, 200k files — never tracked. (Was .state/omp-kad/ only, which
+# let .state/backup_pre_etapa_a/ through.)
+.state/
 .models/
 
 # Environment & Secrets
@@ -41,6 +44,30 @@ node_modules/
 .scratch/
 .tmp/
 bin/omp-patched-canary
+
+# Memory substrate (ai-memory data dir — owns its own git history and index)
+# The wiki of record lives here; vault/ is the deterministic mirror that is committed.
+.ai-memory/
+
+# Installer backups (e.g. AGENTS.md.bak-<epoch> emitted by tooling that edits AGENTS.md in place)
+*.bak-*
+
+# Vendored third-party checkouts, downloaded toolchains and build output.
+# Each of these has its own upstream (and its own .git); none is KAD-PI source.
+# ACE-Step/                      - upstream audio-model checkout (19G)
+# tools/game-stack/emsdk/        - Emscripten SDK (1.7G, own .git)
+# tools/game-stack/godot-source/ - Godot engine source (1.4G, own .git)
+# tools/game-stack/target/       - Rust build output (2.6G)
+# tools/game-stack/exports/      - exported game builds (317M)
+ACE-Step/
+tools/game-stack/emsdk/
+tools/game-stack/godot-source/
+tools/game-stack/target/
+tools/game-stack/exports/
+
+# Godot editor cache and compiled GDExtension binaries
+tools/game-stack/godot/.godot/
+tools/game-stack/godot/bin/
 
 # KAD runtime telemetry store (live, regenerable via kad-telemetry backfill; canonical
 # telemetry evidence must be exported/snapshotted into the owning WP evidence/ dir) — D3, WP-043
