@@ -1,6 +1,6 @@
 {
   "schema_version": "kad-omniroute-catalog-1",
-  "fetched_at": "2026-09-11T15:48:29.525Z",
+  "fetched_at": "2026-09-11T21:19:06.916Z",
   "source_url": "http://127.0.0.1:20128/v1/models",
   "catalog_hash": "bd2e0164f871bdc804a8677e9ca8406d1f0fc8b1ac8471290f3accca2b5c5eb2",
   "model_ids": [
@@ -1620,9 +1620,8 @@
   "exposure_policy": "LOCAL_SUBSCRIPTION_AND_FREE_TIERS_ONLY",
   "exposure_policy_source": "config/omniroute-exposure.json",
   "exposure_policy_hash": "c8e0a8b3ad9942069c885e74d9a2f7764273db376d739706004cb083155658c2",
+  "selector_version": 2,
   "exposed_model_ids": [
-    "auto/best-free",
-    "auto/coding:free",
     "oc/big-pickle",
     "oc/deepseek-v4-flash-free",
     "oc/hy3-free",
@@ -1649,9 +1648,7 @@
     "openrouter/poolside/laguna-s-2.1:free",
     "openrouter/poolside/laguna-xs-2.1:free",
     "openrouter/thinkingmachines/inkling-small:free",
-    "openrouter/thinkingmachines/inkling:free",
-    "veo-free/seedance",
-    "veo-free/veo"
+    "openrouter/thinkingmachines/inkling:free"
   ],
-  "exposed_count": 31
+  "exposed_count": 27
 }

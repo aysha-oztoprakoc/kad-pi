@@ -7,28 +7,6 @@ providers:
     api: openai-completions
     auth: apiKey
     models:
-      - id: auto/best-free
-        name: auto/best-free (OmniRoute gateway)
-        api: openai-completions
-        input: [text]
-        cost:
-          input: 0
-          output: 0
-          cacheRead: 0
-          cacheWrite: 0
-        contextWindow: 128000
-        maxTokens: 16384
-      - id: auto/coding:free
-        name: auto/coding:free (OmniRoute gateway)
-        api: openai-completions
-        input: [text]
-        cost:
-          input: 0
-          output: 0
-          cacheRead: 0
-          cacheWrite: 0
-        contextWindow: 128000
-        maxTokens: 16384
       - id: oc/big-pickle
         name: oc/big-pickle (OmniRoute gateway)
         api: openai-completions
@@ -317,28 +295,6 @@ providers:
         maxTokens: 16384
       - id: openrouter/thinkingmachines/inkling:free
         name: openrouter/thinkingmachines/inkling:free (OmniRoute gateway)
-        api: openai-completions
-        input: [text]
-        cost:
-          input: 0
-          output: 0
-          cacheRead: 0
-          cacheWrite: 0
-        contextWindow: 128000
-        maxTokens: 16384
-      - id: veo-free/seedance
-        name: veo-free/seedance (OmniRoute gateway)
-        api: openai-completions
-        input: [text]
-        cost:
-          input: 0
-          output: 0
-          cacheRead: 0
-          cacheWrite: 0
-        contextWindow: 128000
-        maxTokens: 16384
-      - id: veo-free/veo
-        name: veo-free/veo (OmniRoute gateway)
         api: openai-completions
         input: [text]
         cost:

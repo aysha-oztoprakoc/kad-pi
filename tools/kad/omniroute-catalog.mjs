@@ -32,6 +32,14 @@ export const OMP_MODELS_PATH = '.omp/models.yml';
 export const EXPOSURE_PATH = 'config/omniroute-exposure.json';
 
 /**
+ * Version of the exposure-selection semantics in this module. Bump it whenever
+ * `selectExposedModels` changes meaning, so `syncCatalog` cannot mistake a projection
+ * made under the old rules for a current one — the policy file hash only covers the
+ * policy, not the code that reads it.
+ */
+export const SELECTOR_VERSION = 2;
+
+/**
  * Exposure policy of last resort, used only when the policy file is absent.
  * Mirrors config/omniroute-exposure.json: never widen beyond local, subscription
  * and explicitly free-tier ids.
@@ -61,17 +69,37 @@ export function providerOf(modelId) {
   return String(modelId).split('/')[0];
 }
 
-const hasFreeMarker = (id, markers) => markers.some((marker) => id.endsWith(marker) || id.includes(`${marker}/`));
+/**
+ * Model segment of a gateway id: everything after the provider prefix. Free-tier
+ * markers are matched against this segment only, so a provider whose *name* ends in
+ * `-free` cannot whitelist its entire catalog — `unlisted_providers: exclude` stays
+ * binding.
+ */
+function modelSegmentOf(modelId) {
+  const text = String(modelId);
+  const slash = text.indexOf('/');
+  return slash === -1 ? text : text.slice(slash + 1);
+}
+
+const hasFreeMarker = (id, markers) => {
+  const segment = modelSegmentOf(id);
+  return markers.some((marker) => segment.endsWith(marker));
+};
 
 /**
  * Selects which advertised gateway models KAD-PI is willing to expose.
  *
  * Evaluated in order, first match wins:
- *   1. a free-tier marker  -> include (a free-tier id can never fall back to a
+ *   1. an excluded prefix  -> exclude (the gateway's own `auto/*` routing combos are
+ *      dropped first, because they select across upstreams the policy has not
+ *      classified);
+ *   2. a free-tier marker  -> include (a free-tier *model* id cannot fall back to a
  *      paid candidate, so it is safe even inside an otherwise-metered provider);
- *   2. an excluded prefix  -> exclude;
  *   3. a local/subscription provider -> include;
  *   4. anything else       -> exclude (`unlisted_providers: exclude`).
+ *
+ * Exclusions are authoritative: a marker may rescue a model, never a provider.
+ * Bump SELECTOR_VERSION when these semantics change.
  *
  * The advertised catalog is recorded in full; only this projection reaches the
  * harness model list.
@@ -83,8 +111,8 @@ export function selectExposedModels(modelIds, policy = DEFAULT_EXPOSURE) {
   const allowFreeTier = policy.include_free_tier_ids !== false;
 
   return normalizeIds(modelIds).filter((id) => {
-    if (allowFreeTier && markers.length && hasFreeMarker(id, markers)) return true;
     if (excludePrefixes.some((prefix) => id.startsWith(prefix))) return false;
+    if (allowFreeTier && markers.length && hasFreeMarker(id, markers)) return true;
     return includeAll.has(providerOf(id));
   });
 }
@@ -265,6 +293,7 @@ export async function syncCatalog({ repoRoot = process.cwd(), baseUrl = GATEWAY_
     exposure_policy: policy.policy,
     exposure_policy_source: policySource,
     exposure_policy_hash: policyHash,
+    selector_version: SELECTOR_VERSION,
     exposed_model_ids: exposedIds,
     exposed_count: exposedIds.length
   };
@@ -278,6 +307,7 @@ export async function syncCatalog({ repoRoot = process.cwd(), baseUrl = GATEWAY_
     previous
     && previous.catalog_hash === catalog.catalog_hash
     && previous.exposure_policy_hash === catalog.exposure_policy_hash
+    && previous.selector_version === SELECTOR_VERSION
     && blockPresent
   ) {
     return { changed: false, catalog: previous };

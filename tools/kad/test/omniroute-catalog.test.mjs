@@ -110,13 +110,18 @@ test('syncCatalog records the full advertised catalog but projects only policy-e
   try {
     // Advertised set deliberately spans every policy branch: the local lane, a
     // metered provider's paid and free ids, the excluded auto/* combos, an
-    // unlisted provider, and a second include lane.
+    // unlisted provider, a second include lane, and the two ids that used to
+    // defeat the policy — an auto/* alias carrying a model-level `-free` marker,
+    // and an unclassified provider whose *name* ends in `-free`.
     const advertised = [
       { id: 'llama-cpp/kad-local-s13' },
       { id: 'openrouter/anthropic/claude-paid' },
       { id: 'openrouter/google/gemma-4-31b-it:free' },
       { id: 'auto/best-coding' },
+      { id: 'auto/best-free' },
       { id: 'aihorde/never-connected' },
+      { id: 'veo-free/veo' },
+      { id: 'veo-free/seedance' },
       { id: 'oc/big-pickle' }
     ];
     const result = await syncCatalog({ repoRoot: root, fetchImpl: fakeFetch({ data: advertised }) });
@@ -129,8 +134,9 @@ test('syncCatalog records the full advertised catalog but projects only policy-e
 
     // The advertised catalog is recorded in full, and stays hash-verifiable.
     assert.deepEqual(catalog.model_ids, advertised.map((m) => m.id).sort());
-    assert.equal(catalog.model_count, 6);
+    assert.equal(catalog.model_count, 9);
     assert.equal(catalog.catalog_hash, catalogHash(catalog.model_ids));
+    assert.equal(catalog.selector_version, 2);
 
     // The exposure projection is recorded alongside it for auditability.
     assert.equal(catalog.exposure_policy, 'LOCAL_SUBSCRIPTION_AND_FREE_TIERS_ONLY');
@@ -154,6 +160,11 @@ test('syncCatalog records the full advertised catalog but projects only policy-e
     assert.doesNotMatch(models, /claude-paid/);
     assert.doesNotMatch(models, /aihorde/);
     assert.doesNotMatch(models, /auto\/best-coding/);
+    // Exclusions are authoritative: an auto/* alias stays excluded even when its model
+    // segment ends in `-free`, and an unclassified provider is not rescued by a name
+    // that ends in `-free`.
+    assert.doesNotMatch(models, /auto\/best-free/);
+    assert.doesNotMatch(models, /veo-free\//);
     assert.match(models, /^ {8}name: oc\/big-pickle \(OmniRoute gateway\)$/m);
     assert.match(models, /^ {8}maxTokens: 16384$/m);
     // cost is zero across the board: the gateway publishes no per-model prices
