@@ -129,3 +129,46 @@ but changing it is a one-minute action worth taking.
 3. **Reconcile the preflight spend predicate with the subscription policy.**
 4. **Commit, or not.** 469 paths are dirty, mostly from concurrent work; `git add vault` + a commit scoped
    to `vault/` was left to the operator rather than sweeping unrelated changes in.
+
+---
+
+## Addendum — commit hygiene pass (2026-09-11, post-acceptance)
+
+Committed as `d05bf4f`, `8301de2`, `bda2085`, `5249489`, `534685d` (working tree clean afterwards, mirror
+drift 0). Four defects were found while preparing the commit; three were introduced or left open by this
+workpackage and one predated it.
+
+**1. The published mirror was leaking the capture ledger.** `bin/kad-memory publish` rsynced the whole record
+into `vault/`, which carried `log-YYYY-MM.md` — the substrate's live capture ledger. That file is
+unbounded, regenerates continuously, and records raw session events **including prompt text**. `vault/` is
+git-tracked and pushed to the KAD-PI remote, so this would have published session activity for no gain in a
+clone. The ledger now stays in the record and out of the mirror.
+
+**2. `--delete-excluded` was missing, so exclusion alone could never remove anything.** rsync treats an
+excluded path as *protected* and will not delete it without that flag. The first attempt at (1) therefore
+appeared to work while leaving the ledger in place — the mirror would have silently accumulated exactly the
+files the exclude existed to keep out. With the flag, the mirror is a pure function of (record, excludes),
+and a second publish is byte-identical.
+
+**3. The generated bundle index advertised a directory that never ships.** ai-memory's `index.md` lists
+`.obsidian/`, which the mirror deliberately excludes. A committed index pointing at a non-existent directory
+is a broken link; publish now drops dot-directory entries.
+
+**4. `.gitignore` would have allowed ~25 GB into a commit (pre-existing).** `.state/omp-kad/` was ignored but
+the narrower pattern let `.state/backup_pre_etapa_a/` through, so `git status` never settled. More seriously,
+nothing ignored `ACE-Step/` (19 G upstream clone), `tools/game-stack/emsdk/` (1.7 G, own `.git`),
+`tools/game-stack/target/` (2.6 G Rust output), `tools/game-stack/godot-source/` (1.4 G, own `.git`) or
+`tools/game-stack/exports/` (317 M). A single `git add -A` would have staged them. All are now ignored;
+`tools/game-stack` contributes 32 authored source files instead of 6.1 G.
+
+Also removed: `AGENTS.md.bak-<epoch>`, a backup emitted by the tooling that edits `AGENTS.md` in place. The
+`*.bak-*` pattern is now ignored so the next run cannot leave one behind.
+
+**Credential verification before commit.** Both live secrets (the ai-memory bearer token and the OmniRoute
+key) were scanned for across every tracked and untracked file, and again across the staged diff:
+zero hits. `.ai-memory/` — which holds the record, the config and the bearer in `env` — was already ignored.
+The scratch files that held the gateway key and an authenticated dashboard session (`/tmp/newkey.json`,
+`/tmp/omni-cookies.txt`) were purged with `shred -u`.
+
+**Post-commit state:** ISA 33/33 PASS, 63 focused tests pass, `bin/kad-models sync` idempotent,
+`bin/kad-memory status` drift 0, both services active.
