@@ -1,5 +1,5 @@
 ---
-name: router
+name: gamedev-router
 description: >
   Routes any game-development request to the right specialized skill(s): it detects the engine
   (Godot, Unity, Unreal, Bevy, Phaser, PixiJS, three.js, LÖVE, pygame, Roblox) and the task, then

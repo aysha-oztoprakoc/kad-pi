@@ -1,0 +1,36 @@
+# gitleaks configuration — KAD-PI
+#
+# The default rule set flags seven matches in this repository's history, and all seven
+# are deterministic non-secrets, verified one by one on 2026-09-11
+# (WP-KAD-REVIEW-REMEDIATION-058):
+#
+#   1-2. citation keys of the form <Author><Year><Title> in research tests
+#        ('Doyle1979ATruthMaintenan', 'Linhares2020NOCA');
+#   3-4. credential-shaped *fixtures* that exist to prove the publication-privacy and
+#        observatory filters strip credentials ('sk-abcdef1234567890abcdef',
+#        'sk-proj-1234567890abcdef1234567890abcdef');
+#   5-7. `tokenizer_version_hash` — a derived SHA-256 field in the distillation
+#        evidence replays, not a credential.
+#   8-9. `secret_token` canaries in the Gaya evaluation design: values that literally
+#        begin with `GAYA_CANARY_`, registered on purpose so leakage into training can
+#        be detected (evidence/WP-GAYA-DATASET-G1/05-evaluation-design/).
+#
+# Each entry is an exact literal, so a real credential written into one of the same
+# files is still reported: this narrows scanner noise without blinding the scanner.
+#
+# Verify with:  gitleaks git . --no-banner     (expect: no leaks found)
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Deterministic non-secrets: research citation keys, credential-shaped test fixtures, derived hashes, evaluation canaries"
+regexTarget = "line"
+regexes = [
+  '''Doyle1979ATruthMaintenan''',
+  '''Linhares2020NOCA''',
+  '''sk-abcdef1234567890abcdef''',
+  '''sk-proj-1234567890abcdef1234567890abcdef''',
+  '''tokenizer_version_hash''',
+  '''GAYA_CANARY_[A-Z0-9_]+''',
+]
