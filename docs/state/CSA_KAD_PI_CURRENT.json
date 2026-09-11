@@ -1,21 +1,21 @@
 {
   "schema": "kad.csa/v1",
   "state": "CURRENT",
-  "generated_at": "2026-09-11T21:41:19Z",
-  "evidence_cutoff": "29369d3e3b61801c75fb981629310130e4ed16f7",
+  "generated_at": "2026-09-11T22:03:06Z",
+  "evidence_cutoff": "c1e50ae6553186a3a1b40fbc922acca488dba7b8",
   "repository": {
-    "head": "29369d3e3b61801c75fb981629310130e4ed16f7",
+    "head": "c1e50ae6553186a3a1b40fbc922acca488dba7b8",
     "branch": "main",
     "remote": "https://github.com/aysha-oztoprakoc/kad-pi.git",
     "remote_head": "2f2ae35383a57a955cd9b5626dbe9f62d0bf9f31",
     "dirty": true,
-    "dirty_paths": 12,
-    "divergence": 17,
+    "dirty_paths": 19,
+    "divergence": 20,
     "state_class": "VERIFIED_CURRENT",
     "evidence": {
       "source": "git",
       "command": "git rev-parse HEAD; git ls-remote origin refs/heads/main; git status --short --untracked-files=all | wc -l",
-      "hash": "29369d3e3b61801c75fb981629310130e4ed16f7",
+      "hash": "c1e50ae6553186a3a1b40fbc922acca488dba7b8",
       "path": "evidence/WP-KAD-REVIEW-REMEDIATION-058/csa-refresh-probe.txt"
     }
   },

@@ -97,10 +97,34 @@ test('terminal transition deactivates the mutating claim', () => {
   assert.equal(runWorkctl(['claim', 'WP-TEST-001', '--actor', 'builder'], { workspaceRoot: root }).code, 0);
   assert.equal(runWorkctl(['transition', 'WP-TEST-001', 'IN_PROGRESS', '--actor', 'builder'], { workspaceRoot: root }).code, 0);
   assert.equal(runWorkctl(['transition', 'WP-TEST-001', 'REVIEW', '--actor', 'builder'], { workspaceRoot: root }).code, 0);
+  fs.mkdirSync(path.join(root, 'evidence', 'test'), { recursive: true });
+  fs.writeFileSync(path.join(root, 'evidence', 'test', 'receipt.json'), '{}\n');
   assert.equal(runWorkctl(['transition', 'WP-TEST-001', 'ACCEPTED', '--actor', 'builder'], { workspaceRoot: root }).code, 0);
   assert.equal(runWorkctl(['release', 'WP-TEST-001', '--actor', 'builder'], { workspaceRoot: root }).code, 1);
   const claim = JSON.parse(fs.readFileSync(path.join(root, '.agents', 'work', 'claims', 'WP-TEST-001.json'), 'utf8'));
   assert.equal(claim.active, false);
+});
+
+test('acceptance is refused unless durable evidence actually exists', () => {
+  const root = fixture();
+  const review = (id) => {
+    runWorkctl(['claim', id, '--actor', 'builder'], { workspaceRoot: root });
+    runWorkctl(['transition', id, 'IN_PROGRESS', '--actor', 'builder'], { workspaceRoot: root });
+    return runWorkctl(['transition', id, 'REVIEW', '--actor', 'builder'], { workspaceRoot: root });
+  };
+  const accept = (id) => runWorkctl(['transition', id, 'ACCEPTED', '--actor', 'builder'], { workspaceRoot: root });
+
+  task(root);
+  review('WP-TEST-001');
+  assert.match(accept('WP-TEST-001').error, /declared evidence target does not exist/);
+  fs.mkdirSync(path.join(root, 'evidence', 'test'), { recursive: true });
+  assert.match(accept('WP-TEST-001').error, /evidence target directory is empty/);
+  fs.writeFileSync(path.join(root, 'evidence', 'test', 'receipt.json'), '{}\n');
+  assert.equal(accept('WP-TEST-001').code, 0);
+
+  task(root, { id: 'WP-TEST-002', evidence_target: undefined });
+  review('WP-TEST-002');
+  assert.match(accept('WP-TEST-002').error, /no evidence_target declared/);
 });
 
 test('handoff requires an active mutating claim and rejects unsafe review actors', () => {

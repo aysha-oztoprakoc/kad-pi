@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { ensureVault, vaultRoot } from './index.mjs';
+import { ensureVault, vaultRoot, stableKadId } from './index.mjs';
 
 const hash = (bytes) => crypto.createHash('sha256').update(bytes).digest('hex');
 const safeId = (value) => String(value).replace(/[^A-Za-z0-9._-]+/g, '-').replace(/^-|-$/g, '').toLowerCase() || 'unknown';
@@ -31,7 +31,7 @@ function destination(relative, classification) {
   if (classification === 'REVIEW_REQUIRED') return `80_Review/Pending/legacy-${safeId(relative)}.md`;
   return `99_Archive/LegacyWiki/${relative}`;
 }
-export function stableKadId(identity) { return `kad-${hash(String(identity)).slice(0, 24)}`; }
+export { stableKadId };
 export function migrationManifest({ root = vaultRoot(), legacyRoot = path.resolve('wiki') } = {}) {
   ensureVault(root);
   const entries = walk(legacyRoot).filter((file) => !file.endsWith('.gitkeep')).map((relative) => {

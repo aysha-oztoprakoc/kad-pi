@@ -5,8 +5,28 @@ import crypto from 'node:crypto';
 
 export const AUTHORITY = Object.freeze({ CANONICAL:'CANONICAL', RAW_EVIDENCE:'RAW_EVIDENCE', PROPOSAL:'PROPOSAL', DERIVED:'DERIVED', EXTERNAL_AUTHORITY_REFERENCE:'EXTERNAL_AUTHORITY_REFERENCE', ARCHIVED:'ARCHIVED', UNKNOWN:'UNKNOWN', CANONICAL_KNOWLEDGE:'CANONICAL_KNOWLEDGE', CANONICAL_PROJECT_DECISION:'CANONICAL_PROJECT_DECISION', PROPOSAL_UNREVIEWED:'PROPOSAL_UNREVIEWED' });
 export const EPISTEMIC = Object.freeze({ SOURCE_FACT:'SOURCE_FACT', DERIVED_SYNTHESIS:'DERIVED_SYNTHESIS', PROJECT_INFERENCE:'PROJECT_INFERENCE', UNKNOWN:'UNKNOWN' });
-const zones = ['00_Home','00_Governance','10_Inbox','10_Raw','20_Sources','20_Sources/Papers','20_Sources/Documentation','20_Sources/Web','20_Sources/Transcripts','20_Sources/Assets','30_Knowledge','30_Knowledge/Concepts','30_Knowledge/Technologies','30_Knowledge/Models','30_Knowledge/Systems','30_Knowledge/People','30_Knowledge/Organizations','40_Decisions','40_Research/Papers','40_Research/Questions','40_Research/Syntheses','40_Research/Claims','40_Research/Experiments','50_Projects/KAD-PI/Overview','50_Projects/KAD-PI/Architecture','50_Projects/KAD-PI/Roadmap','50_Projects/KAD-PI/Workpackages','50_Projects/KAD-PI/Decisions','50_Projects/KAD-PI/Experiments','50_Projects/KAD-PI/Releases','60_Operations/Machines','60_Operations/Models','60_Operations/Providers','60_Operations/Harnesses','60_Operations/Resources','60_Operations/Metrics','70_Dashboards','80_Review/Pending','80_Review/Rejected','80_Review/Receipts','90_Derived/Indexes','90_Derived/ContextPacks','90_Derived/KnowledgePlane','90_Derived/Sofia','90_Derived/Website','99_Archive'];
+export const VAULT_ZONES = Object.freeze(['00_Home','00_Governance','10_Inbox','10_Raw','20_Sources','20_Sources/Papers','20_Sources/Documentation','20_Sources/Web','20_Sources/Transcripts','20_Sources/Assets','30_Knowledge','30_Knowledge/Concepts','30_Knowledge/Technologies','30_Knowledge/Models','30_Knowledge/Systems','30_Knowledge/People','30_Knowledge/Organizations','40_Decisions','40_Research/Papers','40_Research/Questions','40_Research/Syntheses','40_Research/Claims','40_Research/Experiments','50_Projects/KAD-PI/Overview','50_Projects/KAD-PI/Architecture','50_Projects/KAD-PI/Roadmap','50_Projects/KAD-PI/Workpackages','50_Projects/KAD-PI/Decisions','50_Projects/KAD-PI/Experiments','50_Projects/KAD-PI/Releases','60_Operations/Machines','60_Operations/Models','60_Operations/Providers','60_Operations/Harnesses','60_Operations/Resources','60_Operations/Metrics','70_Dashboards','80_Review/Pending','80_Review/Rejected','80_Review/Receipts','90_Derived/Indexes','90_Derived/ContextPacks','90_Derived/KnowledgePlane','90_Derived/Sofia','90_Derived/Website','99_Archive']);
+/**
+ * Declared zones the vault does not govern as canon: governance records, raw
+ * ingest, review queues, derived projections and the archive are addressable but
+ * exempt from the `kad_id` rule.
+ */
+export const NON_CANONICAL_ZONES = Object.freeze(['00_Governance','10_Raw','80_Review','90_Derived','99_Archive']);
+const RESERVED_NAMES = Object.freeze(['index.md','log.md','bootstrap.md','_meta.md']);
+/**
+ * Top-level areas the layout declares.
+ *
+ * The vault owns the zones it declares. Everything else in the same tree — the
+ * memory substrate's episodic capture under `sessions/`, its monthly ledgers,
+ * whatever directory the substrate adds next — is written by processes the vault
+ * does not control, so a canon rule there is unsatisfiable by editing the corpus.
+ * Those paths are reported (`OUTSIDE_DECLARED_ZONE`) rather than enforced.
+ */
+const zoneTops = new Set(VAULT_ZONES.map((zone) => zone.split('/')[0]));
+export const inCanonScope = (relative) => zoneTops.has(String(relative).split('/')[0]);
+export const inNonCanonicalZone = (relative) => NON_CANONICAL_ZONES.some((zone) => String(relative) === zone || String(relative).startsWith(`${zone}/`));
 export const sha256 = (text) => crypto.createHash('sha256').update(text).digest('hex');
+export const stableKadId = (identity) => `kad-${sha256(String(identity)).slice(0, 24)}`;
 const safe = (root, candidate) => { const r=path.resolve(root), c=path.resolve(candidate); if (c!==r && !c.startsWith(`${r}${path.sep}`)) throw new Error('path escapes vault'); return c; };
 const RECORD_POINTER_RELPATH = path.join('.ai-memory', 'vault-path');
 
@@ -64,7 +84,7 @@ export function assertCanonicalRoot(root, operation = 'write') {
   }
   return resolved;
 }
-export function ensureVault(root=vaultRoot()) { for (const z of zones) fs.mkdirSync(safe(root,path.join(root,z)),{recursive:true}); if(!fs.existsSync(path.join(root,'index.md'))) fs.writeFileSync(path.join(root,'index.md'),'# KAD Canonical Vault\n\nCanonical human-editable knowledge. Derived projections are disposable.\n'); if(!fs.existsSync(path.join(root,'log.md'))) fs.writeFileSync(path.join(root,'log.md'),'# Vault log\n'); if(!fs.existsSync(path.join(root,'00_Home','Home.md'))) fs.writeFileSync(path.join(root,'00_Home','Home.md'),'---\nkad_id: kad-home\ntitle: KAD-PI knowledge home\ntype: documentation\nauthority: CANONICAL_KNOWLEDGE\nepistemic_class: PROJECT_INFERENCE\nreview_status: APPROVED\nvisibility: project\ncontext_eligible: false\ntrain_eligible: false\npublish: false\n---\n\n# KAD-PI Knowledge Home\n\n- [[Project-Map]]\n- [[Navigation]]\n- [[../01_Governance/AUTHORITY]]\n- [[../01_Governance/PROPERTY_REGISTRY]]\n'); for (const [name, body] of [['Project-Map.md','# KAD-PI Project Map\\n\\nCanonical project navigation.'],['Navigation.md','# Navigation\\n\\nUse the dashboards and filtered Bases views for discovery.']]) { const file=path.join(root,'00_Home',name); if(!fs.existsSync(file)) fs.writeFileSync(file,`---\\nkad_id: kad-${name.slice(0,-3).toLowerCase().replaceAll(/[^a-z0-9]+/g,'-')}\\ntype: documentation\\nauthority: CANONICAL_KNOWLEDGE\\nepistemic_class: PROJECT_INFERENCE\\nreview_status: APPROVED\\nvisibility: project\\ncontext_eligible: false\\ntrain_eligible: false\\npublish: false\\n---\\n\\n${body}\\n`); } return root; }
+export function ensureVault(root=vaultRoot()) { for (const z of VAULT_ZONES) fs.mkdirSync(safe(root,path.join(root,z)),{recursive:true}); if(!fs.existsSync(path.join(root,'index.md'))) fs.writeFileSync(path.join(root,'index.md'),'# KAD Canonical Vault\n\nCanonical human-editable knowledge. Derived projections are disposable.\n'); if(!fs.existsSync(path.join(root,'log.md'))) fs.writeFileSync(path.join(root,'log.md'),'# Vault log\n'); if(!fs.existsSync(path.join(root,'00_Home','Home.md'))) fs.writeFileSync(path.join(root,'00_Home','Home.md'),'---\nkad_id: kad-home\ntitle: KAD-PI knowledge home\ntype: documentation\nauthority: CANONICAL_KNOWLEDGE\nepistemic_class: PROJECT_INFERENCE\nreview_status: APPROVED\nvisibility: project\ncontext_eligible: false\ntrain_eligible: false\npublish: false\n---\n\n# KAD-PI Knowledge Home\n\n- [[Project-Map]]\n- [[Navigation]]\n- [[../01_Governance/AUTHORITY]]\n- [[../01_Governance/PROPERTY_REGISTRY]]\n'); for (const [name, body] of [['Project-Map.md','# KAD-PI Project Map\\n\\nCanonical project navigation.'],['Navigation.md','# Navigation\\n\\nUse the dashboards and filtered Bases views for discovery.']]) { const file=path.join(root,'00_Home',name); if(!fs.existsSync(file)) fs.writeFileSync(file,`---\\nkad_id: kad-${name.slice(0,-3).toLowerCase().replaceAll(/[^a-z0-9]+/g,'-')}\\ntype: documentation\\nauthority: CANONICAL_KNOWLEDGE\\nepistemic_class: PROJECT_INFERENCE\\nreview_status: APPROVED\\nvisibility: project\\ncontext_eligible: false\\ntrain_eligible: false\\npublish: false\\n---\\n\\n${body}\\n`); } return root; }
 function parseFrontmatter(text) { const normalized=text.replaceAll('\\n','\n'); if(!normalized.startsWith('---\n')) return {}; const end=normalized.indexOf('\n---',4); if(end<0) return {}; const out={}; for(const line of normalized.slice(4,end).split('\n')) { const m=line.match(/^([A-Za-z_][\w-]*):\s*(.*)$/); if(!m) continue; let v=m[2].trim(); if(v.startsWith('[')&&v.endsWith(']')) { try {v=JSON.parse(v.replaceAll("'",'\"'));} catch {v=v.slice(1,-1).split(',').map(x=>x.trim()).filter(Boolean);} } else if(v==='true'||v==='false') v=v==='true'; out[m[1]]=v; } return out; }
 export function noteMetadata(text,file='') { const fm=parseFrontmatter(text); return {...fm,path:file,content_hash:sha256(text)}; }
 export function files(root, sub='') { const dir=safe(root,path.join(root,sub)); if(!fs.existsSync(dir)) return []; return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?files(root,path.join(sub,e.name)):(e.name.endsWith('.md')?[path.join(dir,e.name)]:[])); }
@@ -74,22 +94,56 @@ export function lintVault(root=vaultRoot()) {
   const text = fs.readFileSync(file, 'utf8');
   return { file, text, meta: noteMetadata(text, path.relative(root, file)) };
  });
- const errors=[], ids=new Map();
+ const errors=[], warnings=[];
  for(const n of notes) {
   const m=n.meta;
+  const rel=String(m.path).split(path.sep).join('/');
   // Reserved names carry no `kad_id`: `index.md`, `log.md` and `bootstrap.md` are
   // OKF bundle-reserved at any level, `_meta.md` is the ai-memory scope manifest,
   // and `00_Home/Log.md` is the vault ledger relocated out of the reserved root
   // name when the wiki of record took ownership of the corpus.
-  const exempt=['index.md','log.md','bootstrap.md','_meta.md'].includes(String(m.path).split('/').pop().toLowerCase());
-  const isExemptDir = m.path.startsWith('00_Governance') || m.path.startsWith('10_Raw') || m.path.startsWith('80_Review') || m.path.startsWith('90_Derived') || m.path.startsWith('99_Archive');
-  if(!m.kad_id && !isExemptDir && !exempt) errors.push({code:'MISSING_KAD_ID',path:m.path});
-  if(m.authority===AUTHORITY.RAW_EVIDENCE && m.context_eligible===true) errors.push({code:'RAW_CONTEXT_FORBIDDEN',path:m.path});
-  if(m.epistemic_class===EPISTEMIC.SOURCE_FACT && (!m.sources||!m.source_hashes)) errors.push({code:'SOURCE_FACT_NEEDS_EVIDENCE',path:m.path});
-  if(m.context_eligible===true&&! [AUTHORITY.CANONICAL_KNOWLEDGE,AUTHORITY.CANONICAL_PROJECT_DECISION].includes(m.authority)) errors.push({code:'INELIGIBLE_AUTHORITY',path:m.path});
-  if(m.train_eligible===true&&(m.epistemic_class===EPISTEMIC.UNKNOWN||m.review_status!=='APPROVED')) errors.push({code:'TRAINING_GATE',path:m.path});
+  const exempt=RESERVED_NAMES.includes(rel.split('/').pop().toLowerCase());
+  const canon=inCanonScope(rel);
+  const isExemptDir = inNonCanonicalZone(rel);
+  if(!canon) warnings.push({code:'OUTSIDE_DECLARED_ZONE',path:rel});
+  else if(!m.kad_id && !isExemptDir && !exempt) errors.push({code:'MISSING_KAD_ID',path:rel});
+  if(m.authority===AUTHORITY.RAW_EVIDENCE && m.context_eligible===true) errors.push({code:'RAW_CONTEXT_FORBIDDEN',path:rel});
+  if(m.epistemic_class===EPISTEMIC.SOURCE_FACT && (!m.sources||!m.source_hashes)) errors.push({code:'SOURCE_FACT_NEEDS_EVIDENCE',path:rel});
+  if(m.context_eligible===true&&! [AUTHORITY.CANONICAL_KNOWLEDGE,AUTHORITY.CANONICAL_PROJECT_DECISION].includes(m.authority)) errors.push({code:'INELIGIBLE_AUTHORITY',path:rel});
+  if(m.train_eligible===true&&(m.epistemic_class===EPISTEMIC.UNKNOWN||m.review_status!=='APPROVED')) errors.push({code:'TRAINING_GATE',path:rel});
  }
- return {ok:errors.length===0,errors,notes:notes.map(n=>n.meta),count:notes.length};
+ return {ok:errors.length===0,errors,warnings,notes:notes.map(n=>n.meta),count:notes.length};
+}
+/**
+ * Mints canonical ids for canon pages that arrived without one.
+ *
+ * Ids are path-addressed: these pages are edited in place, and an id derived
+ * from the bytes would stop describing the file that carries it on the first
+ * edit. `migration.mjs` hashes content instead because it imports immutable
+ * legacy artifacts.
+ *
+ * `apply` is off by default; the caller sees exactly what would change first.
+ */
+export function mintIds(root=vaultRoot(), {apply=false}={}) {
+ ensureVault(root);
+ const minted=[], held=new Set();
+ for(const file of files(root)) {
+  const rel=path.relative(root, file).split(path.sep).join('/');
+  const meta=noteMetadata(fs.readFileSync(file,'utf8'), rel);
+  if(meta.kad_id) { held.add(meta.kad_id); continue; }
+  if(!inCanonScope(rel) || inNonCanonicalZone(rel)) continue;
+  if(RESERVED_NAMES.includes(rel.split('/').pop().toLowerCase())) continue;
+  minted.push({path:rel, kad_id:stableKadId(rel)});
+ }
+ const collisions=minted.filter(entry=>held.has(entry.kad_id));
+ if(collisions.length) throw new Error(`kad_id collision: ${collisions.map(c=>c.path).join(', ')}`);
+ if(apply) for(const entry of minted) {
+  const file=path.join(root, entry.path);
+  const text=fs.readFileSync(file,'utf8');
+  if(!text.startsWith('---\n')) throw new Error(`refusing to mint into ${entry.path}: no frontmatter block`);
+  fs.writeFileSync(file, `---\nkad_id: ${entry.kad_id}\n${text.slice(4)}`);
+ }
+ return {root, applied:apply, total:files(root).length, minted};
 }
 export function contextEligible(meta) {
  if (!meta || meta.context_eligible !== true || meta.review_status !== 'APPROVED') return false;

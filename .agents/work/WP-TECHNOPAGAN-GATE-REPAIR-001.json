@@ -8,7 +8,8 @@
   "fixed_point": "53fc4d51930171fa21d1f09cab5ab8dba0faec61",
   "scope": [
     "package.json",
-    "tests/"
+    "tests/",
+    "evidence/"
   ],
   "non_scope": [
     "install.sh behaviour",
@@ -17,7 +18,8 @@
   ],
   "owned_paths": [
     "package.json",
-    "tests/"
+    "tests/",
+    "evidence/"
   ],
   "required_capabilities": [
     "filesystem_read",
@@ -31,6 +33,7 @@
   "validation": [
     "bash tests/run_all.sh"
   ],
+  "evidence_target": "evidence/WP-TECHNOPAGAN-GATE-REPAIR-001",
   "blocked_by": [],
   "blocks": [],
   "acceptance_criteria": [

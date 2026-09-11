@@ -7,6 +7,7 @@ all: test
 verify:
 	python3 validate_prime_directive.py
 	node tools/kad/posture-check.mjs
+	bin/kad-wiki lint
 	node tools/librarian/librarian.mjs verify
 
 public-build:

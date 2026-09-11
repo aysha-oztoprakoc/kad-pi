@@ -247,15 +247,20 @@ function execute(root, parsed) {
     const claimFile = path.join(paths(root).claims, `${item.id}.json`);
     const claim = fs.existsSync(claimFile) ? json(claimFile) : null;
     if (nextState !== 'READY' && (!claim || claim.actor_label !== actor(parsed))) return fail('claim owner required for transition');
-    if (nextState === 'ACCEPTED' && item.evidence_target) {
+    if (nextState === 'ACCEPTED') {
+      // Acceptance is the transition that certifies work as done, so it is the one
+      // transition that must not be satisfiable by declaring nothing. A missing
+      // target, a target that was never created and an empty target all mean the
+      // same thing: there is no durable evidence to accept.
       const projectInfo = project(root, item.project);
+      if (!item.evidence_target) return fail(`cannot accept task ${item.id}: no evidence_target declared - acceptance requires a durable evidence path`);
       const evidencePath = path.resolve(projectInfo.root, item.evidence_target);
-      if (fs.existsSync(evidencePath)) {
-        const evidenceFiles = fs.readdirSync(evidencePath).filter(f => !f.startsWith('.'));
-        if (evidenceFiles.length === 0) {
-          return fail(`cannot accept task ${item.id}: evidence target directory is empty: ${item.evidence_target}`);
-        }
+      if (!fs.existsSync(evidencePath)) return fail(`cannot accept task ${item.id}: declared evidence target does not exist: ${item.evidence_target}`);
+      const stats = fs.statSync(evidencePath);
+      if (stats.isDirectory() && fs.readdirSync(evidencePath).filter(f => !f.startsWith('.')).length === 0) {
+        return fail(`cannot accept task ${item.id}: evidence target directory is empty: ${item.evidence_target}`);
       }
+      if (stats.isFile() && stats.size === 0) return fail(`cannot accept task ${item.id}: evidence target file is empty: ${item.evidence_target}`);
     }
     if (claim && !MUTATING_STATES.has(nextState)) {
       claim.active = false; claim.released_at = new Date().toISOString(); writeJson(claimFile, claim);

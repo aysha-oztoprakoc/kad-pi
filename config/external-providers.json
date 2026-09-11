@@ -184,6 +184,22 @@
       "allows_canonical_tracker_authority": false,
       "allows_isa_authority": false,
       "description": "OpenAI-compatible transport for remote providers and for proxied local KAD GGUF endpoints. Registering a connection grants reachability only, never qualification: the gateway publishes no pricing and holds no authority over KAD routing, acceptance, or canonical state."
+    },
+    {
+      "id": "zai-free-cloud",
+      "name": "Z.AI free-tier API",
+      "class": "WORKLOAD_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "OBSERVED",
+      "base_url": "https://api.z.ai/api/paas/v4",
+      "authority": "TRANSPORT_ONLY",
+      "omp_provider": "zai-free",
+      "subordinate_to_workctl": true,
+      "allows_autonomous_work_transition": false,
+      "allows_autonomous_merge": false,
+      "allows_canonical_tracker_authority": false,
+      "allows_isa_authority": false,
+      "description": "External free-tier cloud endpoint reached over the network. It carries a baseUrl like a local endpoint does, but KAD-PI starts no process behind it and can own none, so it is transport: the local-inference census must not count it and no ownership claim may be derived from reachability."
     }
   ]
 }

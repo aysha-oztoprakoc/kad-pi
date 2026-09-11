@@ -57,6 +57,54 @@ test('T7 canonical receipt replays identically', async () => {
   } finally { await removeOmpPreflightFixture(root); }
 });
 
+test('T9 a registered transport-only provider stays out of the local-inference census', async () => {
+  const modelsYaml = `providers:
+  kad-local-world:
+    baseUrl: http://127.0.0.1:5001/v1
+    auth: none
+    models:
+      - id: kad-local-s13
+        contextWindow: 4096
+  kad-local-qwen:
+    baseUrl: http://127.0.0.1:5002/v1
+    auth: none
+    models:
+      - id: qwen-local
+        contextWindow: 4096
+  zai-free:
+    baseUrl: https://api.z.ai/api/paas/v4
+    auth: none
+    models:
+      - id: glm-flash
+        contextWindow: 4096
+`;
+  const root = await createOmpPreflightFixture({
+    modelsYaml,
+    externalProviders: {
+      providers: [
+        { id: 'zai-free-cloud', class: 'WORKLOAD_PROVIDER', status: 'ACTIVE', authority: 'TRANSPORT_ONLY', omp_provider: 'zai-free' }
+      ]
+    }
+  });
+  try {
+    const receipt = inspectPreflight({
+      root,
+      observed: {
+        ompVersion: EXPECTED_OMP,
+        piVersion: '0.84.3',
+        localInference: {
+          resources: [
+            { provider: 'kad-local-qwen', model: 'qwen-local', endpoint: 'http://127.0.0.1:5002/v1', endpoint_available: true, observed_identity: 'qwen-local', ownership: 'OWNED', capability_state: 'AVAILABLE' }
+          ]
+        }
+      }
+    });
+    assert.deepEqual(receipt.local_inference.resources.map((r) => r.provider), ['kad-local-world', 'kad-local-qwen'], 'only loopback compute the harness can own is census material');
+    assert.deepEqual(receipt.local_inference.failures, [], 'a declared transport never reads as an unowned local process');
+    assert.equal(receipt.status, 'READY');
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
 /**
  * T8 is the one deliberately config-coupled test in this file: it reads the live
  * checkout and pins the *consequence* of the posture declared in `.omp/RULES.md` and
