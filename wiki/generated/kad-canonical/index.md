@@ -5,7 +5,7 @@
 Projection: `kad-governed-wiki-v1`
 Status: `PASS`
 Sources: `40`
-Records: `56`
+Records: `69`
 
 ## Navigation
 
@@ -16,7 +16,7 @@ Records: `56`
 - [FAILURES](namespaces/FAILURES.md) — 1 records
 - [EXPERIMENTS](namespaces/EXPERIMENTS.md) — 1 records
 - [RESEARCH](namespaces/RESEARCH.md) — 1 records
-- [MODELS](namespaces/MODELS.md) — 6 records
+- [MODELS](namespaces/MODELS.md) — 19 records
 - [PROVIDERS](namespaces/PROVIDERS.md) — 12 records
 - [GLOSSARY](namespaces/GLOSSARY.md) — 1 records
 - [PROJECT](namespaces/PROJECT.md) — 2 records

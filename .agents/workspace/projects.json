@@ -65,18 +65,20 @@
       "notes": "Third-party checkout; read-only."
     },
     {
-      "id": "kad-rpg-unknown",
-      "name": "KAD RPG (unclassified)",
+      "id": "kad-rpg",
+      "name": "KAD RPG",
       "path": "kad-rpg",
-      "kind": "UNKNOWN",
-      "git_root": null,
-      "default_branch": null,
-      "instruction_entrypoint": null,
-      "authority_entrypoints": [],
-      "status_command": null,
-      "validation_command": null,
-      "agent_enabled": false,
-      "notes": "No independent git root or unambiguous instruction entrypoint observed."
+      "kind": "SIDE_PROJECT",
+      "git_root": ".",
+      "default_branch": "main",
+      "instruction_entrypoint": "README.md",
+      "authority_entrypoints": [
+        "README.md"
+      ],
+      "status_command": "git status --short",
+      "validation_command": "python -m unittest discover kad-gaya/tests",
+      "agent_enabled": true,
+      "notes": "Nested repository for As Crônicas de Gaya data-scraping pipeline and game construction."
     },
     {
       "id": "kad-sillytavern-unknown",

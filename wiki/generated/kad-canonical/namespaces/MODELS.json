@@ -6,7 +6,7 @@
     "namespace": "MODELS",
     "status": "LOADABLE",
     "source_ref": "config/local-models.registry.json",
-    "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
     "epistemic_class": "DOCUMENT_DERIVED",
     "authority_class": "CANONICAL_SOURCE",
     "acceptance_state": "ACCEPTED",
@@ -14,7 +14,7 @@
     "projection_id": "kad-governed-wiki-v1",
     "privacy_class": "INTERNAL",
     "stale_state": "FRESH",
-    "description": "Existing embedding health and persistence evidence preserved. OpenViking config cutover is required.",
+    "description": "RETIRED 2026-09-11 (WP-KAD-MEMORY-SUBSTRATE-057). Existing embedding health and persistence evidence preserved. The file remains on disk with its verified sha256 and is still loadable on demand, but the OpenViking cutover it was provisioned for no longer exists; the retrieval seam is the ai-memory substrate.",
     "relationships": [
       {
         "type": "provides_candidate",
@@ -31,9 +31,321 @@
     ],
     "declared_trust_domain": "retrieval",
     "qualification_state": "LOADABLE",
-    "lifecycle_owner": "OpenViking runtime",
+    "lifecycle_owner": "none; unowned since the OpenViking retirement (WP-KAD-MEMORY-SUBSTRATE-057). The ai-memory substrate embeds with its own bundled all-MiniLM-L6-v2 in-process, so nothing loads this file now.",
     "relative_path": "embeddings/bge-small-zh-v1.5-f16.gguf",
     "sha256": "ab9b81d9cd329c712eee379cf0068eabe6a5e2a01d0def61535eba9384085e2c"
+  },
+  {
+    "id": "model:chaos-rp-8b",
+    "title": "Chaos_RP_l3_8B-Q4_K_M-imat",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "UNKNOWN",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Lewdiculous imatrix quant for chaotic roleplay.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:world"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:roleplay"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:unrestricted"
+      }
+    ],
+    "model_id": "chaos-rp-8b",
+    "family": "Llama 3 / Chaos RP",
+    "parameters": "8B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "capability_candidates": [
+      "world",
+      "roleplay",
+      "unrestricted"
+    ],
+    "declared_trust_domain": "world",
+    "qualification_state": "CATALOGED",
+    "lifecycle_owner": "KoboldCpp Vulkan",
+    "relative_path": "gguf/world/Chaos_RP_l3_8B-Q4_K_M-imat.gguf",
+    "sha256": "5774595ad560e4d258dac17723509bdefe746c4dacd4e679a0de00346f14d2f3"
+  },
+  {
+    "id": "model:dark-planet-8b",
+    "title": "Llama-3.1-128k-Dark-Planet-Uncensored-8B-Q4_k_m",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "UNKNOWN",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "DavidAU Dark Planet 128k uncensored fine-tune.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:world"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:roleplay"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:dark-fantasy"
+      }
+    ],
+    "model_id": "dark-planet-8b",
+    "family": "Llama 3.1 / Dark Planet",
+    "parameters": "8B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "capability_candidates": [
+      "world",
+      "roleplay",
+      "dark-fantasy"
+    ],
+    "declared_trust_domain": "world",
+    "qualification_state": "CATALOGED",
+    "lifecycle_owner": "KoboldCpp Vulkan",
+    "relative_path": "gguf/world/Llama-3.1-128k-Dark-Planet-Uncensored-8B-Q4_k_m.gguf",
+    "sha256": "cda7e0d065abf314a12da9ee2903f8f4d655749a896598f7d0700c1825d7cb60"
+  },
+  {
+    "id": "model:dolphin-8b",
+    "title": "Dolphin3.0-Llama3.1-8B-Q4_K_M",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "UNKNOWN",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Eric Hartford's uncensored Dolphin 3.0 on Llama 3.1 8B base.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:world"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:roleplay"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:general"
+      }
+    ],
+    "model_id": "dolphin-8b",
+    "family": "Llama 3.1 / Dolphin 3.0",
+    "parameters": "8B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "capability_candidates": [
+      "world",
+      "roleplay",
+      "general"
+    ],
+    "declared_trust_domain": "world",
+    "qualification_state": "CATALOGED",
+    "lifecycle_owner": "KoboldCpp Vulkan",
+    "relative_path": "gguf/world/Dolphin3.0-Llama3.1-8B-Q4_K_M.gguf",
+    "sha256": "4c001f29d4edbd9327a6df8e16e2b7907a64e0e31b0a7abe9c779a96773f304e"
+  },
+  {
+    "id": "model:dreamshaper-xl",
+    "title": "dreamshaperXL_v2_q4_k",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "LOADABLE",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "High-fidelity photorealistic and fantasy artistic SDXL model in GGUF format for detailed character and scene creation.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:image-generation"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:sdxl"
+      }
+    ],
+    "model_id": "dreamshaper-xl",
+    "family": "SDXL / DreamShaper XL v2 Turbo",
+    "parameters": "SDXL",
+    "format": "GGUF",
+    "quantization": "Q4_K",
+    "capability_candidates": [
+      "image-generation",
+      "sdxl"
+    ],
+    "declared_trust_domain": "image",
+    "qualification_state": "LOADABLE",
+    "lifecycle_owner": "KoboldCpp SD engine",
+    "relative_path": "gguf/image/dreamshaperXL_v2_q4_k.gguf",
+    "sha256": "8bcbad2682ebef85378969c275fe048596b82075b2541b2189ef0757b225b4c3"
+  },
+  {
+    "id": "model:gemma-4-e4b",
+    "title": "Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "UNKNOWN",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "HauhauCS aggressive uncensored Gemma architecture.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:world"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:roleplay"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:fast"
+      }
+    ],
+    "model_id": "gemma-4-e4b",
+    "family": "Gemma / E4B",
+    "parameters": "4B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "capability_candidates": [
+      "world",
+      "roleplay",
+      "fast"
+    ],
+    "declared_trust_domain": "world",
+    "qualification_state": "CATALOGED",
+    "lifecycle_owner": "KoboldCpp Vulkan",
+    "relative_path": "gguf/world/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf",
+    "sha256": "d0027dd3a9128d9323e9f282c8bf010a8526c46477584535991dc1a869b56e96"
+  },
+  {
+    "id": "model:hermes-3-8b",
+    "title": "Hermes-3-Llama-3.1-8B.Q4_K_M",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "UNKNOWN",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Nous Research Hermes 3: advanced agentic planning and GM roleplay.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:world"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:roleplay"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:agentic"
+      }
+    ],
+    "model_id": "hermes-3-8b",
+    "family": "Llama 3.1 / Hermes 3",
+    "parameters": "8B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "capability_candidates": [
+      "world",
+      "roleplay",
+      "agentic"
+    ],
+    "declared_trust_domain": "world",
+    "qualification_state": "CATALOGED",
+    "lifecycle_owner": "KoboldCpp Vulkan",
+    "relative_path": "gguf/world/Hermes-3-Llama-3.1-8B.Q4_K_M.gguf",
+    "sha256": "d4403ce5a6e930f4c2509456388c20d633a15ff08dd52ef3b142ff1810ec3553"
+  },
+  {
+    "id": "model:llama-3.1-8b-abliterated",
+    "title": "Meta-Llama-3.1-8B-Instruct-abliterated-Q4_K_M",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "UNKNOWN",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Baseline abliterated Llama 3.1 8B.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:world"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:roleplay"
+      }
+    ],
+    "model_id": "llama-3.1-8b-abliterated",
+    "family": "Llama 3.1 / Abliterated",
+    "parameters": "8B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "capability_candidates": [
+      "world",
+      "roleplay"
+    ],
+    "declared_trust_domain": "world",
+    "qualification_state": "CATALOGED",
+    "lifecycle_owner": "KoboldCpp Vulkan",
+    "relative_path": "gguf/world/Meta-Llama-3.1-8B-Instruct-abliterated-Q4_K_M.gguf",
+    "sha256": "c6be866583f7bddb437b8ccd988fc499c98f1846934a1f3d48de7777313057cb"
   },
   {
     "id": "model:lumimaid-8b",
@@ -42,7 +354,7 @@
     "namespace": "MODELS",
     "status": "FILE_ONLY",
     "source_ref": "config/local-models.registry.json",
-    "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
     "epistemic_class": "DOCUMENT_DERIVED",
     "authority_class": "CANONICAL_SOURCE",
     "acceptance_state": "ACCEPTED",
@@ -77,13 +389,54 @@
     "sha256": "1199440aa13c55f5f2cad1cb215535306f21e52a81de23f80a9e3586c8ac1c50"
   },
   {
+    "id": "model:lunaris-8b",
+    "title": "L3-8B-Lunaris-v1-Q4_K_M",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "UNKNOWN",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "High emotional intelligence and prose consistency.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:world"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:roleplay"
+      }
+    ],
+    "model_id": "lunaris-8b",
+    "family": "Llama 3 / Lunaris v1",
+    "parameters": "8B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "capability_candidates": [
+      "world",
+      "roleplay"
+    ],
+    "declared_trust_domain": "world",
+    "qualification_state": "CATALOGED",
+    "lifecycle_owner": "KoboldCpp Vulkan",
+    "relative_path": "gguf/world/L3-8B-Lunaris-v1-Q4_K_M.gguf",
+    "sha256": "ef1d393f125be8c608859eeb4f26185ad90c7fc9cba41c96e847e77cdbcada18"
+  },
+  {
     "id": "model:needle2",
     "title": "Cactus Needle 2",
     "kind": "registry",
     "namespace": "MODELS",
     "status": "LOADABLE",
     "source_ref": "config/local-models.registry.json",
-    "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
     "epistemic_class": "DOCUMENT_DERIVED",
     "authority_class": "CANONICAL_SOURCE",
     "acceptance_state": "ACCEPTED",
@@ -118,13 +471,100 @@
     "sha256": "b43aabfcaf1a6db6acf488076eab71d823c08697c7af4521fc1d174b60ede5ba"
   },
   {
+    "id": "model:neural-daredevil-8b",
+    "title": "NeuralDaredevil-8B-abliterated-Q4_K_M",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "UNKNOWN",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Abliterated high-creative writing roleplay blend.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:world"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:roleplay"
+      }
+    ],
+    "model_id": "neural-daredevil-8b",
+    "family": "Llama 3 / NeuralDaredevil",
+    "parameters": "8B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "capability_candidates": [
+      "world",
+      "roleplay"
+    ],
+    "declared_trust_domain": "world",
+    "qualification_state": "CATALOGED",
+    "lifecycle_owner": "KoboldCpp Vulkan",
+    "relative_path": "gguf/world/NeuralDaredevil-8B-abliterated-Q4_K_M.gguf",
+    "sha256": "4cb4fc42a1c41ff69d80cea7175dcd66d12820f6a1b6702cecd5ea96cfb278bb"
+  },
+  {
+    "id": "model:openhermes-7b",
+    "title": "openhermes-2.5-mistral-7b.Q4_K_M",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "UNKNOWN",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Classic snappy Mistral 7B fine-tune.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:world"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:roleplay"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:lightweight"
+      }
+    ],
+    "model_id": "openhermes-7b",
+    "family": "Mistral / OpenHermes 2.5",
+    "parameters": "7B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "capability_candidates": [
+      "world",
+      "roleplay",
+      "lightweight"
+    ],
+    "declared_trust_domain": "world",
+    "qualification_state": "CATALOGED",
+    "lifecycle_owner": "KoboldCpp Vulkan",
+    "relative_path": "gguf/world/openhermes-2.5-mistral-7b.Q4_K_M.gguf",
+    "sha256": "cd58120326971c71c0590f6b7084a0744e287ce9c67275d8b4bf34a5947d950b"
+  },
+  {
     "id": "model:qwen-local",
     "title": "Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
     "kind": "registry",
     "namespace": "MODELS",
     "status": "DEGRADED",
     "source_ref": "config/local-models.registry.json",
-    "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
     "epistemic_class": "DOCUMENT_DERIVED",
     "authority_class": "CANONICAL_SOURCE",
     "acceptance_state": "ACCEPTED",
@@ -159,13 +599,59 @@
     "sha256": "2ca636d9e81d3d23ca9b60c234fe185d30ec082eeba69ce770fdb0c76559a4f5"
   },
   {
+    "id": "model:rocinante-12b",
+    "title": "Rocinante-12B-v1.1-Q4_K_M",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "UNKNOWN",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "TheDrummer long-form fiction and immersive RP 12B model.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:world"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:roleplay"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:fiction"
+      }
+    ],
+    "model_id": "rocinante-12b",
+    "family": "Mistral Nemo / Rocinante",
+    "parameters": "12B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "capability_candidates": [
+      "world",
+      "roleplay",
+      "fiction"
+    ],
+    "declared_trust_domain": "world",
+    "qualification_state": "CATALOGED",
+    "lifecycle_owner": "KoboldCpp Vulkan",
+    "relative_path": "gguf/world/Rocinante-12B-v1.1-Q4_K_M.gguf",
+    "sha256": "5133341741709aafcbc162c8fe638143e466288b7942ba7a0e9d9ef4e08d056f"
+  },
+  {
     "id": "model:rp-hero-8b",
     "title": "L3.1-RP-Hero-InBetween-8B-D_AU-Q4_k_m",
     "kind": "registry",
     "namespace": "MODELS",
     "status": "FILE_ONLY",
     "source_ref": "config/local-models.registry.json",
-    "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
     "epistemic_class": "DOCUMENT_DERIVED",
     "authority_class": "CANONICAL_SOURCE",
     "acceptance_state": "ACCEPTED",
@@ -200,13 +686,49 @@
     "sha256": "55243b4c116f78f1309ab0ad4509da45e3fcbedb3ac2868576d25082dd513c24"
   },
   {
+    "id": "model:sdxs-image",
+    "title": "sdxs-512-tinySDdistilled_Q8_0",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "ACTIVE",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "Fast 512x512 distilled Stable Diffusion model for character and scene generation in SillyTavern.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:image-generation"
+      }
+    ],
+    "model_id": "sdxs-image",
+    "family": "SDXS / Tiny Stable Diffusion Distilled",
+    "parameters": "512M",
+    "format": "GGUF",
+    "quantization": "Q8_0",
+    "capability_candidates": [
+      "image-generation"
+    ],
+    "declared_trust_domain": "image",
+    "qualification_state": "ACTIVE",
+    "lifecycle_owner": "KoboldCpp SD engine",
+    "relative_path": "gguf/image/sdxs-512-tinySDdistilled_Q8_0.gguf",
+    "sha256": "409ab23582ee074c6b9d5395784fc0741b0599fb9d138686c69087c71678eb6a"
+  },
+  {
     "id": "model:stheno-v3.2",
     "title": "L3-8B-Stheno-v3.2-Q4_K_M",
     "kind": "registry",
     "namespace": "MODELS",
     "status": "ACTIVE",
     "source_ref": "config/local-models.registry.json",
-    "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
     "epistemic_class": "DOCUMENT_DERIVED",
     "authority_class": "CANONICAL_SOURCE",
     "acceptance_state": "ACCEPTED",
@@ -234,5 +756,51 @@
     "lifecycle_owner": "external KoboldCpp process",
     "relative_path": "gguf/world/L3-8B-Stheno-v3.2-Q4_K_M.gguf",
     "sha256": "8e98c1953f9c04e060fd9640bbe866685c844363a2360f09099b79c6c9195fc4"
+  },
+  {
+    "id": "model:violet-lotus-12b",
+    "title": "MN-Violet-Lotus-12B.Q4_K_M",
+    "kind": "registry",
+    "namespace": "MODELS",
+    "status": "UNKNOWN",
+    "source_ref": "config/local-models.registry.json",
+    "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+    "epistemic_class": "DOCUMENT_DERIVED",
+    "authority_class": "CANONICAL_SOURCE",
+    "acceptance_state": "ACCEPTED",
+    "trust_domain": "engineering",
+    "projection_id": "kad-governed-wiki-v1",
+    "privacy_class": "INTERNAL",
+    "stale_state": "FRESH",
+    "description": "High emotional intelligence and long-context Mistral Nemo RP model.",
+    "relationships": [
+      {
+        "type": "provides_candidate",
+        "target": "capability:world"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:roleplay"
+      },
+      {
+        "type": "provides_candidate",
+        "target": "capability:emotional"
+      }
+    ],
+    "model_id": "violet-lotus-12b",
+    "family": "Mistral Nemo / Violet Lotus",
+    "parameters": "12B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "capability_candidates": [
+      "world",
+      "roleplay",
+      "emotional"
+    ],
+    "declared_trust_domain": "world",
+    "qualification_state": "CATALOGED",
+    "lifecycle_owner": "KoboldCpp Vulkan",
+    "relative_path": "gguf/world/MN-Violet-Lotus-12B.Q4_K_M.gguf",
+    "sha256": "4e24e5fb4de39c6f0495eccce4d534beb54e17d45cb2ea6e87ef91d05cc21db3"
   }
 ]

@@ -16,7 +16,7 @@
       "state": "LOADABLE",
       "source_ref": "config/local-models.registry.json",
       "evidence_ref": "config/local-models.registry.json",
-      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
       "blocking_reason": null,
       "degraded_capabilities": []
     },
@@ -34,7 +34,16 @@
       "state": "LOADABLE",
       "source_ref": "config/local-models.registry.json",
       "evidence_ref": "config/local-models.registry.json",
-      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "Chaos_RP_l3_8B-Q4_K_M-imat",
+      "state": "UNKNOWN",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
       "blocking_reason": null,
       "degraded_capabilities": []
     },
@@ -44,6 +53,24 @@
       "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
       "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
       "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "Dolphin3.0-Llama3.1-8B-Q4_K_M",
+      "state": "UNKNOWN",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "dreamshaperXL_v2_q4_k",
+      "state": "LOADABLE",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
       "blocking_reason": null,
       "degraded_capabilities": []
     },
@@ -66,6 +93,24 @@
       "degraded_capabilities": []
     },
     {
+      "component": "Gemma-4-E4B-Uncensored-HauhauCS-Aggressive-Q4_K_M",
+      "state": "UNKNOWN",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "Hermes-3-Llama-3.1-8B.Q4_K_M",
+      "state": "UNKNOWN",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
       "component": "KnowledgePlane",
       "state": "PASS",
       "source_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
@@ -75,11 +120,20 @@
       "degraded_capabilities": []
     },
     {
+      "component": "L3-8B-Lunaris-v1-Q4_K_M",
+      "state": "UNKNOWN",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
       "component": "L3-8B-Stheno-v3.2-Q4_K_M",
       "state": "ACTIVE",
       "source_ref": "config/local-models.registry.json",
       "evidence_ref": "config/local-models.registry.json",
-      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
       "blocking_reason": null,
       "degraded_capabilities": []
     },
@@ -88,7 +142,7 @@
       "state": "FILE_ONLY",
       "source_ref": "config/local-models.registry.json",
       "evidence_ref": "config/local-models.registry.json",
-      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
       "blocking_reason": null,
       "degraded_capabilities": []
     },
@@ -97,7 +151,16 @@
       "state": "FILE_ONLY",
       "source_ref": "config/local-models.registry.json",
       "evidence_ref": "config/local-models.registry.json",
-      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "Llama-3.1-128k-Dark-Planet-Uncensored-8B-Q4_k_m",
+      "state": "UNKNOWN",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
       "blocking_reason": null,
       "degraded_capabilities": []
     },
@@ -111,6 +174,24 @@
       "degraded_capabilities": []
     },
     {
+      "component": "Meta-Llama-3.1-8B-Instruct-abliterated-Q4_K_M",
+      "state": "UNKNOWN",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "MN-Violet-Lotus-12B.Q4_K_M",
+      "state": "UNKNOWN",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
       "component": "Needle",
       "state": "BLOCKED",
       "source_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
@@ -120,11 +201,20 @@
       "degraded_capabilities": []
     },
     {
-      "component": "OpenViking",
-      "state": "DEGRADED",
-      "source_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
-      "evidence_ref": "evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md",
-      "source_hash": "2fb8f5c98c23f21b3e79f31498389217a9cb54ea0e07e4e016c9b2c36b05ae5b",
+      "component": "NeuralDaredevil-8B-abliterated-Q4_K_M",
+      "state": "UNKNOWN",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "openhermes-2.5-mistral-7b.Q4_K_M",
+      "state": "UNKNOWN",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
       "blocking_reason": null,
       "degraded_capabilities": []
     },
@@ -151,7 +241,7 @@
       "state": "DEGRADED",
       "source_ref": "config/local-models.registry.json",
       "evidence_ref": "config/local-models.registry.json",
-      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
       "blocking_reason": "Existing retrieval-only qualification evidence is preserved; endpoint is currently unavailable. Do not substitute stock Qwen.",
       "degraded_capabilities": [
         "repository-fact-finding",
@@ -164,6 +254,24 @@
       "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
       "evidence_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
       "source_hash": "1738d56245d4df5fc6dfc4c83ffe52feef9127c0e5c5c7c26d553caf5e857884",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "Rocinante-12B-v1.1-Q4_K_M",
+      "state": "UNKNOWN",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
+      "blocking_reason": null,
+      "degraded_capabilities": []
+    },
+    {
+      "component": "sdxs-512-tinySDdistilled_Q8_0",
+      "state": "ACTIVE",
+      "source_ref": "config/local-models.registry.json",
+      "evidence_ref": "config/local-models.registry.json",
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778",
       "blocking_reason": null,
       "degraded_capabilities": []
     },
@@ -197,7 +305,6 @@
   ],
   "degraded_components": [
     "Needle",
-    "OpenViking",
     "Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M"
   ]
 }

@@ -42,11 +42,24 @@
   ],
   "MODELS": [
     "model:bge-small-zh-v1.5",
+    "model:chaos-rp-8b",
+    "model:dark-planet-8b",
+    "model:dolphin-8b",
+    "model:dreamshaper-xl",
+    "model:gemma-4-e4b",
+    "model:hermes-3-8b",
+    "model:llama-3.1-8b-abliterated",
     "model:lumimaid-8b",
+    "model:lunaris-8b",
     "model:needle2",
+    "model:neural-daredevil-8b",
+    "model:openhermes-7b",
     "model:qwen-local",
+    "model:rocinante-12b",
     "model:rp-hero-8b",
-    "model:stheno-v3.2"
+    "model:sdxs-image",
+    "model:stheno-v3.2",
+    "model:violet-lotus-12b"
   ],
   "PROVIDERS": [
     "provider:advisor",

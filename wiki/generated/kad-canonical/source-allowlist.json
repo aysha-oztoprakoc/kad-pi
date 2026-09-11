@@ -319,7 +319,6 @@
     "reason": "Latest accepted KnowledgePlane report; preserves optional-runtime degradation.",
     "component_statuses": {
       "KnowledgePlane": "PASS",
-      "OpenViking": "DEGRADED",
       "Needle": "BLOCKED"
     }
   },

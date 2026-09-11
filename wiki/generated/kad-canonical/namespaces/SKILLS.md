@@ -7,24 +7,24 @@
 - ID: `skill:code-review`
 - Status: `FILE_ONLY`
 - Source: `.agents/skills/code-review/SKILL.md`
-- Source hash: `47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50`
+- Source hash: `c4c7e604d7b24635cd4a949228e1a2332e348abdc18a65be9a7e2d01223a31ee`
 - Epistemic class: `DOCUMENT_DERIVED`
 - Acceptance: `ACCEPTED`
 - Trust domain: `engineering`
 - Privacy: `INTERNAL`
-- Description: Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\".
+- Description: Dual-axis code review evaluating Standards (style, types, lint) and Specification (ticket fulfill) with skeptical analysis.
 
 ## implement Skill
 
 - ID: `skill:implement`
 - Status: `FILE_ONLY`
 - Source: `.agents/skills/implement/SKILL.md`
-- Source hash: `7a624d0a999f6f0d2d45c3a430ed026094827fb55330b06826efda7ca8984c49`
+- Source hash: `91d618b0dcbd7bc781eb8bd39b3e067888b28b26532a39af5975e1b68b63c19b`
 - Epistemic class: `DOCUMENT_DERIVED`
 - Acceptance: `ACCEPTED`
 - Trust domain: `engineering`
 - Privacy: `INTERNAL`
-- Description: Implement a piece of work based on a spec or set of tickets.
+- Description: Primary engineering implementation skill. Executes code edits on claimed files within fusion_writer_lease bounds.
 
 ## kad-evidence-gate Skill
 
@@ -43,9 +43,9 @@
 - ID: `skill:tdd`
 - Status: `FILE_ONLY`
 - Source: `.agents/skills/tdd/SKILL.md`
-- Source hash: `5c1902f0c747725fe2781b68d678f4cebe075bad2ebd4a977a82d5f8d08d00bf`
+- Source hash: `ad9668f83e9c8482b121871120bc558aa24e8c93873e8db2b435253ad0131819`
 - Epistemic class: `DOCUMENT_DERIVED`
 - Acceptance: `ACCEPTED`
 - Trust domain: `engineering`
 - Privacy: `INTERNAL`
-- Description: Test-driven development. Use when the user wants to build features or
+- Description: Test-Driven Development discipline: Red (failing test) -> Green (minimal pass) -> Refactor (clean structure).

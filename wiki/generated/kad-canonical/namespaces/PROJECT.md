@@ -19,9 +19,9 @@
 - ID: `record:README.md`
 - Status: `ACCEPTED`
 - Source: `README.md`
-- Source hash: `ac4c254368fe5731e38900a116b7481ed420a89918df0a0a0fa7992f9ac352aa`
+- Source hash: `7876ed058ff4d348558ec117d8d67a941d0cc2e227c40e82a7ac2efb47388120`
 - Epistemic class: `DOCUMENT_DERIVED`
 - Acceptance: `ACCEPTED`
 - Trust domain: `engineering`
 - Privacy: `INTERNAL`
-- Description: KAD-PI: Local AI Experimental Platform & Agent Harness
+- Description: KAD-PI

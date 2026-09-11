@@ -3,11 +3,11 @@
   "name": "KAD-PI",
   "status": "PASS",
   "source_count": 40,
-  "record_count": 56,
+  "record_count": 69,
   "source_hashes": [
     {
       "source_ref": "README.md",
-      "source_hash": "ac4c254368fe5731e38900a116b7481ed420a89918df0a0a0fa7992f9ac352aa"
+      "source_hash": "7876ed058ff4d348558ec117d8d67a941d0cc2e227c40e82a7ac2efb47388120"
     },
     {
       "source_ref": "PRIME_DIRECTIVE.md",
@@ -51,7 +51,7 @@
     },
     {
       "source_ref": "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
-      "source_hash": "4af8121c7b4ce2c3a400439d1e1a830deda5706c09c49e32d0599bbc9ad29f78"
+      "source_hash": "42d6add19f290083df865873505c31ae3d2d48712d70c1b8810276d9318440af"
     },
     {
       "source_ref": "wiki/KAD_Implementation_Plan.md",
@@ -119,7 +119,7 @@
     },
     {
       "source_ref": "config/local-models.registry.json",
-      "source_hash": "5ae8911539c7dfe66cc05e69377bf9b2d7ecf684f770d4e66083b4e35b6e4079"
+      "source_hash": "91737aedb444c03901e7c6075dcc339b927f944800c7c141a44cc591e9b28778"
     },
     {
       "source_ref": "evidence/WP-KAD-OMP-001/provider-role-map.json",
@@ -155,15 +155,15 @@
     },
     {
       "source_ref": ".agents/skills/tdd/SKILL.md",
-      "source_hash": "5c1902f0c747725fe2781b68d678f4cebe075bad2ebd4a977a82d5f8d08d00bf"
+      "source_hash": "ad9668f83e9c8482b121871120bc558aa24e8c93873e8db2b435253ad0131819"
     },
     {
       "source_ref": ".agents/skills/implement/SKILL.md",
-      "source_hash": "7a624d0a999f6f0d2d45c3a430ed026094827fb55330b06826efda7ca8984c49"
+      "source_hash": "91d618b0dcbd7bc781eb8bd39b3e067888b28b26532a39af5975e1b68b63c19b"
     },
     {
       "source_ref": ".agents/skills/code-review/SKILL.md",
-      "source_hash": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50"
+      "source_hash": "c4c7e604d7b24635cd4a949228e1a2332e348abdc18a65be9a7e2d01223a31ee"
     }
   ]
 }
