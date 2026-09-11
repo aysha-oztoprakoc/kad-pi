@@ -2,7 +2,7 @@
   "projection_type": "KAD_MEMORY_ISA_PROJECTION",
   "version": "1.0.0",
   "domain": "memory",
-  "generated_at": "2026-09-11T21:41:41.924Z",
+  "generated_at": "2026-09-11T22:03:30.429Z",
   "source_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/00_Governance/ISA-KAD-MEMORY-001.md",
   "isa": {
     "id": "ISA-KAD-MEMORY-001",
@@ -63,8 +63,8 @@
       "validator": "memory.mirror.okf_conformant",
       "pass": true,
       "severity": "BLOCKER",
-      "evidence": "mirror is OKF v0.2 conformant: index declares okf_version, 200 pages all carry a non-empty type",
-      "checked_count": 201
+      "evidence": "mirror is OKF v0.2 conformant: index declares okf_version, 201 pages all carry a non-empty type",
+      "checked_count": 202
     },
     {
       "id": "ISA-KAD-MEMORY-005",
@@ -74,7 +74,7 @@
       "validator": "memory.record.versioned",
       "pass": true,
       "severity": "HIGH",
-      "evidence": "record resolves HEAD 19468349a0ca with 1 branch ref(s) under its own git history",
+      "evidence": "record resolves HEAD 6980a26ade4f with 1 branch ref(s) under its own git history",
       "checked_count": 3
     },
     {
@@ -96,8 +96,8 @@
       "validator": "memory.record.frontmatter_complete",
       "pass": true,
       "severity": "BLOCKER",
-      "evidence": "all 201 record pages carry a non-empty OKF type",
-      "checked_count": 201
+      "evidence": "all 202 record pages carry a non-empty OKF type",
+      "checked_count": 202
     },
     {
       "id": "ISA-KAD-MEMORY-008",
@@ -108,7 +108,7 @@
       "pass": true,
       "severity": "HIGH",
       "evidence": "gateway registered as TRANSPORT_ONLY at http://127.0.0.1:20128/v1; local inference endpoints are proxied, not delegated",
-      "checked_count": 17
+      "checked_count": 18
     },
     {
       "id": "ISA-KAD-MEMORY-009",
