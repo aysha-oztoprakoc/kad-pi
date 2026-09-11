@@ -1,4 +1,5 @@
 ---
+kad_id: kad-a471ca1d4a7e831752640f28
 slug: manto_de_kravarius
 titulo: "Manto de Kravarius"
 categoria: mechanics

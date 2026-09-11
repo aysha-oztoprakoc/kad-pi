@@ -1,4 +1,5 @@
 ---
+kad_id: kad-f786d2bec33cb3d69c1fe376
 type: paper
 title: "Adapting Language Models to Compress Contexts"
 paper: "[[Chevalier2023AdaptingLanguag]]"

@@ -1,4 +1,5 @@
 ---
+kad_id: kad-9081fa92db5431f03e64ca71
 type: paper
 title: "A Dissection of the Test-Driven Development Process: Does It Really Matter to Test-First or to Test-Last?"
 paper: "[[Fucci2016ADissectionOfTh]]"

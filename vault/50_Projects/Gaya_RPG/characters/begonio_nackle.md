@@ -1,4 +1,5 @@
 ---
+kad_id: kad-564c8a540ad58e4a59291b00
 slug: begonio_nackle
 titulo: "Begônio Nackle, o Mestre Arcanista"
 categoria: characters

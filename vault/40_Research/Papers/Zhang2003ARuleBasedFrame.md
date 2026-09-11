@@ -1,4 +1,5 @@
 ---
+kad_id: kad-b3c7512e3f46d0d8cc19d4a2
 type: paper
 title: "A rule-based framework for role-based delegation and revocation"
 paper: "[[Zhang2003ARuleBasedFrame]]"

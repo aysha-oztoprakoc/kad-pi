@@ -1,4 +1,5 @@
 ---
+kad_id: kad-cd732cc6fd7f57089976bbb3
 type: paper
 title: "Notification Oriented Paradigm Applied to Ambient Assisted Living Tool"
 paper: "[[Oliveira2018NotificationOri]]"

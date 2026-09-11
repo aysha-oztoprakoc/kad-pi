@@ -1,4 +1,5 @@
 ---
+kad_id: kad-bac9c8c0ddc8d0c27e1df47f
 type: paper
 title: "Delegation Logic: A Logic-based Approach to Distrbuted Authorization"
 paper: "[[Li2000DelegationLogic]]"

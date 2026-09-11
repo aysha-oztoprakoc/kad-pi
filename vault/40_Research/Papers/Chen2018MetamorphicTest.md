@@ -1,4 +1,5 @@
 ---
+kad_id: kad-e112c96f0adcc68b17455c36
 type: paper
 title: "Metamorphic Testing"
 paper: "[[Chen2018MetamorphicTest]]"

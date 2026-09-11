@@ -1,4 +1,5 @@
 ---
+kad_id: kad-75ad66ca9f799d526f13f14e
 slug: aysha_oztoprak
 titulo: "Ayşa Öztoprak, o Trovão Lampejante"
 categoria: characters

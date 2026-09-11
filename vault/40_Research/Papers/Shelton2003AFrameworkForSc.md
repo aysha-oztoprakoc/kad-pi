@@ -1,4 +1,5 @@
 ---
+kad_id: kad-4d9e19cc3d094d201c900e43
 type: paper
 title: "A framework for scalable analysis and design of system-wide graceful degradation in distributed embedded systems"
 paper: "[[Shelton2003AFrameworkForSc]]"

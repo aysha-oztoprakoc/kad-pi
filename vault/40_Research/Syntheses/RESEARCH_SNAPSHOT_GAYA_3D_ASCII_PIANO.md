@@ -8,8 +8,9 @@ authority: CANONICAL_RESEARCH_GROUNDING
 epistemic_class: SOURCE_DERIVED
 review_status: PENDING_ASTRA_SYNTHESIS
 visibility: project
-context_eligible: true
-train_eligible: true
+context_eligible: false
+train_eligible: false
+eligibility_note: "draft pending ASTRA synthesis: context and training eligibility turn on only with review_status APPROVED and a canonical authority"
 publish: false
 temporal_status: CURRENT
 owner: "Human Project Lead & KAD Architecture"

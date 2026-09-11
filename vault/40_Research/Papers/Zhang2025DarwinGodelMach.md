@@ -1,4 +1,5 @@
 ---
+kad_id: kad-0ec2fe5f86fb9b2b9cfc96f9
 type: paper
 title: "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents"
 paper: "[[Zhang2025DarwinGodelMach]]"

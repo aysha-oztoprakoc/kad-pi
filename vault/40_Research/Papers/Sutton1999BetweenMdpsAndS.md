@@ -1,4 +1,5 @@
 ---
+kad_id: kad-5fdadcf7da8c62c1e30c0ebf
 type: paper
 title: "Between MDPs and Semi-MDPs: A Framework for Temporal Abstraction in Reinforcement Learning"
 paper: "[[Sutton1999BetweenMdpsAndS]]"

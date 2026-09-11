@@ -1,4 +1,5 @@
 ---
+kad_id: kad-1d2f5ce94c5b7c65b37735f9
 type: paper
 title: "The Evolution of the Recovery Block Concept"
 paper: "[[Randell1994TheEvolutionOfT]]"

@@ -1,4 +1,5 @@
 ---
+kad_id: kad-71885c04bad5613069eec2b9
 type: paper
 title: "Manifest sharing with session types"
 paper: "[[Balzer2017ManifestSharing]]"

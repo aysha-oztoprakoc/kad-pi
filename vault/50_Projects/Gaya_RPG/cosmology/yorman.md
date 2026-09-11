@@ -1,4 +1,5 @@
 ---
+kad_id: kad-fa4a8af0ba2b328138380c0e
 slug: yorman
 titulo: "Yorman (Eorarmethum) — A Abstração Primordial"
 categoria: cosmology

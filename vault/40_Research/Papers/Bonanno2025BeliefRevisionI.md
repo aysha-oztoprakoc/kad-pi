@@ -1,4 +1,5 @@
 ---
+kad_id: kad-bf8babea2ea5f781cdcf4588
 type: paper
 title: "Belief revision in a temporal framework"
 paper: "[[Bonanno2025BeliefRevisionI]]"

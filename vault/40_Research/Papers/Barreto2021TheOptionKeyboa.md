@@ -1,4 +1,5 @@
 ---
+kad_id: kad-7376ef97f3384fdb70cc588a
 type: paper
 title: "The Option Keyboard: Combining Skills in Reinforcement Learning"
 paper: "[[Barreto2021TheOptionKeyboa]]"

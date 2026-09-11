@@ -1,4 +1,5 @@
 ---
+kad_id: kad-d4daf90460b399904d14e1c6
 type: paper
 title: "A Truth Maintenance System"
 paper: "[[Doyle1979ATruthMaintenan]]"

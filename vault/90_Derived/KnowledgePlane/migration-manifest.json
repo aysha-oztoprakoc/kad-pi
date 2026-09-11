@@ -1,7 +1,7 @@
 {
   "schema": "kad-vault-migration-v1",
   "source": "wiki/",
-  "canonical_root": "vault",
+  "canonical_root": ".ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc",
   "source_count": 75,
   "entries": [
     {
@@ -13,7 +13,7 @@
       "evidence": [
         "wiki/CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md"
       ],
-      "migration_status": "REVIEW_PENDING",
+      "migration_status": "INVENTORIED",
       "classification": "REVIEW_REQUIRED"
     },
     {
@@ -25,7 +25,7 @@
       "evidence": [
         "wiki/DEEPHAR_DREAM_OS_SAFE_PLUGIN_LAB_HANDOFF.md"
       ],
-      "migration_status": "REVIEW_PENDING",
+      "migration_status": "INVENTORIED",
       "classification": "REVIEW_REQUIRED"
     },
     {
@@ -37,7 +37,7 @@
       "evidence": [
         "wiki/DSH_PON_CORDIS_HANDOFF_2026-08-25.md"
       ],
-      "migration_status": "REVIEW_PENDING",
+      "migration_status": "INVENTORIED",
       "classification": "REVIEW_REQUIRED"
     },
     {
@@ -49,19 +49,19 @@
       "evidence": [
         "wiki/HANDOFF — Omarchy QuickShell Aesthetic Design via OpenCode Harness.md"
       ],
-      "migration_status": "REVIEW_PENDING",
+      "migration_status": "INVENTORIED",
       "classification": "REVIEW_REQUIRED"
     },
     {
       "old_path": "KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
-      "hash": "4af8121c7b4ce2c3a400439d1e1a830deda5706c09c49e32d0599bbc9ad29f78",
+      "hash": "42d6add19f290083df865873505c31ae3d2d48712d70c1b8810276d9318440af",
       "destination": "80_Review/Pending/legacy-kad_context_knowledge_plane_roadmap_2026-08-29.md.md",
-      "canonical_id": "kad-590e74208a8ab509fbf83667",
+      "canonical_id": "kad-0c42aee681000152ca37771e",
       "reason": "legacy knowledge requires human classification",
       "evidence": [
         "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md"
       ],
-      "migration_status": "REVIEW_PENDING",
+      "migration_status": "INVENTORIED",
       "classification": "REVIEW_REQUIRED"
     },
     {
@@ -73,7 +73,7 @@
       "evidence": [
         "wiki/KAD_Counterfactual_Observatory_2026-08-30.md"
       ],
-      "migration_status": "MIGRATED",
+      "migration_status": "INVENTORIED",
       "classification": "MIGRATE_CANONICAL"
     },
     {
@@ -85,7 +85,7 @@
       "evidence": [
         "wiki/KAD_Counterfactual_Promotion_Readiness_2026-08-30.md"
       ],
-      "migration_status": "MIGRATED",
+      "migration_status": "INVENTORIED",
       "classification": "MIGRATE_CANONICAL"
     },
     {
@@ -97,7 +97,7 @@
       "evidence": [
         "wiki/KAD_Economic_Router_Shadow_2026-08-30.md"
       ],
-      "migration_status": "MIGRATED",
+      "migration_status": "INVENTORIED",
       "classification": "MIGRATE_CANONICAL"
     },
     {
@@ -109,7 +109,7 @@
       "evidence": [
         "wiki/KAD_Implementation_Plan.md"
       ],
-      "migration_status": "REVIEW_PENDING",
+      "migration_status": "INVENTORIED",
       "classification": "REVIEW_REQUIRED"
     },
     {
@@ -121,7 +121,7 @@
       "evidence": [
         "wiki/KAD_Knowledge_Plane_Seed_Promotion_2026-08-30.md"
       ],
-      "migration_status": "MIGRATED",
+      "migration_status": "INVENTORIED",
       "classification": "MIGRATE_CANONICAL"
     },
     {
@@ -133,7 +133,7 @@
       "evidence": [
         "wiki/KAD_Operator_Control_Plane_2026-08-29.md"
       ],
-      "migration_status": "MIGRATED",
+      "migration_status": "INVENTORIED",
       "classification": "MIGRATE_CANONICAL"
     },
     {
@@ -145,7 +145,7 @@
       "evidence": [
         "wiki/KAD_PI_AGY_HANDOFF_2026-08-28.md"
       ],
-      "migration_status": "REVIEW_PENDING",
+      "migration_status": "INVENTORIED",
       "classification": "REVIEW_REQUIRED"
     },
     {
@@ -157,19 +157,19 @@
       "evidence": [
         "wiki/KAD_Research_Real_Corpus_Evaluation_2026-08-30.md"
       ],
-      "migration_status": "MIGRATED",
+      "migration_status": "INVENTORIED",
       "classification": "MIGRATE_CANONICAL"
     },
     {
       "old_path": "KAD_Research_Workflow_Implementation_Roadmap_2026-08-29.md",
-      "hash": "a6a5aaf5d5127bdcd566c22d4ee972440f6deda1b182f9bf13da3bf624edaa2b",
+      "hash": "56ede0632d86f1829575b170f0f17f1aa6db4e79d2ff14d16a92853d5ce033f3",
       "destination": "50_Projects/KAD-PI/Workpackages/KAD_Research_Workflow_Implementation_Roadmap_2026-08-29.md",
-      "canonical_id": "kad-841db1a378d9c7ddbcc45812",
+      "canonical_id": "kad-976bb03c02aa22a5fd4f9ef2",
       "reason": "accepted KAD record",
       "evidence": [
         "wiki/KAD_Research_Workflow_Implementation_Roadmap_2026-08-29.md"
       ],
-      "migration_status": "MIGRATED",
+      "migration_status": "INVENTORIED",
       "classification": "MIGRATE_CANONICAL"
     },
     {
@@ -181,7 +181,7 @@
       "evidence": [
         "wiki/KAD_Usage_Bridge_2026-08-30.md"
       ],
-      "migration_status": "MIGRATED",
+      "migration_status": "INVENTORIED",
       "classification": "MIGRATE_CANONICAL"
     },
     {
@@ -193,7 +193,7 @@
       "evidence": [
         "wiki/OFFICIAL_SOL_REVIEWER_HANDOFF_DREAM_SETUP_R2.md"
       ],
-      "migration_status": "REVIEW_PENDING",
+      "migration_status": "INVENTORIED",
       "classification": "REVIEW_REQUIRED"
     },
     {
@@ -205,7 +205,7 @@
       "evidence": [
         "wiki/OPENCODE_GO_ECONOMIC_MODEL_MATRIX_HANDOFF.md"
       ],
-      "migration_status": "REVIEW_PENDING",
+      "migration_status": "INVENTORIED",
       "classification": "REVIEW_REQUIRED"
     },
     {
@@ -217,7 +217,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/adr-index.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -229,19 +229,19 @@
       "evidence": [
         "wiki/generated/kad-canonical/evidence-index.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/index.md",
-      "hash": "06a3b7580d54b1134ff9cd82f8fad5789fe07801187a871c5a10ead7338382b8",
+      "hash": "e390b3bd9bc88629adf1e4bf6d05cd41cb6e459bed72f9935f438f8620091803",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/index.md",
-      "canonical_id": "kad-8d9b9f312f6b0e05fbac27c5",
+      "canonical_id": "kad-72cd2a19fa2e4dab1f85ff96",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/index.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -253,31 +253,31 @@
       "evidence": [
         "wiki/generated/kad-canonical/link-validation.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/manifest.json",
-      "hash": "c8329d95f19fac148a4505d3812b0b2b0dace4b2e77e9431fb7125d463b402c3",
+      "hash": "a31c0c135338276390812e0528201122ea0f72c429bd6fd636ba906665d4d123",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/manifest.json",
-      "canonical_id": "kad-cf585dff78e925ac90999727",
+      "canonical_id": "kad-65805ad43d676a800302860a",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/manifest.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/namespace-manifest.json",
-      "hash": "6077beca4a9eda2d5b83253dbc43cb6ef0c7fec3e15ff36e9e1031b80c52b055",
+      "hash": "2485bc43358c1b4a2f2a9d308638c7ace78839d6c0fcb6135ef6673ef611cab2",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/namespace-manifest.json",
-      "canonical_id": "kad-26bb45b3df6d6e42fa6ab26f",
+      "canonical_id": "kad-8ab01bc7ca2781a097ecc7fe",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/namespace-manifest.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -289,7 +289,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/AGENTS.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -301,7 +301,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/AGENTS.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -313,7 +313,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/ARCHITECTURE.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -325,7 +325,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/ARCHITECTURE.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -337,7 +337,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/CAPABILITIES.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -349,7 +349,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/CAPABILITIES.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -361,7 +361,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/DECISIONS.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -373,7 +373,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/DECISIONS.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -385,7 +385,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/EVIDENCE.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -397,7 +397,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/EVIDENCE.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -409,7 +409,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/EXPERIMENTS.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -421,7 +421,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/EXPERIMENTS.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -433,7 +433,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/FAILURES.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -445,7 +445,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/FAILURES.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -457,7 +457,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/GLOSSARY.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -469,55 +469,55 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/GLOSSARY.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/MODELS.json",
-      "hash": "6d4febf3d65e09a1a65adb9e8f70ecdb28833af3a754c8ba2dd1c9ffe5005edc",
+      "hash": "484730af68aade26f7101b3dd7ebf5f8c8b3363629ef03de12ff1ad385cfb6b2",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/namespaces/MODELS.json",
-      "canonical_id": "kad-8d8a891bf1c7bb3047d0614d",
+      "canonical_id": "kad-213f2db67f61c0e92c1f6e33",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/MODELS.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/MODELS.md",
-      "hash": "be4cb79bcee4908a6a25163fd0d4a84784b0654b0f0b2f3dea64a3ccfcf38644",
+      "hash": "97bbe0d42b1f283f7824aaed941e7963412ac1212a93c43330cfff80099a0617",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/namespaces/MODELS.md",
-      "canonical_id": "kad-992003de16cebc14af7800f6",
+      "canonical_id": "kad-380e22f5381a487a816bf09c",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/MODELS.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/PROJECT.json",
-      "hash": "59b56494f269e8dd967b35922319893763735dae4ea7fa02575dfe8ec503fa9b",
+      "hash": "25ea44ff6724bce0eef2625da9ec819a2ee537813329fc65b1c1aaf236123359",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/namespaces/PROJECT.json",
-      "canonical_id": "kad-2f144dc649201485f925b9d6",
+      "canonical_id": "kad-8f6312918c44024999d40790",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/PROJECT.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/PROJECT.md",
-      "hash": "bb073a7c68f8170e021727ee6b69c494eb731e4b6dc50cbfc50d3a4f706bb788",
+      "hash": "81cf5233c82ad6fd039bef1039cbf4b64c50c098bbbe774468095166de812bad",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/namespaces/PROJECT.md",
-      "canonical_id": "kad-186954d2daea463ace8df3e7",
+      "canonical_id": "kad-ade63b9fef6247a79c4fc075",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/PROJECT.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -529,7 +529,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/PROVIDERS.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -541,7 +541,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/PROVIDERS.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -553,7 +553,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/RESEARCH.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -565,55 +565,55 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/RESEARCH.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/ROADMAP.json",
-      "hash": "c14130df1df417497c88a9a42f825e098b0ae7a459402e6f110ab76c3af415b7",
+      "hash": "74a7287365c87312d3670c2ec82713337c5fa98624ed108fd04e62421df30f18",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/namespaces/ROADMAP.json",
-      "canonical_id": "kad-3278d9555ce0dac144319048",
+      "canonical_id": "kad-6064b631343727a781b07547",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/ROADMAP.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/ROADMAP.md",
-      "hash": "502af644492e91fff056d88dde85cdc79312088d8ff715fd51ca985805b8a510",
+      "hash": "39176f9789d7ab84c823297d943d9570327ac990d04e8a5b53c9398d7ca3c439",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/namespaces/ROADMAP.md",
-      "canonical_id": "kad-77928aa0823934e44cd32cd7",
+      "canonical_id": "kad-f8938369489b96c323811ce3",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/ROADMAP.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/SKILLS.json",
-      "hash": "e8ddfe2395881b957ed7fd5aca7e0922ac1ea4e76ff0dbe1823a794ae266c2c1",
+      "hash": "9c59e2fb9a2f701a2045dbc8819221799f02bba7134a793b5b21c10cdae021a8",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/namespaces/SKILLS.json",
-      "canonical_id": "kad-2f586636041dd4215893f880",
+      "canonical_id": "kad-fedc785859ae233711b7c25a",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/SKILLS.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/SKILLS.md",
-      "hash": "4e741325d49ec9597eded22b72e586c352758eda72baf489295f7ae435b190a4",
+      "hash": "f2221602589ab08742d7fd54e695c3e20a845643061421c61e9f3fa0fc8b9f0b",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/namespaces/SKILLS.md",
-      "canonical_id": "kad-6a7a7ab41a4456e7356e2f4c",
+      "canonical_id": "kad-384f6f008bfa8a9ebf60f82f",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/SKILLS.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -625,7 +625,7 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/TECHNOLOGIES.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -637,79 +637,79 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/TECHNOLOGIES.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/project-state.json",
-      "hash": "6db75b49c93508ef90b066e5ddab1d5bfdeb39969d7092ec2a28020ee05877f8",
+      "hash": "515164491e94b3dd3ad4010db1aebd07adee3d7cb6c6032973bcf3f6df605575",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/project-state.json",
-      "canonical_id": "kad-653ec5a2b5b29527e14432db",
+      "canonical_id": "kad-6daf8d342446bbf4b0386009",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/project-state.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/project.json",
-      "hash": "433773e6dd10d01eae400c67deddd6f2f22300202a4193ad13853306a90b3cfc",
+      "hash": "9a48441edb6f6235903f17e90a45d2b9b0d23b4cb6de062ed2f0643ecd6c5e45",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/project.json",
-      "canonical_id": "kad-1ef7486ed6b19bb2939b0a4f",
+      "canonical_id": "kad-02d421da9224cfcfc5b20314",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/project.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/source-allowlist.json",
-      "hash": "346110e91d1b3a1b67bb0dba10dc6c01e1a6027e204d398b902b45bb64e5bad3",
+      "hash": "05f92dc9ec4cfb7c9e554acf690076d8bc0bef64b48fd047c61d8a8d85111358",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/source-allowlist.json",
-      "canonical_id": "kad-35a8c96a9165e619fc7c4dbc",
+      "canonical_id": "kad-0a0638beeb17b5d290b3841b",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/source-allowlist.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/source-census.json",
-      "hash": "b8404d161f076426dbef1c8efb5d42c96e15e18b4e1472b809040e3d950be59e",
+      "hash": "1f45e22c164772fa8489518381d65457cbf685d44dfab55a227e54dcb5beb21e",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/source-census.json",
-      "canonical_id": "kad-8df7ddbe9ec10f8235d81971",
+      "canonical_id": "kad-95e34f6016461df7d826b22c",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/source-census.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/source-hashes.json",
-      "hash": "3778f640441fafff6a640982971a48a2ff64a205b9537e6049fd2949e0b04c50",
+      "hash": "98cce87d18fd547d5321270c9ec7932cc971ac6abc2b1f2277c5e6414baefb89",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/source-hashes.json",
-      "canonical_id": "kad-59ea39319c78cc95465327bf",
+      "canonical_id": "kad-a08385f38e80ea9a0b45b829",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/source-hashes.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
       "old_path": "generated/kad-canonical/status.json",
-      "hash": "a1bd92e8c25b4f9c0a533b4cfdcc666cd30f220f58695560eb44495fcffb1ec8",
+      "hash": "98aaa7439fc3ad9ec8c40a5748a6a2df35a704a5d9e4ec081da6ebef0b3211b8",
       "destination": "90_Derived/LegacyWiki/generated/kad-canonical/status.json",
-      "canonical_id": "kad-81ab8f4beaa3671dd65985b7",
+      "canonical_id": "kad-361140adff74482fac36c6f8",
       "reason": "generated projection",
       "evidence": [
         "wiki/generated/kad-canonical/status.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -721,7 +721,7 @@
       "evidence": [
         "wiki/generated/knowledge-plane/index.md"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -733,7 +733,7 @@
       "evidence": [
         "wiki/generated/knowledge-plane/records.json"
       ],
-      "migration_status": "DERIVED",
+      "migration_status": "INVENTORIED",
       "classification": "DERIVED_ONLY"
     },
     {
@@ -745,7 +745,7 @@
       "evidence": [
         "wiki/index.md"
       ],
-      "migration_status": "REVIEW_PENDING",
+      "migration_status": "INVENTORIED",
       "classification": "REVIEW_REQUIRED"
     },
     {
@@ -757,7 +757,7 @@
       "evidence": [
         "wiki/research/CATALOG.json"
       ],
-      "migration_status": "REVIEW_PENDING",
+      "migration_status": "INVENTORIED",
       "classification": "REVIEW_REQUIRED"
     },
     {
@@ -769,7 +769,7 @@
       "evidence": [
         "wiki/synthetic/01_ARCHITECTURE_PON_STC.md"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     },
     {
@@ -781,7 +781,7 @@
       "evidence": [
         "wiki/synthetic/02_DETERMINISTIC_AUTHORITY_SIMULATION.md"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     },
     {
@@ -793,7 +793,7 @@
       "evidence": [
         "wiki/synthetic/03_PI_HARNESS_INTEGRATION.md"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     },
     {
@@ -805,7 +805,7 @@
       "evidence": [
         "wiki/synthetic/04_SWARM_GOVERNANCE_AGENTS.md"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     },
     {
@@ -817,7 +817,7 @@
       "evidence": [
         "wiki/synthetic/05_SUBSCRIPTION_ECONOMICS_ROUTING.md"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     },
     {
@@ -829,7 +829,7 @@
       "evidence": [
         "wiki/synthetic/06_SAFE_PLUGIN_LAB_TOOLCHAINS.md"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     },
     {
@@ -841,7 +841,7 @@
       "evidence": [
         "wiki/synthetic/07_EVIDENCE_EPISTEMOLOGY_LEDGER.md"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     },
     {
@@ -853,7 +853,7 @@
       "evidence": [
         "wiki/synthetic/CATALOG.json"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     },
     {
@@ -865,7 +865,7 @@
       "evidence": [
         "wiki/synthetic/LIBRARIAN.md"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     },
     {
@@ -877,7 +877,7 @@
       "evidence": [
         "wiki/synthetic/RETRIEVAL_INDEX.jsonl"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     },
     {
@@ -889,7 +889,7 @@
       "evidence": [
         "wiki/synthetic/TAXONOMY.json"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     },
     {
@@ -901,7 +901,7 @@
       "evidence": [
         "wiki/synthetic/TAXONOMY.md"
       ],
-      "migration_status": "ARCHIVED",
+      "migration_status": "INVENTORIED",
       "classification": "ARCHIVE"
     }
   ]

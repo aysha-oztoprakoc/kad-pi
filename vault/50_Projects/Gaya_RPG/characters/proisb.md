@@ -1,4 +1,5 @@
 ---
+kad_id: kad-1afc32ca9a68976e9b69ff13
 slug: proisb
 titulo: "Proisb, o Carniçal"
 categoria: characters

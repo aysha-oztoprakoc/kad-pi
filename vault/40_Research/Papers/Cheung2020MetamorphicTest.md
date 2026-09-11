@@ -1,4 +1,5 @@
 ---
+kad_id: kad-1deb41aaa1eaf7215e00ac77
 type: paper
 title: "Metamorphic Testing: A New Approach for Generating Next Test Cases"
 paper: "[[Cheung2020MetamorphicTest]]"

@@ -1,4 +1,5 @@
 ---
+kad_id: kad-8c26d8e15a7e09368eb54435
 type: paper
 title: "ML-Based Fault Injection for Autonomous Vehicles: A Case for Bayesian Fault Injection"
 paper: "[[Jha2019MlBasedFaultInj]]"

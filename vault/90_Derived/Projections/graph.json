@@ -1,8 +1,8 @@
 {
   "schema": "kad-canonical-graph-v1",
   "generator_version": "1.0.0",
-  "source_vault_revision": "77d181f2a9359fc3502678616692b356ca940f509b1aae2c9cbf3efdf0dc3afe",
-  "generated_at": "2026-09-07T01:22:33.314Z",
+  "source_vault_revision": "a9fa62ebd187b3ad7138d3fa374c05e3889babd5a954979d6b1a269cb8f17b4c",
+  "generated_at": "2026-09-11T21:57:40.404Z",
   "nodes": [
     {
       "kad_id": "kad-source-index",
@@ -30,6 +30,17 @@
       "kad_id": "ISA-KAD-COMPUTE-FABRIC-001",
       "path": "00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md",
       "title": "KAD Compute Fabric Ideal State Artifact (ISA)",
+      "type": "governance",
+      "authority": "CANONICAL_KNOWLEDGE",
+      "epistemic_class": "PROJECT_INFERENCE",
+      "temporal_status": "CURRENT",
+      "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "ISA-KAD-MEMORY-001",
+      "path": "00_Governance/ISA-KAD-MEMORY-001.md",
+      "title": "KAD Memory & Knowledge Substrate Ideal State Artifact (ISA)",
       "type": "governance",
       "authority": "CANONICAL_KNOWLEDGE",
       "epistemic_class": "PROJECT_INFERENCE",
@@ -68,6 +79,1370 @@
       "epistemic_class": "PROJECT_INFERENCE",
       "temporal_status": "CURRENT",
       "review_status": "APPROVED",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-c81c44be879620ab195e1931",
+      "path": "40_Research/Claims/CLAIM-PIANO-CONCURRENT-COGNITION-001.md",
+      "title": "\"A agregação concorrente de fluxos cognitivos via Cognitive Controller com Action Awareness é condição necessária para difusão social adaptativa em sociedades de agentes\"",
+      "type": "claim",
+      "authority": "UNKNOWN",
+      "epistemic_class": "SOURCE_DERIVED",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-bae662f769431048961da2f6",
+      "path": "40_Research/Papers/Abboush2022HardwareInTheLo.md",
+      "title": "\"Hardware-in-the-Loop-Based Real-Time Fault Injection Framework for Dynamic Behavior Analysis of Automotive Software Systems\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-a9bf816d32049edacf0f3db4",
+      "path": "40_Research/Papers/Ancona2016BehavioralTypes.md",
+      "title": "\"Behavioral Types in Programming Languages\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-e63af0d3b675f95b06229c54",
+      "path": "40_Research/Papers/Anderson1976RecoveryBlocksI.md",
+      "title": "\"Recovery blocks in action: A system supporting high reliability\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-17d33b1b5f762607bd6ac747",
+      "path": "40_Research/Papers/Aravanis2026NonPrioritisedK.md",
+      "title": "\"Non-prioritised kernel contraction\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-c9a9228012314d540e6a5791",
+      "path": "40_Research/Papers/Avizienis2007BasicConceptsAn.md",
+      "title": "\"Basic concepts and taxonomy of dependable and secure computing\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-8152fc45698210412aca5ea9",
+      "path": "40_Research/Papers/Bacon2016TheOptionCritic.md",
+      "title": "\"The Option-Critic Architecture\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-00d2877be1cedd19c2ff3fb6",
+      "path": "40_Research/Papers/Baldoni2003ModelingPublish.md",
+      "title": "\"Modeling publish/subscribe communication systems: towards a formal approach\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-71885c04bad5613069eec2b9",
+      "path": "40_Research/Papers/Balzer2017ManifestSharing.md",
+      "title": "\"Manifest sharing with session types\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-41549afab0733fd43f119e5d",
+      "path": "40_Research/Papers/Barr2015TheOracleProble.md",
+      "title": "\"The Oracle Problem in Software Testing: A Survey\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-7376ef97f3384fdb70cc588a",
+      "path": "40_Research/Papers/Barreto2021TheOptionKeyboa.md",
+      "title": "\"The Option Keyboard: Combining Skills in Reinforcement Learning\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-a5550ccc48cebe60fdaaea0b",
+      "path": "40_Research/Papers/Becker2015AnalyzingGracef.md",
+      "title": "\"Analyzing Graceful Degradation for Mixed Critical Fault-Tolerant Real-Time Systems\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-bf8babea2ea5f781cdcf4588",
+      "path": "40_Research/Papers/Bonanno2025BeliefRevisionI.md",
+      "title": "\"Belief revision in a temporal framework\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-6f296cc8d7e045ff36d570b2",
+      "path": "40_Research/Papers/Bonchi2006SaturatedSemant.md",
+      "title": "\"Saturated Semantics for Reactive Systems\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-e112c96f0adcc68b17455c36",
+      "path": "40_Research/Papers/Chen2018MetamorphicTest.md",
+      "title": "\"Metamorphic Testing\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-b66e26f5deec7702b3266418",
+      "path": "40_Research/Papers/Chen2024MetamorphicTest.md",
+      "title": "\"Metamorphic Testing and Testing with Special Values\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-7c28c4ffd664a464c5f05f24",
+      "path": "40_Research/Papers/Chen2025SetsLeveragingS.md",
+      "title": "\"SETS: Leveraging Self-Verification and Self-Correction for Improved Test-Time Scaling\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-1deb41aaa1eaf7215e00ac77",
+      "path": "40_Research/Papers/Cheung2020MetamorphicTest.md",
+      "title": "\"Metamorphic Testing: A New Approach for Generating Next Test Cases\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-f786d2bec33cb3d69c1fe376",
+      "path": "40_Research/Papers/Chevalier2023AdaptingLanguag.md",
+      "title": "\"Adapting Language Models to Compress Contexts\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-aea80a2ec91a46bfae687917",
+      "path": "40_Research/Papers/Cimatti2014ContractsRefine.md",
+      "title": "\"Contracts-refinement proof system for component-based embedded systems\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-6624bdde6b750efb47835959",
+      "path": "40_Research/Papers/Ciocca2002DeterminingAcce.md",
+      "title": "\"Determining Acceptance Tests for Application-Level Fault Detection\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-de47715b04fa78a764525ad9",
+      "path": "40_Research/Papers/Coniglio2024ParaconsistentB.md",
+      "title": "\"Paraconsistent Belief Revision: A Replacement-Enriched LFI for Epistemic Entrenchment\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-273e741f6e12a077419b1b6a",
+      "path": "40_Research/Papers/Crampton2006DelegationInRol.md",
+      "title": "\"Delegation in role-based access control\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-9d6f3fa5af5347ac9d6468ec",
+      "path": "40_Research/Papers/Daniel2016ProbabilisticIn.md",
+      "title": "\"Probabilistic inference for determining options in reinforcement learning\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-cb5f8f1732a46718bf74e698",
+      "path": "40_Research/Papers/Delgrande2018GeneralBeliefRe.md",
+      "title": "\"General Belief Revision\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-d4daf90460b399904d14e1c6",
+      "path": "40_Research/Papers/Doyle1979ATruthMaintenan.md",
+      "title": "\"A Truth Maintenance System\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-f4afaa052e6b0825608abf14",
+      "path": "40_Research/Papers/Eugster2003TheManyFacesOfP.md",
+      "title": "\"The many faces of publish/subscribe\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-9081fa92db5431f03e64ca71",
+      "path": "40_Research/Papers/Fucci2016ADissectionOfTh.md",
+      "title": "\"A Dissection of the Test-Driven Development Process: Does It Really Matter to Test-First or to Test-Last?\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-40f48fc0e45cd1f2cdb87488",
+      "path": "40_Research/Papers/Gay2009LinearTypeTheor.md",
+      "title": "\"Linear type theory for asynchronous session types\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-331171389ee0004a516046f5",
+      "path": "40_Research/Papers/Ge2023InContextAutoen.md",
+      "title": "\"In-context Autoencoder for Context Compression in a Large Language Model\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-77d0109d995479caeb5bcdb3",
+      "path": "40_Research/Papers/Ghasemi2020CompositionalSy.md",
+      "title": "\"Compositional synthesis via a convex parameterization of assume-guarantee contracts\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-2f019e22868efdcc14490aca",
+      "path": "40_Research/Papers/Httel2016FoundationsOfSe.md",
+      "title": "\"Foundations of Session Types and Behavioural Contracts\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-9e6492bf58d290c7726d7349",
+      "path": "40_Research/Papers/Incer2023PactiAssumeGuar.md",
+      "title": "\"Pacti: Assume-Guarantee Contracts for Efficient Compositional Analysis and Design\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-239cea20fd61170f63fbeadf",
+      "path": "40_Research/Papers/Jha2018AvfiFaultInject.md",
+      "title": "\"AVFI: Fault Injection for Autonomous Vehicles\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-6a6724e5f8e12b52a340fe0f",
+      "path": "40_Research/Papers/Jha2019KayoteeAFaultIn.md",
+      "title": "\"Kayotee: A Fault Injection-based System to Assess the Safety and Reliability of Autonomous Vehicles to Faults and Errors\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-8c26d8e15a7e09368eb54435",
+      "path": "40_Research/Papers/Jha2019MlBasedFaultInj.md",
+      "title": "\"ML-Based Fault Injection for Autonomous Vehicles: A Case for Bayesian Fault Injection\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-d0fde8df18521cd538a8feba",
+      "path": "40_Research/Papers/Karac2021AControlledExpe.md",
+      "title": "\"A Controlled Experiment with Novice Developers on the Impact of Task Description Granularity on Software Quality in Test-Driven Development\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-6224d389bec1d56353ff2a7d",
+      "path": "40_Research/Papers/Kim1989DistributedExec.md",
+      "title": "\"Distributed Execution of Recovery Blocks: An Approach for Uniform Treatment of Hardware and Software Faults in Real-Time Applications\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-dd447399ef7a870b82defbdd",
+      "path": "40_Research/Papers/Koopman2018UsingArchitectu.md",
+      "title": "\"Using Architectural Properties to Model and Measure System-Wide Graceful Degradation\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-a2ff7b320c4d506d98b77e2f",
+      "path": "40_Research/Papers/Laprie1995DependableCompu.md",
+      "title": "\"DEPENDABLE COMPUTING AND FAULT TOLERANCE : CONCEPTS AND TERMINOLOGY\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-bac9c8c0ddc8d0c27e1df47f",
+      "path": "40_Research/Papers/Li2000DelegationLogic.md",
+      "title": "\"Delegation Logic: A Logic-based Approach to Distrbuted Authorization\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-70d2bc1cb5b3dcf2b460d66d",
+      "path": "40_Research/Papers/Li2023CompressingCont.md",
+      "title": "\"Compressing Context to Enhance Inference Efficiency of Large Language Models\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-925e5807674dc1a35a0c5f3d",
+      "path": "40_Research/Papers/Lifshitz2025MultiAgentVerif.md",
+      "title": "\"Multi-Agent Verification: Scaling Test-Time Compute with Multiple Verifiers\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-72f2f485af74b0b8cae4a0cd",
+      "path": "40_Research/Papers/Lindley2022LightweightFunc.md",
+      "title": "\"Lightweight functional session types\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-173e512a652b393b61e5e65e",
+      "path": "40_Research/Papers/Linhares2015NocaANotificati.md",
+      "title": "\"NOCA ‑ A Notification-Oriented Computer Architecture\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-0088345e8fb6630bfc2784fc",
+      "path": "40_Research/Papers/Linhares2020NocaANotificati.md",
+      "title": "\"NOCA — A Notification-Oriented Computer Architecture: Prototype and Simulator\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-3125745221eb395875e0bf50",
+      "path": "40_Research/Papers/Lohstroh2021TowardALinguaFr.md",
+      "title": "\"Toward a Lingua Franca for Deterministic Concurrent Systems\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-6264249678ba6caeb8005684",
+      "path": "40_Research/Papers/Machado2021TemporalAbstrac.md",
+      "title": "\"Temporal Abstraction in Reinforcement Learning with the Successor Representation\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-f1efe1bb052df71efd2cb2e7",
+      "path": "40_Research/Papers/Manheim2018CategorizingVar.md",
+      "title": "\"Categorizing Variants of Goodhart's Law\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-7e3f81053d3c7c4279cecfe3",
+      "path": "40_Research/Papers/Nakayama2016ReductionOfUnne.md",
+      "title": "\"Reduction of Unnecessarily Ordered Event Messages in Peer-to-Peer Model of Topic-Based Publish/Subscribe Systems\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-54c152f460b89e88625386ae",
+      "path": "40_Research/Papers/Natella2016AssessingDepend.md",
+      "title": "\"Assessing Dependability with Software Fault Injection\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-cd732cc6fd7f57089976bbb3",
+      "path": "40_Research/Papers/Oliveira2018NotificationOri.md",
+      "title": "\"Notification Oriented Paradigm Applied to Ambient Assisted Living Tool\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-526233ec0829bc3369fc4503",
+      "path": "40_Research/Papers/Prakash2026AipAgentIdentit.md",
+      "title": "\"AIP: Agent Identity Protocol for Verifiable Delegation Across MCP and A2A\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-6b9b8967a7c7382badd30746",
+      "path": "40_Research/Papers/Rafique2013TheEffectsOfTes.md",
+      "title": "\"The Effects of Test-Driven Development on External Quality and Productivity: A Meta-Analysis\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-1d2f5ce94c5b7c65b37735f9",
+      "path": "40_Research/Papers/Randell1994TheEvolutionOfT.md",
+      "title": "\"The Evolution of the Recovery Block Concept\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-0135db4a05dd19928148626c",
+      "path": "40_Research/Papers/Randell2025LookingBackOnRe.md",
+      "title": "\"Looking Back on Recovery Blocks and Conversations\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-fe624cc45e668718e01d6ac8",
+      "path": "40_Research/Papers/Ronszcka2017NotificationOri.md",
+      "title": "\"Notification-Oriented Paradigm Framework 2.0: An Implementation Based On Design Patterns\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-caa4ae6cff34733ecfda4e34",
+      "path": "40_Research/Papers/Santos2020AFamilyOfExperi.md",
+      "title": "\"A family of experiments on test-driven development\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-aed72bcf97a7345349520e10",
+      "path": "40_Research/Papers/Saoud2018OnTheCompositio.md",
+      "title": "\"On the Composition of Discrete and Continuous-time Assume-Guarantee Contracts for Invariance\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-93a104f42fde9c80e64f647a",
+      "path": "40_Research/Papers/Saoud2021AssumeGuarantee.md",
+      "title": "\"Assume-guarantee contracts for continuous-time systems\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-e5379e9ff73f9c656cbd3080",
+      "path": "40_Research/Papers/Schtz2018ProposalOfADecl.md",
+      "title": "\"Proposal of a declarative and parallelizable artificial neural network using the notification-oriented paradigm\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-41975079f60597e21e106214",
+      "path": "40_Research/Papers/Segura2016ASurveyOnMetamo.md",
+      "title": "\"A Survey on Metamorphic Testing\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-4d9e19cc3d094d201c900e43",
+      "path": "40_Research/Papers/Shelton2003AFrameworkForSc.md",
+      "title": "\"A framework for scalable analysis and design of system-wide graceful degradation in distributed embedded systems\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-b268bbf9fb1b74e6ee0554bf",
+      "path": "40_Research/Papers/Snell2024ScalingLlmTestT.md",
+      "title": "\"Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-d1b2fee2c5bc2f7bf5a02868",
+      "path": "40_Research/Papers/South2025AuthenticatedDe.md",
+      "title": "\"Authenticated Delegation and Authorized AI Agents\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-140752d834719398c81752c2",
+      "path": "40_Research/Papers/Spadini2019TestDrivenCodeR.md",
+      "title": "\"Test-Driven Code Review: An Empirical Study\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-5fdadcf7da8c62c1e30c0ebf",
+      "path": "40_Research/Papers/Sutton1999BetweenMdpsAndS.md",
+      "title": "\"Between MDPs and Semi-MDPs: A Framework for Temporal Abstraction in Reinforcement Learning\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-bc4943fef9df08c7a8b3a86a",
+      "path": "40_Research/Papers/Wang2025HuxleyGodelMach.md",
+      "title": "\"Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-3512b39b72cd87015f416fbc",
+      "path": "40_Research/Papers/Yang2024ProjectSidMany.md",
+      "title": "\"Project Sid: Many-Agent Simulations Toward AI Civilization\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-b242560dc1f59b032c63fa49",
+      "path": "40_Research/Papers/Yin2024GodelAgentASelf.md",
+      "title": "\"Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-566420266670f9c3d0727df3",
+      "path": "40_Research/Papers/Yin2025GodelAgentASelf.md",
+      "title": "\"Gödel Agent: A Self-Referential Agent Framework for Recursively Self-Improvement\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-602cd0c4876599d3ae42666c",
+      "path": "40_Research/Papers/Zaveri2016TheNociceptinOp.md",
+      "title": "\"The Nociceptin Opioid Receptor (NOP) as a Therapeutic Target: Progress in Translation from Preclinical Research to Clinical Utility\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-b3c7512e3f46d0d8cc19d4a2",
+      "path": "40_Research/Papers/Zhang2003ARuleBasedFrame.md",
+      "title": "\"A rule-based framework for role-based delegation and revocation\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-6917d97f96dccb393922e802",
+      "path": "40_Research/Papers/Zhang2024GenerativeVerif.md",
+      "title": "\"Generative Verifiers: Reward Modeling as Next-Token Prediction\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-0ec2fe5f86fb9b2b9cfc96f9",
+      "path": "40_Research/Papers/Zhang2025DarwinGodelMach.md",
+      "title": "\"Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-01af118371ce04233264e6e3",
+      "path": "40_Research/Papers/Zhang2025LightthinkerThi.md",
+      "title": "\"LightThinker: Thinking Step-by-Step Compression\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-adc160afa98b763ab72bcf01",
+      "path": "40_Research/Papers/Zhao2025SampleScrutiniz.md",
+      "title": "\"Sample, Scrutinize and Scale: Effective Inference-Time Search by Scaling Verification\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-c776eced9308a256ec25557d",
+      "path": "40_Research/Papers/Zhu2023ASurveyOnModelC.md",
+      "title": "\"A Survey on Model Compression for Large Language Models\"",
+      "type": "paper",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-37c37edd3c4bdff3b430fab4",
+      "path": "40_Research/Questions/Q01.md",
+      "title": "\"Theoretical and empirical foundations of Notification-Oriented Paradigm (NOP) vs event-driven/reactive architectures\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-61a0894f9474435ab5f893f9",
+      "path": "40_Research/Questions/Q02.md",
+      "title": "\"Formal semantic frameworks for event-driven reactive systems with asynchronous notifications\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-b20cc348053d01fe90f9c9e7",
+      "path": "40_Research/Questions/Q03.md",
+      "title": "\"Assume–guarantee (compositional) reasoning to verify component contracts in reactive systems\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-adf61688e5735e12dd878bc0",
+      "path": "40_Research/Questions/Q04.md",
+      "title": "\"Behavioral type systems and session types for component interaction and lifecycle protocols\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-f6712d01b6ca8fdeef9ad166",
+      "path": "40_Research/Questions/Q05.md",
+      "title": "\"Empirical evidence for test-driven development impact on defect density, code quality, and productivity\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-a711dc2efc8fc0f836266edd",
+      "path": "40_Research/Questions/Q06.md",
+      "title": "\"Formal properties test suites can establish: test oracle theory, mutation adequacy, metamorphic testing\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-f27889de8923d63d72da390e",
+      "path": "40_Research/Questions/Q07.md",
+      "title": "\"Formal models for graceful degradation, fail-soft behavior, and degraded modes of operation\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-e68dc2a10d14f1e8527d339a",
+      "path": "40_Research/Questions/Q08.md",
+      "title": "\"Recovery blocks and runtime acceptance tests providing fault tolerance through retry with verification\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-c0ea08f80a3b730cb3c4730a",
+      "path": "40_Research/Questions/Q09.md",
+      "title": "\"Conditions for safe or provably correct self-modifying systems (proof-based self-modification, Gödel machines)\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-36a3bffe65bba8704b3da789",
+      "path": "40_Research/Questions/Q10.md",
+      "title": "\"Belief revision and truth maintenance systems handling contradictions while preserving consistency and relevance\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-a9c14a76a53d14c5d112a95e",
+      "path": "40_Research/Questions/Q11.md",
+      "title": "\"Impact of context compression, summarization, or memory pruning on LLM reasoning accuracy\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-f786e975a5782f5e451fcbde",
+      "path": "40_Research/Questions/Q12.md",
+      "title": "\"Test-time (inference-time) computation scaling and optimal allocation between generation and verification\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-6e8c2de547e8991e458b3dfc",
+      "path": "40_Research/Questions/Q13.md",
+      "title": "\"Formal logics modeling delegation and authority attenuation in distributed and multi-agent systems\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-110e41150a009501431a26b0",
+      "path": "40_Research/Questions/Q14.md",
+      "title": "\"Experimental methodologies (fault injection, dependability benchmarking) for autonomous systems under capability loss\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-3149d62968ab08e91b5564a7",
+      "path": "40_Research/Questions/Q15.md",
+      "title": "\"Temporal abstraction frameworks (options, macro-actions, hierarchical RL) for reusable skills acquisition and transfer\"",
+      "type": "research_question",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "SNAP-GAYA-3D-ASCII-PIANO-001",
+      "path": "40_Research/Syntheses/RESEARCH_SNAPSHOT_GAYA_3D_ASCII_PIANO.md",
+      "title": "\"Research Snapshot: Deterministic 3D ASCII Text-RPG, PIANO Cognitive Architecture, and Gaya World Substrate on Consumer Hardware\"",
+      "type": "synthesis",
+      "authority": "CANONICAL_RESEARCH_GROUNDING",
+      "epistemic_class": "SOURCE_DERIVED",
+      "temporal_status": "CURRENT",
+      "review_status": "PENDING_ASTRA_SYNTHESIS",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-95833e436d5481aa56807e2d",
+      "path": "50_Projects/Gaya_RPG/characters/akuanduba.md",
+      "title": "akuanduba",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-96837d7ac9cd793b93bce7fe",
+      "path": "50_Projects/Gaya_RPG/characters/amethysta.md",
+      "title": "amethysta",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-75ad66ca9f799d526f13f14e",
+      "path": "50_Projects/Gaya_RPG/characters/aysha_oztoprak.md",
+      "title": "aysha_oztoprak",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-564c8a540ad58e4a59291b00",
+      "path": "50_Projects/Gaya_RPG/characters/begonio_nackle.md",
+      "title": "begonio_nackle",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "path": "50_Projects/Gaya_RPG/characters/douglas.md",
+      "title": "douglas",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-52e4d93085677b5853b1fa8a",
+      "path": "50_Projects/Gaya_RPG/characters/lylia_centelha_de_sofia.md",
+      "title": "lylia_centelha_de_sofia",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-dd6cdaf9030db76a1b97e418",
+      "path": "50_Projects/Gaya_RPG/characters/niara.md",
+      "title": "niara",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-1afc32ca9a68976e9b69ff13",
+      "path": "50_Projects/Gaya_RPG/characters/proisb.md",
+      "title": "proisb",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-091a30150e6e27fd29c9ce78",
+      "path": "50_Projects/Gaya_RPG/characters/pumma_nix.md",
+      "title": "pumma_nix",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-31e04bb9516af1d978a1a5b9",
+      "path": "50_Projects/Gaya_RPG/cosmology/khan.md",
+      "title": "khan",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-3492c345eec7f4c068402851",
+      "path": "50_Projects/Gaya_RPG/cosmology/roukash_tashtael.md",
+      "title": "roukash_tashtael",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-fa4a8af0ba2b328138380c0e",
+      "path": "50_Projects/Gaya_RPG/cosmology/yorman.md",
+      "title": "yorman",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-211156de69f94207a4d781f9",
+      "path": "50_Projects/Gaya_RPG/factions/equipe_ykt.md",
+      "title": "equipe_ykt",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-1086b6765606dfa78a4d26f7",
+      "path": "50_Projects/Gaya_RPG/locations/camara_de_sintese.md",
+      "title": "camara_de_sintese",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-bcadf4fbc2d12cd7e52675bb",
+      "path": "50_Projects/Gaya_RPG/locations/copa_e_biblioteca.md",
+      "title": "copa_e_biblioteca",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-4df1a1a926719431dfe70e21",
+      "path": "50_Projects/Gaya_RPG/locations/escola_de_mana.md",
+      "title": "escola_de_mana",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-9f7b56950d59c2fab85a4426",
+      "path": "50_Projects/Gaya_RPG/locations/heartwood.md",
+      "title": "heartwood",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-3797211993a0049702ec2db1",
+      "path": "50_Projects/Gaya_RPG/locations/raizes_sagradas.md",
+      "title": "raizes_sagradas",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-2e7ea145f92ea37552dafac9",
+      "path": "50_Projects/Gaya_RPG/locations/ramo_de_douglas.md",
+      "title": "ramo_de_douglas",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-3e4c154c38ac545fcc3e9e42",
+      "path": "50_Projects/Gaya_RPG/locations/ramos_residenciais.md",
+      "title": "ramos_residenciais",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-426aede0118d3f8b12f60b34",
+      "path": "50_Projects/Gaya_RPG/locations/refugio_ykt.md",
+      "title": "refugio_ykt",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-238abbf67e9bc5e7de975836",
+      "path": "50_Projects/Gaya_RPG/locations/templo_suspenso.md",
+      "title": "templo_suspenso",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-9d35b20fa9543481a22cff10",
+      "path": "50_Projects/Gaya_RPG/locations/terraco_de_chegada.md",
+      "title": "terraco_de_chegada",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-e8d20d78f468b60f2ef3a178",
+      "path": "50_Projects/Gaya_RPG/locations/terraco_de_combate.md",
+      "title": "terraco_de_combate",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-3c0a3514829a8b2b564ab7d1",
+      "path": "50_Projects/Gaya_RPG/mechanics/crosta_de_kravarius.md",
+      "title": "crosta_de_kravarius",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-ab1d7f51e1f7c628cbfd28b8",
+      "path": "50_Projects/Gaya_RPG/mechanics/garra_de_kravut.md",
+      "title": "garra_de_kravut",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-a471ca1d4a7e831752640f28",
+      "path": "50_Projects/Gaya_RPG/mechanics/manto_de_kravarius.md",
+      "title": "manto_de_kravarius",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-76ec58f6421a97e2b003ba1c",
+      "path": "50_Projects/Gaya_RPG/mechanics/nyr_e_zhar.md",
+      "title": "nyr_e_zhar",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-c7d88c41b7ba102d0ce1b84a",
+      "path": "50_Projects/Gaya_RPG/mechanics/sintese.md",
+      "title": "sintese",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
+      "visibility": "project"
+    },
+    {
+      "kad_id": "kad-dea51086c2ae3ffb8b8d3b28",
+      "path": "50_Projects/Gaya_RPG/mechanics/tambor_do_polirritmo.md",
+      "title": "tambor_do_polirritmo",
+      "type": "State",
+      "authority": "UNKNOWN",
+      "epistemic_class": "UNKNOWN",
+      "temporal_status": "CURRENT",
+      "review_status": "UNKNOWN",
       "visibility": "project"
     },
     {
@@ -194,7 +1569,7 @@
     {
       "kad_id": "kad-dossier-data-rein",
       "path": "50_Projects/Legacy/DATA-REIN-Dossier.md",
-      "title": "Historical Dossier: DATA_REIN Predecessor",
+      "title": "\"Historical Dossier: DATA_REIN Predecessor\"",
       "type": "dossier",
       "authority": "CANONICAL_KNOWLEDGE",
       "epistemic_class": "PROJECT_INFERENCE",
@@ -205,7 +1580,7 @@
     {
       "kad_id": "kad-ref-deepseek-harness",
       "path": "50_Projects/Reference/DeepSeek-Harness-Lab.md",
-      "title": "Reference Dossier: DeepSeek Harness Lab",
+      "title": "\"Reference Dossier: DeepSeek Harness Lab\"",
       "type": "reference",
       "authority": "CANONICAL_KNOWLEDGE",
       "epistemic_class": "PROJECT_INFERENCE",
@@ -216,7 +1591,7 @@
     {
       "kad_id": "kad-dossier-data-workspace",
       "path": "50_Projects/SideProjects/DATA-WORKSPACE.md",
-      "title": "Project Dossier: DATA_WORKSPACE",
+      "title": "\"Project Dossier: DATA_WORKSPACE\"",
       "type": "dossier",
       "authority": "CANONICAL_KNOWLEDGE",
       "epistemic_class": "PROJECT_INFERENCE",
@@ -227,7 +1602,7 @@
     {
       "kad_id": "kad-dossier-technopagan",
       "path": "50_Projects/SideProjects/Technopagan-Netrunner.md",
-      "title": "Project Dossier: Technopagan Netrunner Cyberdeck",
+      "title": "\"Project Dossier: Technopagan Netrunner Cyberdeck\"",
       "type": "dossier",
       "authority": "CANONICAL_KNOWLEDGE",
       "epistemic_class": "PROJECT_INFERENCE",
@@ -238,7 +1613,7 @@
     {
       "kad_id": "kad-28d0116a43002f3dd82d3d1a",
       "path": "80_Review/Pending/legacy-cli_subscription_quota_economics_handoff.md.md",
-      "title": "Review: CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md",
+      "title": "\"Review: CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md\"",
       "type": "review_record",
       "authority": "PROPOSAL_UNREVIEWED",
       "epistemic_class": "UNKNOWN",
@@ -249,7 +1624,7 @@
     {
       "kad_id": "kad-a45bbfa737f956c25a814bd2",
       "path": "80_Review/Pending/legacy-deephar_dream_os_safe_plugin_lab_handoff.md.md",
-      "title": "Review: DEEPHAR_DREAM_OS_SAFE_PLUGIN_LAB_HANDOFF.md",
+      "title": "\"Review: DEEPHAR_DREAM_OS_SAFE_PLUGIN_LAB_HANDOFF.md\"",
       "type": "review_record",
       "authority": "PROPOSAL_UNREVIEWED",
       "epistemic_class": "UNKNOWN",
@@ -260,7 +1635,7 @@
     {
       "kad_id": "kad-9777dc52926670913bb329fc",
       "path": "80_Review/Pending/legacy-dsh_pon_cordis_handoff_2026-08-25.md.md",
-      "title": "Review: DSH_PON_CORDIS_HANDOFF_2026-08-25.md",
+      "title": "\"Review: DSH_PON_CORDIS_HANDOFF_2026-08-25.md\"",
       "type": "review_record",
       "authority": "PROPOSAL_UNREVIEWED",
       "epistemic_class": "UNKNOWN",
@@ -271,7 +1646,7 @@
     {
       "kad_id": "kad-3480e7a93a9d33f2a534e819",
       "path": "80_Review/Pending/legacy-handoff-omarchy-quickshell-aesthetic-design-via-opencode-harness.md.md",
-      "title": "Review: HANDOFF — Omarchy QuickShell Aesthetic Design via OpenCode Harness.md",
+      "title": "\"Review: HANDOFF — Omarchy QuickShell Aesthetic Design via OpenCode Harness.md\"",
       "type": "review_record",
       "authority": "PROPOSAL_UNREVIEWED",
       "epistemic_class": "UNKNOWN",
@@ -282,7 +1657,7 @@
     {
       "kad_id": "kad-76aff88bc5fb4084b8f4fb20",
       "path": "80_Review/Pending/legacy-index.md.md",
-      "title": "Review: index.md",
+      "title": "\"Review: index.md\"",
       "type": "review_record",
       "authority": "PROPOSAL_UNREVIEWED",
       "epistemic_class": "UNKNOWN",
@@ -293,7 +1668,7 @@
     {
       "kad_id": "kad-590e74208a8ab509fbf83667",
       "path": "80_Review/Pending/legacy-kad_context_knowledge_plane_roadmap_2026-08-29.md.md",
-      "title": "Review: KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+      "title": "\"Review: KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md\"",
       "type": "review_record",
       "authority": "PROPOSAL_UNREVIEWED",
       "epistemic_class": "UNKNOWN",
@@ -304,7 +1679,7 @@
     {
       "kad_id": "kad-f40a860727ffb7eba609436b",
       "path": "80_Review/Pending/legacy-kad_implementation_plan.md.md",
-      "title": "Review: KAD_Implementation_Plan.md",
+      "title": "\"Review: KAD_Implementation_Plan.md\"",
       "type": "review_record",
       "authority": "PROPOSAL_UNREVIEWED",
       "epistemic_class": "UNKNOWN",
@@ -315,7 +1690,7 @@
     {
       "kad_id": "kad-604a843770c3906ce08e219b",
       "path": "80_Review/Pending/legacy-kad_pi_agy_handoff_2026-08-28.md.md",
-      "title": "Review: KAD_PI_AGY_HANDOFF_2026-08-28.md",
+      "title": "\"Review: KAD_PI_AGY_HANDOFF_2026-08-28.md\"",
       "type": "review_record",
       "authority": "PROPOSAL_UNREVIEWED",
       "epistemic_class": "UNKNOWN",
@@ -326,7 +1701,7 @@
     {
       "kad_id": "kad-fe4904400bb4dfc792b988aa",
       "path": "80_Review/Pending/legacy-official_sol_reviewer_handoff_dream_setup_r2.md.md",
-      "title": "Review: OFFICIAL_SOL_REVIEWER_HANDOFF_DREAM_SETUP_R2.md",
+      "title": "\"Review: OFFICIAL_SOL_REVIEWER_HANDOFF_DREAM_SETUP_R2.md\"",
       "type": "review_record",
       "authority": "PROPOSAL_UNREVIEWED",
       "epistemic_class": "UNKNOWN",
@@ -337,7 +1712,7 @@
     {
       "kad_id": "kad-fcbe5aba0b1b5fc7b4579598",
       "path": "80_Review/Pending/legacy-opencode_go_economic_model_matrix_handoff.md.md",
-      "title": "Review: OPENCODE_GO_ECONOMIC_MODEL_MATRIX_HANDOFF.md",
+      "title": "\"Review: OPENCODE_GO_ECONOMIC_MODEL_MATRIX_HANDOFF.md\"",
       "type": "review_record",
       "authority": "PROPOSAL_UNREVIEWED",
       "epistemic_class": "UNKNOWN",
@@ -348,7 +1723,7 @@
     {
       "kad_id": "kad-878a0c3a2facdd17496195ff",
       "path": "80_Review/Pending/legacy-research-catalog.json.md",
-      "title": "Review: CATALOG.json",
+      "title": "\"Review: CATALOG.json\"",
       "type": "review_record",
       "authority": "PROPOSAL_UNREVIEWED",
       "epistemic_class": "UNKNOWN",
@@ -466,6 +1841,1641 @@
     {
       "source": "kad-project-map",
       "target": "kad-current-architecture",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c81c44be879620ab195e1931",
+      "target": "kad-3512b39b72cd87015f416fbc",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-bae662f769431048961da2f6",
+      "target": "kad-110e41150a009501431a26b0",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a9bf816d32049edacf0f3db4",
+      "target": "kad-adf61688e5735e12dd878bc0",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e63af0d3b675f95b06229c54",
+      "target": "kad-e68dc2a10d14f1e8527d339a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-17d33b1b5f762607bd6ac747",
+      "target": "kad-36a3bffe65bba8704b3da789",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c9a9228012314d540e6a5791",
+      "target": "kad-f27889de8923d63d72da390e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-8152fc45698210412aca5ea9",
+      "target": "kad-3149d62968ab08e91b5564a7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-00d2877be1cedd19c2ff3fb6",
+      "target": "kad-61a0894f9474435ab5f893f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-71885c04bad5613069eec2b9",
+      "target": "kad-adf61688e5735e12dd878bc0",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-41549afab0733fd43f119e5d",
+      "target": "kad-a711dc2efc8fc0f836266edd",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-7376ef97f3384fdb70cc588a",
+      "target": "kad-3149d62968ab08e91b5564a7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a5550ccc48cebe60fdaaea0b",
+      "target": "kad-f27889de8923d63d72da390e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-bf8babea2ea5f781cdcf4588",
+      "target": "kad-36a3bffe65bba8704b3da789",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6f296cc8d7e045ff36d570b2",
+      "target": "kad-61a0894f9474435ab5f893f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e112c96f0adcc68b17455c36",
+      "target": "kad-a711dc2efc8fc0f836266edd",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-b66e26f5deec7702b3266418",
+      "target": "kad-a711dc2efc8fc0f836266edd",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-7c28c4ffd664a464c5f05f24",
+      "target": "kad-f786e975a5782f5e451fcbde",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1deb41aaa1eaf7215e00ac77",
+      "target": "kad-a711dc2efc8fc0f836266edd",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f786d2bec33cb3d69c1fe376",
+      "target": "kad-a9c14a76a53d14c5d112a95e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-aea80a2ec91a46bfae687917",
+      "target": "kad-b20cc348053d01fe90f9c9e7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6624bdde6b750efb47835959",
+      "target": "kad-e68dc2a10d14f1e8527d339a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-de47715b04fa78a764525ad9",
+      "target": "kad-36a3bffe65bba8704b3da789",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-273e741f6e12a077419b1b6a",
+      "target": "kad-6e8c2de547e8991e458b3dfc",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-9d6f3fa5af5347ac9d6468ec",
+      "target": "kad-3149d62968ab08e91b5564a7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-cb5f8f1732a46718bf74e698",
+      "target": "kad-36a3bffe65bba8704b3da789",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-d4daf90460b399904d14e1c6",
+      "target": "kad-36a3bffe65bba8704b3da789",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f4afaa052e6b0825608abf14",
+      "target": "kad-61a0894f9474435ab5f893f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-9081fa92db5431f03e64ca71",
+      "target": "kad-f6712d01b6ca8fdeef9ad166",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-40f48fc0e45cd1f2cdb87488",
+      "target": "kad-adf61688e5735e12dd878bc0",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-331171389ee0004a516046f5",
+      "target": "kad-a9c14a76a53d14c5d112a95e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-77d0109d995479caeb5bcdb3",
+      "target": "kad-b20cc348053d01fe90f9c9e7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-2f019e22868efdcc14490aca",
+      "target": "kad-adf61688e5735e12dd878bc0",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-9e6492bf58d290c7726d7349",
+      "target": "kad-b20cc348053d01fe90f9c9e7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-239cea20fd61170f63fbeadf",
+      "target": "kad-110e41150a009501431a26b0",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6a6724e5f8e12b52a340fe0f",
+      "target": "kad-110e41150a009501431a26b0",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-8c26d8e15a7e09368eb54435",
+      "target": "kad-110e41150a009501431a26b0",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-d0fde8df18521cd538a8feba",
+      "target": "kad-f6712d01b6ca8fdeef9ad166",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6224d389bec1d56353ff2a7d",
+      "target": "kad-e68dc2a10d14f1e8527d339a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-dd447399ef7a870b82defbdd",
+      "target": "kad-f27889de8923d63d72da390e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a2ff7b320c4d506d98b77e2f",
+      "target": "kad-f27889de8923d63d72da390e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-bac9c8c0ddc8d0c27e1df47f",
+      "target": "kad-6e8c2de547e8991e458b3dfc",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-70d2bc1cb5b3dcf2b460d66d",
+      "target": "kad-a9c14a76a53d14c5d112a95e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-925e5807674dc1a35a0c5f3d",
+      "target": "kad-f786e975a5782f5e451fcbde",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-72f2f485af74b0b8cae4a0cd",
+      "target": "kad-adf61688e5735e12dd878bc0",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-173e512a652b393b61e5e65e",
+      "target": "kad-37c37edd3c4bdff3b430fab4",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-0088345e8fb6630bfc2784fc",
+      "target": "kad-37c37edd3c4bdff3b430fab4",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3125745221eb395875e0bf50",
+      "target": "kad-61a0894f9474435ab5f893f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6264249678ba6caeb8005684",
+      "target": "kad-3149d62968ab08e91b5564a7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f1efe1bb052df71efd2cb2e7",
+      "target": "kad-c0ea08f80a3b730cb3c4730a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-7e3f81053d3c7c4279cecfe3",
+      "target": "kad-61a0894f9474435ab5f893f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-54c152f460b89e88625386ae",
+      "target": "kad-110e41150a009501431a26b0",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-cd732cc6fd7f57089976bbb3",
+      "target": "kad-37c37edd3c4bdff3b430fab4",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-526233ec0829bc3369fc4503",
+      "target": "kad-6e8c2de547e8991e458b3dfc",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6b9b8967a7c7382badd30746",
+      "target": "kad-f6712d01b6ca8fdeef9ad166",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1d2f5ce94c5b7c65b37735f9",
+      "target": "kad-e68dc2a10d14f1e8527d339a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-0135db4a05dd19928148626c",
+      "target": "kad-e68dc2a10d14f1e8527d339a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-fe624cc45e668718e01d6ac8",
+      "target": "kad-37c37edd3c4bdff3b430fab4",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-caa4ae6cff34733ecfda4e34",
+      "target": "kad-f6712d01b6ca8fdeef9ad166",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-aed72bcf97a7345349520e10",
+      "target": "kad-b20cc348053d01fe90f9c9e7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-93a104f42fde9c80e64f647a",
+      "target": "kad-b20cc348053d01fe90f9c9e7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e5379e9ff73f9c656cbd3080",
+      "target": "kad-37c37edd3c4bdff3b430fab4",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-41975079f60597e21e106214",
+      "target": "kad-a711dc2efc8fc0f836266edd",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-4d9e19cc3d094d201c900e43",
+      "target": "kad-f27889de8923d63d72da390e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-b268bbf9fb1b74e6ee0554bf",
+      "target": "kad-f786e975a5782f5e451fcbde",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-d1b2fee2c5bc2f7bf5a02868",
+      "target": "kad-6e8c2de547e8991e458b3dfc",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-140752d834719398c81752c2",
+      "target": "kad-f6712d01b6ca8fdeef9ad166",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-5fdadcf7da8c62c1e30c0ebf",
+      "target": "kad-3149d62968ab08e91b5564a7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-bc4943fef9df08c7a8b3a86a",
+      "target": "kad-c0ea08f80a3b730cb3c4730a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3512b39b72cd87015f416fbc",
+      "target": "kad-37c37edd3c4bdff3b430fab4",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3512b39b72cd87015f416fbc",
+      "target": "kad-61a0894f9474435ab5f893f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3512b39b72cd87015f416fbc",
+      "target": "kad-3149d62968ab08e91b5564a7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3512b39b72cd87015f416fbc",
+      "target": "kad-c81c44be879620ab195e1931",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-b242560dc1f59b032c63fa49",
+      "target": "kad-c0ea08f80a3b730cb3c4730a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-566420266670f9c3d0727df3",
+      "target": "kad-c0ea08f80a3b730cb3c4730a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-602cd0c4876599d3ae42666c",
+      "target": "kad-37c37edd3c4bdff3b430fab4",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-b3c7512e3f46d0d8cc19d4a2",
+      "target": "kad-6e8c2de547e8991e458b3dfc",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6917d97f96dccb393922e802",
+      "target": "kad-f786e975a5782f5e451fcbde",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-0ec2fe5f86fb9b2b9cfc96f9",
+      "target": "kad-c0ea08f80a3b730cb3c4730a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-01af118371ce04233264e6e3",
+      "target": "kad-a9c14a76a53d14c5d112a95e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-adc160afa98b763ab72bcf01",
+      "target": "kad-f786e975a5782f5e451fcbde",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c776eced9308a256ec25557d",
+      "target": "kad-a9c14a76a53d14c5d112a95e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-37c37edd3c4bdff3b430fab4",
+      "target": "kad-cd732cc6fd7f57089976bbb3",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-37c37edd3c4bdff3b430fab4",
+      "target": "kad-173e512a652b393b61e5e65e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-37c37edd3c4bdff3b430fab4",
+      "target": "kad-fe624cc45e668718e01d6ac8",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-37c37edd3c4bdff3b430fab4",
+      "target": "kad-e5379e9ff73f9c656cbd3080",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-37c37edd3c4bdff3b430fab4",
+      "target": "kad-0088345e8fb6630bfc2784fc",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-61a0894f9474435ab5f893f9",
+      "target": "kad-f4afaa052e6b0825608abf14",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-61a0894f9474435ab5f893f9",
+      "target": "kad-3125745221eb395875e0bf50",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-61a0894f9474435ab5f893f9",
+      "target": "kad-7e3f81053d3c7c4279cecfe3",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-61a0894f9474435ab5f893f9",
+      "target": "kad-6f296cc8d7e045ff36d570b2",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-61a0894f9474435ab5f893f9",
+      "target": "kad-00d2877be1cedd19c2ff3fb6",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-b20cc348053d01fe90f9c9e7",
+      "target": "kad-93a104f42fde9c80e64f647a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-b20cc348053d01fe90f9c9e7",
+      "target": "kad-9e6492bf58d290c7726d7349",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-b20cc348053d01fe90f9c9e7",
+      "target": "kad-77d0109d995479caeb5bcdb3",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-b20cc348053d01fe90f9c9e7",
+      "target": "kad-aea80a2ec91a46bfae687917",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-b20cc348053d01fe90f9c9e7",
+      "target": "kad-aed72bcf97a7345349520e10",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-adf61688e5735e12dd878bc0",
+      "target": "kad-a9bf816d32049edacf0f3db4",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-adf61688e5735e12dd878bc0",
+      "target": "kad-72f2f485af74b0b8cae4a0cd",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-adf61688e5735e12dd878bc0",
+      "target": "kad-71885c04bad5613069eec2b9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-adf61688e5735e12dd878bc0",
+      "target": "kad-40f48fc0e45cd1f2cdb87488",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-adf61688e5735e12dd878bc0",
+      "target": "kad-2f019e22868efdcc14490aca",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f6712d01b6ca8fdeef9ad166",
+      "target": "kad-9081fa92db5431f03e64ca71",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f6712d01b6ca8fdeef9ad166",
+      "target": "kad-6b9b8967a7c7382badd30746",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f6712d01b6ca8fdeef9ad166",
+      "target": "kad-caa4ae6cff34733ecfda4e34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f6712d01b6ca8fdeef9ad166",
+      "target": "kad-140752d834719398c81752c2",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f6712d01b6ca8fdeef9ad166",
+      "target": "kad-d0fde8df18521cd538a8feba",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a711dc2efc8fc0f836266edd",
+      "target": "kad-1deb41aaa1eaf7215e00ac77",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a711dc2efc8fc0f836266edd",
+      "target": "kad-41549afab0733fd43f119e5d",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a711dc2efc8fc0f836266edd",
+      "target": "kad-41975079f60597e21e106214",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a711dc2efc8fc0f836266edd",
+      "target": "kad-e112c96f0adcc68b17455c36",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a711dc2efc8fc0f836266edd",
+      "target": "kad-b66e26f5deec7702b3266418",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f27889de8923d63d72da390e",
+      "target": "kad-c9a9228012314d540e6a5791",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f27889de8923d63d72da390e",
+      "target": "kad-a2ff7b320c4d506d98b77e2f",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f27889de8923d63d72da390e",
+      "target": "kad-dd447399ef7a870b82defbdd",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f27889de8923d63d72da390e",
+      "target": "kad-a5550ccc48cebe60fdaaea0b",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f27889de8923d63d72da390e",
+      "target": "kad-4d9e19cc3d094d201c900e43",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e68dc2a10d14f1e8527d339a",
+      "target": "kad-1d2f5ce94c5b7c65b37735f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e68dc2a10d14f1e8527d339a",
+      "target": "kad-6224d389bec1d56353ff2a7d",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e68dc2a10d14f1e8527d339a",
+      "target": "kad-0135db4a05dd19928148626c",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e68dc2a10d14f1e8527d339a",
+      "target": "kad-6624bdde6b750efb47835959",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e68dc2a10d14f1e8527d339a",
+      "target": "kad-e63af0d3b675f95b06229c54",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c0ea08f80a3b730cb3c4730a",
+      "target": "kad-0ec2fe5f86fb9b2b9cfc96f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c0ea08f80a3b730cb3c4730a",
+      "target": "kad-f1efe1bb052df71efd2cb2e7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c0ea08f80a3b730cb3c4730a",
+      "target": "kad-bc4943fef9df08c7a8b3a86a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c0ea08f80a3b730cb3c4730a",
+      "target": "kad-566420266670f9c3d0727df3",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c0ea08f80a3b730cb3c4730a",
+      "target": "kad-b242560dc1f59b032c63fa49",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-36a3bffe65bba8704b3da789",
+      "target": "kad-bf8babea2ea5f781cdcf4588",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-36a3bffe65bba8704b3da789",
+      "target": "kad-cb5f8f1732a46718bf74e698",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-36a3bffe65bba8704b3da789",
+      "target": "kad-d4daf90460b399904d14e1c6",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-36a3bffe65bba8704b3da789",
+      "target": "kad-de47715b04fa78a764525ad9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-36a3bffe65bba8704b3da789",
+      "target": "kad-17d33b1b5f762607bd6ac747",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a9c14a76a53d14c5d112a95e",
+      "target": "kad-c776eced9308a256ec25557d",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a9c14a76a53d14c5d112a95e",
+      "target": "kad-f786d2bec33cb3d69c1fe376",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a9c14a76a53d14c5d112a95e",
+      "target": "kad-70d2bc1cb5b3dcf2b460d66d",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a9c14a76a53d14c5d112a95e",
+      "target": "kad-331171389ee0004a516046f5",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a9c14a76a53d14c5d112a95e",
+      "target": "kad-01af118371ce04233264e6e3",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f786e975a5782f5e451fcbde",
+      "target": "kad-b268bbf9fb1b74e6ee0554bf",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f786e975a5782f5e451fcbde",
+      "target": "kad-6917d97f96dccb393922e802",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f786e975a5782f5e451fcbde",
+      "target": "kad-7c28c4ffd664a464c5f05f24",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f786e975a5782f5e451fcbde",
+      "target": "kad-925e5807674dc1a35a0c5f3d",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-f786e975a5782f5e451fcbde",
+      "target": "kad-adc160afa98b763ab72bcf01",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6e8c2de547e8991e458b3dfc",
+      "target": "kad-d1b2fee2c5bc2f7bf5a02868",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6e8c2de547e8991e458b3dfc",
+      "target": "kad-bac9c8c0ddc8d0c27e1df47f",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6e8c2de547e8991e458b3dfc",
+      "target": "kad-273e741f6e12a077419b1b6a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6e8c2de547e8991e458b3dfc",
+      "target": "kad-b3c7512e3f46d0d8cc19d4a2",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-6e8c2de547e8991e458b3dfc",
+      "target": "kad-526233ec0829bc3369fc4503",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-110e41150a009501431a26b0",
+      "target": "kad-8c26d8e15a7e09368eb54435",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-110e41150a009501431a26b0",
+      "target": "kad-54c152f460b89e88625386ae",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-110e41150a009501431a26b0",
+      "target": "kad-bae662f769431048961da2f6",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-110e41150a009501431a26b0",
+      "target": "kad-239cea20fd61170f63fbeadf",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-110e41150a009501431a26b0",
+      "target": "kad-6a6724e5f8e12b52a340fe0f",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3149d62968ab08e91b5564a7",
+      "target": "kad-8152fc45698210412aca5ea9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3149d62968ab08e91b5564a7",
+      "target": "kad-5fdadcf7da8c62c1e30c0ebf",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3149d62968ab08e91b5564a7",
+      "target": "kad-7376ef97f3384fdb70cc588a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3149d62968ab08e91b5564a7",
+      "target": "kad-6264249678ba6caeb8005684",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3149d62968ab08e91b5564a7",
+      "target": "kad-9d6f3fa5af5347ac9d6468ec",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-95833e436d5481aa56807e2d",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-95833e436d5481aa56807e2d",
+      "target": "gaya",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-95833e436d5481aa56807e2d",
+      "target": "kad-211156de69f94207a4d781f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-95833e436d5481aa56807e2d",
+      "target": "kad-bcadf4fbc2d12cd7e52675bb",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-95833e436d5481aa56807e2d",
+      "target": "drakovia",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-95833e436d5481aa56807e2d",
+      "target": "kad-e8d20d78f468b60f2ef3a178",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-95833e436d5481aa56807e2d",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-96837d7ac9cd793b93bce7fe",
+      "target": "kad-a471ca1d4a7e831752640f28",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-96837d7ac9cd793b93bce7fe",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-96837d7ac9cd793b93bce7fe",
+      "target": "kad-4df1a1a926719431dfe70e21",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-96837d7ac9cd793b93bce7fe",
+      "target": "kad-564c8a540ad58e4a59291b00",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-96837d7ac9cd793b93bce7fe",
+      "target": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-96837d7ac9cd793b93bce7fe",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-96837d7ac9cd793b93bce7fe",
+      "target": "kad-211156de69f94207a4d781f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-96837d7ac9cd793b93bce7fe",
+      "target": "savana_negra",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-96837d7ac9cd793b93bce7fe",
+      "target": "kad-9f7b56950d59c2fab85a4426",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-96837d7ac9cd793b93bce7fe",
+      "target": "kad-2e7ea145f92ea37552dafac9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-75ad66ca9f799d526f13f14e",
+      "target": "kad-c7d88c41b7ba102d0ce1b84a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-75ad66ca9f799d526f13f14e",
+      "target": "kad-fa4a8af0ba2b328138380c0e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-75ad66ca9f799d526f13f14e",
+      "target": "kad-31e04bb9516af1d978a1a5b9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-75ad66ca9f799d526f13f14e",
+      "target": "kad-3c0a3514829a8b2b564ab7d1",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-75ad66ca9f799d526f13f14e",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-75ad66ca9f799d526f13f14e",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-75ad66ca9f799d526f13f14e",
+      "target": "drakovia",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-75ad66ca9f799d526f13f14e",
+      "target": "kad-211156de69f94207a4d781f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-75ad66ca9f799d526f13f14e",
+      "target": "savana_negra",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-75ad66ca9f799d526f13f14e",
+      "target": "grande_arvore",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-75ad66ca9f799d526f13f14e",
+      "target": "kad-238abbf67e9bc5e7de975836",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-564c8a540ad58e4a59291b00",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-564c8a540ad58e4a59291b00",
+      "target": "kad-4df1a1a926719431dfe70e21",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-564c8a540ad58e4a59291b00",
+      "target": "kad-31e04bb9516af1d978a1a5b9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-564c8a540ad58e4a59291b00",
+      "target": "kad-fa4a8af0ba2b328138380c0e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-564c8a540ad58e4a59291b00",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-564c8a540ad58e4a59291b00",
+      "target": "kad-211156de69f94207a4d781f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-564c8a540ad58e4a59291b00",
+      "target": "yaark_nuustrad",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "target": "kad-dea51086c2ae3ffb8b8d3b28",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "target": "kad-2e7ea145f92ea37552dafac9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "target": "kad-211156de69f94207a4d781f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-52e4d93085677b5853b1fa8a",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-52e4d93085677b5853b1fa8a",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-52e4d93085677b5853b1fa8a",
+      "target": "kad-1086b6765606dfa78a4d26f7",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-52e4d93085677b5853b1fa8a",
+      "target": "sofia",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-52e4d93085677b5853b1fa8a",
+      "target": "gaya",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-52e4d93085677b5853b1fa8a",
+      "target": "kad-211156de69f94207a4d781f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-52e4d93085677b5853b1fa8a",
+      "target": "kad-c7d88c41b7ba102d0ce1b84a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-52e4d93085677b5853b1fa8a",
+      "target": "kad-31e04bb9516af1d978a1a5b9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-52e4d93085677b5853b1fa8a",
+      "target": "kad-fa4a8af0ba2b328138380c0e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-52e4d93085677b5853b1fa8a",
+      "target": "kad-9f7b56950d59c2fab85a4426",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-dd6cdaf9030db76a1b97e418",
+      "target": "kad-ab1d7f51e1f7c628cbfd28b8",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-dd6cdaf9030db76a1b97e418",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-dd6cdaf9030db76a1b97e418",
+      "target": "kad-e8d20d78f468b60f2ef3a178",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1afc32ca9a68976e9b69ff13",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1afc32ca9a68976e9b69ff13",
+      "target": "kad-3797211993a0049702ec2db1",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1afc32ca9a68976e9b69ff13",
+      "target": "kad-3492c345eec7f4c068402851",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1afc32ca9a68976e9b69ff13",
+      "target": "kad-211156de69f94207a4d781f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1afc32ca9a68976e9b69ff13",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1afc32ca9a68976e9b69ff13",
+      "target": "kad-9f7b56950d59c2fab85a4426",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-091a30150e6e27fd29c9ce78",
+      "target": "eloise_nihilo",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-091a30150e6e27fd29c9ce78",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-091a30150e6e27fd29c9ce78",
+      "target": "kad-e8d20d78f468b60f2ef3a178",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-091a30150e6e27fd29c9ce78",
+      "target": "kad-211156de69f94207a4d781f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-091a30150e6e27fd29c9ce78",
+      "target": "grande_arvore",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-31e04bb9516af1d978a1a5b9",
+      "target": "kad-fa4a8af0ba2b328138380c0e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-31e04bb9516af1d978a1a5b9",
+      "target": "gaya",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-31e04bb9516af1d978a1a5b9",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-31e04bb9516af1d978a1a5b9",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-31e04bb9516af1d978a1a5b9",
+      "target": "kad-c7d88c41b7ba102d0ce1b84a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3492c345eec7f4c068402851",
+      "target": "gaya",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3492c345eec7f4c068402851",
+      "target": "kad-1afc32ca9a68976e9b69ff13",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3492c345eec7f4c068402851",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3492c345eec7f4c068402851",
+      "target": "kad-3797211993a0049702ec2db1",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-fa4a8af0ba2b328138380c0e",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-fa4a8af0ba2b328138380c0e",
+      "target": "kad-31e04bb9516af1d978a1a5b9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-fa4a8af0ba2b328138380c0e",
+      "target": "gaya",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-fa4a8af0ba2b328138380c0e",
+      "target": "kad-c7d88c41b7ba102d0ce1b84a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-fa4a8af0ba2b328138380c0e",
+      "target": "kad-564c8a540ad58e4a59291b00",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "drakovia",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "gaya",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "kad-52e4d93085677b5853b1fa8a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "kad-564c8a540ad58e4a59291b00",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "kad-1afc32ca9a68976e9b69ff13",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "kad-dd6cdaf9030db76a1b97e418",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "kad-091a30150e6e27fd29c9ce78",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-211156de69f94207a4d781f9",
+      "target": "kad-95833e436d5481aa56807e2d",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1086b6765606dfa78a4d26f7",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1086b6765606dfa78a4d26f7",
+      "target": "kad-52e4d93085677b5853b1fa8a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1086b6765606dfa78a4d26f7",
+      "target": "kad-31e04bb9516af1d978a1a5b9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1086b6765606dfa78a4d26f7",
+      "target": "kad-fa4a8af0ba2b328138380c0e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1086b6765606dfa78a4d26f7",
+      "target": "kad-c7d88c41b7ba102d0ce1b84a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1086b6765606dfa78a4d26f7",
+      "target": "kad-3c0a3514829a8b2b564ab7d1",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-1086b6765606dfa78a4d26f7",
+      "target": "kad-a471ca1d4a7e831752640f28",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-bcadf4fbc2d12cd7e52675bb",
+      "target": "gaya",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-bcadf4fbc2d12cd7e52675bb",
+      "target": "kad-211156de69f94207a4d781f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-bcadf4fbc2d12cd7e52675bb",
+      "target": "kad-95833e436d5481aa56807e2d",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-bcadf4fbc2d12cd7e52675bb",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-bcadf4fbc2d12cd7e52675bb",
+      "target": "kad-238abbf67e9bc5e7de975836",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-4df1a1a926719431dfe70e21",
+      "target": "kad-564c8a540ad58e4a59291b00",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-4df1a1a926719431dfe70e21",
+      "target": "kad-31e04bb9516af1d978a1a5b9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-4df1a1a926719431dfe70e21",
+      "target": "kad-fa4a8af0ba2b328138380c0e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-4df1a1a926719431dfe70e21",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-4df1a1a926719431dfe70e21",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-9f7b56950d59c2fab85a4426",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-9f7b56950d59c2fab85a4426",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-9f7b56950d59c2fab85a4426",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-9f7b56950d59c2fab85a4426",
+      "target": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3797211993a0049702ec2db1",
+      "target": "kad-1afc32ca9a68976e9b69ff13",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3797211993a0049702ec2db1",
+      "target": "kad-3492c345eec7f4c068402851",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3797211993a0049702ec2db1",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-2e7ea145f92ea37552dafac9",
+      "target": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-2e7ea145f92ea37552dafac9",
+      "target": "kad-dea51086c2ae3ffb8b8d3b28",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-2e7ea145f92ea37552dafac9",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-2e7ea145f92ea37552dafac9",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3e4c154c38ac545fcc3e9e42",
+      "target": "kad-211156de69f94207a4d781f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3e4c154c38ac545fcc3e9e42",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3e4c154c38ac545fcc3e9e42",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3e4c154c38ac545fcc3e9e42",
+      "target": "kad-564c8a540ad58e4a59291b00",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3e4c154c38ac545fcc3e9e42",
+      "target": "kad-1afc32ca9a68976e9b69ff13",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3e4c154c38ac545fcc3e9e42",
+      "target": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3e4c154c38ac545fcc3e9e42",
+      "target": "kad-dd6cdaf9030db76a1b97e418",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3e4c154c38ac545fcc3e9e42",
+      "target": "kad-091a30150e6e27fd29c9ce78",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3e4c154c38ac545fcc3e9e42",
+      "target": "alexei_gusev",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3e4c154c38ac545fcc3e9e42",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-426aede0118d3f8b12f60b34",
+      "target": "kad-211156de69f94207a4d781f9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-426aede0118d3f8b12f60b34",
+      "target": "kad-238abbf67e9bc5e7de975836",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-426aede0118d3f8b12f60b34",
+      "target": "kad-c7d88c41b7ba102d0ce1b84a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-426aede0118d3f8b12f60b34",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-426aede0118d3f8b12f60b34",
+      "target": "kad-31e04bb9516af1d978a1a5b9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-426aede0118d3f8b12f60b34",
+      "target": "kad-fa4a8af0ba2b328138380c0e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-426aede0118d3f8b12f60b34",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-426aede0118d3f8b12f60b34",
+      "target": "kad-52e4d93085677b5853b1fa8a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-426aede0118d3f8b12f60b34",
+      "target": "kad-9f7b56950d59c2fab85a4426",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-238abbf67e9bc5e7de975836",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-238abbf67e9bc5e7de975836",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-238abbf67e9bc5e7de975836",
+      "target": "kad-3492c345eec7f4c068402851",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-238abbf67e9bc5e7de975836",
+      "target": "kad-1afc32ca9a68976e9b69ff13",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-238abbf67e9bc5e7de975836",
+      "target": "kad-bcadf4fbc2d12cd7e52675bb",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-9d35b20fa9543481a22cff10",
+      "target": "kad-9f7b56950d59c2fab85a4426",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-9d35b20fa9543481a22cff10",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-9d35b20fa9543481a22cff10",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e8d20d78f468b60f2ef3a178",
+      "target": "kad-dd6cdaf9030db76a1b97e418",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e8d20d78f468b60f2ef3a178",
+      "target": "kad-ab1d7f51e1f7c628cbfd28b8",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e8d20d78f468b60f2ef3a178",
+      "target": "kad-091a30150e6e27fd29c9ce78",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e8d20d78f468b60f2ef3a178",
+      "target": "kad-95833e436d5481aa56807e2d",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e8d20d78f468b60f2ef3a178",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-e8d20d78f468b60f2ef3a178",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3c0a3514829a8b2b564ab7d1",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-3c0a3514829a8b2b564ab7d1",
+      "target": "kad-a471ca1d4a7e831752640f28",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-ab1d7f51e1f7c628cbfd28b8",
+      "target": "kad-dd6cdaf9030db76a1b97e418",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-ab1d7f51e1f7c628cbfd28b8",
+      "target": "kad-e8d20d78f468b60f2ef3a178",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a471ca1d4a7e831752640f28",
+      "target": "kad-96837d7ac9cd793b93bce7fe",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a471ca1d4a7e831752640f28",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-a471ca1d4a7e831752640f28",
+      "target": "kad-3c0a3514829a8b2b564ab7d1",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-76ec58f6421a97e2b003ba1c",
+      "target": "kad-c7d88c41b7ba102d0ce1b84a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-76ec58f6421a97e2b003ba1c",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-76ec58f6421a97e2b003ba1c",
+      "target": "kad-fa4a8af0ba2b328138380c0e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-76ec58f6421a97e2b003ba1c",
+      "target": "kad-31e04bb9516af1d978a1a5b9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c7d88c41b7ba102d0ce1b84a",
+      "target": "kad-75ad66ca9f799d526f13f14e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c7d88c41b7ba102d0ce1b84a",
+      "target": "yaark_nuustrad",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c7d88c41b7ba102d0ce1b84a",
+      "target": "kad-76ec58f6421a97e2b003ba1c",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c7d88c41b7ba102d0ce1b84a",
+      "target": "kad-426aede0118d3f8b12f60b34",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c7d88c41b7ba102d0ce1b84a",
+      "target": "kad-52e4d93085677b5853b1fa8a",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c7d88c41b7ba102d0ce1b84a",
+      "target": "kad-31e04bb9516af1d978a1a5b9",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-c7d88c41b7ba102d0ce1b84a",
+      "target": "kad-fa4a8af0ba2b328138380c0e",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-dea51086c2ae3ffb8b8d3b28",
+      "target": "kad-41c8f1e1e9b1f30b0e0acb2c",
+      "relation": "REFERENCES"
+    },
+    {
+      "source": "kad-dea51086c2ae3ffb8b8d3b28",
+      "target": "kad-2e7ea145f92ea37552dafac9",
       "relation": "REFERENCES"
     }
   ]

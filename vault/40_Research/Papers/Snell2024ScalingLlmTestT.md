@@ -1,4 +1,5 @@
 ---
+kad_id: kad-b268bbf9fb1b74e6ee0554bf
 type: paper
 title: "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters"
 paper: "[[Snell2024ScalingLlmTestT]]"

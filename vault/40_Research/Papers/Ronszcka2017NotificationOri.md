@@ -1,4 +1,5 @@
 ---
+kad_id: kad-fe624cc45e668718e01d6ac8
 type: paper
 title: "Notification-Oriented Paradigm Framework 2.0: An Implementation Based On Design Patterns"
 paper: "[[Ronszcka2017NotificationOri]]"

@@ -1,4 +1,5 @@
 ---
+kad_id: kad-f1efe1bb052df71efd2cb2e7
 type: paper
 title: "Categorizing Variants of Goodhart's Law"
 paper: "[[Manheim2018CategorizingVar]]"

@@ -1,4 +1,5 @@
 ---
+kad_id: kad-273e741f6e12a077419b1b6a
 type: paper
 title: "Delegation in role-based access control"
 paper: "[[Crampton2006DelegationInRol]]"

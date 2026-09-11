@@ -1,4 +1,5 @@
 ---
+kad_id: kad-41c8f1e1e9b1f30b0e0acb2c
 slug: douglas
 titulo: "Douglas, o Violeiro"
 categoria: characters

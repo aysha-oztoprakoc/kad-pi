@@ -1,4 +1,5 @@
 ---
+kad_id: kad-f4afaa052e6b0825608abf14
 type: paper
 title: "The many faces of publish/subscribe"
 paper: "[[Eugster2003TheManyFacesOfP]]"

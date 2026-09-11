@@ -1,8 +1,8 @@
 {
   "schema": "kad-research-corpus-v1",
   "generator_version": "1.0.0",
-  "source_vault_revision": "77d181f2a9359fc3502678616692b356ca940f509b1aae2c9cbf3efdf0dc3afe",
-  "generated_at": "2026-09-07T01:22:33.319Z",
+  "source_vault_revision": "a9fa62ebd187b3ad7138d3fa374c05e3889babd5a954979d6b1a269cb8f17b4c",
+  "generated_at": "2026-09-11T21:57:40.417Z",
   "corpus": [
     {
       "id": "toolformer-schick-2023",

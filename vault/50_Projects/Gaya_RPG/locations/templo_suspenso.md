@@ -1,4 +1,5 @@
 ---
+kad_id: kad-238abbf67e9bc5e7de975836
 slug: templo_suspenso
 titulo: "O Templo Suspenso e o Colosso Ancestral"
 categoria: locations

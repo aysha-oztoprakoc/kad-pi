@@ -1,4 +1,5 @@
 ---
+kad_id: kad-2f019e22868efdcc14490aca
 type: paper
 title: "Foundations of Session Types and Behavioural Contracts"
 paper: "[[Httel2016FoundationsOfSe]]"

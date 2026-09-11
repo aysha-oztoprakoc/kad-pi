@@ -1,4 +1,5 @@
 ---
+kad_id: kad-95833e436d5481aa56807e2d
 slug: akuanduba
 titulo: "Akuanduba, a Ave Phoenix"
 categoria: characters

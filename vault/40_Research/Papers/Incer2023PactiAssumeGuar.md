@@ -1,4 +1,5 @@
 ---
+kad_id: kad-9e6492bf58d290c7726d7349
 type: paper
 title: "Pacti: Assume-Guarantee Contracts for Efficient Compositional Analysis and Design"
 paper: "[[Incer2023PactiAssumeGuar]]"

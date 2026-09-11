@@ -1,4 +1,5 @@
 ---
+kad_id: kad-54c152f460b89e88625386ae
 type: paper
 title: "Assessing Dependability with Software Fault Injection"
 paper: "[[Natella2016AssessingDepend]]"

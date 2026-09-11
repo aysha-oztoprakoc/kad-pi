@@ -1,4 +1,5 @@
 ---
+kad_id: kad-bae662f769431048961da2f6
 type: paper
 title: "Hardware-in-the-Loop-Based Real-Time Fault Injection Framework for Dynamic Behavior Analysis of Automotive Software Systems"
 paper: "[[Abboush2022HardwareInTheLo]]"

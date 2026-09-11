@@ -1,4 +1,5 @@
 ---
+kad_id: kad-239cea20fd61170f63fbeadf
 type: paper
 title: "AVFI: Fault Injection for Autonomous Vehicles"
 paper: "[[Jha2018AvfiFaultInject]]"

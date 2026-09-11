@@ -1,4 +1,5 @@
 ---
+kad_id: kad-ab1d7f51e1f7c628cbfd28b8
 slug: garra_de_kravut
 titulo: "Garra de Kravut"
 categoria: mechanics

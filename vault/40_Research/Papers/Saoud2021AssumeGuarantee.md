@@ -1,4 +1,5 @@
 ---
+kad_id: kad-93a104f42fde9c80e64f647a
 type: paper
 title: "Assume-guarantee contracts for continuous-time systems"
 paper: "[[Saoud2021AssumeGuarantee]]"

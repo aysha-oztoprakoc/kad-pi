@@ -1,4 +1,5 @@
 ---
+kad_id: kad-adc160afa98b763ab72bcf01
 type: paper
 title: "Sample, Scrutinize and Scale: Effective Inference-Time Search by Scaling Verification"
 paper: "[[Zhao2025SampleScrutiniz]]"

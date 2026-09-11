@@ -1,4 +1,5 @@
 ---
+kad_id: kad-0135db4a05dd19928148626c
 type: paper
 title: "Looking Back on Recovery Blocks and Conversations"
 paper: "[[Randell2025LookingBackOnRe]]"

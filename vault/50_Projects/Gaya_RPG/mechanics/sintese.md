@@ -1,4 +1,5 @@
 ---
+kad_id: kad-c7d88c41b7ba102d0ce1b84a
 slug: sintese
 titulo: "Síntese (Yaark de Ayşa Öztoprak)"
 categoria: mechanics

@@ -1,4 +1,5 @@
 ---
+kad_id: kad-6917d97f96dccb393922e802
 type: paper
 title: "Generative Verifiers: Reward Modeling as Next-Token Prediction"
 paper: "[[Zhang2024GenerativeVerif]]"

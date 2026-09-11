@@ -1,4 +1,5 @@
 ---
+kad_id: kad-925e5807674dc1a35a0c5f3d
 type: paper
 title: "Multi-Agent Verification: Scaling Test-Time Compute with Multiple Verifiers"
 paper: "[[Lifshitz2025MultiAgentVerif]]"

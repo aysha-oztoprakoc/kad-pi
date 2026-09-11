@@ -1,4 +1,5 @@
 ---
+kad_id: kad-331171389ee0004a516046f5
 type: paper
 title: "In-context Autoencoder for Context Compression in a Large Language Model"
 paper: "[[Ge2023InContextAutoen]]"

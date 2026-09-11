@@ -1,4 +1,5 @@
 ---
+kad_id: kad-7e3f81053d3c7c4279cecfe3
 type: paper
 title: "Reduction of Unnecessarily Ordered Event Messages in Peer-to-Peer Model of Topic-Based Publish/Subscribe Systems"
 paper: "[[Nakayama2016ReductionOfUnne]]"

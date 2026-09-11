@@ -1,4 +1,5 @@
 ---
+kad_id: kad-d0fde8df18521cd538a8feba
 type: paper
 title: "A Controlled Experiment with Novice Developers on the Impact of Task Description Granularity on Software Quality in Test-Driven Development"
 paper: "[[Karac2021AControlledExpe]]"

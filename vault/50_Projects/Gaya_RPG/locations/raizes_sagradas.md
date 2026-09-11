@@ -1,4 +1,5 @@
 ---
+kad_id: kad-3797211993a0049702ec2db1
 slug: raizes_sagradas
 titulo: "Raízes Sagradas — Capela de Roukash Tashtael"
 categoria: locations

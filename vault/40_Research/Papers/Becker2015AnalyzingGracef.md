@@ -1,4 +1,5 @@
 ---
+kad_id: kad-a5550ccc48cebe60fdaaea0b
 type: paper
 title: "Analyzing Graceful Degradation for Mixed Critical Fault-Tolerant Real-Time Systems"
 paper: "[[Becker2015AnalyzingGracef]]"

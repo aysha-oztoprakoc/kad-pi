@@ -1,4 +1,5 @@
 ---
+kad_id: kad-211156de69f94207a4d781f9
 slug: equipe_ykt
 titulo: "Equipe YKT (Família e Aliança do Refúgio)"
 categoria: factions

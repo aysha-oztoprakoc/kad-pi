@@ -1,4 +1,5 @@
 ---
+kad_id: kad-3512b39b72cd87015f416fbc
 type: paper
 title: "Project Sid: Many-Agent Simulations Toward AI Civilization"
 paper: "[[Yang2024ProjectSidMany]]"

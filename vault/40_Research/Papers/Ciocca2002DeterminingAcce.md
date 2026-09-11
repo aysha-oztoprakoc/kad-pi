@@ -1,4 +1,5 @@
 ---
+kad_id: kad-6624bdde6b750efb47835959
 type: paper
 title: "Determining Acceptance Tests for Application-Level Fault Detection"
 paper: "[[Ciocca2002DeterminingAcce]]"

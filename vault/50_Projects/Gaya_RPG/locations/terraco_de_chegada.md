@@ -1,4 +1,5 @@
 ---
+kad_id: kad-9d35b20fa9543481a22cff10
 slug: terraco_de_chegada
 titulo: "Terraço de Chegada e Plataforma de Içamento"
 categoria: locations

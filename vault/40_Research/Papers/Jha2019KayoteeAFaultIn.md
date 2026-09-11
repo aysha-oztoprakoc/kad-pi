@@ -1,4 +1,5 @@
 ---
+kad_id: kad-6a6724e5f8e12b52a340fe0f
 type: paper
 title: "Kayotee: A Fault Injection-based System to Assess the Safety and Reliability of Autonomous Vehicles to Faults and Errors"
 paper: "[[Jha2019KayoteeAFaultIn]]"

@@ -1,4 +1,5 @@
 ---
+kad_id: kad-426aede0118d3f8b12f60b34
 slug: refugio_ykt
 titulo: "Refúgio YKT — A Árvore sob o Templo"
 categoria: locations

@@ -1,4 +1,5 @@
 ---
+kad_id: kad-76ec58f6421a97e2b003ba1c
 slug: nyr_e_zhar
 titulo: "Nyr e Zhar — As Lâminas Gêmeas de Síntese"
 categoria: mechanics

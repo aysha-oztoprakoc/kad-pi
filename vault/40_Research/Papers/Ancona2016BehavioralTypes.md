@@ -1,4 +1,5 @@
 ---
+kad_id: kad-a9bf816d32049edacf0f3db4
 type: paper
 title: "Behavioral Types in Programming Languages"
 paper: "[[Ancona2016BehavioralTypes]]"

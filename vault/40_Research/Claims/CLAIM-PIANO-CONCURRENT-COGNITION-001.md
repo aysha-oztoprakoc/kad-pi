@@ -1,4 +1,5 @@
 ---
+kad_id: kad-c81c44be879620ab195e1931
 type: claim
 claim_id: "CLAIM-PIANO-CONCURRENT-COGNITION-001"
 title: "A agregação concorrente de fluxos cognitivos via Cognitive Controller com Action Awareness é condição necessária para difusão social adaptativa em sociedades de agentes"

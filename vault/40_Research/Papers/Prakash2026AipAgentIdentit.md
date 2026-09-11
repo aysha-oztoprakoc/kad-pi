@@ -1,4 +1,5 @@
 ---
+kad_id: kad-526233ec0829bc3369fc4503
 type: paper
 title: "AIP: Agent Identity Protocol for Verifiable Delegation Across MCP and A2A"
 paper: "[[Prakash2026AipAgentIdentit]]"

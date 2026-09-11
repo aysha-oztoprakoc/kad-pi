@@ -1,4 +1,5 @@
 ---
+kad_id: kad-2e7ea145f92ea37552dafac9
 slug: ramo_de_douglas
 titulo: "Ramo de Douglas — Salão de Cortesia e Música"
 categoria: locations

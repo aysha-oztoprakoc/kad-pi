@@ -1,4 +1,5 @@
 ---
+kad_id: kad-72f2f485af74b0b8cae4a0cd
 type: paper
 title: "Lightweight functional session types"
 paper: "[[Lindley2022LightweightFunc]]"

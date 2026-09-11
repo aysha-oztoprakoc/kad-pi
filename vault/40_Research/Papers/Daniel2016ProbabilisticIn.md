@@ -1,4 +1,5 @@
 ---
+kad_id: kad-9d6f3fa5af5347ac9d6468ec
 type: paper
 title: "Probabilistic inference for determining options in reinforcement learning"
 paper: "[[Daniel2016ProbabilisticIn]]"

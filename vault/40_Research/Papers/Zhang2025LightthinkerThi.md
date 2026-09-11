@@ -1,4 +1,5 @@
 ---
+kad_id: kad-01af118371ce04233264e6e3
 type: paper
 title: "LightThinker: Thinking Step-by-Step Compression"
 paper: "[[Zhang2025LightthinkerThi]]"

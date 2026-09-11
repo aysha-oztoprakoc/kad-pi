@@ -1,4 +1,5 @@
 ---
+kad_id: kad-dd6cdaf9030db76a1b97e418
 slug: niara
 titulo: "Niara, a Cavaleira do Eco"
 categoria: characters

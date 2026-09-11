@@ -1,4 +1,5 @@
 ---
+kad_id: kad-c776eced9308a256ec25557d
 type: paper
 title: "A Survey on Model Compression for Large Language Models"
 paper: "[[Zhu2023ASurveyOnModelC]]"

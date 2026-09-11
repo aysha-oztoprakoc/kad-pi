@@ -1,4 +1,5 @@
 ---
+kad_id: kad-e63af0d3b675f95b06229c54
 type: paper
 title: "Recovery blocks in action: A system supporting high reliability"
 paper: "[[Anderson1976RecoveryBlocksI]]"

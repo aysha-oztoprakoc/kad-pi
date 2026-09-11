@@ -1,4 +1,5 @@
 ---
+kad_id: kad-6b9b8967a7c7382badd30746
 type: paper
 title: "The Effects of Test-Driven Development on External Quality and Productivity: A Meta-Analysis"
 paper: "[[Rafique2013TheEffectsOfTes]]"

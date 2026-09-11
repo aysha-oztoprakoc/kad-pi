@@ -1,4 +1,5 @@
 ---
+kad_id: kad-31e04bb9516af1d978a1a5b9
 slug: khan
 titulo: "Khan (Knaerethum) — A Matéria Primordial"
 categoria: cosmology

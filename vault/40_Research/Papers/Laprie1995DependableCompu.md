@@ -1,4 +1,5 @@
 ---
+kad_id: kad-a2ff7b320c4d506d98b77e2f
 type: paper
 title: "DEPENDABLE COMPUTING AND FAULT TOLERANCE : CONCEPTS AND TERMINOLOGY"
 paper: "[[Laprie1995DependableCompu]]"

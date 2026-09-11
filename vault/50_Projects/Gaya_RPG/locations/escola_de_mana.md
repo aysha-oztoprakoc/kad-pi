@@ -1,4 +1,5 @@
 ---
+kad_id: kad-4df1a1a926719431dfe70e21
 slug: escola_de_mana
 titulo: "Escola de Mana — Sala de Instrução de Begônio"
 categoria: locations

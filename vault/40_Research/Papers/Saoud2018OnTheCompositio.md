@@ -1,4 +1,5 @@
 ---
+kad_id: kad-aed72bcf97a7345349520e10
 type: paper
 title: "On the Composition of Discrete and Continuous-time Assume-Guarantee Contracts for Invariance"
 paper: "[[Saoud2018OnTheCompositio]]"

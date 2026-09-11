@@ -1,4 +1,5 @@
 ---
+kad_id: kad-aea80a2ec91a46bfae687917
 type: paper
 title: "Contracts-refinement proof system for component-based embedded systems"
 paper: "[[Cimatti2014ContractsRefine]]"

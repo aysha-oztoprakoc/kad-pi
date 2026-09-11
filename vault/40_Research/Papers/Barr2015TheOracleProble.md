@@ -1,4 +1,5 @@
 ---
+kad_id: kad-41549afab0733fd43f119e5d
 type: paper
 title: "The Oracle Problem in Software Testing: A Survey"
 paper: "[[Barr2015TheOracleProble]]"

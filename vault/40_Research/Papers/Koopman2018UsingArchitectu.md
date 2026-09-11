@@ -1,4 +1,5 @@
 ---
+kad_id: kad-dd447399ef7a870b82defbdd
 type: paper
 title: "Using Architectural Properties to Model and Measure System-Wide Graceful Degradation"
 paper: "[[Koopman2018UsingArchitectu]]"

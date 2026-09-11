@@ -1,4 +1,5 @@
 ---
+kad_id: kad-6224d389bec1d56353ff2a7d
 type: paper
 title: "Distributed Execution of Recovery Blocks: An Approach for Uniform Treatment of Hardware and Software Faults in Real-Time Applications"
 paper: "[[Kim1989DistributedExec]]"

@@ -1,4 +1,5 @@
 ---
+kad_id: kad-6264249678ba6caeb8005684
 type: paper
 title: "Temporal Abstraction in Reinforcement Learning with the Successor Representation"
 paper: "[[Machado2021TemporalAbstrac]]"

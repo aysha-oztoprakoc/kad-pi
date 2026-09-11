@@ -1,4 +1,5 @@
 ---
+kad_id: kad-7c28c4ffd664a464c5f05f24
 type: paper
 title: "SETS: Leveraging Self-Verification and Self-Correction for Improved Test-Time Scaling"
 paper: "[[Chen2025SetsLeveragingS]]"

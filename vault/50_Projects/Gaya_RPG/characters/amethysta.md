@@ -1,4 +1,5 @@
 ---
+kad_id: kad-96837d7ac9cd793b93bce7fe
 slug: amethysta
 titulo: "Amethysta Öztoprak"
 categoria: characters

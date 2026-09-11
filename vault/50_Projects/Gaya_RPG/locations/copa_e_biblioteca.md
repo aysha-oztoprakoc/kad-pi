@@ -1,4 +1,5 @@
 ---
+kad_id: kad-bcadf4fbc2d12cd7e52675bb
 slug: copa_e_biblioteca
 titulo: "Copa da Árvore, Biblioteca e Observatório"
 categoria: locations

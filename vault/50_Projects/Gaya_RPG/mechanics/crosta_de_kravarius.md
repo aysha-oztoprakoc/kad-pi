@@ -1,4 +1,5 @@
 ---
+kad_id: kad-3c0a3514829a8b2b564ab7d1
 slug: crosta_de_kravarius
 titulo: "Crosta de Kravarius"
 categoria: mechanics

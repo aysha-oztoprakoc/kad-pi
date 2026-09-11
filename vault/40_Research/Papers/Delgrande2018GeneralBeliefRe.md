@@ -1,4 +1,5 @@
 ---
+kad_id: kad-cb5f8f1732a46718bf74e698
 type: paper
 title: "General Belief Revision"
 paper: "[[Delgrande2018GeneralBeliefRe]]"

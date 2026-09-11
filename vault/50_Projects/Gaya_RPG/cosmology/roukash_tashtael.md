@@ -1,4 +1,5 @@
 ---
+kad_id: kad-3492c345eec7f4c068402851
 slug: roukash_tashtael
 titulo: "Roukash Tashtael — Terceiro Titã Primordial de Energia"
 categoria: cosmology

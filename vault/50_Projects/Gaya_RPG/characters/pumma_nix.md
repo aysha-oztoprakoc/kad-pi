@@ -1,4 +1,5 @@
 ---
+kad_id: kad-091a30150e6e27fd29c9ce78
 slug: pumma_nix
 titulo: "Pumma Nix, A Leal (Eloise Nihilo)"
 categoria: characters

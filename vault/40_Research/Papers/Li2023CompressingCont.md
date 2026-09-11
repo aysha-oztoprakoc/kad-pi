@@ -1,4 +1,5 @@
 ---
+kad_id: kad-70d2bc1cb5b3dcf2b460d66d
 type: paper
 title: "Compressing Context to Enhance Inference Efficiency of Large Language Models"
 paper: "[[Li2023CompressingCont]]"

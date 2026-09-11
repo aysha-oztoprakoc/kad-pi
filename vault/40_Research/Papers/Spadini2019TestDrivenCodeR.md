@@ -1,4 +1,5 @@
 ---
+kad_id: kad-140752d834719398c81752c2
 type: paper
 title: "Test-Driven Code Review: An Empirical Study"
 paper: "[[Spadini2019TestDrivenCodeR]]"

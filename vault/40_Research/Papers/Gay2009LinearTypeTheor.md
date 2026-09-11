@@ -1,4 +1,5 @@
 ---
+kad_id: kad-40f48fc0e45cd1f2cdb87488
 type: paper
 title: "Linear type theory for asynchronous session types"
 paper: "[[Gay2009LinearTypeTheor]]"

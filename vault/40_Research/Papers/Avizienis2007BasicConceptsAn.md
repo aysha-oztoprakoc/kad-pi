@@ -1,4 +1,5 @@
 ---
+kad_id: kad-c9a9228012314d540e6a5791
 type: paper
 title: "Basic concepts and taxonomy of dependable and secure computing"
 paper: "[[Avizienis2007BasicConceptsAn]]"

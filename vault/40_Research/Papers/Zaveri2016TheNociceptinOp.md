@@ -1,4 +1,5 @@
 ---
+kad_id: kad-602cd0c4876599d3ae42666c
 type: paper
 title: "The Nociceptin Opioid Receptor (NOP) as a Therapeutic Target: Progress in Translation from Preclinical Research to Clinical Utility"
 paper: "[[Zaveri2016TheNociceptinOp]]"

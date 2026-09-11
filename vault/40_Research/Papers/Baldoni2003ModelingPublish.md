@@ -1,4 +1,5 @@
 ---
+kad_id: kad-00d2877be1cedd19c2ff3fb6
 type: paper
 title: "Modeling publish/subscribe communication systems: towards a formal approach"
 paper: "[[Baldoni2003ModelingPublish]]"

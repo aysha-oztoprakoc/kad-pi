@@ -1,4 +1,5 @@
 ---
+kad_id: kad-de47715b04fa78a764525ad9
 type: paper
 title: "Paraconsistent Belief Revision: A Replacement-Enriched LFI for Epistemic Entrenchment"
 paper: "[[Coniglio2024ParaconsistentB]]"

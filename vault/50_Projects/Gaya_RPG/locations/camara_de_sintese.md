@@ -1,4 +1,5 @@
 ---
+kad_id: kad-1086b6765606dfa78a4d26f7
 slug: camara_de_sintese
 titulo: "Câmara de Síntese — Ateliê de Ayşa e Lylia"
 categoria: locations

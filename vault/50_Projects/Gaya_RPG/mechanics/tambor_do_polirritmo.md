@@ -1,4 +1,5 @@
 ---
+kad_id: kad-dea51086c2ae3ffb8b8d3b28
 slug: tambor_do_polirritmo
 titulo: "Tambor do Polirritmo"
 categoria: mechanics

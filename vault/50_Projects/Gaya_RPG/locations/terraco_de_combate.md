@@ -1,4 +1,5 @@
 ---
+kad_id: kad-e8d20d78f468b60f2ef3a178
 slug: terraco_de_combate
 titulo: "Terraço de Combate e Pátio Tático"
 categoria: locations

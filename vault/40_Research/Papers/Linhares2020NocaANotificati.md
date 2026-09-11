@@ -1,4 +1,5 @@
 ---
+kad_id: kad-0088345e8fb6630bfc2784fc
 type: paper
 title: "NOCA — A Notification-Oriented Computer Architecture: Prototype and Simulator"
 paper: "[[Linhares2020NocaANotificati]]"

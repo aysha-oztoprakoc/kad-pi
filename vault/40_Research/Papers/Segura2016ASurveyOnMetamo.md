@@ -1,4 +1,5 @@
 ---
+kad_id: kad-41975079f60597e21e106214
 type: paper
 title: "A Survey on Metamorphic Testing"
 paper: "[[Segura2016ASurveyOnMetamo]]"

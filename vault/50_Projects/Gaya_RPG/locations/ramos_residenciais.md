@@ -1,4 +1,5 @@
 ---
+kad_id: kad-3e4c154c38ac545fcc3e9e42
 slug: ramos_residenciais
 titulo: "Ramos Residenciais — Aposentos Privados da YKT"
 categoria: locations

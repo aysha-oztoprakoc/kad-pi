@@ -1,4 +1,5 @@
 ---
+kad_id: kad-77d0109d995479caeb5bcdb3
 type: paper
 title: "Compositional synthesis via a convex parameterization of assume-guarantee contracts"
 paper: "[[Ghasemi2020CompositionalSy]]"

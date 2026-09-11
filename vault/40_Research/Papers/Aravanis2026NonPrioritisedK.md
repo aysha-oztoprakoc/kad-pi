@@ -1,4 +1,5 @@
 ---
+kad_id: kad-17d33b1b5f762607bd6ac747
 type: paper
 title: "Non-prioritised kernel contraction"
 paper: "[[Aravanis2026NonPrioritisedK]]"

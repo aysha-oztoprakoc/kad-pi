@@ -1,4 +1,5 @@
 ---
+kad_id: kad-8152fc45698210412aca5ea9
 type: paper
 title: "The Option-Critic Architecture"
 paper: "[[Bacon2016TheOptionCritic]]"

@@ -1,4 +1,5 @@
 ---
+kad_id: kad-3125745221eb395875e0bf50
 type: paper
 title: "Toward a Lingua Franca for Deterministic Concurrent Systems"
 paper: "[[Lohstroh2021TowardALinguaFr]]"

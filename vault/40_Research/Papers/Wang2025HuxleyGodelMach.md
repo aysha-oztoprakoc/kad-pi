@@ -1,4 +1,5 @@
 ---
+kad_id: kad-bc4943fef9df08c7a8b3a86a
 type: paper
 title: "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine"
 paper: "[[Wang2025HuxleyGodelMach]]"

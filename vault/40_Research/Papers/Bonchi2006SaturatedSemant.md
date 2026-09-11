@@ -1,4 +1,5 @@
 ---
+kad_id: kad-6f296cc8d7e045ff36d570b2
 type: paper
 title: "Saturated Semantics for Reactive Systems"
 paper: "[[Bonchi2006SaturatedSemant]]"

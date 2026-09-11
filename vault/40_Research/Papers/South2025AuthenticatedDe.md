@@ -1,4 +1,5 @@
 ---
+kad_id: kad-d1b2fee2c5bc2f7bf5a02868
 type: paper
 title: "Authenticated Delegation and Authorized AI Agents"
 paper: "[[South2025AuthenticatedDe]]"

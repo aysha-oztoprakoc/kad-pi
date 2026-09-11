@@ -1,4 +1,5 @@
 ---
+kad_id: kad-e5379e9ff73f9c656cbd3080
 type: paper
 title: "Proposal of a declarative and parallelizable artificial neural network using the notification-oriented paradigm"
 paper: "[[Schtz2018ProposalOfADecl]]"

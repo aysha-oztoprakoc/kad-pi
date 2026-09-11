@@ -1,4 +1,5 @@
 ---
+kad_id: kad-b242560dc1f59b032c63fa49
 type: paper
 title: "Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement"
 paper: "[[Yin2024GodelAgentASelf]]"

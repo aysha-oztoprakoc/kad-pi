@@ -1,4 +1,5 @@
 ---
+kad_id: kad-173e512a652b393b61e5e65e
 type: paper
 title: "NOCA ‑ A Notification-Oriented Computer Architecture"
 paper: "[[Linhares2015NocaANotificati]]"
