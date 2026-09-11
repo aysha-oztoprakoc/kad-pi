@@ -5,7 +5,7 @@
   "type": "module",
   "description": "KAD-PI: First-Principles Agentic Infrastructure & Canonical Knowledge Cockpit",
   "scripts": {
-    "test": "node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs",
+    "test": "node --test tools/kad/test/*.test.mjs tools/workspace/*.test.mjs tools/librarian/test/librarian.test.mjs tools/gaya/test/*.test.mjs docs/state/test/state-artifacts.test.mjs .agents/capabilities/ask_user/contract_test.mjs",
     "doctor": "bin/kad doctor && bin/workctl doctor",
     "lint": "bin/kad-wiki lint"
   },

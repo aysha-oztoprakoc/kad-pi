@@ -1,8 +1,15 @@
 import assert from 'node:assert/strict';
+import { before, after, test } from 'node:test';
 import { readFileSync } from 'node:fs';
-import test from 'node:test';
+import { fileURLToPath } from 'node:url';
 import { canonicalReceipt, inspectPreflight } from '../omp-orchestration-preflight.mjs';
+import { createOmpPreflightFixture, removeOmpPreflightFixture, EXPECTED_OMP } from './fixtures/omp-preflight-root.mjs';
 
+/**
+ * Endpoint facts these tests inject. The fixture root supplies everything else, so the
+ * aggregate `status` reflects local-inference degradation only — not the operator's live
+ * learning/spend posture (that coupling lives in T8 of omp-orchestration-preflight.test.mjs).
+ */
 const world = {
   provider: 'kad-local-world', endpoint: 'http://127.0.0.1:5001/v1', expected_model: 'kad-local-s13',
   observed_identity: 'koboldcpp/L3-8B-Stheno-v3.2-Q4_K_M', endpoint_available: true,
@@ -14,9 +21,52 @@ const qwen = {
   ownership: 'OWNED', capability_state: 'AVAILABLE'
 };
 
+/** Two local endpoints plus the TRANSPORT_ONLY gateway the census must not claim to own. */
+const MODELS_YAML = `providers:
+  kad-local-world:
+    baseUrl: http://127.0.0.1:5001/v1
+    auth: none
+    models:
+      - id: kad-local-s13
+        contextWindow: 4096
+  kad-local-qwen:
+    baseUrl: http://127.0.0.1:5002/v1
+    auth: none
+    models:
+      - id: qwen-local
+        contextWindow: 4096
+  omniroute:
+    baseUrl: http://127.0.0.1:20128/v1
+    auth: apiKey
+    models:
+      - id: auto/best-free
+        contextWindow: 128000
+`;
+
+const EXTERNAL_PROVIDERS = {
+  version: 1,
+  providers: [
+    {
+      id: 'omniroute-gateway',
+      authority: 'TRANSPORT_ONLY',
+      omp_provider: 'omniroute'
+    }
+  ]
+};
+
+let root;
+
+before(async () => {
+  root = await createOmpPreflightFixture({ modelsYaml: MODELS_YAML, externalProviders: EXTERNAL_PROVIDERS });
+});
+
+after(async () => {
+  await removeOmpPreflightFixture(root);
+});
+
 function receipt(resources) {
-  return inspectPreflight({ root: process.cwd(), observed: {
-    ompVersion: '18.0.9', piVersion: '0.84.3',
+  return inspectPreflight({ root, observed: {
+    ompVersion: EXPECTED_OMP, piVersion: '0.84.3',
     localInference: { resources }
   } });
 }
@@ -39,18 +89,21 @@ test('T1 WORLD and Qwen are independently represented', () => {
 });
 
 test('T1b TRANSPORT_ONLY gateway providers are not counted as local inference', () => {
-  // `omniroute-gateway` is registered TRANSPORT_ONLY in config/external-providers.json.
-  // It answers on loopback but KAD-PI owns no inference process behind it, so the
-  // census must not claim ownership of it.
-  const models = readFileSync(new URL('../../../.omp/models.yml', import.meta.url), 'utf8');
-  assert.match(models, /^ {2}omniroute:$/m, 'fixture expectation: the gateway provider is configured');
-
+  // `omniroute` is registered TRANSPORT_ONLY in the fixture registry. It answers on
+  // loopback but KAD-PI owns no inference process behind it, so the census must not
+  // claim ownership of it.
   const result = receipt([]);
   assert.equal(
     result.local_inference.resources.some(resource => resource.provider === 'omniroute'),
     false,
     'the transport-only gateway must not appear as a local-inference resource'
   );
+});
+
+test('T1c the repository model map still carries the gateway provider', () => {
+  // Structural fact of the committed harness projection, independent of the fixture.
+  const models = readFileSync(fileURLToPath(new URL('../../../.omp/models.yml', import.meta.url)), 'utf8');
+  assert.match(models, /^ {2}omniroute:$/m, 'the gateway provider is configured');
 });
 
 test('T2 inactive Qwen degrades retrieval without changing WORLD', () => {
