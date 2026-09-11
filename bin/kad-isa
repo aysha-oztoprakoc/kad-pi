@@ -21,9 +21,10 @@ import {
   discoverIsas,
   compileAllIsas
 } from '../tools/kad/isa.mjs';
+import { vaultRoot } from '../tools/kad/wiki/index.mjs';
 
 const [,, command, target, extra] = process.argv;
-const DEFAULT_ISA = resolve(process.cwd(), 'vault/00_Governance/ISA-KAD-AESTHETIC-001.md');
+const DEFAULT_ISA = resolve(vaultRoot(), '00_Governance/ISA-KAD-AESTHETIC-001.md');
 
 function help() {
   console.log(`
@@ -45,7 +46,7 @@ if (!command) help();
 try {
   switch (command) {
     case 'list': {
-      const isas = discoverIsas(process.cwd());
+      const isas = discoverIsas();
       console.log(`=== DISCOVERED KAD IDEAL STATE ARTIFACTS (${isas.length}) ===\n`);
       for (const isa of isas) {
         console.log(`• ${isa.kad_id} (v${isa.version}) [${isa.domain}] - ${isa.status}`);
@@ -59,7 +60,7 @@ try {
 
     case 'lint': {
       if (!target || target === 'all') {
-        const isas = discoverIsas(process.cwd());
+        const isas = discoverIsas();
         let allOk = true;
         for (const isa of isas) {
           const res = lintIsa(isa.file);
@@ -87,7 +88,7 @@ try {
 
     case 'check': {
       if (target === 'all') {
-        const isas = discoverIsas(process.cwd());
+        const isas = discoverIsas();
         let allOk = true;
         for (const isa of isas) {
           const res = checkIsa(isa.file, { rootDir: process.cwd() });
@@ -155,7 +156,7 @@ try {
 
     case 'compile': {
       if (!target || target === 'all') {
-        const res = compileAllIsas(process.cwd());
+        const res = compileAllIsas();
         console.log(`[PASS] Compiled ${res.compiled_count} ISA projections and updated registry at ${res.registry_path}`);
         process.exit(res.ok ? 0 : 1);
       } else {

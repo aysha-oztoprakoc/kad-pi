@@ -1,0 +1,100 @@
+# Substrate evidence — WP-KAD-MEMORY-SUBSTRATE-057
+# captured: 2026-09-11T15:47:49Z
+
+$ systemctl --user is-active ai-memory.service omniroute.service
+active
+active
+
+$ curl -H 'Authorization: Bearer $AI_MEMORY_AUTH_TOKEN' http://127.0.0.1:49374/admin/status
+{
+  "bind": "0.0.0.0:49374",
+  "counts": {
+    "observations": 22,
+    "pages_all": 253,
+    "pages_latest": 192,
+    "sessions": 11
+  },
+  "data_dir": "/home/amdy/Work/.ai-memory",
+  "db_path": "/home/amdy/Work/.ai-memory/db/memory.sqlite",
+  "derived": {
+    "embed_failures_recovered": 0,
+    "embed_failures_unresolved": 0,
+    "embedding_rows": 173,
+    "embedding_triples": [
+      {
+        "count": 173,
+        "dim": 384,
+        "model": "all-MiniLM-L6-v2",
+        "provider": "local"
+      }
+    ],
+    "latest_pages_missing_embeddings": 21,
+    "latest_pages_unembeddable": 0,
+    "links_from_latest_pages": 403,
+    "observations_fts_rows": 22,
+    "observations_rows": 22,
+    "pages_fts_rows": 253,
+    "pages_rows": 253,
+    "stale_links_from_latest_pages": 0,
+    "typed_links_from_latest_pages": [],
+    "unresolved_links_from_latest_pages": 388
+  },
+  "ingest": {
+    "accepted": 22,
+    "dropped_by_policy": 0,
+    "last_persisted_ms": 1789141202934,
+    "shed_rate_limited": 0,
+    "shed_saturated": 0
+  },
+  "providers": {
+    "embedding": {
+      "dim": 384,
+      "last_call_at": "2026-09-11T15:24:06.836776582Z",
+      "last_error_at": null,
+      "last_error_message": null,
+      "last_error_status": null,
+      "last_success_at": "2026-09-11T15:24:06.836776582Z",
+      "model": "all-MiniLM-L6-v2",
+      "provider": "local",
+      "retry_hint": null,
+      "status": "ok"
+    },
+    "llm": {
+      "dim": null,
+      "last_call_at": null,
+      "last_error_at": null,
+      "last_error_message": null,
+      "last_error_status": null,
+      "last_success_at": null,
+      "model": null,
+      "provider": null,
+      "retry_hint": null,
+      "status": "disabled"
+    },
+    "llm_candidates": []
+  },
+  "storage": {
+    "data_dir_free_bytes": 727714455552,
+    "database_bytes": 3227648,
+    "freelist_count": 45,
+    "page_count": 788,
+    "page_size": 4096,
+    "reclaimable_bytes": 184320
+  },
+  "version": "2.1.1",
+  "wiki_format": {
+    "backup_archive": "/home/amdy/ai-memory-backup-okf-v0.2-20260911-145007.tar.gz",
+    "backup_archive_bytes": 85390948,
+    "okf_migrated": true
+  },
+  "write_queue": [
+    0,
+    1024
+  ]
+}
+
+$ curl (anonymous) -> expect 401
+401
+
+$ ss -ltnp | grep 49374
+LISTEN 0      128          0.0.0.0:49374      0.0.0.0:*    users:(("ai-memory",pid=2919857,fd=19))

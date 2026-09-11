@@ -1,7 +1,7 @@
 # KAD-PI IDEAL STATE ARTIFACT V2
 
 **Artifact Version**: `2.0.0`
-**Compiled Date**: `2026-08-30`
+**Compiled Date**: `2026-09-11`
 **Governing Authority**: `PRIME_DIRECTIVE.md` & `INTENT_DECISION_EVENT_V1` Ledger
 **Historical Baseline**: `ISA-KAD-SKILL-ROLE-002 v1.1` (Preserved Invariant)
 **Epistemic Status**: `CANONICAL TARGET ARCHITECTURE`
@@ -40,7 +40,7 @@ KAD-PI is an advanced, local-first **Personal Engineering Operating System and S
 | **`REQ-KAD-RES-001`** | `RESEARCH_OPERATING_LIFECYCLE` | `MUST` | KAD-PI MUST execute external scientific research through a strict tiered epistemic pipeline: Question -> Source Extraction -> Provenance Validation -> Claim Triangulation -> Empirical Verification -> Advisor Review -> Human Promotion. | `DEC_ID_13` | `3_MONTH` | `PARTIAL` |
 | **`REQ-KAD-KNOW-001`** | `KNOWLEDGE_PLANE_STORAGE_TOPOLOGY` | `MUST` | The KnowledgePlane MUST maintain sovereign epistemic authority across typed representations (Canonical Doctrine, Authoritative Evidence Records, Derived Projections, Candidate, Contested, and Historical states); the Obsidian Vault serves as the primary human-readable, git-diffable, portable offline doctrine surface, while structured records/receipts serve as authoritative evidence without storage format alone conferring authority. | `DEC_ID_14` | `NOW` | `IMPLEMENTED` |
 | **`REQ-KAD-KNOW-002`** | `CONTRADICTION_INVALIDATION_MANAGEMENT` | `MUST` | The KnowledgePlane MUST manage epistemic conflicts, stale doctrines, and invalidated claims through explicit contradiction journaling with impact-scoped containment (informational conflicts annotate CONTESTED without blocking unrelated work; operational/epistemic conflicts block dependent automation/promotion; constitutional conflicts fail closed on privileged operations). | `DEC_ID_16` | `3_MONTH` | `PARTIAL` |
-| **`REQ-KAD-CTX-001`** | `CONTEXT_PLANE_CAPABILITIES` | `MUST` | Context retrieval MUST be decoupled from proprietary vendor APIs through stable capability interfaces (SemanticIndexProvider, GraphProjectionProvider, ContextCompiler); candidate providers such as OpenViking or Needle MUST undergo empirical benchmarking before adoption. | `DEC_ID_14` | `6_MONTH` | `NOT_IMPLEMENTED` |
+| **`REQ-KAD-CTX-001`** | `CONTEXT_PLANE_CAPABILITIES` | `MUST` | Context retrieval MUST be decoupled from proprietary vendor APIs through stable capability interfaces (SemanticIndexProvider, GraphProjectionProvider, ContextCompiler); candidate providers such as ai-memory MUST undergo empirical benchmarking before adoption and MUST remain non-authoritative, returning PROPOSED records only. | `DEC_ID_14` | `6_MONTH` | `PARTIAL` |
 | **`REQ-KAD-DIST-001`** | `DISTILLATION_LEARNING_PIPELINE` | `MUST` | KAD-PI MUST strictly enforce EXECUTION != LEARNING through an offline evidence-gated distillation pipeline that extracts repeated validated execution trajectories into deterministic tools, tests, linters, schemas, or compact local specialists. | `DEC_ID_15` | `6_MONTH` | `PARTIAL` |
 | **`REQ-KAD-SEC-001`** | `SECURITY_TRUST_DOMAINS` | `MUST` | Security boundaries MUST enforce strict multi-domain isolation across AMDY Workstation, TELL Server, Local Sandbox, Remote APIs, and Knowledge Vault with zero ambient credential inheritance; raw secret access by agent prompts MUST be strictly forbidden. | `DEC_ID_08` | `3_MONTH` | `PARTIAL` |
 | **`REQ-KAD-COMP-001`** | `LOCAL_COMPUTE_HARDWARE_ROLES` | `MUST` | The compute fabric MUST operate an asymmetric dual-node topology: AMDY Workstation handles interactive controller tasks, GUI presentation, and fast local steering; TELL Server handles headless batch execution, distillation pipelines, and multi-model benchmarking. | `DEC_ID_11, DEC_ID_23` | `6_MONTH` | `PARTIAL` |
@@ -85,6 +85,7 @@ Every system capability is classified under the Four-Plane Model:
 | **`KNOWLEDGE_PLANE_STORAGE_TOPOLOGY`** | Markdown Vault in vault/ is canonical; wiki lint and projection synchronization verified (WP-010, WP-011). | KnowledgePlane sovereign authority with typed representations (Doctrine in Vault, Evidence in structured records, derived projections rebuildable). | Vault is primary doctrine surface; need formal multi-representation epistemic indexing. | `LOW` | `NOW` | `WP-KAD-KNOWLEDGE-LIFECYCLE-034` |
 | **`DISTILLATION_LEARNING_PIPELINE`** | Observatory records execution telemetry and causal journals (WP-002, WP-021). | Offline trajectory pattern analyzer distilling repeated execution failures into deterministic linters and tools. | Automated distillation pipeline converting validated episodes into new regression fixtures and tools. | `HIGH` | `6_MONTH` | `EXP-KAD-DISTILLATION-006` |
 | **`CONTRADICTION_INVALIDATION_MANAGEMENT`** | Epistemic status tags exist in metadata; manual dispute recording in vault notes. | Impact-scoped contradiction containment (informational annotated, operational/epistemic blocked, constitutional fail-closed). | Contradiction journaling engine linking conflicting claims to downstream impact-scoped blocking gates. | `HIGH` | `3_MONTH` | `WP-KAD-CONTRADICTION-JOURNAL-040` |
+| **`MEMORY_SUBSTRATE_AND_MODEL_GATEWAY`** | Knowledge is split across vault/, the legacy knowledge base and harness-local memory with no single writer; each harness binds remote providers independently, so model availability is a per-harness fact. | One git-backed memory record reachable from every harness and host, with vault/ as its deterministic mirror, and one OpenAI-compatible gateway endpoint carrying every authorized remote provider plus the proxied local KAD endpoints. | No unified memory substrate existed, so cross-harness continuity and provenance were unenforceable; no single transport existed, so "which models KAD-PI may use" could not be answered outside each harness config. | `MEDIUM` | `NOW` | `WP-KAD-MEMORY-SUBSTRATE-057` |
 
 ---
 
@@ -138,21 +139,22 @@ Every system capability is classified under the Four-Plane Model:
   - **`MINE_IDEAS`**: Port graph layout algorithms into native Sofia v3 Cytoscape explorer; discard Beads.
   - **`REMOVE`**: Zero measurable comprehension gain; reject projection.
 
-### EXP-KAD-SEMANTIC-RETRIEVAL-004: OpenViking / Needle Semantic Knowledge Retrieval Benchmark
+### EXP-KAD-MEMORY-RETRIEVAL-004-R1: ai-memory Substrate Retrieval Benchmark (successor to the OpenViking/Needle evaluation)
 
 * **Domain**: `CONTEXT_PLANE_CAPABILITIES`
-* **Hypothesis**: Local semantic embedding indices accelerate relevant context retrieval for complex architecture queries without hallucinating unverified connections.
-* **Baseline**: Deterministic ripgrep, AST grep, and frontmatter property queries.
-* **Candidate**: Local OpenViking/Needle vector index over canonical Vault Markdown.
-* **Independent Variable**: Retrieval method (Deterministic Keyword vs Semantic Vector).
-* **Controlled Variables**: Query benchmark suite, Vault corpus content
-* **Confounders**: Embedding model latency, Index staleness
-* **Metrics**: Retrieval Recall@5; Precision@5; Query latency (ms); Context token economy
-* **Acceptance Threshold**: Recall@5 > 85% with zero unverified document claims admitted into canonical context.
+* **Hypothesis**: In-process local embeddings over the ai-memory wiki of record accelerate relevant context retrieval for complex architecture queries without hallucinating unverified connections, and without paid egress.
+* **Baseline**: Deterministic ripgrep, AST grep, and frontmatter property queries over the committed vault mirror.
+* **Candidate**: ai-memory hybrid retrieval (FTS5 + 384-dim all-MiniLM-L6-v2 local embeddings) exposed through the non-authoritative KnowledgePlane adapter.
+* **Independent Variable**: Retrieval method (Deterministic Keyword vs Hybrid Local Semantic).
+* **Controlled Variables**: Query benchmark suite, Vault corpus content, Embedding model revision
+* **Confounders**: Embedding model latency, Index staleness, Page churn between reindex passes
+* **Metrics**: Retrieval Recall@5; Precision@5; Query latency (ms); Context token economy; Egress bytes (must be 0)
+* **Acceptance Threshold**: Recall@5 > 85% with zero unverified document claims admitted into canonical context and zero paid spend.
 * **Disposition Taxonomy**:
-  - **`ADOPT`**: Integrate semantic index as rebuildable derived projection provider.
-  - **`ADOPT_NARROW`**: Use semantic retrieval for exploratory search only; require deterministic paths for code/governance.
-  - **`REMOVE`**: Excessive memory/latency overhead; rely on deterministic search.
+  - **`ADOPT`**: Integrate the ai-memory substrate as a rebuildable, non-authoritative derived retrieval provider.
+  - **`ADOPT_NARROW`**: Use substrate retrieval for exploratory search only; require deterministic paths for code/governance.
+  - **`REMOVE`**: Excessive memory/latency overhead; rely on deterministic search over the mirror.
+  - **`SUPERSEDED_BY_PREDECESSOR`**: Predecessor experiment concluded before adoption; no retrieval change warranted.
 
 ### EXP-KAD-TELL-PERSISTENT-005: TELL Persistent Headless Worker Integration & Evaluation
 
@@ -200,6 +202,7 @@ Every system capability is classified under the Four-Plane Model:
 - [ ] **M3: Strict Multi-Domain Security Sandbox & Capability Broker Prototype**
 - [ ] **M4: KnowledgePlane Contradiction Journal & Lifecycle State Machine**
 - [ ] **M5: Human Cognitive Attention & Intervention Telemetry Baseline**
+- [ ] **M5B: Unified Memory Substrate (ai-memory wiki of record) & Single Model Gateway Operational**
 
 ### 6_MONTH Horizon: Asymmetric Dual-Node Compute Fabric (AMDY + TELL) & Governed Asynchronous Pipelines
 
@@ -209,7 +212,7 @@ Every system capability is classified under the Four-Plane Model:
 - [ ] **M6: Asymmetric Dual-Node Compute Fabric Operational (AMDY interactive + TELL batch)**
 - [ ] **M7: Downward Distillation Pipeline Eliminating Repeated Execution Errors**
 - [ ] **M8: Warren Detached Asynchronous Workload Canary Qualification**
-- [ ] **M9: ContextPlane Semantic Retrieval Benchmarking & Projection Integration**
+- [ ] **M9: ContextPlane Substrate Retrieval Benchmarking (EXP-KAD-MEMORY-RETRIEVAL-004-R1) & Projection Integration**
 - [ ] **M10: Staged Open Research & Specification Publishing Framework**
 
 ### 12_MONTH Horizon: Mature Self-Distilling Personal Engineering OS & Publishable Scientific Research Laboratory
@@ -279,5 +282,16 @@ Every system capability is classified under the Four-Plane Model:
 * **Non-Scope**: `probabilistic conflict resolution`
 * **Authority Class**: `epistemic` | **Risk Level**: `HIGH`
 * **Acceptance Evidence**: Conflicting claims are journaled, tagged CONTESTED, and block downstream dependent automated actions via impact-scoped containment without halting unrelated tasks.
+* **Execution Provider**: `OMP` (LOCAL_DETERMINISTIC)
+
+### WP-KAD-MEMORY-SUBSTRATE-057: Unified Memory Substrate (ai-memory), Model Gateway (OmniRoute) & Current/Ideal State Artifacts
+
+* **Why Now**: Required by REQ-KAD-CTX-001, REQ-KAD-KNOW-001 and REQ-KAD-FIN-001: memory was split across the vault, the legacy knowledge base and harness-local stores with no single writer, and remote model availability was a per-harness fact rather than a governed property of the fabric.
+* **Intent References**: `DEC_ID_06, DEC_ID_07, DEC_ID_14`
+* **Dependencies**: `WP-KAD-KNOWLEDGE-LIFECYCLE-034`
+* **Scope**: `docs/state/, docs/architecture/KAD_PI_IDEAL_STATE_V2.md, vault/00_Governance/, tools/kad/, bin/, config/, .omp/, vault/, .gitignore, AGENTS.md, evidence/WP-KAD-MEMORY-SUBSTRATE-057/`
+* **Non-Scope**: `paid-provider spend, TLS termination, TELL deployment, model weight downloads, rewriting historical evidence or accepted ADRs`
+* **Authority Class**: `epistemic` | **Risk Level**: `HIGH`
+* **Acceptance Evidence**: A single git-backed record exists and is reachable from every harness; vault/ is a deterministically regenerated OKF v0.2 mirror; every mutating vault command fails closed against the mirror; the OpenViking path is retired in favour of a PROPOSED-only ai-memory adapter; and every authorized remote provider plus the proxied local KAD endpoints are reachable through one gateway endpoint registered as TRANSPORT_ONLY, with a hash-verified catalog and zero paid spend.
 * **Execution Provider**: `OMP` (LOCAL_DETERMINISTIC)
 

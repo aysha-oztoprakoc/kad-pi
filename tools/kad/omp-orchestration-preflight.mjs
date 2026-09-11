@@ -266,13 +266,37 @@ function statusFor(sections) {
   return 'READY';
 }
 
+/**
+ * Providers that KAD-PI's external-provider registry declares TRANSPORT_ONLY.
+ *
+ * A gateway that proxies other providers is not local inference. Counting it in
+ * the local-inference census asserts ownership of a process KAD-PI never starts,
+ * reports a bogus LOCAL_PROCESS_OWNERSHIP_UNKNOWN, and pollutes the resource list
+ * an acceptance receipt is built from. The registry already carries the fact, so
+ * the census reads it rather than guessing from the provider name.
+ */
+function transportOnlyProviders(root) {
+  try {
+    const registry = JSON.parse(text(join(root, 'config', 'external-providers.json')));
+    return new Set((registry.providers ?? [])
+      .filter((entry) => entry.authority === 'TRANSPORT_ONLY' && typeof entry.omp_provider === 'string')
+      .map((entry) => entry.omp_provider));
+  } catch {
+    return new Set();
+  }
+}
+
 export function inspectPreflight({ root = process.cwd(), observed = {} } = {}) {
   root = resolve(root);
   const config = text(join(root, '.omp', 'config.yml'));
   const modelsText = text(join(root, '.omp', 'models.yml'));
   const models = modelsFromConfig(modelsText);
-  const effectiveObserved = Object.hasOwn(observed, 'localInference') ? observed : { ...observed, localInference: { resources: collectLiveLocalInference(models, root) } };
-  const localInference = inspectLocalInference(effectiveObserved, models);
+  const transportOnly = transportOnlyProviders(root);
+  const inferenceModels = Object.fromEntries(
+    Object.entries(models).filter(([provider]) => !transportOnly.has(provider))
+  );
+  const effectiveObserved = Object.hasOwn(observed, 'localInference') ? observed : { ...observed, localInference: { resources: collectLiveLocalInference(inferenceModels, root) } };
+  const localInference = inspectLocalInference(effectiveObserved, inferenceModels);
   const roleObservation = { ...effectiveObserved, localInference };
   const sections = {
     omp: inspectOmp(root, effectiveObserved),

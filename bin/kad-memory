@@ -1,0 +1,185 @@
+#!/usr/bin/env node
+/**
+ * bin/kad-memory — memory-substrate operations for KAD-PI.
+ *
+ * Usage:
+ *   bin/kad-memory status              # record, mirror and freshness report
+ *   bin/kad-memory publish [--commit]  # regenerate vault/ from the wiki of record
+ *
+ * The wiki of record is ai-memory's project wiki. `vault/` is a deterministic
+ * mirror of it, committed so a fresh clone, CI and the KAD-PI remote keep the
+ * knowledge without needing the substrate running.
+ *
+ * Publish is deliberately two-sourced:
+ *   1. `ai-memory export-okf` is the CONFORMANCE GATE. It fails on any page that
+ *      violates OKF v0.2, so a non-conformant record can never be published. It
+ *      also generates the bundle-root `index.md`, which is the only file that may
+ *      declare `okf_version`.
+ *   2. `rsync` performs the mirror. The export bundle carries markdown only,
+ *      while the mirror must also carry the derived JSON artefacts
+ *      (`90_Derived/**`) that the repository's own tooling regenerates.
+ */
+
+import { execFileSync, spawnSync } from 'node:child_process';
+import { existsSync, readFileSync, rmSync, mkdtempSync, unlinkSync } from 'node:fs';
+import { resolve, join } from 'node:path';
+import { tmpdir } from 'node:os';
+
+const REPO_ROOT = resolve(new URL('..', import.meta.url).pathname);
+const DATA_DIR = join(REPO_ROOT, '.ai-memory');
+const POINTER = join(DATA_DIR, 'vault-path');
+const MIRROR = join(REPO_ROOT, 'vault');
+/** Obsidian is bound to the record; the mirror must not carry a second config. */
+const MIRROR_EXCLUDES = [
+  '.obsidian/',
+  // The substrate's live capture ledger. It is operational telemetry, not knowledge:
+  // unbounded, regenerated continuously, and it records raw session events including
+  // prompt text. Publishing it to the remote would leak session activity for no gain
+  // in a clone, so it stays in the record and out of the mirror. Anchored with a
+  // leading slash so it matches the ledger at the record root only.
+  '/log-*.md'
+];
+
+function fail(message, code = 1) {
+  console.error(`[FAIL] ${message}`);
+  process.exit(code);
+}
+
+function recordDir() {
+  if (!existsSync(POINTER)) {
+    fail(`${POINTER} is absent: no wiki of record is published. Run the ai-memory install steps first.`);
+  }
+  const dir = readFileSync(POINTER, 'utf8').trim();
+  if (!dir || !existsSync(dir)) fail(`${POINTER} does not resolve to a directory: ${dir}`);
+  return dir;
+}
+
+function aiMemoryEnv() {
+  const env = { ...process.env, AI_MEMORY_DATA_DIR: DATA_DIR };
+  const tokenFile = resolve(process.env.HOME ?? '', '.config/ai-memory/env');
+  if (!env.AI_MEMORY_AUTH_TOKEN && existsSync(tokenFile)) {
+    for (const line of readFileSync(tokenFile, 'utf8').split('\n')) {
+      const match = line.match(/^AI_MEMORY_AUTH_TOKEN=(.+)$/);
+      if (match) env.AI_MEMORY_AUTH_TOKEN = match[1].trim();
+    }
+  }
+  return env;
+}
+
+/** Runs the OKF export as a conformance gate and returns the bundle index.md. */
+function exportBundleIndex(record) {
+  const workDir = mkdtempSync(join(tmpdir(), 'kad-memory-export-'));
+  const archive = join(workDir, 'bundle.tar.gz');
+  try {
+    execFileSync('ai-memory', [
+      '--data-dir', DATA_DIR,
+      'export-okf', '--workspace', 'kad', '--project', 'kad-pi', '--to', archive
+    ], { env: aiMemoryEnv(), stdio: ['ignore', 'pipe', 'pipe'] });
+  } catch (error) {
+    const detail = (error.stderr?.toString() || error.message || '').trim();
+    rmSync(workDir, { recursive: true, force: true });
+    fail(`OKF conformance gate failed; mirror not regenerated.\n${detail}`);
+  }
+  try {
+    const raw = execFileSync('tar', ['xzOf', archive, 'index.md'], { encoding: 'utf8' });
+    // The bundle lists every directory in the record, including `.obsidian/`, which the
+    // mirror deliberately does not carry. A committed index advertising a directory that
+    // never exists in a clone is a broken link, so drop the dot-directory entries.
+    return raw
+      .split('\n')
+      .filter((line) => !/^- \[\./.test(line))
+      .join('\n');
+  } finally {
+    rmSync(workDir, { recursive: true, force: true });
+  }
+}
+
+function publish({ commit = false } = {}) {
+  const record = recordDir();
+
+  // 1. Conformance gate + the generated bundle-root index.
+  const bundleIndex = exportBundleIndex(record);
+  if (!/okf_version:\s*["']?0\.2["']?/.test(bundleIndex)) {
+    fail('exported bundle index does not declare okf_version: "0.2"; refusing to publish');
+  }
+
+  // 2. Mirror the record. Derived JSON rides along; MIRROR_EXCLUDES is the whole filter.
+  //    `--delete-excluded` is load-bearing: without it rsync treats an excluded path as
+  //    protected and will never remove one that a previous publish created, so the
+  //    mirror would silently accumulate exactly the files the excludes exist to keep out.
+  //    With it, the mirror is a pure function of (record, excludes).
+  const rsyncArgs = ['-a', '--delete', '--delete-excluded',
+    ...MIRROR_EXCLUDES.flatMap((e) => ['--exclude', e]), `${record}/`, `${MIRROR}/`];
+  const rsync = spawnSync('rsync', rsyncArgs, { encoding: 'utf8' });
+  if (rsync.status !== 0) fail(`rsync failed: ${(rsync.stderr || '').trim()}`);
+
+  // 3. index.md is generated at export time, not stored, so restore it.
+  execFileSync('bash', ['-c', `cat > ${JSON.stringify(join(MIRROR, 'index.md'))}`], {
+    input: bundleIndex
+  });
+
+  const changed = spawnSync('git', ['-C', REPO_ROOT, 'status', '--short', '--', 'vault'], { encoding: 'utf8' })
+    .stdout.trim().split('\n').filter(Boolean);
+
+  console.log(`[PASS] mirror regenerated from ${record}`);
+  console.log(`       vault/ differs from HEAD in ${changed.length} path(s)`);
+
+  if (commit && changed.length) {
+    execFileSync('git', ['-C', REPO_ROOT, 'add', '--', 'vault'], { stdio: 'inherit' });
+    execFileSync('git', ['-C', REPO_ROOT, 'commit', '-m',
+      'memory: regenerate vault/ mirror from the ai-memory wiki of record', '--', 'vault'],
+      { stdio: 'inherit' });
+    console.log('[PASS] committed vault/ (scoped to vault/ only)');
+  } else if (changed.length) {
+    console.log('       review and commit: git add vault && git commit -m "..." -- vault');
+  }
+}
+
+async function status() {
+  const record = existsSync(POINTER) ? readFileSync(POINTER, 'utf8').trim() : null;
+  const live = record && existsSync(record);
+  console.log('KAD-PI memory substrate');
+  console.log(`  data dir ............ ${DATA_DIR}`);
+  console.log(`  wiki of record ...... ${record ?? '(no pointer)'}`);
+  console.log(`  record reachable .... ${live ? 'yes' : 'no'}`);
+  console.log(`  mirror .............. ${MIRROR} (${existsSync(MIRROR) ? 'present' : 'absent'})`);
+
+  // Probed in-process so the bearer token never lands in an argv (and therefore
+  // never in the process table).
+  const { AI_MEMORY_AUTH_TOKEN: token } = aiMemoryEnv();
+  try {
+    const response = await fetch('http://127.0.0.1:49374/admin/status', {
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+      signal: AbortSignal.timeout(4000)
+    });
+    if (!response.ok) {
+      console.log(`  service status ...... HTTP ${response.status}`);
+    } else {
+      const body = await response.json();
+      console.log(`  service status ...... OK (v${body.version}, ${body.counts?.pages_latest ?? '?'} live pages)`);
+    }
+  } catch (error) {
+    console.log(`  service status ...... unreachable (${error.name})`);
+  }
+
+  if (live) {
+    const marker = join(REPO_ROOT, '.ai-memory.toml');
+    console.log(`  capture scope ....... ${existsSync(marker) ? '.ai-memory.toml present' : 'MISSING'}`);
+    const drift = spawnSync('git', ['-C', REPO_ROOT, 'status', '--short', '--', 'vault'], { encoding: 'utf8' })
+      .stdout.trim().split('\n').filter(Boolean).length;
+    console.log(`  mirror drift ........ ${drift} path(s) differ from HEAD`);
+  }
+}
+
+const [command = 'status', ...flags] = process.argv.slice(2);
+switch (command) {
+  case 'status':
+    await status();
+    break;
+  case 'publish':
+    publish({ commit: flags.includes('--commit') });
+    break;
+  default:
+    console.error(`Unknown command: ${command}\nUsage: bin/kad-memory [status|publish [--commit]]`);
+    process.exit(1);
+}

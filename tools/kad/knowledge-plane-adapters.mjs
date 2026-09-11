@@ -1,71 +1,114 @@
-import { ResearchOpenVikingAdapter } from './research-openviking.mjs';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
-import { basename } from 'node:path';
 
-function unwrapResponse(payload) {
-  if (payload && typeof payload === 'object' && 'result' in payload) return payload.result;
-  return payload;
+export const AI_MEMORY_BASE_URL = 'http://127.0.0.1:49374';
+export const AI_MEMORY_EXCERPT_LIMIT = 500;
+
+// A plain `ai-memory serve` exposes its read surface under `/admin/*` behind the root
+// bearer token. `/api/v1/*` belongs to the optional web surface and is not mounted here.
+const AI_MEMORY_STATUS_PATH = '/admin/status';
+const AI_MEMORY_SEARCH_PATH = '/admin/search';
+const AI_MEMORY_READ_PAGE_PATH = '/admin/read-page';
+
+function collapseText(text) {
+  return String(text ?? '').replace(/<\/?mark>/g, '').replace(/\s+/g, ' ').trim();
 }
 
-async function requestJson(baseUrl, path, init = {}) {
-  const response = await fetch(new URL(path, baseUrl), init);
-  const text = await response.text();
-  let payload;
-  try {
-    payload = text ? JSON.parse(text) : null;
-  } catch {
-    payload = text;
+/**
+ * Read-only, non-authoritative access to the ai-memory wiki of record.
+ *
+ * Every record is a PROPOSED/INFERRED proposal: this adapter cannot emit `ACCEPTED`,
+ * cannot widen trust, and never mutates the substrate. Transport failure, a missing
+ * bearer token, and an authentication failure all degrade instead of throwing, so the
+ * KnowledgePlane keeps its exact deterministic fallback.
+ */
+export function createAiMemoryAccessAdapter({
+  baseUrl = AI_MEMORY_BASE_URL,
+  token = process.env.AI_MEMORY_AUTH_TOKEN,
+  workspace = 'kad',
+  project = 'kad-pi',
+  fetchImpl = fetch,
+  timeoutMs = 2000
+} = {}) {
+  async function request(pathname, params = {}) {
+    if (!token) return { ok: false, status: null, reason: 'AI_MEMORY_AUTH_TOKEN is not set' };
+    const url = new URL(pathname, baseUrl);
+    for (const [key, value] of Object.entries(params)) {
+      if (value !== undefined && value !== null) url.searchParams.set(key, String(value));
+    }
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const response = await fetchImpl(url, {
+        method: 'GET',
+        headers: { authorization: `Bearer ${token}`, accept: 'application/json' },
+        signal: controller.signal
+      });
+      let payload = null;
+      try { payload = await response.json(); } catch { payload = null; }
+      if (!response.ok) return { ok: false, status: response.status, reason: `ai-memory ${pathname} returned HTTP ${response.status}` };
+      return { ok: true, status: response.status, payload };
+    } catch (error) {
+      return {
+        ok: false,
+        status: null,
+        reason: error?.name === 'AbortError' ? `ai-memory ${pathname} timed out after ${timeoutMs}ms` : `ai-memory ${pathname} was unreachable`
+      };
+    } finally {
+      clearTimeout(timer);
+    }
   }
-  if (!response.ok) throw new Error(`OpenViking ${response.status}: ${typeof payload === 'string' ? payload : JSON.stringify(payload)}`);
-  return unwrapResponse(payload);
-}
 
-export function createOpenVikingAdapter({ base_url: baseUrl = 'http://127.0.0.1:1933', user_id: userId = 'kad-knowledge-plane' } = {}) {
-  const headers = { 'X-OpenViking-User': userId };
+  // `source_hash` is the SHA-256 of the exact normalised text the server returned for the
+  // record: the page body for `read()`, the FTS snippet for `search()` (search hits are
+  // not content-addressed by the server). It is never absent, so every record is displayable.
+  function normalise(path, title, content) {
+    const text = collapseText(content);
+    return Object.freeze({
+      source_ref: `ai-memory://${workspace}/${project}/${path}`,
+      source_hash: createHash('sha256').update(text, 'utf8').digest('hex'),
+      title: typeof title === 'string' && title !== '' ? title : null,
+      path,
+      excerpt: text.length > AI_MEMORY_EXCERPT_LIMIT ? `${text.slice(0, AI_MEMORY_EXCERPT_LIMIT)}…` : text,
+      acceptance_state: 'PROPOSED',
+      epistemic_class: 'INFERRED',
+      authority: 'DERIVED',
+      trust_domain: 'memory'
+    });
+  }
+
   return Object.freeze({
-    name: 'OpenViking',
+    name: 'ai-memory',
     authority: false,
-    async health() {
-      return requestJson(baseUrl, '/health', { headers });
+    kind: 'retrieval',
+    trust_domain: 'memory',
+    async probe() {
+      const result = await request(AI_MEMORY_STATUS_PATH);
+      if (!result.ok) return { adapter: 'ai-memory', status: 'DEGRADED', authority: false, detail: result.reason, version: null };
+      const version = typeof result.payload?.version === 'string' ? result.payload.version : null;
+      return { adapter: 'ai-memory', status: 'PASS', authority: false, detail: `ai-memory ${version ?? 'unknown version'} at ${baseUrl}`, version };
     },
-    async ingest({ content, source_ref: sourceRef, target_uri: targetUri }) {
-      const form = new FormData();
-      form.append('file', new Blob([content], { type: 'text/markdown' }), basename(sourceRef));
-      const upload = await requestJson(baseUrl, '/api/v1/resources/temp_upload', { method: 'POST', headers, body: form });
-      return requestJson(baseUrl, '/api/v1/resources', {
-        method: 'POST',
-        headers: { ...headers, 'content-type': 'application/json' },
-        body: JSON.stringify({ temp_file_id: upload.temp_file_id, to: targetUri, wait: true, source_name: basename(sourceRef) })
+    async search({ query, limit = 10 } = {}) {
+      if (typeof query !== 'string' || query.trim() === '') return [];
+      const result = await request(AI_MEMORY_SEARCH_PATH, {
+        q: query,
+        workspace,
+        project,
+        limit: Math.min(100, Math.max(1, Number(limit) || 10))
       });
+      if (!result.ok || !Array.isArray(result.payload)) return [];
+      return result.payload
+        .filter(hit => hit && typeof hit.path === 'string' && hit.path !== '')
+        .map(hit => normalise(hit.path, hit.title, hit.snippet));
     },
-    async read(uri) {
-      const url = new URL('/api/v1/content/read', baseUrl);
-      url.searchParams.set('uri', uri);
-      url.searchParams.set('offset', '0');
-      url.searchParams.set('limit', '-1');
-      const response = await fetch(url, { headers: { ...headers, accept: 'text/plain' }, method: 'GET' });
-      if (!response.ok) throw new Error(`OpenViking read failed: ${response.status}`);
-      const body = await response.text();
-      try {
-        const payload = JSON.parse(body);
-        return payload && typeof payload === 'object' && 'result' in payload ? payload.result : payload;
-      } catch {
-        return body;
-      }
-    },
-    async retrieve(query, { target_uri: targetUri = '', limit = 5 } = {}) {
-      return requestJson(baseUrl, '/api/v1/search/find', {
-        method: 'POST',
-        headers: { ...headers, 'content-type': 'application/json' },
-        body: JSON.stringify({ query, target_uri: targetUri, limit })
-      });
+    async read({ path } = {}) {
+      if (typeof path !== 'string' || path === '') return null;
+      const result = await request(AI_MEMORY_READ_PAGE_PATH, { workspace, project, path });
+      if (!result.ok || !result.payload || typeof result.payload.body !== 'string') return null;
+      const servedPath = typeof result.payload.path === 'string' && result.payload.path !== '' ? result.payload.path : path;
+      return normalise(servedPath, result.payload.title, result.payload.body);
     }
   });
-}
-
-export function createResearchOpenVikingAdapter(options = {}) {
-  return new ResearchOpenVikingAdapter(options);
 }
 
 export function createNeedleAdapter({ infer = null } = {}) {

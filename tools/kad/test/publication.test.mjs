@@ -11,7 +11,7 @@ const internal = {
     status: 'PARTIAL',
     components: [
       {
-        component: 'OpenViking',
+        component: 'ai-memory',
         state: 'DEGRADED',
         source_ref: 'evidence/private/report.md',
         source_hash: 'a'.repeat(64),
@@ -64,7 +64,7 @@ test('publication strips internal component details and local paths', () => {
   const output = sanitizePublicProjection(internal);
   assert.equal(output.component_summary.DEGRADED, 1);
   assert.equal(output.components, undefined);
-  assert.doesNotMatch(JSON.stringify(output), /OpenViking|private|\/home\/amdy|source_hash|source_ref/);
+  assert.doesNotMatch(JSON.stringify(output), /ai-memory|private|\/home\/amdy|source_hash|source_ref/);
 });
 
 test('candidate, sensitive, and unknown classes fail closed', () => {

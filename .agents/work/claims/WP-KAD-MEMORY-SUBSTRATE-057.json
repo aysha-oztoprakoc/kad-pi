@@ -1,0 +1,25 @@
+{
+  "task": "WP-KAD-MEMORY-SUBSTRATE-057",
+  "project": "kad-pi",
+  "claim_id": "b14f1c3e-15fd-46bd-b886-c3a0ebc3eaf1",
+  "actor_label": "omp-kad-memory-substrate",
+  "started_at": "2026-09-11T14:35:15.080Z",
+  "base_commit": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+  "owned_paths": [
+    "docs/state",
+    "docs/architecture/KAD_PI_IDEAL_STATE_V2.md",
+    "vault/00_Governance",
+    "tools/kad",
+    "bin",
+    "config",
+    ".omp",
+    "vault",
+    "wiki",
+    ".gitignore",
+    "AGENTS.md",
+    "evidence/WP-KAD-MEMORY-SUBSTRATE-057"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-11T15:51:13.184Z"
+}

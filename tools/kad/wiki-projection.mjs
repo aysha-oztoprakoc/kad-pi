@@ -57,7 +57,7 @@ export const CURATED_SOURCE_ALLOWLIST = Object.freeze([
   SOURCE('evidence/WP-KAD-005/final-report.md', 'WP-KAD-005 Evidence', 'evidence', 'EVIDENCE', 'EVIDENCE', 'Accepted workpackage report and observed evidence.'),
   SOURCE('evidence/WP-KAD-CONTEXT-SWARM-001/REPORT.md', 'Context Swarm Evidence', 'evidence', 'EVIDENCE', 'EVIDENCE', 'Accepted bounded swarm evidence.'),
   SOURCE('evidence/WP-KAD-KNOWLEDGE-PLANE-001/REPORT-R2.md', 'KnowledgePlane Evidence', 'evidence', 'EVIDENCE', 'EVIDENCE', 'Latest accepted KnowledgePlane report; preserves optional-runtime degradation.', {
-    component_statuses: { KnowledgePlane: 'PASS', OpenViking: 'DEGRADED', Needle: 'BLOCKED' }
+    component_statuses: { KnowledgePlane: 'PASS', Needle: 'BLOCKED' }
   }),
   SOURCE('evidence/WP-KAD-OMP-001/final-report.md', 'OMP Boundary Evidence', 'evidence', 'EVIDENCE', 'EVIDENCE', 'Accepted OMP boundary and role evidence.'),
   SOURCE('evidence/WP-KAD-LIB-002-R1/final-report.md', 'Librarian Evidence', 'evidence', 'EVIDENCE', 'EVIDENCE', 'Reconciled deterministic Librarian evidence.'),

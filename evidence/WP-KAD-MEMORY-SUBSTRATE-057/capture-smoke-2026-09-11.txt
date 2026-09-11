@@ -1,0 +1,12 @@
+# Capture smoke test — WP-KAD-MEMORY-SUBSTRATE-057
+# proves an OMP session is captured end to end into the record
+
+before: {"sessions":11,"observations":22}
+$ omp --print 'Reply with the single word: OK'
+Working...
+OK
+
+after:  {"sessions":12,"observations":26}
+
+# NOTE: the generated extension resolves the bearer from the OMP process env (AI_MEMORY_AUTH_TOKEN).
+#       Without it in ~/.omp/agent/.env the hooks post unauthenticated and are dropped (observed: sessions:0).

@@ -1,0 +1,15 @@
+# Adapter evidence — WP-KAD-MEMORY-SUBSTRATE-057
+
+$ node --test tools/kad/test/ai-memory-adapter.test.mjs
+✔ a healthy probe reports PASS and stays non-authoritative (14.222303ms)
+✔ search returns PROPOSED records addressed by /admin/search with scoping and bearer auth (0.677127ms)
+✔ read returns one PROPOSED page addressed by /admin/read-page (0.341905ms)
+✔ read and search reject unusable input without a request (0.365571ms)
+✔ an ACCEPTED server payload cannot become an accepted record (0.469049ms)
+✔ a refused connection degrades without throwing (0.231092ms)
+✔ a stalled request degrades after the bounded timeout (10.481644ms)
+✔ a missing bearer token degrades without issuing a request (0.205934ms)
+✔ an authentication failure degrades without throwing (0.484368ms)
+ℹ tests 9
+ℹ pass 9
+ℹ fail 0

@@ -440,9 +440,9 @@ export class ClaimKnowledgePlane {
   show(claimId) { return this.#records.get(`kp:claim:${claimId}`) ?? null; }
   history() { return [...this.#history]; }
 
-  projectOpenViking({ available = false } = {}) {
-    if (!available) return { status: 'DEGRADED', canonical_mutation: false, entries: [], reason: 'OpenViking unavailable; exact canonical fallback remains available' };
-    return { status: 'PASS', canonical_mutation: false, entries: this.list().map(record => ({ uri: `viking://resources/kad-claims/${record.claim_id}.json`, canonical_id: record.id, epistemic_class: record.epistemic_class, source_ref: record.source_ref, source_hash: record.source_hash })) };
+  projectDerivedIndex({ available = false } = {}) {
+    if (!available) return { status: 'DEGRADED', canonical_mutation: false, entries: [], reason: 'ai-memory unavailable; exact canonical fallback remains available' };
+    return { status: 'PASS', canonical_mutation: false, entries: this.list().map(record => ({ uri: `ai-memory://kad/kad-pi/claims/${record.claim_id}.json`, canonical_id: record.id, epistemic_class: record.epistemic_class, source_ref: record.source_ref, source_hash: record.source_hash })) };
   }
 }
 

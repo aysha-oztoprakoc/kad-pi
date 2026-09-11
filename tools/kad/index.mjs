@@ -18,7 +18,7 @@ export { RESOURCE_STATES, ACCEPTANCE_STATES, ResultEnvelope, ResourceRegistry, A
 export { createQwenRetrievalWorker, createSthenoWorldWorker } from './swarm-workers.mjs';
 export { EXECUTION_CLASSES as MICROTASK_EXECUTION_CLASSES, ESCALATION_REASONS, classifyMicrotask, compileFreshLocalPacket, buildEscalationPacket, routeMicrotask, executeMicrotask, makeEconomicReceipt, recordDistillationCandidate } from './microtask-router.mjs';
 export { DEFAULT_SOURCE_ALLOWLIST, EPISTEMIC_CLASSES, CLAIM_CLASSES, TRAINING_ELIGIBILITY, DeterministicKnowledgePlane, ClaimKnowledgePlane, createClaimKnowledgePlane, promoteAuditedClaims, projectClaims, hashSource, parseKnowledgeCliArgs, projectionImpact, runKnowledgeCli, validateAcceptanceTransition } from './knowledge-plane.mjs';
-export { createNeedleAdapter, createOpenVikingAdapter, readFixture, runOptionalAdapterProbe } from './knowledge-plane-adapters.mjs';
+export { AI_MEMORY_BASE_URL, AI_MEMORY_EXCERPT_LIMIT, createAiMemoryAccessAdapter, createNeedleAdapter, readFixture, runOptionalAdapterProbe } from './knowledge-plane-adapters.mjs';
 export { RUNTIME_STATES, RUNTIME_STATUS_SCHEMA, SELECTED_RUNTIME, createRuntimeStatus, applyStaleness, observeRuntime, runtimeTransition, validateRuntimeStatus } from './runtime-status.mjs';
 
 // WP-KAD-RESEARCH-API-001 Exports
@@ -26,10 +26,6 @@ export { RESEARCH_SCHEMA_VERSION, IDENTIFIER_TYPES, IDENTIFIER_PRECEDENCE, Resea
 
 // WP-KAD-RESEARCH-CAPABILITIES-003 Exports
 export { RESEARCH_CAPABILITY_SCHEMA_VERSION, CAPABILITY_NAMES, CONSTRAINT_CLASSES, OBSERVATION_STATES, SUPPORT_MODES, ResearchCapabilityError, ResearchCapabilityValidationError, ResearchCapabilityProfile, ResearchCapabilityObservation, ResearchCapabilityPlane, validateCapabilityProfile, validateCapabilityObservation, parseCapabilityManifest, serializeCapabilityManifest, evaluateCapabilityState, evaluateEconomicAdmission, selectResearchCapabilityRoute, registerResearchCapabilities } from './research-capabilities.mjs';
-
-// WP-KAD-RESEARCH-OPENVIKING-004 Exports
-export { RESEARCH_CONTEXT_DERIVATION_VERSION, RESEARCH_VIKING_PREFIX, ResearchContextError, buildResearchResourceUri, parseResearchResourceUri, deriveL0Context, deriveL1Context, deriveL2Chunk, evaluateContextStaleness, ResearchOpenVikingAdapter } from './research-openviking.mjs';
-export { createResearchOpenVikingAdapter } from './knowledge-plane-adapters.mjs';
 
 // WP-KAD-RESEARCH-ZOTERO-005 Exports
 export { DEFAULT_ZOTERO_LOCAL_URL, ZoteroError, ZoteroSecurityError, ZoteroClientError, isLoopbackUrl, normalizeZoteroItem, ZoteroLocalAdapter } from './research-zotero.mjs';

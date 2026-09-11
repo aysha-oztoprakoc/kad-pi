@@ -1,0 +1,86 @@
+# WP-KAD-MEMORY-SUBSTRATE-057 — pre-refactor substrate probe
+# host: amdy  user: amdy  date: 2026-09-11T14:36:30Z
+
+## git
+$ git rev-parse HEAD
+3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5
+$ git symbolic-ref --short HEAD
+main
+$ git ls-remote origin refs/heads/main
+2f2ae35383a57a955cd9b5626dbe9f62d0bf9f31	refs/heads/main
+$ git status --short --untracked-files=all | wc -l
+349
+$ git ls-files vault | wc -l
+113
+$ find vault -name '*.md' | wc -l
+188
+
+## memory substrate
+$ command -v ai-memory
+(absent)
+$ ls ~/.config/ai-memory ~/.local/share/ai-memory
+ls: cannot access '/home/amdy/.config/ai-memory': No such file or directory
+ls: cannot access '/home/amdy/.local/share/ai-memory': No such file or directory
+$ systemctl --user is-active ai-memory.service
+inactive
+
+## gateway
+$ command -v omniroute
+(absent)
+$ systemctl --user is-active omniroute.service
+inactive
+
+## retrieval substrate
+$ curl --max-time 3 http://127.0.0.1:1933/
+curl: (7) Failed to connect to 127.0.0.1:1933 after 0 ms: Could not connect to server
+http_code=000
+
+## local inference
+$ bin/kad-serve status
+=== Local Inference Status ===
+Port 5001: OFFLINE
+Port 5002: OFFLINE
+
+## local model registry
+$ bin/kad-model list | wc -l
+19
+$ bin/kad-model list
+stheno-v3.2	ACTIVE	world	4920734240	8e98c1953f9c04e060fd9640bbe866685c844363a2360f09099b79c6c9195fc4
+qwen-local	DEGRADED	retrieval	5627044224	2ca636d9e81d3d23ca9b60c234fe185d30ec082eeba69ce770fdb0c76559a4f5
+rp-hero-8b	FILE_ONLY	world	4920767200	55243b4c116f78f1309ab0ad4509da45e3fcbedb3ac2868576d25082dd513c24
+lumimaid-8b	FILE_ONLY	world	4920733888	1199440aa13c55f5f2cad1cb215535306f21e52a81de23f80a9e3586c8ac1c50
+needle2	LOADABLE	engineering	13737807	b43aabfcaf1a6db6acf488076eab71d823c08697c7af4521fc1d174b60ede5ba
+bge-small-zh-v1.5	LOADABLE	retrieval	47886240	ab9b81d9cd329c712eee379cf0068eabe6a5e2a01d0def61535eba9384085e2c
+sdxs-image	ACTIVE	image	682847200	409ab23582ee074c6b9d5395784fc0741b0599fb9d138686c69087c71678eb6a
+dreamshaper-xl	LOADABLE	image	2798084896	8bcbad2682ebef85378969c275fe048596b82075b2541b2189ef0757b225b4c3
+lunaris-8b	CATALOGED	world	4920734240	ef1d393f125be8c608859eeb4f26185ad90c7fc9cba41c96e847e77cdbcada18
+dolphin-8b	CATALOGED	world	4920745856	4c001f29d4edbd9327a6df8e16e2b7907a64e0e31b0a7abe9c779a96773f304e
+neural-daredevil-8b	CATALOGED	world	4920734272	4cb4fc42a1c41ff69d80cea7175dcd66d12820f6a1b6702cecd5ea96cfb278bb
+hermes-3-8b	CATALOGED	world	4920733824	d4403ce5a6e930f4c2509456388c20d633a15ff08dd52ef3b142ff1810ec3553
+openhermes-7b	CATALOGED	world	4368450304	cd58120326971c71c0590f6b7084a0744e287ce9c67275d8b4bf34a5947d950b
+llama-3.1-8b-abliterated	CATALOGED	world	4920734720	c6be866583f7bddb437b8ccd988fc499c98f1846934a1f3d48de7777313057cb
+dark-planet-8b	CATALOGED	world	4920734848	cda7e0d065abf314a12da9ee2903f8f4d655749a896598f7d0700c1825d7cb60
+chaos-rp-8b	CATALOGED	world	4920733856	5774595ad560e4d258dac17723509bdefe746c4dacd4e679a0de00346f14d2f3
+gemma-4-e4b	CATALOGED	world	5335285728	d0027dd3a9128d9323e9f282c8bf010a8526c46477584535991dc1a869b56e96
+rocinante-12b	CATALOGED	world	7477203712	5133341741709aafcbc162c8fe638143e466288b7942ba7a0e9d9ef4e08d056f
+violet-lotus-12b	CATALOGED	world	7477209440	4e24e5fb4de39c6f0495eccce4d534beb54e17d45cb2ea6e87ef91d05cc21db3
+
+## harness binaries
+claude: /home/amdy/.local/share/mise/installs/claude/latest/claude
+codex: /home/amdy/.local/share/mise/installs/codex/latest/bin/codex
+opencode: /home/amdy/.local/share/mise/installs/opencode/latest/opencode
+pi: /home/amdy/.local/share/mise/installs/pi/latest/pi/pi
+crush: /home/amdy/.local/bin/crush
+gemini: /home/amdy/.local/share/mise/installs/gemini/latest/node_modules/.bin/gemini
+qwen: MISSING
+omniroute: MISSING
+ai-memory: MISSING
+omp: /home/amdy/.local/share/mise/installs/github-can1357-oh-my-pi/latest/omp
+
+## install capability
+$ sudo -n true
+sudo: a password is required
+requires password
+$ yay -Q ai-memory-bin omniroute-bin
+error: package 'ai-memory-bin' was not found
+error: package 'omniroute-bin' was not found

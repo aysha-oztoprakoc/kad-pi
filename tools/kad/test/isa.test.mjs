@@ -13,10 +13,15 @@ import {
   compileAllIsas,
   VALIDATOR_REGISTRY
 } from '../isa.mjs';
+import { vaultRoot } from '../wiki/index.mjs';
 
 const ROOT = new URL('../../..', import.meta.url).pathname;
-const AESTHETIC_ISA = resolve(ROOT, 'vault/00_Governance/ISA-KAD-AESTHETIC-001.md');
-const COMPUTE_ISA = resolve(ROOT, 'vault/00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md');
+// The knowledge root resolves through vaultRoot(): the ai-memory wiki of record
+// when the substrate owns the corpus, the committed vault/ mirror otherwise.
+const VAULT = vaultRoot();
+const AESTHETIC_ISA = resolve(VAULT, '00_Governance/ISA-KAD-AESTHETIC-001.md');
+const COMPUTE_ISA = resolve(VAULT, '00_Governance/ISA-KAD-COMPUTE-FABRIC-001.md');
+const MEMORY_ISA = resolve(VAULT, '00_Governance/ISA-KAD-MEMORY-001.md');
 
 test('parseIsa extracts frontmatter, sections, and structured claims for aesthetic ISA', () => {
   const content = readFileSync(AESTHETIC_ISA, 'utf8');
@@ -66,7 +71,7 @@ test('lintIsa validates correct schema across different ISA domains', () => {
 });
 
 test('discoverIsas discovers all active ISAs in canonical governance directory', () => {
-  const isas = discoverIsas(ROOT);
+  const isas = discoverIsas(VAULT);
   assert.ok(Array.isArray(isas));
   assert.ok(isas.length >= 2);
   const ids = isas.map(i => i.kad_id);
@@ -127,14 +132,14 @@ test('explainClaim returns detailed metadata and guidance across domains', () =>
 });
 
 test('buildIsaProjection compiles domain-specific machine-readable projections', () => {
-  const aestheticOut = resolve(ROOT, 'vault/90_Derived/Projections/isa-aesthetic.json');
-  const aestheticProj = buildIsaProjection(AESTHETIC_ISA, aestheticOut);
+  const aestheticOut = resolve(VAULT, '90_Derived/Projections/isa-aesthetic.json');
+  const aestheticProj = buildIsaProjection(AESTHETIC_ISA, aestheticOut, { rootDir: ROOT });
   assert.equal(aestheticProj.projection_type, 'KAD_AESTHETIC_ISA_PROJECTION');
   assert.equal(aestheticProj.isa.id, 'ISA-KAD-AESTHETIC-001');
   assert.ok(aestheticProj.token_contracts);
 
-  const computeOut = resolve(ROOT, 'vault/90_Derived/Projections/isa-compute-fabric.json');
-  const computeProj = buildIsaProjection(COMPUTE_ISA, computeOut);
+  const computeOut = resolve(VAULT, '90_Derived/Projections/isa-compute-fabric.json');
+  const computeProj = buildIsaProjection(COMPUTE_ISA, computeOut, { rootDir: ROOT });
   assert.equal(computeProj.projection_type, 'KAD_COMPUTE_FABRIC_ISA_PROJECTION');
   assert.equal(computeProj.isa.id, 'ISA-KAD-COMPUTE-FABRIC-001');
   assert.ok(computeProj.host_profiles);
@@ -146,9 +151,9 @@ test('compileAllIsas builds domain projections and composite registry', () => {
   const result = compileAllIsas(ROOT);
   assert.equal(result.ok, true);
   assert.ok(result.compiled_count >= 2);
-  assert.ok(existsSync(resolve(ROOT, 'vault/90_Derived/Projections/isa-registry.json')));
+  assert.ok(existsSync(resolve(VAULT, '90_Derived/Projections/isa-registry.json')));
 
-  const registry = JSON.parse(readFileSync(resolve(ROOT, 'vault/90_Derived/Projections/isa-registry.json'), 'utf8'));
+  const registry = JSON.parse(readFileSync(resolve(VAULT, '90_Derived/Projections/isa-registry.json'), 'utf8'));
   assert.equal(registry.registry_type, 'KAD_ISA_REGISTRY');
   assert.ok(registry.artifacts.length >= 2);
   assert.ok(registry.artifacts.some(a => a.id === 'ISA-KAD-AESTHETIC-001'));
@@ -161,4 +166,26 @@ test('validator registry rejects arbitrary shell commands in markdown', () => {
     assert.ok(spec.name);
     assert.ok(['DETERMINISTIC', 'HUMAN_REVIEW', 'HYBRID'].includes(spec.class));
   }
+});
+
+test('memory domain ISAs lint, expose memory contracts, and compile to their own projection', () => {
+  const lint = lintIsa(MEMORY_ISA);
+  assert.equal(lint.ok, true, `memory ISA lint errors: ${lint.errors?.join(', ')}`);
+  assert.equal(lint.domain, 'memory');
+  assert.ok(lint.claimCount >= 8, 'memory ISA must carry a substantive claim set');
+
+  // Every claim must resolve to a registered validator; none may execute shell.
+  const parsed = parseIsa(readFileSync(MEMORY_ISA, 'utf8'));
+  for (const claim of parsed.claims) {
+    assert.ok(VALIDATOR_REGISTRY[claim.validator], `unregistered validator ${claim.validator} on ${claim.id}`);
+    assert.equal(claim.class, 'DETERMINISTIC', `${claim.id} must be DETERMINISTIC`);
+  }
+
+  const projection = buildIsaProjection(MEMORY_ISA, undefined, { rootDir: ROOT });
+  assert.equal(projection.projection_type, 'KAD_MEMORY_ISA_PROJECTION');
+  assert.deepEqual(projection.memory_contracts.authority_order, ['SOURCE', 'EVIDENCE', 'DERIVATION']);
+  assert.ok(projection.memory_contracts.prohibited.includes('silent-promotion-to-CANONICAL'));
+
+  const discovered = discoverIsas(VAULT).map(i => i.kad_id);
+  assert.ok(discovered.includes('ISA-KAD-MEMORY-001'));
 });

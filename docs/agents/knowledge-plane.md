@@ -9,7 +9,7 @@ The KAD KnowledgePlane is the canonical authority for promoted claim records. A 
 - `PROJECT_INFERENCE`: KAD-specific interpretation; remains project-specific.
 - `UNKNOWN`: retained uncertainty; cannot promote as fact.
 
-Wiki and OpenViking outputs are reproducible projections. They carry canonical IDs, source references, hashes, and epistemic classes. They have no mutation authority over canonical records. OpenViking absence degrades only the projection and leaves exact KnowledgePlane retrieval available.
+Wiki and ai-memory outputs are reproducible projections. They carry canonical IDs, source references, hashes, and epistemic classes. They have no mutation authority over canonical records. ai-memory absence degrades only the projection and leaves exact KnowledgePlane retrieval available.
 
 Training eligibility is metadata only. It cannot alter epistemic class; `UNKNOWN` remains ineligible by default. No Needle training, fine-tuning, or distillation is performed by the seed promotion workflow.
 

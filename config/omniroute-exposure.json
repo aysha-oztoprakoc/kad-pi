@@ -1,0 +1,32 @@
+{
+  "schema_version": "kad-omniroute-exposure-1",
+  "policy": "LOCAL_SUBSCRIPTION_AND_FREE_TIERS_ONLY",
+  "rationale": "KAD-PI exposes only models that carry no marginal per-token cost: inference it owns locally, subscriptions the operator already pays for, and free-tier ids. Metered providers are projected only through their explicitly free-tier ids, so no harness fallback chain can turn into an unapproved bill. This is the enforcement point for REQ-KAD-FIN-001 (unauthorized metered spend FORBIDDEN).",
+  "include_all_from": [
+    "llama-cpp",
+    "opencode",
+    "oc",
+    "opencode-go",
+    "agy",
+    "antigravity"
+  ],
+  "metered": [
+    "openrouter"
+  ],
+  "include_free_tier_ids": true,
+  "free_tier_markers": [
+    ":free",
+    "-free"
+  ],
+  "exclude_prefixes": [
+    "auto/"
+  ],
+  "unlisted_providers": "exclude",
+  "operator_notes": [
+    "`include_all_from` is the local + subscription lane: local KAD GGUF endpoints (llama-cpp) and the operator's already-paid subscriptions (OpenCode Go, Google AI Pro via agy/antigravity).",
+    "`metered` providers contribute only ids carrying a free-tier marker.",
+    "`exclude_prefixes` drops the gateway's own auto/* routing combos, which would otherwise select across every upstream the gateway knows about, including metered ones. auto/*:free survives via the free-tier marker and is safe because :free cannot fall back to a paid candidate.",
+    "`unlisted_providers: exclude` means a provider nobody has classified is never exposed. Adding a connection therefore never widens model exposure on its own: it must also be listed here.",
+    "Local models appear in the catalog only while the KAD KoboldCpp endpoints are running (bin/kad-serve). When they are offline the gateway cannot enumerate them, and they drop out of the exposed set."
+  ]
+}

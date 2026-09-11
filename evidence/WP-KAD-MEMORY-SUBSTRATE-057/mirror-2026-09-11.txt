@@ -1,0 +1,22 @@
+# Mirror + guard evidence — WP-KAD-MEMORY-SUBSTRATE-057
+
+$ bin/kad-memory publish
+[PASS] mirror regenerated from /home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc
+       vault/ differs from HEAD in 55 path(s)
+       review and commit: git add vault && git commit -m "..." -- vault
+
+$ head -3 vault/index.md
+---
+okf_version: "0.2"
+---
+
+$ test -d vault/.obsidian -> expect absent
+absent
+
+$ mutating ops aimed at the mirror (each must exit 1):
+  KAD_VAULT=$PWD/vault bin/kad-wiki rebuild -> exit=1
+  KAD_VAULT=$PWD/vault bin/kad-wiki propose --id guard --target 00_Governance/PROBE.md --body /dev/null -> exit=1
+  KAD_VAULT=$PWD/vault bin/kad-wiki ingest --source g --file /dev/null -> exit=1
+
+$ read-only op against the mirror (fresh-clone path)
+{"ok":false,"count":192}

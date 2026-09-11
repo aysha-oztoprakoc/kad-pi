@@ -72,7 +72,7 @@ test('CP2 Compact meter formats status bar string cleanly and gracefully degrade
     provider_quota_percent: null,
     gpu: null,
     workctl: { ticket_id: 'NO ACTIVE CLAIM', has_active_claim: false },
-    degraded_services: ['openviking'],
+    degraded_services: ['ai-memory'],
   };
 
   const degradedMeter = renderCompactMeter(degradedState);
@@ -128,7 +128,7 @@ test('CP3 Detailed panel renders structured sections with theme tokens', () => {
       power_w: 18,
     },
     services: {
-      openviking: { state: 'AVAILABLE' },
+      ai_memory: { state: 'AVAILABLE' },
       zotero: { state: 'DEGRADED' },
       needle: { state: 'UNAVAILABLE' },
     },

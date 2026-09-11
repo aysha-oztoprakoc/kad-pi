@@ -1,6 +1,371 @@
-# Source-of-truth project declaration for the wrapper-linked Work-local OMP model config.
-# No credential is stored here. The endpoint is KAD STC-owned and localhost-only.
+# Free/general Z.AI Open Platform route. The credential is resolved from the
+# ZAI_API_KEY environment variable; no secret is stored in this file.
 providers:
+  omniroute:
+    baseUrl: http://127.0.0.1:20128/v1
+    apiKey: OMNIROUTE_API_KEY
+    api: openai-completions
+    auth: apiKey
+    models:
+      - id: auto/best-free
+        name: auto/best-free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: auto/coding:free
+        name: auto/coding:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: oc/big-pickle
+        name: oc/big-pickle (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: oc/deepseek-v4-flash-free
+        name: oc/deepseek-v4-flash-free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: oc/hy3-free
+        name: oc/hy3-free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: oc/mimo-v2.5-free
+        name: oc/mimo-v2.5-free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: oc/muse-spark-1.2
+        name: oc/muse-spark-1.2 (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: oc/muse-spark-1.2-contributor-free
+        name: oc/muse-spark-1.2-contributor-free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: oc/nemotron-3-ultra-free
+        name: oc/nemotron-3-ultra-free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: oc/north-mini-code-free
+        name: oc/north-mini-code-free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/cohere/north-mini-code:free
+        name: openrouter/cohere/north-mini-code:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/dots-studio/dots-3-note-preview:free
+        name: openrouter/dots-studio/dots-3-note-preview:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/google/gemma-4-26b-a4b-it:free
+        name: openrouter/google/gemma-4-26b-a4b-it:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/google/gemma-4-31b-it:free
+        name: openrouter/google/gemma-4-31b-it:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/inclusionai/ling-3.0-flash-fin:free
+        name: openrouter/inclusionai/ling-3.0-flash-fin:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/inclusionai/ling-3.0-flash-sante:free
+        name: openrouter/inclusionai/ling-3.0-flash-sante:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/inclusionai/ling-3.0-flash-vl:free
+        name: openrouter/inclusionai/ling-3.0-flash-vl:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/liquid/lfm-2.5-2.6b:free
+        name: openrouter/liquid/lfm-2.5-2.6b:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/nex-agi/nex-n2.5-mini:free
+        name: openrouter/nex-agi/nex-n2.5-mini:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/nex-agi/nex-n2.5-pro:free
+        name: openrouter/nex-agi/nex-n2.5-pro:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
+        name: openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/nvidia/nemotron-3-super-120b-a12b:free
+        name: openrouter/nvidia/nemotron-3-super-120b-a12b:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
+        name: openrouter/nvidia/nemotron-3-ultra-550b-a55b:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/nvidia/nemotron-3.5-content-safety:free
+        name: openrouter/nvidia/nemotron-3.5-content-safety:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/nvidia/nemotron-3.5-lightning:free
+        name: openrouter/nvidia/nemotron-3.5-lightning:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/poolside/laguna-s-2.1:free
+        name: openrouter/poolside/laguna-s-2.1:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/poolside/laguna-xs-2.1:free
+        name: openrouter/poolside/laguna-xs-2.1:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/thinkingmachines/inkling-small:free
+        name: openrouter/thinkingmachines/inkling-small:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: openrouter/thinkingmachines/inkling:free
+        name: openrouter/thinkingmachines/inkling:free (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: veo-free/seedance
+        name: veo-free/seedance (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+      - id: veo-free/veo
+        name: veo-free/veo (OmniRoute gateway)
+        api: openai-completions
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 128000
+        maxTokens: 16384
+  zai-free:
+    baseUrl: https://api.z.ai/api/paas/v4
+    apiKey: ZAI_API_KEY
+    api: openai-completions
+    auth: apiKey
+    models:
+      - id: glm-4.7-flash
+        name: GLM-4.7-Flash (Z.AI Open Platform free)
+        api: openai-completions
+        reasoning: true
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 200000
+        maxTokens: 128000
   kad-local-world:
     baseUrl: http://127.0.0.1:5001/v1
     api: openai-completions
@@ -8,8 +373,64 @@ providers:
     models:
       - id: kad-local-s13
         name: Stheno v3.2 (KAD WORLD-only)
-        identityContains: L3-8B-Stheno-v3.2-Q4_K_M
-        contextWindow: 4096
+        api: openai-completions
+        supportsTools: true
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 16384
+        maxTokens: 1024
+      - id: stheno-local
+        name: Stheno v3.2 local
+        api: openai-completions
+        supportsTools: true
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 16384
+        maxTokens: 1024
+      - id: rp-hero
+        name: RP-Hero 8B local (Port 5001)
+        api: openai-completions
+        supportsTools: true
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 16384
+        maxTokens: 1024
+      - id: lumimaid
+        name: Lumimaid 8B local (Port 5001)
+        api: openai-completions
+        supportsTools: true
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 16384
+        maxTokens: 1024
+      - id: active-local
+        name: Active Local Model (Port 5001)
+        api: openai-completions
+        supportsTools: true
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 16384
+        maxTokens: 1024
   kad-local-qwen:
     baseUrl: http://127.0.0.1:5002/v1
     api: openai-completions
@@ -17,6 +438,13 @@ providers:
     models:
       - id: qwen-local
         name: Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M (KAD retrieval-only)
-        identityContains: Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M
-        contextWindow: 4096
-        maxTokens: 256
+        api: openai-completions
+        supportsTools: true
+        input: [text]
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        contextWindow: 16384
+        maxTokens: 1024

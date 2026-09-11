@@ -73,9 +73,9 @@ export function analyzeArchitectureComplexity(cwd = process.cwd()) {
   if (fs.existsSync(zoteroAdapter)) {
     providerAdapters.push({ id: 'adapter:zotero', name: 'Zotero Read-Only Local API Adapter' });
   }
-  const openVikingAdapter = path.join(cwd, 'tools', 'kad', 'research-openviking.mjs');
-  if (fs.existsSync(openVikingAdapter)) {
-    providerAdapters.push({ id: 'adapter:openviking', name: 'OpenViking Research Engine Adapter' });
+  const aiMemoryAdapter = path.join(cwd, 'tools', 'kad', 'knowledge-plane-adapters.mjs');
+  if (fs.existsSync(aiMemoryAdapter) && fs.readFileSync(aiMemoryAdapter, 'utf8').includes('createAiMemoryAccessAdapter')) {
+    providerAdapters.push({ id: 'adapter:ai-memory', name: 'ai-memory Retrieval Substrate Adapter' });
   }
   const localInferenceAdapter = path.join(cwd, 'tools', 'kad', 'local-inference-capability.mjs');
   if (fs.existsSync(localInferenceAdapter)) {

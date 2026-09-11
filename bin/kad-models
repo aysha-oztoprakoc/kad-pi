@@ -1,0 +1,156 @@
+#!/usr/bin/env node
+/**
+ * bin/kad-models - KAD OmniRoute Gateway Model Catalog CLI
+ *
+ * Usage:
+ *   bin/kad-models [sync]   Snapshot the gateway catalog and project it into .omp/models.yml
+ *   bin/kad-models list     List the model ids recorded in the snapshot
+ *   bin/kad-models diff     Compare the live gateway catalog against the snapshot
+ *
+ * `sync` is idempotent: an unchanged catalog hash writes nothing and prints
+ * `unchanged`. An unreachable or empty gateway prints the error, exits non-zero,
+ * and leaves the previous snapshot and provider block in place.
+ */
+
+import { lstatSync, readFileSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import {
+  CATALOG_PATH,
+  GATEWAY_BASE_URL,
+  catalogHash,
+  fetchCatalog,
+  readCatalog,
+  renderOmpModelsBlock,
+  spliceOmpModelsBlock,
+  syncCatalog
+} from '../tools/kad/omniroute-catalog.mjs';
+
+const [,, command = 'sync'] = process.argv;
+const repoRoot = process.cwd();
+const catalogFile = resolve(repoRoot, CATALOG_PATH);
+
+/**
+ * Resolves the gateway bearer from the operator's agent env file when it is not
+ * already exported, so the CLI works standalone without echoing the secret into
+ * an argv or a shell profile.
+ */
+if (!process.env.OMNIROUTE_API_KEY) {
+  const envFile = resolve(process.env.HOME ?? '', '.omp/agent/.env');
+  try {
+    for (const line of readFileSync(envFile, 'utf8').split('\n')) {
+      const match = line.match(/^OMNIROUTE_API_KEY=(.+)$/);
+      if (match) {
+        process.env.OMNIROUTE_API_KEY = match[1].trim();
+        break;
+      }
+    }
+  } catch {
+    // Absent env file: the gateway call below reports the failure.
+  }
+}
+
+function help() {
+  console.log(`
+KAD OmniRoute Gateway Model Catalog
+
+Usage:
+  bin/kad-models [sync]   Snapshot the gateway catalog and project it into .omp/models.yml
+  bin/kad-models list     List the model ids recorded in the snapshot
+  bin/kad-models diff     Compare the live gateway catalog against the snapshot
+
+Environment:
+  OMNIROUTE_BASE_URL   Gateway base URL (default ${GATEWAY_BASE_URL})
+  OMNIROUTE_API_KEY    Bearer credential for the gateway
+`);
+  process.exit(1);
+}
+
+function requireCatalog() {
+  const catalog = readCatalog(catalogFile);
+  if (!catalog || !Array.isArray(catalog.model_ids)) {
+    throw new Error(`no gateway catalog snapshot at ${CATALOG_PATH}; run 'bin/kad-models sync' first`);
+  }
+  return catalog;
+}
+
+/**
+ * Projects the exposed provider block into the agent model map OMP actually
+ * reads (`~/.omp/agent/models.yml`).
+ *
+ * `bin/omp-kad` is supposed to symlink the project map into that path, but when
+ * the path is a stale regular file the harness silently reads the old map and the
+ * gateway provider never appears. We therefore write the block directly whenever
+ * the path is not already a symlink, leaving the wrapper's linking design intact
+ * for installs that do use it.
+ */
+function projectToAgentModelMap(catalog) {
+  const agentMap = resolve(process.env.HOME ?? '', '.omp/agent/models.yml');
+  if (agentMap === resolve(repoRoot, '.omp/models.yml')) return;
+  let content;
+  try {
+    content = readFileSync(agentMap, 'utf8');
+  } catch {
+    return; // No agent map on this host: the project map is the only surface.
+  }
+  if (lstatSync(agentMap).isSymbolicLink()) {
+    console.log('agent model map is a symlink to the project map; nothing to project');
+    return;
+  }
+  const block = renderOmpModelsBlock(catalog.exposed_model_ids, {
+    baseUrl: String(catalog.source_url).replace(/\/models$/, '')
+  });
+  const projected = spliceOmpModelsBlock(content, block);
+  if (projected === content) return;
+  writeFileSync(`${agentMap}.bak-${Date.now()}`, content);
+  writeFileSync(agentMap, projected);
+  console.log(`projected ${catalog.exposed_count} exposed models into ${agentMap}`);
+}
+
+try {
+  switch (command) {
+    case 'sync': {
+      const result = await syncCatalog({ repoRoot });
+      if (result.changed) {
+        console.log(`catalog synced: ${result.catalog.model_count} advertised, ${result.catalog.exposed_count} exposed (policy ${result.catalog.exposure_policy}, hash ${result.catalog.catalog_hash.slice(0, 12)})`);
+      } else {
+        console.log('unchanged');
+      }
+      projectToAgentModelMap(result.catalog);
+      process.exit(0);
+      break;
+    }
+
+    case 'list': {
+      const catalog = requireCatalog();
+      // The exposed set is what KAD-PI will actually route through; the full
+      // advertised catalog is larger and is available via `list --all`.
+      const ids = process.argv.includes('--all') ? catalog.model_ids : (catalog.exposed_model_ids ?? catalog.model_ids);
+      for (const id of ids) console.log(id);
+      process.exit(0);
+      break;
+    }
+
+    case 'diff': {
+      const catalog = requireCatalog();
+      const live = await fetchCatalog({ baseUrl: GATEWAY_BASE_URL });
+      const recorded = new Set(catalog.model_ids);
+      const observed = new Set(live.model_ids);
+      const added = live.model_ids.filter((id) => !recorded.has(id));
+      const removed = catalog.model_ids.filter((id) => !observed.has(id));
+      for (const id of added) console.log(`+ ${id}`);
+      for (const id of removed) console.log(`- ${id}`);
+      if (added.length === 0 && removed.length === 0) {
+        console.log(`no drift: ${catalog.model_ids.length} models (snapshot hash ${catalogHash(catalog.model_ids).slice(0, 12)})`);
+      }
+      process.exit(0);
+      break;
+    }
+
+    default:
+      console.error(`Unknown command: ${command}`);
+      help();
+  }
+} catch (err) {
+  console.error(`kad-models ${command} failed: ${err.message}`);
+  process.exit(1);
+}

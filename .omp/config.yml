@@ -1,22 +1,18 @@
 modelRoleStorage: project
 modelRoles:
-  # Baseline agentic work — economical flash-tier
-  default: opencode-go/deepseek-v4-flash:low
+  default: openai-codex/gpt-5.6-luna:max
   task: openai-codex/gpt-5.6-luna:low
   advisor: google-antigravity/gemini-3.8-flash:low
   designer: google-antigravity/gemini-3.8-flash:high
   vision: google-antigravity/gemini-3.8-flash:high
-  # Planning / architecture / scaffolding — deliberate high-thinking (feeds local-model training)
-  plan: opencode-go/deepseek-v4-pro:high
+  plan: opencode-go/deepseek-v4.1-flash:high
   slow: openai-codex/gpt-5.6-terra:high
   verifier: google-antigravity/gemini-3.1-pro:high
   research: google-antigravity/gemini-3.1-pro:low
   oracle: openai-codex/gpt-5.6-terra:max
-  # Background + knowledge maintenance — local-first
   smol: kad-local-qwen/qwen-local:low
   tiny: zai-free/glm-4.7-flash:minimal
   commit: zai-free/glm-4.7-flash:low
-  # Local inference roles
   world: kad-local-world/kad-local-s13:low
   local_retrieval: kad-local-qwen/qwen-local:low
   local_general: kad-local-world/kad-local-s13:low
@@ -53,12 +49,17 @@ enabledModels:
   - zai-free/*
   - kad-local-world/*
   - kad-local-qwen/*
+  # Single OpenAI-compatible transport for local + subscription models. The
+  # provider block in .omp/models.yml is projected by `bin/kad-models sync` and
+  # carries only policy-exposed ids (no metered models). See
+  # config/omniroute-exposure.json.
+  - omniroute/*
 disabledProviders:
   - openrouter
 advisor:
   enabled: false
 memory:
-  backend: "mnemopi"
+  backend: mnemopi
 autolearn:
   enabled: true
   autoContinue: false
@@ -69,6 +70,9 @@ compaction:
   enabled: true
   methodOrder:
     - snapcompact
+    - handoff
+    - shake
+    - soft
   thresholdPercent: 70
   thresholdTokens: -1
   midTurnEnabled: true

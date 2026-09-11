@@ -1,4 +1,5 @@
 import { observeRuntime } from '../runtime-status.mjs';
+import { AI_MEMORY_BASE_URL } from '../knowledge-plane-adapters.mjs';
 
 export async function probeZoteroHealth(fetchImpl = fetch, timeoutMs = 800) {
   try {
@@ -17,20 +18,31 @@ export async function probeZoteroHealth(fetchImpl = fetch, timeoutMs = 800) {
   }
 }
 
-export async function probeOpenVikingHealth(fetchImpl = fetch, timeoutMs = 800) {
+export async function probeAiMemoryHealth(fetchImpl = fetch, timeoutMs = 800, token = process.env.AI_MEMORY_AUTH_TOKEN) {
+  if (!token) return { state: 'DEGRADED', reason: 'AI_MEMORY_AUTH_TOKEN is not configured' };
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeoutMs);
-    const res = await fetchImpl('http://127.0.0.1:8080/health', {
+    const res = await fetchImpl(`${AI_MEMORY_BASE_URL}/admin/status`, {
+      headers: { authorization: `Bearer ${token}`, accept: 'application/json' },
       signal: controller.signal,
     }).finally(() => clearTimeout(timer));
 
     if (res.ok) {
-      return { state: 'AVAILABLE', status_code: res.status };
+      let version = null;
+      try {
+        version = (await res.json())?.version ?? null;
+      } catch {
+        version = null;
+      }
+      return { state: 'AVAILABLE', status_code: res.status, version };
+    }
+    if (res.status === 401 || res.status === 403) {
+      return { state: 'DEGRADED', reason: `ai-memory rejected the bearer token (HTTP ${res.status})` };
     }
     return { state: 'DEGRADED', reason: `HTTP ${res.status}` };
   } catch {
-    return { state: 'UNAVAILABLE', reason: 'OpenViking server offline' };
+    return { state: 'UNAVAILABLE', reason: 'ai-memory server offline' };
   }
 }
 
@@ -39,7 +51,7 @@ export async function collectServiceHealth({
   now = Date.now(),
 } = {}) {
   const defaultProbes = {
-    openviking: () => probeOpenVikingHealth(),
+    ai_memory: () => probeAiMemoryHealth(),
     zotero: () => probeZoteroHealth(),
     needle: async () => ({ state: 'UNAVAILABLE', reason: 'Needle 2 not configured' }),
     local_runtime: async () => {

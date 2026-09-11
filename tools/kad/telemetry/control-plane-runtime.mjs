@@ -139,11 +139,11 @@ export function renderDetailedPanel(viewModel = {}) {
   // Services
   lines.push(`▶ SERVICE HEALTH`);
   const s = viewModel.services || {};
-  const ovState = s.openviking?.state || 'UNAVAILABLE';
+  const memState = s.ai_memory?.state || 'UNAVAILABLE';
   const zotState = s.zotero?.state || 'UNAVAILABLE';
   const needleState = s.needle?.state || 'UNAVAILABLE';
   const localState = s.local_runtime?.state || 'UNAVAILABLE';
-  lines.push(`  OpenViking: ${ovState.padEnd(12)} Zotero API: ${zotState.padEnd(12)} Needle: ${needleState}`);
+  lines.push(`  ai-memory: ${memState.padEnd(12)} Zotero API: ${zotState.padEnd(12)} Needle: ${needleState}`);
   lines.push(`  Local Inference: ${localState}`);
   lines.push('');
 
@@ -553,7 +553,7 @@ export function createKadControlPlaneExtension(pi) {
   });
 
   pi.registerCommand('kad-services', {
-    description: 'Check OpenViking, Zotero, and local model health',
+    description: 'Check ai-memory, Zotero, and local model health',
     handler: async (_args, ctx) => {
       const health = await collectServiceHealth();
       ctx.ui.notify(JSON.stringify(health, null, 2), 'info');

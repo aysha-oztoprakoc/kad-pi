@@ -11,7 +11,7 @@ The KAD Operator Control Plane serves as the cockpit for KAD-PI inside Oh My Pi 
 * Active economic route, execution class, and paid spend authorization.
 * Active workctl ticket claim, execution mode, and frontier status.
 * AMD GPU utilization, VRAM usage, temperature, and power.
-* Health status of optional local services (OpenViking, Zotero API, Needle 2, local inference).
+* Health status of optional local services (ai-memory, Zotero API, Needle 2, local inference).
 * Mathematically defensible TOKENMAXXING metrics.
 
 ```text
@@ -85,7 +85,7 @@ The extension is installed at `.omp/extensions/kad-control-plane/` (and `.omp/ex
 * `/kad-tokens`: Shows token breakdown and provider quotas.
 * `/kad-providers`: Lists all configured, enabled, and disabled providers.
 * `/kad-budget`: Shows current economic router authorization and execution class.
-* `/kad-services`: Shows health of OpenViking, Zotero API, Needle 2, and local inference.
+* `/kad-services`: Shows health of ai-memory, Zotero API, Needle 2, and local inference.
 * `/kad-work`: Shows active workctl claim, actor, and frontier.
 * `/kad-refresh`: Forces immediate telemetry refresh.
 * `/kad-doctor`: Runs comprehensive health diagnostics.
@@ -141,7 +141,7 @@ KAD-PI integrates deterministic development utilities configured via `Justfile` 
 | Component Outage | Observable Degradation | Invariant Preserved |
 | --- | --- | --- |
 | Provider Quota API Down | Provider status marked `DEGRADED`, limit `UNKNOWN` | No fake quota invented; session continues |
-| OpenViking Offline | OpenViking marked `UNAVAILABLE` | Falls back to exact KAD librarian retrieval |
+| ai-memory Offline | ai-memory marked `UNAVAILABLE` | Falls back to exact KAD librarian retrieval |
 | Zotero API Offline | Zotero marked `UNAVAILABLE` | Standard export/manifest import remains operational |
 | AMD GPU Telemetry Down | GPU section displays `UNAVAILABLE` | Extension and OMP session continue |
 | Workctl No Active Claim | Workctl displays `NO ACTIVE CLAIM` | No future work or claim manufactured |

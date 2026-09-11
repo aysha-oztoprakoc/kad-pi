@@ -37,5 +37,5 @@ test('public build remains deterministic and emits sanitized state', () => {
   assert.equal(output.publication_class, 'PUBLIC');
   assert.equal(persisted.project.status, 'PARTIAL');
   assert.deepEqual(persisted.records, []);
-  assert.doesNotMatch(JSON.stringify(persisted), /source_ref|source_hash|\/home\/|OpenViking|Needle/i);
+  assert.doesNotMatch(JSON.stringify(persisted), /source_ref|source_hash|\/home\/|ai-memory|Needle/i);
 });

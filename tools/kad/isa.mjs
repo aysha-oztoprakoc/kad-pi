@@ -7,7 +7,22 @@
  */
 
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';
-import { resolve, join, dirname } from 'node:path';
+import { resolve, join, dirname, relative } from 'node:path';
+import { createHash } from 'node:crypto';
+import { vaultRoot } from './wiki/index.mjs';
+import {
+  validateSourceInventory,
+  validateProvenance,
+  validateExtraction,
+  validateKnowledge,
+  validateVisual,
+  validateLeakage,
+  validateSynthesis,
+  validateConsumers,
+  validateQuality,
+  validateReplay,
+  validateAcceptance
+} from './gaya-dataset-qualification.mjs';
 
 /**
  * Parses frontmatter, headers, and YAML claims block from ISA Markdown
@@ -485,14 +500,364 @@ export const VALIDATOR_REGISTRY = {
         checked_count: 1
       };
     }
+  },
+
+  // --- Gaya Dataset Generation Domain Validators (ISA-GAYA-DATASET-G1-001) ---
+  'gaya.dataset.source_inventory': {
+    name: 'Gaya Source Inventory & Exclusion Verification',
+    class: 'DETERMINISTIC',
+    execute(rootDir) { return validateSourceInventory(rootDir); }
+  },
+  'gaya.dataset.provenance': {
+    name: 'Gaya Provenance & Eligibility Resolution',
+    class: 'HYBRID',
+    execute(rootDir) { return validateProvenance(rootDir); }
+  },
+  'gaya.dataset.extraction': {
+    name: 'Gaya Document Extraction & OCR Integrity',
+    class: 'HYBRID',
+    execute(rootDir) { return validateExtraction(rootDir); }
+  },
+  'gaya.dataset.knowledge': {
+    name: 'Gaya Canonical Knowledge & Metamorphic Verification',
+    class: 'HYBRID',
+    execute(rootDir) { return validateKnowledge(rootDir); }
+  },
+  'gaya.dataset.visual': {
+    name: 'Gaya Visual Grounding & Spatial Reference Verification',
+    class: 'HYBRID',
+    execute(rootDir) { return validateVisual(rootDir); }
+  },
+  'gaya.dataset.leakage': {
+    name: 'Gaya Split Isolation & Non-Leakage Verification',
+    class: 'DETERMINISTIC',
+    execute(rootDir) { return validateLeakage(rootDir); }
+  },
+  'gaya.dataset.synthesis': {
+    name: 'Gaya Bounded Synthesis & Family Coverage Verification',
+    class: 'HYBRID',
+    execute(rootDir) { return validateSynthesis(rootDir); }
+  },
+  'gaya.dataset.consumers': {
+    name: 'Gaya Offline Consumer Loading & Smoke Qualification',
+    class: 'DETERMINISTIC',
+    execute(rootDir) { return validateConsumers(rootDir); }
+  },
+  'gaya.dataset.quality': {
+    name: 'Gaya Adversarial Semantic Cases & Independent Review',
+    class: 'HYBRID',
+    execute(rootDir) { return validateQuality(rootDir); }
+  },
+  'gaya.dataset.replay': {
+    name: 'Gaya Deterministic Replay & Fault Injection Recovery',
+    class: 'DETERMINISTIC',
+    execute(rootDir) { return validateReplay(rootDir); }
+  },
+  'gaya.dataset.acceptance': {
+    name: 'Gaya Full Required-Family Coverage & Release Acceptance',
+    class: 'HYBRID',
+    execute(rootDir) { return validateAcceptance(rootDir); }
+  },
+
+  // --- Memory Substrate Domain Validators (ISA-KAD-MEMORY-001) ---
+  'memory.substrate.declared': {
+    name: 'Memory Substrate Declaration & Provenance',
+    class: 'DETERMINISTIC',
+    execute(rootDir) {
+      const csaPath = resolve(rootDir, 'docs/state/CSA_KAD_PI_CURRENT.json');
+      if (!existsSync(csaPath)) {
+        return { pass: false, evidence: 'docs/state/CSA_KAD_PI_CURRENT.json missing', checked_count: 0 };
+      }
+      let csa;
+      try {
+        csa = JSON.parse(readFileSync(csaPath, 'utf8'));
+      } catch (err) {
+        return { pass: false, evidence: `CSA is not valid JSON: ${err.message}`, checked_count: 0 };
+      }
+      const substrate = csa.knowledge_plane?.memory_substrate;
+      if (!substrate || typeof substrate !== 'object') {
+        return { pass: false, evidence: 'knowledge_plane.memory_substrate absent from the CSA', checked_count: 1 };
+      }
+      const hasBackend = typeof substrate.backend === 'string' && substrate.backend.length > 0;
+      const hasEvidence = typeof substrate.evidence?.source === 'string'
+        && ['command', 'hash', 'path'].some((k) => typeof substrate.evidence[k] === 'string');
+      return {
+        pass: hasBackend && hasEvidence,
+        evidence: hasBackend && hasEvidence
+          ? `CSA declares memory substrate backend "${substrate.backend}" with provenance (${substrate.evidence.source})`
+          : `substrate declaration incomplete (backend=${JSON.stringify(substrate.backend)}, provenance=${hasEvidence})`,
+        checked_count: 2
+      };
+    }
+  },
+
+  'memory.substrate.vault_of_record': {
+    name: 'Wiki of Record Is a Live ai-memory Project',
+    class: 'DETERMINISTIC',
+    execute(rootDir) {
+      const pointerPath = resolve(rootDir, '.ai-memory/vault-path');
+      if (!existsSync(pointerPath)) {
+        return { pass: false, evidence: '.ai-memory/vault-path absent: no wiki of record is published', checked_count: 0 };
+      }
+      const recordDir = readFileSync(pointerPath, 'utf8').trim();
+      if (!recordDir || !existsSync(recordDir)) {
+        return { pass: false, evidence: `.ai-memory/vault-path does not resolve to a directory: ${recordDir}`, checked_count: 1 };
+      }
+      const manifest = join(recordDir, '_meta.md');
+      if (!existsSync(manifest)) {
+        return { pass: false, evidence: `record has no project manifest (_meta.md): ${recordDir}`, checked_count: 2 };
+      }
+      const manifestText = readFileSync(manifest, 'utf8');
+      if (!/^project:\s*\S+/m.test(manifestText)) {
+        return { pass: false, evidence: `record manifest does not name a project: ${manifest}`, checked_count: 2 };
+      }
+      const gitDir = join(recordDir, '..', '..', '.git');
+      if (!existsSync(gitDir)) {
+        return { pass: false, evidence: `record has no enclosing wiki git history: ${gitDir}`, checked_count: 3 };
+      }
+      const csaPath = resolve(rootDir, 'docs/state/CSA_KAD_PI_CURRENT.json');
+      if (!existsSync(csaPath)) {
+        return { pass: false, evidence: 'CSA missing', checked_count: 3 };
+      }
+      const substrate = JSON.parse(readFileSync(csaPath, 'utf8')).knowledge_plane?.memory_substrate ?? {};
+      const declared = substrate.wiki_project_dir === recordDir && substrate.vault_of_record === true;
+      return {
+        pass: declared,
+        evidence: declared
+          ? `wiki of record is live and matches the CSA: ${recordDir}`
+          : `CSA does not declare the resolved record as the vault of record (declared=${substrate.wiki_project_dir}, vault_of_record=${substrate.vault_of_record})`,
+        checked_count: 4
+      };
+    }
+  },
+
+  'memory.capture.exclusions': {
+    name: 'Capture Exclusion Policy Is Declared and Complete',
+    class: 'DETERMINISTIC',
+    execute(rootDir) {
+      const markerPath = resolve(rootDir, '.ai-memory.toml');
+      if (!existsSync(markerPath)) {
+        return { pass: false, evidence: '.ai-memory.toml absent: capture has no scope declaration', checked_count: 0 };
+      }
+      const text = readFileSync(markerPath, 'utf8');
+      const section = text.match(/\[capture\]\s*\n([\s\S]*?)(?=\n\[|\s*$)/);
+      if (!section) {
+        return { pass: false, evidence: '.ai-memory.toml declares no [capture] section', checked_count: 1 };
+      }
+      const declaredScope = /^workspace\s*=\s*\S+/m.test(text) && /^project\s*=\s*\S+/m.test(text);
+      const required = ['.ai-memory/**', 'vault/**'];
+      const missing = required.filter((entry) => !section[1].includes(entry));
+      return {
+        pass: declaredScope && missing.length === 0,
+        evidence: !declaredScope
+          ? '.ai-memory.toml does not declare both workspace and project'
+          : missing.length === 0
+            ? `capture scope declared for workspace=yes project=yes; self-referential paths excluded (${required.join(', ')})`
+            : `capture ignore_paths missing required exclusions: ${missing.join(', ')}`,
+        checked_count: 2 + required.length
+      };
+    }
+  },
+
+  'memory.mirror.okf_conformant': {
+    name: 'Published Mirror Is an OKF v0.2 Conformant Bundle',
+    class: 'DETERMINISTIC',
+    execute(rootDir) {
+      const mirrorRoot = resolve(rootDir, 'vault');
+      if (!existsSync(mirrorRoot)) {
+        return { pass: false, evidence: 'vault/ mirror absent', checked_count: 0 };
+      }
+      const indexPath = join(mirrorRoot, 'index.md');
+      if (!existsSync(indexPath)) {
+        return { pass: false, evidence: 'vault/index.md absent: mirror is not an OKF bundle root', checked_count: 1 };
+      }
+      const indexHead = readFileSync(indexPath, 'utf8').slice(0, 400);
+      const declaresVersion = /okf_version:\s*["']?0\.2["']?/.test(indexHead);
+      const RESERVED = new Set(['_meta.md', 'log.md', 'index.md', 'bootstrap.md']);
+      const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+        if (entry.name.startsWith('.')) return [];
+        const full = join(dir, entry.name);
+        if (entry.isDirectory()) return walk(full);
+        return entry.name.endsWith('.md') && !RESERVED.has(entry.name) ? [full] : [];
+      });
+      const pages = walk(mirrorRoot);
+      const untyped = pages.filter((page) => {
+        const head = readFileSync(page, 'utf8').slice(0, 2000);
+        return !/^---\s*\n[\s\S]*?^type:\s*\S+/m.test(head);
+      });
+      return {
+        pass: declaresVersion && untyped.length === 0,
+        evidence: !declaresVersion
+          ? 'vault/index.md does not declare okf_version: "0.2"'
+          : untyped.length === 0
+            ? `mirror is OKF v0.2 conformant: index declares okf_version, ${pages.length} pages all carry a non-empty type`
+            : `${untyped.length}/${pages.length} mirrored pages lack OKF 'type' frontmatter (first: ${untyped[0]})`,
+        checked_count: pages.length + 1
+      };
+    }
+  },
+
+  'memory.record.versioned': {
+    name: 'Wiki of Record Carries Its Own Git History',
+    class: 'DETERMINISTIC',
+    execute(rootDir) {
+      const pointerPath = resolve(rootDir, '.ai-memory/vault-path');
+      if (!existsSync(pointerPath)) {
+        return { pass: false, evidence: '.ai-memory/vault-path absent', checked_count: 0 };
+      }
+      const recordDir = readFileSync(pointerPath, 'utf8').trim();
+      const gitDir = join(recordDir, '..', '..', '.git');
+      if (!existsSync(gitDir)) {
+        return { pass: false, evidence: `record git directory missing: ${gitDir}`, checked_count: 0 };
+      }
+      const branchDir = join(gitDir, 'refs', 'heads');
+      const loose = existsSync(branchDir) ? readdirSync(branchDir).filter((f) => statSync(join(branchDir, f)).isFile()) : [];
+      const packedPath = join(gitDir, 'packed-refs');
+      const packed = existsSync(packedPath)
+        ? readFileSync(packedPath, 'utf8').split('\n').filter((line) => /^[0-9a-f]{40}\s+refs\/heads\//.test(line))
+        : [];
+      const headPath = join(gitDir, 'HEAD');
+      const head = existsSync(headPath) ? readFileSync(headPath, 'utf8').trim() : '';
+      const committed = loose.length + packed.length > 0;
+      return {
+        pass: committed,
+        evidence: committed
+          ? `record has ${loose.length + packed.length} branch ref(s) under its own git history (HEAD: ${head})`
+          : `record git repository has no commits (HEAD: ${head || 'missing'})`,
+        checked_count: 3
+      };
+    }
+  },
+
+  'memory.obsidian.vault_bound': {
+    name: 'Obsidian Is Bound to the Wiki of Record',
+    class: 'DETERMINISTIC',
+    execute(rootDir) {
+      const pointerPath = resolve(rootDir, '.ai-memory/vault-path');
+      if (!existsSync(pointerPath)) {
+        return { pass: false, evidence: '.ai-memory/vault-path absent', checked_count: 0 };
+      }
+      const recordDir = readFileSync(pointerPath, 'utf8').trim();
+      const obsidianDir = join(recordDir, '.obsidian');
+      if (!existsSync(obsidianDir)) {
+        return { pass: false, evidence: `Obsidian config is not present in the wiki of record: ${obsidianDir}`, checked_count: 0 };
+      }
+      const configs = readdirSync(obsidianDir).filter((f) => f.endsWith('.json'));
+      const mirrorHasObsidian = existsSync(resolve(rootDir, 'vault', '.obsidian'));
+      return {
+        pass: configs.length > 0 && !mirrorHasObsidian,
+        evidence: configs.length === 0
+          ? 'record .obsidian/ carries no JSON configuration'
+          : mirrorHasObsidian
+            ? 'vault/ mirror still carries .obsidian/: Obsidian may be pointed at the derived mirror'
+            : `Obsidian is bound to the record (${configs.length} config files); the derived mirror carries none`,
+        checked_count: configs.length + 1
+      };
+    }
+  },
+
+  'memory.record.frontmatter_complete': {
+    name: 'Every Record Page Satisfies the OKF Type Requirement',
+    class: 'DETERMINISTIC',
+    execute(rootDir) {
+      const pointerPath = resolve(rootDir, '.ai-memory/vault-path');
+      if (!existsSync(pointerPath)) {
+        return { pass: false, evidence: '.ai-memory/vault-path absent', checked_count: 0 };
+      }
+      const recordDir = readFileSync(pointerPath, 'utf8').trim();
+      if (!existsSync(recordDir)) {
+        return { pass: false, evidence: `record directory does not exist: ${recordDir}`, checked_count: 0 };
+      }
+      const RESERVED = new Set(['_meta.md', 'log.md', 'index.md', 'bootstrap.md']);
+      const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+        if (entry.name === '.git' || entry.name === '.obsidian') return [];
+        const full = join(dir, entry.name);
+        if (entry.isDirectory()) return walk(full);
+        return entry.name.endsWith('.md') && !RESERVED.has(entry.name) ? [full] : [];
+      });
+      const pages = walk(recordDir);
+      const untyped = pages.filter((page) => !/^---\s*\r?\n[\s\S]*?^type:[ \t]*\S/m.test(readFileSync(page, 'utf8').slice(0, 4000)));
+      return {
+        pass: pages.length > 0 && untyped.length === 0,
+        evidence: untyped.length === 0
+          ? `all ${pages.length} record pages carry a non-empty OKF type`
+          : `${untyped.length}/${pages.length} record pages lack OKF type frontmatter (first: ${relative(rootDir, untyped[0])})`,
+        checked_count: pages.length
+      };
+    }
+  },
+
+  // --- Compute Fabric: Gateway Transport Validators (ISA-KAD-COMPUTE-FABRIC-001 §4.7) ---
+  'compute.gateway.single_endpoint': {
+    name: 'Single Gateway Endpoint for Remote Provider Transport',
+    class: 'DETERMINISTIC',
+    execute(rootDir) {
+      const registryPath = resolve(rootDir, 'config/external-providers.json');
+      if (!existsSync(registryPath)) {
+        return { pass: false, evidence: 'config/external-providers.json missing', checked_count: 0 };
+      }
+      let registry;
+      try {
+        registry = JSON.parse(readFileSync(registryPath, 'utf8'));
+      } catch (err) {
+        return { pass: false, evidence: `provider registry is not valid JSON: ${err.message}`, checked_count: 0 };
+      }
+      const providers = Array.isArray(registry.providers) ? registry.providers : [];
+      const gateway = providers.find((p) => p.id === 'omniroute-gateway');
+      if (!gateway) {
+        return { pass: false, evidence: 'no omniroute-gateway entry in config/external-providers.json', checked_count: providers.length };
+      }
+      const hasBase = typeof gateway.base_url === 'string' && /^https?:\/\//.test(gateway.base_url);
+      const transportOnly = gateway.authority === 'TRANSPORT_ONLY';
+      return {
+        pass: hasBase && transportOnly,
+        evidence: hasBase && transportOnly
+          ? `gateway registered as TRANSPORT_ONLY at ${gateway.base_url}; local inference endpoints are proxied, not delegated`
+          : `gateway entry incomplete (base_url=${JSON.stringify(gateway.base_url)}, authority=${gateway.authority})`,
+        checked_count: providers.length
+      };
+    }
+  },
+
+  'compute.gateway.catalog_sync': {
+    name: 'Deterministic Model Catalog Sync',
+    class: 'DETERMINISTIC',
+    execute(rootDir) {
+      const catalogPath = resolve(rootDir, 'config/omniroute-catalog.json');
+      if (!existsSync(catalogPath)) {
+        return { pass: false, evidence: 'config/omniroute-catalog.json absent: gateway catalog has never been synced', checked_count: 0 };
+      }
+      let catalog;
+      try {
+        catalog = JSON.parse(readFileSync(catalogPath, 'utf8'));
+      } catch (err) {
+        return { pass: false, evidence: `catalog snapshot is not valid JSON: ${err.message}`, checked_count: 0 };
+      }
+      if (!Array.isArray(catalog.model_ids) || catalog.model_ids.length === 0) {
+        return { pass: false, evidence: 'catalog snapshot carries no model_ids', checked_count: 1 };
+      }
+      const recomputed = createHash('sha256').update([...catalog.model_ids].sort().join('\n')).digest('hex');
+      const matches = recomputed === catalog.catalog_hash;
+      return {
+        pass: matches,
+        evidence: matches
+          ? `catalog hash verified over ${catalog.model_ids.length} model ids (${catalog.catalog_hash.slice(0, 12)}…)`
+          : `catalog_hash mismatch: recorded ${catalog.catalog_hash}, recomputed ${recomputed}`,
+        checked_count: catalog.model_ids.length
+      };
+    }
   }
 };
 
 /**
- * Discovers all active ISA documents under vault/00_Governance/
+ * Discovers all active ISA documents under <vault>/00_Governance/.
+ *
+ * `vaultDir` resolves through `vaultRoot()`, so discovery follows the wiki of
+ * record when the memory substrate owns the corpus, and the committed mirror
+ * otherwise.
  */
-export function discoverIsas(rootDir = process.cwd()) {
-  const govDir = resolve(rootDir, 'vault/00_Governance');
+export function discoverIsas(vaultDir = vaultRoot()) {
+  const govDir = join(vaultDir, '00_Governance');
   if (!existsSync(govDir)) return [];
 
   const files = readdirSync(govDir).filter(f => f.startsWith('ISA-') && f.endsWith('.md')).sort();
@@ -568,6 +933,21 @@ export function lintIsa(filePath) {
       '## 11. Acceptance Matrix',
       '## 12. Provenance & Change Log'
     ];
+  } else if (domain === 'memory') {
+    requiredSections = [
+      '## 1. Identity',
+      '## 2. Stated Goal',
+      '## 3. Ideal State Description',
+      '## 4. Memory Substrate Architecture',
+      '## 5. Retrieval & Promotion Discipline',
+      '## 6. Context & Token Economy',
+      '## 7. Testable Claims',
+      '## 8. Operational Constraints',
+      '## 9. Anti-Patterns',
+      '## 10. Graceful Degradation',
+      '## 11. Acceptance Matrix',
+      '## 12. Change Log'
+    ];
   } else {
     requiredSections = [
       '## 1. Identity',
@@ -616,7 +996,13 @@ export function lintIsa(filePath) {
  * Executes all registered deterministic validators for an ISA
  */
 export function checkIsa(filePath, options = {}) {
-  const rootDir = options.rootDir || resolve(dirname(filePath), '../..');
+  const rootDir = options.rootDir || (
+    existsSync(resolve(dirname(filePath), 'package.json')) ? dirname(filePath) :
+    existsSync(resolve(dirname(filePath), '..', 'package.json')) ? resolve(dirname(filePath), '..') :
+    existsSync(resolve(dirname(filePath), '../..', 'package.json')) ? resolve(dirname(filePath), '../..') :
+    existsSync(resolve(dirname(filePath), '../../..', 'package.json')) ? resolve(dirname(filePath), '../../..') :
+    process.cwd()
+  );
   const lintResult = lintIsa(filePath);
   if (!lintResult.ok) {
     return { ok: false, lint: lintResult, results: [] };
@@ -684,9 +1070,9 @@ export function checkIsa(filePath, options = {}) {
 /**
  * Returns a high-level summary status of an ISA or all discovered ISAs
  */
-export function statusIsa(filePath) {
+export function statusIsa(filePath, options = {}) {
   if (filePath && filePath !== 'all') {
-    const checkResult = checkIsa(filePath);
+    const checkResult = checkIsa(filePath, options);
     if (!checkResult.ok && checkResult.lint && !checkResult.lint.ok) {
       return { status: 'INVALID', errors: checkResult.lint.errors };
     }
@@ -713,7 +1099,7 @@ export function statusIsa(filePath) {
 
   // Aggregate all discovered ISAs
   const isas = discoverIsas();
-  const summaries = isas.map(isa => statusIsa(isa.file));
+  const summaries = isas.map(isa => statusIsa(isa.file, options));
   return {
     status: summaries.every(s => s.status === 'ACCEPTED') ? 'ACCEPTED' : 'FAILING_CLAIMS',
     total_isas: isas.length,
@@ -765,13 +1151,13 @@ export function explainClaim(claimId, filePath) {
 /**
  * Compiles canonical ISA Markdown into derived machine-readable JSON projection
  */
-export function buildIsaProjection(filePath, outputPath) {
-  const checkResult = checkIsa(filePath);
+export function buildIsaProjection(filePath, outputPath, options = {}) {
+  const checkResult = checkIsa(filePath, options);
   const parsed = parseIsa(readFileSync(filePath, 'utf8'));
   const domain = parsed.metadata.domain || 'generic';
 
   let projection = {
-    projection_type: domain === 'aesthetic' ? 'KAD_AESTHETIC_ISA_PROJECTION' : domain === 'compute-fabric' ? 'KAD_COMPUTE_FABRIC_ISA_PROJECTION' : 'KAD_GENERIC_ISA_PROJECTION',
+    projection_type: domain === 'aesthetic' ? 'KAD_AESTHETIC_ISA_PROJECTION' : domain === 'compute-fabric' ? 'KAD_COMPUTE_FABRIC_ISA_PROJECTION' : domain === 'memory' ? 'KAD_MEMORY_ISA_PROJECTION' : 'KAD_GENERIC_ISA_PROJECTION',
     version: parsed.metadata.version || '1.0.0',
     domain,
     generated_at: new Date().toISOString(),
@@ -896,6 +1282,38 @@ export function buildIsaProjection(filePath, outputPath) {
       'context_tokens',
       'human_attention'
     ];
+    projection.gateway_contracts = {
+      transport: 'single OpenAI-compatible gateway endpoint (OmniRoute)',
+      scope: 'remote providers and proxied local KAD endpoints',
+      authority: 'TRANSPORT_ONLY',
+      local_inference_ownership: 'KAD STC-owned; the gateway proxies, it does not own or admit',
+      catalog_sync: 'deterministic snapshot at config/omniroute-catalog.json, hash-verified',
+      degradation: 'unreachable gateway keeps the last snapshot and never erases qualification state',
+      prohibited: [
+        'gateway-registration-granting-model-qualification',
+        'fabricated-quota-or-cost-figures',
+        'delegating-local-inference-admission-to-a-foreign-router'
+      ]
+    };
+  } else if (domain === 'memory') {
+    projection.memory_contracts = {
+      authority_order: ['SOURCE', 'EVIDENCE', 'DERIVATION'],
+      accepted_producers: ['human', 'accepted-adr', 'deterministic-import'],
+      non_authoritative_producers: ['session-capture', 'llm-consolidation', 'semantic-retrieval'],
+      required_frontmatter: ['type', 'kad_id', 'authority', 'epistemic_class', 'review_status'],
+      layers: {
+        canonical: ['PRIME_DIRECTIVE.md', 'CONTEXT.md', 'docs/adr/**', 'docs/state/**', 'vault/**', 'evidence/**'],
+        substrate: ['<data_dir>/wiki/<workspace_id>/<project_id>/**'],
+        derived: ['wiki/generated/**', 'vault/90_Derived/**', 'embeddings', 'context packs']
+      },
+      promotion_pipeline: ['conversation', 'candidate', 'PROPOSED/INFERRED', 'provenance', 'validation', 'ACCEPTED|REJECTED'],
+      prohibited: [
+        'silent-promotion-to-CANONICAL',
+        'unprovenanced-page',
+        'derived-state-as-source',
+        'harness-local-durable-facts'
+      ]
+    };
   }
 
   if (outputPath) {
@@ -906,21 +1324,25 @@ export function buildIsaProjection(filePath, outputPath) {
 }
 
 /**
- * Compiles all discovered ISAs and builds the composite registry projection
+ * Compiles all discovered ISAs and builds the composite registry projection.
+ *
+ * `rootDir` is the repository root that deterministic validators inspect;
+ * `vaultDir` is the knowledge root and resolves through `vaultRoot()`.
  */
-export function compileAllIsas(rootDir = process.cwd()) {
-  const isas = discoverIsas(rootDir);
-  const projectionsDir = resolve(rootDir, 'vault/90_Derived/Projections');
+export function compileAllIsas(rootDir = process.cwd(), vaultDir = vaultRoot()) {
+  const isas = discoverIsas(vaultDir);
+  const projectionsDir = join(vaultDir, '90_Derived/Projections');
   const compiled = [];
 
   for (const isa of isas) {
     let outName = 'isa-unknown.json';
     if (isa.domain === 'aesthetic') outName = 'isa-aesthetic.json';
     else if (isa.domain === 'compute-fabric') outName = 'isa-compute-fabric.json';
+    else if (isa.domain === 'memory') outName = 'isa-memory.json';
     else outName = `isa-${isa.kad_id.toLowerCase().replace(/[^a-z0-9]/g, '-')}.json`;
 
     const outPath = join(projectionsDir, outName);
-    const proj = buildIsaProjection(isa.file, outPath);
+    const proj = buildIsaProjection(isa.file, outPath, { rootDir });
     compiled.push({
       id: isa.kad_id,
       title: isa.title,

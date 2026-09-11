@@ -771,7 +771,7 @@ export class DeterministicResearchCorpus {
     }
 
     // Protect canonical authority: derived/inferred external updates cannot overwrite canonical source fields
-    if (updates.epistemic_class === EPISTEMIC_CLASSES.INFERRED || updates.actor === 'OpenViking') {
+    if (updates.epistemic_class === EPISTEMIC_CLASSES.INFERRED || updates.actor === 'ai-memory') {
       if (doc.epistemic_class === EPISTEMIC_CLASSES.DOCUMENT_DERIVED || doc.authority_class === 'CANONICAL_RESEARCH') {
         throw new ResearchError('Derived metadata cannot overwrite canonical source data without authorized transition');
       }

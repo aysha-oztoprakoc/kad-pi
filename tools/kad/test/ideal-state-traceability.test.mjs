@@ -124,7 +124,21 @@ test('WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030: Ideal State V2 & Traceability
     assert.ok(expIds.has('EXP-KAD-OFFLINE-SURVIVAL-001'), 'Missing offline survival experiment');
     assert.ok(expIds.has('EXP-KAD-WARREN-ASYNC-002'), 'Missing Warren async offload experiment');
     assert.ok(expIds.has('EXP-KAD-BEADS-GRAPH-003'), 'Missing Beads graph projection experiment');
-    assert.ok(expIds.has('EXP-KAD-SEMANTIC-RETRIEVAL-004'), 'Missing semantic retrieval experiment');
+    assert.ok(expIds.has('EXP-KAD-MEMORY-RETRIEVAL-004-R1'), 'Missing ai-memory substrate retrieval experiment');
+    // The OpenViking/Needle evaluation was retired with the OpenViking runtime path.
+    // The successor must carry the provenance of what it replaced, so traceability
+    // to DEC_ID_14 survives the retirement.
+    const retrievalSuccessor = data.experiments.find(e => e.experiment_id === 'EXP-KAD-MEMORY-RETRIEVAL-004-R1');
+    assert.equal(
+      retrievalSuccessor.supersedes,
+      'EXP-KAD-SEMANTIC-RETRIEVAL-004',
+      'Substrate retrieval experiment must record the experiment it supersedes'
+    );
+    assert.equal(
+      expIds.has('EXP-KAD-SEMANTIC-RETRIEVAL-004'),
+      false,
+      'The retired OpenViking/Needle experiment must not remain an active register entry'
+    );
     assert.ok(expIds.has('EXP-KAD-TELL-PERSISTENT-005'), 'Missing TELL persistent worker experiment');
     assert.ok(expIds.has('EXP-KAD-DISTILLATION-006'), 'Missing downward distillation experiment');
 

@@ -185,6 +185,37 @@ test('T7 Provider discovery produces truthful capability/quota inventory for all
   assert.equal(disabled?.enabled, false);
 });
 
+test('T7b Fallback gating: fallbackChains are strictly ignored unless both retry.enabled and modelFallback are true', () => {
+  const baseRoles = { plan: 'openai-codex/gpt-5.6-luna:high' };
+  const fallbackSpec = { plan: ['google-antigravity/gemini-3-flash:high'] };
+
+  // Caso 1: enabled: false, modelFallback: false
+  const cfg1 = { modelRoles: baseRoles, retry: { enabled: false, modelFallback: false, fallbackChains: fallbackSpec } };
+  const inv1 = discoverProviders({ config: cfg1 });
+  assert.ok(inv1.some((p) => p.provider_id === 'openai-codex'));
+  assert.ok(!inv1.some((p) => p.provider_id === 'google-antigravity'), 'Não deve descobrir quando ambos são false');
+
+  // Caso 2: enabled: false, modelFallback: true (flag enabled bloqueia)
+  const cfg2 = { modelRoles: baseRoles, retry: { enabled: false, modelFallback: true, fallbackChains: fallbackSpec } };
+  const inv2 = discoverProviders({ config: cfg2 });
+  assert.ok(!inv2.some((p) => p.provider_id === 'google-antigravity'), 'Não deve descobrir quando retry.enabled é false');
+
+  // Caso 3: enabled: true, modelFallback: false (flag modelFallback bloqueia)
+  const cfg3 = { modelRoles: baseRoles, retry: { enabled: true, modelFallback: false, fallbackChains: fallbackSpec } };
+  const inv3 = discoverProviders({ config: cfg3 });
+  assert.ok(!inv3.some((p) => p.provider_id === 'google-antigravity'), 'Não deve descobrir quando modelFallback é false');
+
+  // Caso 4: retry omitido/ausente
+  const cfg4 = { modelRoles: baseRoles, fallbackChains: fallbackSpec };
+  const inv4 = discoverProviders({ config: cfg4 });
+  assert.ok(!inv4.some((p) => p.provider_id === 'google-antigravity'), 'Não deve descobrir quando retry não está configurado');
+
+  // Caso 5: Controle positivo (enabled: true E modelFallback: true)
+  const cfg5 = { modelRoles: baseRoles, retry: { enabled: true, modelFallback: true, fallbackChains: fallbackSpec } };
+  const inv5 = discoverProviders({ config: cfg5 });
+  assert.ok(inv5.some((p) => p.provider_id === 'google-antigravity'), 'Controle positivo: deve descobrir quando ambas as flags são true');
+});
+
 test('T8 Economic router integration projects active route, paid authorization, and fallback', () => {
   const routeState = createEconomicViewModel({
     requirement: { trust_domain: 'engineering', capabilities: ['code_build'] },
@@ -271,16 +302,16 @@ test('T10 GPU telemetry parses structured amdgpu_top JSON into normalized record
   assert.equal(gpuMetrics.power_w, 18);
 });
 
-test('T11 Service health collector probes OpenViking, Zotero, and local runtimes', async () => {
+test('T11 Service health collector probes ai-memory, Zotero, and local runtimes', async () => {
   const health = await collectServiceHealth({
     probes: {
-      openviking: async () => ({ state: 'AVAILABLE', latency_ms: 5 }),
+      ai_memory: async () => ({ state: 'AVAILABLE', latency_ms: 5 }),
       zotero: async () => ({ state: 'DEGRADED', reason: 'connection refused' }),
       needle: async () => ({ state: 'UNAVAILABLE', reason: 'not configured' }),
     },
   });
 
-  assert.equal(health.services.openviking.state, 'AVAILABLE');
+  assert.equal(health.services.ai_memory.state, 'AVAILABLE');
   assert.equal(health.services.zotero.state, 'DEGRADED');
   assert.equal(health.services.needle.state, 'UNAVAILABLE');
 });

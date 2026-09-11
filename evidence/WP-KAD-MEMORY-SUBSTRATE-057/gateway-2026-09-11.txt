@@ -1,0 +1,57 @@
+# Gateway evidence — WP-KAD-MEMORY-SUBSTRATE-057
+
+$ ss -ltnp | grep 20128 (loopback only)
+LISTEN 0      511        127.0.0.1:20128      0.0.0.0:*    users:(("omniroute (v16.",pid=2939021,fd=21))
+
+$ bin/kad-models sync
+catalog synced: 1611 advertised, 31 exposed (policy LOCAL_SUBSCRIPTION_AND_FREE_TIERS_ONLY, hash bd2e0164f871)
+
+$ bin/kad-models sync (idempotence)
+unchanged
+
+$ bin/kad-models list | wc -l
+31
+
+$ bin/kad-models list (exposed set)
+auto/best-free
+auto/coding:free
+oc/big-pickle
+oc/deepseek-v4-flash-free
+oc/hy3-free
+oc/mimo-v2.5-free
+oc/muse-spark-1.2
+oc/muse-spark-1.2-contributor-free
+oc/nemotron-3-ultra-free
+oc/north-mini-code-free
+openrouter/cohere/north-mini-code:free
+openrouter/dots-studio/dots-3-note-preview:free
+openrouter/google/gemma-4-26b-a4b-it:free
+openrouter/google/gemma-4-31b-it:free
+openrouter/inclusionai/ling-3.0-flash-fin:free
+openrouter/inclusionai/ling-3.0-flash-sante:free
+openrouter/inclusionai/ling-3.0-flash-vl:free
+openrouter/liquid/lfm-2.5-2.6b:free
+openrouter/nex-agi/nex-n2.5-mini:free
+openrouter/nex-agi/nex-n2.5-pro:free
+openrouter/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
+openrouter/nvidia/nemotron-3-super-120b-a12b:free
+openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
+openrouter/nvidia/nemotron-3.5-content-safety:free
+openrouter/nvidia/nemotron-3.5-lightning:free
+openrouter/poolside/laguna-s-2.1:free
+openrouter/poolside/laguna-xs-2.1:free
+openrouter/thinkingmachines/inkling-small:free
+openrouter/thinkingmachines/inkling:free
+veo-free/seedance
+veo-free/veo
+
+$ catalog snapshot summary
+{"advertised":1611,"exposed":31,"policy":"LOCAL_SUBSCRIPTION_AND_FREE_TIERS_ONLY","policy_hash":"c8e0a8b3ad9942069c885e74d9a2f7764273db376d739706004cb083155658c2","hash":"bd2e0164f871bdc804a8677e9ca8406d1f0fc8b1ac8471290f3accca2b5c5eb2"}
+
+$ omp models | grep omniroute
+omniroute (31)
+
+$ omniroute providers list
+8ac02cd9   llama-cpp      kad-local-qwen           [32mactive[0m
+b588386f   llama-cpp      kad-local-world          [32mactive[0m
+a674610e   openrouter     openrouter               [32mactive[0m

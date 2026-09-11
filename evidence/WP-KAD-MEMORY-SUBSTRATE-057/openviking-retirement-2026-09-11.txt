@@ -1,0 +1,21 @@
+# OpenViking retirement — WP-KAD-MEMORY-SUBSTRATE-057
+
+$ test -e tools/kad/research-openviking.mjs
+removed
+$ test -e tools/kad/test/research-openviking.test.mjs
+removed
+
+$ live-surface grep (tools/ bin/ config/) — expect no hits:
+tools/kad/test/ideal-state-traceability.test.mjs:128:    // The OpenViking/Needle evaluation was retired with the OpenViking runtime path.
+tools/kad/test/ideal-state-traceability.test.mjs:140:      'The retired OpenViking/Needle experiment must not remain an active register entry'
+tools/kad/wiki/projection.mjs:196:      { wp_id: 'WP-KAD-RESEARCH-OPENVIKING-004', title: 'OpenViking Derived Research Context', status: 'ACCEPTED', priority: 80 },
+tools/kad/intent/ideal-state-engine.mjs:902:      title: 'ai-memory Substrate Retrieval Benchmark (successor to the OpenViking/Needle evaluation)',
+tools/kad/intent/ideal-state-engine.mjs:1079:      acceptance_evidence: 'A single git-backed record exists and is reachable from every harness; vault/ is a deterministically regenerated OKF v0.2 mirror; every mutating vault command fails closed against the mirror; the OpenViking path is retired in favour of a PROPOSED-only ai-memory adapter; and every authorized remote provider plus the proxied local KAD endpoints are reachable through one gateway endpoint registered as TRANSPORT_ONLY, with a hash-verified catalog and zero paid spend.',
+config/local-models.registry.json:184:        "openviking": "0.4.17",
+config/local-models.registry.json:192:      "lifecycle_owner": "OpenViking runtime",
+config/local-models.registry.json:193:      "notes": "Existing embedding health and persistence evidence preserved. OpenViking config cutover is required."
+config/external-providers.json:133:      "id": "openviking-derived",
+config/external-providers.json:134:      "name": "OpenViking Vector & Structural Index Projection",
+
+$ historical references deliberately preserved (evidence/, .agents/work/):
+  files: 83

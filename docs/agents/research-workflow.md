@@ -78,4 +78,4 @@ Manifests use schema `kad-research-manifest-v1` and serve as transport represent
 
 ## Graceful Degradation & Zero-Model Baseline
 
-The entire research ingestion and verification pipeline executes 100% locally and deterministically. It requires no network connection, no API keys, no LLM inference, and no OpenViking service.
+The entire research ingestion and verification pipeline executes 100% locally and deterministically. It requires no network connection, no API keys, no LLM inference, and no ai-memory service.

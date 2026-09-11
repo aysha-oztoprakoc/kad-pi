@@ -133,9 +133,9 @@
       "id": "openviking-derived",
       "name": "OpenViking Vector & Structural Index Projection",
       "class": "RESEARCH_PROVIDER",
-      "status": "ACTIVE",
+      "status": "RETIRED",
       "epistemic_class": "DESIGN_DECISION",
-      "description": "Derived vector embedding and hierarchical chunking index with strictly derived non-canonical authority."
+      "description": "RETIRED 2026-09-11 (WP-KAD-MEMORY-SUBSTRATE-057). Derived vector embedding and hierarchical chunking index with strictly derived non-canonical authority. The runtime path, adapter module and its test were removed; the non-authoritative retrieval seam is now tools/kad/knowledge-plane-adapters.mjs createAiMemoryAccessAdapter. Kept for traceability rather than deleted."
     },
     {
       "id": "sofia-v3",
@@ -168,6 +168,22 @@
       "status": "ACTIVE",
       "epistemic_class": "DESIGN_DECISION",
       "description": "Read-only viewport connecting Obsidian vault views to KAD telemetry streams."
+    },
+    {
+      "id": "omniroute-gateway",
+      "name": "OmniRoute local gateway",
+      "class": "WORKLOAD_PROVIDER",
+      "status": "ACTIVE",
+      "epistemic_class": "OBSERVED",
+      "base_url": "http://127.0.0.1:20128/v1",
+      "authority": "TRANSPORT_ONLY",
+      "omp_provider": "omniroute",
+      "subordinate_to_workctl": true,
+      "allows_autonomous_work_transition": false,
+      "allows_autonomous_merge": false,
+      "allows_canonical_tracker_authority": false,
+      "allows_isa_authority": false,
+      "description": "OpenAI-compatible transport for remote providers and for proxied local KAD GGUF endpoints. Registering a connection grants reachability only, never qualification: the gateway publishes no pricing and holds no authority over KAD routing, acceptance, or canonical state."
     }
   ]
 }

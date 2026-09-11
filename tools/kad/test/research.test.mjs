@@ -320,11 +320,11 @@ test('Derived or external metadata cannot overwrite canonical accepted source da
       provenance: { method: 'manual', origin: 'canonical_editor', actor: 'human_lead' }
     });
 
-    // Attempting to update canonical document with derived LLM/OpenViking metadata fails
+    // Attempting to update canonical document with derived LLM/retrieval-substrate metadata fails
     assert.throws(() => {
       corpus.updateMetadata('doc:doi:10.5555/spec.2025', {
         abstract: 'Hallucinated or inferred summary.',
-        actor: 'OpenViking',
+        actor: 'ai-memory',
         epistemic_class: EPISTEMIC_CLASSES.INFERRED
       });
     }, /cannot overwrite canonical source/i);

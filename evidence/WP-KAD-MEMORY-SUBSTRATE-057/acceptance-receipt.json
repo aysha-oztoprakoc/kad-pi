@@ -1,0 +1,106 @@
+{
+  "schema": "kad.acceptance-receipt/v1",
+  "workpackage": "WP-KAD-MEMORY-SUBSTRATE-057",
+  "project": "kad-pi",
+  "claim_id": "b14f1c3e-15fd-46bd-b886-c3a0ebc3eaf1",
+  "actor": "omp-kad-memory-substrate",
+  "base_commit": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+  "captured_at": "2026-09-11T15:52:00Z",
+  "verdict": "PARTIAL_ACCEPTANCE",
+  "verdict_reason": "All in-scope deliverables are implemented and verified. Three criteria are qualified: one is blocked by an operator credential decision, one is a pre-existing corpus conformance gap that this WP deliberately did not resolve by fabricating metadata, and one is a pre-existing BLOCKED preflight state unchanged by this work.",
+  "criteria": [
+    {
+      "criterion": "current state artifact is produced and validated before the ideal state artifact is updated",
+      "verdict": "MET",
+      "evidence": "docs/state/CSA_KAD_PI_CURRENT.{json,md} rewritten in Phase A (2026-09-11T14:36:41Z) with probe-backed nodes; baseline preserved as CSA_KAD_PI_CURRENT_2026-09-11.{md,json}; ISA work began only after node --test docs/state/test/state-artifacts.test.mjs reported 9/9."
+    },
+    {
+      "criterion": "the current state artifact records a probe-backed memory substrate node with evidence",
+      "verdict": "MET",
+      "evidence": "knowledge_plane.memory_substrate carries state_class VERIFIED_CURRENT plus evidence {source: COMMAND, command, path}; the test that walks the document for state_class-without-evidence passes."
+    },
+    {
+      "criterion": "ai-memory is the wiki of record and vault/ is a deterministically regenerated mirror",
+      "verdict": "MET",
+      "evidence": "bin/kad-memory status: record resolves; publish regenerates vault/ and is gated on ai-memory export-okf; vault/index.md declares okf_version \"0.2\"; vault/.obsidian absent; vault/_meta.md present; 192 markdown files. evidence/WP-KAD-MEMORY-SUBSTRATE-057/mirror-2026-09-11.txt"
+    },
+    {
+      "criterion": "vault-derived tooling fails closed when pointed at the derived mirror",
+      "verdict": "MET",
+      "evidence": "KAD_VAULT=$PWD/vault bin/kad-wiki rebuild|propose|ingest each exit 1 with an explicit 'derived mirror' message; the same propose against the record exits 0; read-only lint still works against the mirror. mirror-2026-09-11.txt"
+    },
+    {
+      "criterion": "the OpenViking runtime path is retired and replaced by a PROPOSED-only ai-memory adapter",
+      "verdict": "MET",
+      "evidence": "tools/kad/research-openviking.mjs and its test deleted; createAiMemoryAccessAdapter exported (authority false, records always PROPOSED with source_ref + source_hash; unreachable/401/missing-token degrade without throwing); 9/9 adapter tests pass; config registry entries marked RETIRED; historical references under evidence/ and .agents/work/ preserved (83 files)."
+    },
+    {
+      "criterion": "every remote provider available to KAD-PI is reachable through one OmniRoute gateway endpoint",
+      "verdict": "QUALIFIED",
+      "qualification": "The single-endpoint transport is live and verified for the three connections that exist: two local KAD endpoints and OpenRouter. The operator's Google AI Pro and OpenCode Go subscriptions are NOT yet connected — they need interactive OAuth consent and a credential that is not present on this host. Both lanes are already declared in the exposure policy, so they surface automatically once connected.",
+      "evidence": "POST 127.0.0.1:20128/v1/models with the issued key returns 1610 ids; omp models lists 'omniroute (31)'; omniroute providers list shows 3 active connections; compute.gateway.single_endpoint PASSES."
+    },
+    {
+      "criterion": "local KAD GGUF endpoints remain KAD-owned and are only proxied, never delegated",
+      "verdict": "MET",
+      "evidence": "The gateway entry is registered authority TRANSPORT_ONLY with allows_autonomous_* all false; local endpoints are registered as llama-cpp connections at 127.0.0.1:5001/5002 while admission and lifecycle stay with bin/kad-serve; omp-orchestration-preflight now excludes TRANSPORT_ONLY providers from the local-inference census so KAD never claims ownership of the gateway process (test T1b)."
+    },
+    {
+      "criterion": "the KAD model catalog is refreshed deterministically and degrades without erasing qualification state",
+      "verdict": "MET",
+      "evidence": "bin/kad-models sync writes config/omniroute-catalog.json whose catalog_hash is recomputed and matched by the registered validator compute.gateway.catalog_sync; a second sync prints 'unchanged' and leaves both files byte-identical; an unreachable or empty gateway throws before any write (covered by 11/11 offline tests)."
+    },
+    {
+      "criterion": "no fabricated quota, cost or capability figures enter the CSA or the registry",
+      "verdict": "MET",
+      "evidence": "Gateway model cost fields are all zero because /v1/models publishes no pricing; quota remains UNKNOWN with no synthesised numbers; the delegated catalog agent refused to write an empty or invented catalog when the gateway returned 401 rather than fabricating one."
+    },
+    {
+      "criterion": "the memory ISA is a first-class governed domain with deterministic validators",
+      "verdict": "MET",
+      "evidence": "bin/kad-isa lint all -> ISA-KAD-MEMORY-001 lints clean in domain 'memory' with 9 claims; bin/kad-isa check all -> 33/33 claims PASS; projection_type KAD_MEMORY_ISA_PROJECTION with memory_contracts.authority_order ['SOURCE','EVIDENCE','DERIVATION']; isa-memory.json compiled into the record and mirrored."
+    },
+    {
+      "criterion": "tests and doctors remain GREEN",
+      "verdict": "QUALIFIED",
+      "qualification": "The suites this workpackage touches are green. Three pre-existing failures remain and were proven to predate the work by running the same test file against a pristine `git archive HEAD` export: local-multi-endpoint T2/T3/T4 fail at HEAD with BLOCKED vs DEGRADED. Two further conditions are pre-existing and unchanged: bin/kad-wiki lint reports 126 errors and rebuild refuses — all 126 on files with zero git tracking at the cutoff — and the OMP orchestration preflight reports BLOCKED before and after.",
+      "evidence": "node --test docs/state/test/state-artifacts.test.mjs 9/9; tools/kad/test/omniroute-catalog.test.mjs 11/11; tools/kad/test/ai-memory-adapter.test.mjs 9/9; tools/kad/test/ideal-state-traceability.test.mjs pass; /tmp/kad-head-full (git archive HEAD) reproduces T2-T4 failures."
+    }
+  ],
+  "gates": {
+    "bin/kad-isa lint all": "PASS (3 ISAs, 33 claims)",
+    "bin/kad-isa check all": "PASS (33/33 claims)",
+    "bin/kad-isa compile all": "PASS (3 projections + registry)",
+    "bin/kad-wiki lint": "FAIL — 126 pre-existing errors, all on files with zero git tracking at the cutoff",
+    "bin/kad-wiki rebuild": "FAIL — refuses on the pre-existing corpus conformance gap",
+    "bin/kad-knowledge rebuild": "PASS (69 records, 40 sources)",
+    "node --test docs/state/test/state-artifacts.test.mjs": "PASS 9/9",
+    "node --test tools/kad/test/omniroute-catalog.test.mjs": "PASS 11/11",
+    "node --test tools/kad/test/ai-memory-adapter.test.mjs": "PASS 9/9",
+    "node --test tools/kad/test/ideal-state-traceability.test.mjs": "PASS",
+    "bin/kad-models sync (idempotence)": "PASS — second run 'unchanged'",
+    "omp capture round trip": "PASS — sessions 1, observations 3",
+    "OMP orchestration preflight": "BLOCKED — pre-existing, unchanged (UNAPPROVED_OR_PAYG_MODEL_SURFACE, MEMORY_NOT_OFF, AUTOLEARN_ENABLED)"
+  },
+  "blockers_for_operator": [
+    "Connect Google AI Pro: `omniroute providers auth agy --import-from-system` (interactive consent on the account).",
+    "Connect OpenCode Go: provide the subscription credential, then `omniroute providers add opencode-go --credential-env OPENCODE_GO_API_KEY`, then `bin/kad-models sync`.",
+    "Decide the 123-page corpus conformance gap (bring to vault schema, or exclude from the mirror).",
+    "Decide whether to commit vault/ (469 paths are dirty, largely from concurrent workpackages)."
+  ],
+  "evidence": {
+    "directory": "evidence/WP-KAD-MEMORY-SUBSTRATE-057/",
+    "files": [
+      "baseline-probe-2026-09-11.txt",
+      "substrate-2026-09-11.json",
+      "capture-smoke-2026-09-11.txt",
+      "mirror-2026-09-11.txt",
+      "gateway-2026-09-11.txt",
+      "adapter-2026-09-11.txt",
+      "openviking-retirement-2026-09-11.txt",
+      "execution-receipt.md",
+      "acceptance-receipt.json",
+      "final-report.md"
+    ]
+  }
+}

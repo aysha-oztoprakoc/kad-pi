@@ -31,7 +31,7 @@ Status is derived from explicit report verdicts, structured registry qualificati
 
 ## Degradation and trust
 
-Exact deterministic retrieval and projection do not require OpenViking or Needle. Optional semantic or specialist adapters may provide proposals only. Backend failure reduces capability to exact deterministic behavior; it cannot widen trust or acceptance authority. Trust-domain mismatches and unknown sources fail closed through the existing KnowledgePlane contract.
+Exact deterministic retrieval and projection do not require ai-memory or Needle. Optional semantic or specialist adapters may provide proposals only. Backend failure reduces capability to exact deterministic behavior; it cannot widen trust or acceptance authority. Trust-domain mismatches and unknown sources fail closed through the existing KnowledgePlane contract.
 
 `INTERNAL` is the default privacy boundary. `PUBLIC_CANDIDATE` is not assigned automatically. `SENSITIVE` and `UNKNOWN` must not be published without a separate policy and evidence gate.
 

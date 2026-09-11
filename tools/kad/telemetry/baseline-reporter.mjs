@@ -184,7 +184,7 @@ Structural complexity proxies measuring system comprehensibility:
 | **Authoritative Stores** | \`${report.architecture_complexity.authoritative_stores}\` | Canonical Vault, Workctl Ledger, Intent Journal, Git |
 | **Persistent Daemons** | \`${report.architecture_complexity.persistent_daemons}\` | Interface HTTP/SSE Server |
 | **Persistent Databases** | \`${report.architecture_complexity.persistent_databases}\` | SQLite Stores |
-| **Provider Adapters** | \`${report.architecture_complexity.provider_adapters}\` | OMP, Codex, Antigravity, Qwen, Zotero, OpenViking |
+| **Provider Adapters** | \`${report.architecture_complexity.provider_adapters}\` | OMP, Codex, Antigravity, Qwen, Zotero, ai-memory |
 | **Active Schemas** | \`${report.architecture_complexity.schemas}\` | Telemetry, Intent, ISA, Workload, Role schemas |
 | **Mandatory CLI Surfaces** | \`${report.architecture_complexity.mandatory_cli_surfaces}\` | bin/kad, bin/workctl, bin/kad-telemetry, etc. |
 | **Manual Sync Edges** | \`${report.architecture_complexity.manual_sync_edges}\` | Projections, intent reports, ISA validation |

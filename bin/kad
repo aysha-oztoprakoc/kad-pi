@@ -45,7 +45,7 @@ Usage:
   kad observatory [--json]           Show longitudinal actual vs shadow divergence metrics
   kad observatory readiness [--json] Show deterministic promotion readiness gate status
   kad readiness [--json]             Alias for observatory readiness
-  kad services [--json]              Show service health (OpenViking, Zotero, etc.)
+  kad services [--json]              Show service health (ai-memory, Zotero, etc.)
   kad telemetry [args...]    Outcome, cognitive attention, and total-cost telemetry
   kad gate [args...]         Deterministic governance gates and preflight
   kad governance [args...]   Alias for kad gate

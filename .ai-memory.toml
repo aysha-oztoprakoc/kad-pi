@@ -1,0 +1,32 @@
+# ai-memory project marker for KAD-PI.
+#
+# This file is the authoritative scope declaration for the memory substrate:
+# lifecycle hooks walk up from the agent's cwd to the first marker and adopt the
+# workspace/project it names, so every KAD-PI harness writes into one record.
+workspace = "kad"
+project = "kad-pi"
+
+[briefing]
+# Inject the project brief at session start, bounded so it cannot crowd out the task.
+inject_on_session_start = "true"
+max_chars = 4000
+
+[capture]
+# Paths whose reads must never be compiled into wiki pages.
+#
+# `.ai-memory/**`  - the record itself; a captured read of a page would be recompiled into
+#                    the very page it came from.
+# `vault/**`       - the deterministic mirror, regenerated from the record. Capturing it
+#                    would recompile the mirror back into the record it mirrors.
+# `docs/adr/**`, `evidence/**`, `.agents/work/**`
+#                  - governed records with their own authority chains and their own
+#                    deterministic gates (ADR 0014, the workctl claim/receipt model). A
+#                    summarised copy of a governed record is strictly worse than the
+#                    record, and goes stale the moment the record is superseded.
+# `wiki/generated/**`
+#                  - rebuildable projections, not knowledge.
+ignore_paths = [".ai-memory/**", "vault/**", "docs/adr/**", "evidence/**", ".agents/work/**", "wiki/generated/**"]
+
+[recall]
+# Project-scoped recall by default; global recall only when a query asks for it.
+default_global = "false"

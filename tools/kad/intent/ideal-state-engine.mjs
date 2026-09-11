@@ -353,26 +353,27 @@ export function compileIdealStateData(events = [], normalizations = []) {
     // Domain H: ContextPlane & Semantic Retrieval (DEC_ID_14)
     {
       requirement_id: 'REQ-KAD-CTX-001',
-      statement: 'Context retrieval MUST be decoupled from proprietary vendor APIs through stable capability interfaces (SemanticIndexProvider, GraphProjectionProvider, ContextCompiler); candidate providers such as OpenViking or Needle MUST undergo empirical benchmarking before adoption.',
+      statement: 'Context retrieval MUST be decoupled from proprietary vendor APIs through stable capability interfaces (SemanticIndexProvider, GraphProjectionProvider, ContextCompiler); candidate providers such as ai-memory MUST undergo empirical benchmarking before adoption and MUST remain non-authoritative, returning PROPOSED records only.',
       normative_level: 'MUST',
       plane: 'TARGET',
       domain_id: 'CONTEXT_PLANE_CAPABILITIES',
       intent_refs: ['DEC_ID_14'],
       raw_event_refs: [getHash('DEC_ID_14')],
       normalization_refs: ['DEC_ID_14'],
-      current_state_refs: ['vault/90_Derived/Projections/'],
+      current_state_refs: ['vault/90_Derived/Projections/', 'tools/kad/knowledge-plane-adapters.mjs'],
       research_refs: [],
       rationale: 'Preserves model and provider neutrality at context compilation boundaries.',
       verification_strategy: 'Context compiler mock tests and retrieval benchmark suite.',
       risk_class: 'MEDIUM',
       dependencies: ['REQ-KAD-KNOW-001'],
-      implementation_status: 'NOT_IMPLEMENTED',
+      implementation_status: 'PARTIAL',
       target_horizon: '6_MONTH',
       reversibility_or_change_cost: 'LOW_REVERSIBLE',
       context_plane: {
         vendor_agnostic_interface: true,
-        candidate_providers: ['OpenViking', 'Needle'],
-        qualification_required: true
+        candidate_providers: ['ai-memory'],
+        qualification_required: true,
+        non_authoritative_required: true
       }
     },
 
@@ -826,6 +827,16 @@ export function compileIdealStateData(events = [], normalizations = []) {
       risk_level: 'HIGH',
       target_horizon: '3_MONTH',
       remediation_wp: 'WP-KAD-CONTRADICTION-JOURNAL-040'
+    },
+    {
+      domain_id: 'MEMORY_SUBSTRATE_AND_MODEL_GATEWAY',
+      current_state: 'Knowledge is split across vault/, the legacy knowledge base and harness-local memory with no single writer; each harness binds remote providers independently, so model availability is a per-harness fact.',
+      target_state: 'One git-backed memory record reachable from every harness and host, with vault/ as its deterministic mirror, and one OpenAI-compatible gateway endpoint carrying every authorized remote provider plus the proxied local KAD endpoints.',
+      gap_description: 'No unified memory substrate existed, so cross-harness continuity and provenance were unenforceable; no single transport existed, so "which models KAD-PI may use" could not be answered outside each harness config.',
+      evidence_refs: ['docs/state/CSA_KAD_PI_CURRENT_2026-09-11.json', 'vault/00_Governance/ISA-KAD-MEMORY-001.md', 'evidence/WP-KAD-MEMORY-SUBSTRATE-057/'],
+      risk_level: 'MEDIUM',
+      target_horizon: 'NOW',
+      remediation_wp: 'WP-KAD-MEMORY-SUBSTRATE-057'
     }
   ];
 
@@ -886,21 +897,23 @@ export function compileIdealStateData(events = [], normalizations = []) {
       }
     },
     {
-      experiment_id: 'EXP-KAD-SEMANTIC-RETRIEVAL-004',
-      title: 'OpenViking / Needle Semantic Knowledge Retrieval Benchmark',
+      experiment_id: 'EXP-KAD-MEMORY-RETRIEVAL-004-R1',
+      supersedes: 'EXP-KAD-SEMANTIC-RETRIEVAL-004',
+      title: 'ai-memory Substrate Retrieval Benchmark (successor to the OpenViking/Needle evaluation)',
       domain_id: 'CONTEXT_PLANE_CAPABILITIES',
-      hypothesis: 'Local semantic embedding indices accelerate relevant context retrieval for complex architecture queries without hallucinating unverified connections.',
-      baseline: 'Deterministic ripgrep, AST grep, and frontmatter property queries.',
-      candidate: 'Local OpenViking/Needle vector index over canonical Vault Markdown.',
-      independent_variable: 'Retrieval method (Deterministic Keyword vs Semantic Vector).',
-      controlled_variables: ['Query benchmark suite', 'Vault corpus content'],
-      confounders: ['Embedding model latency', 'Index staleness'],
-      metrics: ['Retrieval Recall@5', 'Precision@5', 'Query latency (ms)', 'Context token economy'],
-      acceptance_threshold: 'Recall@5 > 85% with zero unverified document claims admitted into canonical context.',
+      hypothesis: 'In-process local embeddings over the ai-memory wiki of record accelerate relevant context retrieval for complex architecture queries without hallucinating unverified connections, and without paid egress.',
+      baseline: 'Deterministic ripgrep, AST grep, and frontmatter property queries over the committed vault mirror.',
+      candidate: 'ai-memory hybrid retrieval (FTS5 + 384-dim all-MiniLM-L6-v2 local embeddings) exposed through the non-authoritative KnowledgePlane adapter.',
+      independent_variable: 'Retrieval method (Deterministic Keyword vs Hybrid Local Semantic).',
+      controlled_variables: ['Query benchmark suite', 'Vault corpus content', 'Embedding model revision'],
+      confounders: ['Embedding model latency', 'Index staleness', 'Page churn between reindex passes'],
+      metrics: ['Retrieval Recall@5', 'Precision@5', 'Query latency (ms)', 'Context token economy', 'Egress bytes (must be 0)'],
+      acceptance_threshold: 'Recall@5 > 85% with zero unverified document claims admitted into canonical context and zero paid spend.',
       disposition_taxonomy: {
-        ADOPT: 'Integrate semantic index as rebuildable derived projection provider.',
-        ADOPT_NARROW: 'Use semantic retrieval for exploratory search only; require deterministic paths for code/governance.',
-        REMOVE: 'Excessive memory/latency overhead; rely on deterministic search.'
+        ADOPT: 'Integrate the ai-memory substrate as a rebuildable, non-authoritative derived retrieval provider.',
+        ADOPT_NARROW: 'Use substrate retrieval for exploratory search only; require deterministic paths for code/governance.',
+        REMOVE: 'Excessive memory/latency overhead; rely on deterministic search over the mirror.',
+        SUPERSEDED_BY_PREDECESSOR: 'Predecessor experiment concluded before adoption; no retrieval change warranted.'
       }
     },
     {
@@ -952,7 +965,8 @@ export function compileIdealStateData(events = [], normalizations = []) {
         'M2: Lean Deterministic PM Kernel & WBS/DAG Validation in workctl',
         'M3: Strict Multi-Domain Security Sandbox & Capability Broker Prototype',
         'M4: KnowledgePlane Contradiction Journal & Lifecycle State Machine',
-        'M5: Human Cognitive Attention & Intervention Telemetry Baseline'
+        'M5: Human Cognitive Attention & Intervention Telemetry Baseline',
+        'M5B: Unified Memory Substrate (ai-memory wiki of record) & Single Model Gateway Operational'
       ]
     },
     six_month: {
@@ -963,7 +977,7 @@ export function compileIdealStateData(events = [], normalizations = []) {
         'M6: Asymmetric Dual-Node Compute Fabric Operational (AMDY interactive + TELL batch)',
         'M7: Downward Distillation Pipeline Eliminating Repeated Execution Errors',
         'M8: Warren Detached Asynchronous Workload Canary Qualification',
-        'M9: ContextPlane Semantic Retrieval Benchmarking & Projection Integration',
+        'M9: ContextPlane Substrate Retrieval Benchmarking (EXP-KAD-MEMORY-RETRIEVAL-004-R1) & Projection Integration',
         'M10: Staged Open Research & Specification Publishing Framework'
       ]
     },
@@ -1049,6 +1063,20 @@ export function compileIdealStateData(events = [], normalizations = []) {
       authority_class: 'epistemic',
       risk_level: 'HIGH',
       acceptance_evidence: 'Conflicting claims are journaled, tagged CONTESTED, and block downstream dependent automated actions via impact-scoped containment without halting unrelated tasks.',
+      estimated_resource_class: 'LOCAL_DETERMINISTIC',
+      candidate_execution_provider: 'OMP'
+    },
+    {
+      workpackage_id: 'WP-KAD-MEMORY-SUBSTRATE-057',
+      title: 'Unified Memory Substrate (ai-memory), Model Gateway (OmniRoute) & Current/Ideal State Artifacts',
+      why_now: 'Required by REQ-KAD-CTX-001, REQ-KAD-KNOW-001 and REQ-KAD-FIN-001: memory was split across the vault, the legacy knowledge base and harness-local stores with no single writer, and remote model availability was a per-harness fact rather than a governed property of the fabric.',
+      intent_refs: ['DEC_ID_06', 'DEC_ID_07', 'DEC_ID_14'],
+      dependencies: ['WP-KAD-KNOWLEDGE-LIFECYCLE-034'],
+      scope: ['docs/state/', 'docs/architecture/KAD_PI_IDEAL_STATE_V2.md', 'vault/00_Governance/', 'tools/kad/', 'bin/', 'config/', '.omp/', 'vault/', '.gitignore', 'AGENTS.md', 'evidence/WP-KAD-MEMORY-SUBSTRATE-057/'],
+      non_scope: ['paid-provider spend', 'TLS termination', 'TELL deployment', 'model weight downloads', 'rewriting historical evidence or accepted ADRs'],
+      authority_class: 'epistemic',
+      risk_level: 'HIGH',
+      acceptance_evidence: 'A single git-backed record exists and is reachable from every harness; vault/ is a deterministically regenerated OKF v0.2 mirror; every mutating vault command fails closed against the mirror; the OpenViking path is retired in favour of a PROPOSED-only ai-memory adapter; and every authorized remote provider plus the proxied local KAD endpoints are reachable through one gateway endpoint registered as TRANSPORT_ONLY, with a hash-verified catalog and zero paid spend.',
       estimated_resource_class: 'LOCAL_DETERMINISTIC',
       candidate_execution_provider: 'OMP'
     }

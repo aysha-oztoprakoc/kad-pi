@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { canonicalReceipt, inspectPreflight } from '../omp-orchestration-preflight.mjs';
 
@@ -22,18 +23,41 @@ function receipt(resources) {
 
 test('T1 WORLD and Qwen are independently represented', () => {
   const result = receipt([world, qwen]);
-  assert.deepEqual(result.local_inference.resources.map(resource => [resource.provider, resource.endpoint]), [
-    ['kad-local-world', 'http://127.0.0.1:5001/v1'],
-    ['kad-local-qwen', 'http://127.0.0.1:5002/v1']
-  ]);
-  assert.equal(result.local_inference.resources[0].ownership, 'EXTERNAL');
-  assert.equal(result.local_inference.resources[1].ownership, 'OWNED');
+  const byProvider = new Map(result.local_inference.resources.map(resource => [resource.provider, resource]));
+
+  // Both endpoints are represented, and neither is conflated with the other.
+  // (The census also lists every other configured provider that declares a
+  // baseUrl, so this asserts presence and identity rather than an exact array.)
+  assert.ok(byProvider.has('kad-local-world'), 'WORLD must be represented');
+  assert.ok(byProvider.has('kad-local-qwen'), 'Qwen must be represented');
+  assert.equal(byProvider.get('kad-local-world').endpoint, 'http://127.0.0.1:5001/v1');
+  assert.equal(byProvider.get('kad-local-qwen').endpoint, 'http://127.0.0.1:5002/v1');
+  assert.notEqual(byProvider.get('kad-local-world').endpoint, byProvider.get('kad-local-qwen').endpoint);
+
+  assert.equal(byProvider.get('kad-local-world').ownership, 'EXTERNAL');
+  assert.equal(byProvider.get('kad-local-qwen').ownership, 'OWNED');
+});
+
+test('T1b TRANSPORT_ONLY gateway providers are not counted as local inference', () => {
+  // `omniroute-gateway` is registered TRANSPORT_ONLY in config/external-providers.json.
+  // It answers on loopback but KAD-PI owns no inference process behind it, so the
+  // census must not claim ownership of it.
+  const models = readFileSync(new URL('../../../.omp/models.yml', import.meta.url), 'utf8');
+  assert.match(models, /^ {2}omniroute:$/m, 'fixture expectation: the gateway provider is configured');
+
+  const result = receipt([]);
+  assert.equal(
+    result.local_inference.resources.some(resource => resource.provider === 'omniroute'),
+    false,
+    'the transport-only gateway must not appear as a local-inference resource'
+  );
 });
 
 test('T2 inactive Qwen degrades retrieval without changing WORLD', () => {
   const result = receipt([world, { ...qwen, endpoint_available: false, capability_state: 'UNAVAILABLE', observed_identity: 'UNKNOWN' }]);
-  assert.equal(result.local_inference.resources[0].capability_state, 'AVAILABLE');
-  assert.equal(result.local_inference.resources[1].capability_state, 'UNAVAILABLE');
+  const byProvider = new Map(result.local_inference.resources.map(resource => [resource.provider, resource]));
+  assert.equal(byProvider.get('kad-local-world').capability_state, 'AVAILABLE');
+  assert.equal(byProvider.get('kad-local-qwen').capability_state, 'UNAVAILABLE');
   assert.equal(result.status, 'DEGRADED');
 });
 
@@ -61,8 +85,11 @@ test('T5 tracked Qwen lifecycle can advertise OWNED availability', () => {
 test('T6 Qwen disposal withdraws retrieval only', () => {
   const before = receipt([world, qwen]);
   const after = receipt([world, { ...qwen, endpoint_available: false, capability_state: 'UNAVAILABLE', ownership: 'INACTIVE', observed_identity: 'UNKNOWN' }]);
-  assert.equal(before.local_inference.resources[0].observed_identity, after.local_inference.resources[0].observed_identity);
-  assert.equal(after.local_inference.resources[1].capability_state, 'UNAVAILABLE');
+  const worldBefore = before.local_inference.resources.find(resource => resource.provider === 'kad-local-world');
+  const worldAfter = after.local_inference.resources.find(resource => resource.provider === 'kad-local-world');
+  const qwenAfter = after.local_inference.resources.find(resource => resource.provider === 'kad-local-qwen');
+  assert.equal(worldAfter.observed_identity, worldBefore.observed_identity);
+  assert.equal(qwenAfter.capability_state, 'UNAVAILABLE');
 });
 
 test('T7 provider-aware collection does not assume port 5001', () => {

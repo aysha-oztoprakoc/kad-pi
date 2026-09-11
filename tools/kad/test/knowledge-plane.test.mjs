@@ -73,7 +73,7 @@ test('semantic unavailability preserves exact retrieval but reports DEGRADED', (
 
 test('derived records cannot self-promote to accepted knowledge', () => {
   const record = createPlane().ingest()[0];
-  assert.equal(validateAcceptanceTransition(record, { actor: 'OpenViking', target_state: 'ACCEPTED' }).status, 'REJECTED');
+  assert.equal(validateAcceptanceTransition(record, { actor: 'ai-memory', target_state: 'ACCEPTED' }).status, 'REJECTED');
   assert.equal(validateAcceptanceTransition({ ...record, acceptance_state: 'PROPOSED', epistemic_class: 'INFERRED' }, { actor: 'KAD_VALIDATOR', target_state: 'ACCEPTED' }).status, 'ACCEPTED');
 });
 
