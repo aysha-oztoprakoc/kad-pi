@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
+import { execFileSync } from 'node:child_process';
 
 import {
   compileProjections,
@@ -16,9 +17,10 @@ import {
   compileSofiaAdapter,
   isProjectionFresh,
   sofiaDeviationReport,
-  exportTechnologyRegistry
+  exportTechnologyRegistry,
+  repoRoot
 } from '../wiki/projection.mjs';
-import { revision, ensureVault, lintVault } from '../wiki/index.mjs';
+import { revision, ensureVault, lintVault, vaultRoot } from '../wiki/index.mjs';
 
 function tmpVault() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'kad-vault-proj-'));
@@ -110,6 +112,31 @@ test('Projection Compiler: generates root README.md distinguishing CURRENT, EXPE
   assert.match(readme, /## Current Architecture/);
   assert.match(readme, /## Status/);
   assert.ok(!readme.includes('sk-ant-'), 'no API keys');
+});
+
+test('Projection Compiler: README status is measured, and reads UNKNOWN when nothing can be measured', () => {
+  // A bare vault outside any repository: every live field must degrade to UNKNOWN
+  // rather than fall back to a remembered value. The previous template asserted a
+  // fixed phase, "555+ ... 100% GREEN" and "origin/main Synchronized" no matter what
+  // the checkout actually said, and declared the vault the sole knowledge source
+  // after the record/mirror split made that false.
+  const readme = compileReadme({ root: tmpVault() });
+  assert.doesNotMatch(readme, /WP-011|555\+|100% GREEN|single human truth store|Synchronized/i);
+  assert.match(readme, /\*\*Repository\*\*: UNKNOWN \(not a git work tree\)/);
+  assert.match(readme, /\*\*Phase\*\*: UNKNOWN \(no readable work ledger\)/);
+  assert.match(readme, /\*\*Test Suite\*\*: UNKNOWN \(no npm test script\)/);
+});
+
+test('Projection Compiler: README status reflects the live checkout it is generated in', () => {
+  // Same generator, a real repository: the status block must carry the branch, the
+  // short HEAD and the declared test inventory rather than placeholders.
+  const repo = repoRoot();
+  const readme = compileReadme({ root: vaultRoot(), repoRoot: repo });
+  const head = execFileSync('git', ['-C', repo, 'rev-parse', '--short', 'HEAD'], { encoding: 'utf8' }).trim();
+  const branch = execFileSync('git', ['-C', repo, 'rev-parse', '--abbrev-ref', 'HEAD'], { encoding: 'utf8' }).trim();
+  assert.match(readme, new RegExp(`\\*\\*Repository\\*\\*: \`${branch}\` at \`${head}\``));
+  assert.match(readme, /\*\*Test Suite\*\*: \d+ test file\(s\) declared by the `npm test` gate/);
+  assert.match(readme, /\*\*Phase\*\*: `/);
 });
 
 test('Projection Compiler: website public filter fails closed on unapproved/private/review/governance notes', () => {

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import {
   vaultRoot,
   files,
@@ -8,7 +9,8 @@ import {
   revision,
   sha256,
   contextEligible,
-  ensureVault
+  ensureVault,
+  recordPointer
 } from './index.mjs';
 
 export const PROJECTION_COMPILER_VERSION = '1.0.0';
@@ -367,7 +369,7 @@ export function exportTechnologyRegistry({ root = vaultRoot() } = {}) {
 }
 
 
-export function compileRepoDocs({ root = vaultRoot(), outputDir = path.resolve(root, '..', 'docs/generated') } = {}) {
+export function compileRepoDocs({ root = vaultRoot(), outputDir = path.join(repoRoot(root), 'docs/generated') } = {}) {
   fs.mkdirSync(outputDir, { recursive: true });
   const rev = revision(root);
 
@@ -440,8 +442,131 @@ Deterministic evidence outranks model judgment. All agent activities, routing de
   return manifest;
 }
 
-export function compileReadme({ root = vaultRoot() } = {}) {
+/**
+ * Repository root that owns the knowledge root, whether `root` is the committed mirror
+ * or the live ai-memory record: `recordPointer` walks upward and returns the directory
+ * that holds `.ai-memory/vault-path`.
+ */
+export function repoRoot(root = vaultRoot()) {
+  return recordPointer(root)?.root ?? path.resolve(root, '..');
+}
+
+function readJsonSafe(file) {
+  try {
+    return JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+function gitLine(repo, args) {
+  try {
+    return execFileSync('git', ['-C', repo, ...args], {
+      encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore']
+    }).trim();
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Current phase, measured from the work ledger rather than asserted: the open item the
+ * ledger would hand out next, plus the terminal counts.
+ */
+function ledgerState(repo) {
+  const dir = path.join(repo, '.agents', 'work');
+  let entries;
+  try {
+    entries = fs.readdirSync(dir)
+      .filter((name) => name.endsWith('.json'))
+      .map((name) => readJsonSafe(path.join(dir, name)))
+      .filter((item) => item && typeof item.id === 'string' && typeof item.status === 'string');
+  } catch {
+    return null;
+  }
+  const terminal = new Set(['ACCEPTED', 'SUPERSEDED', 'REJECTED']);
+  const open = entries.filter((item) => !terminal.has(item.status));
+  open.sort((a, b) => (Number(b.priority ?? 0) - Number(a.priority ?? 0)) || a.id.localeCompare(b.id));
+  return {
+    current: open[0] ?? null,
+    openCount: open.length,
+    acceptedCount: entries.filter((item) => item.status === 'ACCEPTED').length,
+    total: entries.length
+  };
+}
+
+/** Branch, HEAD and divergence from the tracked upstream. */
+function remoteState(repo) {
+  const branch = gitLine(repo, ['rev-parse', '--abbrev-ref', 'HEAD']);
+  if (!branch) return null;
+  const head = gitLine(repo, ['rev-parse', '--short', 'HEAD']);
+  const upstream = gitLine(repo, ['rev-parse', '--abbrev-ref', '--symbolic-full-name', '@{u}']);
+  if (!upstream) return { branch, head, upstream: null, ahead: null, behind: null };
+  const counts = gitLine(repo, ['rev-list', '--left-right', '--count', '@{u}...HEAD']);
+  const [behind, ahead] = (counts ?? '').split(/\s+/).map((n) => Number.parseInt(n, 10));
+  return { branch, head, upstream, ahead: Number.isNaN(ahead) ? null : ahead, behind: Number.isNaN(behind) ? null : behind };
+}
+
+/**
+ * Number of test files the `npm test` gate declares, expanded from the script's globs.
+ * This is an inventory, never a verdict: a README cannot know whether the suite passed.
+ */
+function testInventory(repo) {
+  const script = readJsonSafe(path.join(repo, 'package.json'))?.scripts?.test;
+  if (typeof script !== 'string' || script === '') return null;
+  const targets = script.split(/\s+/).filter((token) => token !== 'node' && token !== '--test' && !token.startsWith('-'));
+  let count = 0;
+  for (const target of targets) {
+    const star = target.indexOf('*');
+    if (star === -1) {
+      if (fs.existsSync(path.resolve(repo, target))) count += 1;
+      continue;
+    }
+    const dir = path.dirname(target);
+    const suffix = target.slice(star + 1);
+    try {
+      count += fs.readdirSync(path.resolve(repo, dir)).filter((name) => name.endsWith(suffix)).length;
+    } catch { /* declared directory absent: contributes nothing */ }
+  }
+  return count;
+}
+
+/** Where durable knowledge actually lives: the live record, or the committed mirror alone. */
+function memoryAuthority(repo) {
+  const pointer = path.join(repo, '.ai-memory', 'vault-path');
+  try {
+    const target = fs.readFileSync(pointer, 'utf8').trim();
+    if (target && fs.existsSync(target)) return { record: target, live: true };
+  } catch { /* no live record: the mirror is the only surface */ }
+  return { record: null, live: false };
+}
+
+export function compileReadme({ root = vaultRoot(), repoRoot: repo = repoRoot(root) } = {}) {
   const rev = revision(root);
+  const ledger = ledgerState(repo);
+  const remote = remoteState(repo);
+  const tests = testInventory(repo);
+  const memory = memoryAuthority(repo);
+
+  const phase = ledger?.current
+    ? `\`${ledger.current.id}\` — ${ledger.current.title ?? 'untitled'} (${ledger.current.status})`
+    : 'UNKNOWN (no readable work ledger)';
+  const ledgerLine = ledger
+    ? `${ledger.openCount} open, ${ledger.acceptedCount} accepted of ${ledger.total} recorded workpackage(s)`
+    : 'UNKNOWN';
+  const repositoryLine = remote
+    ? `\`${remote.branch}\` at \`${remote.head}\``
+      + (remote.upstream
+        ? `; ${remote.ahead} commit(s) ahead of, ${remote.behind} behind \`${remote.upstream}\``
+        : '; no upstream tracking configured')
+    : 'UNKNOWN (not a git work tree)';
+  const testLine = tests === null
+    ? 'UNKNOWN (no npm test script)'
+    : `${tests} test file(s) declared by the \`npm test\` gate — run it for the current verdict`;
+  const knowledgeLine = memory.live
+    ? `ai-memory wiki of record at \`${memory.record}\`; \`vault/\` is a deterministically regenerated mirror`
+    : 'no live record pointer: the committed `vault/` mirror is the only knowledge surface';
+
   return `<!-- @generated by KAD Projection Compiler v${PROJECTION_COMPILER_VERSION} from canonical vault revision ${rev} -->
 # KAD-PI
 
@@ -452,16 +577,20 @@ KAD-PI is a local-first engineering workstation, research engine, and agent cont
 ---
 
 ## Status
-- **Phase**: Canonical Knowledge & Presentation Synchronization (\`WP-011\`)
+- **Phase**: ${phase}
+- **Work ledger**: ${ledgerLine}
+- **Repository**: ${repositoryLine}
+- **Knowledge Record**: ${knowledgeLine}
 - **Canonical Vault Revision**: \`${rev}\`
-- **Remote Synchronization**: \`origin/main\` Synchronized
-- **Test Suite**: 555+ unit & integration tests passing (100% GREEN)
+- **Test Suite**: ${testLine}
+
+_Every line above is measured at generation time from the ledger, git and the record pointer. This file is regenerated, not maintained: an unmeasured value reads \`UNKNOWN\` rather than a remembered one._
 
 ---
 
 ## Core Principles
 1. **Prime Directive**: Deterministic evidence outranks model judgment.
-2. **Single Human Truth Store**: The canonical Obsidian vault (\`vault/\`) is the sole human-authored durable knowledge source.
+2. **Record and Mirror**: The ai-memory wiki of record is the durable knowledge authority; \`vault/\` is a deterministic mirror committed for clones, CI and the remote. Derived projections are disposable.
 3. **No Unapproved Spend**: Zero implicit paid API spend; free/subscription quota lanes are prioritized deterministically.
 4. **Epistemic Honesty**: Explicit separation between \`SOURCE_FACT\`, \`OBSERVED\`, \`DERIVED_SYNTHESIS\`, and \`PROJECT_INFERENCE\`.
 
@@ -469,7 +598,7 @@ KAD-PI is a local-first engineering workstation, research engine, and agent cont
 
 ## Current Architecture
 - **Control Plane & Telemetry**: Native OMP extension with compact status meter and provider-neutral quota telemetry.
-- **Knowledge Plane**: Governed Obsidian vault with flat typed property validation, target-bound proposal receipts, and anti-poisoning retrieval boundaries.
+- **Knowledge Plane**: ai-memory wiki of record with governed ingestion, OKF v0.2 conformance gating on publish, and anti-poisoning retrieval boundaries.
 - **Counterfactual Observatory**: Append-only tamper-evident divergence journal tracking actual vs. shadow routing choices with zero unexecuted causal claims.
 - **Local Swarm Substrate**: Local AMD ROCm / Vulkan inference (\`Qwen2.5-Coder-7B-Instruct-GGUF\` for retrieval, \`Stheno-v3.2-8B-GGUF\` for simulation).
 - **Workpackage Substrate**: \`bin/workctl\` deterministic state machine with exclusive lease-based mutating claims.
@@ -480,11 +609,11 @@ KAD-PI is a local-first engineering workstation, research engine, and agent cont
 
 | Component | Status | Classification | Authority Role |
 |---|---|---|---|
-| \`vault/\` | **CURRENT** | Governed Vault | Durable Ground Truth |
+| \`.ai-memory/\` | **CURRENT** | Wiki of Record | Durable Knowledge Authority |
+| \`vault/\` | **DERIVED** | Committed Mirror | Deterministic projection of the record |
 | \`tools/kad/telemetry/\` | **CURRENT** | Operator Control Plane | Live Telemetry & Quota |
 | \`tools/workspace/workctl.mjs\` | **CURRENT** | Workpackage Engine | Task Execution Authority |
 | \`corpus/research/\` | **CURRENT** | 5-Paper Audited Corpus | Scientific Primary Source |
-| \`wiki/\` | **DERIVED** | Legacy Compatibility | Generated Only |
 | \`docs/generated/\` | **DERIVED** | Repository Documentation | Generated Only |
 | \`site/\` | **PLANNED** | Public Website | Presentation Layer |
 | \`dashboard/\` | **EXPERIMENTAL** | Sofia v3 Dashboard | Telemetry Visualization |
@@ -501,17 +630,22 @@ KAD-PI is a local-first engineering workstation, research engine, and agent cont
 # Check KAD system runtimes and security toolchain
 ./bin/kad doctor
 
-# Validate canonical vault schema and links
+# Validate the knowledge record's schema and links
 ./bin/kad-wiki lint
 \`\`\`
 
 ### Run Test Suite
 \`\`\`bash
-node --test tools/kad/test/*.test.mjs tools/workspace/workctl.test.mjs
+npm test
 \`\`\`
 
-### Rebuild Canonical Projections
+### Regenerate Derived Artifacts
 \`\`\`bash
+# Re-publish vault/ from the wiki of record (OKF conformance gated)
+./bin/kad-memory publish
+
+# Rebuild the vault's own projections; currently refused while the pre-existing
+# non-conformant corpus is still in the mirror
 ./bin/kad-wiki rebuild
 \`\`\`
 
@@ -662,7 +796,7 @@ export function sofiaDeviationReport() {
   };
 }
 
-export function compileProjections({ root = vaultRoot(), projectRoot = path.resolve(root, '..') } = {}) {
+export function compileProjections({ root = vaultRoot(), projectRoot = repoRoot(root) } = {}) {
   const rev = revision(root);
   const projDir = path.join(root, '90_Derived/Projections');
   fs.mkdirSync(projDir, { recursive: true });
@@ -691,7 +825,7 @@ export function compileProjections({ root = vaultRoot(), projectRoot = path.reso
   fs.writeFileSync(path.join(siteGenDir, 'public-state.json'), JSON.stringify(websiteState, null, 2) + '\n');
 
   // Compile root README.md
-  const readmeContent = compileReadme({ root });
+  const readmeContent = compileReadme({ root, repoRoot: projectRoot });
   fs.writeFileSync(path.join(projectRoot, 'README.md'), readmeContent);
 
   return {
