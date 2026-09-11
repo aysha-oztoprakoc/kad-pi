@@ -1,0 +1,125 @@
+{
+  "artifact": "GAYA-DATASET-HANDOFF-001",
+  "scope": "Draft handoff validation only",
+  "handoff_integrity": {
+    "handoff_integrity": "PASS",
+    "workpackages": 10,
+    "claims": 11,
+    "all_claims_covered": true,
+    "dag": "ACYCLIC_TOPologically_ORDERED",
+    "markdown_frame_mirror": "EXACT_STEPS",
+    "native_registration": "NOT_PERFORMED",
+    "native_validator_bindings": "11_PLANNED_UNREGISTERED",
+    "implementation_acceptance": "NOT_CLAIMED"
+  },
+  "native_isa_lint": {
+    "command": "node bin/kad-isa lint docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+    "cwd": "/home/amdy/Work",
+    "exit_code": 1,
+    "status": "FAIL_EXPECTED_PLANNED_VALIDATORS_UNREGISTERED",
+    "unregistered_validator_count": 11,
+    "other_reported_errors": [],
+    "gate_weakened": false,
+    "explanation": "All claims are future targets. Register real semantic validators under frame 09 before native lint/check may qualify the implemented release. No unrelated validators were substituted."
+  },
+  "integrity_check_reproduction": {
+    "command": "node --input-type=module",
+    "cwd": "/home/amdy/Work",
+    "stdin_source": "import assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nimport { parseIsa, VALIDATOR_REGISTRY } from './tools/kad/isa.mjs';\nconst base = 'docs/gaya/dataset-generation/';\nconst plan = JSON.parse(readFileSync(base + 'workpackages.json', 'utf8'));\nconst isa = parseIsa(readFileSync(base + 'ISA-GAYA-DATASET-G1-001.md', 'utf8'));\nconst md = readFileSync(base + 'WORKPACKAGES.md', 'utf8');\nassert.equal(plan.native_workctl_registered, false);\nassert.equal(plan.workpackages.length, 10);\nassert.equal(isa.claims.length, 11);\nassert.equal(isa.metadata.status, 'DRAFT_VALIDATOR_BINDING_PENDING');\nassert.equal(isa.metadata.train_eligible, 'false');\nconst ids = new Set(plan.workpackages.map(f => f.id));\nassert.equal(ids.size, 10);\nconst claims = new Set(isa.claims.map(c => c.id));\nassert.equal(claims.size, 11);\nconst complete = new Set();\nconst covered = new Set();\nfor (const f of plan.workpackages) {\n  assert.equal(f.status, 'PROPOSED');\n  assert.equal(f.fixed_point, null);\n  for (const d of f.depends_on) { assert.ok(ids.has(d)); assert.ok(complete.has(d)); }\n  for (const key of ['inputs','owned_paths','non_goals','steps','acceptance','proof','stop','research','gates']) assert.ok(Array.isArray(f[key]) && f[key].length > 0, f.id + ':' + key);\n  for (const g of f.gates) { assert.ok(claims.has(g), g); covered.add(g); }\n  assert.equal(md.split('### ' + f.id + ' — ').length - 1, 1);\n  assert.ok(f.steps.every(step => md.includes(step)));\n  complete.add(f.id);\n}\nassert.equal(covered.size, claims.size);\nfor (const c of isa.claims) { assert.equal(c.status, 'PENDING'); assert.equal(c.target_state, 'CANONICAL_TARGET'); assert.equal(VALIDATOR_REGISTRY[c.validator], undefined); }\nconsole.log(JSON.stringify({handoff_integrity:'PASS', workpackages:ids.size, claims:claims.size, all_claims_covered:true, dag:'ACYCLIC_TOPologically_ORDERED', markdown_frame_mirror:'EXACT_STEPS', native_registration:'NOT_PERFORMED', native_validator_bindings:'11_PLANNED_UNREGISTERED', implementation_acceptance:'NOT_CLAIMED'}, null, 2));\n",
+    "exit_code": 0,
+    "stdout": "{\n  \"handoff_integrity\": \"PASS\",\n  \"workpackages\": 10,\n  \"claims\": 11,\n  \"all_claims_covered\": true,\n  \"dag\": \"ACYCLIC_TOPologically_ORDERED\",\n  \"markdown_frame_mirror\": \"EXACT_STEPS\",\n  \"native_registration\": \"NOT_PERFORMED\",\n  \"native_validator_bindings\": \"11_PLANNED_UNREGISTERED\",\n  \"implementation_acceptance\": \"NOT_CLAIMED\"\n}\n",
+    "stderr": ""
+  },
+  "source_stability": [
+    {
+      "path": "PRIME_DIRECTIVE.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/state/CSA_KAD_PI_CURRENT.json",
+      "unchanged": true
+    },
+    {
+      "path": "docs/state/CSA_KAD_PI_CURRENT.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/adr/0004-model-agnostic-control-plane.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/adr/0005-deterministic-first-and-epistemic-classification.md",
+      "unchanged": true
+    },
+    {
+      "path": "docs/adr/0014-generalized-ideal-state-artifact-and-compute-fabric-governance.md",
+      "unchanged": true
+    },
+    {
+      "path": ".agents/workspace/projects.json",
+      "unchanged": true
+    },
+    {
+      "path": "tools/kad/isa.mjs",
+      "unchanged": true
+    },
+    {
+      "path": "tools/workspace/workctl.mjs",
+      "unchanged": true
+    },
+    {
+      "path": "kad-rpg/kad-gaya/ingestion/corpus_ingestor.py",
+      "unchanged": true
+    },
+    {
+      "path": "kad-rpg/kad-gaya/extract_and_ingest_gaya.py",
+      "unchanged": true
+    },
+    {
+      "path": "kad-rpg/kad-gaya/docs/PLANO_CORRECAO_GAYA_PARA_GEMINI.md",
+      "unchanged": true
+    },
+    {
+      "path": "kad-rpg/kad-gaya/pipeline/schemas.py",
+      "unchanged": true
+    },
+    {
+      "path": "kad-rpg/kad-gaya/pipeline/deterministic.py",
+      "unchanged": true
+    },
+    {
+      "path": "kad-rpg/kad-gaya/training/sharegpt_exporter.py",
+      "unchanged": true
+    },
+    {
+      "path": "tools/kad/research-dataset-compiler.mjs",
+      "unchanged": true
+    },
+    {
+      "path": "tools/gaya/test/piano-playground.test.mjs",
+      "unchanged": true
+    },
+    {
+      "path": "docs/research/RESEARCH_SNAPSHOT_GAYA_3D_ASCII_PIANO.md",
+      "unchanged": true
+    },
+    {
+      "path": "evidence/WP-GAME-STACK-001/qualification.json",
+      "unchanged": true
+    },
+    {
+      "path": "/home/amdy/Downloads/reports/RESEARCH_SNAPSHOT_GAYA_3D_ASCII_PIANO_2026-09-08.md",
+      "unchanged": true
+    },
+    {
+      "path": "/home/amdy/Downloads/reports/plano de pesquisa/Plano de Pesquisa — Fundamentação Teórica da Harness KAD-PI (Consensus Pro).md",
+      "unchanged": true
+    }
+  ],
+  "implementation_status": "NOT_EXECUTED",
+  "registered_workpackages": false,
+  "canonical_isa_promotion": false,
+  "model_training": false,
+  "bulk_dataset_generation": false,
+  "commits": false
+}

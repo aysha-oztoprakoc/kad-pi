@@ -1,0 +1,171 @@
+{
+  "artifact": "GAYA-DATASET-HANDOFF-001",
+  "recorded_at": "2026-09-09T00:51:23Z",
+  "purpose": "Preparation evidence for a proposed dataset-first ISA and builder prompt, not implementation acceptance",
+  "source_fingerprints": [
+    {
+      "path": "PRIME_DIRECTIVE.md",
+      "sha256": "fe02ae3f26da3c542df37bb811d5454e71ff3cda76c36511fe924698a22ccba1"
+    },
+    {
+      "path": "docs/state/CSA_KAD_PI_CURRENT.json",
+      "sha256": "6914ca33dec12d0e384cedac2b2398a898e923189cac3276e6f8c0b93e0b2eac"
+    },
+    {
+      "path": "docs/state/CSA_KAD_PI_CURRENT.md",
+      "sha256": "e5e37ac03c7d30ace3c33005d85b324a73445c658ab10a45cd984e2c6fb5fb29"
+    },
+    {
+      "path": "docs/adr/0004-model-agnostic-control-plane.md",
+      "sha256": "b9eba4a02e63c59802b18aa56f1409710e4c4a14e649435d24a42114d6556417"
+    },
+    {
+      "path": "docs/adr/0005-deterministic-first-and-epistemic-classification.md",
+      "sha256": "f85186eb15e51ff6a36ef58e31bd663295c48326eb30270a6dbb4d53871ff9cb"
+    },
+    {
+      "path": "docs/adr/0014-generalized-ideal-state-artifact-and-compute-fabric-governance.md",
+      "sha256": "82e735579f2a62e88cd53a9e148d642f445a407536c2ec0e06870a2e1aeb63df"
+    },
+    {
+      "path": ".agents/workspace/projects.json",
+      "sha256": "99368bec55147d7986bc5c710631e802dcc3e29f8b169e305d22ecff051b88a9"
+    },
+    {
+      "path": "tools/kad/isa.mjs",
+      "sha256": "80f064b3de85264e72a16d082e58cdc7952fbd027c1f115a18ba4ca80ada3404"
+    },
+    {
+      "path": "tools/workspace/workctl.mjs",
+      "sha256": "6c62994ec418d04dd5cb228d1f3a9bc62bdd27325a7963d1421d91af5161d9d1"
+    },
+    {
+      "path": "kad-rpg/kad-gaya/ingestion/corpus_ingestor.py",
+      "sha256": "6568add04696ae4cc817646556db54b151a7acccd77c4683d744dcab39af97f0"
+    },
+    {
+      "path": "kad-rpg/kad-gaya/extract_and_ingest_gaya.py",
+      "sha256": "5231b82d7833622b7f0863fc2406a31be42a579dc98a9adfe41e0fc153239f37"
+    },
+    {
+      "path": "kad-rpg/kad-gaya/docs/PLANO_CORRECAO_GAYA_PARA_GEMINI.md",
+      "sha256": "2d8f74bf8e93ae748abac177f5f31da523c72cedfff965e750e6c4aaf102e408"
+    },
+    {
+      "path": "kad-rpg/kad-gaya/pipeline/schemas.py",
+      "sha256": "b173b85058cf39ae91f7a31cb5efd483f4bdc7473f4484017f26ed79eebf71cc"
+    },
+    {
+      "path": "kad-rpg/kad-gaya/pipeline/deterministic.py",
+      "sha256": "83ed18e06dc47d8394be266fbad3f7cd5727bac315993a0645d951677f9fcd5c"
+    },
+    {
+      "path": "kad-rpg/kad-gaya/training/sharegpt_exporter.py",
+      "sha256": "2f545318866404b675332d19ec185f82cf5d9889059db61f641fcae66184cb40"
+    },
+    {
+      "path": "tools/kad/research-dataset-compiler.mjs",
+      "sha256": "c34a62697985ad72f8e900a8f6adcb89af32548314c3f4af63366af6aadffa71"
+    },
+    {
+      "path": "tools/gaya/test/piano-playground.test.mjs",
+      "sha256": "db7810c844d6a703589feded05ddc6230dae16da631c2978b617d4242e2c2627"
+    },
+    {
+      "path": "docs/research/RESEARCH_SNAPSHOT_GAYA_3D_ASCII_PIANO.md",
+      "sha256": "50dea111551d81ce12cec2cdfa60ab1cf53322245ce1c2540d3a461f7950a7ef"
+    },
+    {
+      "path": "evidence/WP-GAME-STACK-001/qualification.json",
+      "sha256": "1bb93ee293c2e5dcc50efb6fc3a21886520e56847e49f889746610115b9d4df7"
+    },
+    {
+      "path": "/home/amdy/Downloads/reports/RESEARCH_SNAPSHOT_GAYA_3D_ASCII_PIANO_2026-09-08.md",
+      "sha256": "d3f5f1aa3b60e84329a3166fc86f1985d8bae16a6955ad52d60efc3b93c0cfe6"
+    },
+    {
+      "path": "/home/amdy/Downloads/reports/plano de pesquisa/Plano de Pesquisa — Fundamentação Teórica da Harness KAD-PI (Consensus Pro).md",
+      "sha256": "0d54b3b02edc785048d0d34a78eb717ed9ac82463f324910491de7505c4a37a3"
+    }
+  ],
+  "source_stability_check": {
+    "unchanged": 21,
+    "changed": 0
+  },
+  "deliverable_fingerprints": [
+    {
+      "path": "docs/gaya/dataset-generation/CSA-GAYA-DATASET-001.md",
+      "sha256": "b7f59f8927b727cd070bb81b6567109ebcd62f022cb2f1457d3ed5ea663f9122"
+    },
+    {
+      "path": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "sha256": "bea676b519dac4e2f676a0eeea2713b7451dc72f997ee2b3b94a42c9db4af0e1"
+    },
+    {
+      "path": "docs/gaya/dataset-generation/RESEARCH-MAP.md",
+      "sha256": "f19004c0e2f356ef10bcdd968204f8b8860550961d345f0a855ecdfca3a94514"
+    },
+    {
+      "path": "docs/gaya/dataset-generation/workpackages.json",
+      "sha256": "8148f7ffd951d44907cee722b18498864bdd298fa698621a005320a98b1e56d3"
+    },
+    {
+      "path": "docs/gaya/dataset-generation/WORKPACKAGES.md",
+      "sha256": "72b53cecc461378d2833a3b354634fca3b4cdefe50b9676b1244175ec25cf6b8"
+    },
+    {
+      "path": "docs/gaya/dataset-generation/PROMPT-GEMINI-BUILDER.md",
+      "sha256": "743a3e9aa54eb6ae0f47fd2815fb7eb7d535b34eba4690f98466084b28c71c00"
+    }
+  ],
+  "external_sources": [
+    {
+      "url": "https://arxiv.org/abs/2212.10560",
+      "evidence_level": "PRIMARY_ABSTRACT_READ",
+      "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions"
+    },
+    {
+      "url": "https://arxiv.org/abs/1803.09010",
+      "evidence_level": "PRIMARY_ABSTRACT_READ",
+      "title": "Datasheets for Datasets"
+    },
+    {
+      "url": "https://arxiv.org/abs/2310.05736",
+      "evidence_level": "PRIMARY_ABSTRACT_READ",
+      "title": "LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models"
+    },
+    {
+      "url": "https://doi.org/10.1109/TSE.2014.2372785",
+      "evidence_level": "BIBLIOGRAPHIC_IDENTITY_CHECKED",
+      "full_text_read": false
+    },
+    {
+      "url": "https://doi.org/10.1016/0004-3702(79)90008-0",
+      "evidence_level": "BIBLIOGRAPHIC_IDENTITY_CHECKED",
+      "full_text_read": false
+    },
+    {
+      "url": "https://doi.org/10.1016/S0004-3702(99)00052-1",
+      "evidence_level": "BIBLIOGRAPHIC_IDENTITY_CHECKED",
+      "full_text_read": false
+    }
+  ],
+  "bounded_session_probes": [
+    {
+      "operation": "GayaCorpusIngestor.parse_docx",
+      "input": "kad-rpg/kad-gaya/O Códice de Gaya História e Cosmogo.docx",
+      "characters_extracted": 9037,
+      "parser_error": false,
+      "staging": "TemporaryDirectory; cleaned after probe",
+      "limitation": "One document text extraction, not semantic completeness"
+    },
+    {
+      "command": "node bin/gaya --replay",
+      "exit_code": 0,
+      "state_hash": "1f59ccd46655bddac4b03cfd8185191b02a09b559d5f678025931667898917b9",
+      "ledger_hash": "2fd1145cfa3fa2b7252a786643c904252460e141ec5a1cfea690b0248e4baf1e",
+      "result": "Original and replayed state/ledger hashes matched",
+      "limitation": "Scripted simulation only; not generative-model replay"
+    }
+  ]
+}

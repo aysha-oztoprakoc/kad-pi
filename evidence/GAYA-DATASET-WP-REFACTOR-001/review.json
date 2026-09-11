@@ -1,0 +1,76 @@
+{
+  "artifact": "GAYA-DATASET-WP-REFACTOR-001",
+  "scope": "Plan-only review and refactor of the proposed Gaya dataset workpackage contracts; no implementation, enrollment, registration or acceptance claims",
+  "recorded_at": "2026-09-09T01:45:00Z",
+  "authority": "KAD-bounded documentation review; not a native workctl claim",
+  "inputs_before": {
+    "docs/gaya/dataset-generation/workpackages.json": "8148f7ffd951d44907cee722b18498864bdd298fa698621a005320a98b1e56d3",
+    "docs/gaya/dataset-generation/WORKPACKAGES.md": "72b53cecc461378d2833a3b354634fca3b4cdefe50b9676b1244175ec25cf6b8",
+    "docs/gaya/dataset-generation/PROMPT-GEMINI-BUILDER.md": "743a3e9aa54eb6ae0f47fd2815fb7eb7d535b34eba4690f98466084b28c71c00",
+    "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md": "bea676b519dac4e2f676a0eeea2713b7451dc72f997ee2b3b94a42c9db4af0e1"
+  },
+  "outputs_after": {
+    "docs/gaya/dataset-generation/workpackages.json": "a58414a00c33e36047a28303b5d27e9bb6659cdf0e7da5810d7880fc5f3a6a8e",
+    "docs/gaya/dataset-generation/WORKPACKAGES.md": "559baa63ed709ae6e3dcd02e35856f69adf4a5d4493fac227f359612ed271110",
+    "docs/gaya/dataset-generation/PROMPT-GEMINI-BUILDER.md": "da5f41cb177cb1f8b46e409c57bfd5f9f84074e4d738e8d1e7c9e6eaa859135a",
+    "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md": "29384e5779ab7ef4df483a86af32aa63ad2ee73471a8a1291326584430810b76"
+  },
+  "review_findings": [
+    "Frames 01–08 owned mixed roots: nested kad-rpg code paths plus workspace evidence paths that cannot be claimed together under one native project claim.",
+    "Frame 04 consumed frame 03 resolved entity IDs without declaring the dependency; the visual chain was incorrectly parallel to the knowledge chain.",
+    "Frame 00 steps directed it to register tasks and resolve enrollment, effects outside its evidence-only owned scope.",
+    "Every frame embedded a model/provider transport string ('Gemini 3.8 Flash…') in the contract, contrary to model-neutral work definitions.",
+    "Frame 01 required the complete inspect/run/verify/replay CLI while later frames implemented its stages; intermediate acceptance was not bounded.",
+    "Frame 02 acceptance allowed representative probes as evidence of a full census; ISA requires complete source accounting.",
+    "The pasted TODO in the handoff delivery relabeled frames as ingestion/normalization and reported 1/10, conflicting with the canonical 00–09 IDs.",
+    "The release layout implied qualification results inside the sealed payload while the ISA also requires an authorized acceptance receipt; the hash-recipient order was under-specified and risked circular final checks.",
+    "The ISA acceptance matrix assigns GAYA-G1-01 to frames 00–02, but frame 01 did not list it as an evidence contribution although it defines the disposition schema carrying that gate's manifest evidence.",
+    "Frames 07/08 accepted blocked preconditions implicitly; native workctl requires ACCEPTED blockers and a BLOCKED frame cannot advance merely because partial artifacts exist."
+  ],
+  "changes_applied": [
+    "Added shared execution_policy: builder role transport-neutral; path bases; evidence ownership; native registration mapping; dependency semantics; acceptance semantics; scope resolution before registration.",
+    "Normalized frame owned_paths to project-relative (kad-rpg for 01–08, workspace for 00/09); nested receipt staging first, separately authorized workspace evidence copies.",
+    "Corrected the DAG: 03 → 04 → 05, with 04 declaring entity/seed inputs from 03.",
+    "Rebounded frame 00 to a read-only preflight evidence frame with a prerequisite decision table; enrollment/registration are external authority effects.",
+    "Added per-frame entry_conditions tying progress to accepted native dependencies, including observed admission for fresh local synthesis without waiving the ISA requirement.",
+    "Bounded frame 01 to real inspect plus fail-closed dispatch; per-frame stage completion responsibilities for run/verify/replay across 02–08.",
+    "Strengthened frame 02 to full per-source deterministic extraction receipts with mutually exclusive terminal dispositions and distinct reason codes.",
+    "Clarified non-recursive release sealing: external authorized acceptance receipts bind to the sealed manifest hash and live outside the payload hash set; final native check consumes the receipt.",
+    "Added GAYA-G1-01 to frame 01 gates to satisfy the ISA acceptance matrix owner-frames.",
+    "Updated PROMPT-GEMINI-BUILDER.md and ISA-GAYA-DATASET-G1-001.md in alignment: project-scoped ownership, sequential frames, staged CLI, acceptance receipt order, change log entries.",
+    "Recorded this review under evidence/GAYA-DATASET-WP-REFACTOR-001/review.json."
+  ],
+  "preserved": [
+    "All ten frame IDs WP-GAYA-DATASET-G1-00..09 and titles.",
+    "All eleven ISA claim IDs and their statements/severities/validators.",
+    "status PROPOSED, fixed_point null, native_workctl_registered false on every frame.",
+    "DRAFT_VALIDATOR_BINDING_PENDING and train_eligible false on the ISA.",
+    "Historical evidence unchanged: source-manifest.json, validation.json, preflight-report.md, projects.json."
+  ],
+  "validation": {
+    "command": "node --input-type=module (inline verifier using tools/kad/isa.mjs native parser)",
+    "cwd": "/home/amdy/Work",
+    "exit_code": 0,
+    "result": {
+      "plan_integrity": "PASS",
+      "frames": 10,
+      "claims": 11,
+      "markdown_sections": 10,
+      "dag": "ACYCLIC_SEQUENTIAL_WITH_ENTITY_VISUAL_DEPENDENCY",
+      "project_roots": "SEPARATED",
+      "isa_matrix_bindings": 24,
+      "shared_policy_mirror": "EXACT",
+      "native_registration": "NOT_PERFORMED",
+      "native_validator_bindings": "11_PLANNED_UNREGISTERED",
+      "implementation_acceptance": "NOT_CLAIMED"
+    }
+  },
+  "not_performed": [
+    "Native workctl registration or claims",
+    "Project enrollment or registry edits",
+    "Native ISA lint/check rerun (validator binding unchanged; historical expected failure stands)",
+    "Git commits or pushes",
+    "Model inference, dataset generation, training or publication",
+    "Corpus or database mutation"
+  ]
+}

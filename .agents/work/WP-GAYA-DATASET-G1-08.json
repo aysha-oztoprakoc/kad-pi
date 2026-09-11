@@ -1,0 +1,60 @@
+{
+  "id": "WP-GAYA-DATASET-G1-08",
+  "project": "kad-rpg",
+  "title": "Qualify semantics, leakage and failure recovery",
+  "status": "ACCEPTED",
+  "priority": 38,
+  "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "scope": [
+    "kad-gaya/training/qualification.py",
+    "kad-gaya/pipeline/dataset_cli.py",
+    "kad-gaya/tests/",
+    "kad-gaya/dataset_runs/"
+  ],
+  "non_scope": [
+    "No 3D engine or renderer implementation",
+    "No local or remote model weight training",
+    "No unapproved paid API spend",
+    "No unilateral source corpus or pre-existing database mutation",
+    "No modification of SillyTavern runtime configuration"
+  ],
+  "owned_paths": [
+    "kad-gaya/training/qualification.py",
+    "kad-gaya/pipeline/dataset_cli.py",
+    "kad-gaya/tests/",
+    "kad-gaya/dataset_runs/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "shell_readonly",
+    "code_build"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-rpg-project",
+  "validation": [],
+  "evidence_target": "evidence/WP-GAYA-DATASET-G1/08-qualification/",
+  "blocked_by": [
+    "WP-GAYA-DATASET-G1-07"
+  ],
+  "blocks": [
+    "WP-GAYA-DATASET-G1-09"
+  ],
+  "acceptance_criteria": [
+    "Every critical adversarial case is detected with valid controls passing; exact evidence/eligibility/split/replay gates hold.",
+    "Review coverage and quality measurements satisfy preregistered criteria or explicitly fail/block release.",
+    "Source changes and interrupted writes preserve old complete releases and cannot produce false current acceptance."
+  ],
+  "description": "Evaluate the real release against frozen criteria using deterministic gates and independent bounded semantic review.",
+  "isa_gates": [
+    "GAYA-G1-02",
+    "GAYA-G1-03",
+    "GAYA-G1-04",
+    "GAYA-G1-05",
+    "GAYA-G1-06",
+    "GAYA-G1-07",
+    "GAYA-G1-09",
+    "GAYA-G1-10"
+  ]
+}

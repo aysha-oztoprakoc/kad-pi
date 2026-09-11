@@ -145,8 +145,9 @@ export function discoverProviders({
     }
   }
 
-  // 2. Scan fallbackChains
-  const chains = projectConfig.retry?.fallbackChains || {};
+  // 2. Scan fallbackChains (gated strictly by retry.enabled and retry.modelFallback)
+  const fallbackActive = Boolean(projectConfig.retry?.enabled && projectConfig.retry?.modelFallback);
+  const chains = fallbackActive ? (projectConfig.retry?.fallbackChains || {}) : {};
   for (const [_, chain] of Object.entries(chains)) {
     if (Array.isArray(chain)) {
       for (const target of chain) {

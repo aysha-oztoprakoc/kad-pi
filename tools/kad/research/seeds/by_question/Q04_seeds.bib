@@ -1,0 +1,51 @@
+% BibTeX seeds for Q04: Behavioral type systems and session types for component interaction and lifecycle protocols
+
+@article{Ancona2016BehavioralTypes,
+  title = {Behavioral Types in Programming Languages},
+  author = {D. Ancona and V. Bono and M. Bravetti and Joana Campos and Giuseppe Castagna and Pierre-Malo Deniélou and S. Gay and N. Gesbert and Elena Giachino and Raymond Hu and E. Johnsen and F. Martins and V. Mascardi and F. Montesi and Rumyana Neykova and Nicholas Ng and L. Padovani and V. Vasconcelos and N. Yoshida},
+  year = {2016},
+  journal = {Found. Trends Program. Lang.},
+  doi = {10.1561/2500000031},
+  url = {https://consensus.app/papers/behavioral-types-in-programming-languages-ancona-bono/ecf48632ad695e5cb5fa9336be6f3958/},
+  abstract = {A recent trend in programming language research is to use behavioral type theory to ensure various correctness properties of large-scale, communication-intensive systems. Behavioral types encompass concepts such as interfaces, communication protocols, contracts, and choreography. The successful application of behavioral types requires a solid understanding of several practical aspects, from their representation in a concrete programming language, to their integration with other programming constructs such as methods and functions, to design and monitoring methodologies that take behaviors into account. Behavioral Types in Programming Languages provides the reader with the first comprehensive overview of the state of the art of these practical aspects, which are summarized as the pragmatics of behavioral types. Each section covers a particular programming paradigm or methodology, providing an ideal reference for programming languages researchers interested the topic, and in identifying the areas as yet unexplored.}
+}
+
+@article{Lindley2022LightweightFunc,
+  title = {Lightweight functional session types},
+  author = {Sam Lindley and J. Garrett Morris},
+  year = {2022},
+  doi = {10.1201/9781003337331-12},
+  url = {https://consensus.app/papers/lightweight-functional-session-types-lindley-morris/bc961b8a2bf3545c8d5a9a89a92d4533/},
+  abstract = {Session types describe communication protocols, capturing both the type and the order of messages. Recently, we presented a semantics for a core session-typed linear λ-calculus, GV, and proved that it enjoys a number of desirable properties beyond type soundness, including deadlock freedom, determinism (and hence race freedom), and termination. In this paper, we modularly extend GV with practical features. We begin by introducing FST (System F with Session Types), an extension of GV, with features including polymorphism, row typing (to support extensible records, variants, and session types), and a subkinding system (to integrate linear and unlimited types). FST preserves all of GV’s desirable properties. We then consider further extensions of FST with recursion and recursive types, which preserve all of the properties save for termination. Finally, we consider an additional extension of FST with access points (a much more expressive mechanism for initiating communication among threads) in return for giving up deadlock freedom, determinism (and indeed race freedom), and termination. Building on the formal development, we discuss the design of Session Links, a session-typing extension of the Links web programming language and a full implementation of FST.}
+}
+
+@article{Balzer2017ManifestSharing,
+  title = {Manifest sharing with session types},
+  author = {Stephanie Balzer and F. Pfenning},
+  year = {2017},
+  journal = {Proceedings of the ACM on Programming Languages},
+  doi = {10.1145/3110281},
+  url = {https://consensus.app/papers/manifest-sharing-with-session-types-balzer-pfenning/7b7cc06db30e5dbd858a41bc78c870e2/},
+  abstract = {Session-typed languages building on the Curry-Howard isomorphism between linear logic and session-typed communication guarantee session fidelity and deadlock freedom. Unfortunately, these strong guarantees exclude many naturally occurring programming patterns pertaining to shared resources. In this paper, we introduce sharing into a session-typed language where types are stratified into linear and shared layers with modal operators connecting the layers. The resulting language retains session fidelity but not the absence of deadlocks, which can arise from contention for shared processes. We illustrate our language on various examples, such as the dining philosophers problem, and provide a translation of the untyped asynchronous π-calculus into our language.}
+}
+
+@article{Gay2009LinearTypeTheor,
+  title = {Linear type theory for asynchronous session types},
+  author = {S. Gay and V. Vasconcelos},
+  year = {2009},
+  journal = {Journal of Functional Programming},
+  doi = {10.1017/s0956796809990268},
+  url = {https://consensus.app/papers/linear-type-theory-for-asynchronous-session-types-gay-vasconcelos/417fe1249f595ad1b8fc669a03edea47/},
+  abstract = {Abstract Session types support a type-theoretic formulation of structured patterns of communication, so that the communication behaviour of agents in a distributed system can be verified by static typechecking. Applications include network protocols, business processes and operating system services. In this paper we define a multithreaded functional language with session types, which unifies, simplifies and extends previous work. There are four main contributions. First is an operational semantics with buffered channels, instead of the synchronous communication of previous work. Second, we prove that the session type of a channel gives an upper bound on the necessary size of the buffer. Third, session types are manipulated by means of the standard structures of a linear type theory, rather than by means of new forms of typing judgement. Fourth, a notion of subtyping, including the standard subtyping relation for session types (imported into the functional setting), and a novel form of subtyping between standard and linear function types, which allows the typechecker to handle linear types conveniently. Our new approach significantly simplifies session types in the functional setting, clarifies their essential features and provides a secure foundation for language developments such as polymorphism and object-orientation.}
+}
+
+@article{Httel2016FoundationsOfSe,
+  title = {Foundations of Session Types and Behavioural Contracts},
+  author = {Hans Hüttel and Ivan Lanese and V. Vasconcelos and Luís Caires and Marco Carbone and Pierre-Malo Deniélou and D. Mostrous and Luca Padovani and A. Ravara and Emilio Tuosto and Hugo Torres Vieira and G. Zavattaro},
+  year = {2016},
+  journal = {ACM Computing Surveys (CSUR)},
+  doi = {10.1145/2873052},
+  url = {https://consensus.app/papers/foundations-of-session-types-and-behavioural-contracts-h%C3%BCttel-lanese/cbc1f9e6c4c35ea59eccb617d0c316ba/},
+  abstract = {Behavioural type systems, usually associated to concurrent or distributed computations, encompass concepts such as interfaces, communication protocols, and contracts, in addition to the traditional input/output operations. The behavioural type of a software component specifies its expected patterns of interaction using expressive type languages, so types can be used to determine automatically whether the component interacts correctly with other components. Two related important notions of behavioural types are those of session types and behavioural contracts. This article surveys the main accomplishments of the last 20 years within these two approaches.}
+}
+

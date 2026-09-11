@@ -1,0 +1,54 @@
+{
+  "id": "WP-GAME-STACK-001",
+  "project": "kad-pi",
+  "title": "Qualify deterministic game development tooling for Linux Windows and browser",
+  "status": "CLAIMED",
+  "priority": 210,
+  "spec_ref": "user:/game-stack-tooling",
+  "fixed_point": "2f2ae35383a57a955cd9b5626dbe9f62d0bf9f31",
+  "scope": [
+    "tools/game-stack/",
+    "evidence/WP-GAME-STACK-001/"
+  ],
+  "non_scope": [
+    "game feature implementation",
+    "model routing or memory mutation",
+    "paid services",
+    "publication",
+    "claiming native Windows execution from cross-compilation"
+  ],
+  "owned_paths": [
+    "tools/game-stack/",
+    "evidence/WP-GAME-STACK-001/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_build",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "native Rust GDExtension load and deterministic replay smoke",
+    "Windows GNU extension cross-build",
+    "actual browser web export execution",
+    "Rust language server symbol lookup and LLDB DAP launch"
+  ],
+  "evidence_target": "evidence/WP-GAME-STACK-001/",
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Install pinned compatible Godot editor and templates, stable Rust plus isolated nightly web compiler, Emscripten SDK",
+    "Preserve OMP routing and memory settings; use built-in language and debugger integrations",
+    "Same pure Rust simulation inputs yield identical replay results in exercised native and browser runtimes",
+    "Record exact versions, commands, outcomes and unverified Windows runtime status; browser qualification failure requires human decision"
+  ],
+  "description": "User-authorized host tooling setup, bounded runnable qualification project and project-local OMP integration. Host effects additionally include user Rust toolchains, user-local Godot binaries/templates and Emscripten SDK; package-manager effects are user-executed, not claimed reversible by workctl.",
+  "spec_decisions": [
+    "D1",
+    "D2",
+    "D3"
+  ],
+  "source_ticket": "user:/game-stack-tooling"
+}

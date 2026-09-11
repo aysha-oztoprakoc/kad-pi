@@ -1,0 +1,64 @@
+{
+  "id": "WP-GAYA-DATASET-G1-09",
+  "project": "kad-pi",
+  "title": "Bind native ISA gates and hand off qualified release",
+  "status": "ACCEPTED",
+  "priority": 39,
+  "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+  "fixed_point": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+  "scope": [
+    "tools/kad/isa.mjs",
+    "tools/kad/gaya-dataset-qualification.mjs",
+    "tools/kad/test/",
+    "docs/gaya/dataset-generation/",
+    "evidence/WP-GAYA-DATASET-G1/09-release/"
+  ],
+  "non_scope": [
+    "No 3D engine or renderer implementation",
+    "No local or remote model weight training",
+    "No unapproved paid API spend",
+    "No unilateral source corpus or pre-existing database mutation",
+    "No modification of SillyTavern runtime configuration"
+  ],
+  "owned_paths": [
+    "tools/kad/isa.mjs",
+    "tools/kad/gaya-dataset-qualification.mjs",
+    "tools/kad/test/",
+    "docs/gaya/dataset-generation/",
+    "evidence/WP-GAYA-DATASET-G1/09-release/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "shell_readonly",
+    "code_build"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [],
+  "evidence_target": "evidence/WP-GAYA-DATASET-G1/09-release/",
+  "blocked_by": [
+    "WP-GAYA-DATASET-G1-08"
+  ],
+  "blocks": [],
+  "acceptance_criteria": [
+    "Native ISA lint/check operate on real registered semantic gates; all blocking release claims have fresh evidence and authorized acceptance.",
+    "A release can be consumed/replayed from its documented inputs; required families and exclusions are explicit.",
+    "No original corpus/DB/live projection mutation, remote data generation, model training, publication or commit occurred; authorized code edits and staging/evidence writes are reported separately.",
+    "If any gate is blocked/failed, deliver reachable artifacts and an exact blocker matrix without labeling G1 qualified."
+  ],
+  "description": "Deliver an evidence-backed release with native KAD validation, accurate status and consumer-ready continuation.",
+  "isa_gates": [
+    "GAYA-G1-01",
+    "GAYA-G1-02",
+    "GAYA-G1-03",
+    "GAYA-G1-04",
+    "GAYA-G1-05",
+    "GAYA-G1-06",
+    "GAYA-G1-07",
+    "GAYA-G1-08",
+    "GAYA-G1-09",
+    "GAYA-G1-10",
+    "GAYA-G1-11"
+  ]
+}

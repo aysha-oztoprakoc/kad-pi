@@ -1,0 +1,58 @@
+{
+  "id": "WP-GAYA-DATASET-G1-01",
+  "project": "kad-rpg",
+  "title": "Extend shared contracts and safe entrypoint",
+  "status": "ACCEPTED",
+  "priority": 31,
+  "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "scope": [
+    "kad-gaya/pipeline/schemas.py",
+    "kad-gaya/pipeline/dataset_cli.py",
+    "kad-gaya/tests/",
+    "kad-gaya/extract_and_ingest_gaya.py",
+    "kad-gaya/dataset_runs/"
+  ],
+  "non_scope": [
+    "No 3D engine or renderer implementation",
+    "No local or remote model weight training",
+    "No unapproved paid API spend",
+    "No unilateral source corpus or pre-existing database mutation",
+    "No modification of SillyTavern runtime configuration"
+  ],
+  "owned_paths": [
+    "kad-gaya/pipeline/schemas.py",
+    "kad-gaya/pipeline/dataset_cli.py",
+    "kad-gaya/tests/",
+    "kad-gaya/extract_and_ingest_gaya.py",
+    "kad-gaya/dataset_runs/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "shell_readonly",
+    "code_build"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-rpg-project",
+  "validation": [],
+  "evidence_target": "evidence/WP-GAYA-DATASET-G1/01-contracts/",
+  "blocked_by": [
+    "WP-GAYA-DATASET-G1-00"
+  ],
+  "blocks": [
+    "WP-GAYA-DATASET-G1-02"
+  ],
+  "acceptance_criteria": [
+    "Invalid records, stale locators and out-of-scope paths fail closed with specific reasons.",
+    "Unicode names, quotes, newlines, units and source offsets round-trip without factual truncation.",
+    "Inspect/import has no writes to original corpus assets, live vaults, DBs or runtime stores.",
+    "inspect exercises the real corpus read-only; invalid config, output collisions and unavailable-stage dispatch fail closed. Positive run/replay/export/qualification proofs remain mandatory in their owning frames."
+  ],
+  "description": "Establish a single validated contract from source evidence to dataset release using existing Python seams.",
+  "isa_gates": [
+    "GAYA-G1-01",
+    "GAYA-G1-02",
+    "GAYA-G1-10"
+  ]
+}

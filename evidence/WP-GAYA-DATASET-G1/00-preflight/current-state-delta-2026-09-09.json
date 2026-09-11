@@ -1,0 +1,138 @@
+{
+  "artifact": "WP-GAYA-DATASET-G1-00-CURRENT-STATE-DELTA",
+  "timestamp": "2026-09-09T01:48:29.486560+00:00",
+  "preflight_reference": "evidence/WP-GAYA-DATASET-G1/00-preflight/preflight-report.json (2026-09-08T22:21:00Z)",
+  "refactor_reference": "evidence/GAYA-DATASET-WP-REFACTOR-001/review.json (2026-09-09T01:45:00Z)",
+  "status": "PREFLIGHT_DELTA_OBSERVED_READONLY",
+  "observations": [
+    {
+      "item": "project_registry_kad_rpg",
+      "command": "node bin/workctl projects",
+      "observed": {
+        "id": "kad-rpg-unknown",
+        "kind": "UNKNOWN",
+        "agent_enabled": false,
+        "claimable": false
+      },
+      "status_versus_preflight": "UNCHANGED_SINCE_PREFLIGHT",
+      "note": "Enrollment not yet resolved; kad-rpg remains unclaimable."
+    },
+    {
+      "item": "project_registry_kad_pi",
+      "command": "node bin/workctl projects",
+      "observed": {
+        "id": "kad-pi",
+        "kind": "PRIMARY",
+        "agent_enabled": true
+      },
+      "status_versus_preflight": "UNCHANGED_SINCE_PREFLIGHT",
+      "note": "Primary workspace project."
+    },
+    {
+      "item": "active_workctl_claims",
+      "command": "node bin/workctl status",
+      "observed": [
+        {
+          "task": "WP-GAME-STACK-001",
+          "project": "kad-pi",
+          "owned_paths": [
+            "tools/game-stack",
+            "evidence/WP-GAME-STACK-001"
+          ],
+          "active": true
+        }
+      ],
+      "status_versus_preflight": "UNCHANGED_SINCE_PREFLIGHT",
+      "note": "WP-GAME-STACK-001 is active on kad-pi; zero overlap with Gaya dataset paths."
+    },
+    {
+      "item": "kad_rpg_git_head",
+      "command": "git -C kad-rpg rev-parse HEAD",
+      "observed": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+      "status_versus_preflight": "UNCHANGED_SINCE_PREFLIGHT",
+      "note": "Clean working tree, remote origin points to aysha-oztoprakoc/kad-rpg.git."
+    },
+    {
+      "item": "kad_rpg_git_status",
+      "command": "git -C kad-rpg status --short",
+      "observed": "CLEAN",
+      "status_versus_preflight": "UNCHANGED_SINCE_PREFLIGHT",
+      "note": "Zero source or database mutation."
+    },
+    {
+      "item": "workspace_git_head",
+      "command": "git rev-parse HEAD",
+      "observed": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+      "status_versus_preflight": "CHANGED",
+      "note": "Workspace HEAD observed at 3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5."
+    },
+    {
+      "item": "python_runtime",
+      "command": "python3 --version",
+      "observed": "Python 3.12.14",
+      "status_versus_preflight": "UNCHANGED_SINCE_PREFLIGHT",
+      "note": "CPython 3.12.14 with stdlib zipfile/ElementTree."
+    },
+    {
+      "item": "extraction_binaries",
+      "command": "which pdftotext soffice tesseract",
+      "observed": {
+        "pdftotext": "/usr/bin/pdftotext",
+        "soffice": "/usr/bin/soffice",
+        "tesseract": "/usr/bin/tesseract"
+      },
+      "status_versus_preflight": "UNCHANGED_SINCE_PREFLIGHT",
+      "note": "All three extraction tools present and executable."
+    },
+    {
+      "item": "tcp_ports",
+      "command": "socket connect checks",
+      "observed": {
+        "port_8000": "OPEN (SillyTavern preserved)",
+        "port_11434": "CLOSED",
+        "port_8080": "CLOSED",
+        "port_5000": "CLOSED",
+        "port_1234": "CLOSED"
+      },
+      "status_versus_preflight": "UNCHANGED_SINCE_PREFLIGHT",
+      "note": "Frontend preserved; no local LLM daemons active."
+    },
+    {
+      "item": "corpus_source_fingerprints",
+      "command": "re-hash 21 files from source-manifest.json",
+      "observed": {
+        "checked": 21,
+        "matched": 21,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "status_versus_preflight": "UNCHANGED_SINCE_PREFLIGHT",
+      "note": "Complete source stability confirmed."
+    },
+    {
+      "item": "deliverable_fingerprints",
+      "command": "re-hash 6 deliverable files from source-manifest.json",
+      "observed": {
+        "CSA-GAYA-DATASET-001.md": "UNCHANGED",
+        "RESEARCH-MAP.md": "UNCHANGED",
+        "ISA-GAYA-DATASET-G1-001.md": "REFACTORED_BY_WP_REFACTOR_001",
+        "workpackages.json": "REFACTORED_BY_WP_REFACTOR_001",
+        "WORKPACKAGES.md": "REFACTORED_BY_WP_REFACTOR_001",
+        "PROMPT-GEMINI-BUILDER.md": "REFACTORED_BY_WP_REFACTOR_001"
+      },
+      "status_versus_preflight": "CHANGED",
+      "note": "Four plan files refactored under GAYA-DATASET-WP-REFACTOR-001; hashes match review.json outputs_after."
+    },
+    {
+      "item": "native_isa_lint",
+      "command": "node bin/kad-isa lint docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "observed": {
+        "exit_code": 1,
+        "status": "FAIL_EXPECTED_PLANNED_VALIDATORS_UNREGISTERED",
+        "unregistered_count": 11
+      },
+      "status_versus_preflight": "UNCHANGED_SINCE_PREFLIGHT",
+      "note": "Expected initial condition; no stubs registered, no gates weakened."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task": "WP-GAYA-DATASET-G1-01",
+  "project": "kad-rpg",
+  "claim_id": "3dd4bb4a-e436-4db2-ab41-15c1e3a459f5",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-09-09T01:56:11.759Z",
+  "base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "owned_paths": [
+    "kad-gaya/pipeline/schemas.py",
+    "kad-gaya/pipeline/dataset_cli.py",
+    "kad-gaya/tests",
+    "kad-gaya/extract_and_ingest_gaya.py",
+    "kad-gaya/dataset_runs"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-09T02:06:30.131Z"
+}

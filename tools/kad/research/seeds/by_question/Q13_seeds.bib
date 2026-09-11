@@ -1,0 +1,50 @@
+% BibTeX seeds for Q13: Formal logics modeling delegation and authority attenuation in distributed and multi-agent systems
+
+@article{South2025AuthenticatedDe,
+  title = {Authenticated Delegation and Authorized AI Agents},
+  author = {Tobin South and Samuele G. Marro and T. Hardjono and Robert Mahari and C. Whitney and Dazza Greenwood and Alan Chan and A. Pentland},
+  year = {2025},
+  journal = {ArXiv},
+  doi = {10.48550/arxiv.2501.09674},
+  url = {https://consensus.app/papers/authenticated-delegation-and-authorized-ai-agents-south-marro/d71e273a402858feb205f7833ec6deed/},
+  abstract = {The rapid deployment of autonomous AI agents creates urgent challenges around authorization, accountability, and access control in digital spaces. New standards are needed to know whom AI agents act on behalf of and guide their use appropriately, protecting online spaces while unlocking the value of task delegation to autonomous agents. We introduce a novel framework for authenticated, authorized, and auditable delegation of authority to AI agents, where human users can securely delegate and restrict the permissions and scope of agents while maintaining clear chains of accountability. This framework builds on existing identification and access management protocols, extending OAuth 2.0 and OpenID Connect with agent-specific credentials and metadata, maintaining compatibility with established authentication and web infrastructure. Further, we propose a framework for translating flexible, natural language permissions into auditable access control configurations, enabling robust scoping of AI agent capabilities across diverse interaction modalities. Taken together, this practical approach facilitates immediate deployment of AI agents while addressing key security and accountability concerns, working toward ensuring agentic AI systems perform only appropriate actions and providing a tool for digital service providers to enable AI agent interactions without risking harm from scalable interaction.}
+}
+
+@article{Li2000DelegationLogic,
+  title = {Delegation Logic: A Logic-based Approach to Distrbuted Authorization},
+  author = {Ninghui Li and Benjamin N. Grosof and J. Feigenbaum},
+  year = {2000},
+  url = {https://consensus.app/papers/delegation-logic-a-logicbased-approach-to-distrbuted-li-grosof/24321f9da7a358e29392cc81a9e380b7/},
+  abstract = {We address the problem of authorization in large-scale, open, distributed systems. Authorization decisions are needed in electronic commerce, mobile-code execution, remote resource sharing, privacy protection, and many other applications. We adopt the trust-management approach, in which “authorization” is viewed as a “proof-of-compliance” problem: Does a set of credentials prove that a request complies with a policy? We develop a logic-based language, called Delegation Logic (DL), to represent policies, credentials, and requests in distributed authorization. In this paper, we describe D1LP, the monotonic version of DL. D1LP extends the logic-programming (LP) language Datalog with expressive delegation constructs that feature delegation depth and a wide variety of complex principals (including, but not limited to, k-out-of-n thresholds). Our approach to defining and implementing D1LP is based on tractably compiling D1LP programs into ordinary logic programs (OLP’s). This compilation approach enables D1LP to be implemented modularly on top of existing technologies for OLP, e.g., Prolog. As a trust-management language, D1LP provides a concept of proof-of-compliance that is founded on well-understood principles of logic programming and knowledge representation. D1LP also provides a logical framework for studying delegation.}
+}
+
+@article{Crampton2006DelegationInRol,
+  title = {Delegation in role-based access control},
+  author = {J. Crampton and H. Khambhammettu},
+  year = {2006},
+  journal = {International Journal of Information Security},
+  doi = {10.1007/s10207-007-0044-8},
+  url = {https://consensus.app/papers/delegation-in-rolebased-access-control-crampton-khambhammettu/648ed428cefd59aa974eb2b7847bfcd2/},
+  abstract = {User delegation is a mechanism for assigning access rights available to one user to another user. A delegation can either be a grant or transfer operation. Existing work on delegation in the context of role-based access control models has extensively studied grant delegations, but transfer delegations have largely been ignored. This is largely because enforcing transfer delegation policies is more complex than grant delegation policies. This paper, primarily, studies transfer delegations for role-based access control models. We also include grant delegations in our model for completeness. We present various mechanisms that authorize delegations in our model. In particular, we show that the use of administrative scope for authorizing delegations is more efficient than using relations. We also discuss the enforcement and revocation of delegations. Finally, we study delegation in the context of workflow systems. In particular, we demonstrate the application of the administrative scope and administrative domain concepts to control delegation of tasks in worklist-based workflow systems.}
+}
+
+@article{Zhang2003ARuleBasedFrame,
+  title = {A rule-based framework for role-based delegation and revocation},
+  author = {Longhua Zhang and Gail-Joon Ahn and B. Chu},
+  year = {2003},
+  journal = {ACM Trans. Inf. Syst. Secur.},
+  doi = {10.1145/937527.937530},
+  url = {https://consensus.app/papers/a-rulebased-framework-for-rolebased-delegation-and-zhang-ahn/d6a488eb2634504e8a8bb3acff41f2f0/},
+  abstract = {Delegation is the process whereby an active entity in a distributed environment authorizes another entity to access resources. In today's distributed systems, a user often needs to act on another user's behalf with some subset of his/her rights. Most systems have attempted to resolve such delegation requirements with ad-hoc mechanisms by compromising existing disorganized policies or simply attaching additional components to their applications. Still, there is a strong need in the large, distributed systems for a mechanism that provides effective privilege delegation and revocation management. This paper describes a rule-based framework for role-based delegation and revocation. The basic idea behind a role-based delegation is that users themselves may delegate role authorities to others to carry out some functions authorized to the former. We present a role-based delegation model called RDM2000 (role-based delegation model 2000) supporting hierarchical roles and multistep delegation. Different approaches for delegation and revocation are explored. A rule-based language for specifying and enforcing policies on RDM2000 is proposed. We describe a proof-of-concept prototype implementation of RDM2000 to demonstrate the feasibility of the proposed framework and provide secure protocols for managing delegations. The prototype is a web-based application for law enforcement agencies allowing reliable delegation and revocation. The future directions are also discussed.}
+}
+
+@article{Prakash2026AipAgentIdentit,
+  title = {AIP: Agent Identity Protocol for Verifiable Delegation Across MCP and A2A},
+  author = {S. Prakash},
+  year = {2026},
+  journal = {ArXiv},
+  doi = {10.48550/arxiv.2603.24775},
+  url = {https://consensus.app/papers/aip-agent-identity-protocol-for-verifiable-delegation-prakash/270a1233c5eb57ec9606af98c692b55c/},
+  abstract = {AI agents increasingly call tools via the Model Context Protocol (MCP) and delegate to other agents via Agent-to-Agent (A2A), yet neither protocol verifies agent identity. A scan of approximately 2,000 MCP servers found all lacked authentication. In our survey, we did not identify a prior implemented protocol that jointly combines public-key verifiable delegation, holder-side attenuation, expressive chained policy, transport bindings across MCP/A2A/HTTP, and provenance-oriented completion records. We introduce Invocation-Bound Capability Tokens (IBCTs), a primitive that fuses identity, attenuated authorization, and provenance binding into a single append-only token chain. IBCTs operate in two wire formats: compact mode (a signed JWT for single-hop cases) and chained mode (a Biscuit token with Datalog policies for multi-hop delegation). We provide reference implementations in Python and Rust with full cross-language interoperability. Compact mode verification takes 0.049ms (Rust) and 0.189ms (Python), with 0.22ms overhead over no-auth in real MCP-over-HTTP deployment. In a real multi-agent deployment with Gemini 2.5 Flash, AIP adds 2.35ms of overhead (0.086% of total end-to-end latency). Adversarial evaluation across 600 attack attempts shows 100% rejection rate, with two attack categories (delegation depth violation and audit evasion through empty context) uniquely caught by AIP's chained delegation model that neither unsigned nor plain JWT deployments detect.}
+}
+

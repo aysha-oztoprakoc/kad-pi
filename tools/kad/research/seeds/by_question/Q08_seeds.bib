@@ -1,0 +1,47 @@
+% BibTeX seeds for Q08: Recovery blocks and runtime acceptance tests providing fault tolerance through retry with verification
+
+@article{Randell1994TheEvolutionOfT,
+  title = {The Evolution of the Recovery Block Concept},
+  author = {B. Randell and Jie Xu},
+  year = {1994},
+  url = {https://consensus.app/papers/the-evolution-of-the-recovery-block-concept-randell-xu/f647907c4f075c2ab76710ae5d160550/},
+  abstract = {This chapter reviews the development of the recovery block approach to software fault tolerance and subsequent work based on this approach. It starts with an account of the development and implementations of the basic recovery block scheme in the early 1970s at Newcastle, and then goes on to describe work at Newcastle and elsewhere on extensions to the basic scheme, recovery in concurrent systems, and linguistic support for recovery blocks based on the use of object-oriented programming concepts.}
+}
+
+@article{Kim1989DistributedExec,
+  title = {Distributed Execution of Recovery Blocks: An Approach for Uniform Treatment of Hardware and Software Faults in Real-Time Applications},
+  author = {K. Kim and H. Welch},
+  year = {1989},
+  journal = {IEEE Trans. Computers},
+  doi = {10.1109/12.24266},
+  url = {https://consensus.app/papers/distributed-execution-of-recovery-blocks-an-approach-for-kim-welch/b2225b87ec215de1a08b920a8352ae34/},
+  abstract = {The concept of distributed execution of recovery blocks is examined as an approach for uniform treatment of hardware and software faults. A useful characteristic of the approach is the relatively small time cost it requires. The approach is thus suitable for incorporation into real-time computer systems. A specific formulation of the approach that is aimed at minimizing the recovery time is presented, called the distributed recovery blocks scheme. The DRB scheme is capable of effecting forward recovery while handling both hardware and software faults in a uniform manner. An approach to incorporating the capability for distributed execution of recovery blocks into a load-sharing multiprocessing scheme is also discussed. Two experiments aimed at testing the execution efficiency of the scheme in real-time applications have been conducted on two different multimicrocomputer networks. The results clearly indicate the feasibility of achieving tolerance of hardware and software faults. >}
+}
+
+@article{Randell2025LookingBackOnRe,
+  title = {Looking Back on Recovery Blocks and Conversations},
+  author = {Brian Randell and Jie Xu},
+  year = {2025},
+  journal = {IEEE Transactions on Software Engineering},
+  doi = {10.1109/tse.2025.3533973},
+  url = {https://consensus.app/papers/looking-back-on-recovery-blocks-and-conversations-randell-xu/701467d364045d7e9c2eeab32ac36633/},
+  abstract = {Our 1975 paper “System Structure for Software Fault Tolerance” introduced “Recovery Blocks” (a backward error recovery strategy for use in isolated processes), the “Domino Effect” (the problem that a single error could cause multiple interacting processes with uncoordinated error recovery strategies to lose all their recovery capability) and “Conversations” (an error recovery strategy for interacting processes motivated by the danger of the domino effect). This retrospective account describes how these ideas were developed by the Newcastle group and its collaborators, and what further research ensued. A tentative assessment is then provided of the impact of this research.}
+}
+
+@article{Ciocca2002DeterminingAcce,
+  title = {Determining Acceptance Tests for Application-Level Fault Detection},
+  author = {E. Ciocca and I. Koren and C. M. Krishna},
+  year = {2002},
+  url = {https://consensus.app/papers/determining-acceptance-tests-for-applicationlevel-fault-ciocca-koren/e507b4bcea40575cac4afcce4e0d50b1/},
+  abstract = {| Faults are often diÆcult to detect, especially when the detection algorithm does not understand the semantic context of the faulty data. By allowing the application itself to take on the responsibility of detecting faults, signi cant savings can be made in incurred error penalty. However, such an approach to fault detection is inherently bound to be inaccurate sometimes. Inaccuracies may be the result of either faulty elements which were not detected, or nonfaulty elements which were wrongly considered to be faulty. The end user must consider not only the error penalty of missed faults, but also the extra runtime which may come with a false alarm. Our approach to software level fault tolerance allows for levels of customization within each acceptance test. As such, the correct con guration of these error bounds is a matter left to the end user. The end user must also determine a balance among the acceptance tests, such that the serialization of multiple tests results in not only the best fault detection, but also a low overhead. We demonstrate these principles as applied to NASA's Orbital Thermal Imaging Spectrometer (OTIS) application.}
+}
+
+@article{Anderson1976RecoveryBlocksI,
+  title = {Recovery blocks in action: A system supporting high reliability},
+  author = {T. Anderson and R. Kerr},
+  year = {1976},
+  doi = {10.1007/978-3-642-82470-8_9},
+  url = {https://consensus.app/papers/recovery-blocks-in-action-a-system-supporting-high-anderson-kerr/bdc3b28caa29520f977c2c2c20136fa9/},
+  abstract = {The need for reliable complex systems motivates the development of techniques by which acceptable service can be maintained, even in the presence of residual errors. Recovery blocks allow a software designer to include tests on the acceptability of the various phases of a system's operation, and to specify alternative actions should the acceptance tests fail. This approach relies on certain architectural features, ideally implemented in hardware, by which control and data structures can be retrieved after errors.  A brief account is presented of the recovery block scheme, together with a description of a new implementation of the underlying cache mechanism. The salient features of a proposed computer architecture are described, which incorporates this implementation and also provides a high level of detection for errors such as the corruption of code and data. A prototype system has been constructed to test the viability of these techniques by executing programs containing recovery blocks on an emulator for the proposed architecture. Experiences in running this system are recounted with respect to the execution of programs based on erroneous algorithms and also with respect to errors introduced by deliberate attempts to corrupt the system.}
+}
+

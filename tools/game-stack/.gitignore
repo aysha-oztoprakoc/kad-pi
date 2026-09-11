@@ -1,0 +1,13 @@
+/target/
+/emsdk/
+/godot/.godot/
+/godot/bin/
+/godot/*.so
+/godot/*.dll
+/godot/*.wasm
+/exports/
+*.log
+/godot-source/
+/.venv/
+/upstream/
+__pycache__/

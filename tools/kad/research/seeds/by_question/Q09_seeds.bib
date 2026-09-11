@@ -1,0 +1,51 @@
+% BibTeX seeds for Q09: Conditions for safe or provably correct self-modifying systems (proof-based self-modification, Gödel machines)
+
+@article{Zhang2025DarwinGodelMach,
+  title = {Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents},
+  author = {Jenny Zhang and Shengran Hu and Cong Lu and R. Lange and Jeff Clune},
+  year = {2025},
+  journal = {ArXiv},
+  doi = {10.48550/arxiv.2505.22954},
+  url = {https://consensus.app/papers/darwin-godel-machine-openended-evolution-of-zhang-hu/051e339f41cc55f9a77a0c479d586b96/},
+  abstract = {Most of today’s AI systems are constrained by human-designed, fixed architectures and cannot autonomously and continuously improve themselves. The scientific method, on the other hand, provides a cumulative and open-ended system, where each innovation builds upon previous artifacts, enabling future discoveries. There is growing hope that the current manual process of advancing AI could itself be automated. If done safely, such automation would accelerate AI development and allow us to reap its benefits much sooner. This prospect raises the question of how AI systems can endlessly improve themselves while getting better at solving relevant problems. Previous approaches, such as meta-learning, provide a toolset for automating the discovery of novel algorithms but are limited by the human design of a suitable search space and first-order improvements. The Godel machine [116], on the other hand, introduced a theoretical approach to a self-improving AI, capable of modifying itself in a provably beneficial manner. Unfortunately, this original formulation is in practice impossible to create due to the inability to prove the impact of most self-modifications. To address this limitation, we propose the Darwin Godel Machine (DGM), a novel self-improving system that iteratively modifies its own code (thereby also improving its ability to modify its own codebase) and empirically validates each change using coding benchmarks. In this paper, the DGM aims to optimize the design of coding agents, powered by frozen foundation models, which enable the ability to read, write, and execute code via tool use. Inspired by biological evolution and open-endedness research, the DGM maintains an archive of generated coding agents. It then samples from this archive and tries to create a new, interesting, improved version of the sampled agent. This open-ended exploration forms a growing tree of diverse, high-quality agents and allows the parallel exploration of many different paths through the search space. Empirically, the DGM automatically improves its coding capabilities (e.g., better code editing tools, long-context window management, peer-review mechanisms), producing performance increases on SWE-bench from 20.0% to 50.0%, and on Polyglot from 14.2% to 30.7%. Furthermore, the DGM significantly outperforms baselines without self-improvement or open-ended exploration. All experiments were done with safety precautions (e.g., sandboxing, human oversight). Overall, the DGM represents a significant step toward self-improving AI, capable of gathering its own stepping stones along a path that unfolds into endless innovation. All code is open-sourced at https://github.com/jennyzzt/dgm.}
+}
+
+@article{Manheim2018CategorizingVar,
+  title = {Categorizing Variants of Goodhart's Law},
+  author = {David Manheim and Scott Garrabrant},
+  year = {2018},
+  journal = {ArXiv},
+  doi = {10.48550/arxiv.1803.04585},
+  url = {https://consensus.app/papers/categorizing-variants-of-goodharts-law-manheim-garrabrant/0fc3ab0316405581a302e14bf37ed9c3/},
+  abstract = {There are several distinct failure modes for overoptimization of systems on the basis of metrics. This occurs when a metric which can be used to improve a system is used to an extent that further optimization is ineffective or harmful, and is sometimes termed Goodhart's Law. This class of failure is often poorly understood, partly because terminology for discussing them is ambiguous, and partly because discussion using this ambiguous terminology ignores distinctions between different failure modes of this general type. This paper expands on an earlier discussion by Garrabrant, which notes there are "(at least) four different mechanisms" that relate to Goodhart's Law. This paper is intended to explore these mechanisms further, and specify more clearly how they occur. This discussion should be helpful in better understanding these types of failures in economic regulation, in public policy, in machine learning, and in Artificial Intelligence alignment. The importance of Goodhart effects depends on the amount of power directed towards optimizing the proxy, and so the increased optimization power offered by artificial intelligence makes it especially critical for that field.}
+}
+
+@article{Wang2025HuxleyGodelMach,
+  title = {Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine},
+  author = {Wenyi Wang and Nanbo Li and Firas Laakom and Yimeng Chen and M. Ostaszewski and Mingchen Zhuge},
+  year = {2025},
+  journal = {ArXiv},
+  doi = {10.48550/arxiv.2510.21614},
+  url = {https://consensus.app/papers/huxleyg%C3%B6del-machine-humanlevel-coding-agent-development-wang-li/c1b6d77285be57fc8b57f9d0ef5f7433/},
+  abstract = {Recent studies operationalize self-improvement through coding agents that edit their own codebases. They grow a tree of self-modifications through expansion strategies that favor higher software engineering benchmark performance, assuming that this implies more promising subsequent self-modifications. However, we identify a mismatch between the agent's self-improvement potential (metaproductivity) and its coding benchmark performance, namely the Metaproductivity-Performance Mismatch. Inspired by Huxley's concept of clade, we propose a metric ($\mathrm{CMP}$) that aggregates the benchmark performances of the descendants of an agent as an indicator of its potential for self-improvement. We show that, in our self-improving coding agent development setting, access to the true $\mathrm{CMP}$ is sufficient to simulate how the G\"odel Machine would behave under certain assumptions. We introduce the Huxley-G\"odel Machine (HGM), which, by estimating $\mathrm{CMP}$ and using it as guidance, searches the tree of self-modifications. On SWE-bench Verified and Polyglot, HGM outperforms prior self-improving coding agent development methods while using fewer allocated CPU hours. Last but not least, HGM demonstrates strong transfer to other coding datasets and large language models. The agent optimized by HGM on SWE-bench Verified with GPT-5-mini and evaluated on SWE-bench Lite with GPT-5 achieves human-level performance, matching the best officially checked results of human-engineered coding agents. Our code is publicly available at https://github.com/metauto-ai/HGM.}
+}
+
+@article{Yin2025GodelAgentASelf,
+  title = {Gödel Agent: A Self-Referential Agent Framework for Recursively Self-Improvement},
+  author = {Xunjian Yin and Xinyi Wang and Liangming Pan and Li Lin and Xiaojun Wan and W. Wang},
+  year = {2025},
+  doi = {10.18653/v1/2025.acl-long.1354},
+  url = {https://consensus.app/papers/g%C3%B6del-agent-a-selfreferential-agent-framework-for-yin-wang/895b1aa34d82558e8d2ab6ad1ec18550/},
+  abstract = {The rapid advancement of large language models (LLMs) has significantly enhanced the capabilities of agents across various tasks.However, existing agentic systems, whether based on fixed pipeline algorithms or pre-defined meta-learning frameworks, cannot search the whole agent design space due to the restriction of human-designed components, and thus might miss the more optimal agent design.In this paper, we introduce Gödel Agent, a selfevolving framework inspired by the Gödel machine, enabling agents to recursively improve themselves without relying on predefined routines or fixed optimization algorithms.Gödel Agent leverages LLMs to dynamically modify its own logic and behavior, guided solely by high-level objectives through prompting.Experimental results on multiple domains demonstrate that implementation of Gödel Agent can achieve continuous self-improvement, surpassing manually crafted agents in performance, efficiency, and generalizability.}
+}
+
+@article{Yin2024GodelAgentASelf,
+  title = {Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement},
+  author = {Xunjian Yin and Xinyi Wang and Liangming Pan and Xiaojun Wan and W. Wang},
+  year = {2024},
+  journal = {ArXiv},
+  doi = {10.48550/arxiv.2410.04444},
+  url = {https://consensus.app/papers/g%C3%B6del-agent-a-selfreferential-agent-framework-for-yin-wang/0cce42b5b82d5dfeb32e689957888f08/},
+  abstract = {The rapid advancement of large language models (LLMs) has significantly enhanced the capabilities of AI-driven agents across various tasks. However, existing agentic systems, whether based on fixed pipeline algorithms or pre-defined meta-learning frameworks, cannot search the whole agent design space due to the restriction of human-designed components, and thus might miss the globally optimal agent design. In this paper, we introduce Gödel Agent, a self-evolving framework inspired by the Gödel machine, enabling agents to recursively improve themselves without relying on predefined routines or fixed optimization algorithms. Gödel Agent leverages LLMs to dynamically modify its own logic and behavior, guided solely by high-level objectives through prompting. Experimental results on mathematical reasoning and complex agent tasks demonstrate that implementation of Gödel Agent can achieve continuous self-improvement, surpassing manually crafted agents in performance, efficiency, and generalizability.}
+}
+

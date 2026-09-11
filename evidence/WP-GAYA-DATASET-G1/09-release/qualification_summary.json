@@ -1,0 +1,152 @@
+{
+  "status": "PASS",
+  "timestamp": "2026-09-09T03:45:33.204070+00:00",
+  "release_directory": "/home/amdy/Work/kad-rpg/kad-gaya/dataset_runs/staging/07-consumers",
+  "manifest_integrity": {
+    "status": "PASS",
+    "manifest_sealed": true,
+    "recorded_sealed_sha256": "04fea0862991d06b4b2e0398cce4f037092f1d72a6b0985b1b8cf2c321bf8b9a",
+    "files_verified": 18,
+    "tampered_files": []
+  },
+  "duplicate_and_split_leakage": {
+    "status": "PASS",
+    "exact_duplicates": 0,
+    "near_duplicates_exceeding_threshold": 0,
+    "max_cross_split_similarity": 0.8571,
+    "cross_split_source_leakage": [],
+    "total_examples_evaluated": 37
+  },
+  "secret_canary_scans": {
+    "status": "PASS",
+    "scanned_files": 25,
+    "canary_escapes": 0,
+    "escaped_canaries_details": [],
+    "positive_control_sensor_operational": true
+  },
+  "revoked_claims_exclusion": {
+    "status": "PASS",
+    "scanned_files": 20,
+    "revoked_claims_found": 0,
+    "revoked_claims_details": []
+  },
+  "adversarial_metamorphic_suite": {
+    "status": "PASS",
+    "total_mutations_tested": 4,
+    "total_escapes": 0,
+    "zero_escapes_verified": true,
+    "mutation_details": [
+      {
+        "mutation_id": "MUT_NEG_001",
+        "type": "NEGATION_INVERSION",
+        "mutated_text": "Amethysta usa armas; empunha espadas no combate corpo a corpo.",
+        "verdict": "REJECT",
+        "detected_correctly": true,
+        "notes": "Violação de negação: cânone proíbe armas em Amethysta."
+      },
+      {
+        "mutation_id": "MUT_DIR_001",
+        "type": "DIRECTION_REVERSAL",
+        "mutated_text": "Sofia é mãe de Lylia.",
+        "verdict": "REJECT",
+        "detected_correctly": true,
+        "notes": "Reversão genealógica proibida: Lylia deu à luz Sofia, não o inverso."
+      },
+      {
+        "mutation_id": "MUT_UNIT_001",
+        "type": "UNIT_DISTORTION",
+        "mutated_text": "Percepção Aguçada atua a até 30 metros (m) de Ayşa.",
+        "verdict": "REJECT",
+        "detected_correctly": true,
+        "notes": "Distorção de unidades: pés convertidos incorretamente para metros, alterando o alcance mecânico."
+      },
+      {
+        "mutation_id": "MUT_REL_001",
+        "type": "UNSUPPORTED_RELATION",
+        "mutated_text": "Síntese drena energia vital diretamente dos corpos dos inimigos em combate.",
+        "verdict": "REJECT",
+        "detected_correctly": true,
+        "notes": "Relação não suportada: drenagem vital de seres vivos é expressamente negada no códice."
+      }
+    ]
+  },
+  "evidence_and_media_locators": {
+    "status": "PASS",
+    "total_assets_verified": 147,
+    "unresolved_assets": [],
+    "unknown_geography_verified": true,
+    "orphan_relations": 0
+  },
+  "independent_semantic_review": {
+    "status": "PASS",
+    "total_dataset_examples": 37,
+    "reviewed_sample_size": 28,
+    "sample_coverage_ratio": 0.76,
+    "preregistered_minimum_ratio": 0.2,
+    "high_risk_seeds_evaluated": 10,
+    "high_risk_coverage_rate": 1.0,
+    "approved_examples": 28,
+    "rejected_examples": 0,
+    "errors_by_family": {
+      "grounded_lore_qa": 0,
+      "character_identity_and_style": 0,
+      "relationships_and_evidence_paths": 0,
+      "items_and_mechanics": 0,
+      "spatial_containment_and_routes": 0,
+      "visual_entity_references": 0,
+      "bounded_situational_decisions": 0,
+      "memory_and_abstention": 0
+    },
+    "limitations_recorded": [
+      "Amostra semântica validada para o primeiro ciclo G1 sem fine-tuning ativo.",
+      "Não autoriza inferência autônoma de lore além dos códices canônicos."
+    ]
+  },
+  "isa_gates_matrix": {
+    "GAYA-G1-02": {
+      "statement": "Corpus ingestion and census qualification",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    },
+    "GAYA-G1-03": {
+      "statement": "Canonical entities and grounded relations",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    },
+    "GAYA-G1-04": {
+      "statement": "Negation, direction, unicode aliases, and relationship checks",
+      "status": "PASS",
+      "class": "HYBRID"
+    },
+    "GAYA-G1-05": {
+      "statement": "Visual references link source assets without inventing canon",
+      "status": "PASS",
+      "class": "HYBRID"
+    },
+    "GAYA-G1-06": {
+      "statement": "Frozen split hashes, family separation, zero cross-partition leakage",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    },
+    "GAYA-G1-07": {
+      "statement": "Deterministic synthesis, family coverage, replayable",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    },
+    "GAYA-G1-08": {
+      "statement": "Consumers load successfully and retain lineage",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    },
+    "GAYA-G1-09": {
+      "statement": "Adversarial semantic cases and frozen independent review satisfy criteria",
+      "status": "PASS",
+      "class": "HYBRID"
+    },
+    "GAYA-G1-10": {
+      "statement": "Independent-process replay produces identical release bytes; interrupted writes preserve integrity",
+      "status": "PASS",
+      "class": "DETERMINISTIC"
+    }
+  }
+}

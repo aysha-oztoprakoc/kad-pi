@@ -1,0 +1,130 @@
+{
+  "generated_by": "integrate_skills.py",
+  "upstream": {
+    "mattpocock": {
+      "rev": "3cca18b368ae95cdbdebbff572ccafa662551015",
+      "disposition": "already reconciled into workspace .agents/skills (superset)"
+    },
+    "gamedev": {
+      "rev": "cf44d99a0315dabff6ac6f407c6ccc026190f16c",
+      "disposition": "curated flatten into workspace .agents/skills (OMP discovery root)"
+    },
+    "voltagent": {
+      "rev": "8873794bcb26ff5dcf9cd518c87cf5638ca44b92",
+      "disposition": "catalog-only: README index of links, not installable skills"
+    }
+  },
+  "integrated": {
+    "gamedev-router": {
+      "source": "router"
+    },
+    "godot-gdscript": {
+      "source": "skills/godot/godot-gdscript"
+    },
+    "godot-export": {
+      "source": "skills/godot/godot-export"
+    },
+    "godot-nodes-scenes": {
+      "source": "skills/godot/godot-nodes-scenes"
+    },
+    "godot-signals-groups": {
+      "source": "skills/godot/godot-signals-groups"
+    },
+    "godot-resources": {
+      "source": "skills/godot/godot-resources"
+    },
+    "godot-ui-control": {
+      "source": "skills/godot/godot-ui-control"
+    },
+    "godot-animation": {
+      "source": "skills/godot/godot-animation"
+    },
+    "godot-audio": {
+      "source": "skills/godot/godot-audio"
+    },
+    "save-systems": {
+      "source": "skills/disciplines/save-systems"
+    },
+    "input-systems": {
+      "source": "skills/disciplines/input-systems"
+    },
+    "performance-optimization": {
+      "source": "skills/disciplines/performance-optimization"
+    }
+  },
+  "excluded": {
+    "godot-physics": "state-authority conflict: asserts Godot physics owns simulation state",
+    "godot-multiplayer": "state-authority conflict: asserts Godot hosts authoritative netcode",
+    "godot-csharp": "out-of-scope: project uses GDScript for presentation + Rust for simulation",
+    "godot-2d-movement": "state-authority conflict: movement lives in Rust fixed-point simulation",
+    "godot-tilemap": "out-of-scope: tilemap gameplay logic is Rust-owned",
+    "godot-3d-essentials": "out-of-scope: not needed for the 2D qualification harness",
+    "godot-shaders": "optional presentation; reference-only via upstream snapshot",
+    "unity-*": "out-of-scope engine",
+    "unreal-*": "out-of-scope engine",
+    "roblox-*": "out-of-scope engine",
+    "web-engines/phaser-*": "out-of-scope engine",
+    "web-engines/pixijs-*": "out-of-scope engine",
+    "web-engines/threejs-*": "out-of-scope engine",
+    "other-engines/bevy-ecs": "out-of-scope engine",
+    "other-engines/pygame-core": "out-of-scope engine",
+    "other-engines/love2d-core": "out-of-scope engine",
+    "genres/*": "out-of-scope: no genre-specific template applies to the qualification harness",
+    "workflows/game-jam": "process; reference-only",
+    "workflows/steam-publish": "publication authority boundary; reference-only",
+    "workflows/itch-publish": "publication authority boundary; reference-only",
+    "workflows/prototype-fast": "process; reference-only",
+    "disciplines/physics-tuning": "state-authority conflict: Godot physics tuning implies Godot-side simulation",
+    "disciplines/procedural-gen": "Rust-owned; deterministic RNG in stack-core, reference-only",
+    "disciplines/game-ai": "Rust-owned simulation logic; reference-only",
+    "disciplines/dialogue-systems": "out-of-scope for current harness",
+    "disciplines/camera-systems": "presentation-only; reference-only",
+    "disciplines/game-feel": "presentation-only; reference-only",
+    "disciplines/level-design": "out-of-scope for current harness",
+    "disciplines/audio-design": "presentation-only; reference-only",
+    "disciplines/shader-programming": "presentation-only; reference-only",
+    "disciplines/game-ui-ux": "presentation-only; reference-only",
+    "disciplines/create-game-assets": "asset pipeline; not part of this integration",
+    "disciplines/ai-behavior-trees-utility-ai": "Rust-owned simulation logic; reference-only"
+  },
+  "guardrail": "tools/game-stack/AGENTS.md (project-scoped context file, not a global skill)",
+  "wasm": {
+    "skill": {
+      "name": "wasm-toolchain",
+      "source": "authored (no directly-applicable upstream skill in the 3 collections)",
+      "path": ".agents/skills/wasm-toolchain/SKILL.md",
+      "disposition": "integrated"
+    },
+    "tooling": {
+      "wasm-tools": {
+        "version": "1.258.0",
+        "source": "cargo install --locked",
+        "role": "validator/parser/disassembler",
+        "path": "~/.cargo/bin/wasm-tools"
+      },
+      "wasm-opt": {
+        "version": "123",
+        "source": "bundled with emsdk",
+        "role": "optimizer/size",
+        "path": "tools/game-stack/emsdk/upstream/bin/wasm-opt"
+      },
+      "excluded": {
+        "wasmtime": "emscripten ABI (browser imports) cannot instantiate under WASI/wasmtime runtime",
+        "wabt": "wasm-tools print covers disassembly; wat2wasm not needed for Rust->wasm pipeline",
+        "wasm-bindgen/wasm-pack": "target is wasm32-unknown-emscripten GDExtension, not wasm32-unknown-unknown JS interop",
+        "twiggy": "profiles wasm32-unknown-unknown code size; binaryen wasm-opt is the right shrinker here"
+      }
+    },
+    "verified": {
+      "validate": "wasm-tools validate --features legacy-exceptions stack_extension.wasm -> VALID",
+      "exception_model": "Emscripten legacy try instruction (JS-based); requires --features legacy-exceptions",
+      "entrypoint": "gdext_rust_init",
+      "size": "27,045,957 -> 1,365,229 bytes (95.0% smaller) via wasm-opt -O3 --strip-debug --strip-producers"
+    },
+    "collections_checked": {
+      "voltagent": "no directly-applicable WASM skills (Cloudflare Workers = JS edge compute; Rust section = Azure SDK clients)",
+      "gamedev": "web-engines are JS (Phaser/PixiJS/three.js), not WASM",
+      "mattpocock": "TypeScript-focused"
+    }
+  }
+}

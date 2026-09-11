@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "total_records_indexed": 304,
+  "invalid_citations_count": 0,
+  "scope_isolation_proven": true,
+  "sample_query_matches": 19,
+  "canary_matches": 0,
+  "revoked_matches": 0
+}

@@ -1,0 +1,15 @@
+[package]
+name = "stack-extension"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+stack-core = { path = "../core" }
+godot = { version = "=0.5.5", default-features = false, features = ["api-custom", "lazy-function-tables"] }
+
+[features]
+web = ["godot/experimental-wasm", "godot/experimental-wasm-nothreads"]

@@ -1,0 +1,47 @@
+{
+  "GAYA-G1-02": {
+    "statement": "Corpus ingestion and census qualification",
+    "status": "PASS",
+    "class": "DETERMINISTIC"
+  },
+  "GAYA-G1-03": {
+    "statement": "Canonical entities and grounded relations",
+    "status": "PASS",
+    "class": "DETERMINISTIC"
+  },
+  "GAYA-G1-04": {
+    "statement": "Negation, direction, unicode aliases, and relationship checks",
+    "status": "PASS",
+    "class": "HYBRID"
+  },
+  "GAYA-G1-05": {
+    "statement": "Visual references link source assets without inventing canon",
+    "status": "PASS",
+    "class": "HYBRID"
+  },
+  "GAYA-G1-06": {
+    "statement": "Frozen split hashes, family separation, zero cross-partition leakage",
+    "status": "PASS",
+    "class": "DETERMINISTIC"
+  },
+  "GAYA-G1-07": {
+    "statement": "Deterministic synthesis, family coverage, replayable",
+    "status": "PASS",
+    "class": "DETERMINISTIC"
+  },
+  "GAYA-G1-08": {
+    "statement": "Consumers load successfully and retain lineage",
+    "status": "PASS",
+    "class": "DETERMINISTIC"
+  },
+  "GAYA-G1-09": {
+    "statement": "Adversarial semantic cases and frozen independent review satisfy criteria",
+    "status": "PASS",
+    "class": "HYBRID"
+  },
+  "GAYA-G1-10": {
+    "statement": "Independent-process replay produces identical release bytes; interrupted writes preserve integrity",
+    "status": "PASS",
+    "class": "DETERMINISTIC"
+  }
+}

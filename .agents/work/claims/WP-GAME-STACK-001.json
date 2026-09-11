@@ -1,0 +1,14 @@
+{
+  "task": "WP-GAME-STACK-001",
+  "project": "kad-pi",
+  "claim_id": "b1a2a0c6-12cc-4b88-a78e-93445892c856",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-09-08T19:32:13.440Z",
+  "base_commit": "2f2ae35383a57a955cd9b5626dbe9f62d0bf9f31",
+  "owned_paths": [
+    "tools/game-stack",
+    "evidence/WP-GAME-STACK-001"
+  ],
+  "mode": "mutate",
+  "active": true
+}

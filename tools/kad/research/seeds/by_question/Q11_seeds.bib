@@ -1,0 +1,50 @@
+% BibTeX seeds for Q11: Impact of context compression, summarization, or memory pruning on LLM reasoning accuracy
+
+@article{Zhu2023ASurveyOnModelC,
+  title = {A Survey on Model Compression for Large Language Models},
+  author = {Xunyu Zhu and Jian Li and Yong Liu and Can Ma and Weiping Wang},
+  year = {2023},
+  journal = {Transactions of the Association for Computational Linguistics},
+  doi = {10.1162/tacl_a_00704},
+  url = {https://consensus.app/papers/a-survey-on-model-compression-for-large-language-models-zhu-li/d1031b19da9e5965a881a2c8bad0d0ab/},
+  abstract = {Abstract Large Language Models (LLMs) have transformed natural language processing tasks successfully. Yet, their large size and high computational needs pose challenges for practical use, especially in resource-limited settings. Model compression has emerged as a key research area to address these challenges. This paper presents a survey of model compression techniques for LLMs. We cover methods like quantization, pruning, and knowledge distillation, highlighting recent advancements. We also discuss benchmarking strategies and evaluation metrics crucial for assessing compressed LLMs. This survey offers valuable insights for researchers and practitioners, aiming to enhance efficiency and real-world applicability of LLMs while laying a foundation for future advancements.}
+}
+
+@article{Chevalier2023AdaptingLanguag,
+  title = {Adapting Language Models to Compress Contexts},
+  author = {A. Chevalier and Alexander Wettig and Anirudh Ajith and Danqi Chen},
+  year = {2023},
+  journal = {ArXiv},
+  doi = {10.48550/arxiv.2305.14788},
+  url = {https://consensus.app/papers/adapting-language-models-to-compress-contexts-chevalier-wettig/9e0e67e2bcf2594180f03bb3927689f0/},
+  abstract = {Transformer-based language models (LMs) are powerful and widely-applicable tools, but their usefulness is constrained by a finite context window and the expensive computational cost of processing long text documents. We propose to adapt pre-trained LMs into AutoCompressors. These models are capable of compressing long contexts into compact summary vectors, which are then accessible to the model as soft prompts. Summary vectors are trained with an unsupervised objective, whereby long documents are processed in segments and summary vectors from all previous segments are used in language modeling. We fine-tune OPT models on sequences of up to 30,720 tokens and show that AutoCompressors can utilize long contexts to improve perplexity. We evaluate AutoCompressors on in-context learning by compressing task demonstrations. We find that summary vectors are good substitutes for plain-text demonstrations, increasing accuracy while reducing inference cost. Finally, we explore the benefits of pre-computing summary vectors for large corpora by applying summary vectors to retrieval-augmented language modeling. Overall, AutoCompressors emerge as a simple and inexpensive solution for extending the context window of LMs while speeding up inference over long contexts.}
+}
+
+@article{Li2023CompressingCont,
+  title = {Compressing Context to Enhance Inference Efficiency of Large Language Models},
+  author = {Yucheng Li and Bo Dong and Chenghua Lin and Frank Guerin},
+  year = {2023},
+  doi = {10.48550/arxiv.2310.06201},
+  url = {https://consensus.app/papers/compressing-context-to-enhance-inference-efficiency-of-li-dong/66e8741466445414bfd9f37011ddf2b9/},
+  abstract = {Large language models (LLMs) achieved remarkable performance across various tasks. However, they face challenges in managing long documents and extended conversations, due to significantly increased computational requirements, both in memory and inference time, and potential context truncation when the input exceeds the LLM's fixed context length. This paper proposes a method called Selective Context that enhances the inference efficiency of LLMs by identifying and pruning redundancy in the input context to make the input more compact. We test our approach using common data sources requiring long context processing: arXiv papers, news articles, and long conversations, on tasks of summarisation, question answering, and response generation. Experimental results show that Selective Context significantly reduces memory cost and decreases generation latency while maintaining comparable performance compared to that achieved when full context is used. Specifically, we achieve a 50\% reduction in context cost, resulting in a 36\% reduction in inference memory usage and a 32\% reduction in inference time, while observing only a minor drop of .023 in BERTscore and .038 in faithfulness on four downstream applications, indicating that our method strikes a good balance between efficiency and performance.}
+}
+
+@article{Ge2023InContextAutoen,
+  title = {In-context Autoencoder for Context Compression in a Large Language Model},
+  author = {Tao Ge and Jing Hu and Xun Wang and Si-Qing Chen and Furu Wei},
+  year = {2023},
+  journal = {ArXiv},
+  doi = {10.48550/arxiv.2307.06945},
+  url = {https://consensus.app/papers/incontext-autoencoder-for-context-compression-in-a-large-ge-hu/db616ecfbd705ba3a492f102f6e39926/},
+  abstract = {We propose the In-context Autoencoder (ICAE), leveraging the power of a large language model (LLM) to compress a long context into short compact memory slots that can be directly conditioned on by the LLM for various purposes. ICAE is first pretrained using both autoencoding and language modeling objectives on massive text data, enabling it to generate memory slots that accurately and comprehensively represent the original context. Then, it is fine-tuned on instruction data for producing desirable responses to various prompts. Experiments demonstrate that our lightweight ICAE, introducing about 1% additional parameters, effectively achieves $4\times$ context compression based on Llama, offering advantages in both improved latency and GPU memory cost during inference, and showing an interesting insight in memorization as well as potential for scalability. These promising results imply a novel perspective on the connection between working memory in cognitive science and representation learning in LLMs, revealing ICAE's significant implications in addressing the long context problem and suggesting further research in LLM context management. Our data, code and models are available at https://github.com/getao/icae.}
+}
+
+@article{Zhang2025LightthinkerThi,
+  title = {LightThinker: Thinking Step-by-Step Compression},
+  author = {Jintian Zhang and Yuqi Zhu and Mengshu Sun and Yujie Luo and Shuofei Qiao and Lun Du and Da Zheng and Huajun Chen and Ningyu Zhang},
+  year = {2025},
+  doi = {10.48550/arxiv.2502.15589},
+  url = {https://consensus.app/papers/lightthinker-thinking-stepbystep-compression-zhang-zhu/9036bb6702bc53eca7f1222d16fcc506/},
+  abstract = {Large language models (LLMs) have shown remarkable performance in complex reasoning tasks, but their efficiency is hindered by the substantial memory and computational costs associated with generating lengthy tokens. In this paper, we propose LightThinker, a novel method that enables LLMs to dynamically compress intermediate thoughts during reasoning. Inspired by human cognitive processes, LightThinker compresses verbose thought steps into compact representations and discards the original reasoning chains, thereby significantly reducing the number of tokens stored in the context window. This is achieved by training the model on when and how to perform compression through data construction, mapping hidden states to condensed gist tokens, and creating specialized attention masks. Additionally, we introduce the Dependency (Dep) metric to quantify the degree of compression by measuring the reliance on historical tokens during generation. Extensive experiments on four datasets and two models show that LightThinker reduces peak memory usage and inference time, while maintaining competitive accuracy. Our work provides a new direction for improving the efficiency of LLMs in complex reasoning tasks without sacrificing performance. Code is released at https://github.com/zjunlp/LightThinker.}
+}
+

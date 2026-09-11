@@ -1,0 +1,54 @@
+{
+  "id": "WP-GAYA-DATASET-G1-04",
+  "project": "kad-rpg",
+  "title": "Ground visual references and spatial associations",
+  "status": "ACCEPTED",
+  "priority": 34,
+  "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "scope": [
+    "kad-gaya/ingestion/media_references.py",
+    "kad-gaya/dataset_runs/",
+    "kad-gaya/tests/",
+    "kad-gaya/pipeline/dataset_cli.py"
+  ],
+  "non_scope": [
+    "No 3D engine or renderer implementation",
+    "No local or remote model weight training",
+    "No unapproved paid API spend",
+    "No unilateral source corpus or pre-existing database mutation",
+    "No modification of SillyTavern runtime configuration"
+  ],
+  "owned_paths": [
+    "kad-gaya/ingestion/media_references.py",
+    "kad-gaya/dataset_runs/",
+    "kad-gaya/tests/",
+    "kad-gaya/pipeline/dataset_cli.py"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "shell_readonly",
+    "code_build"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-rpg-project",
+  "validation": [],
+  "evidence_target": "evidence/WP-GAYA-DATASET-G1/04-visual/",
+  "blocked_by": [
+    "WP-GAYA-DATASET-G1-03"
+  ],
+  "blocks": [
+    "WP-GAYA-DATASET-G1-05"
+  ],
+  "acceptance_criteria": [
+    "Each accepted visual pair resolves to exact original media and approved association/description.",
+    "Unlabeled/conflicting images remain unresolved; generated captions cannot promote facts.",
+    "Map/text discrepancies and unknown spatial fields remain visible rather than silently reconciled.",
+    "All required visual categories are covered or explicitly blocked; asset tracking alone is not complete visual extraction."
+  ],
+  "description": "Preserve the user's image-based knowledge and connect it to entities without hallucinated appearance or map topology.",
+  "isa_gates": [
+    "GAYA-G1-05"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "total_dataset_examples": 37,
+  "reviewed_sample_size": 28,
+  "sample_coverage_ratio": 0.76,
+  "preregistered_minimum_ratio": 0.2,
+  "high_risk_seeds_evaluated": 10,
+  "high_risk_coverage_rate": 1.0,
+  "approved_examples": 28,
+  "rejected_examples": 0,
+  "errors_by_family": {
+    "grounded_lore_qa": 0,
+    "character_identity_and_style": 0,
+    "relationships_and_evidence_paths": 0,
+    "items_and_mechanics": 0,
+    "spatial_containment_and_routes": 0,
+    "visual_entity_references": 0,
+    "bounded_situational_decisions": 0,
+    "memory_and_abstention": 0
+  },
+  "limitations_recorded": [
+    "Amostra semântica validada para o primeiro ciclo G1 sem fine-tuning ativo.",
+    "Não autoriza inferência autônoma de lore além dos códices canônicos."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "total_sharegpt_files": 7,
+  "total_internal_files": 7,
+  "total_sharegpt_examples": 37,
+  "provenance_sidecar_count": 37,
+  "lineage_resolution_rate": 1.0,
+  "token_statistics": {
+    "total_estimated_tokens": 3072,
+    "average_tokens_per_turn": 41,
+    "max_tokens_turn": 90
+  },
+  "multimodal_verified_images": 10,
+  "canary_violations": 0
+}

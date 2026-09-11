@@ -1,0 +1,45 @@
+{
+  "id": "WP-GAYA-DATASET-G1-00",
+  "project": "kad-pi",
+  "title": "Review preflight evidence and specify authority prerequisites",
+  "status": "ACCEPTED",
+  "priority": 30,
+  "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+  "fixed_point": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+  "scope": [
+    "evidence/WP-GAYA-DATASET-G1/00-preflight/"
+  ],
+  "non_scope": [
+    "No 3D engine or renderer implementation",
+    "No local or remote model weight training",
+    "No unapproved paid API spend",
+    "No unilateral source corpus or pre-existing database mutation",
+    "No modification of SillyTavern runtime configuration"
+  ],
+  "owned_paths": [
+    "evidence/WP-GAYA-DATASET-G1/00-preflight/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "shell_readonly",
+    "code_build"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [],
+  "evidence_target": "evidence/WP-GAYA-DATASET-G1/00-preflight/",
+  "blocked_by": [],
+  "blocks": [
+    "WP-GAYA-DATASET-G1-01"
+  ],
+  "acceptance_criteria": [
+    "An auditable current-state delta distinguishes dated preflight observations from fresh observations, stale inputs and unresolved prerequisites.",
+    "A decision table names each missing authority, affected frames, permitted read-only continuation and required decision evidence; preflight completion does not unlock mutation or pass GAYA-G1-01.",
+    "Source scope, required dataset families, research evidence levels and downstream-only training/game goals are recorded."
+  ],
+  "description": "Deliver a bounded read-only current-state and authority prerequisite report; enrollment and task registration are external decisions, not effects owned by this frame.",
+  "isa_gates": [
+    "GAYA-G1-01"
+  ]
+}

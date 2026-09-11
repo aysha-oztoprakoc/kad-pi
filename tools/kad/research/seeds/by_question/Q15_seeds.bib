@@ -1,0 +1,51 @@
+% BibTeX seeds for Q15: Temporal abstraction frameworks (options, macro-actions, hierarchical RL) for reusable skills acquisition and transfer
+
+@article{Bacon2016TheOptionCritic,
+  title = {The Option-Critic Architecture},
+  author = {Pierre-Luc Bacon and J. Harb and Doina Precup},
+  year = {2016},
+  journal = {ArXiv},
+  doi = {10.1609/aaai.v31i1.10916},
+  url = {https://consensus.app/papers/the-optioncritic-architecture-bacon-harb/9f70056050cf59a8b3db3b17553d74a8/},
+  abstract = {Temporal abstraction is key to scaling up learning and planning in reinforcement learning. While planning with temporally extended actions is well understood, creating such abstractions autonomously from data has remained challenging.We tackle this problem in the framework of options [Sutton,Precup and Singh, 1999; Precup, 2000]. We derive policy gradient theorems for options and propose a new option-critic architecture capable of learning both the internal policies and the termination conditions of options, in tandem with the policy over options, and without the need to provide any additional rewards or subgoals. Experimental results in both discrete and continuous environments showcase the flexibility and efficiency of the framework.}
+}
+
+@article{Sutton1999BetweenMdpsAndS,
+  title = {Between MDPs and Semi-MDPs: A Framework for Temporal Abstraction in Reinforcement Learning},
+  author = {R. Sutton and Doina Precup and Satinder Singh},
+  year = {1999},
+  journal = {Artif. Intell.},
+  doi = {10.1016/s0004-3702(99)00052-1},
+  url = {https://consensus.app/papers/between-mdps-and-semimdps-a-framework-for-temporal-sutton-precup/16e26fe19d575062ae0756c2636c8325/},
+}
+
+@article{Barreto2021TheOptionKeyboa,
+  title = {The Option Keyboard: Combining Skills in Reinforcement Learning},
+  author = {André Barreto and Diana Borsa and Shaobo Hou and Gheorghe Comanici and Eser Aygün and P. Hamel and Daniel Toyama and Jonathan J. Hunt and Shibl Mourad and David Silver and Doina Precup},
+  year = {2021},
+  journal = {ArXiv},
+  doi = {10.13140/rg.2.2.12370.50882},
+  url = {https://consensus.app/papers/the-option-keyboard-combining-skills-in-reinforcement-barreto-borsa/d79f7f90e31159ea962baba48af6072a/},
+  abstract = {The ability to combine known skills to create new ones may be crucial in the solution of complex reinforcement learning problems that unfold over extended periods. We argue that a robust way of combining skills is to define and manipulate them in the space of pseudo-rewards (or "cumulants"). Based on this premise, we propose a framework for combining skills using the formalism of options. We show that every deterministic option can be unambiguously represented as a cumulant defined in an extended domain. Building on this insight and on previous results on transfer learning, we show how to approximate options whose cumulants are linear combinations of the cumulants of known options. This means that, once we have learned options associated with a set of cumulants, we can instantaneously synthesise options induced by any linear combination of them, without any learning involved. We describe how this framework provides a hierarchical interface to the environment whose abstract actions correspond to combinations of basic skills. We demonstrate the practical benefits of our approach in a resource management problem and a navigation task involving a quadrupedal simulated robot.}
+}
+
+@article{Machado2021TemporalAbstrac,
+  title = {Temporal Abstraction in Reinforcement Learning with the Successor Representation},
+  author = {Marlos C. Machado and André Barreto and Doina Precup},
+  year = {2021},
+  journal = {J. Mach. Learn. Res.},
+  doi = {10.48550/arxiv.2110.05740},
+  url = {https://consensus.app/papers/temporal-abstraction-in-reinforcement-learning-with-the-machado-barreto/854ba5f0b07a55b19202720e9603180b/},
+  abstract = {Reasoning at multiple levels of temporal abstraction is one of the key attributes of intelligence. In reinforcement learning, this is often modeled through temporally extended courses of actions called options. Options allow agents to make predictions and to operate at different levels of abstraction within an environment. Nevertheless, approaches based on the options framework often start with the assumption that a reasonable set of options is known beforehand. When this is not the case, there are no definitive answers for which options one should consider. In this paper, we argue that the successor representation (SR), which encodes states based on the pattern of state visitation that follows them, can be seen as a natural substrate for the discovery and use of temporal abstractions. To support our claim, we take a big picture view of recent results, showing how the SR can be used to discover options that facilitate either temporally-extended exploration or planning. We cast these results as instantiations of a general framework for option discovery in which the agent's representation is used to identify useful options, which are then used to further improve its representation. This results in a virtuous, never-ending, cycle in which both the representation and the options are constantly refined based on each other. Beyond option discovery itself, we also discuss how the SR allows us to augment a set of options into a combinatorially large counterpart without additional learning. This is achieved through the combination of previously learned options. Our empirical evaluation focuses on options discovered for exploration and on the use of the SR to combine them. The results of our experiments shed light on important design decisions involved in the definition of options and demonstrate the synergy of different methods based on the SR, such as eigenoptions and the option keyboard.}
+}
+
+@article{Daniel2016ProbabilisticIn,
+  title = {Probabilistic inference for determining options in reinforcement learning},
+  author = {Christian Daniel and H. V. Hoof and Jan Peters and G. Neumann},
+  year = {2016},
+  journal = {Machine Learning},
+  doi = {10.1007/s10994-016-5580-x},
+  url = {https://consensus.app/papers/probabilistic-inference-for-determining-options-in-daniel-hoof/440d841eb17253a697c0bd0921624e8f/},
+  abstract = {Tasks that require many sequential decisions or complex solutions are hard to solve using conventional reinforcement learning algorithms. Based on the semi Markov decision process setting (SMDP) and the option framework, we propose a model which aims to alleviate these concerns. Instead of learning a single monolithic policy, the agent learns a set of simpler sub-policies as well as the initiation and termination probabilities for each of those sub-policies. While existing option learning algorithms frequently require manual specification of components such as the sub-policies, we present an algorithm which infers all relevant components of the option framework from data. Furthermore, the proposed approach is based on parametric option representations and works well in combination with current policy search methods, which are particularly well suited for continuous real-world tasks. We present results on SMDPs with discrete as well as continuous state-action spaces. The results show that the presented algorithm can combine simple sub-policies to solve complex tasks and can improve learning performance on simpler tasks.}
+}
+

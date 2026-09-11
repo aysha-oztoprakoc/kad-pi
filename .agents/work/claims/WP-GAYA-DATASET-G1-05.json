@@ -1,0 +1,18 @@
+{
+  "task": "WP-GAYA-DATASET-G1-05",
+  "project": "kad-rpg",
+  "claim_id": "cb137a31-5c1c-4641-80ce-598f02b15888",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-09-09T02:41:41.814Z",
+  "base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "owned_paths": [
+    "kad-gaya/training/splits.py",
+    "kad-gaya/pipeline/scenario_oracles.py",
+    "kad-gaya/dataset_runs",
+    "kad-gaya/tests",
+    "kad-gaya/pipeline/dataset_cli.py"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-09T02:56:26.216Z"
+}

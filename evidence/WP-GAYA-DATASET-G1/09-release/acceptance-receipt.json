@@ -1,0 +1,29 @@
+{
+  "receipt_type": "KAD_ISA_RELEASE_ACCEPTANCE",
+  "kad_id": "ISA-GAYA-DATASET-G1-001",
+  "workpackage_id": "WP-GAYA-DATASET-G1-09",
+  "timestamp": "2026-09-09T04:00:49.617908+00:00",
+  "project": "kad-pi",
+  "claim_id": "a04740a8-4c97-4503-bd9c-752ec24056d1",
+  "base_commit": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+  "sealed_release_manifest_sha256": "bd56586d841558a8c8ef45db9a7b472ae89576f5b14593b193965afc4864d9c1",
+  "overall_status": "QUALIFIED_RELEASE",
+  "isa_gates_evaluated": 11,
+  "isa_gates_passed": 11,
+  "gate_results": {
+    "GAYA-G1-01": "PASS",
+    "GAYA-G1-02": "PASS",
+    "GAYA-G1-03": "PASS",
+    "GAYA-G1-04": "PASS",
+    "GAYA-G1-05": "PASS",
+    "GAYA-G1-06": "PASS",
+    "GAYA-G1-07": "PASS",
+    "GAYA-G1-08": "PASS",
+    "GAYA-G1-09": "PASS",
+    "GAYA-G1-10": "PASS",
+    "GAYA-G1-11": "PASS"
+  },
+  "acceptance_verdict": "AUTHORIZED_ACCEPTED",
+  "acceptance_authority": "Human Project Lead / KAD Architecture",
+  "notes": "Qualified first-generation dataset release conforming to all preregistered ISA gates and deterministic invariants."
+}

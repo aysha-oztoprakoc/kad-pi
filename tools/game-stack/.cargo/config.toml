@@ -1,0 +1,13 @@
+[env]
+GODOT4_BIN = "/home/amdy/.local/share/godot/4.7.2/Godot_v4.7.2-stable_linux.x86_64"
+
+[target.x86_64-pc-windows-gnu]
+linker = "x86_64-w64-mingw32-gcc"
+
+[target.wasm32-unknown-emscripten]
+rustflags = [
+    "-C", "link-args=-sSIDE_MODULE=2",
+    "-C", "link-args=-fwasm-exceptions",
+    "-Z", "default-visibility=hidden",
+    "-Z", "link-native-libraries=no",
+]

@@ -1,0 +1,50 @@
+{
+  "id": "WP-GAYA-SILLYTAVERN-001",
+  "project": "kad-rpg",
+  "title": "Generate source-backed Gaya world and all YKT character cards for SillyTavern",
+  "status": "REVIEW",
+  "priority": 30,
+  "spec_ref": "user:/gaya-sillytavern-all-ykt",
+  "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "scope": [
+    "kad-gaya/integration/card_corpus.py",
+    "kad-gaya/integration/card_export.py",
+    "kad-gaya/dataset_runs/sillytavern-2026-09-09/"
+  ],
+  "non_scope": [
+    "Original corpus and existing databases",
+    "Existing dataset releases",
+    "Live SillyTavern assets and settings",
+    "Inference services, training, external uploads, commits"
+  ],
+  "owned_paths": [
+    "kad-gaya/integration/card_corpus.py",
+    "kad-gaya/integration/card_export.py",
+    "kad-gaya/dataset_runs/sillytavern-2026-09-09/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "shell_readonly",
+    "code_build"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-rpg-project",
+  "validation": [
+    "Real corpus extraction and deterministic replay",
+    "Installed SillyTavern card parser round trip",
+    "Full source and YKT coverage accounting"
+  ],
+  "evidence_target": "kad-gaya/dataset_runs/sillytavern-2026-09-09/evidence/",
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "All YKT sheet identities represented with source-linked templates and revision provenance",
+    "All eligible extracted text accounted for without derived feedback promoted to canon",
+    "Importable world lorebook and character and place cards",
+    "Unknowns and roleplay adaptations distinguished from source facts"
+  ],
+  "description": null,
+  "spec_decisions": [],
+  "source_ticket": "WP-GAYA-SILLYTAVERN-001"
+}

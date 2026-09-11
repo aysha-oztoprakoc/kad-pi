@@ -1,0 +1,16 @@
+{
+  "task": "WP-GAYA-SILLYTAVERN-001",
+  "project": "kad-rpg",
+  "claim_id": "17ec2264-caa7-46da-be47-8416927e3aca",
+  "actor_label": "Main",
+  "started_at": "2026-09-09T18:12:16.745Z",
+  "base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "owned_paths": [
+    "kad-gaya/integration/card_corpus.py",
+    "kad-gaya/integration/card_export.py",
+    "kad-gaya/dataset_runs/sillytavern-2026-09-09"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-09T18:42:44.325Z"
+}

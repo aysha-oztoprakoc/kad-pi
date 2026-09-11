@@ -1,0 +1,670 @@
+{
+  "schema": "gaya.dataset.workpackage-plan/v1",
+  "status": "PROPOSED_NOT_REGISTERED",
+  "isa_id": "ISA-GAYA-DATASET-G1-001",
+  "native_workctl_registered": false,
+  "native_isa_validator_binding": "PENDING",
+  "fixed_point_policy": "Resolve actual project/fixed point after authority; never copy the historical CSA cutoff blindly.",
+  "frame_contract": "Each frame has goal, inputs, project_root, owned_paths, entry_conditions, non_goals, steps, acceptance, proof, stop, research and gates. Proposal state is not native lifecycle or release acceptance.",
+  "workpackages": [
+    {
+      "id": "WP-GAYA-DATASET-G1-00",
+      "title": "Review preflight evidence and specify authority prerequisites",
+      "depends_on": [],
+      "goal": "Deliver a bounded read-only current-state and authority prerequisite report; enrollment and task registration are external decisions, not effects owned by this frame.",
+      "inputs": [
+        "docs/gaya/dataset-generation/CSA-GAYA-DATASET-001.md",
+        "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+        "docs/gaya/dataset-generation/RESEARCH-MAP.md",
+        "docs/state/CSA_KAD_PI_CURRENT.json",
+        ".agents/workspace/projects.json",
+        "PRIME_DIRECTIVE.md",
+        "evidence/WP-GAYA-DATASET-G1/00-preflight/preflight-report.json",
+        "evidence/WP-GAYA-DATASET-G1/00-preflight/preflight-report.md"
+      ],
+      "owned_paths": [
+        "evidence/WP-GAYA-DATASET-G1/00-preflight/"
+      ],
+      "non_goals": [
+        "Do not replay the old correction plan's unrelated OMP configuration recovery.",
+        "Do not enroll an UNKNOWN project, claim the parent as a bypass, change providers, or run bulk ingestion without the required authority."
+      ],
+      "steps": [
+        "Read current authority, applicable accepted ADRs, evidence and executable gates. Reuse existing preflight receipts as dated observations; refresh only changed inputs or capability claims needed by the next action. Preserve historical evidence rather than rewriting it as current PASS.",
+        "Use existing workctl project/status/show inspection to identify project ownership and active leases. Record the authorized decision needed for enrollment; do not apply registry changes or register tasks from this evidence-only frame.",
+        "Record observed project roots and revisions with observation time. The reported 0389137746b0e92a34013e7cf72abfbf0679c1e4 is historical evidence, not a fixed point for every frame. Specify separate nested-project implementation and workspace evidence/registry ownership before external registration.",
+        "Inspect Python environment, dependency metadata, parsers, qualified local generation/vision, model tokenizer/context, resource limits and consumer availability without downloads or stopping services. Configured is not observed.",
+        "Create a source policy separating originals from code, staging, DBs, projections and generated releases. Account for excluded files and unsupported formats; do not preselect only convenient sources.",
+        "Build the research ledger from exact report/source hashes. Keep primary abstract, bibliographic metadata and full-text-verified claims distinct. Translate R1–R8 into frozen local experiments; no claimed literature-derived speedup."
+      ],
+      "acceptance": [
+        "An auditable current-state delta distinguishes dated preflight observations from fresh observations, stale inputs and unresolved prerequisites.",
+        "A decision table names each missing authority, affected frames, permitted read-only continuation and required decision evidence; preflight completion does not unlock mutation or pass GAYA-G1-01.",
+        "Source scope, required dataset families, research evidence levels and downstream-only training/game goals are recorded."
+      ],
+      "proof": [
+        "Read-only command receipts with versions and outcomes, no secrets.",
+        "A source-disposition sample containing original lore, a historical revision, an image, code and a generated DB."
+      ],
+      "stop": [
+        "Unknown ownership, missing scope approval or changed authority: block mutation, not the independent read-only investigation."
+      ],
+      "research": [
+        "R2",
+        "R8"
+      ],
+      "gates": [
+        "GAYA-G1-01"
+      ],
+      "status": "PROPOSED",
+      "fixed_point": null,
+      "project_binding": "kad-pi; explicit narrow workspace ownership required; no nested-project mutation authority",
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/00-preflight/",
+      "project_root": ".",
+      "entry_conditions": [
+        "Read-only inspection is permitted; new workspace evidence requires authorized non-conflicting scope.",
+        "Existing preflight reports are observations to reconcile, not native ACCEPTED state."
+      ]
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-01",
+      "title": "Extend shared contracts and safe entrypoint",
+      "depends_on": [
+        "WP-GAYA-DATASET-G1-00"
+      ],
+      "goal": "Establish a single validated contract from source evidence to dataset release using existing Python seams.",
+      "inputs": [
+        "kad-rpg/kad-gaya/pipeline/schemas.py",
+        "kad-rpg/kad-gaya/pipeline/deterministic.py",
+        "kad-rpg/kad-gaya/extract_and_ingest_gaya.py",
+        "kad-rpg/kad-gaya/training/sharegpt_exporter.py"
+      ],
+      "owned_paths": [
+        "kad-gaya/pipeline/schemas.py",
+        "kad-gaya/pipeline/dataset_cli.py",
+        "kad-gaya/tests/",
+        "kad-gaya/extract_and_ingest_gaya.py",
+        "kad-gaya/dataset_runs/"
+      ],
+      "non_goals": [
+        "Do not create a second generic workflow engine or duplicate domain schema library.",
+        "Do not execute the bulk script to test imports; first eliminate or isolate its top-level effects."
+      ],
+      "steps": [
+        "Inspect existing callers and tests; use available language-server references before exported API changes. Extend compatible schemas for the semantic records in ISA section 3.1.",
+        "Separate source extraction, claim approval, context visibility, training eligibility and release qualification. Define explicit status enums, locator kinds, numeric units, versioning, stable IDs and typed validation errors.",
+        "Make source locators resolvable to exact bytes/regions and preserve normalized-to-original mappings. Disallow arbitrary confidence as a substitute for review.",
+        "Implement real read-only inspect and shared CLI configuration, dispatch and prerequisite checks. run/verify/replay reject unavailable stages with explicit nonzero reasons, never successful no-ops. Stage implementations and positive smoke proofs belong to frames 02–08; frame 01 does not claim the final CLI is complete.",
+        "Define fresh owned staging, path containment, a recovery journal and manifest lifecycle. Separate payload sealing from qualification and authorized acceptance. Freeze payload hashes before review; keep review receipts external to the hashed payload to avoid self-referential hashes. No COMPLETE before all required evidence; per-file rename is not multi-artifact atomicity.",
+        "Safely refactor imports/orchestration boundaries where necessary, migrate callers without obsolete shims, and preserve existing source/DB/projection bytes."
+      ],
+      "acceptance": [
+        "Invalid records, stale locators and out-of-scope paths fail closed with specific reasons.",
+        "Unicode names, quotes, newlines, units and source offsets round-trip without factual truncation.",
+        "Inspect/import has no writes to original corpus assets, live vaults, DBs or runtime stores.",
+        "inspect exercises the real corpus read-only; invalid config, output collisions and unavailable-stage dispatch fail closed. Positive run/replay/export/qualification proofs remain mandatory in their owning frames."
+      ],
+      "proof": [
+        "Adversarial schema/path/locator cases with valid controls and source hashes before/after.",
+        "Actual inspect command against a representative real-corpus configuration."
+      ],
+      "stop": [
+        "If the schema change conflicts with another writer, serialize through the integration owner; do not fork contracts."
+      ],
+      "research": [
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "gates": [
+        "GAYA-G1-01",
+        "GAYA-G1-02",
+        "GAYA-G1-10"
+      ],
+      "status": "PROPOSED",
+      "fixed_point": null,
+      "project_binding": "REQUIRES_AUTHORIZED_OWNERSHIP_RESOLUTION",
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/01-contracts/",
+      "project_root": "kad-rpg",
+      "entry_conditions": [
+        "Frame 00 report accepted through authorized work lifecycle; nested project legitimately enrolled.",
+        "Current nested-project fixed point, non-conflicting claim and local receipt destination resolved; workspace evidence requires separate ownership."
+      ]
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-02",
+      "title": "Qualify complete source and document ingestion",
+      "depends_on": [
+        "WP-GAYA-DATASET-G1-01"
+      ],
+      "goal": "Account for the full declared corpus and preserve evidence locators through heterogeneous extraction.",
+      "inputs": [
+        "kad-rpg/kad-gaya/ingestion/corpus_ingestor.py",
+        "Original corpus and policy from frame 00",
+        "Schemas from frame 01"
+      ],
+      "owned_paths": [
+        "kad-gaya/ingestion/",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/",
+        "kad-gaya/pipeline/dataset_cli.py"
+      ],
+      "non_goals": [
+        "Do not recursively ingest generated output as new source material.",
+        "Do not label blank/scanned PDF output as successful factual extraction."
+      ],
+      "steps": [
+        "Replace immediate-file-only assumptions with the frozen discovery policy, sorted traversal, symlink boundary checks and a full source/exclusion manifest. Count by actual content/format and disposition.",
+        "Group identical bytes and explicit revision families; preserve compressed/original alternatives without assuming the newest filename is canonical.",
+        "Exercise UTF-8 Markdown/text/JSON, PDF layout, DOCX, ODT and ODG with exact source mappings. Preserve original text and numeric/table structure; record parser/version and unsupported constructs.",
+        "Separate scanned/image pages from text extraction. Use OCR only if locally qualified and authorized; preserve page/image, bbox, engine/version and critical-value review. If unavailable, retain explicit review-pending status.",
+        "Keep image assets indexed without claiming semantic extraction. Expose documents and media through the same source IDs for frame 04.",
+        "Run full deterministic extraction for every in-scope supported source in new staging, not only representative parser probes. Reconcile discovered = processed + pending + rejected + excluded with one terminal disposition per source and reason codes distinguishing unattempted, parser-failed, unsupported and review-pending material. Keep format/category, processing disposition and canon/train eligibility separate.",
+        "Wire this frame's stage into dataset_cli run under its declared prerequisites and exercise the actual command in a new owned staging directory; do not claim later stages implemented."
+      ],
+      "acceptance": [
+        "Every in-scope source is accounted for; no source silently disappears on parser failure.",
+        "Representative actual formats produce resolvable locators; empty/scanned/error cases have truthful status.",
+        "Code, DB/projections, previous releases and manifests cannot feed the positive lore corpus.",
+        "Repeated ingestion with identical source policy produces identical content artifacts."
+      ],
+      "proof": [
+        "Full census and per-format disposition report.",
+        "Per-source extraction receipts for the complete frozen inventory, plus locator walkthroughs for real DOCX, tabular PDF, editable office document, Unicode text and images; genuine scanned pages where present. Fixtures prove fallback behavior only, not real corpus coverage."
+      ],
+      "stop": [
+        "Missing converter/permission blocks affected formats; do not omit them or install packages without approval."
+      ],
+      "research": [
+        "R2",
+        "R3"
+      ],
+      "gates": [
+        "GAYA-G1-01",
+        "GAYA-G1-03"
+      ],
+      "status": "PROPOSED",
+      "fixed_point": null,
+      "project_binding": "REQUIRES_AUTHORIZED_OWNERSHIP_RESOLUTION",
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/02-ingestion/",
+      "project_root": "kad-rpg",
+      "entry_conditions": [
+        "Frame 01 contracts accepted; frozen discovery policy and fresh owned staging available.",
+        "Converters admitted per format; unavailable formats remain accounted for with explicit blockers."
+      ]
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-03",
+      "title": "Extract grounded entities, relations and reviewed seeds",
+      "depends_on": [
+        "WP-GAYA-DATASET-G1-02"
+      ],
+      "goal": "Build versioned supported Gaya knowledge records rather than exporting hardcoded lore or unchecked regex claims.",
+      "inputs": [
+        "Extracted source manifest and spans",
+        "kad-rpg/kad-gaya/pipeline/deterministic.py",
+        "Existing source-based approval records if available"
+      ],
+      "owned_paths": [
+        "kad-gaya/pipeline/deterministic.py",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/",
+        "kad-gaya/pipeline/dataset_cli.py"
+      ],
+      "non_goals": [
+        "Do not treat source ownership, generated prose, filename recency or an LLM judge as canon approval.",
+        "Do not convert all related-entity links into friendship or infer unknown identities from generic nouns."
+      ],
+      "steps": [
+        "Resolve named entities with reviewed aliases and source spans; preserve original Unicode and ambiguity. Retain entity-definition versus item-instance distinctions.",
+        "Extract bounded factual candidates with direction, polarity, time, perspective, branch and exact supporting text. Outside supported grammar, abstain or use separately admitted local candidate extraction.",
+        "Support typed relationships and evidence paths. Friendship need not be symmetric or transitive; enemy-of-enemy is not a canonical friend. A third-party query returns the path, not an invented direct edge.",
+        "Separate historical character-sheet values from current approved revisions; retain inconsistent sources as conflicts pending review. Record source precedence only from explicit authority.",
+        "Create the source-backed seed registry through existing review mechanisms. Apply rights and train/context eligibility independently; quarantine unsupported, denied and ambiguous facts.",
+        "Link every derivative to support. A changed/rejected source invalidates dependent rows without deleting unrelated accepted support.",
+        "Wire this frame's stage into dataset_cli run under its declared prerequisites and exercise the actual command in a new owned staging directory; do not claim later stages implemented."
+      ],
+      "acceptance": [
+        "Lylia é mãe de Sofia is not inverted; Lylia não carrega Nyr does not become positive possession.",
+        "Desertion is not current affiliation; generic floresta/brigada/dragão mentions remain generic; Gaia and Gaya are not silently merged.",
+        "Actor-specific beliefs and narrator-level accounts remain distinguishable from objective facts.",
+        "Review-backed seed records cover the required families where sources support them; unresolved families are explicitly blocked."
+      ],
+      "proof": [
+        "Source-located real examples and independently reviewed expected relations/attributes.",
+        "Negative controls, contradictory sheet revisions, alias collisions and source-revocation propagation."
+      ],
+      "stop": [
+        "No author/reviewer decision for a consequential canon conflict: retain candidates and continue independent records; never fabricate a decision."
+      ],
+      "research": [
+        "R3",
+        "R4",
+        "R6"
+      ],
+      "gates": [
+        "GAYA-G1-02",
+        "GAYA-G1-04"
+      ],
+      "status": "PROPOSED",
+      "fixed_point": null,
+      "project_binding": "REQUIRES_AUTHORIZED_OWNERSHIP_RESOLUTION",
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/03-knowledge/",
+      "project_root": "kad-rpg",
+      "entry_conditions": [
+        "Frame 02 extraction and locator receipts accepted; source identities are frozen.",
+        "Canon/rights decisions have named authority; missing decisions quarantine affected candidates."
+      ]
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-04",
+      "title": "Ground visual references and spatial associations",
+      "depends_on": [
+        "WP-GAYA-DATASET-G1-03"
+      ],
+      "goal": "Preserve the user's image-based knowledge and connect it to entities without hallucinated appearance or map topology.",
+      "inputs": [
+        "Media/source inventory and shared schemas",
+        "Original images, map/screenshot assets and document regions",
+        "Resolved entity IDs and reviewed seed registry from frame 03"
+      ],
+      "owned_paths": [
+        "kad-gaya/ingestion/media_references.py",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/",
+        "kad-gaya/pipeline/dataset_cli.py"
+      ],
+      "non_goals": [
+        "Do not generate replacement art or infer a portrait identity from an anonymous filename.",
+        "Do not add precise 3D coordinates or doors because the downstream game will need them."
+      ],
+      "steps": [
+        "Reuse available media handling; add only the missing asset-association seam. Record hashes, dimensions, original paths, regions and extraction provenance.",
+        "Derive explicit associations from document embedding, labels, reviewed text and author-provided references. Keep guessed captions or local VLM interpretations as candidates.",
+        "If local OCR/vision is required, inspect its real structured-output and resource capability through KAD/STC; do not route engineering extraction to Stheno WORLD.",
+        "Preserve current-versus-old portrait/revision distinctions, including named historical references, without automatic precedence from filenames.",
+        "Build reviewed text-image pairs for characters/items/places where supported, preserving conflicting depictions. Represent map containment/adjacency and units only when evidenced.",
+        "Exercise a real asset lookup and a source-region-to-entity walkthrough; integrate resolved entity IDs after frame 03 before split freeze.",
+        "Wire this frame's stage into dataset_cli run under its declared prerequisites and exercise the actual command in a new owned staging directory; do not claim later stages implemented."
+      ],
+      "acceptance": [
+        "Each accepted visual pair resolves to exact original media and approved association/description.",
+        "Unlabeled/conflicting images remain unresolved; generated captions cannot promote facts.",
+        "Map/text discrepancies and unknown spatial fields remain visible rather than silently reconciled.",
+        "All required visual categories are covered or explicitly blocked; asset tracking alone is not complete visual extraction."
+      ],
+      "proof": [
+        "Actual portrait, item illustration and location/map-region walkthroughs where present; missing categories reported with inventory evidence.",
+        "A changed image hash invalidates the old association; media paths survive relocation via manifest-relative resolution."
+      ],
+      "stop": [
+        "Missing qualified vision or review blocks only unresolved visual interpretation, not text ingestion; full visual acceptance remains blocked."
+      ],
+      "research": [
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "gates": [
+        "GAYA-G1-05"
+      ],
+      "status": "PROPOSED",
+      "fixed_point": null,
+      "project_binding": "REQUIRES_AUTHORIZED_OWNERSHIP_RESOLUTION",
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/04-visual/",
+      "project_root": "kad-rpg",
+      "entry_conditions": [
+        "Frame 03 entity identities accepted; frame 02 media inventory remains hash-resolvable.",
+        "Local vision admission is needed for model interpretation, not explicit reviewed source associations."
+      ]
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-05",
+      "title": "Freeze evaluation, splits and scenario oracles",
+      "depends_on": [
+        "WP-GAYA-DATASET-G1-04"
+      ],
+      "goal": "Define observable correctness and leakage boundaries before synthetic expansion can contaminate evaluation.",
+      "inputs": [
+        "Reviewed seed registry",
+        "Visual associations",
+        "Research experiments R1–R8",
+        "Existing Gaya kernel rules where source-compatible"
+      ],
+      "owned_paths": [
+        "kad-gaya/training/splits.py",
+        "kad-gaya/pipeline/scenario_oracles.py",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/",
+        "kad-gaya/pipeline/dataset_cli.py"
+      ],
+      "non_goals": [
+        "Do not randomly split generated rows or show held-out answers to the generator.",
+        "Do not build a renderer or invent unsupported mechanics to create behavioral examples."
+      ],
+      "steps": [
+        "Freeze source duplicate/revision/scenario families and split policy before generating paraphrases. Define source-held-out versus same-canon task-held-out evaluations explicitly.",
+        "Reject cross-partition multi-source examples; if grouping collapses most corpus into one family, report this and design a legitimate held-out task set instead of claiming source independence.",
+        "Define per-family observable targets and known-answer cases independently from the generation outputs. Keep source offsets and concise evidence rationales, not hidden chain of thought.",
+        "Implement bounded scenario oracles for supported movement, ownership, resource transitions and option termination, reusing actual kernel contracts where compatible. Record assumptions and rules; distinguish trade conservation from transformations with source/sink accounting.",
+        "Preregister critical zero-tolerance gates, review sampling/thresholds, budgets/attempt limits, family coverage goals and duplicate thresholds based on measured corpus size/risk. Human authority resolves consequential thresholds; no retroactive lowering.",
+        "Freeze secret-canary tests across actor prompt/target/retrieval/summary surfaces and semantic mutations for negation, units, direction and unsupported relations.",
+        "Wire this frame's stage into dataset_cli run under its declared prerequisites and exercise the actual command in a new owned staging directory; do not claim later stages implemented."
+      ],
+      "acceptance": [
+        "Split/benchmark manifests are hashed before synthesis and stay isolated from generator seed input.",
+        "All scenario outcomes are executable under explicit rules and terminate within bounds.",
+        "Coverage targets, sample design, metric denominators and release thresholds are preregistered rather than chosen after results."
+      ],
+      "proof": [
+        "Partition collision and multi-source bridge rejection; secret canary exclusion with positive visible controls.",
+        "Real source-supported valid/invalid action pairs, including failed initiation and recovery."
+      ],
+      "stop": [
+        "No defensible expected outcome or independent review basis: quarantine that scenario; do not use generator self-agreement as its oracle."
+      ],
+      "research": [
+        "R3",
+        "R5",
+        "R6",
+        "R7"
+      ],
+      "gates": [
+        "GAYA-G1-06",
+        "GAYA-G1-07",
+        "GAYA-G1-09"
+      ],
+      "status": "PROPOSED",
+      "fixed_point": null,
+      "project_binding": "REQUIRES_AUTHORIZED_OWNERSHIP_RESOLUTION",
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/05-evaluation-design/",
+      "project_root": "kad-rpg",
+      "entry_conditions": [
+        "Frames 03–04 reviewed seeds and visual associations accepted with immutable identities.",
+        "Independent oracle/review authority and threshold decision owner identified before synthesis."
+      ]
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-06",
+      "title": "Generate and replay bounded synthetic examples",
+      "depends_on": [
+        "WP-GAYA-DATASET-G1-05"
+      ],
+      "goal": "Produce the actual G1 synthetic examples from grounded seeds with admitted local generation and deterministic replay.",
+      "inputs": [
+        "Frozen generation plan, seeds, schemas and splits",
+        "Dated local capability evidence; admission required for inference only, not deterministic compilation",
+        "Existing orchestrator and KAD runtime admission seams"
+      ],
+      "owned_paths": [
+        "kad-gaya/training/synthetic_builder.py",
+        "kad-gaya/pipeline/dataset_cli.py",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/"
+      ],
+      "non_goals": [
+        "Do not call Gemini or any remote provider as a synthetic-data teacher.",
+        "Do not train weights, synthesize ungrounded canon, fabricate preference labels or inflate rows with trivial paraphrases."
+      ],
+      "steps": [
+        "Compile deterministic reference/action/abstention tasks first using the same normalized example contract as local-generated rows.",
+        "For semantic diversity, use only observed, authorized local roles with bounded prompts, context/output limits and resource ownership. Include only source/knowledge-scope-eligible material.",
+        "Generate candidate dialogue, paraphrases and explicit-assumption situations across all required families. Record exact prompt/template/model/runtime/tokenizer/config IDs and raw outputs with lineage.",
+        "Apply schemas, source support, actor scope, scenario execution and duplicate filters; ambiguous prose stays review-pending. Validate negative examples for their intended contrast label rather than exporting them as positive facts.",
+        "Enforce maximum attempts and stop on unchanged-input failures per declared policy. No provider fallback or hidden download. Record rejection reasons and admitted useful yield.",
+        "Implement resume/replay from immutable proposal tapes. Freeze stable content ordering and IDs; separate wall-clock diagnostic metadata. Exercise two independent processes with varied Python hash seeds/output paths."
+      ],
+      "acceptance": [
+        "Actual accepted synthetic examples and rejection evidence exist for every supported required family.",
+        "A recorded run compiles identically across processes without calling a model during replay.",
+        "A live local synthesis smoke is observed if the capability is available; if not, deterministic output is useful but fresh-local-generation qualification is BLOCKED.",
+        "Generator self-scores never constitute factual approval."
+      ],
+      "proof": [
+        "Full small real-source pilot under the preregistered budget, then the frozen release-sized plan after pilot acceptance.",
+        "A denied secret, unsupported target, duplicate and invalid action are rejected for the correct reasons; valid controls remain accepted."
+      ],
+      "stop": [
+        "Missing authorized local generation, exhausted declared resources or inadequate factual support: record exact blocked gates, preserve tapes and continue deterministic reachable work."
+      ],
+      "research": [
+        "R1",
+        "R3",
+        "R6",
+        "R8"
+      ],
+      "gates": [
+        "GAYA-G1-07",
+        "GAYA-G1-10"
+      ],
+      "status": "PROPOSED",
+      "fixed_point": null,
+      "project_binding": "REQUIRES_AUTHORIZED_OWNERSHIP_RESOLUTION",
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/06-synthesis/",
+      "project_root": "kad-rpg",
+      "entry_conditions": [
+        "Frame 05 splits, oracles, review criteria and budgets accepted and hashed before generation.",
+        "Deterministic compilation requires no LLM daemon. Fresh local synthesis additionally requires observed KAD/STC admission; absence stays BLOCKED without waiving the ISA requirement."
+      ]
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-07",
+      "title": "Export training, game and scoped retrieval bundles",
+      "depends_on": [
+        "WP-GAYA-DATASET-G1-06"
+      ],
+      "goal": "Prove the dataset can be consumed by both model-adaptation tooling and game construction without mixing authority domains.",
+      "inputs": [
+        "Validated normalized examples and frozen source/review/split identities from frame 06; final release qualification is performed in frame 08",
+        "kad-rpg/kad-gaya/training/sharegpt_exporter.py",
+        "Existing storage/projection adapters and selected consumer contracts"
+      ],
+      "owned_paths": [
+        "kad-gaya/training/sharegpt_exporter.py",
+        "kad-gaya/training/release_exporter.py",
+        "kad-gaya/pipeline/dataset_cli.py",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/"
+      ],
+      "non_goals": [
+        "Do not populate live OpenViking/Obsidian/SillyTavern stores or alter game engine selection.",
+        "Do not call JSON parse success a training-framework or vision-consumer smoke."
+      ],
+      "steps": [
+        "Extend the existing exporter eligibility boundary and migrate callers. Export internal normalized rows plus the actual selected trainer format; preserve forbidden consumer metadata in a lossless keyed sidecar.",
+        "Separate persona/world-planner/narrator outputs by declared knowledge scope. Exclude unauthorized sources, rejected positive claims and engineering/research instruction contamination.",
+        "Export game-content definitions, item instances, places, typed relationships, media refs and source-supported rules from the same release, not by asking a model to invent a world DB.",
+        "Export retrievable source chunks and derived context summaries with visibility filters applied before lookup/ranking; keep indexes rebuildable and offline unless separately authorized.",
+        "Load training rows through the selected real consumer parser/tokenizer in no-training mode. Load actual images for any claimed multimodal consumer. If unavailable, qualify only internal format and leave consumer gate blocked.",
+        "Import the portable game bundle into an executable offline content loader and exercise entity/route/rule lookup. Query a scoped retrieval record back to source. Resolve sidecar lineage for examples from each split/family."
+      ],
+      "acceptance": [
+        "Training parser/tokenizer, game loader and scoped retrieval smoke outputs are recorded separately.",
+        "All game references and media paths resolve; unknown geography remains unknown/proposed.",
+        "A revoked/disallowed fact is absent from positive exports across every consumer, not just ShareGPT."
+      ],
+      "proof": [
+        "Actual no-training consumer loads, real asset decoding when applicable, game-content traversal and source lookup.",
+        "Hash comparison across repeat exports and eligibility exclusion controls."
+      ],
+      "stop": [
+        "Missing consumer dependency/license/model asset: report exact compatibility blocker; do not download or silently substitute an easier consumer."
+      ],
+      "research": [
+        "R2",
+        "R5",
+        "R6"
+      ],
+      "gates": [
+        "GAYA-G1-05",
+        "GAYA-G1-08",
+        "GAYA-G1-10"
+      ],
+      "status": "PROPOSED",
+      "fixed_point": null,
+      "project_binding": "REQUIRES_AUTHORIZED_OWNERSHIP_RESOLUTION",
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/07-consumers/",
+      "project_root": "kad-rpg",
+      "entry_conditions": [
+        "Frame 06 accepted through native dependencies; partial deterministic artifacts alone do not satisfy a blocked native dependency.",
+        "Named offline consumers, tokenizer/assets and rights available for each claimed compatibility proof."
+      ]
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-08",
+      "title": "Qualify semantics, leakage and failure recovery",
+      "depends_on": [
+        "WP-GAYA-DATASET-G1-07"
+      ],
+      "goal": "Evaluate the real release against frozen criteria using deterministic gates and independent bounded semantic review.",
+      "inputs": [
+        "Frozen evaluation from frame 05",
+        "Real release and generation tapes",
+        "Consumer smoke receipts"
+      ],
+      "owned_paths": [
+        "kad-gaya/training/qualification.py",
+        "kad-gaya/pipeline/dataset_cli.py",
+        "kad-gaya/tests/",
+        "kad-gaya/dataset_runs/"
+      ],
+      "non_goals": [
+        "Do not tune against held-out answers, loosen legitimate failing assertions or mark samples correct using their generator.",
+        "Do not claim model improvements or Sid emergence without training/simulation experiments outside this scope."
+      ],
+      "steps": [
+        "Implement the domain qualification evaluator and complete verify dispatch against frozen release inputs before executing the adversarial suite. Reuse it from the frame 09 adapter; do not create a second acceptance engine. Run affected tests after integration, retaining behavior-based regressions rather than tautological or source-text assertions.",
+        "Execute E1–E8 applicable deterministic experiments and separately report any local-model comparisons that are genuinely run. Optional research ablation unavailability must not masquerade as core functional failure or success.",
+        "Run exact/near-duplicate and partition-family analysis, secret-canary scans, evidence locator checks, entity/negation/unit/route mutations and valid controls.",
+        "Inject interruption before and during export finalization, source change/revocation, malformed local output and stale media references using owned scratch copies only. Never alter original corpus assets or immutable prior releases to exercise a fault. Prove no false COMPLETE and no damage to existing artifacts.",
+        "Have an independent permitted reviewer examine the preregistered semantic sample and high-risk seed decisions. Record disagreements, denominator, confidence/limitations and concrete rejected examples; model review alone cannot grant human canon authority.",
+        "Rebuild from recorded inputs in a new process/output root and compare all claimed reproducible bytes. Diagnose failures at their source, preserving the frozen oracle; if changing criteria is scientifically necessary, version a new experiment without hiding the old result."
+      ],
+      "acceptance": [
+        "Every critical adversarial case is detected with valid controls passing; exact evidence/eligibility/split/replay gates hold.",
+        "Review coverage and quality measurements satisfy preregistered criteria or explicitly fail/block release.",
+        "Source changes and interrupted writes preserve old complete releases and cannot produce false current acceptance."
+      ],
+      "proof": [
+        "Machine-readable per-gate outcomes with artifact hashes and actual command/scenario output.",
+        "Independent semantic review receipt and errors by family/phenomenon, not just aggregate PASS or row counts."
+      ],
+      "stop": [
+        "A failed critical gate blocks release. Fix implementation, not the gate. Missing independent/human authority remains an explicit acceptance blocker."
+      ],
+      "research": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8"
+      ],
+      "gates": [
+        "GAYA-G1-02",
+        "GAYA-G1-03",
+        "GAYA-G1-04",
+        "GAYA-G1-05",
+        "GAYA-G1-06",
+        "GAYA-G1-07",
+        "GAYA-G1-09",
+        "GAYA-G1-10"
+      ],
+      "status": "PROPOSED",
+      "fixed_point": null,
+      "project_binding": "REQUIRES_AUTHORIZED_OWNERSHIP_RESOLUTION",
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/08-qualification/",
+      "project_root": "kad-rpg",
+      "entry_conditions": [
+        "Frame 07 exports and consumer receipts accepted; frame 05 criteria remain frozen.",
+        "Independent reviewer is authorized and distinct from generator; mutation/fault cases use owned scratch copies."
+      ]
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-09",
+      "title": "Bind native ISA gates and hand off qualified release",
+      "depends_on": [
+        "WP-GAYA-DATASET-G1-08"
+      ],
+      "goal": "Deliver an evidence-backed release with native KAD validation, accurate status and consumer-ready continuation.",
+      "inputs": [
+        "All qualification artifacts",
+        "tools/kad/isa.mjs",
+        "ISA claim-to-validator contract",
+        "Existing KAD review/acceptance machinery"
+      ],
+      "owned_paths": [
+        "tools/kad/isa.mjs",
+        "tools/kad/gaya-dataset-qualification.mjs",
+        "tools/kad/test/",
+        "docs/gaya/dataset-generation/",
+        "evidence/WP-GAYA-DATASET-G1/09-release/"
+      ],
+      "non_goals": [
+        "Do not add generic always-pass validators, shell-execution-from-Markdown or file-exists acceptance.",
+        "Do not self-promote this ISA into the canonical vault, train models, publish data or commit."
+      ],
+      "steps": [
+        "After explicit ownership for the narrow registry change, implement the planned validator IDs using the existing allowlisted ISA registry. Use a small shared release-validation adapter rather than eleven duplicated engines.",
+        "Registry validators verify actual release payloads, source/review/config hashes, recorded results and independent acceptance scope. Recompute deterministic invariants where possible. Bind external review/acceptance receipts to the sealed payload manifest hash; the payload must not include its own receipt or final check result. Missing acceptance yields BLOCKED, not a circular requirement to pass check before requesting review.",
+        "Prove negative controls: altered data hash, stale receipt, missing review, missing required family and all-BLOCKED results cannot pass. Keep project governance unchanged beyond the declared domain adapter.",
+        "Run native lint after real validator registration. Run diagnostic check against the sealed release, retaining genuine missing-review BLOCKED results; run final check again only after new authorized acceptance evidence is available. Structural lint alone is not semantic acceptance.",
+        "Write the release datasheet, source/row/family counts, split policy, metrics, limitations, rerun commands, consumer versions and separate training/game next-step contracts. Reflect actually changed behavior in existing documentation.",
+        "After domain smoke and deterministic qualification, request independent authorized acceptance of the sealed payload through existing authority. Then run final native check including that receipt; only full success permits qualified-release labeling. Record a workctl handoff, preserve evidence and user sources, and remove only owned throwaway artifacts. Builder completion never grants acceptance."
+      ],
+      "acceptance": [
+        "Native ISA lint/check operate on real registered semantic gates; all blocking release claims have fresh evidence and authorized acceptance.",
+        "A release can be consumed/replayed from its documented inputs; required families and exclusions are explicit.",
+        "No original corpus/DB/live projection mutation, remote data generation, model training, publication or commit occurred; authorized code edits and staging/evidence writes are reported separately.",
+        "If any gate is blocked/failed, deliver reachable artifacts and an exact blocker matrix without labeling G1 qualified."
+      ],
+      "proof": [
+        "Native lint/check output and adversarial validator controls tied to release hashes.",
+        "Final deliverable manifest, independent review/acceptance receipts and reproducible consumer commands."
+      ],
+      "stop": [
+        "Registry ownership or acceptance authority unavailable: retain a validated domain release report but native integration/overall acceptance remains BLOCKED; do not borrow another passing validator."
+      ],
+      "research": [
+        "R2",
+        "R3",
+        "R8"
+      ],
+      "gates": [
+        "GAYA-G1-01",
+        "GAYA-G1-02",
+        "GAYA-G1-03",
+        "GAYA-G1-04",
+        "GAYA-G1-05",
+        "GAYA-G1-06",
+        "GAYA-G1-07",
+        "GAYA-G1-08",
+        "GAYA-G1-09",
+        "GAYA-G1-10",
+        "GAYA-G1-11"
+      ],
+      "status": "PROPOSED",
+      "fixed_point": null,
+      "project_binding": "kad-pi; explicit narrow workspace ownership required; no nested-project mutation authority",
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/09-release/",
+      "project_root": ".",
+      "entry_conditions": [
+        "Frame 08 domain qualification and independent semantic review accepted; sealed nested-project payload is read-only input.",
+        "Workspace fixed point and explicit kad-pi registry claim resolved separately from kad-rpg enrollment; authorized acceptance remains an external decision."
+      ]
+    }
+  ],
+  "execution_policy": {
+    "builder_role": "Engineering builder through existing KAD-authorized transport; model/provider selection belongs to dispatch, not native work contracts.",
+    "integration_owner": "One active mutation owner per project-scoped claim; independent reviewers do not share mutation ownership.",
+    "validation_execution": "Sequential owner: RED/GREEN at agreed seams, actual smoke, then relevant integrated suite. Concurrent workers: skip all build/lint/test commands until integration barrier.",
+    "path_bases": "File inputs are workspace-relative; owned_paths are relative to project_root; evidence_target is workspace-relative and grants no write authority.",
+    "evidence_ownership": "Frames 00 and 09 own their workspace evidence. Frames 01–08 write receipts within their claimed kad-gaya/dataset_runs/ directory. Copying receipts to workspace evidence_target requires a separately authorized narrow kad-pi evidence claim. Never use ../ or claim the parent to bypass nested-project enrollment.",
+    "native_registration": "External authorized governance materializes project-scoped contracts; this plan does not register or enable projects. Map depends_on to blocked_by and derive reciprocal blocks. Supply native required fields including required_capabilities, trust_domain, authority_required, validation, scope and non_scope. Resolve fixed_point separately for each project root at registration and revalidate before claim.",
+    "dependency_semantics": "depends_on is a completion prerequisite, not just artifact availability. Native workctl requires ACCEPTED blockers. Partial receipts never advance native state. Independent continuation requires an already eligible claim or explicitly authorized decomposition with separate acceptance criteria; do not bypass unresolved blockers.",
+    "acceptance_semantics": "Frame acceptance proves only its bounded deliverable. gates lists evidence contributions, not automatic gate PASS. Preflight completion, implementation completion, fresh-local-generation qualification, independent review and authorized release acceptance remain separate.",
+    "scope_resolution": "Before native registration narrow broad test/staging paths and include every actually affected caller. Missing ownership requires an authorized scope amendment before editing, never a compatibility shim or an undeclared write."
+  }
+}

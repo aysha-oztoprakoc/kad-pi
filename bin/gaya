@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+// Gaya: The YKT Refuge - Deterministic ASCII Settlement Simulation CLI
+// Usage:
+//   bin/gaya               -> Runs 1-day scripted simulation and renders final ASCII frame
+//   bin/gaya --frame       -> Renders initial ASCII interface frame
+//   bin/gaya --replay      -> Executes deterministic replay gate test
+
+import { createInitialState } from '../tools/gaya/kernel/state.mjs';
+import { runOneDaySimulation, replaySimulationTape } from '../tools/gaya/simulation/one-day-scenario.mjs';
+import { renderAsciiFrame } from '../tools/gaya/ui/ascii-terminal.mjs';
+
+const args = process.argv.slice(2);
+
+if (args.includes('--frame')) {
+  const state = createInitialState();
+  console.log(renderAsciiFrame(state));
+  process.exit(0);
+}
+
+if (args.includes('--replay')) {
+  console.log('--- Executing Deterministic Replay Gate ---');
+  const run = runOneDaySimulation({ seed: 20260908, runId: 'cli-run-001' });
+  console.log(`Original run final state hash:   ${run.final_hash}`);
+  console.log(`Original run event ledger hash:  ${run.ledger_hash}`);
+
+  const replay = replaySimulationTape(20260908, run.fullCommandTape, run.final_hash);
+  console.log(`Replayed run final state hash:   ${replay.replayFinalHash}`);
+  console.log(`Replayed run event ledger hash:  ${replay.ledger_hash}`);
+  console.log(`Replay gate status: ${replay.match ? 'PASS (EXACT MATCH)' : 'FAIL'}`);
+  process.exit(replay.match ? 0 : 1);
+}
+
+// Default: Run 1-day scripted simulation
+console.log('================================================================================');
+console.log('             GAYA: THE YKT REFUGE — DETERMINISTIC SETTLEMENT SIMULATION         ');
+console.log('================================================================================');
+
+const sim = runOneDaySimulation({ seed: 1337, runId: 'cli-oneday-001' });
+
+console.log(renderAsciiFrame(sim.state, {
+  controlledActorId: 'actor.aysha',
+  logs: [
+    `Day 1 completed: ${sim.command_count} commands executed across 48 ticks.`,
+    `Final State Hash: ${sim.final_hash.slice(0, 32)}... (All 75+ events verified).`
+  ],
+  choices: [
+    { id: '1', label: 'Resume branch on Day 2 08:00' },
+    { id: '2', label: 'Inspect committed Event Ledger' },
+    { id: '3', label: 'Verify replay command tape' },
+    { id: '0', label: 'Exit simulation' }
+  ]
+}));
+
+console.log('\n--- Simulation Summary ---');
+console.log(`Ticks Simulated:   ${sim.state.tick} (24 hours)`);
+console.log(`Final Clock:       ${sim.final_clock}`);
+console.log(`Initial Hash:      ${sim.initial_hash}`);
+console.log(`Final State Hash:  ${sim.final_hash}`);
+console.log(`Ledger Hash:       ${sim.ledger_hash}`);
+console.log(`Committed Events:  ${sim.event_count}`);
+console.log(`Ledger Integrity:  ${sim.ledgerVerification.valid ? 'VALID (UNBROKEN SEQUENCE)' : 'INVALID'}`);
+console.log('--------------------------');

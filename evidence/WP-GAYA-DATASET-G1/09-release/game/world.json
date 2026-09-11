@@ -1,0 +1,2093 @@
+{
+  "schema_version": "1.0.0",
+  "release_id": "gaya_game_world_v1",
+  "total_entities": 53,
+  "total_relations": 8,
+  "total_spatial_nodes": 16,
+  "total_spatial_edges": 13,
+  "entities": [
+    {
+      "entity_id": "akuanduba",
+      "slug": "akuanduba",
+      "name": "Akuanduba",
+      "category": "characters",
+      "aliases": [
+        "akuanduba",
+        "ave phoenix",
+        "cólera do dragão"
+      ],
+      "description": "Guerreiro Phoenix e Sentinela de Combate",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "calendario.md",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/akuanduba.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/copa_e_biblioteca.md",
+        "obsidian_vault/locations/terraco_de_combate.md",
+        "openviking_storage/characters/akuanduba/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/copa_e_biblioteca/content.md",
+        "openviking_storage/locations/terraco_de_combate/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/calendario_md.txt"
+      ]
+    },
+    {
+      "entity_id": "alexei_gusev",
+      "slug": "alexei_gusev",
+      "name": "Alexei Gusev",
+      "category": "characters",
+      "aliases": [
+        "alexei",
+        "alexei gusev"
+      ],
+      "description": "Oficial e Estrategista",
+      "source_references": [
+        "YKT _ Alexei Gusev.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/locations/ramos_residenciais.md",
+        "openviking_storage/locations/ramos_residenciais/content.md",
+        "staging_ingestion/YKT _ Alexei Gusev_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "amethysta",
+      "slug": "amethysta",
+      "name": "Amethysta",
+      "category": "characters",
+      "aliases": [
+        "amethysta",
+        "amethysta oztoprak",
+        "amethysta öztoprak"
+      ],
+      "description": "Dragoa de Ametista e companheira de vínculo de Ayşa Öztoprak",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "Manto de Kravarius.odt",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "expansao_itens_kravarius_cavaleiro_do_dragao.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/akuanduba.md",
+        "obsidian_vault/characters/amethysta.md",
+        "obsidian_vault/characters/aysha_oztoprak.md",
+        "obsidian_vault/characters/begonio_nackle.md",
+        "obsidian_vault/characters/douglas.md",
+        "obsidian_vault/characters/proisb.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/escola_de_mana.md",
+        "obsidian_vault/locations/heartwood.md",
+        "obsidian_vault/locations/ramo_de_douglas.md",
+        "obsidian_vault/locations/ramos_residenciais.md",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "obsidian_vault/locations/terraco_de_chegada.md",
+        "obsidian_vault/mechanics/manto_de_kravarius.md",
+        "openviking_storage/characters/akuanduba/content.md",
+        "openviking_storage/characters/amethysta/content.md",
+        "openviking_storage/characters/aysha_oztoprak/content.md",
+        "openviking_storage/characters/begonio_nackle/content.md",
+        "openviking_storage/characters/douglas/content.md",
+        "openviking_storage/characters/proisb/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/escola_de_mana/content.md",
+        "openviking_storage/locations/heartwood/content.md",
+        "openviking_storage/locations/ramo_de_douglas/content.md",
+        "openviking_storage/locations/ramos_residenciais/content.md",
+        "openviking_storage/locations/refugio_ykt/content.md",
+        "openviking_storage/locations/terraco_de_chegada/content.md",
+        "openviking_storage/mechanics/manto_de_kravarius/content.md",
+        "spells-sublist-amethysta.json",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/Manto de Kravarius_odt.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt",
+        "staging_ingestion/expansao_itens_kravarius_cavaleiro_do_dragao_pdf.txt",
+        "staging_ingestion/spells-sublist-amethysta_json.txt"
+      ]
+    },
+    {
+      "entity_id": "aysha_oztoprak",
+      "slug": "aysha_oztoprak",
+      "name": "Ayşa Öztoprak",
+      "category": "characters",
+      "aliases": [
+        "aysha",
+        "aysha oztoprak",
+        "ayşa",
+        "ayşa öztoprak",
+        "tenente aysha",
+        "trovão lampejante"
+      ],
+      "description": "Dragoa de Combate e Desertora da Brigada Adamantina",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "Manto de Kravarius.odt",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "docs/PLANO_CORRECAO_GAYA_PARA_GEMINI.md",
+        "expansao_itens_kravarius_cavaleiro_do_dragao.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/amethysta.md",
+        "obsidian_vault/characters/aysha_oztoprak.md",
+        "obsidian_vault/characters/lylia_centelha_de_sofia.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/cosmology/khan.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/camara_de_sintese.md",
+        "obsidian_vault/locations/heartwood.md",
+        "obsidian_vault/locations/ramos_residenciais.md",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "obsidian_vault/locations/templo_suspenso.md",
+        "obsidian_vault/locations/terraco_de_combate.md",
+        "obsidian_vault/mechanics/crosta_de_kravarius.md",
+        "obsidian_vault/mechanics/manto_de_kravarius.md",
+        "obsidian_vault/mechanics/nyr_e_zhar.md",
+        "obsidian_vault/mechanics/sintese.md",
+        "openviking_storage/characters/amethysta/content.md",
+        "openviking_storage/characters/aysha_oztoprak/content.md",
+        "openviking_storage/characters/lylia_centelha_de_sofia/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/cosmology/khan/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/camara_de_sintese/content.md",
+        "openviking_storage/locations/heartwood/content.md",
+        "openviking_storage/locations/ramos_residenciais/content.md",
+        "openviking_storage/locations/refugio_ykt/content.md",
+        "openviking_storage/locations/templo_suspenso/content.md",
+        "openviking_storage/locations/terraco_de_combate/content.md",
+        "openviking_storage/mechanics/crosta_de_kravarius/content.md",
+        "openviking_storage/mechanics/manto_de_kravarius/content.md",
+        "openviking_storage/mechanics/nyr_e_zhar/content.md",
+        "openviking_storage/mechanics/sintese/content.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/Manto de Kravarius_odt.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt",
+        "staging_ingestion/expansao_itens_kravarius_cavaleiro_do_dragao_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "begonio_nackle",
+      "slug": "begonio_nackle",
+      "name": "Begônio Nackle",
+      "category": "characters",
+      "aliases": [
+        "begonio",
+        "begonio nackle",
+        "begônio",
+        "begônio nackle",
+        "mestre arcanista"
+      ],
+      "description": "Mestre Arcanista e Guardião da Escola de Mana no Refúgio YKT",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Manto de Kravarius.odt",
+        "YKT _ Begônio, o Mestre Arcanista.pdf",
+        "calendario.md",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/amethysta.md",
+        "obsidian_vault/characters/begonio_nackle.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/cosmology/yorman.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/escola_de_mana.md",
+        "obsidian_vault/locations/ramos_residenciais.md",
+        "openviking_storage/characters/amethysta/content.md",
+        "openviking_storage/characters/begonio_nackle/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/cosmology/yorman/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/escola_de_mana/content.md",
+        "openviking_storage/locations/ramos_residenciais/content.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Manto de Kravarius_odt.txt",
+        "staging_ingestion/YKT _ Begônio, o Mestre Arcanista_pdf.txt",
+        "staging_ingestion/calendario_md.txt"
+      ]
+    },
+    {
+      "entity_id": "brigada_adamantina",
+      "slug": "brigada_adamantina",
+      "name": "Brigada Adamantina",
+      "category": "factions",
+      "aliases": [
+        "brigada adamantina"
+      ],
+      "description": "Tropa Militar de Elite Drakoviana (abandonada por Ayşa)",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "camara_de_sintese",
+      "slug": "camara_de_sintese",
+      "name": "Câmara de Síntese",
+      "category": "locations",
+      "aliases": [
+        "camara de sintese",
+        "câmara de síntese",
+        "mesa de síntese"
+      ],
+      "description": "Mesa de Síntese e Alquimia Operada por Síntese",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/lylia_centelha_de_sofia.md",
+        "obsidian_vault/locations/camara_de_sintese.md",
+        "openviking_storage/characters/lylia_centelha_de_sofia/content.md",
+        "openviking_storage/locations/camara_de_sintese/content.md"
+      ]
+    },
+    {
+      "entity_id": "copa_e_biblioteca",
+      "slug": "copa_e_biblioteca",
+      "name": "Copa e Biblioteca",
+      "category": "locations",
+      "aliases": [
+        "biblioteca do refúgio",
+        "copa da arvore",
+        "copa da árvore",
+        "copa e biblioteca",
+        "observatório do refúgio"
+      ],
+      "description": "Observatório e Biblioteca na Copa da Árvore do Refúgio",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/locations/copa_e_biblioteca.md",
+        "openviking_storage/locations/copa_e_biblioteca/content.md"
+      ]
+    },
+    {
+      "entity_id": "crosta_de_kravarius",
+      "slug": "crosta_de_kravarius",
+      "name": "Crosta de Kravarius",
+      "category": "mechanics",
+      "aliases": [
+        "crosta de kravarius"
+      ],
+      "description": "Armadura Relíquia de Proteção Ígnea de Kravarius",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "Manto de Kravarius.odt",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "expansao_itens_kravarius_cavaleiro_do_dragao.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/mechanics/crosta_de_kravarius.md",
+        "openviking_storage/mechanics/crosta_de_kravarius/content.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/Manto de Kravarius_odt.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt",
+        "staging_ingestion/expansao_itens_kravarius_cavaleiro_do_dragao_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "douglas",
+      "slug": "douglas",
+      "name": "Douglas",
+      "category": "characters",
+      "aliases": [
+        "douglas",
+        "douglas o violeiro",
+        "douglas, o violeiro",
+        "o violeiro"
+      ],
+      "description": "Violeiro e Diplomata do Ramo de Douglas",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Manto de Kravarius.odt",
+        "YKT _ Douglas, o Violeiro.pdf",
+        "calendario.md",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/amethysta.md",
+        "obsidian_vault/characters/douglas.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/heartwood.md",
+        "obsidian_vault/locations/ramo_de_douglas.md",
+        "obsidian_vault/locations/ramos_residenciais.md",
+        "obsidian_vault/mechanics/tambor_do_polirritmo.md",
+        "openviking_storage/characters/amethysta/content.md",
+        "openviking_storage/characters/douglas/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/heartwood/content.md",
+        "openviking_storage/locations/ramo_de_douglas/content.md",
+        "openviking_storage/locations/ramos_residenciais/content.md",
+        "openviking_storage/mechanics/tambor_do_polirritmo/content.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Manto de Kravarius_odt.txt",
+        "staging_ingestion/YKT _ Douglas, o Violeiro_pdf.txt",
+        "staging_ingestion/calendario_md.txt"
+      ]
+    },
+    {
+      "entity_id": "drakovia",
+      "slug": "drakovia",
+      "name": "Drakovia",
+      "category": "locations",
+      "aliases": [
+        "drakovia",
+        "drakoviano",
+        "drakovianos",
+        "império drakoviano"
+      ],
+      "description": "Império Militarista Drakoviano",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "Manto de Kravarius.odt",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/akuanduba.md",
+        "obsidian_vault/characters/aysha_oztoprak.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "openviking_storage/characters/akuanduba/content.md",
+        "openviking_storage/characters/aysha_oztoprak/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/Manto de Kravarius_odt.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "druidar",
+      "slug": "druidar",
+      "name": "Druidar",
+      "category": "factions",
+      "aliases": [
+        "conselho dos druidas",
+        "druidar"
+      ],
+      "description": "Conselho dos Druidas Guardiões de Gaya",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt"
+      ]
+    },
+    {
+      "entity_id": "dulhast",
+      "slug": "dulhast",
+      "name": "Dulhast",
+      "category": "locations",
+      "aliases": [
+        "bastião de dulhast",
+        "dulhast"
+      ],
+      "description": "Bastião e Fortaleza de Dulhast",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "eloise_nihilo",
+      "slug": "eloise_nihilo",
+      "name": "Eloise Nihilo",
+      "category": "characters",
+      "aliases": [
+        "eloise",
+        "eloise nihilo"
+      ],
+      "description": "Mística do Vazio",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "YKT _ Eloise Nihilo, a Leal.pdf",
+        "calendario.md",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/pumma_nix.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "openviking_storage/characters/pumma_nix/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/YKT _ Eloise Nihilo, a Leal_pdf.txt",
+        "staging_ingestion/calendario_md.txt"
+      ]
+    },
+    {
+      "entity_id": "equipe_ykt",
+      "slug": "equipe_ykt",
+      "name": "Equipe YKT",
+      "category": "factions",
+      "aliases": [
+        "equipe ykt",
+        "time ykt",
+        "ykt"
+      ],
+      "description": "Equipe de Heróis e Residentes do Refúgio YKT",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "Manto de Kravarius.odt",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "YKT _ Douglas, o Violeiro.pdf",
+        "YKT _ Eloise Nihilo, a Leal.pdf",
+        "YKT _ Lylia_Nivel_6.pdf",
+        "YKT _ Lylia_Nivel_7.pdf",
+        "YKT _ Pumma Nix, A Leal.pdf",
+        "calendario.md",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/akuanduba.md",
+        "obsidian_vault/characters/amethysta.md",
+        "obsidian_vault/characters/aysha_oztoprak.md",
+        "obsidian_vault/characters/begonio_nackle.md",
+        "obsidian_vault/characters/douglas.md",
+        "obsidian_vault/characters/lylia_centelha_de_sofia.md",
+        "obsidian_vault/characters/niara.md",
+        "obsidian_vault/characters/proisb.md",
+        "obsidian_vault/characters/pumma_nix.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/cosmology/khan.md",
+        "obsidian_vault/cosmology/roukash_tashtael.md",
+        "obsidian_vault/cosmology/yorman.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/camara_de_sintese.md",
+        "obsidian_vault/locations/copa_e_biblioteca.md",
+        "obsidian_vault/locations/escola_de_mana.md",
+        "obsidian_vault/locations/heartwood.md",
+        "obsidian_vault/locations/raizes_sagradas.md",
+        "obsidian_vault/locations/ramo_de_douglas.md",
+        "obsidian_vault/locations/ramos_residenciais.md",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "obsidian_vault/locations/templo_suspenso.md",
+        "obsidian_vault/locations/terraco_de_chegada.md",
+        "obsidian_vault/locations/terraco_de_combate.md",
+        "obsidian_vault/mechanics/sintese.md",
+        "openviking_storage/characters/akuanduba/content.md",
+        "openviking_storage/characters/amethysta/content.md",
+        "openviking_storage/characters/aysha_oztoprak/content.md",
+        "openviking_storage/characters/begonio_nackle/content.md",
+        "openviking_storage/characters/douglas/content.md",
+        "openviking_storage/characters/lylia_centelha_de_sofia/content.md",
+        "openviking_storage/characters/niara/content.md",
+        "openviking_storage/characters/proisb/content.md",
+        "openviking_storage/characters/pumma_nix/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/cosmology/khan/content.md",
+        "openviking_storage/cosmology/roukash_tashtael/content.md",
+        "openviking_storage/cosmology/yorman/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/camara_de_sintese/content.md",
+        "openviking_storage/locations/copa_e_biblioteca/content.md",
+        "openviking_storage/locations/escola_de_mana/content.md",
+        "openviking_storage/locations/heartwood/content.md",
+        "openviking_storage/locations/raizes_sagradas/content.md",
+        "openviking_storage/locations/ramo_de_douglas/content.md",
+        "openviking_storage/locations/ramos_residenciais/content.md",
+        "openviking_storage/locations/refugio_ykt/content.md",
+        "openviking_storage/locations/templo_suspenso/content.md",
+        "openviking_storage/locations/terraco_de_chegada/content.md",
+        "openviking_storage/locations/terraco_de_combate/content.md",
+        "openviking_storage/mechanics/sintese/content.md",
+        "sobre a aventura.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/Manto de Kravarius_odt.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt",
+        "staging_ingestion/YKT _ Douglas, o Violeiro_pdf.txt",
+        "staging_ingestion/YKT _ Eloise Nihilo, a Leal_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_6_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_7_pdf.txt",
+        "staging_ingestion/YKT _ Pumma Nix, A Leal_pdf.txt",
+        "staging_ingestion/calendario_md.txt",
+        "staging_ingestion/sobre a aventura_md.txt"
+      ]
+    },
+    {
+      "entity_id": "escola_de_mana",
+      "slug": "escola_de_mana",
+      "name": "Escola de Mana",
+      "category": "locations",
+      "aliases": [
+        "escola de mana",
+        "sala de aula de begônio",
+        "sala de begonio"
+      ],
+      "description": "Sala de Aula e Treinamento Arcano de Begônio no Refúgio YKT",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/amethysta.md",
+        "obsidian_vault/characters/begonio_nackle.md",
+        "obsidian_vault/locations/escola_de_mana.md",
+        "openviking_storage/characters/amethysta/content.md",
+        "openviking_storage/characters/begonio_nackle/content.md",
+        "openviking_storage/locations/escola_de_mana/content.md"
+      ]
+    },
+    {
+      "entity_id": "faemathar",
+      "slug": "faemathar",
+      "name": "Faemathar",
+      "category": "locations",
+      "aliases": [
+        "faemathar"
+      ],
+      "description": "Reino Feérico Oculto",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt"
+      ]
+    },
+    {
+      "entity_id": "floresta_negra",
+      "slug": "floresta_negra",
+      "name": "Floresta Negra",
+      "category": "locations",
+      "aliases": [
+        "floresta negra"
+      ],
+      "description": "Região florestal densa e sagrada sob proteção druídica",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "YKT _ Lylia_Nivel_6.pdf",
+        "YKT _ Lylia_Nivel_7.pdf",
+        "docs/PLANO_CORRECAO_GAYA_PARA_GEMINI.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_6_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_7_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "gaia",
+      "slug": "gaia",
+      "name": "Gaia",
+      "category": "cosmology",
+      "aliases": [
+        "gaia",
+        "mãe dos druidas",
+        "primeira druida"
+      ],
+      "description": "Primeira Druida e Mãe dos Druidas (distinta do planeta Gaya)",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "docs/PLANO_CORRECAO_GAYA_PARA_GEMINI.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "galahad",
+      "slug": "galahad",
+      "name": "Galahad",
+      "category": "locations",
+      "aliases": [
+        "galahad",
+        "reino de galahad"
+      ],
+      "description": "Reino Tradicional de Galahad",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "Gorr.pdf",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/Gorr_pdf.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt"
+      ]
+    },
+    {
+      "entity_id": "garra_de_kravut",
+      "slug": "garra_de_kravut",
+      "name": "Garra de Kravut",
+      "category": "mechanics",
+      "aliases": [
+        "garra de kravut"
+      ],
+      "description": "Arma de Dano Cortante e Perfuração Ancestral",
+      "source_references": [
+        "YKT _ Niara.xlsx.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/mechanics/garra_de_kravut.md",
+        "openviking_storage/mechanics/garra_de_kravut/content.md",
+        "staging_ingestion/YKT _ Niara.xlsx_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "gaya",
+      "slug": "gaya",
+      "name": "Gaya",
+      "category": "cosmology",
+      "aliases": [
+        "gaya",
+        "mundo gaya",
+        "planeta gaya"
+      ],
+      "description": "Planeta e Mundo Canônico de Gaya (distinto de Gaia a Druida)",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "YKT _ Lylia_Nivel_6.pdf",
+        "YKT _ Lylia_Nivel_7.pdf",
+        "YKT _ Niara.xlsx.pdf",
+        "docs/PLANO_CORRECAO_GAYA_PARA_GEMINI.md",
+        "expansao_itens_kravarius_cavaleiro_do_dragao.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/akuanduba.md",
+        "obsidian_vault/characters/amethysta.md",
+        "obsidian_vault/characters/aysha_oztoprak.md",
+        "obsidian_vault/characters/begonio_nackle.md",
+        "obsidian_vault/characters/douglas.md",
+        "obsidian_vault/characters/lylia_centelha_de_sofia.md",
+        "obsidian_vault/characters/niara.md",
+        "obsidian_vault/characters/proisb.md",
+        "obsidian_vault/characters/pumma_nix.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/cosmology/khan.md",
+        "obsidian_vault/cosmology/roukash_tashtael.md",
+        "obsidian_vault/cosmology/yorman.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/camara_de_sintese.md",
+        "obsidian_vault/locations/copa_e_biblioteca.md",
+        "obsidian_vault/locations/escola_de_mana.md",
+        "obsidian_vault/locations/heartwood.md",
+        "obsidian_vault/locations/raizes_sagradas.md",
+        "obsidian_vault/locations/ramo_de_douglas.md",
+        "obsidian_vault/locations/ramos_residenciais.md",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "obsidian_vault/locations/templo_suspenso.md",
+        "obsidian_vault/locations/terraco_de_chegada.md",
+        "obsidian_vault/locations/terraco_de_combate.md",
+        "obsidian_vault/mechanics/crosta_de_kravarius.md",
+        "obsidian_vault/mechanics/garra_de_kravut.md",
+        "obsidian_vault/mechanics/manto_de_kravarius.md",
+        "obsidian_vault/mechanics/nyr_e_zhar.md",
+        "obsidian_vault/mechanics/sintese.md",
+        "obsidian_vault/mechanics/tambor_do_polirritmo.md",
+        "openviking_storage/characters/akuanduba/content.md",
+        "openviking_storage/characters/amethysta/content.md",
+        "openviking_storage/characters/aysha_oztoprak/content.md",
+        "openviking_storage/characters/begonio_nackle/content.md",
+        "openviking_storage/characters/douglas/content.md",
+        "openviking_storage/characters/lylia_centelha_de_sofia/content.md",
+        "openviking_storage/characters/niara/content.md",
+        "openviking_storage/characters/proisb/content.md",
+        "openviking_storage/characters/pumma_nix/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/cosmology/khan/content.md",
+        "openviking_storage/cosmology/roukash_tashtael/content.md",
+        "openviking_storage/cosmology/yorman/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/camara_de_sintese/content.md",
+        "openviking_storage/locations/copa_e_biblioteca/content.md",
+        "openviking_storage/locations/escola_de_mana/content.md",
+        "openviking_storage/locations/heartwood/content.md",
+        "openviking_storage/locations/raizes_sagradas/content.md",
+        "openviking_storage/locations/ramo_de_douglas/content.md",
+        "openviking_storage/locations/ramos_residenciais/content.md",
+        "openviking_storage/locations/refugio_ykt/content.md",
+        "openviking_storage/locations/templo_suspenso/content.md",
+        "openviking_storage/locations/terraco_de_chegada/content.md",
+        "openviking_storage/locations/terraco_de_combate/content.md",
+        "openviking_storage/mechanics/crosta_de_kravarius/content.md",
+        "openviking_storage/mechanics/garra_de_kravut/content.md",
+        "openviking_storage/mechanics/manto_de_kravarius/content.md",
+        "openviking_storage/mechanics/nyr_e_zhar/content.md",
+        "openviking_storage/mechanics/sintese/content.md",
+        "openviking_storage/mechanics/tambor_do_polirritmo/content.md",
+        "relatorio_requisitos_gaya.html.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_6_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_7_pdf.txt",
+        "staging_ingestion/YKT _ Niara.xlsx_pdf.txt",
+        "staging_ingestion/expansao_itens_kravarius_cavaleiro_do_dragao_pdf.txt",
+        "staging_ingestion/relatorio_requisitos_gaya.html_txt.txt",
+        "staging_ingestion/relatorio_requisitos_pipeline_gaya_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "gorr",
+      "slug": "gorr",
+      "name": "Gorr",
+      "category": "characters",
+      "aliases": [
+        "gorr",
+        "kar'mah"
+      ],
+      "description": "Kar'mah de Combate",
+      "source_references": [
+        "Gorr.pdf",
+        "staging_ingestion/Gorr_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "grande_arvore",
+      "slug": "grande_arvore",
+      "name": "Grande Árvore",
+      "category": "locations",
+      "aliases": [
+        "grande arvore",
+        "grande árvore"
+      ],
+      "description": "Árvore ancestral central de Gaya",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "Lualho Nham.pdf",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "YKT _ Lylia_Nivel_6.pdf",
+        "YKT _ Lylia_Nivel_7.pdf",
+        "gaya_knowledge_db.json",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Lualho Nham_pdf.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_6_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_7_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "heartwood",
+      "slug": "heartwood",
+      "name": "Heartwood",
+      "category": "locations",
+      "aliases": [
+        "heartwood",
+        "salao central",
+        "salão central"
+      ],
+      "description": "Salão Central e Coração da Árvore do Refúgio YKT",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/amethysta.md",
+        "obsidian_vault/characters/lylia_centelha_de_sofia.md",
+        "obsidian_vault/characters/proisb.md",
+        "obsidian_vault/locations/heartwood.md",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "obsidian_vault/locations/terraco_de_chegada.md",
+        "openviking_storage/characters/amethysta/content.md",
+        "openviking_storage/characters/lylia_centelha_de_sofia/content.md",
+        "openviking_storage/characters/proisb/content.md",
+        "openviking_storage/locations/heartwood/content.md",
+        "openviking_storage/locations/refugio_ykt/content.md",
+        "openviking_storage/locations/terraco_de_chegada/content.md"
+      ]
+    },
+    {
+      "entity_id": "irina",
+      "slug": "irina",
+      "name": "Irina",
+      "category": "characters",
+      "aliases": [
+        "irina",
+        "irina aasimar"
+      ],
+      "description": "Aasimar de Luz e Conjuradora",
+      "source_references": [
+        "YKT _ Irina.pdf",
+        "staging_ingestion/YKT _ Irina_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "khan",
+      "slug": "khan",
+      "name": "Khan",
+      "category": "cosmology",
+      "aliases": [
+        "khan",
+        "knaerethum"
+      ],
+      "description": "Titã do Panteão Primordial (Knaerethum)",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "Manto de Kravarius.odt",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "YKT _ Begônio, o Mestre Arcanista.pdf",
+        "YKT _ Charlotte.pdf",
+        "YKT _ Douglas, o Violeiro.pdf",
+        "YKT _ Lylia_Nivel_6.pdf",
+        "YKT _ Lylia_Nivel_7.pdf",
+        "YKT _ Niara.xlsx.pdf",
+        "YKT _ Viridia.pdf",
+        "calendario.md",
+        "expansao_itens_kravarius_cavaleiro_do_dragao.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/aysha_oztoprak.md",
+        "obsidian_vault/characters/begonio_nackle.md",
+        "obsidian_vault/characters/lylia_centelha_de_sofia.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/cosmology/khan.md",
+        "obsidian_vault/cosmology/yorman.md",
+        "obsidian_vault/locations/camara_de_sintese.md",
+        "obsidian_vault/locations/escola_de_mana.md",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "obsidian_vault/mechanics/nyr_e_zhar.md",
+        "obsidian_vault/mechanics/sintese.md",
+        "openviking_storage/characters/aysha_oztoprak/content.md",
+        "openviking_storage/characters/begonio_nackle/content.md",
+        "openviking_storage/characters/lylia_centelha_de_sofia/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/cosmology/khan/content.md",
+        "openviking_storage/cosmology/yorman/content.md",
+        "openviking_storage/locations/camara_de_sintese/content.md",
+        "openviking_storage/locations/escola_de_mana/content.md",
+        "openviking_storage/locations/refugio_ykt/content.md",
+        "openviking_storage/mechanics/nyr_e_zhar/content.md",
+        "openviking_storage/mechanics/sintese/content.md",
+        "sobre a aventura.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/Manto de Kravarius_odt.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt",
+        "staging_ingestion/YKT _ Begônio, o Mestre Arcanista_pdf.txt",
+        "staging_ingestion/YKT _ Charlotte_pdf.txt",
+        "staging_ingestion/YKT _ Douglas, o Violeiro_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_6_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_7_pdf.txt",
+        "staging_ingestion/YKT _ Niara.xlsx_pdf.txt",
+        "staging_ingestion/YKT _ Viridia_pdf.txt",
+        "staging_ingestion/calendario_md.txt",
+        "staging_ingestion/expansao_itens_kravarius_cavaleiro_do_dragao_pdf.txt",
+        "staging_ingestion/sobre a aventura_md.txt"
+      ]
+    },
+    {
+      "entity_id": "lualho_nham",
+      "slug": "lualho_nham",
+      "name": "Lualho Nham",
+      "category": "characters",
+      "aliases": [
+        "lualho",
+        "lualho nham"
+      ],
+      "description": "Guerreiro de Fronteira",
+      "source_references": [
+        "Lualho Nham.pdf",
+        "staging_ingestion/Lualho Nham_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "lylia_centelha_de_sofia",
+      "slug": "lylia_centelha_de_sofia",
+      "name": "Lylia",
+      "category": "characters",
+      "aliases": [
+        "centelha de sofia",
+        "lylia",
+        "lylia centelha de sofia",
+        "lylia, a centelha de sofia"
+      ],
+      "description": "Druida de Gaya e Pastora da Alma Divina de Sofia",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "YKT _ Lylia.pdf",
+        "YKT _ Lylia_Nivel_6.pdf",
+        "YKT _ Lylia_Nivel_7.pdf",
+        "docs/PLANO_CORRECAO_GAYA_PARA_GEMINI.md",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/lylia_centelha_de_sofia.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/camara_de_sintese.md",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "obsidian_vault/mechanics/sintese.md",
+        "openviking_storage/characters/lylia_centelha_de_sofia/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/camara_de_sintese/content.md",
+        "openviking_storage/locations/refugio_ykt/content.md",
+        "openviking_storage/mechanics/sintese/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_6_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_7_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "manto_de_kravarius",
+      "slug": "manto_de_kravarius",
+      "name": "Manto de Kravarius",
+      "category": "mechanics",
+      "aliases": [
+        "manto de kravarius"
+      ],
+      "description": "Manto Relíquia de Invisibilidade e Defesa Arcana",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "expansao_itens_kravarius_cavaleiro_do_dragao.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/mechanics/manto_de_kravarius.md",
+        "openviking_storage/mechanics/manto_de_kravarius/content.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/expansao_itens_kravarius_cavaleiro_do_dragao_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "midgard",
+      "slug": "midgard",
+      "name": "Midgard",
+      "category": "cosmology",
+      "aliases": [
+        "midgard",
+        "midgraciil"
+      ],
+      "description": "Reino Primordial de Midgraciil",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt"
+      ]
+    },
+    {
+      "entity_id": "niara",
+      "slug": "niara",
+      "name": "Niara",
+      "category": "characters",
+      "aliases": [
+        "niara",
+        "niara echo knight"
+      ],
+      "description": "Echo Knight e Guardiã do Refúgio YKT",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Manto de Kravarius.odt",
+        "YKT _ Niara.xlsx.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/niara.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/ramos_residenciais.md",
+        "obsidian_vault/locations/terraco_de_combate.md",
+        "obsidian_vault/mechanics/garra_de_kravut.md",
+        "openviking_storage/characters/niara/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/ramos_residenciais/content.md",
+        "openviking_storage/locations/terraco_de_combate/content.md",
+        "openviking_storage/mechanics/garra_de_kravut/content.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Manto de Kravarius_odt.txt",
+        "staging_ingestion/YKT _ Niara.xlsx_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "niligard",
+      "slug": "niligard",
+      "name": "Niligard",
+      "category": "locations",
+      "aliases": [
+        "niligard",
+        "niligardia",
+        "república de niligard"
+      ],
+      "description": "República Comercial de Niligard",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "calendario.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt",
+        "staging_ingestion/calendario_md.txt"
+      ]
+    },
+    {
+      "entity_id": "nyr_e_zhar",
+      "slug": "nyr_e_zhar",
+      "name": "Nyr e Zhar",
+      "category": "mechanics",
+      "aliases": [
+        "espadas nyr e zhar",
+        "lâminas gêmeas",
+        "nyr e zhar"
+      ],
+      "description": "Lâminas Gêmeas Relíquias (não empunhadas por Lylia)",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "expansao_itens_kravarius_cavaleiro_do_dragao.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/mechanics/nyr_e_zhar.md",
+        "openviking_storage/mechanics/nyr_e_zhar/content.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/expansao_itens_kravarius_cavaleiro_do_dragao_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "proisb",
+      "slug": "proisb",
+      "name": "Proisb",
+      "category": "characters",
+      "aliases": [
+        "o carniçal",
+        "proisb",
+        "proisb o carniçal",
+        "proisb, o carniçal"
+      ],
+      "description": "Carniçal Guardião e Aliado da YKT",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "YKT _ Proisb , o Carniçal.pdf",
+        "calendario.md",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/proisb.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/cosmology/roukash_tashtael.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/raizes_sagradas.md",
+        "obsidian_vault/locations/ramos_residenciais.md",
+        "obsidian_vault/locations/templo_suspenso.md",
+        "openviking_storage/characters/proisb/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/cosmology/roukash_tashtael/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/raizes_sagradas/content.md",
+        "openviking_storage/locations/ramos_residenciais/content.md",
+        "openviking_storage/locations/templo_suspenso/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/YKT _ Proisb , o Carniçal_pdf.txt",
+        "staging_ingestion/calendario_md.txt"
+      ]
+    },
+    {
+      "entity_id": "pumma_nix",
+      "slug": "pumma_nix",
+      "name": "Pumma Nix",
+      "category": "characters",
+      "aliases": [
+        "pumma",
+        "pumma nix",
+        "pumma nix, a leal"
+      ],
+      "description": "Guerreira Leal e Aliada da YKT",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Manto de Kravarius.odt",
+        "YKT _ Eloise Nihilo, a Leal.pdf",
+        "YKT _ Pumma Nix, A Leal.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/pumma_nix.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/ramos_residenciais.md",
+        "obsidian_vault/locations/terraco_de_combate.md",
+        "openviking_storage/characters/pumma_nix/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/ramos_residenciais/content.md",
+        "openviking_storage/locations/terraco_de_combate/content.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Manto de Kravarius_odt.txt",
+        "staging_ingestion/YKT _ Eloise Nihilo, a Leal_pdf.txt",
+        "staging_ingestion/YKT _ Pumma Nix, A Leal_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "raizes_artesanais",
+      "slug": "raizes_artesanais",
+      "name": "Raízes Artesanais",
+      "category": "locations",
+      "aliases": [
+        "forja de pedra",
+        "raizes artesanais",
+        "raízes artesanais"
+      ],
+      "description": "Forja de Pedra e Oficina nas Raízes do Refúgio",
+      "source_references": []
+    },
+    {
+      "entity_id": "raizes_sagradas",
+      "slug": "raizes_sagradas",
+      "name": "Raízes Sagradas",
+      "category": "locations",
+      "aliases": [
+        "capela de roukash",
+        "raizes sagradas",
+        "raízes sagradas",
+        "santuário da efígie"
+      ],
+      "description": "Capela de Roukash e Santuário nas Raízes do Refúgio",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/proisb.md",
+        "obsidian_vault/locations/raizes_sagradas.md",
+        "openviking_storage/characters/proisb/content.md",
+        "openviking_storage/locations/raizes_sagradas/content.md"
+      ]
+    },
+    {
+      "entity_id": "ramo_de_douglas",
+      "slug": "ramo_de_douglas",
+      "name": "Ramo de Douglas",
+      "category": "locations",
+      "aliases": [
+        "ramo de douglas",
+        "sala de musica",
+        "sala de música",
+        "salao de cortesia",
+        "salão de cortesia"
+      ],
+      "description": "Salão de Música e Cortesia de Douglas no Refúgio YKT",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/douglas.md",
+        "obsidian_vault/locations/ramo_de_douglas.md",
+        "openviking_storage/characters/douglas/content.md",
+        "openviking_storage/locations/ramo_de_douglas/content.md"
+      ]
+    },
+    {
+      "entity_id": "ramos_residenciais",
+      "slug": "ramos_residenciais",
+      "name": "Ramos Residenciais",
+      "category": "locations",
+      "aliases": [
+        "quartos do refúgio",
+        "ramos residenciais"
+      ],
+      "description": "Acomodações e Dormitórios da Equipe YKT",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/locations/ramos_residenciais.md",
+        "openviking_storage/locations/ramos_residenciais/content.md"
+      ]
+    },
+    {
+      "entity_id": "refugio_ykt",
+      "slug": "refugio_ykt",
+      "name": "Refúgio YKT",
+      "category": "locations",
+      "aliases": [
+        "arvore sob o templo",
+        "refugio ykt",
+        "refúgio ykt",
+        "árvore sob o templo",
+        "árvore-mundo da ykt"
+      ],
+      "description": "Base de Operações e Árvore sob o Templo da Equipe YKT",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/aysha_oztoprak.md",
+        "obsidian_vault/locations/heartwood.md",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "openviking_storage/characters/aysha_oztoprak/content.md",
+        "openviking_storage/locations/heartwood/content.md",
+        "openviking_storage/locations/refugio_ykt/content.md"
+      ]
+    },
+    {
+      "entity_id": "roukash_tashtael",
+      "slug": "roukash_tashtael",
+      "name": "Roukash Tashtael",
+      "category": "cosmology",
+      "aliases": [
+        "roukash",
+        "roukash tashtael",
+        "terceiro primordial",
+        "titã do abismo"
+      ],
+      "description": "Terceiro Primordial e Titã do Abismo",
+      "source_references": [
+        "YKT _ Proisb , o Carniçal.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/proisb.md",
+        "obsidian_vault/cosmology/roukash_tashtael.md",
+        "obsidian_vault/locations/raizes_sagradas.md",
+        "obsidian_vault/locations/templo_suspenso.md",
+        "openviking_storage/characters/proisb/content.md",
+        "openviking_storage/cosmology/roukash_tashtael/content.md",
+        "openviking_storage/locations/raizes_sagradas/content.md",
+        "openviking_storage/locations/templo_suspenso/content.md",
+        "staging_ingestion/YKT _ Proisb , o Carniçal_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "savana_negra",
+      "slug": "savana_negra",
+      "name": "Savana Negra",
+      "category": "locations",
+      "aliases": [
+        "savana negra"
+      ],
+      "description": "Região árida e perigosa ao sul de Gaya",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "docs/PLANO_CORRECAO_GAYA_PARA_GEMINI.md",
+        "gaya_knowledge_db.json",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "sintese",
+      "slug": "sintese",
+      "name": "Síntese",
+      "category": "characters",
+      "aliases": [
+        "sintese",
+        "síntese",
+        "yaark nustraad síntese",
+        "yaark síntese"
+      ],
+      "description": "Mestre Artífice de Yaark Nustraad e Criador da Câmara de Síntese",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "calendario.md",
+        "docs/PLANO_CORRECAO_GAYA_PARA_GEMINI.md",
+        "expansao_itens_kravarius_cavaleiro_do_dragao.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/aysha_oztoprak.md",
+        "obsidian_vault/characters/lylia_centelha_de_sofia.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/cosmology/khan.md",
+        "obsidian_vault/cosmology/yorman.md",
+        "obsidian_vault/locations/camara_de_sintese.md",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "obsidian_vault/mechanics/nyr_e_zhar.md",
+        "obsidian_vault/mechanics/sintese.md",
+        "openviking_storage/characters/aysha_oztoprak/content.md",
+        "openviking_storage/characters/lylia_centelha_de_sofia/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/cosmology/khan/content.md",
+        "openviking_storage/cosmology/yorman/content.md",
+        "openviking_storage/locations/camara_de_sintese/content.md",
+        "openviking_storage/locations/refugio_ykt/content.md",
+        "openviking_storage/mechanics/nyr_e_zhar/content.md",
+        "openviking_storage/mechanics/sintese/content.md",
+        "relatorio_requisitos_gaya.html.txt",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt",
+        "staging_ingestion/calendario_md.txt",
+        "staging_ingestion/expansao_itens_kravarius_cavaleiro_do_dragao_pdf.txt",
+        "staging_ingestion/relatorio_requisitos_gaya.html_txt.txt",
+        "staging_ingestion/relatorio_requisitos_pipeline_gaya_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "sofia",
+      "slug": "sofia",
+      "name": "Sofia",
+      "category": "characters",
+      "aliases": [
+        "sofia"
+      ],
+      "description": "Alma Divina e Filha Mística sob a tutela de Lylia",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "YKT _ Lylia.pdf",
+        "YKT _ Lylia_Nivel_6.pdf",
+        "YKT _ Lylia_Nivel_7.pdf",
+        "docs/PLANO_CORRECAO_GAYA_PARA_GEMINI.md",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/lylia_centelha_de_sofia.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/factions/equipe_ykt.md",
+        "obsidian_vault/locations/camara_de_sintese.md",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "obsidian_vault/mechanics/sintese.md",
+        "openviking_storage/characters/lylia_centelha_de_sofia/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/factions/equipe_ykt/content.md",
+        "openviking_storage/locations/camara_de_sintese/content.md",
+        "openviking_storage/locations/refugio_ykt/content.md",
+        "openviking_storage/mechanics/sintese/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_6_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_7_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "tambor_do_polirritmo",
+      "slug": "tambor_do_polirritmo",
+      "name": "Tambor do Polirritmo",
+      "category": "mechanics",
+      "aliases": [
+        "tambor do polirritmo"
+      ],
+      "description": "Instrumento Mágico de Ressonância Temporal",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/mechanics/tambor_do_polirritmo.md",
+        "openviking_storage/mechanics/tambor_do_polirritmo/content.md"
+      ]
+    },
+    {
+      "entity_id": "templo_suspenso",
+      "slug": "templo_suspenso",
+      "name": "Templo Suspenso",
+      "category": "locations",
+      "aliases": [
+        "colosso do templo",
+        "colosso sentado",
+        "templo flutuante",
+        "templo suspenso"
+      ],
+      "description": "Colosso Flutuante e Templo sobre o Refúgio",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "obsidian_vault/locations/templo_suspenso.md",
+        "openviking_storage/locations/refugio_ykt/content.md",
+        "openviking_storage/locations/templo_suspenso/content.md"
+      ]
+    },
+    {
+      "entity_id": "terraco_de_chegada",
+      "slug": "terraco_de_chegada",
+      "name": "Terraço de Chegada",
+      "category": "locations",
+      "aliases": [
+        "plataforma de içamento",
+        "terraco de chegada",
+        "terraço de chegada"
+      ],
+      "description": "Plataforma de Içamento e Entrada do Refúgio",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/locations/terraco_de_chegada.md",
+        "openviking_storage/locations/terraco_de_chegada/content.md"
+      ]
+    },
+    {
+      "entity_id": "terraco_de_combate",
+      "slug": "terraco_de_combate",
+      "name": "Terraço de Combate",
+      "category": "locations",
+      "aliases": [
+        "patio de treinamento",
+        "pátio de treinamento",
+        "terraco de combate",
+        "terraço de combate"
+      ],
+      "description": "Pátio de Treinamento de Combate no Refúgio YKT",
+      "source_references": [
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/niara.md",
+        "obsidian_vault/characters/pumma_nix.md",
+        "obsidian_vault/locations/terraco_de_combate.md",
+        "openviking_storage/characters/niara/content.md",
+        "openviking_storage/characters/pumma_nix/content.md",
+        "openviking_storage/locations/terraco_de_combate/content.md"
+      ]
+    },
+    {
+      "entity_id": "urso_primal",
+      "slug": "urso_primal",
+      "name": "Urso Primal",
+      "category": "characters",
+      "aliases": [
+        "urso primal"
+      ],
+      "description": "Entidade totemica da floresta sagrada",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "YKT _ Lylia_Nivel_6.pdf",
+        "YKT _ Lylia_Nivel_7.pdf",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_6_pdf.txt",
+        "staging_ingestion/YKT _ Lylia_Nivel_7_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "yaark_nuustrad",
+      "slug": "yaark_nuustrad",
+      "name": "Yaark Nuustrad",
+      "category": "cosmology",
+      "aliases": [
+        "a questão",
+        "yaark nuustrad"
+      ],
+      "description": "A Questão Fundamental e Filosofia dos Yaarks",
+      "source_references": [
+        "YKT _ Begônio, o Mestre Arcanista.pdf",
+        "gaya_knowledge_db.json",
+        "staging_ingestion/YKT _ Begônio, o Mestre Arcanista_pdf.txt"
+      ]
+    },
+    {
+      "entity_id": "yggdrasil",
+      "slug": "yggdrasil",
+      "name": "Yggdrasil",
+      "category": "cosmology",
+      "aliases": [
+        "yggdrasil"
+      ],
+      "description": "Árvore da Vida Cósmica",
+      "source_references": [
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt"
+      ]
+    },
+    {
+      "entity_id": "yorman",
+      "slug": "yorman",
+      "name": "Yorman",
+      "category": "cosmology",
+      "aliases": [
+        "eorarmethum",
+        "yorman"
+      ],
+      "description": "Titã do Panteão Primordial (Eorarmethum)",
+      "source_references": [
+        "Expansao_Itens_Kravarius_Atualizada.pdf",
+        "Expansao_Itens_Kravarius_Atualizada_compressed.pdf",
+        "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+        "Gaya_Lore_Codex_Atualizado.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese.md",
+        "Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado.md",
+        "Manto de Kravarius.odt",
+        "O Códice de Gaya História e Cosmogo.docx",
+        "YKT _ Aysha_Amethysta_Ficha_Atualizada.pdf",
+        "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel.pdf",
+        "YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed.pdf",
+        "YKT _ Begônio, o Mestre Arcanista.pdf",
+        "YKT _ Charlotte.pdf",
+        "YKT _ Douglas, o Violeiro.pdf",
+        "YKT _ Eloise Nihilo, a Leal.pdf",
+        "YKT _ Niara.xlsx.pdf",
+        "YKT _ Proisb , o Carniçal.pdf",
+        "YKT _ Pumma Nix, A Leal.pdf",
+        "YKT _ Viridia.pdf",
+        "expansao_itens_kravarius_cavaleiro_do_dragao.pdf",
+        "gaya_knowledge_db.json",
+        "obsidian_vault/characters/aysha_oztoprak.md",
+        "obsidian_vault/characters/begonio_nackle.md",
+        "obsidian_vault/characters/lylia_centelha_de_sofia.md",
+        "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+        "obsidian_vault/cosmology/khan.md",
+        "obsidian_vault/cosmology/yorman.md",
+        "obsidian_vault/locations/camara_de_sintese.md",
+        "obsidian_vault/locations/escola_de_mana.md",
+        "obsidian_vault/locations/refugio_ykt.md",
+        "obsidian_vault/mechanics/nyr_e_zhar.md",
+        "obsidian_vault/mechanics/sintese.md",
+        "openviking_storage/characters/aysha_oztoprak/content.md",
+        "openviking_storage/characters/begonio_nackle/content.md",
+        "openviking_storage/characters/lylia_centelha_de_sofia/content.md",
+        "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+        "openviking_storage/cosmology/khan/content.md",
+        "openviking_storage/cosmology/yorman/content.md",
+        "openviking_storage/locations/camara_de_sintese/content.md",
+        "openviking_storage/locations/escola_de_mana/content.md",
+        "openviking_storage/locations/refugio_ykt/content.md",
+        "openviking_storage/mechanics/nyr_e_zhar/content.md",
+        "openviking_storage/mechanics/sintese/content.md",
+        "staging_ingestion/Expansao_Itens_Kravarius_Atualizada_pdf.txt",
+        "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_Atualizado_md.txt",
+        "staging_ingestion/Gaya_Lore_Codex_Aysha_Amethysta_Sintese_md.txt",
+        "staging_ingestion/Manto de Kravarius_odt.txt",
+        "staging_ingestion/O Códice de Gaya História e Cosmogo_docx.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Atualizada_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Amethysta_Ficha_Editavel_Final_odg.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_compressed_pdf.txt",
+        "staging_ingestion/YKT _ Aysha_Oztoprak_Dragoon_Nivel_7_DnD_5_5_Editavel_pdf.txt",
+        "staging_ingestion/YKT _ Begônio, o Mestre Arcanista_pdf.txt",
+        "staging_ingestion/YKT _ Charlotte_pdf.txt",
+        "staging_ingestion/YKT _ Douglas, o Violeiro_pdf.txt",
+        "staging_ingestion/YKT _ Eloise Nihilo, a Leal_pdf.txt",
+        "staging_ingestion/YKT _ Niara.xlsx_pdf.txt",
+        "staging_ingestion/YKT _ Proisb , o Carniçal_pdf.txt",
+        "staging_ingestion/YKT _ Pumma Nix, A Leal_pdf.txt",
+        "staging_ingestion/YKT _ Viridia_pdf.txt",
+        "staging_ingestion/expansao_itens_kravarius_cavaleiro_do_dragao_pdf.txt"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relation_id": "rel_0003",
+      "source_id": "amethysta",
+      "target_id": "aysha_oztoprak",
+      "relation_type": "filho_de",
+      "source_ref": "openviking_storage/cosmology/gaya_codice_canonico_consolidado/content.md",
+      "source_sha256": "52b657502f4cda73c8a8ab13775d7ceb54d7feea5a827ca2b048f2ac15ee8a15",
+      "review_state": "APPROVED"
+    },
+    {
+      "relation_id": "rel_0004",
+      "source_id": "amethysta",
+      "target_id": "aysha_oztoprak",
+      "relation_type": "filho_de",
+      "source_ref": "obsidian_vault/cosmology/gaya_codice_canonico_consolidado.md",
+      "source_sha256": "c3652528b8fc97605c3dc9e8487cd2f8ce73af03ef436f743a497ac3ff5778a2",
+      "review_state": "APPROVED"
+    },
+    {
+      "relation_id": "rel_0005",
+      "source_id": "amethysta",
+      "target_id": "aysha_oztoprak",
+      "relation_type": "filho_de",
+      "source_ref": "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+      "source_sha256": "c36bcb22e47dc9de485ec8a706e82078856db624c79a75d2d4f624f3900e0bbc",
+      "review_state": "APPROVED"
+    },
+    {
+      "relation_id": "rel_0007",
+      "source_id": "amethysta",
+      "target_id": "aysha_oztoprak",
+      "relation_type": "filho_de",
+      "source_ref": "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+      "source_sha256": "c36bcb22e47dc9de485ec8a706e82078856db624c79a75d2d4f624f3900e0bbc",
+      "review_state": "APPROVED"
+    },
+    {
+      "relation_id": "rel_0001",
+      "source_id": "lylia_centelha_de_sofia",
+      "target_id": "sofia",
+      "relation_type": "mae_de",
+      "source_ref": "docs/PLANO_CORRECAO_GAYA_PARA_GEMINI.md",
+      "source_sha256": "2d8f74bf8e93ae748abac177f5f31da523c72cedfff965e750e6c4aaf102e408",
+      "review_state": "APPROVED"
+    },
+    {
+      "relation_id": "rel_0002",
+      "source_id": "nyr_e_zhar",
+      "target_id": "sintese",
+      "relation_type": "criado_por",
+      "source_ref": "gaya_knowledge_db.json",
+      "source_sha256": "4583aeb7977ad0075f4e28db9613e0efae4b87c01a4322f961b6b1aa7b0e0304",
+      "review_state": "APPROVED"
+    },
+    {
+      "relation_id": "rel_0006",
+      "source_id": "nyr_e_zhar",
+      "target_id": "sintese",
+      "relation_type": "criado_por",
+      "source_ref": "Gaya_Codice_Canonico_Consolidado_2026-09-08.md",
+      "source_sha256": "c36bcb22e47dc9de485ec8a706e82078856db624c79a75d2d4f624f3900e0bbc",
+      "review_state": "APPROVED"
+    },
+    {
+      "relation_id": "rel_0008",
+      "source_id": "nyr_e_zhar",
+      "target_id": "sintese",
+      "relation_type": "criado_por",
+      "source_ref": "staging_ingestion/Gaya_Codice_Canonico_Consolidado_2026-09-08_md.txt",
+      "source_sha256": "c36bcb22e47dc9de485ec8a706e82078856db624c79a75d2d4f624f3900e0bbc",
+      "review_state": "APPROVED"
+    }
+  ],
+  "spatial_graph": {
+    "total_locations": 16,
+    "total_spatial_relations": 13,
+    "nodes": [
+      {
+        "slug": "gaya",
+        "title": "Mundo de Gaya",
+        "kind": "PLANET",
+        "notes": "Plano material do RPG"
+      },
+      {
+        "slug": "refugio_ykt",
+        "title": "Refúgio YKT",
+        "kind": "BASE_AREA",
+        "notes": "Árvore-mundo viva base da YKT"
+      },
+      {
+        "slug": "templo_suspenso",
+        "title": "Templo Suspenso",
+        "kind": "MONUMENT",
+        "notes": "Colosso flutuante sobre a árvore"
+      },
+      {
+        "slug": "heartwood",
+        "title": "Heartwood",
+        "kind": "INTERIOR_ROOM",
+        "notes": "Salão central do Refúgio"
+      },
+      {
+        "slug": "escola_de_mana",
+        "title": "Escola de Mana",
+        "kind": "INTERIOR_ROOM",
+        "notes": "Sala de Begônio"
+      },
+      {
+        "slug": "terraco_de_combate",
+        "title": "Terraço de Combate",
+        "kind": "EXTERIOR_PLATFORM",
+        "notes": "Pátio de treino"
+      },
+      {
+        "slug": "ramo_de_douglas",
+        "title": "Ramo de Douglas",
+        "kind": "INTERIOR_ROOM",
+        "notes": "Salão de música"
+      },
+      {
+        "slug": "raizes_sagradas",
+        "title": "Raízes Sagradas",
+        "kind": "UNDERGROUND",
+        "notes": "Capela de Roukash"
+      },
+      {
+        "slug": "raizes_artesanais",
+        "title": "Raízes Artesanais",
+        "kind": "UNDERGROUND",
+        "notes": "Forja de pedra"
+      },
+      {
+        "slug": "camara_de_sintese",
+        "title": "Câmara de Síntese",
+        "kind": "INTERIOR_ROOM",
+        "notes": "Mesa de Síntese"
+      },
+      {
+        "slug": "copa_e_biblioteca",
+        "title": "Copa e Biblioteca",
+        "kind": "INTERIOR_ROOM",
+        "notes": "Observatório"
+      },
+      {
+        "slug": "terraco_de_chegada",
+        "title": "Terraço de Chegada",
+        "kind": "ENTRANCE",
+        "notes": "Plataforma de içamento"
+      },
+      {
+        "slug": "ramos_residenciais",
+        "title": "Ramos Residenciais",
+        "kind": "QUARTERS",
+        "notes": "Quartos da equipe"
+      },
+      {
+        "slug": "savana_negra",
+        "title": "Savana Negra",
+        "kind": "REGION",
+        "notes": "Região árida ao sul"
+      },
+      {
+        "slug": "floresta_negra",
+        "title": "Floresta Negra",
+        "kind": "REGION",
+        "notes": "Região florestal sagrada"
+      },
+      {
+        "slug": "drakovia",
+        "title": "Império de Drakovia",
+        "kind": "NATION",
+        "notes": "Império militar"
+      }
+    ],
+    "edges": [
+      {
+        "relation": "contains",
+        "parent": "refugio_ykt",
+        "child": "heartwood",
+        "evidence": "Heartwood é o salão central da árvore do Refúgio YKT."
+      },
+      {
+        "relation": "contains",
+        "parent": "refugio_ykt",
+        "child": "escola_de_mana",
+        "evidence": "Escola de Mana situa-se nos ramos do Refúgio YKT."
+      },
+      {
+        "relation": "contains",
+        "parent": "refugio_ykt",
+        "child": "terraco_de_combate",
+        "evidence": "Terraço de combate é o pátio do Refúgio YKT."
+      },
+      {
+        "relation": "contains",
+        "parent": "refugio_ykt",
+        "child": "ramo_de_douglas",
+        "evidence": "Ramo de Douglas é o salão de cortesia no Refúgio."
+      },
+      {
+        "relation": "contains",
+        "parent": "refugio_ykt",
+        "child": "raizes_sagradas",
+        "evidence": "Raízes sagradas formam a capela sob a árvore."
+      },
+      {
+        "relation": "contains",
+        "parent": "refugio_ykt",
+        "child": "raizes_artesanais",
+        "evidence": "Raízes artesanais abrigam a oficina de Síntese."
+      },
+      {
+        "relation": "contains",
+        "parent": "refugio_ykt",
+        "child": "camara_de_sintese",
+        "evidence": "Câmara de síntese opera no Refúgio YKT."
+      },
+      {
+        "relation": "contains",
+        "parent": "refugio_ykt",
+        "child": "copa_e_biblioteca",
+        "evidence": "Copa e biblioteca observatório no topo do Refúgio."
+      },
+      {
+        "relation": "contains",
+        "parent": "refugio_ykt",
+        "child": "terraco_de_chegada",
+        "evidence": "Terraço de chegada é a plataforma do Refúgio."
+      },
+      {
+        "relation": "contains",
+        "parent": "refugio_ykt",
+        "child": "ramos_residenciais",
+        "evidence": "Dormitórios nos ramos residenciais do Refúgio."
+      },
+      {
+        "relation": "floating_above",
+        "parent": "templo_suspenso",
+        "child": "refugio_ykt",
+        "evidence": "Colosso sentado do Templo flutua sobre o Refúgio."
+      },
+      {
+        "relation": "adjacent_to",
+        "parent": "savana_negra",
+        "child": "floresta_negra",
+        "evidence": "Savana Negra faz fronteira com a Floresta Negra."
+      },
+      {
+        "relation": "travel_route",
+        "parent": "drakovia",
+        "child": "refugio_ykt",
+        "evidence": "Rota de fuga de Ayşa: Drakovia -> Savana Negra -> Refúgio YKT."
+      }
+    ]
+  },
+  "unknown_geography": [
+    {
+      "location_id": "LOC_UNKNOWN_001",
+      "name": "Estepes Cinzentas Além-Kravarius",
+      "status": "UNKNOWN_PROPOSED",
+      "canon_verified": false,
+      "coordinates": null,
+      "notes": "Fronteira norte das estepes; terreno não explorado no cânone atual."
+    },
+    {
+      "location_id": "LOC_UNKNOWN_002",
+      "name": "Abismo Além da Savana Negra",
+      "status": "UNKNOWN_PROPOSED",
+      "canon_verified": false,
+      "coordinates": null,
+      "notes": "Região além das fronteiras exploradas da Savana Negra."
+    }
+  ],
+  "supported_rules": [
+    {
+      "rule_id": "RULE_SYNTHESIS_001",
+      "name": "Proibição de Fios Vivos",
+      "scope": "SYNTHESIS_EXTRACTION",
+      "constraint": "FORBID_EXTRACTION_FROM_LIVING",
+      "verdict_on_violation": "VIOLATION",
+      "allowed": false,
+      "notes": "Extrair fios de síntese de seres vivos constitui violação direta das leis canônicas."
+    },
+    {
+      "rule_id": "RULE_COMBAT_001",
+      "name": "Mecânica de Redução de Dano",
+      "base_damage_reduction": 2,
+      "true_damage_ignores_rd": true,
+      "notes": "Redução de Dano (RD 2) absorve dano físico comum. Dano Verdadeiro ignora RD."
+    },
+    {
+      "rule_id": "RULE_ECONOMY_001",
+      "name": "Conservação de Recursos e Moedas",
+      "currencies": [
+        "Khan",
+        "Yorman"
+      ],
+      "conversion_rate": {
+        "1_Yorman_in_Khan": 100
+      },
+      "conservation_enforced": true,
+      "notes": "Trocas exigem conservação total de moedas e integridade de itens."
+    }
+  ]
+}

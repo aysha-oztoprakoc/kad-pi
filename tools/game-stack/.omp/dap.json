@@ -1,0 +1,22 @@
+{
+  "adapters": {
+    "lldb-dap": {
+      "command": "/usr/bin/lldb-dap",
+      "launchDefaults": { "stopOnEntry": true }
+    },
+    "godot": {
+      "command": "/usr/bin/socat",
+      "args": ["STDIO", "TCP:127.0.0.1:6006"],
+      "languages": ["gdscript"],
+      "fileTypes": ["gd"],
+      "rootMarkers": ["Cargo.toml"],
+      "launchDefaults": {
+        "project": "/home/amdy/Work/tools/game-stack/godot",
+        "launch_scene": true,
+        "launch_url": "",
+        "debug_collisions": false,
+        "debug_paths": false
+      }
+    }
+  }
+}

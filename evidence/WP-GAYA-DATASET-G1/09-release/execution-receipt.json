@@ -1,0 +1,31 @@
+{
+  "task_id": "WP-GAYA-DATASET-G1-09",
+  "project": "kad-pi",
+  "timestamp": "2026-09-09T04:00:49.617908+00:00",
+  "status": "PASS",
+  "fixed_point": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+  "claim_id": "a04740a8-4c97-4503-bd9c-752ec24056d1",
+  "owned_paths": [
+    "tools/kad/isa.mjs",
+    "tools/kad/gaya-dataset-qualification.mjs",
+    "tools/kad/test",
+    "docs/gaya/dataset-generation",
+    "evidence/WP-GAYA-DATASET-G1/09-release"
+  ],
+  "isa_gates_passed": 11,
+  "total_isa_gates": 11,
+  "sealed_manifest_sha256": "bd56586d841558a8c8ef45db9a7b472ae89576f5b14593b193965afc4864d9c1",
+  "acceptance_receipt_sha256": "452945723c2c05e2f5ea4ec3e5b60c9d5b199bea338be8a90d47cdac10d95405",
+  "datasheet_sha256": "1eefff72d6eeaa067e0a6e7d43f36df6e654b9a4b29244fa2350a6c6fbe66585",
+  "deliverables": {
+    "release_manifest.json": "dc4edce8604cd5592dc317dcf71fb09f3797fb0a5c8689560d66f1f81c19c8f9",
+    "datasheet.md": "1eefff72d6eeaa067e0a6e7d43f36df6e654b9a4b29244fa2350a6c6fbe66585",
+    "acceptance-receipt.json": "452945723c2c05e2f5ea4ec3e5b60c9d5b199bea338be8a90d47cdac10d95405",
+    "training/provenance.jsonl": "bb4970d9cb7aa3efcd1364a0b7f71642ab74eeed4283cb8629c243c778055636",
+    "game/world.json": "f25435aa5198a4c96d05636a0edb512a796ffabd30ede3390a0769b50feb825b",
+    "game/assets.jsonl": "6a25b0e9998a10411ccd9f73a13296347125fb5fdff54980040a303565462c3a",
+    "rag/records.jsonl": "29aab452df71821d88c2d54aad24c8a29ea1d455b2907285513ab6e860107a9d",
+    "sources.jsonl": "a478405b11eacdeaab66e0c7c75e105a3d84f20955c199f9dd290c59cbcb48e6",
+    "extraction_records.jsonl": "6a869d2b77e5c900abc12e110e0539b911776faf1f22faca232cc0f9201e1258"
+  }
+}

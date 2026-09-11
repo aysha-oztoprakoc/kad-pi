@@ -1,0 +1,18 @@
+{
+  "task": "WP-GAYA-DATASET-G1-09",
+  "project": "kad-pi",
+  "claim_id": "a04740a8-4c97-4503-bd9c-752ec24056d1",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-09-09T03:49:24.565Z",
+  "base_commit": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+  "owned_paths": [
+    "tools/kad/isa.mjs",
+    "tools/kad/gaya-dataset-qualification.mjs",
+    "tools/kad/test",
+    "docs/gaya/dataset-generation",
+    "evidence/WP-GAYA-DATASET-G1/09-release"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-09T04:06:35.910Z"
+}

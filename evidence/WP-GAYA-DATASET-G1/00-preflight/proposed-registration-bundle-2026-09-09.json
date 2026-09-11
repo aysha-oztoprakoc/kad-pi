@@ -1,0 +1,458 @@
+{
+  "artifact": "WP-GAYA-DATASET-G1-PROPOSED-REGISTRATION-BUNDLE",
+  "timestamp": "2026-09-09T01:46:34Z",
+  "status": "DRAFT_PROPOSAL_FOR_REVIEW",
+  "governance_note": "Read-only proposal bundle for human lead review; NOT registered into .agents/work/.",
+  "workspace_head_observed": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+  "kad_rpg_head_observed": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+  "frozen_policies": {
+    "source_inventory_policy": "209 total items cataloged into 6 mutually exclusive dispositions: POSITIVE_LORE_CANDIDATE (41), MEDIA_ASSET (151), STRUCTURED_DATA (1), DOCUMENTATION (1), EXCLUDED_CODE (1), EXCLUDED_DATABASE (3). Zero source mutation allowed.",
+    "split_family_policy": "Partitioning strictly by source duplicate/revision family rather than random row split. Canary secrets isolated per Experiment E6.",
+    "evidence_target_layout": "Two-tier evidence recording: Frames 01–08 stage receipts inside kad-rpg/kad-gaya/dataset_runs/staging/; Frame 09 reconciles and promotes final sealed release to workspace evidence/WP-GAYA-DATASET-G1/."
+  },
+  "frames": [
+    {
+      "id": "WP-GAYA-DATASET-G1-00",
+      "title": "Review preflight evidence and specify authority prerequisites",
+      "project": "kad-pi",
+      "status": "READY",
+      "priority": 30,
+      "trust_domain": "engineering",
+      "authority_required": "kad-pi-project",
+      "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "fixed_point": "TO_RESOLVE_AT_REGISTRATION",
+      "observed_base_commit": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+      "required_capabilities": [
+        "filesystem_read",
+        "filesystem_write",
+        "shell_readonly",
+        "code_build"
+      ],
+      "blocked_by": [],
+      "blocks": [
+        "WP-GAYA-DATASET-G1-01"
+      ],
+      "scope": [
+        "evidence/WP-GAYA-DATASET-G1/00-preflight/"
+      ],
+      "non_scope": [
+        "No 3D engine or renderer implementation",
+        "No local or remote model weight training",
+        "No unapproved paid API spend",
+        "No unilateral source corpus or pre-existing database mutation",
+        "No modification of SillyTavern runtime configuration"
+      ],
+      "validation": [],
+      "isa_gates": [
+        "GAYA-G1-01"
+      ],
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/00-preflight/"
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-01",
+      "title": "Extend shared contracts and safe entrypoint",
+      "project": "kad-rpg",
+      "status": "BLOCKED",
+      "priority": 31,
+      "trust_domain": "engineering",
+      "authority_required": "kad-rpg-project",
+      "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "fixed_point": "TO_RESOLVE_AT_REGISTRATION",
+      "observed_base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+      "required_capabilities": [
+        "filesystem_read",
+        "filesystem_write",
+        "shell_readonly",
+        "code_build"
+      ],
+      "blocked_by": [
+        "WP-GAYA-DATASET-G1-00"
+      ],
+      "blocks": [
+        "WP-GAYA-DATASET-G1-02"
+      ],
+      "scope": [
+        "kad-gaya/pipeline/schemas.py",
+        "kad-gaya/pipeline/dataset_cli.py",
+        "kad-gaya/tests/",
+        "kad-gaya/extract_and_ingest_gaya.py",
+        "kad-gaya/dataset_runs/"
+      ],
+      "non_scope": [
+        "No 3D engine or renderer implementation",
+        "No local or remote model weight training",
+        "No unapproved paid API spend",
+        "No unilateral source corpus or pre-existing database mutation",
+        "No modification of SillyTavern runtime configuration"
+      ],
+      "validation": [],
+      "isa_gates": [
+        "GAYA-G1-01",
+        "GAYA-G1-02",
+        "GAYA-G1-10"
+      ],
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/01-contracts/"
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-02",
+      "title": "Qualify complete source and document ingestion",
+      "project": "kad-rpg",
+      "status": "BLOCKED",
+      "priority": 32,
+      "trust_domain": "engineering",
+      "authority_required": "kad-rpg-project",
+      "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "fixed_point": "TO_RESOLVE_AT_REGISTRATION",
+      "observed_base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+      "required_capabilities": [
+        "filesystem_read",
+        "filesystem_write",
+        "shell_readonly",
+        "code_build"
+      ],
+      "blocked_by": [
+        "WP-GAYA-DATASET-G1-01"
+      ],
+      "blocks": [
+        "WP-GAYA-DATASET-G1-03"
+      ],
+      "scope": [
+        "kad-gaya/ingestion/",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/",
+        "kad-gaya/pipeline/dataset_cli.py"
+      ],
+      "non_scope": [
+        "No 3D engine or renderer implementation",
+        "No local or remote model weight training",
+        "No unapproved paid API spend",
+        "No unilateral source corpus or pre-existing database mutation",
+        "No modification of SillyTavern runtime configuration"
+      ],
+      "validation": [],
+      "isa_gates": [
+        "GAYA-G1-01",
+        "GAYA-G1-03"
+      ],
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/02-ingestion/"
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-03",
+      "title": "Extract grounded entities, relations and reviewed seeds",
+      "project": "kad-rpg",
+      "status": "BLOCKED",
+      "priority": 33,
+      "trust_domain": "engineering",
+      "authority_required": "kad-rpg-project",
+      "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "fixed_point": "TO_RESOLVE_AT_REGISTRATION",
+      "observed_base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+      "required_capabilities": [
+        "filesystem_read",
+        "filesystem_write",
+        "shell_readonly",
+        "code_build"
+      ],
+      "blocked_by": [
+        "WP-GAYA-DATASET-G1-02"
+      ],
+      "blocks": [
+        "WP-GAYA-DATASET-G1-04"
+      ],
+      "scope": [
+        "kad-gaya/pipeline/deterministic.py",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/",
+        "kad-gaya/pipeline/dataset_cli.py"
+      ],
+      "non_scope": [
+        "No 3D engine or renderer implementation",
+        "No local or remote model weight training",
+        "No unapproved paid API spend",
+        "No unilateral source corpus or pre-existing database mutation",
+        "No modification of SillyTavern runtime configuration"
+      ],
+      "validation": [],
+      "isa_gates": [
+        "GAYA-G1-02",
+        "GAYA-G1-04"
+      ],
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/03-knowledge/"
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-04",
+      "title": "Ground visual references and spatial associations",
+      "project": "kad-rpg",
+      "status": "BLOCKED",
+      "priority": 34,
+      "trust_domain": "engineering",
+      "authority_required": "kad-rpg-project",
+      "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "fixed_point": "TO_RESOLVE_AT_REGISTRATION",
+      "observed_base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+      "required_capabilities": [
+        "filesystem_read",
+        "filesystem_write",
+        "shell_readonly",
+        "code_build"
+      ],
+      "blocked_by": [
+        "WP-GAYA-DATASET-G1-03"
+      ],
+      "blocks": [
+        "WP-GAYA-DATASET-G1-05"
+      ],
+      "scope": [
+        "kad-gaya/ingestion/media_references.py",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/",
+        "kad-gaya/pipeline/dataset_cli.py"
+      ],
+      "non_scope": [
+        "No 3D engine or renderer implementation",
+        "No local or remote model weight training",
+        "No unapproved paid API spend",
+        "No unilateral source corpus or pre-existing database mutation",
+        "No modification of SillyTavern runtime configuration"
+      ],
+      "validation": [],
+      "isa_gates": [
+        "GAYA-G1-05"
+      ],
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/04-visual/"
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-05",
+      "title": "Freeze evaluation, splits and scenario oracles",
+      "project": "kad-rpg",
+      "status": "BLOCKED",
+      "priority": 35,
+      "trust_domain": "engineering",
+      "authority_required": "kad-rpg-project",
+      "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "fixed_point": "TO_RESOLVE_AT_REGISTRATION",
+      "observed_base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+      "required_capabilities": [
+        "filesystem_read",
+        "filesystem_write",
+        "shell_readonly",
+        "code_build"
+      ],
+      "blocked_by": [
+        "WP-GAYA-DATASET-G1-04"
+      ],
+      "blocks": [
+        "WP-GAYA-DATASET-G1-06"
+      ],
+      "scope": [
+        "kad-gaya/training/splits.py",
+        "kad-gaya/pipeline/scenario_oracles.py",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/",
+        "kad-gaya/pipeline/dataset_cli.py"
+      ],
+      "non_scope": [
+        "No 3D engine or renderer implementation",
+        "No local or remote model weight training",
+        "No unapproved paid API spend",
+        "No unilateral source corpus or pre-existing database mutation",
+        "No modification of SillyTavern runtime configuration"
+      ],
+      "validation": [],
+      "isa_gates": [
+        "GAYA-G1-06",
+        "GAYA-G1-07",
+        "GAYA-G1-09"
+      ],
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/05-evaluation-design/"
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-06",
+      "title": "Generate and replay bounded synthetic examples",
+      "project": "kad-rpg",
+      "status": "BLOCKED",
+      "priority": 36,
+      "trust_domain": "engineering",
+      "authority_required": "kad-rpg-project",
+      "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "fixed_point": "TO_RESOLVE_AT_REGISTRATION",
+      "observed_base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+      "required_capabilities": [
+        "filesystem_read",
+        "filesystem_write",
+        "shell_readonly",
+        "code_build"
+      ],
+      "blocked_by": [
+        "WP-GAYA-DATASET-G1-05"
+      ],
+      "blocks": [
+        "WP-GAYA-DATASET-G1-07"
+      ],
+      "scope": [
+        "kad-gaya/training/synthetic_builder.py",
+        "kad-gaya/pipeline/dataset_cli.py",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/"
+      ],
+      "non_scope": [
+        "No 3D engine or renderer implementation",
+        "No local or remote model weight training",
+        "No unapproved paid API spend",
+        "No unilateral source corpus or pre-existing database mutation",
+        "No modification of SillyTavern runtime configuration"
+      ],
+      "validation": [],
+      "isa_gates": [
+        "GAYA-G1-07",
+        "GAYA-G1-10"
+      ],
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/06-synthesis/"
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-07",
+      "title": "Export training, game and scoped retrieval bundles",
+      "project": "kad-rpg",
+      "status": "BLOCKED",
+      "priority": 37,
+      "trust_domain": "engineering",
+      "authority_required": "kad-rpg-project",
+      "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "fixed_point": "TO_RESOLVE_AT_REGISTRATION",
+      "observed_base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+      "required_capabilities": [
+        "filesystem_read",
+        "filesystem_write",
+        "shell_readonly",
+        "code_build"
+      ],
+      "blocked_by": [
+        "WP-GAYA-DATASET-G1-06"
+      ],
+      "blocks": [
+        "WP-GAYA-DATASET-G1-08"
+      ],
+      "scope": [
+        "kad-gaya/training/sharegpt_exporter.py",
+        "kad-gaya/training/release_exporter.py",
+        "kad-gaya/pipeline/dataset_cli.py",
+        "kad-gaya/dataset_runs/",
+        "kad-gaya/tests/"
+      ],
+      "non_scope": [
+        "No 3D engine or renderer implementation",
+        "No local or remote model weight training",
+        "No unapproved paid API spend",
+        "No unilateral source corpus or pre-existing database mutation",
+        "No modification of SillyTavern runtime configuration"
+      ],
+      "validation": [],
+      "isa_gates": [
+        "GAYA-G1-05",
+        "GAYA-G1-08",
+        "GAYA-G1-10"
+      ],
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/07-consumers/"
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-08",
+      "title": "Qualify semantics, leakage and failure recovery",
+      "project": "kad-rpg",
+      "status": "BLOCKED",
+      "priority": 38,
+      "trust_domain": "engineering",
+      "authority_required": "kad-rpg-project",
+      "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "fixed_point": "TO_RESOLVE_AT_REGISTRATION",
+      "observed_base_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+      "required_capabilities": [
+        "filesystem_read",
+        "filesystem_write",
+        "shell_readonly",
+        "code_build"
+      ],
+      "blocked_by": [
+        "WP-GAYA-DATASET-G1-07"
+      ],
+      "blocks": [
+        "WP-GAYA-DATASET-G1-09"
+      ],
+      "scope": [
+        "kad-gaya/training/qualification.py",
+        "kad-gaya/pipeline/dataset_cli.py",
+        "kad-gaya/tests/",
+        "kad-gaya/dataset_runs/"
+      ],
+      "non_scope": [
+        "No 3D engine or renderer implementation",
+        "No local or remote model weight training",
+        "No unapproved paid API spend",
+        "No unilateral source corpus or pre-existing database mutation",
+        "No modification of SillyTavern runtime configuration"
+      ],
+      "validation": [],
+      "isa_gates": [
+        "GAYA-G1-02",
+        "GAYA-G1-03",
+        "GAYA-G1-04",
+        "GAYA-G1-05",
+        "GAYA-G1-06",
+        "GAYA-G1-07",
+        "GAYA-G1-09",
+        "GAYA-G1-10"
+      ],
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/08-qualification/"
+    },
+    {
+      "id": "WP-GAYA-DATASET-G1-09",
+      "title": "Bind native ISA gates and hand off qualified release",
+      "project": "kad-pi",
+      "status": "BLOCKED",
+      "priority": 39,
+      "trust_domain": "engineering",
+      "authority_required": "kad-pi-project",
+      "spec_ref": "docs/gaya/dataset-generation/ISA-GAYA-DATASET-G1-001.md",
+      "fixed_point": "TO_RESOLVE_AT_REGISTRATION",
+      "observed_base_commit": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+      "required_capabilities": [
+        "filesystem_read",
+        "filesystem_write",
+        "shell_readonly",
+        "code_build"
+      ],
+      "blocked_by": [
+        "WP-GAYA-DATASET-G1-08"
+      ],
+      "blocks": [],
+      "scope": [
+        "tools/kad/isa.mjs",
+        "tools/kad/gaya-dataset-qualification.mjs",
+        "tools/kad/test/",
+        "docs/gaya/dataset-generation/",
+        "evidence/WP-GAYA-DATASET-G1/09-release/"
+      ],
+      "non_scope": [
+        "No 3D engine or renderer implementation",
+        "No local or remote model weight training",
+        "No unapproved paid API spend",
+        "No unilateral source corpus or pre-existing database mutation",
+        "No modification of SillyTavern runtime configuration"
+      ],
+      "validation": [],
+      "isa_gates": [
+        "GAYA-G1-01",
+        "GAYA-G1-02",
+        "GAYA-G1-03",
+        "GAYA-G1-04",
+        "GAYA-G1-05",
+        "GAYA-G1-06",
+        "GAYA-G1-07",
+        "GAYA-G1-08",
+        "GAYA-G1-09",
+        "GAYA-G1-10",
+        "GAYA-G1-11"
+      ],
+      "evidence_target": "evidence/WP-GAYA-DATASET-G1/09-release/"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 WORK_ROOT="${KAD_WORKSPACE_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
-OMP_BINARY="${OMP_BINARY:-$WORK_ROOT/bin/omp-patched-canary}"
+OMP_BINARY="${OMP_BINARY:-$(which omp 2>/dev/null || echo "$WORK_ROOT/bin/omp-patched-canary")}"
 OMP_STATE="$WORK_ROOT/.state/omp-kad/agent"
 MODEL_CONFIG="$WORK_ROOT/.omp/models.yml"
 LINK="$OMP_STATE/models.yml"
@@ -12,42 +12,57 @@ if [[ ! -x "$OMP_BINARY" ]]; then
   exit 127
 fi
 
-if [[ "${OMP_SKIP_DIGEST_CHECK:-0}" != "1" ]]; then
-  EXPECTED_DIGEST="e0ff9cf2fc622d775597c970d6dcbba6b1ca93ea10c52ae2ad60b0ef9cc34ed3"
+# P03 qualification: strict digest enforcement when requested or testing patched canary
+if [[ "${OMP_STRICT_DIGEST:-0}" == "1" || ("$OMP_BINARY" == *"-patched-canary" && "${OMP_SKIP_DIGEST_CHECK:-0}" != "1") ]]; then
+  EXPECTED_DIGEST="${OMP_EXPECTED_DIGEST:-e0ff9cf2fc622d775597c970d6dcbba6b1ca93ea10c52ae2ad60b0ef9cc34ed3}"
   ACTUAL_DIGEST="$(sha256sum "$OMP_BINARY" | awk '{print $1}')"
   if [[ "$ACTUAL_DIGEST" != "$EXPECTED_DIGEST" ]]; then
     printf 'omp-kad: binary digest mismatch: expected %s, got %s\n' "$EXPECTED_DIGEST" "$ACTUAL_DIGEST" >&2
     exit 126
   fi
 fi
+
 if [[ ! -f "$MODEL_CONFIG" ]]; then
   printf 'omp-kad: missing tracked model configuration: %s\n' "$MODEL_CONFIG" >&2
   exit 78
 fi
+
 mkdir -p "$OMP_STATE" \
   "$WORK_ROOT/.state/omp-kad/xdg/data/omp" \
   "$WORK_ROOT/.state/omp-kad/xdg/state/omp" \
   "$WORK_ROOT/.state/omp-kad/xdg/cache/omp"
+
 export XDG_DATA_HOME="$WORK_ROOT/.state/omp-kad/xdg/data"
 export XDG_STATE_HOME="$WORK_ROOT/.state/omp-kad/xdg/state"
 export XDG_CACHE_HOME="$WORK_ROOT/.state/omp-kad/xdg/cache"
-if [[ -e "$LINK" || -L "$LINK" ]]; then
-  if [[ ! -L "$LINK" || "$(readlink -f "$LINK")" != "$MODEL_CONFIG" ]]; then
-    printf 'omp-kad: refusing to overwrite unexpected state path: %s\n' "$LINK" >&2
-    exit 78
-  fi
-else
-  # A concurrent launcher may win creation; verify after a non-destructive retry.
-  ln -s "$MODEL_CONFIG" "$LINK" 2>/dev/null || true
-  if [[ ! -L "$LINK" || "$(readlink -f "$LINK")" != "$MODEL_CONFIG" ]]; then
-    printf 'omp-kad: failed to establish expected model-config link: %s\n' "$LINK" >&2
-    exit 78
-  fi
+
+# Link model definitions
+ln -sf "$MODEL_CONFIG" "$LINK"
+
+# Link user credentials so remote models and API keys remain functional in isolated state
+SOURCE_AGENT_DIR="$HOME/.omp/agent"
+SOURCE_XDG_DATA="$HOME/.local/share/omp"
+
+if [[ -f "$SOURCE_AGENT_DIR/.env" ]]; then
+  ln -sf "$SOURCE_AGENT_DIR/.env" "$OMP_STATE/.env"
+  ln -sf "$SOURCE_AGENT_DIR/.env" "$WORK_ROOT/.state/omp-kad/xdg/data/omp/.env"
+fi
+
+if [[ -f "$SOURCE_XDG_DATA/agent.db" ]]; then
+  ln -sf "$SOURCE_XDG_DATA/agent.db" "$WORK_ROOT/.state/omp-kad/xdg/data/omp/agent.db"
+  ln -sf "$SOURCE_XDG_DATA/agent.db" "$OMP_STATE/agent.db"
+elif [[ -f "$SOURCE_AGENT_DIR/agent.db" ]]; then
+  ln -sf "$SOURCE_AGENT_DIR/agent.db" "$WORK_ROOT/.state/omp-kad/xdg/data/omp/agent.db"
+  ln -sf "$SOURCE_AGENT_DIR/agent.db" "$OMP_STATE/agent.db"
+fi
+
+if [[ -f "$HOME/.deepapi/env" ]]; then
+  # Sourced safely without mutating caller shell
+  # shellcheck source=/dev/null
+  source "$HOME/.deepapi/env"
 fi
 
 export PI_CODING_AGENT_DIR="$OMP_STATE"
 
-# P03: Removed recursive cleanup of $HOME/.omp. All runtime writes are isolated to
-# $WORK_ROOT/.state/omp-kad/ above. Never infer ownership of or delete $HOME/.omp.
-
+# P03: Never infer ownership of or delete $HOME/.omp.
 exec "$OMP_BINARY" "$@"

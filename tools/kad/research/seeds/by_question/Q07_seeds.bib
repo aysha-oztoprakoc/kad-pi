@@ -1,0 +1,51 @@
+% BibTeX seeds for Q07: Formal models for graceful degradation, fail-soft behavior, and degraded modes of operation
+
+@article{Avizienis2007BasicConceptsAn,
+  title = {Basic concepts and taxonomy of dependable and secure computing},
+  author = {A. Avizienis and J. Laprie and B. Randell and C. Landwehr},
+  year = {2007},
+  journal = {IEEE Transactions on Dependable and Secure Computing},
+  doi = {10.1109/tdsc.2004.2},
+  url = {https://consensus.app/papers/basic-concepts-and-taxonomy-of-dependable-and-secure-avizienis-laprie/22852274301e531cb29845e2d302fe40/},
+  abstract = {This paper gives the main definitions relating to dependability, a generic concept including a special case of such attributes as reliability, availability, safety, integrity, maintainability, etc. Security brings in concerns for confidentiality, in addition to availability and integrity. Basic definitions are given first. They are then commented upon, and supplemented by additional definitions, which address the threats to dependability and security (faults, errors, failures), their attributes, and the means for their achievement (fault prevention, fault tolerance, fault removal, fault forecasting). The aim is to explicate a set of general concepts, of relevance across a wide range of situations and, therefore, helping communication and cooperation among a number of scientific and technical communities, including ones that are concentrating on particular types of system, of system failures, or of causes of system failures.}
+}
+
+@article{Laprie1995DependableCompu,
+  title = {DEPENDABLE COMPUTING AND FAULT TOLERANCE : CONCEPTS AND TERMINOLOGY},
+  author = {J. Laprie},
+  year = {1995},
+  journal = {Twenty-Fifth International Symposium on Fault-Tolerant Computing, 1995, ' Highlights from Twenty-Five Years'.},
+  doi = {10.1109/ftcsh.1995.532603},
+  url = {https://consensus.app/papers/dependable-computing-and-fault-tolerance-concepts-and-laprie/0df7c2fe75375a22b74a7e3808c411ea/},
+  abstract = {This paper provides a concepeual framework for expressing the attributes of what constitutes dependable and reliable computing: the impairrnents to dependability: faults, errors, and failures, the means for dependability: fault-avoidance, fault-tolerance, enor-removal, and errorthe measures of dependability: reliability, availability, maintainability, and safety. Emphasis is being put on the dependability impairments and on fault-tolerance. -}
+}
+
+@article{Koopman2018UsingArchitectu,
+  title = {Using Architectural Properties to Model and Measure System-Wide Graceful Degradation},
+  author = {P. Koopman and C. Shelton},
+  year = {2018},
+  doi = {10.1184/r1/6626387.v1},
+  url = {https://consensus.app/papers/using-architectural-properties-to-model-and-measure-koopman-shelton/09af8441535553f6ad3b00df49e697ae/},
+  abstract = {System-wide graceful degradation may be a viable approach to improving dependability in computer systems. In order to evaluate and improve system-wide graceful degradation we present initial work on a component-based model that will explicitly define graceful degradation as a system property, and measure how well a system gracefully degrades in the presence of multiple combinations of component failures. The system’s software architecture plays a major role in this model, because the interface and component specifications embody the architecture’s abstraction principle. We use the architecture to group components into subsystems that enable reasoning about overall system utility. We apply this model to an example distributed embedded control system and report on initial results.}
+}
+
+@article{Becker2015AnalyzingGracef,
+  title = {Analyzing Graceful Degradation for Mixed Critical Fault-Tolerant Real-Time Systems},
+  author = {Klaus Becker and Sebastian Voss},
+  year = {2015},
+  journal = {2015 IEEE 18th International Symposium on Real-Time Distributed Computing},
+  doi = {10.1109/isorc.2015.10},
+  url = {https://consensus.app/papers/analyzing-graceful-degradation-for-mixed-critical-becker-voss/82f74af618245456903093713942b989/},
+  abstract = {Fault-tolerant distributed embedded systems have to react properly on the occurrence of faults in order to avoid harm to the system or its environment. Faulty system resources have to be isolated from the remaining system. Hence, these resources become unavailable, leading to a decreasing number of available resources and input data. In such cases, mechanisms like graceful degradation may be applied to ensure that the system does not turn off completely, but degrades its provided set of functional features gracefully. It must be ensured that the remaining intact resources are efficiently used to execute at least those features, which are required to behave fail-operational. In this paper, we investigate deployments of mixed-critical software components to a fault-tolerant system platform. We introduce a formal model of software components and their publish/subscribe based communication channels. We use this model to analyze the graceful degradation of the system in different scenarios of failing execution hardware. This includes also the explicit deactivation of software components due to unavailable required input data. Our analysis is based on using an SMT solver and contributes to guarantee that all requirements with respect to fail-operationality are met by the system design. The approach is evaluated by an example and a scalability analysis.}
+}
+
+@article{Shelton2003AFrameworkForSc,
+  title = {A framework for scalable analysis and design of system-wide graceful degradation in distributed embedded systems},
+  author = {C. Shelton and P. Koopman and W. Nace},
+  year = {2003},
+  journal = {Proceedings of the Eighth International Workshop on Object-Oriented Real-Time Dependable Systems, 2003. (WORDS 2003).},
+  doi = {10.1109/words.2003.1218078},
+  url = {https://consensus.app/papers/a-framework-for-scalable-analysis-and-design-of-systemwide-shelton-koopman/e183f5abadab5946aee2550d0745a884/},
+  abstract = {We present a framework that will enable scalable analysis and design of graceful degradation in distributed embedded systems. We define graceful degradation in terms of utility. A system that gracefully degrades suffers a proportional loss of system utility as individual software and hardware components fail. However, explicitly designing a system to gracefully degrade; i.e. handle all possible combinations of component failures, becomes impractical for systems with more than a few components. We avoid this exponential complexity of component combinations by exploiting the structure of the system architecture to partition components into subsystems. We view each subsystem as a configuration of components that changes when components are removed or added. Thus, a subsystem's utility changes when components fail or are repaired. We then view the system as a composition of subsystems that each contribute to overall system utility. We demonstrate the scalability of our framework by applying it to an example automobile navigation system. Using this framework, we improve the system dependability by identifying architectural properties that enhance a system's ability to gracefully degrade.}
+}
+

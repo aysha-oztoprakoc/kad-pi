@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "scanned_files": 25,
+  "canary_escapes": 0,
+  "escaped_canaries_details": [],
+  "positive_control_sensor_operational": true
+}

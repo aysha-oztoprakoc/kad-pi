@@ -1,0 +1,20 @@
+{
+  "servers": {
+    "rust-analyzer": {
+      "command": "/home/amdy/.rustup/toolchains/1.98.1-x86_64-unknown-linux-gnu/bin/rust-analyzer",
+      "settings": {
+        "rust-analyzer": {
+          "check": { "command": "clippy" }
+        }
+      }
+    },
+    "gdscript": {
+      "command": "/usr/bin/socat",
+      "args": ["STDIO", "TCP:127.0.0.1:6005"],
+      "fileTypes": [".gd"],
+      "languageId": "gdscript",
+      "rootMarkers": ["Cargo.toml"],
+      "initOptions": {}
+    }
+  }
+}

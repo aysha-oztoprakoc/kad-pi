@@ -1,0 +1,14 @@
+{
+  "task": "WP-GAYA-DATASET-G1-00",
+  "project": "kad-pi",
+  "claim_id": "44b7e27d-0c83-4f9a-b330-3a9c7fe3a33f",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-09-09T01:56:11.600Z",
+  "base_commit": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+  "owned_paths": [
+    "evidence/WP-GAYA-DATASET-G1/00-preflight"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-09T01:56:11.674Z"
+}

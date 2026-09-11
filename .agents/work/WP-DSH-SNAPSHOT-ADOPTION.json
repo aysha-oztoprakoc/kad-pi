@@ -1,0 +1,55 @@
+{
+  "id": "WP-DSH-SNAPSHOT-ADOPTION",
+  "project": "kad-pi",
+  "title": "Adopt DeepSeek Harness skill patterns and wire deterministic snapcompact",
+  "status": "READY",
+  "priority": 190,
+  "spec_ref": "user:/dsh-snapcompact-adoption",
+  "fixed_point": "3a0b5b0",
+  "scope": [
+    ".agents/skills/",
+    ".omp/config.yml",
+    ".scratch/"
+  ],
+  "non_scope": [
+    "mutating tries/deepseek-harness-lab/ (upstream reference; read-only)",
+    "unapproved paid API spend",
+    "model routing, memory backend, or fallback cascade changes",
+    "installing marketplace plugins",
+    "rewriting existing KAD skills beyond adding the new ones"
+  ],
+  "owned_paths": [
+    ".agents/skills/kad-trim-cot-leakage/",
+    ".agents/skills/kad-archive-agent-notes/",
+    ".agents/skills/kad-pre-push-checks/",
+    ".omp/config.yml",
+    ".scratch/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "deterministic_search",
+    "shell"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test docs/state/test/state-artifacts.test.mjs",
+    "omp config get compaction.methodOrder",
+    "ruby -ryaml -e 'YAML.load_file(\".omp/config.yml\")'"
+  ],
+  "evidence_target": "evidence/WP-DSH-SNAPSHOT-ADOPTION/",
+  "blocked_by": [],
+  "blocks": [],
+  "acceptance_criteria": [
+    "kad-trim-cot-leakage SKILL.md exists with name+description frontmatter and zero DSH-specific references",
+    "kad-archive-agent-notes SKILL.md exists with name+description frontmatter and frozen-notes/archived triplet rule",
+    "kad-pre-push-checks SKILL.md exists mapping to python check.py, node --test, make verify, kad doctor",
+    "compaction.methodOrder contains snapcompact first with local fallbacks (handoff, shake, soft)",
+    "omp config get compaction.methodOrder returns the expected array and .omp/config.yml parses cleanly",
+    "repo analysis next-steps report written to .scratch/dsh-adoption-next-steps.md with ranked recommendations"
+  ],
+  "description": "Port three DeepSeek Harness skill patterns (trim-cot-leakage, archive-agent-notes, pre-push-checks) into the KAD skill corpus as KAD-flavored variants, enrich the compaction method order so the deterministic local snapcompact is primary, then analyze the repo (ISA, CSA, workpackages, plugin ecosystem) and write a ranked next-steps report.",
+  "spec_decisions": [],
+  "source_ticket": "user:/dsh-snapcompact-adoption"
+}

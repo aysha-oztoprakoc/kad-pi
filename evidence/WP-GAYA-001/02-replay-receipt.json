@@ -1,0 +1,18 @@
+{
+  "workpackage": "WP-GAYA-001",
+  "run_id": "cli-replay-qualification-001",
+  "seed": 20260908,
+  "ticks_executed": 48,
+  "commands_scheduled": 27,
+  "commands_accepted": 27,
+  "commands_rejected": 0,
+  "events_committed": 75,
+  "initial_state_hash": "17b534bacd5abcf8f098101b3045b30498438dcc4f430b5a64bf0bcf6410a506",
+  "original_final_state_hash": "1f59ccd46655bddac4b03cfd8185191b02a09b559d5f678025931667898917b9",
+  "replayed_final_state_hash": "1f59ccd46655bddac4b03cfd8185191b02a09b559d5f678025931667898917b9",
+  "original_ledger_hash": "2fd1145cfa3fa2b7252a786643c904252460e141ec5a1cfea690b0248e4baf1e",
+  "replayed_ledger_hash": "2fd1145cfa3fa2b7252a786643c904252460e141ec5a1cfea690b0248e4baf1e",
+  "replay_match": true,
+  "verdict": "PASS",
+  "timestamp": "2026-09-08T15:45:00.000Z"
+}

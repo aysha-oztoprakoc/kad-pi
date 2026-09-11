@@ -1,0 +1,293 @@
+{
+  "artifact": "WP-GAYA-DATASET-G1-00-PREFLIGHT",
+  "timestamp": "2026-09-08T22:21:00Z",
+  "status": "PREFLIGHT_COMPLETE_MUTATION_BLOCKED_PENDING_AUTHORITY",
+  "workpackage_id": "WP-GAYA-DATASET-G1-00",
+  "target_isa": "ISA-GAYA-DATASET-G1-001",
+  "epistemic_status": "OBSERVED_DETERMINISTIC",
+  "authority_preflight": {
+    "workspace_root": "/home/amdy/Work",
+    "projects_registry": ".agents/workspace/projects.json",
+    "kad_rpg_registry_status": {
+      "id": "kad-rpg-unknown",
+      "kind": "UNKNOWN",
+      "agent_enabled": false,
+      "notes": "No independent git root or unambiguous instruction entrypoint observed."
+    },
+    "observed_reality": {
+      "path": "kad-rpg",
+      "is_git_repo": true,
+      "git_root": "kad-rpg",
+      "head_commit": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
+      "default_branch": "main",
+      "remote_origin": "https://github.com/aysha-oztoprakoc/kad-rpg.git",
+      "working_tree_clean": true,
+      "instruction_entrypoint": "README.md",
+      "authority_entrypoints": [
+        "README.md"
+      ],
+      "status_command": "git status --short",
+      "validation_command": "python -m unittest discover kad-gaya/tests",
+      "validation_smoke_result": "PASS (Ran 7 tests in 0.014s, OK)"
+    },
+    "active_leases": [],
+    "active_claims": [
+      {
+        "task": "WP-GAME-STACK-001",
+        "project": "kad-pi",
+        "owned_paths": [
+          "tools/game-stack",
+          "evidence/WP-GAME-STACK-001"
+        ]
+      }
+    ],
+    "compliance_with_non_goals": {
+      "did_enroll_unknown_project": false,
+      "did_claim_parent_as_bypass": false,
+      "did_change_providers": false,
+      "did_run_bulk_ingestion": false,
+      "did_mutate_source_or_dbs": false
+    },
+    "stop_condition_evaluated": {
+      "condition": "Unknown ownership, missing scope approval or changed authority",
+      "action": "block mutation, not the independent read-only investigation",
+      "result": "MUTATION_BLOCKED"
+    },
+    "exact_decision_required": {
+      "action": "Enroll kad-rpg as SIDE_PROJECT in .agents/workspace/projects.json",
+      "proposed_entry": {
+        "id": "kad-rpg",
+        "name": "KAD RPG",
+        "path": "kad-rpg",
+        "kind": "SIDE_PROJECT",
+        "git_root": ".",
+        "default_branch": "main",
+        "instruction_entrypoint": "README.md",
+        "authority_entrypoints": [
+          "README.md"
+        ],
+        "status_command": "git status --short",
+        "validation_command": "python -m unittest discover kad-gaya/tests",
+        "agent_enabled": true,
+        "notes": "Nested repository for As Crônicas de Gaya data-scraping pipeline and game construction."
+      },
+      "task_registration_required": "Register WP-GAYA-DATASET-G1-00 through 09 in .agents/work/ with project: kad-rpg, fixed_point: 0389137746b0e92a34013e7cf72abfbf0679c1e4"
+    }
+  },
+  "source_stability": {
+    "total_checked": 21,
+    "matched": 21,
+    "mismatched": 0,
+    "missing": 0,
+    "deliverables_checked": 6,
+    "deliverables_matched": 6
+  },
+  "environment_census": {
+    "python_version": "3.12.14",
+    "modules": {
+      "docx": false,
+      "pypdf": false,
+      "fitz": false,
+      "pdfplumber": false,
+      "torch": false,
+      "transformers": false,
+      "tokenizers": false,
+      "sqlite3": true,
+      "json": true,
+      "xml_etree": true,
+      "zipfile": true
+    },
+    "binaries": {
+      "pdftotext": "/usr/bin/pdftotext",
+      "tesseract": "/usr/bin/tesseract",
+      "soffice": "/usr/bin/soffice",
+      "unzip": "/usr/bin/unzip",
+      "node": "/home/amdy/.local/share/mise/installs/node/26.7.0/bin/node",
+      "git": "/usr/bin/git",
+      "make": "/usr/bin/make"
+    },
+    "tested_parsers": {
+      "docx": {
+        "method": "GayaCorpusIngestor.parse_docx (pure stdlib zipfile+xml)",
+        "tested_on": "O Códice de Gaya História e Cosmogo.docx",
+        "extracted_chars": 9037,
+        "status": "PASS"
+      },
+      "odt": {
+        "method": "GayaCorpusIngestor.parse_opendocument (pure stdlib zipfile+xml)",
+        "tested_on": "Manto de Kravarius.odt",
+        "extracted_chars": 2910,
+        "status": "PASS"
+      },
+      "odg": {
+        "method": "GayaCorpusIngestor.parse_opendocument (pure stdlib zipfile+xml)",
+        "tested_on": "YKT _ Aysha_Amethysta_Ficha_Editavel_Final.odg",
+        "extracted_chars": 33794,
+        "status": "PASS"
+      },
+      "pdf": {
+        "method": "GayaCorpusIngestor.parse_pdf (/usr/bin/pdftotext -layout)",
+        "tested_on": "YKT _ Begônio, o Mestre Arcanista.pdf",
+        "extracted_chars": 9955,
+        "status": "PASS"
+      }
+    },
+    "resources": {
+      "ram_total_kb": 15446676,
+      "ram_available_kb": 7345716,
+      "ram_free_kb": 2148940,
+      "gpu_model": "Advanced Micro Devices, Inc. [AMD/ATI] Navi 44 [Radeon RX 9060 XT] (rev c0)",
+      "rocm_installed": false
+    },
+    "services": {
+      "port_8000": "SillyTavern HTTP (OPEN)",
+      "port_11434": "Ollama (CLOSED)",
+      "port_8080": "llama.cpp/vLLM (CLOSED)",
+      "port_5000": "CLOSED",
+      "port_1234": "LM Studio (CLOSED)"
+    },
+    "cost_and_provider_boundary": {
+      "builder_model": "gemini-3.8-flash (OMP interactive)",
+      "teacher_model_authorized": false,
+      "marginal_paid_spend": 0.0,
+      "model_weights_trained": false,
+      "model_weights_downloaded": false
+    }
+  },
+  "source_census": {
+    "corpus_root": "/home/amdy/Work/kad-rpg/kad-gaya",
+    "total_items": 209,
+    "subdirectories": 11,
+    "total_files": 198,
+    "by_extension": {
+      ".md": 6,
+      ".docx": 1,
+      ".odt": 1,
+      ".odg": 2,
+      ".pdf": 31,
+      ".png": 140,
+      ".webp": 8,
+      ".jpg": 3,
+      ".txt": 1,
+      ".py": 1,
+      ".json": 2,
+      ".sqlite": 1,
+      ".jsonl": 1
+    },
+    "disposition_summary": {
+      "POSITIVE_LORE_CANDIDATES": 41,
+      "MEDIA_ASSETS": 151,
+      "EXCLUDED_CODE": 1,
+      "EXCLUDED_DATABASE": 3,
+      "STRUCTURED_DATA": 1,
+      "DOCUMENTATION": 1
+    },
+    "disposition_sample": [
+      {
+        "name": "O Códice de Gaya História e Cosmogo.docx",
+        "category": "ORIGINAL_LORE_DOCX",
+        "size": 13617,
+        "sha256": "706ff1cbfa17b4c6e93eb5183312c3f81df95e9ff075c3db112c38cbda5060ee",
+        "disposition": "POSITIVE_LORE_CANDIDATE",
+        "notes": "Original cosmogony source. Contains Khan/Yorman origins and eras as taught in current world."
+      },
+      {
+        "name": "YKT _ Lylia_Nivel_6.pdf",
+        "category": "HISTORICAL_REVISION_PDF",
+        "size": 93515,
+        "sha256": "6a111a91d293883a8b417e9fe5589a19491a92e1dd3ba4bc25e6e8e815668b13",
+        "disposition": "HISTORICAL_REVISION",
+        "notes": "Predecessor to Lylia Level 7 sheet. Kept as historical revision, not merged blindly with N7."
+      },
+      {
+        "name": "YKT _ Amethysta comendo.png",
+        "category": "IMAGE_ASSET",
+        "size": 135378,
+        "sha256": "9e6f30a94aa002a275215c2cf0ea0b001a1d13f9c6e3b5e40e698ea7ee3a44ad",
+        "disposition": "MEDIA_ASSET",
+        "notes": "Illustration of Amethysta in halfling/chibi form with ham. Visual asset reference, no invented facts."
+      },
+      {
+        "name": "extract_and_ingest_gaya.py",
+        "category": "CODE",
+        "size": 82673,
+        "sha256": "5231b82d7833622b7f0863fc2406a31be42a579dc98a9adfe41e0fc153239f37",
+        "disposition": "EXCLUDED_FROM_POSITIVE_LORE",
+        "notes": "Legacy ingestion script with destructive SQLite recreate. Excluded from positive canon extraction."
+      },
+      {
+        "name": "gaya_knowledge_db.sqlite",
+        "category": "GENERATED_DATABASE",
+        "size": 258048,
+        "sha256": "807908c69ee03a270db79fbc957a41407fcfaf3a7d459639535798da2b6be009",
+        "disposition": "EXCLUDED_FROM_POSITIVE_LORE",
+        "notes": "Pre-existing generated database. Preserved without mutation; cannot feed positive dataset."
+      }
+    ]
+  },
+  "research_ledger": {
+    "reports_dir": "/home/amdy/Downloads/reports/plano de pesquisa",
+    "total_files": 46,
+    "experiments_mapping": {
+      "E1": {
+        "research_ref": "R1 (Self-Instruct)",
+        "topic": "Seeded synthetic instruction generation",
+        "design": "Compare deterministic templates vs source-conditioned local generation on frozen splits."
+      },
+      "E2": {
+        "research_ref": "R2 (Datasheets for Datasets)",
+        "topic": "Dataset documentation and lineage",
+        "design": "Full lineage sidecar linking each row to exact immutable source locator; test source revocation."
+      },
+      "E3": {
+        "research_ref": "R3 (Test Oracle Problem / Q6)",
+        "topic": "Oracles and metamorphic semantic verification",
+        "design": "Mutate entity direction, negation, units, routes; verify fault detection on adversarial controls."
+      },
+      "E4": {
+        "research_ref": "R4 (Truth Maintenance / Q10)",
+        "topic": "Contradiction and belief revision",
+        "design": "Track candidate, approved, contested, superseded states; preserve narrator vs persona scopes."
+      },
+      "E5": {
+        "research_ref": "R5 (Prompt Compression / Q11)",
+        "topic": "Compression and character memory",
+        "design": "Compare full evidence vs L0/L1 summaries; enforce zero loss of numeric constraints and negation."
+      },
+      "E6": {
+        "research_ref": "R6 (Authority Attenuation / Q13)",
+        "topic": "Authority and secret canary isolation",
+        "design": "Canary secret injection outside actor visibility; verify zero leakage into persona prompts/targets."
+      },
+      "E7": {
+        "research_ref": "R7 (Options & Macro Actions / Q15)",
+        "topic": "Bounded action datasets",
+        "design": "Executable simulation oracles with initiation conditions, step bounds, and failure receipts."
+      },
+      "E8": {
+        "research_ref": "R8 (Test-time Compute / Q12)",
+        "topic": "Compute allocation and evaluation separation",
+        "design": "Preregistered attempt limits; deterministic verification independent of generator self-agreement."
+      }
+    }
+  },
+  "target_release_layout": {
+    "root": "dataset_runs/<run-id>/",
+    "files": [
+      "release.json",
+      "sources.jsonl",
+      "claims.jsonl",
+      "review-decisions.jsonl",
+      "examples.jsonl",
+      "splits.json",
+      "generation/tapes.jsonl",
+      "training/persona/<split>.jsonl",
+      "training/world/<split>.jsonl",
+      "training/provenance.jsonl",
+      "game/world.json",
+      "game/assets.jsonl",
+      "rag/records.jsonl",
+      "qualification/results.json"
+    ]
+  }
+}

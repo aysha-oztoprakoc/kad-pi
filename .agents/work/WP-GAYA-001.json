@@ -1,0 +1,54 @@
+{
+  "id": "WP-GAYA-001",
+  "project": "kad-pi",
+  "title": "Gaya Settlement Simulation Deterministic Kernel and Replay Qualification",
+  "status": "REVIEW",
+  "priority": 200,
+  "spec_ref": "docs/gaya/SYSTEM.md",
+  "fixed_point": "2f2ae35383a57a955cd9b5626dbe9f62d0bf9f31",
+  "scope": [
+    "tools/gaya/",
+    "docs/gaya/",
+    "evidence/WP-GAYA-001/"
+  ],
+  "non_scope": [
+    "unapproved paid API spend",
+    "modifying core KAD-PI governance without authorization",
+    "inventing unresolved Gaya tabletop lore",
+    "arbitrary shell execution in simulation"
+  ],
+  "owned_paths": [
+    "tools/gaya/",
+    "docs/gaya/",
+    "evidence/WP-GAYA-001/"
+  ],
+  "required_capabilities": [
+    "filesystem_read",
+    "filesystem_write",
+    "code_review"
+  ],
+  "trust_domain": "engineering",
+  "authority_required": "kad-pi-project",
+  "validation": [
+    "node --test tools/gaya/test/*.test.mjs",
+    "node docs/gaya/atlas/build.mjs"
+  ],
+  "evidence_target": "evidence/WP-GAYA-001/",
+  "blocked_by": [],
+  "blocks": [
+    "WP-GAYA-002",
+    "WP-GAYA-003",
+    "WP-GAYA-005"
+  ],
+  "acceptance_criteria": [
+    "Deterministic domain state kernel implemented with normalized entities and SHA256 state hashing",
+    "Command validator rejects unaffordable or illegal actions with structured receipts",
+    "Append-only event ledger chains state before/after hashes with stable causation IDs",
+    "One-day refuge scenario executes successfully under zero-LLM scripted policy",
+    "Replay of accepted command tape produces identical state hash and event ledger",
+    "Gaya System Atlas (atlas.html and SYSTEM.md) compiles cleanly with zero errors"
+  ],
+  "description": "Implement the pure ESM deterministic domain kernel, command validation, append-only event ledger, and 1-day scripted refuge scenario for Gaya: The YKT Refuge with exact replay verification.",
+  "spec_decisions": [],
+  "source_ticket": "user:/WP-GAYA-001"
+}
