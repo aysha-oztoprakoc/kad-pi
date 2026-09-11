@@ -7,6 +7,7 @@
  */
 
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { resolve, join, dirname, relative } from 'node:path';
 import { createHash } from 'node:crypto';
 import { vaultRoot } from './wiki/index.mjs';
@@ -718,12 +719,23 @@ export const VALIDATOR_REGISTRY = {
         : [];
       const headPath = join(gitDir, 'HEAD');
       const head = existsSync(headPath) ? readFileSync(headPath, 'utf8').trim() : '';
-      const committed = loose.length + packed.length > 0;
+      // A ref file can point at an object that does not exist: the store is only
+      // versioned if HEAD actually resolves. Presence of refs/heads/* is not enough —
+      // a truncated object write leaves the ref in place and the history unreadable.
+      let resolved = '';
+      try {
+        resolved = execFileSync('git', ['-C', recordDir, 'rev-parse', '--verify', 'HEAD'], {
+          encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore']
+        }).trim();
+      } catch {
+        resolved = '';
+      }
+      const committed = resolved !== '' && loose.length + packed.length > 0;
       return {
         pass: committed,
         evidence: committed
-          ? `record has ${loose.length + packed.length} branch ref(s) under its own git history (HEAD: ${head})`
-          : `record git repository has no commits (HEAD: ${head || 'missing'})`,
+          ? `record resolves HEAD ${resolved.slice(0, 12)} with ${loose.length + packed.length} branch ref(s) under its own git history`
+          : `record git history does not resolve (HEAD: ${head || 'missing'}; rev-parse --verify HEAD failed)`,
         checked_count: 3
       };
     }

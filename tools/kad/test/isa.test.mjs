@@ -189,3 +189,39 @@ test('memory domain ISAs lint, expose memory contracts, and compile to their own
   const discovered = discoverIsas(VAULT).map(i => i.kad_id);
   assert.ok(discovered.includes('ISA-KAD-MEMORY-001'));
 });
+
+test('memory.record.versioned rejects a ref that does not resolve, accepts one that does', async () => {
+  // A truncated object write leaves `refs/heads/master` in place while the object it
+  // names is gone. Presence of a ref is not versioning: the 2026-09-11 corruption was
+  // reported as PASS by a presence-only check, so this guards the resolution step.
+  const { mkdtemp, mkdir, writeFile, rm } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const { execFileSync } = await import('node:child_process');
+
+  const root = await mkdtemp(resolve(tmpdir(), 'kad-isa-record-'));
+  const record = resolve(root, 'wiki', 'ws', 'proj');
+  const gitDir = resolve(root, 'wiki', '.git');
+  try {
+    await mkdir(resolve(gitDir, 'refs', 'heads'), { recursive: true });
+    await mkdir(record, { recursive: true });
+    await mkdir(resolve(root, '.ai-memory'), { recursive: true });
+    await writeFile(resolve(root, '.ai-memory', 'vault-path'), `${record}\n`);
+    await writeFile(resolve(gitDir, 'HEAD'), 'ref: refs/heads/master\n');
+    await writeFile(resolve(gitDir, 'refs', 'heads', 'master'), `${'a'.repeat(40)}\n`);
+    await writeFile(resolve(record, 'page.md'), 'content\n');
+
+    const dangling = VALIDATOR_REGISTRY['memory.record.versioned'].execute(root);
+    assert.equal(dangling.pass, false, 'a ref pointing at an absent object must not count as versioned');
+    assert.match(dangling.evidence, /does not resolve/);
+
+    // A real commit in the same record resolves and passes.
+    execFileSync('git', ['-C', record, 'init', '-q', '-b', 'master']);
+    execFileSync('git', ['-C', record, '-c', 'user.name=t', '-c', 'user.email=t@local', 'add', '-A']);
+    execFileSync('git', ['-C', record, '-c', 'user.name=t', '-c', 'user.email=t@local', 'commit', '-q', '-m', 'seed']);
+    const versioned = VALIDATOR_REGISTRY['memory.record.versioned'].execute(root);
+    assert.equal(versioned.pass, true);
+    assert.match(versioned.evidence, /resolves HEAD [0-9a-f]{12}/);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});

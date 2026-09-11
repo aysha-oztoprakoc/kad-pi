@@ -54,6 +54,37 @@ function recordDir() {
   return dir;
 }
 
+/**
+ * Paths the mirror does not take from the record verbatim, and which therefore must not
+ * count as drift: `publish` generates `index.md` from the OKF export bundle (it is the
+ * only file allowed to declare `okf_version`), while the record keeps its own human
+ * `index.md`. Comparing them would report one permanent, meaningless difference.
+ */
+const DRIFT_EXCLUDES = [...MIRROR_EXCLUDES, '/index.md'];
+
+/**
+ * Measure record-to-mirror divergence with the same filter `publish` applies.
+ *
+ * A `git status -- vault` comparison sees only *uncommitted* mirror edits, so a
+ * mirror that was committed but never re-published — the state a fresh clone reads —
+ * reported zero drift. Divergence here means *content*: `--checksum` ignores mtime
+ * churn, excluded paths are protected rather than reported as deletions, and only
+ * file transfers and removals are counted. Returns null when the comparison cannot
+ * be made.
+ */
+function mirrorDrift(record) {
+  if (!existsSync(MIRROR)) return null;
+  const result = spawnSync('rsync', [
+    '-a', '--checksum', '--delete', '--dry-run', '--itemize-changes',
+    ...DRIFT_EXCLUDES.flatMap((e) => ['--exclude', e]), `${record}/`, `${MIRROR}/`
+  ], { encoding: 'utf8' });
+  if (result.status !== 0) return null;
+  return result.stdout
+    .split('\n')
+    .filter((line) => line.startsWith('>') || line.startsWith('*deleting'))
+    .length;
+}
+
 function aiMemoryEnv() {
   const env = { ...process.env, AI_MEMORY_DATA_DIR: DATA_DIR };
   const tokenFile = resolve(process.env.HOME ?? '', '.config/ai-memory/env');
@@ -165,9 +196,11 @@ async function status() {
   if (live) {
     const marker = join(REPO_ROOT, '.ai-memory.toml');
     console.log(`  capture scope ....... ${existsSync(marker) ? '.ai-memory.toml present' : 'MISSING'}`);
-    const drift = spawnSync('git', ['-C', REPO_ROOT, 'status', '--short', '--', 'vault'], { encoding: 'utf8' })
+    const drift = mirrorDrift(record);
+    console.log(`  mirror drift ........ ${drift === null ? 'unavailable (rsync failed)' : `${drift} path(s) differ from the record`}`);
+    const uncommitted = spawnSync('git', ['-C', REPO_ROOT, 'status', '--short', '--', 'vault'], { encoding: 'utf8' })
       .stdout.trim().split('\n').filter(Boolean).length;
-    console.log(`  mirror drift ........ ${drift} path(s) differ from HEAD`);
+    console.log(`  vault uncommitted ... ${uncommitted} path(s) differ from HEAD`);
   }
 }
 

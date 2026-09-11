@@ -1,7 +1,7 @@
 {
   "registry_type": "KAD_ISA_REGISTRY",
   "version": "1.0.0",
-  "generated_at": "2026-09-11T15:45:33.410Z",
+  "generated_at": "2026-09-11T21:23:53.810Z",
   "artifacts_count": 3,
   "artifacts": [
     {
@@ -32,7 +32,7 @@
       "source_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/00_Governance/ISA-KAD-MEMORY-001.md",
       "projection_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/90_Derived/Projections/isa-memory.json",
       "claims_count": 9,
-      "ok": false
+      "ok": true
     }
   ]
 }
