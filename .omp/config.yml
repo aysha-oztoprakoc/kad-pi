@@ -1,6 +1,6 @@
 modelRoleStorage: project
 modelRoles:
-  default: openai-codex/gpt-5.6-luna:max
+  default: opencode-go/deepseek-v4.1-flash:max
   task: openai-codex/gpt-5.6-luna:low
   advisor: google-antigravity/gemini-3.8-flash:low
   designer: google-antigravity/gemini-3.8-flash:high
@@ -49,10 +49,6 @@ enabledModels:
   - zai-free/*
   - kad-local-world/*
   - kad-local-qwen/*
-  # Single OpenAI-compatible transport for local + subscription models. The
-  # provider block in .omp/models.yml is projected by `bin/kad-models sync` and
-  # carries only policy-exposed ids (no metered models). See
-  # config/omniroute-exposure.json.
   - omniroute/*
 disabledProviders:
   - openrouter
