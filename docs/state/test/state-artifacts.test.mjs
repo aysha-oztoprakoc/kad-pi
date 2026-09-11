@@ -2,10 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const stateDir = path.resolve(here, '..');
+const repoRoot = path.resolve(here, '../..');
 const readJson = (name) => JSON.parse(fs.readFileSync(path.join(stateDir, name), 'utf8'));
 
 const CSA_STATE_CLASSES = new Set([
@@ -135,4 +137,37 @@ test('Gap model: post-WP gaps that WP-041 resolved are marked RESOLVED', () => {
     assert.ok(GAP_OWNERSHIP.has(g.ownership_status), `gap ${g.gap_id} invalid ownership ${g.ownership_status}`);
     assert.ok(g.evidence, `gap ${g.gap_id} missing evidence`);
   }
+});
+
+/**
+ * How far HEAD may advance past the commit the CSA records. Committing the CSA itself
+ * necessarily moves HEAD one commit past the state it describes, so a lag of one is
+ * structural; anything beyond that means the artifact is describing a checkout that is
+ * no longer the one on disk.
+ */
+const MAX_CSA_LAG = 1;
+
+test('CSA: the recorded repository state is live, not historical', () => {
+  // The artifact declares `state: CURRENT`. Before 2026-09-11 that claim went
+  // unchecked: the CSA named 3a0b5b0 while HEAD was six commits ahead with 466 fewer
+  // dirty paths, and every reader treated it as current. This assertion makes the
+  // claim falsifiable, so the CSA is refreshed instead of quietly ageing.
+  const csa = readJson('CSA_KAD_PI_CURRENT.json');
+  const git = (...args) => execFileSync('git', ['-C', repoRoot, ...args], {
+    encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore']
+  }).trim();
+
+  const head = git('rev-parse', 'HEAD');
+  const recorded = csa.repository.head;
+  assert.match(recorded, /^[0-9a-f]{40}$/, 'repository.head must be a full commit id');
+  execFileSync('git', ['-C', repoRoot, 'cat-file', '-e', `${recorded}^{commit}`], { stdio: 'ignore' });
+
+  const newer = Number(git('rev-list', '--count', `${recorded}..${head}`));
+  assert.ok(
+    newer <= MAX_CSA_LAG,
+    `CSA records ${recorded.slice(0, 8)} but HEAD is ${head.slice(0, 8)}, ${newer} commits newer. `
+    + 'Refresh docs/state/CSA_KAD_PI_CURRENT.{md,json} in the same commit as the work that moved HEAD.'
+  );
+  assert.equal(csa.repository.branch, git('rev-parse', '--abbrev-ref', 'HEAD'), 'CSA branch must match the checkout');
+  assert.equal(csa.state, 'CURRENT');
 });

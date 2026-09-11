@@ -1,22 +1,22 @@
 {
   "schema": "kad.csa/v1",
   "state": "CURRENT",
-  "generated_at": "2026-09-11T15:46:34Z",
-  "evidence_cutoff": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+  "generated_at": "2026-09-11T21:38:00Z",
+  "evidence_cutoff": "46c6f988412a2032d4760ea23bba23dd8e825014",
   "repository": {
-    "head": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
+    "head": "46c6f988412a2032d4760ea23bba23dd8e825014",
     "branch": "main",
     "remote": "https://github.com/aysha-oztoprakoc/kad-pi.git",
     "remote_head": "2f2ae35383a57a955cd9b5626dbe9f62d0bf9f31",
     "dirty": true,
-    "dirty_paths": 469,
-    "divergence": 1,
+    "dirty_paths": 11,
+    "divergence": 16,
     "state_class": "VERIFIED_CURRENT",
     "evidence": {
       "source": "git",
       "command": "git rev-parse HEAD; git ls-remote origin refs/heads/main; git status --short --untracked-files=all | wc -l",
-      "hash": "3a0b5b0f2cb11ed00b65ef8da7bb49c309c42af5",
-      "path": "evidence/WP-KAD-MEMORY-SUBSTRATE-057/baseline-probe-2026-09-11.txt"
+      "hash": "46c6f988412a2032d4760ea23bba23dd8e825014",
+      "path": "evidence/WP-KAD-REVIEW-REMEDIATION-058/csa-refresh-probe.txt"
     }
   },
   "hosts": {
@@ -73,7 +73,7 @@
       "memory_wiring": {
         "hooks_extension": "~/.omp/agent/extensions/ai-memory-omp.ts (mode 0600)",
         "mcp_registration": "~/.omp/agent/mcp.json (global, mode 0600; carries the bearer)",
-        "bearer_source": "AI_MEMORY_AUTH_TOKEN in ~/.omp/agent/.env — the generated OMP extension resolves it from the process env at runtime, not from an embedded literal",
+        "bearer_source": "AI_MEMORY_AUTH_TOKEN in ~/.omp/agent/.env \u2014 the generated OMP extension resolves it from the process env at runtime, not from an embedded literal",
         "model_map": "~/.omp/agent/models.yml (the path OMP actually reads; bin/omp-kad is intended to symlink .omp/models.yml here but the path holds a stale regular file, so bin/kad-models also projects into it)",
         "project_mcp_file": ".omp/mcp.json deliberately carries NO ai-memory entry: it is git-tracked and the entry embeds a bearer token",
         "state_class": "VERIFIED_CURRENT",
@@ -155,7 +155,7 @@
     },
     "adapter": {
       "provider": "ai-memory",
-      "module": "tools/kad/knowledge-plane-adapters.mjs → createAiMemoryAccessAdapter",
+      "module": "tools/kad/knowledge-plane-adapters.mjs \u2192 createAiMemoryAccessAdapter",
       "authority": "DERIVED",
       "authority_grant": false,
       "acceptance_state": "PROPOSED (the adapter cannot emit ACCEPTED)",
@@ -234,14 +234,14 @@
     "note": "14 WP-031 streams mapped; ~80% implemented"
   },
   "plugins": {
-    "marketplace": "claude-plugins-official (anthropics/claude-plugins-official) — catalog added; no plugins installed",
+    "marketplace": "claude-plugins-official (anthropics/claude-plugins-official) \u2014 catalog added; no plugins installed",
     "extensions": [
       "kad-control-plane.js",
-      "kad-context-economy.js (bootstrap shims → tools/kad/telemetry/control-plane-runtime.mjs)"
+      "kad-context-economy.js (bootstrap shims \u2192 tools/kad/telemetry/control-plane-runtime.mjs)"
     ],
     "mcp": {
-      "context7": "npx @upstash/context7-mcp@4.0.4 — AUTHORITY-INVERSION RISK (fetches remote code)",
-      "ai-memory": "~/.omp/agent/mcp.json — native HTTP transport, bearer-authenticated, global (outside the repo)"
+      "context7": "npx @upstash/context7-mcp@4.0.4 \u2014 AUTHORITY-INVERSION RISK (fetches remote code)",
+      "ai-memory": "~/.omp/agent/mcp.json \u2014 native HTTP transport, bearer-authenticated, global (outside the repo)"
     },
     "fusion": {
       ".omp/fusion/manifest.json": "ambient extensions/skills/rules disabled; mutation gated on leases"
@@ -304,16 +304,23 @@
       "installed": true,
       "version": "3.8.50",
       "base_url": "http://127.0.0.1:20128/v1",
-      "bind": "127.0.0.1 only (upstream default is 0.0.0.0 with no key requirement — corrected)",
-      "authority": "TRANSPORT_ONLY (config/external-providers.json → omniroute-gateway)",
+      "bind": "127.0.0.1 only (upstream default is 0.0.0.0 with no key requirement \u2014 corrected)",
+      "authority": "TRANSPORT_ONLY (config/external-providers.json \u2192 omniroute-gateway)",
       "service": "systemd --user omniroute.service, enabled, active",
-      "connections": ["llama-cpp kad-local-world (127.0.0.1:5001/v1)", "llama-cpp kad-local-qwen (127.0.0.1:5002/v1)", "openrouter"],
+      "connections": [
+        "llama-cpp kad-local-world (127.0.0.1:5001/v1)",
+        "llama-cpp kad-local-qwen (127.0.0.1:5002/v1)",
+        "openrouter"
+      ],
       "advertised_models": 1610,
       "exposed_models": 31,
-      "exposure_policy": "config/omniroute-exposure.json → LOCAL_SUBSCRIPTION_AND_FREE_TIERS_ONLY",
+      "exposure_policy": "config/omniroute-exposure.json \u2192 LOCAL_SUBSCRIPTION_AND_FREE_TIERS_ONLY",
       "catalog_snapshot": "config/omniroute-catalog.json (hash-verified over the full advertised set)",
       "client_credential": "OMNIROUTE_API_KEY (dashboard key 'kad-pi-harness'), operator-scoped files outside the repo",
-      "not_connected": ["agy/antigravity (Google AI Pro OAuth — needs interactive consent)", "opencode-go (needs the subscription credential)"],
+      "not_connected": [
+        "agy/antigravity (Google AI Pro OAuth \u2014 needs interactive consent)",
+        "opencode-go (needs the subscription credential)"
+      ],
       "state_class": "VERIFIED_CURRENT",
       "evidence": {
         "source": "COMMAND",
@@ -336,7 +343,7 @@
       "openai-codex/gpt-5.6-luna + gpt-5.6-terra (SUBSCRIPTION_BACKED, quota UNKNOWN)",
       "google-antigravity/gemini-3.8-flash + gemini-3.1-pro",
       "zai-free/glm-4.7-flash (FREE, tiny/commit)",
-      "omniroute/* — local + subscription + free-tier models through one gateway endpoint"
+      "omniroute/* \u2014 local + subscription + free-tier models through one gateway endpoint"
     ],
     "evidence": {
       "source": "FILE",
@@ -356,9 +363,12 @@
     }
   },
   "verification": {
-    "note": "see evidence/WP-KAD-MEMORY-SUBSTRATE-057/ and evidence/WP-KAD-OMP-METAHARNESS-REFACTOR-041/",
-    "state_artifacts_test": "node --test docs/state/test/state-artifacts.test.mjs — 9/9 pass",
-    "isa_gates": "bin/kad-isa lint all — 3 ISAs clean; bin/kad-isa check all — every claim PASS (aesthetic 10/10, compute-fabric 14/14, memory 9/9)"
+    "note": "see evidence/WP-KAD-REVIEW-REMEDIATION-058/ and evidence/WP-KAD-MEMORY-SUBSTRATE-057/",
+    "state_artifacts_test": "node --test docs/state/test/state-artifacts.test.mjs \u2014 pass, including the repository liveness assertion",
+    "test_suite": "npm test \u2014 876 tests, 0 failing (2026-09-11)",
+    "isa_gates": "bin/kad-isa lint all \u2014 3 ISAs clean; bin/kad-isa check all \u2014 33/33 claims PASS",
+    "posture_check": "node tools/kad/posture-check.mjs \u2014 6/6 declared keys agree with .omp/config.yml",
+    "secret_scan": "gitleaks git . --no-banner \u2014 no leaks found (9 verified non-secrets allowlisted by shape)"
   },
   "unknowns": [
     "TELL reachability / hardware (not probed)",
@@ -375,10 +385,14 @@
     "two OMP binaries (18.1.14 mise active, 18.0.9 staged)",
     "ai-memory LAN bind is plaintext HTTP with a bearer token; TLS termination via the documented Caddy template is the recorded upgrade path",
     "the gateway's client-API routes require a valid key even with REQUIRE_API_KEY=false (upstream 3.8.50 behaviour), so a dashboard-issued key is mandatory rather than optional",
-    "OMP reads ~/.omp/agent/models.yml, not .omp/models.yml; that path currently holds a stale regular file rather than the symlink bin/omp-kad would create, so bin/kad-models now projects into both",
-    "vault/ is a faithful mirror and therefore carries 123 pages that were already untracked in the working tree and lack the kad_id the vault schema requires; bin/kad-wiki lint reports 126 errors and bin/kad-wiki rebuild refuses to run on them. All 126 are on files with zero git tracking at the evidence cutoff, so none was introduced by this workpackage.",
-    "the OMP orchestration preflight reports BLOCKED both before and after this workpackage: UNAPPROVED_OR_PAYG_MODEL_SURFACE (its spend predicate requires every enabled pattern to resolve to a loopback auth:none provider, which the project's subscription-enabled config has never satisfied), plus MEMORY_NOT_OFF and AUTOLEARN_ENABLED",
-    "tools/kad/test/local-multi-endpoint.test.mjs T2-T4 fail identically at the evidence cutoff (BLOCKED vs DEGRADED); T1/T2/T6 index-based assertions were decoupled from array position, and T1b was added to assert that TRANSPORT_ONLY gateway providers are excluded from the local-inference census"
+    "OMP reads ~/.omp/agent/models.yml, not .omp/models.yml; `bin/kad-models sync` now projects the same policy-exposed set into both and they are byte-identical (verified 2026-09-11), but the agent path remains a regular file rather than the symlink `bin/omp-kad` intends, so the two can drift silently.",
+    "vault/ is a faithful mirror and therefore carries the non-conformant corpus: `bin/kad-wiki lint` reports 140 errors over 139 distinct paths (138 MISSING_KAD_ID, one TRAINING_GATE, one INELIGIBLE_AUTHORITY), of which 14 are live-captured session pages the substrate keeps adding. The corpus was untracked at the WP-057 cutoff and is committed as of 534685d, so this is now a repository-resident content decision rather than untracked drift; by construction the count cannot fall while capture continues.",
+    "the OMP orchestration preflight reports BLOCKED: UNAPPROVED_OR_PAYG_MODEL_SURFACE, MEMORY_NOT_OFF, AUTOLEARN_ENABLED and LOCAL_PROCESS_OWNERSHIP_UNKNOWN:zai-free. The receipt is deterministic and correct, but no entrypoint runs it \u2014 not the Makefile, Justfile, package.json or any workflow \u2014 so its verdict reaches no caller.",
+    "RESOLVED 2026-09-11 (WP-KAD-REVIEW-REMEDIATION-058): local-multi-endpoint.test.mjs T2-T4 failed because the fixture injected only localInference while the aggregate `status` also depended on the live learning/spend posture. The fixture is now isolated and the live-posture coupling lives in exactly one named test.",
+    "DECLARED 2026-09-11: the harness posture is stated in .omp/RULES.md (approvalMode=yolo, memory.backend=mnemopi, autolearn.enabled=true) and `node tools/kad/posture-check.mjs`, wired into `make verify`, fails when the declaration and .omp/config.yml disagree. The yolo posture itself was widened in 1a738b5 with no recorded decision; it is now a declared operator decision rather than an unrecorded one.",
+    "`make test` delegates to `npm test`, which covers the kad, workspace, librarian, gaya, state-artifact and ask_user suites (876 tests, 0 failing on 2026-09-11). Previously the enrolled gate ran 15 of 84 kad test files, so it was green while the root gate was red.",
+    "the wiki of record was repaired on 2026-09-11: a truncated object write had left refs/heads/master pointing at a zero-byte object, so `git log` failed while the ISA validator reported PASS on ref-presence alone. History was re-anchored on 9023f9d1, the index rebuilt, and memory.record.versioned now resolves HEAD.",
+    "the Gaya frame evidence for WP-GAYA-DATASET-G1-01..08 was promoted from the kad-rpg staging tree into the evidence_target paths the ledger declares. Those eight paths had never existed in any revision, and workctl's ACCEPT gate only checks a target directory when it exists, so acceptance could be recorded with no evidence."
   ],
   "hosts.amdy": {
     "cpu": "AMD Ryzen 7 7700 8-Core",

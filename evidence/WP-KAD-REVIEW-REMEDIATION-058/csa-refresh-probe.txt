@@ -1,0 +1,20 @@
+# CSA refresh probe — 2026-09-11T21:36:41Z
+
+command: git rev-parse HEAD
+46c6f988412a2032d4760ea23bba23dd8e825014
+
+command: git rev-parse --abbrev-ref HEAD
+main
+
+command: git ls-remote origin refs/heads/main
+2f2ae35383a57a955cd9b5626dbe9f62d0bf9f31	refs/heads/main
+
+command: git status --short --untracked-files=all | wc -l
+11
+
+command: git rev-list --count origin/main..HEAD
+16
+
+command: git rev-list --count HEAD..origin/main
+0
+
