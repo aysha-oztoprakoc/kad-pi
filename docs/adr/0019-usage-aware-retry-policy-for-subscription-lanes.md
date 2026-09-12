@@ -45,3 +45,27 @@ of fact, it is two different measurements:
   unattended run can stall where it previously failed fast. Reverting is a one-line change to
   `maxDelayMs`. Windows on one account remain a shared bucket: no configuration makes two
   simultaneous sessions independent of it.
+
+## Amendment — 2026-09-12: the procedure was wrong on the KAD path
+
+The Context note above says `retry.waitForUsageReset` "is already `true` in the machine-level
+config". That is true of the ambient `omp` flow and **false** of `bin/omp-kad` runs: the launcher
+redirects `PI_CODING_AGENT_DIR` into `.state/omp-kad/<profile>`, so the machine-level agent config
+is deliberately not read. Measured both ways on this checkout:
+
+| invocation | `omp config get retry.waitForUsageReset` |
+| --- | --- |
+| `omp` in this directory (ambient agent dir) | `true` |
+| `PI_CODING_AGENT_DIR=.state/omp-kad/agent omp …` (until this amendment) | `false` |
+
+So decision 2's ceiling had been lifted on a path where the wait itself was disabled: KAD runs
+failed fast instead of resuming through a stated reset — the opposite of the declared preference —
+and the setting that decided it lived outside the repository, where no review could see it.
+
+**Decision 5.** Each launcher profile declares its retry posture in the repository and installs it as
+that profile's agent-dir config: `config/omp-interactive.yml` (`waitForUsageReset: true`, the default
+profile) and `config/omp-unattended.yml` (`false`, selected by `bin/omp-kad --unattended`). An
+interactive session may wait out a stated reset because a human can abort it; an unattended run has
+nobody to abort it and must fail fast. `tools/kad/test/launcher-profiles.test.mjs` pins the wiring,
+and the resolved value stays re-checkable with
+`PI_CODING_AGENT_DIR=.state/omp-kad/<profile> omp config get retry.waitForUsageReset`.

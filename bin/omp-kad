@@ -4,8 +4,9 @@ set -euo pipefail
 WORK_ROOT="${KAD_WORKSPACE_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
 
 # ADR 0018: the newest mise-provided build is the harness. A bare `which omp` is not enough — a
-# hand-installed copy earlier on PATH (this host has one at ~/.local/bin/omp, one release behind)
-# silently shadows the mise build in every login shell. Ask mise what it dispatches first.
+# hand-installed copy earlier on PATH can silently shadow the mise build in every login shell. One
+# such copy (`~/.local/bin/omp`, 18.1.14, 200 MB) did exactly that here and was removed on
+# 2026-09-12; the resolution order stays as defence in depth, not because it is still needed.
 resolve_omp_binary() {
   local resolved
   if command -v mise >/dev/null 2>&1; then
@@ -17,8 +18,22 @@ resolve_omp_binary() {
   printf '%s' "$WORK_ROOT/bin/omp-patched-canary"
 }
 
+# Two profiles share one state tree. The default is interactive; `--unattended` selects the bounded
+# retry profile (ADR 0019): an interactive session may wait for a provider-stated usage reset because
+# a human can abort it, an unattended run has nobody to abort it and must fail fast instead of
+# sleeping through the window. The default profile keeps the state directory name `agent` so the
+# existing session state stays where it is.
+PROFILE="interactive"
+STATE_DIR="agent"
+ARGS=()
+for arg in "$@"; do
+  if [[ "$arg" == "--unattended" ]]; then PROFILE="unattended"; STATE_DIR="unattended"; continue; fi
+  ARGS+=("$arg")
+done
+
 OMP_BINARY="${OMP_BINARY:-$(resolve_omp_binary)}"
-OMP_STATE="$WORK_ROOT/.state/omp-kad/agent"
+OMP_STATE="$WORK_ROOT/.state/omp-kad/$STATE_DIR"
+OMP_PROFILE_CONFIG="$WORK_ROOT/config/omp-$PROFILE.yml"
 MODEL_CONFIG="$WORK_ROOT/.omp/models.yml"
 LINK="$OMP_STATE/models.yml"
 
@@ -77,7 +92,23 @@ if [[ -f "$HOME/.deepapi/env" ]]; then
   source "$HOME/.deepapi/env"
 fi
 
+# The launcher redirects PI_CODING_AGENT_DIR into the workspace state tree, so the machine-global
+# agent config is deliberately not read on KAD runs. That layer is where the operator's
+# `retry.waitForUsageReset: true` lived, which meant KAD runs silently took the built-in default
+# (`false`) and never waited out a provider-stated reset — see the ADR 0019 amendment. Each profile
+# therefore declares its own agent-dir config in the repository, so the retry posture is a
+# reviewable file instead of ambient machine state.
+if [[ ! -f "$OMP_PROFILE_CONFIG" ]]; then
+  printf 'omp-kad: missing profile config: %s\n' "$OMP_PROFILE_CONFIG" >&2
+  exit 78
+fi
+ln -sf "$OMP_PROFILE_CONFIG" "$OMP_STATE/config.yml"
+
+if [[ "$PROFILE" == "unattended" ]]; then
+  printf 'omp-kad: unattended profile — retry.waitForUsageReset=false, fails fast instead of waiting for a usage reset\n' >&2
+fi
+
 export PI_CODING_AGENT_DIR="$OMP_STATE"
 
 # P03: Never infer ownership of or delete $HOME/.omp.
-exec "$OMP_BINARY" "$@"
+exec "$OMP_BINARY" ${ARGS[@]+"${ARGS[@]}"}

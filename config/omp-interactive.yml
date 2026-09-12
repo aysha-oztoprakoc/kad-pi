@@ -1,0 +1,17 @@
+# Interactive harness profile — the default for `bin/omp-kad`.
+#
+# This file is symlinked into the profile's agent directory as `config.yml`, so it is the
+# agent-dir (global) configuration layer for that run — see `omp config path`.
+#
+# Why this file exists at all: the launcher redirects `PI_CODING_AGENT_DIR` into the workspace
+# state tree, which means the machine-global agent config is deliberately not read on KAD runs.
+# That layer is where the operator's `retry.waitForUsageReset: true` lived, so KAD runs were
+# silently running with the built-in default (`false`) and never waited out a provider-stated
+# usage reset — contrary to what ADR 0019 recorded for the ambient `omp` flow. Declaring the value
+# here puts the retry posture in the repository, where it is reviewable and diffable, which is what
+# ADR 0019 decision 3 asks of the other tuning keys.
+#
+# Paired with `config/omp-unattended.yml`, which takes the bounded behaviour because an unattended
+# run has nobody to abort a long wait.
+retry:
+  waitForUsageReset: true

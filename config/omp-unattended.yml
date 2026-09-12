@@ -1,0 +1,15 @@
+# Unattended harness profile, selected by `bin/omp-kad --unattended`.
+#
+# This file is symlinked into the profile's agent directory as `config.yml`, so it is the
+# agent-dir (global) configuration layer for that run — see `omp config path`.
+#
+# ADR 0019 keeps `retry.waitForUsageReset: true` for interactive sessions: waiting through a
+# provider-stated usage reset is resume behaviour a human asked for, and Esc can abort it. An
+# unattended run has nobody to abort it, so it takes the bounded behaviour here: the wait does not
+# happen and the call fails fast instead of sleeping through the window.
+#
+# Scope: this layer overrides the built-in default. A key set in the project's `.omp/config.yml`
+# still wins, because the project layer outranks the agent-dir layer. `retry.waitForUsageReset` is
+# deliberately not set there, so this profile is what decides it.
+retry:
+  waitForUsageReset: false
