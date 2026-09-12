@@ -5,7 +5,7 @@
   "actor": "omp-kad-review-remediation",
   "captured_at": "2026-09-11T21:45:00Z",
   "base_commit": "3ca6b8627d1f4b1c5d62c89f5cb81661c70efb03",
-  "verdict": "COMPLETE_PENDING_INDEPENDENT_REVIEW",
+  "verdict": "COMPLETE_PENDING_ACCEPTANCE",
   "scope": "Remediation of the independent 2026-09-11 workspace review: declared posture, binding gates, spend policy, memory record, evidence durability, projections, hygiene.",
   "items": [
     {
@@ -77,7 +77,10 @@
         "kad-rpg commit 57cfead: 800 paths staged, working tree clean, 851 tracked files, .git 26M -> 40M (bundle/replay dedupe)",
         "python -m unittest discover kad-gaya/tests -> Ran 77 tests, OK, exit 0 (re-run after the commit)"
       ],
-      "commits": ["826e5f8", "57cfead (kad-rpg)"]
+      "commits": [
+        "826e5f8",
+        "57cfead (kad-rpg)"
+      ]
     },
     {
       "id": "P6",
@@ -90,7 +93,10 @@
         "node --test docs/state/test/state-artifacts.test.mjs -> 10/10 pass",
         "control: CSA head set back to 3a0b5b0 -> 'CSA records 3a0b5b0f but HEAD is 46c6f988, 13 commits newer' (fails as intended)"
       ],
-      "commits": ["13a5c7d", "29369d3"]
+      "commits": [
+        "13a5c7d",
+        "29369d3"
+      ]
     },
     {
       "id": "P7",
@@ -104,28 +110,100 @@
         "wiki/ falsification: 5 top-level documents are referenced by the Librarian catalog/index and 18 are referenced by ledger records; deleting it would have broken make verify",
         "gitleaks git . --no-banner -> no leaks found (9 verified non-secrets allowlisted by shape); control repository with a synthetic key still reports 1 leak"
       ],
-      "commits": ["46c6f98", "5d1369f (technopagan)"]
+      "commits": [
+        "46c6f98",
+        "5d1369f (technopagan)"
+      ]
+    },
+    {
+      "id": "P1b",
+      "deliverable": "workctl ACCEPT is fail-closed when the evidence is absent",
+      "change": "Transitioning to ACCEPTED requires a declared evidence_target that exists and is non-empty; a missing target, a path that was never created and an empty target all refuse the transition.",
+      "evidence": [
+        "tools/workspace/workctl.mjs:249-266",
+        "tools/workspace/workctl.test.mjs: 9 tests, including the missing/absent/empty-target refusals"
+      ],
+      "commit": "68f90df"
+    },
+    {
+      "id": "P1c",
+      "deliverable": "The OMP preflight is bound to an entrypoint",
+      "change": "tools/kad/preflight-gate.mjs runs the receipt and maps it to a gate: BLOCKED fails, DEGRADED prints its causes and passes. Wired into `make verify`.",
+      "evidence": [
+        "Makefile verify target, line 9",
+        "tools/kad/test/preflight-gate.test.mjs: 5 tests (pass, fail, mise dispatch precedence, degraded cause visible, unmanaged provenance warns)"
+      ],
+      "commit": "8e3f219"
+    },
+    {
+      "id": "P1d",
+      "deliverable": "npm run lint is inside the gate",
+      "change": "`make test` delegates to `npm test`, and `npm test` runs the state-artifact suite; `make verify` runs the wiki lint, so a red lint cannot pass silently.",
+      "evidence": [
+        "Makefile",
+        "package.json test script"
+      ],
+      "commit": "3b53fb0"
+    },
+    {
+      "id": "P8",
+      "deliverable": "The OMP the workspace runs is the newest mise build",
+      "change": "ADR 0018: mise resolves `latest` with the tool exempt from the 24h minimum_release_age guard (18.1.18 installed, attestation-verified). bin/omp-kad and the preflight both resolve OMP_BINARY -> `mise which omp` -> PATH -> canary, and report a PATH shadow rather than trusting it.",
+      "evidence": [
+        "docs/adr/0018-newest-mise-provided-omp-is-authoritative.md",
+        "evidence/WP-KAD-REVIEW-REMEDIATION-058/implementer-verification.json",
+        "a login shell now runs omp/18.1.18 from /home/amdy/.local/bin/omp was 18.1.14"
+      ],
+      "commit": "4a4743f"
+    },
+    {
+      "id": "P9",
+      "deliverable": "The settings matrix is compared against the enforced config",
+      "change": "37 project-declared settings are compared on every test run; 12 rows were stating a previous model cascade as VERIFIED and are corrected. Reading .omp/config.yml needed parseSimpleYaml to handle scalar list items and to scope its lookahead to the next line.",
+      "evidence": [
+        "docs/state/test/state-artifacts.test.mjs: \"every project-declared setting matches the enforced config\" (asserts the comparison cannot go vacuous)",
+        "docs/state/OMP_SETTINGS_COMPATIBILITY_MATRIX.json"
+      ],
+      "commit": "4a4743f"
+    },
+    {
+      "id": "P10",
+      "deliverable": "Usage-aware retry policy for the subscription lanes",
+      "change": "ADR 0019: usageReservePct 5 (the default 10 reported headroom as exhaustion), maxDelayMs 0 (the documented setting for resuming through provider-stated resets), and the default fallback chain no longer leads with the bucket most likely to be saturated.",
+      "evidence": [
+        "docs/adr/0019-usage-aware-retry-policy-for-subscription-lanes.md",
+        ".omp/config.yml retry block, compared against the matrix by the test above"
+      ],
+      "commit": "4a4743f"
     }
   ],
   "known_red_unchanged": [
-    "bin/kad-wiki lint -> 140 errors over 139 paths (138 MISSING_KAD_ID, 1 TRAINING_GATE, 1 INELIGIBLE_AUTHORITY); 14 are live-captured session pages, so the count cannot fall while capture continues. bin/kad-wiki rebuild refuses, as designed.",
-    "OMP orchestration preflight -> BLOCKED (MEMORY_NOT_OFF, AUTOLEARN_ENABLED, LOCAL_PROCESS_OWNERSHIP_UNKNOWN:zai-free, UNAPPROVED_OR_PAYG_MODEL_SURFACE). Not wired into any entrypoint (P1c was not selected).",
-    "mirror drift is non-zero between publishes because the substrate captures continuously; the metric now reports it, and it read 0 immediately after the publish.",
-    "P1b (workctl ACCEPT evidence gate fails open on a missing evidence_target) and P1d (npm run lint outside the gate) were reported but not selected for execution."
+    "bin/kad-wiki lint reports 22 warnings / 210 notes outside the declared zones (episodic capture pages the substrate rewrites). They are reported, not fatal, by design.",
+    "mirror drift is non-zero between publishes because the substrate captures continuously; the metric reports it and it reads 0 immediately after a publish.",
+    "The OMP preflight is DEGRADED, not READY: local retrieval is not running on this host, and the PATH shadow /home/amdy/.local/bin/omp (18.1.14) is reported. Neither blocks."
   ],
   "gates": {
-    "make verify": "PASS",
-    "make test": "EXIT=0 (delegates to npm test + kad-lab C++)",
-    "npm test": "880 tests, 880 pass, 0 fail",
+    "npm test": "904 tests, 904 pass, 0 fail (was 880 at first capture)",
+    "make verify": "PASS \u2014 validate_prime_directive, posture-check 6/6, preflight-gate (DEGRADED, non-fatal), kad-wiki lint (0 errors), librarian verify",
+    "OMP preflight": "DEGRADED, 0 failures \u2014 omp 18.1.18 (mise); wired into make verify as tools/kad/preflight-gate.mjs since P1c",
+    "bin/kad-wiki lint": "ok, 0 errors, 22 warnings, 210 notes (was 141 errors over 139 paths); `bin/kad-wiki rebuild` runs",
     "bin/kad doctor": "PASS",
-    "bin/workctl doctor": "healthy, 0 errors, warnings only (LOCAL_DELTA x16, stale claims until the workpackages are transitioned)",
+    "bin/workctl doctor": "healthy, 0 errors, 16 warnings (LOCAL_DELTA, 0 stale)",
+    "bin/kad-isa lint all": "3 ISAs clean",
     "bin/kad-isa check all": "33/33 claims PASS (aesthetic 10/10, compute-fabric 14/14, memory 9/9)",
-    "docs/state/test/state-artifacts.test.mjs": "10/10 pass",
+    "docs/state/test/state-artifacts.test.mjs": "13/13 pass",
     "tools/kad/posture-check.mjs": "6/6 keys agree",
+    "gitleaks git . --no-banner": "no leaks found, with the allowlist narrowed to the exact nine matched values (regexTarget=secret); a control file proves a new secret on a previously-allowlisted line is still reported",
     "data_workspace gate": "EXIT=0",
     "technopagan-netrunner gate": "EXIT=0, 11/11 steps",
-    "kad-rpg gate": "77 tests OK, EXIT=0",
-    "gitleaks": "no leaks found"
+    "kad-rpg gate": "77 tests OK, EXIT=0"
   },
-  "no_gate_weakened": "Every change either adds a check, makes an existing claim falsifiable, or repairs state. The two known-red gates were left red and are reported above."
+  "no_gate_weakened": "Every change either adds a check, makes an existing claim falsifiable, or repairs state. The two known-red gates were left red and are reported above.",
+  "refreshed_at": "2026-09-12T19:00:00Z",
+  "refresh": {
+    "reason": "The independent review of this workpackage found the receipt asserting three conditions that no longer held at the commit it was filed against: that `bin/kad-wiki lint` was red, that the OMP preflight was BLOCKED and unwired, and that P1b was reported but not executed. All three had been closed by commits in the same range.",
+    "found_by": "evidence/WP-KAD-REVIEW-REMEDIATION-058/independent-review.json",
+    "at_commit": "HEAD of the refresh commit",
+    "also_corrected": "gates were re-measured, and the item list now records the work delivered after the first capture (P1b, P1c, P1d and P8-P10)."
+  }
 }

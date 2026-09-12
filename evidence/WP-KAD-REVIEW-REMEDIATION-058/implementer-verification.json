@@ -2,70 +2,70 @@
   "schema": "kad.execution-verification/v1",
   "workpackage": "WP-KAD-REVIEW-REMEDIATION-058",
   "project_root": "/home/amdy/Work",
-  "recorded_at": "2026-09-12T17:55:03.773Z",
-  "head": "2b95b9f189e3309f0df5618abcedf911f473adb2",
-  "worktree_dirty": 9,
+  "recorded_at": "2026-09-12T18:14:07.019Z",
+  "head": "8e3f219eeddcf6ef37716943fb412020f2344930",
+  "worktree_dirty": 12,
   "boundary": "IMPLEMENTER_VERIFICATION — deterministic results only. Independent review and human acceptance are separate records.",
   "results": [
     {
       "command": "npm test",
-      "started_at": "2026-09-12T17:54:48.007Z",
+      "started_at": "2026-09-12T18:13:50.574Z",
       "exit_code": 0,
-      "observed_tail": "✔ ticket import accepts a blocker already registered in workctl (0.361814ms)\n✔ ticket contracts reject provider, model, and harness coupling (0.210224ms)\n✔ workctl CLI imports accepted tickets and exposes READY work (1.523484ms)\n✔ ticket import rejects conflicting existing work state (0.391421ms)\nℹ tests 903\nℹ suites 0\nℹ pass 903\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 12526.259866",
-      "output_bytes": 76525
+      "observed_tail": "✔ ticket import accepts a blocker already registered in workctl (0.37553ms)\n✔ ticket contracts reject provider, model, and harness coupling (0.199182ms)\n✔ workctl CLI imports accepted tickets and exposes READY work (1.89149ms)\n✔ ticket import rejects conflicting existing work state (0.42743ms)\nℹ tests 904\nℹ suites 0\nℹ pass 904\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 12949.216057",
+      "output_bytes": 76638
     },
     {
       "command": "make verify",
-      "started_at": "2026-09-12T17:55:00.704Z",
+      "started_at": "2026-09-12T18:14:03.701Z",
       "exit_code": 0,
       "observed_tail": "node tools/librarian/librarian.mjs verify\n{\n  \"status\": \"PASS\",\n  \"errors\": [],\n  \"missingFiles\": [],\n  \"brokenLinks\": [],\n  \"corruptedLocators\": [],\n  \"invalidSchemas\": [],\n  \"validDocumentsCount\": 28,\n  \"validCardsCount\": 32,\n  \"validConceptsCount\": 23\n}",
-      "output_bytes": 140980
+      "output_bytes": 142378
     },
     {
       "command": "node --test docs/state/test/state-artifacts.test.mjs",
-      "started_at": "2026-09-12T17:55:02.092Z",
+      "started_at": "2026-09-12T18:14:05.247Z",
       "exit_code": 0,
-      "observed_tail": "✔ Settings matrix: the posture rows match the config the harness actually runs (1.555576ms)\n✔ Settings matrix: every project-declared setting matches the enforced config (1.96427ms)\n✔ Gap model: post-WP gaps that WP-041 resolved are marked RESOLVED (0.191617ms)\n✔ CSA: the recorded repository state is live, not historical (9.58714ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 76.535304",
-      "output_bytes": 1093
+      "observed_tail": "✔ Settings matrix: every project-declared setting matches the enforced config (2.068309ms)\n✔ Front door: the README records live repository state, not a remembered one (10.597974ms)\n✔ Gap model: post-WP gaps that WP-041 resolved are marked RESOLVED (0.369839ms)\n✔ CSA: the recorded repository state is live, not historical (8.63041ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 90.978997",
+      "output_bytes": 1188
     },
     {
       "command": "bin/kad-isa lint all",
-      "started_at": "2026-09-12T17:55:02.254Z",
+      "started_at": "2026-09-12T18:14:05.436Z",
       "exit_code": 0,
       "observed_tail": "[PASS] ISA Lint OK: ISA-KAD-AESTHETIC-001 (10 claims verified)\n[PASS] ISA Lint OK: ISA-KAD-COMPUTE-FABRIC-001 (14 claims verified)\n[PASS] ISA Lint OK: ISA-KAD-MEMORY-001 (9 claims verified)",
       "output_bytes": 190
     },
     {
       "command": "bin/kad-isa check all",
-      "started_at": "2026-09-12T17:55:02.354Z",
+      "started_at": "2026-09-12T18:14:05.543Z",
       "exit_code": 0,
-      "observed_tail": "[✓] ISA-KAD-MEMORY-004 (DETERMINISTIC/BLOCKER) [CANONICAL_TARGET]: The committed vault mirror is an OKF v0.2 bundle: the bundle root declares okf_version and every non-reserved page carries a non-empty type.\n    Validator: memory.mirror.okf_conformant -> mirror is OKF v0.2 conformant: index declares okf_version, 202 pages all carry a non-empty type\n[✓] ISA-KAD-MEMORY-005 (DETERMINISTIC/HIGH) [CANONICAL_TARGET]: The record carries its own git history, so knowledge versions independently of the repository that publishes its mirror.\n    Validator: memory.record.versioned -> record resolves HEAD 48b6b79014c7 with 1 branch ref(s) under its own git history\n[✓] ISA-KAD-MEMORY-006 (DETERMINISTIC/HIGH) [CANONICAL_TARGET]: Obsidian is bound to the wiki of record, not to the derived mirror, so human editing lands on the canonical surface.\n    Validator: memory.obsidian.vault_bound -> Obsidian is bound to the record (5 config files); the derived mirror carries none\n[✓] ISA-KAD-MEMORY-007 (DETERMINISTIC/BLOCKER) [CANONICAL_TARGET]: Every page in the record satisfies the OKF type requirement, so no page can be silently unclassified.\n    Validator: memory.record.frontmatter_complete -> all 205 record pages carry a non-empty OKF type\n[✓] ISA-KAD-MEMORY-008 (DETERMINISTIC/HIGH) [CANONICAL_TARGET]: Every remote model available to KAD-PI is reachable through one OpenAI-compatible gateway endpoint registered as TRANSPORT_ONLY; local KAD inference is proxied, never delegated.\n    Validator: compute.gateway.single_endpoint -> gateway registered as TRANSPORT_ONLY at http://127.0.0.1:20128/v1; local inference endpoints are proxied, not delegated\n[✓] ISA-KAD-MEMORY-009 (DETERMINISTIC/MEDIUM) [CANONICAL_TARGET]: The model catalog is refreshed deterministically from the gateway and hash-verified, so a stale or tampered catalog cannot pass as current.\n    Validator: compute.gateway.catalog_sync -> catalog hash verified over 1611 model ids (bd2e0164f871…)",
+      "observed_tail": "[✓] ISA-KAD-MEMORY-004 (DETERMINISTIC/BLOCKER) [CANONICAL_TARGET]: The committed vault mirror is an OKF v0.2 bundle: the bundle root declares okf_version and every non-reserved page carries a non-empty type.\n    Validator: memory.mirror.okf_conformant -> mirror is OKF v0.2 conformant: index declares okf_version, 202 pages all carry a non-empty type\n[✓] ISA-KAD-MEMORY-005 (DETERMINISTIC/HIGH) [CANONICAL_TARGET]: The record carries its own git history, so knowledge versions independently of the repository that publishes its mirror.\n    Validator: memory.record.versioned -> record resolves HEAD ff6962c920f8 with 1 branch ref(s) under its own git history\n[✓] ISA-KAD-MEMORY-006 (DETERMINISTIC/HIGH) [CANONICAL_TARGET]: Obsidian is bound to the wiki of record, not to the derived mirror, so human editing lands on the canonical surface.\n    Validator: memory.obsidian.vault_bound -> Obsidian is bound to the record (5 config files); the derived mirror carries none\n[✓] ISA-KAD-MEMORY-007 (DETERMINISTIC/BLOCKER) [CANONICAL_TARGET]: Every page in the record satisfies the OKF type requirement, so no page can be silently unclassified.\n    Validator: memory.record.frontmatter_complete -> all 207 record pages carry a non-empty OKF type\n[✓] ISA-KAD-MEMORY-008 (DETERMINISTIC/HIGH) [CANONICAL_TARGET]: Every remote model available to KAD-PI is reachable through one OpenAI-compatible gateway endpoint registered as TRANSPORT_ONLY; local KAD inference is proxied, never delegated.\n    Validator: compute.gateway.single_endpoint -> gateway registered as TRANSPORT_ONLY at http://127.0.0.1:20128/v1; local inference endpoints are proxied, not delegated\n[✓] ISA-KAD-MEMORY-009 (DETERMINISTIC/MEDIUM) [CANONICAL_TARGET]: The model catalog is refreshed deterministically from the gateway and hash-verified, so a stale or tampered catalog cannot pass as current.\n    Validator: compute.gateway.catalog_sync -> catalog hash verified over 1611 model ids (bd2e0164f871…)",
       "output_bytes": 11344
     },
     {
       "command": "bin/kad doctor",
-      "started_at": "2026-09-12T17:55:02.470Z",
+      "started_at": "2026-09-12T18:14:05.664Z",
       "exit_code": 0,
       "observed_tail": "KAD DOCTOR: PASS\n\n  [✓] omp_extension            kad-control-plane extension registered\n  [✓] workctl                  Workctl state clean (no active claim)\n  [✓] economic_router          Economic policy active (paidAuthorized: false)\n  [✓] observatory_journal      Journal valid (12 events recorded)\n  [✓] readiness_gate           Gate active (status: UNKNOWN_DOMINATED, canary authorized: false)\n  [✓] outcome_telemetry        Outcome telemetry valid (37 records verified)\n  [✓] governance_gates         Deterministic governance active (17 governed operation classes)\n  [✓] toolchain_trivy          Version: 0.74.0\n  [✓] toolchain_gitleaks       gitleaks 8.30.1\n  [✓] toolchain_amdgpu_top     amdgpu_top v0.11.5",
       "output_bytes": 735
     },
     {
       "command": "bin/workctl doctor",
-      "started_at": "2026-09-12T17:55:02.809Z",
+      "started_at": "2026-09-12T18:14:06.014Z",
       "exit_code": 0,
       "observed_tail": "      \"id\": \"data-workspace-test\",\n      \"command\": \"npm test\",\n      \"available\": true\n    },\n    {\n      \"id\": \"technopagan-test\",\n      \"command\": \"bash tests/run_all.sh\",\n      \"available\": true\n    }\n  ],\n  \"llm_required\": false\n}",
       "output_bytes": 1662
     },
     {
       "command": "gitleaks git . --no-banner",
-      "started_at": "2026-09-12T17:55:02.975Z",
+      "started_at": "2026-09-12T18:14:06.198Z",
       "exit_code": 0,
       "observed_tail": "",
       "output_bytes": 0
     },
     {
       "command": "git diff --check",
-      "started_at": "2026-09-12T17:55:03.702Z",
+      "started_at": "2026-09-12T18:14:06.943Z",
       "exit_code": 0,
       "observed_tail": "",
       "output_bytes": 0

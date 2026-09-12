@@ -1,7 +1,7 @@
 # gitleaks configuration — KAD-PI
 #
-# The default rule set flags seven matches in this repository's history, and all seven
-# are deterministic non-secrets, verified one by one on 2026-09-11
+# The default rule set flags nine matches in this repository's history, and all nine are
+# deterministic non-secrets, verified one by one on 2026-09-11 and again on 2026-09-12
 # (WP-KAD-REVIEW-REMEDIATION-058):
 #
 #   1-2. citation keys of the form <Author><Year><Title> in research tests
@@ -9,14 +9,18 @@
 #   3-4. credential-shaped *fixtures* that exist to prove the publication-privacy and
 #        observatory filters strip credentials ('sk-abcdef1234567890abcdef',
 #        'sk-proj-1234567890abcdef1234567890abcdef');
-#   5-7. `tokenizer_version_hash` — a derived SHA-256 field in the distillation
-#        evidence replays, not a credential.
-#   8-9. `secret_token` canaries in the Gaya evaluation design: values that literally
-#        begin with `GAYA_CANARY_`, registered on purpose so leakage into training can
-#        be detected (evidence/WP-GAYA-DATASET-G1/05-evaluation-design/).
+#   5-6. `tokenizer_version_hash` — a derived SHA-256 value in the distillation evidence
+#        replays ('64a4809e8e8a52cab6a9ff9ec53ac9bf449fd952'), not a credential.
+#   7-9. `GAYA_CANARY_NARRATOR_SECRET_98412_REIDRA` — a canary whose value literally begins
+#        with `GAYA_CANARY_`, registered on purpose so leakage into training can be detected
+#        (evidence/WP-GAYA-DATASET-G1/05-evaluation-design/).
 #
-# Each entry is an exact literal, so a real credential written into one of the same
-# files is still reported: this narrows scanner noise without blinding the scanner.
+# The allowlist matches the exact value the scanner reported (`regexTarget = "secret"`), not
+# the file and not the line. This is what the header used to claim while the config did the
+# opposite: with `regexTarget = "line"` and pattern-shaped entries, every line mentioning
+# `tokenizer_version_hash` was exempt from every rule, so a real credential written onto such
+# a line would have been suppressed. An allowlisted value is still reported anywhere else, and
+# a new secret on the same line is now reported as well.
 #
 # Verify with:  gitleaks git . --no-banner     (expect: no leaks found)
 
@@ -24,13 +28,13 @@
 useDefault = true
 
 [[allowlists]]
-description = "Deterministic non-secrets: research citation keys, credential-shaped test fixtures, derived hashes, evaluation canaries"
-regexTarget = "line"
+description = "Deterministic non-secrets, matched by exact value: research citation keys, credential-shaped test fixtures, a derived hash, and the evaluation canary"
+regexTarget = "secret"
 regexes = [
   '''Doyle1979ATruthMaintenan''',
   '''Linhares2020NOCA''',
   '''sk-abcdef1234567890abcdef''',
   '''sk-proj-1234567890abcdef1234567890abcdef''',
-  '''tokenizer_version_hash''',
-  '''GAYA_CANARY_[A-Z0-9_]+''',
+  '''64a4809e8e8a52cab6a9ff9ec53ac9bf449fd952''',
+  '''GAYA_CANARY_NARRATOR_SECRET_98412_REIDRA''',
 ]

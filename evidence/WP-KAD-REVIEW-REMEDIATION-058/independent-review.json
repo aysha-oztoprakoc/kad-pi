@@ -1,0 +1,167 @@
+{
+  "schema": "kad.independent-review/v1",
+  "workpackage": "WP-KAD-REVIEW-REMEDIATION-058",
+  "project": "kad-pi",
+  "reviewer": "Review058",
+  "reviewed_range": {
+    "from": "3ca6b8627d1f4b1c5d62c89f5cb81661c70efb03",
+    "to": "8e3f219eeddcf6ef37716943fb412020f2344930"
+  },
+  "verdict": "CONDITIONAL",
+  "axes": {
+    "standards": {
+      "verdict": "PASS",
+      "notes": [
+        "Read .omp/RULES.md's fenced posture block, .omp/config.yml, Makefile, tools/kad/posture-check.mjs, tools/kad/preflight-gate.mjs, tools/kad/omp-orchestration-preflight.mjs, tools/kad/isa.mjs, tools/kad/omniroute-catalog.mjs, tools/kad/wiki/index.mjs, tools/workspace/workctl.mjs and their tests. Every change extends an existing convention (one parser shared by two gates, fail-closed validators, fixture-based tests) rather than introducing a parallel one.",
+        "The new gates are deterministic and read-only; no check reaches the network or a paid provider. The wiki lint, posture check and preflight gate all run inside `make verify` on the caller's PATH.",
+        "Commits are scoped and message-described; tests accompany each behavioural change (posture-check.test.mjs, preflight-gate.test.mjs, T16 in omp-orchestration-preflight.test.mjs, workctl.test.mjs acceptance test, isa.test.mjs dangling-ref test)."
+      ]
+    },
+    "specification": {
+      "verdict": "CONDITIONAL",
+      "notes": [
+        "P0 (declared posture matches enforced config): met. `node tools/kad/posture-check.mjs` -> 'POSTURE DECLARED AND ENFORCED: 6/6 keys agree', exit 0, against .omp/RULES.md and .omp/config.yml.",
+        "P1 (make test delegates to npm test): met by inspection of Makefile (`test: verify` then `npm test` then kad-lab) and package.json's single node-suite entry point.",
+        "P2/P3/P4/P5: met by inspection and targeted execution (see claims_verified).",
+        "P6: partially met. The CSA carries a liveness assertion (MAX_CSA_LAG) and passes; the README's measured status block has no equivalent guard and was left describing commit e0ca5cd, 19 commits ahead, while HEAD at freeze is 8e3f219, 27 ahead.",
+        "P7: one clause of the compound criterion is unmet - 'amdy-platform and wiki/ retired'. `wiki/` is unchanged across the whole range and is still read by tools/librarian/librarian.mjs (wiki/synthetic/*.json) and by publication; the implementer recorded the refusal with a reason in the receipt. The criterion as written is not satisfied and needs an acceptor decision.",
+        "'no gate weakened to obtain PASS': supported. The two fail-open paths I found by experiment were closed in 8e3f219 rather than tolerated, and no check was relaxed to get a green run."
+      ]
+    },
+    "skeptical": {
+      "verdict": "CONDITIONAL",
+      "notes": [
+        "I tried to falsify the repaired gates instead of reading them. Posture check: fail-closed on unreadable files, a missing fence, a missing key, an unenforced key and an unknown key (tools/kad/test/posture-check.test.mjs). workctl ACCEPT: now refuses a missing, absent, empty-directory or empty-file evidence_target (tools/workspace/workctl.mjs:250-266). memory.record.versioned: now requires `git rev-parse --verify HEAD` to resolve, not merely a ref file to exist.",
+        "Two residual fail-open paths were confirmed by experiment before the freeze commit (spend vacuity with an absent enabledModels; an invisible DEGRADED cause in the gate line). Both were fixed in 8e3f219 and I re-ran the same experiments against the frozen commit to confirm the fix, not the claim.",
+        "Residual weaknesses that are not gate-breaking: the settings-matrix comparison can only ever exercise the 37 rows .omp/config.yml declares (bound asserted >= 30, actual 37, so ~7 rows of slack); the CSA lags HEAD by one commit by design; the execution receipt in the evidence target still describes a checkout four commits and several fixes behind the delivered one."
+      ]
+    }
+  },
+  "claims_verified": [
+    {
+      "claim": "`make verify` includes the new posture check and the OMP preflight gate",
+      "evidence": "read Makefile (lines 5-11)",
+      "observed": "verify runs python3 validate_prime_directive.py; node tools/kad/posture-check.mjs; node tools/kad/preflight-gate.mjs; bin/kad-wiki lint; node tools/librarian/librarian.mjs verify"
+    },
+    {
+      "claim": "P0: .omp/RULES.md declares the effective posture and it equals .omp/config.yml",
+      "evidence": "node tools/kad/posture-check.mjs",
+      "observed": "POSTURE DECLARED AND ENFORCED: 6/6 keys agree (tools.approvalMode=yolo, memory.backend=mnemopi, autolearn.enabled=true, secrets/ttsr/recap.enabled=false), exit 0"
+    },
+    {
+      "claim": "the posture check fails closed rather than passing on unknown input",
+      "evidence": "read tools/kad/posture-check.mjs and tools/kad/test/posture-check.test.mjs",
+      "observed": "problems are raised for unreadable files, an absent ```yaml block, an undeclared key, a key absent from config.yml and an unknown key; five tests cover those five paths"
+    },
+    {
+      "claim": "bin/workctl transition <id> ACCEPTED cannot succeed without durable evidence",
+      "evidence": "read tools/workspace/workctl.mjs:249-266 and tools/workspace/workctl.test.mjs ('acceptance is refused unless durable evidence actually exists')",
+      "observed": "no evidence_target -> fail; target path absent -> fail; empty directory (no non-dot entry) -> fail; empty file -> fail; a non-empty target -> ok"
+    },
+    {
+      "claim": "the spend gate fails closed when the model surface is absent (not merely when a lane is unapproved)",
+      "evidence": "experiment: /tmp/f5.mjs - createOmpPreflightFixture then delete the enabledModels section and call inspectPreflight",
+      "observed": "before: status DEGRADED, spend.failures []; after 8e3f219: status BLOCKED, spend.failures ['OMP_MODEL_SURFACE_UNDECLARED'], lanes 0"
+    },
+    {
+      "claim": "the preflight gate names every non-blocking cause it lets through",
+      "evidence": "experiment: /tmp/f4.mjs - fixture with localRouterContracts:false, gate run as a subprocess",
+      "observed": "before: gate stdout 'OMP PREFLIGHT DEGRADED: omp 18.1.18 (mise)' with receipt.failures ['WORLD_AUTHORITY_BOUNDARY_UNVERIFIED'] invisible; after 8e3f219: stdout carries WORLD_AUTHORITY_BOUNDARY_UNVERIFIED, exit 0"
+    },
+    {
+      "claim": "P3: the exposure selector cannot admit auto/* or a provider whose name ends in -free",
+      "evidence": "read tools/kad/omniroute-catalog.mjs selectExposedModels; config/omniroute-catalog.json",
+      "observed": "exclude_prefixes is evaluated before any inclusion rule and free-tier markers are matched against the model segment only (modelSegmentOf); the committed projection is 27 models with auto/best-free, auto/coding:free, veo-free/seedance and veo-free/veo absent, selector_version 2"
+    },
+    {
+      "claim": "ADR 0018 leaves no version assertion that can silently pass",
+      "evidence": "grep -rn 'EXPECTED_OMP|18\\.0\\.9|versionMatches|OMP_VERSION_MISMATCH' tools/ bin/ Makefile package.json; read tools/kad/omp-orchestration-preflight.mjs inspectOmp; read bin/omp-kad",
+      "observed": "no live version constant remains (only the test fixture FIXTURE_STAGED_OMP_VERSION and historical evidence/**); inspectOmp pushes OMP_VERSION_UNKNOWN / OMP_BINARY_UNAVAILABLE as blocking failures when the harness cannot be named; bin/omp-kad resolves through `mise which omp` before PATH"
+    },
+    {
+      "claim": "the CSA harness census matches the machine (mise build is the harness, the hand-installed copy is a shadow)",
+      "evidence": "sha256sum /home/amdy/.local/share/mise/installs/github-can1357-oh-my-pi/latest/omp /home/amdy/.local/bin/omp; read docs/state/CSA_KAD_PI_CURRENT.json harnesses.omp",
+      "observed": "CSA records 18.1.18 via `mise which omp` with hash 45421f9a5f112bc47cb9f77c4b4d7927631f8ff859624f821287ec854eb239fc and the shadow /home/amdy/.local/bin/omp (18.1.14, sha256 27dd66cb6a2c39fff51e1fe6db40f1f376fee4a3d04457f236edaa5d0290e4d2); both digests equal the sha256sum output"
+    },
+    {
+      "claim": "the settings-matrix comparison against .omp/config.yml is sound and non-vacuous",
+      "evidence": "node --test docs/state/test/state-artifacts.test.mjs; a direct count of rows whose setting_id resolves against the parsed config",
+      "observed": "12/12 tests pass; 37 of 481 rows resolve against .omp/config.yml with 0 mismatches against the bound >= 30, so the comparison cannot silently go empty"
+    },
+    {
+      "claim": "P5: every ACCEPTED G1 evidence_target resolves and the 054 receipt's references resolve",
+      "evidence": "list .agents/work/WP-GAYA-DATASET-G1-* (all ACCEPTED) and their evidence dirs; a script that extracts every file-like reference from evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054/01-integrated-next-state-smoke-receipt.json and tests it",
+      "observed": "all 10 evidence/WP-GAYA-DATASET-G1/*/ directories exist and are non-empty (5-21 files each); 8 referenced paths, 0 missing"
+    },
+    {
+      "claim": "the wiki lint gate is green at the frozen commit (contradicting the execution receipt's known_red note)",
+      "evidence": "bin/kad-wiki lint --json",
+      "observed": "ok:true, 0 errors, 22 warnings (all OUTSIDE_DECLARED_ZONE), 210 notes; exit 0"
+    }
+  ],
+  "claims_unverified": [
+    {
+      "claim": "npm test 903 pass / 0 fail and `make test` EXIT=0",
+      "why": "project-wide suites are outside the reviewer's lane and the tree moved during the review; implementer-verification.json records exit 0 for npm test and make verify at head 2b95b9f with 9 dirty paths, which is the pre-freeze worktree"
+    },
+    {
+      "claim": "gitleaks git . --no-banner reports no leaks and the allowlist is shape-verified",
+      "why": "I did not run the scanner; I read .gitleaks.toml only (see finding 5, which concerns the allowlist's scope, not its result on the current tree)"
+    },
+    {
+      "claim": "bin/kad-isa check all 33/33 PASS, including memory.record.versioned resolving the record's HEAD",
+      "why": "read the validator source and its new regression test, but did not execute the ISA checker against the live record"
+    },
+    {
+      "claim": "the wiki of record's git history is fsck-clean and bin/kad-memory publish regenerated the mirror (ok:true 9/9)",
+      "why": "not executed; the record lives in its own repository under .ai-memory/ and the mirror-drift metric depends on a live publish"
+    },
+    {
+      "claim": "the kad-rpg dataset artifacts (507 files, 72 MB) are committed at 57cfead",
+      "why": "kad-rpg is a separate repository outside this workspace's review range and was not inspected"
+    },
+    {
+      "claim": "the data_workspace, technopagan-netrunner and kad-rpg gates pass",
+      "why": "not re-run; these are other projects' suites"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "MEDIUM",
+      "finding": "evidence/WP-KAD-REVIEW-REMEDIATION-058/execution-receipt.json was never refreshed after the last four commits, so its known_red_unchanged section asserts three states that are false at the frozen commit: that bin/kad-wiki lint is red with 140 errors over 139 paths, that the OMP preflight is BLOCKED and 'not wired into any entrypoint', and that P1b (workctl ACCEPT fails open on a missing evidence_target) was 'reported but not selected for execution'.",
+      "evidence": "file mtime 2026-09-11 18:40, byte-identical to the version committed at base; `bin/kad-wiki lint --json` -> ok:true / 0 errors; Makefile:9 wires tools/kad/preflight-gate.mjs into make verify and `node tools/kad/preflight-gate.mjs` exits 0 with DEGRADED; tools/workspace/workctl.mjs:249-266 is the P1b fix landed in 68f90df",
+      "impact": "An acceptor reading the evidence target is told two gates are red that are green and that an acknowledged fail-open is still live when it was closed; the durable evidence trail describes a checkout four commits behind the one it is filed against. implementer-verification.json partly supersedes it but covers only the nine validation commands."
+    },
+    {
+      "severity": "MEDIUM",
+      "finding": "The generated README front door is stale at the frozen commit and nothing detects it: its status block states 'main at e0ca5cd; 19 commit(s) ahead' while HEAD is 8e3f219 with 27 commits ahead of origin/main. The CSA has a liveness assertion (MAX_CSA_LAG) and was refreshed; README has no equivalent guard.",
+      "evidence": "read README.md lines 9-18; `git rev-parse --short HEAD` -> 8e3f219; `git rev-list --count origin/main..HEAD` -> 27; git log shows the block was generated at 9d5ff7f",
+      "impact": "P6's stated premise is that the front door is measured rather than remembered; inside the same workpackage the measured values were allowed to drift by eight commits, and a reader who trusts the README (phase, divergence, commit) is misinformed with no failing check to correct them."
+    },
+    {
+      "severity": "MEDIUM",
+      "finding": "The range writes outside the workpackage's declared scope and non_scope. package.json, .gitignore, docs/adr/0016-0019, docs/generated/*, site/generated/public-state.json, evidence/PLATFORM-BASELINE-2026-08-25/* (9 new files) and evidence/WP-KAD-002/causal-journal.jsonl are all modified or added, and none of these paths appears in the contract's scope list; non_scope explicitly excludes 'evidence/** history outside the two named targets'.",
+      "evidence": "git diff --name-only 3ca6b86..8e3f219 filtered against the contract's scope/non_scope; git log --oneline 3ca6b86..HEAD -- <path> attributes package.json to 3b53fb0, .gitignore and evidence/PLATFORM-BASELINE-2026-08-25 to 46c6f98, docs/adr/0016-0017 to 6186eb2, evidence/WP-KAD-002 to e0ca5cd/66daea9/6186eb2",
+      "impact": "Files the ledger does not authorise this workpackage to touch are modified in the same commits, so ownership of package.json (the npm test gate), docs/adr/ and two evidence trees outside the named targets is not recorded anywhere. Some of these are substantively required by the acceptance criteria (package.json by P1, the ADRs by the citation of 0016-0019 in the description), which is exactly why the scope list should have named them; the card writes to evidence/ are a machine-generated side effect of running the control plane."
+    },
+    {
+      "severity": "LOW",
+      "finding": "Acceptance criterion P7 requires 'amdy-platform and wiki/ retired'. amdy-platform is retired, but wiki/ is untouched across the entire range and remains a live input to tools/librarian/librarian.mjs (wiki/synthetic/TAXONOMY.json, CATALOG.json, RETRIEVAL_INDEX.jsonl) and to publication.",
+      "evidence": "git diff --stat 3ca6b86..8e3f219 -- wiki/ is empty; grep -c 'wiki/' tools/librarian/librarian.mjs -> 4; wiki/ contains 5 top-level documents plus wiki/synthetic/*.json",
+      "impact": "One clause of a compound acceptance criterion is unmet by documented choice. The implementer's reason (deleting it would break the librarian's verify step inside make verify) is sound, but the criterion stands unamended, so acceptance must record an explicit decision rather than inherit a silent deviation."
+    },
+    {
+      "severity": "LOW",
+      "finding": "The gitleaks allowlist is wider than its own comment claims. .gitleaks.toml sets regexTarget='line' with regexes including 'tokenizer_version_hash' and 'GAYA_CANARY_[A-Z0-9_]+', so any line containing one of those strings is exempt from every rule, while the header states 'Each entry is an exact literal, so a real credential written into one of the same files is still reported'.",
+      "evidence": "read .gitleaks.toml; regexTarget='line' matches the whole line containing the finding, so a real key on a line that also carries tokenizer_version_hash would be suppressed",
+      "impact": "The scanner's blind spot is wider than the documented one, in a file the workpackage added to make the scanner signal trustworthy. Narrowing the two regex entries to the exact literal (or switching regexTarget to 'secret') would restore the claimed property."
+    }
+  ],
+  "limitations": [
+    "The working tree moved repeatedly during the review (HEAD went 6186eb2 -> 2b95b9f -> 8e3f219 while tools/kad/omp-orchestration-preflight.mjs, tools/kad/preflight-gate.mjs and their tests were rewritten). Every check in this receipt was re-run against 8e3f219 after the implementer declared the tree frozen and clean (git status --porcelain empty).",
+    "I did not run npm test, make test, gitleaks, the ISA checker, bin/kad doctor, bin/workctl doctor or any other project's gate; the verification section of the implementer record was not independently reproduced. Only the gate implementations, the two node test files I cite and the specific experiments above were executed.",
+    "The CSA records HEAD 2b95b9f (one commit behind 8e3f219) with dirty:true and dirty_paths:9; this is the structural lag the MAX_CSA_LAG assertion allows and its liveness test passes, but the artifact is one commit stale at freeze and its dirty count describes the pre-freeze worktree.",
+    "The settings-matrix comparison exercises only the rows .omp/config.yml declares (37 of 481). Rows describing machine-global OMP settings are captured, not verified, by design."
+  ],
+  "summary": "The three gate fail-open paths I reproduced before the freeze (spend passing with an absent enabledModels, a DEGRADED preflight cause printed nowhere, and a CSA harness census that recorded the shadow binary as the mise harness) are all genuinely closed at 8e3f219, and the gates the receipt names are honest: posture 6/6, wiki lint 0 errors, workctl ACCEPT refuses any non-durable evidence, and the matrix/exposure checks are non-vacuous. Acceptance should be CONDITIONAL on four recorded items: refresh or retire the stale execution-receipt.json whose known_red section is false at HEAD, give the generated README a freshness guard or regenerate it at the merge commit, record the unlisted in-scope writes (package.json, .gitignore, docs/adr/0016-0019, docs/generated, site/generated, evidence/PLATFORM-BASELINE-2026-08-25, evidence/WP-KAD-002) against the workpackage, and obtain an explicit acceptor decision on P7's unfulfilled 'wiki/ retired' clause."
+}
