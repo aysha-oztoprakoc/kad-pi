@@ -1,32 +1,266 @@
 {
   "schema": "kad-progress-state-v1",
-  "generated_at": "2026-09-08T21:21:38.200Z",
+  "generated_at": "2026-09-12T20:55:21.668Z",
   "repository": {
-    "root": "/home/amdy/Work",
+    "root": "/home/runner/work/kad-pi/kad-pi",
     "branch": "main",
-    "head": "e793ddbe9f8ea95ffc64f3e7731f55a05357c3af",
-    "remote": "https://github.com/aysha-oztoprakoc/kad-pi.git"
+    "head": "bc4c90436bbe6d95487c345211f7cc12954b2f93",
+    "remote": "https://github.com/aysha-oztoprakoc/kad-pi"
   },
   "branches": [
     "main",
-    "origin/main",
-    "origin/dependabot/npm_and_yarn/npm_and_yarn-711da9e1ad"
+    "origin/dependabot/npm_and_yarn/npm_and_yarn-711da9e1ad",
+    "origin/main"
   ],
   "worktrees": [
     {
-      "path": "/home/amdy/Work",
-      "head": "e793ddbe9f8ea95ffc64f3e7731f55a05357c3af",
+      "path": "/home/runner/work/kad-pi/kad-pi",
+      "head": "bc4c90436bbe6d95487c345211f7cc12954b2f93",
       "branch": "refs/heads/main"
     }
   ],
   "commits": {
-    "total": 114,
+    "total": 153,
     "recent": [
+      {
+        "hash": "bc4c904",
+        "date": "2026-09-12",
+        "subject": "refactor(knowledge): prune the retired wiki's derived and archived copies",
+        "refs": "HEAD -> main, origin/main"
+      },
+      {
+        "hash": "fb91619",
+        "date": "2026-09-12",
+        "subject": "chore(state): refresh the projections and the CSA at the retirement commit",
+        "refs": ""
+      },
+      {
+        "hash": "f89f174",
+        "date": "2026-09-12",
+        "subject": "refactor(knowledge)!: retire the wiki tree by substitution",
+        "refs": ""
+      },
+      {
+        "hash": "f2c9264",
+        "date": "2026-09-12",
+        "subject": "feat(omp): declare local retrieval on demand",
+        "refs": ""
+      },
+      {
+        "hash": "626b7bc",
+        "date": "2026-09-12",
+        "subject": "fix(canary): the suite asserted the superseded pin, not the contract",
+        "refs": ""
+      },
+      {
+        "hash": "219ee6f",
+        "date": "2026-09-12",
+        "subject": "docs(contract): acceptance is an authority decision",
+        "refs": ""
+      },
+      {
+        "hash": "cf6ba2c",
+        "date": "2026-09-12",
+        "subject": "feat(state): sync and render the settings matrix, refresh the CSA",
+        "refs": ""
+      },
+      {
+        "hash": "f9e333f",
+        "date": "2026-09-12",
+        "subject": "feat(omp): declare the retry posture per launcher profile",
+        "refs": ""
+      },
+      {
+        "hash": "c8aa74b",
+        "date": "2026-09-12",
+        "subject": "fix(projection): one writer per public artifact",
+        "refs": ""
+      },
+      {
+        "hash": "ee925a1",
+        "date": "2026-09-12",
+        "subject": "fix(telemetry): make the derived summary reproducible, and stop the flake hiding it",
+        "refs": ""
+      },
+      {
+        "hash": "2c39b43",
+        "date": "2026-09-12",
+        "subject": "chore(state): refresh the CSA and the projections at the acceptance commit",
+        "refs": ""
+      },
+      {
+        "hash": "7bbd560",
+        "date": "2026-09-12",
+        "subject": "chore(ledger): accept the three remediated workpackages, and make acceptance reachable",
+        "refs": ""
+      },
+      {
+        "hash": "b128be4",
+        "date": "2026-09-12",
+        "subject": "fix(state): make the front-door guard consistent with the lag it allows",
+        "refs": ""
+      },
+      {
+        "hash": "63b0a7a",
+        "date": "2026-09-12",
+        "subject": "fix(review): close what the independent review of this workpackage found",
+        "refs": ""
+      },
+      {
+        "hash": "8e3f219",
+        "date": "2026-09-12",
+        "subject": "fix(gates): close the fail-open paths the independent review found",
+        "refs": ""
+      },
+      {
+        "hash": "2b95b9f",
+        "date": "2026-09-12",
+        "subject": "test(omp): keep the gate tests off the host toolchain",
+        "refs": ""
+      },
+      {
+        "hash": "4a4743f",
+        "date": "2026-09-12",
+        "subject": "feat(omp): resolve the harness through mise, and gate on the receipt (ADR 0018/0019)",
+        "refs": ""
+      },
+      {
+        "hash": "6186eb2",
+        "date": "2026-09-12",
+        "subject": "feat(gates): make the spend and learning gates ask declaration questions (ADR 0016/0017)",
+        "refs": ""
+      },
+      {
+        "hash": "fd2a282",
+        "date": "2026-09-11",
+        "subject": "docs(state): refresh the mirror, the projections and the CSA at the gate commit",
+        "refs": ""
+      },
+      {
+        "hash": "9d5ff7f",
+        "date": "2026-09-11",
+        "subject": "docs(projection): regenerate the front door at the gate commit",
+        "refs": ""
+      },
+      {
+        "hash": "68f90df",
+        "date": "2026-09-11",
+        "subject": "fix(gates): close the last three red gates and the two fail-open paths behind them",
+        "refs": ""
+      },
+      {
+        "hash": "c1e50ae",
+        "date": "2026-09-11",
+        "subject": "docs(vault): publish the id-minted mirror (WP-KAD-REVIEW-REMEDIATION-058)",
+        "refs": ""
+      },
+      {
+        "hash": "e0ca5cd",
+        "date": "2026-09-11",
+        "subject": "chore(evidence): record the control-plane journal up to the remediation close",
+        "refs": ""
+      },
+      {
+        "hash": "66daea9",
+        "date": "2026-09-11",
+        "subject": "chore(ledger): close the remediation workpackages into REVIEW (WP-KAD-REVIEW-REMEDIATION-058)",
+        "refs": ""
+      },
+      {
+        "hash": "29369d3",
+        "date": "2026-09-11",
+        "subject": "docs(state): refresh the CSA and make its CURRENT claim falsifiable (WP-KAD-REVIEW-REMEDIATION-058)",
+        "refs": ""
+      },
+      {
+        "hash": "46c6f98",
+        "date": "2026-09-11",
+        "subject": "chore(hygiene): skill corpus, scanner signal and island retirement (WP-KAD-REVIEW-REMEDIATION-058)",
+        "refs": ""
+      },
+      {
+        "hash": "13a5c7d",
+        "date": "2026-09-11",
+        "subject": "fix(readme): derive the repository front door from live state (WP-KAD-REVIEW-REMEDIATION-058)",
+        "refs": ""
+      },
+      {
+        "hash": "826e5f8",
+        "date": "2026-09-11",
+        "subject": "docs(evidence): promote the Gaya frame evidence to the paths the ledger declares (WP-KAD-REVIEW-REMEDIATION-058)",
+        "refs": ""
+      },
+      {
+        "hash": "1fff81b",
+        "date": "2026-09-11",
+        "subject": "fix(memory): repair the wiki of record and make its versioning claim falsifiable (WP-KAD-REVIEW-REMEDIATION-058)",
+        "refs": ""
+      },
+      {
+        "hash": "e2a03ae",
+        "date": "2026-09-11",
+        "subject": "fix(spend): make exclusions authoritative in the model-exposure selector (WP-KAD-REVIEW-REMEDIATION-058)",
+        "refs": ""
+      },
+      {
+        "hash": "3b53fb0",
+        "date": "2026-09-11",
+        "subject": "test(gates): isolate the multi-endpoint fixture and make `make test` delegate to `npm test` (WP-KAD-REVIEW-REMEDIATION-058)",
+        "refs": ""
+      },
+      {
+        "hash": "e075972",
+        "date": "2026-09-11",
+        "subject": "chore(omp): declare the effective harness posture and enforce agreement (WP-KAD-REVIEW-REMEDIATION-058)",
+        "refs": ""
+      },
+      {
+        "hash": "3ca6b86",
+        "date": "2026-09-11",
+        "subject": "docs(evidence): record the commit-hygiene pass in the WP-057 final report",
+        "refs": ""
+      },
+      {
+        "hash": "534685d",
+        "date": "2026-09-11",
+        "subject": "feat(gaya,game-stack,research): land in-flight workpackage artifacts",
+        "refs": ""
+      },
+      {
+        "hash": "5249489",
+        "date": "2026-09-11",
+        "subject": "chore(derived): regenerate kad-canonical projections and public state",
+        "refs": ""
+      },
+      {
+        "hash": "bda2085",
+        "date": "2026-09-11",
+        "subject": "chore(vault): regenerate vault/ as the ai-memory mirror",
+        "refs": ""
+      },
+      {
+        "hash": "8301de2",
+        "date": "2026-09-11",
+        "subject": "feat(memory): WP-KAD-MEMORY-SUBSTRATE-057 — ai-memory substrate + OmniRoute gateway",
+        "refs": ""
+      },
+      {
+        "hash": "d05bf4f",
+        "date": "2026-09-11",
+        "subject": "chore(gitignore): ignore vendored trees, runtime scratch and installer backups",
+        "refs": ""
+      },
+      {
+        "hash": "3a0b5b0",
+        "date": "2026-09-08",
+        "subject": "ci(progress): compile ISA progress projection from workpackages, branches, commits, CSA snapshots",
+        "refs": ""
+      },
       {
         "hash": "e793ddb",
         "date": "2026-09-08",
         "subject": "docs(state): refresh current state artifact for OMP economical cascade",
-        "refs": "HEAD -> main"
+        "refs": ""
       },
       {
         "hash": "1a738b5",
@@ -38,7 +272,7 @@
         "hash": "2f2ae35",
         "date": "2026-09-06",
         "subject": "chore(acceptance): record sovereign human acceptance for WP-056 milestone package",
-        "refs": "origin/main, origin/HEAD"
+        "refs": ""
       },
       {
         "hash": "c23b2ea",
@@ -147,584 +381,25 @@
         "date": "2026-09-01",
         "subject": "fix(kad-state): correct WP-041 settings matrix, gap model, and CSA provenance per semantic review",
         "refs": ""
-      },
-      {
-        "hash": "47c7b59",
-        "date": "2026-09-01",
-        "subject": "chore(workctl): transition WP-KAD-OMP-METAHARNESS-REFACTOR-041 to REVIEW",
-        "refs": ""
-      },
-      {
-        "hash": "8cb52bb",
-        "date": "2026-09-01",
-        "subject": "feat(kad-state): integrate WP-KAD-OMP-METAHARNESS-REFACTOR-041 reconciliation artifacts",
-        "refs": ""
-      },
-      {
-        "hash": "c029d90",
-        "date": "2026-09-01",
-        "subject": "feat(kad-governance): integrate WP-KAD-GOVERNANCE-GATES-032 accepted governance gates",
-        "refs": ""
-      },
-      {
-        "hash": "394cf78",
-        "date": "2026-09-01",
-        "subject": "feat(kad-telemetry): integrate WP-KAD-COGNITIVE-TELEMETRY-031 accepted telemetry baseline",
-        "refs": ""
-      },
-      {
-        "hash": "7401b87",
-        "date": "2026-08-30",
-        "subject": "docs(kad): bind WP-032R snapshot provenance",
-        "refs": ""
-      },
-      {
-        "hash": "7eee4df",
-        "date": "2026-08-30",
-        "subject": "fix(kad): harden governance authorization semantics",
-        "refs": ""
-      },
-      {
-        "hash": "15483b6",
-        "date": "2026-08-30",
-        "subject": "fix(kad-ideal-state): execute WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R semantic regression repair & recompilation",
-        "refs": ""
-      },
-      {
-        "hash": "4ba5b05",
-        "date": "2026-08-30",
-        "subject": "feat(kad-ideal-state): execute WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030 successor Ideal State V2 & traceability",
-        "refs": ""
-      },
-      {
-        "hash": "17f91ac",
-        "date": "2026-08-30",
-        "subject": "feat(kad-intent): execute WP-KAD-INTENT-FIDELITY-029 lossless intent ledger & compilation",
-        "refs": ""
-      },
-      {
-        "hash": "2714398",
-        "date": "2026-08-30",
-        "subject": "docs(kad-publication): complete WP-KAD-BASELINE-PUBLICATION-028A receipts and projections",
-        "refs": ""
-      },
-      {
-        "hash": "1c8c9df",
-        "date": "2026-08-30",
-        "subject": "feat(kad-isa): implement ISA-KAD-SKILL-ROLE-002 v1.1 and freeze pre-GitHub baseline",
-        "refs": ""
-      },
-      {
-        "hash": "0ea896b",
-        "date": "2026-08-30",
-        "subject": "feat(kad-fabric): execute WP-KAD-SKILL-ROLE-FABRIC-024 unified skills & role ISA",
-        "refs": ""
-      },
-      {
-        "hash": "b78aaf7",
-        "date": "2026-08-30",
-        "subject": "feat(kad): reconcile reserved WP-016..019 roadmap contracts with Generalized ISA and Compute Fabric governance",
-        "refs": ""
-      },
-      {
-        "hash": "784a84a",
-        "date": "2026-08-30",
-        "subject": "fix(kad): update derived ISA projections and address code review findings",
-        "refs": ""
-      },
-      {
-        "hash": "e401c18",
-        "date": "2026-08-30",
-        "subject": "feat(kad): generalize Ideal State Artifact (ISA) governance and establish canonical compute fabric target (WP-020)",
-        "refs": ""
-      },
-      {
-        "hash": "2da2266",
-        "date": "2026-08-30",
-        "subject": "feat(kad): establish canonical aesthetic directive, ISA governance, and deterministic validation tooling (WP-015)",
-        "refs": ""
-      },
-      {
-        "hash": "27171d9",
-        "date": "2026-08-30",
-        "subject": "feat(kad): implement unified design system, shared presentation foundation, and modernized public website (WP-014)",
-        "refs": ""
-      },
-      {
-        "hash": "982243c",
-        "date": "2026-08-30",
-        "subject": "chore(deps): bump echarts in the npm_and_yarn group across 1 directory",
-        "refs": "origin/dependabot/npm_and_yarn/npm_and_yarn-711da9e1ad"
-      },
-      {
-        "hash": "a0f631c",
-        "date": "2026-08-30",
-        "subject": "feat(kad): implement Sofia v3 canonical dashboard, Cytoscape graph explorer, and hybrid telemetry visualization (WP-013)",
-        "refs": ""
-      },
-      {
-        "hash": "6881352",
-        "date": "2026-08-30",
-        "subject": "feat(kad): establish technology stack, visualization bake-off, and agentic graph architecture (WP-012)",
-        "refs": ""
-      },
-      {
-        "hash": "6994995",
-        "date": "2026-08-30",
-        "subject": "feat(kad): synchronize canonical vault projections, repository docs, and presentation adapters (WP-011)",
-        "refs": ""
-      },
-      {
-        "hash": "8f16c1a",
-        "date": "2026-08-30",
-        "subject": "chore(kad): consolidate workspace baseline and legacy project evidence",
-        "refs": ""
-      },
-      {
-        "hash": "e3bce03",
-        "date": "2026-08-30",
-        "subject": "feat(kad): reconcile /Work inventory, migrate legacy wiki, and synchronize canonical vault (WP-010-R1)",
-        "refs": ""
-      },
-      {
-        "hash": "ca1f56a",
-        "date": "2026-08-30",
-        "subject": "feat(kad): unify vault wiki migration contract",
-        "refs": ""
-      },
-      {
-        "hash": "2d5ef8b",
-        "date": "2026-08-30",
-        "subject": "feat(kad): add pinned fusion and canonical wiki librarian",
-        "refs": ""
-      },
-      {
-        "hash": "2d368db",
-        "date": "2026-08-29",
-        "subject": "feat: promote audited knowledge claims",
-        "refs": ""
-      },
-      {
-        "hash": "ccafcc7",
-        "date": "2026-08-29",
-        "subject": "fix(research): complete epistemic claim audit and source-fidelity repair for five-source real corpus (R1)",
-        "refs": ""
-      },
-      {
-        "hash": "0ba74b9",
-        "date": "2026-08-29",
-        "subject": "feat(research): evaluate real-corpus research workflow on deterministic agent control literature",
-        "refs": ""
-      },
-      {
-        "hash": "9342702",
-        "date": "2026-08-29",
-        "subject": "feat(observatory): implement deterministic promotion readiness gate with per-advisory-class evaluation and zero routing authority",
-        "refs": ""
-      },
-      {
-        "hash": "8774f8d",
-        "date": "2026-08-29",
-        "subject": "feat(observatory): implement longitudinal counterfactual observatory with tamper-evident journal and zero shadow authority",
-        "refs": ""
-      },
-      {
-        "hash": "5f2a615",
-        "date": "2026-08-29",
-        "subject": "feat(telemetry): implement deterministic shadow economic evaluator with quota-aware advisory scoring",
-        "refs": ""
-      },
-      {
-        "hash": "cb59d84",
-        "date": "2026-08-29",
-        "subject": "feat(telemetry): bridge OMP-native usage reports and after_provider_response into KAD control plane",
-        "refs": ""
-      },
-      {
-        "hash": "ea324af",
-        "date": "2026-08-29",
-        "subject": "docs(control-plane): add operator documentation, architecture wiki, and complete evidence package",
-        "refs": ""
-      },
-      {
-        "hash": "33d14c1",
-        "date": "2026-08-29",
-        "subject": "feat(control-plane): add native OMP extension, compact meter, panel overlay, and kad CLI",
-        "refs": ""
-      },
-      {
-        "hash": "6353c6e",
-        "date": "2026-08-29",
-        "subject": "feat(telemetry): implement normalized telemetry schema, provider adapters, and quota honesty",
-        "refs": ""
-      },
-      {
-        "hash": "08c21db",
-        "date": "2026-08-29",
-        "subject": "feat(toolchain): configure developer tooling, Justfile, prek gates, and Context7 MCP",
-        "refs": ""
-      },
-      {
-        "hash": "445e000",
-        "date": "2026-08-29",
-        "subject": "feat(research): implement read-only Zotero local API integration (WP-KAD-RESEARCH-ZOTERO-005)",
-        "refs": ""
-      },
-      {
-        "hash": "b057ffc",
-        "date": "2026-08-29",
-        "subject": "feat(research): implement OpenViking derived research context and exact fallback (WP-KAD-RESEARCH-OPENVIKING-004)",
-        "refs": ""
-      },
-      {
-        "hash": "178ba6e",
-        "date": "2026-08-29",
-        "subject": "feat(research): implement capability profiles, observations, and graceful degradation (WP-KAD-RESEARCH-CAPABILITIES-003)",
-        "refs": ""
       }
     ]
   },
   "workpackages": {
-    "total": 100,
+    "total": 102,
     "statuses": {
-      "BLOCKED": 1,
-      "ACCEPTED": 52,
+      "ACCEPTED": 18,
       "REVIEW": 1,
-      "SUPERSEDED": 1,
-      "EVIDENCE_ONLY": 45
+      "IN_PROGRESS": 1,
+      "EVIDENCE_ONLY": 82
     },
     "items": [
       {
-        "id": "EXP-KAD-OFFLINE-SURVIVAL-001-R1",
+        "id": "WP-WORKSPACE-AGENT-SUBSTRATE-001",
         "project": "kad-pi",
-        "title": "Authorized deterministic WAN fault injection and offline survival qualification",
-        "status": "BLOCKED",
-        "priority": 1,
-        "evidence": "evidence/EXP-KAD-OFFLINE-SURVIVAL-001/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
-        "project": "kad-pi",
-        "title": "Human-Guided Aesthetic Architecture & Ideal State Artifact (ISA) Establishment",
-        "status": "ACCEPTED",
-        "priority": 180,
-        "evidence": "evidence/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
-        "project": "kad-pi",
-        "title": "AMDY Omarchy 4 Quattro & Quickshell KAD Cyberdeck Theme Implementation",
-        "status": "ACCEPTED",
-        "priority": 140,
-        "evidence": "evidence/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-BASELINE-PUBLICATION-028A",
-        "project": "kad-pi",
-        "title": "Frozen Baseline Verification, GitHub Bootstrap Publication & Exact-SHA Vault Projection",
-        "status": "ACCEPTED",
-        "priority": 290,
-        "evidence": "evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052",
-        "project": "kad-pi",
-        "title": "Enforce observable process group cancellation and tracked teardown under failure (P09)",
-        "status": "ACCEPTED",
-        "priority": 18,
-        "evidence": "evidence/WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
-        "project": "kad-pi",
-        "title": "Canonical Obsidian agentic librarian",
-        "status": "ACCEPTED",
-        "priority": 109,
-        "evidence": "evidence/WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
-        "project": "kad-pi",
-        "title": "Commit Consolidation, Remote Synchronization & Vault-Driven Project Projection Bootstrap",
-        "status": "ACCEPTED",
-        "priority": 140,
-        "evidence": "evidence/WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1",
-        "project": "kad-pi",
-        "title": "Full /Work Inventory, Legacy Reconciliation & Canonical Vault Synchronization",
-        "status": "ACCEPTED",
-        "priority": 130,
-        "evidence": "evidence/WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-COGNITIVE-TELEMETRY-031",
-        "project": "kad-pi",
-        "title": "Human Cognitive Attention, Intervention Friction, Outcome Quality & Total-Cost Telemetry Baseline",
-        "status": "ACCEPTED",
-        "priority": 330,
-        "evidence": "evidence/WP-KAD-COGNITIVE-TELEMETRY-031/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
-        "project": "kad-pi",
-        "title": "Compute Fabric Empirical Benchmark Probe & Telemetry Baseline: Ideal-State Convergence → Capability Admission → Empirical Compute Fabric Probe",
-        "status": "ACCEPTED",
-        "priority": 200,
-        "evidence": "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
-        "project": "kad-pi",
-        "title": "KAD-PI Counterfactual Observatory & Longitudinal Divergence Journal",
+        "title": "Implement portable workspace agent substrate",
         "status": "ACCEPTED",
         "priority": 100,
-        "evidence": "evidence/WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
-        "project": "kad-pi",
-        "title": "KAD-PI Deterministic Promotion Readiness Gate",
-        "status": "ACCEPTED",
-        "priority": 100,
-        "evidence": "evidence/WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
-        "project": "kad-pi",
-        "title": "KAD-PI Deterministic Shadow Economic Evaluator",
-        "status": "ACCEPTED",
-        "priority": 100,
-        "evidence": "evidence/WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045",
-        "project": "kad-pi",
-        "title": "Make evidence verification mean what it claims and quarantine unanchored claims (P02)",
-        "status": "ACCEPTED",
-        "priority": 11,
-        "evidence": "evidence/WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050",
-        "project": "kad-pi",
-        "title": "Make exact knowledge retrieval pre-authorized and byte-faithful (P07)",
-        "status": "ACCEPTED",
-        "priority": 16,
-        "evidence": "evidence/WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056",
-        "project": "kad-pi",
-        "title": "Final regression ladder, independent verification, and scoped acceptance package (P13)",
-        "status": "REVIEW",
-        "priority": 22,
-        "evidence": "evidence/WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-FUSION-OMP-ADAPTATION-007A",
-        "project": "kad-pi",
-        "title": "Optional pinned Fusion Harness under OMP",
-        "status": "ACCEPTED",
-        "priority": 110,
-        "evidence": "evidence/WP-KAD-FUSION-OMP-ADAPTATION-007A",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
-        "project": "kad-pi",
-        "title": "Generalized Ideal State Artifact (ISA) Architecture & Canonical Compute Fabric Governance",
-        "status": "ACCEPTED",
-        "priority": 190,
-        "evidence": "evidence/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-GOVERNANCE-GATES-032",
-        "project": "kad-pi",
-        "title": "Deterministic Governance Gates, Authority Tiering, Pre-Flight Verification & Protected Mutation Admission",
-        "status": "ACCEPTED",
-        "priority": 340,
-        "evidence": "evidence/WP-KAD-GOVERNANCE-GATES-032/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053",
-        "project": "kad-pi",
-        "title": "Make continuation handoff operational and qualify fresh-directory restore (P10)",
-        "status": "ACCEPTED",
-        "priority": 19,
-        "evidence": "evidence/WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044",
-        "project": "kad-pi",
-        "title": "Remove invented empirical observations and enforce honest probe/metric semantics (P01)",
-        "status": "ACCEPTED",
-        "priority": 10,
-        "evidence": "evidence/WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
-        "project": "kad-pi",
-        "title": "Intent-Ledger Regression Repair, Normative Semantic Validation & Ideal-State V2 Recompilation",
-        "status": "ACCEPTED",
-        "priority": 320,
-        "evidence": "evidence/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054",
-        "project": "kad-pi",
-        "title": "Integrated smoke proof and 10-row acceptance matrix evidence collection (P11)",
-        "status": "ACCEPTED",
-        "priority": 20,
-        "evidence": "evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-INTENT-FIDELITY-029",
-        "project": "kad-pi",
-        "title": "Lossless Human Intent Event Ledger, Derived Normalization & Deterministic Compilation",
-        "status": "ACCEPTED",
-        "priority": 300,
-        "evidence": "evidence/WP-KAD-INTENT-FIDELITY-029/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
-        "project": "kad-pi",
-        "title": "Typed-Intent -> Successor Ideal State, Requirement Traceability, Gap Model & Evidence-Gated Roadmap",
-        "status": "ACCEPTED",
-        "priority": 310,
-        "evidence": "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-ISA-FINAL-SNAPSHOT-028",
-        "project": "kad-pi",
-        "title": "Implement ISA-KAD-SKILL-ROLE-002 / v1.1 and Freeze the Pre-GitHub KAD-PI Baseline",
-        "status": "ACCEPTED",
-        "priority": 280,
-        "evidence": "evidence/WP-KAD-ISA-FINAL-SNAPSHOT-028/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
-        "project": "kad-pi",
-        "title": "Governed Scientific Evidence Promotion, Wiki Projection and Derived Index Contract",
-        "status": "ACCEPTED",
-        "priority": 100,
-        "evidence": "evidence/WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-LIVE-TELEMETRY-STREAM-019",
-        "project": "kad-pi",
-        "title": "Live PON/SSE Telemetry Streaming Transport & Read-Only Observer Projection",
-        "status": "ACCEPTED",
-        "priority": 120,
-        "evidence": "evidence/WP-KAD-LIVE-TELEMETRY-STREAM-019/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
-        "project": "kad-pi",
-        "title": "Local canonical wiki context library",
-        "status": "ACCEPTED",
-        "priority": 108,
-        "evidence": "evidence/WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
-        "project": "kad-pi",
-        "title": "Canonical Obsidian Bridge Plugin & Governed Visual Workspace Integration",
-        "status": "ACCEPTED",
-        "priority": 150,
-        "evidence": "evidence/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046",
-        "project": "kad-pi",
-        "title": "Qualify one project OMP launch path with isolated runtime writes and durable source pin (P03)",
-        "status": "ACCEPTED",
-        "priority": 12,
-        "evidence": "evidence/WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-OMP-METAHARNESS-REFACTOR-041",
-        "project": "kad-pi",
-        "title": "OMP Meta-Harness Reconciliation, Current-State Artifact, Settings Compatibility Matrix, and CSA↔ISA Gap Model",
-        "status": "ACCEPTED",
-        "priority": 350,
-        "evidence": "evidence/WP-KAD-OMP-METAHARNESS-REFACTOR-041/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-OPERATOR-CONTROL-PLANE-001",
-        "project": "kad-pi",
-        "title": "KAD-PI Native OMP Control Plane, Live Token/Quota Telemetry, Developer Toolchain, Security Gates, and Native Operator UI",
-        "status": "ACCEPTED",
-        "priority": 100,
-        "evidence": "evidence/WP-KAD-OPERATOR-CONTROL-PLANE-001",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043",
-        "project": "kad-pi",
-        "title": "Project closure, debt burn-down and zero-pending baseline",
-        "status": "SUPERSEDED",
-        "priority": 3,
-        "evidence": "evidence/WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042",
-        "project": "kad-pi",
-        "title": "Project hygiene, maintenance and refinement-readiness reconciliation",
-        "status": "ACCEPTED",
-        "priority": 5,
-        "evidence": "evidence/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051",
-        "project": "kad-pi",
-        "title": "Assign single authoritative generator per derived projection and isolate inspection (P08)",
-        "status": "ACCEPTED",
-        "priority": 17,
-        "evidence": "evidence/WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055",
-        "project": "kad-pi",
-        "title": "Safe retirement of redundant active machinery and documentation cutover (P12)",
-        "status": "ACCEPTED",
-        "priority": 21,
-        "evidence": "evidence/WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055/",
+        "evidence": null,
         "source": "projection"
       },
       {
@@ -733,16 +408,7 @@
         "title": "Canonical Research API and Persistence",
         "status": "ACCEPTED",
         "priority": 100,
-        "evidence": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-01-canonical-research-api",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-RESEARCH-CAPABILITIES-003",
-        "project": "kad-pi",
-        "title": "Provider Capability Profiles and Degradation",
-        "status": "ACCEPTED",
-        "priority": 80,
-        "evidence": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-03-capabilities",
+        "evidence": null,
         "source": "projection"
       },
       {
@@ -751,7 +417,16 @@
         "title": "Research Operator Namespace and Manifests",
         "status": "ACCEPTED",
         "priority": 90,
-        "evidence": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-02-research-cli",
+        "evidence": null,
+        "source": "projection"
+      },
+      {
+        "id": "WP-KAD-RESEARCH-CAPABILITIES-003",
+        "project": "kad-pi",
+        "title": "Provider Capability Profiles and Degradation",
+        "status": "ACCEPTED",
+        "priority": 80,
+        "evidence": null,
         "source": "projection"
       },
       {
@@ -760,25 +435,7 @@
         "title": "OpenViking Derived Research Context",
         "status": "ACCEPTED",
         "priority": 80,
-        "evidence": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-04-openviking",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
-        "project": "kad-pi",
-        "title": "Epistemic Claim Audit & Source-Fidelity Repair",
-        "status": "ACCEPTED",
-        "priority": 100,
-        "evidence": "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
-        "project": "kad-pi",
-        "title": "Evidence-Gated Real-Corpus Research Workflow Evaluation",
-        "status": "ACCEPTED",
-        "priority": 100,
-        "evidence": "evidence/WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
+        "evidence": null,
         "source": "projection"
       },
       {
@@ -787,61 +444,34 @@
         "title": "Read-Only Zotero Local API Integration",
         "status": "ACCEPTED",
         "priority": 70,
-        "evidence": "evidence/WP-KAD-RESEARCH-WORKFLOW-SCAFFOLD-001/ticket-05-zotero",
+        "evidence": null,
         "source": "projection"
       },
       {
-        "id": "WP-KAD-SKILL-ROLE-FABRIC-024",
+        "id": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006",
         "project": "kad-pi",
-        "title": "Unified KAD-PI Skills & Role ISA, Fabric Reconciliation & Execution Substrate Alignment",
+        "title": "Evidence-Gated Real-Corpus Research Evaluation",
         "status": "ACCEPTED",
-        "priority": 240,
-        "evidence": "evidence/WP-KAD-SKILL-ROLE-FABRIC-024/",
+        "priority": 100,
+        "evidence": null,
         "source": "projection"
       },
       {
-        "id": "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+        "id": "WP-KAD-RESEARCH-REAL-CORPUS-EVALUATION-006-R1",
         "project": "kad-pi",
-        "title": "Sofia v3 Canonical Dashboard, Cytoscape Graph Explorer & Hybrid Telemetry Visualization",
+        "title": "Epistemic Claim Audit & Source-Fidelity Repair",
         "status": "ACCEPTED",
-        "priority": 160,
-        "evidence": "evidence/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013/",
+        "priority": 100,
+        "evidence": null,
         "source": "projection"
       },
       {
-        "id": "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012",
+        "id": "WP-KAD-OPERATOR-CONTROL-PLANE-001",
         "project": "kad-pi",
-        "title": "Technology Stack, Cross-Project Reuse & Agentic Visualization Architecture",
+        "title": "Deterministic Operator Control Plane",
         "status": "ACCEPTED",
-        "priority": 150,
-        "evidence": "evidence/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
-        "project": "kad-pi",
-        "title": "TELL Server Monospace ANSI Profile, Headless TUI & Host Observability Baseline",
-        "status": "ACCEPTED",
-        "priority": 130,
-        "evidence": "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049",
-        "project": "kad-pi",
-        "title": "Enforce tool and dispatch authority with fail-closed route degradation (P06)",
-        "status": "ACCEPTED",
-        "priority": 15,
-        "evidence": "evidence/WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
-        "project": "kad-pi",
-        "title": "Unified KAD Design System, Shared Presentation Foundation & Modernized Public Website",
-        "status": "ACCEPTED",
-        "priority": 170,
-        "evidence": "evidence/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014/",
+        "priority": 100,
+        "evidence": null,
         "source": "projection"
       },
       {
@@ -850,43 +480,97 @@
         "title": "OMP-Native Usage -> KAD Telemetry Bridge",
         "status": "ACCEPTED",
         "priority": 100,
-        "evidence": "evidence/WP-KAD-USAGE-BRIDGE-002",
+        "evidence": null,
+        "source": "projection"
+      },
+      {
+        "id": "WP-KAD-ECONOMIC-ROUTER-SHADOW-003",
+        "project": "kad-pi",
+        "title": "Deterministic Shadow Economic Evaluator",
+        "status": "ACCEPTED",
+        "priority": 100,
+        "evidence": null,
+        "source": "projection"
+      },
+      {
+        "id": "WP-KAD-COUNTERFACTUAL-OBSERVATORY-004",
+        "project": "kad-pi",
+        "title": "Counterfactual Observatory & Divergence Journal",
+        "status": "ACCEPTED",
+        "priority": 100,
+        "evidence": null,
+        "source": "projection"
+      },
+      {
+        "id": "WP-KAD-COUNTERFACTUAL-PROMOTION-READINESS-005",
+        "project": "kad-pi",
+        "title": "Deterministic Promotion Readiness Gate",
+        "status": "ACCEPTED",
+        "priority": 100,
+        "evidence": null,
+        "source": "projection"
+      },
+      {
+        "id": "WP-KAD-KNOWLEDGE-PLANE-SEED-PROMOTION-007",
+        "project": "kad-pi",
+        "title": "Knowledge Plane Seed Promotion",
+        "status": "ACCEPTED",
+        "priority": 100,
+        "evidence": null,
+        "source": "projection"
+      },
+      {
+        "id": "WP-KAD-FUSION-OMP-ADAPTATION-007A",
+        "project": "kad-pi",
+        "title": "Optional Pinned Fusion Harness",
+        "status": "ACCEPTED",
+        "priority": 110,
+        "evidence": null,
+        "source": "projection"
+      },
+      {
+        "id": "WP-KAD-CANONICAL-OBSIDIAN-LIBRARIAN-008",
+        "project": "kad-pi",
+        "title": "Canonical Obsidian Agentic Librarian",
+        "status": "ACCEPTED",
+        "priority": 109,
+        "evidence": null,
+        "source": "projection"
+      },
+      {
+        "id": "WP-KAD-LOCAL-WIKI-CONTEXT-LIBRARY-009",
+        "project": "kad-pi",
+        "title": "Local Wiki Context Library",
+        "status": "ACCEPTED",
+        "priority": 100,
+        "evidence": null,
         "source": "projection"
       },
       {
         "id": "WP-KAD-VAULT-WIKI-UNIFICATION-010",
         "project": "kad-pi",
-        "title": "Canonical vault and legacy wiki unification",
+        "title": "Canonical Vault and Legacy Wiki Unification",
         "status": "ACCEPTED",
         "priority": 120,
-        "evidence": "evidence/WP-KAD-VAULT-WIKI-UNIFICATION-010/",
+        "evidence": null,
         "source": "projection"
       },
       {
-        "id": "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+        "id": "WP-KAD-CANONICAL-STATE-RECONCILIATION-010-R1",
         "project": "kad-pi",
-        "title": "Separate verification, approval, and acceptance boundaries across workctl and wiki (P05)",
-        "status": "ACCEPTED",
-        "priority": 14,
-        "evidence": "evidence/WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048/",
+        "title": "Full /Work Inventory & State Reconciliation",
+        "status": "REVIEW",
+        "priority": 130,
+        "evidence": null,
         "source": "projection"
       },
       {
-        "id": "WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047",
+        "id": "WP-KAD-CANONICAL-PROJECTION-SYNCHRONIZATION-011",
         "project": "kad-pi",
-        "title": "Make writer leases directional, expiration-aware, and lifecycle-safe (P04)",
-        "status": "ACCEPTED",
-        "priority": 13,
-        "evidence": "evidence/WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047/",
-        "source": "projection"
-      },
-      {
-        "id": "WP-WORKSPACE-AGENT-SUBSTRATE-001",
-        "project": "kad-pi",
-        "title": "Implement portable workspace agent substrate",
-        "status": "ACCEPTED",
-        "priority": 100,
-        "evidence": "evidence/WP-WORKSPACE-AGENT-SUBSTRATE-001",
+        "title": "Commit Consolidation & Projection Bootstrap",
+        "status": "IN_PROGRESS",
+        "priority": 140,
+        "evidence": null,
         "source": "projection"
       },
       {
@@ -914,6 +598,15 @@
         "status": "EVIDENCE_ONLY",
         "priority": null,
         "evidence": "evidence/WP-GAYA-001/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-GAYA-DATASET-G1",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-GAYA-DATASET-G1/",
         "source": "evidence-dir"
       },
       {
@@ -962,6 +655,60 @@
         "source": "evidence-dir"
       },
       {
+        "id": "WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-AESTHETIC-DIRECTIVE-AND-IDEAL-STATE-ARTIFACT-015/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-AMDY-OMARCHY-CYBERDECK-THEME-017/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-BASELINE-PUBLICATION-028A",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-BASELINE-PUBLICATION-028A/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-CANCELLATION-AND-PROCESS-CLEANUP-052/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-COGNITIVE-TELEMETRY-031",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-COGNITIVE-TELEMETRY-031/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-COMPUTE-FABRIC-EXPERIMENTAL-PROBE-021/",
+        "source": "evidence-dir"
+      },
+      {
         "id": "WP-KAD-CONTEXT-PLANE-001",
         "project": "kad-pi",
         "title": "(evidence dir without projection entry)",
@@ -989,6 +736,42 @@
         "source": "evidence-dir"
       },
       {
+        "id": "WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-EVIDENCE-RECEIPT-INTEGRITY-AND-QUALIFICATION-045/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-EXACT-RETRIEVAL-AUTHORIZATION-AND-CITATION-050/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-FINAL-REGRESSION-INDEPENDENT-VERIFICATION-056/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-GENERALIZED-IDEAL-STATE-ARTIFACT-020/",
+        "source": "evidence-dir"
+      },
+      {
         "id": "WP-KAD-GOVERNANCE-AUTHORIZATION-SEMANTICS-032R",
         "project": "kad-pi",
         "title": "(evidence dir without projection entry)",
@@ -998,12 +781,84 @@
         "source": "evidence-dir"
       },
       {
+        "id": "WP-KAD-GOVERNANCE-GATES-032",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-GOVERNANCE-GATES-032/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-HANDOFF-AND-FRESH-RESTORE-QUALIFICATION-053/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-HONEST-PROBE-AND-METRIC-SEMANTICS-044/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-INTEGRATED-NEXT-STATE-SMOKE-EVIDENCE-054/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-INTENT-FIDELITY-029",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-INTENT-FIDELITY-029/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030/",
+        "source": "evidence-dir"
+      },
+      {
         "id": "WP-KAD-INTERFACE-PLATFORM-001",
         "project": "kad-pi",
         "title": "(evidence dir without projection entry)",
         "status": "EVIDENCE_ONLY",
         "priority": null,
         "evidence": "evidence/WP-KAD-INTERFACE-PLATFORM-001/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-ISA-FINAL-SNAPSHOT-028",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-ISA-FINAL-SNAPSHOT-028/",
         "source": "evidence-dir"
       },
       {
@@ -1043,6 +898,15 @@
         "source": "evidence-dir"
       },
       {
+        "id": "WP-KAD-LIVE-TELEMETRY-STREAM-019",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-LIVE-TELEMETRY-STREAM-019/",
+        "source": "evidence-dir"
+      },
+      {
         "id": "WP-KAD-LOCAL-001",
         "project": "kad-pi",
         "title": "(evidence dir without projection entry)",
@@ -1070,6 +934,24 @@
         "source": "evidence-dir"
       },
       {
+        "id": "WP-KAD-MEMORY-SUBSTRATE-057",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-MEMORY-SUBSTRATE-057/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-OBSIDIAN-BRIDGE-PLUGIN-016/",
+        "source": "evidence-dir"
+      },
+      {
         "id": "WP-KAD-OMP-001",
         "project": "kad-pi",
         "title": "(evidence dir without projection entry)",
@@ -1085,6 +967,51 @@
         "status": "EVIDENCE_ONLY",
         "priority": null,
         "evidence": "evidence/WP-KAD-OMP-002/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-OMP-LAUNCH-PATH-QUALIFICATION-046/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-OMP-METAHARNESS-REFACTOR-041",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-OMP-METAHARNESS-REFACTOR-041/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-PROJECT-CLOSURE-AND-ZERO-PENDING-BASELINE-043/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-PROJECT-HYGIENE-AND-REFINEMENT-READINESS-042/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-PROJECTION-OUTPUT-OWNERSHIP-UNIFICATION-051/",
         "source": "evidence-dir"
       },
       {
@@ -1124,6 +1051,15 @@
         "source": "evidence-dir"
       },
       {
+        "id": "WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-REDUNDANT-MACHINERY-RETIREMENT-055/",
+        "source": "evidence-dir"
+      },
+      {
         "id": "WP-KAD-REPRO-001",
         "project": "kad-pi",
         "title": "(evidence dir without projection entry)",
@@ -1148,6 +1084,15 @@
         "status": "EVIDENCE_ONLY",
         "priority": null,
         "evidence": "evidence/WP-KAD-RESERVED-ROADMAP-RECONCILIATION-016-019/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-REVIEW-REMEDIATION-058",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-REVIEW-REMEDIATION-058/",
         "source": "evidence-dir"
       },
       {
@@ -1178,6 +1123,24 @@
         "source": "evidence-dir"
       },
       {
+        "id": "WP-KAD-SKILL-ROLE-FABRIC-024",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-SKILL-ROLE-FABRIC-024/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-SOFIA-V3-CANONICAL-DASHBOARD-013/",
+        "source": "evidence-dir"
+      },
+      {
         "id": "WP-KAD-STRATEGIC-WAYFINDING-001",
         "project": "kad-pi",
         "title": "(evidence dir without projection entry)",
@@ -1193,6 +1156,24 @@
         "status": "EVIDENCE_ONLY",
         "priority": null,
         "evidence": "evidence/WP-KAD-SWARM-001/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-TECHNOLOGY-STACK-AND-AGENTIC-VISUALIZATION-ARCHITECTURE-012/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-TELL-SERVER-ANSI-PROFILE-018",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-TELL-SERVER-ANSI-PROFILE-018/",
         "source": "evidence-dir"
       },
       {
@@ -1259,12 +1240,48 @@
         "source": "evidence-dir"
       },
       {
+        "id": "WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-TOOL-DISPATCH-AUTHORITY-AND-ROUTING-DEGRADATION-049/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-UNIFIED-DESIGN-SYSTEM-AND-PUBLIC-WEBSITE-014/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048/",
+        "source": "evidence-dir"
+      },
+      {
         "id": "WP-KAD-WIKI-CANON-EXPANSION-001",
         "project": "kad-pi",
         "title": "(evidence dir without projection entry)",
         "status": "EVIDENCE_ONLY",
         "priority": null,
         "evidence": "evidence/WP-KAD-WIKI-CANON-EXPANSION-001/",
+        "source": "evidence-dir"
+      },
+      {
+        "id": "WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047",
+        "project": "kad-pi",
+        "title": "(evidence dir without projection entry)",
+        "status": "EVIDENCE_ONLY",
+        "priority": null,
+        "evidence": "evidence/WP-KAD-WRITER-LEASE-DIRECTIONAL-ENFORCEMENT-047/",
         "source": "evidence-dir"
       },
       {
@@ -1299,23 +1316,29 @@
   "csa_snapshots": [
     {
       "file": "CSA_KAD_PI_CURRENT.md",
-      "generated": "2026-09-08T21:09:01Z",
-      "evidence_cutoff": "1a738b5d36276f5eb0f011bf83eac39a294a202d",
-      "head": "1a738b5"
+      "generated": "2026-09-12T20:34:14Z",
+      "evidence_cutoff": "fb9161983650b1e398df6e86a26710171936e029",
+      "head": "fb91619"
     },
     {
       "file": "CSA_KAD_PI_CURRENT_2026-09-06.md",
       "generated": "2026-09-06T21:30:00Z",
       "evidence_cutoff": "337a42021f71e7cf51b908be886836ecd4212790",
       "head": "337a42021f71e7cf51b908be886836ecd4212790"
+    },
+    {
+      "file": "CSA_KAD_PI_CURRENT_2026-09-11.md",
+      "generated": "2026-09-08T21:09:01Z",
+      "evidence_cutoff": "1a738b5d36276f5eb0f011bf83eac39a294a202d",
+      "head": "1a738b5"
     }
   ],
   "isa_progress": {
     "total": 25,
     "statuses": {
-      "PARTIAL": 16,
+      "PARTIAL": 17,
       "IMPLEMENTED": 6,
-      "NOT_IMPLEMENTED": 3
+      "NOT_IMPLEMENTED": 2
     }
   }
 }

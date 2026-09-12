@@ -1,56 +1,95 @@
 # KAD-PI Progress toward Ideal State Artifact
 
-**Generated**: 2026-09-08T21:21:38.200Z · **HEAD**: `e793ddbe9f8ea95ffc64f3e7731f55a05357c3af` · **Branch**: main
-**Remote**: https://github.com/aysha-oztoprakoc/kad-pi.git
+**Generated**: 2026-09-12T20:55:21.668Z · **HEAD**: `bc4c90436bbe6d95487c345211f7cc12954b2f93` · **Branch**: main
+**Remote**: https://github.com/aysha-oztoprakoc/kad-pi
 
 ## ISA requirement registry
 
 | Status | Count |
 |---|---|
 | `IMPLEMENTED` | 6 |
-| `NOT_IMPLEMENTED` | 3 |
-| `PARTIAL` | 16 |
+| `NOT_IMPLEMENTED` | 2 |
+| `PARTIAL` | 17 |
 | **Total** | 25 |
 
 ## Workpackages
 
 | Status | Count |
 |---|---|
-| `ACCEPTED` | 52 |
-| `BLOCKED` | 1 |
-| `EVIDENCE_ONLY` | 45 |
+| `ACCEPTED` | 18 |
+| `EVIDENCE_ONLY` | 82 |
+| `IN_PROGRESS` | 1 |
 | `REVIEW` | 1 |
-| `SUPERSEDED` | 1 |
-| **Total** | 100 |
+| **Total** | 102 |
 
 ## Worktrees
 
 | Path | Branch | HEAD |
 |---|---|---|
-| /home/amdy/Work | refs/heads/main | e793ddbe9f8ea95ffc64f3e7731f55a05357c3af |
+| /home/runner/work/kad-pi/kad-pi | refs/heads/main | bc4c90436bbe6d95487c345211f7cc12954b2f93 |
 
 ## Branches
 
 - `main`
-- `origin/main`
 - `origin/dependabot/npm_and_yarn/npm_and_yarn-711da9e1ad`
+- `origin/main`
 
 ## Current State Artifact snapshots
 
 | Snapshot | Generated | Evidence cutoff | HEAD |
 |---|---|---|---|
-| CSA_KAD_PI_CURRENT.md | 2026-09-08T21:09:01Z | `1a738b5d36276f5eb0f011bf83eac39a294a202d` | `1a738b5` |
+| CSA_KAD_PI_CURRENT.md | 2026-09-12T20:34:14Z | `fb9161983650b1e398df6e86a26710171936e029` | `fb91619` |
 | CSA_KAD_PI_CURRENT_2026-09-06.md | 2026-09-06T21:30:00Z | `337a42021f71e7cf51b908be886836ecd4212790` | `337a42021f71e7cf51b908be886836ecd4212790` |
+| CSA_KAD_PI_CURRENT_2026-09-11.md | 2026-09-08T21:09:01Z | `1a738b5d36276f5eb0f011bf83eac39a294a202d` | `1a738b5` |
 
 ## Recent commits (all refs)
 
-Total commits: 114
+Total commits: 153
 
 | Hash | Date | Subject | Refs |
 |---|---|---|---|
-| `e793ddb` | 2026-09-08 | docs(state): refresh current state artifact for OMP economical cascade | HEAD -> main |
+| `bc4c904` | 2026-09-12 | refactor(knowledge): prune the retired wiki's derived and archived copies | HEAD -> main, origin/main |
+| `fb91619` | 2026-09-12 | chore(state): refresh the projections and the CSA at the retirement commit |  |
+| `f89f174` | 2026-09-12 | refactor(knowledge)!: retire the wiki tree by substitution |  |
+| `f2c9264` | 2026-09-12 | feat(omp): declare local retrieval on demand |  |
+| `626b7bc` | 2026-09-12 | fix(canary): the suite asserted the superseded pin, not the contract |  |
+| `219ee6f` | 2026-09-12 | docs(contract): acceptance is an authority decision |  |
+| `cf6ba2c` | 2026-09-12 | feat(state): sync and render the settings matrix, refresh the CSA |  |
+| `f9e333f` | 2026-09-12 | feat(omp): declare the retry posture per launcher profile |  |
+| `c8aa74b` | 2026-09-12 | fix(projection): one writer per public artifact |  |
+| `ee925a1` | 2026-09-12 | fix(telemetry): make the derived summary reproducible, and stop the flake hiding it |  |
+| `2c39b43` | 2026-09-12 | chore(state): refresh the CSA and the projections at the acceptance commit |  |
+| `7bbd560` | 2026-09-12 | chore(ledger): accept the three remediated workpackages, and make acceptance reachable |  |
+| `b128be4` | 2026-09-12 | fix(state): make the front-door guard consistent with the lag it allows |  |
+| `63b0a7a` | 2026-09-12 | fix(review): close what the independent review of this workpackage found |  |
+| `8e3f219` | 2026-09-12 | fix(gates): close the fail-open paths the independent review found |  |
+| `2b95b9f` | 2026-09-12 | test(omp): keep the gate tests off the host toolchain |  |
+| `4a4743f` | 2026-09-12 | feat(omp): resolve the harness through mise, and gate on the receipt (ADR 0018/0019) |  |
+| `6186eb2` | 2026-09-12 | feat(gates): make the spend and learning gates ask declaration questions (ADR 0016/0017) |  |
+| `fd2a282` | 2026-09-11 | docs(state): refresh the mirror, the projections and the CSA at the gate commit |  |
+| `9d5ff7f` | 2026-09-11 | docs(projection): regenerate the front door at the gate commit |  |
+| `68f90df` | 2026-09-11 | fix(gates): close the last three red gates and the two fail-open paths behind them |  |
+| `c1e50ae` | 2026-09-11 | docs(vault): publish the id-minted mirror (WP-KAD-REVIEW-REMEDIATION-058) |  |
+| `e0ca5cd` | 2026-09-11 | chore(evidence): record the control-plane journal up to the remediation close |  |
+| `66daea9` | 2026-09-11 | chore(ledger): close the remediation workpackages into REVIEW (WP-KAD-REVIEW-REMEDIATION-058) |  |
+| `29369d3` | 2026-09-11 | docs(state): refresh the CSA and make its CURRENT claim falsifiable (WP-KAD-REVIEW-REMEDIATION-058) |  |
+| `46c6f98` | 2026-09-11 | chore(hygiene): skill corpus, scanner signal and island retirement (WP-KAD-REVIEW-REMEDIATION-058) |  |
+| `13a5c7d` | 2026-09-11 | fix(readme): derive the repository front door from live state (WP-KAD-REVIEW-REMEDIATION-058) |  |
+| `826e5f8` | 2026-09-11 | docs(evidence): promote the Gaya frame evidence to the paths the ledger declares (WP-KAD-REVIEW-REMEDIATION-058) |  |
+| `1fff81b` | 2026-09-11 | fix(memory): repair the wiki of record and make its versioning claim falsifiable (WP-KAD-REVIEW-REMEDIATION-058) |  |
+| `e2a03ae` | 2026-09-11 | fix(spend): make exclusions authoritative in the model-exposure selector (WP-KAD-REVIEW-REMEDIATION-058) |  |
+| `3b53fb0` | 2026-09-11 | test(gates): isolate the multi-endpoint fixture and make `make test` delegate to `npm test` (WP-KAD-REVIEW-REMEDIATION-058) |  |
+| `e075972` | 2026-09-11 | chore(omp): declare the effective harness posture and enforce agreement (WP-KAD-REVIEW-REMEDIATION-058) |  |
+| `3ca6b86` | 2026-09-11 | docs(evidence): record the commit-hygiene pass in the WP-057 final report |  |
+| `534685d` | 2026-09-11 | feat(gaya,game-stack,research): land in-flight workpackage artifacts |  |
+| `5249489` | 2026-09-11 | chore(derived): regenerate kad-canonical projections and public state |  |
+| `bda2085` | 2026-09-11 | chore(vault): regenerate vault/ as the ai-memory mirror |  |
+| `8301de2` | 2026-09-11 | feat(memory): WP-KAD-MEMORY-SUBSTRATE-057 — ai-memory substrate + OmniRoute gateway |  |
+| `d05bf4f` | 2026-09-11 | chore(gitignore): ignore vendored trees, runtime scratch and installer backups |  |
+| `3a0b5b0` | 2026-09-08 | ci(progress): compile ISA progress projection from workpackages, branches, commits, CSA snapshots |  |
+| `e793ddb` | 2026-09-08 | docs(state): refresh current state artifact for OMP economical cascade |  |
 | `1a738b5` | 2026-09-08 | feat(omp): economical two-tier model cascade, mnemopi memory, autolearn, extended context |  |
-| `2f2ae35` | 2026-09-06 | chore(acceptance): record sovereign human acceptance for WP-056 milestone package | origin/main, origin/HEAD |
+| `2f2ae35` | 2026-09-06 | chore(acceptance): record sovereign human acceptance for WP-056 milestone package |  |
 | `c23b2ea` | 2026-09-06 | docs(architecture): ingest next ideal state specification, promote state artifacts, and record evidence dossiers |  |
 | `d8363e2` | 2026-09-06 | feat(workstation): harden probe honesty, process cleanup, retrieval and lease enforcement |  |
 | `337a420` | 2026-09-04 | chore(sanitization): sanitize remote artifacts, GitHub README landing page, and public site presentation |  |
@@ -69,45 +108,6 @@ Total commits: 114
 | `9ccc491` | 2026-09-01 | fix(kad-state): second corrective pass — schema_default vs effective_value + RED/GREEN evidence |  |
 | `10ab1f3` | 2026-09-01 | docs(kad-state): record WP-041 corrective pass delta report |  |
 | `13002b9` | 2026-09-01 | fix(kad-state): correct WP-041 settings matrix, gap model, and CSA provenance per semantic review |  |
-| `47c7b59` | 2026-09-01 | chore(workctl): transition WP-KAD-OMP-METAHARNESS-REFACTOR-041 to REVIEW |  |
-| `8cb52bb` | 2026-09-01 | feat(kad-state): integrate WP-KAD-OMP-METAHARNESS-REFACTOR-041 reconciliation artifacts |  |
-| `c029d90` | 2026-09-01 | feat(kad-governance): integrate WP-KAD-GOVERNANCE-GATES-032 accepted governance gates |  |
-| `394cf78` | 2026-09-01 | feat(kad-telemetry): integrate WP-KAD-COGNITIVE-TELEMETRY-031 accepted telemetry baseline |  |
-| `7401b87` | 2026-08-30 | docs(kad): bind WP-032R snapshot provenance |  |
-| `7eee4df` | 2026-08-30 | fix(kad): harden governance authorization semantics |  |
-| `15483b6` | 2026-08-30 | fix(kad-ideal-state): execute WP-KAD-IDEAL-STATE-V2-SEMANTIC-RECONCILIATION-030R semantic regression repair & recompilation |  |
-| `4ba5b05` | 2026-08-30 | feat(kad-ideal-state): execute WP-KAD-INTENT-TO-IDEAL-STATE-REFINEMENT-030 successor Ideal State V2 & traceability |  |
-| `17f91ac` | 2026-08-30 | feat(kad-intent): execute WP-KAD-INTENT-FIDELITY-029 lossless intent ledger & compilation |  |
-| `2714398` | 2026-08-30 | docs(kad-publication): complete WP-KAD-BASELINE-PUBLICATION-028A receipts and projections |  |
-| `1c8c9df` | 2026-08-30 | feat(kad-isa): implement ISA-KAD-SKILL-ROLE-002 v1.1 and freeze pre-GitHub baseline |  |
-| `0ea896b` | 2026-08-30 | feat(kad-fabric): execute WP-KAD-SKILL-ROLE-FABRIC-024 unified skills & role ISA |  |
-| `b78aaf7` | 2026-08-30 | feat(kad): reconcile reserved WP-016..019 roadmap contracts with Generalized ISA and Compute Fabric governance |  |
-| `784a84a` | 2026-08-30 | fix(kad): update derived ISA projections and address code review findings |  |
-| `e401c18` | 2026-08-30 | feat(kad): generalize Ideal State Artifact (ISA) governance and establish canonical compute fabric target (WP-020) |  |
-| `2da2266` | 2026-08-30 | feat(kad): establish canonical aesthetic directive, ISA governance, and deterministic validation tooling (WP-015) |  |
-| `27171d9` | 2026-08-30 | feat(kad): implement unified design system, shared presentation foundation, and modernized public website (WP-014) |  |
-| `982243c` | 2026-08-30 | chore(deps): bump echarts in the npm_and_yarn group across 1 directory | origin/dependabot/npm_and_yarn/npm_and_yarn-711da9e1ad |
-| `a0f631c` | 2026-08-30 | feat(kad): implement Sofia v3 canonical dashboard, Cytoscape graph explorer, and hybrid telemetry visualization (WP-013) |  |
-| `6881352` | 2026-08-30 | feat(kad): establish technology stack, visualization bake-off, and agentic graph architecture (WP-012) |  |
-| `6994995` | 2026-08-30 | feat(kad): synchronize canonical vault projections, repository docs, and presentation adapters (WP-011) |  |
-| `8f16c1a` | 2026-08-30 | chore(kad): consolidate workspace baseline and legacy project evidence |  |
-| `e3bce03` | 2026-08-30 | feat(kad): reconcile /Work inventory, migrate legacy wiki, and synchronize canonical vault (WP-010-R1) |  |
-| `ca1f56a` | 2026-08-30 | feat(kad): unify vault wiki migration contract |  |
-| `2d5ef8b` | 2026-08-30 | feat(kad): add pinned fusion and canonical wiki librarian |  |
-| `2d368db` | 2026-08-29 | feat: promote audited knowledge claims |  |
-| `ccafcc7` | 2026-08-29 | fix(research): complete epistemic claim audit and source-fidelity repair for five-source real corpus (R1) |  |
-| `0ba74b9` | 2026-08-29 | feat(research): evaluate real-corpus research workflow on deterministic agent control literature |  |
-| `9342702` | 2026-08-29 | feat(observatory): implement deterministic promotion readiness gate with per-advisory-class evaluation and zero routing authority |  |
-| `8774f8d` | 2026-08-29 | feat(observatory): implement longitudinal counterfactual observatory with tamper-evident journal and zero shadow authority |  |
-| `5f2a615` | 2026-08-29 | feat(telemetry): implement deterministic shadow economic evaluator with quota-aware advisory scoring |  |
-| `cb59d84` | 2026-08-29 | feat(telemetry): bridge OMP-native usage reports and after_provider_response into KAD control plane |  |
-| `ea324af` | 2026-08-29 | docs(control-plane): add operator documentation, architecture wiki, and complete evidence package |  |
-| `33d14c1` | 2026-08-29 | feat(control-plane): add native OMP extension, compact meter, panel overlay, and kad CLI |  |
-| `6353c6e` | 2026-08-29 | feat(telemetry): implement normalized telemetry schema, provider adapters, and quota honesty |  |
-| `08c21db` | 2026-08-29 | feat(toolchain): configure developer tooling, Justfile, prek gates, and Context7 MCP |  |
-| `445e000` | 2026-08-29 | feat(research): implement read-only Zotero local API integration (WP-KAD-RESEARCH-ZOTERO-005) |  |
-| `b057ffc` | 2026-08-29 | feat(research): implement OpenViking derived research context and exact fallback (WP-KAD-RESEARCH-OPENVIKING-004) |  |
-| `178ba6e` | 2026-08-29 | feat(research): implement capability profiles, observations, and graceful degradation (WP-KAD-RESEARCH-CAPABILITIES-003) |  |
 
 > This artifact is a deterministic downstream projection compiled from git,
 > `vault/90_Derived/Projections/workpackages.json`, `evidence/`, and `docs/state/`.
