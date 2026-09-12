@@ -1,0 +1,62 @@
+{
+  "id": "WP-KAD-WARFRAME-003",
+  "project": "kad-warframe",
+  "title": "Integrate the official Warframe status API (api.warframestat.us) as a live world-state and reference-data source",
+  "status": "REVIEW",
+  "priority": 270,
+  "trust_domain": "project-local",
+  "authority_required": "operator instruction, 2026-09-12: refactor the whole kad-warframe project to also use the official Warframe API data (docs.warframestat.us, github.com/WFCD/warframe-status)",
+  "spec_ref": "README.md, AGENTS.md",
+  "fixed_point": "bf0d3bfa78e777e6959bf15bfdda120bdbb1f25e",
+  "scope": [
+    "an API client with a local cache and explicit TTLs, offline-degrading to the last observation and never inventing a live fact",
+    "world state as a first-class source: cycles (Cetus/Vallis/Cambion/Duviri/Zariman/Earth), fissures, invasions with their rewards, Nightwave acts, Baro Ki'Teer, sortie, Archon hunt, arbitration, daily deals, construction progress",
+    "the official drop tables (/drops) cached locally and searched offline, so `build` and `item` cite the game's own published drop data",
+    "`kad-warframe world` with text and JSON output, plus plan actions for time-bound opportunities that expire, each carrying its expiry and observation time",
+    "curated requirements for world systems (data/world.json) with sources and a verification date, following the existing quests.json pattern",
+    "a World panel in the dashboard (WP-002), and world-state freshness reported by `check` without letting an unreachable live source fail an account-data check"
+  ],
+  "non_scope": [
+    "reimplementing account-snapshot acquisition: warframe-helper owns the memory scan and the mobile-API fetch",
+    "rivens, wfinfo and other late-game endpoints that cannot yet apply to this account",
+    "downloading images, thumbnails or any remote asset: the dashboard stays local-first (ISA-KAD-AESTHETIC-001)",
+    "letting the API become authoritative for account facts (mastery, inventory, credits): those stay snapshot-derived",
+    "advising from a stale world observation: when the live source is unreachable, time-bound advice is withheld rather than shown with an old timestamp"
+  ],
+  "owned_paths": [
+    "kadwarframe/",
+    "data/",
+    "tests/",
+    "README.md",
+    "AGENTS.md",
+    "evidence/"
+  ],
+  "validation": [
+    "python -m unittest discover -s tests",
+    "bin/kad-warframe world --json",
+    "bin/kad-warframe check"
+  ],
+  "acceptance_criteria": [
+    "`kad-warframe world` reports cycles, fissures, invasions, Nightwave and the trader from live data, with each entry's expiry and the observation time",
+    "plan actions for world opportunities state their expiry, and none are emitted when the world observation is stale",
+    "fissure advice matches the relics the account actually holds (tier mapping verified in curated data with sources)",
+    "`build` and `item` cite official drop-table entries where the table has them, labelled as such, falling back to the cached WFCD datasets and saying so",
+    "the API client is offline-safe: a failed fetch degrades to the last cached observation marked stale, and a missing cache reports UNKNOWN rather than fabricating state",
+    "the suite stays hermetic: fixtures captured from real responses, no network in tests, no live calls",
+    "evidence records the endpoints used, the cache TTLs, the degradation path and one real observation"
+  ],
+  "acceptance": {
+    "decided_by": "operator instruction, 2026-09-12",
+    "executed_by": "kad-master",
+    "evidence_target": "evidence/VERIFICATION-WORLDSTATE-2026-09-12.md"
+  },
+  "evidence_target": "evidence/VERIFICATION-WORLDSTATE-2026-09-12.md",
+  "required_capabilities": [
+    "filesystem-read",
+    "local-execution",
+    "deterministic-verification",
+    "network-egress-scoped"
+  ],
+  "blocked_by": [],
+  "blocks": []
+}

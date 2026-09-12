@@ -1,0 +1,68 @@
+{
+  "id": "WP-KAD-WARFRAME-004",
+  "project": "kad-warframe",
+  "title": "Local web dashboard under the KAD aesthetic directive, with the acquisition actions it can honestly drive",
+  "status": "REVIEW",
+  "priority": 280,
+  "trust_domain": "project-local",
+  "authority_required": "operator instruction, 2026-09-12: a local dashboard showing owned items, completed missions, goals, prerequisites and everything else the backend holds; decision protocol answers: stdlib `serve` + buildless page, full control including inventory fetch; and: build the GUI and interface using the KAD aesthetic directive",
+  "spec_ref": "README.md, AGENTS.md, vault/00_Governance/ISA-KAD-AESTHETIC-001.md, docs/adr/0013-aesthetic-directive-and-token-authority.md",
+  "fixed_point": "f96e30e73f1ce5cf068c4eca8caad1cd454613ec",
+  "scope": [
+    "`kad-warframe serve`: a stdlib http.server dashboard bound to 127.0.0.1, no third-party dependency and no build step",
+    "a JSON API whose payloads come from the same view models the CLI's --json serves, so the web layer cannot compute a number the CLI would not",
+    "a buildless single-page frontend served from the package: overview, goals with their evidence and expiries, items, missions, quests, world state, and the actions panel",
+    "the KAD aesthetic directive applied as a projection: canonical tokens carried verbatim from ISA-KAD-AESTHETIC-001 as interface/tokens.css projects them, the foundation and component patterns reused, and every ISA testable claim brought into the project's own suite",
+    "actions: refresh the cached datasets in-process, and drive warframe-helper's own TUI in a tmux session for the inventory fetch and the database sync, capturing the screen and verifying every step before any key is sent",
+    "invariants carried into the UI: freshness visible and advising blocked when stale, UNKNOWN rendered as UNKNOWN, provenance and confidence on curated advice, expiries on time-bound advice, platinum-0 discipline"
+  ],
+  "non_scope": [
+    "reimplementing the memory scan or the mobile-API inventory fetch: that stays warframe-helper's code, which the dashboard drives rather than replaces",
+    "any binding other than 127.0.0.1, any authentication scheme, any CORS surface, any remote font, script or image",
+    "a JavaScript build step, a framework, or a second test stack",
+    "writing the player's account data anywhere new",
+    "driving a TUI step whose target screen has not been verified in the same run: the driver fails closed instead of pressing keys blind",
+    "inventing colours, radii, fonts or motion: the ISA forbids ad-hoc decorative values, and the conformance test enforces it"
+  ],
+  "owned_paths": [
+    "kadwarframe/",
+    "tests/",
+    "data/",
+    "bin/",
+    "evidence/",
+    "README.md",
+    "AGENTS.md",
+    "Makefile"
+  ],
+  "validation": [
+    "python -m unittest discover -s tests",
+    "bin/kad-warframe serve --port 0 --once",
+    "bin/kad-warframe --json next"
+  ],
+  "acceptance_criteria": [
+    "`bin/kad-warframe serve` binds 127.0.0.1, serves the dashboard with no network access of its own beyond the sources the CLI already uses, and exits non-zero if the port is taken",
+    "every panel renders real data: goals with evidence, items, missions, quests, world state with expiries, freshness, needs-attention",
+    "the API's payloads equal the CLI's for the same fixture state, asserted in tests",
+    "actions are guarded: the inventory fetch refuses without a running game process, recorded consent, and the helper binary; every TUI navigation step is verified against the captured screen before a key is sent; the driver fails closed",
+    "the page is a faithful projection of the KAD aesthetic directive: canonical tokens only, no remote asset, no ambient animation loop, no audio API, skip link and visible focus rings, WCAG AAA contrast on primary text, and multi-redundant encoding of every state (colour + border + label + shape)",
+    "no third-party dependency is added and the page loads with no network access at all",
+    "the suite stays hermetic: no account data, no network, no real helper process",
+    "browser verification records each panel rendering real values, and the guards' failure modes",
+    "evidence records the commands, the ISA claims and how each was validated"
+  ],
+  "acceptance": {
+    "decided_by": "operator instruction, 2026-09-12",
+    "executed_by": "kad-master",
+    "evidence_target": "evidence/VERIFICATION-DASHBOARD-2026-09-12.md"
+  },
+  "evidence_target": "evidence/VERIFICATION-DASHBOARD-2026-09-12.md",
+  "required_capabilities": [
+    "filesystem-read",
+    "local-execution",
+    "deterministic-verification",
+    "tmux-control"
+  ],
+  "blocked_by": [],
+  "blocks": [],
+  "notes": "Supersedes WP-KAD-WARFRAME-002, which was released (claim ba54ea10) for the API integration and cannot be re-claimed under workctl's grammar. WP-003 (the official API source) is in REVIEW; this work consumes it."
+}

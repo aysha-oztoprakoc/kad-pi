@@ -1,0 +1,21 @@
+{
+  "task": "WP-KAD-WARFRAME-001",
+  "project": "kad-warframe",
+  "claim_id": "ddd0ad20-5e79-4a02-bee4-83397fa6ff7e",
+  "actor_label": "unknown-actor",
+  "started_at": "2026-09-12T21:16:29.026Z",
+  "base_commit": "aaf9458880e258dbfc3440d2019a00ff3c6c69cd",
+  "owned_paths": [
+    "kadwarframe",
+    "data",
+    "tests",
+    "bin",
+    "evidence",
+    "README.md",
+    "AGENTS.md",
+    "Makefile"
+  ],
+  "mode": "mutate",
+  "active": false,
+  "released_at": "2026-09-12T21:17:48.694Z"
+}

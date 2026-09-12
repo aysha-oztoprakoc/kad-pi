@@ -2,7 +2,7 @@
   "id": "WP-KAD-WARFRAME-001",
   "project": "kad-warframe",
   "title": "Establish the deterministic Warframe progression tutor under KAD authority",
-  "status": "CLAIMED",
+  "status": "REVIEW",
   "priority": 250,
   "trust_domain": "project-local",
   "authority_required": "operator instruction, 2026-09-12: create the project, use warframe-helper and any available tooling, run it under kad-pi and the OMP harness, publish a private repo",

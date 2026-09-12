@@ -1,0 +1,67 @@
+{
+  "id": "WP-KAD-WARFRAME-002",
+  "project": "kad-warframe",
+  "title": "Local web dashboard over the tutor's data, with the acquisition actions it can honestly drive",
+  "status": "SUPERSEDED",
+  "priority": 260,
+  "trust_domain": "project-local",
+  "authority_required": "operator instruction, 2026-09-12: a local dashboard showing owned items, completed missions, goals, prerequisites and everything else the backend holds; decision protocol answers: stdlib `serve` + buildless page, full control including inventory fetch",
+  "spec_ref": "README.md, AGENTS.md",
+  "fixed_point": "f96e30e73f1ce5cf068c4eca8caad1cd454613ec",
+  "scope": [
+    "`kad-warframe serve`: a stdlib http.server dashboard bound to 127.0.0.1, no third-party dependency and no build step",
+    "listing surfaces the CLI was missing: `items` (owned equipment, blueprints, resources, mods, unresolved refs) and `missions` (completed nodes resolved through WFCD Node.json), both with --json",
+    "a JSON API whose payloads come from the same functions the CLI calls, so no advice is reimplemented in the web layer",
+    "a buildless single-page frontend served from the package: overview, goals with their evidence, items, missions, quests and prerequisites, freshness, needs-attention",
+    "actions: refresh the WFCD datasets in-process, and drive warframe-helper's own TUI in a tmux session for the inventory fetch and the database sync, with the screen captured and every step verified before any key is sent",
+    "invariants carried into the UI: freshness visible and advising blocked when stale, UNKNOWN rendered as UNKNOWN, provenance and confidence on curated advice, platinum-0 discipline"
+  ],
+  "non_scope": [
+    "reimplementing the memory scan or the mobile-API inventory fetch: that stays warframe-helper's code, which the dashboard drives rather than replaces",
+    "any binding other than 127.0.0.1, any authentication scheme, any CORS surface, any external CDN or font in the page",
+    "a JavaScript build step, a framework, or a second test stack",
+    "writing the player's account data anywhere new: inventory, catalog and notes stay in ~/.warframe-helper",
+    "driving a TUI step whose target screen has not been verified in the same run: the driver fails closed instead of pressing keys blind"
+  ],
+  "owned_paths": [
+    "kadwarframe/",
+    "tests/",
+    "data/",
+    "bin/",
+    "evidence/",
+    "README.md",
+    "AGENTS.md",
+    "Makefile"
+  ],
+  "validation": [
+    "python -m unittest discover -s tests",
+    "bin/kad-warframe serve --port 0 --once (serves one request and exits)",
+    "bin/kad-warframe items --json && bin/kad-warframe missions --json"
+  ],
+  "acceptance_criteria": [
+    "`bin/kad-warframe serve` starts on 127.0.0.1, serves the dashboard, and exits non-zero if the port is taken",
+    "every panel the operator asked for renders real data from this account: owned items, completed missions, goals with evidence, prerequisites, quests, freshness",
+    "the JSON API returns the same values as the CLI for the same inputs (asserted in tests against one fixture state)",
+    "actions are guarded: the inventory fetch refuses without a running game process, without recorded consent, and without the helper binary; every TUI navigation step is verified against the captured screen before a key is sent",
+    "no third-party dependency is added, and the page loads with no network access at all",
+    "the suite stays hermetic: no account data, no network, no real helper process",
+    "browser verification records each panel rendering real values",
+    "evidence records the commands, the screenshots' claims and the guards' failure modes"
+  ],
+  "acceptance": {
+    "decided_by": "operator instruction, 2026-09-12",
+    "executed_by": "kad-master",
+    "evidence_target": "evidence/VERIFICATION-DASHBOARD-2026-09-12.md"
+  },
+  "evidence_target": "evidence/VERIFICATION-DASHBOARD-2026-09-12.md",
+  "required_capabilities": [
+    "filesystem-read",
+    "local-execution",
+    "deterministic-verification",
+    "network-egress-scoped",
+    "tmux-control"
+  ],
+  "blocked_by": [],
+  "blocks": [],
+  "notes": "WP-KAD-WARFRAME-001 is in REVIEW and covers the tutor itself; this workpackage covers the web layer, which 001's non-scope excludes."
+}
