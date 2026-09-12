@@ -6,6 +6,8 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { inspectPosture } from '../../../tools/kad/posture-check.mjs';
 import { parseSimpleYaml } from '../../../tools/kad/context-compiler.mjs';
+import { renderMarkdown } from '../../../tools/kad/settings-matrix.mjs';
+import { MACHINE_APPENDED, classifyDirty, parsePorcelain } from '../../../tools/kad/csa-refresh.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const stateDir = path.resolve(here, '..');
@@ -161,6 +163,85 @@ test('Settings matrix: every project-declared setting matches the enforced confi
     );
   }
   assert.ok(compared >= 30, `the comparison must not go vacuous: it resolved ${compared} project-declared settings`);
+});
+
+test('Settings matrix: the baseline and its runtime skew are declared', () => {
+  // Decision 8B/C of the 2026-09-12 review: the matrix is a capture of one OMP version while the
+  // machine runs another. That skew is a fact about the artifact, so it is declared rather than
+  // implied — and the re-capture procedure is named, because "the matrix is exhaustive" is only
+  // true of the version it captured.
+  const matrix = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json');
+  const baseline = matrix.baseline;
+  assert.ok(baseline, 'the matrix must declare its baseline');
+  assert.equal(baseline.declared_omp_version, matrix.omp_version);
+  assert.equal(baseline.declared_source_revision, matrix.source_revision);
+  assert.match(baseline.skew_note, /unclassified/i);
+  assert.match(baseline.recapture_procedure, /models-sync/);
+  assert.ok(baseline.observed_runtime_version, 'the observed runtime must be declared');
+});
+
+test('Settings matrix: the runtime skew is still the observed one', () => {
+  // Running a newer harness while the artifact declares an older one is exactly the drift the
+  // baseline exists to expose, and re-declaring it is one command. A machine with no harness on
+  // PATH has nothing to compare and is not failed for it.
+  const baseline = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json').baseline;
+  let observed;
+  try {
+    observed = execFileSync('omp', ['--version'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+  } catch {
+    return;
+  }
+  assert.equal(
+    observed,
+    `omp/${baseline.observed_runtime_version}`,
+    `the harness is ${observed} but the matrix declares ${baseline.observed_runtime_version}: `
+    + 'run `make models-sync` (or re-capture) and commit the result'
+  );
+});
+
+test('Settings matrix: the markdown view is the render of the JSON', () => {
+  // The companion had drifted to stating retry.maxDelayMs 300000 and retry.usageReservePct 10 long
+  // after the JSON said 0 and 5 — two views of one artifact, and the one a reader opens was wrong.
+  // It is rendered now, so this compares what a reader sees against what the artifact says.
+  const matrix = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json');
+  const onDisk = fs.readFileSync(path.join(stateDir, 'OMP_SETTINGS_COMPATIBILITY_MATRIX.md'), 'utf8');
+  assert.equal(
+    onDisk.trimEnd(),
+    renderMarkdown(matrix).trimEnd(),
+    'the markdown view is stale: run `make models-sync`'
+  );
+});
+
+test('CSA: machine-appended paths are excluded from the reviewable dirty count', () => {
+  // `workctl` and the doctors append to the causal journal on nearly every command, so the tree is
+  // dirty again immediately afterwards. A `dirty: true` that is always true is noise the reader
+  // learns to skip; the exclusion is declared in the artifact rather than applied silently.
+  const csa = readJson('CSA_KAD_PI_CURRENT.json');
+  assert.equal(typeof csa.repository.dirty_paths, 'number', 'the CSA must record the reviewable dirty count');
+  assert.match(csa.repository.dirty_paths_excluded_rule, /machine-appended/);
+  for (const name of csa.repository.dirty_paths_excluded ?? []) {
+    assert.ok(MACHINE_APPENDED.includes(name), `${name} is excluded in the artifact but not declared by the refresher`);
+  }
+  assert.ok(MACHINE_APPENDED.includes('evidence/WP-KAD-002/causal-journal.jsonl'));
+});
+
+test('CSA: the dirty classifier separates a machine append from a human changeset', () => {
+  const porcelain = [
+    ' M evidence/WP-KAD-002/causal-journal.jsonl',
+    '?? tools/kad/new-tool.mjs',
+    ' M docs/state/CSA_KAD_PI_CURRENT.md',
+    'R  old/name.md -> docs/new-name.md'
+  ].join('\n');
+  const classified = classifyDirty(parsePorcelain(porcelain));
+  assert.equal(classified.count, 3);
+  assert.deepEqual(classified.excluded, ['evidence/WP-KAD-002/causal-journal.jsonl']);
+  assert.ok(classified.paths.includes('docs/new-name.md'), 'a rename reports the path that now exists');
+  assert.equal(classified.dirty, true);
+  assert.equal(
+    classifyDirty(['evidence/WP-KAD-002/causal-journal.jsonl']).dirty,
+    false,
+    'a tree whose only change is a machine append has nothing for a human to review'
+  );
 });
 
 /**

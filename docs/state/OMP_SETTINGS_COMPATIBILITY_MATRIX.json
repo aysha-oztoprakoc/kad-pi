@@ -403,21 +403,21 @@
       "schema_default": {},
       "schema_default_kind": "constant",
       "effective_value": {
-        "default": "opencode-go/deepseek-v4.1-flash:max",
+        "plan": "opencode-go/deepseek-v4.1-flash:high",
+        "world": "kad-local-world/kad-local-s13:low",
+        "local_retrieval": "kad-local-qwen/qwen-local:low",
+        "smol": "kad-local-qwen/qwen-local:low",
         "task": "openai-codex/gpt-5.6-luna:low",
         "advisor": "google-antigravity/gemini-3.8-flash:low",
+        "default": "opencode-go/deepseek-v4.1-flash:max",
         "designer": "google-antigravity/gemini-3.8-flash:high",
         "vision": "google-antigravity/gemini-3.8-flash:high",
-        "plan": "opencode-go/deepseek-v4.1-flash:high",
         "slow": "openai-codex/gpt-5.6-terra:high",
         "verifier": "google-antigravity/gemini-3.1-pro:high",
         "research": "google-antigravity/gemini-3.1-pro:low",
         "oracle": "openai-codex/gpt-5.6-terra:max",
-        "smol": "kad-local-qwen/qwen-local:low",
         "tiny": "zai-free/glm-4.7-flash:minimal",
         "commit": "zai-free/glm-4.7-flash:low",
-        "world": "kad-local-world/kad-local-s13:low",
-        "local_retrieval": "kad-local-qwen/qwen-local:low",
         "local_general": "kad-local-world/kad-local-s13:low",
         "rpg": "kad-local-world/rp-hero:low"
       },
@@ -9845,5 +9845,13 @@
       "deviation": "none",
       "rationale": "OMP default acceptable"
     }
-  ]
+  ],
+  "baseline": {
+    "declared_omp_version": "18.0.11",
+    "declared_source_revision": "b8ce33a58911c26bed1d84f0db9a5e2e727c49a2",
+    "skew_note": "These rows describe the OMP 18.0.11 surface at source revision b8ce33a58911c26bed1d84f0db9a5e2e727c49a2. Settings introduced after that revision have no row and are therefore unclassified — `retry.waitForUsageReset` is the live example, and it now decides the launcher profiles (ADR 0019 amendment). Rows whose key `.omp/config.yml` declares are re-synced from the running harness; the rest are the capture as reported.",
+    "recapture_procedure": "Run `make models-sync` after any project-declared setting changes. A full re-capture against a newer OMP build means re-deriving `settings` from that build's `omp config list --json` and settings schema, re-classifying every row, and updating `omp_version` and `source_revision` — it is a review, not a sync.",
+    "observed_runtime_version": "18.1.18",
+    "observed_at": "2026-09-12"
+  }
 }

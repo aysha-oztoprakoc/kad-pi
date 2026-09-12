@@ -1,4 +1,4 @@
-.PHONY: all test test-pi-integration verify public-build clean
+.PHONY: all test test-pi-integration verify public-build models-sync csa clean
 
 KAD_PI_SDK_ROOT ?= /tmp/wp-kad-001-sdk/runtime
 
@@ -13,6 +13,16 @@ verify:
 
 public-build:
 	node bin/kad-publication build
+
+# Re-sync the settings rows this repository declares from the running harness, and re-render the
+# matrix's markdown view from the JSON. Run it after any project-declared setting changes.
+models-sync:
+	node tools/kad/settings-matrix.mjs
+
+# Refresh the CSA's repository block: HEAD, branch, divergence and the dirty count, with the
+# machine-appended paths excluded and declared rather than silently dropped.
+csa:
+	node tools/kad/csa-refresh.mjs
 
 
 test: verify
