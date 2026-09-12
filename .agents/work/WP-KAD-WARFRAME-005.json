@@ -1,0 +1,65 @@
+{
+  "id": "WP-KAD-WARFRAME-005",
+  "title": "Tutor chat: a natural-language surface over the deterministic tooling",
+  "status": "REVIEW",
+  "project": "kad-warframe",
+  "kind": "FEATURE",
+  "epistemic_class": "DESIGN_DECISION",
+  "authority": [
+    "operator instruction 2026-09-12: a chatbox in the dashboard that runs any model the operator has access to, remote or local, in the tutor persona, answering from the available data, requesting data when it needs it, with read access only",
+    "config/omniroute-exposure.json — LOCAL_SUBSCRIPTION_AND_FREE_TIERS_ONLY (REQ-KAD-FIN-001: unauthorized metered spend FORBIDDEN)",
+    "config/external-providers.json — per-provider cost_class and base_url declarations",
+    ".omp/models.yml — the project model catalog: omniroute, zai-free, kad-local-world, kad-local-qwen"
+  ],
+  "scope": [
+    "The model surface is derived from the workspace's own declarations. The chat reaches the declared transports only: the local OmniRoute gateway (cost_class LOCAL, key from OMNIROUTE_API_KEY at call time), zai-free (FREE_TIER), and the two declared local KoboldCpp lanes. No metered provider is offered, and no lane can be added by the client.",
+    "The tutor's tools are the existing read-only view models (kadwarframe/dashboard.py) plus catalog and official drop-table lookups. No new computation, no duplicated logic, and no write path: the action routes (refresh, fetch-inventory, sync-database) are not in the tool registry.",
+    "Read access is structural and tested: a snapshot of every data file is hashed before and after running every registered tool, and the set of tool names is asserted disjoint from the action route keys.",
+    "Secrets never leave the server: the browser receives lane ids, never keys, and error messages are scrubbed of key material."
+  ],
+  "deliverables": [
+    "kadwarframe/chat_tools.py — the read-only tool registry (bounded JSON results)",
+    "kadwarframe/chat.py — lane registry, OpenAI-compatible streaming client, the bounded tool loop, the tutor persona",
+    "server routes: GET /api/chat/models, POST /api/chat (SSE, loopback + custom header)",
+    "kadwarframe/web/chat.js + index.html wiring + app.css additions (tokens only)",
+    "tests: lane derivation, the fake-gateway streaming path, the tool loop, read-only proof, secret non-exposure",
+    "evidence/VERIFICATION-CHAT-2026-09-12.md"
+  ],
+  "acceptance": [
+    "python3 -m unittest discover -s tests passes",
+    "the chat answers a real question against the real account data through a real declared lane",
+    "no tool call can change a byte of the operator's data (hashed snapshot test)",
+    "the browser payload contains no key material",
+    "the page keeps its aesthetic conformance (tests/test_aesthetic.py)"
+  ],
+  "created": "2026-09-12",
+  "evidence": "evidence/VERIFICATION-CHAT-2026-09-12.md",
+  "fixed_point": "9ac52754c047f2bd8957f09064453167de307aad",
+  "owned_paths": [
+    "kadwarframe/",
+    "tests/",
+    "evidence/",
+    "README.md",
+    "AGENTS.md",
+    "Makefile"
+  ],
+  "blocked_by": [],
+  "blocks": [],
+  "spec_ref": "README.md, AGENTS.md, config/omniroute-exposure.json, config/external-providers.json, .omp/models.yml",
+  "non_scope": [
+    "no metered provider lane, and no lane the workspace has not declared",
+    "no write capability for the tutor: the action routes stay out of the tool registry",
+    "no changes to the existing planner, catalog, world-state or action logic",
+    "no third-party package, no build step, no remote asset in the page",
+    "no streaming of keys or of any secret to the browser",
+    "no unbounded model loop: the tool round count and the payload sizes are capped"
+  ],
+  "required_capabilities": [
+    "python-stdlib",
+    "http-serving",
+    "streaming-sse",
+    "browser-ui",
+    "test-authoring",
+    "deterministic-verification"
+  ]
+}
