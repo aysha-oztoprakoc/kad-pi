@@ -217,8 +217,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/adr-index.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "024495c67f7bef9bc303e823b7f7248145ed197093c30bea91be4857ee7c75ea",
+      "survivor": "docs/generated/kad-canonical/adr-index.json"
     },
     {
       "old_path": "generated/kad-canonical/evidence-index.json",
@@ -229,8 +232,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/evidence-index.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "23714afc38ed8dfde0d89b371605a9070f35953a30d48ebe460162ee0de7fdeb",
+      "survivor": "docs/generated/kad-canonical/evidence-index.json"
     },
     {
       "old_path": "generated/kad-canonical/index.md",
@@ -241,8 +247,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/index.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "06a3b7580d54b1134ff9cd82f8fad5789fe07801187a871c5a10ead7338382b8",
+      "survivor": "docs/generated/kad-canonical/index.md"
     },
     {
       "old_path": "generated/kad-canonical/link-validation.json",
@@ -253,8 +262,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/link-validation.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "0a9eee70b3e68863a8c7538ca1c6d4bb88639ec34bb7a7f00168ba006bc2bb89",
+      "survivor": "docs/generated/kad-canonical/link-validation.json"
     },
     {
       "old_path": "generated/kad-canonical/manifest.json",
@@ -265,8 +277,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/manifest.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "c8329d95f19fac148a4505d3812b0b2b0dace4b2e77e9431fb7125d463b402c3",
+      "survivor": "docs/generated/kad-canonical/manifest.json"
     },
     {
       "old_path": "generated/kad-canonical/namespace-manifest.json",
@@ -277,8 +292,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespace-manifest.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "6077beca4a9eda2d5b83253dbc43cb6ef0c7fec3e15ff36e9e1031b80c52b055",
+      "survivor": "docs/generated/kad-canonical/namespace-manifest.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/AGENTS.json",
@@ -289,8 +307,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/AGENTS.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "e806a37c2c9f50c8f95e1740ad89637985dfa4aaf51ef1dbe9f873ab08b28eec",
+      "survivor": "docs/generated/kad-canonical/namespaces/AGENTS.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/AGENTS.md",
@@ -301,8 +322,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/AGENTS.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "09c561a7f93fd5f7bc0d106338baefbd1e4bed4d65f009e39197ef0d2d50b304",
+      "survivor": "docs/generated/kad-canonical/namespaces/AGENTS.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/ARCHITECTURE.json",
@@ -313,8 +337,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/ARCHITECTURE.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "fd43058341a263df0ef6c7afeec6600f32e5e7869ecac893cc732bdd8c012162",
+      "survivor": "docs/generated/kad-canonical/namespaces/ARCHITECTURE.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/ARCHITECTURE.md",
@@ -325,8 +352,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/ARCHITECTURE.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "d4f17d86638eb55d96efaf71b767af058c01a7bf1c3dc50808219595f3ae1ea6",
+      "survivor": "docs/generated/kad-canonical/namespaces/ARCHITECTURE.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/CAPABILITIES.json",
@@ -337,8 +367,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/CAPABILITIES.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "eec6eece3bb9ba02bbf3dd6480b29233a5577b0dc6b4a76690ecfdfc99f187fe",
+      "survivor": "docs/generated/kad-canonical/namespaces/CAPABILITIES.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/CAPABILITIES.md",
@@ -349,8 +382,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/CAPABILITIES.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "bd0b00517aa7c3d2f737e1a56aa212d08a204de47e4b2662622ce14443216bb9",
+      "survivor": "docs/generated/kad-canonical/namespaces/CAPABILITIES.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/DECISIONS.json",
@@ -361,8 +397,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/DECISIONS.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "d6a4a9bd429cb1e50237b53f4cd94b7e888c9c5ec6c2adca999d9d5929fe3f56",
+      "survivor": "docs/generated/kad-canonical/namespaces/DECISIONS.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/DECISIONS.md",
@@ -373,8 +412,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/DECISIONS.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "d8a043e05274cb043280f327b83aee998c84d25bd21190da55ea80050c358812",
+      "survivor": "docs/generated/kad-canonical/namespaces/DECISIONS.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/EVIDENCE.json",
@@ -385,8 +427,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/EVIDENCE.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "e9a55af69169df719d6103ab76d302bd2176d716e3ba4335b020e945e7ee9f6b",
+      "survivor": "docs/generated/kad-canonical/namespaces/EVIDENCE.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/EVIDENCE.md",
@@ -397,8 +442,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/EVIDENCE.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "676f21adcc29fd47536a42c06c6ebf0fd688d51b2f5612340025365c1b3365b3",
+      "survivor": "docs/generated/kad-canonical/namespaces/EVIDENCE.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/EXPERIMENTS.json",
@@ -409,8 +457,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/EXPERIMENTS.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "8b8001f5ee0a0e80a9130936cdaea77f2009433dfc790e29383397b59ccc3292",
+      "survivor": "docs/generated/kad-canonical/namespaces/EXPERIMENTS.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/EXPERIMENTS.md",
@@ -421,8 +472,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/EXPERIMENTS.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "736ab840c224756ddd7985ce31a80be689f8184ac07646aeeacbfa23d5a301cb",
+      "survivor": "docs/generated/kad-canonical/namespaces/EXPERIMENTS.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/FAILURES.json",
@@ -433,8 +487,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/FAILURES.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "af0103eca13bc38c6fed9ccd0dea023d04263c10829c76879a40949a9108eca9",
+      "survivor": "docs/generated/kad-canonical/namespaces/FAILURES.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/FAILURES.md",
@@ -445,8 +502,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/FAILURES.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "e588e3a7435abfca243d9232d6f76e3ac7b26ec8c276e2ae5769e5e6cc27e1a1",
+      "survivor": "docs/generated/kad-canonical/namespaces/FAILURES.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/GLOSSARY.json",
@@ -457,8 +517,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/GLOSSARY.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "05d044efe42bc8f38372e4d66063373cad3d5ae53a666c703534a7297177d0fa",
+      "survivor": "docs/generated/kad-canonical/namespaces/GLOSSARY.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/GLOSSARY.md",
@@ -469,8 +532,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/GLOSSARY.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "ff933a5057ae0c5c9b0007ab6d38715df7e7584a4fe62b510e5a922db9563ded",
+      "survivor": "docs/generated/kad-canonical/namespaces/GLOSSARY.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/MODELS.json",
@@ -481,8 +547,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/MODELS.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "6d4febf3d65e09a1a65adb9e8f70ecdb28833af3a754c8ba2dd1c9ffe5005edc",
+      "survivor": "docs/generated/kad-canonical/namespaces/MODELS.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/MODELS.md",
@@ -493,8 +562,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/MODELS.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "6ccdce8f025a83bffce802a0c1daef98554553e366c5ea9dcfc3fedd4f9876de",
+      "survivor": "docs/generated/kad-canonical/namespaces/MODELS.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/PROJECT.json",
@@ -505,8 +577,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/PROJECT.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "59b56494f269e8dd967b35922319893763735dae4ea7fa02575dfe8ec503fa9b",
+      "survivor": "docs/generated/kad-canonical/namespaces/PROJECT.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/PROJECT.md",
@@ -517,8 +592,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/PROJECT.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "54be40f35482601204dee33d56b5525a5c38f7508c262d15bcab6868ea5a5677",
+      "survivor": "docs/generated/kad-canonical/namespaces/PROJECT.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/PROVIDERS.json",
@@ -529,8 +607,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/PROVIDERS.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "2140163a05ee782586cde5a04ecc8324996552319054cbd2cdb0f58af3c94c0f",
+      "survivor": "docs/generated/kad-canonical/namespaces/PROVIDERS.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/PROVIDERS.md",
@@ -541,8 +622,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/PROVIDERS.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "50505f70d92677af43459dec36b9378436c5d7a13a12af6f9a273eabe6f53a4e",
+      "survivor": "docs/generated/kad-canonical/namespaces/PROVIDERS.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/RESEARCH.json",
@@ -553,8 +637,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/RESEARCH.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "e3a2f0296936866f7aaeaca3886df728b41768fd96d4794d1fac1f2c58e8ba4c",
+      "survivor": "docs/generated/kad-canonical/namespaces/RESEARCH.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/RESEARCH.md",
@@ -565,8 +652,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/RESEARCH.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "a87c38a2cd178fb71e63e4faf2281d0e6b7ad80b5ea37f53ba41ee3fe258da96",
+      "survivor": "docs/generated/kad-canonical/namespaces/RESEARCH.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/ROADMAP.json",
@@ -577,8 +667,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/ROADMAP.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "c14130df1df417497c88a9a42f825e098b0ae7a459402e6f110ab76c3af415b7",
+      "survivor": "docs/generated/kad-canonical/namespaces/ROADMAP.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/ROADMAP.md",
@@ -589,8 +682,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/ROADMAP.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "a738d2b53e1cfe2361f5febaa5e5965d889b9e2ed18ff8d5619377cebb65c5e7",
+      "survivor": "docs/generated/kad-canonical/namespaces/ROADMAP.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/SKILLS.json",
@@ -601,8 +697,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/SKILLS.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "e8ddfe2395881b957ed7fd5aca7e0922ac1ea4e76ff0dbe1823a794ae266c2c1",
+      "survivor": "docs/generated/kad-canonical/namespaces/SKILLS.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/SKILLS.md",
@@ -613,8 +712,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/SKILLS.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "60d26246ef4b026a1d4f1703a26010d256f24a75e2372fbf2963c8df2fc44cd3",
+      "survivor": "docs/generated/kad-canonical/namespaces/SKILLS.md"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/TECHNOLOGIES.json",
@@ -625,8 +727,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/TECHNOLOGIES.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "d0463907a39aed9492f92f93249cab299abf2e335ec89c2f562f4fecc9038255",
+      "survivor": "docs/generated/kad-canonical/namespaces/TECHNOLOGIES.json"
     },
     {
       "old_path": "generated/kad-canonical/namespaces/TECHNOLOGIES.md",
@@ -637,8 +742,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/namespaces/TECHNOLOGIES.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "17ba5b9896a786a0520c7a2d33d36bf1808e515953ed178cf5025dcdb737482b",
+      "survivor": "docs/generated/kad-canonical/namespaces/TECHNOLOGIES.md"
     },
     {
       "old_path": "generated/kad-canonical/project-state.json",
@@ -649,8 +757,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/project-state.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "6db75b49c93508ef90b066e5ddab1d5bfdeb39969d7092ec2a28020ee05877f8",
+      "survivor": "docs/generated/kad-canonical/project-state.json"
     },
     {
       "old_path": "generated/kad-canonical/project.json",
@@ -661,8 +772,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/project.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "433773e6dd10d01eae400c67deddd6f2f22300202a4193ad13853306a90b3cfc",
+      "survivor": "docs/generated/kad-canonical/project.json"
     },
     {
       "old_path": "generated/kad-canonical/source-allowlist.json",
@@ -673,8 +787,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/source-allowlist.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "346110e91d1b3a1b67bb0dba10dc6c01e1a6027e204d398b902b45bb64e5bad3",
+      "survivor": "docs/generated/kad-canonical/source-allowlist.json"
     },
     {
       "old_path": "generated/kad-canonical/source-census.json",
@@ -685,8 +802,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/source-census.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "b8404d161f076426dbef1c8efb5d42c96e15e18b4e1472b809040e3d950be59e",
+      "survivor": "docs/generated/kad-canonical/source-census.json"
     },
     {
       "old_path": "generated/kad-canonical/source-hashes.json",
@@ -697,8 +817,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/source-hashes.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "3778f640441fafff6a640982971a48a2ff64a205b9537e6049fd2949e0b04c50",
+      "survivor": "docs/generated/kad-canonical/source-hashes.json"
     },
     {
       "old_path": "generated/kad-canonical/status.json",
@@ -709,8 +832,11 @@
       "evidence": [
         "wiki/generated/kad-canonical/status.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "a1bd92e8c25b4f9c0a533b4cfdcc666cd30f220f58695560eb44495fcffb1ec8",
+      "survivor": "docs/generated/kad-canonical/status.json"
     },
     {
       "old_path": "generated/knowledge-plane/index.md",
@@ -721,8 +847,11 @@
       "evidence": [
         "wiki/generated/knowledge-plane/index.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "810ebbaae08b69d967902dbef63d2d09175bb48ec7a5da8830f4cf6b33c67d47",
+      "survivor": "docs/generated/knowledge-plane/index.md"
     },
     {
       "old_path": "generated/knowledge-plane/records.json",
@@ -733,8 +862,11 @@
       "evidence": [
         "wiki/generated/knowledge-plane/records.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "DERIVED_ONLY"
+      "migration_status": "PRUNED",
+      "classification": "DERIVED_ONLY",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "0c7e24029dee02249688d722463fe9c317c35c0f1616380ae3720d541716149e",
+      "survivor": "docs/generated/knowledge-plane/records.json"
     },
     {
       "old_path": "index.md",
@@ -769,8 +901,11 @@
       "evidence": [
         "wiki/synthetic/01_ARCHITECTURE_PON_STC.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "0b2e05f4cc2a13d4adaef0eda7b41166a6cfebd7a7f60d9449a014c7b98c5b2a",
+      "survivor": ".agents/knowledge/synthetic/01_ARCHITECTURE_PON_STC.md"
     },
     {
       "old_path": "synthetic/02_DETERMINISTIC_AUTHORITY_SIMULATION.md",
@@ -781,8 +916,11 @@
       "evidence": [
         "wiki/synthetic/02_DETERMINISTIC_AUTHORITY_SIMULATION.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "206e85d24def433e0364ce767e7be8c96241899f5b3d8f0f6b6157165dfe0257",
+      "survivor": ".agents/knowledge/synthetic/02_DETERMINISTIC_AUTHORITY_SIMULATION.md"
     },
     {
       "old_path": "synthetic/03_PI_HARNESS_INTEGRATION.md",
@@ -793,8 +931,11 @@
       "evidence": [
         "wiki/synthetic/03_PI_HARNESS_INTEGRATION.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "08eccec50951a114d34c79584b6ee3b6f4dc2de21811be3c7110517664f5fde8",
+      "survivor": ".agents/knowledge/synthetic/03_PI_HARNESS_INTEGRATION.md"
     },
     {
       "old_path": "synthetic/04_SWARM_GOVERNANCE_AGENTS.md",
@@ -805,8 +946,11 @@
       "evidence": [
         "wiki/synthetic/04_SWARM_GOVERNANCE_AGENTS.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "20608c1be15e3f7fda0152610dc9504865d73b9137bcd303a3e37c78a5e3c9c9",
+      "survivor": ".agents/knowledge/synthetic/04_SWARM_GOVERNANCE_AGENTS.md"
     },
     {
       "old_path": "synthetic/05_SUBSCRIPTION_ECONOMICS_ROUTING.md",
@@ -817,8 +961,11 @@
       "evidence": [
         "wiki/synthetic/05_SUBSCRIPTION_ECONOMICS_ROUTING.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "870a0b8c092c830e177fd1f2d796060c6f35047d51dce954f959877a11c71920",
+      "survivor": ".agents/knowledge/synthetic/05_SUBSCRIPTION_ECONOMICS_ROUTING.md"
     },
     {
       "old_path": "synthetic/06_SAFE_PLUGIN_LAB_TOOLCHAINS.md",
@@ -829,8 +976,11 @@
       "evidence": [
         "wiki/synthetic/06_SAFE_PLUGIN_LAB_TOOLCHAINS.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "0ef7c845bfc208d35dad645ab22aaf31734580ba98716cd2700648896e4df8a0",
+      "survivor": ".agents/knowledge/synthetic/06_SAFE_PLUGIN_LAB_TOOLCHAINS.md"
     },
     {
       "old_path": "synthetic/07_EVIDENCE_EPISTEMOLOGY_LEDGER.md",
@@ -841,8 +991,11 @@
       "evidence": [
         "wiki/synthetic/07_EVIDENCE_EPISTEMOLOGY_LEDGER.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "17e530b69f842a4bfbf0a1363152f4a4e52e9e98440f4cac5eae1d34c421b3d2",
+      "survivor": ".agents/knowledge/synthetic/07_EVIDENCE_EPISTEMOLOGY_LEDGER.md"
     },
     {
       "old_path": "synthetic/CATALOG.json",
@@ -853,8 +1006,11 @@
       "evidence": [
         "wiki/synthetic/CATALOG.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "9f312406e5242ddd1f13344279d0cd61741c464a2596c2797cf9dc0f34d7c666",
+      "survivor": ".agents/knowledge/synthetic/CATALOG.json"
     },
     {
       "old_path": "synthetic/LIBRARIAN.md",
@@ -865,8 +1021,11 @@
       "evidence": [
         "wiki/synthetic/LIBRARIAN.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "85807ca94e13f994602e5df0e30a0fd74e498baca0cf6520c39f6b852ea323c1",
+      "survivor": ".agents/knowledge/synthetic/LIBRARIAN.md"
     },
     {
       "old_path": "synthetic/RETRIEVAL_INDEX.jsonl",
@@ -877,8 +1036,11 @@
       "evidence": [
         "wiki/synthetic/RETRIEVAL_INDEX.jsonl"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "87223ff60bd3fd056d1fa3fca47857841697a184b9487aae28774fa93a880bed",
+      "survivor": ".agents/knowledge/synthetic/RETRIEVAL_INDEX.jsonl"
     },
     {
       "old_path": "synthetic/TAXONOMY.json",
@@ -889,8 +1051,11 @@
       "evidence": [
         "wiki/synthetic/TAXONOMY.json"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "5c8a3eaf336674ac7bc139bb5fb524ecbbb8d3952e7bece19be98b7f291bcc8b",
+      "survivor": ".agents/knowledge/synthetic/TAXONOMY.json"
     },
     {
       "old_path": "synthetic/TAXONOMY.md",
@@ -901,8 +1066,25 @@
       "evidence": [
         "wiki/synthetic/TAXONOMY.md"
       ],
-      "migration_status": "INVENTORIED",
-      "classification": "ARCHIVE"
+      "migration_status": "PRUNED",
+      "classification": "ARCHIVE",
+      "pruned_at": "2026-09-12T20:31:45.743Z",
+      "pruned_hash": "be4e6b6cf5a9301b5f4e153b6500c5693368644e1e896dd4c128cdb0ecb8aca8",
+      "survivor": ".agents/knowledge/synthetic/TAXONOMY.md"
     }
-  ]
+  ],
+  "prune": {
+    "at": "2026-09-12T20:31:45.743Z",
+    "decision": "operator instruction, 2026-09-12: prune the retired wiki tree's derived and archived copies",
+    "survivor_rule": {
+      "DERIVED_ONLY": "docs/generated/<old_path without the generated/ prefix>",
+      "ARCHIVE": ".agents/knowledge/<old_path>"
+    },
+    "pruned": 56,
+    "refused": 0,
+    "removed_dirs": [
+      "90_Derived/LegacyWiki",
+      "99_Archive/LegacyWiki"
+    ]
+  }
 }

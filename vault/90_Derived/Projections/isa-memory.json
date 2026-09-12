@@ -2,7 +2,7 @@
   "projection_type": "KAD_MEMORY_ISA_PROJECTION",
   "version": "1.0.0",
   "domain": "memory",
-  "generated_at": "2026-09-12T17:38:49.233Z",
+  "generated_at": "2026-09-12T20:15:02.087Z",
   "source_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/00_Governance/ISA-KAD-MEMORY-001.md",
   "isa": {
     "id": "ISA-KAD-MEMORY-001",
@@ -74,7 +74,7 @@
       "validator": "memory.record.versioned",
       "pass": true,
       "severity": "HIGH",
-      "evidence": "record resolves HEAD 98e64dd62c0a with 1 branch ref(s) under its own git history",
+      "evidence": "record resolves HEAD ca7eee7e7819 with 1 branch ref(s) under its own git history",
       "checked_count": 3
     },
     {
@@ -96,8 +96,8 @@
       "validator": "memory.record.frontmatter_complete",
       "pass": true,
       "severity": "BLOCKER",
-      "evidence": "all 203 record pages carry a non-empty OKF type",
-      "checked_count": 203
+      "evidence": "all 210 record pages carry a non-empty OKF type",
+      "checked_count": 210
     },
     {
       "id": "ISA-KAD-MEMORY-008",
@@ -158,7 +158,7 @@
         "<data_dir>/wiki/<workspace_id>/<project_id>/**"
       ],
       "derived": [
-        "wiki/generated/**",
+        "docs/generated/**",
         "vault/90_Derived/**",
         "embeddings",
         "context packs"

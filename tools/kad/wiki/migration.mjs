@@ -85,3 +85,52 @@ export function executeMigration({ root = vaultRoot(), legacyRoot = path.resolve
   return { migrated, review, archive, derived, total: manifest.entries.length, manifest };
 }
 export function migrateLegacyWiki(options = {}) { return executeMigration(options); }
+
+/**
+ * Retire the migration's derived and archived copies once each has a surviving counterpart.
+ *
+ * The migration parked two classes under the vault's LegacyWiki trees: regenerable projections
+ * (DERIVED_ONLY) and synthetic material (ARCHIVE). Both have a live home — `docs/generated/` and
+ * `.agents/knowledge/` — and both are checked for one before anything is removed, because a prune
+ * without that check is data loss with a receipt. Every removal is recorded per entry in the
+ * manifest (`PRUNED`, when, and the hash of what left), so the record still names what was there.
+ */
+export function pruneLegacyCopies({ root = vaultRoot(), generatedDir = 'docs/generated', corpusDir = '.agents/knowledge', at = new Date().toISOString() } = {}) {
+  ensureVault(root);
+  const manifestPath = path.join(root, '90_Derived/KnowledgePlane/migration-manifest.json');
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+  const survivorFor = (entry) => `${entry.classification === 'DERIVED_ONLY' ? generatedDir : corpusDir}/${entry.classification === 'DERIVED_ONLY' ? entry.old_path.replace(/^generated\//, '') : entry.old_path}`;
+  const pruned = [];
+  const refused = [];
+  for (const entry of manifest.entries.filter((candidate) => candidate.classification === 'DERIVED_ONLY' || candidate.classification === 'ARCHIVE')) {
+    const destFile = path.join(root, entry.destination);
+    if (entry.migration_status === 'PRUNED' && !fs.existsSync(destFile)) continue;
+    const survivor = survivorFor(entry);
+    if (!fs.existsSync(path.resolve(survivor))) {
+      refused.push({ old_path: entry.old_path, classification: entry.classification, reason: `no surviving counterpart at ${survivor}` });
+      continue;
+    }
+    const present = fs.existsSync(destFile);
+    entry.migration_status = 'PRUNED';
+    entry.pruned_at = at;
+    entry.pruned_hash = present ? hash(fs.readFileSync(destFile)) : null;
+    entry.survivor = survivor;
+    if (present) fs.rmSync(destFile);
+    pruned.push({ old_path: entry.old_path, survivor, present });
+  }
+  const removedDirs = [];
+  for (const relative of ['90_Derived/LegacyWiki', '99_Archive/LegacyWiki']) {
+    const absolute = path.join(root, relative);
+    if (fs.existsSync(absolute) && walk(absolute).length === 0) { fs.rmSync(absolute, { recursive: true, force: true }); removedDirs.push(relative); }
+  }
+  manifest.prune = {
+    at,
+    decision: 'operator instruction, 2026-09-12: prune the retired wiki tree\'s derived and archived copies',
+    survivor_rule: { DERIVED_ONLY: `${generatedDir}/<old_path without the generated/ prefix>`, ARCHIVE: `${corpusDir}/<old_path>` },
+    pruned: pruned.length,
+    refused: refused.length,
+    removed_dirs: removedDirs,
+  };
+  fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+  return { pruned: pruned.filter((entry) => entry.present).length, already_absent: pruned.filter((entry) => !entry.present).length, refused, removed_dirs: removedDirs, manifest };
+}

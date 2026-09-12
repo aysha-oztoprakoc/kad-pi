@@ -66,6 +66,27 @@ Done on 2026-09-12. `wiki/` had three kinds of content, and each got a different
 3. **Retired.** The tree itself is gone; `P7` in `WP-KAD-REVIEW-REMEDIATION-058` moves from PARTIAL
    to RESOLVED, and the deviation note that recorded the blocker is replaced by its resolution.
 
+### The prune (2026-09-12, after the migration)
+
+The migration parked 56 files under the vault's `LegacyWiki` trees — 44 regenerable projections
+(`90_Derived/LegacyWiki/generated/…`) and 12 synthetic copies (`99_Archive/LegacyWiki/synthetic/…`).
+Both classes have a live home now, so they were pruned:
+
+- `tools/kad/wiki/migration.mjs` grew `pruneLegacyCopies()`. It removes a copy **only** where its
+  survivor exists — `docs/generated/<old_path without the generated/ prefix>` for `DERIVED_ONLY`,
+  `.agents/knowledge/<old_path>` for `ARCHIVE` — records `PRUNED` with the removed hash and the
+  survivor path per entry, and removes each `LegacyWiki` directory once nothing is left in it. A
+  copy without a survivor is refused, never deleted: the guard is the operation.
+- Run against the wiki of record (`.ai-memory/vault-path`): **56 pruned, 0 refused**, both
+  directories removed, prune block recorded in `migration-manifest.json`.
+- `bin/kad-memory publish` regenerated the committed mirror with **0 drift**, so `vault/` lost the
+  same 56 files and picked up the record's current projections and session pages.
+
+The copies were safe to drop because they were duplicates, not originals: all 12 synthetic files
+have live counterparts in `.agents/knowledge/synthetic/`, and the 44 projections are regenerable
+(`bin/kad-knowledge rebuild`), 37 of them already stale against the manifest's recorded hash
+because the projection was rebuilt after the archive was taken.
+
 
 ## 6A — keep project-scoped model roles, and make the mismatch fixable
 
