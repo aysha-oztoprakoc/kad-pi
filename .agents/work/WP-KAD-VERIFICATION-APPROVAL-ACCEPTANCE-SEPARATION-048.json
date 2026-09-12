@@ -48,6 +48,14 @@
     "Work acceptance requires independent verification and genuine human decision"
   ],
   "description": "Enforce strict separation between implementer verification, independent review, and human acceptance authority (P05).",
-  "spec_decisions": [],
+  "spec_decisions": [
+    {
+      "decision": "Acceptance requires a named authority and an independent review receipt; a live claim does not authorise it",
+      "decided_by": "operator, decision 2A of the 2026-09-12 workspace review",
+      "decided_at": "2026-09-12",
+      "mechanism": "bin/workctl accept requires --authority \"<who decided, and on what basis>\" and an independent-review*.json receipt in the evidence target. The previous rule required a live mutating claim, which cannot exist for an item in REVIEW: claims are created in READY and REVIEW->READY is not a legal transition, so the terminal state was unreachable.",
+      "evidence": "tools/workspace/workctl.mjs accept path; tools/workspace/workctl.test.mjs; AGENTS.md shared contracts"
+    }
+  ],
   "source_ticket": "WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048"
 }

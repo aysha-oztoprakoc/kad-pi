@@ -19,6 +19,7 @@
 - `CAPABILITY != AUTHORITY`; `TASK != MODEL`; `TASK != PROVIDER`; `TASK != HARNESS`.
 - Coordination is deterministic and zero-model. Unsupported harnesses use `bin/workctl`.
 - Mutate only an enrolled project with an explicit claim and owned paths. Reference, vendor, and UNKNOWN projects are read-only.
+- Acceptance is an authority decision, not a claim: `bin/workctl accept <id> --authority "<who decided, and on what basis>"` requires a recorded decision, and the evidence target must contain an `independent-review*.json` receipt. Implementer verification alone is not acceptance evidence, and a claim cannot authorise the transition.
 - KAD authority is confined to the KAD-PI project. Side projects define their own rules.
 
 See `.agents/workspace/projects.json`, `.agents/workspace/tools.json`, and `.agents/skills/workspace-orient/SKILL.md` for the durable index and procedures.
