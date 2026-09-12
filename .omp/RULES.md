@@ -6,6 +6,7 @@ Do not weaken a gate to obtain PASS.
 Do not expose secrets or create unapproved marginal paid spend.
 Preserve trust domains and STC ownership.
 Do not claim capabilities beyond evidence.
+OMP auto-learning and memory mutation are advisory only and hold no canonical write authority; KAD evidence gates own promotion (`docs/adr/0017-omp-memory-and-autolearn-as-advisory-subsystems.md`).
 
 ## Declared harness posture
 
@@ -31,7 +32,10 @@ posture:
 * **Memory** — `memory.backend: mnemopi` with `autolearn.enabled: true`: the harness MAY write and
   extend its own learning store. That store is harness-local cognition state and is **never project
   canon**. Durable project facts belong to ai-memory; promotion into canon remains owned by KAD
-  evidence gates.
+  evidence gates. Amended by `docs/adr/0017-omp-memory-and-autolearn-as-advisory-subsystems.md`,
+  which also states the boundary the preflight enforces: no managed store may resolve inside canon.
 * **Spend** — `secrets`, `ttsr` and `recap` stay disabled, and the reachable model surface is limited
-  to local, subscription and free-tier lanes declared in `config/omniroute-exposure.json`.
-  Registration of a provider is reachability, never qualification.
+  to local, subscription and free-tier lanes declared in `config/omniroute-exposure.json` and, per
+  lane, in `config/external-providers.json` with a `cost_class`. Registration of a provider is
+  reachability, never qualification; metered and undeclared providers block the OMP preflight
+  (`docs/adr/0016-approved-model-surface-and-cost-classes.md`).

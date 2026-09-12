@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { inspectPosture } from '../../../tools/kad/posture-check.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const stateDir = path.resolve(here, '..');
@@ -120,6 +121,20 @@ test('Settings matrix: no effective value silently copied into schema_default', 
     // schema_default is source-derived (never 'copied'/'inferred'); effective_value is runtime-derived.
     assert.notEqual(row.schema_default_kind, 'copied', `${row.setting_id} schema_default_kind must not be copied`);
     assert.equal(row.effective_source, 'omp config list --json', `${row.setting_id} effective_source must be runtime`);
+  }
+});
+
+test('Settings matrix: the posture rows match the config the harness actually runs', () => {
+  // This matrix reported memory.backend = "off" and autolearn.enabled = false as VERIFIED for
+  // three days after .omp/config.yml had moved, because a captured snapshot cannot notice. The
+  // posture keys are the rows that were wrong, so they are the rows that get compared.
+  const posture = inspectPosture({ root: path.resolve(here, '../../..') });
+  assert.equal(posture.ok, true, `the declared posture must be enforced: ${posture.failures.join('; ')}`);
+  const matrix = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json');
+  for (const [key, enforced] of Object.entries(posture.observed)) {
+    const row = matrix.settings.find((entry) => entry.setting_id === key);
+    assert.ok(row, `${key} must have a matrix row`);
+    assert.equal(String(row.effective_value), enforced, `${key}: matrix records ${row.effective_value}, config enforces ${enforced}`);
   }
 });
 

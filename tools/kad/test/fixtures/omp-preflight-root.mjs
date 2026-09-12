@@ -43,6 +43,9 @@ export const DEFAULT_MODELS_YAML = `providers:
  * @param {boolean} [options.omp] whether the pinned OMP binary, wrapper and manifest exist
  * @param {string}  [options.modelsYaml] body of the fixture `.omp/models.yml`
  * @param {object}  [options.externalProviders] body of `config/external-providers.json`
+ * @param {string[]|null} [options.enabledModels] explicit `enabledModels` entries
+ * @param {object|null} [options.declaration] posture keys to declare differently from the config,
+ *   which is how the declaration-drift path is exercised
  * @param {boolean} [options.localRouterContracts] whether the authority-boundary sources exist
  * @returns {Promise<string>} fixture root, ready for `inspectPreflight({ root })`
  */
@@ -54,6 +57,8 @@ export async function createOmpPreflightFixture({
   omp = true,
   modelsYaml = DEFAULT_MODELS_YAML,
   externalProviders = null,
+  enabledModels = null,
+  declaration = null,
   localRouterContracts = true
 } = {}) {
   const root = await mkdtemp(join(tmpdir(), 'kad-omp-preflight-'));
@@ -62,7 +67,6 @@ export async function createOmpPreflightFixture({
   await mkdir(join(root, 'tools', 'kad', 'test'), { recursive: true });
   await writeFile(join(root, 'PRIME_DIRECTIVE.md'), '# PRIME DIRECTIVE\n');
   await writeFile(join(root, '.omp', 'AGENTS.md'), 'This is a pointer to PRIME_DIRECTIVE.md.\n');
-  await writeFile(join(root, '.omp', 'RULES.md'), 'KAD authority outranks OMP.\n');
   await writeFile(join(root, '.agents', 'skills', 'kad-evidence-gate', 'SKILL.md'), 'evidence gate\n');
   if (localRouterContracts) {
     await writeFile(join(root, 'tools', 'kad', 'local-router.mjs'), 'requirement.trust_domain === resource.trust_domain\n');
@@ -85,8 +89,20 @@ export async function createOmpPreflightFixture({
   }
   const roleYaml = role === 'qwen' ? '  local_retrieval: "kad-local-qwen/qwen-local:low"\n' : role === 'world' ? '  world: "kad-local-world/kad-local-s13:low"\n' : '';
   const enabled = role === 'qwen' ? '  - "kad-local-qwen/qwen-local"\n  - "kad-local-world/*"\n' : '  - "kad-local-world/*"\n';
-  const spendYaml = spend === 'unsafe' ? '  - "*"\n' : enabled;
-  await writeFile(join(root, '.omp', 'config.yml'), `modelRoles:\n${roleYaml}enabledModels:\n${spendYaml}advisor:\n  enabled: false\nmemory:\n  backend: "${memory}"\nautolearn:\n  enabled: ${autolearn}\nskills:\n  enableAgentsProject: true\n`);
+  const spendYaml = spend === 'unsafe' ? '  - "*"\n' : enabledModels ? enabledModels.map((entry) => `  - "${entry}"\n`).join('') : enabled;
+  await writeFile(join(root, '.omp', 'config.yml'), `modelRoles:\n${roleYaml}enabledModels:\n${spendYaml}advisor:\n  enabled: false\ntools:\n  approvalMode: yolo\nmemory:\n  backend: "${memory}"\nautolearn:\n  enabled: ${autolearn}\nsecrets:\n  enabled: false\nttsr:\n  enabled: false\nrecap:\n  enabled: false\nskills:\n  enableAgentsProject: true\n`);
+  // The posture is declared, not pinned: the preflight compares this block against the config
+  // above, so a fixture states both. `declaration` overrides a key to exercise a mismatch.
+  const declared = {
+    'tools.approvalMode': 'yolo',
+    'memory.backend': memory,
+    'autolearn.enabled': String(autolearn),
+    'secrets.enabled': 'false',
+    'ttsr.enabled': 'false',
+    'recap.enabled': 'false',
+    ...(declaration ?? {})
+  };
+  await writeFile(join(root, '.omp', 'RULES.md'), `KAD authority outranks OMP.\n\n\`\`\`yaml\nposture:\n${Object.entries(declared).map(([key, value]) => `  ${key}: ${value}`).join('\n')}\n\`\`\`\n`);
   await writeFile(join(root, '.omp', 'models.yml'), modelsYaml);
   return root;
 }

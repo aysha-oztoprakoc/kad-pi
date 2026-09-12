@@ -5,7 +5,9 @@
  */
 import { existsSync, readFileSync, readlinkSync, statSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { join, relative, resolve } from 'node:path';
+import { homedir } from 'node:os';
+import { join, relative, resolve, sep } from 'node:path';
+import { inspectPosture } from './posture-check.mjs';
 
 const EXPECTED_OMP = '18.0.9';
 function text(path) {
@@ -122,17 +124,6 @@ function inspectSkills(root, config) {
   return result;
 }
 
-function inspectLearning(config) {
-  const advisor = scalar(section(config, 'advisor'), 'enabled');
-  const memory = scalar(section(config, 'memory'), 'backend');
-  const autolearn = scalar(section(config, 'autolearn'), 'enabled');
-  const result = { advisor_enabled: advisor === 'true', memory_backend: memory ?? 'UNKNOWN', autolearn_enabled: autolearn === 'true', safe: advisor !== 'true' && memory === 'off' && autolearn !== 'true', failures: [] };
-  if (result.advisor_enabled) result.failures.push('ADVISOR_ENABLED');
-  if (result.memory_backend !== 'off') result.failures.push('MEMORY_NOT_OFF');
-  if (result.autolearn_enabled) result.failures.push('AUTOLEARN_ENABLED');
-  return result;
-}
-
 function parseSelector(selector) {
   const match = String(selector ?? '').match(/^([^/]+)\/([^:]+)(?::[^:]+)?$/);
   return match ? { provider: match[1], model: match[2] } : null;
@@ -169,10 +160,99 @@ function inspectAuthority(root) {
   return { exact_trust_domain_filter: exactTrust, world_engineering_eligible: false, verified_by_contract_test: worldBoundary, failures: exactTrust && worldBoundary ? [] : ['WORLD_AUTHORITY_BOUNDARY_UNVERIFIED'] };
 }
 
-function inspectSpend(config, models) {
+/** Cost classes the operator has approved for exposure (ADR 0016). */
+const APPROVED_COST_CLASSES = new Set(['LOCAL', 'FIXED_SUBSCRIPTION', 'FREE_TIER']);
+
+/**
+ * `omp_provider` -> declared cost class, from the external-provider registry.
+ *
+ * The gate asks a declaration question rather than pinning the surface. Accepting loopback
+ * endpoints only blocked the operator's fixed-cost subscriptions and had to be ignored to get
+ * any work done, which made it useless as a gate; a provider nobody has classified still fails
+ * closed, and METERED lanes still block (ADR 0016).
+ */
+function declaredCostClasses(root) {
+  try {
+    const registry = JSON.parse(text(join(root, 'config', 'external-providers.json')));
+    return new Map((registry.providers ?? [])
+      .filter((entry) => typeof entry.omp_provider === 'string' && typeof entry.cost_class === 'string')
+      .map((entry) => [entry.omp_provider, entry.cost_class]));
+  } catch {
+    return new Map();
+  }
+}
+
+function inspectSpend(config, models, costClasses) {
   const enabled = enabledModelsFromConfig(config);
-  const unsafe = enabled.some(pattern => pattern === '*' || pattern.includes('*/*') || !Object.entries(models).some(([provider, definition]) => (pattern === `${provider}/*` || pattern.startsWith(`${provider}/`)) && definition.auth === 'none' && /^https?:\/\/127\.0\.0\.1(?::\d+)?\//.test(definition.baseUrl ?? '')));
-  return { enabled_models: enabled, approved_surface: !unsafe, new_paid_spend_possible: unsafe, failures: unsafe ? ['UNAPPROVED_OR_PAYG_MODEL_SURFACE'] : [] };
+  const lanes = enabled.map((pattern) => {
+    const provider = String(pattern).split('/')[0];
+    const definition = models[provider];
+    const ownEndpoint = Boolean(definition?.auth === 'none' && /^https?:\/\/127\.0\.0\.1(?::\d+)?\//.test(definition.baseUrl ?? ''));
+    const costClass = ownEndpoint ? 'LOCAL' : costClasses.get(provider) ?? 'UNDECLARED';
+    return { pattern, provider, cost_class: costClass, approved: APPROVED_COST_CLASSES.has(costClass) };
+  });
+  const unapproved = lanes.filter((lane) => !lane.approved);
+  return { enabled_models: enabled, lanes, approved_surface: unapproved.length === 0, new_paid_spend_possible: unapproved.length > 0, failures: unapproved.length ? ['UNAPPROVED_OR_PAYG_MODEL_SURFACE'] : [] };
+}
+
+function pathWithin(parent, candidate) {
+  const outer = resolve(parent);
+  const inner = resolve(candidate);
+  return inner === outer || inner.startsWith(`${outer}${sep}`);
+}
+
+/** Repository root plus the resolved wiki of record: everything canon lives under one of them. */
+function canonRoots(root) {
+  const roots = [resolve(root)];
+  try {
+    const target = readFileSync(join(root, '.ai-memory', 'vault-path'), 'utf8').trim();
+    if (target) roots.push(resolve(target));
+  } catch {}
+  return roots;
+}
+
+/** Harness-local cognition stores: OMP's own state, and where auto-learning mints skills. */
+function managedStorePaths() {
+  const home = homedir();
+  return [join(home, '.omp'), join(home, '.omp', 'agent', 'managed-skills')];
+}
+
+/**
+ * OMP's memory and auto-learning are advisory and must stay outside canon (ADR 0017).
+ *
+ * The gate used to pin `memory.backend: off` and `autolearn: false`. The invariant behind that
+ * protects *promotion authority* — nothing reaches canon on a model's own judgment — not the
+ * existence of a local learning store, which is why the pinned values were overridden by an
+ * operator decision and the gate went on failing for three days. It now asserts the property:
+ * the posture is declared and enforced, the advisor stays off, and no managed store resolves
+ * inside a canon root.
+ */
+function inspectLearning(config, root) {
+  const advisor = scalar(section(config, 'advisor'), 'enabled');
+  const memory = scalar(section(config, 'memory'), 'backend');
+  const autolearn = scalar(section(config, 'autolearn'), 'enabled');
+  const posture = inspectPosture({ root });
+  const stores = managedStorePaths();
+  const canon = canonRoots(root);
+  const storesInCanon = stores.filter((store) => canon.some((entry) => pathWithin(entry, store)));
+  const canonInStore = canon.filter((entry) => stores.some((store) => pathWithin(store, entry)));
+  const failures = [
+    ...new Set(posture.problems.map((problem) => problem.code)),
+    ...(advisor === 'true' ? ['ADVISOR_ENABLED'] : []),
+    ...storesInCanon.map((store) => `MANAGED_STORE_INSIDE_CANON:${store}`),
+    ...canonInStore.map((entry) => `CANON_INSIDE_MANAGED_STORE:${entry}`)
+  ];
+  return {
+    advisor_enabled: advisor === 'true',
+    memory_backend: memory ?? 'UNKNOWN',
+    autolearn_enabled: autolearn === 'true',
+    advisory_systems: [memory && memory !== 'off' ? `memory:${memory}` : null, autolearn === 'true' ? 'autolearn' : null].filter(Boolean),
+    posture: { declared: posture.declared, enforced: posture.observed, problems: posture.problems.map((problem) => problem.code) },
+    managed_stores: stores,
+    canon_roots: canon,
+    safe: failures.length === 0,
+    failures
+  };
 }
 
 function inspectPi(observed) {
@@ -298,16 +378,17 @@ export function inspectPreflight({ root = process.cwd(), observed = {} } = {}) {
   const effectiveObserved = Object.hasOwn(observed, 'localInference') ? observed : { ...observed, localInference: { resources: collectLiveLocalInference(inferenceModels, root) } };
   const localInference = inspectLocalInference(effectiveObserved, inferenceModels);
   const roleObservation = { ...effectiveObserved, localInference };
+  const costClasses = declaredCostClasses(root);
   const sections = {
     omp: inspectOmp(root, effectiveObserved),
     pi: inspectPi(effectiveObserved),
     governance: inspectGovernance(root, config),
     skills: inspectSkills(root, config),
-    learning: inspectLearning(config),
+    learning: inspectLearning(config, root),
     roles: inspectRoles(root, config, models, roleObservation),
     authority: inspectAuthority(root),
     local_inference: localInference,
-    spend: inspectSpend(config, models)
+    spend: inspectSpend(config, models, costClasses)
   };
   const failures = Object.values(sections).flatMap(section => section.failures ?? []);
   const unknowns = [
