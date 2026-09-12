@@ -1,16 +1,16 @@
 {
   "schema": "kad.csa/v1",
   "state": "CURRENT",
-  "generated_at": "2026-09-12T19:50:37Z",
-  "evidence_cutoff": "c8aa74bd274824d6eb516b94cdea808dfc24199c",
+  "generated_at": "2026-09-12T20:15:01Z",
+  "evidence_cutoff": "f89f174fc9dc80ae02b68f5e1fe1f81b38a4307c",
   "repository": {
-    "head": "c8aa74bd274824d6eb516b94cdea808dfc24199c",
+    "head": "f89f174fc9dc80ae02b68f5e1fe1f81b38a4307c",
     "branch": "main",
     "remote": "https://github.com/aysha-oztoprakoc/kad-pi.git",
     "remote_head": "2f2ae35383a57a955cd9b5626dbe9f62d0bf9f31",
     "dirty": true,
-    "dirty_paths": 12,
-    "divergence": 33,
+    "dirty_paths": 7,
+    "divergence": 39,
     "state_class": "VERIFIED_CURRENT",
     "evidence": {
       "source": "git",
@@ -18,9 +18,7 @@
       "hash": "7bbd56011672fa770dc83cf0ea2ba90f40077605",
       "path": "evidence/WP-KAD-REVIEW-REMEDIATION-058/csa-refresh-probe.txt"
     },
-    "dirty_paths_excluded": [
-      "evidence/WP-KAD-002/causal-journal.jsonl"
-    ],
+    "dirty_paths_excluded": [],
     "dirty_paths_excluded_rule": "machine-appended by workctl and the doctors; listed here so the exclusion is declared, not silent"
   },
   "hosts": {
