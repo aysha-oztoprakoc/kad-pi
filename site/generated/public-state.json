@@ -2,8 +2,8 @@
   "schema_version": "kad-public-state-v1",
   "publication_class": "PUBLIC",
   "projection_id": "kad-governed-wiki-v1",
-  "source_vault_revision": "f339b53e786612afadd6862e9b06952dc2ac73d17a4a8ab918ed5db3b9c9f07d",
-  "generated_at": "2026-09-12T18:33:15.534Z",
+  "source_vault_revision": "a23cf13c18997bfb46efd49d11219f42dbd40b120d38905d82ca0e4c048d1184",
+  "generated_at": "2026-09-12T18:34:23.666Z",
   "project": {
     "name": "KAD-PI",
     "status": "PASS",
