@@ -2,7 +2,22 @@
 set -euo pipefail
 
 WORK_ROOT="${KAD_WORKSPACE_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
-OMP_BINARY="${OMP_BINARY:-$(which omp 2>/dev/null || echo "$WORK_ROOT/bin/omp-patched-canary")}"
+
+# ADR 0018: the newest mise-provided build is the harness. A bare `which omp` is not enough — a
+# hand-installed copy earlier on PATH (this host has one at ~/.local/bin/omp, one release behind)
+# silently shadows the mise build in every login shell. Ask mise what it dispatches first.
+resolve_omp_binary() {
+  local resolved
+  if command -v mise >/dev/null 2>&1; then
+    resolved="$(mise which omp 2>/dev/null | head -n1 || true)"
+    if [[ -n "$resolved" && -x "$resolved" ]]; then printf '%s' "$resolved"; return 0; fi
+  fi
+  resolved="$(command -v omp 2>/dev/null || true)"
+  if [[ -n "$resolved" && -x "$resolved" ]]; then printf '%s' "$resolved"; return 0; fi
+  printf '%s' "$WORK_ROOT/bin/omp-patched-canary"
+}
+
+OMP_BINARY="${OMP_BINARY:-$(resolve_omp_binary)}"
 OMP_STATE="$WORK_ROOT/.state/omp-kad/agent"
 MODEL_CONFIG="$WORK_ROOT/.omp/models.yml"
 LINK="$OMP_STATE/models.yml"

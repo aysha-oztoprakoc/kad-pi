@@ -3,13 +3,12 @@
  * Deterministic, read-only readiness receipt for the KAD OMP bridge.
  * Configuration is transport; KAD remains the routing, trust, and lifecycle authority.
  */
-import { existsSync, readFileSync, readlinkSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, readlinkSync, realpathSync, statSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { homedir } from 'node:os';
 import { join, relative, resolve, sep } from 'node:path';
 import { inspectPosture } from './posture-check.mjs';
 
-const EXPECTED_OMP = '18.0.9';
 function text(path) {
   try { return readFileSync(path, 'utf8'); } catch { return ''; }
 }
@@ -79,25 +78,125 @@ function parseManifest(root) {
   return null;
 }
 
-function inspectOmp(root, observed) {
-  const binary = pathStatus(root, join(root, '.tools', 'oh-my-pi', `v${EXPECTED_OMP}`));
-  const wrapper = pathStatus(root, join(root, 'bin', 'omp-kad'));
-  const manifest = parseManifest(root);
-  let version = observed.ompVersion;
-  if (!version && binary.executable) {
-    try { version = execFileSync(binary.path.startsWith('/') ? binary.path : join(root, binary.path), ['--version'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim().match(/(?:v|omp\/?)(\d+\.\d+\.\d+)/i)?.[1] ?? null; } catch {}
+/**
+ * ADR 0018: the newest mise-provided OMP is authoritative.
+ *
+ * The receipt identifies the harness the launcher would actually execute - `OMP_BINARY`, then
+ * `omp` on PATH, then the KAD canary - rather than a staged pin the launcher never touches. An
+ * unresolvable version blocks: a receipt that cannot name the harness cannot vouch for it.
+ * Non-mise provenance degrades rather than blocks, so a checkout without mise stays usable.
+ */
+const OMP_TOOL = 'github:can1357/oh-my-pi';
+
+function miseInstallsRoot() {
+  return join(process.env.MISE_DATA_DIR ?? join(homedir(), '.local', 'share', 'mise'), 'installs');
+}
+
+/** The build mise itself would dispatch `omp` to; the strongest available provenance answer. */
+function miseWhichOmp() {
+  try {
+    const resolved = execFileSync('mise', ['which', 'omp'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    return resolved && existsSync(resolved) ? resolved : null;
+  } catch { return null; }
+}
+
+function realpathOrSelf(path) {
+  try { return realpathSync(path); } catch { return path; }
+}
+
+/**
+ * A mise shim (`<mise data>/shims/omp`) is a symlink to the mise binary that dispatches at exec
+ * time, so its realpath names mise, not the build. It is still a mise-provided harness — and it is
+ * what `command -v omp` returns whenever the shims directory precedes the installs directory on
+ * PATH, which is the normal case in a login shell.
+ */
+function isMiseShim(path) {
+  return /(^|[\\/])shims[\\/][^\\/]+$/.test(path);
+}
+
+function activeOmpBinary(root) {
+  if (process.env.OMP_BINARY) return process.env.OMP_BINARY;
+  try {
+    const onPath = execFileSync('sh', ['-c', 'command -v omp'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    if (onPath) return onPath;
+  } catch { /* no omp on PATH: fall through to the canary */ }
+  const canary = join(root, 'bin', 'omp-patched-canary');
+  return existsSync(canary) ? canary : null;
+}
+
+function ompVersionOf(binary) {
+  try {
+    const output = execFileSync(binary, ['--version'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    return output.match(/(\d+\.\d+\.\d+)/)?.[1] ?? null;
+  } catch { return null; }
+}
+
+function compareSemver(left, right) {
+  const a = left.split('.').map(Number);
+  const b = right.split('.').map(Number);
+  for (const index of [0, 1, 2]) {
+    if ((a[index] ?? 0) !== (b[index] ?? 0)) return (a[index] ?? 0) - (b[index] ?? 0);
   }
-  version ??= manifest?.release ?? null;
-  const versionMatches = version === EXPECTED_OMP;
+  return 0;
+}
+
+/** Newest staged pin left by the pre-ADR-0018 qualification, reported as drift, not authority. */
+function stagedPin(root) {
+  const directory = join(root, '.tools', 'oh-my-pi');
+  if (!existsSync(directory)) return null;
+  let entries;
+  try { entries = readdirSync(directory); } catch { return null; }
+  const versions = entries.map((name) => name.match(/^v(\d+\.\d+\.\d+)$/)?.[1]).filter(Boolean).sort(compareSemver);
+  if (!versions.length) return null;
+  const version = versions.at(-1);
+  return { version, path: join('.tools', 'oh-my-pi', `v${version}`), superseded: true };
+}
+
+function inspectOmp(root, observed) {
+  const wrapper = pathStatus(root, join(root, 'bin', 'omp-kad'));
+  const dispatchedPath = miseWhichOmp();
+  const pathBinary = activeOmpBinary(root);
+  // Precedence follows the launcher: an explicit override wins, then what was observed to run,
+  // then what mise would dispatch, then PATH, then the canary (inside `activeOmpBinary`).
+  const override = process.env.OMP_BINARY || null;
+  const binaryPath = override ?? observed.ompBinary ?? dispatchedPath ?? pathBinary;
+  const resolvedPath = binaryPath ? realpathOrSelf(binaryPath) : null;
+  const binary = binaryPath
+    ? {
+        path: binaryPath.startsWith(root) ? rel(root, binaryPath) : binaryPath,
+        resolved: resolvedPath.startsWith(root) ? rel(root, resolvedPath) : resolvedPath,
+        exists: existsSync(binaryPath),
+        executable: existsSync(binaryPath) && (() => { try { return (statSync(binaryPath).mode & 0o111) !== 0; } catch { return false; } })()
+      }
+    : null;
+  const version = observed.ompVersion ?? (binary?.executable ? ompVersionOf(binaryPath) : null);
+  const managed = Boolean(resolvedPath) && (resolvedPath.startsWith(`${miseInstallsRoot()}${sep}`) || isMiseShim(binaryPath));
+  // A PATH `omp` that is not the build mise dispatches is what a bare invocation gets. It does not
+  // invalidate this receipt — the launcher and the receipt both use the mise build — but it is
+  // reported, because "which omp" answering a different binary is how a stale harness runs.
+  const shadow = pathBinary && dispatchedPath && realpathOrSelf(pathBinary) !== realpathOrSelf(dispatchedPath) && !observed.ompBinary
+    ? { path: pathBinary, version: ompVersionOf(pathBinary) ?? 'UNKNOWN' }
+    : null;
+  const staged = stagedPin(root);
+  const manifest = parseManifest(root);
   const failures = [];
-  if (!binary.exists) failures.push('OMP_PINNED_BINARY_MISSING');
-  else if (!binary.executable) failures.push('OMP_PINNED_BINARY_NOT_EXECUTABLE');
   if (!wrapper.exists) failures.push('OMP_WRAPPER_MISSING');
   else if (!wrapper.executable) failures.push('OMP_WRAPPER_NOT_EXECUTABLE');
-  if (!manifest || manifest.invalid) failures.push('OMP_INSTALL_MANIFEST_MISSING_OR_INVALID');
-  if (manifest && manifest.release !== EXPECTED_OMP) failures.push('OMP_MANIFEST_VERSION_MISMATCH');
-  if (version && !versionMatches) failures.push('OMP_VERSION_MISMATCH');
-  return { version: version ?? 'UNKNOWN', expected_version: EXPECTED_OMP, binary, wrapper, manifest: manifest ? { path: manifest.path, release: manifest.release ?? 'UNKNOWN', sha256_observed: manifest.sha256_observed ?? 'NOT_REPORTED' } : null, version_matches: versionMatches, failures };
+  if (!binary) failures.push('OMP_BINARY_UNAVAILABLE');
+  else if (!version) failures.push('OMP_VERSION_UNKNOWN');
+  return {
+    version: version ?? 'UNKNOWN',
+    tool: managed ? OMP_TOOL : null,
+    source: managed ? 'mise' : binary ? 'unmanaged' : 'UNKNOWN',
+    via: managed ? (dispatchedPath && binaryPath === dispatchedPath ? 'mise which' : isMiseShim(binaryPath) ? 'shim' : 'install') : null,
+    binary,
+    path_shadow: shadow,
+    wrapper,
+    staged_pin: staged ? { ...staged, drift: staged.version !== version } : null,
+    legacy_manifest: manifest ? { path: manifest.path, release: manifest.release ?? 'UNKNOWN', superseded_by: 'docs/adr/0018-newest-mise-provided-omp-is-authoritative.md' } : null,
+    provenance_failures: binary && !managed ? ['OMP_BINARY_NOT_MISE_MANAGED'] : [],
+    failures
+  };
 }
 
 function inspectGovernance(root, config) {
@@ -339,7 +438,7 @@ function providerForRole(models, role, provider) {
 
 function statusFor(sections) {
   const blocking = [...sections.omp.failures, ...sections.learning.failures, ...sections.spend.failures, ...sections.pi.failures];
-  const degraded = [...sections.governance.failures, ...sections.skills.failures, ...sections.roles.failures, ...sections.authority.failures, ...sections.local_inference.failures];
+  const degraded = [...sections.governance.failures, ...sections.skills.failures, ...sections.roles.failures, ...sections.authority.failures, ...sections.local_inference.failures, ...sections.omp.provenance_failures];
   const retrieval = sections.local_inference.resources.find(resource => resource.provider === sections.roles.roles.local_retrieval.provider);
   if (blocking.length) return 'BLOCKED';
   if (degraded.length || sections.roles.roles.local_retrieval.status !== 'RESOLVED' || retrieval?.capability_state !== 'AVAILABLE') return 'DEGRADED';

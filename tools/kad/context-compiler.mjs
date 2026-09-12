@@ -74,19 +74,27 @@ function parseYamlScalar(value) {
   return value.replace(/^['"]|['"]$/g, '');
 }
 
-function parseSimpleYaml(content) {
+export function parseSimpleYaml(content) {
   const root = {};
   const stack = [{ indent: -1, value: root }];
-  for (const raw of content.split(/\r?\n/)) {
+  const lines = content.split(/\r?\n/);
+  for (const [index, raw] of lines.entries()) {
     if (!raw.trim() || raw.trimStart().startsWith('#')) continue;
     const indent = raw.match(/^ */)[0].length;
     const line = raw.trim();
     if (line.startsWith('- ')) {
       const parent = stack.at(-1).value;
       if (!Array.isArray(parent)) throw new Error('yaml arrays are supported only under explicit list containers');
+      const rest = line.slice(2).trim();
+      // `- value` is a scalar item; `- key: value` is a mapping item. The distinction is the
+      // colon-space, which is what YAML itself uses: `- provider/model:low` is one scalar.
+      if (!/^[^:]+:\s/.test(rest)) {
+        parent.push(parseYamlScalar(rest));
+        stack.push({ indent, value: parent });
+        continue;
+      }
       const item = {};
       parent.push(item);
-      const rest = line.slice(2).trim();
       if (rest) {
         const [key, ...tail] = rest.split(':');
         item[key.trim()] = parseYamlScalar(tail.join(':').trim());
@@ -99,8 +107,11 @@ function parseSimpleYaml(content) {
     while (stack.at(-1).indent >= indent) stack.pop();
     const parent = stack.at(-1).value;
     if (valueText === '') {
-      const nextLine = content.split(/\r?\n/).find(l => l.match(/^ */)?.[0].length > indent && l.trim().startsWith('- '));
-      parent[key.trim()] = nextLine ? [] : {};
+      // A key with no inline value opens a list only when the *next* content line (not some
+      // later unrelated one) is a deeper `- ` item; otherwise it opens a map.
+      const nextLine = lines.slice(index + 1).find((candidate) => candidate.trim() && !candidate.trimStart().startsWith('#'));
+      const opensList = Boolean(nextLine) && nextLine.match(/^ */)[0].length > indent && nextLine.trim().startsWith('- ');
+      parent[key.trim()] = opensList ? [] : {};
     } else parent[key.trim()] = parseYamlScalar(valueText);
     stack.push({ indent, value: parent[key.trim()] });
   }

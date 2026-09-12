@@ -1,29 +1,56 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { execFileSync } from 'node:child_process';
+import { chmod, mkdir, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { inspectPreflight, canonicalReceipt } from '../omp-orchestration-preflight.mjs';
-import { createOmpPreflightFixture, removeOmpPreflightFixture, EXPECTED_OMP, DEFAULT_MODELS_YAML } from './fixtures/omp-preflight-root.mjs';
+import { createOmpPreflightFixture, removeOmpPreflightFixture, ompObservation, fixtureOmpBinary, FIXTURE_OMP_VERSION, FIXTURE_STAGED_OMP_VERSION, DEFAULT_MODELS_YAML } from './fixtures/omp-preflight-root.mjs';
 
-const observed = { ompVersion: EXPECTED_OMP, piVersion: '0.84.3', localInference: { ownership: 'INACTIVE', available: false } };
+/**
+ * Observations a fixture root implies, with the harness taken from that root.
+ *
+ * The preflight resolves the executing OMP from `OMP_BINARY`, then PATH, then the canary; a test
+ * injects it so the verdict never depends on which OMP this host happens to have on PATH.
+ */
+const observedFor = (root, overrides = {}) => ({
+  piVersion: '0.84.3',
+  localInference: { ownership: 'INACTIVE', available: false },
+  ...ompObservation(root),
+  ...overrides
+});
+
+/**
+ * The harness this machine would run: absent on a checkout that has no OMP installed, which is why
+ * T8 tolerates an unresolved harness while still asserting mise provenance whenever one resolves.
+ */
+function liveOmpObservation() {
+  try {
+    const binary = execFileSync('sh', ['-c', 'command -v omp'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    if (!binary) return {};
+    const version = execFileSync(binary, ['--version'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim().match(/(\d+\.\d+\.\d+)/)?.[1];
+    return version ? { ompBinary: binary, ompVersion: version } : {};
+  } catch { return {}; }
+}
 
 test('T1 valid OMP/KAD fixture is READY', async () => {
   const root = await createOmpPreflightFixture();
   try {
-    const receipt = inspectPreflight({ root, observed: { ...observed, localInference: { ownership: 'OWNED', available: true, provider: 'kad-local-qwen', model: 'qwen-local' } } });
+    const receipt = inspectPreflight({ root, observed: observedFor(root, { localInference: { ownership: 'OWNED', available: true, provider: 'kad-local-qwen', model: 'qwen-local' } }) });
     assert.equal(receipt.status, 'READY');
   } finally { await removeOmpPreflightFixture(root); }
 });
 
 test('T2 missing local retrieval role is DEGRADED', async () => {
   const root = await createOmpPreflightFixture({ role: 'missing' });
-  try { assert.equal(inspectPreflight({ root, observed }).status, 'DEGRADED'); }
+  try { assert.equal(inspectPreflight({ root, observed: observedFor(root) }).status, 'DEGRADED'); }
   finally { await removeOmpPreflightFixture(root); }
 });
 
 test('T3 WORLD role remains ineligible for engineering', async () => {
   const root = await createOmpPreflightFixture({ role: 'world' });
   try {
-    const receipt = inspectPreflight({ root, observed });
+    const receipt = inspectPreflight({ root, observed: observedFor(root) });
     assert.equal(receipt.authority.world_engineering_eligible, false);
     assert.equal(receipt.status, 'DEGRADED');
   } finally { await removeOmpPreflightFixture(root); }
@@ -32,7 +59,7 @@ test('T3 WORLD role remains ineligible for engineering', async () => {
 test('T4 a posture that diverges from its declaration blocks', async () => {
   const root = await createOmpPreflightFixture({ autolearn: true, declaration: { 'autolearn.enabled': 'false' } });
   try {
-    const receipt = inspectPreflight({ root, observed });
+    const receipt = inspectPreflight({ root, observed: observedFor(root) });
     assert.equal(receipt.status, 'BLOCKED');
     assert.ok(receipt.failures.includes('POSTURE_DECLARATION_MISMATCH'), 'the mismatch is the blocking cause');
     assert.equal(receipt.learning.autolearn_enabled, true, 'autolearn itself is reported, not fatal');
@@ -41,21 +68,21 @@ test('T4 a posture that diverges from its declaration blocks', async () => {
 
 test('T5 unknown or unapproved PAYG surface blocks spend safety', async () => {
   const root = await createOmpPreflightFixture({ spend: 'unsafe' });
-  try { assert.equal(inspectPreflight({ root, observed }).status, 'BLOCKED'); }
+  try { assert.equal(inspectPreflight({ root, observed: observedFor(root) }).status, 'BLOCKED'); }
   finally { await removeOmpPreflightFixture(root); }
 });
 
-test('T6 missing OMP binary and manifest is clearly blocked', async () => {
+test('T6 missing OMP binary and launcher is clearly blocked', async () => {
   const root = await createOmpPreflightFixture({ omp: false });
-  try { assert.equal(inspectPreflight({ root, observed }).status, 'BLOCKED'); }
+  try { assert.equal(inspectPreflight({ root, observed: observedFor(root) }).status, 'BLOCKED'); }
   finally { await removeOmpPreflightFixture(root); }
 });
 
 test('T7 canonical receipt replays identically', async () => {
   const root = await createOmpPreflightFixture();
   try {
-    const a = canonicalReceipt(inspectPreflight({ root, observed }));
-    const b = canonicalReceipt(inspectPreflight({ root, observed }));
+    const a = canonicalReceipt(inspectPreflight({ root, observed: observedFor(root) }));
+    const b = canonicalReceipt(inspectPreflight({ root, observed: observedFor(root) }));
     assert.deepEqual(a, b);
     assert.equal(JSON.stringify(a), JSON.stringify(b));
   } finally { await removeOmpPreflightFixture(root); }
@@ -93,15 +120,13 @@ test('T9 a registered transport-only provider stays out of the local-inference c
   try {
     const receipt = inspectPreflight({
       root,
-      observed: {
-        ompVersion: EXPECTED_OMP,
-        piVersion: '0.84.3',
+      observed: observedFor(root, {
         localInference: {
           resources: [
             { provider: 'kad-local-qwen', model: 'qwen-local', endpoint: 'http://127.0.0.1:5002/v1', endpoint_available: true, observed_identity: 'qwen-local', ownership: 'OWNED', capability_state: 'AVAILABLE' }
           ]
         }
-      }
+      })
     });
     assert.deepEqual(receipt.local_inference.resources.map((r) => r.provider), ['kad-local-world', 'kad-local-qwen'], 'only loopback compute the harness can own is census material');
     assert.deepEqual(receipt.local_inference.failures, [], 'a declared transport never reads as an unowned local process');
@@ -134,7 +159,7 @@ test('T10 spend: declared fixed-cost lanes pass while metered and undeclared lan
 `;
   const spendFor = async (enabledModels) => {
     const root = await createOmpPreflightFixture({ modelsYaml, externalProviders: registry, enabledModels });
-    try { return inspectPreflight({ root, observed }).spend; }
+    try { return inspectPreflight({ root, observed: observedFor(root) }).spend; }
     finally { await removeOmpPreflightFixture(root); }
   };
 
@@ -154,10 +179,73 @@ test('T10 spend: declared fixed-cost lanes pass while metered and undeclared lan
 test('T11 advisory memory and autolearn pass once declared and enforced', async () => {
   const root = await createOmpPreflightFixture({ memory: 'mnemopi', autolearn: true });
   try {
-    const receipt = inspectPreflight({ root, observed });
+    const receipt = inspectPreflight({ root, observed: observedFor(root) });
     assert.deepEqual(receipt.learning.failures, [], 'an enabled advisory store is not a gate failure');
     assert.deepEqual(receipt.learning.advisory_systems, ['memory:mnemopi', 'autolearn']);
     assert.deepEqual(receipt.learning.posture.problems, []);
+    assert.notEqual(receipt.status, 'BLOCKED');
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
+test('T12 an unresolvable harness version blocks instead of passing', async () => {
+  const root = await createOmpPreflightFixture({ omp: false });
+  try {
+    // The binary exists and exits cleanly but reports nothing: the receipt must not vouch for it.
+    const silent = join(root, 'silent-omp');
+    await writeFile(silent, '#!/bin/sh\nexit 0\n');
+    await chmod(silent, 0o755);
+    const receipt = inspectPreflight({ root, observed: { piVersion: '0.84.3', ompBinary: silent, localInference: { ownership: 'INACTIVE', available: false } } });
+    assert.equal(receipt.omp.version, 'UNKNOWN');
+    assert.equal(receipt.status, 'BLOCKED');
+    assert.ok(receipt.failures.includes('OMP_VERSION_UNKNOWN'), 'an unidentifiable harness is fatal');
+    assert.ok(receipt.failures.includes('OMP_WRAPPER_MISSING'), 'no launcher was installed by the fixture');
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
+test('T13 a harness outside the mise install root degrades and is named', async () => {
+  const root = await createOmpPreflightFixture();
+  try {
+    const external = join(root, 'hand-built-omp');
+    await writeFile(external, '#!/bin/sh\necho "omp/18.2.0"\n');
+    await chmod(external, 0o755);
+    const receipt = inspectPreflight({ root, observed: { piVersion: '0.84.3', ompBinary: external, localInference: { ownership: 'INACTIVE', available: false } } });
+    assert.equal(receipt.omp.version, '18.2.0', 'the version is read from the binary that would run');
+    assert.equal(receipt.omp.source, 'unmanaged');
+    assert.deepEqual(receipt.omp.provenance_failures, ['OMP_BINARY_NOT_MISE_MANAGED']);
+    assert.equal(receipt.status, 'DEGRADED', 'unmanaged provenance degrades the receipt; it does not block it');
+    assert.ok(!receipt.failures.includes('OMP_BINARY_NOT_MISE_MANAGED'), 'provenance is not reported as a blocking failure');
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
+test('T14 the superseded staged pin is reported as drift, never as the harness', async () => {
+  const root = await createOmpPreflightFixture();
+  try {
+    const receipt = inspectPreflight({ root, observed: observedFor(root) });
+    assert.equal(receipt.omp.version, FIXTURE_OMP_VERSION, 'the executed build, not the staged pin');
+    assert.equal(receipt.omp.source, 'mise');
+    assert.deepEqual(receipt.omp.staged_pin, { version: FIXTURE_STAGED_OMP_VERSION, path: '.tools/oh-my-pi/v18.0.9', superseded: true, drift: true });
+    assert.match(receipt.omp.legacy_manifest.path, /install-manifest\.json$/);
+    assert.equal(receipt.omp.legacy_manifest.superseded_by, 'docs/adr/0018-newest-mise-provided-omp-is-authoritative.md');
+    assert.deepEqual(receipt.omp.failures, [], 'a stale pin is evidence, not a harness failure');
+    assert.deepEqual(receipt.omp.provenance_failures, []);
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
+test('T15 a mise shim counts as mise provenance, and says which route was taken', async () => {
+  const root = await createOmpPreflightFixture();
+  try {
+    // `command -v omp` returns the shim whenever the shims directory precedes the installs
+    // directory on PATH, which is what a login shell does. The shim is a symlink to the mise
+    // binary, so resolving it proves nothing about the build; provenance must still read as mise.
+    const shim = join(root, 'mise-data', 'shims', 'omp');
+    await mkdir(join(root, 'mise-data', 'shims'), { recursive: true });
+    await writeFile(shim, '#!/bin/sh\necho "omp/18.2.0"\n');
+    await chmod(shim, 0o755);
+    const receipt = inspectPreflight({ root, observed: { piVersion: '0.84.3', ompBinary: shim, localInference: { ownership: 'INACTIVE', available: false } } });
+    assert.equal(receipt.omp.source, 'mise');
+    assert.equal(receipt.omp.via, 'shim');
+    assert.equal(receipt.omp.version, '18.2.0', 'the version still comes from executing the harness');
+    assert.deepEqual(receipt.omp.provenance_failures, []);
     assert.notEqual(receipt.status, 'BLOCKED');
   } finally { await removeOmpPreflightFixture(root); }
 });
@@ -174,14 +262,19 @@ test('T11 advisory memory and autolearn pass once declared and enforced', async 
  */
 test('T8 live posture: declared, enforced, and every enabled lane carries an approved cost class', () => {
   const repoRoot = fileURLToPath(new URL('../../..', import.meta.url));
+  const live = liveOmpObservation();
   const receipt = inspectPreflight({
     root: repoRoot,
-    observed: { ompVersion: EXPECTED_OMP, piVersion: '0.84.3', localInference: { resources: [] } }
+    observed: { ...live, piVersion: '0.84.3', localInference: { resources: [] } }
   });
   assert.deepEqual(receipt.learning.failures, [], 'the live posture must be declared and enforced');
   assert.equal(receipt.spend.approved_surface, true, 'no enabled lane may be undeclared or metered');
   for (const lane of receipt.spend.lanes) {
     assert.ok(['LOCAL', 'FIXED_SUBSCRIPTION', 'FREE_TIER'].includes(lane.cost_class), `${lane.pattern} carries ${lane.cost_class}`);
   }
-  assert.notEqual(receipt.status, 'BLOCKED', `the live preflight must not block: ${receipt.failures.join(', ')}`);
+  assert.ok(receipt.failures.every((failure) => failure.startsWith('OMP_')), `only harness resolution may block the live receipt: ${receipt.failures.join(', ')}`);
+  if (live.ompVersion) {
+    assert.equal(receipt.omp.source, 'mise', 'the live harness must be the mise-provided build (ADR 0018)');
+    assert.notEqual(receipt.status, 'BLOCKED', `the live preflight must not block: ${receipt.failures.join(', ')}`);
+  }
 });

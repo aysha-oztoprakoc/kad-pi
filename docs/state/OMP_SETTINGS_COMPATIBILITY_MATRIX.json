@@ -251,8 +251,13 @@
       "schema_default": [],
       "schema_default_kind": "constant",
       "effective_value": [
+        "google-antigravity/*",
+        "openai-codex/*",
+        "opencode-go/*",
+        "zai-free/*",
         "kad-local-world/*",
-        "kad-local-qwen/qwen-local"
+        "kad-local-qwen/*",
+        "omniroute/*"
       ],
       "effective_source": "omp config list --json",
       "kad_policy": "KAD_DEFAULT",
@@ -398,20 +403,23 @@
       "schema_default": {},
       "schema_default_kind": "constant",
       "effective_value": {
-        "advisor": "google-antigravity/gemini-3-flash:low",
-        "plan": "openai-codex/gpt-5.6-luna:high",
-        "slow": "google-antigravity/gemini-3-flash:high",
-        "task": "openai-codex/gpt-5.4-mini:low",
-        "smol": "zai-free/glm-4.7-flash:minimal",
+        "default": "opencode-go/deepseek-v4.1-flash:max",
+        "task": "openai-codex/gpt-5.6-luna:low",
+        "advisor": "google-antigravity/gemini-3.8-flash:low",
+        "designer": "google-antigravity/gemini-3.8-flash:high",
+        "vision": "google-antigravity/gemini-3.8-flash:high",
+        "plan": "opencode-go/deepseek-v4.1-flash:high",
+        "slow": "openai-codex/gpt-5.6-terra:high",
+        "verifier": "google-antigravity/gemini-3.1-pro:high",
+        "research": "google-antigravity/gemini-3.1-pro:low",
+        "oracle": "openai-codex/gpt-5.6-terra:max",
+        "smol": "kad-local-qwen/qwen-local:low",
         "tiny": "zai-free/glm-4.7-flash:minimal",
         "commit": "zai-free/glm-4.7-flash:low",
-        "designer": "google-antigravity/gemini-3-flash:high",
-        "vision": "google-antigravity/gemini-3-flash:high",
-        "oracle": "openai-codex/gpt-5.6-luna:max",
-        "verifier": "google-antigravity/gemini-3-flash:high",
-        "research": "google-antigravity/gemini-3-flash:medium",
         "world": "kad-local-world/kad-local-s13:low",
-        "local_retrieval": "kad-local-qwen/qwen-local:low"
+        "local_retrieval": "kad-local-qwen/qwen-local:low",
+        "local_general": "kad-local-world/kad-local-s13:low",
+        "rpg": "kad-local-world/rp-hero:low"
       },
       "effective_source": "omp config list --json",
       "kad_policy": "KAD_DEFAULT",
@@ -452,6 +460,9 @@
         "local_general": {
           "name": "Local General (unqualified)",
           "hidden": true
+        },
+        "rpg": {
+          "name": "RPG (RP-Hero roleplay)"
         }
       },
       "effective_source": "omp config list --json",
@@ -498,9 +509,13 @@
       ],
       "schema_default_kind": "constant",
       "effective_value": [
-        "smol",
         "default",
-        "slow"
+        "plan",
+        "slow",
+        "smol",
+        "world",
+        "local_retrieval",
+        "rpg"
       ],
       "effective_source": "omp config list --json",
       "kad_policy": "KAD_WRAPPED",
@@ -2235,7 +2250,7 @@
       "type": "number",
       "schema_default": 300000,
       "schema_default_kind": "arithmetic",
-      "effective_value": 300000,
+      "effective_value": 0,
       "effective_source": "omp config list --json",
       "kad_policy": "KAD_WRAPPED",
       "kad_required_value": null,
@@ -2275,7 +2290,7 @@
       "type": "boolean",
       "schema_default": false,
       "schema_default_kind": "literal",
-      "effective_value": false,
+      "effective_value": true,
       "effective_source": "omp config list --json",
       "kad_policy": "KAD_WRAPPED",
       "kad_required_value": null,
@@ -2295,7 +2310,7 @@
       "type": "number",
       "schema_default": 10,
       "schema_default_kind": "literal",
-      "effective_value": 10,
+      "effective_value": 5,
       "effective_source": "omp config list --json",
       "kad_policy": "KAD_WRAPPED",
       "kad_required_value": null,
@@ -2337,45 +2352,26 @@
       "schema_default_kind": "literal-object",
       "effective_value": {
         "default": [
-          "google-antigravity/gemini-3-flash:medium"
-        ],
-        "plan": [
-          "google-antigravity/gemini-3-flash:high"
-        ],
-        "slow": [
-          "openai-codex/gpt-5.6-luna:high"
-        ],
-        "advisor": [
-          "openai-codex/gpt-5.4-mini:low"
+          "openai-codex/gpt-5.6-luna:low",
+          "google-antigravity/gemini-3.8-flash:low"
         ],
         "task": [
-          "zai-free/glm-4.7-flash:low"
+          "opencode-go/deepseek-v4-flash:low",
+          "google-antigravity/gemini-3.8-flash:low"
+        ],
+        "plan": [
+          "openai-codex/gpt-5.6-terra:high",
+          "google-antigravity/gemini-3.1-pro:high",
+          "google-antigravity/gemini-3.8-flash:low"
+        ],
+        "slow": [
+          "opencode-go/deepseek-v4-pro:high",
+          "google-antigravity/gemini-3.1-pro:high",
+          "google-antigravity/gemini-3.8-flash:low"
         ],
         "smol": [
-          "openai-codex/gpt-5.4-mini:minimal"
-        ],
-        "tiny": [
-          "openai-codex/gpt-5.4-mini:minimal"
-        ],
-        "commit": [
-          "openai-codex/gpt-5.4-mini:low"
-        ],
-        "designer": [
-          "openai-codex/gpt-5.6-luna:high"
-        ],
-        "vision": [
-          "openai-codex/gpt-5.6-luna:high"
-        ],
-        "verifier": [
-          "openai-codex/gpt-5.6-luna:high"
-        ],
-        "research": [
-          "openai-codex/gpt-5.4-mini:low"
-        ],
-        "oracle": [],
-        "world": [],
-        "local_retrieval": [],
-        "local_general": []
+          "zai-free/glm-4.7-flash:minimal"
+        ]
       },
       "effective_source": "omp config list --json",
       "kad_policy": "KAD_WRAPPED",
@@ -3236,7 +3232,7 @@
       "type": "boolean",
       "schema_default": false,
       "schema_default_kind": "literal",
-      "effective_value": false,
+      "effective_value": true,
       "effective_source": "omp config list --json",
       "kad_policy": "PASS_THROUGH",
       "kad_required_value": null,
@@ -3299,7 +3295,10 @@
       ],
       "schema_default_kind": "constant",
       "effective_value": [
-        "snapcompact"
+        "snapcompact",
+        "handoff",
+        "shake",
+        "soft"
       ],
       "effective_source": "omp config list --json",
       "kad_policy": "KAD_WRAPPED",
@@ -7377,7 +7376,7 @@
       "type": "enum",
       "schema_default": "builtins",
       "schema_default_kind": "literal",
-      "effective_value": "builtins",
+      "effective_value": "catalog",
       "effective_source": "omp config list --json",
       "kad_policy": "PASS_THROUGH",
       "kad_required_value": null,
@@ -7974,7 +7973,7 @@
         "designer": "@designer",
         "reviewer": "@verifier",
         "security-reviewer": "@verifier",
-        "librarian": "@research"
+        "librarian": "@local_retrieval"
       },
       "effective_source": "omp config list --json",
       "kad_policy": "KAD_WRAPPED",

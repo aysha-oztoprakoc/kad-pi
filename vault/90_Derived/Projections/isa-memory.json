@@ -2,7 +2,7 @@
   "projection_type": "KAD_MEMORY_ISA_PROJECTION",
   "version": "1.0.0",
   "domain": "memory",
-  "generated_at": "2026-09-12T16:26:00.034Z",
+  "generated_at": "2026-09-12T17:38:49.233Z",
   "source_file": "/home/amdy/Work/.ai-memory/wiki/01a090eb-c52d-7b91-b809-0d1f993c0617/01a090eb-c52d-7b91-b809-0d2e050822dc/00_Governance/ISA-KAD-MEMORY-001.md",
   "isa": {
     "id": "ISA-KAD-MEMORY-001",
@@ -63,8 +63,8 @@
       "validator": "memory.mirror.okf_conformant",
       "pass": true,
       "severity": "BLOCKER",
-      "evidence": "mirror is OKF v0.2 conformant: index declares okf_version, 201 pages all carry a non-empty type",
-      "checked_count": 202
+      "evidence": "mirror is OKF v0.2 conformant: index declares okf_version, 202 pages all carry a non-empty type",
+      "checked_count": 203
     },
     {
       "id": "ISA-KAD-MEMORY-005",
@@ -74,7 +74,7 @@
       "validator": "memory.record.versioned",
       "pass": true,
       "severity": "HIGH",
-      "evidence": "record resolves HEAD 6980a26ade4f with 1 branch ref(s) under its own git history",
+      "evidence": "record resolves HEAD 98e64dd62c0a with 1 branch ref(s) under its own git history",
       "checked_count": 3
     },
     {

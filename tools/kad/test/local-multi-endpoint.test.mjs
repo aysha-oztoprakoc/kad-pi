@@ -3,7 +3,7 @@ import { before, after, test } from 'node:test';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { canonicalReceipt, inspectPreflight } from '../omp-orchestration-preflight.mjs';
-import { createOmpPreflightFixture, removeOmpPreflightFixture, EXPECTED_OMP } from './fixtures/omp-preflight-root.mjs';
+import { createOmpPreflightFixture, removeOmpPreflightFixture, ompObservation } from './fixtures/omp-preflight-root.mjs';
 
 /**
  * Endpoint facts these tests inject. The fixture root supplies everything else, so the
@@ -66,7 +66,7 @@ after(async () => {
 
 function receipt(resources) {
   return inspectPreflight({ root, observed: {
-    ompVersion: EXPECTED_OMP, piVersion: '0.84.3',
+    ...ompObservation(root), piVersion: '0.84.3',
     localInference: { resources }
   } });
 }

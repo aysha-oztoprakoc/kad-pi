@@ -5,6 +5,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { inspectPosture } from '../../../tools/kad/posture-check.mjs';
+import { parseSimpleYaml } from '../../../tools/kad/context-compiler.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const stateDir = path.resolve(here, '..');
@@ -136,6 +137,30 @@ test('Settings matrix: the posture rows match the config the harness actually ru
     assert.ok(row, `${key} must have a matrix row`);
     assert.equal(String(row.effective_value), enforced, `${key}: matrix records ${row.effective_value}, config enforces ${enforced}`);
   }
+});
+
+test('Settings matrix: every project-declared setting matches the enforced config', () => {
+  // The matrix is a capture, and a capture cannot notice the config moving: modelRoles,
+  // enabledModels, cycleOrder, retry.fallbackChains and eight other rows were still stating a
+  // previous model cascade as VERIFIED. Rows whose key `.omp/config.yml` declares are therefore
+  // compared on every run; rows it does not declare describe machine-global facts this repository
+  // cannot verify, and are left as reported.
+  const config = parseSimpleYaml(fs.readFileSync(path.resolve(here, '../../..', '.omp', 'config.yml'), 'utf8'));
+  const matrix = readJson('OMP_SETTINGS_COMPATIBILITY_MATRIX.json');
+  const resolve = (id) => id.split('.').reduce((value, key) => (value && typeof value === 'object' && key in value ? value[key] : undefined), config);
+  let compared = 0;
+  for (const row of matrix.settings) {
+    const declared = resolve(row.setting_id);
+    if (declared === undefined) continue;
+    compared += 1;
+    assert.deepEqual(
+      row.effective_value,
+      declared,
+      `${row.setting_id}: matrix records ${JSON.stringify(row.effective_value).slice(0, 120)}, `
+      + `.omp/config.yml declares ${JSON.stringify(declared).slice(0, 120)}`
+    );
+  }
+  assert.ok(compared >= 30, `the comparison must not go vacuous: it resolved ${compared} project-declared settings`);
 });
 
 test('Gap model: post-WP gaps that WP-041 resolved are marked RESOLVED', () => {
