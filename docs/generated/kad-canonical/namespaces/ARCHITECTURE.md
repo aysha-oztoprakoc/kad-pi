@@ -4,10 +4,10 @@
 
 ## PON/STC Architecture
 
-- ID: `record:wiki:synthetic:01_ARCHITECTURE_PON_STC.md`
+- ID: `record:.agents:knowledge:synthetic:01_ARCHITECTURE_PON_STC.md`
 - Status: `ACCEPTED`
-- Source: `wiki/synthetic/01_ARCHITECTURE_PON_STC.md`
-- Source hash: `fbaee5a37d91089f9f2c156ab05f47bab0d01d4c1992e42601d077bff969b8fd`
+- Source: `.agents/knowledge/synthetic/01_ARCHITECTURE_PON_STC.md`
+- Source hash: `d8c0a3d12d0153e3c53ddd576182d0e527e5887323acfcda587a11286f7ce6f8`
 - Epistemic class: `DOCUMENT_DERIVED`
 - Acceptance: `ACCEPTED`
 - Trust domain: `engineering`

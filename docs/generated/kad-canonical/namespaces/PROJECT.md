@@ -19,7 +19,7 @@
 - ID: `record:README.md`
 - Status: `ACCEPTED`
 - Source: `README.md`
-- Source hash: `7876ed058ff4d348558ec117d8d67a941d0cc2e227c40e82a7ac2efb47388120`
+- Source hash: `4fe8f375eadc4fbc5dea93ab263f810870226ce92892699cebe8bc1e36fc25a5`
 - Epistemic class: `DOCUMENT_DERIVED`
 - Acceptance: `ACCEPTED`
 - Trust domain: `engineering`

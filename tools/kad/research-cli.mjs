@@ -157,7 +157,7 @@ export function runResearchCli(args, options = {}) {
   const effectiveRootDir = parsed.rootDir ? resolve(parsed.rootDir) : rootDir;
   const effectiveStorageDir = parsed.storageDir
     ? resolve(parsed.storageDir)
-    : join(effectiveRootDir, 'wiki', 'research');
+    : join(effectiveRootDir, 'docs', 'research');
 
   const corpus = new DeterministicResearchCorpus({
     rootDir: effectiveRootDir,

@@ -32,14 +32,14 @@ High-density, structured distillations with explicit epistemic tags (`[SOURCE_DE
 
 Canonical system decisions documented in `docs/adr/`:
 
-- [ADR 0001: Notification-Oriented Causality over Polling](../docs/adr/0001-notification-oriented-causality.md)
-- [ADR 0002: Spatiotemporal Composability and Cordis Lifetime Ownership](../docs/adr/0002-spatiotemporal-composability-cordis-ownership.md)
-- [ADR 0003: Intent Authority Boundary in Simulation and Game Core](../docs/adr/0003-intent-authority-boundary.md)
-- [ADR 0004: Model-Agnostic Control Plane and Role-Based Swarm Routing](../docs/adr/0004-model-agnostic-control-plane.md)
-- [ADR 0005: Deterministic-First Resolution and Epistemic Classification](../docs/adr/0005-deterministic-first-and-epistemic-classification.md)
-- [ADR 0006: Pi 0.84.3 SDK Session Subscription Integration Seam](../docs/adr/0006-pi-sdk-session-subscribe-integration-seam.md)
-- [ADR 0007: Synthetic Knowledge Base and Librarian Agent Architecture](../docs/adr/0007-synthetic-knowledge-librarian-architecture.md)
-- [ADR 0008: Unified Context and Knowledge Plane](../docs/adr/0008-unified-context-knowledge-plane.md)
+- [ADR 0001: Notification-Oriented Causality over Polling](../../docs/adr/0001-notification-oriented-causality.md)
+- [ADR 0002: Spatiotemporal Composability and Cordis Lifetime Ownership](../../docs/adr/0002-spatiotemporal-composability-cordis-ownership.md)
+- [ADR 0003: Intent Authority Boundary in Simulation and Game Core](../../docs/adr/0003-intent-authority-boundary.md)
+- [ADR 0004: Model-Agnostic Control Plane and Role-Based Swarm Routing](../../docs/adr/0004-model-agnostic-control-plane.md)
+- [ADR 0005: Deterministic-First Resolution and Epistemic Classification](../../docs/adr/0005-deterministic-first-and-epistemic-classification.md)
+- [ADR 0006: Pi 0.84.3 SDK Session Subscription Integration Seam](../../docs/adr/0006-pi-sdk-session-subscribe-integration-seam.md)
+- [ADR 0007: Synthetic Knowledge Base and Librarian Agent Architecture](../../docs/adr/0007-synthetic-knowledge-librarian-architecture.md)
+- [ADR 0008: Unified Context and Knowledge Plane](../../docs/adr/0008-unified-context-knowledge-plane.md)
 ---
 
 ## 4. Raw Source Knowledge Layer (Historical Handoffs)

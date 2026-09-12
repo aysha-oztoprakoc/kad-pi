@@ -1,12 +1,12 @@
 [
   {
-    "id": "record:wiki:synthetic:01_ARCHITECTURE_PON_STC.md",
+    "id": "record:.agents:knowledge:synthetic:01_ARCHITECTURE_PON_STC.md",
     "title": "PON/STC Architecture",
     "kind": "architecture",
     "namespace": "ARCHITECTURE",
     "status": "ACCEPTED",
-    "source_ref": "wiki/synthetic/01_ARCHITECTURE_PON_STC.md",
-    "source_hash": "fbaee5a37d91089f9f2c156ab05f47bab0d01d4c1992e42601d077bff969b8fd",
+    "source_ref": ".agents/knowledge/synthetic/01_ARCHITECTURE_PON_STC.md",
+    "source_hash": "d8c0a3d12d0153e3c53ddd576182d0e527e5887323acfcda587a11286f7ce6f8",
     "epistemic_class": "DOCUMENT_DERIVED",
     "authority_class": "CANONICAL_SOURCE",
     "acceptance_state": "ACCEPTED",

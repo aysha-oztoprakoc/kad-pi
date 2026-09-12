@@ -21,10 +21,10 @@ const STATIC_FILES = Object.freeze({
   '/vault/90_Derived/Projections/research.json': 'vault/90_Derived/Projections/research.json',
   '/vault/90_Derived/Projections/technology-registry.json': 'vault/90_Derived/Projections/technology-registry.json',
   '/vault/90_Derived/Projections/sofia-projection.json': 'vault/90_Derived/Projections/sofia-projection.json',
-  '/wiki/generated/kad-canonical/project-state.json': 'wiki/generated/kad-canonical/project-state.json',
-  '/wiki/generated/kad-canonical/status.json': 'wiki/generated/kad-canonical/status.json',
+  '/docs/generated/kad-canonical/project-state.json': 'docs/generated/kad-canonical/project-state.json',
+  '/docs/generated/kad-canonical/status.json': 'docs/generated/kad-canonical/status.json',
   '/tools/kad/runtime-status.mjs': 'tools/kad/runtime-status.mjs',
-  '/wiki/generated/kad-canonical/evidence-index.json': 'wiki/generated/kad-canonical/evidence-index.json'
+  '/docs/generated/kad-canonical/evidence-index.json': 'docs/generated/kad-canonical/evidence-index.json'
 });
 
 const CONTENT_TYPES = Object.freeze({ '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8' });

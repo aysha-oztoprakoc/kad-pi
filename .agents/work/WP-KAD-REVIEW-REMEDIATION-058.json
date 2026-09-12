@@ -124,12 +124,17 @@
   "deviations": [
     {
       "criterion": "P7: amdy-platform and wiki/ retired",
-      "status": "PARTIAL",
-      "delivered": "amdy-platform retired.",
-      "not_delivered": "wiki/ not retired.",
-      "reason": "wiki/ is a live input to tools/librarian/librarian.mjs (wiki/synthetic/TAXONOMY.json, CATALOG.json, RETRIEVAL_INDEX.jsonl) and to publication; deleting it breaks the librarian verify step that runs inside `make verify`.",
-      "decision_required": "The operator must either rule that wiki/ is retired by substitution (its content superseded by the vault mirror and the wiki of record) or restate P7 without it. Until then the criterion is unmet and the acceptance records it as an explicit partial, not a silent one.",
-      "recorded_at": "2026-09-12T18:30:00Z"
+      "status": "RESOLVED",
+      "delivered": "amdy-platform retired. wiki/ retired by substitution on 2026-09-12 (operator decision 5B): the librarian corpus and the curated sources moved to .agents/knowledge/, the generated projections to docs/generated/, and the remaining legacy documents were verified present in the wiki of record before the tree was removed.",
+      "resolution": "The librarian verify step inside `make verify` now reads .agents/knowledge/synthetic/ and passes (28 documents, 32 cards, 23 concepts, 0 errors); the curated allowlist sources and the publication/projection defaults point at the new paths; the retired tree's remaining documents were each confirmed present at their migration destination (vault/90_Derived/KnowledgePlane/migration-manifest.json records all 75 entries, every destination present in the record at .ai-memory/wiki/…).",
+      "evidence": [
+        ".agents/knowledge/",
+        "docs/generated/kad-canonical/",
+        "vault/90_Derived/KnowledgePlane/migration-manifest.json",
+        "evidence/WP-KAD-REVIEW-REMEDIATION-058/operator-decisions-2026-09-12.md"
+      ],
+      "recorded_at": "2026-09-12T18:30:00Z",
+      "resolved_at": "2026-09-12"
     }
   ],
   "acceptance": {

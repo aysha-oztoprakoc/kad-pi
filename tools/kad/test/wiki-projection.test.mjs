@@ -90,7 +90,7 @@ test('unchanged rebuilds are byte-identical and unrelated changes have no impact
     assert.deepEqual(validateProjection({ rootDir: ROOT_DIR, outputDir }).status, 'CURRENT');
     assert.deepEqual(projectionImpact({ changed_paths: ['unrelated.txt'] }).rebuild, false);
     assert.deepEqual(projectionImpact({ changed_paths: ['docs/adr/0001-notification-oriented-causality.md'] }).affected_namespaces, ['DECISIONS']);
-    assert.equal(first.source_count, CURATED_SOURCE_ALLOWLIST.filter(source => source.optional !== true || source.path === 'docs/adr/0008-unified-context-knowledge-plane.md' || source.path === 'wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md' || source.path === 'wiki/KAD_Implementation_Plan.md').length);
+    assert.equal(first.source_count, CURATED_SOURCE_ALLOWLIST.filter(source => source.optional !== true || source.path === 'docs/adr/0008-unified-context-knowledge-plane.md' || source.path === '.agents/knowledge/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md' || source.path === '.agents/knowledge/KAD_Implementation_Plan.md').length);
   } finally {
     await rm(outputDir, { recursive: true, force: true });
   }

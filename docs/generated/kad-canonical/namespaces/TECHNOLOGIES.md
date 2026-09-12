@@ -4,10 +4,10 @@
 
 ## Pi Harness Integration
 
-- ID: `record:wiki:synthetic:03_PI_HARNESS_INTEGRATION.md`
+- ID: `record:.agents:knowledge:synthetic:03_PI_HARNESS_INTEGRATION.md`
 - Status: `ACCEPTED`
-- Source: `wiki/synthetic/03_PI_HARNESS_INTEGRATION.md`
-- Source hash: `2fb8403a7ca9db02305ba9024d902f40f58a7f8bf46b4fbdc203adcfbd6fce7d`
+- Source: `.agents/knowledge/synthetic/03_PI_HARNESS_INTEGRATION.md`
+- Source hash: `7c06d8ada07b660a091400ff25e8115665d55cb79d0d58e352d798f7156bd618`
 - Epistemic class: `DOCUMENT_DERIVED`
 - Acceptance: `ACCEPTED`
 - Trust domain: `engineering`

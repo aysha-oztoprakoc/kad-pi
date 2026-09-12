@@ -1316,7 +1316,7 @@ export function buildIsaProjection(filePath, outputPath, options = {}) {
       layers: {
         canonical: ['PRIME_DIRECTIVE.md', 'CONTEXT.md', 'docs/adr/**', 'docs/state/**', 'vault/**', 'evidence/**'],
         substrate: ['<data_dir>/wiki/<workspace_id>/<project_id>/**'],
-        derived: ['wiki/generated/**', 'vault/90_Derived/**', 'embeddings', 'context packs']
+        derived: ['docs/generated/**', 'vault/90_Derived/**', 'embeddings', 'context packs']
       },
       promotion_pipeline: ['conversation', 'candidate', 'PROPOSED/INFERRED', 'provenance', 'validation', 'ACCEPTED|REJECTED'],
       prohibited: [

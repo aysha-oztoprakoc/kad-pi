@@ -195,7 +195,7 @@
     {
       "id": "KAD_CONTEXT_KNOWLEDGE_ROADMAP_2026_08_29",
       "title": "KAD-PI Canonical Context, Knowledge and Local-Specialist Plane Roadmap",
-      "path": "docs/architecture/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+      "path": ".agents/knowledge/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
       "type": "roadmap",
       "domain": "KAD_KNOWLEDGE",
       "epistemic_status": "DESIGN_DECISION",
@@ -205,7 +205,7 @@
     {
       "id": "RAW_DSH_PON_CORDIS",
       "title": "Raw Handoff: DeepSeek Harness / Cordis / PON Lab",
-      "path": ".agents/knowledge/handoffs/DSH_PON_CORDIS_HANDOFF_2026-08-25.md",
+      "path": ".agents/knowledge/DSH_PON_CORDIS_HANDOFF_2026-08-25.md",
       "type": "raw_source",
       "domain": "PON_STC_CORE",
       "epistemic_status": "OBSERVED",
@@ -215,7 +215,7 @@
     {
       "id": "RAW_KAD_PI_AGY",
       "title": "Raw Master Handoff: KAD / PI / AGY Swarm",
-      "path": ".agents/knowledge/handoffs/KAD_PI_AGY_HANDOFF_2026-08-28.md",
+      "path": ".agents/knowledge/KAD_PI_AGY_HANDOFF_2026-08-28.md",
       "type": "raw_source",
       "domain": "SWARM_GOVERNANCE",
       "epistemic_status": "DESIGN_DECISION",
@@ -225,7 +225,7 @@
     {
       "id": "RAW_KAD_PLAN",
       "title": "Raw Plan: KAD Local AI Experimental Platform Implementation Plan",
-      "path": "docs/architecture/KAD_Implementation_Plan.md",
+      "path": ".agents/knowledge/KAD_Implementation_Plan.md",
       "type": "raw_source",
       "domain": "KAD_SIMULATION",
       "epistemic_status": "DESIGN_DECISION",
@@ -235,7 +235,7 @@
     {
       "id": "RAW_CLI_ECONOMICS",
       "title": "Raw Handoff: CLI Subscription Quota Economics Matrix",
-      "path": ".agents/knowledge/handoffs/CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md",
+      "path": ".agents/knowledge/CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md",
       "type": "raw_source",
       "domain": "SUBSCRIPTION_ECONOMICS",
       "epistemic_status": "OBSERVED",

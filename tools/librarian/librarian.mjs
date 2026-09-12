@@ -110,7 +110,7 @@ export function lookupTerm(term, taxonomy, options = {}) {
   if (!direct) return null;
 
   const rootDir = options.rootDir || process.cwd();
-  const sourcePath = 'wiki/synthetic/TAXONOMY.json';
+  const sourcePath = '.agents/knowledge/synthetic/TAXONOMY.json';
   const fullPath = resolve(rootDir, sourcePath);
 
   return {
@@ -223,7 +223,7 @@ export function searchKnowledgeBase(query, catalog, options = {}) {
  * @param {object} param0
  * @returns {object}
  */
-export function verifyKnowledgeBase({ rootDir, wikiDir }) {
+export function verifyKnowledgeBase({ rootDir, knowledgeDir }) {
   const errors = [];
   const missingFiles = [];
   const brokenLinks = [];
@@ -233,16 +233,16 @@ export function verifyKnowledgeBase({ rootDir, wikiDir }) {
   let validCardsCount = 0;
   let validConceptsCount = 0;
 
-  const catalogPath = resolve(wikiDir, 'synthetic/CATALOG.json');
-  const taxonomyPath = resolve(wikiDir, 'synthetic/TAXONOMY.json');
-  const indexPath = resolve(wikiDir, 'synthetic/RETRIEVAL_INDEX.jsonl');
+  const catalogPath = resolve(knowledgeDir, 'synthetic/CATALOG.json');
+  const taxonomyPath = resolve(knowledgeDir, 'synthetic/TAXONOMY.json');
+  const indexPath = resolve(knowledgeDir, 'synthetic/RETRIEVAL_INDEX.jsonl');
 
   // 1. Validate CATALOG.json existence and schema
   if (!existsSync(catalogPath)) {
     return {
       status: 'FAIL',
       errors: ['Missing CATALOG.json'],
-      missingFiles: ['wiki/synthetic/CATALOG.json'],
+      missingFiles: ['.agents/knowledge/synthetic/CATALOG.json'],
       brokenLinks: [],
       corruptedLocators: [],
       invalidSchemas: ['CATALOG.json'],
@@ -274,7 +274,7 @@ export function verifyKnowledgeBase({ rootDir, wikiDir }) {
     return {
       status: 'FAIL',
       errors: ['Missing TAXONOMY.json'],
-      missingFiles: ['wiki/synthetic/TAXONOMY.json'],
+      missingFiles: ['.agents/knowledge/synthetic/TAXONOMY.json'],
       brokenLinks: [],
       corruptedLocators: [],
       invalidSchemas: ['TAXONOMY.json'],
@@ -422,7 +422,7 @@ export function verifyKnowledgeBase({ rootDir, wikiDir }) {
     return {
       status: 'FAIL',
       errors: ['Missing RETRIEVAL_INDEX.jsonl'],
-      missingFiles: ['wiki/synthetic/RETRIEVAL_INDEX.jsonl'],
+      missingFiles: ['.agents/knowledge/synthetic/RETRIEVAL_INDEX.jsonl'],
       brokenLinks,
       corruptedLocators,
       invalidSchemas: ['RETRIEVAL_INDEX.jsonl'],
@@ -590,11 +590,11 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
 
   const __dirname = dirname(fileURLToPath(import.meta.url));
   const ROOT_DIR = resolve(__dirname, '../..');
-  const WIKI_DIR = resolve(ROOT_DIR, 'wiki');
-  const SYNTHETIC_DIR = resolve(WIKI_DIR, 'synthetic');
+  const KNOWLEDGE_DIR = resolve(ROOT_DIR, '.agents/knowledge');
+  const SYNTHETIC_DIR = resolve(KNOWLEDGE_DIR, 'synthetic');
 
   if (cli.command === 'verify') {
-    const result = verifyKnowledgeBase({ rootDir: ROOT_DIR, wikiDir: WIKI_DIR });
+    const result = verifyKnowledgeBase({ rootDir: ROOT_DIR, knowledgeDir: KNOWLEDGE_DIR });
     console.log(JSON.stringify(result, null, 2));
     process.exit(result.status === 'PASS' ? 0 : 1);
   } else if (cli.command === 'search') {

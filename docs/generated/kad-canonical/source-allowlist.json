@@ -162,7 +162,7 @@
     "optional": true
   },
   {
-    "path": "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+    "path": ".agents/knowledge/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
     "title": "KAD Context Knowledge Plane Roadmap",
     "kind": "roadmap",
     "source_class": "ROADMAP",
@@ -177,7 +177,7 @@
     "optional": true
   },
   {
-    "path": "wiki/KAD_Implementation_Plan.md",
+    "path": ".agents/knowledge/KAD_Implementation_Plan.md",
     "title": "KAD Implementation Plan",
     "kind": "roadmap",
     "source_class": "ROADMAP",
@@ -193,7 +193,7 @@
     "optional": true
   },
   {
-    "path": "wiki/synthetic/01_ARCHITECTURE_PON_STC.md",
+    "path": ".agents/knowledge/synthetic/01_ARCHITECTURE_PON_STC.md",
     "title": "PON/STC Architecture",
     "kind": "architecture",
     "source_class": "ARCHITECTURE",
@@ -207,7 +207,7 @@
     "reason": "Canonical synthetic architecture artifact with explicit derivation boundary."
   },
   {
-    "path": "wiki/synthetic/03_PI_HARNESS_INTEGRATION.md",
+    "path": ".agents/knowledge/synthetic/03_PI_HARNESS_INTEGRATION.md",
     "title": "Pi Harness Integration",
     "kind": "technology",
     "source_class": "TECHNOLOGY",

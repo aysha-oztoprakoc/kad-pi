@@ -42,8 +42,30 @@ and the preflight already resolved through mise (ADR 0018).
 
 ## 5B — retire `wiki/` by substituting its live inputs
 
-See the migration commit; `wiki/` was live input for the librarian (`wiki/synthetic/*`), the
-publication pipeline (`wiki/generated/kad-canonical`) and the curated source allowlist.
+Done on 2026-09-12. `wiki/` had three kinds of content, and each got a different treatment:
+
+1. **Live inputs** (read by code at runtime) moved inside the repository:
+   - `wiki/synthetic/` → **`.agents/knowledge/synthetic/`** — the librarian's `TAXONOMY.json`,
+     `CATALOG.json` and `RETRIEVAL_INDEX.jsonl`, plus the synthetic documents they index.
+   - the remaining root documents (including the two the curated allowlist names as sources) →
+     **`.agents/knowledge/`**, keeping the old layout so the move is one rule: `wiki/X` →
+     `.agents/knowledge/X`. Their internal cross-references and the corpus' own path fields were
+     rewritten the same way; the librarian's `verify` step inside `make verify` passes again (28
+     documents, 32 cards, 23 concepts, 0 errors).
+   - `wiki/generated/` → **`docs/generated/`** — the canonical projection
+     (`bin/kad-knowledge rebuild`) and the knowledge plane, both regenerable outputs; the
+     publication pipeline and the interface server now read them there.
+   - `wiki/research/CATALOG.json` → **`docs/research/CATALOG.json`** — the research corpus store the
+     research CLI loads and appends to.
+2. **Already preserved before deletion.** `vault/90_Derived/KnowledgePlane/migration-manifest.json`
+   records all **75** files of the tree with their classification (12 ARCHIVE, 44 DERIVED_ONLY, 8
+   MIGRATE_CANONICAL, 11 REVIEW_REQUIRED) and destinations in the wiki of record
+   (`.ai-memory/wiki/01a090eb-…/`). Every one of the 75 destinations was verified present in the
+   record **before** `wiki/` was removed (`missing=0`), so the retirement loses no content: the
+   record keeps the historical copies, and the working tree keeps what code actually reads.
+3. **Retired.** The tree itself is gone; `P7` in `WP-KAD-REVIEW-REMEDIATION-058` moves from PARTIAL
+   to RESOLVED, and the deviation note that recorded the blocker is replaced by its resolution.
+
 
 ## 6A — keep project-scoped model roles, and make the mismatch fixable
 

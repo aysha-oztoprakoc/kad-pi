@@ -14,7 +14,7 @@
     "reason": "Repository orientation and bounded project identity.",
     "exists": true,
     "state": "CURRENT",
-    "source_hash": "7876ed058ff4d348558ec117d8d67a941d0cc2e227c40e82a7ac2efb47388120"
+    "source_hash": "4fe8f375eadc4fbc5dea93ab263f810870226ce92892699cebe8bc1e36fc25a5"
   },
   {
     "path": "PRIME_DIRECTIVE.md",
@@ -195,7 +195,7 @@
     "source_hash": "6e3d57b5efc7186f84890de5743d12648c8a3c48fcacb4ebadeead7ee755085c"
   },
   {
-    "path": "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+    "path": ".agents/knowledge/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
     "title": "KAD Context Knowledge Plane Roadmap",
     "kind": "roadmap",
     "source_class": "ROADMAP",
@@ -210,10 +210,10 @@
     "optional": true,
     "exists": true,
     "state": "CURRENT",
-    "source_hash": "42d6add19f290083df865873505c31ae3d2d48712d70c1b8810276d9318440af"
+    "source_hash": "1b690435177611004d27a7c1434b24842da6001bdab4c306647e39263a680653"
   },
   {
-    "path": "wiki/KAD_Implementation_Plan.md",
+    "path": ".agents/knowledge/KAD_Implementation_Plan.md",
     "title": "KAD Implementation Plan",
     "kind": "roadmap",
     "source_class": "ROADMAP",
@@ -229,10 +229,10 @@
     "optional": true,
     "exists": true,
     "state": "CURRENT",
-    "source_hash": "9579bae5bc26728357bb953f7910dbfb1fcc8bedd46b11da17405495f7e14818"
+    "source_hash": "1d8e3f1e7982f21c64f71c1fbc92b4fd76a51b18f2ac5a406f554f23b59c5255"
   },
   {
-    "path": "wiki/synthetic/01_ARCHITECTURE_PON_STC.md",
+    "path": ".agents/knowledge/synthetic/01_ARCHITECTURE_PON_STC.md",
     "title": "PON/STC Architecture",
     "kind": "architecture",
     "source_class": "ARCHITECTURE",
@@ -246,10 +246,10 @@
     "reason": "Canonical synthetic architecture artifact with explicit derivation boundary.",
     "exists": true,
     "state": "CURRENT",
-    "source_hash": "fbaee5a37d91089f9f2c156ab05f47bab0d01d4c1992e42601d077bff969b8fd"
+    "source_hash": "d8c0a3d12d0153e3c53ddd576182d0e527e5887323acfcda587a11286f7ce6f8"
   },
   {
-    "path": "wiki/synthetic/03_PI_HARNESS_INTEGRATION.md",
+    "path": ".agents/knowledge/synthetic/03_PI_HARNESS_INTEGRATION.md",
     "title": "Pi Harness Integration",
     "kind": "technology",
     "source_class": "TECHNOLOGY",
@@ -263,7 +263,7 @@
     "reason": "Canonical integration notes for the Pi harness.",
     "exists": true,
     "state": "CURRENT",
-    "source_hash": "2fb8403a7ca9db02305ba9024d902f40f58a7f8bf46b4fbdc203adcfbd6fce7d"
+    "source_hash": "7c06d8ada07b660a091400ff25e8115665d55cb79d0d58e352d798f7156bd618"
   },
   {
     "path": "evidence/WP-KAD-001/final-report.md",

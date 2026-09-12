@@ -18,8 +18,8 @@ import {
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = resolve(__dirname, '../../..');
-const WIKI_DIR = resolve(ROOT_DIR, 'wiki');
-const SYNTHETIC_DIR = resolve(WIKI_DIR, 'synthetic');
+const KNOWLEDGE_DIR = resolve(ROOT_DIR, '.agents/knowledge');
+const SYNTHETIC_DIR = resolve(KNOWLEDGE_DIR, 'synthetic');
 const CATALOG_PATH = resolve(SYNTHETIC_DIR, 'CATALOG.json');
 const TAXONOMY_PATH = resolve(SYNTHETIC_DIR, 'TAXONOMY.json');
 const RETRIEVAL_INDEX_PATH = resolve(SYNTHETIC_DIR, 'RETRIEVAL_INDEX.jsonl');
@@ -147,8 +147,8 @@ test('Librarian Knowledge Base Verification Suite (WP-KAD-LIB-002)', async (t) =
     const fiber = lookupTerm('Fiber', taxonomy, { rootDir: ROOT_DIR });
     assert.ok(fiber, 'Lookup for Fiber must return concept definition');
     assert.equal(fiber.domain, 'PON_STC_CORE');
-    assert.equal(fiber.source_path, 'wiki/synthetic/TAXONOMY.json');
-    assert.equal(fiber.locator, 'wiki/synthetic/TAXONOMY.json#concept:Fiber');
+    assert.equal(fiber.source_path, '.agents/knowledge/synthetic/TAXONOMY.json');
+    assert.equal(fiber.locator, '.agents/knowledge/synthetic/TAXONOMY.json#concept:Fiber');
     assert.ok(fiber.file_uri.startsWith('file://'));
 
     const fiberLower = lookupTerm('fiber', taxonomy, { rootDir: ROOT_DIR });
@@ -224,7 +224,7 @@ test('Librarian Knowledge Base Verification Suite (WP-KAD-LIB-002)', async (t) =
   });
 
   await t.test('8. Deep verifyKnowledgeBase passes on live knowledge base', () => {
-    const report = verifyKnowledgeBase({ rootDir: ROOT_DIR, wikiDir: WIKI_DIR });
+    const report = verifyKnowledgeBase({ rootDir: ROOT_DIR, knowledgeDir: KNOWLEDGE_DIR });
     assert.equal(report.status, 'PASS', `Verifier failed with errors: ${JSON.stringify(report.errors)}`);
     assert.equal(report.brokenLinks.length, 0, `Found broken links: ${JSON.stringify(report.brokenLinks)}`);
     assert.equal(report.missingFiles.length, 0, `Found missing files: ${JSON.stringify(report.missingFiles)}`);
@@ -284,7 +284,7 @@ test('Librarian Knowledge Base Verification Suite (WP-KAD-LIB-002)', async (t) =
         }) + '\n'
       );
 
-      const res1 = verifyKnowledgeBase({ rootDir: tempDir, wikiDir: tempDir });
+      const res1 = verifyKnowledgeBase({ rootDir: tempDir, knowledgeDir: tempDir });
       assert.equal(res1.status, 'FAIL', 'Verifier must fail when doc_id is unknown');
       assert.ok(res1.corruptedLocators.some(c => c.reason.includes('Unresolved doc_id')));
 
@@ -305,7 +305,7 @@ test('Librarian Knowledge Base Verification Suite (WP-KAD-LIB-002)', async (t) =
         }) + '\n'
       );
 
-      const res2 = verifyKnowledgeBase({ rootDir: tempDir, wikiDir: tempDir });
+      const res2 = verifyKnowledgeBase({ rootDir: tempDir, knowledgeDir: tempDir });
       assert.equal(res2.status, 'FAIL', 'Verifier must fail when line range exceeds file lines');
       assert.ok(res2.corruptedLocators.some(c => c.reason.includes('Invalid line range')));
 
@@ -317,7 +317,7 @@ test('Librarian Knowledge Base Verification Suite (WP-KAD-LIB-002)', async (t) =
           concepts: { BadConcept: { domain: 'NON_EXISTENT_DOMAIN', epistemic_class: 'DESIGN_DECISION', definition: 'Def' } }
         })
       );
-      const res3 = verifyKnowledgeBase({ rootDir: tempDir, wikiDir: tempDir });
+      const res3 = verifyKnowledgeBase({ rootDir: tempDir, knowledgeDir: tempDir });
       assert.equal(res3.status, 'FAIL', 'Verifier must fail on undeclared domain');
       assert.ok(res3.errors.some(e => e.includes('undeclared domain')));
 
@@ -340,7 +340,7 @@ test('Librarian Knowledge Base Verification Suite (WP-KAD-LIB-002)', async (t) =
           ]
         })
       );
-      const res4 = verifyKnowledgeBase({ rootDir: tempDir, wikiDir: tempDir });
+      const res4 = verifyKnowledgeBase({ rootDir: tempDir, knowledgeDir: tempDir });
       assert.equal(res4.status, 'FAIL', 'Verifier must fail on invalid epistemic status');
       assert.ok(res4.errors.some(e => e.includes('invalid epistemic_status')));
     } finally {

@@ -4,10 +4,10 @@
 
 ## KAD Context Knowledge Plane Roadmap
 
-- ID: `record:wiki:KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md`
+- ID: `record:.agents:knowledge:KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md`
 - Status: `ACCEPTED`
-- Source: `wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md`
-- Source hash: `42d6add19f290083df865873505c31ae3d2d48712d70c1b8810276d9318440af`
+- Source: `.agents/knowledge/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md`
+- Source hash: `1b690435177611004d27a7c1434b24842da6001bdab4c306647e39263a680653`
 - Epistemic class: `DOCUMENT_DERIVED`
 - Acceptance: `ACCEPTED`
 - Trust domain: `engineering`
@@ -16,10 +16,10 @@
 
 ## KAD Implementation Plan
 
-- ID: `record:wiki:KAD_Implementation_Plan.md`
+- ID: `record:.agents:knowledge:KAD_Implementation_Plan.md`
 - Status: `SUPERSEDED`
-- Source: `wiki/KAD_Implementation_Plan.md`
-- Source hash: `9579bae5bc26728357bb953f7910dbfb1fcc8bedd46b11da17405495f7e14818`
+- Source: `.agents/knowledge/KAD_Implementation_Plan.md`
+- Source hash: `1d8e3f1e7982f21c64f71c1fbc92b4fd76a51b18f2ac5a406f554f23b59c5255`
 - Epistemic class: `DOCUMENT_DERIVED`
 - Acceptance: `ACCEPTED`
 - Trust domain: `engineering`

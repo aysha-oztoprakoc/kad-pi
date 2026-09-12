@@ -26,7 +26,7 @@ const ALLOWLIST = [
   ['CONTEXT.md', 'KAD-PI Domain Context', 'glossary'],
   ['docs/adr/0007-synthetic-knowledge-librarian-architecture.md', 'Synthetic Knowledge Librarian Architecture', 'adr'],
   ['docs/adr/0008-unified-context-knowledge-plane.md', 'Unified Context and Knowledge Plane', 'adr'],
-  ['wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md', 'KAD Context Knowledge Plane Roadmap', 'roadmap']
+  ['.agents/knowledge/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md', 'KAD Context Knowledge Plane Roadmap', 'roadmap']
 ];
 
 export const DEFAULT_SOURCE_ALLOWLIST = Object.freeze(ALLOWLIST.map(([path, title, kind]) => Object.freeze({
@@ -483,7 +483,7 @@ export function parseKnowledgeCliArgs(args) {
   return { command: command ?? 'help', positional, query: positional.join(' '), json };
 }
 
-export function runKnowledgeCli(args, { rootDir = resolve(dirname(new URL(import.meta.url).pathname), '../..'), outputDir = join(rootDir, 'wiki', 'generated', 'knowledge-plane'), stdout = console.log, stderr = console.error } = {}) {
+export function runKnowledgeCli(args, { rootDir = resolve(dirname(new URL(import.meta.url).pathname), '../..'), outputDir = join(rootDir, 'docs', 'generated', 'knowledge-plane'), stdout = console.log, stderr = console.error } = {}) {
   const cli = parseKnowledgeCliArgs(args);
   const plane = new DeterministicKnowledgePlane({ rootDir });
   if (cli.command === 'rebuild') {

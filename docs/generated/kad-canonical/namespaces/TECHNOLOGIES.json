@@ -1,12 +1,12 @@
 [
   {
-    "id": "record:wiki:synthetic:03_PI_HARNESS_INTEGRATION.md",
+    "id": "record:.agents:knowledge:synthetic:03_PI_HARNESS_INTEGRATION.md",
     "title": "Pi Harness Integration",
     "kind": "technology",
     "namespace": "TECHNOLOGIES",
     "status": "ACCEPTED",
-    "source_ref": "wiki/synthetic/03_PI_HARNESS_INTEGRATION.md",
-    "source_hash": "2fb8403a7ca9db02305ba9024d902f40f58a7f8bf46b4fbdc203adcfbd6fce7d",
+    "source_ref": ".agents/knowledge/synthetic/03_PI_HARNESS_INTEGRATION.md",
+    "source_hash": "7c06d8ada07b660a091400ff25e8115665d55cb79d0d58e352d798f7156bd618",
     "epistemic_class": "DOCUMENT_DERIVED",
     "authority_class": "CANONICAL_SOURCE",
     "acceptance_state": "ACCEPTED",

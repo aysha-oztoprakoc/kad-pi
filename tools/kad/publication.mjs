@@ -66,7 +66,7 @@ export function validatePublicProjection(publicProjection) {
   return true;
 }
 
-export function buildPublicProjection({ rootDir = process.cwd(), inputDir = join(rootDir, 'wiki', 'generated', 'kad-canonical'), outputFile = join(rootDir, 'site', 'generated', 'public-state.json') } = {}) {
+export function buildPublicProjection({ rootDir = process.cwd(), inputDir = join(rootDir, 'docs', 'generated', 'kad-canonical'), outputFile = join(rootDir, 'site', 'generated', 'public-state.json') } = {}) {
   const statePath = join(inputDir, 'project-state.json');
   const statusPath = join(inputDir, 'status.json');
   const state = JSON.parse(readFileSync(statePath, 'utf8'));

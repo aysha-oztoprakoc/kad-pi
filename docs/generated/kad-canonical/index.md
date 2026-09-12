@@ -18,11 +18,11 @@ Records: `69`
 - [RESEARCH](namespaces/RESEARCH.md) — 1 records
 - [MODELS](namespaces/MODELS.md) — 19 records
 - [PROVIDERS](namespaces/PROVIDERS.md) — 12 records
-- [GLOSSARY](namespaces/GLOSSARY.md) — 1 records
-- [PROJECT](namespaces/PROJECT.md) — 2 records
 - [ROADMAP](namespaces/ROADMAP.md) — 2 records
 - [ARCHITECTURE](namespaces/ARCHITECTURE.md) — 1 records
 - [TECHNOLOGIES](namespaces/TECHNOLOGIES.md) — 1 records
+- [GLOSSARY](namespaces/GLOSSARY.md) — 1 records
+- [PROJECT](namespaces/PROJECT.md) — 2 records
 - [SKILLS](namespaces/SKILLS.md) — 4 records
 
 ## Trust boundary

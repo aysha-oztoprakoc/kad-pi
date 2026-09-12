@@ -557,7 +557,7 @@ function titlesConflict(title1, title2) {
 export class DeterministicResearchCorpus {
   constructor({
     rootDir = process.cwd(),
-    storageDir = join(process.cwd(), 'wiki', 'research'),
+    storageDir = join(process.cwd(), 'docs', 'research'),
     trustDomain = 'engineering'
   } = {}) {
     this.rootDir = resolve(rootDir);

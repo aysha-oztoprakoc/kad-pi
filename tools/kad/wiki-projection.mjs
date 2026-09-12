@@ -46,10 +46,10 @@ export const CURATED_SOURCE_ALLOWLIST = Object.freeze([
     ['0007-synthetic-knowledge-librarian-architecture.md', 'Synthetic Knowledge Librarian Architecture'],
     ['0008-unified-context-knowledge-plane.md', 'Unified Context and Knowledge Plane']
   ].map(([file, title]) => SOURCE(`docs/adr/${file}`, title, 'adr', 'DECISION', 'DECISIONS', 'Accepted ADR defining an explicit architecture boundary.', { optional: file.startsWith('0008-') })),
-  SOURCE('wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md', 'KAD Context Knowledge Plane Roadmap', 'roadmap', 'ROADMAP', 'ROADMAP', 'Current bounded roadmap and sequencing constraints.', { optional: true }),
-  SOURCE('wiki/KAD_Implementation_Plan.md', 'KAD Implementation Plan', 'roadmap', 'ROADMAP', 'ROADMAP', 'Historical implementation baseline retained for navigation.', { status: 'SUPERSEDED', optional: true }),
-  SOURCE('wiki/synthetic/01_ARCHITECTURE_PON_STC.md', 'PON/STC Architecture', 'architecture', 'ARCHITECTURE', 'ARCHITECTURE', 'Canonical synthetic architecture artifact with explicit derivation boundary.'),
-  SOURCE('wiki/synthetic/03_PI_HARNESS_INTEGRATION.md', 'Pi Harness Integration', 'technology', 'TECHNOLOGY', 'TECHNOLOGIES', 'Canonical integration notes for the Pi harness.'),
+  SOURCE('.agents/knowledge/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md', 'KAD Context Knowledge Plane Roadmap', 'roadmap', 'ROADMAP', 'ROADMAP', 'Current bounded roadmap and sequencing constraints.', { optional: true }),
+  SOURCE('.agents/knowledge/KAD_Implementation_Plan.md', 'KAD Implementation Plan', 'roadmap', 'ROADMAP', 'ROADMAP', 'Historical implementation baseline retained for navigation.', { status: 'SUPERSEDED', optional: true }),
+  SOURCE('.agents/knowledge/synthetic/01_ARCHITECTURE_PON_STC.md', 'PON/STC Architecture', 'architecture', 'ARCHITECTURE', 'ARCHITECTURE', 'Canonical synthetic architecture artifact with explicit derivation boundary.'),
+  SOURCE('.agents/knowledge/synthetic/03_PI_HARNESS_INTEGRATION.md', 'Pi Harness Integration', 'technology', 'TECHNOLOGY', 'TECHNOLOGIES', 'Canonical integration notes for the Pi harness.'),
   SOURCE('evidence/WP-KAD-001/final-report.md', 'WP-KAD-001 Evidence', 'evidence', 'EVIDENCE', 'EVIDENCE', 'Accepted workpackage report and observed integration evidence.'),
   SOURCE('evidence/WP-KAD-002/final-report.md', 'WP-KAD-002 Evidence', 'evidence', 'EVIDENCE', 'EVIDENCE', 'Accepted workpackage report and observed transition evidence.'),
   SOURCE('evidence/WP-KAD-003/final-report.md', 'WP-KAD-003 Evidence', 'evidence', 'EVIDENCE', 'EVIDENCE', 'Accepted workpackage report and observed evidence.'),
@@ -538,7 +538,7 @@ export class CuratedKnowledgeProjection {
   }
 }
 
-export function runCuratedKnowledgeCli(args, { rootDir = resolve(dirname(new URL(import.meta.url).pathname), '../..'), outputDir = join(rootDir, 'wiki', 'generated', 'kad-canonical'), stdout = console.log, stderr = console.error } = {}) {
+export function runCuratedKnowledgeCli(args, { rootDir = resolve(dirname(new URL(import.meta.url).pathname), '../..'), outputDir = join(rootDir, 'docs', 'generated', 'kad-canonical'), stdout = console.log, stderr = console.error } = {}) {
   const [command, ...rest] = args;
   const positional = rest.filter(arg => arg !== '--json');
   const projection = new CuratedKnowledgeProjection({ rootDir });

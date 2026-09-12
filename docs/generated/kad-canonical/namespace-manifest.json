@@ -75,22 +75,22 @@
     "provider:smol",
     "provider:world"
   ],
+  "ROADMAP": [
+    "record:.agents:knowledge:KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+    "record:.agents:knowledge:KAD_Implementation_Plan.md"
+  ],
+  "ARCHITECTURE": [
+    "record:.agents:knowledge:synthetic:01_ARCHITECTURE_PON_STC.md"
+  ],
+  "TECHNOLOGIES": [
+    "record:.agents:knowledge:synthetic:03_PI_HARNESS_INTEGRATION.md"
+  ],
   "GLOSSARY": [
     "record:CONTEXT.md"
   ],
   "PROJECT": [
     "record:PRIME_DIRECTIVE.md",
     "record:README.md"
-  ],
-  "ROADMAP": [
-    "record:wiki:KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
-    "record:wiki:KAD_Implementation_Plan.md"
-  ],
-  "ARCHITECTURE": [
-    "record:wiki:synthetic:01_ARCHITECTURE_PON_STC.md"
-  ],
-  "TECHNOLOGIES": [
-    "record:wiki:synthetic:03_PI_HARNESS_INTEGRATION.md"
   ],
   "SKILLS": [
     "skill:code-review",
