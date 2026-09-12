@@ -13,10 +13,13 @@ const gate = fileURLToPath(new URL('../preflight-gate.mjs', import.meta.url));
 /**
  * Runs the gate as a subprocess, the way `make verify` does.
  *
- * `OMP_BINARY` and `MISE_DATA_DIR` are injected because the gate derives the harness from the
- * environment it runs in; leaving them out would make these assertions depend on this host.
+ * The environment is composed rather than inherited wholesale: the fixture's `fake-bin` (which
+ * stubs `pi`) is always on PATH, and `path_prefix` lets a test put its own stubs ahead of the
+ * host's toolchain. `OMP_BINARY` and `MISE_DATA_DIR` are injected because the gate derives the
+ * harness from its environment; leaving them out would make these assertions depend on this host.
  */
-async function runGate(root, overrides = {}) {
+async function runGate(root, { pathPrefix = null, ...overrides } = {}) {
+  const path = [pathPrefix, join(root, 'fake-bin'), process.env.PATH].filter(Boolean).join(':');
   try {
     const { stdout, stderr } = await execFileAsync(process.execPath, [gate], {
       env: {
@@ -24,6 +27,7 @@ async function runGate(root, overrides = {}) {
         KAD_PREFLIGHT_ROOT: root,
         OMP_BINARY: fixtureOmpBinary(root),
         MISE_DATA_DIR: join(root, 'mise-data'),
+        PATH: path,
         ...overrides
       }
     });
@@ -66,12 +70,12 @@ test('the harness is the build mise dispatches, not whatever PATH resolves first
     await writeFile(shadow, '#!/bin/sh\necho "omp/0.0.1-shadow"\n');
     await chmod(shadow, 0o755);
 
-    const { code, stdout } = await runGate(root, {
-      PATH: `${fakeBin}:${process.env.PATH}`,
+    const { code, stdout, stderr } = await runGate(root, {
+      pathPrefix: fakeBin,
       OMP_BINARY: '',
       MISE_DATA_DIR: join(root, 'mise-data')
     });
-    assert.equal(code, 0);
+    assert.equal(code, 0, `gate exited ${code} instead of passing: ${stderr.slice(0, 600)}`);
     assert.match(stdout, new RegExp(`omp ${FIXTURE_OMP_VERSION.replace(/\./g, '\\.')} \\(mise\\)`), 'the mise build is the harness');
     assert.ok(!stdout.includes('0.0.1-shadow'), 'the PATH shadow is never the harness');
     assert.match(stdout, /OMP_PATH_SHADOW:/, 'and the shadow is still reported rather than hidden');

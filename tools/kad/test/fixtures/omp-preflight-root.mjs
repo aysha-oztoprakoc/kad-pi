@@ -116,6 +116,11 @@ export async function createOmpPreflightFixture({
   // assertions hermetic instead of depending on where this host installs its tools.
   savedMiseDataDir.set(root, process.env.MISE_DATA_DIR);
   process.env.MISE_DATA_DIR = join(root, 'mise-data');
+  // A stub `pi` keeps CLI-level tests off the host toolchain: the preflight blocks on
+  // PI_UNAVAILABLE, and whether this machine's pi resolves is not what these tests are about.
+  await mkdir(join(root, 'fake-bin'), { recursive: true });
+  await writeFile(join(root, 'fake-bin', 'pi'), '#!/bin/sh\necho "0.85.1"\n');
+  await chmod(join(root, 'fake-bin', 'pi'), 0o755);
   const roleYaml = role === 'qwen' ? '  local_retrieval: "kad-local-qwen/qwen-local:low"\n' : role === 'world' ? '  world: "kad-local-world/kad-local-s13:low"\n' : '';
   const enabled = role === 'qwen' ? '  - "kad-local-qwen/qwen-local"\n  - "kad-local-world/*"\n' : '  - "kad-local-world/*"\n';
   const spendYaml = spend === 'unsafe' ? '  - "*"\n' : enabledModels ? enabledModels.map((entry) => `  - "${entry}"\n`).join('') : enabled;
