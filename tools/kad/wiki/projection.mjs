@@ -808,7 +808,6 @@ export function compileProjections({ root = vaultRoot(), projectRoot = repoRoot(
   const workpackages = exportWorkpackages({ root });
   const research = exportResearchIndex({ root });
   const sofiaData = compileSofiaAdapter({ root });
-  const websiteState = compileWebsiteState({ root });
   const techRegistry = exportTechnologyRegistry({ root });
 
   fs.writeFileSync(path.join(projDir, 'graph.json'), JSON.stringify(graph, null, 2) + '\n');
@@ -821,10 +820,11 @@ export function compileProjections({ root = vaultRoot(), projectRoot = repoRoot(
   const docsDir = path.join(projectRoot, 'docs/generated');
   compileRepoDocs({ root, outputDir: docsDir });
 
-  // Compile site/generated/public-state.json
-  const siteGenDir = path.join(projectRoot, 'site/generated');
-  fs.mkdirSync(siteGenDir, { recursive: true });
-  fs.writeFileSync(path.join(siteGenDir, 'public-state.json'), JSON.stringify(websiteState, null, 2) + '\n');
+  // site/generated/public-state.json is deliberately NOT compiled here. Two producers wrote that
+  // path with different shapes - this compiler from the Obsidian vault, and
+  // `bin/kad-publication build` from wiki/generated/kad-canonical - so whichever ran last won and
+  // the publication boundary silently lost either its component summary or its vault provenance.
+  // The publication pipeline owns the file; run `make public-build` for it.
 
   // Compile root README.md
   const readmeContent = compileReadme({ root, repoRoot: projectRoot });
@@ -841,7 +841,6 @@ export function compileProjections({ root = vaultRoot(), projectRoot = repoRoot(
       'sofia-projection.json',
       'technology-registry.json',
       'docs/generated/',
-      'site/generated/public-state.json',
       'README.md'
     ]
   };
