@@ -1,0 +1,63 @@
+{
+  "id": "WP-KAD-WARFRAME-001",
+  "project": "kad-warframe",
+  "title": "Establish the deterministic Warframe progression tutor under KAD authority",
+  "status": "CLAIMED",
+  "priority": 250,
+  "trust_domain": "project-local",
+  "authority_required": "operator instruction, 2026-09-12: create the project, use warframe-helper and any available tooling, run it under kad-pi and the OMP harness, publish a private repo",
+  "spec_ref": "README.md, AGENTS.md",
+  "fixed_point": "aaf9458880e258dbfc3440d2019a00ff3c6c69cd",
+  "scope": [
+    "a deterministic progression engine over the player's account snapshot and the WFCD item data: quest order, mastery arithmetic, recipe shortfalls, star-chart completion, early-game mod gaps, economy constraints",
+    "a CLI (status, next, mr, quests, item, build, price, refresh, check) with JSON output and explicit exit codes, usable from any directory in the workspace",
+    "curated data files carrying their own provenance (quest order, early-game essentials)",
+    "a hermetic test suite over synthetic fixtures",
+    "workspace enrollment: the project registry entry and a portable skill so any harness session can invoke the tutor"
+  ],
+  "non_scope": [
+    "modelling Arbitrations, Steel Path, liches, Rivens, Incarnon adapters or Archon hunts, which need progression flags the API does not expose",
+    "navigating the star chart: unlocked-but-incomplete nodes cannot be distinguished from locked ones in the snapshot",
+    "relic reward analysis (Relics.json is available but not loaded in this version)",
+    "any inference on the advice path: the tutor reports UNKNOWN rather than estimating a missing fact",
+    "mutating the player's account data or the warframe-helper window, which stays the acquisition surface"
+  ],
+  "owned_paths": [
+    "kadwarframe/",
+    "data/",
+    "tests/",
+    "bin/",
+    "evidence/",
+    "README.md",
+    "AGENTS.md",
+    "Makefile"
+  ],
+  "validation": [
+    "python -m unittest discover -s tests",
+    "bin/kad-warframe check",
+    "bin/kad-warframe next --evidence"
+  ],
+  "acceptance_criteria": [
+    "`python -m unittest discover -s tests` runs the full suite and exits 0, with the mastery curves asserted against the game's published values",
+    "`bin/kad-warframe next` ranks real actions for this account from the live snapshot, and every action carries non-empty evidence",
+    "with a declared platinum balance of zero, no action recommends spending platinum (test-enforced)",
+    "a stale or missing input produces exit 1 and an explicit warning, and is never silently advised upon",
+    "the project is enrolled in .agents/workspace/projects.json with its validation command, and a portable skill documents how a harness session invokes it",
+    "evidence records the verification run and the exact commands behind it"
+  ],
+  "acceptance": {
+    "decided_by": "operator instruction, 2026-09-12",
+    "executed_by": "kad-master",
+    "evidence_target": "evidence/VERIFICATION-2026-09-12.md"
+  },
+  "evidence_target": "evidence/VERIFICATION-2026-09-12.md",
+  "required_capabilities": [
+    "filesystem-read",
+    "local-execution",
+    "deterministic-verification",
+    "network-egress-scoped"
+  ],
+  "blocked_by": [],
+  "blocks": [],
+  "priority_note": "a new player at MR 4 with 0 platinum needs farmable advice, so the tutor's first version favours mastery, quests and resource shortfalls over late-game systems"
+}

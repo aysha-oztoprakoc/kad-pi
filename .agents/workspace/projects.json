@@ -81,6 +81,20 @@
       "notes": "Nested repository for As Crônicas de Gaya data-scraping pipeline and game construction."
     },
     {
+      "id": "kad-warframe",
+      "name": "KAD Warframe",
+      "path": "kad-warframe",
+      "kind": "SIDE_PROJECT",
+      "git_root": ".",
+      "default_branch": "main",
+      "instruction_entrypoint": "README.md",
+      "authority_entrypoints": ["README.md", "AGENTS.md"],
+      "status_command": "git status --short",
+      "validation_command": "python -m unittest discover -s kad-warframe/tests",
+      "agent_enabled": true,
+      "notes": "Independent nested repository; deterministic Warframe progression tutor. Reads the player's account snapshot from ~/.warframe-helper and never commits account data. Advises only from fresh inputs; UNKNOWN over guess."
+    },
+    {
       "id": "kad-sillytavern-unknown",
       "name": "KAD SillyTavern (unclassified)",
       "path": "kad-sillytavern",
