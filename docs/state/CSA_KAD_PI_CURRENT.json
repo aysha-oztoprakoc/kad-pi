@@ -1,21 +1,21 @@
 {
   "schema": "kad.csa/v1",
   "state": "CURRENT",
-  "generated_at": "2026-09-12T17:39:37Z",
-  "evidence_cutoff": "6186eb21ad913d61c1ce0faf1323c1b88774a5ae",
+  "generated_at": "2026-09-12T17:54:47Z",
+  "evidence_cutoff": "2b95b9f189e3309f0df5618abcedf911f473adb2",
   "repository": {
-    "head": "6186eb21ad913d61c1ce0faf1323c1b88774a5ae",
+    "head": "2b95b9f189e3309f0df5618abcedf911f473adb2",
     "branch": "main",
     "remote": "https://github.com/aysha-oztoprakoc/kad-pi.git",
     "remote_head": "2f2ae35383a57a955cd9b5626dbe9f62d0bf9f31",
     "dirty": true,
-    "dirty_paths": 22,
-    "divergence": 24,
+    "dirty_paths": 9,
+    "divergence": 26,
     "state_class": "VERIFIED_CURRENT",
     "evidence": {
       "source": "git",
       "command": "git rev-parse HEAD; git ls-remote origin refs/heads/main; git status --short --untracked-files=all | wc -l",
-      "hash": "6186eb21ad913d61c1ce0faf1323c1b88774a5ae",
+      "hash": "2b95b9f189e3309f0df5618abcedf911f473adb2",
       "path": "evidence/WP-KAD-REVIEW-REMEDIATION-058/csa-refresh-probe.txt"
     }
   },
@@ -49,10 +49,11 @@
   },
   "harnesses": {
     "omp": {
-      "version": "18.1.14",
-      "origin": "mise (github-can1357-oh-my-pi/latest)",
-      "binary": "/home/amdy/.local/bin/omp",
-      "alt_binary": "bin/omp-patched-canary (digest-pinned via bin/omp-kad)",
+      "version": "18.1.18",
+      "origin": "mise (github:can1357/oh-my-pi), resolved by `mise which omp`",
+      "binary": "/home/amdy/.local/share/mise/installs/github-can1357-oh-my-pi/latest/omp",
+      "alt_binary": "bin/omp-patched-canary (fallback only; digest-pinned when bin/omp-kad runs it)",
+      "path_shadow": "/home/amdy/.local/bin/omp (18.1.14, hand-installed, precedes every mise path on PATH in a login shell: it is what a bare `omp` invocation runs, and neither bin/omp-kad nor tools/kad/omp-orchestration-preflight.mjs resolve the harness that way since ADR 0018)",
       "project_config": ".omp/config.yml",
       "global_config": "~/.omp/agent/config.yml",
       "settings_schema": "UNKNOWN (binary-only install; source-backed precedence not readable)",
@@ -86,8 +87,9 @@
       "state_class": "VERIFIED_CURRENT",
       "evidence": {
         "source": "COMMAND",
-        "command": "omp --version",
-        "hash": "27dd66cb6a2c39fff51e1fe6db40f1f376fee4a3d04457f236edaa5d0290e4d2"
+        "command": "mise which omp; omp --version",
+        "hash": "45421f9a5f112bc47cb9f77c4b4d7927631f8ff859624f821287ec854eb239fc",
+        "note": "the digest of the resolved mise build; the PATH shadow /home/amdy/.local/bin/omp is sha256 27dd66cb6a2c39fff51e1fe6db40f1f376fee4a3d04457f236edaa5d0290e4d2 (18.1.14)"
       }
     },
     "pi": {
@@ -417,18 +419,19 @@
     }
   },
   "harnesses.omp": {
-    "version": "18.1.14",
-    "origin": "mise (github-can1357-oh-my-pi/latest)",
-    "binary": "/home/amdy/.local/bin/omp",
-    "alt_binary": "bin/omp-patched-canary (digest-pinned via bin/omp-kad)",
+    "version": "18.1.18",
+    "origin": "mise (github:can1357/oh-my-pi), resolved by `mise which omp`",
+    "binary": "/home/amdy/.local/share/mise/installs/github-can1357-oh-my-pi/latest/omp",
+    "alt_binary": "bin/omp-patched-canary (fallback only; digest-pinned when bin/omp-kad runs it)",
+    "path_shadow": "/home/amdy/.local/bin/omp (18.1.14, hand-installed; what a bare `omp` runs in a login shell)",
     "project_config": ".omp/config.yml",
     "global_config": "~/.omp/agent/config.yml (divergent toggles)",
     "settings_schema": "UNKNOWN (binary-only install; source-backed precedence not readable)",
     "state_class": "VERIFIED_CURRENT",
     "evidence": {
       "source": "COMMAND",
-      "command": "omp --version",
-      "hash": "651308275f4dfdab3178f549303cc5da90037761876d8ca881430d7ba41bf1bf"
+      "command": "mise which omp; omp --version",
+      "hash": "45421f9a5f112bc47cb9f77c4b4d7927631f8ff859624f821287ec854eb239fc"
     }
   }
 }

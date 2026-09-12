@@ -82,6 +82,15 @@ test('the harness is the build mise dispatches, not whatever PATH resolves first
   } finally { await removeOmpPreflightFixture(root); }
 });
 
+test('a degraded receipt prints its cause, not just its status', async () => {
+  const root = await createOmpPreflightFixture({ localRouterContracts: false });
+  try {
+    const { code, stdout } = await runGate(root);
+    assert.equal(code, 0, 'a degraded receipt does not fail the gate');
+    assert.match(stdout, /WORLD_AUTHORITY_BOUNDARY_UNVERIFIED/, 'the degraded cause must be visible in the gate line');
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
 test('a harness outside the mise install root warns without failing the gate', async () => {
   const root = await createOmpPreflightFixture();
   try {

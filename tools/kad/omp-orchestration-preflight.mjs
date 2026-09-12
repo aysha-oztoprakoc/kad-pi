@@ -291,7 +291,14 @@ function inspectSpend(config, models, costClasses) {
     return { pattern, provider, cost_class: costClass, approved: APPROVED_COST_CLASSES.has(costClass) };
   });
   const unapproved = lanes.filter((lane) => !lane.approved);
-  return { enabled_models: enabled, lanes, approved_surface: unapproved.length === 0, new_paid_spend_possible: unapproved.length > 0, failures: unapproved.length ? ['UNAPPROVED_OR_PAYG_MODEL_SURFACE'] : [] };
+  // No declared surface is not a clean surface. An empty `enabledModels` leaves nothing to approve,
+  // which is the fail-open shape this gate exists to close: the absence of lanes must fail like an
+  // unapproved lane, not pass like a clean one.
+  const failures = [
+    ...(enabled.length === 0 ? ['OMP_MODEL_SURFACE_UNDECLARED'] : []),
+    ...(unapproved.length ? ['UNAPPROVED_OR_PAYG_MODEL_SURFACE'] : [])
+  ];
+  return { enabled_models: enabled, lanes, approved_surface: failures.length === 0, new_paid_spend_possible: unapproved.length > 0, failures };
 }
 
 function pathWithin(parent, candidate) {

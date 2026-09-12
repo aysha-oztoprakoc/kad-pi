@@ -21,15 +21,27 @@ const observedFor = (root, overrides = {}) => ({
 });
 
 /**
- * The harness this machine would run: absent on a checkout that has no OMP installed, which is why
- * T8 tolerates an unresolved harness while still asserting mise provenance whenever one resolves.
+ * The harness this machine would run, resolved the way the launcher and the receipt resolve it:
+ * `mise which omp` first, then `omp` on PATH. A login shell puts a hand-installed copy ahead of
+ * every mise path, so PATH alone answers a different binary than mise dispatches.
+ *
+ * `viaMise` distinguishes "mise provided this harness" from "some other copy answered PATH": the
+ * provenance assertion below is only meaningful in the first case, and a checkout without mise must
+ * still be able to run this test.
  */
 function liveOmpObservation() {
+  const versionOf = (binary) => {
+    try { return execFileSync(binary, ['--version'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim().match(/(\d+\.\d+\.\d+)/)?.[1] ?? null; } catch { return null; }
+  };
   try {
-    const binary = execFileSync('sh', ['-c', 'command -v omp'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
-    if (!binary) return {};
-    const version = execFileSync(binary, ['--version'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim().match(/(\d+\.\d+\.\d+)/)?.[1];
-    return version ? { ompBinary: binary, ompVersion: version } : {};
+    const dispatched = execFileSync('mise', ['which', 'omp'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    const version = dispatched ? versionOf(dispatched) : null;
+    if (version) return { ompBinary: dispatched, ompVersion: version, viaMise: true };
+  } catch { /* no mise on this machine: fall through to PATH */ }
+  try {
+    const onPath = execFileSync('sh', ['-c', 'command -v omp'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    const version = onPath ? versionOf(onPath) : null;
+    return version ? { ompBinary: onPath, ompVersion: version, viaMise: false } : {};
   } catch { return {}; }
 }
 
@@ -250,6 +262,16 @@ test('T15 a mise shim counts as mise provenance, and says which route was taken'
   } finally { await removeOmpPreflightFixture(root); }
 });
 
+test('T16 an empty model surface fails rather than passing as clean', async () => {
+  const root = await createOmpPreflightFixture({ enabledModels: [] });
+  try {
+    const receipt = inspectPreflight({ root, observed: observedFor(root) });
+    assert.equal(receipt.spend.approved_surface, false, 'no declared lanes is not the same as no unapproved lanes');
+    assert.deepEqual(receipt.spend.failures, ['OMP_MODEL_SURFACE_UNDECLARED']);
+    assert.equal(receipt.status, 'BLOCKED');
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
 /**
  * T8 is the one deliberately config-coupled test in this file: it reads the live
  * checkout and pins the *consequence* of the posture declared in `.omp/RULES.md`, enforced by
@@ -274,7 +296,9 @@ test('T8 live posture: declared, enforced, and every enabled lane carries an app
   }
   assert.ok(receipt.failures.every((failure) => failure.startsWith('OMP_')), `only harness resolution may block the live receipt: ${receipt.failures.join(', ')}`);
   if (live.ompVersion) {
-    assert.equal(receipt.omp.source, 'mise', 'the live harness must be the mise-provided build (ADR 0018)');
+    // `viaMise` is false when mise is absent and PATH had to answer; the mise-provenance claim
+    // only holds when mise is the thing that dispatched the harness.
+    if (live.viaMise) assert.equal(receipt.omp.source, 'mise', 'a mise-dispatched harness must receipt as mise (ADR 0018)');
     assert.notEqual(receipt.status, 'BLOCKED', `the live preflight must not block: ${receipt.failures.join(', ')}`);
   }
 });
