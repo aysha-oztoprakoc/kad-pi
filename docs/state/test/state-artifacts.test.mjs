@@ -172,18 +172,27 @@ test('Settings matrix: every project-declared setting matches the enforced confi
 test('Front door: the README records live repository state, not a remembered one', () => {
   const root = path.resolve(here, '../../..');
   const readme = fs.readFileSync(path.join(root, 'README.md'), 'utf8');
-  const recorded = readme.match(/`([0-9a-f]{7,40})`; (\d+) commit\(s\) ahead of, (\d+) behind/);
+  const recorded = readme.match(/`([^`]+)` at `([0-9a-f]{7,40})`; (\d+) commit\(s\) ahead of, (\d+) behind/);
   assert.ok(recorded, 'the README no longer states measured repository state in the expected form');
-  const [, sha, ahead] = recorded;
+  const [, branch, sha, ahead] = recorded;
   const git = (...args) => execFileSync('git', ['-C', root, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
   execFileSync('git', ['-C', root, 'cat-file', '-e', `${sha}^{commit}`], { stdio: 'ignore' });
   const newer = Number(git('rev-list', '--count', `${sha}..HEAD`));
   assert.ok(
     newer <= MAX_CSA_LAG,
     `README records ${sha} but HEAD is ${git('rev-parse', 'HEAD').slice(0, 8)}, ${newer} commits newer. `
-    + 'Regenerate it: node -e "import(\'./tools/kad/wiki/projection.mjs\').then(m => m.compileReadme())"'
+    + 'Regenerate it: node -e "import(\'./tools/kad/wiki/projection.mjs\').then(m => m.compileProjections())"'
   );
-  assert.equal(Number(git('rev-list', '--count', 'origin/main..HEAD')), Number(ahead), 'the README divergence must match the checkout');
+  // The recorded numbers must agree with the commit the README names, not with the live HEAD:
+  // a file cannot contain the hash of the commit that carries it, so measuring its divergence
+  // against HEAD would fail the very commit that regenerates it. Lag is bounded above; internal
+  // consistency is exact.
+  assert.equal(
+    Number(git('rev-list', '--count', `origin/main..${sha}`)),
+    Number(ahead),
+    `the README says ${ahead} ahead of origin/main but its own commit ${sha} is ${git('rev-list', '--count', `origin/main..${sha}`)} ahead`
+  );
+  assert.equal(branch, git('rev-parse', '--abbrev-ref', 'HEAD'), 'the README branch must match the checkout');
 });
 
 test('Gap model: post-WP gaps that WP-041 resolved are marked RESOLVED', () => {
