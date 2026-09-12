@@ -218,7 +218,10 @@ export function computeSummaryProfile(records = [], options = {}) {
       origin_classes: originClassDistribution,
     },
     provenance: {
-      generated_at: new Date().toISOString(),
+      // Injectable so a caller that claims reproducibility can have it: the profile is a pure
+      // function of its records apart from this reading, and two calls across a millisecond
+      // boundary used to differ in exactly this field.
+      generated_at: options.generated_at ?? new Date().toISOString(),
       evaluator: 'kad-outcome-aggregator-v1',
       record_count: totalRecords,
     },

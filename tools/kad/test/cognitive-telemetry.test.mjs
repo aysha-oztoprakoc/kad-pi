@@ -560,9 +560,20 @@ test('T19: derived summary reproducible -> PASS', () => {
     }),
   ];
 
-  const summary1 = JSON.stringify(computeSummaryProfile(records));
-  const summary2 = JSON.stringify(computeSummaryProfile(records));
-  assert.equal(summary1, summary2);
+  // The profile embeds a clock reading, so byte-equality across two default calls is not a property
+  // it has: it failed on the full suite whenever the millisecond boundary fell between them. Fixed
+  // clock, exact equality; live clock, everything except the reading itself must still agree.
+  const fixed = { generated_at: '2026-08-30T02:00:00Z' };
+  assert.equal(JSON.stringify(computeSummaryProfile(records, fixed)), JSON.stringify(computeSummaryProfile(records, fixed)));
+
+  const withoutClock = (profile) => {
+    const { generated_at, ...provenance } = profile.provenance;
+    return JSON.stringify({ ...profile, provenance });
+  };
+  const live1 = computeSummaryProfile(records);
+  const live2 = computeSummaryProfile(records);
+  assert.equal(withoutClock(live1), withoutClock(live2));
+  assert.match(live1.provenance.generated_at, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/, 'default callers still get a live reading');
 });
 
 test('T20: corrupted record hash -> FAIL', () => {
