@@ -2,7 +2,7 @@
   "id": "WP-TECHNOPAGAN-GATE-REPAIR-001",
   "project": "technopagan-netrunner",
   "title": "Repair the technopagan-netrunner test gate so all 11 steps execute",
-  "status": "REVIEW",
+  "status": "ACCEPTED",
   "priority": 200,
   "spec_ref": "user:2026-09-11-review-remediation",
   "fixed_point": "53fc4d51930171fa21d1f09cab5ab8dba0faec61",
@@ -40,5 +40,21 @@
     "the nested project declares its own module system and no longer inherits type=module from the workspace package.json",
     "bash tests/run_all.sh runs all 11 steps and exits 0"
   ],
-  "description": "The enrolled validation command aborts at step 3/11 because tests/test_gnosis_state.js is CommonJS while the parent workspace package.json declares type=module. Give the nested project its own package.json so the remaining eight verification steps execute."
+  "description": "The enrolled validation command aborts at step 3/11 because tests/test_gnosis_state.js is CommonJS while the parent workspace package.json declares type=module. Give the nested project its own package.json so the remaining eight verification steps execute.",
+  "acceptance": {
+    "decided_by": "operator instruction, 2026-09-12: 'Accept the three workpackages'; evidence target carries the independent review receipt and the implementer verification",
+    "executed_by": "kad-master",
+    "at": "2026-09-12T18:32:15.559Z",
+    "independent_review": [
+      "evidence/WP-TECHNOPAGAN-GATE-REPAIR-001/independent-review.json"
+    ],
+    "review_verdict": "CONDITIONAL",
+    "implementer_verification": "evidence/WP-TECHNOPAGAN-GATE-REPAIR-001/implementer-verification.json",
+    "review_findings": "answered in the commits that follow the review; see the review receipt and the repository history",
+    "accepted_deviations": [
+      "The execution receipt described the module system backwards and under-counted the regained steps. Both were corrected; the original text remains in commit 5d1369f."
+    ],
+    "independence_limit": "The reviewer is a separate agent role in a separate context, not a separate human. Independence is bounded to that; acceptance authority is the operator instruction recorded here.",
+    "evidence_target": "evidence/WP-TECHNOPAGAN-GATE-REPAIR-001"
+  }
 }

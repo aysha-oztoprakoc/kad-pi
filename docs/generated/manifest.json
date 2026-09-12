@@ -1,8 +1,8 @@
 {
   "schema": "kad-docs-projection-manifest-v1",
   "generator_version": "1.0.0",
-  "source_vault_revision": "9b74bb4daedfdd4b72ed1066f16a33bbc5c5050252d748576bc9a519b895db76",
-  "generated_at": "2026-09-12T18:23:53.957Z",
+  "source_vault_revision": "f339b53e786612afadd6862e9b06952dc2ac73d17a4a8ab918ed5db3b9c9f07d",
+  "generated_at": "2026-09-12T18:33:15.547Z",
   "files": [
     "README.md",
     "overview.md",

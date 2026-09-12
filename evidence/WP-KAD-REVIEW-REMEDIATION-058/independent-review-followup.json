@@ -1,0 +1,147 @@
+{
+  "schema": "kad.independent-review-followup/v1",
+  "workpackage": "WP-KAD-REVIEW-REMEDIATION-058",
+  "project": "kad-pi",
+  "reviewer": "Review058",
+  "prior_review": {
+    "path": "evidence/WP-KAD-REVIEW-REMEDIATION-058/independent-review.json",
+    "verdict": "CONDITIONAL",
+    "reviewed_range": {
+      "from": "3ca6b8627d1f4b1c5d62c89f5cb81661c70efb03",
+      "to": "8e3f219eeddcf6ef37716943fb412020f2344930"
+    }
+  },
+  "reviewed_range": {
+    "from": "8e3f219eeddcf6ef37716943fb412020f2344930",
+    "to": "63b0a7a5efb5cdb1a7d803a105bb511b31ec79c2"
+  },
+  "verdict": "FAIL",
+  "finding_verdicts": [
+    {
+      "id": "F1-stale-execution-receipt",
+      "original": "execution-receipt.json was never refreshed, so its known_red section asserted three states that were false at the commit it was filed against.",
+      "verdict": "resolved",
+      "evidence": "git diff 8e3f219..63b0a7a -- evidence/WP-KAD-REVIEW-REMEDIATION-058/execution-receipt.json; read of the refreshed file",
+      "notes": "known_red_unchanged now lists the three conditions that hold at HEAD (lint warnings outside declared zones, mirror drift between publishes, preflight DEGRADED with the PATH shadow); P1b, P1c, P1d and P8-P10 are recorded as delivered items with commits; captured_at is preserved and a refresh{reason,found_by,also_corrected} block records why the file changed. I re-measured two of the three: `bin/kad-wiki lint --json` -> 22 warnings / 210 notes / 0 errors; `node tools/kad/preflight-gate.mjs` -> DEGRADED exit 0 with the PATH shadow named. The stale-claim defect itself is gone; its re-measurement is not durable - see new finding N3."
+    },
+    {
+      "id": "F2-readme-front-door",
+      "original": "The generated README status block was stale and had no freshness guard, unlike the CSA.",
+      "verdict": "partially",
+      "evidence": "README.md lines 11-16; new test 'Front door: the README records live repository state, not a remembered one' at docs/state/test/state-artifacts.test.mjs:172-187; `node --test docs/state/test/state-artifacts.test.mjs`",
+      "notes": "The README was regenerated and now records 8e3f219 / 27 ahead / vault revision b19bf406..., and a liveness assertion was added - both parts of my finding were attempted. But the guard as written fails at HEAD (assertion at line 186: actual 28, expected 27) and is structurally unsatisfiable, so the fix does not achieve what it claims. See new finding N1."
+    },
+    {
+      "id": "F3-scope-deviations",
+      "original": "Seven written paths were outside the workpackage's declared scope, including two evidence trees the non_scope clause excludes.",
+      "verdict": "resolved",
+      "evidence": "git diff 8e3f219..63b0a7a -- .agents/work/WP-KAD-REVIEW-REMEDIATION-058.json",
+      "notes": "All seven paths I named were added to scope (package.json, .gitignore, docs/adr/, docs/generated/, site/, evidence/PLATFORM-BASELINE-2026-08-25/, evidence/WP-KAD-002/), each with a per-path reason in the new scope_amendment block, whose found_by points at independent-review.json. The non_scope clause about evidence history is narrowed with a stated reason (the control-plane journal is machine-appended by running the gates). No path I flagged remains unnamed."
+    },
+    {
+      "id": "F4-p7-wiki-retirement",
+      "original": "Acceptance criterion P7's 'wiki/ retired' clause was unmet and silently inherited.",
+      "verdict": "resolved",
+      "evidence": "git diff 8e3f219..63b0a7a -- .agents/work/WP-KAD-REVIEW-REMEDIATION-058.json (deviations[])",
+      "notes": "Recorded as an explicit PARTIAL in the contract's deviations[]: delivered = amdy-platform retired, not_delivered = wiki/ not retired, with the librarian dependency as the reason and decision_required naming the operator ruling needed. It is not claimed as delivered. My finding asked for exactly this - an explicit decision point rather than a silent deviation."
+    },
+    {
+      "id": "F5-gitleaks-allowlist",
+      "original": "The allowlist used regexTarget=line with pattern-shaped entries, so any line mentioning tokenizer_version_hash was exempt from every rule while the header claimed exact-literal matching.",
+      "verdict": "resolved",
+      "evidence": "read .gitleaks.toml; control repo /tmp/gl3 with the allowlisted hash and a synthetic ghp_ token on one line; `gitleaks git . --no-banner` in the workspace",
+      "notes": "regexTarget is now 'secret' and the six entries are fixed literal strings with no wildcard, class or metacharacter. Independent control: a file whose line carries both 64a4809e...449fd952 and a synthetic github-pat reports the pat (findings: a.txt:github-pat, b.txt:github-pat - 2 of 2), i.e. the same-line suppression is gone. Workspace scan: `gitleaks git . --no-banner` -> '140 commits scanned, no leaks found', exit 0. One residual documentation defect remains (see new finding N4)."
+    }
+  ],
+  "claims_verified": [
+    {
+      "claim": "npm test: 904 tests, 904 pass, 0 fail",
+      "evidence": "npm test at 63b0a7a",
+      "observed": "FALSE - tests 904, pass 902, fail 2, exit 1"
+    },
+    {
+      "claim": "docs/state/test/state-artifacts.test.mjs: 13/13 pass",
+      "evidence": "node --test docs/state/test/state-artifacts.test.mjs at 63b0a7a",
+      "observed": "FALSE - 11/13; 'Front door: the README records live repository state' fails (28 vs 27) and 'CSA: the recorded repository state is live' fails (CSA records 2b95b9f, HEAD 63b0a7a, 2 commits newer)"
+    },
+    {
+      "claim": "make verify: PASS",
+      "evidence": "make verify at 63b0a7a",
+      "observed": "TRUE - exit 0 (validate_prime_directive, posture-check, preflight-gate, kad-wiki lint, librarian verify all pass; make verify does not run the state-artifact suite)"
+    },
+    {
+      "claim": "gitleaks git . --no-banner: no leaks found",
+      "evidence": "gitleaks git . --no-banner at 63b0a7a",
+      "observed": "TRUE - 140 commits scanned, no leaks found, exit 0"
+    },
+    {
+      "claim": "bin/kad-wiki lint: ok, 0 errors, 22 warnings, 210 notes",
+      "evidence": "bin/kad-wiki lint --json",
+      "observed": "TRUE - ok:true, 0 errors, 22 warnings (all OUTSIDE_DECLARED_ZONE), 210 notes, exit 0"
+    },
+    {
+      "claim": "the gitleaks controls prove a new secret on a previously-allowlisted line is still reported",
+      "evidence": "synthetic repo /tmp/gl3 with the KAD config vs the naked default config",
+      "observed": "TRUE - identical result both ways (a.txt and b.txt github-pat), so the allowlist no longer suppresses co-located secrets"
+    },
+    {
+      "claim": "the seven unnamed paths are now in scope with reasons",
+      "evidence": "read .agents/work/WP-KAD-REVIEW-REMEDIATION-058.json scope and scope_amendment",
+      "observed": "TRUE - all seven present, each with a reason and found_by referencing independent-review.json"
+    }
+  ],
+  "claims_unverified": [
+    {
+      "claim": "bin/kad doctor PASS, bin/workctl doctor healthy 0 errors, bin/kad-isa check all 33/33, data_workspace / technopagan-netrunner / kad-rpg gates",
+      "why": "not re-run in this pass; outside the fixes under review and unchanged by 8e3f219..63b0a7a"
+    },
+    {
+      "claim": "the metadata of the refreshed receipt (mirror drift reading 0 immediately after a publish; the two remaining known-red lines)",
+      "why": "only the lint and preflight lines were re-measured; the mirror-drift line depends on a live bin/kad-memory publish, which I did not run"
+    }
+  ],
+  "new_findings": [
+    {
+      "severity": "HIGH",
+      "finding": "The README guard added by this commit is self-contradictory and fails on the very commit that introduces it. It allows the README's recorded commit to lag HEAD by up to MAX_CSA_LAG (1), but then asserts the README's recorded divergence equals `git rev-list --count origin/main..HEAD` computed at the current HEAD. Committing the guard moves HEAD one commit past the commit the README was generated at, so live divergence is 28 while the README records 27 and the assertion fails permanently - no regeneration can fix it, because regenerating the README and committing it repeats the same off-by-one.",
+      "evidence": "docs/state/test/state-artifacts.test.mjs:186 `assert.equal(Number(git('rev-list', '--count', 'origin/main..HEAD')), Number(ahead), ...)`; `node --test docs/state/test/state-artifacts.test.mjs` -> actual 28, expected 27; `git rev-list --count origin/main..HEAD` = 28 vs `git rev-list --count origin/main..8e3f219` = 27 (the README's own value)",
+      "impact": "An enrolled gate is red at HEAD: `npm test` exits 1 with 902/904, so `make test` fails, which is the exact condition acceptance criterion P1 was written to prevent ('the enrolled gate cannot pass while the root gate fails'). The fix is to compare against the recorded commit: `assert.equal(Number(git('rev-list','--count',`origin/main..${sha}`)), Number(ahead), ...)`.",
+      "file_path": "docs/state/test/state-artifacts.test.mjs",
+      "line_start": 186,
+      "line_end": 186
+    },
+    {
+      "severity": "MEDIUM",
+      "finding": "The CSA was not refreshed in 63b0a7a, so its liveness assertion fails. docs/state/CSA_KAD_PI_CURRENT.json records head 2b95b9f with divergence 26 and dirty_paths 9 while HEAD is 63b0a7a; the two intervening commits (8e3f219, 63b0a7a) exceed MAX_CSA_LAG = 1 and the test that guards the claim goes red.",
+      "evidence": "docs/state/CSA_KAD_PI_CURRENT.json repository.head = 2b95b9f189e3309f0df5618abcedf911f473adb2; `git rev-list --count 2b95b9f..HEAD` = 2; assertion failure at docs/state/test/state-artifacts.test.mjs:229-232",
+      "impact": "The second of the two failures that make npm test red. It also means the artifact that P6 exists to keep live is again describing an older checkout - the same drift the workpackage is repairing, one commit after the repair.",
+      "file_path": "docs/state/CSA_KAD_PI_CURRENT.json",
+      "line_start": 8,
+      "line_end": 18
+    },
+    {
+      "severity": "MEDIUM",
+      "finding": "The refreshed execution receipt again states results that do not hold at the commit it is filed against. Its gates block claims 'npm test: 904 tests, 904 pass, 0 fail' and 'docs/state/test/state-artifacts.test.mjs: 13/13 pass'; at 63b0a7a the measured values are 902/904 (exit 1) and 11/13. Both were taken on the pre-commit worktree (implementer-verification.json: head 8e3f219, worktree_dirty 12), and committing 63b0a7a invalidated them.",
+      "evidence": "evidence/WP-KAD-REVIEW-REMEDIATION-058/execution-receipt.json gates block; `npm test` -> tests 904 / pass 902 / fail 2, exit 1; `node --test docs/state/test/state-artifacts.test.mjs` -> 11/13; implementer-verification.json head 8e3f219, dirty 12",
+      "impact": "This is the same defect class as the original F1 - an evidence artifact asserting a state that does not exist at the commit it is filed against - recurring one commit after the fix. An acceptor reading only the receipt would certify a red suite.",
+      "file_path": "evidence/WP-KAD-REVIEW-REMEDIATION-058/execution-receipt.json",
+      "line_start": 197,
+      "line_end": 208
+    },
+    {
+      "severity": "LOW",
+      "finding": "The gitleaks allowlist entries are prefixes of the values the scanner actually reports, not the 'exact value' the header now claims. A naked scan (empty config) reports the secrets as 64a4809e8e8a52cab6a9ff9ec53ac9bf449fd9521a55ad7ec6fd11527cd5bbf1 and GAYA_CANARY_NARRATOR_SECRET_98412_REIDRAKOVIA, while the allowlist carries the 40-character truncation and GAYA_CANARY_NARRATOR_SECRET_98412_REIDRA. The entries work because gitleaks matches allowlist regexes against the secret unanchored, which is also why the header's 'exact value' wording is not literally true.",
+      "evidence": "`gitleaks git . --config /tmp/empty-gitleaks.toml --report-format json` -> 9 findings / 6 unique secrets, printed above; .gitleaks.toml regexes list",
+      "impact": "Cosmetic on today's corpus (nothing else in the file is pattern-shaped and the two entries still suppress only their own secrets), but the comment again describes a guarantee the mechanism does not provide. Replacing the two truncated values with the full reported secrets would make the statement true and the intent legible.",
+      "file_path": ".gitleaks.toml",
+      "line_start": 12,
+      "line_end": 17
+    }
+  ],
+  "limitations": [
+    "I ran npm test and make verify at 63b0a7a because you asked me to check those two facts; both are read-only and the workspace remained clean (git status --porcelain empty after the review).",
+    "gitleaks was run three times: the workspace history scan, and two synthetic control repositories under /tmp (one with the KAD config, one with an empty config) to establish what the scanner reports before and after the allowlist.",
+    "The receipt's mirror-drift line and the three gate results in claims_unverified were not re-run."
+  ],
+  "summary": "Four of the five fixes are solid: the execution receipt is genuinely refreshed and its remaining known-red lines are true, the scope amendment names every path I flagged with a reason, P7 is recorded as an explicit PARTIAL with a named operator decision, and the gitleaks allowlist now matches by secret value - I reproduced that with a control in which a synthetic github-pat on the same line as an allowlisted hash is still reported. The README fix is only partial and it takes the enrolled gate down with it: the new guard compares the README's divergence against the live checkout while permitting a one-commit lag, so it fails on its own commit (28 vs 27), the CSA was left two commits behind at the same time, and npm test now exits 1 at 902/904 while the refreshed receipt still claims 904/904 and 13/13. Fix those three lines and refresh the CSA in the same commit, then the follow-up is clean."
+}

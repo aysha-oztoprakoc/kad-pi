@@ -246,7 +246,18 @@ function execute(root, parsed) {
     if (!transitions[item.status]?.includes(nextState)) return fail(`invalid transition ${item.status} -> ${nextState}`);
     const claimFile = path.join(paths(root).claims, `${item.id}.json`);
     const claim = fs.existsSync(claimFile) ? json(claimFile) : null;
-    if (nextState !== 'READY' && (!claim || claim.actor_label !== actor(parsed))) return fail('claim owner required for transition');
+    const decision = nextState === 'ACCEPTED' || nextState === 'REJECTED';
+    const authority = option(parsed.args, '--authority');
+    if (decision) {
+      // Acceptance and rejection are authority decisions, not implementation work. The claim that
+      // authorised the work was released when the item entered REVIEW, and `claim` refuses any state
+      // other than READY, so a live mutating claim cannot exist here: requiring one made the terminal
+      // states unreachable, which is what happened to the three workpackages accepted on 2026-09-12.
+      // The decision must therefore be stated, and it is recorded on the item.
+      if (!authority || authority.trim().length < 8) {
+        return fail(`${nextState} requires --authority "<who decided, and on what basis>": no claim can authorise an authority decision from ${item.status}`);
+      }
+    } else if (nextState !== 'READY' && (!claim || claim.actor_label !== actor(parsed))) return fail('claim owner required for transition');
     if (nextState === 'ACCEPTED') {
       // Acceptance is the transition that certifies work as done, so it is the one
       // transition that must not be satisfiable by declaring nothing. A missing
@@ -261,6 +272,26 @@ function execute(root, parsed) {
         return fail(`cannot accept task ${item.id}: evidence target directory is empty: ${item.evidence_target}`);
       }
       if (stats.isFile() && stats.size === 0) return fail(`cannot accept task ${item.id}: evidence target file is empty: ${item.evidence_target}`);
+      // WP-KAD-VERIFICATION-APPROVAL-ACCEPTANCE-SEPARATION-048 separates implementer verification,
+      // independent review and human acceptance. The engineering half of that separation is
+      // checkable, so it is checked: an evidence set with no independent review receipt cannot be
+      // accepted, and the receipt's location is recorded with the decision.
+      const receiptDirectory = stats.isDirectory() ? evidencePath : path.dirname(evidencePath);
+      const reviewReceipts = fs.readdirSync(receiptDirectory).filter((name) => /^independent-review.*\.json$/.test(name)).sort();
+      if (reviewReceipts.length === 0) {
+        return fail(`cannot accept task ${item.id}: no independent review receipt in ${receiptDirectory} (expected independent-review*.json) - implementer verification alone is not acceptance evidence`);
+      }
+      item.acceptance = {
+        ...(item.acceptance ?? {}),
+        decided_by: authority,
+        executed_by: actor(parsed),
+        at: new Date().toISOString(),
+        evidence_target: item.evidence_target,
+        independent_review: reviewReceipts.map((name) => path.relative(projectInfo.root, path.join(receiptDirectory, name)))
+      };
+    }
+    if (nextState === 'REJECTED') {
+      item.rejection = { ...(item.rejection ?? {}), decided_by: authority, executed_by: actor(parsed), at: new Date().toISOString(), reason: option(parsed.args, '--reason') ?? null };
     }
     if (claim && !MUTATING_STATES.has(nextState)) {
       claim.active = false; claim.released_at = new Date().toISOString(); writeJson(claimFile, claim);

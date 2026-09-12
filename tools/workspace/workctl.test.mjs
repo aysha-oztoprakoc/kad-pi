@@ -91,15 +91,24 @@ test('doctor detects task schema and project isolation violations', () => {
   assert.match(doctor.error, /owned path escapes project/);
 });
 
+/**
+ * Moves a fixture work item into REVIEW with the evidence acceptance now requires: a non-empty
+ * evidence target and an independent review receipt beside it (WP-048's separation, enforced).
+ */
+function reviewWithEvidence(root, id, { receipt = true, review = true } = {}) {
+  runWorkctl(['claim', id, '--actor', 'builder'], { workspaceRoot: root });
+  runWorkctl(['transition', id, 'IN_PROGRESS', '--actor', 'builder'], { workspaceRoot: root });
+  runWorkctl(['transition', id, 'REVIEW', '--actor', 'builder'], { workspaceRoot: root });
+  fs.mkdirSync(path.join(root, 'evidence', 'test'), { recursive: true });
+  if (receipt) fs.writeFileSync(path.join(root, 'evidence', 'test', 'receipt.json'), '{}\n');
+  if (review) fs.writeFileSync(path.join(root, 'evidence', 'test', 'independent-review.json'), '{"verdict":"PASS"}\n');
+}
+
 test('terminal transition deactivates the mutating claim', () => {
   const root = fixture();
   task(root);
-  assert.equal(runWorkctl(['claim', 'WP-TEST-001', '--actor', 'builder'], { workspaceRoot: root }).code, 0);
-  assert.equal(runWorkctl(['transition', 'WP-TEST-001', 'IN_PROGRESS', '--actor', 'builder'], { workspaceRoot: root }).code, 0);
-  assert.equal(runWorkctl(['transition', 'WP-TEST-001', 'REVIEW', '--actor', 'builder'], { workspaceRoot: root }).code, 0);
-  fs.mkdirSync(path.join(root, 'evidence', 'test'), { recursive: true });
-  fs.writeFileSync(path.join(root, 'evidence', 'test', 'receipt.json'), '{}\n');
-  assert.equal(runWorkctl(['transition', 'WP-TEST-001', 'ACCEPTED', '--actor', 'builder'], { workspaceRoot: root }).code, 0);
+  reviewWithEvidence(root, 'WP-TEST-001');
+  assert.equal(runWorkctl(['transition', 'WP-TEST-001', 'ACCEPTED', '--actor', 'builder', '--authority', 'operator instruction, 2026-09-12'], { workspaceRoot: root }).code, 0);
   assert.equal(runWorkctl(['release', 'WP-TEST-001', '--actor', 'builder'], { workspaceRoot: root }).code, 1);
   const claim = JSON.parse(fs.readFileSync(path.join(root, '.agents', 'work', 'claims', 'WP-TEST-001.json'), 'utf8'));
   assert.equal(claim.active, false);
@@ -107,24 +116,53 @@ test('terminal transition deactivates the mutating claim', () => {
 
 test('acceptance is refused unless durable evidence actually exists', () => {
   const root = fixture();
-  const review = (id) => {
-    runWorkctl(['claim', id, '--actor', 'builder'], { workspaceRoot: root });
-    runWorkctl(['transition', id, 'IN_PROGRESS', '--actor', 'builder'], { workspaceRoot: root });
-    return runWorkctl(['transition', id, 'REVIEW', '--actor', 'builder'], { workspaceRoot: root });
-  };
-  const accept = (id) => runWorkctl(['transition', id, 'ACCEPTED', '--actor', 'builder'], { workspaceRoot: root });
+  const accept = (id, authority = 'operator instruction, 2026-09-12') => runWorkctl(['transition', id, 'ACCEPTED', '--actor', 'acceptor', '--authority', authority], { workspaceRoot: root });
 
   task(root);
-  review('WP-TEST-001');
+  reviewWithEvidence(root, 'WP-TEST-001', { receipt: false, review: false });
+  fs.rmSync(path.join(root, 'evidence', 'test'), { recursive: true, force: true });
   assert.match(accept('WP-TEST-001').error, /declared evidence target does not exist/);
   fs.mkdirSync(path.join(root, 'evidence', 'test'), { recursive: true });
   assert.match(accept('WP-TEST-001').error, /evidence target directory is empty/);
   fs.writeFileSync(path.join(root, 'evidence', 'test', 'receipt.json'), '{}\n');
+  assert.match(accept('WP-TEST-001').error, /no independent review receipt/);
+  fs.writeFileSync(path.join(root, 'evidence', 'test', 'independent-review.json'), '{"verdict":"PASS"}\n');
   assert.equal(accept('WP-TEST-001').code, 0);
 
   task(root, { id: 'WP-TEST-002', evidence_target: undefined });
-  review('WP-TEST-002');
+  reviewWithEvidence(root, 'WP-TEST-002', { receipt: false, review: false });
   assert.match(accept('WP-TEST-002').error, /no evidence_target declared/);
+});
+
+test('acceptance requires a stated authority, and records it with the review it rested on', () => {
+  const root = fixture();
+  task(root);
+  reviewWithEvidence(root, 'WP-TEST-001');
+
+  // The claim that authorised the work was released into REVIEW, and `claim` refuses anything that
+  // is not READY, so acceptance cannot rest on a mutating claim: it must state its authority.
+  const unattributed = runWorkctl(['transition', 'WP-TEST-001', 'ACCEPTED', '--actor', 'acceptor'], { workspaceRoot: root });
+  assert.equal(unattributed.code, 1);
+  assert.match(unattributed.error, /requires --authority/);
+
+  const accepted = runWorkctl(['transition', 'WP-TEST-001', 'ACCEPTED', '--actor', 'acceptor', '--authority', 'operator instruction, 2026-09-12'], { workspaceRoot: root });
+  assert.equal(accepted.code, 0);
+  const item = JSON.parse(fs.readFileSync(path.join(root, '.agents', 'work', 'WP-TEST-001.json'), 'utf8'));
+  assert.equal(item.status, 'ACCEPTED');
+  assert.equal(item.acceptance.decided_by, 'operator instruction, 2026-09-12');
+  assert.equal(item.acceptance.executed_by, 'acceptor');
+  assert.deepEqual(item.acceptance.independent_review, [path.join('evidence', 'test', 'independent-review.json')]);
+});
+
+test('rejection also states its authority, and records the reason', () => {
+  const root = fixture();
+  task(root);
+  reviewWithEvidence(root, 'WP-TEST-001');
+  assert.equal(runWorkctl(['transition', 'WP-TEST-001', 'REJECTED', '--actor', 'acceptor'], { workspaceRoot: root }).code, 1);
+  const rejected = runWorkctl(['transition', 'WP-TEST-001', 'REJECTED', '--actor', 'acceptor', '--authority', 'operator review, 2026-09-12', '--reason', 'the receipt contradicts the artifact'], { workspaceRoot: root });
+  assert.equal(rejected.code, 0);
+  const item = JSON.parse(fs.readFileSync(path.join(root, '.agents', 'work', 'WP-TEST-001.json'), 'utf8'));
+  assert.equal(item.rejection.reason, 'the receipt contradicts the artifact');
 });
 
 test('handoff requires an active mutating claim and rejects unsafe review actors', () => {

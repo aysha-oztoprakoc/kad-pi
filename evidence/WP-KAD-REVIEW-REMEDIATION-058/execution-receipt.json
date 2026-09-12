@@ -183,7 +183,7 @@
     "The OMP preflight is DEGRADED, not READY: local retrieval is not running on this host, and the PATH shadow /home/amdy/.local/bin/omp (18.1.14) is reported. Neither blocks."
   ],
   "gates": {
-    "npm test": "904 tests, 904 pass, 0 fail (was 880 at first capture)",
+    "npm test": "904 tests, 904 pass, 0 fail at b128be4 (was 880 at first capture; the intermediate 902/904 reading belongs to the commit that carried the contradictory front-door guard, fixed in b128be4)",
     "make verify": "PASS \u2014 validate_prime_directive, posture-check 6/6, preflight-gate (DEGRADED, non-fatal), kad-wiki lint (0 errors), librarian verify",
     "OMP preflight": "DEGRADED, 0 failures \u2014 omp 18.1.18 (mise); wired into make verify as tools/kad/preflight-gate.mjs since P1c",
     "bin/kad-wiki lint": "ok, 0 errors, 22 warnings, 210 notes (was 141 errors over 139 paths); `bin/kad-wiki rebuild` runs",
@@ -191,7 +191,7 @@
     "bin/workctl doctor": "healthy, 0 errors, 16 warnings (LOCAL_DELTA, 0 stale)",
     "bin/kad-isa lint all": "3 ISAs clean",
     "bin/kad-isa check all": "33/33 claims PASS (aesthetic 10/10, compute-fabric 14/14, memory 9/9)",
-    "docs/state/test/state-artifacts.test.mjs": "13/13 pass",
+    "docs/state/test/state-artifacts.test.mjs": "13/13 pass at b128be4",
     "tools/kad/posture-check.mjs": "6/6 keys agree",
     "gitleaks git . --no-banner": "no leaks found, with the allowlist narrowed to the exact nine matched values (regexTarget=secret); a control file proves a new secret on a previously-allowlisted line is still reported",
     "data_workspace gate": "EXIT=0",
@@ -205,5 +205,11 @@
     "found_by": "evidence/WP-KAD-REVIEW-REMEDIATION-058/independent-review.json",
     "at_commit": "HEAD of the refresh commit",
     "also_corrected": "gates were re-measured, and the item list now records the work delivered after the first capture (P1b, P1c, P1d and P8-P10)."
+  },
+  "gates_measured_at": {
+    "commit": "b128be477cd285283e1cb5f1cd129ee5fe85d915",
+    "worktree": "six paths pending acceptance (three .agents/work cards, the control-plane journal, and two review receipts) \u2014 none reachable by the test suite",
+    "npm_test_run": "evidence/WP-KAD-REVIEW-REMEDIATION-058/implementer-verification.json (9/9 commands PASS at this commit)",
+    "note": "The previous refresh quoted a run made on the pre-commit worktree; the independent follow-up review caught that and it is corrected here."
   }
 }

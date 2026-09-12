@@ -2,7 +2,7 @@
   "id": "WP-KAD-REVIEW-REMEDIATION-058",
   "project": "kad-pi",
   "title": "Workspace review remediation: declared posture, binding gates, spend policy, memory record, evidence durability",
-  "status": "REVIEW",
+  "status": "ACCEPTED",
   "priority": 260,
   "spec_ref": "user:2026-09-11-review-remediation",
   "fixed_point": "3ca6b8627d1f4b1c5d62c89f5cb81661c70efb03",
@@ -131,5 +131,22 @@
       "decision_required": "The operator must either rule that wiki/ is retired by substitution (its content superseded by the vault mirror and the wiki of record) or restate P7 without it. Until then the criterion is unmet and the acceptance records it as an explicit partial, not a silent one.",
       "recorded_at": "2026-09-12T18:30:00Z"
     }
-  ]
+  ],
+  "acceptance": {
+    "decided_by": "operator instruction, 2026-09-12: 'Accept the three workpackages'; evidence target carries the independent review receipt and the implementer verification",
+    "executed_by": "kad-master",
+    "at": "2026-09-12T18:32:15.491Z",
+    "independent_review": [
+      "evidence/WP-KAD-REVIEW-REMEDIATION-058/independent-review-followup.json",
+      "evidence/WP-KAD-REVIEW-REMEDIATION-058/independent-review.json"
+    ],
+    "review_verdict": "correct",
+    "implementer_verification": "evidence/WP-KAD-REVIEW-REMEDIATION-058/implementer-verification.json",
+    "review_findings": "answered in the commits that follow the review; see the review receipt and the repository history",
+    "accepted_deviations": [
+      "P7 PARTIAL: wiki/ is not retired (it is a live librarian input). The criterion stands unmet until the operator rules."
+    ],
+    "independence_limit": "The reviewer is a separate agent role in a separate context, not a separate human. Independence is bounded to that; acceptance authority is the operator instruction recorded here.",
+    "evidence_target": "evidence/WP-KAD-REVIEW-REMEDIATION-058/"
+  }
 }

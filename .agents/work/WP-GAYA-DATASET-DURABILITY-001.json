@@ -2,7 +2,7 @@
   "id": "WP-GAYA-DATASET-DURABILITY-001",
   "project": "kad-rpg",
   "title": "Make the Gaya dataset artifacts and their producers durable in git",
-  "status": "REVIEW",
+  "status": "ACCEPTED",
   "priority": 240,
   "spec_ref": "user:2026-09-11-review-remediation",
   "fixed_point": "0389137746b0e92a34013e7cf72abfbf0679c1e4",
@@ -52,5 +52,22 @@
     "the recorded validation command still passes after the commit",
     "no dataset content is modified"
   ],
-  "description": "Commit the untracked Gaya dataset artifacts and the modules that generate them so that REVIEW-state evidence and ACCEPTED deliverables survive a clean of the working tree."
+  "description": "Commit the untracked Gaya dataset artifacts and the modules that generate them so that REVIEW-state evidence and ACCEPTED deliverables survive a clean of the working tree.",
+  "acceptance": {
+    "decided_by": "operator instruction, 2026-09-12: 'Accept the three workpackages'; evidence target carries the independent review receipt and the implementer verification",
+    "executed_by": "kad-master",
+    "at": "2026-09-12T18:32:15.624Z",
+    "independent_review": [
+      "kad-gaya/dataset_runs/sillytavern-2026-09-09/evidence/independent-review-followup.json",
+      "kad-gaya/dataset_runs/sillytavern-2026-09-09/evidence/independent-review.json"
+    ],
+    "review_verdict": "CONDITIONAL",
+    "implementer_verification": "kad-gaya/dataset_runs/sillytavern-2026-09-09/evidence/implementer-verification.json",
+    "review_findings": "answered in the commits that follow the review; see the review receipt and the repository history",
+    "accepted_deviations": [
+      "The media context-eligibility flag was fixed after review rather than before acceptance; the export artifacts were regenerated because a tracked source hash changed."
+    ],
+    "independence_limit": "The reviewer is a separate agent role in a separate context, not a separate human. Independence is bounded to that; acceptance authority is the operator instruction recorded here.",
+    "evidence_target": "kad-gaya/dataset_runs/sillytavern-2026-09-09/evidence/"
+  }
 }
