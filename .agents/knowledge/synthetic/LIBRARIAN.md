@@ -4,8 +4,8 @@ title: "Librarian Agent Protocol & Operating Manual"
 domain: EPISTEMOLOGY_EVIDENCE
 epistemic_status: DESIGN_DECISION
 source_documents:
-  - wiki/synthetic/CATALOG.json
-  - wiki/synthetic/TAXONOMY.json
+  - .agents/knowledge/synthetic/CATALOG.json
+  - .agents/knowledge/synthetic/TAXONOMY.json
   - PRIME_DIRECTIVE.md
 retrieval_keywords:
   - Librarian
@@ -41,8 +41,8 @@ The **Librarian Agent** is the autonomous knowledge curator, retriever, and sema
    - The Librarian must never answer a query without citing the epistemic status of the information (`[SOURCE_DERIVED]`, `[DESIGN_DECISION]`, `[HYPOTHESIS]`, `[EXPERIMENT]`, `[OBSERVED]`, `[CONFIRMED]`).
    - A `[HYPOTHESIS]` must explicitly be stated as unproven.
 3. **`PROGRESSIVE DISCLOSURE`**:
-   - Return concise, high-density reference cards first (`wiki/synthetic/`).
-   - Disclose deep raw source handoffs (`wiki/*.md`) or evidence files (`evidence/WP-*`) only when requested or when deep historical context is needed.
+   - Return concise, high-density reference cards first (`.agents/knowledge/synthetic/`).
+   - Disclose deep raw source handoffs (`.agents/knowledge/*.md`) or evidence files (`evidence/WP-*`) only when requested or when deep historical context is needed.
 4. **`RECONSTRUCTABLE PROVENANCE`**:
    - Every claim returned by the Librarian must link directly to the target file and line numbers (e.g. `[filename.md#L10-L25](file:///absolute/path/to/filename.md#L10-L25)`).
 
@@ -73,7 +73,7 @@ The **Librarian Agent** is the autonomous knowledge curator, retriever, and sema
                                       ▼
                ┌──────────────────────────────────────────────┐
                │      STEP 3: SYNTHETIC CARD RESOLUTION       │
-               │   Loads wiki/synthetic/03_PI_HARNESS_INTEGR. │
+               │   Loads .agents/knowledge/synthetic/03_PI_HARNESS_INTEGR. │
                │   Checks Epistemic Status: [CONFIRMED]       │
                └──────────────────────┬───────────────────────┘
                                       │
@@ -90,7 +90,7 @@ The **Librarian Agent** is the autonomous knowledge curator, retriever, and sema
 ## 3. Maintenance & Catalog Re-indexing
 
 When new WorkPackages (`WP-*`), ADRs (`docs/adr/`), or experimental findings are created:
-1. Append the new document entry to `wiki/synthetic/CATALOG.json`.
-2. Update new domain terms in `wiki/synthetic/TAXONOMY.json` and `CONTEXT.md`.
-3. Generate retrieval chunk cards in `wiki/synthetic/RETRIEVAL_INDEX.jsonl`.
+1. Append the new document entry to `.agents/knowledge/synthetic/CATALOG.json`.
+2. Update new domain terms in `.agents/knowledge/synthetic/TAXONOMY.json` and `CONTEXT.md`.
+3. Generate retrieval chunk cards in `.agents/knowledge/synthetic/RETRIEVAL_INDEX.jsonl`.
 4. Run `node tools/librarian/librarian.mjs verify` to guarantee zero broken links or missing files.

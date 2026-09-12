@@ -4,9 +4,9 @@ title: "Lab & Toolchains: DeepHar, Safe Plugins & Omarchy Workstation Customizat
 domain: SAFE_LAB_TOOLCHAINS
 epistemic_status: DESIGN_DECISION
 source_documents:
-  - wiki/DEEPHAR_DREAM_OS_SAFE_PLUGIN_LAB_HANDOFF.md
-  - "wiki/HANDOFF — Omarchy QuickShell Aesthetic Design via OpenCode Harness.md"
-  - wiki/OFFICIAL_SOL_REVIEWER_HANDOFF_DREAM_SETUP_R2.md
+  - .agents/knowledge/DEEPHAR_DREAM_OS_SAFE_PLUGIN_LAB_HANDOFF.md
+  - ".agents/knowledge/HANDOFF — Omarchy QuickShell Aesthetic Design via OpenCode Harness.md"
+  - .agents/knowledge/OFFICIAL_SOL_REVIEWER_HANDOFF_DREAM_SETUP_R2.md
 retrieval_keywords:
   - DeepHar
   - DeepSeek Harness

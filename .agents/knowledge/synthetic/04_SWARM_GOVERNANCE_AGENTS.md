@@ -4,7 +4,7 @@ title: "Governance: Agent Swarm Architecture & Antigravity (AGY) Workflows"
 domain: SWARM_GOVERNANCE
 epistemic_status: DESIGN_DECISION
 source_documents:
-  - wiki/KAD_PI_AGY_HANDOFF_2026-08-28.md
+  - .agents/knowledge/KAD_PI_AGY_HANDOFF_2026-08-28.md
   - .agents/agents/kad-master/agent.md
   - PRIME_DIRECTIVE.md
 retrieval_keywords:

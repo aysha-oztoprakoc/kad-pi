@@ -443,13 +443,49 @@ function providerForRole(models, role, provider) {
   return role === 'qwen' ? provider.includes('qwen') : Boolean(models[provider]);
 }
 
+/**
+ * The local-retrieval role plus the resource standing behind it.
+ *
+ * This is the one condition the status computation reads beyond the section failures, so both
+ * `statusFor` and the degraded-cause list must ask the same question of the same pair; answering
+ * it twice from two lookups is how a status and its stated cause drift apart.
+ */
+function retrievalCondition(sections) {
+  const role = sections.roles.roles.local_retrieval;
+  const resource = sections.local_inference.resources.find((item) => item.provider === role.provider);
+  return { status: role.status, available: resource?.capability_state === 'AVAILABLE' };
+}
+
 function statusFor(sections) {
   const blocking = [...sections.omp.failures, ...sections.learning.failures, ...sections.spend.failures, ...sections.pi.failures];
   const degraded = [...sections.governance.failures, ...sections.skills.failures, ...sections.roles.failures, ...sections.authority.failures, ...sections.local_inference.failures, ...sections.omp.provenance_failures];
-  const retrieval = sections.local_inference.resources.find(resource => resource.provider === sections.roles.roles.local_retrieval.provider);
+  const retrieval = retrievalCondition(sections);
   if (blocking.length) return 'BLOCKED';
-  if (degraded.length || sections.roles.roles.local_retrieval.status !== 'RESOLVED' || retrieval?.capability_state !== 'AVAILABLE') return 'DEGRADED';
+  if (degraded.length || retrieval.status !== 'RESOLVED' || !retrieval.available) return 'DEGRADED';
   return 'READY';
+}
+
+/**
+ * Every cause behind a DEGRADED receipt, and whether the operator declared it.
+ *
+ * The gate prints this list, so a degraded checkout names what is wrong instead of printing a bare
+ * status. A down retrieval endpoint is `intended` only when the operator declared on-demand
+ * endpoints *and* the role resolved to exactly UNAVAILABLE: `UNRESOLVED`, `STALE`, `UNKNOWN` and
+ * `NOT_STC_OWNED` mean the role is misdeclared or unowned, which nobody declared and someone must
+ * fix, so labelling one of those as the steady state would mask the very faults this gate exists
+ * to surface.
+ */
+function degradedCauses(sections, retrievalMode) {
+  const causes = [
+    ...sections.governance.failures, ...sections.skills.failures, ...sections.roles.failures,
+    ...sections.authority.failures, ...sections.local_inference.failures, ...sections.omp.provenance_failures
+  ].map((code) => ({ code, intended: false }));
+  const retrieval = retrievalCondition(sections);
+  if (retrieval.status !== 'RESOLVED' || !retrieval.available) {
+    const intended = retrievalMode === 'on-demand' && retrieval.status === 'UNAVAILABLE';
+    causes.push({ code: intended ? 'LOCAL_RETRIEVAL_ON_DEMAND' : 'LOCAL_RETRIEVAL_UNAVAILABLE', intended });
+  }
+  return causes;
 }
 
 /**
@@ -469,6 +505,22 @@ function transportOnlyProviders(root) {
       .map((entry) => entry.omp_provider));
   } catch {
     return new Set();
+  }
+}
+
+/**
+ * The declared local-retrieval mode, from the operator's steady-state declaration.
+ *
+ * Fail-soft like the provider registry above: a missing or malformed declaration means nothing is
+ * declared, and the receipt reports the degradation unnamed rather than inventing intent the
+ * operator never stated.
+ */
+function declaredRetrievalMode(root) {
+  try {
+    const declaration = JSON.parse(text(join(root, 'config', 'omp-steady-state.json')));
+    return typeof declaration?.local_retrieval?.mode === 'string' ? declaration.local_retrieval.mode : null;
+  } catch {
+    return null;
   }
 }
 
@@ -502,7 +554,7 @@ export function inspectPreflight({ root = process.cwd(), observed = {} } = {}) {
     ...(sections.local_inference.ownership === 'UNKNOWN' ? ['LOCAL_PROCESS_OWNERSHIP_UNKNOWN'] : []),
     ...(sections.pi.version === 'UNKNOWN' ? ['PI_VERSION_UNKNOWN'] : [])
   ];
-  return { schema_version: 'kad-omp-preflight-1', status: statusFor(sections), omp: sections.omp, pi: sections.pi, governance: sections.governance, skills: sections.skills, learning: sections.learning, roles: sections.roles, local_inference: sections.local_inference, spend: sections.spend, authority: sections.authority, failures: [...new Set(failures)], unknowns: [...new Set(unknowns)] };
+  return { schema_version: 'kad-omp-preflight-1', status: statusFor(sections), degraded_causes: degradedCauses(sections, declaredRetrievalMode(root)), omp: sections.omp, pi: sections.pi, governance: sections.governance, skills: sections.skills, learning: sections.learning, roles: sections.roles, local_inference: sections.local_inference, spend: sections.spend, authority: sections.authority, failures: [...new Set(failures)], unknowns: [...new Set(unknowns)] };
 }
 
 export function canonicalReceipt(receipt) {

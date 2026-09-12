@@ -14,12 +14,12 @@
 import { inspectPreflight, canonicalReceipt } from './omp-orchestration-preflight.mjs';
 
 /**
- * The sections whose failures degrade rather than block. A gate that prints only provenance and
- * unknowns hides the degraded causes it still lets through — a receipt can read DEGRADED with the
- * reason (an unverified authority boundary, a missing skill, a role that does not resolve) invisible.
+ * The reasons come from the receipt's own `degraded_causes`, which is the list the status
+ * computation was made from. Composing them here from a hard-coded set of sections is how the
+ * line went silent: a checkout degraded only by a down retrieval endpoint printed no reason at
+ * all, because no section *failure* had fired. The receipt decides what degraded it; the gate
+ * only decides what the operator still has to see on top of that.
  */
-const DEGRADED_SECTIONS = ['governance', 'skills', 'roles', 'authority', 'local_inference'];
-
 const receipt = canonicalReceipt(inspectPreflight({ root: process.env.KAD_PREFLIGHT_ROOT ?? process.cwd() }));
 
 if (receipt.status === 'BLOCKED') {
@@ -28,8 +28,7 @@ if (receipt.status === 'BLOCKED') {
   process.exitCode = 1;
 } else {
   const reasons = [
-    ...DEGRADED_SECTIONS.flatMap((name) => receipt[name]?.failures ?? []),
-    ...(receipt.omp.provenance_failures ?? []),
+    ...(receipt.degraded_causes ?? []).map((cause) => cause.code),
     ...(receipt.omp.path_shadow ? [`OMP_PATH_SHADOW:${receipt.omp.path_shadow.path}`] : []),
     ...(receipt.unknowns ?? [])
   ];

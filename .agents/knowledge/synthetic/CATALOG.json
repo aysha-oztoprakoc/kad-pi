@@ -5,7 +5,7 @@
     {
       "id": "ARCH_PON_STC",
       "title": "Architecture: Notification-Oriented Paradigm (PON) & Spatiotemporal Composability (STC)",
-      "path": "wiki/synthetic/01_ARCHITECTURE_PON_STC.md",
+      "path": ".agents/knowledge/synthetic/01_ARCHITECTURE_PON_STC.md",
       "type": "synthetic_distillation",
       "domain": "PON_STC_CORE",
       "epistemic_status": "SOURCE_DERIVED",
@@ -15,7 +15,7 @@
     {
       "id": "SIM_AUTHORITY_CORE",
       "title": "Simulation & Core: Deterministic Authority Boundary & World Simulation",
-      "path": "wiki/synthetic/02_DETERMINISTIC_AUTHORITY_SIMULATION.md",
+      "path": ".agents/knowledge/synthetic/02_DETERMINISTIC_AUTHORITY_SIMULATION.md",
       "type": "synthetic_distillation",
       "domain": "KAD_SIMULATION",
       "epistemic_status": "DESIGN_DECISION",
@@ -25,7 +25,7 @@
     {
       "id": "PI_HARNESS_INTEGRATION",
       "title": "Integration: Pi Coding Agent SDK & Lifecycle Seams (WP-KAD-001)",
-      "path": "wiki/synthetic/03_PI_HARNESS_INTEGRATION.md",
+      "path": ".agents/knowledge/synthetic/03_PI_HARNESS_INTEGRATION.md",
       "type": "synthetic_distillation",
       "domain": "PI_INTEGRATION",
       "epistemic_status": "CONFIRMED",
@@ -35,7 +35,7 @@
     {
       "id": "SWARM_GOVERNANCE",
       "title": "Governance: Agent Swarm Architecture & Antigravity (AGY) Workflows",
-      "path": "wiki/synthetic/04_SWARM_GOVERNANCE_AGENTS.md",
+      "path": ".agents/knowledge/synthetic/04_SWARM_GOVERNANCE_AGENTS.md",
       "type": "synthetic_distillation",
       "domain": "SWARM_GOVERNANCE",
       "epistemic_status": "DESIGN_DECISION",
@@ -45,7 +45,7 @@
     {
       "id": "ECON_ROUTING",
       "title": "Economics: Subscription Quota Economics & Dynamic Swarm Routing",
-      "path": "wiki/synthetic/05_SUBSCRIPTION_ECONOMICS_ROUTING.md",
+      "path": ".agents/knowledge/synthetic/05_SUBSCRIPTION_ECONOMICS_ROUTING.md",
       "type": "synthetic_distillation",
       "domain": "SUBSCRIPTION_ECONOMICS",
       "epistemic_status": "DESIGN_DECISION",
@@ -55,7 +55,7 @@
     {
       "id": "SAFE_LAB_TOOLCHAINS",
       "title": "Lab & Toolchains: DeepHar, Safe Plugins & Omarchy Workstation Customization",
-      "path": "wiki/synthetic/06_SAFE_PLUGIN_LAB_TOOLCHAINS.md",
+      "path": ".agents/knowledge/synthetic/06_SAFE_PLUGIN_LAB_TOOLCHAINS.md",
       "type": "synthetic_distillation",
       "domain": "SAFE_LAB_TOOLCHAINS",
       "epistemic_status": "DESIGN_DECISION",
@@ -65,7 +65,7 @@
     {
       "id": "EVIDENCE_EPISTEMOLOGY",
       "title": "Epistemology: Prime Directive, Evidence Ledgers & Scientific Reconstructability",
-      "path": "wiki/synthetic/07_EVIDENCE_EPISTEMOLOGY_LEDGER.md",
+      "path": ".agents/knowledge/synthetic/07_EVIDENCE_EPISTEMOLOGY_LEDGER.md",
       "type": "synthetic_distillation",
       "domain": "EPISTEMOLOGY_EVIDENCE",
       "epistemic_status": "DESIGN_DECISION",
@@ -75,7 +75,7 @@
     {
       "id": "LIBRARIAN_PROTOCOL",
       "title": "Librarian Agent Protocol & Operating Manual",
-      "path": "wiki/synthetic/LIBRARIAN.md",
+      "path": ".agents/knowledge/synthetic/LIBRARIAN.md",
       "type": "governance",
       "domain": "EPISTEMOLOGY_EVIDENCE",
       "epistemic_status": "DESIGN_DECISION",
@@ -85,7 +85,7 @@
     {
       "id": "TAXONOMY_SPEC",
       "title": "Domain Taxonomy & Semantic Ontology",
-      "path": "wiki/synthetic/TAXONOMY.md",
+      "path": ".agents/knowledge/synthetic/TAXONOMY.md",
       "type": "governance",
       "domain": "PON_STC_CORE",
       "epistemic_status": "SOURCE_DERIVED",
@@ -195,7 +195,7 @@
     {
       "id": "KAD_CONTEXT_KNOWLEDGE_ROADMAP_2026_08_29",
       "title": "KAD-PI Canonical Context, Knowledge and Local-Specialist Plane Roadmap",
-      "path": "wiki/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
+      "path": "docs/architecture/KAD_Context_Knowledge_Plane_Roadmap_2026-08-29.md",
       "type": "roadmap",
       "domain": "KAD_KNOWLEDGE",
       "epistemic_status": "DESIGN_DECISION",
@@ -205,7 +205,7 @@
     {
       "id": "RAW_DSH_PON_CORDIS",
       "title": "Raw Handoff: DeepSeek Harness / Cordis / PON Lab",
-      "path": "wiki/DSH_PON_CORDIS_HANDOFF_2026-08-25.md",
+      "path": ".agents/knowledge/handoffs/DSH_PON_CORDIS_HANDOFF_2026-08-25.md",
       "type": "raw_source",
       "domain": "PON_STC_CORE",
       "epistemic_status": "OBSERVED",
@@ -215,7 +215,7 @@
     {
       "id": "RAW_KAD_PI_AGY",
       "title": "Raw Master Handoff: KAD / PI / AGY Swarm",
-      "path": "wiki/KAD_PI_AGY_HANDOFF_2026-08-28.md",
+      "path": ".agents/knowledge/handoffs/KAD_PI_AGY_HANDOFF_2026-08-28.md",
       "type": "raw_source",
       "domain": "SWARM_GOVERNANCE",
       "epistemic_status": "DESIGN_DECISION",
@@ -225,7 +225,7 @@
     {
       "id": "RAW_KAD_PLAN",
       "title": "Raw Plan: KAD Local AI Experimental Platform Implementation Plan",
-      "path": "wiki/KAD_Implementation_Plan.md",
+      "path": "docs/architecture/KAD_Implementation_Plan.md",
       "type": "raw_source",
       "domain": "KAD_SIMULATION",
       "epistemic_status": "DESIGN_DECISION",
@@ -235,7 +235,7 @@
     {
       "id": "RAW_CLI_ECONOMICS",
       "title": "Raw Handoff: CLI Subscription Quota Economics Matrix",
-      "path": "wiki/CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md",
+      "path": ".agents/knowledge/handoffs/CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md",
       "type": "raw_source",
       "domain": "SUBSCRIPTION_ECONOMICS",
       "epistemic_status": "OBSERVED",

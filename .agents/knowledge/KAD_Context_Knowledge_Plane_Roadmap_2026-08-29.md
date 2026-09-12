@@ -8,7 +8,7 @@ source_documents:
   - CONTEXT.md
   - docs/adr/0007-synthetic-knowledge-librarian-architecture.md
   - docs/adr/0008-unified-context-knowledge-plane.md
-  - wiki/KAD_Implementation_Plan.md
+  - .agents/knowledge/KAD_Implementation_Plan.md
 retrieval_keywords:
   - OpenViking
   - Knowledge Plane

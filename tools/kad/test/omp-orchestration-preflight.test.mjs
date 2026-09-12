@@ -273,6 +273,89 @@ test('T16 an empty model surface fails rather than passing as clean', async () =
 });
 
 /**
+ * Writes the operator's steady-state declaration into a fixture.
+ *
+ * The preflight takes intent from this file alone, so a test asserting the intended path must
+ * state the declaration the way the operator does; the fixture cannot imply it.
+ */
+async function declareSteadyState(root, mode = 'on-demand') {
+  await mkdir(join(root, 'config'), { recursive: true });
+  await writeFile(join(root, 'config', 'omp-steady-state.json'), `${JSON.stringify({
+    schema: 'kad-omp-steady-state-v1',
+    declared_at: '2026-09-12',
+    declared_by: 'test fixture',
+    local_retrieval: { mode, rationale: 'endpoints are started only for retrieval-heavy work', endpoints: [{ provider: 'kad-local-qwen', endpoint: 'http://127.0.0.1:5002/v1' }] }
+  }, null, 2)}\n`);
+}
+
+test('T17 a declared on-demand retrieval endpoint degrades as intended', async () => {
+  const root = await createOmpPreflightFixture();
+  try {
+    await declareSteadyState(root);
+    // No retrieval process is running: that is what this machine looks like between
+    // retrieval-heavy jobs, and the declaration says so.
+    const receipt = inspectPreflight({ root, observed: observedFor(root) });
+    assert.equal(receipt.roles.roles.local_retrieval.status, 'UNAVAILABLE');
+    assert.equal(receipt.status, 'DEGRADED');
+    assert.deepEqual(receipt.degraded_causes, [{ code: 'LOCAL_RETRIEVAL_ON_DEMAND', intended: true }]);
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
+test('T18 without the declaration the same degradation is unnamed', async () => {
+  const root = await createOmpPreflightFixture();
+  try {
+    const receipt = inspectPreflight({ root, observed: observedFor(root) });
+    assert.equal(receipt.roles.roles.local_retrieval.status, 'UNAVAILABLE');
+    assert.equal(receipt.status, 'DEGRADED');
+    assert.deepEqual(receipt.degraded_causes, [{ code: 'LOCAL_RETRIEVAL_UNAVAILABLE', intended: false }]);
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
+test('T19 a misdeclared retrieval provider is never the declared steady state', async () => {
+  // `kad-local-qwen` is absent from the model map while the role still selects it, so the role
+  // never resolves and the resource it would own does not exist. Nobody declared that state, and
+  // the declaration must not be read as covering it.
+  const modelsYaml = `providers:
+  kad-local-world:
+    baseUrl: http://127.0.0.1:5001/v1
+    auth: none
+    models:
+      - id: kad-local-s13
+        contextWindow: 4096
+`;
+  const root = await createOmpPreflightFixture({ modelsYaml, enabledModels: ['kad-local-world/*'] });
+  try {
+    await declareSteadyState(root);
+    const receipt = inspectPreflight({ root, observed: observedFor(root) });
+    assert.equal(receipt.roles.roles.local_retrieval.provider, 'kad-local-qwen');
+    assert.equal(receipt.roles.roles.local_retrieval.status, 'UNRESOLVED');
+    assert.equal(receipt.status, 'DEGRADED');
+    assert.deepEqual(receipt.degraded_causes, [
+      { code: 'LOCAL_RETRIEVAL_ROLE_UNRESOLVED', intended: false },
+      { code: 'LOCAL_RETRIEVAL_UNAVAILABLE', intended: false }
+    ]);
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
+test('T20 a declaration that is not an on-demand claim never implies intent', async () => {
+  const root = await createOmpPreflightFixture();
+  try {
+    // A malformed declaration is the same as no declaration: the receipt reports the degradation
+    // rather than inventing intent the operator never stated.
+    await mkdir(join(root, 'config'), { recursive: true });
+    await writeFile(join(root, 'config', 'omp-steady-state.json'), '{ not json\n');
+    const malformed = inspectPreflight({ root, observed: observedFor(root) });
+    assert.equal(malformed.status, 'DEGRADED');
+    assert.deepEqual(malformed.degraded_causes, [{ code: 'LOCAL_RETRIEVAL_UNAVAILABLE', intended: false }]);
+
+    await declareSteadyState(root, 'always-on');
+    const otherMode = inspectPreflight({ root, observed: observedFor(root) });
+    assert.equal(otherMode.status, 'DEGRADED');
+    assert.deepEqual(otherMode.degraded_causes, [{ code: 'LOCAL_RETRIEVAL_UNAVAILABLE', intended: false }]);
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
+/**
  * T8 is the one deliberately config-coupled test in this file: it reads the live
  * checkout and pins the *consequence* of the posture declared in `.omp/RULES.md`, enforced by
  * `.omp/config.yml`, and of the cost class declared for every lane in

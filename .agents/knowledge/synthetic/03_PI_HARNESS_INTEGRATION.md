@@ -4,7 +4,7 @@ title: "Integration: Pi Coding Agent SDK & Lifecycle Seams (WP-KAD-001)"
 domain: PI_INTEGRATION
 epistemic_status: CONFIRMED
 source_documents:
-  - wiki/KAD_PI_AGY_HANDOFF_2026-08-28.md
+  - .agents/knowledge/KAD_PI_AGY_HANDOFF_2026-08-28.md
   - evidence/WP-KAD-001/final-report.md
   - evidence/WP-KAD-001/acceptance-amendment.json
   - evidence/WP-KAD-001/sdk-package-provenance.json

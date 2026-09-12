@@ -91,6 +91,40 @@ test('a degraded receipt prints its cause, not just its status', async () => {
   } finally { await removeOmpPreflightFixture(root); }
 });
 
+test('a declared on-demand retrieval endpoint degrades by name', async () => {
+  // The endpoints sit on an unroutable loopback port so the gate's live probe cannot find them:
+  // the assertion is about what the line says when retrieval is down, not about this host.
+  const modelsYaml = `providers:
+  kad-local-world:
+    baseUrl: http://127.0.0.1:9/v1
+    auth: none
+    models:
+      - id: kad-local-s13
+        contextWindow: 4096
+  kad-local-qwen:
+    baseUrl: http://127.0.0.1:9/v1
+    auth: none
+    models:
+      - id: qwen-local
+        contextWindow: 4096
+`;
+  const root = await createOmpPreflightFixture({ modelsYaml });
+  try {
+    await mkdir(join(root, 'config'), { recursive: true });
+    await writeFile(join(root, 'config', 'omp-steady-state.json'), `${JSON.stringify({
+      schema: 'kad-omp-steady-state-v1',
+      declared_at: '2026-09-12',
+      declared_by: 'test fixture',
+      local_retrieval: { mode: 'on-demand', rationale: 'endpoints are started only for retrieval-heavy work', endpoints: [{ provider: 'kad-local-qwen', endpoint: 'http://127.0.0.1:9/v1' }] }
+    }, null, 2)}\n`);
+
+    const { code, stdout } = await runGate(root);
+    assert.equal(code, 0, 'the declared steady state degrades the receipt without failing the gate');
+    assert.match(stdout, /^OMP PREFLIGHT DEGRADED: /);
+    assert.match(stdout, /LOCAL_RETRIEVAL_ON_DEMAND/, 'the line names the declared cause instead of printing none');
+  } finally { await removeOmpPreflightFixture(root); }
+});
+
 test('a harness outside the mise install root warns without failing the gate', async () => {
   const root = await createOmpPreflightFixture();
   try {

@@ -4,7 +4,7 @@ title: "Simulation & Core: Deterministic Authority Boundary & World Simulation"
 domain: KAD_SIMULATION
 epistemic_status: DESIGN_DECISION
 source_documents:
-  - wiki/KAD_Implementation_Plan.md
+  - .agents/knowledge/KAD_Implementation_Plan.md
   - kad-lab/README.md
   - PRIME_DIRECTIVE.md
 retrieval_keywords:

@@ -1,0 +1,17 @@
+{
+  "schema": "kad-omp-steady-state-v1",
+  "declared_at": "2026-09-12",
+  "declared_by": "decision 9C of the 2026-09-12 workspace review",
+  "local_retrieval": {
+    "mode": "on-demand",
+    "rationale": "Local retrieval endpoints are started only for retrieval-heavy work. Keeping them warm around the clock burns GPU and memory on an idle machine, so their absence is the intended steady state rather than a fault. The preflight therefore reports a down retrieval endpoint as a declared degradation, not as an unexplained one.",
+    "endpoints": [
+      { "provider": "kad-local-world", "endpoint": "http://127.0.0.1:5001/v1" },
+      { "provider": "kad-local-qwen", "endpoint": "http://127.0.0.1:5002/v1" }
+    ]
+  },
+  "operator_notes": [
+    "`local_retrieval.mode` is the only value that changes anything: `on-demand` marks a down retrieval endpoint as intended. Any other value, or a missing file, leaves the degradation unnamed.",
+    "Intended covers exactly the endpoint being down. A role that does not resolve, is unknown, goes stale, or is not STC-owned is a misdeclaration or an ownership fault, and is never annotated as the declared steady state."
+  ]
+}

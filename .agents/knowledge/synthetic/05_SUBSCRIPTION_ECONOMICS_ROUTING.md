@@ -4,8 +4,8 @@ title: "Economics: Subscription Quota Economics & Dynamic Swarm Routing"
 domain: SUBSCRIPTION_ECONOMICS
 epistemic_status: DESIGN_DECISION
 source_documents:
-  - wiki/CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md
-  - wiki/OPENCODE_GO_ECONOMIC_MODEL_MATRIX_HANDOFF.md
+  - .agents/knowledge/CLI_SUBSCRIPTION_QUOTA_ECONOMICS_HANDOFF.md
+  - .agents/knowledge/OPENCODE_GO_ECONOMIC_MODEL_MATRIX_HANDOFF.md
 retrieval_keywords:
   - Quota Economics
   - ChatGPT Plus

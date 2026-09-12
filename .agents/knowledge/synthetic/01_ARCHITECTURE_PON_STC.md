@@ -4,8 +4,8 @@ title: "Architecture: Notification-Oriented Paradigm (PON) & Spatiotemporal Comp
 domain: PON_STC_CORE
 epistemic_status: SOURCE_DERIVED
 source_documents:
-  - wiki/DSH_PON_CORDIS_HANDOFF_2026-08-25.md
-  - wiki/KAD_PI_AGY_HANDOFF_2026-08-28.md
+  - .agents/knowledge/DSH_PON_CORDIS_HANDOFF_2026-08-25.md
+  - .agents/knowledge/KAD_PI_AGY_HANDOFF_2026-08-28.md
   - PRIME_DIRECTIVE.md
 retrieval_keywords:
   - Notification-Oriented Paradigm

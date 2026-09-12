@@ -5,7 +5,7 @@ domain: EPISTEMOLOGY_EVIDENCE
 epistemic_status: DESIGN_DECISION
 source_documents:
   - PRIME_DIRECTIVE.md
-  - wiki/KAD_PI_AGY_HANDOFF_2026-08-28.md
+  - .agents/knowledge/KAD_PI_AGY_HANDOFF_2026-08-28.md
   - evidence/WP-KAD-001/final-report.md
 retrieval_keywords:
   - Prime Directive
